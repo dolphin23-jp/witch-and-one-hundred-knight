@@ -11,9 +11,7 @@ gemini:
   display_name: Bisco
   gender: female
   language_code: ja-JP
-  description: >-
-    A clear, mid-range voice of a young adult woman with a firm core; earnest and
-    straightforward, speaking crisply with well-defined phrasing.
+  description: 日本語を母語とする若い成人女性の声。中音域で、澄んでいて芯がある。生真面目でまっすぐな性格で、はきはきと、区切りをはっきりつけて話す。日本のアニメのヒロインのように、感情の起伏がはっきり伝わる、張りのある演技をする。
   voice_id: voice_m6ptnlm6xv67
   # 権利のあるサンプル音声から作る場合（D-037）。文章による設計（description）と、どちらか一方を使う。
   replicate:
@@ -24,10 +22,10 @@ gemini:
 tests:
   - id: normal
     text: 見たよ。昨日の夜も見たし、今朝起きてすぐにも見せられた
-    style: flat and mildly exasperated, not looking up, matter-of-fact
+    style: 淡々と、少しうんざりした様子で。顔も上げずに、事実だけを言う
   - id: gag
     text: 明日！？　無茶だろう、そんなの
-    style: startled, voice jumping upward, flustered and quick
+    style: 驚いて声が上ずる。慌てて早口に
   - id: honne
     text: <short pause> ……おやすみ、メタリカ
-    style: soft and lowered, a little breathy, tender
+    style: 声を落として柔らかく、少し息を混ぜて、優しく
