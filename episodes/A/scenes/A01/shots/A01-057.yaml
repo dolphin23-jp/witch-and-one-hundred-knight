@@ -1,0 +1,23 @@
+id: A01-057
+scene: A01          # 魔女邸・居間（朝）
+sec: 1.5
+shot: 寄り（通常の頭身）
+acting: 大きく口を開けて怒鳴る
+dialogue:
+  - {who: metallica, line: ……散れと言っている！}
+sound: null
+notes: ギャグON。脚本の「デフォルメ顔・口が顔の半分」は D-042 に合わせ、通常の絵柄で大口の怒鳴りにする。怒りマークは合成
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, mood: 本気の怒り}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: 怒鳴り切る
+overlays: [怒りマーク]   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

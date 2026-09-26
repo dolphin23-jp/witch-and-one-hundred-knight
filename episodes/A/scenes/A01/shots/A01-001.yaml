@@ -1,0 +1,26 @@
+id: A01-001
+scene: A01          # 魔女邸・居間（朝）
+sec: 4
+shot: 大引き・固定。沼越しの魔女邸
+acting: 朝靄。翠の水面に泡が浮かび、弾ける
+dialogue: []
+sound: 泡の音
+notes: 沼は美しく撮る
+difficulty: 背景のみ
+
+# --- 本制作用の項目 ---
+background: witch-house-exterior-morning
+state: {}           # 人物なし
+refs: [witch-house, swamp]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: null
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+# ベイクオフで試作済み（指示文は bakeoff/shots/A01-001.yaml）
+bakeoff_result:
+  image: bakeoff/results/image/A01-001/nano-banana-pro_01.png
+  video: bakeoff/results/video/A01-001/wan-3.0_01.mp4
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

@@ -1,0 +1,22 @@
+id: A01-014
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 寄り・百騎兵の手元から顔へ
+acting: フォークで目玉焼きの黄身をつつく。黄身が割れて広がる。首が少しかしぐ
+dialogue: []
+sound: ぷつり
+notes: 演説との対比
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  hundred-knight: {props: フォーク, seat: テーブル右端}
+refs: [hundred-knight]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: フォークが黄身に触れる
+end_pose: 首がかしぐ
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

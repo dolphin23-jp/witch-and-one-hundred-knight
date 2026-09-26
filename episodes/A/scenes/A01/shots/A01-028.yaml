@@ -1,0 +1,23 @@
+id: A01-028
+scene: A01          # 魔女邸・居間（朝）
+sec: 1.5
+shot: テーブルの下
+acting: 床に転がった首が叫ぶ
+dialogue:
+  - {who: arlecchino, line: く、首はいけませぬー！}
+sound: null
+notes: 定型のギャグ（毎回同じ叫び）
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-under-table
+state:
+  arlecchino: {head: 床}
+refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: null
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: 首の見え方がサービスの制限にかかった場合は、テーブルクロスの陰から声だけ（Claudeの提案、ユーザー未確認）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

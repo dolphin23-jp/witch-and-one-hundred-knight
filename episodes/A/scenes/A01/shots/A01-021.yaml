@@ -1,0 +1,23 @@
+id: A01-021
+scene: A01          # 魔女邸・居間（朝）
+sec: 2
+shot: 大寄り・カップ
+acting: 紅茶がカップの縁まで来ても注ぎ続ける
+dialogue:
+  - {who: arlecchino, line: お喜びもひとしお……}
+sound: 注ぐ音が続く
+notes: null
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  arlecchino: {head: あり, props: ティーポット}
+refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 紅茶が縁の手前
+end_pose: 縁まで満ちる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
