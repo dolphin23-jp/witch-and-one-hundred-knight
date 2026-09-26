@@ -9,18 +9,19 @@ roles:
     implementations:
       - {name: nano-banana-pro, via: higgsfield, status: adopted, note: アニメとして動かしやすい（ユーザー判断、D-041）}
       - {name: gpt-image-2, via: higgsfield, status: fallback, note: A01-019 の試作で逆光と表情は良かった}
+      - {name: gpt-image-2, via: codex-cli, status: candidate, note: ChatGPT のプラン枠で生成（試行中。D-036 の改訂案）}
       - {name: soul, via: higgsfield, status: dropped, note: A01-019 の試作で指示とキャラクターを保てなかった}
 
   video:
     input: 最初と最後の静止画 + 動きの指定
     output: 数秒の動画 (MP4)
     implementations:
-      - {name: kling-3.0, via: higgsfield, status: candidate}
-      - {name: seedance-2.0, via: higgsfield, status: candidate}
-      - {name: veo-3.1, via: higgsfield, status: candidate}
-      - {name: runway-gen-4.5, via: runway, status: candidate, note: 個別契約が必要}
-      - {name: vidu, via: vidu, status: candidate, note: 個別契約が必要}
-      - {name: wan-2.7, via: cloud-gpu, status: fallback, note: 規約で作れないカットの予備（D-034）}
+      - {name: wan-3.0, via: alibaba-model-studio, status: adopted, tool: tools/wan_video.py（未作成）, note: 最初のフレームに忠実で安い（D-043）。環境変数 DASHSCOPE_API_KEY と DASHSCOPE_WORKSPACE_ID}
+      - {name: seedance-2.0, via: higgsfield, status: fallback, note: Higgsfield の Plus プラン以上が必要。大きな動きのカットで比較する候補}
+      - {name: kling-3.0, via: higgsfield, status: fallback, note: 1本6クレジット（4秒）}
+      - {name: veo-3.1, via: higgsfield, status: dropped}
+      - {name: runway-gen-4.5, via: runway, status: dropped, note: 個別契約が必要}
+      - {name: vidu, via: vidu, status: dropped, note: 個別契約が必要}
 
   voice:
     input: 台詞 + 声の設計書 + 演技指定
