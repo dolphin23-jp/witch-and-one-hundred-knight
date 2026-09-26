@@ -7,9 +7,9 @@ roles:
     input: ショット指定 + 参照画像
     output: 静止画 (PNG)
     implementations:
-      - {name: nano-banana-pro, via: higgsfield, status: candidate}
-      - {name: gpt-image-2, via: higgsfield, status: candidate}
-      - {name: soul, via: higgsfield, status: candidate}
+      - {name: nano-banana-pro, via: higgsfield, status: adopted, note: アニメとして動かしやすい（ユーザー判断、D-041）}
+      - {name: gpt-image-2, via: higgsfield, status: fallback, note: A01-019 の試作で逆光と表情は良かった}
+      - {name: soul, via: higgsfield, status: dropped, note: A01-019 の試作で指示とキャラクターを保てなかった}
 
   video:
     input: 最初と最後の静止画 + 動きの指定
