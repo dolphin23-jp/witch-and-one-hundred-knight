@@ -1,0 +1,10 @@
+# 書き出した動画の保存先（D-044）。動画は Google Drive に置き、ここには場所だけを書く。
+folder: https://drive.google.com/drive/folders/14Ao_xdXO001DurwE586lYIcFRFK6Sycp   # 「魔女と百騎兵 Animatic」
+files:
+  - name: A01_v01.mp4
+    scene: A01
+    made: 2026-09-26
+    sec: 282.85
+    content: 声（Gemini TTS）+ BGM（Lyria 3.5）+ 仮の画面。ベイクオフの5カットだけ動画
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --bgm audio/music/a01_morning_lyria-3.5.mp3
+    drive: null   # Drive に置いたらリンクを書く

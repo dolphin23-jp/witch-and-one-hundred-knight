@@ -28,8 +28,8 @@ roles:
     input: 原作音源（ユーザーが用意）+ 脚本の台詞（D-045）
     output: 台詞ごとの音声 (WAV、声だけ)
     implementations:
-      - {name: original-audio, via: local, status: adopted, tool: tools/extract_lines.py, note: Demucs htdemucs_ft で声を分け、Whisper large-v3 の時刻で脚本と突き合わせて切り出す（D-045）}
-      - {name: gemini-3.8-flash-tts, via: gemini-api, status: dropped, tool: tools/gemini_tts.py, note: AI で作った声は使わない（D-045）}
+      - {name: original, via: user, status: adopted, tool: tools/extract_lines.py, note: 原作の台詞音源をユーザーが用意（D-045）。長い音源は Demucs htdemucs_ft で声を分け、Whisper large-v3 の時刻で脚本と突き合わせて切り出す}
+      - {name: gemini-3.8-flash-tts, via: gemini-api, status: dropped, tool: tools/gemini_tts.py, note: D-045 で不採用}
 
   hundred_knight_voice:
     input: 感情の語彙
@@ -39,7 +39,9 @@ roles:
   music_sfx:
     input: 場面の感情、主題の型
     output: BGM、効果音
-    implementations: []   # 未定
+    implementations:
+      - {name: original, via: user, status: adopted, note: BGM は原作の音源をユーザーが用意（D-045）。効果音は未定}
+      - {name: lyria-3.5, via: gemini-api, status: dropped, tool: tools/lyria.py, note: D-045 で不採用}
 
   compositing:
     input: 動画 + 漫符 + エフェクト
@@ -52,5 +54,6 @@ roles:
     input: ショットファイル + 素材
     output: 一話の動画
     implementations:
+      - {name: ffmpeg, status: temporary, tool: tools/animatic.py, note: 静止画がそろうまでの仮の組み立て（尺と間の確認用）}
       - {name: hyperframes, status: candidate}
       - {name: remotion, status: candidate}
