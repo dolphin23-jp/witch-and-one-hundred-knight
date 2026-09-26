@@ -49,7 +49,7 @@
 | `bakeoff/` | ベイクオフ（候補の比較）。`shots/` に5カット、`voices/` に声の設計とテスト台詞、`evaluation.md` に評価表、`results/` に生成物 |
 | `episodes/<話>/scenes/<シーン>/shots/` | 本制作のショットファイル（1カット1ファイル、YAML） |
 | `refs/` | ユーザーが用意した参照画像（原作の画像）と一覧 `index.yaml` |
-| `characters/<人物>/` | 基準素材（通常とデフォルメ）、声の設定（ベイクオフ後に `bakeoff/voices/` から移す） |
+| `characters/<人物>/` | 基準素材（デフォルメは使わない、D-042）、声の設定（ベイクオフ後に `bakeoff/voices/` から移す） |
 | `logs/generations.jsonl` | 生成とQCの記録（`tools/record.py` が書く。手で編集しない） |
 | `world/` | 背景の参照画像と設計 |
 | `overlays/` | 漫符の素材集 |
