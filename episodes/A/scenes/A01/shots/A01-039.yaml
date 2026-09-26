@@ -1,23 +1,20 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-039
-scene: A01          # 魔女邸・居間（朝）
-sec: 2
+scene: A01
+tc: 188.8
+sec: 4.7
+kind: K
 shot: 胸上・ビスコ
-acting: 眉をひそめたまま
+acting: 身を乗り出す。眉が寄る
 dialogue:
-  - {who: bisco, line: ……なんだそれは。どれも聞いたことがないぞ, delivery: 眉をひそめて、困惑と不審}
+- L26
 sound: null
 notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+background: living-room-sofa
 state:
   bisco: {}
-refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: null
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+refs:
+- bisco
+overlays: []
+fallback: null

@@ -1,23 +1,19 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-011
-scene: A01          # 魔女邸・居間（朝）
-sec: 2.5
-shot: 寄り・二人
-acting: メタリカが招待状をビスコの鼻先に突きつける。ビスコの鼻がひくりと動き、目を細めて顔をそらす
+scene: A01
+tc: 45.8
+sec: 1.5
+kind: K
+shot: 胸上・ビスコ
+acting: パンを噛みながら、ちらりと招待状を見上げる。耳が小さく動く
 dialogue: []
-sound: null
-notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+sound: 咀嚼
+notes: 盗み見（D-046）
+background: living-room-sofa
 state:
-  metallica: {hat: あり, props: 招待状}
-  bisco: {seat: 手前}
-refs: [metallica, bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 招待状が画面に入る
-end_pose: ビスコが顔をそらし終える
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  bisco: {}
+refs:
+- bisco
+overlays: []
+fallback: null

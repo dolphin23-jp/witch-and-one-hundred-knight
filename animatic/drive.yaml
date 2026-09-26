@@ -8,3 +8,10 @@ files:
     content: 声（Gemini TTS）+ BGM（Lyria 3.5）+ 仮の画面。ベイクオフの5カットだけ動画
     built_with: python tools/animatic.py episodes/A/scenes/A01 --bgm audio/music/a01_morning_lyria-3.5.mp3
     drive: null   # Drive に置いたらリンクを書く
+  - name: A01_v02_timing.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: タイミング確認用。原作の声（audio/A01/original、D-045）を voice.yaml の位置に置き、画面はショットの画・動き・音を書いた仮の画面（種別で色分け）。56カット
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v02_timing
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く

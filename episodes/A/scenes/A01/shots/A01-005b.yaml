@@ -1,0 +1,21 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-005b
+scene: A01
+tc: 14.7
+sec: 1.4
+kind: A
+shot: 全身・横移動で追う
+acting: 14.8 最後の段から床へ着地（膝が沈み、帽子が跳ねる）→止まらずにテーブルへ大股3歩
+dialogue:
+- L01「ヴァルプルギスの夜会の」
+sound: 14.8 着地音と同時に BGM① IN
+notes: 見せ場（P-01）
+background: living-room
+state:
+  metallica: {}
+refs:
+- metallica
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

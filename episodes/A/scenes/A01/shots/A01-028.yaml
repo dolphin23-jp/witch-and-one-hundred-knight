@@ -1,23 +1,20 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-028
-scene: A01          # 魔女邸・居間（朝）
-sec: 1.5
-shot: テーブルの下
-acting: 床に転がった首が叫ぶ
+scene: A01
+tc: 120.0
+sec: 6.1
+kind: M
+shot: 寄り・メタリカ
+acting: 「いや待て」で歩きが止まり、直後の0.9秒の間であごに指を当て、目を細める
 dialogue:
-  - {who: arlecchino, line: く、首はいけませぬー！, delivery: 慌てた悲鳴。声が裏返って裏声になる}
+- L16
 sound: null
-notes: 定型のギャグ（毎回同じ叫び）
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-under-table
+notes: null
+background: living-room
 state:
-  arlecchino: {head: 床}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: null
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: 首の見え方がサービスの制限にかかった場合は、テーブルクロスの陰から声だけ（ユーザー確認済み 2026-09-26）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+refs:
+- metallica
+overlays: []
+fallback: null
