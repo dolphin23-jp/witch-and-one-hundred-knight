@@ -1,0 +1,19 @@
+# A01（魔女邸・居間、朝）の BGM。声の下に小さく敷く。A01 は約4分40秒なので、ループして使う。
+# 主題の型（メタリカ、沼など）は、この曲を聞いて方向が決まってから作る（D-023 の案）。
+model: lyria-3.5
+target: A01
+out: audio/music/a01_morning_lyria-3.5.mp3
+cost_usd: 0.08        # Gemini API の料金表（1曲 0.08 ドル）
+prompt: |
+  Instrumental only, no vocals. Background music for a comedic morning scene in a 2D TV anime.
+  Setting: a crooked wooden tower house standing in a glowing green swamp, home of a proud,
+  loud witch and her odd servants, having breakfast.
+  Mood: mischievous, playful, slightly dark fairy-tale whimsy, light comedy. Not scary, not epic.
+  Style: small chamber ensemble. Pizzicato strings, bassoon, clarinet, harpsichord, glockenspiel,
+  soft hand percussion. Waltz in 3/4, moderate tempo around 100 BPM. Simple, catchy melody.
+  Keep it light and uncluttered so dialogue can sit on top. Steady energy, no big climax.
+  Length about 3 minutes, and make the ending loop back smoothly to the beginning.
+  [0:00-0:15] Intro: sneaky pizzicato and bassoon.
+  [0:15-1:30] Main theme on clarinet over harpsichord.
+  [1:30-2:15] Lighter variation with glockenspiel.
+  [2:15-3:00] Main theme returns, ending ready to loop.
