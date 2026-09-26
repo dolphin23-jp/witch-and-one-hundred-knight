@@ -1,0 +1,28 @@
+id: A01-026
+scene: A01          # 魔女邸・居間（朝）
+sec: 1.5
+shot: 引き（通常の頭身）
+acting: 助走二歩、蹴り。首が天井へ
+dialogue: []
+sound: 派手な打撃音
+notes: 絵柄は通常のまま（D-042）。ギャグの間だが、メタリカは本気で怒っている。首の穴の緑の光を見せる。ベイクオフで試作済み（前半2.0秒を使用）
+difficulty: 大きな動き
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, mood: 本気の怒り}
+  arlecchino: {head: 飛ぶ}
+refs: [metallica, arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: メタリカが助走の一歩目
+end_pose: 首が天井に当たる瞬間
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+# ベイクオフで試作済み（指示文は bakeoff/shots/A01-026.yaml）
+bakeoff_result:
+  image: bakeoff/results/image/A01-026/nano-banana-pro_03.png
+  video: bakeoff/results/video/A01-026/wan-3.0_01_cut2s.mp4
+
+fallback: 蹴りが当たる瞬間で白フラッシュ。次の画で、首のない胴体と天井に刺さった首を同じ画面に置く。首が飛ぶ途中の画は作らない（ユーザー確認済み 2026-09-26）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

@@ -7,20 +7,22 @@ roles:
     input: ショット指定 + 参照画像
     output: 静止画 (PNG)
     implementations:
-      - {name: nano-banana-pro, via: higgsfield, status: candidate}
-      - {name: gpt-image-2, via: higgsfield, status: candidate}
-      - {name: soul, via: higgsfield, status: candidate}
+      - {name: nano-banana-pro, via: higgsfield, status: adopted, note: アニメとして動かしやすい（ユーザー判断、D-041）}
+      - {name: gpt-image-2, via: higgsfield, status: fallback, note: A01-019 の試作で逆光と表情は良かった}
+      - {name: gpt-image-2, via: codex-cli, status: dropped, note: 利用上限で試行できず。比較せず Nano Banana Pro で進める（ユーザー判断 2026-09-26。D-036 のまま）}
+      - {name: soul, via: higgsfield, status: dropped, note: A01-019 の試作で指示とキャラクターを保てなかった}
 
   video:
     input: 最初と最後の静止画 + 動きの指定
     output: 数秒の動画 (MP4)
     implementations:
-      - {name: kling-3.0, via: higgsfield, status: candidate}
-      - {name: seedance-2.0, via: higgsfield, status: candidate}
-      - {name: veo-3.1, via: higgsfield, status: candidate}
-      - {name: runway-gen-4.5, via: runway, status: candidate, note: 個別契約が必要}
-      - {name: vidu, via: vidu, status: candidate, note: 個別契約が必要}
-      - {name: wan-2.7, via: cloud-gpu, status: fallback, note: 規約で作れないカットの予備（D-034）}
+      - {name: wan-3.0, via: higgsfield, status: adopted, note: 最初のフレームに忠実。Starter プランで使える。720p・4秒で7クレジット（D-043）}
+      - {name: wan-3.0, via: alibaba-model-studio, status: fallback, note: 公式API。アカウント手続きが途中のため未使用}
+      - {name: seedance-2.0, via: higgsfield, status: fallback, note: Higgsfield の Plus プラン以上が必要。大きな動きのカットで比較する候補}
+      - {name: kling-3.0, via: higgsfield, status: fallback, note: 1本6クレジット（4秒）}
+      - {name: veo-3.1, via: higgsfield, status: dropped}
+      - {name: runway-gen-4.5, via: runway, status: dropped, note: 個別契約が必要}
+      - {name: vidu, via: vidu, status: dropped, note: 個別契約が必要}
 
   voice:
     input: 台詞 + 声の設計書 + 演技指定

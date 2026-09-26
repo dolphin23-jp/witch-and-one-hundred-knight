@@ -1,0 +1,25 @@
+id: A01-056
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 引き・固定
+acting: 誰も動かない。ビスコはまだパンを食べている。アルレッキーノは受け皿を拭いている。百騎兵は目玉焼きの残りを見ている
+dialogue: []
+sound: 時計の音だけ
+notes: 1拍の静止
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり}
+  bisco: {}
+  hundred-knight: {}
+  arlecchino: {head: あり}
+refs: [metallica, bisco, hundred-knight, arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: null
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

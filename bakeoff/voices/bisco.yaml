@@ -1,8 +1,8 @@
 character: bisco
 design:
-  高さ: 中音域
-  質感: 澄んでいて芯がある
-  年齢感: 十代後半の少女
+  高さ: 中音域でやや低め
+  質感: 落ち着いた柔らかい響きに、凛とした芯がある
+  年齢感: 若い成人女性
   話す速さ: 普通。はきはきと、区切りがはっきりしている
   態度: まっすぐ、生真面目。動揺すると声が上ずり、照れると早口になる
   本音の場面: 声を落とし、少し息が混ざる
@@ -11,10 +11,8 @@ gemini:
   display_name: Bisco
   gender: female
   language_code: ja-JP
-  description: >-
-    A clear, mid-range voice of a girl in her late teens with a firm core; earnest and
-    straightforward, speaking crisply with well-defined phrasing.
-  voice_id: null
+  description: 日本語を母語とする若い成人女性の声。中音域でやや低めの、落ち着いた柔らかい響きに、凛とした芯がある。生真面目でまっすぐな性格で、はきはきと、区切りをはっきりつけて話す。普段は落ち着いているが、動揺すると声が上ずり、素直な温かみがにじむ。日本のアニメのヒロインのように、感情の起伏がはっきり伝わる、張りのある演技をする。
+  voice_id: voice_r0qhy72y3pt1
   # 権利のあるサンプル音声から作る場合（D-037）。文章による設計（description）と、どちらか一方を使う。
   replicate:
     source: null     # 例: voice-samples/bisco/source.m4a（10〜30秒の自然な話し声。雑音なし）
@@ -24,10 +22,10 @@ gemini:
 tests:
   - id: normal
     text: 見たよ。昨日の夜も見たし、今朝起きてすぐにも見せられた
-    style: flat and mildly exasperated, not looking up, matter-of-fact
+    style: 淡々と、少しうんざりした様子で。顔も上げずに、事実だけを言う
   - id: gag
     text: 明日！？　無茶だろう、そんなの
-    style: startled, voice jumping upward, flustered and quick
+    style: 驚いて声が上ずる。慌てて早口に
   - id: honne
     text: <short pause> ……おやすみ、メタリカ
-    style: soft and lowered, a little breathy, tender
+    style: 声を落として柔らかく、少し息を混ぜて、優しく

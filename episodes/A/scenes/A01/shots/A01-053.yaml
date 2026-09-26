@@ -1,0 +1,23 @@
+id: A01-053
+scene: A01          # 魔女邸・居間（朝）
+sec: 6
+shot: 俯瞰の寄り・振り子
+acting: 振り子が地図の南の端、砂色の一帯の上で小さく揺れ、定まらない。メタリカが眉をひそめ、振り子を指で止める
+dialogue:
+  - {who: metallica, line: 草は……まだ絞りきれんが、砂漠の方角だ。百騎兵、オマエだ。ついでにピラーも咲かせてこい, delivery: 迷いながら言いかけ、途中から切り替えて命じる。最後はついでのように軽く}
+sound: null
+notes: null
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-table-top
+state:
+  metallica: {hat: あり, props: 振り子}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 振り子が揺れる
+end_pose: 指で止める
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

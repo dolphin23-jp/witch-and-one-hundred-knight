@@ -10,7 +10,7 @@ difficulty: 会話（小さな動き、口パク）
 
 background: living-room-morning
 state:
-  bisco: {hood: なし（拠点なので犬の耳が見える）, outfit: 騎士装備は外して上着のみ（要確認）, holding: パン}
+  bisco: {hood: なし（拠点なので耳が見える。耳は完全な犬の耳ではない。bisco_official_03 を基準）, outfit: 騎士装備は外して上着のみ（要確認）, holding: パン}
 refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
 start_pose: 手元のパンを見ている
 end_pose: 同じ。口だけ動く
@@ -19,15 +19,15 @@ bakeoff:
   looks_at: キャラクター設計書の「必ず残すもの」の再現、口パク
   image:
     brief: >-
-      朝食の席に座るビスコ。フードはなく、犬の耳が見えている。視線は手元のパン。
+      朝食の席に座るビスコ。フードはなく、頭の上の耳が見えている（完全な犬の耳ではない）。尻尾も見えている。視線は手元のパン。
       話している相手のほうは見ない。胸上、正面やや斜め。窓からの朝の光。背景の居間はぼかす。
     prompt_en: >-
       Medium close-up (chest up) of the character in the reference image, seated at a breakfast
-      table. No hood; her dog ears are visible. She looks down at the bread in her hands, not at
+      table. No hood; the two small ear-like tufts on top of her head are visible exactly as in reference image 1 (they are not full dog ears), and her tail shows behind the chair. She looks down at the bread in her hands, not at
       the person she is talking to, with a mildly exasperated expression. Morning light from a
       window on the left; soft, out-of-focus cozy wooden living room behind her. Camera at eye
       level, slightly off-center. 2D TV anime style, clean lines, simplified details. Keep her
-      face, hair, and ears identical to the reference.
+      face, hair, ears, and tail identical to reference image 1.
   video:
     motion: パンをちぎって口に運び、話す口の動き。耳が一度だけ動く。
     sec: 3

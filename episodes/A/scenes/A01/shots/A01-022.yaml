@@ -1,0 +1,23 @@
+id: A01-022
+scene: A01          # 魔女邸・居間（朝）
+sec: 2.5
+shot: 大寄り・受け皿とポット
+acting: 紅茶が受け皿にあふれる。ポットを静かに置く。受け皿は拭かない
+dialogue:
+  - {who: arlecchino, line: ……いえ、当然の結果にございます、はい, delivery: 半拍の間のあと、少し急いで、妙に滑らかに言い直す}
+sound: null
+notes: null
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  arlecchino: {head: あり, props: ティーポット}
+refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: あふれ始める
+end_pose: ポットが置かれる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

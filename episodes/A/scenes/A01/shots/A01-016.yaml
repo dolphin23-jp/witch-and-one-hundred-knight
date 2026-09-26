@@ -1,0 +1,22 @@
+id: A01-016
+scene: A01          # 魔女邸・居間（朝）
+sec: 1.5
+shot: 全身・メタリカ
+acting: 椅子から足が滑り落ちる。顔が一瞬で真っ赤になる
+dialogue: []
+sound: 滑る効果音
+notes: ギャグON（D-027）。絵柄・頭身は通常のまま（D-042）。湯気は合成
+difficulty: 大きな動き
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, mood: 赤面, props: 招待状}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 片足を椅子にかけた姿勢
+end_pose: 足が床に落ち、赤面
+overlays: [湯気]   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
