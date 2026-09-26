@@ -1,14 +1,10 @@
-# 参照画像の一覧。画像はこのフォルダ（refs/）に、下の名前で置く。
-# 拡張子は問わない（.png / .jpg / .jpeg / .heic）。HEICはツール側でPNGに変換する。
-# 画像を追加したら、ここに1行足す。
+# 参照画像の一覧。ユーザーが選んだ画像を、ユーザーの説明に従って登録する。
+# 手順は CLAUDE.md の「参照画像を受け取ったとき」を参照。
+#
+# 書き方（1枚1行）:
+#   <ファイル名（拡張子なし）>: {subjects: [<対象>], kind: <種類>, note: <ユーザーの説明>}
+# 対象の表記: metallica, bisco, hundred-knight, arlecchino, witch-house, swamp など（英小文字とハイフン）
+# 例:
+#   metallica_official_01: {subjects: [metallica], kind: 公式イラスト, note: 全身。帽子の形の基準}
 
-images:
-  metallica_official:    {subjects: [metallica], kind: 公式イラスト, note: メタリカの見た目の基準}
-  metallica_bisco_event: {subjects: [metallica, bisco], kind: ゲームのイベント画面, note: メタリカとビスコが並ぶ場面}
-  hundred-knight_helmet: {subjects: [hundred-knight], kind: ゲーム画面, note: 兜ありの百騎兵。ティトの家の場面}
-  arlecchino:            {subjects: [arlecchino], kind: ゲーム画面, note: 通常の姿}
-  arlecchino_headless:   {subjects: [arlecchino], kind: ゲーム画面, note: 首が取れた姿。首の穴の緑の光}
-  witch-house_swamp:     {subjects: [witch-house, swamp], kind: ゲーム画面, note: 魔女邸と光る緑の沼}
-
-# まだ受け取っていない画像（Living Spec の「未受領」）:
-#   夜会の魔女たち、マーリカ、夜光列車
+images: {}
