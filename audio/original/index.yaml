@@ -9,3 +9,4 @@ bgm: []     # 例: {file: bgm/xxx.mp3, title: 曲名, use: [A01]}
 # 長い音源（プレイ録画）から tools/extract_lines.py で切り出したもの。元の音源はリポジトリに入れていない。
 extracted:
   - {scene: A01, lines: L01-L27, src: "Revival パート16（チャットで受け取り）", range: "14:08-18:05", out: audio/A01/original/, list: audio/A01/original/lines.csv}
+  - {scene: A01b, lines: L28-L93, src: "Revival パート16（チャットで受け取り）", range: "18:05-25:58", out: audio/A01b/original/, list: audio/A01b/original/lines.csv, note: "L76・L86 は手で足した候補、L78 は声なし"}
