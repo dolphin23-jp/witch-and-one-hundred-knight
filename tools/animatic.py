@@ -5,7 +5,7 @@
 
 シーンに voice.yaml があるときは、原作の台詞（D-045）で組む（build_original）。
   声: audio/<シーン>/original/<台詞ID>_<人物>.wav を voice.yaml の秒に置く（息継ぎを広げる split も）。
-  画: ショットファイルの tc で切り替え。image があれば静止画（K はゆっくり寄る）、なければ種別（S/K/M/A）で色を分けた仮の画面に画・動き・音を書く。
+  画: ショットファイルの tc で切り替え。image があれば静止画（camera.move でカメラを動かす）、なければ種別（S/K/M/A）で色を分けた仮の画面に画・動き・音を書く。
 以下は voice.yaml がないとき（第2稿の AI の声）の組み立て。
 
 - 画: ベイクオフで作った動画 > 静止画 > 仮の画面（カットID・画・芝居の文字）の順に使う。
@@ -156,6 +156,32 @@ def build(scene_dir, bgm, out_dir):
 KIND = {"S": ("止め", "0x2a2f36"), "K": ("止め＋カメラ", "0x223040"), "M": ("小さな動き", "0x1d3326"), "A": ("見せ場", "0x5a3414")}
 
 
+def camera_move(mv, sec):
+    """camera.move を ffmpeg の zoompan に直す。静止画を2倍に拡大してから切り出す。"""
+    if mv == "static":
+        return f"scale={W}:{H},fps={FPS}"
+    n = max(1, int(sec * FPS))
+    cx, cy = "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    z, x, y = "1", cx, cy
+    if mv == "push":
+        z = f"1+0.10*on/{n}"
+    elif mv == "push_fast":
+        z = f"min(1+0.20*on/{max(1, int(n * 0.35))},1.20)"
+    elif mv == "pull":
+        z = f"1.12-0.12*on/{n}"
+    elif mv in ("pan_l", "pan_r"):
+        z = "1.15"
+        x = f"(iw-iw/zoom)*on/{n}" if mv == "pan_r" else f"(iw-iw/zoom)*(1-on/{n})"
+    elif mv in ("tilt_up", "tilt_down"):
+        z = "1.15"
+        y = f"(ih-ih/zoom)*(1-on/{n})" if mv == "tilt_up" else f"(ih-ih/zoom)*on/{n}"
+    elif mv == "shake":
+        z = "1.08"
+        x = f"{cx}+28*sin(on*2.3)*max(0,1-on/14)"
+        y = f"{cy}+20*cos(on*2.9)*max(0,1-on/14)"
+    return f"scale={W * 2}:{H * 2},zoompan=z='{z}':x='{x}':y='{y}':d={n}:s={W}x{H}:fps={FPS}"
+
+
 def build_original(scene_dir, out_dir, name=None):
     """原作の台詞（D-045）を voice.yaml の置き場所に並べ、ショットファイルの tc と sec で画面を切り替える。
 
@@ -210,14 +236,15 @@ def build_original(scene_dir, out_dir, name=None):
         seg = tmp / f"{sid}.mp4"
         img = ROOT / s["image"] if s.get("image") else None
         if img and img.exists():
-            # 静止画があれば使う。K（止め＋カメラ）はゆっくり寄る。カットIDと種別を左上に小さく出す
+            # 静止画があれば使う。ショットファイルの camera.move でカメラを動かす（演出ノート P-03）。
+            # camera がないときは K だけゆっくり寄る。カットIDと種別、カメラ位置を左上に小さく出す
+            cam = s.get("camera") or {}
+            mv = cam.get("move") or ("push" if s.get("kind") == "K" else "static")
+            if cam.get("setup"):
+                head += f"   カメラ {cam['setup']}"
             tag = f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_t.txt', head)}':x=20:y=18:fontsize=22" \
                   f":fontcolor=white:box=1:boxcolor={color}@0.85:boxborderw=8"
-            if s.get("kind") == "K":
-                n = max(1, int(sec * FPS))
-                move = f"scale={W * 2}:{H * 2},zoompan=z='1+0.08*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}"
-            else:
-                move = f"scale={W}:{H},fps={FPS}"
+            move = camera_move(mv, sec)
             ff("-loop", "1", "-i", img, "-vf", f"{move},{tag}", "-t", sec, "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
         else:
             ff("-f", "lavfi", "-i", f"color=c={color}:s={W}x{H}:r={FPS}", "-vf", ",".join(draws), "-t", sec,
