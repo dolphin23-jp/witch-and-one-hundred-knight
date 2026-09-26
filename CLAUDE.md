@@ -79,4 +79,4 @@
 ## コミット
 
 - 作業の区切りごとにコミットする。メッセージは日本語で、何を作ったか・何を記録したかを書く。
-- 動画は1ファイル100MB未満に収める。保存先の方針（Git LFS か Google Drive）は、最初のAnimaticを書き出した時点で決める。それまでは `animatic/out/` を Git の管理外にしている。
+- 動画は1ファイル100MB未満に収める。書き出した動画（Animatic など）は Google Drive の「魔女と百騎兵 Animatic」フォルダに置き、リポジトリには場所の一覧 `animatic/drive.yaml` だけを持つ（D-044）。`animatic/out/` は Git の管理外。
