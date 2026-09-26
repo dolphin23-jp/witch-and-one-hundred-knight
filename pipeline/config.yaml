@@ -1,0 +1,53 @@
+# 役割ごとの実装。ツールを替えるときはここだけを書き換える。
+# status: candidate（ベイクオフ中） / adopted（採用） / fallback（予備）
+# 方針: 制作パイプライン（Living Spec）、D-034、D-035、D-036
+
+roles:
+  image:
+    input: ショット指定 + 参照画像
+    output: 静止画 (PNG)
+    implementations:
+      - {name: nano-banana-pro, via: higgsfield, status: candidate}
+      - {name: gpt-image-2, via: higgsfield, status: candidate}
+      - {name: soul, via: higgsfield, status: candidate}
+
+  video:
+    input: 最初と最後の静止画 + 動きの指定
+    output: 数秒の動画 (MP4)
+    implementations:
+      - {name: kling-3.0, via: higgsfield, status: candidate}
+      - {name: seedance-2.0, via: higgsfield, status: candidate}
+      - {name: veo-3.1, via: higgsfield, status: candidate}
+      - {name: runway-gen-4.5, via: runway, status: candidate, note: 個別契約が必要}
+      - {name: vidu, via: vidu, status: candidate, note: 個別契約が必要}
+      - {name: wan-2.7, via: cloud-gpu, status: fallback, note: 規約で作れないカットの予備（D-034）}
+
+  voice:
+    input: 台詞 + 声の設計書 + 演技指定
+    output: 音声 (WAV)
+    implementations:
+      - {name: gemini-3.8-flash-tts, via: gemini-api, status: candidate, tool: tools/gemini_tts.py}
+
+  hundred_knight_voice:
+    input: 感情の語彙
+    output: 効果音
+    implementations: []   # 未定。効果音の合成と加工
+
+  music_sfx:
+    input: 場面の感情、主題の型
+    output: BGM、効果音
+    implementations: []   # 未定
+
+  compositing:
+    input: 動画 + 漫符 + エフェクト
+    output: 完成カット
+    implementations:
+      - {name: hyperframes, status: candidate}
+      - {name: remotion, status: candidate}
+
+  animatic_assembly:
+    input: ショットファイル + 素材
+    output: 一話の動画
+    implementations:
+      - {name: hyperframes, status: candidate}
+      - {name: remotion, status: candidate}

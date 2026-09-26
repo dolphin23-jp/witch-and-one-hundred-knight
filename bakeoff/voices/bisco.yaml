@@ -1,0 +1,28 @@
+character: bisco
+design:
+  高さ: 中音域
+  質感: 澄んでいて芯がある
+  年齢感: 十代後半の少女
+  話す速さ: 普通。はきはきと、区切りがはっきりしている
+  態度: まっすぐ、生真面目。動揺すると声が上ずり、照れると早口になる
+  本音の場面: 声を落とし、少し息が混ざる
+
+gemini:
+  display_name: Bisco
+  gender: female
+  language_code: ja-JP
+  description: >-
+    A clear, mid-range voice of a girl in her late teens with a firm core; earnest and
+    straightforward, speaking crisply with well-defined phrasing.
+  voice_id: null
+
+tests:
+  - id: normal
+    text: 見たよ。昨日の夜も見たし、今朝起きてすぐにも見せられた
+    style: flat and mildly exasperated, not looking up, matter-of-fact
+  - id: gag
+    text: 明日！？　無茶だろう、そんなの
+    style: startled, voice jumping upward, flustered and quick
+  - id: honne
+    text: <short pause> ……おやすみ、メタリカ
+    style: soft and lowered, a little breathy, tender

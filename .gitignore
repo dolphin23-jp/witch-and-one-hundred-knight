@@ -1,0 +1,13 @@
+# Animatic の書き出し（保存先の方針が決まるまで Git の管理外）
+animatic/out/
+# 作業用の一時ファイル（フレームの抜き出しなど）
+tmp/
+**/frames/
+# 依存物
+node_modules/
+__pycache__/
+.venv/
+# 認証情報
+.env
+*.key
+.DS_Store

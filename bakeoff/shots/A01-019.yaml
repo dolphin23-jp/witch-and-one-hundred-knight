@@ -1,0 +1,37 @@
+id: A01-019
+scene: A01
+sec: 4
+shot: 窓辺・逆光の寄り
+acting: 招待状を朝の光にかざす。透かし模様。口元が勝手にゆるむ
+dialogue: null
+sound: 音楽を一瞬引く
+notes: 誰も見ていない本音の一瞬（D-016）。騒がしい表情はなし
+difficulty: 表情の繊細さ
+
+background: living-room-window-morning
+state:
+  metallica: {hat: あり, holding: 招待状}
+refs: [IMG_5508, IMG_5506]
+start_pose: 招待状を光にかざす
+end_pose: 口元がゆるんだ顔
+
+bakeoff:
+  looks_at: 表情の繊細さ、帽子のつばと光
+  image:
+    brief: >-
+      窓辺で招待状を朝の光にかざす。紙に透かし模様が浮かぶ。口元が思わずゆるむ。
+      誰にも見られていない、小さな幸せの顔。寄り、横顔から斜め前。帽子のつばの影が目元にかかる。
+      逆光。招待状が光って見え、橙色の髪の輪郭が光る。
+    prompt_en: >-
+      Close-up, three-quarter profile of the character in the reference image standing at a
+      window. She holds a letter up to the morning light; a faint watermark pattern glows through
+      the paper. The brim of her huge witch hat casts a shadow over her eyes. Her mouth softens
+      into a small, unguarded smile, as if no one is watching. Strong backlight; rim light on her
+      long orange hair. Quiet, intimate mood. 2D TV anime style, clean lines. Keep her hat, hair
+      color, and eye color identical to the reference.
+  video:
+    motion: 口元がゆっくりゆるむ。髪がわずかに揺れる。
+    sec: 4
+
+fallback: null
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

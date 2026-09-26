@@ -1,0 +1,40 @@
+id: A01-026
+scene: A01
+sec: 1.5
+shot: 引き・デフォルメ
+acting: 助走二歩、蹴り。首が天井へ
+dialogue: null
+sound: 派手な打撃音
+notes: デフォルメ体型。ギャグON（D-027）。首の穴の緑の光を見せる
+difficulty: 大きな動き（手間の集中するカット）
+
+background: living-room-morning（単色でも可）
+state:
+  metallica: {style: デフォルメ, hat: あり（体の半分の大きさのまま）}
+  arlecchino: {style: デフォルメ, head: 飛ぶ}
+refs: [IMG_5508, IMG_5510, IMG_5511]
+start_pose: メタリカが助走の一歩目
+end_pose: 首が天井に当たる瞬間
+
+bakeoff:
+  looks_at: デフォルメの一貫性、動きの切れ
+  image:
+    brief: >-
+      メタリカが助走二歩で、執事の頭を蹴り上げる。二人とも大きな頭のデフォルメ体型。
+      帽子は体の半分の大きさのまま。執事の首が天井へ飛び、首の穴から緑の光がもれる。
+      引き、横から。明るく平らな光。背景は単色でもよい。
+    prompt_en: >-
+      Comedic chibi (super-deformed) wide shot, side view. The witch from reference image 1,
+      drawn in chibi proportions with her huge hat still half her body size, takes a two-step
+      run-up and kicks the butler from reference image 2 in the head. His head flies up toward
+      the ceiling; a green light glows from the empty neck socket. Exaggerated speed lines, flat
+      bright background. 2D anime gag-scene style.
+  video:
+    motion: 助走、蹴り、首が飛ぶまで。最初と最後のフレームを指定できる場合は、助走の姿勢と首が天井に当たる瞬間。
+    sec: 1.5
+
+# 首が飛ぶ表現がサービスの制限にかかった場合の代替（D-005）。Claudeの提案で、ユーザー未確認
+fallback: >-
+  蹴りが当たる瞬間で白フラッシュ。次の画で、首のない胴体と天井に刺さった首を同じ画面に置く。
+  首が飛ぶ途中の画は作らない。
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

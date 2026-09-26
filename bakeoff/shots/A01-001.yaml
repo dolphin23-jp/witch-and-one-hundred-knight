@@ -1,0 +1,39 @@
+# ショットファイルの見本。項目は D-033 の形式 + 本制作用の項目。
+id: A01-001
+scene: A01          # 魔女邸・居間、朝（冒頭は外観）
+sec: 4              # 仮。声を当てた後に確定する
+shot: 大引き・固定。沼越しの魔女邸
+acting: 朝靄。翠の水面に泡が浮かび、弾ける
+dialogue: null
+sound: 泡の音
+notes: 沼は美しく撮る
+difficulty: 背景のみ
+
+# --- 本制作用の項目 ---
+background: witch-house-exterior-morning
+state: {}           # 人物なし
+refs: [IMG_5507]
+start_pose: null
+end_pose: null
+
+bakeoff:
+  looks_at: 光る緑の沼の美しさ、原作の美術との近さ
+  image:
+    brief: >-
+      朝靄の中、蛍光色のように光る緑の沼。沼の中に杭で立つ、丸い多層の木造の塔。
+      桟橋が塔を巡る。手前にねじれた黒い枯れ木。水面に泡が一つ。人物はなし。
+      カメラは固定、目の高さより少し低く、水面越し。朝の柔らかい光。沼の緑の光が靄を下から照らす。
+    prompt_en: >-
+      Wide establishing shot, early morning mist. A round, multi-tiered wooden tower house
+      standing on stilts in the middle of a glowing bright-green swamp. Wooden walkways circle
+      the tower. Twisted black dead trees in the foreground. A single bubble rises and pops on
+      the swamp surface. No characters. Soft morning light; the green glow of the swamp lights
+      the mist from below. Low camera just above the water, static. 2D TV anime background art,
+      clean lines. Match the art style of the attached reference.
+  video:
+    motion: 泡が浮かんで弾ける。靄がゆっくり流れる。
+    sec: 4
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

@@ -1,0 +1,35 @@
+id: A01-038
+scene: A01
+sec: 2
+shot: 寄り・百騎兵の目の高さ
+acting: 「ひとつ、スズの音草」の声に、首が反対側にかしぐ
+dialogue: {speaker: arlecchino, line: ひとつ、スズの音草, offscreen: true}
+sound: null
+notes: 反応の三連の3。「？」は合成で重ねる（D-027）ので生成しない
+difficulty: 反応（素材集として使い回す候補）
+
+background: living-room-morning
+state:
+  hundred-knight: {helmet: あり（Living Spec で基本の姿は未確定）}
+refs: [IMG_5512]
+start_pose: 正面を向いて座っている
+end_pose: 首をかしげた状態
+
+bakeoff:
+  looks_at: 兜と同心円の目、炎の再現
+  image:
+    brief: >-
+      テーブルの端に座る百騎兵。兜の頂に青白い炎。兜の奥の橙色の同心円の目。首をかしげる。
+      寄り、百騎兵の目の高さ。朝の光。背景はぼかす。
+    prompt_en: >-
+      Close-up at the eye level of the small creature in the reference image, seated at the end
+      of a breakfast table. Silver knight helmet with blue trim, a pale blue flame burning on top,
+      glowing orange concentric-ring eyes inside the dark helmet. It slowly tilts its head to one
+      side, blank and curious. Soft morning light, blurred wooden living room behind. 2D TV anime
+      style, clean lines. Do not add any text or symbols.
+  video:
+    motion: 首がゆっくりかしぐ。炎が小さく揺れる。
+    sec: 2
+
+fallback: null
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

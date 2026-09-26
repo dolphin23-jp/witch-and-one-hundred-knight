@@ -1,0 +1,28 @@
+character: arlecchino
+design:
+  高さ: 男性の中低音域
+  質感: 柔らかく、少し鼻にかかった上品さ
+  年齢感: 年齢不詳の大人
+  話す速さ: 一定で、ゆったり
+  態度: 慇懃だが、言葉の奥に皮肉がある。「……いえ」と言い直す直前に、半拍の間を置く
+  ギャグの場面: 首が飛ぶときの悲鳴だけ、声が裏返る
+
+gemini:
+  display_name: Arlecchino
+  gender: male
+  language_code: ja-JP
+  description: >-
+    A soft, slightly nasal, refined male voice in the mid-low range, of indeterminate adult
+    age; unfailingly polite with a faint undertone of irony, speaking at a steady, unhurried pace.
+  voice_id: null
+
+tests:
+  - id: normal
+    text: さようでございますね。なにしろ招待状が届きましたのは、百年余りで今回が初めてでございますから。お喜びもひとしお…… <short pause> いえ、当然の結果にございます、はい
+    style: courteous and even, with a sly edge; the correction after the pause is hurried and a touch too smooth
+  - id: gag
+    text: く、首はいけませぬー！
+    style: panicked wail, voice cracking into falsetto
+  - id: deadpan
+    text: おおむね、毎朝でございます
+    style: completely deadpan and unbothered

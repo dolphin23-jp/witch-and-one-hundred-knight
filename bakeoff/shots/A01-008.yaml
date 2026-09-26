@@ -1,0 +1,36 @@
+id: A01-008
+scene: A01
+sec: 3
+shot: 胸上・ビスコ
+acting: 顔も上げずに答える
+dialogue: {speaker: bisco, line: 見たよ。昨日の夜も……}
+sound: null
+notes: 返事は相手を見ずに
+difficulty: 会話（小さな動き、口パク）
+
+background: living-room-morning
+state:
+  bisco: {hood: なし（拠点なので犬の耳が見える）, outfit: 騎士装備は外して上着のみ（要確認）, holding: パン}
+refs: [IMG_5506]
+start_pose: 手元のパンを見ている
+end_pose: 同じ。口だけ動く
+
+bakeoff:
+  looks_at: キャラクター設計書の「必ず残すもの」の再現、口パク
+  image:
+    brief: >-
+      朝食の席に座るビスコ。フードはなく、犬の耳が見えている。視線は手元のパン。
+      話している相手のほうは見ない。胸上、正面やや斜め。窓からの朝の光。背景の居間はぼかす。
+    prompt_en: >-
+      Medium close-up (chest up) of the character in the reference image, seated at a breakfast
+      table. No hood; her dog ears are visible. She looks down at the bread in her hands, not at
+      the person she is talking to, with a mildly exasperated expression. Morning light from a
+      window on the left; soft, out-of-focus cozy wooden living room behind her. Camera at eye
+      level, slightly off-center. 2D TV anime style, clean lines, simplified details. Keep her
+      face, hair, and ears identical to the reference.
+  video:
+    motion: パンをちぎって口に運び、話す口の動き。耳が一度だけ動く。
+    sec: 3
+
+fallback: null
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
