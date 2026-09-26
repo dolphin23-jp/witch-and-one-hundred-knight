@@ -12,13 +12,14 @@
 
 ## ログ
 
+- 2026-09-26: Higgsfield の Starter プランで Wan 3.0 が使えた（A01-019、7クレジット）。D-043 を「Higgsfield 経由」に修正。
+
 - 2026-09-26: 動画は Wan 3.0（Alibaba Cloud Model Studio、公式API）を採用（D-043、ユーザー判断）。Seedance 2.0 は Higgsfield の Starter プランでは使えなかった（Plus 以上が必要、費用なし）。
 
-### 次のセッションでやること（2026-09-26 時点）
-1. ユーザーが環境設定を済ませている: API認証情報または環境変数 `DASHSCOPE_API_KEY`、環境変数 `DASHSCOPE_WORKSPACE_ID`、許可ドメイン `*.aliyuncs.com` と OpenAI（`chatgpt.com`、`auth.openai.com`、`api.openai.com`）。
-2. Codex CLI を入れ、`codex login --device-auth` でユーザーにスマホからログインしてもらう。A01-019 を参照画像つきで1枚作り、`bakeoff/results/image/A01-019/nano-banana-pro_01.png` と比べる（生成前に承認を取る）。
-3. `tools/wan_video.py` を作り、5カットの動画を Wan 3.0 で作る（承認を取る）。最初のフレームは evaluation.md のカットごとのメモを参照。
-4. PR #2（このブランチ）の見守りを続ける。
+### 次のセッションでやること（2026-09-26 更新）
+1. 動画は Higgsfield の Wan 3.0 で作る（Alibaba の登録は不要になった）。5カットの結果をユーザーに見せ、評価表に記入。
+2. Codex CLI を試す場合のみ: 環境の許可ドメインに `chatgpt.com`、`auth.openai.com`、`api.openai.com` を加え、`codex login --device-auth` でログイン。A01-019 を1枚作って比べる（承認を取る）。
+3. PR #2（このブランチ）の見守りを続ける。
 
 - 2026-09-26: ギャグでもデフォルメにしない方針（D-042）と、ビスコの耳の基準画像（bisco_official_03、完全な犬の耳ではない）を Living Spec に反映（v0.34）。A01-008 の指示文から「dog ears」を外し、尻尾を追加。
 
