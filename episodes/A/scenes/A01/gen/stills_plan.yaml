@@ -1,0 +1,700 @@
+# A01 の静止画の生成計画（承認待ち）。CLAUDE.md 守ること1
+scene: A01
+model: nano_banana_pro
+via: higgsfield
+resolution: 2k
+aspect_ratio: '16:9'
+credits_each: 2
+count: 57
+credits_total: 114
+note: 1カット1枚（見せ場 A は頂点のポーズ）。world:living-room-plate は最初に作る背景の基準で、居間のカットの参照画像にする
+items:
+- target: world:living-room-plate
+  kind: 背景
+  refs:
+  - witch-house-living_ingame_01
+  - witch-house-living_ingame_02
+  - witch-house-exterior_ingame_01
+  prompt: 'Background plate only, no characters. Recreate the witch''s living room from the reference screenshots as clean anime background art, wide 16:9 view: curved wooden staircase
+    with carved banister on the left, red high-backed sofa with creepy stitched dolls in the back, round table with a red tablecloth piled with old books in the center, tall bookshelves
+    on the right, hanging brass lamp, glowing green vines along the edges. Add one small round window (like the round windows on the house''s towers in the exterior reference) in the
+    wall right of the staircase, with pale morning light coming in. Remove all game UI, dialogue boxes, menus and characters. Warm orange lamp light. 2D anime background art, no text.
+    16:9.'
+- target: A01-001
+  kind: K
+  brief: 朝靄。翠の水面に泡が浮かび、弾ける
+  refs:
+  - witch-house-exterior_ingame_01
+  - swamp_ingame_02
+  prompt: 'Extreme wide shot of the witch''s house standing on a glowing emerald-green swamp, as in the references: twisted wooden towers with orange conical roofs marked with glowing
+    green symbols, wooden walkways on stilts over the swamp, dead twisted trees. Morning mist over the water; a single bubble rising and popping on the green surface in the foreground.
+    Beautiful and eerie. No characters. 2D anime background art, no text, 16:9.'
+- target: A01-002
+  kind: M
+  brief: アルレッキーノが丸テーブルの皿の位置を指先で直す。奥のソファにビスコ、テーブルの右に百騎兵
+  refs:
+  - world:living-room-plate
+  - arlecchino_official_03
+  - bisco_official_03
+  - bisco_official_01
+  - hundred-knight_official_02
+  prompt: 'Wide establishing shot of the living room, slight side angle. Arlecchino stands by the round table adjusting a plate with his fingertip; Bisco sits on the red sofa behind
+    the table; the Hundred Knight stands at the right side of the table, barely taller than the tabletop. Calm morning. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-003
+  kind: M
+  brief: ビスコがバターを端から端まで均一に塗る
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Extreme close-up of Bisco''s gloved hands over the round table: she spreads butter on a slice of bread perfectly evenly from edge to edge, neat and elegant. Red tablecloth,
+    plate, knife. Shallow depth of field. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with
+    creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green
+    vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style,
+    clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga
+    symbols. 16:9.'
+- target: A01-004
+  kind: M
+  brief: 目玉焼きを見つめる。12.3「おい」で天井を見上げる
+  refs:
+  - world:living-room-plate
+  - hundred-knight_official_02
+  prompt: 'Close-up at the Hundred Knight''s eye level, just above the tabletop: the Hundred Knight stares at a fried egg on a plate, then its head tilts up toward the ceiling as if
+    hearing footsteps upstairs. Red tablecloth in the foreground. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red
+    high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass
+    lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light.
+    2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech
+    bubbles, no manga symbols. 16:9.'
+- target: A01-005a
+  kind: A
+  brief: 階段の上に現れたメタリカが、招待状を掲げたまま3段飛ばしで駆け下りる。片手で帽子を押さえ、マントとスカートが遅れてはためく
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Low angle from the bottom of the curved wooden staircase looking up: Metallica leaps down the stairs three steps at a time, one hand holding an envelope with a wax seal high
+    above her head, the other pressing her huge witch hat down; her long hair, cape and skirt flutter behind her. Dynamic, full body, motion. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-005b
+  kind: A
+  brief: 14.8 最後の段から床へ着地（膝が沈み、帽子が跳ねる）→止まらずにテーブルへ大股3歩
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Full body side view tracking shot: Metallica lands on the floor at the foot of the staircase, knees bent from the impact, hat bouncing, about to stride toward the round table,
+    envelope raised. Dynamic motion, living room behind her. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed
+    sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing
+    green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime
+    style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no
+    manga symbols. 16:9.'
+- target: A01-005c
+  kind: A
+  brief: 16.2 テーブルに手を叩きつけ（皿と目玉焼きが跳ねる）、招待状を百騎兵の鼻先へ。17.2「だぞ？」で招待状の上から身を乗り出し、にやりと顔を見せる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  - hundred-knight_official_02
+  prompt: 'Shot from the Hundred Knight''s eye level: Metallica slams one hand on the round table (plates and a fried egg jump) and thrusts the envelope right in front of the camera;
+    she leans over the top edge of the envelope with a wide, smug grin. Foreshortened, dynamic. Interior of the witch''s living room exactly as in the background reference: curved wooden
+    staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves
+    on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light
+    mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-006
+  kind: S
+  brief: 首をかしげる
+  refs:
+  - world:living-room-plate
+  - hundred-knight_official_02
+  prompt: 'Close-up of the Hundred Knight at the table, tilting its round helmeted head to one side in confusion. Simple, cute pause. Interior of the witch''s living room exactly as
+    in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-007
+  kind: K
+  brief: 「キヒヒ！」
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up of Metallica laughing ''kihihi'' with a mischievous, smug grin, eyes narrowed, shoulders shaking. Lamp light. Interior of the witch''s living room exactly as in the
+    background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and
+    breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning
+    light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume,
+    hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-007a
+  kind: K
+  brief: 身をかがめて百騎兵と目の高さを合わせ、招待状をひらひら振る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  - hundred-knight_official_02
+  prompt: 'Low angle from the Hundred Knight''s eye level: Metallica bends down to its eye level and waves the envelope teasingly, condescending smile. Interior of the witch''s living
+    room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-008
+  kind: M
+  brief: 「よかろう！」のあとの0.6秒の間で、床に積んだ本の山に片足をかけて演説の姿勢
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Low-angle knee shot: Metallica puts one boot on a pile of old books stacked on the floor and strikes a grand speech pose, holding the envelope up, chin raised. Books and table
+    behind. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting
+    on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round
+    window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-009
+  kind: M
+  brief: 目を細め、招待状を胸に当てて悦に入る。「一……流」の途切れ（34.9）で目を開け、こちらを見据えてにやりとする
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up, slightly low angle: Metallica holds the envelope against her chest, eyes half-closed in blissful self-satisfaction, savoring the moment; a small proud smile. Soft
+    lamp light on her face. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched
+    dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges,
+    a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel
+    shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-010
+  kind: M
+  brief: 招待状を丸窓の方へ大きく振り出し、「沼」（39.3）で胸を張る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot: Metallica sweeps the envelope out toward the small round window in a big theatrical gesture, chest puffed out, proud and loud. Interior of the witch''s living
+    room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-010a
+  kind: M
+  brief: （声はオフ）フォークで黄身をつつき、二度目の「一流」（40.6）で割れて広がる
+  refs:
+  - world:living-room-plate
+  - hundred-knight_official_02
+  prompt: 'Close-up of the Hundred Knight''s small gloved hand poking a fried egg with a fork; the yolk bursts and spreads over the plate. Red tablecloth. Interior of the witch''s living
+    room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-010b
+  kind: K
+  brief: 「大魔女」（42.5）で招待状を天井へ掲げる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Dramatic low angle looking up: Metallica raises the envelope high toward the ceiling and the hanging lamp, triumphant, the lamp light glowing behind the envelope. Heroic composition.
+    Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round
+    table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in
+    the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-011
+  kind: K
+  brief: パンを噛みながら、ちらりと招待状を見上げる。耳が小さく動く
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco on the red sofa chewing bread, her eyes glancing sideways up at something off-screen with curiosity; one ear twitches slightly. Interior of the witch''s
+    living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-012
+  kind: M
+  brief: 「あん？」→直後の0.9秒の間で、目だけがビスコの方へ走る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up of Metallica: her eyes dart sharply to the side, catching someone looking. Suspicious, sly expression. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-012a
+  kind: M
+  brief: テーブル越しに身を乗り出し、招待状をビスコの鼻先へ
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Two-shot across the round table: Metallica leans over the table and pushes the envelope right under Bisco''s nose; Bisco sits on the sofa, annoyed. Interior of the witch''s
+    living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-013
+  kind: M
+  brief: 「呼ぶな！」（56.1）で招待状を手の甲で押しのける
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco on the sofa pushing the envelope away with the back of her hand, irritated, frowning. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-013a
+  kind: K
+  brief: （声はオフ）聞き流して、押しのけられた招待状の縁を指で直す
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot of Metallica ignoring the complaint, casually straightening the edge of the envelope with her fingers, unbothered. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-014
+  kind: K
+  brief: パンに目を戻しながら
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco on the sofa looking back down at her bread while talking, calm and a little exasperated. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-015
+  kind: K
+  brief: （声はオフ）得意げな笑顔が固まっていき、「そればっかりだぞ」で顔が赤くなる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot of Metallica with one boot on a pile of books, her smug grin freezing; her cheeks begin to turn red as she realizes she was caught being happy. Interior of the witch''s
+    living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-016
+  kind: A
+  brief: 69.5 足をかけた本の山が崩れ、体が前につんのめる→70.3「う、」で両手をテーブルについて踏みとどまる→直後の0.9秒の間で跳ね起きる。顔は真っ赤
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Full body: the pile of books under Metallica''s boot collapses; she lurches forward and catches herself with both hands on the round table, plates rattling, books scattering,
+    her face bright red. Dynamic comedic moment. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa
+    with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing
+    green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime
+    style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no
+    manga symbols. 16:9.'
+- target: A01-017
+  kind: M
+  brief: 腕を振り回して否定する
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot: Metallica flails her arms in flustered denial, face red, mouth wide open shouting. Interior of the witch''s living room exactly as in the background reference:
+    curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall
+    bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange
+    lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to
+    their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-017a
+  kind: K
+  brief: 腕を組んであごを上げ、そっぽを向く
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot: Metallica crosses her arms, raises her chin and turns her face away haughtily. Interior of the witch''s living room exactly as in the background reference: curved
+    wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves
+    on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light
+    mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-017b
+  kind: M
+  brief: 「浮かれるものか！」で帽子のつばをぐいと引き下ろす
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot: Metallica yanks the brim of her huge witch hat down hard over her eyes, hiding her face. Interior of the witch''s living room exactly as in the background reference:
+    curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall
+    bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange
+    lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to
+    their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-018
+  kind: M
+  brief: 背を向けて丸窓へ。招待状を丸窓から差し込む朝の光にかざす。透かし模様。口元が勝手にゆるむ
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up in front of the small round window, backlit: Metallica holds the envelope up to the morning light coming through the round window; a faint watermark pattern glows
+    through the paper. Her hat brim shadows her eyes; her mouth softens into a small, unguarded smile, as if no one is watching. Rim light on her long orange hair. Quiet, intimate. Interior
+    of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table
+    with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the
+    wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-019
+  kind: K
+  brief: メタリカの背中を見ながら
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Over-the-shoulder style: Bisco on the sofa in the foreground watching Metallica''s back as Metallica stands at the small round window in the background. Bisco''s expression
+    is thoughtful. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting
+    on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round
+    window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-019a
+  kind: M
+  brief: （声はオフ）肩がわずかに上がる。口元は見せない
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Back view of Metallica at the small round window, backlit; her shoulders rise slightly, pleased. Her face is not visible. Interior of the witch''s living room exactly as in
+    the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books
+    and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale
+    morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-020
+  kind: M
+  brief: ポットを取り、メタリカのカップに注ぎ始める
+  refs:
+  - world:living-room-plate
+  - arlecchino_official_03
+  prompt: 'Knee shot: Arlecchino, smiling politely, lifts a teapot and starts pouring tea into a cup on the round table. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-021
+  kind: M
+  brief: （声はオフ）「まさに」（97.6）で縁まで来ても、注ぎ続ける
+  refs: &id001
+  - world:living-room-plate
+  prompt: 'Extreme close-up of a teacup on a saucer on the red tablecloth being filled with tea from a teapot spout; the tea reaches the brim and keeps pouring. Interior of the witch''s
+    living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-022
+  kind: M
+  brief: あふれた紅茶が赤い布に広がり、ビスコの方へ流れる。ビスコは顔も上げず、自分の皿だけをすっと持ち上げる
+  refs:
+  - world:living-room-plate
+  - arlecchino_official_03
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Wide shot of the round table: tea overflows from the saucer and spreads across the red tablecloth toward Bisco; Bisco, without looking up, calmly lifts her own plate out of
+    the way. Arlecchino keeps pouring with a serene smile. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed
+    sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing
+    green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime
+    style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no
+    manga symbols. 16:9.'
+- target: A01-023
+  kind: S
+  brief: （声はオフ）「リカ様」（101.2）で背中が止まる。怒りマークを「リカ様」「成就」（102.4）「はい」（104.6）の3回で一つずつ増やす
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Medium shot of Metallica''s back at the small round window; her whole body has frozen stiff, fists clenched. Face not visible. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-024
+  kind: A
+  brief: 髪と帽子のつばで円を描いて振り返り、「呼べ！」（108.5）で睨みつける
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up to knee shot: Metallica whirls around, her long hair and hat brim sweeping in an arc, glaring furiously with an angry shout. Dynamic. Interior of the witch''s living
+    room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-025
+  kind: A
+  brief: L14 の息継ぎを広げた間に部屋を大股3歩で横切る→「それに、」（109.8）でアルレッキーノの鼻先に指を突きつけ、顔を寄せて怒鳴る。アルレッキーノはポットを持ったまま微笑みを崩さない
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  - arlecchino_official_03
+  prompt: 'Close two-shot: Metallica jabs her finger at Arlecchino''s nose, face close to his, yelling angrily; Arlecchino, still holding the teapot, keeps his calm polite smile. Comedic
+    contrast. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting
+    on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round
+    window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-026
+  kind: M
+  brief: 悪びれず一礼し、紅茶の染みた布を拭き始める
+  refs:
+  - world:living-room-plate
+  - arlecchino_official_03
+  prompt: 'Knee shot: Arlecchino bows politely, unbothered, and starts wiping the tea-stained red tablecloth with a cloth. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-027
+  kind: M
+  brief: ふんと背を向け、腕を振って丸窓の方へ戻りながら
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot: Metallica turns her back with a huff and stomps toward the small round window, arms swinging. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-028
+  kind: M
+  brief: 「いや待て」で歩きが止まり、直後の0.9秒の間であごに指を当て、目を細める
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up: Metallica stops mid-step, finger on her chin, eyes narrowed, suddenly thinking. Interior of the witch''s living room exactly as in the background reference: curved
+    wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves
+    on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light
+    mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-029
+  kind: K
+  brief: （声はオフ）翠の水面から瘴気が立ちのぼり、ゆらぐ
+  refs:
+  - witch-house-exterior_ingame_01
+  - swamp_ingame_02
+  prompt: 'View through a small round window of the emerald-green swamp outside: greenish miasma vapors rise and waver above the glowing water in the morning. Round window frame in the
+    foreground. No characters. 2D anime background art, no text, 16:9.'
+- target: A01-030
+  kind: M
+  brief: 「フム」のあとの1.1秒の間で、あごに当てた指をとんとんと動かす。本気で考え込む
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot: Metallica deep in serious thought, tapping her chin with a finger, eyes lowered, no comedy. Lamp light. Interior of the witch''s living room exactly as in the
+    background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and
+    breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning
+    light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume,
+    hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-030a
+  kind: K
+  brief: （声はオフ）赤いソファに座る人形へ、ゆっくり寄る
+  refs: *id001
+  prompt: 'Close-up of the creepy stitched dolls sitting on the red sofa, seen from Metallica''s point of view, slow push-in feeling. Slightly ominous. Interior of the witch''s living
+    room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth
+    piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase
+    letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-031
+  kind: K
+  brief: アルレッキーノは布を拭き、百騎兵はパンで黄身をぬぐい、ビスコは紅茶をすする
+  refs:
+  - world:living-room-plate
+  - arlecchino_official_03
+  - bisco_official_03
+  - bisco_official_01
+  - hundred-knight_official_02
+  prompt: 'Wide shot of the living room: Arlecchino wipes the tablecloth, the Hundred Knight wipes up egg yolk with bread, Bisco sips tea on the sofa. A calm breath after the commotion.
+    Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round
+    table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in
+    the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-032
+  kind: M
+  brief: ソファの肘掛けに腰を下ろし、あふれた紅茶に顔をしかめ、それでも飲む。「それにしても、」のあとの0.7秒の間でカップを下ろし、ビスコを見る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot: Metallica sits on the armrest of the red sofa, sipping from the overfilled teacup with a grimace but drinking anyway. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-032a
+  kind: K
+  brief: 横目でビスコを見る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up: Metallica, seated on the sofa armrest, gives a sidelong glance with a curious, teasing look. Interior of the witch''s living room exactly as in the background reference:
+    curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall
+    bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange
+    lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to
+    their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-033
+  kind: K
+  brief: 目をパンに落とす
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco on the sofa lowering her eyes to the bread in her hands, a faint shadow of something unspoken in her face. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-033a
+  kind: M
+  brief: （声はオフ）ためらいの0.5秒でパンをちぎる手が止まり、「王宮付き」でまた動き出す
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Extreme close-up of Bisco''s gloved hands tearing a piece of bread; the hands pause mid-motion. Interior of the witch''s living room exactly as in the background reference:
+    curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall
+    bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange
+    lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to
+    their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-034
+  kind: K
+  brief: 顔を上げ、さらりとした顔に戻る。「知っているさ」で小さく肩をすくめる
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco looking up again with a composed, casual face, giving a small shrug. Interior of the witch''s living room exactly as in the background reference: curved
+    wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves
+    on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light
+    mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-035
+  kind: K
+  brief: （声はオフ）「孤独を常とする」で、一瞬だけ丸窓へ目をやる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot of Metallica on the sofa armrest; her eyes flick for a moment toward the small round window, a fleeting lonely look. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-036
+  kind: M
+  brief: 「そうだ。」で視線を戻し、直後の0.8秒の間で遠くを見る目になる。そのまま少しやわらいだ顔で語る
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Chest shot of Metallica looking into the distance with a softened, almost reverent expression, as if recalling something important. Interior of the witch''s living room exactly
+    as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old
+    books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in
+    pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-037
+  kind: K
+  brief: 少し意外そうに、口元がゆるむ
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco on the sofa, slightly surprised, the corners of her mouth softening into a small smile. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-038
+  kind: M
+  brief: 「敬意？」でまばたき。直後の0.9秒の間で、空っぽの顔からにやりとした顔に変わる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up of Metallica blinking with a blank, caught-off-guard face that is just starting to turn into a sly grin. Interior of the witch''s living room exactly as in the background
+    reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast
+    plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light.
+    Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-038a
+  kind: A
+  brief: 「キヒヒ！」でソファに体ごと倒れ込み、ブーツをテーブルに叩きつける（積んだ本が跳ねる）。隣の人形も弾む
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot: Metallica throws herself back onto the red sofa laughing loudly, slamming her boots up onto the round table so the stacked books jump; the doll beside her bounces.
+    Dynamic, exaggerated but on-model. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the left, red high-backed sofa with creepy
+    stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines
+    at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean
+    line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols.
+    16:9.'
+- target: A01-038b
+  kind: K
+  brief: ブーツをテーブルに乗せたまま、にやり
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Close-up: Metallica lounging on the sofa with her boots up on the table, smirking arrogantly. Interior of the witch''s living room exactly as in the background reference:
+    curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall
+    bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange
+    lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to
+    their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-039
+  kind: K
+  brief: 身を乗り出す。眉が寄る
+  refs:
+  - world:living-room-plate
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Chest shot of Bisco leaning forward on the sofa, brows knitted with concern. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase
+    on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right,
+    hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool
+    morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No
+    text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-040
+  kind: A
+  brief: 「心配するな。」でブーツを下ろしてソファから跳ね起き、直後の0.9秒の間で帽子をかぶり直す
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Knee shot: Metallica springs up from the sofa, boots off the table, grabbing her hat to put it back on firmly. Energetic. Interior of the witch''s living room exactly as in
+    the background reference: curved wooden staircase on the left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books
+    and breakfast plates, tall bookshelves on the right, hanging brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale
+    morning light. Warm orange lamp light mixed with cool morning light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-040a
+  kind: A
+  brief: マントを翻して玄関へ大股で歩き、「重要」（198.5）で両手で扉を開け放つ。翠の光が部屋に流れ込み、メタリカが影になる
+  refs:
+  - world:living-room-plate
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Wide tracking shot: Metallica, cape flaring, strides to the front door at the right of the room and throws both doors wide open with both hands; bright emerald-green light
+    floods in and she becomes a silhouette against it. Dynamic, dramatic. Interior of the witch''s living room exactly as in the background reference: curved wooden staircase on the
+    left, red high-backed sofa with creepy stitched dolls sitting on it, round table with a red tablecloth piled with old books and breakfast plates, tall bookshelves on the right, hanging
+    brass lamp, glowing green vines at the edges, a small round window in the wall right of the staircase letting in pale morning light. Warm orange lamp light mixed with cool morning
+    light. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no
+    speech bubbles, no manga symbols. 16:9.'
