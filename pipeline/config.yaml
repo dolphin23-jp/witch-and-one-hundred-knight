@@ -38,7 +38,8 @@ roles:
   music_sfx:
     input: 場面の感情、主題の型
     output: BGM、効果音
-    implementations: []   # 未定
+    implementations:
+      - {name: lyria-3.5, via: gemini-api, status: candidate, tool: tools/lyria.py, note: BGM。1曲0.08ドル。効果音は未定}
 
   compositing:
     input: 動画 + 漫符 + エフェクト
@@ -51,5 +52,6 @@ roles:
     input: ショットファイル + 素材
     output: 一話の動画
     implementations:
+      - {name: ffmpeg, status: temporary, tool: tools/animatic.py, note: 静止画がそろうまでの仮の組み立て（尺と間の確認用）}
       - {name: hyperframes, status: candidate}
       - {name: remotion, status: candidate}
