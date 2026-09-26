@@ -1,0 +1,21 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-038a
+scene: A01
+tc: 182.0
+sec: 3.8
+kind: A
+shot: 膝上・メタリカ
+acting: 「キヒヒ！」でソファに体ごと倒れ込み、ブーツをテーブルに叩きつける（積んだ本が跳ねる）。隣の人形も弾む
+dialogue:
+- L25「キヒヒ！そんなもの誰が払うか！」
+sound: null
+notes: 見せ場（P-01）。照れを虚勢でごまかす
+background: living-room-sofa
+state:
+  metallica: {}
+refs:
+- metallica
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

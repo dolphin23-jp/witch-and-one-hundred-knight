@@ -1,23 +1,18 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-021
-scene: A01          # 魔女邸・居間（朝）
-sec: 2
+scene: A01
+tc: 95.3
+sec: 3.5
+kind: M
 shot: 大寄り・カップ
-acting: 紅茶がカップの縁まで来ても注ぎ続ける
+acting: （声はオフ）「まさに」（97.6）で縁まで来ても、注ぎ続ける
 dialogue:
-  - {who: arlecchino, line: お喜びもひとしお……, delivery: しみじみと、わざとらしく。語尾を伸ばして途切れる}
+- L12 前半
 sound: 注ぐ音が続く
 notes: null
-difficulty: 手元インサート
-
-# --- 本制作用の項目 ---
-background: living-room-morning
-state:
-  arlecchino: {head: あり, props: ティーポット}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 紅茶が縁の手前
-end_pose: 縁まで満ちる
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+background: living-room-table
+state: {}
+refs: []
+overlays: []
+fallback: null

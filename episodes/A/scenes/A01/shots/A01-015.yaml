@@ -1,23 +1,20 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-015
-scene: A01          # 魔女邸・居間（朝）
-sec: 2.5
-shot: 胸上・ビスコ
-acting: パンを持ったまま、淡々と
+scene: A01
+tc: 64.9
+sec: 4.4
+kind: K
+shot: 膝上・メタリカ（本の山に片足）
+acting: （声はオフ）得意げな笑顔が固まっていき、「そればっかりだぞ」で顔が赤くなる
 dialogue:
-  - {who: bisco, line: 嬉しいのは分かったから、少し座ったらどうだ, delivery: 呆れつつも少しだけ優しい、落ち着いた声}
+- L08 後半
 sound: null
 notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+background: living-room
 state:
-  bisco: {seat: 手前}
-refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: null
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+refs:
+- metallica
+overlays: []
+fallback: null

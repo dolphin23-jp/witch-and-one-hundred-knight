@@ -1,23 +1,20 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-035
-scene: A01          # 魔女邸・居間（朝）
-sec: 3
-shot: 胸上・アルレッキーノ
-acting: 招待状を読み上げる。咳払い
+scene: A01
+tc: 161.6
+sec: 6.6
+kind: K
+shot: 胸上・メタリカ
+acting: （声はオフ）「孤独を常とする」で、一瞬だけ丸窓へ目をやる
 dialogue:
-  - {who: arlecchino, line: では。夜会にご出席の魔女様は、以下の三品をご持参のこと, delivery: 改まって、朗々と読み上げる}
+- L22
 sound: null
-notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: A01b の L45 への伏線
+background: living-room-sofa
 state:
-  arlecchino: {head: あり, monocle: あり, props: 招待状}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: 咳払い
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+refs:
+- metallica
+overlays: []
+fallback: null
