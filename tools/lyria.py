@@ -30,7 +30,7 @@ def main():
     body = {
         "model": spec["model"],
         "input": spec["prompt"].strip(),
-        "response_format": {"type": "audio", "mime_type": "audio/wav"},
+        "response_format": {"type": "audio"},   # 既定の MP3（lyria-3.5 は WAV 指定を受け付けない）
     }
     t0 = time.time()
     res = call("POST", "/interactions", body, a.dry_run)

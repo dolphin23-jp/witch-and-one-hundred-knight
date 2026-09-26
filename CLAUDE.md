@@ -39,7 +39,8 @@
 ## 生成サービスへのつなぎ方
 
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
-- 声: Gemini 3.8 Flash TTS（Gemini API）。`python tools/gemini_tts.py` を使う。APIキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。
+- 声: Gemini 3.8 Flash TTS（Gemini API）。`python tools/gemini_tts.py` を使う。
+- BGM: Lyria 3.5（Gemini API）。`python tools/lyria.py` を使う。APIキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。
 - どのサービスを使うかは `pipeline/config.yaml` で管理する。ツールを替えるときはここだけを書き換える。
 
 ## フォルダ構成
@@ -55,7 +56,7 @@
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音 |
 | `voice-samples/<人物>/` | 権利のある声のサンプルと同意文の音声（リポジトリは非公開にしておくこと） |
-| `animatic/` | Animaticの組み立て（HyperFrames または Remotion）と書き出し |
+| `animatic/` | Animaticの組み立て（HyperFrames または Remotion。それまでは `tools/animatic.py`）と、Drive に置いた動画の一覧 `drive.yaml` |
 | `pipeline/` | 役割ごとの実装の設定 |
 | `tools/` | 記録、TTS、組み立て、QCのスクリプト |
 | `docs/` | 作業ログ、Living Spec への反映待ちの提案 |
@@ -78,4 +79,4 @@
 ## コミット
 
 - 作業の区切りごとにコミットする。メッセージは日本語で、何を作ったか・何を記録したかを書く。
-- 動画は1ファイル100MB未満に収める。保存先の方針（Git LFS か Google Drive）は、最初のAnimaticを書き出した時点で決める。それまでは `animatic/out/` を Git の管理外にしている。
+- 動画は1ファイル100MB未満に収める。書き出した動画（Animatic など）は Google Drive の「魔女と百騎兵 Animatic」フォルダに置き、リポジトリには場所の一覧 `animatic/drive.yaml` だけを持つ（D-044）。`animatic/out/` は Git の管理外。
