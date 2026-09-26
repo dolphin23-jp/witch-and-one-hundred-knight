@@ -16,7 +16,8 @@ roles:
     input: 最初と最後の静止画 + 動きの指定
     output: 数秒の動画 (MP4)
     implementations:
-      - {name: wan-3.0, via: alibaba-model-studio, status: adopted, tool: tools/wan_video.py（未作成）, note: 最初のフレームに忠実で安い（D-043）。環境変数 DASHSCOPE_API_KEY と DASHSCOPE_WORKSPACE_ID}
+      - {name: wan-3.0, via: higgsfield, status: adopted, note: 最初のフレームに忠実。Starter プランで使える。720p・4秒で7クレジット（D-043）}
+      - {name: wan-3.0, via: alibaba-model-studio, status: fallback, note: 公式API。アカウント手続きが途中のため未使用}
       - {name: seedance-2.0, via: higgsfield, status: fallback, note: Higgsfield の Plus プラン以上が必要。大きな動きのカットで比較する候補}
       - {name: kling-3.0, via: higgsfield, status: fallback, note: 1本6クレジット（4秒）}
       - {name: veo-3.1, via: higgsfield, status: dropped}
