@@ -28,7 +28,8 @@ roles:
     input: 台詞 + 声の設計書 + 演技指定
     output: 音声 (WAV)
     implementations:
-      - {name: gemini-3.8-flash-tts, via: gemini-api, status: candidate, tool: tools/gemini_tts.py}
+      - {name: original, via: user, status: adopted, note: 原作の台詞音源をユーザーが用意（D-045）}
+      - {name: gemini-3.8-flash-tts, via: gemini-api, status: dropped, tool: tools/gemini_tts.py, note: D-045 で不採用}
 
   hundred_knight_voice:
     input: 感情の語彙
@@ -39,7 +40,8 @@ roles:
     input: 場面の感情、主題の型
     output: BGM、効果音
     implementations:
-      - {name: lyria-3.5, via: gemini-api, status: candidate, tool: tools/lyria.py, note: BGM。1曲0.08ドル。効果音は未定}
+      - {name: original, via: user, status: adopted, note: BGM は原作の音源をユーザーが用意（D-045）。効果音は未定}
+      - {name: lyria-3.5, via: gemini-api, status: dropped, tool: tools/lyria.py, note: D-045 で不採用}
 
   compositing:
     input: 動画 + 漫符 + エフェクト
