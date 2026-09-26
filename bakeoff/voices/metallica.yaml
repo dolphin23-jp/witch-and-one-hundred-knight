@@ -1,0 +1,33 @@
+# 声の設計書（ベイクオフ準備タブより）。実在の声優の名前や声の模倣は指定しない（D-022）。
+character: metallica
+design:
+  高さ: 高めで、よく通る
+  質感: 張りがあり、ときどき毒を含んだざらつきが混ざる
+  年齢感: 少女から若い女性。尊大さの中に幼さが残る
+  話す速さ: 速い。たたみかける
+  態度: 尊大、自信過剰。怒鳴るときは声が裏返る
+  笑い: 喉の奥で引っかける、短く細かい「キヒヒ」
+  本音の場面: 声量と速さが落ち、語尾がかすれる
+
+# Gemini の声の設計（POST /v1beta/voices, type=prompted）に渡す説明。
+# 永続的な声の性質だけを書く。場面ごとの演技は tests の style で指定する。
+gemini:
+  display_name: Metallica
+  gender: female
+  language_code: ja-JP
+  description: >-
+    A bright, high-pitched young woman's voice in her late teens that carries well, with a
+    taut, springy tone and an occasional venomous rasp; arrogant and overconfident, yet with a
+    trace of childishness underneath.
+  voice_id: null     # 作成後に tools/gemini_tts.py が書き込む
+
+tests:
+  - id: normal
+    text: キヒヒ……見ろ。この封蠟。この紙の手触り。一流の魔女にしか届かん代物だぞ
+    style: smug and gloating, fast and pushy delivery; the opening laugh is short and caught in the back of the throat
+  - id: gag
+    text: ……散れと言っている！
+    style: explosive shout after a beat of silence, voice cracking upward in fury
+  - id: honne
+    text: ……ワタシだって、感謝くらいするんだ
+    style: quiet and slow, almost muttered, embarrassed; the end of the line goes husky
