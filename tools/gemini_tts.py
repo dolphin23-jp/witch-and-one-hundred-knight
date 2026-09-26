@@ -8,6 +8,7 @@ APIキー:
 使い方:
   python tools/gemini_tts.py design bakeoff/voices/metallica.yaml          # 声を作る（voice_id を YAML に書き込む）
   python tools/gemini_tts.py speak  bakeoff/voices/metallica.yaml          # tests の台詞をすべて読ませる
+  python tools/gemini_tts.py lines  episodes/A/scenes/A01/shots           # ショットファイルの台詞を読ませる（--only A01-006）
   python tools/gemini_tts.py speak  bakeoff/voices/metallica.yaml --only gag
   python tools/gemini_tts.py replicate bakeoff/voices/metallica.yaml       # 権利のあるサンプル音声から声を作る
   python tools/gemini_tts.py list                                           # 作成済みの声の一覧
@@ -265,6 +266,69 @@ def cmd_speak(a):
         print(f"{t['id']}: {show(out)}（{dur}秒）")
 
 
+def synth(voice_id, text, style, dry_run):
+    body = {
+        "model": MODEL,
+        "input": [{
+            "type": "user_input",
+            "content": [{
+                "type": "text",
+                "text": text,
+                "annotations": [{"type": "speech_metadata", "style": style}],
+            }],
+        }],
+        "response_format": {"type": "audio", "mime_type": "audio/wav", "sample_rate": 24000},
+        "generation_config": {"speech_config": [{"voice": voice_id or "voice_(未作成)"}]},
+    }
+    res = call("POST", "/interactions", body, dry_run)
+    if res is None:
+        return None
+    audio = find_audio(res)
+    if not audio:
+        sys.exit("応答に音声がありません: " + json.dumps(res)[:800])
+    return base64.b64decode(audio)
+
+
+def next_free(out):
+    if not out.exists():
+        return out
+    n = 2
+    while out.with_name(f"{out.stem}_{n:02d}{out.suffix}").exists():
+        n += 1
+    return out.with_name(f"{out.stem}_{n:02d}{out.suffix}")
+
+
+def cmd_lines(a):
+    """ショットファイルの dialogue を読ませる。出力は audio/<シーン>/<カットID>_<番号>_<人物>.wav"""
+    voices = {}
+    for f in sorted(pathlib.Path(a.shots).glob("*.yaml")):
+        shot = yaml.safe_load(f.read_text(encoding="utf-8"))
+        if a.only and shot["id"] not in a.only:
+            continue
+        for i, d in enumerate(shot.get("dialogue") or [], 1):
+            who = d["who"]
+            if who not in voices:
+                _, spec = load(str(ROOT / "bakeoff" / "voices" / f"{who}.yaml"))
+                voices[who] = spec["gemini"].get("voice_id")
+                if not voices[who] and not a.dry_run:
+                    sys.exit(f"{who} の voice_id がありません。")
+            out_dir = ROOT / "audio" / shot["scene"]
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out = out_dir / f"{shot['id']}_{i}_{who}.wav"
+            if not a.overwrite:
+                out = next_free(out)
+            t0 = time.time()
+            wav = synth(voices[who], d["line"], d["delivery"], a.dry_run)
+            if wav is None:
+                print(f"{shot['id']}_{i} {who}: {d['line']} || {d['delivery']}")
+                continue
+            out.write_bytes(wav)
+            dur = wav_seconds(out)
+            record(shot["id"], MODEL, f"{d['line']} || style: {d['delivery']}",
+                   out, time.time() - t0, f"voice:{who} 台詞{i} 音声{dur}秒")
+            print(f"{shot['id']}_{i} {who}: {show(out)}（{dur}秒）")
+
+
 def cmd_list(a):
     res = call("GET", "/voices", None, a.dry_run)
     if res is None:
@@ -282,6 +346,9 @@ def main():
     s.add_argument("--overwrite", action="store_true"); s.set_defaults(func=cmd_speak)
     s = sub.add_parser("replicate"); s.add_argument("spec"); s.add_argument("--force", action="store_true")
     s.set_defaults(func=cmd_replicate)
+    s = sub.add_parser("lines"); s.add_argument("shots", help="ショットファイルのフォルダ")
+    s.add_argument("--only", nargs="*"); s.add_argument("--overwrite", action="store_true")
+    s.set_defaults(func=cmd_lines)
     s = sub.add_parser("list"); s.set_defaults(func=cmd_list)
     for s in sub.choices.values():
         s.add_argument("--dry-run", action="store_true")
