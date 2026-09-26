@@ -1,0 +1,8 @@
+# 原作の音源の一覧（D-045）。ユーザーが Drive の「魔女と百騎兵 原作音源」に置いたものを取り込む。
+# 台詞は、どのファイルのどこ（秒）がどのカットのどの台詞かを書く。BGM は、どのシーンのどこで使うかを書く。
+drive:
+  folder: https://drive.google.com/drive/folders/1TMvhdD_r2KuW6iblN86JY567IpwalXSz   # 魔女と百騎兵 原作音源
+  lines: https://drive.google.com/drive/folders/13qBlZJ68j4IHcztXk9AYHQytI0iBCxX2    # 台詞/
+  bgm: https://drive.google.com/drive/folders/1qXbEcDCK7sxfwKe8mA-DcvF5sML0AKnt      # BGM/
+lines: []   # 例: {file: lines/a01_01.wav, start: 0.0, end: 3.2, scene: A01, who: metallica, line: "おい、見ろ！…"}
+bgm: []     # 例: {file: bgm/xxx.mp3, title: 曲名, use: [A01]}
