@@ -5,7 +5,7 @@
 
 シーンに voice.yaml があるときは、原作の台詞（D-045）で組む（build_original）。
   声: audio/<シーン>/original/<台詞ID>_<人物>.wav を voice.yaml の秒に置く（息継ぎを広げる split も）。
-  画: ショットファイルの tc で切り替え、種別（S/K/M/A）で色を分けた仮の画面に、画・動き・音を書く。
+  画: ショットファイルの tc で切り替え。image があれば静止画（K はゆっくり寄る）、なければ種別（S/K/M/A）で色を分けた仮の画面に画・動き・音を書く。
 以下は voice.yaml がないとき（第2稿の AI の声）の組み立て。
 
 - 画: ベイクオフで作った動画 > 静止画 > 仮の画面（カットID・画・芝居の文字）の順に使う。
@@ -208,10 +208,23 @@ def build_original(scene_dir, out_dir, name=None):
         if foot:
             draws.append(f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_f.txt', foot)}':x=60:y=h-250:fontsize=24:line_spacing=6:fontcolor=0xf0c878")
         seg = tmp / f"{sid}.mp4"
-        ff("-f", "lavfi", "-i", f"color=c={color}:s={W}x{H}:r={FPS}", "-vf", ",".join(draws), "-t", sec,
-           "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
+        img = ROOT / s["image"] if s.get("image") else None
+        if img and img.exists():
+            # 静止画があれば使う。K（止め＋カメラ）はゆっくり寄る。カットIDと種別を左上に小さく出す
+            tag = f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_t.txt', head)}':x=20:y=18:fontsize=22" \
+                  f":fontcolor=white:box=1:boxcolor={color}@0.85:boxborderw=8"
+            if s.get("kind") == "K":
+                n = max(1, int(sec * FPS))
+                move = f"scale={W * 2}:{H * 2},zoompan=z='1+0.08*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}"
+            else:
+                move = f"scale={W}:{H},fps={FPS}"
+            ff("-loop", "1", "-i", img, "-vf", f"{move},{tag}", "-t", sec, "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
+        else:
+            ff("-f", "lavfi", "-i", f"color=c={color}:s={W}x{H}:r={FPS}", "-vf", ",".join(draws), "-t", sec,
+               "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
         segs.append(seg)
-        timeline.append({"id": sid, "kind": s.get("kind"), "start": start, "sec": sec})
+        timeline.append({"id": sid, "kind": s.get("kind"), "start": start, "sec": sec,
+                         "image": s.get("image") if img and img.exists() else None})
 
     lst = tmp / "list.txt"
     lst.write_text("".join(f"file '{p}'\n" for p in segs))

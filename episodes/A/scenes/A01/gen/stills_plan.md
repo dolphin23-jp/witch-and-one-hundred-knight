@@ -1,6 +1,6 @@
 # A01 静止画の生成計画（承認待ち）
 
-モデル: Nano Banana Pro（Higgsfield、2k、16:9）。1枚2クレジット。57枚で114クレジット。指示文の全文は stills_plan.yaml。
+モデル: GPT Image 2.5（Higgsfield、quality medium、2k、16:9）。1枚1クレジット。57枚で57クレジット（2026-09-27 ユーザー指示で Nano Banana Pro から変更）。指示文の全文は stills_plan.yaml。
 
 最初に居間の背景の基準（world:living-room-plate）を1枚作り、居間のカットはそれを参照画像にする。
 
