@@ -15,3 +15,10 @@ files:
     content: タイミング確認用。原作の声（audio/A01/original、D-045）を voice.yaml の位置に置き、画面はショットの画・動き・音を書いた仮の画面（種別で色分け）。56カット
     built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v02_timing
     drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v03_stills.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 原作の声 + 静止画55枚（GPT Image 2.5）。K はゆっくり寄る。A01-038b は未生成（nsfw 判定）のため仮の画面。左上にカットIDと種別
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v03_stills
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く

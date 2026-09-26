@@ -1,12 +1,13 @@
-# A01 の静止画の生成計画（承認待ち）。CLAUDE.md 守ること1
+# A01 の静止画の生成計画。CLAUDE.md 守ること1。ユーザー承認済み（2026-09-27、GPT Image 2.5 のみで作る指示）
 scene: A01
-model: nano_banana_pro
+model: gpt_image_2_5
 via: higgsfield
+quality: medium
 resolution: 2k
 aspect_ratio: '16:9'
-credits_each: 2
+credits_each: 1
 count: 57
-credits_total: 114
+credits_total: 57
 note: 1カット1枚（見せ場 A は頂点のポーズ）。world:living-room-plate は最初に作る背景の基準で、居間のカットの参照画像にする
 items:
 - target: world:living-room-plate
