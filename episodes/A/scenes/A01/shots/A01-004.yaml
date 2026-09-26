@@ -11,6 +11,7 @@ dialogue:
 - L01 前半（声だけ先行）
 sound: 11.6 から2階を駆ける足音
 notes: 声だけ先に入れる（ユーザー採用）
+camera: {setup: A, lens: 寄り・低い位置, move: tilt_up}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
 background: living-room-table
 state:
   hundred-knight: {}
