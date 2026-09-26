@@ -15,10 +15,8 @@ gemini:
   display_name: Metallica
   gender: female
   language_code: ja-JP
-  description: >-
-    A bright, high-pitched voice of a young adult woman that carries well, with a
-    taut, springy tone and an occasional venomous rasp; arrogant and overconfident.
-  voice_id: voice_29h89o6iv1zf     # 作成後に tools/gemini_tts.py が書き込む
+  description: 日本語を母語とする若い成人女性の声。高めでよく通り、張りがあって、ときどき毒を含んだざらつきが混ざる。尊大で自信過剰。日本のアニメの高飛車な魔女役のように、早口でたたみかける、メリハリの強い演技をする。
+  voice_id: voice_9malxh9g0fin     # 作成後に tools/gemini_tts.py が書き込む
   # 権利のあるサンプル音声から作る場合（D-037）。文章による設計（description）と、どちらか一方を使う。
   replicate:
     source: null     # 例: voice-samples/metallica/source.m4a（10〜30秒の自然な話し声。雑音なし）
@@ -28,10 +26,10 @@ gemini:
 tests:
   - id: normal
     text: キヒヒ……見ろ。この封蠟。この紙の手触り。一流の魔女にしか届かん代物だぞ
-    style: smug and gloating, fast and pushy delivery; the opening laugh is short and caught in the back of the throat
+    style: 得意げで勝ち誇った調子。早口でたたみかける。冒頭の笑いは短く、喉の奥で引っかける
   - id: gag
     text: ……散れと言っている！
-    style: explosive shout after a beat of silence, voice cracking upward in fury
+    style: 一拍の沈黙のあと、爆発するように怒鳴る。怒りで声が裏返る
   - id: honne
     text: ……ワタシだって、感謝くらいするんだ
-    style: quiet and slow, almost muttered, embarrassed; the end of the line goes husky
+    style: 小さくゆっくり、つぶやくように。照れている。語尾がかすれる
