@@ -112,7 +112,6 @@ def reading(text):
 def align(a, b):
     """a（脚本）と b（書き起こし）を編集距離で1文字ずつ対応づける。a の各文字に対応する b の位置（なければ None）。"""
     n, m = len(a), len(b)
-    INF = 10 ** 9
     D = np.zeros((n + 1, m + 1), dtype=np.int32)
     D[:, 0] = np.arange(n + 1)
     D[0, :] = 0   # 書き起こしの頭に余分があってもよい
@@ -154,8 +153,7 @@ def transcript_chars(whisper):
     Whisper は漢字1字ずつを語として返すことがあるので（「見」「ろ」）、読みは区間の文全体で取り、
     元の文字の位置から時刻を割り当てる。
     """
-    import pykakasi  # noqa: F401  (reading() が読み込む)
-    reading("")
+    reading("")   # 読みの辞書を読み込む
     chars = []
     wi = 0
     for seg in whisper:
@@ -408,6 +406,10 @@ def main():
             g = loud[k + 1][0] - loud[k][1]
             if g > 1.0:
                 flags.append(f"途中に{g:.1f}秒の無音（{fmt_tc(t0 + loud[k][1])}）")
+        if match < 0.9:
+            flags.append(f"書き起こしと脚本の読みが一部違う（一致 {match:.3f}。下の表で比べる）")
+        if d["p"] < 0.6:
+            flags.append(f"書き起こしの確からしさが低い（{d['p']:.2f}）")
         if match >= 0.9 and d["p"] >= 0.6 and not truncated and not weak:
             mark = "◎"
         elif match >= 0.8 and not truncated:
@@ -433,12 +435,17 @@ def main():
                         "-b:a", "128k", str(out / f"{spec['scene']}_original_all.m4a")], check=True)
 
     total = sum(float(r["dur"]) for r in rows if r["dur"])
+    # 一覧に残すのは、最初の台詞から次のシーンの台詞の頭までにある音だけ
+    lo = min(sp[0] for sp in spans[:len(lines)] if sp)
+    hi = spans[-1][0] if spec.get("next_line") and spans[-1] else len(mono) / sr
+    unassigned = [u for u in unassigned if lo <= u[0][0] and u[0][1] <= hi]
     report = {
         "rows": rows, "total": total, "thr": thr, "speech": float(speech),
         "unassigned": [[fmt_tc(t0 + r[0]), fmt_tc(t0 + r[1]), round(pk, 1), why] for r, pk, why in unassigned],
         "next_line": ({"start": fmt_tc(t0 + spans[-1][0])} if spec.get("next_line") and spans[-1] else None),
     }
     (work / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_md(out / "lines.md", spec, rows, report, a)
     for r in rows:
         print(r["id"], r["mark"], r["cut"], r["start"], r["end"], r["dur"], r["match"], r["flags"], "|", r["heard"])
     print("合計", f"{total:.1f}秒")
@@ -446,6 +453,45 @@ def main():
         print("  台詞に入れなかった音:", u)
     print("次の台詞の頭:", report["next_line"])
 
+
+def write_md(path, spec, rows, report, a):
+    src = spec.get("source", {})
+    marks = {m: sum(1 for r in rows if r["mark"] == m) for m in ("◎", "○", "△", "×")}
+    cut = sum(1 for r in rows if r["cut"])
+    L = [f"# {spec['scene']} 原作の台詞（{rows[0]['id']}〜{rows[-1]['id']}）", "",
+         f"原作音源パート{src.get('part', '?')}の {fmt_tc(parse_tc(a.start))} から切り出し（`tools/extract_lines.py`、D-045）。"
+         f"声の分離は Demucs `{a.demucs}`、書き起こしは Whisper `{a.whisper}`。",
+         "時刻は原作音源パートの中の位置。ファイルは声だけ（BGM・効果音を除いたもの）、モノラル 44.1kHz。", "",
+         f"- 台詞 {len(rows)} 本、合計 {report['total']:.1f} 秒（台詞と台詞の間は含まない）",
+         f"- 印: ◎ {marks['◎']}、○ {marks['○']}、△ {marks['△']}、見つからない {marks['×']}、途切れの疑い {cut}",
+         f"- 通して聞く: `{spec['scene']}_original_all.m4a`（台詞の間を0.5秒にそろえて並べたもの）", "",
+         "| ID | 話者 | 開始 | 終了 | 長さ | 一致 | 印 |", "| --- | --- | --- | --- | --- | --- | --- |"]
+    for r in rows:
+        mark = r["mark"] + (" 途切れ?" if r["cut"] else "")
+        name = f"[{r['id']}]({r['file']})" if r["file"] else r["id"]
+        L.append(f"| {name} | {r['who']} | {r['start']} | {r['end']} | {r['dur']} | {r['match']} | {mark} |")
+    L += ["", "## 印の意味", "",
+          "- **一致**: 脚本の読み（ひらがな）のうち、Whisper の書き起こしと合った文字の割合。"
+          "「キヒヒ」「あん？」「う、」「フム」は Whisper が文字にしないので、声は入っていても一致が下がる。",
+          "- **◎** 一致 0.90 以上で、語尾や境目に気になる点がない。",
+          "- **○** 声はそろっているが、語尾が書き起こしに出ない・境目を推定したなど、聞いて確かめたい。",
+          "- **△** 自信がない。聞いて確かめる。",
+          "- **途切れ?** 語尾が途中で切れている疑い（語尾の声がない、または次の台詞がすぐ始まり声が急に切れている）。", "",
+          "## 台詞ごとの注記", ""]
+    for r in rows:
+        if r["flags"]:
+            L.append(f"- **{r['id']}** {r['flags']}")
+    L += ["", "## 書き起こし（Whisper）と脚本", "",
+          "| ID | 書き起こし | 脚本 |", "| --- | --- | --- |"]
+    for r in rows:
+        L.append(f"| {r['id']} | {r['heard']} | {r['text']} |")
+    if report["unassigned"]:
+        L += ["", "## 台詞に入れなかった音", "",
+              "声の区間のうち、どの台詞にも含めなかったもの（息、物音、百騎兵の声などの可能性）。", "",
+              "| 開始 | 終了 | 大きさ (dB) | 理由 |", "| --- | --- | --- | --- |"]
+        for u in report["unassigned"]:
+            L.append(f"| {u[0]} | {u[1]} | {u[2]} | {u[3]} |")
+    path.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 if __name__ == "__main__":
     main()
