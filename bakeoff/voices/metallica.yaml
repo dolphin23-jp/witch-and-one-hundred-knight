@@ -19,6 +19,11 @@ gemini:
     A bright, high-pitched voice of a young adult woman that carries well, with a
     taut, springy tone and an occasional venomous rasp; arrogant and overconfident.
   voice_id: voice_29h89o6iv1zf     # 作成後に tools/gemini_tts.py が書き込む
+  # 権利のあるサンプル音声から作る場合（D-037）。文章による設計（description）と、どちらか一方を使う。
+  replicate:
+    source: null     # 例: voice-samples/metallica/source.m4a（10〜30秒の自然な話し声。雑音なし）
+    consent: null    # 例: voice-samples/metallica/consent.m4a（同じ人が同じ環境で、同意文を一字一句そのまま読み上げたもの）
+    rights: null     # 誰の声で、どのように同意・許諾を得たか
 
 tests:
   - id: normal
