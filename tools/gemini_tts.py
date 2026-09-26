@@ -317,6 +317,8 @@ def cmd_lines(a):
             out = out_dir / f"{shot['id']}_{i}_{who}.wav"
             if not a.overwrite:
                 out = next_free(out)
+            if not a.dry_run:
+                time.sleep(7)   # 1分10本の制限（Tier 1）に合わせる
             t0 = time.time()
             wav = synth(voices[who], d["line"], d["delivery"], a.dry_run)
             if wav is None:
