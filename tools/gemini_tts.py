@@ -9,10 +9,13 @@ APIキー:
   python tools/gemini_tts.py design bakeoff/voices/metallica.yaml          # 声を作る（voice_id を YAML に書き込む）
   python tools/gemini_tts.py speak  bakeoff/voices/metallica.yaml          # tests の台詞をすべて読ませる
   python tools/gemini_tts.py speak  bakeoff/voices/metallica.yaml --only gag
+  python tools/gemini_tts.py replicate bakeoff/voices/metallica.yaml       # 権利のあるサンプル音声から声を作る
   python tools/gemini_tts.py list                                           # 作成済みの声の一覧
   どのコマンドも --dry-run で、送信内容だけを表示する。
 
-声の複製（type=replicated）は使わない（D-022）。このスクリプトは文章による設計（type=prompted）だけを扱う。
+声の複製（replicate）は、声の持ち主本人が同意し、権利のある音声に限って使う（D-037）。
+実在の声優の演技（原作ゲームのボイスなど）は使わない。YAML の gemini.replicate に、
+サンプル（10〜30秒）、本人が同意文を読み上げた音声、権利の根拠を書いておく。
 """
 import argparse
 import base64
@@ -160,6 +163,66 @@ def cmd_design(a):
         print(f"試聴: {show(out)}（{wav_seconds(out)}秒）")
 
 
+CONSENT_JA = "私はこの音声の所有者であり、Googleがこの音声を使用して音声合成モデルを作成することを承認します。"
+
+
+def to_wav24k(src, dst):
+    """24kHz・モノラル・16bit の WAV に変換する（推奨形式）。"""
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+                    "-ac", "1", "-ar", "24000", "-sample_fmt", "s16", str(dst)], check=True)
+    return dst
+
+
+def cmd_replicate(a):
+    spec_path, spec = load(a.spec)
+    g = spec["gemini"]
+    r = g.get("replicate") or {}
+    missing = [k for k in ("source", "consent", "rights") if not r.get(k)]
+    if missing:
+        sys.exit(f"gemini.replicate に {', '.join(missing)} がありません。"
+                 "サンプル音声、同意文の音声、権利の根拠（誰の声で、どう同意を得たか）を書いてください。")
+    if g.get("voice_id") and not a.force:
+        sys.exit(f"すでに voice_id={g['voice_id']} があります。作り直すときは --force を付けてください。")
+    src, consent = ROOT / r["source"], ROOT / r["consent"]
+    for p in (src, consent):
+        if not p.exists():
+            sys.exit(f"ファイルがありません: {p}")
+    work = ROOT / "tmp" / "replicate"
+    work.mkdir(parents=True, exist_ok=True)
+    src_wav = to_wav24k(src, work / "source.wav")
+    con_wav = to_wav24k(consent, work / "consent.wav")
+    dur = wav_seconds(src_wav)
+    if dur is not None and not (10 <= dur <= 30):
+        sys.exit(f"サンプル音声は10〜30秒にしてください（いまは{dur}秒）。")
+    print(f"同意文（本人がこの通りに読み上げていること）: {CONSENT_JA}")
+    body = {
+        "store": True,
+        "voice": {
+            "model": MODEL,
+            "type": "replicated",
+            "display_name": g["display_name"],
+            "replicated": {
+                "source_audio": {"mime_type": "audio/wav",
+                                 "data": "<base64省略>" if a.dry_run else base64.b64encode(src_wav.read_bytes()).decode()},
+                "consent_audio": {"mime_type": "audio/wav",
+                                  "data": "<base64省略>" if a.dry_run else base64.b64encode(con_wav.read_bytes()).decode()},
+            },
+        },
+    }
+    t0 = time.time()
+    res = call("POST", "/voices", body, a.dry_run)
+    if res is None:
+        return
+    v = res.get("replicated_voice") or res.get("voice") or res
+    voice_id = v.get("id") or v.get("key")
+    if not voice_id:
+        sys.exit("応答に voice の id がありません: " + json.dumps(res)[:800])
+    write_voice_id(spec_path, voice_id)
+    record(f"voice:{spec['character']}", f"{MODEL}/voice-replicate", f"source={r['source']} rights={r['rights']}",
+           r["source"], time.time() - t0, f"voice_id={voice_id}")
+    print(f"声を作りました: {voice_id}（サンプル{dur}秒）")
+
+
 def cmd_speak(a):
     spec_path, spec = load(a.spec)
     voice_id = spec["gemini"].get("voice_id")
@@ -217,6 +280,8 @@ def main():
     s.set_defaults(func=cmd_design)
     s = sub.add_parser("speak"); s.add_argument("spec"); s.add_argument("--only", nargs="*")
     s.add_argument("--overwrite", action="store_true"); s.set_defaults(func=cmd_speak)
+    s = sub.add_parser("replicate"); s.add_argument("spec"); s.add_argument("--force", action="store_true")
+    s.set_defaults(func=cmd_replicate)
     s = sub.add_parser("list"); s.set_defaults(func=cmd_list)
     for s in sub.choices.values():
         s.add_argument("--dry-run", action="store_true")
