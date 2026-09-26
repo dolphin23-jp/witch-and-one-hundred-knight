@@ -1,0 +1,23 @@
+id: A01-009
+scene: A01          # 魔女邸・居間（朝）
+sec: 2
+shot: 膝上・メタリカ
+acting: 招待状を振りかざす
+dialogue:
+  - {who: metallica, line: ならもう一度見ろ。見るたびに味わいが増すんだ, delivery: まったく意に介さず、押しつけるように}
+sound: null
+notes: null
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, props: 招待状}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: null
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

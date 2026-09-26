@@ -1,0 +1,22 @@
+id: A01-029
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 引き
+acting: 首のない胴体が両手を前に伸ばし、よろよろとテーブルの周りを探し回る。椅子にぶつかり、壁にぶつかる
+dialogue: []
+sound: ごつん
+notes: 首の穴の緑の光を必ず見せる。胴体が首を探す動きはお決まりの型にする（全話で使い回す）
+difficulty: 大きな動き
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  arlecchino: {head: なし（胴体のみ）}
+refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 胴体が手を伸ばす
+end_pose: 壁にぶつかる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: 首の穴は緑の光だけで描き、断面は見せない（ユーザー確認済み 2026-09-26）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

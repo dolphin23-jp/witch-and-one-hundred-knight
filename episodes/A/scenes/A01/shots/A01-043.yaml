@@ -1,0 +1,23 @@
+id: A01-043
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 膝上・メタリカ
+acting: 立ち上がり、テーブルの上の皿を腕でまとめて端へ押しやる
+dialogue:
+  - {who: metallica, line: キヒヒ。ワタシを誰だと思っている, delivery: 自信満々、不敵に笑う}
+sound: 食器の音
+notes: null
+difficulty: 大きな動き
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 立ち上がる
+end_pose: 皿を押しやる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

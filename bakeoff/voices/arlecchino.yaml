@@ -1,7 +1,7 @@
 character: arlecchino
 design:
-  高さ: 男性の中低音域
-  質感: 柔らかく、少し鼻にかかった上品さ
+  高さ: 男性の中音域
+  質感: 艶のある柔らかい響き。軽妙で飄々とし、どこか胡散臭い
   年齢感: 年齢不詳の大人
   話す速さ: 一定で、ゆったり
   態度: 慇懃だが、言葉の奥に皮肉がある。「……いえ」と言い直す直前に、半拍の間を置く
@@ -11,10 +11,8 @@ gemini:
   display_name: Arlecchino
   gender: male
   language_code: ja-JP
-  description: >-
-    A soft, slightly nasal, refined male voice in the mid-low range, of indeterminate adult
-    age; unfailingly polite with a faint undertone of irony, speaking at a steady, unhurried pace.
-  voice_id: null
+  description: 日本語を母語とする男性の声。中音域で、艶のある柔らかい響き。軽妙で飄々としていて、つかみどころがなく、どこか胡散臭い。よく通る張りがある。年齢不詳の大人。常に慇懃だが、言葉の奥に皮肉がにじむ。日本のアニメの執事役のように、発音がはっきりしていて、抑揚にメリハリのある演技をする。
+  voice_id: voice_rzqfztvaiooo
   # 権利のあるサンプル音声から作る場合（D-037）。文章による設計（description）と、どちらか一方を使う。
   replicate:
     source: null     # 例: voice-samples/arlecchino/source.m4a（10〜30秒の自然な話し声。雑音なし）
@@ -24,10 +22,10 @@ gemini:
 tests:
   - id: normal
     text: さようでございますね。なにしろ招待状が届きましたのは、百年余りで今回が初めてでございますから。お喜びもひとしお…… <short pause> いえ、当然の結果にございます、はい
-    style: courteous and even, with a sly edge; the correction after the pause is hurried and a touch too smooth
+    style: 慇懃で落ち着いているが、含みがある。間のあとの言い直しは、少し急いで、妙に滑らかに
   - id: gag
     text: く、首はいけませぬー！
-    style: panicked wail, voice cracking into falsetto
+    style: 慌てた悲鳴。声が裏返って裏声になる
   - id: deadpan
     text: おおむね、毎朝でございます
-    style: completely deadpan and unbothered
+    style: まったくの無表情で、動じない

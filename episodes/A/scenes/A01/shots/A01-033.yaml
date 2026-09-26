@@ -1,0 +1,23 @@
+id: A01-033
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 膝上・メタリカ
+acting: 鼻を鳴らし、ようやく椅子に座る。紅茶のカップを取り、あふれた分に顔をしかめ、それでも飲む。招待状をアルレッキーノに放る
+dialogue:
+  - {who: metallica, line: ふん。それより持参の品だ。読め, delivery: 鼻を鳴らして、偉そうに命じる}
+sound: null
+notes: null
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, props: 招待状、紅茶のカップ, seat: テーブル左端}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 椅子に座る
+end_pose: 招待状を放る
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

@@ -1,0 +1,25 @@
+id: A01-024
+scene: A01          # 魔女邸・居間（朝）
+sec: 2
+shot: 切り返し
+acting: メタリカが背中のまま呼ぶ。アルレッキーノが応える
+dialogue:
+  - {who: metallica, line: ……アルレッキーノ, delivery: 背を向けたまま、低く静かな声。怒りをこらえている}
+  - {who: arlecchino, line: はい, delivery: 平然と、即答で}
+sound: 沈黙
+notes: null
+difficulty: 会話（小さな動き）
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  metallica: {hat: あり, props: 招待状}
+  arlecchino: {head: あり}
+refs: [metallica, arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: null
+end_pose: null
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
