@@ -1,0 +1,22 @@
+id: A01-027
+scene: A01          # 魔女邸・居間（朝）
+sec: 1
+shot: 天井からテーブル下へ追う
+acting: 首が天井で跳ね返り、テーブルの下へ転がり込む
+dialogue: []
+sound: 跳ねる音
+notes: null
+difficulty: 大きな動き
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  arlecchino: {head: 転がる}
+refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 首が天井に当たる
+end_pose: 首がテーブルの下に消える
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: 首は画面外に置き、天井の跳ね返りは音だけ。テーブルの下に転がり込む瞬間だけ見せる（Claudeの提案、ユーザー未確認）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

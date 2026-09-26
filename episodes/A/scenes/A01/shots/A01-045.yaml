@@ -1,0 +1,23 @@
+id: A01-045
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 俯瞰・テーブル
+acting: 空いた場所に古い地図を広げる
+dialogue:
+  - {who: metallica, line: ダウジング・ペンデュラムで、おおよその当たりはもうつけてある}
+sound: 紙の音
+notes: null
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-table-top
+state:
+  metallica: {hat: あり, props: 古い地図}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 丸めた地図
+end_pose: 地図が広がる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

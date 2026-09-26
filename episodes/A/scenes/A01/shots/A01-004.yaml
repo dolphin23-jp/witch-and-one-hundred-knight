@@ -1,0 +1,22 @@
+id: A01-004
+scene: A01          # 魔女邸・居間（朝）
+sec: 3
+shot: 大寄り・手元
+acting: ビスコがパンを小さくちぎり、バターを薄く、端から端まで均一に塗る
+dialogue: []
+sound: ナイフの音
+notes: 王女の伏線（第9章）。この家で一人だけ所作が上品
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-morning
+state:
+  bisco: {seat: 手前}
+refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: ナイフがパンの端に当たる
+end_pose: 反対の端まで塗り終える
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）

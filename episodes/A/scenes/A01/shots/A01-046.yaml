@@ -1,0 +1,22 @@
+id: A01-046
+scene: A01          # 魔女邸・居間（朝）
+sec: 4
+shot: 俯瞰の寄り・振り子
+acting: 懐から振り子を取り出し、地図の上に垂らす。居間が静まる。振り子がゆっくり円を描き、一か所で大きく揺れる
+dialogue: []
+sound: ほぼ無音
+notes: 全員の視線が集まる
+difficulty: 手元インサート
+
+# --- 本制作用の項目 ---
+background: living-room-table-top
+state:
+  metallica: {hat: あり, props: 振り子}
+refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
+start_pose: 振り子を垂らす
+end_pose: 一か所で大きく揺れる
+overlays: []   # 漫符は生成せず合成で重ねる（D-027）
+
+fallback: null      # 残酷表現の代替案（このカットは不要）
+
+# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
