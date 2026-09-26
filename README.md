@@ -13,4 +13,4 @@
    - 許可するサイト: `generativelanguage.googleapis.com`
    - ヘッダー名: `x-goog-api-key`、プレフィックス: なし、値: APIキー
 3. **クラウド環境のセットアップスクリプト** に [setup/cloud-setup.sh](setup/cloud-setup.sh) の中身を貼る。
-4. **参照画像** を `refs/` フォルダに置く。ファイル名は [refs/index.yaml](refs/index.yaml) の名前にする（例: `metallica_official.png`）。スマホからは、ブラウザで GitHub のリポジトリを開き、`refs` フォルダで「Add file → Upload files」を選ぶ。またはクラウドセッションのチャットに画像を添付して「refs に置いて」と頼む。
+4. **参照画像**: 使いたい画像を選び、Codeタブのセッションに添付して「これは○○の画像」と説明する。Claude Code が名前を付けて `refs/` に置き、[refs/index.yaml](refs/index.yaml) に登録してコミットする。
