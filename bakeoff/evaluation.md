@@ -31,10 +31,20 @@
 
 ### A01-001
 
+動画用: `results/image/A01-001/nano-banana-pro_01.png`（1枚のみ）。塔の意匠は原作と違う。
+
 ### A01-008
+
+動画用: `results/image/A01-008/nano-banana-pro_02.png`（ユーザー選択）。耳は bisco_official_03 基準。1回目は耳が完全な犬の耳で不合格。
 
 ### A01-019
 
+動画用: `results/image/A01-019/nano-banana-pro_01.png`（静止画は Nano Banana Pro を採用、D-041）。GPT Image 2 は逆光と表情が良く、Soul は指示を無視。
+
 ### A01-026
 
+動画用: `results/image/A01-026/nano-banana-pro_03.png`（ユーザー選択）。通常の頭身・本気の怒り（D-042）。3回目で漫符を消し、魔女邸の室内に。
+
 ### A01-038
+
+動画用: `results/image/A01-038/nano-banana-pro_01.png`（1枚のみ）。首をかしげていない。
