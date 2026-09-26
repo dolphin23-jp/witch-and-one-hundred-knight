@@ -25,10 +25,10 @@ roles:
       - {name: vidu, via: vidu, status: dropped, note: 個別契約が必要}
 
   voice:
-    input: 台詞 + 声の設計書 + 演技指定
-    output: 音声 (WAV)
+    input: 原作音源（ユーザーが用意）+ 脚本の台詞（D-045）
+    output: 台詞ごとの音声 (WAV、声だけ)
     implementations:
-      - {name: original, via: user, status: adopted, note: 原作の台詞音源をユーザーが用意（D-045）}
+      - {name: original, via: user, status: adopted, tool: tools/extract_lines.py, note: 原作の台詞音源をユーザーが用意（D-045）。長い音源は Demucs htdemucs_ft で声を分け、Whisper large-v3 の時刻で脚本と突き合わせて切り出す}
       - {name: gemini-3.8-flash-tts, via: gemini-api, status: dropped, tool: tools/gemini_tts.py, note: D-045 で不採用}
 
   hundred_knight_voice:
