@@ -72,6 +72,21 @@ def export(scene_dir, out_root, with_overlays=False):
                 im.save(dst, quality=90)
             cut["image"] = f"img/{s['id']}.jpg"
             cut["source"] = s["image"]
+        # 動画（段階2）: ショットファイルの video があれば静止画の代わりに使う。
+        # video_fit: speed（全体をカットの長さに合わせて速める、最大1.6倍）/ head（頭から切る）/ tail（終わりに合わせて切る）
+        vid = ROOT / s["video"] if s.get("video") else None
+        if vid and vid.exists():
+            (out / "vid").mkdir(exist_ok=True)
+            dst = out / "vid" / f"{s['id']}{vid.suffix}"
+            if not dst.exists() or dst.stat().st_mtime < vid.stat().st_mtime:
+                shutil.copy2(vid, dst)
+            L = dur(vid)
+            fit = s.get("video_fit", "speed")
+            rate = min(max(L / sec, 1.0), 1.6) if fit == "speed" else 1.0
+            used = sec * rate
+            begin = max(0.0, L - used) if fit == "tail" else (max(0.0, (L - used) / 2) if fit == "speed" else 0.0)
+            cut.update({"video": f"vid/{dst.name}", "video_rate": round(rate, 4), "video_from": round(begin, 3)})
+            cut["label"] += "   動画"
         cuts.append(cut)
 
     voices, subs = [], []

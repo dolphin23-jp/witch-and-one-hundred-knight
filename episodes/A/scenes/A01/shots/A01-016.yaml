@@ -16,6 +16,8 @@ background: living-room
 state:
   metallica: {}
 image: episodes/A/scenes/A01/images/A01-016_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+video: episodes/A/scenes/A01/videos/A01-016_wan3_0_01.mp4   # 段階2（Wan 3.0、D-043）。今の静止画を最初のフレームにした
+video_fit: speed   # カットの長さに合わせて速める（最大1.6倍）
 refs:
 - metallica
 keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
