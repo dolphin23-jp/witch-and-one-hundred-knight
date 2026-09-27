@@ -1,0 +1,44 @@
+# 魔女邸・居間の間取り（上から見た図の座標、単位はメートル）。演出ノート P-04
+# 座標: x は左の壁（西）0 → 右の壁（東）8。y は奥の壁（北）0 → 手前の壁（南・玄関側）7。
+# カメラ A（今の背景の基準 world/living-room-plate_gpt-image-2.5_01.png）は手前から奥を見た画。
+# 原作のリビング（refs: witch-house-living_ingame_01・02）に合わせ、原作にない丸窓（D-047）と玄関側の壁（P-03 の B）を足している。
+id: living-room
+size: {w: 8.0, d: 7.0, ceiling: 4.2}
+
+# 壁ごとの見えるもの。range は壁に沿った座標（北・南の壁は x、西・東の壁は y）
+walls:
+  N:   # 奥の壁
+    - {range: [0.0, 1.3], ja: 階段の上の踊り場, en: "the upper landing of the curved wooden staircase"}
+    - {range: [1.6, 2.4], ja: 小さな丸窓, en: "the small round window with pale morning light"}
+    - {range: [2.4, 3.0], ja: 壁と蔦, en: "wood-paneled wall with glowing green vines"}
+    - {range: [3.0, 5.8], ja: 赤いソファの背もたれ, en: "the back of the red high-backed sofa"}
+    - {range: [5.8, 8.0], ja: 本棚の端, en: "the end of the tall bookshelves"}
+  W:   # 左の壁（階段）
+    - {range: [0.0, 5.6], ja: 曲がった木の階段と彫刻の手すり, en: "the curved wooden staircase with its carved banister"}
+    - {range: [5.6, 7.0], ja: 階段の下の段と壺, en: "the bottom steps of the staircase and old jars"}
+  E:   # 右の壁（本棚）
+    - {range: [0.0, 5.4], ja: 天井までの本棚とはしご, en: "tall bookshelves packed with old books, with a rolling ladder"}
+    - {range: [5.4, 7.0], ja: 玄関の角, en: "the front corner of the room"}
+  S:   # 手前の壁（玄関側、原作の画面にない）
+    - {range: [0.0, 1.4], ja: 階段の下, en: "the space under the staircase"}
+    - {range: [1.4, 6.0], ja: 薬瓶と燭台の棚、帽子掛け, en: "shelves of potion jars and candles, and a coat rack with a spare witch hat"}
+    - {range: [6.0, 7.8], ja: アーチ形の両開きの玄関扉, en: "the heavy arched wooden double front door"}
+
+# 家具・小道具（丸は center と r、四角は x・y の範囲）
+props:
+  table: {kind: circle, center: [4.2, 2.4], r: 0.85, ja: 赤い布の丸テーブル, en: "the round table with the red tablecloth, stacked old books and breakfast plates"}
+  sofa:  {kind: rect, x: [3.0, 5.8], y: [0.25, 1.1], ja: 赤いソファ, en: "the red high-backed sofa"}
+  dolls: {kind: point, at: [3.7, 0.75], ja: ソファの人形（西寄り）, en: "the creepy stitched dolls sitting on the left part of the sofa"}
+  books: {kind: point, at: [2.3, 3.4], ja: 床に積んだ本の山, en: "a pile of old books stacked on the floor"}
+  lamp:  {kind: point, at: [4.2, 2.4], h: 3.2, ja: 吊りランプ（テーブルの上）, en: "the hanging brass lamp above the table"}
+  stairs_top:  {kind: point, at: [0.7, 0.9], h: 2.8, ja: 階段の上}
+  stairs_foot: {kind: point, at: [0.9, 5.3], ja: 階段の下}
+  window: {kind: point, at: [2.0, 0.0], h: 1.8, ja: 丸窓}
+  door:   {kind: point, at: [6.9, 7.0], ja: 玄関}
+
+# 人物の大きさ（立った時の目の高さ、m）。百騎兵の大きさは要確認（メタリカの腰くらいと仮定）
+people:
+  metallica:      {ja: メタリカ, eye: 1.5, en: "Metallica (the orange-haired witch in the huge black witch hat)"}
+  bisco:          {ja: ビスコ, eye: 1.5, en: "Bisco (the black-haired girl in silver armor)"}
+  arlecchino:     {ja: アルレッキーノ, eye: 1.9, en: "Arlecchino (the tall butler with the white skull mask and pink scarf)"}
+  hundred-knight: {ja: 百騎兵, eye: 0.8, en: "the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume)"}
