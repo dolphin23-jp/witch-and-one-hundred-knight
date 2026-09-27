@@ -22,6 +22,7 @@
 5. **声と BGM は原作の音源（D-045）。** 台詞は原作の台詞だけを使い、脚本で書き足した台詞は使わない。音源はユーザーが用意し、Google Drive の「魔女と百騎兵 原作音源」フォルダ（`台詞/`、`BGM/`）で受け取る。AI で声や BGM を作らない。原作の声を材料にして声を作ること（複製）はしない。実在の声優の名前を指示に使わない。
    - 受け取った音源は `audio/original/` に置き、どのファイルのどこがどの台詞かを `audio/original/index.yaml` に書く。リポジトリは非公開にしておくこと。
    - プレイ録画などの長い音源から台詞を切り出すときは `tools/extract_lines.py` を使う（Demucs で声と BGM を分け、Whisper の時刻で脚本と突き合わせる）。元の長い音源はリポジトリに入れず、切り出した台詞と一覧（`lines.md`）を `audio/<シーン>/original/` に置く。自信のない台詞と途切れの疑いには印を付け、ユーザーに聞いてもらう。
+   - プレイ録画をパートごとに声と BGM・効果音に分けたものは、Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」に置く（`tools/separate.py`。記録は `audio/original/separated.yaml`、書き起こしは `audio/original/transcripts/`）。
 6. **残酷表現:** 生成サービスの制限にかかったカットは、ショットファイルの `fallback`（様式化の代替案）で作る（D-005）。制限を回避するための言い換えはしない。
 7. **使わないもの:** 非公式のMCP（生成サービスのWebアプリを直接操作するもの）、GUIの編集ソフトをAIに操作させる方式（D-035）。
 
@@ -41,6 +42,7 @@
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
 - 声・BGM: 原作の音源（D-045）。Drive の「魔女と百騎兵 原作音源」フォルダから取り込み、長い音源は `python tools/extract_lines.py` で台詞に切り出す（Demucs・Whisper は重いので、セッションごとに作業用の venv に入れる）。`tools/gemini_tts.py` と `tools/lyria.py` は使わない（ベイクオフの記録として残す）。
 - Gemini API のキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。
+- Drive: 文書や小さいファイル（10MB未満）は Drive コネクタで扱う。大きい音声は、「原作音源」フォルダの中だけを読み書きする受け口（Apps Script、`setup/drive_bridge.md`）を通して `python tools/drive.py` で読み書きする。受け口の鍵は環境変数 `DRIVE_BRIDGE_KEY`（クラウド環境の設定で入れる。ファイルやコマンドに書かない）。
 - どのサービスを使うかは `pipeline/config.yaml` で管理する。ツールを替えるときはここだけを書き換える。
 
 ## フォルダ構成

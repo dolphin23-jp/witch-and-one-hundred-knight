@@ -2,6 +2,12 @@
 # status: candidate（ベイクオフ中） / adopted（採用） / fallback（予備）
 # 方針: 制作パイプライン（Living Spec）、D-034、D-035、D-036
 
+# Drive の「魔女と百騎兵 原作音源」フォルダの受け口（setup/drive_bridge.gs）。大きい音声の読み書きに使う（tools/drive.py）。
+# URL だけでは使えない。鍵は環境変数 DRIVE_BRIDGE_KEY（Drive の「Claude受け口_鍵.txt」の中身をクラウド環境の設定に入れる）。
+drive_bridge:
+  url: https://script.google.com/macros/s/AKfycbyMCue7G3GxcruxRcaLJVDpHd2WDNm4NHG1jT0VQJoVEqMMkxX7lYRK8weKRU-Ur6k5zw/exec
+  root: 1TMvhdD_r2KuW6iblN86JY567IpwalXSz   # 魔女と百騎兵 原作音源
+
 roles:
   image:
     input: ショット指定 + 参照画像
