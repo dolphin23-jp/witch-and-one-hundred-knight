@@ -1,21 +1,34 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-073
 scene: A01b
 tc: 313.2
-sec: 2.5   # 決めた値
+sec: 2.5
 kind: K
-shot: "大引き・高台の四人と沼"
-acting: "振り子の光"
+shot: 大引き・高台の四人と沼
+acting: 振り子の光。カメラが上がっていく
 dialogue: []
-sound: "BGM④"
-notes: "A02へ"
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+sound: BGM④
+notes: A02 へ
+camera:
+  pos:
+  - 8.0
+  - 13.5
+  - 7.5
+  look:
+  - 7.4
+  - 0.0
+  lens: 24
+  bearing: 357
+  tilt: down
+  move: 高く上がりながら引く（crane up）
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: 振り子（ダウジング・ペンデュラム）
   bisco: {}
-  arlecchino: {}
+  arlecchino:
+    holds: 招待状
   hundred-knight: {}
 image: null
 refs:
@@ -25,3 +38,15 @@ refs:
 - hundred-knight
 overlays: []
 fallback: null
+act:
+  start: 高台の四人と、眼下の沼
+  end: 沼と屋敷とピラーまで見渡す
+  sync: —
+blocking:
+  start: 百（左・斜め後ろ（画面右向き）・目線 画面右・奥寄り）、ビ（中央・背中・目線 画面右・奥寄り）、ア（中央・正面・目線 画面右・奥寄り）、メ（中央・正面・目線 画面右・奥寄り）
+  end: null
+  background: 眼下の沼に建つ魔女邸と木の遊歩道／一面の翠の沼と沼に立つ枯れ木／沼の岸と枯れ木の林、朝日
+  staging_en: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), tiny, on the left of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), tiny, in the center of the frame, with the back to the camera, looking toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big
+    black boots), tiny, in the center of the frame, facing the camera, looking toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), tiny at the cliff edge, holding the glinting pendulum high, in the center of the frame, facing the camera, looking toward screen right. No other people. High angle looking down. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts, then a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist, then the swamp shore lined with twisted dead trees, the low morning sun rising behind them.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-073_start.png

@@ -1,17 +1,25 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-042
 scene: A01b
 tc: 202.8
-sec: 2.2   # 台詞の実測
+sec: 2.2
 kind: K
-shot: "胸上・ビスコ"
-acting: "—"
+shot: 胸上・ビスコ
+acting: メタリカへ向き、問う
 dialogue:
-- "L67「それで、期限はいつなんだ？」"
+- L67「それで、期限はいつなんだ？」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 8.8
+  - 4.3
+  - 1.5
+  look: bisco
+  lens: 85
+  bearing: 238
+  move: 止め
 background: swamp-hill
 state:
   bisco: {}
@@ -20,3 +28,14 @@ refs:
 - bisco
 overlays: []
 fallback: null
+act:
+  start: 眉を寄せている
+  end: 同じ
+  sync: —
+blocking:
+  start: ビ（中央・横顔（画面右向き）・目線 画面右）
+  end: null
+  background: ねじれた木の暗い森
+  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), asking plainly, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-042_start.png

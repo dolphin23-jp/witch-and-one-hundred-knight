@@ -1,17 +1,25 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-010
 scene: A01b
 tc: 45.3
-sec: 2.5   # 台詞の実測
+sec: 2.5
 kind: S
-shot: "胸上・ビスコ"
-acting: "歯噛み"
+shot: 胸上・ビスコ
+acting: 歯を食いしばり拳を握る。メタリカは画面の外で崖の縁へ戻る
 dialogue:
-- "L37「くっ……！勝手なことを……。」"
+- L37「くっ……！勝手なことを……。」
 sound: null
-notes: "ギャグON。怒りマークは合成"
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+notes: 怒りマークは合成（「勝手な」で1つ）
+camera:
+  pos:
+  - 9.4
+  - 7.0
+  - 1.45
+  look: bisco
+  lens: 85
+  bearing: 295
+  move: 止め
 background: swamp-hill
 state:
   bisco: {}
@@ -21,3 +29,16 @@ refs:
 overlays:
 - 怒りマーク
 fallback: null
+act:
+  start: 鼻を押さえている
+  end: 歯噛みしたまま
+  sync: 「くっ」で歯噛み、「勝手な」で拳
+blocking:
+  start: ビ（中央・横顔（画面右向き）・目線 画面右）
+  end: ビ（中央・横顔（画面右向き）・目線 画面右）
+  background: ねじれた木の暗い森／眼下の沼に建つ魔女邸と木の遊歩道
+  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), gritting her teeth, fists clenched, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  staging_en_end: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), gritting her teeth, fists clenched, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-010_start.png
+  - episodes/A/scenes/A01b/gen/sketch/A01b-010_end.png

@@ -1,22 +1,44 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-002
 scene: A01b
 tc: 3.8
-sec: 4.8   # 台詞の実測
+sec: 4.8
 kind: K
-shot: "仰角・膝上・メタリカ正面、背景に空"
-acting: "両腕を広げたまま天へ"
+shot: 仰角・膝上・メタリカ正面、背景に空
+acting: 「沼こそが、世界！」で腕を天へ突き上げ、胸を反らす
 dialogue:
-- "L29「沼こそが、世界！世界のすべては沼で満たされるべきなのだ！」"
+- L29「沼こそが、世界！世界のすべては沼で満たされるべきなのだ！」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 8.2
+  - -0.7
+  - 0.5
+  look: m_edge
+  lens: 24
+  bearing: 186
+  tilt: up
+  move: 崖の下から煽り、少しずつ下から上へ（tilt up）
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: 招待状（右手）
 image: null
 refs:
 - metallica
 overlays: []
 fallback: null
+act:
+  start: 両腕を広げたまま
+  end: 天を仰いだまま
+  sync: 「沼」（2.7秒）で腕の頂点
+blocking:
+  start: メ（中央・正面・目線 カメラの方）
+  end: null
+  background: 森へ下りる土の小道と赤いきのこ／ねじれた木の暗い森
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), both arms spread wide and raised toward the sky, chin up, triumphant, in the center of the frame, facing the camera, looking toward the camera. No other people. Low angle looking up; the morning sky fills the upper part of the frame. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-002_start.png
+  axis_free: 沼の側から撮るメタリカだけの正面の画（軸の延長上）

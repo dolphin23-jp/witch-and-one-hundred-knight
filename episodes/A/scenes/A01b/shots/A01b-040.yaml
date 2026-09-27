@@ -1,20 +1,25 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-040
 scene: A01b
 tc: 190.3
-sec: 6.6   # 台詞の実測
+sec: 6.6
 kind: K
-shot: "インサート・招待状の地図"
-acting: "（声はオフ）砂漠の先に尖った山、山頂に印"
+shot: インサート・招待状の地図
+acting: 砂漠から山へたどる
 dialogue:
-- "L65「それらを持参の上、テッタラ砂漠の先にあるアズ・ブロッケン山、山頂に集合とのことです。」"
+- L65「それらを持参の上、テッタラ砂漠の先にあるアズ・ブロッケン山、山頂に集合とのことです。」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  move: 地図の上を砂漠から山頂へ動かす（pan）
 background: invitation-map
 state: {}
 image: null
 refs: []
 overlays: []
 fallback: null
+act:
+  start: 砂漠の地図
+  end: 山頂の印
+  sync: 「山頂に集合」（4.5秒）で印

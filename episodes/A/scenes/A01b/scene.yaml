@@ -2,10 +2,11 @@
 id: A01b
 episode: A
 title: 沼のほとりの森（朝）
-source: Living Spec「脚本 A01 第3稿（原作台詞）」、「ショット設計 A01 第3稿」のカット表 A01b
+source: Living Spec「脚本 A01 第3稿（原作台詞）」、「ショット設計 A01 第3稿」のカット表 A01b、blocking.yaml（立ち位置・向き・動き・カメラ）
+site: world/swamp-hill-layout.yaml   # 高台の配置。確かめる道具は tools/staging.py
 shots: 73
 sec_total: 316.0     # 台詞のあるカットは audio/A01b/original/ の実測。台詞のないカット（046・054・068・073）は決めた値
-kinds: {S: 11, K: 55, M: 7, A: 0}   # 見せ場（A）は未設計
+kinds: {S: 10, K: 41, M: 12, A: 10}   # blocking.yaml で決めた種別
 audio: audio/A01b/original/          # L28〜L93（原作の声、D-045）
 
 layout:

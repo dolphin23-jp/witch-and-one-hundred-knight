@@ -1,21 +1,32 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-003
 scene: A01b
 tc: 8.6
-sec: 5.5   # 台詞の実測
+sec: 5.5
 kind: M
-shot: "引き・後ろの三人"
-acting: "（声はオフ）ビスコは呆れ顔、アルレッキーノは拍手、百騎兵はトンボを目で追う"
+shot: 引き・後ろの三人
+acting: ビスコは呆れて半眼。アルレッキーノは大きな手で拍手。百騎兵は目の前を横切るトンボを首で追う
 dialogue:
-- "L30「この重大にして、素晴らしき提案を夜会で訴えずに何が沼の魔女だ！」"
-sound: "拍手"
+- L30「この重大にして、素晴らしき提案を夜会で訴えずに何が沼の魔女だ！」
+sound: 拍手
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 8.9
+  - 1.9
+  - 1.5
+  look:
+  - 7.9
+  - 6.2
+  lens: 28
+  bearing: 193
+  move: 止め。三人の前をゆっくり横へ（pan）
 background: swamp-hill
 state:
   bisco: {}
-  arlecchino: {}
+  arlecchino:
+    holds: なし
   hundred-knight: {}
 image: null
 refs:
@@ -24,3 +35,15 @@ refs:
 - hundred-knight
 overlays: []
 fallback: null
+act:
+  start: 三人が並んでメタリカの背中を見ている
+  end: 同じ
+  sync: 「訴えずに」（3.6秒）で拍手が一番大きい
+blocking:
+  start: ア（左・正面・目線 画面右・手前寄り）、ビ（右・正面・目線 カメラの方）、百（右・正面・目線 画面右・手前寄り）
+  end: null
+  background: 森へ下りる土の小道と赤いきのこ／ねじれた木の暗い森
+  staging_en: 'In frame (exactly 3 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing and clapping his big hands, at the far left of the frame, facing the camera, looking toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing with a flat, fed-up expression, on the right of the frame, facing the camera, looking toward the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes;
+    it carries no sword here), standing, its head turned to follow a small dragonfly, at the far right of the frame, facing the camera, looking toward screen right. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-003_start.png

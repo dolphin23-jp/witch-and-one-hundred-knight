@@ -1,22 +1,43 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-049
 scene: A01b
 tc: 233.6
-sec: 3.7   # 台詞の実測
+sec: 3.7
 kind: K
-shot: "ローアングル・メタリカ"
-acting: "拳を握る"
+shot: ローアングル・メタリカ
+acting: 拳を握って胸の前へ
 dialogue:
-- "L73「わかり次第、取りに行くだけだ！必ず三品集めるぞ！」"
+- L73「わかり次第、取りに行くだけだ！必ず三品集めるぞ！」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 8.6
+  - 3.2
+  - 0.3
+  look: m_edge
+  lens: 24
+  bearing: 343
+  tilt: up
+  move: 地面すれすれから煽る。止め
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: なし
 image: null
 refs:
 - metallica
 overlays: []
 fallback: null
+act:
+  start: 片手を上げている
+  end: 拳を握ったまま
+  sync: 「集めるぞ」（2.9秒）で握る
+blocking:
+  start: メ（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
+  end: null
+  background: 眼下の沼に建つ魔女邸と木の遊歩道／一面の翠の沼と沼に立つ枯れ木
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), clenching a fist in front of her chest, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left. No other people. Low angle looking up; the morning sky fills the upper part of the frame. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts, then a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-049_start.png

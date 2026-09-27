@@ -1,16 +1,24 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-068
 scene: A01b
 tc: 298.2
-sec: 1.0   # 決めた値
+sec: 1.0
 kind: M
-shot: "寄り・百騎兵"
-acting: "頷く"
+shot: 寄り・百騎兵
+acting: 力強く一度頷く
 dialogue: []
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 7.4
+  - 7.4
+  - 0.8
+  look: hk
+  lens: 85
+  bearing: 292
+  move: 百騎兵の目の高さ。止め
 background: swamp-hill
 state:
   hundred-knight: {}
@@ -19,3 +27,14 @@ refs:
 - hundred-knight
 overlays: []
 fallback: null
+act:
+  start: 見上げている
+  end: 顔を上げる
+  sync: —
+blocking:
+  start: 百（中央・横顔（画面右向き）・目線 画面右）
+  end: null
+  background: ねじれた木の暗い森／眼下の沼に建つ魔女邸と木の遊歩道
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), nodding firmly once, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-068_start.png

@@ -23,3 +23,11 @@ images:
   witch-house-living_ingame_01: {subjects: [witch-house], kind: ゲーム画面, note: 魔女邸内部リビング}
   witch-house-living_ingame_02: {subjects: [witch-house], kind: ゲーム画面, note: 魔女邸内部リビング}
   witch-house-exterior_ingame_01: {subjects: [witch-house, swamp], kind: ゲーム画面, note: 魔女邸外観}
+  # 2026-09-27: ユーザーが「人物の設定画は正式なものとしてこちらに差し替え」と指定。生成ではまずこの4枚を使う（D-049）
+  metallica_sheet_01: {subjects: [metallica], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・帽子・全身パーツの詳細, primary: true}
+  bisco_sheet_01: {subjects: [bisco], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・尻尾・武器・胴体・手・脚部の詳細, primary: true}
+  hundred-knight_sheet_01: {subjects: [hundred-knight], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と武器（百騎兵の剣）・頭部・腕と手・下半身・足の詳細, primary: true}
+  arlecchino_sheet_01: {subjects: [arlecchino], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・マフラーと上着・全身パーツ・サイズ比の詳細, primary: true}
+  # 2026-09-27: ユーザーが屋敷の正式な参照画像を用意。「今回の範囲はパイロット版として、こちらは次回以降のパートで参照するようにしてください」（A01 は今の画のまま）
+  witch-house-exterior_sheet_01: {subjects: [witch-house, swamp], kind: 設定画, note: 屋敷の外の画像（正面・外観、左右の前斜め、高所からの俯瞰、後ろ側、エントランス、木の橋・遊歩道、側面、沼の水面、枯れ木、屋根の魔法陣、ランタン、木の杭と足場、周辺の小物）, primary: true, use_from: 次回以降のパート}
+  witch-house-living_sheet_01: {subjects: [witch-house], kind: 設定画, note: 屋内の画像（正面メインアングル、左右の斜め前・斜め後ろ、階段付近、ソファ周辺、テーブル上、書棚、暖炉・奥の扉）, primary: true, use_from: 次回以降のパート}

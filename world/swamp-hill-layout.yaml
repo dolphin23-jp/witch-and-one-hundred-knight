@@ -1,0 +1,35 @@
+# 沼を見下ろす高台（A01b）の配置（上から見た図の座標、単位はメートル）。演出ノート P-04
+# 座標: x は西 0 → 東 16。y は北（沼側の崖の縁）0 → 南（森側）14。
+# 方位（bearing）: 0 = 北（沼）、90 = 東、180 = 南（森と小道）、270 = 西。
+# 屋敷と沼の見た目は正式な設定画（refs/witch-house-exterior_sheet_01.png、次回以降のパートで使う）に合わせる。
+# 台本「翠の沼を見下ろす高台」。原作ではこの台詞は屋敷の遊歩道の枯れ木の横（refs: swamp_ingame_02）なので、枯れ木を縁に置く。
+id: swamp-hill
+size: {w: 16.0, d: 14.0}
+time: 朝（東から低い朝日。沼に薄い朝靄）
+
+# 遠景（高台の中心から見た方位ごと）。カメラの向きと画角から、背景に何が見えるかを決める
+horizon:
+  - {from: 300, to: 345, ja: 眼下の沼に建つ魔女邸と木の遊歩道, en: "far below, the witch's house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts"}
+  - {from: 345, to: 360, ja: 一面の翠の沼と沼に立つ枯れ木, en: "a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist"}
+  - {from: 0, to: 18, ja: 一面の翠の沼と沼に立つ枯れ木, en: "a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist"}
+  - {from: 18, to: 27, ja: 沼の彼方のピラー・オブ・テンペランス, en: "far across the swamp on the horizon, the Pillar of Temperance, a tall ancient stone pillar"}
+  - {from: 27, to: 75, ja: 沼の岸と枯れ木の林、朝日, en: "the swamp shore lined with twisted dead trees, the low morning sun rising behind them"}
+  - {from: 75, to: 150, ja: ねじれた木の暗い森と光るきのこ, en: "a dark forest of twisted black trees with faintly glowing mushrooms"}
+  - {from: 150, to: 210, ja: 森へ下りる土の小道と赤いきのこ, en: "a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it"}
+  - {from: 210, to: 300, ja: ねじれた木の暗い森, en: "a dark forest of twisted black trees"}
+
+# 高台の地面と近くの物
+ground: {ja: 苔と土の高台。北の縁は沼へ落ちる崖, en: "a mossy dirt hilltop whose north edge drops steeply down to the swamp"}
+props:
+  dead_tree:  {kind: point, at: [2.6, 0.8], ja: 崖の縁の大きな枯れ木（枝が沼の上へ伸びる）, en: "a huge gnarled dead tree at the cliff edge, its bare branches reaching out over the swamp"}
+  edge:       {kind: line, from: [0.0, 0.4], to: [16.0, 0.4], ja: 崖の縁, en: "the cliff edge"}
+  stump:      {kind: point, at: [12.6, 4.8], ja: 切り株, en: "an old tree stump"}
+  mushrooms:  {kind: point, at: [4.2, 8.6], ja: 赤いきのこの群れ, en: "a cluster of red mushrooms"}
+  path_head:  {kind: point, at: [7.6, 13.5], ja: 森へ下りる小道の入り口, en: "the head of the dirt path into the forest"}
+
+# 人物の大きさ（eye: 目の高さ、h: 身長、m）と見た目。A01 の world/living-room-layout.yaml と同じ（正式な設定画、D-049）
+people:
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  bisco:          {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
+  arlecchino:     {ja: アルレッキーノ, eye: 1.9, h: 1.9, en: "Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots)"}
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
