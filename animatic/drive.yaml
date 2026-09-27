@@ -29,3 +29,10 @@ files:
     content: v03 からカメラ位置を分けて33カットを作り直し（P-03、背景の基準 A〜E と窓の外）。全カットにカメラの動き（camera.move）。左上にカットID・種別・カメラ位置。012a は前の画、031 は配置が違う画のまま（どちらも hold）
     built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v04_camera
     drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v05_blocking.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 立ち位置とカメラ割り（P-04、blocking.yaml）に合わせて23カットを作り直した版。hold 6（006・010・010a・011・013a・031）。010・010a は前の画
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v05_blocking
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
