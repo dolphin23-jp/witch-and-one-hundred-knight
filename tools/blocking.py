@@ -351,11 +351,92 @@ def render(sc, reports, out_dir):
     return files
 
 
+SEATED = {"bisco": 1.2, "hundred-knight": 0.85}
+WIDTH = {"metallica": 0.55, "bisco": 0.5, "hundred-knight": 0.65, "arlecchino": 0.85}
+LABEL = {"metallica": "METALLICA", "bisco": "BISCO", "hundred-knight": "HUNDRED KNIGHT", "arlecchino": "ARLECCHINO"}
+
+
+def sketch(sc, cut, path, W=1536, H=864):
+    """カメラから見た配置の下絵（人物の位置と大きさ）を描く。生成の参照画像に使う（演出ノート P-04）。"""
+    c = sc.bk["cuts"][cut]
+    pos = sc.positions(cut)
+    cam = tuple(c["cam"][:2])
+    ch = c["cam"][2]
+    look = sc.target(c["look"], pos)
+    d = norm((look[0] - cam[0], look[1] - cam[1]))
+    right = (-d[1], d[0])
+    half = fov_half(c["lens"])
+    f = (W / 2) / math.tan(half)
+    tilt = c.get("tilt", -0.25 if ch > 2.0 else 0.0)   # 高い位置からは少し見下ろす
+
+    def proj(p, h):
+        v = (p[0] - cam[0], p[1] - cam[1])
+        z = dot(v, d)
+        if z <= 0.1:
+            return None
+        x = W / 2 + f * dot(v, right) / z
+        y = H / 2 - f * ((h - ch) / z - tilt)
+        return x, y, z
+    im = Image.new("RGB", (W, H), (235, 232, 225))
+    dr = ImageDraw.Draw(im)
+    font = ImageFont.truetype(FONT, 30)
+    # 床と奥の壁の目安（部屋の四隅の床の線）
+    corners = [(0, 0), (sc.W, 0), (sc.W, sc.D), (0, sc.D)]
+    for a, b in zip(corners, corners[1:] + corners[:1]):
+        pts = []
+        for k in range(41):
+            q = (a[0] + (b[0] - a[0]) * k / 40, a[1] + (b[1] - a[1]) * k / 40)
+            r = proj(q, 0)
+            if r:
+                pts.append(r[:2])
+        if len(pts) > 1:
+            dr.line(pts, fill=(170, 160, 150), width=3)
+    # テーブルとソファ
+    tb = sc.lay["props"]["table"]
+    pts = [proj((tb["center"][0] + tb["r"] * math.cos(a / 30 * 2 * math.pi), tb["center"][1] + tb["r"] * math.sin(a / 30 * 2 * math.pi)), 0.75) for a in range(31)]
+    pts = [p[:2] for p in pts if p]
+    if len(pts) > 2:
+        dr.polygon(pts, fill=(200, 110, 100), outline=(120, 50, 40))
+    so = sc.lay["props"]["sofa"]
+    sp = [proj(q, hh) for q, hh in (((so["x"][0], so["y"][1]), 0.45), ((so["x"][1], so["y"][1]), 0.45), ((so["x"][1], so["y"][0]), 1.1), ((so["x"][0], so["y"][0]), 1.1))]
+    if all(sp):
+        dr.polygon([p[:2] for p in sp], fill=(170, 60, 60), outline=(100, 30, 30))
+    # 人物（遠い順）
+    items = []
+    for who, p in pos.items():
+        r = proj(p, 0)
+        if r:
+            items.append((r[2], who, p))
+    for z, who, p in sorted(items, reverse=True):
+        seated = SEATED.get(who) or (1.3 if who == "metallica" and c["beat"] in ("sofa", "lounge") else None)
+        h = seated or sc.lay["people"][who].get("h", 1.6)
+        base = 0.45 if seated and who != "hundred-knight" else 0.0
+        top, bot = proj(p, h), proj(p, base)
+        x = top[0]
+        w = f * WIDTH[who] / z
+        col = COLORS[who]
+        head = (top[1] - bot[1]) * -0.16
+        dr.rounded_rectangle([x - w / 2, top[1] + head, x + w / 2, bot[1]], radius=int(w / 4), fill=col, outline="black", width=3)
+        dr.ellipse([x - head * 0.6, top[1], x + head * 0.6, top[1] + head * 1.1], fill=col, outline="black", width=3)
+        tw = dr.textlength(LABEL[who], font=font)
+        dr.rectangle([x - tw / 2 - 6, top[1] - 42, x + tw / 2 + 6, top[1] - 4], fill="white")
+        dr.text((x, top[1] - 23), LABEL[who], font=font, fill="black", anchor="mm")
+    dr.text((20, 20), f"{cut} layout sketch (positions and sizes only)", font=font, fill=(90, 90, 90))
+    im.save(path)
+    return path
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("scene_dir")
+    ap.add_argument("--sketch", nargs="*", help="下絵を描くカット（例: A01-031）")
     a = ap.parse_args()
     sc = Scene(a.scene_dir)
+    if a.sketch:
+        (sc.dir / "gen" / "sketch").mkdir(parents=True, exist_ok=True)
+        for cu in a.sketch:
+            print(sketch(sc, cu, sc.dir / "gen" / "sketch" / f"{cu}_layout.png").relative_to(ROOT))
+        return
     out_dir = sc.dir / "gen"
     out_dir.mkdir(exist_ok=True)
     reports = [sc.analyze(cu) for cu in sc.order]

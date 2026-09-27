@@ -36,9 +36,10 @@ props:
   window: {kind: point, at: [2.0, 0.0], h: 1.8, ja: 丸窓}
   door:   {kind: point, at: [6.9, 7.0], ja: 玄関}
 
-# 人物の大きさ（立った時の目の高さ、m）。百騎兵はメタリカの腰くらい（ユーザー確認 2026-09-27）
+# 人物の大きさ（eye: 立った時の目の高さ、h: 身長、m）。百騎兵はメタリカの腰くらい（ユーザー確認 2026-09-27）。
+# en の見た目は正式な設定画（refs/*_sheet_01.png、D-049）から
 people:
-  metallica:      {ja: メタリカ, eye: 1.5, en: "Metallica (the orange-haired witch in the huge black witch hat)"}
-  bisco:          {ja: ビスコ, eye: 1.5, en: "Bisco (the black-haired girl in silver armor)"}
-  arlecchino:     {ja: アルレッキーノ, eye: 1.9, en: "Arlecchino (the tall butler with the white skull mask and pink scarf)"}
-  hundred-knight: {ja: 百騎兵, eye: 0.8, en: "the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume)"}
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  bisco:          {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
+  arlecchino:     {ja: アルレッキーノ, eye: 1.9, h: 1.9, en: "Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots)"}
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}

@@ -36,3 +36,10 @@ files:
     content: 立ち位置とカメラ割り（P-04、blocking.yaml）に合わせて23カットを作り直した版。hold 6（006・010・010a・011・013a・031）。010・010a は前の画
     built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v05_blocking
     drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v06_sheets.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v05 の保留6カットを正式な設定画（D-049）で作り直した版。006・031 は配置違いで hold。ほかの45カットは設定画より前の画
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v06_sheets
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
