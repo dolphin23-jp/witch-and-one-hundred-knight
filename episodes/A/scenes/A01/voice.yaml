@@ -2,6 +2,8 @@ scene: A01
 source: audio/A01/original（原作音源パート16、14:08〜）
 note: 台詞の置き場所（シーンの頭からの秒）。split は台詞の中の息継ぎを広げる位置（音声ファイル内の秒）と足す間（秒）
 total_sec: 201.3
+# BGM（D-050）: 原作音源パート16 の 14:08 から 237秒を Demucs htdemucs_ft で分けた声以外の音（効果音も含む）。そのまま使い、シーンより短ければループ
+bgm: {src: audio/A01/original/A01_bgm.ogg, from: 0.0, volume: 1.0}
 lines:
 - id: L01
   at: 12.0

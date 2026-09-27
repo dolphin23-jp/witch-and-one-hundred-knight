@@ -7,6 +7,7 @@ HyperFrames と Remotion の比較（制作パイプラインのマイルスト�
 tools/animatic.py（ffmpeg で直接書き出す仮の組み立て）と同じ規則で、尺・カメラの動き・台詞の置き場所を決める。
   画: 静止画を 1920x1080 の JPEG に縮めて img/ に置く（カメラの寄りで 1.2 倍まで拡大しても 1280x720 で粗くならない）
   声: audio/<シーン>/original/<台詞ID>_<人物>.wav。voice.yaml の split（息継ぎを広げる）は2本に分けて audio/ に置く
+  BGM: voice.yaml の bgm（原作音源から声を分けた残り、D-045）。シーンより短ければループする
 出力は Git の管理外（animatic/build/）。
 """
 import argparse
@@ -93,6 +94,16 @@ def export(scene_dir, out_root, with_overlays=False):
         who = NAMES.get(script[v["id"]]["who"], script[v["id"]]["who"])
         subs.append({"start": v["at"], "end": round(end + 0.15, 3), "text": f"{v['id']} {who}「{script[v['id']]['text']}」"})
 
+    bgm = None
+    if vspec.get("bgm"):
+        b = vspec["bgm"]
+        src = ROOT / b["src"]
+        dst = out / "audio" / src.name
+        shutil.copy2(src, dst)
+        L = dur(src) - float(b.get("from", 0.0))
+        bgm = {"src": f"audio/{dst.name}", "from": float(b.get("from", 0.0)), "volume": float(b.get("volume", 1.0)),
+               "sec": round(L, 3), "loop": L < total}
+
     overlays = []
     if with_overlays:
         spec = yaml.safe_load((scene_dir / "overlays.yaml").read_text(encoding="utf-8")) if (scene_dir / "overlays.yaml").exists() else {"overlays": []}
@@ -106,9 +117,10 @@ def export(scene_dir, out_root, with_overlays=False):
                              "sec": round(o.get("sec", c["sec"] - o.get("at", 0.0)), 3)})
 
     data = {"scene": scene, "width": 1280, "height": 720, "fps": 24, "total": total,
-            "cuts": cuts, "voices": voices, "subs": subs, "overlays": overlays}
+            "cuts": cuts, "voices": voices, "subs": subs, "overlays": overlays, "bgm": bgm}
     (out / "scene.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{(out / 'scene.json').relative_to(ROOT)}（{len(cuts)}カット、声 {len(voices)} 本、漫符 {len(overlays)}）")
+    print(f"{(out / 'scene.json').relative_to(ROOT)}（{len(cuts)}カット、声 {len(voices)} 本、漫符 {len(overlays)}、"
+          f"BGM {'なし' if not bgm else str(bgm['sec']) + '秒' + ('（ループ）' if bgm['loop'] else '')}）")
     return out
 
 
