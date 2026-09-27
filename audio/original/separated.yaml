@@ -1,0 +1,83 @@
+# プレイ録画の音源をパートごとに声と BGM・効果音に分けた記録（tools/separate.py が書く。手で編集しない）。
+# 分けた音声は Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」にある。リポジトリには入れない。
+parts:
+- part: 16
+  src: 魔女と百騎兵Revival パート16.mp3
+  sec: 1558.13
+  made: '2026-09-27'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート16/
+  files:
+    voice:
+      name: パート16_声.mp3
+      id: 1fZpeC5AL6uwAjXShN2671db2N5LcW3g2
+    bgm:
+      name: パート16_BGMと効果音.mp3
+      id: 1lt3_6l_gg7JfDIHDF-gBW6HeeB2mmUV6
+    transcript:
+      name: パート16_書き起こし.txt
+      id: 1bAGV5gH3mNmSSOVDqCprWTwrHhC4Zex2
+  transcript: audio/original/transcripts/part16.txt
+  segments: 271
+- part: 17
+  src: 魔女と百騎兵Revival パート17.mp3
+  sec: 1492.16
+  made: '2026-09-27'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート17/
+  files:
+    voice:
+      name: パート17_声.mp3
+      id: 1HqLmxiMoYVGJfgb7GmFnLG-XziiT8u1v
+    bgm:
+      name: パート17_BGMと効果音.mp3
+      id: 1Mm5WAhD3pvt2CPjhlC6f3CIj30K62UYj
+    transcript:
+      name: パート17_書き起こし.txt
+      id: 1btcOz6avgul5AUPx7zSKyDJ53XuELBtO
+  transcript: audio/original/transcripts/part17.txt
+  segments: 190
+- part: 18
+  src: 魔女と百騎兵Revival パート18.mp3
+  sec: 1766.18
+  made: '2026-09-27'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート18/
+  files:
+    voice:
+      name: パート18_声.mp3
+      id: 15k7kRaILwJdq1cV76ZQTpU3scx5D1yiE
+    bgm:
+      name: パート18_BGMと効果音.mp3
+      id: 16NEiMbZ1HGKtyrA2cquwcboYpgLbQTWe
+    transcript:
+      name: パート18_書き起こし.txt
+      id: 1txn4gYq2gbZCC5_B2DwqGPIFa5mP9GV4
+  transcript: audio/original/transcripts/part18.txt
+  segments: 260
+- part: 19
+  src: 魔女と百騎兵Revival パート19.mp3
+  sec: 1468.15
+  made: '2026-09-27'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート19/
+  files:
+    voice:
+      name: パート19_声.mp3
+      id: 1g5tCLXIXvjbbdeBgWf0G_mnFdkom__Zw
+    bgm:
+      name: パート19_BGMと効果音.mp3
+      id: 1U-DFcbUvP7imJsNwBfGy_hrUG68xm5Ld
+    transcript:
+      name: パート19_書き起こし.txt
+      id: 1R-51O2mYWPGLyefpglMbowyfVKJDWACo
+  transcript: audio/original/transcripts/part19.txt
+  segments: 186
