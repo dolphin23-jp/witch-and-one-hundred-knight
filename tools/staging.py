@@ -376,6 +376,26 @@ def draw_camera(d, P, st, cut, k, font, col, label, which="start"):
     d.text((a[0], a[1] - 20), label, font=font, fill=col, anchor="mm")
 
 
+def draw_areas(st, d, P, font):
+    """layout の areas（沼・岸・デッキなど）を上から見た図に描く。"""
+    for a in st.lay.get("areas", []):
+        col = tuple(a.get("color", [80, 80, 80]))
+        if a["kind"] == "rect":
+            d.rectangle([*P(a["x"][0], a["y"][0]), *P(a["x"][1], a["y"][1])], fill=col)
+        elif a["kind"] == "poly":
+            d.polygon([P(*q) for q in a["points"]], fill=col)
+        elif a["kind"] == "circle":
+            cx, cy = P(*a["center"])
+            r = P(a["center"][0] + a["r"], 0)[0] - cx
+            d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=col)
+    for a in st.lay.get("areas", []):
+        c = a.get("center") or (a["x"][0] + (a["x"][1] - a["x"][0]) / 2, a["y"][0] + (a["y"][1] - a["y"][0]) / 2) if a["kind"] != "poly" else \
+            (sum(q[0] for q in a["points"]) / len(a["points"]), sum(q[1] for q in a["points"]) / len(a["points"]))
+        if a["kind"] == "rect" and a["x"][1] - a["x"][0] > 15:
+            continue
+        d.text(P(*c), a["ja"], font=font, fill=(20, 20, 20), anchor="mm")
+
+
 def arrow(d, a, b, col, width=4):
     d.line([a, b], fill=col, width=width)
     ang = math.atan2(b[1] - a[1], b[0] - a[0])
@@ -401,10 +421,14 @@ def render(st, out_dir, sections):
         d.text((W // 2, 62), "丸＝人物（線は体の向き）、薄い丸＝区間の初めの位置、矢印＝カットの中の移動、扇＝カメラ（番号はカット）", font=fs, fill=(190, 190, 190), anchor="mm")
         ox, oy = 130, 90 + int(1.9 * k)
         P = lambda x, y: (ox + x * k, oy + y * k)
-        d.rectangle([*P(0, 0.4), *P(st.W, ymax)], fill=(52, 58, 40), outline=(120, 110, 80), width=2)
-        d.rectangle([*P(0, -1.6), *P(st.W, 0.4)], fill=(40, 150, 70))
-        d.text(P(st.W / 2, -0.8), "翠の沼（崖の下）　↑北", font=f, fill=(10, 40, 20), anchor="mm")
-        d.text(P(st.W / 2, ymax + 0.5), "↓南（森）", font=f, fill=(170, 170, 170), anchor="mm")
+        if st.lay.get("areas"):
+            draw_areas(st, d, P, f)
+            d.text(P(st.W / 2, -0.5), "↑北", font=f, fill=(200, 200, 200), anchor="mm")
+        else:
+            d.rectangle([*P(0, 0.4), *P(st.W, ymax)], fill=(52, 58, 40), outline=(120, 110, 80), width=2)
+            d.rectangle([*P(0, -1.6), *P(st.W, 0.4)], fill=(40, 150, 70))
+            d.text(P(st.W / 2, -0.8), "翠の沼（崖の下）　↑北", font=f, fill=(10, 40, 20), anchor="mm")
+        d.text(P(st.W / 2, ymax + 0.5), "↓南", font=f, fill=(170, 170, 170), anchor="mm")
         for name, pr in st.lay.get("props", {}).items():
             if "at" not in pr or pr["at"][1] > ymax:
                 continue
