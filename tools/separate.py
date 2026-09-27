@@ -55,10 +55,56 @@ def duration(path):
     return float(r.stdout.strip())
 
 
+CHUNK_SEC = 600     # 長い音源は10分ずつに分けて分離する（29分をまるごと分けるとメモリ 15GB で足りなかった）
+OVERLAP_SEC = 10    # 切れ目は重ねて、なめらかにつなぐ
+
+
 def separate(wav, work, model):
     out = work / "sep" / model / wav.stem
-    if not (out / "vocals.wav").exists():
+    if (out / "vocals.wav").exists():
+        return out / "vocals.wav", out / "no_vocals.wav"
+    sec = duration(wav)
+    if sec <= CHUNK_SEC * 1.5:
         run([sys.executable, "-m", "demucs", "--two-stems=vocals", "-n", model, "-o", str(work / "sep"), str(wav)])
+        return out / "vocals.wav", out / "no_vocals.wav"
+    import numpy as np
+    import soundfile as sf
+    chunks = work / "chunks"
+    chunks.mkdir(exist_ok=True)
+    starts = list(range(0, int(sec), CHUNK_SEC))
+    if sec - starts[-1] < 60 and len(starts) > 1:   # 最後が短すぎるときは一つ前にまとめる
+        starts.pop()
+    pieces = []
+    for i, st in enumerate(starts):
+        a = max(0, st - OVERLAP_SEC)
+        b = starts[i + 1] + OVERLAP_SEC if i + 1 < len(starts) else sec
+        name = f"c{i:02d}"
+        src = chunks / f"{name}.wav"
+        sep = chunks / "sep" / model / name
+        if not (sep / "vocals.wav").exists():
+            run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(wav), "-ss", str(a), "-to", str(b),
+                 "-c:a", "pcm_s16le", str(src)])
+            print(f"  {i + 1}/{len(starts)}（{fmt_tc(a)}〜{fmt_tc(b)}）", flush=True)
+            run([sys.executable, "-m", "demucs", "--two-stems=vocals", "-n", model, "-o", str(chunks / "sep"), str(src)])
+        pieces.append((a, sep))
+    out.mkdir(parents=True, exist_ok=True)
+    total = sf.info(str(wav)).frames
+    for stem in ("vocals", "no_vocals"):
+        acc, sr = None, None
+        for a, sep in pieces:
+            x, sr = sf.read(str(sep / f"{stem}.wav"), dtype="float32")
+            if acc is None:
+                acc = np.zeros((total, x.shape[1]), dtype="float32")
+            i0 = int(round(a * sr))
+            x = x[:total - i0]
+            if i0 > 0:   # 重なり（前の片の終わり 2*OVERLAP）を直線でつなぐ
+                n = min(int(2 * OVERLAP_SEC * sr), len(x))
+                ramp = np.linspace(0, 1, n, dtype="float32")[:, None]
+                acc[i0:i0 + n] *= 1 - ramp
+                x = x.copy()
+                x[:n] *= ramp
+            acc[i0:i0 + len(x)] += x
+        sf.write(str(out / f"{stem}.wav"), acc, sr, subtype="FLOAT")
     return out / "vocals.wav", out / "no_vocals.wav"
 
 
