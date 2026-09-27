@@ -225,6 +225,8 @@ class Stage:
             g = (c.get("gaze_end") or c.get("gaze") or {}) if which == "end" else (c.get("gaze") or {})
             g = g.get(who)
             if g is not None:
+                if isinstance(g, str) and g in self.lay["people"]:
+                    e["gaze_to"] = g
                 gb = self.face_of(g, who, pos)
                 gv = vec_of(gb)
                 gx, gz = dot(gv, right), dot(gv, d)
@@ -309,7 +311,9 @@ class Stage:
             if e["dist"] > 6.0 and c.get("frame") not in ("大引き", "引き"):
                 s += ", small in the background"
             g = e.get("gaze")
-            if g:
+            if e.get("gaze_to"):   # 相手の名前で書く（画面の外でも）
+                s += ", looking at " + en[e["gaze_to"]].split(" (")[0] + ("" if any(x["who"] == e["gaze_to"] for x in fr["people"]) else " (off screen, toward screen " + ("right" if g.startswith("画面右") else "left" if g.startswith("画面左") else "center") + ")")
+            elif g:
                 s += ", looking " + ("toward the camera" if g == "カメラの方" else "into the distance away from the camera" if g == "奥"
                                      else "toward screen " + ("right" if g.startswith("画面右") else "left"))
             parts.append(s)
