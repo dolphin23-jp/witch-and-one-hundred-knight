@@ -150,3 +150,24 @@ cel_012:
     white head, red eyes, copper horn pipes, pink scarf and black coat exactly as in the references; his hands are the same large mitten-like olive-green hands as in the references, not bigger. Transparent
     background: no scenery, no ground, no other characters, no text. Soft early-morning light. 2D TV anime style, clean line art, cel shading, rich but soft colors. No manga symbols.'
   output: episodes/A/scenes/A01b/stills/fix3/cels/A01b-012_arlecchino.png
+edits2:
+- cut: A01b-034
+  input: episodes/A/scenes/A01b/stills/fix3/A01b-034_composite.png
+  output: episodes/A/scenes/A01b/stills/fix3/A01b-034_gpt-image-2.5_edit02.png
+  prompt: 'Image 1 is a rough paste-up composite of one anime frame with FOUR characters. Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). The
+    finished frame must contain exactly these four characters, all fully visible where they are in image 1: (1) the Hundred Knight, small, at the left (reference image 2); (2) Metallica in the center, in
+    profile facing right, leaning back half a step, surprised (reference image 3); (3) Bisco to the right of Metallica, in profile facing left toward Metallica, red-faced and shouting, fists down, stamping
+    one foot (reference image 4) - Bisco must stay in the picture, she is the main character of this frame; (4) Arlecchino large at the right edge, seen from behind at an angle (reference image 5). Keep
+    exactly the camera angle and framing and every character''s position, size, pose and facing. Keep the background layout (the witch''s house on its round deck, the lamp posts, the dirt clearing with
+    red mushrooms and stumps, the glowing green swamp with dead trees, the boardwalk). Change the time to early morning: a pale, clear morning sky with soft low sunlight and a thin mist over the swamp;
+    the swamp still glows green; the lamps are unlit or faint. Relight the characters to match, add natural contact shadows on the ground, and blend the edges. Keep each character''s design, colors and
+    proportions identical to the reference images. No text, no manga symbols.'
+- cut: A01b-012
+  input: episodes/A/scenes/A01b/stills/fix3/A01b-012_composite.png
+  output: episodes/A/scenes/A01b/stills/fix3/A01b-012_gpt-image-2.5_edit01.png
+  prompt: 'Image 1 is a rough paste-up composite of one anime frame: a close-up of Arlecchino bending forward, leaning toward the left, whispering quietly to someone off screen left, both hands down (no
+    hand raised). Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). Keep exactly the camera angle and framing, his position, size, pose, facing
+    and expression. Keep the background layout behind him (the witch''s house on its round deck, the short wooden bridge with steps, the lamp posts, the glowing green swamp with dead trees, the boardwalk
+    on the right), slightly out of focus. Change the time to early morning: a pale, clear morning sky with soft low sunlight and a thin mist over the swamp; the swamp still glows green; the lamps are unlit
+    or faint. Relight him to match and blend the edges. Keep his design, colors and proportions identical to the reference images 2 and 3 (egg-shaped white head with a crack over one eye, red eyes, stitched
+    tooth pattern, copper horn pipes, pink scarf, black coat). Only Arlecchino in the frame. No text, no manga symbols.'
