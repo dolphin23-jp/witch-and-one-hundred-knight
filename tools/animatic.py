@@ -91,7 +91,7 @@ def motion(move, sec):
     return fit
 
 
-LINE = re.compile(r"^(L\d+)([ab]?)「(.*)」$")
+LINE = re.compile(r"^(L\d+)([ab]?)(?:（[^）]*）)?「(.*)」$")
 
 
 def silences(wav):
