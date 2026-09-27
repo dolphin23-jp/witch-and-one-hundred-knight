@@ -5,16 +5,16 @@ scene: A01b
 tc: 225.5
 sec: 8.1
 kind: A
-shot: 全身・メタリカ・アルレッキーノ・百騎兵・ビスコ。背景は枯れ木／エントランス・接写
-acting: 「ふん」でくるりと背を向け、大股で橋の端へ戻りながら宣言する。端で振り返る。アルレッキーノはビスコの隣へ戻る
+shot: 全身・メタリカ・アルレッキーノ・百騎兵・ビスコ。背景は枯れ木／用意画像 bg_01
+acting: 「ふん」でくるりと背を向け、大股で広場の中ほどへ戻りながら宣言する。端で振り返る。アルレッキーノはビスコの隣へ戻る
 dialogue:
 - L72「ふん……。珍品のありかは今すぐ探しだす！ワタシのダウジング・ペンデュラムにかかれば造作もないことよ。」
 sound: BGM①再開
 notes: null
 camera:
   pos:
-  - 11.0
-  - 8.2
+  - 13.0
+  - 11.2
   - 1.4
   look: m_back
   lens: 28
@@ -38,30 +38,32 @@ overlays: []
 fallback: null
 act:
   start: 目をむいたまま
-  end: 橋の端で振り返り、片手を上げる
+  end: 広場の中ほどで振り返り、片手を上げる
   sync: 「ふん」（0〜0.3秒）で背を向け、間（1.1秒）で歩き出し、「ダウジング・ペンデュラム」（5.7秒）で振り返る
 blocking:
   start: メ（中央・横顔（画面右向き）・目線 画面左）、ア（中央・斜め前（画面右向き））、百（中央・正面）、ビ（右・横顔（画面左向き））
   end: メ（中央・横顔（画面右向き）・目線 画面右）、百（右・斜め前（画面左向き））
-  background: 西の沼と大きな枯れ木〔枯れ木〕／玄関と屋敷の壁（近く）〔エントランス・接写〕
+  background: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
   panels:
   - 枯れ木
-  - エントランス・接写
+  - 用意画像 bg_01
   staging_en: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
     orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning on her heel with a huff, braids
     swinging, in the center of the frame, in profile, turned toward screen right, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over
     one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), holding the invitation, in the center of the
     frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing on the deck, on the right of the frame, facing
-    the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver
-    armored boots), standing on the deck, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing
-    in the water, then close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in the middle of the clearing, on the right
+    of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+    tail, silver armored boots), standing in the middle of the clearing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with huge
+    gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns,
+    a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   staging_en_end: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing at the foot of the bridge
-    again, turned back toward the others, one hand raised, in the center of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to
-    Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
-    brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with a huge
-    gnarled dead tree standing in the water, then the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp.'
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing in the middle of the
+    clearing again, turned back toward the others, one hand raised, in the center of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high
+    to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
+    brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with huge
+    gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns,
+    a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-048_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-048_end.png

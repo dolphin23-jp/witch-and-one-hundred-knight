@@ -5,7 +5,7 @@ scene: A01b
 tc: 19.5
 sec: 5.2
 kind: K
-shot: 大引き・人物なし。背景は要用意（沼の彼方のピラー・オブ・テンペランス）
+shot: 大引き・人物なし。背景は用意画像 bg_01／沼の水面
 acting: 朝靄がゆっくり流れる
 dialogue:
 - L32「それが魔力満ちたる沼を封じていたという歴然たる事実！」
@@ -13,28 +13,31 @@ sound: null
 notes: ピラーを画で初出させる
 camera:
   pos:
-  - 8.6
-  - 7.6
+  - 10.6
+  - 10.6
   - 1.6
   look: pillar
-  lens: 85
-  bearing: 79
-  move: ピラーへゆっくり寄る（push）
-background: swamp-pillar-far
+  lens: 50
+  bearing: 76
+  move: 沼の彼方へゆっくり寄る（push）
+background: witch-house-front
 state: {}
 image: null
 refs: []
 overlays: []
 fallback: null
 act:
-  start: 沼の彼方にピラーが霞んで立つ
+  start: メタリカが指す東の沼の彼方。枯れ木が地平線まで続く
   end: 同じ
   sync: —
 blocking:
   start: 人物なし
-  background: 沼の彼方のピラー・オブ・テンペランス〔要用意〕
+  background: 橋と玄関と屋敷の正面〔用意画像 bg_01〕／東の沼と遊歩道〔沼の水面〕
   panels:
-  - 要用意（沼の彼方のピラー・オブ・テンペランス）
-  staging_en: 'No people in frame. Behind: far across the glowing green swamp on the horizon, the Pillar of Temperance, a tall ancient stone pillar, in thin morning mist.'
+  - 用意画像 bg_01
+  - 沼の水面
+  staging_en: 'No people in frame. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+    green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides, then the glowing emerald-green swamp full of gnarled dead trees,
+    a long wooden boardwalk with lamp posts leading away over the water.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-005_start.png

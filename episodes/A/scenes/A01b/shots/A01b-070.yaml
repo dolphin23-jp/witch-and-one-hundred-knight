@@ -5,7 +5,7 @@ scene: A01b
 tc: 301.3
 sec: 4.4
 kind: K
-shot: 引き・百騎兵・ビスコ・アルレッキーノ。背景は右前斜め／エントランス・接写
+shot: 引き・百騎兵・ビスコ・アルレッキーノ。背景は枯れ木／用意画像 bg_01
 acting: ビスコがアルレッキーノの方へ顔を向けて小さく笑う。百騎兵もアルレッキーノを見上げる
 dialogue:
 - L91b「ワタクシ、初めてで少し緊張してしまいそうです。はい。」
@@ -13,12 +13,12 @@ sound: null
 notes: 初めてのチームの画
 camera:
   pos:
-  - 10.6
-  - 8.2
+  - 12.6
+  - 11.2
   - 1.5
   look:
+  - 10.3
   - 8.3
-  - 5.3
   lens: 35
   bearing: 322
   move: ゆっくり引く（pull）
@@ -42,26 +42,26 @@ act:
 blocking:
   start: 百（中央・斜め前（画面左向き）・目線 画面左・手前寄り）、ビ（中央・斜め前（画面左向き）・目線 画面左・手前寄り）、ア（右・斜め後ろ（画面左向き）・目線 画面左・奥寄り）
   end: 百（中央・斜め前（画面右向き）・目線 画面右・手前寄り）、ビ（中央・斜め前（画面右向き）・目線 画面右・手前寄り）、ア（右・斜め後ろ（画面左向き）・目線 画面左・奥寄り）
-  background: 屋敷の右前斜めと東の遊歩道〔右前斜め〕／玄関と屋敷の壁（近く）〔エントランス・接写〕
+  background: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
   panels:
-  - 右前斜め
-  - エントランス・接写
+  - 枯れ木
+  - 用意画像 bg_01
   staging_en: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
     on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), looking up at Arlecchino, on the left of the frame, in
     three-quarter view, turned toward screen left, looking toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
     gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), smiling softly, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left;
     Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted
     coat, olive-green arms, big black boots), fidgeting shyly, on the right of the frame, seen from behind at an angle, turned toward screen left, looking toward screen left. No other people. Behind: the
-    witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp, then close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both
-    sides, and the wooden deck.'
+    glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with
+    glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   staging_en_end: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
     plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), looking up at Arlecchino, on the left of the frame,
     in three-quarter view, turned toward screen right, looking toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform
     with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), smiling softly, in the center of the frame, in three-quarter view, turned toward screen right, looking toward screen
     right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black
     double-breasted coat, olive-green arms, big black boots), fidgeting shyly, on the right of the frame, seen from behind at an angle, turned toward screen left, looking toward screen left. No other people.
-    Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp, then close behind: the house''s wooden wall with the ornate arched front door, green lanterns
-    on both sides, and the wooden deck.'
+    Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone
+    roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-070_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-070_end.png

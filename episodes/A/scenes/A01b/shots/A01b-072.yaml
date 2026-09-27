@@ -5,7 +5,7 @@ scene: A01b
 tc: 309.8
 sec: 3.4
 kind: A
-shot: 全身・メタリカ。背景は枯れ木／右前斜め
+shot: 全身・メタリカ。背景は枯れ木／用意画像 bg_01
 acting: 帽子の中から振り子を取り出し、沼の方へ向き直りながら片腕で高く掲げる。振り子が朝日に光る
 dialogue:
 - L93「では、これよりダウジング術を開始する！！」
@@ -13,8 +13,8 @@ sound: BGM④最高潮
 notes: null
 camera:
   pos:
-  - 10.0
-  - 7.9
+  - 12.0
+  - 10.9
   - 0.2
   look: m_end
   lens: 35
@@ -37,19 +37,21 @@ act:
 blocking:
   start: メ（中央・横顔（画面右向き）・目線 画面右）
   end: メ（中央・正面・目線 画面右）
-  background: 西の沼と大きな枯れ木〔枯れ木〕／屋敷の右前斜めと東の遊歩道〔右前斜め〕
+  background: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
   panels:
   - 枯れ木
-  - 右前斜め
+  - 用意画像 bg_01
   staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
     in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), pulling a dowsing pendulum from her hat, in the center
     of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Low angle looking up; the morning sky fills the upper part of the frame. Behind: the glowing emerald-green
-    swamp with a huge gnarled dead tree standing in the water, then the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp.'
+    swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle
+    patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
     ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), holding a dowsing pendulum high above her head
     with one arm, the pendulum glinting in the morning sun, in the center of the frame, facing the camera, looking toward screen right. No other people. Low angle looking up; the morning sky fills the upper
-    part of the frame. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing in the water, then the witch''s house seen from its front right, with the wooden boardwalk curving away
-    over the swamp.'
+    part of the frame. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked
+    orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts
+    on both sides.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-072_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-072_end.png
