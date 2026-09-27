@@ -1850,74 +1850,89 @@ cuts:
     note: ギャグON。集中線・青い縦線は合成（デフォルメしない D-042）
   A01b-048:
     cam:
-    - 13.0
-    - 11.2
+    - 12.9
+    - 12.7
     - 1.4
     lens: 28
-    bearing: 302
+    bearing: 320
     frame: 全身
     start:
       people:
-      - who: metallica
-        s: -0.0
-        dist: 4.0
-        side: 中央
-        body: 横顔（画面右向き）
-        gaze: 画面左
-      - who: arlecchino
-        s: 0.01
-        dist: 2.83
-        side: 中央
-        body: 斜め前（画面右向き）
       - who: hundred-knight
-        s: 0.06
-        dist: 5.18
+        s: -0.09
+        dist: 6.07
         side: 中央
         body: 正面
+      - who: metallica
+        s: -0.06
+        dist: 4.88
+        side: 中央
+        body: 横顔（画面右向き）
+        gaze: 画面左・手前寄り
+      - who: arlecchino
+        s: 0.08
+        dist: 3.78
+        side: 中央
+        body: 横顔（画面右向き）
       - who: bisco
-        s: 0.46
-        dist: 3.87
-        side: 右
-        body: 横顔（画面左向き）
+        s: 0.29
+        dist: 5.11
+        side: 中央
+        body: 斜め前（画面左向き）
       bg: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
       props:
+      - 玄関の扉
       - 橋の左の街灯
+      - 橋の右の街灯
       - 西の大きな枯れ木
-      staging: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning on her heel with a
-        huff, braids swinging, in the center of the frame, in profile, turned toward screen right, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red
-        eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), holding the invitation,
-        in the center of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece
-        and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing at the foot
-        of the bridge, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing at the foot of the bridge, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the
-        glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs
-        with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early
-        morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
-        is a night scene; keep its layout and details but render it in morning light.)'
+      staging: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing at the foot of the bridge, in the
+        center of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip,
+        very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning on her heel with
+        a huff, braids swinging, in the center of the frame, in profile, turned toward screen right, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with
+        red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), holding the invitation,
+        in the center of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
+        gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing at the foot of the bridge, on the right of the frame, in three-quarter view, turned toward screen left. No other
+        people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange
+        shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts
+        on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background
+        reference image is a night scene; keep its layout and details but render it in morning light.)'
     end:
       people:
       - who: metallica
-        s: 0.0
-        dist: 3.04
-        side: 中央
-        body: 横顔（画面右向き）
+        s: -0.42
+        dist: 3.4
+        side: 左
+        body: 斜め後ろ（画面右向き）
         gaze_to: bisco
-        gaze: 画面右
+        gaze: 画面右・奥寄り
       - who: hundred-knight
-        s: 0.71
-        dist: 4.72
-        side: 右
+        s: -0.09
+        dist: 6.07
+        side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+      - who: bisco
+        s: 0.29
+        dist: 5.11
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: arlecchino
+        s: 0.52
+        dist: 4.45
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing in the middle of
-        the clearing again, turned back toward the others, one hand raised, in the center of the frame, in profile, turned toward screen right, looking at Bisco (off screen, toward screen right); the Hundred
-        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, facing the camera. No other people. Behind: the glowing emerald-green swamp
-        with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle
-        patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning
-        sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout
-        and details but render it in morning light.)'
+        the clearing again, turned back toward the others, one hand raised, on the left of the frame, seen from behind at an angle, turned toward screen right, looking at Bisco; the Hundred Knight (small,
+        about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with
+        black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair
+        ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in
+        three-quarter view, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people.
+        Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled
+        cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both
+        sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference
+        image is a night scene; keep its layout and details but render it in morning light.)'
     move:
       metallica:
         to: m_end
@@ -2560,98 +2575,99 @@ cuts:
     note: 心の声。口は動かさない
   A01b-067:
     cam:
-    - 13.4
-    - 10.2
+    - 12.9
+    - 12.6
     - 1.3
     lens: 28
-    bearing: 283
+    bearing: 320
     frame: 全身
     start:
       people:
       - who: metallica
-        s: -0.6
-        dist: 3.2
+        s: -0.46
+        dist: 3.33
         side: 左
         body: 正面
         gaze: 画面右・手前寄り
       - who: hundred-knight
-        s: 0.25
-        dist: 5.01
+        s: -0.11
+        dist: 6.0
+        side: 中央
+        body: 正面
+        gaze_to: metallica
+        gaze: カメラの方
+      - who: bisco
+        s: 0.27
+        dist: 5.03
         side: 中央
         body: 斜め前（画面左向き）
         gaze_to: metallica
         gaze: 画面左・手前寄り
-      - who: bisco
-        s: 0.56
-        dist: 3.47
-        side: 右
-        body: 斜め前（画面左向き）
-        gaze_to: metallica
-        gaze: 画面左
       - who: arlecchino
-        s: 0.78
-        dist: 2.61
+        s: 0.51
+        dist: 4.37
         side: 右
-        body: 背中
+        body: 斜め後ろ（画面左向き）
         gaze_to: metallica
-        gaze: 画面左
+        gaze: 画面左・手前寄り
       bg: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
       props:
+      - 玄関の扉
       - 橋の左の街灯
+      - 橋の右の街灯
       - 西の大きな枯れ木
-      - 西のふちの赤いきのこ
       staging: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), in the middle of the clearing,
         looking out over the swamp, on the left of the frame, facing the camera, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with
         a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), small,
-        standing and looking up at Metallica, on the right of the frame, in three-quarter view, turned toward screen left, looking at Metallica; Bisco (short black bob hair with two gold hair ornaments,
-        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing at the foot of the bridge, on the right
-        of the frame, in three-quarter view, turned toward screen left, looking at Metallica; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and
-        a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing at the foot of the bridge, at the far right
-        of the frame, with the back to the camera, looking at Metallica. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house
-        on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short
-        wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the
-        swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+        standing and looking up at Metallica, in the center of the frame, facing the camera, looking at Metallica; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and
+        chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing at the foot of the bridge, on the right of the frame, in three-quarter
+        view, turned toward screen left, looking at Metallica; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
+        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing at the foot of the bridge, on the right of the frame, seen from behind at an angle,
+        turned toward screen left, looking at Metallica. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round
+        wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge
+        with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows
+        green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
     end:
       people:
       - who: metallica
-        s: -0.6
-        dist: 3.2
+        s: -0.46
+        dist: 3.33
         side: 左
-        body: 横顔（画面右向き）
+        body: 斜め後ろ（画面右向き）
         gaze: 画面右・奥寄り
       - who: hundred-knight
-        s: 0.25
-        dist: 5.01
+        s: -0.11
+        dist: 6.0
+        side: 中央
+        body: 正面
+        gaze_to: metallica
+        gaze: カメラの方
+      - who: bisco
+        s: 0.27
+        dist: 5.03
         side: 中央
         body: 斜め前（画面左向き）
         gaze_to: metallica
         gaze: 画面左・手前寄り
-      - who: bisco
-        s: 0.56
-        dist: 3.47
-        side: 右
-        body: 斜め前（画面左向き）
-        gaze_to: metallica
-        gaze: 画面左
       - who: arlecchino
-        s: 0.78
-        dist: 2.61
+        s: 0.51
+        dist: 4.37
         side: 右
-        body: 背中
+        body: 斜め後ろ（画面左向き）
         gaze_to: metallica
-        gaze: 画面左
+        gaze: 画面左・手前寄り
       staging: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), spun around, arm thrust out
-        pointing straight at the Hundred Knight, on the left of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica:
-        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown
-        shoes; it carries no sword here), small, standing at attention, looking up at Metallica, on the right of the frame, in three-quarter view, turned toward screen left, looking at Metallica; Bisco
-        (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
-        standing at the foot of the bridge, on the right of the frame, in three-quarter view, turned toward screen left, looking at Metallica; Arlecchino (a bulky servant as tall as a man: white egg-shaped
-        head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing
-        at the foot of the bridge, at the far right of the frame, with the back to the camera, looking at Metallica. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees
-        standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green
-        lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
+        pointing straight at the Hundred Knight, on the left of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high
+        to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
+        shorts, brown shoes; it carries no sword here), small, standing at attention, looking up at Metallica, in the center of the frame, facing the camera, looking at Metallica; Bisco (short black bob
+        hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing at the
+        foot of the bridge, on the right of the frame, in three-quarter view, turned toward screen left, looking at Metallica; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red
+        eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing at the foot
+        of the bridge, on the right of the frame, seen from behind at an angle, turned toward screen left, looking at Metallica. No other people. Behind: the glowing emerald-green swamp with huge gnarled
+        dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+        green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
         from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render
         it in morning light.)'
     move:
