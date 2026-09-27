@@ -18,7 +18,11 @@
 
 - （提案 2026-09-27）カメラ位置の設計（演出ノート P-03 の適用）。A01 居間にカメラ位置を6つ決め（A 奥・B 玄関・C 階段・D 本棚・E 俯瞰・F 窓の外、図は episodes/A/scenes/A01/gen/camera_map.png）、会話の切り返しで背景の壁を変える。B の玄関側の壁（アーチ形の両開きの扉、薬瓶と燭台の棚、帽子掛け）は原作の画面にないので足す。計画は gen/camera_plan.yaml（背景の基準4枚＋作り直し33カット、37クレジット）。ユーザー承認済み（玄関側の壁の追加も OK、2026-09-27）。
 
+- （提案 2026-09-27）組み立ての実装（マイルストーン3）。A01 を HyperFrames と Remotion の両方で組み、比べた（animatic/assembly-compare.md）。どちらも v08 と同じ画になり、漫符を別の層で重ねられた。違いは、Remotion が書き出しが速い（6分13秒と7分37秒）・フレームごとに式で何でも動かせる・成熟している、HyperFrames は声の時刻が正確（Remotion は約40ms遅れる）・Apache-2.0・HeyGen に上げればブラウザで確認できる。Claude の推奨は Remotion（漫符や字幕の動きを自由に書け、今後の動画カットや口の動きにも対応しやすい。声の遅れは補正する）。ユーザーの判断を待つ。
+
 ## ログ
+
+- 2026-09-27: 組み立ての比較。共通の入力を作る tools/scene_export.py、Remotion（animatic/remotion/）と HyperFrames（animatic/hyperframes/）の組み立てを追加し、A01 を両方で書き出した（A01_v08_remotion.mp4、A01_v08_hyperframes.mp4、並べた A01_assembly_compare.mp4）。漫符の試験として overlays/anger_mark_01.svg と episodes/A/scenes/A01/overlays.yaml（023 に怒りマーク）を追加。結果は animatic/assembly-compare.md。生成の費用なし。
 
 - 2026-09-27: hold 3カットを作り直し（gen/regen_holds.yaml、3クレジット、残り55.88、ユーザー承認）。006 は人物を百騎兵1人にして手前の髪と肩を「ぼやけた前景」と書き、メタリカの設定画を外した。007a は手前の頭なめをやめた。023 は「背中だけが見える」と書き、丸窓のすぐ前に立たせた。3カットとも pass（023 は背中側のひもがない、ソファが1人掛けに見えるのが小さな違い）。032a・038 は _03 を顔の寄りに切り抜き（*_crop.png、費用なし、ユーザー承認）。A01_v08_holds.mp4。
 
