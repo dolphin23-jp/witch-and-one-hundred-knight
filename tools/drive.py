@@ -22,6 +22,8 @@ import pathlib
 import subprocess
 import sys
 import tempfile
+import time
+import unicodedata
 
 import yaml
 
@@ -41,13 +43,24 @@ def call(action, **params):
     if not key:
         sys.exit("DRIVE_BRIDGE_KEY がありません。クラウド環境の設定で環境変数に入れてください（setup/drive_bridge.md）。")
     body = json.dumps(dict(params, action=action, key=key)).encode()
-    # 鍵をコマンドラインに出さないよう、本文は標準入力で渡す
-    r = subprocess.run(["curl", "-sS", "-L", "--max-time", "600", "-H", "Content-Type: application/json",
-                        "--data-binary", "@-", bridge_url()], input=body, capture_output=True, check=True)
-    try:
-        out = json.loads(r.stdout)
-    except json.JSONDecodeError:
-        sys.exit(f"受け口の返事が読めません: {r.stdout[:300]!r}")
+    # 鍵をコマンドラインに出さないよう、本文は標準入力で渡す。
+    # Google がときどきエラーページ（HTML）を返すので、一時的な失敗は間をあけて数回やり直す。
+    for wait in (2, 4, 8, 16, None):
+        r = subprocess.run(["curl", "-sS", "-L", "--max-time", "600", "-H", "Content-Type: application/json",
+                            "--data-binary", "@-", bridge_url()], input=body, capture_output=True)
+        try:
+            out = json.loads(r.stdout) if r.returncode == 0 else None
+        except json.JSONDecodeError:
+            out = None
+        # 本文が届かなかったとき、受け口は初期化の返事（message だけ）を返す。これも一時的な失敗として扱う
+        if isinstance(out, dict) and set(out) == {"ok", "message"}:
+            out = None
+        if out is not None:
+            break
+        if wait is None:
+            sys.exit(f"受け口の返事が読めません（{action}）: {(r.stdout or r.stderr)[:300]!r}")
+        print(f"  受け口の返事が読めません（{action}）。{wait}秒後にやり直します。", file=sys.stderr, flush=True)
+        time.sleep(wait)
     if not out.get("ok"):
         sys.exit(f"受け口のエラー（{action}）: {out.get('error')}")
     return out
@@ -59,13 +72,18 @@ def children(folder_id=None):
     return call("list", **({"folder": folder_id} if folder_id else {}))["files"]
 
 
+def nfc(s):
+    return unicodedata.normalize("NFC", s)
+
+
 def resolve(path):
-    """道筋からファイル（またはフォルダ）を探す。見つからなければ None。"""
+    """道筋からファイル（またはフォルダ）を探す。見つからなければ None。
+    Drive の名前は濁点が分かれた形（NFD）のことがあるので、NFC にそろえて比べる。"""
     cur = None
     parts = [p for p in str(path).split("/") if p]
     item = None
     for i, name in enumerate(parts):
-        found = [f for f in children(cur) if f["name"] == name]
+        found = [f for f in children(cur) if nfc(f["name"]) == nfc(name)]
         if not found:
             return None
         item = found[0]
