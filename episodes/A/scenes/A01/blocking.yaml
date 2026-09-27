@@ -32,7 +32,7 @@ beats:
   jab:      {bisco: bisco, hundred-knight: hk, arlecchino: a_south, metallica: m_jab}
   think:    {bisco: bisco, hundred-knight: hk, arlecchino: a_south, metallica: m_mid}
   sofa:     {bisco: bisco, hundred-knight: hk, arlecchino: a_south, metallica: m_arm}
-  lounge:   {bisco: bisco, hundred-knight: hk, arlecchino: a_south, metallica: m_seat}
+  lounge:   {bisco: bisco, hundred-knight: hk, arlecchino: a_east, metallica: m_seat}   # アルレッキーノは拭き終えてテーブルの右へ戻る
 
 # 会話の軸。同じ区間ではカメラを線の同じ側に置く（side は、その側にある点）
 axes:
@@ -56,7 +56,7 @@ cuts:
              gaze: {metallica: hk, bisco: metallica, arlecchino: metallica, hundred-knight: metallica}, note: 右へパンで追う。テーブルの3人も映す}
   A01-005c: {beat: arrive, cam: [3.05, 2.45, 0.8], look: metallica, lens: 24, frame: 寄り, only: [metallica],
              gaze: {metallica: hk}, note: 百騎兵の目の高さ（百騎兵の目の位置にカメラ）。招待状がレンズの前}
-  A01-006: {beat: arrive, cam: [2.2, 3.35, 1.35], look: hundred-knight, lens: 50, frame: 寄り,
+  A01-006: {beat: arrive, cam: [2.2, 3.35, 1.35], look: hundred-knight, lens: 50, frame: 寄り, only: [hundred-knight, metallica],
             gaze: {hundred-knight: metallica}, note: メタリカの肩なめ}
   A01-007: {beat: arrive, cam: [3.5, 3.3, 1.1], look: metallica, lens: 85, frame: 寄り, gaze: {metallica: hk}}
   A01-007a: {beat: arrive, cam: [3.14, 2.17, 0.75], look: metallica, lens: 35, frame: 膝上, gaze: {metallica: hk}, note: 百騎兵の頭なめ・煽り}
@@ -114,6 +114,6 @@ cuts:
              note: ソファに倒れ込み、ブーツをテーブルの端へ。隣の人形が弾む}
   A01-038b: {beat: lounge, cam: [3.9, 1.45, 1.2], look: metallica, lens: 85, frame: 寄り, gaze: {metallica: bisco}}
   A01-039: {beat: lounge, cam: [3.45, 1.3, 1.2], look: bisco, lens: 85, frame: 胸上, gaze: {bisco: metallica}}
-  A01-040: {beat: lounge, cam: [3.4, 3.7, 1.3], look: metallica, lens: 35, frame: 膝上, gaze: {metallica: bisco}}
+  A01-040: {beat: lounge, pose: {metallica: standing}, cam: [3.4, 3.7, 1.3], look: metallica, lens: 35, frame: 膝上, gaze: {metallica: bisco}}
   A01-040a: {beat: lounge, pos: {metallica: m_door}, cam: [4.0, 1.4, 1.5], look: [6.8, 6.9], lens: 24, frame: 引き, gaze: {metallica: [6.9, 7.0]},
              note: 背中から。両手で扉を開け放つ}

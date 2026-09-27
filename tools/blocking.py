@@ -174,13 +174,29 @@ class Scene:
             s = "テーブルの" + (ew + ns or "脇")
         return s + (f"・{hw}" if hw else "")
 
+    POSE = {"bisco": "seated on the red sofa", "hk": "seated on a low stool at the left side of the round table",
+            "m_arm": "sitting on the left armrest of the red sofa", "m_seat": "sitting back on the left part of the red sofa",
+            "m_stairs": "on the stairs"}
+
+    def pose(self, c, who):
+        """その画での姿勢（座っている・立っている）を場所の名前から決める。カットの pose で上書きできる。"""
+        if who in c.get("pose", {}):
+            return c["pose"][who]
+        raw = c.get("pos", {}).get(who, self.bk["beats"][c["beat"]].get(who))
+        if isinstance(raw, str) and raw in self.POSE:
+            return self.POSE[raw]
+        return "standing"
+
     def staging(self, cut, c, people, bg, fg_table=False):
         en = {k: v["en"] for k, v in self.lay["people"].items()}
-        side_en = {"左": "on the left of the frame", "右": "on the right of the frame", "中央": "in the center of the frame"}
         gaze_en = {"カメラの方": "looking toward the camera", "奥（カメラに背を向ける）": "facing away from the camera"}
+
+        def where(s):
+            return ("at the far left" if s < -0.6 else "on the left" if s < -0.2 else "in the center" if s <= 0.2
+                    else "on the right" if s <= 0.6 else "at the far right") + " of the frame"
         parts = []
         for e in people:
-            s = f"{en[e['who']]} {side_en[e['side']]}"
+            s = f"{en[e['who']]}, {self.pose(c, e['who'])}, {where(e['s'])}"
             if e["dist"] > 4.0 and c.get("frame") not in ("引き",):
                 s += ", small in the background"
             g = e.get("gaze")
@@ -197,7 +213,7 @@ class Scene:
         txt = ""
         if parts:
             n = len(parts)
-            txt += "In frame (exactly " + ("one person" if n == 1 else f"{n} people") + "): " + "; ".join(parts) + ". No other people. "
+            txt += ("In frame (exactly one person): " if n == 1 else f"In frame (exactly {n} people, from left to right): ") + "; ".join(parts) + ". No other people. "
         elif c.get("only") == []:
             txt += "No people in frame. "
         if fg_table:
