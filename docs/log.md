@@ -18,9 +18,11 @@
 
 - （提案 2026-09-27）カメラ位置の設計（演出ノート P-03 の適用）。A01 居間にカメラ位置を6つ決め（A 奥・B 玄関・C 階段・D 本棚・E 俯瞰・F 窓の外、図は episodes/A/scenes/A01/gen/camera_map.png）、会話の切り返しで背景の壁を変える。B の玄関側の壁（アーチ形の両開きの扉、薬瓶と燭台の棚、帽子掛け）は原作の画面にないので足す。計画は gen/camera_plan.yaml（背景の基準4枚＋作り直し33カット、37クレジット）。ユーザー承認済み（玄関側の壁の追加も OK、2026-09-27）。
 
-- （提案 2026-09-27）組み立ての実装（マイルストーン3）。A01 を HyperFrames と Remotion の両方で組み、比べた（animatic/assembly-compare.md）。どちらも v08 と同じ画になり、漫符を別の層で重ねられた。違いは、Remotion が書き出しが速い（6分13秒と7分37秒）・フレームごとに式で何でも動かせる・成熟している、HyperFrames は声の時刻が正確（Remotion は約40ms遅れる）・Apache-2.0・HeyGen に上げればブラウザで確認できる。Claude の推奨は Remotion（漫符や字幕の動きを自由に書け、今後の動画カットや口の動きにも対応しやすい。声の遅れは補正する）。ユーザーの判断を待つ。
+- （提案 2026-09-27）組み立ての実装（マイルストーン3）。A01 を HyperFrames と Remotion の両方で組み、比べた（animatic/assembly-compare.md）。どちらも v08 と同じ画になり、漫符を別の層で重ねられた。違いは、Remotion が書き出しが速い（6分13秒と7分37秒）・フレームごとに式で何でも動かせる・成熟している、HyperFrames は声の時刻が正確（Remotion は約40ms遅れる）・Apache-2.0・HeyGen に上げればブラウザで確認できる。Claude の推奨は Remotion。→ ユーザーが Remotion に決定。BGM は音源分離でできた残りをそのまま使い、足りなければループ（ユーザー指示）。Living Spec に D-050 として反映（v0.44）。
 
 ## ログ
+
+- 2026-09-27: 組み立てを Remotion に決定（D-050、Living Spec v0.44。制作パイプラインのタブも更新）。BGM は原作音源パート16 の 14:08 から 237秒を Demucs htdemucs_ft で分け直し、声以外（効果音も含む）を audio/A01/original/A01_bgm.ogg に保存（分離16分）。A01b の分離の残りも audio/A01b/original/A01b_bgm.ogg に保存。voice.yaml の bgm に書き、scene_export.py と Remotion で敷く（シーンより短ければループ、20秒の音で確認）。Remotion の声の約1フレームの遅れは、MP4 に直接 AAC を入れることが原因だったので、画と音を別に書き出して ffmpeg でまとめる形にした（ずれ 0ms を確認）。A01_v09_remotion_bgm.mp4（201.3秒、52MB、書き出し7分20秒）。
 
 - 2026-09-27: 組み立ての比較。共通の入力を作る tools/scene_export.py、Remotion（animatic/remotion/）と HyperFrames（animatic/hyperframes/）の組み立てを追加し、A01 を両方で書き出した（A01_v08_remotion.mp4、A01_v08_hyperframes.mp4、並べた A01_assembly_compare.mp4）。漫符の試験として overlays/anger_mark_01.svg と episodes/A/scenes/A01/overlays.yaml（023 に怒りマーク）を追加。結果は animatic/assembly-compare.md。生成の費用なし。
 

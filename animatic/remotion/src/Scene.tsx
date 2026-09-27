@@ -8,8 +8,9 @@ export type Cut = {id: string; kind: string; start: number; sec: number; label: 
 export type Voice = {src: string; at: number; sec: number};
 export type Sub = {start: number; end: number; text: string};
 export type Overlay = {cut: string; src: string; x: number; y: number; size: number; start: number; sec: number; anim?: string};
+export type Bgm = {src: string; from: number; volume: number; sec: number; loop: boolean};
 export type SceneData = {scene: string; width: number; height: number; fps: number; total: number;
-  cuts: Cut[]; voices: Voice[]; subs: Sub[]; overlays: Overlay[]};
+  cuts: Cut[]; voices: Voice[]; subs: Sub[]; overlays: Overlay[]; bgm?: Bgm | null};
 
 const FONT = '"Noto Serif CJK JP", "Noto Serif CJK", serif';
 const f = (sec: number, fps: number) => Math.round(sec * fps);
@@ -83,6 +84,10 @@ export const Scene: React.FC<SceneData> = (d) => {
           <Audio src={staticFile(v.src)} />
         </Sequence>
       ))}
+      {d.bgm ? (
+        // BGM（D-045）: 原作音源から声を分けた残りをそのまま敷く。シーンより短ければループ
+        <Audio src={staticFile(d.bgm.src)} volume={d.bgm.volume} loop={d.bgm.loop} startFrom={f(d.bgm.from, fps)} name="BGM" />
+      ) : null}
       <Timecode />
     </AbsoluteFill>
   );

@@ -78,3 +78,10 @@ files:
     content: 95〜120秒（023 の怒りマークを含む）を Remotion（左）と HyperFrames（右）で並べた比較。音は HyperFrames
     built_with: ffmpeg（hstack）
     drive: null   # チャットでユーザーに送付
+  - name: A01_v09_remotion_bgm.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: Remotion で組んだ最初の正式版（D-050）。原作音源から声を分けた残りを BGM としてそのまま敷いた。023 に怒りマーク（漫符の試験）
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v09_remotion_bgm
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く

@@ -15,8 +15,7 @@
 - 字幕: 台詞を画面下に出す（確認用）。
 - BGM: --bgm を渡すと、声の下に小さく敷く。music: off のカットは BGM を下げる。
 
-HyperFrames か Remotion かは、静止画と漫符がそろった段階で試して決める（制作パイプライン）。
-それまでの尺と間の確認用。
+組み立ては Remotion に決まった（D-050、animatic/remotion/render.sh）。この ffmpeg の組み立ては v08 までの記録として残す。
 """
 import argparse
 import pathlib
