@@ -22,6 +22,8 @@
 
 ## ログ
 
+- 2026-09-27: Higgsfield を Plus プランに（ユーザー、残高1200）。段階2として A01 の見せ場9カットの動画化を承認済みで開始（gen/video_a.yaml、Wan 3.0・720p・音なし、1秒1.75クレジット）。最初のフレーム指定の4本を生成（14クレジット）: 005a・005c・016 は pass、005b は存在しない人物（仮面で紺のコート）が右端から入って hold。最後のフレームだけの5本（024・025・038a・040・040a）は Wan 3.0 が受け付けず（end_image requires start_image、費用なし）。最初のフレームの静止画を作ってつなぐ計画を gen/video_a2.yaml に（承認待ち）。Remotion をショットファイルの video に対応（video_fit: speed で最大1.6倍に速めてカットに合わせる）。A01_v10_video3.mp4（動画3カット入り）。ユーザーから: 屋敷の中の図は崩れやすいので、後で正式な参照画像を用意する予定。
+
 - 2026-09-27: 組み立てを Remotion に決定（D-050、Living Spec v0.44。制作パイプラインのタブも更新）。BGM は原作音源パート16 の 14:08 から 237秒を Demucs htdemucs_ft で分け直し、声以外（効果音も含む）を audio/A01/original/A01_bgm.ogg に保存（分離16分）。A01b の分離の残りも audio/A01b/original/A01b_bgm.ogg に保存。voice.yaml の bgm に書き、scene_export.py と Remotion で敷く（シーンより短ければループ、20秒の音で確認）。Remotion の声の約1フレームの遅れは、MP4 に直接 AAC を入れることが原因だったので、画と音を別に書き出して ffmpeg でまとめる形にした（ずれ 0ms を確認）。A01_v09_remotion_bgm.mp4（201.3秒、52MB、書き出し7分20秒）。
 
 - 2026-09-27: 組み立ての比較。共通の入力を作る tools/scene_export.py、Remotion（animatic/remotion/）と HyperFrames（animatic/hyperframes/）の組み立てを追加し、A01 を両方で書き出した（A01_v08_remotion.mp4、A01_v08_hyperframes.mp4、並べた A01_assembly_compare.mp4）。漫符の試験として overlays/anger_mark_01.svg と episodes/A/scenes/A01/overlays.yaml（023 に怒りマーク）を追加。結果は animatic/assembly-compare.md。生成の費用なし。
