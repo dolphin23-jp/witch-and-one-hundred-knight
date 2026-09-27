@@ -1,22 +1,44 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-057
 scene: A01b
 tc: 258.4
-sec: 5.2   # 台詞の実測
+sec: 5.2
 kind: K
-shot: "膝上・メタリカ"
-acting: "沼の方を向いたまま、ビスコを見ない"
+shot: 膝上・メタリカ
+acting: 沼の方へ体を向ける。ビスコを見ない
 dialogue:
-- "L81「まあ、いいだろう。犬コロにとっても無関係な話ではないからな。」"
+- L81「まあ、いいだろう。犬コロにとっても無関係な話ではないからな。」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 10.4
+  - 4.6
+  - 1.4
+  look: m_edge
+  lens: 50
+  bearing: 325
+  move: 止め
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: なし
 image: null
 refs:
 - metallica
 overlays: []
 fallback: null
+act:
+  start: そっぽを向いている
+  end: 沼を見ている
+  sync: 「まあ、いいだろう」の後の間（0.9秒）で向ききる
+blocking:
+  start: メ（中央・横顔（画面右向き）・目線 画面右・奥寄り）
+  end: メ（中央・斜め後ろ（画面右向き）・目線 画面右・奥寄り）
+  background: 眼下の沼に建つ魔女邸と木の遊歩道
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-057_start.png
+  - episodes/A/scenes/A01b/gen/sketch/A01b-057_end.png

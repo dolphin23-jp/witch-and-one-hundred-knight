@@ -1,17 +1,25 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-014
 scene: A01b
 tc: 63.9
-sec: 5.9   # 台詞の実測
+sec: 5.9
 kind: K
-shot: "胸上・ビスコ"
-acting: "腕を組む"
+shot: 胸上・ビスコ
+acting: 「しかし」で腕を組み、首をかしげて問う
 dialogue:
-- "L41「しかし、わざわざ提案なんてしなくても、沼ぐらい魔力で広げられそうだが？」"
+- L41「しかし、わざわざ提案なんてしなくても、沼ぐらい魔力で広げられそうだが？」
 sound: null
 notes: null
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+camera:
+  pos:
+  - 9.1
+  - 4.4
+  - 1.4
+  look: bisco
+  lens: 50
+  bearing: 243
+  move: 止め
 background: swamp-hill
 state:
   bisco: {}
@@ -20,3 +28,14 @@ refs:
 - bisco
 overlays: []
 fallback: null
+act:
+  start: 両腕を下ろしている
+  end: 腕を組んだまま
+  sync: 「しかし」の後の間（0.65秒）で腕を組む
+blocking:
+  start: ビ（中央・斜め前（画面右向き）・目線 画面右・手前寄り）
+  end: null
+  background: ねじれた木の暗い森
+  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), arms folded, one eyebrow raised, in the center of the frame, in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-014_start.png

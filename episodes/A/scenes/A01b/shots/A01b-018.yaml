@@ -1,22 +1,34 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-018
 scene: A01b
 tc: 90.4
-sec: 6.0   # 台詞の実測
+sec: 6.0
 kind: K
-shot: "引き・後ろ姿。沼の縁に一人"
-acting: "三人との距離が空いた構図"
+shot: 引き・後ろ姿。沼の縁に一人
+acting: 誰も動かない。風に草が揺れる
 dialogue:
-- "L45「だから、百騎兵が来るまで、ワタシは外に出られなかったんだよ。わかったか？」"
-sound: "BGM②OUT"
-notes: "「外に出られなかった」を距離で見せる"
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+- L45「だから、百騎兵が来るまで、ワタシは外に出られなかったんだよ。わかったか？」
+sound: BGM②OUT
+notes: 「外に出られなかった」を距離で見せる
+camera:
+  pos:
+  - 6.1
+  - 10.0
+  - 1.2
+  look:
+  - 5.8
+  - 1.3
+  lens: 28
+  bearing: 358
+  move: 三人の背中の間から、ゆっくり引く（pull）
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: 招待状（右手）
   bisco: {}
-  arlecchino: {}
+  arlecchino:
+    holds: なし
   hundred-knight: {}
 image: null
 refs:
@@ -26,3 +38,16 @@ refs:
 - hundred-knight
 overlays: []
 fallback: null
+act:
+  start: 手前の左に百騎兵、右にビスコとアルレッキーノの背中。その間の奥、崖の縁に一人のメタリカ
+  end: 同じ
+  sync: 「外に出られなかった」（3.5秒）でカメラが止まる
+blocking:
+  start: 百（左・背中）、メ（中央・背中・目線 奥）、ビ（中央・背中）、ア（右・横顔（画面左向き））
+  end: null
+  background: 眼下の沼に建つ魔女邸と木の遊歩道／一面の翠の沼と沼に立つ枯れ木／沼の岸と枯れ木の林、朝日
+  staging_en: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), seen from behind, on the left of the frame, with the back to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), alone at the cliff edge, seen from behind, small in the distance, in the center of the frame, with the back to the camera, looking into the distance away from the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor
+    over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), seen from behind, on the right of the frame, with the back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), seen from behind, on the right of the frame, in profile, turned toward screen left. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts, then a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist, then the swamp shore lined with twisted dead trees, the low morning sun rising behind them.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-018_start.png
+  axis_free: 三人の背中越しにメタリカの背中（全員が沼の方を向いた画）

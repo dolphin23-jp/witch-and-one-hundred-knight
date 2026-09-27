@@ -1,22 +1,45 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表 A01b から（2026-09-27）
+# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-001
 scene: A01b
 tc: 0.0
-sec: 3.8   # 台詞の実測
-kind: K
-shot: "大引き・高台。手前にメタリカの背中、翠の沼"
-acting: "両腕を広げる（A01-040の窓を開く動作の続き）"
+sec: 3.8
+kind: A
+shot: 大引き・高台。手前にメタリカの背中、翠の沼
+acting: 「見よ！」で両腕を大きく左右へ広げる。長い三つ編みが風に揺れる
 dialogue:
-- "L28「見よ！この美しく素晴らしい沼を！」"
-sound: "BGM②IN（L28の頭）"
-notes: "沼は美しく、少し不気味に"
-camera: null   # A01b のカメラ位置は未設計（演出ノート P-03・P-04）
+- L28「見よ！この美しく素晴らしい沼を！」
+sound: BGM②IN（L28の頭）
+notes: 沼は美しく、少し不気味に
+camera:
+  pos:
+  - 8.4
+  - 4.2
+  - 1.3
+  look:
+  - 8.0
+  - -8.0
+  lens: 24
+  bearing: 358
+  move: 背中から、ゆっくり押し込む（push）
 background: swamp-hill
 state:
-  metallica: {}
+  metallica:
+    holds: 招待状（右手）
 image: null
 refs:
 - metallica
 overlays: []
 fallback: null
+act:
+  start: 両腕を下ろして崖の縁に立つ背中（A01-040a の扉を開け放った姿勢を受ける）
+  end: 両腕を広げきって止まる
+  sync: 「見よ」の頭（0.1秒）で腕を上げはじめ、「沼を！」（3.2秒）で広げきる
+blocking:
+  start: メ（中央・背中）
+  end: null
+  background: 眼下の沼に建つ魔女邸と木の遊歩道／一面の翠の沼と沼に立つ枯れ木／沼の岸と枯れ木の林、朝日
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind, both arms flung wide open toward the swamp, the invitation letter in her right hand, in the center of the frame, with the back to the camera. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts, then a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist, then the swamp shore lined with twisted dead trees, the low morning sun rising behind them.'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-001_start.png
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
