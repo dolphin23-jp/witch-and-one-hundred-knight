@@ -110,3 +110,43 @@ cels:
     soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
   body: 正面
   background: transparent
+edits:
+- cut: A01b-034
+  input: episodes/A/scenes/A01b/stills/fix3/A01b-034_composite.png
+  refs:
+  - characters/hundred-knight/views/hundred-knight_front.png
+  - characters/metallica/views/metallica_side.png
+  - characters/bisco/views/bisco_side.png
+  - characters/arlecchino/views/arlecchino_back.png
+  prompt: 'Image 1 is a rough paste-up composite of one anime frame. Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). Keep exactly: the camera
+    angle and framing, every character''s position, size, pose, facing and expression, and which character is in front of which. Keep the background layout (the witch''s house on its round deck, the short
+    wooden bridge with steps, the lamp posts, the dirt clearing with red mushrooms and stumps, the glowing green swamp with dead trees). Change the time to early morning: a pale, clear morning sky with
+    soft low sunlight and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. Relight the characters to match the scene, add natural contact shadows on the ground, and
+    blend the edges. From left to right: the Hundred Knight (small, reference image 2), Metallica (reference image 3), Bisco shouting red-faced (reference image 4), Arlecchino at the right edge seen from
+    behind at an angle (reference image 5). Keep each character''s design, colors and proportions identical to the reference images. Do not add or remove any character. No text, no manga symbols.'
+  output: episodes/A/scenes/A01b/stills/fix3/A01b-034_gpt-image-2.5_edit01.png
+- cut: A01b-062
+  input: episodes/A/scenes/A01b/stills/fix3/A01b-062_composite.png
+  refs:
+  - characters/metallica/views/metallica_front.png
+  - characters/hundred-knight/views/hundred-knight_front.png
+  - characters/bisco/views/bisco_front.png
+  - characters/arlecchino/views/arlecchino_front.png
+  prompt: 'Image 1 is a rough paste-up composite of one anime frame. Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). Keep exactly: the camera
+    angle and framing, every character''s position, size, pose, facing and expression, and which character is in front of which. Keep the background layout (the witch''s house on its round deck, the short
+    wooden bridge with steps, the lamp posts, the dirt clearing with red mushrooms and stumps, the glowing green swamp with dead trees, the boardwalk on the right). Change the time to early morning: a pale,
+    clear morning sky with soft low sunlight and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. Relight the characters to match the scene, add natural contact shadows,
+    and blend the edges. Metallica is in the foreground on the left, looking far out over the swamp with a calm face; the Hundred Knight, Bisco and Arlecchino stand small in the background at the foot of
+    the bridge, slightly out of focus. References: Metallica image 2, the Hundred Knight image 3, Bisco image 4, Arlecchino image 5. Keep each character''s design, colors and proportions identical to the
+    reference images. Do not add or remove any character. No text, no manga symbols.'
+  output: episodes/A/scenes/A01b/stills/fix3/A01b-062_gpt-image-2.5_edit01.png
+cel_012:
+  refs:
+  - characters/arlecchino/views/arlecchino_face_front.png
+  - characters/arlecchino/views/arlecchino_front.png
+  - characters/arlecchino/views/arlecchino_side.png
+  prompt: 'A single character cel of Arlecchino (character reference: images 1, 2, 3), from the knees up, bending forward slightly and leaning toward the left side of the picture, whispering quietly to
+    someone off to the left; both hands stay down at his sides (no hand raised to his mouth), in three-quarter view turned toward the left side of the picture, seen from slightly above eye level. His egg-shaped
+    white head, red eyes, copper horn pipes, pink scarf and black coat exactly as in the references; his hands are the same large mitten-like olive-green hands as in the references, not bigger. Transparent
+    background: no scenery, no ground, no other characters, no text. Soft early-morning light. 2D TV anime style, clean line art, cel shading, rich but soft colors. No manga symbols.'
+  output: episodes/A/scenes/A01b/stills/fix3/cels/A01b-012_arlecchino.png

@@ -56,6 +56,7 @@ def main():
     ap.add_argument("--plate", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--blur_far", type=float, default=0.0, help="この距離(m)より遠い人物をぼかす")
+    ap.add_argument("--from_h", type=float, default=0.0, help="セルが膝上などのとき、セルの下端の高さ(m)")
     a = ap.parse_args()
     st = staging.Stage(a.scene_dir)
     W, H = 1920, 1080
@@ -67,8 +68,11 @@ def main():
         cel = Image.open(pathlib.Path(a.cels) / f"{a.cut}_{o['who']}.png").convert("RGBA")
         bb = cel.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()
         cel = cel.crop(bb)
-        k = o["height"] * EXTRA[o["who"]] / cel.height
+        h = st.lay["people"][o["who"]]["h"]
+        part = (h - a.from_h) / h
+        k = o["height"] * part * EXTRA[o["who"]] / cel.height
         cel = cel.resize((max(1, round(cel.width * k)), max(1, round(cel.height * k))), Image.LANCZOS)
+        o["foot"] -= o["height"] * a.from_h / h
         if a.blur_far and o["z"] > a.blur_far:
             cel = cel.filter(ImageFilter.GaussianBlur(3))
         plate.alpha_composite(cel, (round(o["x"] - cel.width / 2), round(o["foot"] - cel.height)))
