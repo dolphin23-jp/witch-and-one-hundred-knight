@@ -319,6 +319,9 @@ def main():
             spans.append(None)
             continue
         s, e = d["s"], d["e"]
+        # Whisper は頭の語を前の無音まで引き延ばすことがある。頭が無音に落ちていたら、その後の最初の声の区間まで詰める
+        if not any(r[0] <= s <= r[1] for r in regs):
+            s = next((r[0] for r in regs if s < r[0] < e), s)
         for r in regs:
             if r[0] <= s <= r[1]:
                 s = min(s, r[0])
@@ -385,7 +388,8 @@ def main():
         prev = max((i for i, sp in enumerate(spans) if sp and sp[1] <= r[0]), default=None)
         nxt = min((i for i, sp in enumerate(spans) if sp and sp[0] >= r[1]), default=None)
         gp = r[0] - spans[prev][1] if prev is not None else 1e9
-        gn = spans[nxt][0] - r[1] if nxt is not None else 1e9
+        # 次の台詞までの間は、頭を詰める前の書き起こしの頭から測る（Whisper は「キヒヒ」「あん？」の分まで頭の語を延ばしている）
+        gn = max(0.0, min(spans[nxt][0], info[nxt].get("s", spans[nxt][0])) - r[1]) if nxt is not None else 1e9
         if min(gp, gn) > 1.5:
             unassigned.append((r, pk, "台詞から離れた声"))
             continue
