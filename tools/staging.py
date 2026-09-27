@@ -330,6 +330,8 @@ class Stage:
         if c.get("tilt") == "down" or h > 3.0:
             txt += "High angle looking down. "
         txt += "Behind: " + ", then ".join(seen) + "."
+        if self.lay.get("light_en"):   # 時刻と光（背景画像の時刻と違うときも、こちらに合わせる）
+            txt += " " + self.lay["light_en"]
         return txt
 
     # ---------- 確かめる ----------
