@@ -415,7 +415,7 @@ cuts:
     look: [9.0, 10.9]
     look_end: [10.0, 8.6]
     lens: 35
-    move: {metallica: {to: m_circle, via: [[9.4, 11.0], [10.7, 9.4]], face: '@bisco'}}
+    move: {metallica: {to: m_circle, via: [[9.4, 11.0], [10.7, 9.4]], face: '@bisco'}, hundred-knight: {to: [8.7, 8.3], face: '@metallica'}}
     gaze: {metallica: bisco, bisco: metallica}
     pose: {metallica: 'striding toward Bisco while lecturing, one finger raised', bisco: 'standing still, following Metallica with her eyes', hundred-knight: standing beside Bisco, arlecchino: standing beside Bisco}
     pose_end: {metallica: 'circling around Bisco, now at her front left, finger raised', bisco: 'standing still, turning her head to follow Metallica', hundred-knight: standing beside Bisco, arlecchino: standing beside Bisco}
@@ -644,7 +644,7 @@ cuts:
     frame: 膝上
     cam: [11.6, 11.3, 0.3]
     look: m_end
-    lens: 35
+    lens: 50
     tilt: up
     only: [metallica]
     gaze: {metallica: bisco}
@@ -799,7 +799,7 @@ cuts:
     kind: K
   A01b-062:
     frame: 胸上
-    cam: [11.0, 13.9, 1.3]
+    cam: [10.6, 13.9, 1.3]
     look: [10.3, 9.4]
     lens: 35
     gaze: {metallica: sky_e, bisco: metallica}
