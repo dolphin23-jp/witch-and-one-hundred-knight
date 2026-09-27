@@ -1,10 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Img, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {camera} from './camera';
 
 // scene.json（tools/scene_export.py が作る）の形
 export type Cut = {id: string; kind: string; start: number; sec: number; label: string; color: string; move: string;
-  image: string | null; shot: string; acting: string};
+  image: string | null; shot: string; acting: string;
+  video?: string; video_rate?: number; video_from?: number};
 export type Voice = {src: string; at: number; sec: number};
 export type Sub = {start: number; end: number; text: string};
 export type Overlay = {cut: string; src: string; x: number; y: number; size: number; start: number; sec: number; anim?: string};
@@ -22,7 +23,11 @@ const Still: React.FC<{cut: Cut}> = ({cut}) => {
   const c = camera(cut.move, frame, N, width, height);
   return (
     <AbsoluteFill style={{backgroundColor: cut.color}}>
-      {cut.image ? (
+      {cut.video ? (
+        // 動画（段階2）: 動きは動画の中にあるので、カメラの動きは足さない
+        <OffthreadVideo src={staticFile(cut.video)} muted playbackRate={cut.video_rate ?? 1}
+          startFrom={Math.round((cut.video_from ?? 0) * fps)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+      ) : cut.image ? (
         <Img src={staticFile(cut.image)} style={{width: '100%', height: '100%', objectFit: 'cover',
           transform: `translate(${c.x}px, ${c.y}px) scale(${c.z})`, transformOrigin: 'center'}} />
       ) : (
