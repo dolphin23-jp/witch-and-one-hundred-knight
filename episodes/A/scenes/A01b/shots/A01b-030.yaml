@@ -5,20 +5,20 @@ scene: A01b
 tc: 147.1
 sec: 4.7
 kind: A
-shot: 全身・メタリカ。背景は枯れ木／右前斜め
-acting: 講釈しながら橋を上ってビスコへ歩み寄り、ビスコの目の前を右から左へ半円を描いて回り込む
+shot: 全身・メタリカ。背景は枯れ木／用意画像 bg_01
+acting: 講釈しながらビスコへ歩み寄り、ビスコの目の前を右から左へ半円を描いて回り込む
 dialogue:
 - L56「魔法で本を作ったからといって、中身がなければどうしようもあるまい。」
 sound: null
 notes: null
 camera:
   pos:
-  - 10.6
-  - 8.6
+  - 12.6
+  - 11.6
   - 1.3
   look:
-  - 7.0
-  - 7.9
+  - 9.0
+  - 10.9
   lens: 35
   bearing: 281
   move: 歩きに合わせて左から右へ振る（pan）
@@ -39,30 +39,31 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 岸の西寄り
+  start: 広場の西寄り
   end: ビスコの左前で止まる（指を立てたまま）
   sync: 「本を作った」で歩き出し、間（2.0秒）で回り込み、「ある」（4.1秒）で止まる
 blocking:
   start: メ（左・斜め前（画面右向き）・目線 画面右・手前寄り）
   end: メ（中央・横顔（画面右向き）・目線 画面右）、百（中央・正面）、ビ（中央・横顔（画面左向き）・目線 画面左）、ア（右・斜め後ろ（画面左向き））
-  background: 西の沼と大きな枯れ木〔枯れ木〕／屋敷の右前斜めと東の遊歩道〔右前斜め〕
+  background: 西の沼と枯れ木〔枯れ木〕／橋と玄関と屋敷の正面〔用意画像 bg_01〕
   panels:
   - 枯れ木
-  - 右前斜め
+  - 用意画像 bg_01
   staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
     in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), striding toward Bisco while lecturing, one finger raised,
-    on the left of the frame, in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing
-    in the water, then the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp.'
+    on the left of the frame, in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing
+    in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+    top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   staging_en_end: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
     long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), circling around Bisco, now at
     her front left, finger raised, in the center of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
     helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
-    standing on the deck beside Bisco, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform
-    with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing still, turning her head to follow Metallica, on the right of the frame, in profile, turned toward screen left,
-    looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head,
-    pink scarf, black double-breasted coat, olive-green arms, big black boots), standing on the deck beside Bisco, on the right of the frame, seen from behind at an angle, turned toward screen left. No
-    other people. Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp, then close behind: the house''s wooden wall with the ornate arched front door,
-    green lanterns on both sides, and the wooden deck.'
+    standing beside Bisco, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold
+    trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing still, turning her head to follow Metallica, on the right of the frame, in profile, turned toward screen left, looking
+    toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink
+    scarf, black double-breasted coat, olive-green arms, big black boots), standing beside Bisco, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind:
+    the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs
+    with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-030_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-030_end.png

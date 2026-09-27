@@ -5,7 +5,7 @@ scene: A01b
 tc: 305.7
 sec: 4.1
 kind: K
-shot: 寄り・メタリカ。背景は枯れ木
+shot: 寄り・メタリカ。背景は用意画像 bg_02／枯れ木
 acting: 腕を下ろしてビスコたちの方へ向き直り、「キヒヒ！」でニヤリと笑う
 dialogue:
 - L92「キヒヒ！なんだか面白くなってきたじゃないか。」
@@ -13,8 +13,8 @@ sound: null
 notes: 067 の終わり（百騎兵を指す）から、三人の方へ向きを戻している（画面の外）
 camera:
   pos:
-  - 9.8
-  - 6.4
+  - 11.8
+  - 9.4
   - 1.5
   look: m_end
   lens: 135
@@ -36,15 +36,18 @@ act:
 blocking:
   start: メ（中央・横顔（画面右向き）・目線 画面右・手前寄り）
   end: メ（中央・斜め前（画面右向き）・目線 画面右・手前寄り）
-  background: 西の沼と大きな枯れ木〔枯れ木〕
+  background: 広場とそのまわりの沼〔用意画像 bg_02〕／西の沼と枯れ木〔枯れ木〕
   panels:
+  - 用意画像 bg_02
   - 枯れ木
   staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
     in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), a wide, wicked grin, in the center of the frame, in profile,
-    turned toward screen right, looking toward screen right. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing in the water.'
+    turned toward screen right, looking toward screen right. No other people. Behind: the round dirt clearing edged with red mushrooms, old stumps and lamp posts, and beyond it the glowing emerald-green
+    swamp full of gnarled dead trees stretching to the horizon, then the glowing emerald-green swamp with huge gnarled dead trees standing in the water.'
   staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
     ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), a wide, wicked grin, in the center of the frame,
-    in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing in the water.'
+    in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: the round dirt clearing edged with red mushrooms, old stumps and lamp posts, and beyond it the
+    glowing emerald-green swamp full of gnarled dead trees stretching to the horizon, then the glowing emerald-green swamp with huge gnarled dead trees standing in the water.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-071_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-071_end.png
