@@ -39,6 +39,13 @@ def build(st, cut, which="start"):
         refs.append(f"refs/{who}_sheet_01.png")
         name = st.lay["people"][who]["en"].split(" (")[0]
         text = text.replace(st.lay["people"][who]["en"], f"{name} (character sheet: image {n})")
+    if fr["people"]:   # 身長（百騎兵が大きくなりすぎないように。ユーザーの指摘 2026-09-27）
+        sizes = []
+        for e in fr["people"]:
+            pl = st.lay["people"][e["who"]]
+            name = pl["en"].split(" (")[0]
+            sizes.append(f"{name} {pl['h']} m" + (" (small, only about waist-high to Metallica and Bisco)" if e["who"] == "hundred-knight" else ""))
+        text += " Heights: " + "; ".join(sizes) + "."
     bgs = [PANEL_FILE[p] for p in b["panels"] if p in PANEL_FILE]
     bg_idx = []
     for f in dict.fromkeys(bgs):
