@@ -1,0 +1,23 @@
+# プレイ録画の音源をパートごとに声と BGM・効果音に分けた記録（tools/separate.py が書く。手で編集しない）。
+# 分けた音声は Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」にある。リポジトリには入れない。
+parts:
+- part: 16
+  src: 魔女と百騎兵Revival パート16.mp3
+  sec: 1558.13
+  made: '2026-09-27'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート16/
+  files:
+    voice:
+      name: パート16_声.mp3
+      id: 1fZpeC5AL6uwAjXShN2671db2N5LcW3g2
+    bgm:
+      name: パート16_BGMと効果音.mp3
+      id: 1lt3_6l_gg7JfDIHDF-gBW6HeeB2mmUV6
+    transcript:
+      name: パート16_書き起こし.txt
+      id: 1bAGV5gH3mNmSSOVDqCprWTwrHhC4Zex2
+  transcript: audio/original/transcripts/part16.txt
+  segments: 271
