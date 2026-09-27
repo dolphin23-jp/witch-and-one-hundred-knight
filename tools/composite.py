@@ -56,6 +56,7 @@ def main():
     ap.add_argument("--plate", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--blur_far", type=float, default=0.0, help="この距離(m)より遠い人物をぼかす")
+    ap.add_argument("--which", default="start", choices=["start", "end"], help="カットの始めと終わりのどちらの立ち位置で重ねるか")
     ap.add_argument("--from_h", type=float, default=0.0, help="セルが膝上などのとき、セルの下端の高さ(m)")
     a = ap.parse_args()
     st = staging.Stage(a.scene_dir)
@@ -64,7 +65,7 @@ def main():
     s = max(W / plate.width, H / plate.height)
     plate = plate.resize((round(plate.width * s), round(plate.height * s)))
     plate = plate.crop(((plate.width - W) // 2, (plate.height - H) // 2, (plate.width - W) // 2 + W, (plate.height - H) // 2 + H))
-    for o in layout(st, a.cut, W=W, H=H):
+    for o in layout(st, a.cut, a.which, W=W, H=H):
         cel = Image.open(pathlib.Path(a.cels) / f"{a.cut}_{o['who']}.png").convert("RGBA")
         bb = cel.getchannel("A").point(lambda v: 255 if v > 128 else 0).getbbox()
         cel = cel.crop(bb)
