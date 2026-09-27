@@ -27,8 +27,8 @@ places:
   m_peek:    [9.9, 8.7]    # ビスコの顔を覗き込む（0.64m）。031
   m_back:    [9.6, 9.1]    # ビスコの怒鳴り声に半歩下がった位置。034
   bisco:     [10.3, 8.2]    # ビスコ。橋を下りた所（広場の北の端）。ずっとここ
-  hk:        [9.2, 8.05]   # 百騎兵。ビスコの左（西）、1.1m
-  arle:      [11.9, 8.0]    # アルレッキーノ。最初の位置（ビスコの東、橋の右の街灯の横）
+  hk:        [9.2, 8.5]    # 百騎兵。ビスコの左前（西へ1.1m、少し前。三人を横一列にしない）
+  arle:      [11.8, 7.8]    # アルレッキーノ。最初の位置（ビスコの右後ろ、橋の右の街灯の横）
   arle_near: [11.15, 8.35]  # ビスコの右隣（東、0.86m。耳打ち、011〜）
   arle_take: [10.6, 9.7]    # メタリカの手から招待状を抜き取った位置（035〜047）
   pillar:    [60.0, -2.0]  # 沼の彼方のピラー（東、方位 80° 前後。画には映さない）
@@ -53,13 +53,14 @@ cuts:
   # ---------- 沼の演説（001〜010） ----------
   A01b-001:
     frame: 大引き
-    cam: [12.8, 14.6, 1.6]
-    look: [10.3, 9.0]
+    cam: [11.6, 12.2, 1.0]
+    look: [10.3, 9.1]
     lens: 24
     move: {}
-    pose: {metallica: 'in the middle of the clearing, both arms flung wide open toward the swamp, the invitation letter in her right hand', bisco: 'small, standing at the foot of the bridge in front of the house', arlecchino: 'small, standing at the foot of the bridge in front of the house', hundred-knight: 'small, standing at the foot of the bridge in front of the house'}
+    pose: {metallica: 'large in the left foreground close to the camera, seen from the thighs up, both arms flung wide open toward the swamp, the invitation letter in her right hand', bisco: 'much smaller in the background, standing at the foot of the bridge', arlecchino: 'much smaller in the background, standing a step behind Bisco near the right lamp post', hundred-knight: 'much smaller in the background, standing a half step in front of Bisco'}
     act: {start: 広場の中ほどに立つメタリカ（A01-040a で扉を開け放った姿勢を受ける）。奥の橋のたもとに三人, do: 「見よ！」で両腕を大きく左右へ広げる。長い三つ編みが揺れる, end: 両腕を広げきって止まる, sync: 「見よ」の頭（0.1秒）で腕を上げはじめ、「沼を！」（3.2秒）で広げきる}
     camera: 広場の南から、屋敷の正面ごとゆっくり押し込む（push）。場所を見せる最初の画
+    note: 奥行きを出す（メタリカは手前に大きく、三人は奥に小さく、前後にずらして立つ。横一列にしない。ユーザーの指摘 2026-09-27）
     kind: A
   A01b-002:
     frame: 膝上
@@ -190,9 +191,8 @@ cuts:
     lens: 85
     only: [arlecchino]
     gaze: {arlecchino: bisco}
-    gaze_end: {arlecchino: metallica}
-    pose: {arlecchino: 'whispering, then glancing back over his shoulder'}
-    act: {start: ビスコに耳打ち, do: 「調子に乗って……いえ」で言い直し、肩越しにメタリカをうかがう, end: メタリカの方を見たまま「大変お喜びなのです」, sync: 「いえ」（1.9秒）で目線を送る}
+    pose: {arlecchino: 'bending down, whispering to Bisco (off screen left) behind his big olive-green hand, his head seen from the side exactly as in the side view of his character sheet'}
+    act: {start: ビスコに耳打ち, do: 「調子に乗って……いえ」で言い直す（目線の動きは合成か次のカットで。静止画は耳打ちの横顔だけ）, end: 耳打ちの横顔のまま「大変お喜びなのです」, sync: 「いえ」（1.9秒）で目線を送る}
     camera: 止め
     note: 冷や汗は合成（「いえ」で1つ）
     kind: K
@@ -523,9 +523,9 @@ cuts:
     kind: S
   A01b-039:
     frame: 寄り
-    cam: [11.6, 9.6, 0.8]
+    cam: [11.8, 8.4, 0.8]
     look: hk
-    lens: 85
+    lens: 135
     only: [hundred-knight]
     gaze: {hundred-knight: arlecchino}
     pose: {hundred-knight: tilting its whole helmeted head to one side}
@@ -832,11 +832,11 @@ cuts:
   A01b-065:
     frame: 寄り
     cam: [8.0, 10.2, 1.5]
-    look: m_end
+    look: [10.0, 10.93]
     lens: 85
     only: [metallica]
     gaze: {metallica: sky_e}
-    pose: {metallica: 'seen from behind, face hidden, hat and long braids, the glowing swamp beyond her'}
+    pose: {metallica: 'seen from behind, face hidden, hat and long braids, looking out over open swamp water with dead trees; there is no boardwalk, bridge or path in this direction'}
     act: {start: 東の沼を見ている背中, do: 動かない, end: 同じ, sync: —}
     camera: 止め（西の沼の上から、背中越しに東の沼）
     axis_free: ビスコの心の声の間、メタリカの背中だけを沼ごと見せる（ビスコは画面の外）
