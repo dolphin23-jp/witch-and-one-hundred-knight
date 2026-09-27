@@ -59,6 +59,18 @@ def ang_diff(a, b):
     return (a - b + 180) % 360 - 180
 
 
+def tilt_of(c, cam, look):
+    """カメラの上下の傾き（ラジアン、上が正）。tilt: up / down、または look_h（見る点の高さ）から決める。"""
+    ch = c["cam"][2]
+    if c.get("tilt") == "down":   # 見る点の地面から 0.8m を画面の中心にする
+        return math.atan2(0.8 - ch, max(0.5, math.dist(cam, look)))
+    if c.get("tilt") == "up":
+        return 0.28
+    if c.get("look_h") is not None:
+        return math.atan2(c["look_h"] - ch, math.dist(cam, look))
+    return 0.0
+
+
 # ---------- 場面 ----------
 
 class Stage:
@@ -144,7 +156,13 @@ class Stage:
 
     # ---------- 1枚の画の計算 ----------
 
-    def horizon_at(self, b):
+    def horizon_at(self, b, cam=None, look=None):
+        """方位 b の遠景。layout に near があり、見る点がその近くでカメラが決まった向きなら、近くの背景（玄関など）を返す。"""
+        if cam is not None and look is not None:
+            for n in self.lay.get("near", []):
+                lo, hi = n["from"], n["to"]
+                if math.dist(look, n["at"]) <= n["r"] and math.dist(cam, n["at"]) <= n.get("cam_max", 1e9) and ((lo <= b < hi) if lo <= hi else (b >= lo or b < hi)):
+                    return n
         for h in self.lay["horizon"]:
             lo, hi = h["from"], h["to"]
             if (lo <= b < hi) if lo <= hi else (b >= lo or b < hi):
@@ -163,8 +181,19 @@ class Stage:
         half = fov_half(lens)
         th = math.tan(half)
         only = c.get("only")
-        people = []
+        people, hidden = [], []
+        tilt = tilt_of(c, cam, look)
+        vhalf = math.atan(th * 9 / 16)
         for who, p in pos.items():
+            if p is not None and only is not None and who not in only:
+                # 映さないことにした人物が、実際には画面に入っていないか（高さも見る）
+                v = (p[0] - cam[0], p[1] - cam[1])
+                z = dot(v, d)
+                if z > 0.2 and abs(dot(v, right) / z / th) < 0.95:
+                    top = math.atan2(self.lay["people"][who]["h"] - c["cam"][2], z) - tilt
+                    bot = math.atan2(-c["cam"][2], z) - tilt
+                    if top > -vhalf * 0.95 and bot < vhalf * 0.95:
+                        hidden.append(who)
             if p is None or (only is not None and who not in only):
                 continue
             v = (p[0] - cam[0], p[1] - cam[1])
@@ -208,8 +237,10 @@ class Stage:
         cb = bearing_of(d)
         bg = {}
         for k, a in (("left", -math.degrees(half) * 0.9), ("center", 0.0), ("right", math.degrees(half) * 0.9)):
-            h = self.horizon_at((cb + a) % 360)
+            h = self.horizon_at((cb + a) % 360, cam, look)
             bg[k] = h
+        if c.get("bg"):   # カットで背景を決めたとき（遠くのピラー、俯瞰など）。layout の views の名前
+            bg = {"left": None, "center": self.lay["views"][c["bg"]], "right": None}
         props = []
         for name, pr in self.lay.get("props", {}).items():
             if "at" not in pr:
@@ -218,13 +249,34 @@ class Stage:
             z = dot(v, d)
             if z > 0.3 and abs(dot(v, right) / z / th) <= 1.0:
                 props.append(pr["ja"])
-        return {"people": people, "bg": bg, "props": props, "bearing": round(cb), "cam": list(c["cam"]), "lens": lens}
+        return {"people": people, "bg": bg, "props": props, "bearing": round(cb), "cam": list(c["cam"]), "lens": lens, "hidden": hidden}
 
     # ---------- 言葉 ----------
+
+    def area_at(self, p):
+        """点 p がどの地面の区分にあるか（後に書いたものが上）。"""
+        hit = None
+        for a in self.lay.get("areas", []):
+            if a["kind"] == "rect":
+                ok = a["x"][0] <= p[0] <= a["x"][1] and a["y"][0] <= p[1] <= a["y"][1]
+            elif a["kind"] == "circle":
+                ok = math.dist(p, a["center"]) <= a["r"]
+            else:
+                q, ok = a["points"], False
+                for i in range(len(q)):
+                    (x1, y1), (x2, y2) = q[i], q[i - 1]
+                    if (y1 > p[1]) != (y2 > p[1]) and p[0] < (x2 - x1) * (p[1] - y1) / (y2 - y1) + x1:
+                        ok = not ok
+            if ok:
+                hit = a
+        return hit
 
     def where(self, c):
         x, y, h = c["cam"]
         hw = "地面すれすれ" if h < 0.5 else ("高い位置" if h > 3.0 else ("低め" if h < 1.1 else ""))
+        if self.lay.get("areas"):
+            a = self.area_at((x, y))
+            return (a["ja"] + ("の上" if a["ja"].endswith("沼") else "") if a else "場の外") + (f"・{hw}" if hw else "")
         if y < 0.4:
             s = "崖の外（沼の上）"
         elif y < 2.2:
@@ -283,7 +335,7 @@ class Stage:
     # ---------- 確かめる ----------
 
     def checks(self):
-        res = {"axis": [], "jumps": [], "overlap": [], "offscreen": []}
+        res = {"axis": [], "jumps": [], "overlap": [], "offscreen": [], "hidden": []}
         for ax in self.bk.get("axes", []):
             i0, i1 = self.order.index(ax["cuts"][0]), self.order.index(ax["cuts"][1])
             for cut in self.order[i0:i1 + 1]:
@@ -308,6 +360,10 @@ class Stage:
                 continue
             fr_s = self.frame(cut, "start")
             vis_s = {e["who"] for e in fr_s["people"]}
+            for which, fr in (("start", fr_s), ("end", self.frame(cut, "end"))):
+                for who in fr["hidden"]:
+                    if who not in (self.bk["cuts"][cut].get("hidden_ok") or []):
+                        res["hidden"].append({"cut": cut, "which": which, "who": who})
             for who, kind in st["jumps"]:
                 if who in prev_vis or who in vis_s:
                     res["jumps"].append({"cut": cut, "who": who, "kind": kind,
@@ -393,6 +449,9 @@ def draw_areas(st, d, P, font):
             (sum(q[0] for q in a["points"]) / len(a["points"]), sum(q[1] for q in a["points"]) / len(a["points"]))
         if a["kind"] == "rect" and a["x"][1] - a["x"][0] > 15:
             continue
+        if a["kind"] == "circle" and any(b is not a and b["kind"] == "circle" and b["center"] == a["center"] and b["r"] < a["r"]
+                                         for b in st.lay["areas"]):
+            c = (a["center"][0], a["center"][1] - a["r"] + 0.45)   # 輪（デッキ）の名前は上の縁に
         d.text(P(*c), a["ja"], font=font, fill=(20, 20, 20), anchor="mm")
 
 
@@ -491,8 +550,12 @@ def render(st, out_dir, sections):
     for i, cut in enumerate(st.order):
         ox, oy = (i % cols) * cw + 10, (i // cols) * ch + 26 + int(1.6 * kk)
         P = lambda x, y, ox=ox, oy=oy: (ox + x * kk, oy + y * kk)
-        d.rectangle([*P(0, 0.4), *P(st.W, st.D)], fill=(52, 58, 40))
-        d.rectangle([*P(0, -1.2), *P(st.W, 0.4)], fill=(40, 150, 70))
+        if st.lay.get("areas"):
+            for a in st.lay["areas"]:
+                d.polygon([P(*q) for q in _outline(a, 24)], fill=tuple(a.get("color", [80, 80, 80])))
+        else:
+            d.rectangle([*P(0, 0.4), *P(st.W, st.D)], fill=(52, 58, 40))
+            d.rectangle([*P(0, -1.2), *P(st.W, 0.4)], fill=(40, 150, 70))
         c = st.bk["cuts"][cut]
         d.text(((i % cols) * cw + 8, (i // cols) * ch + 4), f"{cut[-3:]} {c.get('frame', '')}", font=fs, fill="white")
         pos, face = st.states[cut]["end"]
@@ -522,6 +585,82 @@ def render(st, out_dir, sections):
 
 # ---------- カメラから見た略図 ----------
 
+def _clip_near(pts, zmin=0.1):
+    """カメラ座標の多角形を、カメラの前（z >= zmin）だけに切る。"""
+    out = []
+    for i in range(len(pts)):
+        a, b = pts[i - 1], pts[i]
+        ina, inb = a[2] >= zmin, b[2] >= zmin
+        if ina != inb:
+            t = (zmin - a[2]) / (b[2] - a[2])
+            out.append(tuple(a[k] + (b[k] - a[k]) * t for k in range(3)))
+        if inb:
+            out.append(b)
+    return out
+
+
+def _outline(a, n=72):
+    if a["kind"] == "rect":
+        (x0, x1), (y0, y1) = a["x"], a["y"]
+        return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+    if a["kind"] == "circle":
+        cx, cy = a["center"]
+        return [(cx + a["r"] * math.cos(2 * math.pi * i / n), cy + a["r"] * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    return [tuple(q) for q in a["points"]]
+
+
+def _dense(pts, step=0.5):
+    out = []
+    for i in range(len(pts)):
+        a, b = pts[i], pts[(i + 1) % len(pts)]
+        n = max(1, int(math.dist(a, b) / step))
+        out += [(a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n) for k in range(n)]
+    return out
+
+
+def sketch_areas(st, d, cam, ch, d2, right, ct, stt, f, W, H, hz):
+    """略図に、地面の区分（沼・岸・デッキ・橋）と屋敷の壁と屋根、玄関の扉を透視で描く。"""
+    def cc(p, h):
+        v = (p[0] - cam[0], p[1] - cam[1])
+        x, z0, y0 = dot(v, right), dot(v, d2), h - ch
+        return (x, -z0 * stt + y0 * ct, z0 * ct + y0 * stt)
+
+    def poly(pts3, col, outline=None):
+        c3 = _clip_near(pts3)
+        if len(c3) >= 3:
+            d.polygon([(W / 2 + f * q[0] / q[2], H / 2 - f * q[1] / q[2]) for q in c3], fill=col, outline=outline)
+    d.rectangle([0, hz, W, H], fill=(40, 170, 80))   # 地平線までの沼
+    hs = st.lay.get("house")
+    for a in st.lay.get("areas", []):
+        if a["kind"] == "rect" and a["x"][1] - a["x"][0] > 15:
+            continue
+        if hs and a["kind"] == "circle" and abs(a["r"] - hs["r"]) < 1e-6:
+            continue
+        poly([cc(p, 0.0) for p in _dense(_outline(a))], tuple(a.get("color", [80, 80, 80])), outline=(30, 30, 20))
+    if not hs:
+        return
+    # 屋敷: 円柱の壁と円錐の屋根（遠い面から描く）
+    cx, cy = hs["center"]
+    n = 48
+    segs = []
+    for i in range(n):
+        a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+        p0 = (cx + hs["r"] * math.cos(a0), cy + hs["r"] * math.sin(a0))
+        p1 = (cx + hs["r"] * math.cos(a1), cy + hs["r"] * math.sin(a1))
+        segs.append((math.dist(((p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2), cam), p0, p1))
+    segs.sort(reverse=True)
+    for _, p0, p1 in segs:
+        poly([cc(p0, 0), cc(p1, 0), cc(p1, hs["h"]), cc(p0, hs["h"])], (120, 70, 40), outline=(60, 35, 20))
+    top = cc((cx, cy), hs["h"] + hs["roof"])
+    for _, p0, p1 in segs:
+        poly([cc(p0, hs["h"]), cc(p1, hs["h"]), top], (210, 110, 50), outline=(120, 60, 20))
+    door = st.lay.get("props", {}).get("door")
+    if door and dot((door["at"][0] - cam[0], door["at"][1] - cam[1]), (0, -1)) > 0:   # 南から見たときだけ
+        x, y = door["at"]
+        poly([cc((x - 0.5, y + 0.02), 0), cc((x + 0.5, y + 0.02), 0), cc((x + 0.5, y + 0.02), 2.2), cc((x - 0.5, y + 0.02), 2.2)],
+             (50, 30, 25), outline=(0, 0, 0))
+
+
 def sketch(st, cut, which, path, W=1536, H=864):
     """カメラの位置・向き・レンズ・高さから、人物（色の人形）と崖の縁・遠景の方位を透視で描く。構図の参照に使う。"""
     c = st.bk["cuts"][cut]
@@ -534,11 +673,7 @@ def sketch(st, cut, which, path, W=1536, H=864):
     right = (-d2[1], d2[0])
     lens = c.get("lens_end", c["lens"]) if which == "end" else c["lens"]
     f = (W / 2) / math.tan(fov_half(lens))
-    tilt = {"up": 0.28}.get(c.get("tilt"), 0.0)
-    if c.get("tilt") == "down":   # 見る点の地面から 0.8m を画面の中心にする
-        tilt = math.atan2(0.8 - ch, max(0.5, math.dist(cam, look)))
-    if tilt == 0.0 and isinstance(look, tuple) and c.get("look_h") is not None:
-        tilt = math.atan2(c["look_h"] - ch, math.dist(cam, look))
+    tilt = tilt_of(c, cam, look)
     ct, stt = math.cos(tilt), math.sin(tilt)
 
     def proj(p, h):
@@ -557,9 +692,11 @@ def sketch(st, cut, which, path, W=1536, H=864):
     d.rectangle([0, hz, W, H], fill=(70, 80, 55))
     fnt = ImageFont.truetype(FONT, 26)
     fs = ImageFont.truetype(FONT, 20)
-    # 崖の縁（y=0.4 の線）と、その向こうの沼
+    if st.lay.get("areas"):
+        sketch_areas(st, d, cam, ch, d2, right, ct, stt, f, W, H, hz)
+    # 崖の縁（y=0.4 の線）と、その向こうの沼（高台の配置だけ）
     pts = []
-    for x in [i * 0.25 for i in range(0, int(st.W * 4) + 1)]:
+    for x in ([] if st.lay.get("areas") else [i * 0.25 for i in range(0, int(st.W * 4) + 1)]):
         q = proj((x, 0.4), 0.0)
         if q:
             pts.append((q[0], q[1]))
@@ -572,20 +709,21 @@ def sketch(st, cut, which, path, W=1536, H=864):
     cb = bearing_of(d2)
     seen = []
     for k_, a in (("left", -half * 0.7), ("center", 0.0), ("right", half * 0.7)):
-        h_ = st.horizon_at((cb + a) % 360)
+        h_ = (st.lay["views"][c["bg"]] if c.get("bg") else None) or st.horizon_at((cb + a) % 360, cam, look)
         if h_ and h_["ja"] not in seen:
             seen.append(h_["ja"])
             x = W / 2 + f * math.tan(math.radians(a))
             d.text((x, max(30, hz - 40)), h_["ja"], font=fs, fill=(20, 40, 60), anchor="mm")
     # 近くの物
     for name, pr in st.lay.get("props", {}).items():
-        if "at" not in pr:
+        if "at" not in pr or name == "door":
             continue
+        ph = pr.get("h", 4.0 if name == "dead_tree" else 0.5)
         b = proj(tuple(pr["at"]), 0.0)
-        t = proj(tuple(pr["at"]), 4.0 if name == "dead_tree" else 0.5)
+        t = proj(tuple(pr["at"]), ph)
         if b and t and -200 < b[0] < W + 200:
-            wpx = max(6, f * (0.5 if name == "dead_tree" else 0.3) / b[2])
-            d.rectangle([b[0] - wpx / 2, t[1], b[0] + wpx / 2, b[1]], fill=(90, 70, 50))
+            wpx = max(6, f * (0.5 if ph > 2 else 0.3) / b[2])
+            d.rectangle([b[0] - wpx / 2, min(t[1], b[1]), b[0] + wpx / 2, max(t[1], b[1])], fill=(90, 70, 50))
             d.text((b[0], t[1] - 14), pr["ja"][:6], font=fs, fill=(60, 40, 30), anchor="mm")
     # 人物（遠い順に描く）
     order = []
@@ -667,7 +805,7 @@ def main():
     scene = yaml.safe_load((st.dir / "scene.yaml").read_text(encoding="utf-8"))
     out_dir = st.dir / "gen"
     out_dir.mkdir(exist_ok=True)
-    rows, data = [], {}
+    rows, data, missing = [], {}, {}
     for cut in st.order:
         c = st.bk["cuts"][cut]
         if c.get("insert"):
@@ -676,7 +814,17 @@ def main():
             continue
         fs_, fe = st.frame(cut, "start"), st.frame(cut, "end")
         moved = bool(c.get("move")) or c.get("look_end") or c.get("lens_end") or c.get("gaze_end")
-        bgt = "／".join(dict.fromkeys(h["ja"] for h in fs_["bg"].values() if h))
+        bgs = []
+        for h in fs_["bg"].values():
+            if h and all((h["ja"], h.get("panel")) != (x["ja"], x.get("panel")) for x in bgs):
+                bgs.append(h)
+        if "panel" in (bgs[0] if bgs else {}):
+            bgt = "／".join(f"{h['ja']}〔{h['panel'] or '要用意'}〕" for h in bgs)
+            for h in bgs:
+                if not h.get("panel"):
+                    missing.setdefault(h["ja"], []).append(cut[-3:])
+        else:
+            bgt = "／".join(h["ja"] for h in bgs)
         cam = f"{st.where(c)}・{c['lens']}mm・{fs_['bearing']}°"
         rows.append(f"| {cut[-3:]} | {c.get('frame', '')} | {cam} | {describe(fs_)} | {describe(fe) if moved else '（同じ）'} | {bgt} |")
         data[cut] = {"cam": c["cam"], "lens": c["lens"], "bearing": fs_["bearing"], "frame": c.get("frame"),
@@ -686,13 +834,20 @@ def main():
     ck = st.checks()
     L = [f"# {st.bk['scene']} 立ち位置とカメラ割り（tools/staging.py が blocking.yaml から計算）", "",
          "人物: メ＝メタリカ、ビ＝ビスコ、ア＝アルレッキーノ、百＝百騎兵。向きは体の向き（正面＝カメラを向く）。目線は見る相手の方向。",
-         "カメラの ° は向いている方位（北＝沼 0、東 90、南＝森 180、西 270）。", "",
+         "カメラの ° は向いている方位（" + st.lay.get("compass", "北＝沼 0、東 90、南＝森 180、西 270") + "）。背景の〔〕は使う設定画のパネル。", "",
          "| カット | 画 | カメラ（どこから・レンズ・向き） | 始め（左→右） | 終わり（動く場合） | 背景 |",
          "| --- | --- | --- | --- | --- | --- |"] + rows
+    if missing:
+        L += ["", "## 設定画にない背景（ユーザーに用意してもらう）", ""]
+        L += [f"- {k}: {'・'.join(v)}（{len(v)}カット）" for k, v in missing.items()]
     L += ["", "## 確かめた結果", ""]
     L.append(f"- 会話の軸をまたいだカット: {len(ck['axis'])}" + ("" if not ck["axis"] else "（" + "、".join(f"{x['cut'][-3:]} {x['axis']}" for x in ck["axis"]) + "）"))
     L.append(f"- 映っている人物の位置・向きの飛び（カットの間で説明なしに変わる）: {len(ck['jumps'])}" + ("" if not ck["jumps"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT[x['who']]}の{x['kind']}" for x in ck["jumps"]) + "）"))
     L.append(f"- 画面の外で動いたもの（映っていない間の移動・向き替え）: {len(ck['offscreen'])}" + ("" if not ck["offscreen"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT[x['who']]}の{x['kind']}" for x in ck["offscreen"]) + "）"))
+    hid = {}
+    for x in ck["hidden"]:
+        hid.setdefault(x["cut"][-3:], set()).add(SHORT[x["who"]])
+    L.append(f"- 映さないことにしたのに画面に入る人物: {len(hid)}カット" + ("" if not hid else "（" + "、".join(f"{k} {''.join(sorted(v))}" for k, v in hid.items()) + "）"))
     L.append(f"- 人物の重なり（0.45m 未満）: {len(ck['overlap'])}" + ("" if not ck["overlap"] else "（" + "、".join(f"{x['cut'][-3:]}" for x in ck["overlap"]) + "）"))
     (out_dir / "staging_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     (out_dir / "staging_report.yaml").write_text(yaml.safe_dump({"cuts": data, "checks": ck}, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
@@ -701,7 +856,10 @@ def main():
     print(out_dir / "staging_report.md")
     for p in files:
         print(p)
-    print("軸", len(ck["axis"]), "飛び", len(ck["jumps"]), "画面外", len(ck["offscreen"]), "重なり", len(ck["overlap"]))
+    print("軸", len(ck["axis"]), "飛び", len(ck["jumps"]), "画面外", len(ck["offscreen"]), "重なり", len(ck["overlap"]), "隠れ", len(ck["hidden"]))
+    for k in ("axis", "jumps", "overlap", "hidden"):
+        for x in ck[k]:
+            print(" ", k, x)
 
 
 if __name__ == "__main__":

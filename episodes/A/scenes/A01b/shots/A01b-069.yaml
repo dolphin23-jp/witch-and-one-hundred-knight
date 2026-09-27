@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-069
 scene: A01b
 tc: 299.2
 sec: 2.0
 kind: M
-shot: 膝上・アルレッキーノ
+shot: 胸上・アルレッキーノ。背景はエントランス・接写
 acting: もじもじと手をもむ
 dialogue:
 - L91a「まさか、チームプレイとは……。」
@@ -13,14 +13,14 @@ sound: null
 notes: null
 camera:
   pos:
-  - 9.2
-  - 6.8
-  - 1.6
-  look: arle_take
-  lens: 50
-  bearing: 310
+  - 9.8
+  - 8.9
+  - 1.8
+  look: arle_near
+  lens: 135
+  bearing: 350
   move: 止め
-background: swamp-hill
+background: witch-house-front
 state:
   arlecchino:
     holds: 招待状
@@ -36,9 +36,15 @@ act:
 blocking:
   start: ア（中央・横顔（画面左向き）・目線 画面左）
   end: ア（中央・横顔（画面左向き）・目線 画面左）
-  background: ねじれた木の暗い森／眼下の沼に建つ魔女邸と木の遊歩道
-  staging_en: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), fidgeting, rubbing his big hands together shyly, in the center of the frame, in profile, turned toward screen left, looking toward screen left. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
-  staging_en_end: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), fidgeting, rubbing his big hands together shyly, in the center of the frame, in profile, turned toward screen left, looking toward screen left. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  background: 玄関と屋敷の壁（近く）〔エントランス・接写〕
+  panels:
+  - エントランス・接写
+  staging_en: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
+    on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), fidgeting, rubbing his big hands together shyly, in the center of the frame, in profile, turned toward screen
+    left, looking toward screen left. No other people. Behind: close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
+  staging_en_end: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+    pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), fidgeting, rubbing his big hands together shyly, in the center of the frame, in profile, turned toward
+    screen left, looking toward screen left. No other people. Behind: close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-069_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-069_end.png

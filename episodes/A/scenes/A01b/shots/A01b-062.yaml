@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-062
 scene: A01b
 tc: 277.3
 sec: 4.6
 kind: K
-shot: 胸上・沼の側からメタリカ正面、奥にビスコ
+shot: 胸上・メタリカ・百騎兵・ビスコ・アルレッキーノ。背景は右前斜め／正面・外観
 acting: ビスコを見ずに、そっけなく言う。奥のビスコ（小さく、ぼけている）が顔を上げる
 dialogue:
 - L85「夜会に行けば、お前に呪いをかけた魔女も見つかるかもしれんだろ。」
@@ -13,35 +13,50 @@ sound: null
 notes: 一番やさしい台詞を、一番そっけなく撮る
 camera:
   pos:
-  - 7.4
-  - -0.8
+  - 9.0
+  - 10.9
   - 1.3
   look:
-  - 7.75
-  - 3.2
+  - 8.3
+  - 6.4
   lens: 35
-  bearing: 175
-  move: 沼の側から。止め
-background: swamp-hill
+  bearing: 351
+  move: 岸の南から。止め。奥に屋敷の正面
+background: witch-house-front
 state:
   metallica:
     holds: なし
   bisco: {}
+  arlecchino:
+    holds: 招待状と片眼鏡
+  hundred-knight: {}
 image: null
 refs:
 - metallica
 - bisco
+- arlecchino
+- hundred-knight
 overlays: []
 fallback: null
 act:
-  start: 沼を見ている
+  start: 東の沼を見ている横顔。奥の玄関前に三人
   end: 同じ
   sync: —
 blocking:
-  start: メ（左・正面・目線 カメラの方）、ビ（右・正面・目線 画面左・手前寄り）
-  end: null
-  background: 森へ下りる土の小道と赤いきのこ
-  staging_en: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), looking far out over the swamp, not at Bisco, her face calm, on the left of the frame, facing the camera, looking toward the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), small and blurred in the background behind Metallica, on the right of the frame, facing the camera, small in the background, looking toward screen left. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it.'
+  start: メ（中央・斜め前（画面右向き）・目線 画面右）、百（中央・正面）、ビ（中央・正面・目線 画面左・手前寄り）、ア（右・正面）
+  background: 屋敷の右前斜めと東の遊歩道〔右前斜め〕／屋敷の正面と玄関〔正面・外観〕
+  panels:
+  - 右前斜め
+  - 正面・外観
+  staging_en: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), looking far out over the swamp, not
+    at Bisco, her face calm, on the left of the frame, in three-quarter view, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round
+    silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries
+    no sword here), small and blurred in the background on the deck, on the left of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue
+    eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), small and blurred in the background on the deck, in the center
+    of the frame, facing the camera, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
+    copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), small and blurred in the background on the deck, on the right of the frame, facing the
+    camera. No other people. Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp, then the witch''s house seen from the front: stacked orange shingled
+    cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, the round wooden deck on posts.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-062_start.png
-  axis_free: 沼の側から撮るメタリカの正面の画。奥にビスコ（わざと）

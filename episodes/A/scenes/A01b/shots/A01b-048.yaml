@@ -1,44 +1,67 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-048
 scene: A01b
 tc: 225.5
 sec: 8.1
 kind: A
-shot: 膝上・メタリカ
-acting: 「ふん」でくるりと背を向け、大股で崖の縁へ戻りながら宣言する。縁で振り返る
+shot: 全身・メタリカ・アルレッキーノ・百騎兵・ビスコ。背景は枯れ木／エントランス・接写
+acting: 「ふん」でくるりと背を向け、大股で橋の端へ戻りながら宣言する。端で振り返る。アルレッキーノはビスコの隣へ戻る
 dialogue:
 - L72「ふん……。珍品のありかは今すぐ探しだす！ワタシのダウジング・ペンデュラムにかかれば造作もないことよ。」
 sound: BGM①再開
 notes: null
 camera:
   pos:
-  - 12.2
-  - 4.6
+  - 11.0
+  - 8.2
   - 1.4
   look: m_back
   lens: 28
-  bearing: 270
+  bearing: 302
   move: 歩きに合わせて右へ振る（pan）
-background: swamp-hill
+background: witch-house-front
 state:
   metallica:
     holds: なし
+  bisco: {}
+  arlecchino:
+    holds: 招待状と片眼鏡
+  hundred-knight: {}
 image: null
 refs:
 - metallica
+- bisco
+- arlecchino
+- hundred-knight
 overlays: []
 fallback: null
 act:
   start: 目をむいたまま
-  end: 崖の縁で振り返り、片手を上げる
+  end: 橋の端で振り返り、片手を上げる
   sync: 「ふん」（0〜0.3秒）で背を向け、間（1.1秒）で歩き出し、「ダウジング・ペンデュラム」（5.7秒）で振り返る
 blocking:
-  start: メ（中央・斜め前（画面左向き）・目線 画面右）
-  end: メ（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
-  background: ねじれた木の暗い森
-  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning on her heel with a huff, braids swinging, in the center of the frame, in three-quarter view, turned toward screen left, small in the background, looking toward screen right. No other people. Behind: a dark forest of twisted black trees.'
-  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing at the cliff edge again, turned back toward the others, one hand raised, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  start: メ（中央・横顔（画面右向き）・目線 画面左）、ア（中央・斜め前（画面右向き））、百（中央・正面）、ビ（右・横顔（画面左向き））
+  end: メ（中央・横顔（画面右向き）・目線 画面右）、百（右・斜め前（画面左向き））
+  background: 西の沼と大きな枯れ木〔枯れ木〕／玄関と屋敷の壁（近く）〔エントランス・接写〕
+  panels:
+  - 枯れ木
+  - エントランス・接写
+  staging_en: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning on her heel with a huff, braids
+    swinging, in the center of the frame, in profile, turned toward screen right, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over
+    one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), holding the invitation, in the center of the
+    frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing on the deck, on the right of the frame, facing
+    the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver
+    armored boots), standing on the deck, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing
+    in the water, then close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing at the foot of the bridge
+    again, turned back toward the others, one hand raised, in the center of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to
+    Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
+    brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with a huge
+    gnarled dead tree standing in the water, then the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-048_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-048_end.png

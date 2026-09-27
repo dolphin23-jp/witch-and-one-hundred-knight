@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-059
 scene: A01b
 tc: 268.2
 sec: 3.3
 kind: K
-shot: 寄り・メタリカ
+shot: 寄り・メタリカ。背景は枯れ木
 acting: 体は沼に向けたまま、左肩越しに首だけ振り返り、横目でアルレッキーノを睨む
 dialogue:
 - L82b「どなたかご存知かもしれないということですね。」
@@ -13,14 +13,14 @@ sound: null
 notes: 本音を代弁されて照れる
 camera:
   pos:
-  - 9.0
-  - -0.6
+  - 10.4
+  - 7.9
   - 1.4
-  look: m_edge
+  look: m_end
   lens: 85
-  bearing: 209
-  move: 沼の側から。止め
-background: swamp-hill
+  bearing: 275
+  move: 沼の側（正面）から。止め
+background: witch-house-front
 state:
   metallica:
     holds: なし
@@ -34,10 +34,13 @@ act:
   end: 睨んだまま頬が少し赤い
   sync: 「ご存知かも」（1.2秒）で睨む
 blocking:
-  start: メ（中央・正面・目線 奥）
-  end: null
-  background: 森へ下りる土の小道と赤いきのこ／ねじれた木の暗い森
-  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), body still facing the swamp, head turned over her left shoulder, glaring sideways at Arlecchino behind her, cheeks slightly flushed, in the center of the frame, facing the camera, looking into the distance away from the camera. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
+  start: メ（中央・正面・目線 画面右・手前寄り）
+  background: 西の沼と大きな枯れ木〔枯れ木〕
+  panels:
+  - 枯れ木
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+    in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), body still facing the swamp, head turned over her left
+    shoulder, glaring sideways at Arlecchino behind her, cheeks slightly flushed, in the center of the frame, facing the camera, looking toward screen right. No other people. Behind: the glowing emerald-green
+    swamp with a huge gnarled dead tree standing in the water.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-059_start.png
-  axis_free: 沼の側から撮るメタリカの正面の画（ビスコたちを見ていない）

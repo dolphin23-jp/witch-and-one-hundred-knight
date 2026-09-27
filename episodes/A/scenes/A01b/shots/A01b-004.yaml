@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-004
 scene: A01b
 tc: 14.1
 sec: 5.4
 kind: A
-shot: 膝上・メタリカ、沼の彼方を指差す
+shot: 膝上・メタリカ・百騎兵。背景は右前斜め／正面・外観
 acting: 体をひねって右腕を突き出し、沼の彼方を指差す
 dialogue:
 - L31「それに、世間の連中が大事に奉っているピラー・オブ・テンペランス！」
@@ -13,32 +13,49 @@ sound: null
 notes: null
 camera:
   pos:
-  - 10.6
-  - 3.0
+  - 10.3
+  - 10.2
   - 1.3
-  look: m_edge
-  lens: 35
-  bearing: 305
+  look: m_end
+  lens: 50
+  bearing: 317
   move: 腕の振りに合わせて右へ振る（pan）。指の先が画面右（005 のピラーの方）
-background: swamp-hill
+background: witch-house-front
 state:
   metallica:
     holds: 招待状（右手）
+  hundred-knight: {}
 image: null
 refs:
 - metallica
+- hundred-knight
 overlays: []
 fallback: null
 act:
-  start: 沼を見渡している
+  start: 東の沼を見渡している
   end: 腕を伸ばしきって止まる（指先の先にピラー）
   sync: 「ピラー・オブ・テンペランス」の「オ」（4.1秒）で腕が伸びきる
 blocking:
-  start: メ（中央・斜め後ろ（画面右向き）・目線 画面右・奥寄り）
-  end: メ（中央・横顔（画面右向き）・目線 画面右）
-  background: ねじれた木の暗い森／眼下の沼に建つ魔女邸と木の遊歩道
-  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing at the cliff edge, turning to her right, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
-  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), right arm thrust out straight, pointing far across the swamp, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  start: メ（中央・正面・目線 画面右・奥寄り）、百（右・正面）
+  end: メ（中央・斜め前（画面右向き）・目線 画面右・手前寄り）、百（右・正面）
+  background: 屋敷の右前斜めと東の遊歩道〔右前斜め〕／屋敷の正面と玄関〔正面・外観〕
+  panels:
+  - 右前斜め
+  - 正面・外観
+  staging_en: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), at the foot of the bridge, turning
+    to her left toward the far swamp, in the center of the frame, facing the camera, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet
+    with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), tiny
+    in the background on the deck, watching her, on the right of the frame, facing the camera. No other people. Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away
+    over the swamp, then the witch''s house seen from the front: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, the
+    round wooden deck on posts.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), right arm thrust out straight,
+    pointing far across the swamp, in the center of the frame, in three-quarter view, turned toward screen right, looking toward screen right; the Hundred Knight (small, about waist-high to Metallica: big
+    round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes;
+    it carries no sword here), standing, on the right of the frame, facing the camera. No other people. Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away over
+    the swamp, then the witch''s house seen from the front: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, the round
+    wooden deck on posts.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-004_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-004_end.png

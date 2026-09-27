@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-050
 scene: A01b
 tc: 237.3
 sec: 4.3
 kind: M
-shot: 胸上・アルレッキーノ
+shot: 胸上・アルレッキーノ。背景はエントランス・接写
 acting: 胸に手を当てて一礼
 dialogue:
 - L74「では、ワタクシは尾の先がだるいニワトリを取りに行きましょう。」
@@ -13,14 +13,14 @@ sound: null
 notes: null
 camera:
   pos:
-  - 8.5
-  - 2.5
-  - 1.7
-  look: arle_take
-  lens: 85
-  bearing: 214
+  - 9.8
+  - 8.9
+  - 1.8
+  look: arle_near
+  lens: 135
+  bearing: 350
   move: 止め
-background: swamp-hill
+background: witch-house-front
 state:
   arlecchino:
     holds: 招待状
@@ -34,11 +34,17 @@ act:
   end: 一礼から顔を上げる
   sync: 「取りに行きましょう」で一礼
 blocking:
-  start: ア（中央・斜め前（画面左向き）・目線 画面右・手前寄り）
-  end: ア（中央・正面・目線 画面右・手前寄り）
-  background: 森へ下りる土の小道と赤いきのこ／ねじれた木の暗い森
-  staging_en: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), bowing politely with one hand on his chest, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen right. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
-  staging_en_end: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), bowing politely with one hand on his chest, in the center of the frame, facing the camera, looking toward screen right. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
+  start: ア（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
+  end: ア（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
+  background: 玄関と屋敷の壁（近く）〔エントランス・接写〕
+  panels:
+  - エントランス・接写
+  staging_en: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
+    on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), bowing politely with one hand on his chest, in the center of the frame, in three-quarter view, turned toward
+    screen left, looking toward screen left. No other people. Behind: close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
+  staging_en_end: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+    pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), bowing politely with one hand on his chest, in the center of the frame, in three-quarter view, turned toward
+    screen left, looking toward screen left. No other people. Behind: close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-050_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-050_end.png

@@ -1,9 +1,11 @@
 # 魔女邸の前（A01b）の配置（上から見た図の座標、単位はメートル）。演出ノート P-04
 # 屋敷の外観の設定画（refs/witch-house-exterior_sheet_01、D-054）の「正面・外観」パネルを基準にした（案、2026-09-27）。
+# 沼の彼方のピラー・オブ・テンペランスは東（方位 80° 前後）の地平線。設定画にないので、005 の背景はユーザーに用意してもらう
 # 座標: x は西 0 → 東 16。y は北（屋敷）0 → 南（森へ下りる小道）14。方位: 北（屋敷の玄関）0・東 90・南（小道）180・西 270。
 # 背景は Claude が作らない。設定画のパネルを使い、足りない向きはユーザーが用意する（ユーザー指定 2026-09-27）。
 id: witch-house-front
 size: {w: 16.0, d: 14.0}
+compass: 北＝屋敷 0、東 90、南＝森への小道 180、西 270
 time: 朝
 
 # 地面の区分（上から見た図と略図に描く）。先に書いたものが下になる
@@ -16,20 +18,28 @@ areas:
   - {kind: rect, x: [11.2, 16], y: [2.6, 3.6], ja: 東の遊歩道, color: [150, 120, 80]}
   - {kind: circle, center: [8.0, 2.0], r: 2.4, ja: 屋敷, color: [120, 70, 40]}
 
-# 遠景（方位ごと）。どの設定画のパネルが背景になるか（panel）。panel が null の向きはユーザーに用意してもらう
+# 遠景（カメラの向く方位ごと）。どの設定画のパネルが背景になるか（panel）。panel が null の向きはユーザーに用意してもらう
+# 「左前斜め」は屋敷を正面の左（西）寄りから見た画（カメラは南西から北東を向く）。扉が屋敷の右下に見える。「右前斜め」はその逆
 horizon:
   - {from: 330, to: 360, ja: 屋敷の正面と玄関, panel: 正面・外観, en: "the witch's house seen from the front: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, the round wooden deck on posts"}
   - {from: 0, to: 30, ja: 屋敷の正面と玄関, panel: 正面・外観, en: "the witch's house seen from the front: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, the round wooden deck on posts"}
-  - {from: 30, to: 70, ja: 屋敷の右前斜めと東の遊歩道, panel: 右前斜め, en: "the witch's house seen from its front right, with the wooden boardwalk curving away over the swamp"}
+  - {from: 30, to: 70, ja: 屋敷の左前斜めと西の遊歩道, panel: 左前斜め, en: "the witch's house seen from its front left, with the wooden boardwalk and posts over the swamp"}
   - {from: 70, to: 135, ja: 東の沼と枯れ木, panel: 沼の水面, en: "the glowing emerald-green swamp with gnarled dead trees standing in the water"}
   - {from: 135, to: 225, ja: 森へ下りる土の小道, panel: null, en: "the dirt path leading away from the house into a dark forest of twisted trees, red mushrooms and old stumps along it"}
   - {from: 225, to: 290, ja: 西の沼と大きな枯れ木, panel: 枯れ木, en: "the glowing emerald-green swamp with a huge gnarled dead tree standing in the water"}
-  - {from: 290, to: 330, ja: 屋敷の左前斜めと西の遊歩道, panel: 左前斜め, en: "the witch's house seen from its front left, with the wooden boardwalk and posts over the swamp"}
+  - {from: 290, to: 330, ja: 屋敷の右前斜めと東の遊歩道, panel: 右前斜め, en: "the witch's house seen from its front right, with the wooden boardwalk curving away over the swamp"}
+
+# 屋敷の近くを撮るとき（見る点が玄関から r m 以内、カメラが玄関から cam_max m 以内で、北寄りを向く）は、背景を「エントランス・接写」のパネルにする
+near:
+  - {at: [8.0, 4.4], r: 2.2, cam_max: 5.5, from: 300, to: 60, ja: 玄関と屋敷の壁（近く）, panel: エントランス・接写, en: "close behind: the house's wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck"}
+
+# 屋敷の高さ（略図で壁を立てる）
+house: {center: [8.0, 2.0], r: 2.4, h: 4.5, roof: 5.0}
 
 props:
   door:        {kind: point, at: [8.0, 4.4], ja: 玄関の扉, en: "the arched front door"}
-  big_tree:    {kind: point, at: [3.0, 6.2], ja: 沼に立つ大きな枯れ木, en: "a huge gnarled dead tree standing in the swamp"}
-  east_trees:  {kind: point, at: [13.6, 6.0], ja: 右の枯れ木, en: "twisted dead trees"}
+  big_tree:    {kind: point, h: 6.0, at: [3.0, 6.2], ja: 沼に立つ大きな枯れ木, en: "a huge gnarled dead tree standing in the swamp"}
+  east_trees:  {kind: point, h: 5.0, at: [13.6, 6.0], ja: 右の枯れ木, en: "twisted dead trees"}
   mushrooms:   {kind: point, at: [5.4, 9.4], ja: 赤いきのこ, en: "a cluster of red mushrooms"}
   stump_w:     {kind: point, at: [4.0, 12.0], ja: 左の杭と切り株, en: "old wooden posts and a stump"}
   stump_e:     {kind: point, at: [12.2, 10.0], ja: 右の切り株, en: "an old stump"}
@@ -40,3 +50,8 @@ people:
   bisco:          {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
   arlecchino:     {ja: アルレッキーノ, eye: 1.9, h: 1.9, en: "Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots)"}
   hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
+
+# カットで背景を名前で決めるとき（blocking.yaml の bg）。panel が null はユーザーに用意してもらう
+views:
+  overhead:   {ja: 高い所から見下ろす屋敷の前, panel: 高所からの俯瞰, en: "seen from high above: the witch's house with its stacked orange cone roofs, the round wooden deck and the bridge over the glowing green swamp"}
+  pillar_far: {ja: 沼の彼方のピラー・オブ・テンペランス, panel: null, en: "far across the glowing green swamp on the horizon, the Pillar of Temperance, a tall ancient stone pillar, in thin morning mist"}
