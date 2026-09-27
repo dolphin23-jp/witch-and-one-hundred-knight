@@ -110,6 +110,13 @@ def original_line(audio_dir, s, d, tmp):
     lid, part, text = m.groups()
     wavs = sorted((audio_dir / "original").glob(f"{lid}_*.wav"))
     if not wavs:
+        rows = {}
+        csv_path = audio_dir / "original" / "lines.csv"
+        if csv_path.exists():
+            import csv
+            rows = {r["id"]: r for r in csv.DictReader(csv_path.open(encoding="utf-8"))}
+        if "無言" in (rows.get(lid, {}).get("flags") or "") + (rows.get(lid, {}).get("mark") or ""):   # 声のない台詞（「……」）。字幕だけ出す
+            return rows[lid]["who"], text, None
         sys.exit(f"声がありません: audio/{s['scene']}/original/{lid}_*.wav")
     wav = wavs[0]
     who = wav.stem.split("_", 1)[1]
@@ -124,6 +131,7 @@ def original_line(audio_dir, s, d, tmp):
     return who, text, out
 
 
+SILENT = 1.0   # 声のない台詞の字幕を出す秒
 SPLIT_A = {}   # 分けた台詞の a のカットの秒（b を切るときに使う）
 
 
@@ -151,7 +159,7 @@ def build(scene_dir, bgm, out_dir):
                     sys.exit(f"声がありません: {wav.relative_to(ROOT)}")
                 items.append((d["who"], d["line"], wav))
         original = any(isinstance(d, str) for d in (s.get("dialogue") or []))
-        total_voice = sum(dur(w) for _, _, w in items) + GAP * max(len(items) - 1, 0)
+        total_voice = sum(dur(w) if w else SILENT for _, _, w in items) + GAP * max(len(items) - 1, 0)
         if original:   # 原作の台詞はカットの秒が声の実測なので、余りがあるときだけ頭に間を置く
             lead = (s.get("timing") or {}).get("lead", min(LEAD, max(0.0, float(s["sec"]) - total_voice)))
             tail = 0.0
@@ -159,9 +167,10 @@ def build(scene_dir, bgm, out_dir):
             lead, tail = (s.get("timing") or {}).get("lead", LEAD), TAIL
         lines, cursor = [], lead
         for who, line, wav in items:
-            L = dur(wav)
+            L = dur(wav) if wav else SILENT
             lines.append({"who": who, "line": line, "start": round(cursor, 2), "end": round(cursor + L, 2)})
-            voices.append((t + cursor, wav))
+            if wav:
+                voices.append((t + cursor, wav))
             cursor += L + GAP
         voice_need = (cursor - GAP + tail) if lines else 0
         sec = round(max(float(s["sec"]), voice_need), 2)
