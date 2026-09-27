@@ -21,7 +21,7 @@ FRAME_EN = {"大引き": "extreme wide shot", "引き": "wide shot", "全身": "
             "胸上": "medium close-up (chest up)", "寄り": "close-up", "大寄り": "extreme close-up"}
 PANEL_FILE = {"用意画像 bg_01": "refs/witch-house-front_bg_01.png", "用意画像 bg_02": "refs/witch-house-front_bg_02.png",
               "枯れ木": "world/witch-house-front/panel_dead-tree.png", "沼の水面": "world/witch-house-front/panel_swamp-water.png"}
-CREDITS = {"nano_banana_pro": 2.0}   # 2k、16:9 の1枚（logs/generations.jsonl の実績）
+CREDITS = {"nano_banana_pro": 2.0, "gpt_image_2_5": 1.0}   # 2k、16:9 の1枚（logs/generations.jsonl の実績。GPT Image 2.5 は quality medium）
 STYLE = ("2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. "
          "No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).")
 
