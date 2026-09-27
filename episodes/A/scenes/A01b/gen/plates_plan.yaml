@@ -1,0 +1,56 @@
+# A01b 背景の基準（人物なし）の生成計画（承認待ち、2026-09-27）。演出ノート P-03: カメラの向きごとに背景の基準を作り、各カットはそれを1枚目の参照画像にする。
+# 向きは blocking.yaml のカメラの向き（tools/staging.py の bearing）で分けた。参照画像は D-054 の公式資料だけ（屋敷の外観の設定画）。
+model: {id: gpt_image_2_5, via: higgsfield, quality: medium, resolution: 2k, aspect_ratio: "16:9", credits_each: 1}
+refs: [witch-house-exterior_sheet_01]
+common: >-
+  Background plate for a 2D anime (hand-painted anime background art, clean shapes, soft cel shading), 16:9, a single continuous scene
+  (not a collage, not a grid, no panels, no borders, no text, no labels). No people, no characters, no animals.
+  Match the art style, colors and props of the reference sheet: a glowing emerald-green swamp, twisted black dead trees,
+  orange shingled cone roofs with glowing green magic-circle patterns, wooden boardwalks on posts, red mushrooms.
+  Time: early morning. The low sun is in the east, thin mist lies over the swamp, the sky is pale with soft clouds.
+  The viewpoint is a mossy dirt hilltop whose north edge drops steeply down to the swamp. Eye-level camera (about 1.5 m).
+plates:
+  - id: swamp-hill-N
+    name: 北・一面の沼
+    cuts: [A01b-001, A01b-007, A01b-015, A01b-018, A01b-054, A01b-056, A01b-065, A01b-071, A01b-049, A01b-072]
+    prompt: >-
+      Looking north toward the cliff edge. The mossy edge of the hilltop runs across the lower quarter of the frame; beyond and far below it,
+      a vast glowing emerald-green swamp stretches to the horizon, with gnarled dead trees standing in the water and thin morning mist.
+  - id: swamp-hill-NW
+    name: 北西・眼下の屋敷
+    cuts: [A01b-004, A01b-016, A01b-020, A01b-022, A01b-025, A01b-029, A01b-044, A01b-051, A01b-057, A01b-064, A01b-069, A01b-070, A01b-008, A01b-021, A01b-046]
+    prompt: >-
+      Looking north-west. The cliff edge of the hilltop crosses the lower foreground. Far below on the swamp stands the witch's house:
+      stacked orange shingled cone roofs with glowing green magic-circle patterns and a glowing green lantern-shaped top, with winding wooden
+      boardwalks on posts around it, surrounded by the glowing green water. On the left, at the cliff edge, a huge gnarled dead tree reaches its bare branches out over the swamp.
+  - id: swamp-hill-NE
+    name: 北東・沼の岸と朝日、ピラー
+    cuts: [A01b-005, A01b-011, A01b-012]
+    prompt: >-
+      Looking north-east over the cliff edge. The swamp shore is lined with twisted dead trees; the low morning sun rises behind them with soft rays through the mist.
+      Far away on the horizon, slightly left of center, stands the Pillar of Temperance, a tall ancient stone pillar, hazy in the mist.
+  - id: swamp-hill-W
+    name: 西・崖の縁の大きな枯れ木
+    cuts: [A01b-010, A01b-017, A01b-030, A01b-033, A01b-048, A01b-061, A01b-067, A01b-068]
+    prompt: >-
+      Looking west along the cliff edge. A huge gnarled dead tree stands at the cliff edge left of center, its bare branches reaching out over the swamp.
+      The right third of the frame opens onto the glowing emerald-green swamp far below. On the left, the mossy hilltop ground and a dark forest of twisted black trees.
+  - id: swamp-hill-SW
+    name: 南西・ねじれた木の暗い森
+    cuts: [A01b-006, A01b-013, A01b-014, A01b-019, A01b-026, A01b-027, A01b-028, A01b-031, A01b-034, A01b-035, A01b-036, A01b-037, A01b-038, A01b-039, A01b-041, A01b-042, A01b-043, A01b-045, A01b-047, A01b-052, A01b-053, A01b-055, A01b-060, A01b-063, A01b-066]
+    prompt: >-
+      Looking south-west across the mossy dirt hilltop. Moss and dirt ground in the foreground with a few small red mushrooms;
+      behind, the edge of a dark forest of twisted black trees with faintly glowing mushrooms at their roots. Soft morning light comes from the left.
+  - id: swamp-hill-S
+    name: 南・森へ下りる小道
+    cuts: [A01b-002, A01b-003, A01b-009, A01b-023, A01b-032, A01b-050, A01b-058, A01b-059, A01b-062]
+    prompt: >-
+      Looking south across the hilltop. A dirt path leads from the hilltop down into a dark forest of twisted black trees; clusters of red mushrooms
+      and old stumps line the path. Soft morning light from the left.
+  - id: swamp-hill-high
+    name: 俯瞰・高台と眼下の沼
+    cuts: [A01b-073, A01b-046]
+    prompt: >-
+      High crane view from above the south side of the hilltop, looking north and down. The small mossy hilltop fills the lower part of the frame, with its cliff edge
+      and a huge gnarled dead tree at the left end of the edge. Beyond and far below spreads the vast glowing emerald-green swamp; the witch's house with its winding
+      boardwalks stands far below on the left; the Pillar of Temperance rises on the far horizon, slightly right. The morning sun is low on the right.
