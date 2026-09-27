@@ -143,7 +143,7 @@ cuts:
     lens: 24
     move: {metallica: {to: m_front, face: '@bisco'}}
     gaze: {metallica: bisco}
-    pose: {metallica: striding forward with big confident steps, bisco: standing at the foot of the bridge in front of the house, hundred-knight: standing in the middle of the clearing, arlecchino: standing at the foot of the bridge}
+    pose: {metallica: striding forward with big confident steps, bisco: standing at the foot of the bridge in front of the house, hundred-knight: standing at the foot of the bridge, arlecchino: standing at the foot of the bridge}
     pose_end: {metallica: 'stopped with her chest thrust out and chin raised, hands on her hips'}
     act: {start: 広場の中ほどで振り向いた姿勢, do: 大股でビスコへ詰め寄る（4歩）, end: ビスコの目の前で胸を張って止まる（両手を腰に）, sync: 「全ての魔女も」で歩き出し、「ひれ伏すべき」の「ども」（2.6秒）で止まって胸を張る}
     camera: 沼の上の低い位置から、歩く姿を追って振る（pan）
@@ -635,7 +635,7 @@ cuts:
     move: {metallica: {to: m_end, via: [[9.4, 10.0]], face: '@bisco'}, arlecchino: {to: arle_near, face: '@metallica'}}
     gaze: {metallica: 200}
     gaze_end: {metallica: bisco}
-    pose: {metallica: 'turning on her heel with a huff, braids swinging', bisco: standing in the middle of the clearing, hundred-knight: standing in the middle of the clearing, arlecchino: holding the invitation}
+    pose: {metallica: 'turning on her heel with a huff, braids swinging', bisco: standing at the foot of the bridge, hundred-knight: standing at the foot of the bridge, arlecchino: holding the invitation}
     pose_end: {metallica: 'standing in the middle of the clearing again, turned back toward the others, one hand raised'}
     act: {start: 目をむいたまま, do: 「ふん」でくるりと背を向け、大股で広場の中ほどへ戻りながら宣言する。端で振り返る。アルレッキーノはビスコの隣へ戻る, end: 広場の中ほどで振り返り、片手を上げる, sync: 「ふん」（0〜0.3秒）で背を向け、間（1.1秒）で歩き出し、「ダウジング・ペンデュラム」（5.7秒）で振り返る}
     camera: 歩きに合わせて右へ振る（pan）
@@ -803,7 +803,7 @@ cuts:
     look: [10.3, 9.4]
     lens: 35
     gaze: {metallica: sky_e, bisco: metallica}
-    pose: {metallica: 'looking far out over the swamp, not at Bisco, her face calm', bisco: small and blurred in the background in the middle of the clearing, arlecchino: small and blurred in the background in the middle of the clearing, hundred-knight: small and blurred in the background at the foot of the bridge}
+    pose: {metallica: 'looking far out over the swamp, not at Bisco, her face calm', bisco: small and blurred in the background at the foot of the bridge, arlecchino: small and blurred in the background at the foot of the bridge, hundred-knight: small and blurred in the background at the foot of the bridge}
     act: {start: 東の沼を見ている横顔。奥の玄関前に三人, do: ビスコを見ずに、そっけなく言う。奥のビスコ（小さく、ぼけている）が顔を上げる, end: 同じ, sync: —}
     camera: 広場の南から。止め。奥に屋敷の正面
     note: 一番やさしい台詞を、一番そっけなく撮る
@@ -865,8 +865,8 @@ cuts:
     move: {metallica: {face: hk}}
     gaze: {metallica: sky_e, hundred-knight: metallica, bisco: metallica, arlecchino: metallica}
     gaze_end: {metallica: hk, hundred-knight: metallica, bisco: metallica, arlecchino: metallica}
-    pose: {metallica: 'in the middle of the clearing, looking out over the swamp', hundred-knight: 'small, standing and looking up at Metallica', bisco: standing in the middle of the clearing, arlecchino: standing at the foot of the bridge}
-    pose_end: {metallica: 'spun around, arm thrust out pointing straight at the Hundred Knight', hundred-knight: 'small, standing at attention, looking up at Metallica', bisco: standing in the middle of the clearing, arlecchino: standing at the foot of the bridge}
+    pose: {metallica: 'in the middle of the clearing, looking out over the swamp', hundred-knight: 'small, standing and looking up at Metallica', bisco: standing at the foot of the bridge, arlecchino: standing at the foot of the bridge}
+    pose_end: {metallica: 'spun around, arm thrust out pointing straight at the Hundred Knight', hundred-knight: 'small, standing at attention, looking up at Metallica', bisco: standing at the foot of the bridge, arlecchino: standing at the foot of the bridge}
     act: {start: 沼を見る姿, do: くるりと振り向き、橋のたもとの百騎兵を真っ直ぐ指差す。「制圧しながら」で指を突き出し直す, end: 指差したまま, sync: 「百騎兵」（0.6〜1.0秒）で振り向いて指差し、「圧」（3.3秒）で突き出す}
     camera: 振り向きに合わせて少し寄る（push）
     kind: A
