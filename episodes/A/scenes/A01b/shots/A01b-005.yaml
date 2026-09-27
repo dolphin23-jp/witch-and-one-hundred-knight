@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-005
 scene: A01b
 tc: 19.5
 sec: 5.2
 kind: K
-shot: 大引き・沼の彼方のピラー
+shot: 大引き・人物なし。背景は要用意（沼の彼方のピラー・オブ・テンペランス）
 acting: 朝靄がゆっくり流れる
 dialogue:
 - L32「それが魔力満ちたる沼を封じていたという歴然たる事実！」
@@ -13,12 +13,12 @@ sound: null
 notes: ピラーを画で初出させる
 camera:
   pos:
-  - 8.0
-  - 0.5
+  - 8.6
+  - 7.6
   - 1.6
   look: pillar
   lens: 85
-  bearing: 22
+  bearing: 79
   move: ピラーへゆっくり寄る（push）
 background: swamp-pillar-far
 state: {}
@@ -32,8 +32,9 @@ act:
   sync: —
 blocking:
   start: 人物なし
-  end: null
-  background: 一面の翠の沼と沼に立つ枯れ木／沼の彼方のピラー・オブ・テンペランス／沼の岸と枯れ木の林、朝日
-  staging_en: 'No people in frame. Behind: a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist, then far across the swamp on the horizon, the Pillar of Temperance, a tall ancient stone pillar, then the swamp shore lined with twisted dead trees, the low morning sun rising behind them.'
+  background: 沼の彼方のピラー・オブ・テンペランス〔要用意〕
+  panels:
+  - 要用意（沼の彼方のピラー・オブ・テンペランス）
+  staging_en: 'No people in frame. Behind: far across the glowing green swamp on the horizon, the Pillar of Temperance, a tall ancient stone pillar, in thin morning mist.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-005_start.png

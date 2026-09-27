@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-057
 scene: A01b
 tc: 258.4
 sec: 5.2
 kind: K
-shot: 膝上・メタリカ
+shot: 膝上・メタリカ。背景は枯れ木
 acting: 沼の方へ体を向ける。ビスコを見ない
 dialogue:
 - L81「まあ、いいだろう。犬コロにとっても無関係な話ではないからな。」
@@ -13,14 +13,14 @@ sound: null
 notes: null
 camera:
   pos:
-  - 10.4
-  - 4.6
+  - 10.6
+  - 7.4
   - 1.4
-  look: m_edge
+  look: m_end
   lens: 50
-  bearing: 325
+  bearing: 263
   move: 止め
-background: swamp-hill
+background: witch-house-front
 state:
   metallica:
     holds: なし
@@ -34,11 +34,18 @@ act:
   end: 沼を見ている
   sync: 「まあ、いいだろう」の後の間（0.9秒）で向ききる
 blocking:
-  start: メ（中央・横顔（画面右向き）・目線 画面右・奥寄り）
-  end: メ（中央・斜め後ろ（画面右向き）・目線 画面右・奥寄り）
-  background: 眼下の沼に建つ魔女邸と木の遊歩道
-  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco, in the center of the frame, in profile, turned toward screen right, looking toward screen right. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
-  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts.'
+  start: メ（中央・斜め前（画面左向き）・目線 カメラの方）
+  end: メ（中央・正面・目線 カメラの方）
+  background: 西の沼と大きな枯れ木〔枯れ木〕
+  panels:
+  - 枯れ木
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+    in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco, in the
+    center of the frame, in three-quarter view, turned toward screen left, looking toward the camera. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing in the
+    water.'
+  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
+    ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turned toward the swamp, not looking at Bisco,
+    in the center of the frame, facing the camera, looking toward the camera. No other people. Behind: the glowing emerald-green swamp with a huge gnarled dead tree standing in the water.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-057_start.png
   - episodes/A/scenes/A01b/gen/sketch/A01b-057_end.png

@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-032
 scene: A01b
 tc: 157.3
 sec: 4.5
 kind: S
-shot: 寄り・ビスコ
+shot: 寄り・ビスコ。背景はエントランス・接写
 acting: 追い詰められてのけぞる
 dialogue:
 - L58「楽器がそこにあれば、素晴らしい音楽が奏でられるとでも思ってるのか？」
@@ -13,14 +13,14 @@ sound: null
 notes: 汗は合成
 camera:
   pos:
-  - 7.2
-  - 4.2
+  - 9.4
+  - 6.6
   - 1.5
   look: bisco
   lens: 85
-  bearing: 202
+  bearing: 322
   move: 止め
-background: swamp-hill
+background: witch-house-front
 state:
   bisco: {}
 image: null
@@ -34,9 +34,12 @@ act:
   end: のけぞったまま
   sync: 「楽器」「音楽」で一段ずつのけぞる
 blocking:
-  start: ビ（中央・斜め前（画面右向き）・目線 画面右・手前寄り）
-  end: null
-  background: 森へ下りる土の小道と赤いきのこ／ねじれた木の暗い森
-  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), cornered, leaning back, sweating, in the center of the frame, in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: a dirt path leading down into the dark forest, clusters of red mushrooms and old stumps along it, then a dark forest of twisted black trees.'
+  start: ビ（中央・横顔（画面左向き）・目線 画面左）
+  background: 玄関と屋敷の壁（近く）〔エントランス・接写〕
+  panels:
+  - エントランス・接写
+  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+    black-and-white tail, silver armored boots), cornered, leaning back, sweating, in the center of the frame, in profile, turned toward screen left, looking toward screen left. No other people. Behind:
+    close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-032_start.png

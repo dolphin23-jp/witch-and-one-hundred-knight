@@ -1,28 +1,28 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-046
 scene: A01b
 tc: 221.5
 sec: 1.0
 kind: S
-shot: 俯瞰・引き・固定・四人
+shot: 引き・メタリカ・アルレッキーノ・百騎兵・ビスコ。背景は高所からの俯瞰
 acting: 誰も動かない（1拍）
 dialogue: []
 sound: BGM①を止める／風の音だけ
 notes: 1拍の静止。BGM①を止め、風の音だけ
 camera:
   pos:
-  - 9.0
-  - 8.6
+  - 11.4
+  - 9.8
   - 5.5
   look:
-  - 6.1
-  - 5.3
+  - 8.0
+  - 5.9
   lens: 28
   bearing: 319
   tilt: down
   move: 高い位置からの俯瞰。固定
-background: swamp-hill
+background: witch-house-front
 state:
   metallica:
     holds: なし
@@ -43,10 +43,18 @@ act:
   end: 同じ
   sync: —
 blocking:
-  start: 百（左・横顔（画面右向き）・目線 画面右）、ビ（中央・背中・目線 画面右・奥寄り）、メ（中央・正面・目線 画面右・手前寄り）、ア（中央・横顔（画面右向き））
-  end: null
-  background: ねじれた木の暗い森／眼下の沼に建つ魔女邸と木の遊歩道／一面の翠の沼と沼に立つ枯れ木
-  staging_en: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), frozen, on the left of the frame, in profile, turned toward screen right, looking toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), frozen, in the center of the frame, with the back to the camera, looking toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple
-    pants with gold concentric circles, curled-toe boots), frozen, arms still folded, in the center of the frame, facing the camera, looking toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), frozen, smiling, the invitation in hand, on the right of the frame, in profile, turned toward screen right. No other people. High angle looking down. Behind: a dark forest of twisted black trees, then far below, the witch''s house standing in the swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a green lantern-shaped top, winding wooden boardwalks on posts, then a vast glowing emerald-green swamp below, with gnarled dead trees standing in the water and thin morning mist.'
+  start: メ（中央・横顔（画面右向き）・目線 画面右・手前寄り）、ア（中央・斜め前（画面右向き））、百（中央・正面・目線 カメラの方）、ビ（中央・横顔（画面左向き）・目線 画面左・手前寄り）
+  background: 高い所から見下ろす屋敷の前〔高所からの俯瞰〕
+  panels:
+  - 高所からの俯瞰
+  staging_en: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), frozen, arms still folded, in the center
+    of the frame, in profile, turned toward screen right, looking toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched
+    tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), frozen, smiling, the invitation in hand, in the center of the frame,
+    in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top,
+    black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), frozen, in the center of the frame, facing the camera, looking
+    toward the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail,
+    silver armored boots), frozen, in the center of the frame, in profile, turned toward screen left, looking toward screen left. No other people. High angle looking down. Behind: seen from high above:
+    the witch''s house with its stacked orange cone roofs, the round wooden deck and the bridge over the glowing green swamp.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-046_start.png

@@ -1,11 +1,11 @@
-# A01b 沼のほとりの森（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27）
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
 # kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01b-039
 scene: A01b
 tc: 185.6
 sec: 4.7
 kind: S
-shot: 寄り・百騎兵
+shot: 寄り・百騎兵。背景は右前斜め／エントランス・接写
 acting: 首（兜ごと）が反対側へかしぐ
 dialogue:
 - L64「満月の夜に音を出すスズの音草の3品にございます。」
@@ -13,14 +13,14 @@ sound: null
 notes: 反応の三連 3。「？」は合成
 camera:
   pos:
-  - 7.6
-  - 6.2
+  - 9.6
+  - 6.6
   - 0.8
   look: hk
   lens: 85
-  bearing: 263
+  bearing: 303
   move: 百騎兵の目の高さ。止め
-background: swamp-hill
+background: witch-house-front
 state:
   hundred-knight: {}
 image: null
@@ -34,9 +34,14 @@ act:
   end: かしいだまま
   sync: 「スズの音草」（2.6秒）でかしぐ
 blocking:
-  start: 百（中央・斜め前（画面右向き）・目線 画面右・手前寄り）
-  end: null
-  background: ねじれた木の暗い森
-  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), tilting its whole helmeted head to one side, in the center of the frame, in three-quarter view, turned toward screen right, looking toward screen right. No other people. Behind: a dark forest of twisted black trees.'
+  start: 百（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
+  background: 屋敷の右前斜めと東の遊歩道〔右前斜め〕／玄関と屋敷の壁（近く）〔エントランス・接写〕
+  panels:
+  - 右前斜め
+  - エントランス・接写
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), tilting its whole helmeted head to one side, in the center of the frame,
+    in three-quarter view, turned toward screen left, looking toward screen left. No other people. Behind: the witch''s house seen from its front right, with the wooden boardwalk curving away over the swamp,
+    then close behind: the house''s wooden wall with the ornate arched front door, green lanterns on both sides, and the wooden deck.'
   sketch:
   - episodes/A/scenes/A01b/gen/sketch/A01b-039_start.png
