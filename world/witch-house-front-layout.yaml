@@ -1,0 +1,53 @@
+# 魔女邸の前（A01b）の配置（上から見た図の座標、単位はメートル）。演出ノート P-04
+# 位置関係の基準はユーザーが用意した背景画像（refs/witch-house-front_bg_01・02）。設定画（witch-house-exterior_sheet_01）より優先（ユーザー指定 2026-09-27）。
+#   bg_01: 広場の南の端から、橋と玄関と屋敷の正面を見た画。右（東）に沼へ延びる遊歩道
+#   bg_02: 屋敷の前の橋の上から、広場を見た画（南向き）。左（東）に遊歩道。広場のまわりは沼で、森へ下りる小道はない
+# 屋敷は沼の中の丸いデッキの上に立ち、短い木の橋（階段）で南の土の広場につながる。広場のふちに赤いきのこ、杭、切り株、街灯
+# 背景は Claude が作らない。足りない向きはユーザーが用意する（ユーザー指定 2026-09-27）。ピラーは映さない
+# 座標: x は西 0 → 東 20。y は北（屋敷）0 → 南 19。方位: 北（屋敷の玄関）0・東 90・南 180・西 270。
+id: witch-house-front
+size: {w: 20.0, d: 19.0}
+compass: 北＝屋敷 0、東 90、南 180、西 270
+time: 朝
+# 用意画像 bg_01・02 は夜の画。シーンは朝に合わせる（ユーザー指定 2026-09-27）。画像は位置関係と見た目の参照にし、光は指示文で朝にする
+light_en: "Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)"
+
+# 地面の区分（上から見た図と略図に描く）。先に書いたものが下になる
+areas:
+  - {kind: rect, x: [0, 20], y: [0, 19], ja: 翠の沼, color: [40, 170, 80]}
+  - {kind: poly, points: [[17.2, 12.6], [17.06, 13.65], [16.65, 14.67], [15.99, 15.6], [15.09, 16.42], [14.0, 17.09], [12.76, 17.59], [11.4, 17.9], [10.0, 18.0], [8.6, 17.9], [7.24, 17.59], [6.0, 17.09], [4.91, 16.42], [4.01, 15.6], [3.35, 14.67], [2.94, 13.65], [2.8, 12.6], [2.94, 11.55], [3.35, 10.53], [4.01, 9.6], [4.91, 8.78], [6.0, 8.11], [7.24, 7.61], [8.6, 7.3], [10.0, 7.2], [11.4, 7.3], [12.76, 7.61], [14.0, 8.11], [15.09, 8.78], [15.99, 9.6], [16.65, 10.53], [17.06, 11.55]], ja: 土の広場, color: [110, 90, 60]}
+  - {kind: rect, x: [16.4, 20], y: [9.2, 10.6], ja: 東へ延びる遊歩道, color: [150, 120, 80]}
+  - {kind: circle, center: [10.0, 2.0], r: 3.4, ja: 屋敷を囲む木のデッキ, color: [150, 120, 80]}
+  - {kind: rect, x: [9.0, 11.0], y: [5.2, 7.5], ja: 玄関へ渡る木の橋（階段）, color: [150, 120, 80]}
+  - {kind: circle, center: [10.0, 2.0], r: 2.4, ja: 屋敷, color: [120, 70, 40]}
+
+# 遠景（カメラの向く方位ごと）。どの背景画像・パネルが背景になるか（panel）
+horizon:
+  - {from: 300, to: 360, ja: 橋と玄関と屋敷の正面, panel: "用意画像 bg_01", en: "the witch's house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides"}
+  - {from: 0, to: 60, ja: 橋と玄関と屋敷の正面, panel: "用意画像 bg_01", en: "the witch's house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides"}
+  - {from: 60, to: 120, ja: 東の沼（遊歩道は広場の北東の端から出る）, panel: 沼の水面, en: "the glowing emerald-green swamp full of gnarled dead trees"}
+  - {from: 120, to: 240, ja: 広場とそのまわりの沼, panel: "用意画像 bg_02", en: "the round dirt clearing edged with red mushrooms, old stumps and lamp posts, and beyond it the glowing emerald-green swamp full of gnarled dead trees stretching to the horizon"}
+  - {from: 240, to: 300, ja: 西の沼と枯れ木, panel: 枯れ木, en: "the glowing emerald-green swamp with huge gnarled dead trees standing in the water"}
+
+# 屋敷の高さ（略図で壁を立てる）
+house: {center: [10.0, 2.0], r: 2.4, h: 4.5, roof: 5.0}
+
+props:
+  door:        {kind: point, at: [10.0, 4.4], ja: 玄関の扉, en: "the arched front door"}
+  lamp_w:      {kind: point, h: 2.2, at: [8.6, 7.4], ja: 橋の左の街灯, en: "a lamp post"}
+  lamp_e:      {kind: point, h: 2.2, at: [11.4, 7.4], ja: 橋の右の街灯, en: "a lamp post"}
+  tree_w:      {kind: point, h: 6.0, at: [1.5, 9.0], ja: 西の大きな枯れ木, en: "a huge gnarled dead tree standing in the swamp"}
+  tree_e:      {kind: point, h: 6.0, at: [18.5, 6.5], ja: 東の大きな枯れ木, en: "a huge gnarled dead tree standing in the swamp"}
+  mushrooms_w: {kind: point, at: [3.6, 12.8], ja: 西のふちの赤いきのこ, en: "a cluster of red mushrooms"}
+  mushrooms_e: {kind: point, at: [16.2, 13.8], ja: 東のふちの赤いきのこ, en: "a cluster of red mushrooms"}
+  stumps_s:    {kind: point, at: [10.0, 17.8], ja: 南のふちの杭と切り株, en: "old wooden posts and stumps"}
+
+people:
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  bisco:          {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
+  arlecchino:     {ja: アルレッキーノ, eye: 1.9, h: 1.9, en: "Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots)"}
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
+
+# カットで背景を名前で決めるとき（blocking.yaml の bg）
+views:
+  overhead:   {ja: 高い所から見下ろす屋敷の前, panel: null, en: "seen from high above: the witch's house on its round deck, the short bridge and the round dirt clearing in the glowing green swamp"}

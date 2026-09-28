@@ -1,0 +1,25 @@
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01b-024
+scene: A01b
+tc: 121.1
+sec: 6.1
+kind: K
+shot: インサート・魔女邸の書庫
+acting: 本の山をゆっくり上へたどる
+dialogue:
+- L50「その数、およそ300万冊にございます。一日100冊はお読みになっておりましたゆえ。」
+sound: null
+notes: 300万冊を画で。一人で読み続けた時間
+camera:
+  move: 下から上へゆっくり（tilt up）
+background: witch-house-library
+state: {}
+image: episodes/A/scenes/A01b/stills/rest/A01b-024_gpt-image-2.5_01.png
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 床から積み上がった本の山
+  end: 頂上の小さな読書灯と、座り込んで本を読む小さな跡
+  sync: 「一日100冊」（4.6秒）で頂上

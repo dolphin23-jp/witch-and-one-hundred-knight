@@ -1,0 +1,72 @@
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01b-011
+scene: A01b
+tc: 47.8
+sec: 6.8
+kind: K
+shot: 膝上・メタリカ・百騎兵・ビスコ。背景は枯れ木
+acting: 右から歩み寄り、腰を折って大きな手を口元に当て耳打ち。画面左のメタリカはまだ沼に向かって両腕を上げている
+dialogue:
+- L38「申し訳ございません、ビスコ様。大魔女となり、沼を世界に広げるのはリカ様の悲願。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.2
+  - 9.4
+  - 1.5
+  look:
+  - 10.5
+  - 9.2
+  lens: 35
+  bearing: 274
+  move: 止め。右にビスコとアルレッキーノ、左の広場の中ほどにメタリカ。二人からメタリカへピントを送る
+background: witch-house-front
+state:
+  metallica:
+    holds: 招待状（右手）
+  bisco: {}
+  arlecchino:
+    holds: なし
+  hundred-knight: {}
+image: episodes/A/scenes/A01b/stills/rest/A01b-011_gpt-image-2.5_edit01.png
+refs:
+- metallica
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノは三人の右端、ビスコはメタリカを見ている
+  end: 耳打ちの姿勢のまま。ビスコはアルレッキーノへ顔を向ける
+  sync: 「申し訳ございません」で身をかがめる
+blocking:
+  start: メ（左・斜め前（画面左向き））、百（中央・斜め前（画面左向き））、ビ（右・横顔（画面左向き）・目線 画面右・手前寄り）
+  end: メ（左・斜め前（画面左向き））、百（中央・斜め前（画面左向き））、ビ（右・正面・目線 カメラの方）、ア（右・背中・目線 奥）
+  background: 西の沼と枯れ木〔枯れ木〕
+  panels:
+  - 枯れ木
+  staging_en: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), in the middle of the clearing, posing
+    with arms raised toward the swamp, at the far left of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+    helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
+    standing, on the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy
+    uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), listening with her head tilted toward him, at the far right of the frame, in profile, turned toward screen left,
+    looking at Arlecchino (off screen, toward screen right). No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning
+    sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout
+    and details but render it in morning light.)'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), in the middle of the clearing,
+    posing with arms raised toward the swamp, at the far left of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+    helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
+    standing, on the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy
+    uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), listening with her head tilted toward him, at the far right of the frame, facing the camera, looking at Arlecchino;
+    Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted
+    coat, olive-green arms, big black boots), leaning down toward Bisco and whispering behind his big hand, at the far right of the frame, with the back to the camera, looking at Bisco. No other people.
+    Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+    the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-011_start.png
+  - episodes/A/scenes/A01b/gen/sketch/A01b-011_end.png
