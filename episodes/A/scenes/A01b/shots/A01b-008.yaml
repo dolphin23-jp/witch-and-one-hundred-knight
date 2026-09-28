@@ -1,0 +1,70 @@
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01b-008
+scene: A01b
+tc: 35.2
+sec: 5.2
+kind: A
+shot: 全身・メタリカ・百騎兵。背景は用意画像 bg_02／枯れ木
+acting: 大股でビスコへ詰め寄る（4歩）
+dialogue:
+- L35「つまり、全ての魔女も領民共も、ワタシにひれ伏すべきなのだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.6
+  - 9.6
+  - 0.4
+  look:
+  - 10.1
+  - 10.0
+  lens: 24
+  bearing: 261
+  move: 沼の上の低い位置から、歩く姿を追って振る（pan）
+background: witch-house-front
+state:
+  metallica:
+    holds: 招待状（右手）
+  bisco: {}
+  hundred-knight: {}
+image: episodes/A/scenes/A01b/stills/try10/A01b-008_gpt-image-2.5_01.png
+refs:
+- metallica
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 広場の中ほどで振り向いた姿勢
+  end: ビスコの目の前で胸を張って止まる（両手を腰に）
+  sync: 「全ての魔女も」で歩き出し、「ひれ伏すべき」の「ども」（2.6秒）で止まって胸を張る
+blocking:
+  start: メ（中央・斜め前（画面右向き）・目線 画面右）、百（右・斜め前（画面左向き））
+  end: メ（中央・横顔（画面右向き）・目線 画面右）、百（中央・正面）、ビ（右・斜め前（画面左向き））
+  background: 広場とそのまわりの沼〔用意画像 bg_02〕／西の沼と枯れ木〔枯れ木〕
+  panels:
+  - 用意画像 bg_02
+  - 枯れ木
+  staging_en: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), striding forward with big confident
+    steps, on the left of the frame, in three-quarter view, turned toward screen right, looking at Bisco (off screen, toward screen right); the Hundred Knight (small, about waist-high to Metallica: big
+    round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes;
+    it carries no sword here), standing at the foot of the bridge, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Low angle looking up; the morning sky
+    fills the upper part of the frame. Behind: the round dirt clearing edged with red mushrooms, old stumps and lamp posts, and beyond it the glowing emerald-green swamp full of gnarled dead trees stretching
+    to the horizon, then the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist
+    over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+  staging_en_end: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), stopped with her chest thrust
+    out and chin raised, hands on her hips, in the center of the frame, in profile, turned toward screen right, looking at Bisco; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+    helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
+    standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Low angle looking up; the morning
+    sky fills the upper part of the frame. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green
+    swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing,
+    lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The
+    background reference image is a night scene; keep its layout and details but render it in morning light.)'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-008_start.png
+  - episodes/A/scenes/A01b/gen/sketch/A01b-008_end.png
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）

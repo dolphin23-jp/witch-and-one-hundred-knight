@@ -1,0 +1,55 @@
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01b-013
+scene: A01b
+tc: 60.4
+sec: 3.5
+kind: K
+shot: 胸上・ビスコ。背景は用意画像 bg_01
+acting: 表情が少しやわらぎ、メタリカを見る
+dialogue:
+- L40「リカ様のお気持ち、どうかお察しくださいませ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.0
+  - 10.2
+  - 1.45
+  look: bisco
+  lens: 85
+  bearing: 320
+  move: ゆっくり寄る（push）
+background: witch-house-front
+state:
+  bisco: {}
+image: episodes/A/scenes/A01b/stills/rest/A01b-013_gpt-image-2.5_01.png
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 耳打ちを聞いている
+  end: やわらいだ顔
+  sync: 「お察し」（2.1秒）でやわらぐ
+blocking:
+  start: ビ（中央・斜め前（画面右向き）・目線 画面左・手前寄り）
+  end: ビ（中央・斜め前（画面左向き）・目線 画面左・手前寄り）
+  background: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+  panels:
+  - 用意画像 bg_01
+  staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+    black-and-white tail, silver armored boots), her expression softening a little, in the center of the frame, in three-quarter view, turned toward screen right, looking at Metallica (off screen, toward
+    screen left). No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+    green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
+    from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in
+    morning light.)'
+  staging_en_end: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+    black-and-white tail, silver armored boots), her expression softening a little, in the center of the frame, in three-quarter view, turned toward screen left, looking at Metallica (off screen, toward
+    screen left). No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+    green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
+    from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in
+    morning light.)'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-013_start.png
+  - episodes/A/scenes/A01b/gen/sketch/A01b-013_end.png

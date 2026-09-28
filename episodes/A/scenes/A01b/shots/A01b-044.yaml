@@ -1,0 +1,47 @@
+# A01b 魔女邸の前（朝）。Living Spec「ショット設計 A01 第3稿」のカット表と、blocking.yaml（立ち位置・向き・動き・カメラ）から（2026-09-27、場所を屋敷の前に変更）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01b-044
+scene: A01b
+tc: 211.3
+sec: 6.5
+kind: K
+shot: 寄り・アルレッキーノ。背景は枯れ木
+acting: 片眼鏡をはめ直し、招待状の一行を指でなぞる
+dialogue:
+- L69「そんなことはございません。招待状には魔女の暦で毒蜘蛛の日の黄昏と……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.2
+  - 9.2
+  - 1.7
+  look: arle_take
+  lens: 135
+  bearing: 259
+  move: 止め
+background: witch-house-front
+state:
+  arlecchino:
+    holds: 招待状と片眼鏡
+image: episodes/A/scenes/A01b/stills/rest/A01b-044_gpt-image-2.5_01.png
+refs:
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 片眼鏡をつまんでいる
+  end: 指が「毒蜘蛛の日」で止まる
+  sync: 「毒蜘蛛」（4.9秒）で指が止まる
+blocking:
+  start: ア（中央・正面・目線 カメラの方）
+  background: 西の沼と枯れ木〔枯れ木〕
+  panels:
+  - 枯れ木
+  staging_en: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
+    on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), monocle back on, tracing a line on the invitation with a big finger, in the center of the frame, facing the camera,
+    looking toward the camera. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky with soft low sunlight
+    from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in
+    morning light.)'
+  sketch:
+  - episodes/A/scenes/A01b/gen/sketch/A01b-044_start.png

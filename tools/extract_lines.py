@@ -18,6 +18,10 @@
   # 試しに分離だけ（1分）
   python tools/extract_lines.py --src <mp3> --start 14:08 --duration 60 --separate-only --work tmp/test
 
+  # 分離済みの声（tools/separate.py が Drive に置いたパートまるごとの声）を使う。Demucs は動かさない
+  python tools/extract_lines.py --vocals <パート16_声.mp3> --start 18:05.3 --duration 473 \
+      --script audio/A01b/original/script.yaml --out audio/A01b/original
+
 必要なもの（重いので setup には入れていない）:
   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
   pip install demucs faster-whisper pykakasi soundfile pyyaml
@@ -232,7 +236,8 @@ def cut_level(db, end):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", required=True, help="原作音源（mp3）")
+    ap.add_argument("--src", help="原作音源（mp3）")
+    ap.add_argument("--vocals", help="分離済みの声（パートまるごと、元の mp3 と同じ長さ）。指定すると Demucs を使わない")
     ap.add_argument("--start", required=True, help="切り出す範囲の頭（例 14:08）")
     ap.add_argument("--duration", type=float, required=True, help="範囲の長さ（秒）")
     ap.add_argument("--script", help="台詞の一覧（YAML）")
@@ -243,14 +248,22 @@ def main():
     ap.add_argument("--separate-only", action="store_true")
     a = ap.parse_args()
 
+    if not (a.src or a.vocals):
+        ap.error("--src か --vocals のどちらかが要る")
     work = pathlib.Path(a.work)
     work.mkdir(parents=True, exist_ok=True)
     t0 = parse_tc(a.start)
-    region = work / f"region_{int(t0)}_{int(a.duration)}.wav"
     print("切り出し", fmt_tc(t0), f"+{a.duration}秒")
-    cut_region(a.src, t0, a.duration, region)
-    print("分離", a.demucs)
-    vocals = separate(region, work, a.demucs)
+    if a.vocals:
+        vocals = work / f"vocals_{int(t0 * 100)}_{int(a.duration)}.wav"
+        cut_region(a.vocals, t0, a.duration, vocals)
+        wh_cache = work / f"whisper_{vocals.stem}.json"
+    else:
+        region = work / f"region_{int(t0)}_{int(a.duration)}.wav"
+        cut_region(a.src, t0, a.duration, region)
+        print("分離", a.demucs)
+        vocals = separate(region, work, a.demucs)
+        wh_cache = work / f"whisper_{vocals.parent.name}_{a.demucs}.json"
     if a.separate_only:
         print(vocals)
         return
@@ -258,7 +271,7 @@ def main():
     spec = yaml.safe_load(pathlib.Path(a.script).read_text(encoding="utf-8"))
     lines = spec["lines"]
     print("書き起こし", a.whisper)
-    wh = transcribe(vocals, work / f"whisper_{vocals.parent.name}_{a.demucs}.json", a.whisper)
+    wh = transcribe(vocals, wh_cache, a.whisper)
 
     # 突き合わせ（次のシーンの頭の台詞も入れて、最後の台詞の終わりを決める）
     all_lines = lines + ([spec["next_line"]] if spec.get("next_line") else [])
@@ -279,6 +292,7 @@ def main():
         n = len(pos)
         d = {"hit": len(hit), "n": n, "cov": len(hit) / n if n else 0}
         if hit:
+            d["mids"] = [(tchars[p]["s"] + tchars[p]["e"]) / 2 for p in hit]
             d["s"], d["e"] = tchars[hit[0]]["s"], tchars[hit[-1]]["e"]
             d["tj0"], d["tj1"] = hit[0], hit[-1]
             d["p"] = float(np.mean([tchars[p]["p"] for p in hit]))
@@ -305,19 +319,62 @@ def main():
             spans.append(None)
             continue
         s, e = d["s"], d["e"]
+        # Whisper は頭の語を前の無音まで引き延ばすことがある。頭が無音に落ちていたら、その後の最初の声の区間まで詰める
+        if not any(r[0] <= s <= r[1] for r in regs):
+            s = next((r[0] for r in regs if s < r[0] < e), s)
         for r in regs:
             if r[0] <= s <= r[1]:
                 s = min(s, r[0])
             if r[0] <= e <= r[1]:
                 e = max(e, r[1])
         spans.append([s, e])
-    # 隣の台詞と重なったら、書き起こしの境目で分ける
+    # 隣の台詞と重なったら分ける。
+    # Whisper は台詞の頭の語の時刻を前の台詞の声の中に置くことがあるので（無音をはさんでも1つの区間にまとめる）、
+    # 重なった声の区間が1つなら、書き起こしの文字（の時刻の中点）が多く入っている方の台詞にその区間を渡し、
+    # もう一方は隣の話し声の区間の境目までにする。決められないときは書き起こしの境目で分ける。
+    loud_regs = [r for r, pk in zip(regs, peak) if pk >= loud_thr]
     for li in range(len(spans) - 1):
         a_, b_ = spans[li], spans[li + 1]
-        if a_ and b_ and a_[1] > b_[0]:
+        if not (a_ and b_ and a_[1] > b_[0]):
+            continue
+        shared = [r for r in loud_regs if r[0] < a_[1] and b_[0] < r[1]]
+        done = False
+        if len(shared) == 1:
+            r = shared[0]
+            na = sum(1 for t in info[li].get("mids", []) if r[0] <= t <= r[1])
+            nb = sum(1 for t in info[li + 1].get("mids", []) if r[0] <= t <= r[1])
+            after = [q for q in loud_regs if q[0] >= r[1] and q[0] < b_[1]]
+            before = [q for q in loud_regs if q[1] <= r[0] and q[1] > a_[0]]
+            if na > nb and after:
+                a_[1], b_[0] = r[1], after[0][0]
+                done = True
+            elif nb > na and before:
+                a_[1], b_[0] = before[-1][1], r[0]
+                done = True
+        if not done:
             cut = (info[li]["e"] + info[li + 1]["s"]) / 2
             a_[1], b_[0] = cut, cut
             info[li]["joined"] = info[li + 1]["joined_prev"] = True
+
+    # 台本に文字のない台詞（「……。」）は突き合わせられないので、前後の台詞の間にある声（話し声くらいの大きさ）を当てる
+    for li, d in enumerate(info[:len(lines)]):
+        if d["n"] or spans[li]:
+            continue
+        lo_ = max((sp[1] for sp in spans[:li] if sp), default=0.0)
+        hi_ = min((sp[0] for sp in spans[li + 1:] if sp), default=len(mono) / sr)
+        cand = [r for r, pk in zip(regs, peak) if pk >= loud_thr and lo_ <= r[0] and r[1] <= hi_]
+        if cand:
+            spans[li] = [cand[0][0], cand[-1][1]]
+
+    # 手で決めた範囲（script.yaml の cut: [開始, 終了]。原作音源パートの中の時刻で、声の頭と終わり。片方は null でよい）
+    for li, ln in enumerate(lines):
+        if ln.get("cut"):
+            s_, e_ = ln["cut"]
+            cur = spans[li] or [None, None]
+            spans[li] = [parse_tc(s_) - t0 if s_ else cur[0], parse_tc(e_) - t0 if e_ else cur[1]]
+            if None in spans[li]:
+                sys.exit(f"{ln['id']}: 声が見つからない台詞は cut の両方を書く")
+            info[li]["manual"] = ln.get("note", "")
 
     # どの台詞にも入っていない声は、近い方の台詞に足す（「キヒヒ」「あん？」は書き起こしに出ないことが多い）。
     # 小さな音（息、物音、百騎兵の声など）と、台詞から 1.5 秒以上離れた声は足さずに一覧に残す。
@@ -331,13 +388,17 @@ def main():
         prev = max((i for i, sp in enumerate(spans) if sp and sp[1] <= r[0]), default=None)
         nxt = min((i for i, sp in enumerate(spans) if sp and sp[0] >= r[1]), default=None)
         gp = r[0] - spans[prev][1] if prev is not None else 1e9
-        gn = spans[nxt][0] - r[1] if nxt is not None else 1e9
+        # 次の台詞までの間は、頭を詰める前の書き起こしの頭から測る（Whisper は「キヒヒ」「あん？」の分まで頭の語を延ばしている）
+        gn = max(0.0, min(spans[nxt][0], info[nxt].get("s", spans[nxt][0])) - r[1]) if nxt is not None else 1e9
         if min(gp, gn) > 1.5:
             unassigned.append((r, pk, "台詞から離れた声"))
             continue
         k = nxt if gn <= gp else prev
         if k >= len(lines):
             unassigned.append((r, pk, "次のシーンの台詞の手前"))
+            continue
+        if "manual" in info[k]:
+            unassigned.append((r, pk, "範囲を手で決めた台詞の隣"))
             continue
         spans[k][0], spans[k][1] = min(spans[k][0], r[0]), max(spans[k][1], r[1])
         info[k].setdefault("added", []).append(r)
@@ -351,11 +412,15 @@ def main():
         d, sp = info[li], spans[li]
         who = NAMES.get(ln["who"], ln["who"])
         if sp is None:
+            if d["n"]:
+                mark, why = "×", "音声が見つからない"
+            else:
+                mark, why = "－", "台本に文字のない台詞。前後の台詞の間に声がない（無言）"
             rows.append({"id": ln["id"], "who": who, "file": "", "start": "", "end": "", "dur": "",
-                         "match": "0.00", "mark": "×", "cut": "", "flags": "音声が見つからない", "heard": "", "text": ln["text"]})
+                         "match": "", "mark": mark, "cut": "", "flags": why, "heard": "", "text": ln["text"]})
             continue
-        prev_end = spans[li - 1][1] if li > 0 and spans[li - 1] else 0.0
-        next_start = spans[li + 1][0] if li + 1 < len(spans) and spans[li + 1] else len(mono) / sr
+        prev_end = max((s[1] for s in spans[:li] if s), default=0.0)
+        next_start = min((s[0] for s in spans[li + 1:] if s), default=len(mono) / sr)
         cs = max(sp[0] - PRE_PAD, (prev_end + sp[0]) / 2, 0.0)
         ce = min(sp[1] + POST_PAD, (sp[1] + next_start) / 2, len(mono) / sr)
         seg = mono[int(cs * sr):int(ce * sr)].copy()
@@ -366,6 +431,15 @@ def main():
         fname = f"{ln['id']}_{ln['who']}.wav"
         sf.write(str(out / fname), seg, sr, subtype="PCM_16")
         preview.append(seg)
+
+        manual = f"範囲を手で決めた（{d['manual']}）" if d.get("manual") else "範囲を手で決めた" if "manual" in d else ""
+        if "tj0" not in d:   # 書き起こしと突き合わせられない台詞（文字のない台詞に間の声を当てたもの、手で決めたもの）
+            rows.append({"id": ln["id"], "who": who, "file": fname,
+                         "start": fmt_tc(t0 + cs), "end": fmt_tc(t0 + ce), "dur": f"{ce - cs:.2f}",
+                         "match": "", "mark": "○" if manual else "△", "cut": "",
+                         "flags": manual or "台本に文字のない台詞。前後の台詞の間にあった声を当てた（聞いて確かめる）",
+                         "heard": "", "text": ln["text"]})
+            continue
 
         # 確からしさと印
         flags = []
@@ -386,7 +460,7 @@ def main():
             else:
                 flags.append("語尾の声がない（途切れの疑い）")
                 truncated = True
-        gap_next = next_start - sp[1] if li + 1 < len(spans) and spans[li + 1] else 9.0
+        gap_next = next_start - sp[1] if any(spans[li + 1:]) else 9.0
         if gap_next < 0.15:
             if cut_level(db, sp[1]) > -6:
                 flags.append("次の台詞がすぐ始まり、語尾が急に切れている（途切れの疑い）")
@@ -398,6 +472,9 @@ def main():
             weak = True
         if d.get("joined") or d.get("joined_prev"):
             flags.append("隣の台詞と声が続いていて、境目は推定")
+            weak = True
+        if manual:
+            flags.append(manual)
             weak = True
         if d.get("added"):
             flags.append("書き起こしにない声を頭か末尾に含めた（" + "、".join(fmt_tc(t0 + r[0]) for r in d["added"]) + "）")
@@ -456,14 +533,20 @@ def main():
 
 def write_md(path, spec, rows, report, a):
     src = spec.get("source", {})
-    marks = {m: sum(1 for r in rows if r["mark"] == m) for m in ("◎", "○", "△", "×")}
+    marks = {m: sum(1 for r in rows if r["mark"] == m) for m in ("◎", "○", "△", "×", "－")}
     cut = sum(1 for r in rows if r["cut"])
+    if a.vocals:
+        sep = (f"声は分離済みのもの（Drive「{src['vocals']}」、Demucs `{a.demucs}`、`tools/separate.py`）を使い、"
+               if src.get("vocals") else "声は分離済みのものを使い、")
+    else:
+        sep = f"声の分離は Demucs `{a.demucs}`、"
     L = [f"# {spec['scene']} 原作の台詞（{rows[0]['id']}〜{rows[-1]['id']}）", "",
          f"原作音源パート{src.get('part', '?')}の {fmt_tc(parse_tc(a.start))} から切り出し（`tools/extract_lines.py`、D-045）。"
-         f"声の分離は Demucs `{a.demucs}`、書き起こしは Whisper `{a.whisper}`。",
+         f"{sep}書き起こしは Whisper `{a.whisper}`。",
          "時刻は原作音源パートの中の位置。ファイルは声だけ（BGM・効果音を除いたもの）、モノラル 44.1kHz。", "",
          f"- 台詞 {len(rows)} 本、合計 {report['total']:.1f} 秒（台詞と台詞の間は含まない）",
-         f"- 印: ◎ {marks['◎']}、○ {marks['○']}、△ {marks['△']}、見つからない {marks['×']}、途切れの疑い {cut}",
+         f"- 印: ◎ {marks['◎']}、○ {marks['○']}、△ {marks['△']}、見つからない {marks['×']}、"
+         + (f"無言 {marks['－']}、" if marks["－"] else "") + f"途切れの疑い {cut}",
          f"- 通して聞く: `{spec['scene']}_original_all.m4a`（台詞の間を0.5秒にそろえて並べたもの）", "",
          "| ID | 話者 | 開始 | 終了 | 長さ | 一致 | 印 |", "| --- | --- | --- | --- | --- | --- | --- |"]
     for r in rows:
@@ -476,7 +559,8 @@ def write_md(path, spec, rows, report, a):
           "- **◎** 一致 0.90 以上で、語尾や境目に気になる点がない。",
           "- **○** 声はそろっているが、語尾が書き起こしに出ない・境目を推定したなど、聞いて確かめたい。",
           "- **△** 自信がない。聞いて確かめる。",
-          "- **途切れ?** 語尾が途中で切れている疑い（語尾の声がない、または次の台詞がすぐ始まり声が急に切れている）。", "",
+          "- **途切れ?** 語尾が途中で切れている疑い（語尾の声がない、または次の台詞がすぐ始まり声が急に切れている）。",
+          "- **－** 台本に文字のない台詞（「……。」）で、前後の台詞の間に声がない（無言）。声があれば当てて △ にする。", "",
           "## 台詞ごとの注記", ""]
     for r in rows:
         if r["flags"]:

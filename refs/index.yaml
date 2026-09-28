@@ -1,25 +1,24 @@
 # 参照画像の一覧。ユーザーが選んだ画像を、ユーザーの説明に従って登録する。
 # 手順は CLAUDE.md の「参照画像を受け取ったとき」を参照。
 #
+# 公式資料は次の2種類だけ（ユーザー指定 2026-09-27、D-054）。それ以外の画像は参照しない（削除済み。Git の履歴には残る）。
+#   人物: 三面図の載った設定画（<人物>_sheet_01）
+#   背景: カットが複数載ったイメージ画（witch-house-*_sheet_01）
+# ほかに、ユーザーが用意した背景画像（<場所>_bg_<連番>）を使う。位置関係はこちらが設定画より優先（ユーザー指定 2026-09-27）。
+#
 # 書き方（1枚1行）:
 #   <ファイル名（拡張子なし）>: {subjects: [<対象>], kind: <種類>, note: <ユーザーの説明>}
-# 対象の表記: metallica, bisco, hundred-knight, arlecchino, witch-house, swamp など（英小文字とハイフン）
-# 例:
-#   metallica_official_01: {subjects: [metallica], kind: 公式イラスト, note: 全身。帽子の形の基準}
 
 images:
-  metallica_official_01: {subjects: [metallica], kind: 公式画像, note: メタリカ}
-  bisco_official_01: {subjects: [bisco], kind: 公式画像, note: ビスコ（犬の耳が見えるもの）}
-  hundred-knight_official_01: {subjects: [hundred-knight], kind: 公式画像, note: 百騎兵}
-  arlecchino_official_01: {subjects: [arlecchino], kind: 公式画像, note: アルレッキーノ（通常の姿）}
-  arlecchino_official_02: {subjects: [arlecchino], kind: 公式画像, note: アルレッキーノ（首が取れた姿）}
-  metallica_official_02: {subjects: [metallica], kind: 公式画像, note: メタリカ（先ほどのものより高画質なもの）}
-  bisco_official_02: {subjects: [bisco], kind: 公式画像, note: ビスコ（先ほどのものより高画質なもの）}
-  hundred-knight_official_02: {subjects: [hundred-knight], kind: 公式画像, note: 百騎兵（先ほどのものより高画質なもの）}
-  arlecchino_official_03: {subjects: [arlecchino], kind: 公式画像, note: アルレッキーノ（先ほどのものより高画質なもの）}
-  swamp_ingame_01: {subjects: [swamp, witch-house], kind: ゲーム画面, note: 背景、沼の画像です}
-  swamp_ingame_02: {subjects: [swamp, witch-house], kind: ゲーム画面, note: 背景、沼の画像です}
-  bisco_official_03: {subjects: [bisco], kind: 公式画像, note: ビスコの耳は完全な犬耳ではない、尻尾も見えているこの画像を基準にして}
-  witch-house-living_ingame_01: {subjects: [witch-house], kind: ゲーム画面, note: 魔女邸内部リビング}
-  witch-house-living_ingame_02: {subjects: [witch-house], kind: ゲーム画面, note: 魔女邸内部リビング}
-  witch-house-exterior_ingame_01: {subjects: [witch-house, swamp], kind: ゲーム画面, note: 魔女邸外観}
+  # 2026-09-27: ユーザーが「人物の設定画は正式なものとしてこちらに差し替え」と指定（D-049）
+  metallica_sheet_01: {subjects: [metallica], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・帽子・全身パーツの詳細, primary: true}
+  bisco_sheet_01: {subjects: [bisco], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・尻尾・武器・胴体・手・脚部の詳細, primary: true}
+  hundred-knight_sheet_01: {subjects: [hundred-knight], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と武器（百騎兵の剣）・頭部・腕と手・下半身・足の詳細, primary: true}
+  arlecchino_sheet_01: {subjects: [arlecchino], kind: 設定画, note: 人物の設定画（正式なもの）。三面図（正面・側面・背面）と頭部・マフラーと上着・全身パーツ・サイズ比の詳細, primary: true}
+  # 2026-09-27: ユーザーが屋敷の正式な参照画像を用意。「今回の範囲はパイロット版として、こちらは次回以降のパートで参照するようにしてください」（A01 は今の画のまま）
+  witch-house-exterior_sheet_01: {subjects: [witch-house, swamp], kind: 設定画, note: 屋敷の外の画像（正面・外観、左右の前斜め、高所からの俯瞰、後ろ側、エントランス、木の橋・遊歩道、側面、沼の水面、枯れ木、屋根の魔法陣、ランタン、木の杭と足場、周辺の小物）, primary: true, use_from: 次回以降のパート}
+  witch-house-living_sheet_01: {subjects: [witch-house], kind: 設定画, note: 屋内の画像（正面メインアングル、左右の斜め前・斜め後ろ、階段付近、ソファ周辺、テーブル上、書棚、暖炉・奥の扉）, primary: true, use_from: 次回以降のパート}
+  # 2026-09-27: ユーザーが A01b の屋敷前の背景を用意。「屋敷前の画像を用意した。位置関係の基準はこちらの画像が優先。小道はない」
+  # 画像は夜。A01b は朝に合わせる（ユーザー指定「朝に合わせる」）。光は指示文で朝にする
+  witch-house-front_bg_01: {subjects: [witch-house, swamp], kind: 背景, note: 屋敷前の画像（広場から屋敷の正面を見た向き）。位置関係の基準はこちらの画像が優先。小道はない, primary: true}
+  witch-house-front_bg_02: {subjects: [witch-house, swamp], kind: 背景, note: 屋敷前の画像（屋敷の橋から広場を見た向き）。位置関係の基準はこちらの画像が優先。小道はない, primary: true}

@@ -1,0 +1,7 @@
+# 設定画（refs/<人物>_sheet_01、D-054）から切り抜いた向きごとの図。切り抜いただけで、生成はしていない（2026-09-27）
+# 静止画の生成では、カットの体の向きに合う図だけを添付する（設定画を丸ごと渡すと、モデルが迷って崩れやすかったため）
+#   正面 → front、斜め前 → front と side、横顔 → side、斜め後ろ → side と back、背中 → back
+#   寄り・大寄り・胸上 は顔の図（face_front か face_side）も添える
+views: [front, side, back, face_front, face_side]
+people: [metallica, bisco, arlecchino, hundred-knight]
+path: characters/<人物>/views/<人物>_<図>.png
