@@ -143,6 +143,7 @@ class Stage:
                 if who in before and abs(ang_diff(cur_face[who], before[who])) > 20 and (who, "位置") not in jumps:
                     jumps.append((who, "向き"))
             start = ({k: v for k, v in cur_pos.items()}, dict(cur_face))
+            track_start = dict(track)
             for who, s in (c.get("move") or {}).items():
                 if "to" in s:
                     cur_pos[who] = self.place(s["to"])
@@ -151,7 +152,7 @@ class Stage:
                     cur_face[who] = set_face(who, s["face"])
             retrack()
             end = ({k: v for k, v in cur_pos.items()}, dict(cur_face))
-            out[cut] = {"start": start, "end": end, "jumps": jumps}
+            out[cut] = {"start": start, "end": end, "jumps": jumps, "track_start": track_start, "track_end": dict(track)}   # track: 目で追っている相手（tools/previs.py が使う）
         return out
 
     # ---------- 1枚の画の計算 ----------
