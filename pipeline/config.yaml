@@ -29,7 +29,7 @@ roles:
     input: 開始の静止画（必要なら終わりの静止画）+ 動きの指定 + プリビズ動画（動きとカメラの参照）+ 口パクの参照（原作の声）
     output: 数秒の動画 (MP4)。生成された音声は使わない（generate_audio=false。声は原作の音源だけ、D-045）
     implementations:
-      - {name: seedance-2.0, via: higgsfield, status: candidate, note: "D-055 で動画は Seedance に決定。2.0 か 2.5 かは試験で決める（決まったら adopted にする）。std は Plus 以上。5秒の見積もり: 720p 22.5クレジット、480p 15、fast 480p 5（参照なしの見積もり。参照を付けると変わるかは未確認）。参照は 開始・終了フレーム、画像、動画、音声"}
+      - {name: seedance-2.0, via: higgsfield, status: candidate, note: "D-055 で動画は Seedance に決定。2.0 か 2.5 かは試験で決める（決まったら adopted にする）。std は Plus 以上。5秒の見積もり: 720p 22.5クレジット、480p 15、fast 480p 5（参照なしの見積もり。参照を付けると変わるかは未確認）。参照は 開始・終了フレーム、画像、動画、音声。試験2（A01b-001・030・031）で、開始＋終わりの静止画＋設定画＋下絵＋口パク参照を付けた3本は終わりの静止画に着地した（480p の std は1秒3クレジット）"}
       - {name: seedance-2.5, via: higgsfield, status: candidate, note: "D-055 で動画は Seedance に決定。2.0 か 2.5 かは A01b-001・030・031 の試験で決める。5秒の見積もり: 720p 35クレジット、480p のドラフト 15（7日以内に 1080p へ仕上げられる）。4〜30秒、omni_reference で画像・動画・音声の参照"}
       - {name: seedance-2.0-mini, via: higgsfield, status: candidate, note: "5秒 720p 5クレジット。構図や動きの確認用の候補"}
       - {name: wan-3.0, via: higgsfield, status: fallback, note: "D-055 で予備に変更（D-043 は採用だった）。最初のフレームに忠実。720p・4秒で7クレジット"}
