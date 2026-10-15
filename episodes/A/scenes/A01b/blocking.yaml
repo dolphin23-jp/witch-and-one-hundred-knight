@@ -464,7 +464,7 @@ cuts:
     cam: [11.9, 10.6, 1.2]
     look: [10.0, 8.7]
     lens: 35
-    move: {metallica: {to: m_back}}
+    move: {metallica: {to: m_back, t: [0.2, 1.2]}}   # t: 「うるさいな」の頭（0.2秒）から半歩のけぞる。previs.py 用
     gaze: {metallica: bisco, bisco: metallica}
     pose: {bisco: 'red-faced, shouting, fists down at her sides, stamping one foot', metallica: 'leaning back half a step, surprised', hundred-knight: 'standing beside Bisco, startled', arlecchino: standing beside Bisco}
     act: {start: 顔を近づけたメタリカ, do: ビスコが真っ赤になって足を踏み鳴らし怒鳴る。メタリカは半歩のけぞる, end: 怒鳴り終えて肩で息をするビスコ, sync: 「うるさいな」の頭（0.2秒）で踏み鳴らす}

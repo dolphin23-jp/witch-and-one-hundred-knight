@@ -1,0 +1,58 @@
+status: 承認待ち（生成はまだしていない）
+section: A01b-028〜034「本は作れないのか」（34.2秒、7カット）。動画が要るのは 030（A）・031（M）・034（A）。030・031 は試験2の動画を採用済み。新しく作るのは 034 だけ
+decision: 'D-055（標準の作り方: 開始＋終わりの静止画＋設定画＋下絵＋口パク参照）'
+cuts:
+  K/S（静止画＋カメラの動き）:
+  - 028
+  - 029
+  - '032'
+  - '033'
+  動画（作成済み、試験2の D）:
+  - '030'
+  - '031'
+  動画（新規）:
+  - '034'
+preview: gen/section_028_034/A01b_028-034.mp4（034 は静止画のままの試作。034 の動画ができたら組み直す）
+credits_estimate: 13
+cut_034:
+  sec: 3.6
+  kind: A
+  dialogue: L60「う、うるさいな！余計なこと言って悪かったよ！」（ビスコ。原作の声 audio/A01b/original/L60_bisco.wav）
+  end_still:
+    method: 編集（開始の静止画を元に。カメラも人物の位置も同じで、メタリカの半歩のけぞりとビスコの息だけが変わる）
+    model: gpt_image_2_5（2k、16:9、quality medium）
+    credits: 1
+    refs:
+    - episodes/A/scenes/A01b/stills/fix3/A01b-034_gpt-image-2.5_edit02.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/metallica/views/metallica_side.png
+    - characters/bisco/views/bisco_side.png
+    - characters/arlecchino/views/arlecchino_back.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-034_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the first frame of a shot. Draw the last frame of the same shot: the identical scene, camera angle, framing, characters, outfits, lighting, colors and layout. Only these change:
+      Bisco has finished shouting and now stands panting with her shoulders heaving, her mouth slightly open, her face still flushed, her fists at her sides; Metallica has leaned back half a step (her body
+      tilted slightly back and a little farther from Bisco), still looking at Bisco in surprise; the Hundred Knight and Arlecchino stay exactly where they are. Keep each character''s design, colors and
+      proportions identical to image 1 and to the character sheets (images 2 to 5). 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+  video:
+    model: seedance_2_0
+    mode: std
+    resolution: 480p
+    duration: 4
+    generate_audio: false
+    credits: 12
+    note: 最短が4秒。カットは3.6秒なので、組み立てで速度を少し上げて収める（tools/animatic.py）。衝撃の揺れは合成で足す（カメラは動かさない）
+    start_image: episodes/A/scenes/A01b/stills/fix3/A01b-034_gpt-image-2.5_edit02.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-034_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/metallica/views/metallica_side.png
+    - characters/bisco/views/bisco_side.png
+    - characters/arlecchino/views/arlecchino_back.png
+    previs: previs/A01b/A01b-034.mp4
+    audio_reference: audio/A01b/original/L60_bisco.wav（mp3 に変えて渡す）
+    prompt: 'Medium-long shot with a still camera. Bisco, flushed, shouts with her fists down at her sides and stamps one foot at the very start, while Metallica leans back half a step in surprise. The
+      Hundred Knight, startled, and Arlecchino stay beside Bisco. At the end Bisco stands panting with her shoulders heaving. Follow video 1 for the camera, the positions of the figures and how they move;
+      the shot must arrive at the given last frame. Bisco speaks the line in audio 1: sync her mouth movements to it. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no
+      anger marks, sweat drops or question marks).'
