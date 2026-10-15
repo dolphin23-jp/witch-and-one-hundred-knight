@@ -1,0 +1,62 @@
+# Seedance の試験（D-055）。A01b-001・030・031 を「静止画だけ」「＋プリビズ」「＋口パク参照」の3通りで作り、プリビズと口パク参照が効くかを見る。
+# 状態: 承認待ち（生成はまだしていない。ユーザーの OK のあとでファイルを Higgsfield に上げ、費用を見積もり直してから生成する）
+# 指示文に書くのは動きとカメラ、背景、光だけ。人物の見た目は開始フレームと設定画で固定する（守ること 3）。漫符は作らない（守ること 4）。
+# 声は原作の音源だけを使う: 生成される音声は使わない（generate_audio=false）。口パクの参照にだけ原作の台詞（メタリカの L28・L56・L57）を渡す（D-055）。
+model: seedance_2_5
+mode: omni_reference
+resolution: 480p
+draft: true            # 480p の下書き。よければ7日以内に 1080p に仕上げられる
+aspect_ratio: '16:9'
+generate_audio: false
+credits_estimate: 135  # 480p ドラフトは 1秒あたり3クレジット（4秒12・5秒15・6秒18。参照なしの見積もり）。3カット×3通り=9本。参照を付けると変わるかは未確認
+status: 承認待ち
+variants:
+  A: 静止画だけ（開始フレーム＋設定画）。比べる基準
+  B: A＋プリビズ動画（動きとカメラの参照）
+  C: B＋口パクの参照（原作の台詞の音声）
+common_tail: >-
+  2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets.
+  Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+previs_tail: >-
+  Follow video 1 for the camera movement, the positions of the figures and how they move. Video 1 uses plain colored placeholder mannequins: do not draw them or copy their look.
+items:
+- cut: A01b-001
+  sec: 3.8
+  duration: 4          # 最短が4秒。組み立てのときに3.8秒へ切る
+  start_image: episodes/A/scenes/A01b/stills/try10/A01b-001_gpt-image-2.5_01.png
+  image_references:
+  - characters/metallica/views/metallica_back.png
+  - characters/bisco/views/bisco_front.png
+  - characters/arlecchino/views/arlecchino_front.png
+  - characters/hundred-knight/views/hundred-knight_front.png
+  previs: previs/A01b/A01b-001.mp4
+  audio_reference: audio/A01b/original/L28_metallica.wav
+  prompt: >-
+    The camera slowly pushes in toward the clearing and the house. Metallica, large in the left foreground, seen from behind at an angle, flings both arms wide open toward the swamp while shouting;
+    her long braids sway. Bisco, Arlecchino and the Hundred Knight, small in the background at the foot of the bridge, stay in place and watch her. The invitation letter stays in her right hand.
+- cut: A01b-030
+  sec: 4.7
+  duration: 5
+  start_image: episodes/A/scenes/A01b/stills/rest/A01b-030_gpt-image-2.5_01.png
+  image_references:
+  - characters/metallica/views/metallica_side.png
+  - characters/bisco/views/bisco_front.png
+  - characters/arlecchino/views/arlecchino_front.png
+  - characters/hundred-knight/views/hundred-knight_front.png
+  previs: previs/A01b/A01b-030.mp4
+  audio_reference: audio/A01b/original/L56_metallica.wav
+  prompt: >-
+    Metallica strides toward Bisco while lecturing with one finger raised, then walks a half circle in front of Bisco from right to left and stops at Bisco's front left, finger still raised.
+    The camera pans slowly from left to right, following her. Bisco stands still and turns her head to follow Metallica with her eyes. The Hundred Knight steps back a little to stand at Bisco's left.
+- cut: A01b-031
+  sec: 5.5
+  duration: 6
+  start_image: episodes/A/scenes/A01b/stills/rest/A01b-031_gpt-image-2.5_01.png
+  image_references:
+  - characters/metallica/views/metallica_front.png
+  - characters/metallica/views/metallica_face_front.png
+  - characters/bisco/views/bisco_side.png
+  previs: previs/A01b/A01b-031.mp4
+  audio_reference: audio/A01b/original/L57_metallica.wav
+  prompt: >-
+    Close-up with a still camera. Metallica bends at the waist and peers up into Bisco's face from below, coming closer until her face is very near. Bisco, in profile at the edge of the frame, stays still.

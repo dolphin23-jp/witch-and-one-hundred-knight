@@ -54,6 +54,7 @@ cuts:
   A01b-001:
     frame: 大引き
     cam: [11.6, 12.2, 1.0]
+    cam_end: [11.45, 11.83, 1.0]   # 押し込み 0.4m（previs.py 用。camera: の「ゆっくり押し込む」を座標にした。0.8m だと終わりでメタリカが画面の左端から出る）
     look: [10.3, 9.1]
     lens: 24
     move: {}
@@ -415,7 +416,7 @@ cuts:
     look: [9.0, 10.9]
     look_end: [10.0, 8.6]
     lens: 35
-    move: {metallica: {to: m_circle, via: [[9.4, 11.0], [10.7, 9.4]], face: '@bisco'}, hundred-knight: {to: [8.7, 8.3], face: '@metallica'}}
+    move: {metallica: {to: m_circle, via: [[9.4, 11.0], [10.7, 9.4]], face: '@bisco', t: [0.3, 4.1]}, hundred-knight: {to: [8.7, 8.3], face: '@metallica'}}   # t: 歩く秒（act.sync の「本を作った」から「ある」4.1秒。previs.py 用）
     gaze: {metallica: bisco, bisco: metallica}
     pose: {metallica: 'striding toward Bisco while lecturing, one finger raised', bisco: 'standing still, following Metallica with her eyes', hundred-knight: standing beside Bisco, arlecchino: standing beside Bisco}
     pose_end: {metallica: 'circling around Bisco, now at her front left, finger raised', bisco: 'standing still, turning her head to follow Metallica', hundred-knight: standing beside Bisco, arlecchino: standing beside Bisco}
@@ -428,7 +429,7 @@ cuts:
     look: [10.1, 8.5]
     lens: 50
     only: [metallica, bisco]
-    move: {metallica: {to: m_peek}}
+    move: {metallica: {to: m_peek, t: [0.3, 2.7]}}   # t: 覗き込む秒（act.sync の「画材道具が揃えば」2.7秒で一番近づく。previs.py 用）
     gaze: {metallica: bisco, bisco: metallica}
     pose: {metallica: leaning in close to peer into Bisco's face, bisco: seen from the side at the edge of the frame}
     act: {start: ビスコの左前, do: 腰をかがめてビスコの顔を下から覗き込む, end: 顔を近づけたまま, sync: 「画材道具が揃えば」（2.7秒）で一番近づく}
