@@ -1,4 +1,4 @@
-status: '承認待ち（段階1: 終わりの静止画 → ユーザーの目視で合格 → 段階2: 動画）'
+status: 段階1（終わりの静止画7枚）は生成済み（2026-10-15、7クレジット、残高 692→685）。ユーザーの目視で合格を得てから、段階2（動画3本、45クレジット）の承認を取る
 decision: D-055（2026-10-15、下絵と口パク参照を使う。次の試験で終わりの静止画も渡す）
 stage1:
   model: gpt_image_2_5
@@ -112,6 +112,7 @@ stage1:
       blend the edges. From left to right: the Hundred Knight (small, facing the viewer, reference image 2), Metallica in profile facing right with one finger raised (reference image 3), Bisco in profile
       facing left (reference image 4), Arlecchino at the right edge seen from behind at an angle (reference image 5). Keep each character''s design, colors and proportions identical to the reference images.
       Do not add or remove any character. No text, no manga symbols.'
+  result: 001・031 は1枚ずつ、030 はセル4枚→ tools/composite.py で重ねた絵（stills/end/A01b-030_end_composite.png）→ 朝の光の描き直し1枚。確認画像は stills/end/review_*.jpg
 stage2:
   model: seedance_2_0
   mode: std
@@ -125,7 +126,7 @@ stage2:
     sec: 3.8
     duration: 4
     start_image: episodes/A/scenes/A01b/stills/try10/A01b-001_gpt-image-2.5_01.png
-    end_image: episodes/A/scenes/A01b/stills/end/A01b-001_end_gpt-image-2.5_01.png（承認後に確定）
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-001_end_gpt-image-2.5_01.png
     image_references:
     - characters/metallica/views/metallica_back.png
     - characters/bisco/views/bisco_front.png
@@ -141,7 +142,7 @@ stage2:
     sec: 4.7
     duration: 5
     start_image: episodes/A/scenes/A01b/stills/rest/A01b-030_gpt-image-2.5_01.png
-    end_image: episodes/A/scenes/A01b/stills/end/A01b-030_end_gpt-image-2.5_01.png（承認後に確定）
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-030_end_gpt-image-2.5_01.png
     image_references:
     - characters/metallica/views/metallica_side.png
     - characters/bisco/views/bisco_front.png
@@ -157,7 +158,7 @@ stage2:
     sec: 5.5
     duration: 6
     start_image: episodes/A/scenes/A01b/stills/rest/A01b-031_gpt-image-2.5_01.png
-    end_image: episodes/A/scenes/A01b/stills/end/A01b-031_end_gpt-image-2.5_01.png（承認後に確定）
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-031_end_gpt-image-2.5_01.png
     image_references:
     - characters/metallica/views/metallica_front.png
     - characters/metallica/views/metallica_face_front.png
