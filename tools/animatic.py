@@ -2,9 +2,11 @@
 
   python tools/animatic.py episodes/A/scenes/A01            # animatic/out/A01.mp4 と A01_timeline.yaml
   python tools/animatic.py episodes/A/scenes/A01 --bgm audio/A01/bgm.wav
+  python tools/animatic.py episodes/A/scenes/A01b --cuts A01b-028 A01b-034 --out episodes/A/scenes/A01b/gen/section_028_034   # 区間だけ（両端を含む）
 
-- 画: ベイクオフで作った動画 > 静止画（ベイクオフ、またはショットファイルの image）> 仮の画面（カットID・画・芝居の文字）の順に使う。
+- 画: ショットファイルの video（Seedance で作った動画、D-055）> ベイクオフで作った動画 > 静止画（ベイクオフ、またはショットファイルの image）> 仮の画面（カットID・画・芝居の文字）の順に使う。
   静止画はショットファイルの camera.move に合わせて動かす（push・pull・pan・tilt up・揺れ。それ以外は止め）。
+  動画がカットの秒より少し長いとき（85%まで）は、終わりを切らずに速度を上げて収める。それ以上長いときは終わりを切る。短いときは最後のフレームを止める。
 - 声: audio/<シーン>/<カットID>_<番号>_<人物>.wav を、カットの頭から順に置く。
   台詞が「L28「…」」の形（原作の台詞、D-045）のときは audio/<シーン>/original/L28_<人物>.wav を使う。
   1本の台詞を2カットに分けた所（L49a・L49b）は、a のカットの秒に一番近い声の切れ目で分ける。
@@ -55,6 +57,8 @@ def text_file(tmp, name, text):
 
 def visual(shot):
     """使える画を探す: ベイクオフの動画 > 静止画 > なし"""
+    if shot.get("video") and (ROOT / shot["video"]).exists():
+        return "video", ROOT / shot["video"]
     b = shot.get("bakeoff_result") or {}
     for key in ("video", "image"):
         if b.get(key) and (ROOT / b[key]).exists():
@@ -135,10 +139,17 @@ SILENT = 1.0   # 声のない台詞の字幕を出す秒
 SPLIT_A = {}   # 分けた台詞の a のカットの秒（b を切るときに使う）
 
 
-def build(scene_dir, bgm, out_dir):
+def build(scene_dir, bgm, out_dir, cuts=None):
     scene_dir = ROOT / scene_dir
     shots = [yaml.safe_load(p.read_text(encoding="utf-8")) for p in sorted((scene_dir / "shots").glob("*.yaml"))]
     scene = shots[0]["scene"]
+    name = scene
+    if cuts:   # 区間だけ（両端を含む）
+        lo, hi = cuts
+        shots = [x for x in shots if lo <= x["id"] <= hi]
+        if not shots:
+            sys.exit(f"区間にカットがありません: {lo} {hi}")
+        name = f"{scene}_{lo.split('-')[-1]}-{hi.split('-')[-1]}"
     audio_dir = ROOT / "audio" / scene
     out_dir.mkdir(parents=True, exist_ok=True)
     tmp = pathlib.Path(tempfile.mkdtemp())
@@ -195,7 +206,12 @@ def build(scene_dir, bgm, out_dir):
         if kind == "image":
             vf = ",".join([motion((s.get("camera") or {}).get("move"), sec), f"setsar=1,fps={FPS}"] + draws)
         else:
-            vf = ",".join([f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={FPS}",
+            pre = ""
+            if kind == "video":
+                vd = dur(src)
+                if vd > sec and sec / vd >= 0.85:   # 少し長いだけなら、終わりを切らずに速度を上げて収める
+                    pre = f"setpts=PTS*{sec / vd:.5f},"
+            vf = ",".join([f"{pre}scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={FPS}",
                            f"tpad=stop_mode=clone:stop_duration={sec}"] + draws)
         if kind == "video":
             ff("-i", src, "-vf", vf, "-t", sec, "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
@@ -235,9 +251,9 @@ def build(scene_dir, bgm, out_dir):
     audio = tmp / "audio.m4a"
     ff(*inputs, "-filter_complex", ";".join(filt), "-map", last, "-t", total, "-c:a", "aac", "-b:a", "160k", audio)
 
-    out = out_dir / f"{scene}.mp4"
+    out = out_dir / f"{name}.mp4"
     ff("-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", "-c", "copy", "-shortest", out)
-    tl = out_dir / f"{scene}_timeline.yaml"
+    tl = out_dir / f"{name}_timeline.yaml"
     tl.write_text(yaml.safe_dump({"scene": scene, "total_sec": total, "cuts": timeline},
                                  allow_unicode=True, sort_keys=False), encoding="utf-8")
     print(f"{out.relative_to(ROOT)}（{total}秒、{len(shots)}カット、声で伸びたカット {sum(x['stretched'] for x in timeline)}）")
@@ -249,8 +265,9 @@ def main():
     p.add_argument("scene_dir")
     p.add_argument("--bgm")
     p.add_argument("--out", default="animatic/out")
+    p.add_argument("--cuts", nargs=2, metavar=("FROM", "TO"), help="区間のカットID（両端を含む）")
     a = p.parse_args()
-    build(a.scene_dir, a.bgm, ROOT / a.out)
+    build(a.scene_dir, a.bgm, ROOT / a.out, a.cuts)
 
 
 if __name__ == "__main__":
