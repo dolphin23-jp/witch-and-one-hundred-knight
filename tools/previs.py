@@ -379,6 +379,8 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     n = max(2, round(sec * fps))
     frames_dir = pathlib.Path(tempfile.mkdtemp(prefix=f"previs_{cut}_", dir=work_root))
     checks = {}
+    warnings = []
+    cam_moves = bool(plan.c.get("cam_end"))   # staging.py はカメラ本体の移動を知らないので、終わりの比較はしない
 
     def pose(i):
         t = i / fps
@@ -398,7 +400,16 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
 
     for i in ([0, n // 2, n - 1] if preview else range(n)):   # preview: 始め・中ほど・終わりの3枚だけ
         pos = pose(i)
-        if i in (0, n - 1):
+        out_of_frame = []
+        for who in plan.shown:
+            root = figs[who][0]
+            p = Vector(root.matrix_world.translation) + Vector((0, 0, lay["people"][who]["h"] * 0.5))
+            v = world_to_camera_view(scene, cam, p)
+            if v.z > 0 and not (-0.02 <= v.x <= 1.02):
+                out_of_frame.append(who)
+        if out_of_frame:
+            warnings.append((i, out_of_frame))
+        if i in (0, n - 1) and not (cam_moves and i != 0):
             which = "start" if i == 0 else "end"
             fr = st.frame(cut, which)
             res = []
@@ -413,9 +424,11 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     out_dir.mkdir(parents=True, exist_ok=True)
     mp4 = out_dir / f"{cut}.mp4"
     if preview:
+        checks["warnings"] = warnings
         return None, frames_dir, n, checks
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(frames_dir / "%04d.png"),
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", str(mp4)], check=True)
+    checks["warnings"] = warnings
     return mp4, frames_dir, n, checks
 
 
@@ -471,6 +484,10 @@ def main():
                                               denoise=a.denoise, preview=a.preview)
             sheet = check_sheet(cut, shot, fdir, n, out_dir)
             print(f"{cut}: {rel(mp4) if mp4 else '（動画なし）'}（{n}フレーム、{shot['sec']}秒）、{rel(sheet)}")
+            warn = checks.pop("warnings", [])
+            if warn:
+                who = sorted({w for _, ws in warn for w in ws})
+                print(f"  警告: 画面の端から出る人物 {', '.join(who)}（フレーム {warn[0][0]}〜{warn[-1][0]}）。出入りを意図したカットでなければ、カメラか動きを直す")
             for which, res in checks.items():
                 diff = max((abs(r["staging_s"] - r["blender_s"]) for r in res), default=0)
                 print(f"  {which}: 画面の左右（staging.py と Blender の差の最大 {diff:.2f}）",
