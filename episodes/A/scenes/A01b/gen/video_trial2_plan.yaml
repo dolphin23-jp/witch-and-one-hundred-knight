@@ -1,0 +1,169 @@
+status: '承認待ち（段階1: 終わりの静止画 → ユーザーの目視で合格 → 段階2: 動画）'
+decision: D-055（2026-10-15、下絵と口パク参照を使う。次の試験で終わりの静止画も渡す）
+stage1:
+  model: gpt_image_2_5
+  resolution: 2k
+  aspect_ratio: '16:9'
+  credits_estimate: 7
+  note: 001 は編集1枚、031 は略図から1枚、030 は人物4枚＋重ねた絵の描き直し1枚。失敗しても自動では作り直さない
+  edit_001:
+    cut: A01b-001
+    which: end
+    method: 編集（開始の静止画を元に）
+    refs:
+    - episodes/A/scenes/A01b/stills/try10/A01b-001_gpt-image-2.5_01.png
+    - characters/metallica/views/metallica_back.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-001_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the first frame of a shot. Draw the last frame of the same shot: the identical scene, characters, outfits, lighting, colors and layout, but the camera has pushed in slightly (about
+      10 percent closer, same angle and height), and Metallica now has both arms fully flung wide open toward the swamp (her right arm stretched out to the right and her left arm raised out to the left),
+      chin up, the invitation letter still in her right hand. The three characters in the background (Bisco, Arlecchino, the Hundred Knight) stay exactly where they are. Keep each character''s design, colors
+      and proportions identical to image 1 and to the character sheet (image 2). 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga
+      symbols (no anger marks, sweat drops or question marks).'
+  direct_031:
+    cut: A01b-031
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/metallica/views/metallica_face_side.png
+    - characters/metallica/views/metallica_side.png
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A01b/gen/sketch/A01b-031_end.png
+    - episodes/A/scenes/A01b/stills/rest/A01b-031_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 50mm lens, camera height 1.5 m. In frame (exactly 2 people, from left to right): Metallica (character reference: images 1, 2), leaning in close to peer into Bisco''s face,
+      on the left of the frame, in profile, turned toward screen right, looking at Bisco; Bisco (character reference: images 3, 4, 5), seen from the side at the edge of the frame, on the right of the frame,
+      in three-quarter view, turned toward screen left, looking at Metallica. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone
+      roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.
+      Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
+      is a night scene; keep its layout and details but render it in morning light.) Heights: Metallica 1.6 m; Bisco 1.55 m. Background and setting: follow image 6 (same place, same props and layout). Composition:
+      image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no
+      captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks). Image 8 is the first frame of the same shot: keep its background rendering, morning light and the way
+      both characters are drawn; only the framing and the positions of the characters change, as in the layout sketch (Metallica now very close to Bisco''s face, leaning in toward her, Bisco unmoving in
+      profile).'
+    output: episodes/A/scenes/A01b/stills/end/A01b-031_end_gpt-image-2.5_01.png
+  cels_030:
+  - cut: A01b-030
+    who: hundred-knight
+    which: end
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    prompt: 'A single full-body character cel of the Hundred Knight (character reference: image 1), standing naturally, facing the viewer, seen at eye level. Height 0.9 m (small, only about waist-high to
+      an adult). Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference.
+      2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 正面
+    background: transparent
+    output: episodes/A/scenes/A01b/stills/end/cels/A01b-030_hundred-knight.png
+  - cut: A01b-030
+    who: metallica
+    which: end
+    refs:
+    - characters/metallica/views/metallica_side.png
+    prompt: 'A single full-body character cel of Metallica (character reference: image 1), circling around Bisco, now at her front left, finger raised, in profile, turned toward the right side of the picture,
+      looking toward the right side of the picture, seen at eye level. Height 1.6 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light.
+      Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A01b/stills/end/cels/A01b-030_metallica.png
+  - cut: A01b-030
+    who: bisco
+    which: end
+    refs:
+    - characters/bisco/views/bisco_side.png
+    prompt: 'A single full-body character cel of Bisco (character reference: image 1), standing still, turning her head to follow Metallica, in profile, turned toward the left side of the picture, looking
+      toward the left side of the picture, seen at eye level. Height 1.55 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep
+      the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A01b/stills/end/cels/A01b-030_bisco.png
+  - cut: A01b-030
+    who: arlecchino
+    which: end
+    refs:
+    - characters/arlecchino/views/arlecchino_side.png
+    - characters/arlecchino/views/arlecchino_back.png
+    prompt: 'A single full-body character cel of Arlecchino (character reference: images 1, 2), standing naturally, seen from behind at an angle, turned toward the left side of the picture, seen at eye
+      level. Height 1.9 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the
+      reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 斜め後ろ（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A01b/stills/end/cels/A01b-030_arlecchino.png
+  composite_030:
+    cut: A01b-030
+    which: end
+    method: 重ねる→描き直す編集
+    composite_cmd: python tools/composite.py episodes/A/scenes/A01b A01b-030 --which end --cels episodes/A/scenes/A01b/stills/end/cels --plate refs/witch-house-front_bg_01.png --out episodes/A/scenes/A01b/stills/end/A01b-030_end_composite.png
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/metallica/views/metallica_side.png
+    - characters/bisco/views/bisco_side.png
+    - characters/arlecchino/views/arlecchino_back.png
+    input: episodes/A/scenes/A01b/stills/end/A01b-030_end_composite.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-030_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is a rough paste-up composite of one anime frame. Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). Keep exactly: the camera
+      angle and framing, every character''s position, size, pose, facing and expression, and which character is in front of which. Keep the background layout (the witch''s house on its round deck, the short
+      wooden bridge with steps, the lamp posts, the dirt clearing with red mushrooms and stumps, the glowing green swamp with dead trees). Change the time to early morning: a pale, clear morning sky with
+      soft low sunlight and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. Relight the characters to match the scene, add natural contact shadows on the ground, and
+      blend the edges. From left to right: the Hundred Knight (small, facing the viewer, reference image 2), Metallica in profile facing right with one finger raised (reference image 3), Bisco in profile
+      facing left (reference image 4), Arlecchino at the right edge seen from behind at an angle (reference image 5). Keep each character''s design, colors and proportions identical to the reference images.
+      Do not add or remove any character. No text, no manga symbols.'
+stage2:
+  model: seedance_2_0
+  mode: std
+  resolution: 480p
+  generate_audio: false
+  credits_estimate: 45
+  note: 開始＋終わりの静止画＋設定画＋下絵＋口パク参照（D）。終わりの静止画の role は end_image。見積もりは通った（5秒 15クレジット）
+  items:
+  - cut: A01b-001
+    variant: D
+    sec: 3.8
+    duration: 4
+    start_image: episodes/A/scenes/A01b/stills/try10/A01b-001_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-001_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/metallica/views/metallica_back.png
+    - characters/bisco/views/bisco_front.png
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    previs: previs/A01b/A01b-001.mp4
+    audio_reference: audio/A01b/original/L28_metallica.wav
+    credits: 12
+    prompt_tail: 'Follow video 1 for the camera movement, the positions of the figures and how they move; the shot must arrive at the given last frame. Metallica speaks the line in audio 1: sync her mouth
+      movements to it.'
+  - cut: A01b-030
+    variant: D
+    sec: 4.7
+    duration: 5
+    start_image: episodes/A/scenes/A01b/stills/rest/A01b-030_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-030_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/metallica/views/metallica_side.png
+    - characters/bisco/views/bisco_front.png
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    previs: previs/A01b/A01b-030.mp4
+    audio_reference: audio/A01b/original/L56_metallica.wav
+    credits: 15
+    prompt_tail: 'Follow video 1 for the camera movement, the positions of the figures and how they move; the shot must arrive at the given last frame. Metallica speaks the line in audio 1: sync her mouth
+      movements to it.'
+  - cut: A01b-031
+    variant: D
+    sec: 5.5
+    duration: 6
+    start_image: episodes/A/scenes/A01b/stills/rest/A01b-031_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-031_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/metallica/views/metallica_front.png
+    - characters/metallica/views/metallica_face_front.png
+    - characters/bisco/views/bisco_side.png
+    previs: previs/A01b/A01b-031.mp4
+    audio_reference: audio/A01b/original/L57_metallica.wav
+    credits: 18
+    prompt_tail: 'Follow video 1 for the camera movement, the positions of the figures and how they move; the shot must arrive at the given last frame. Metallica speaks the line in audio 1: sync her mouth
+      movements to it.'
