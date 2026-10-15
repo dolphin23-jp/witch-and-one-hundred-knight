@@ -20,6 +20,7 @@
 3. **人物の見た目は指示文ではなく参照画像で固定する。** 指示文に書くのは構図、芝居、背景、光だけ。参照画像はユーザーが選んだもので、`refs/` にある。どの画像に何が写っているかは `refs/index.yaml` にある。公式資料は、人物は三面図の載った設定画（`<人物>_sheet_01`）、背景はカットが複数載ったイメージ画（`witch-house-*_sheet_01`）だけ。ほかの画像は参照しない（D-054）。背景は、ユーザーが用意した背景画像（`<場所>_bg_<連番>`）も使い、位置関係はそちらを優先する。背景を Claude が生成しない。
 4. **漫符（怒りマーク、「？」、青い縦線、湯気など）は生成しない。** 合成で重ねる（D-027）。
 5. **声と BGM は原作の音源（D-045）。** 台詞は原作の台詞だけを使い、脚本で書き足した台詞は使わない。音源はユーザーが用意し、Google Drive の「魔女と百騎兵 原作音源」フォルダ（`台詞/`、`BGM/`）で受け取る。AI で声や BGM を作らない。原作の声を材料にして声を作ること（複製）はしない。実在の声優の名前を指示に使わない。
+   - 動画生成（Seedance）では、生成される音声を使わない（`generate_audio=false`。出てきても捨てる）。口パクの参照（audio reference）にだけ、切り出した原作の台詞を渡してよい（ユーザー判断、D-055）。声は原作の音源だけを使う。
    - 受け取った音源は `audio/original/` に置き、どのファイルのどこがどの台詞かを `audio/original/index.yaml` に書く。リポジトリは非公開にしておくこと。
    - プレイ録画などの長い音源から台詞を切り出すときは `tools/extract_lines.py` を使う（Demucs で声と BGM を分け、Whisper の時刻で脚本と突き合わせる）。元の長い音源はリポジトリに入れず、切り出した台詞と一覧（`lines.md`）を `audio/<シーン>/original/` に置く。自信のない台詞と途切れの疑いには印を付け、ユーザーに聞いてもらう。
    - プレイ録画をパートごとに声と BGM・効果音に分けたものは、Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」に置く（`tools/separate.py`。記録は `audio/original/separated.yaml`、書き起こしは `audio/original/transcripts/`）。
@@ -40,6 +41,7 @@
 ## 生成サービスへのつなぎ方
 
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
+- 動画は Seedance（Higgsfield 経由、2.0 か 2.5 かは試験で決める。D-055。Wan 3.0 は予備）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は Seedance に参照動画として渡す。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
 - 声・BGM: 原作の音源（D-045）。Drive の「魔女と百騎兵 原作音源」フォルダから取り込み、長い音源は `python tools/extract_lines.py` で台詞に切り出す（Demucs・Whisper は重いので、セッションごとに作業用の venv に入れる）。`tools/gemini_tts.py` と `tools/lyria.py` は使わない（ベイクオフの記録として残す）。
 - Gemini API のキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。
 - Drive: 文書や小さいファイル（10MB未満）は Drive コネクタで扱う。大きい音声は、「原作音源」フォルダの中だけを読み書きする受け口（Apps Script、`setup/drive_bridge.md`）を通して `python tools/drive.py` で読み書きする。受け口の鍵は環境変数 `DRIVE_BRIDGE_KEY`（クラウド環境の設定で入れる。ファイルやコマンドに書かない）。
@@ -57,9 +59,10 @@
 | `world/` | 背景の参照画像と設計 |
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音。原作の音源は `audio/original/`（一覧は `index.yaml`）、長い音源から切り出した台詞は `audio/<シーン>/original/` |
+| `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
 | `animatic/` | Animaticの組み立て（HyperFrames または Remotion。それまでは `tools/animatic.py`）と、Drive に置いた動画の一覧 `drive.yaml` |
 | `pipeline/` | 役割ごとの実装の設定 |
-| `tools/` | 記録、台詞の切り出し、組み立て、QCのスクリプト |
+| `tools/` | 記録、台詞の切り出し、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QCのスクリプト |
 | `docs/` | 作業ログ、Living Spec への反映待ちの提案 |
 | `setup/` | クラウド環境のセットアップスクリプト（claude.ai の環境設定に貼る） |
 
