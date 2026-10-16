@@ -142,8 +142,9 @@ cuts:
   A01b-008:
     frame: 全身
     cam: [12.6, 9.6, 0.4]
+    cam_end: [14.6, 10.0, 0.5]   # 引きながら振る（previs.py 用）。止まったメタリカ（1.6m）がカメラから 2.3m だと頭が画面の上に切れる（頭の先が画面の上端より 344px 上）ので、2m 引いて 4.4m にする。起点は同じなので開始の静止画はそのまま
     look: [10.1, 10.0]
-    look_end: m_front
+    look_end: [10.3, 8.6]   # メタリカとビスコの間
     lens: 24
     move: {metallica: {to: m_front, face: '@bisco', t: [0.2, 2.6]}}
     gaze: {metallica: bisco}
