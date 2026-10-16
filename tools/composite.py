@@ -23,8 +23,9 @@ EXTRA = {"metallica": 1.25, "bisco": 1.05, "arlecchino": 1.1, "hundred-knight": 
 def layout(st, cut, which="start", W=1920, H=1080):
     c = st.bk["cuts"][cut]
     pos, face = st.states[cut][which]
-    cam = tuple(c["cam"][:2])
-    ch = c["cam"][2]
+    camv = (c.get("cam_end") if which == "end" and c.get("cam_end") else c["cam"])   # カメラ本体が動くカット（previs.py の cam_end）は、終わりの位置で重ねる
+    cam = tuple(camv[:2])
+    ch = camv[2]
     look = c.get("look_end", c["look"]) if which == "end" else c["look"]
     look = pos[look] if isinstance(look, str) and look in pos else st.place(look)
     d2 = staging.norm((look[0] - cam[0], look[1] - cam[1]))
