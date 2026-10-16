@@ -1,4 +1,4 @@
-status: 承認待ち（2026-10-16 作成。生成はまだしていない）
+status: 承認待ち（2026-10-16 作成。生成はまだしていない。下絵 004・007・008 は作成済み。一覧画像は gen/section_001_010/plan_overview.jpg）
 section: A01b-001〜010「沼の演説」（約47秒、10カット）。動画が要るのは 001（M→試験2の D を採用済み）と 003（M）・004（A）・007（M）・008（A）・009（M）。002・005・006・010 は K/S（静止画＋カメラの動き）
 decision: 'D-055（標準の作り方: 開始＋終わりの静止画＋設定画＋下絵＋口パク参照）'
 credits_estimate: 101   # 静止画 5 ＋ 動画 96。残高 627 → 約 526
@@ -32,7 +32,7 @@ stills:
     output: episodes/A/scenes/A01b/stills/end/A01b-004_end_gpt-image-2.5_01.png
     prompt: 'Image 1 is the first frame of a shot. Draw the last frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfit, hair and hat, but Metallica
       has twisted her body toward the left side of the picture and thrust her right arm (the arm on the left side of the picture) straight out toward the far swamp, pointing far into the distance with
-      her index finger, in three-quarter view with her face turned toward screen left, looking where she points, mouth open as she shouts. She stays in the center of the frame. No other people. Keep the
+      her index finger, in three-quarter view with her face turned toward screen left, looking where she points, mouth open as she shouts. She ends up in the right half of the frame (about three quarters of the way across), with open swamp to the left of her. No other people. Keep the
       character''s design, colors and proportions identical to image 1 and to the character sheets (images 2 and 3). 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text,
       no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
   - id: start_007
@@ -127,7 +127,7 @@ videos:
     image_references:
     - characters/metallica/views/metallica_front.png
     - characters/metallica/views/metallica_side.png
-    previs: previs/A01b/A01b-004.mp4（停止後 2.5〜4.1 秒に体をひねる。カメラは 2.3〜4.3 秒に画面の左へ振る）
+    previs: previs/A01b/A01b-004.mp4（2.5〜4.1 秒に体をひねる。カメラは 2.3〜4.3 秒に画面の左へ約10°振り、終わりでメタリカは画面の右寄り）
     audio_reference: audio/A01b/original/L31_metallica.wav（mp3 に変えて渡す）
     prompt: 'Knee-up shot. Metallica stands in the center looking out over the swamp, then twists her body toward the left side of the picture and swings her right arm out, thrusting it straight toward
       the far swamp and pointing with her index finger as she shouts, the arm reaching full extension at about 4 seconds, then holding. The camera pans slowly to the left to follow the swing of her arm.
