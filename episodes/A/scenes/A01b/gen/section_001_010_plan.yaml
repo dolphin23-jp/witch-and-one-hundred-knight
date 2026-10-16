@@ -1,0 +1,178 @@
+status: 承認待ち（2026-10-16 作成。生成はまだしていない）
+section: A01b-001〜010「沼の演説」（約47秒、10カット）。動画が要るのは 001（M→試験2の D を採用済み）と 003（M）・004（A）・007（M）・008（A）・009（M）。002・005・006・010 は K/S（静止画＋カメラの動き）
+decision: 'D-055（標準の作り方: 開始＋終わりの静止画＋設定画＋下絵＋口パク参照）'
+credits_estimate: 101   # 静止画 5 ＋ 動画 96。残高 627 → 約 526
+cuts:
+  K/S（静止画＋カメラの動き。生成なし）: ['002', '005', '006', '010']
+  動画（作成済み、試験2の D）: ['001']
+  動画（新規）: ['003', '004', '007', '008', '009']
+direction_note: >-
+  004 の camera 欄は「右へ振る。指の先が画面右」だったが、blocking の計算（カメラは軸の東側。東＝ピラーの方は画面の左）と、ショットファイルの blocking.end（斜め前・画面左向き・目線 画面左）は
+  どちらも画面の左。camera 欄の「右」は誤りと判断し、下絵と終わりの静止画は「画面の左へ振る・画面の左を指す」で作る。
+common_tail: >-
+  2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets.
+  Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+previs_tail: >-
+  Follow video 1 for the camera movement, the positions of the figures and how they move; the shot must arrive at the given last frame. Video 1 uses plain colored placeholder mannequins: do not draw them or copy their look.
+lipsync_tail: >-
+  Metallica speaks the line in audio 1: sync her mouth movements to it.
+stills:
+  note: 開始と終わりの静止画のうち、足りない方を作る（GPT Image 2.5、2k、16:9、medium、1枚1クレジット）。003 は開始と同じ絵を終わりにも渡す（動かないカメラ・同じ立ち位置）。失敗しても自動では作り直さない
+  credits_estimate: 5
+  items:
+  - id: end_004
+    cut: A01b-004
+    which: end
+    credits: 1
+    method: 編集（開始の静止画を元に。右腕を突き出して沼を指す）
+    refs:
+    - episodes/A/scenes/A01b/stills/rest/A01b-004_gpt-image-2.5_01.png
+    - characters/metallica/views/metallica_side.png
+    - characters/metallica/views/metallica_front.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-004_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the first frame of a shot. Draw the last frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfit, hair and hat, but Metallica
+      has twisted her body toward the left side of the picture and thrust her right arm (the arm on the left side of the picture) straight out toward the far swamp, pointing far into the distance with
+      her index finger, in three-quarter view with her face turned toward screen left, looking where she points, mouth open as she shouts. She stays in the center of the frame. No other people. Keep the
+      character''s design, colors and proportions identical to image 1 and to the character sheets (images 2 and 3). 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text,
+      no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - id: start_007
+    cut: A01b-007
+    which: start
+    credits: 1
+    method: 編集（既存の静止画 rest/A01b-007 は終わりの姿勢＝振り返ってニヤリ、なので、それを「終わり」に使い、頭を沼へ向けた「開始」を作る）
+    refs:
+    - episodes/A/scenes/A01b/stills/rest/A01b-007_gpt-image-2.5_01.png
+    - characters/metallica/views/metallica_face_front.png
+    - characters/metallica/views/metallica_face_side.png
+    output: episodes/A/scenes/A01b/stills/start/A01b-007_start_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the last frame of a shot. Draw the first frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfit, hair, hat and body position,
+      but Metallica''s head is turned toward the left side of the picture, her eyes looking far away toward the swamp where she just pointed, with a calm, proud, closed-mouth expression (no grin).
+      Keep the character''s design, colors and proportions identical to image 1 and to the face references (images 2 and 3). 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - id: cel_008_metallica
+    cut: A01b-008
+    which: end
+    credits: 1
+    method: セル（透明な背景）。ビスコ・百騎兵は 030 のセル（stills/end/cels/A01b-030_bisco.png・A01b-030_hundred-knight.png）を再利用（0クレジット）
+    refs:
+    - characters/metallica/views/metallica_side.png
+    output: episodes/A/scenes/A01b/stills/end/cels008/A01b-008_metallica.png
+    prompt: 'A single full-body character cel of Metallica (character reference: image 1), stopped with her chest thrust out and her chin raised, both hands on her hips, mouth open as she shouts
+      triumphantly, in profile, turned toward the right side of the picture, looking toward the right side of the picture, seen from a slightly low angle. Height 1.6 m. Transparent background: no scenery,
+      no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading,
+      rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - id: end_008
+    cut: A01b-008
+    which: end
+    credits: 1
+    method: 重ねる→描き直す編集（セルを tools/composite.py で終わりの立ち位置に重ね、朝の光で描き直す）
+    composite_cmd: python tools/composite.py episodes/A/scenes/A01b A01b-008 --which end --cels episodes/A/scenes/A01b/stills/end/cels008 --plate refs/witch-house-front_bg_01.png --out episodes/A/scenes/A01b/stills/end/A01b-008_end_composite.png
+    refs:
+    - episodes/A/scenes/A01b/stills/end/A01b-008_end_composite.png
+    - characters/metallica/views/metallica_side.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/bisco/views/bisco_side.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-008_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is a rough paste-up composite of one anime frame. Redraw it as a single coherent 2D TV anime frame (clean line art, cel shading, rich but soft colors, 16:9). Keep exactly: the camera
+      angle and framing, every character''s position, size, pose, facing and expression, and which character is in front of which. Keep the background layout (the swamp with huge gnarled dead trees and
+      the dirt clearing with red mushrooms, stumps and lamp posts, and at the right edge the witch''s house with its short wooden bridge). Change the time to early morning: a pale, clear morning sky
+      with soft low sunlight and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. Relight the characters to match the scene, add natural contact shadows on the ground,
+      and blend the edges. From left to right: Metallica in profile facing right with her chest out and hands on her hips (reference image 2), the small Hundred Knight facing the viewer just behind her
+      (reference image 3), Bisco at the right in profile facing left (reference image 4). Keep each character''s design, colors and proportions identical to the reference images. Do not add or remove any
+      character. No text, no manga symbols.'
+  - id: start_009
+    cut: A01b-009
+    which: start
+    credits: 1
+    method: 編集（既存の静止画 try10/A01b-009 は指が鼻先に当たった姿勢＝「突く」の瞬間。それを「終わり」に使い、指を離した「開始」を作る）
+    refs:
+    - episodes/A/scenes/A01b/stills/try10/A01b-009_gpt-image-2.5_01.png
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/metallica/views/metallica_back.png
+    output: episodes/A/scenes/A01b/stills/start/A01b-009_start_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the last frame of a shot. Draw the first frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfits and positions, but Metallica''s
+      raised index finger is held a short distance (about 20 cm) in front of Bisco''s nose, not touching it, and Bisco stands upright without leaning back, looking up at Metallica with a flat, unimpressed
+      expression. Keep each character''s design, colors and proportions identical to image 1 and to the character references (images 2 to 4). 2D TV anime style, clean line art, cel shading, rich but soft
+      colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+videos:
+  model: seedance_2_0
+  mode: std
+  resolution: 480p
+  generate_audio: false
+  credits_estimate: 96   # 480p std は1秒3クレジット（参照を付けても変わらない）
+  note: 最短 4 秒、整数秒。カットの秒数より長い分は、組み立て（tools/animatic.py）で速度を少し上げて収める。003 と 009 は人物の位置もカメラも動かないので下絵は省く（止めのカメラなので開始の静止画で足りる）。003 は喋る人物が画面にいない（声は画面の外のメタリカ）、009 はメタリカが後ろ姿で口が見えないので、口パクの参照は付けない
+  items:
+  - cut: A01b-003
+    sec: 5.5
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A01b/stills/try10/A01b-003_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/try10/A01b-003_gpt-image-2.5_01.png   # 開始と同じ絵（0クレジット）
+    image_references:
+    - characters/bisco/views/bisco_front.png
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    previs: なし（止めのカメラで人物も動かない）
+    audio_reference: なし（画面に喋る人物がいない。L30 は画面の外のメタリカ）
+    prompt: 'Medium-long shot with a completely still camera. The three stand at the foot of the bridge, listening to Metallica off-screen. Bisco keeps a flat, half-lidded, fed-up look, her eyes fixed
+      on Metallica off-screen. Arlecchino claps his big hands slowly and steadily, the clapping growing a little stronger around the middle of the shot, then settling. The Hundred Knight''s head follows
+      a small dragonfly that flies across right in front of it, turning its head slowly to follow it, then turns back to the front. The shot ends on the given last frame (the same pose as the first frame).'
+  - cut: A01b-004
+    sec: 5.4
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A01b/stills/rest/A01b-004_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-004_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/metallica/views/metallica_front.png
+    - characters/metallica/views/metallica_side.png
+    previs: previs/A01b/A01b-004.mp4（停止後 2.5〜4.1 秒に体をひねる。カメラは 2.3〜4.3 秒に画面の左へ振る）
+    audio_reference: audio/A01b/original/L31_metallica.wav（mp3 に変えて渡す）
+    prompt: 'Knee-up shot. Metallica stands in the center looking out over the swamp, then twists her body toward the left side of the picture and swings her right arm out, thrusting it straight toward
+      the far swamp and pointing with her index finger as she shouts, the arm reaching full extension at about 4 seconds, then holding. The camera pans slowly to the left to follow the swing of her arm.
+      Her long braids and hair swing with the turn.'
+  - cut: A01b-007
+    sec: 8.3
+    duration: 9
+    credits: 27
+    start_image: episodes/A/scenes/A01b/stills/start/A01b-007_start_gpt-image-2.5_01.png（承認後に確定）
+    end_image: episodes/A/scenes/A01b/stills/rest/A01b-007_gpt-image-2.5_01.png
+    image_references:
+    - characters/metallica/views/metallica_face_front.png
+    - characters/metallica/views/metallica_face_side.png
+    previs: previs/A01b/A01b-007.mp4（0〜0.9 秒に振り返る。カメラは 0.25m だけ寄る）
+    audio_reference: audio/A01b/original/L34_metallica.wav（mp3 に変えて渡す。頭か末尾に余分な声が混じるかも、と lines.md に印あり）
+    prompt: 'Close-up. Metallica, looking toward the far swamp at screen left with a calm proud face, whips her head back over her left shoulder at the very start, toward the right side of the picture,
+      and breaks into a sly grin; she keeps talking with a smug, delighted look, her eyes sparkling, her braids and hair swaying slightly. The camera pushes in very slowly. The shot ends on the given
+      last frame.'
+  - cut: A01b-008
+    sec: 5.2
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A01b/stills/try10/A01b-008_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-008_end_gpt-image-2.5_01.png（承認後に確定）
+    image_references:
+    - characters/metallica/views/metallica_side.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/bisco/views/bisco_side.png
+    previs: previs/A01b/A01b-008.mp4（0.2〜2.6 秒に4歩。カメラは低い位置から右へ振る）
+    audio_reference: audio/A01b/original/L35_metallica.wav（mp3 に変えて渡す）
+    prompt: 'Wide shot from a low camera near the ground. Metallica strides toward the right side of the picture in four big, confident steps, her braids bouncing, then stops with her chest thrust out,
+      chin raised and both hands on her hips as she finishes shouting. The Hundred Knight stands where it is and watches her. Bisco comes into frame at the right edge as the camera pans slowly to the right
+      to follow Metallica.'
+  - cut: A01b-009
+    sec: 4.9
+    duration: 5
+    credits: 15
+    start_image: episodes/A/scenes/A01b/stills/start/A01b-009_start_gpt-image-2.5_01.png（承認後に確定）
+    end_image: episodes/A/scenes/A01b/stills/try10/A01b-009_gpt-image-2.5_01.png
+    image_references:
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_face_front.png
+    - characters/metallica/views/metallica_back.png
+    previs: なし（止めのカメラで人物も動かない）
+    audio_reference: なし（メタリカは後ろ姿で口が見えず、ビスコは喋らない。突く拍は指示文に秒で書く）
+    prompt: 'Over-the-shoulder shot with a completely still camera. Metallica, at the left foreground seen from behind at an angle, pokes Bisco''s nose with her index finger at about 1.5 seconds,
+      draws the finger back a little, and pokes again at about 3.2 seconds. Each time, Bisco leans back slightly and looks up at Metallica with a flat, unimpressed look. The shot ends on the given last
+      frame, with the fingertip resting on Bisco''s nose.'
