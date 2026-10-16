@@ -91,9 +91,11 @@ cuts:
     frame: 膝上
     cam: [11.3, 8.7, 1.3]
     look: m_end
+    look_end: [10.34, 10.9]   # 腕の振りに合わせて東（ピラーの方、画面の左）へ約10°振る。終わりでメタリカは画面の右寄り（x≈0.45）、左に指す先の空きができる（previs.py 用）
+    cam_t: [2.3, 4.3]
     lens: 50
     only: [metallica]
-    move: {metallica: {face: pillar}}
+    move: {metallica: {face: pillar, t: [2.5, 4.1]}}
     gaze: {metallica: 0}
     gaze_end: {metallica: pillar}
     pose: {metallica: 'turning to her right, away from the three, toward the far swamp'}
@@ -125,10 +127,11 @@ cuts:
   A01b-007:
     frame: 寄り
     cam: [11.3, 8.7, 1.45]
+    cam_end: [11.16, 8.91, 1.45]   # 振り返りに合わせて少し寄る 0.25m（previs.py 用）
     look: m_end
     lens: 85
     only: [metallica]
-    move: {metallica: {face: '@bisco'}}
+    move: {metallica: {face: '@bisco', t: [0.0, 0.9]}}
     gaze: {metallica: pillar}
     gaze_end: {metallica: bisco}
     pose: {metallica: still looking toward the far swamp where she pointed}
@@ -139,10 +142,11 @@ cuts:
   A01b-008:
     frame: 全身
     cam: [12.6, 9.6, 0.4]
+    cam_end: [14.6, 10.0, 0.5]   # 引きながら振る（previs.py 用）。止まったメタリカ（1.6m）がカメラから 2.3m だと頭が画面の上に切れる（頭の先が画面の上端より 344px 上）ので、2m 引いて 4.4m にする。起点は同じなので開始の静止画はそのまま
     look: [10.1, 10.0]
-    look_end: m_front
+    look_end: [10.3, 8.6]   # メタリカとビスコの間
     lens: 24
-    move: {metallica: {to: m_front, face: '@bisco'}}
+    move: {metallica: {to: m_front, face: '@bisco', t: [0.2, 2.6]}}
     gaze: {metallica: bisco}
     pose: {metallica: striding forward with big confident steps, bisco: standing at the foot of the bridge in front of the house, hundred-knight: standing at the foot of the bridge, arlecchino: standing at the foot of the bridge}
     pose_end: {metallica: 'stopped with her chest thrust out and chin raised, hands on her hips'}
@@ -464,7 +468,7 @@ cuts:
     cam: [11.9, 10.6, 1.2]
     look: [10.0, 8.7]
     lens: 35
-    move: {metallica: {to: m_back}}
+    move: {metallica: {to: m_back, t: [0.2, 1.2]}}   # t: 「うるさいな」の頭（0.2秒）から半歩のけぞる。previs.py 用
     gaze: {metallica: bisco, bisco: metallica}
     pose: {bisco: 'red-faced, shouting, fists down at her sides, stamping one foot', metallica: 'leaning back half a step, surprised', hundred-knight: 'standing beside Bisco, startled', arlecchino: standing beside Bisco}
     act: {start: 顔を近づけたメタリカ, do: ビスコが真っ赤になって足を踏み鳴らし怒鳴る。メタリカは半歩のけぞる, end: 怒鳴り終えて肩で息をするビスコ, sync: 「うるさいな」の頭（0.2秒）で踏み鳴らす}

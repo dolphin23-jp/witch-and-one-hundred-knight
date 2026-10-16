@@ -41,7 +41,8 @@
 ## 生成サービスへのつなぎ方
 
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
-- 動画は Seedance（Higgsfield 経由、2.0 か 2.5 かは試験で決める。D-055。Wan 3.0 は予備）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は Seedance に参照動画として渡す。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
+- 動画は Seedance 2.0（Higgsfield 経由。std・480p の試験で合格。2.5 は未試験。D-055。Wan 3.0 は予備）。標準の作り方は 「開始の静止画＋終わりの静止画＋設定画＋下絵（Blender）＋口パク参照（原作の台詞。mp3 に変えて渡す）」で、生成音声は使わない（`generate_audio=false`）。動画にするカットごとに終わりの静止画が要る（3人以上は人物を1人ずつ作り、`tools/composite.py --which end` で重ねて朝の光で描き直す）。480p の std は1秒3クレジット（参照を付けても変わらない）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は Seedance に参照動画として渡す。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
+  - Higgsfield への受け渡し: `media_upload` で署名付き URL をもらい、`curl -X PUT -H "Content-Type: …" -H "If-None-Match: *"` で上げて `media_confirm`。音声は WAV が audio/mpeg 扱いになるので mp3（192k）にして上げる。送信がプリセットの推薦（「IN THE DARK」など）で止まったら、ジョブも課金も作られていないので、`declined_preset_id` を付けて同じ内容で出し直す。生成は `generate_video_batch`、完成は `jobs_wait` で待つ。
 - 声・BGM: 原作の音源（D-045）。Drive の「魔女と百騎兵 原作音源」フォルダから取り込み、長い音源は `python tools/extract_lines.py` で台詞に切り出す（Demucs・Whisper は重いので、セッションごとに作業用の venv に入れる）。`tools/gemini_tts.py` と `tools/lyria.py` は使わない（ベイクオフの記録として残す）。
 - Gemini API のキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。
 - Drive: 文書や小さいファイル（10MB未満）は Drive コネクタで扱う。大きい音声は、「原作音源」フォルダの中だけを読み書きする受け口（Apps Script、`setup/drive_bridge.md`）を通して `python tools/drive.py` で読み書きする。受け口の鍵は環境変数 `DRIVE_BRIDGE_KEY`（クラウド環境の設定で入れる。ファイルやコマンドに書かない）。
