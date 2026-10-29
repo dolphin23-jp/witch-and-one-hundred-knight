@@ -34,6 +34,30 @@ def ff(*args):
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", *map(str, args)], check=True)
 
 
+CODES = {"static", "push", "push_fast", "pull", "pan_l", "pan_r", "tilt_up", "tilt_down", "shake"}
+
+
+def norm_move(m, kind):
+    """camera.move を Remotion の動き（camera.ts）の名前に直す。言葉で書いたもの（A01b など）は tools/animatic.py の motion() と同じ読み方"""
+    if not m:
+        return "push" if kind == "K" else "static"
+    if m in CODES:
+        return m
+    if "tilt up" in m:
+        return "tilt_up"
+    if "pan" in m:
+        return "pan_l" if ("左へ" in m and "左から" not in m) else "pan_r"
+    if "揺れ" in m:
+        return "shake"
+    if "push_fast" in m or "一気に寄る" in m:
+        return "push_fast"
+    if "pull" in m or "引く" in m:
+        return "pull"
+    if "push" in m or "寄る" in m or "寄り" in m:
+        return "push"
+    return "static"
+
+
 def export(scene_dir, out_root, with_overlays=False):
     scene_dir = ROOT / scene_dir
     vspec = yaml.safe_load((scene_dir / "voice.yaml").read_text(encoding="utf-8"))
@@ -57,7 +81,7 @@ def export(scene_dir, out_root, with_overlays=False):
         cam = s.get("camera") or {}
         head = f"{s['id']}   {s.get('kind', '')} {label}   {sec:.1f}秒" + (f"   カメラ {cam['setup']}" if cam.get("setup") else "")
         cut = {"id": s["id"], "kind": s.get("kind"), "start": start, "sec": sec, "label": head, "color": color,
-               "move": cam.get("move") or ("push" if s.get("kind") == "K" else "static"), "image": None,
+               "move": norm_move(cam.get("move"), s.get("kind")), "image": None,
                "shot": s.get("shot", ""), "acting": s.get("acting", "")}
         img = ROOT / s["image"] if s.get("image") else None
         if img and img.exists():
