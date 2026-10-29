@@ -13,7 +13,7 @@ roles:
     input: ショット指定 + 参照画像
     output: 静止画 (PNG)
     implementations:
-      - {name: gpt-image-2.5, via: higgsfield, status: adopted, model_id: gpt_image_2_5, params: {quality: medium, resolution: 2k, aspect_ratio: '16:9'}, note: 1枚1クレジット。A01 の静止画から採用（ユーザー判断 2026-09-27、D-048 提案中）}
+      - {name: gpt-image-2.5, via: higgsfield, status: adopted, model_id: gpt_image_2_5, params: {quality: medium, resolution: 2k, aspect_ratio: '16:9'}, note: 1枚1クレジット。A01 の静止画から採用（ユーザー判断 2026-09-27、D-048）}
       - {name: nano-banana-pro, via: higgsfield, status: fallback, note: 1枚2クレジット。D-041 で採用していたが、A01 から GPT Image 2.5 に切り替え}
       - {name: gpt-image-2, via: higgsfield, status: dropped, note: A01-019 の試作で逆光と表情は良かった。2.5 に置き換え}
       - {name: gpt-image-2, via: codex-cli, status: dropped, note: 利用上限で試行できず。比較せず Nano Banana Pro で進める（ユーザー判断 2026-09-26。D-036 のまま）}
@@ -63,13 +63,13 @@ roles:
     input: 動画 + 漫符 + エフェクト
     output: 完成カット
     implementations:
-      - {name: hyperframes, status: candidate}
-      - {name: remotion, status: candidate}
+      - {name: remotion, status: adopted, tool: animatic/remotion/, note: "D-050。漫符・BGM・効果音の合成はまだ試験のみ（A01 の漫符）"}
+      - {name: hyperframes, status: dropped, note: D-050 で Remotion に決定。animatic/hyperframes/ は比較の記録}
 
   animatic_assembly:
     input: ショットファイル + 素材
     output: 一話の動画
     implementations:
-      - {name: ffmpeg, status: temporary, tool: tools/animatic.py, note: 静止画がそろうまでの仮の組み立て（尺と間の確認用）}
-      - {name: hyperframes, status: candidate}
-      - {name: remotion, status: candidate}
+      - {name: remotion, status: adopted, tool: animatic/remotion/render.sh, note: "D-050。tools/scene_export.py がショットファイルと voice.yaml から組み立て用のデータを作る。voice.yaml があるシーン（A01）が対象"}
+      - {name: ffmpeg, status: temporary, tool: tools/animatic.py, note: voice.yaml がないシーン（A01b）の仮の組み立て（尺と間の確認用）}
+      - {name: hyperframes, status: dropped, note: D-050 で Remotion に決定}

@@ -4,7 +4,7 @@
 
 ## いまの段階
 
-ベイクオフ（画像・動画・声の候補を同じ条件で比べる）。詳しくは [bakeoff/README.md](bakeoff/README.md)。
+本制作。第5章の冒頭から物語の順に作っている（D-057）。A01 居間はパイロット版（Animatic v11）、A01b 魔女邸の前は静止画73カットが合格し、動画にするカットを区間ごとに作っている。いま有効な決定は Living Spec の「現行決定サマリー」タブ、作業の記録は [docs/log.md](docs/log.md)。ベイクオフ（候補の比較）の記録は [bakeoff/README.md](bakeoff/README.md)。
 
 ## 初回の準備（ユーザーが行うこと）
 
