@@ -106,3 +106,10 @@ files:
     content: 採用した静止画73カット（camera.move に合わせて寄り・引き・パン・ティルト・揺れ）+ 原作の台詞（D-045）+ 字幕。BGM・効果音・漫符なし
     built_with: python tools/animatic.py episodes/A/scenes/A01b（720p、crf31 で 22MB に縮めたもの）
     drive: null   # 受け口は「原作音源」フォルダだけ、コネクタは10MB未満なので Drive にはまだ置いていない。チャットで直接渡した
+  - name: A01b_v02.mp4
+    scene: A01b
+    made: 2026-10-30
+    sec: 315.7
+    content: Remotion で組んだ A01b の最初の版（D-050。voice.yaml は tools/voice_yaml.py で作成）。静止画73カットのうち動画6カット（001・003・009・030・031・034、Seedance 2.0）+ 原作の台詞65本 + BGM（原作音源パート16 から声を分けた残りをそのまま。場面の BGM の切り替えとは合っていない）+ 字幕。漫符・効果音なし
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01b A01b_v02（チャットで送るため crf31 で 21MB に縮めた）
+    drive: null   # チャットでユーザーに送付。Drive の「Animatic」フォルダへは、受け口が「原作音源」フォルダだけ・コネクタが10MB未満のため置けていない
