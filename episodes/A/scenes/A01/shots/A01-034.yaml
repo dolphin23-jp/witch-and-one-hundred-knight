@@ -1,22 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-034
-scene: A01          # 魔女邸・居間（朝）
-sec: 2
-shot: 手元
-acting: アルレッキーノが片手で招待状を受け取り、胸ポケットから片眼鏡を出してはめる
-dialogue: []
+scene: A01
+tc: 156.2
+sec: 5.4
+kind: K
+shot: 胸上・ビスコ
+acting: 顔を上げ、さらりとした顔に戻る。「知っているさ」で小さく肩をすくめる
+dialogue:
+- L21
 sound: null
-notes: null
-difficulty: 手元インサート
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: 語尾の「さ」だけ声が跳ね上がる
+camera: {setup: D, lens: 胸上, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
 state:
-  arlecchino: {head: あり, monocle: はめる, props: 招待状}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 招待状が飛んでくる
-end_pose: 片眼鏡をはめる
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  bisco: {}
+image: episodes/A/scenes/A01/images/A01-034_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- bisco
+overlays: []
+fallback: null

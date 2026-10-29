@@ -1,0 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-038b
+scene: A01
+tc: 185.8
+sec: 3.0
+kind: K
+shot: 寄り・メタリカ
+acting: ブーツをテーブルに乗せたまま、にやり
+dialogue:
+- L25「ワタシは利用させてもらうだけだ。」
+sound: null
+notes: null
+camera: {setup: C, lens: 寄り, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
+state:
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-038b_gpt-image-2.5_02.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

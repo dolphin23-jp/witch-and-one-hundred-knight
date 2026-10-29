@@ -1,0 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-032a
+scene: A01
+tc: 146.0
+sec: 5.7
+kind: K
+shot: 寄り・メタリカ
+acting: 横目でビスコを見る
+dialogue:
+- L19「犬コロの分際で…意外だったぞ。」
+sound: null
+notes: 語尾が上がるので顔で終える
+camera: {setup: C, lens: 寄り・ビスコの肩なめ, move: push}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
+state:
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-032a_gpt-image-2.5_03_crop.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）。_03 を顔の寄りに切り抜き（ユーザー承認 2026-09-27、費用なし）
+refs:
+- metallica
+overlays: []
+fallback: null

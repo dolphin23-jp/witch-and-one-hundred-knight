@@ -1,23 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-012
-scene: A01          # 魔女邸・居間（朝）
-sec: 7
-shot: ローアングル・膝上
-acting: 椅子の上に片足をかけ、演説の姿勢
+scene: A01
+tc: 47.3
+sec: 1.3
+kind: M
+shot: 寄り・メタリカ
+acting: 「あん？」→直後の0.9秒の間で、目だけがビスコの方へ走る
 dialogue:
-  - {who: metallica, line: お前は本当に何も分かっていないな、犬コロ。いいか、ヴァルプルギスの夜会だぞ。大魔女ウルカが作った、由緒正しい魔女の集まりだ, delivery: 演説口調。尊大に、芝居がかって。相手を見下しつつ熱が入っていく}
+- L06「あん？」
 sound: null
-notes: 尺は声で伸びる見込み
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: null
+camera: {setup: C, lens: 寄り, move: push_fast}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
 state:
-  metallica: {hat: あり, pose: 椅子に片足, props: 招待状}
-refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 片足を椅子にかける
-end_pose: 演説の決め姿勢
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-012_gpt-image-2.5_04.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

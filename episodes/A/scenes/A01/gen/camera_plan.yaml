@@ -1,0 +1,623 @@
+# A01 カメラ位置の設計と作り直しの計画（承認待ち）。CLAUDE.md 守ること1
+scene: A01
+model: gpt_image_2_5
+via: higgsfield
+quality: medium
+resolution: 2k
+aspect_ratio: '16:9'
+credits_each: 1
+note: カメラ位置の設計（演出ノート P-03、提案中）。setup ごとの背景の基準を先に作り、regenerate のカットはその基準を1枚目の参照画像にして作り直す。
+setups:
+  A:
+    name: 奥
+    camera: 玄関側（部屋の手前）から奥を見る
+    bg: 左に階段、丸窓、奥に人形の座る赤いソファ、右に本棚（今の背景の基準）
+    plate: world/living-room-plate_gpt-image-2.5_01.png
+  B:
+    name: 玄関
+    camera: ソファの前から手前（玄関側）を見る。A の切り返し
+    bg: 奥の壁の左寄りにアーチ形の両開きの玄関扉、薬瓶と燭台の棚、左に本棚の続き、右端に階段の下の段（玄関側の壁は原作の画面にないので足す）
+    plate: world/living-room-plate-B-door_gpt-image-2.5_01.png
+  C:
+    name: 階段
+    camera: 本棚の側から部屋を横切って階段を見る
+    bg: 曲がった木の階段と彫刻の手すり、右寄りに丸窓とソファの端
+    plate: world/living-room-plate-C-stairs_gpt-image-2.5_01.png
+  D:
+    name: 本棚
+    camera: 階段の側から部屋を横切って本棚を見る
+    bg: 天井までの本棚とはしご、左寄りにソファの端（人形）、右寄りに玄関の角
+    plate: world/living-room-plate-D-shelves_gpt-image-2.5_01.png
+  E:
+    name: 俯瞰
+    camera: 階段の上の踊り場から見下ろす
+    bg: 丸テーブル、ソファ、床の敷物を上から
+    plate: world/living-room-plate-E-high_gpt-image-2.5_01.png
+  F:
+    name: 窓の外
+    camera: 丸窓の外から中をのぞく
+    bg: 丸窓の枠が手前で人物を丸く囲む。外壁の苔、沼の緑の照り返し
+    plate: null
+plates:
+- target: world:living-room-plate-B
+  refs:
+  - plate:A
+  - witch-house-living_ingame_01
+  - witch-house-living_ingame_02
+  prompt: 'Background plate only, no characters. The same witch''s living room as in the first reference image, but seen from the opposite direction (reverse angle): the camera stands in front of the red
+    sofa at the back of the room and looks toward the front of the room. Middle ground: the round table with the red tablecloth, stacks of old books and breakfast plates. Screen left: tall bookshelves continuing
+    along the side wall. Far wall, left of center: a heavy arched wooden double front door with iron fittings, closed, thin emerald-green light leaking through its gaps. The rest of the far wall: shelves
+    of potion jars and candles, a coat rack with a spare witch hat. Screen right edge: the bottom steps and carved banister of the curved wooden staircase. Hanging brass lamp, glowing green vines along
+    the edges, patterned rug. Warm orange lamp light, cool morning light from behind the camera. 2D anime background art, clean lines, same style and colors as the reference. No text. 16:9.'
+- target: world:living-room-plate-C
+  refs:
+  - plate:A
+  - witch-house-living_ingame_01
+  - witch-house-living_ingame_02
+  prompt: 'Background plate only, no characters. The same witch''s living room as in the first reference image, seen from a side angle: the camera stands near the tall bookshelves on the right side of the
+    room and looks across the room toward the curved wooden staircase. The staircase with its carved banister fills the center and left, rising to an upper landing. Screen right: the back wall with the
+    small round window letting in pale morning light, and the end of the red high-backed sofa with a creepy stitched doll. Round table with red tablecloth in the right middle ground. Hanging brass lamp,
+    glowing green vines, patterned rug. Warm orange lamp light mixed with cool morning light. 2D anime background art, clean lines, same style and colors as the reference. No text. 16:9.'
+- target: world:living-room-plate-D
+  refs:
+  - plate:A
+  - witch-house-living_ingame_01
+  - witch-house-living_ingame_02
+  prompt: 'Background plate only, no characters. The same witch''s living room as in the first reference image, seen from a side angle: the camera stands near the foot of the curved staircase on the left
+    side of the room and looks across the room toward the right wall. Tall wooden bookshelves packed with old books fill the far wall up to the ceiling, with a rolling ladder. Screen left: the end of the
+    red high-backed sofa with creepy stitched dolls. Screen right: the front corner of the room with part of the arched wooden front door. Round table with red tablecloth in the middle ground. Hanging brass
+    lamp, glowing green vines, patterned rug. Warm orange lamp light mixed with cool morning light from the left. 2D anime background art, clean lines, same style and colors as the reference. No text. 16:9.'
+- target: world:living-room-plate-E
+  refs:
+  - plate:A
+  - witch-house-living_ingame_01
+  - witch-house-living_ingame_02
+  prompt: 'Background plate only, no characters. The same witch''s living room as in the first reference image, seen from a high angle: the camera is on the upper landing of the curved staircase and looks
+    down diagonally into the room. Below: the round table with the red tablecloth, stacks of old books, breakfast plates and teacups seen from above; the red high-backed sofa with stitched dolls; the patterned
+    rug; bookshelves at the far side; the carved banister in the near foreground at the edge of frame. Hanging brass lamp near the camera. Warm orange lamp light mixed with cool morning light. 2D anime
+    background art, clean lines, same style and colors as the reference. No text. 16:9.'
+items:
+- target: A01-001
+  setup: 外観
+  lens: 大引き
+  move: push
+- target: A01-002
+  setup: A
+  lens: 引き・標準
+  move: pan_r
+- target: A01-003
+  setup: A
+  lens: インサート
+  move: static
+- target: A01-004
+  setup: A
+  lens: 寄り・低い位置
+  move: tilt_up
+- target: A01-005a
+  setup: C
+  lens: 階段の下から強い煽り・広角
+  move: tilt_down
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Extreme low angle from the foot of
+    the curved wooden staircase looking straight up the steps, wide-angle lens: Metallica leaps down the stairs three steps at a time toward the camera, one hand holding a wax-sealed envelope high above
+    her head, the other pressing her huge witch hat down; her long hair, cape and skirt stream behind her. The ceiling beams and hanging brass lamp above her. Dynamic, full body, strong perspective. Use
+    the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-005b
+  setup: A
+  lens: 全身・横移動
+  move: pan_r
+- target: A01-005c
+  setup: C
+  lens: 百騎兵の目の高さ・広角、招待状がレンズの前
+  move: shake
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  - hundred-knight_official_02
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. From the Hundred Knight''s low eye
+    level at the round table, wide-angle lens: Metallica slams one hand on the table (plates and a fried egg jump) and thrusts the wax-sealed envelope right into the lens, huge in the foreground; she leans
+    over its top edge with a wide, smug grin. The staircase she just came down rises behind her. Foreshortened, dynamic. Use the first reference image only for the room''s design and this viewpoint; the
+    other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-006
+  setup: D
+  lens: 寄り・メタリカの肩なめ
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - hundred-knight_official_02
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Over Metallica''s shoulder (her orange hair
+    and hat brim blurred in the near foreground): close-up of the Hundred Knight sitting at the round table, tilting its round helmeted head to one side in confusion. Bookshelves behind it. Simple, cute
+    pause. Telephoto lens, background softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style,
+    clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-007
+  setup: C
+  lens: 寄り・わずかに煽り
+  move: push_fast
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Close-up of Metallica laughing ''kihihi''
+    with a mischievous, smug grin, eyes narrowed, shoulders shaking, seen from slightly below. Warm lamp light on her face; the staircase banister behind her. Telephoto lens, background softly out of focus.
+    Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-007a
+  setup: C
+  lens: 百騎兵の頭なめ・煽り
+  move: static
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  - hundred-knight_official_02
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Low angle from behind the Hundred
+    Knight''s round helmet (its helmet edge blurred in the near foreground): Metallica bends down to its eye level and waves the envelope teasingly with a condescending smile. The staircase behind her.
+    Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-008
+  setup: C
+  lens: ローアングル・膝上・広角
+  move: tilt_up
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Low-angle knee shot, wide-angle lens,
+    camera near the floor: Metallica plants one boot on a pile of old books stacked on the floor and strikes a grand speech pose, envelope held high, chin raised. The staircase and the hanging brass lamp
+    tower behind her. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-009
+  setup: C
+  lens: 寄り・やや煽り
+  move: push
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Close-up, slightly low angle: Metallica
+    holds the envelope against her chest, eyes half-closed in blissful self-satisfaction, a small proud smile. Soft lamp light on her face; the carved banister softly blurred behind her. Telephoto lens,
+    background softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel
+    shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-010
+  setup: A
+  lens: 胸上
+  move: pan_l
+- target: A01-010a
+  setup: A
+  lens: インサート
+  move: static
+- target: A01-010b
+  setup: C
+  lens: 真下からの強い煽り
+  move: tilt_up
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Extreme low angle from almost directly
+    below: Metallica raises the envelope high toward the ceiling; the hanging brass lamp glows right behind the envelope like a halo; the upper part of the staircase and the ceiling beams frame the top
+    of the picture. Triumphant, heroic composition. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean
+    line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-011
+  setup: A
+  lens: 胸上・ビスコ
+  move: static
+- target: A01-012
+  setup: B
+  lens: 寄り
+  move: push_fast
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Close-up of Metallica standing by the round table: her eyes dart sharply to the side (toward the sofa behind the
+    camera), catching someone looking. Suspicious, sly expression. The arched front door and shelves of jars behind her. Telephoto lens, background softly out of focus. Use the first reference image only
+    for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-012a
+  setup: D
+  lens: 真横のツーショット
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - metallica_official_02
+  - metallica_official_01
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Profile two-shot from the side: Metallica
+    (screen right) leans far over the round table and pushes the envelope right under the nose of Bisco (screen left), who sits on the red sofa, annoyed and leaning back. Both seen in clean profile. The
+    bookshelves fill the background. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art,
+    cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-013
+  setup: A
+  lens: 胸上・ビスコ
+  move: static
+- target: A01-013a
+  setup: B
+  lens: 胸上
+  move: static
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Chest shot of Metallica ignoring the complaint, casually straightening the edge of the envelope with her fingers,
+    unbothered. The arched front door and shelves of jars behind her. Telephoto lens, background softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other
+    references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images.
+    No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-014
+  setup: A
+  lens: 胸上・ビスコ
+  move: static
+- target: A01-015
+  setup: B
+  lens: 膝上・わずかに煽り
+  move: push
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Knee shot from slightly below: Metallica with one boot on a pile of books, her smug grin freezing; her cheeks begin
+    to turn red as she realizes she was caught being happy. The arched front door and shelves of jars behind her. Use the first reference image only for the room''s design and this viewpoint; the other
+    references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images.
+    No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-016
+  setup: E
+  lens: 俯瞰・全身
+  move: shake
+  regenerate: true
+  refs:
+  - plate:E
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup E: high angle from the upper landing of the staircase looking down into the room; the background is the view in the first reference image. High-angle full-body shot looking down
+    at the round table: the pile of books under Metallica''s boot collapses; she lurches forward and catches herself with both hands on the table, plates rattling, books scattering across the rug, her face
+    bright red. Dynamic comedic moment seen from above. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style,
+    clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-017
+  setup: B
+  lens: 胸上・ダッチアングル
+  move: shake
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Chest shot with a strongly tilted (Dutch) camera angle: Metallica flails her arms in flustered denial, face red,
+    mouth wide open shouting. The front door and shelves of jars behind her, tilted. Use the first reference image only for the room''s design and this viewpoint; the other references are for character
+    design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles,
+    no manga symbols. 16:9.'
+- target: A01-017a
+  setup: B
+  lens: 膝上・わずかに俯瞰
+  move: static
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Knee shot from slightly above: Metallica crosses her arms, raises her chin and turns her face away haughtily. The
+    front door and shelves of jars behind her. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean
+    line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-017b
+  setup: B
+  lens: 胸上
+  move: push_fast
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Chest shot: Metallica yanks the brim of her huge witch hat down hard over her eyes, hiding her face. The shelves
+    of jars behind her. Telephoto lens, background softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only.
+    2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols.
+    16:9.'
+- target: A01-018
+  setup: F
+  lens: 窓の外から・寄り
+  move: push
+  regenerate: true
+  refs:
+  - plate:A
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera outside the witch''s house looking in through the small round window: the thick round wooden window frame is in the foreground and frames the subject in a circle; mossy dark outer wall
+    around it, faint emerald-green swamp light on the frame; the warm living room glows behind the subject. Metallica stands just inside the round window, facing it, and holds the wax-sealed envelope up
+    to the morning light; a faint watermark pattern glows through the paper. Morning light falls on her face; her mouth softens into a small, unguarded smile, as if no one is watching. Quiet, intimate.
+    The first reference image is the living room seen from inside, for the glimpse of the room behind her. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color,
+    eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-019
+  setup: A
+  lens: 胸上・メタリカの背中なめ
+  move: static
+- target: A01-019a
+  setup: A
+  lens: 背中
+  move: static
+- target: A01-020
+  setup: D
+  lens: 膝上
+  move: pan_r
+  regenerate: true
+  refs:
+  - plate:D
+  - arlecchino_official_03
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Knee shot: Arlecchino, smiling politely,
+    lifts a teapot and starts pouring tea into a cup on the round table. The tall bookshelves behind him. Use the first reference image only for the room''s design and this viewpoint; the other references
+    are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text,
+    no speech bubbles, no manga symbols. 16:9.'
+- target: A01-021
+  setup: A
+  lens: インサート
+  move: static
+- target: A01-022
+  setup: E
+  lens: 俯瞰・テーブル
+  move: static
+  regenerate: true
+  refs:
+  - plate:E
+  - bisco_official_03
+  - bisco_official_01
+  - arlecchino_official_03
+  prompt: 'Camera setup E: high angle from the upper landing of the staircase looking down into the room; the background is the view in the first reference image. High-angle shot looking down at the round
+    table: tea overflows from a cup and a dark stain spreads across the red tablecloth toward Bisco, who sits on the sofa at the table''s edge; without looking up, she calmly lifts her own plate into the
+    air, out of the stain''s path. Arlecchino''s gloved hand keeps pouring from the teapot at the edge of frame. Use the first reference image only for the room''s design and this viewpoint; the other references
+    are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text,
+    no speech bubbles, no manga symbols. 16:9.'
+- target: A01-023
+  setup: A
+  lens: 背中
+  move: static
+- target: A01-024
+  setup: A
+  lens: 寄り→膝上
+  move: shake
+- target: A01-025
+  setup: C
+  lens: 真横のツーショット・寄り
+  move: push_fast
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  - arlecchino_official_03
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Close profile two-shot from the side:
+    Metallica (screen left) jabs her finger at Arlecchino''s nose (screen right), face close to his, yelling angrily; Arlecchino, still holding the teapot, keeps his calm polite smile. Both in clean profile.
+    The staircase behind them. Comedic contrast. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean
+    line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-026
+  setup: D
+  lens: 膝上
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - arlecchino_official_03
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Knee shot: Arlecchino bows politely, unbothered,
+    and starts wiping the tea-stained red tablecloth with a cloth. The tall bookshelves behind him. Use the first reference image only for the room''s design and this viewpoint; the other references are
+    for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no
+    speech bubbles, no manga symbols. 16:9.'
+- target: A01-027
+  setup: A
+  lens: 膝上
+  move: pan_l
+- target: A01-028
+  setup: A
+  lens: 寄り
+  move: push
+- target: A01-029
+  setup: 窓外の沼
+  lens: インサート
+  move: push
+- target: A01-030
+  setup: A
+  lens: 胸上
+  move: static
+- target: A01-030a
+  setup: A
+  lens: 寄り・メタリカの視線
+  move: push
+- target: A01-031
+  setup: E
+  lens: 俯瞰・引き
+  move: pull
+  regenerate: true
+  refs:
+  - plate:E
+  - arlecchino_official_03
+  - bisco_official_03
+  - bisco_official_01
+  - hundred-knight_official_02
+  prompt: 'Camera setup E: high angle from the upper landing of the staircase looking down into the room; the background is the view in the first reference image. Wide high-angle shot of the living room
+    from the staircase landing: Arlecchino, standing, wipes the stained tablecloth; the Hundred Knight, seated at the table, wipes up egg yolk with bread; Bisco sits on the red sofa sipping tea. A calm
+    breath after the commotion. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading.
+    Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-032
+  setup: C
+  lens: 膝上
+  move: static
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Knee shot: Metallica sits on the armrest
+    at the end of the red sofa, sipping from the overfilled teacup with a grimace but drinking anyway. The staircase behind her. Use the first reference image only for the room''s design and this viewpoint;
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-032a
+  setup: C
+  lens: 寄り・ビスコの肩なめ
+  move: push
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Over Bisco''s shoulder (her dark hair
+    blurred in the near foreground): close-up of Metallica on the sofa armrest giving a sidelong glance with a curious, teasing look. The staircase softly blurred behind her. Telephoto lens, background
+    softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading.
+    Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-033
+  setup: D
+  lens: 胸上・メタリカの肩なめ
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - bisco_official_03
+  - bisco_official_01
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Over Metallica''s shoulder (her orange hair
+    blurred in the near foreground): chest shot of Bisco on the sofa lowering her eyes to the bread in her hands, a faint shadow of something unspoken in her face. Bookshelves behind her. Telephoto lens,
+    background softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel
+    shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-033a
+  setup: A
+  lens: インサート
+  move: static
+- target: A01-034
+  setup: D
+  lens: 胸上
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Chest shot of Bisco on the sofa looking up
+    again with a composed, casual face, giving a small shrug. The tall bookshelves softly blurred behind her. Telephoto lens, background softly out of focus. Use the first reference image only for the room''s
+    design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat)
+    identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-035
+  setup: C
+  lens: 胸上
+  move: static
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Chest shot of Metallica on the sofa
+    armrest; her eyes flick for a moment toward the small round window at the right of frame, a fleeting lonely look. The staircase behind her. Telephoto lens, background softly out of focus. Use the first
+    reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face,
+    hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-036
+  setup: C
+  lens: 胸上
+  move: push
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Chest shot of Metallica on the sofa
+    armrest looking into the distance with a softened, almost reverent expression, as if recalling something important. Pale morning light from the round window touches her face. Telephoto lens, background
+    softly out of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading.
+    Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-037
+  setup: D
+  lens: 胸上
+  move: static
+  regenerate: true
+  refs:
+  - plate:D
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Chest shot of Bisco on the sofa, slightly
+    surprised, the corners of her mouth softening into a small smile. The tall bookshelves softly blurred behind her. Telephoto lens, background softly out of focus. Use the first reference image only for
+    the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-038
+  setup: C
+  lens: 寄り
+  move: push_fast
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Close-up of Metallica blinking with
+    a blank, caught-off-guard face that is just starting to turn into a sly grin. The staircase softly blurred behind her. Telephoto lens, background softly out of focus. Use the first reference image only
+    for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color,
+    costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-038a
+  setup: A
+  lens: 膝上
+  move: shake
+- target: A01-038b
+  setup: C
+  lens: 寄り
+  move: static
+  regenerate: true
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup C: from the bookshelf side looking across the room toward the curved wooden staircase; the background is the view in the first reference image. Close-up from the chest up: Metallica
+    leans back deep into the red sofa with her arms crossed and her chin raised, smirking smugly (her legs are out of frame). The staircase softly blurred behind her. Telephoto lens, background softly out
+    of focus. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every
+    character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-039
+  setup: D
+  lens: 胸上
+  move: push
+  regenerate: true
+  refs:
+  - plate:D
+  - bisco_official_03
+  - bisco_official_01
+  prompt: 'Camera setup D: from the staircase side looking across the room toward the tall bookshelves; the background is the view in the first reference image. Chest shot of Bisco leaning forward on the
+    sofa, brows knitted with concern. The tall bookshelves softly blurred behind her. Telephoto lens, background softly out of focus. Use the first reference image only for the room''s design and this viewpoint;
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+- target: A01-040
+  setup: A
+  lens: 膝上
+  move: shake
+- target: A01-040a
+  setup: B
+  lens: 引き・背中から追う
+  move: push
+  regenerate: true
+  refs:
+  - plate:B
+  - metallica_official_02
+  - metallica_official_01
+  prompt: 'Camera setup B (reverse angle): from near the red sofa at the back of the room looking toward the front of the room; the background is the view in the first reference image (arched front door,
+    shelves of jars, bookshelves on the left, bottom of the staircase at the right edge). Wide shot from behind Metallica: cape flaring, she strides across the room toward the arched front door and throws
+    both doors wide open with both hands; bright emerald-green light floods in through the doorway and she becomes a dark silhouette against it, long shadows stretching back toward the camera. Dynamic,
+    dramatic. Use the first reference image only for the room''s design and this viewpoint; the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every
+    character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+count: 37
+credits_total: 37

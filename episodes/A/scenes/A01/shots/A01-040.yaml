@@ -1,23 +1,25 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-040
-scene: A01          # 魔女邸・居間（朝）
-sec: 5
-shot: 膝上・アルレッキーノ
-acting: 片眼鏡で招待状を読み上げる
+scene: A01
+tc: 193.5
+sec: 2.5
+kind: A
+shot: 膝上・メタリカ
+acting: 「心配するな。」でブーツを下ろしてソファから跳ね起き、直後の0.9秒の間で帽子をかぶり直す
 dialogue:
-  - {who: arlecchino, line: 刻限は明日の黄昏、白夜月が昇るまで。場所はテッタラ砂漠の先、アズ・ブロッケン山の山頂にございます, delivery: 朗々と、落ち着いて読み上げる}
+- L27「心配するな。」
 sound: null
-notes: 期限の提示
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: 見せ場（P-01）
+camera: {setup: A, lens: 膝上, move: shake}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
 state:
-  arlecchino: {head: あり, monocle: あり, props: 招待状}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: null
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-040_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+video: episodes/A/scenes/A01/videos/A01-040_wan3_0_01.mp4   # 段階2（Wan 3.0）。始めの画（A01-040_start_gpt-image-2.5_01）と今の画をつないだ
+video_fit: speed
+refs:
+- metallica
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

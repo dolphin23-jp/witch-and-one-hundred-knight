@@ -1,26 +1,19 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-001
-scene: A01          # 魔女邸・居間（朝）
-sec: 4
-shot: 大引き・固定。沼越しの魔女邸
+scene: A01
+tc: 0.0
+sec: 4.0
+kind: K
+shot: 大引き・ゆっくり寄る。沼越しの魔女邸
 acting: 朝靄。翠の水面に泡が浮かび、弾ける
 dialogue: []
-sound: 泡の音
+sound: 沼の環境音・泡。BGM なし
 notes: 沼は美しく撮る
-difficulty: 背景のみ
-
-# --- 本制作用の項目 ---
+camera: {setup: 外観, lens: 大引き, move: push}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
 background: witch-house-exterior-morning
-state: {}           # 人物なし
-refs: [witch-house, swamp]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: null
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-# ベイクオフで試作済み（指示文は bakeoff/shots/A01-001.yaml）
-bakeoff_result:
-  image: bakeoff/results/image/A01-001/nano-banana-pro_01.png
-  video: bakeoff/results/video/A01-001/wan-3.0_01.mp4
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+state: {}
+image: episodes/A/scenes/A01/images/A01-001_gpt-image-2.5_01.png   # 静止画（GPT Image 2.5、D-048）。A は頂点のポーズ
+refs: []
+overlays: []
+fallback: null
