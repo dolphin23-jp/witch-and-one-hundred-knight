@@ -1,0 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-010b
+scene: A01
+tc: 42.5
+sec: 3.3
+kind: K
+shot: 仰角・ゆっくり煽り上げる
+acting: 「大魔女」（42.5）で招待状を天井へ掲げる
+dialogue:
+- L05「大魔女だという公的な証なんだよ！」
+sound: 「よ！」（45.0）に短い音型
+notes: 盛りは中（ユーザー指定）。合成は入れない
+camera: {setup: C, lens: 真下からの強い煽り, move: tilt_up}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
+state:
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-010b_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

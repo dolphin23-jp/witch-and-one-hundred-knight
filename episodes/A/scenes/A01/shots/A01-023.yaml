@@ -1,22 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-023
-scene: A01          # 魔女邸・居間（朝）
-sec: 3
-shot: 背中・メタリカ
-acting: 窓辺で止まった背中。動かない
-dialogue: []
+scene: A01
+tc: 101.2
+sec: 4.6
+kind: S
+shot: 背中・丸窓の前のメタリカ
+acting: （声はオフ）「リカ様」（101.2）で背中が止まる。怒りマークを「リカ様」「成就」（102.4）「はい」（104.6）の3回で一つずつ増やす
+dialogue:
+- L13「リカ様の…はい。」
 sound: 漫符の効果音×3
-notes: ギャグON。怒りマークは一つ、二つ、三つと合成で重ねる（D-027）
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-window
+notes: ギャグON（合成）
+camera: {setup: A, lens: 背中, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-round-window
 state:
-  metallica: {hat: あり, mood: 怒り（こらえる）, props: 招待状}
-refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 静止した背中
-end_pose: 同じ（静止）
-overlays: [怒りマーク×3]   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-023_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

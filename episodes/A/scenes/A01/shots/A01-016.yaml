@@ -1,22 +1,25 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-016
-scene: A01          # 魔女邸・居間（朝）
-sec: 1.5
+scene: A01
+tc: 69.3
+sec: 1.9
+kind: A
 shot: 全身・メタリカ
-acting: 椅子から足が滑り落ちる。顔が一瞬で真っ赤になる
-dialogue: []
-sound: 滑る効果音
-notes: ギャグON（D-027）。絵柄・頭身は通常のまま（D-042）。湯気は合成
-difficulty: 大きな動き
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+acting: 69.5 足をかけた本の山が崩れ、体が前につんのめる→70.3「う、」で両手をテーブルについて踏みとどまる→直後の0.9秒の間で跳ね起きる。顔は真っ赤
+dialogue:
+- L09「う、」
+sound: 本が崩れる音、皿の音
+notes: 見せ場（P-01）。ギャグON（湯気は合成）
+camera: {setup: E, lens: 俯瞰・全身, move: shake}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
 state:
-  metallica: {hat: あり, mood: 赤面, props: 招待状}
-refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 片足を椅子にかけた姿勢
-end_pose: 足が床に落ち、赤面
-overlays: [湯気]   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-016_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+video: episodes/A/scenes/A01/videos/A01-016_wan3_0_01.mp4   # 段階2（Wan 3.0、D-043）。今の静止画を最初のフレームにした
+video_fit: speed   # カットの長さに合わせて速める（最大1.6倍）
+refs:
+- metallica
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

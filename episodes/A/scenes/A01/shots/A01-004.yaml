@@ -1,22 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-004
-scene: A01          # 魔女邸・居間（朝）
-sec: 3
-shot: 大寄り・手元
-acting: ビスコがパンを小さくちぎり、バターを薄く、端から端まで均一に塗る
-dialogue: []
-sound: ナイフの音
-notes: 王女の伏線（第9章）。この家で一人だけ所作が上品
-difficulty: 手元インサート
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+scene: A01
+tc: 11.0
+sec: 2.4
+kind: M
+shot: 寄り・百騎兵の目の高さ
+acting: 目玉焼きを見つめる。12.3「おい」で天井を見上げる
+dialogue:
+- L01 前半（声だけ先行）
+sound: 11.6 から2階を駆ける足音
+notes: 声だけ先に入れる（ユーザー採用）
+camera: {setup: C, lens: 寄り・低い位置, move: tilt_up}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-table
 state:
-  bisco: {seat: 手前}
-refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: ナイフがパンの端に当たる
-end_pose: 反対の端まで塗り終える
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  hundred-knight: {}
+image: episodes/A/scenes/A01/images/A01-004_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- hundred-knight
+overlays: []
+fallback: null

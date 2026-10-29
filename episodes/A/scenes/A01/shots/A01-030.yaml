@@ -1,23 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-030
-scene: A01          # 魔女邸・居間（朝）
-sec: 2.5
-shot: テーブルの下・百騎兵の目の高さ
-acting: 百騎兵がテーブルの下を覗き込む。床の上の首と目が合う。首がまばたきをする
-dialogue: []
-sound: null
-notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-under-table
+scene: A01
+tc: 130.5
+sec: 5.9
+kind: M
+shot: 胸上・メタリカ
+acting: 「フム」のあとの1.1秒の間で、あごに当てた指をとんとんと動かす。本気で考え込む
+dialogue:
+- L18「フム……、…沼の瘴気から守る、」
+sound: BGM① を絞る
+notes: 低い声は考え込んでいるから（P-02）
+camera: {setup: A, lens: 胸上, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
 state:
-  hundred-knight: {}
-  arlecchino: {head: 床}
-refs: [hundred-knight, arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 百騎兵が覗き込む
-end_pose: 首がまばたき
-overlays: [？]   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-030_gpt-image-2.5_02.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null
