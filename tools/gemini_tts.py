@@ -12,6 +12,7 @@ APIキー:
   python tools/gemini_tts.py speak  bakeoff/voices/metallica.yaml --only gag
   python tools/gemini_tts.py replicate bakeoff/voices/metallica.yaml       # 権利のあるサンプル音声から声を作る
   python tools/gemini_tts.py list                                           # 作成済みの声の一覧
+  python tools/gemini_tts.py check                                          # APIキーが付いているかの確認（生成しない・無料）
   どのコマンドも --dry-run で、送信内容だけを表示する。
 
 声の複製（replicate）は、声の持ち主本人が同意し、権利のある音声に限って使う（D-037）。
@@ -64,7 +65,11 @@ def call(method, path, body=None, dry_run=False):
             return json.loads(r.read().decode())
     except urllib.error.HTTPError as e:
         detail = e.read().decode(errors="replace")
-        sys.exit(f"Gemini API エラー {e.code}: {detail[:1000]}")
+        hint = ""
+        if e.code == 403 and "unregistered callers" in detail:
+            hint = ("\nAPIキーが付いていません。環境設定の「API認証情報」に登録されているか確認し、"
+                    "登録後に始めた新しいセッションで試してください。")
+        sys.exit(f"Gemini API エラー {e.code}: {detail[:1000]}{hint}")
 
 
 def find_audio(obj):
@@ -339,6 +344,13 @@ def cmd_list(a):
         print(f"{v.get('id')}  {v.get('display_name')}  {v.get('type')}")
 
 
+def cmd_check(a):
+    res = call("GET", f"/models/{MODEL}", None, a.dry_run)
+    if res is None:
+        return
+    print(f"APIキーは有効です。{res.get('name', MODEL)} を使えます。")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -352,6 +364,7 @@ def main():
     s.add_argument("--only", nargs="*"); s.add_argument("--overwrite", action="store_true")
     s.set_defaults(func=cmd_lines)
     s = sub.add_parser("list"); s.set_defaults(func=cmd_list)
+    s = sub.add_parser("check"); s.set_defaults(func=cmd_check)
     for s in sub.choices.values():
         s.add_argument("--dry-run", action="store_true")
     a = p.parse_args()
