@@ -1,23 +1,27 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-025
-scene: A01          # 魔女邸・居間（朝）
-sec: 2.5
-shot: 寄り・メタリカ
-acting: ゆっくり振り返る。笑顔のまま、目だけが笑っていない
+scene: A01
+tc: 108.9
+sec: 3.7
+kind: A
+shot: 引き→寄り・追う
+acting: L14 の息継ぎを広げた間に部屋を大股3歩で横切る→「それに、」（109.8）でアルレッキーノの鼻先に指を突きつけ、顔を寄せて怒鳴る。アルレッキーノはポットを持ったまま微笑みを崩さない
 dialogue:
-  - {who: metallica, line: その余計な口ごと、首を沼に沈めてやろうか！, delivery: 笑顔のまま言っている感じで始まり、最後は本気の怒りで叫ぶ}
-sound: null
-notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-window
+- L14 後半
+sound: 足音
+notes: 見せ場（P-01）。首のギャグは入れない（D-046）
+camera: {setup: A, lens: 真横のツーショット・寄り, move: push_fast}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
 state:
-  metallica: {hat: あり, mood: 笑顔で怒り, props: 招待状}
-refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 背中
-end_pose: 振り返り終えた笑顔
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+  arlecchino: {}
+image: episodes/A/scenes/A01/images/A01-025_gpt-image-2.5_04.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+video: episodes/A/scenes/A01/videos/A01-025_wan3_0_01.mp4   # 段階2（Wan 3.0）。始めの画（A01-025_start_gpt-image-2.5_01）と今の画をつないだ
+video_fit: speed
+refs:
+- metallica
+- arlecchino
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

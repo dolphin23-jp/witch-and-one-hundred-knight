@@ -4,6 +4,11 @@
   python tools/animatic.py episodes/A/scenes/A01 --bgm audio/A01/bgm.wav
   python tools/animatic.py episodes/A/scenes/A01b --cuts A01b-028 A01b-034 --out episodes/A/scenes/A01b/gen/section_028_034   # 区間だけ（両端を含む）
 
+シーンに voice.yaml があるときは、原作の台詞（D-045）で組む（build_original）。
+  声: audio/<シーン>/original/<台詞ID>_<人物>.wav を voice.yaml の秒に置く（息継ぎを広げる split も）。
+  画: ショットファイルの tc で切り替え。image があれば静止画（camera.move でカメラを動かす）、なければ種別（S/K/M/A）で色を分けた仮の画面に画・動き・音を書く。
+以下は voice.yaml がないシーン（A01b など）の組み立て（build）。
+
 - 画: ショットファイルの video（Seedance で作った動画、D-055）> ベイクオフで作った動画 > 静止画（ベイクオフ、またはショットファイルの image）> 仮の画面（カットID・画・芝居の文字）の順に使う。
   静止画はショットファイルの camera.move に合わせて動かす（push・pull・pan・tilt up・揺れ。それ以外は止め）。
   動画がカットの秒より少し長いとき（85%まで）は、終わりを切らずに速度を上げて収める。それ以上長いときは終わりを切る。短いときは最後のフレームを止める。
@@ -15,8 +20,7 @@
 - 字幕: 台詞を画面下に出す（確認用）。
 - BGM: --bgm を渡すと、声の下に小さく敷く。music: off のカットは BGM を下げる。
 
-HyperFrames か Remotion かは、静止画と漫符がそろった段階で試して決める（制作パイプライン）。
-それまでの尺と間の確認用。
+組み立ては Remotion に決まった（D-050、animatic/remotion/render.sh）。この ffmpeg の組み立ては v08 までの記録として残す。
 """
 import argparse
 import pathlib
@@ -260,14 +264,150 @@ def build(scene_dir, bgm, out_dir, cuts=None):
     print(tl.relative_to(ROOT))
 
 
+KIND = {"S": ("止め", "0x2a2f36"), "K": ("止め＋カメラ", "0x223040"), "M": ("小さな動き", "0x1d3326"), "A": ("見せ場", "0x5a3414")}
+
+
+def camera_move(mv, sec):
+    """camera.move を ffmpeg の zoompan に直す。静止画を2倍に拡大してから切り出す。"""
+    if mv == "static":
+        return f"scale={W}:{H},fps={FPS}"
+    n = max(1, int(sec * FPS))
+    cx, cy = "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    z, x, y = "1", cx, cy
+    if mv == "push":
+        z = f"1+0.10*on/{n}"
+    elif mv == "push_fast":
+        z = f"min(1+0.20*on/{max(1, int(n * 0.35))},1.20)"
+    elif mv == "pull":
+        z = f"1.12-0.12*on/{n}"
+    elif mv in ("pan_l", "pan_r"):
+        z = "1.15"
+        x = f"(iw-iw/zoom)*on/{n}" if mv == "pan_r" else f"(iw-iw/zoom)*(1-on/{n})"
+    elif mv in ("tilt_up", "tilt_down"):
+        z = "1.15"
+        y = f"(ih-ih/zoom)*(1-on/{n})" if mv == "tilt_up" else f"(ih-ih/zoom)*on/{n}"
+    elif mv == "shake":
+        z = "1.08"
+        x = f"{cx}+28*sin(on*2.3)*max(0,1-on/14)"
+        y = f"{cy}+20*cos(on*2.9)*max(0,1-on/14)"
+    return f"scale={W * 2}:{H * 2},zoompan=z='{z}':x='{x}':y='{y}':d={n}:s={W}x{H}:fps={FPS}"
+
+
+def build_original(scene_dir, out_dir, name=None):
+    """原作の台詞（D-045）を voice.yaml の置き場所に並べ、ショットファイルの tc と sec で画面を切り替える。
+
+    voice.yaml: lines: [{id: L01, at: 12.0, split: {at: 1.65, gap: 1.2}}, ...]
+      at    = シーンの頭からの秒。split = 台詞の中の息継ぎを広げる位置（音声ファイル内の秒）と足す間（秒）
+    声は audio/<シーン>/original/<id>_<人物>.wav。画面はショットの画・動き・音を書いた仮の画面（種別で色を分ける）。
+    """
+    scene_dir = ROOT / scene_dir
+    vspec = yaml.safe_load((scene_dir / "voice.yaml").read_text(encoding="utf-8"))
+    scene = vspec["scene"]
+    shots = [yaml.safe_load(p.read_text(encoding="utf-8")) for p in sorted((scene_dir / "shots").glob("*.yaml"))]
+    shots.sort(key=lambda s: s["tc"])
+    total = float(vspec["total_sec"])
+    src_dir = ROOT / "audio" / scene / "original"
+    script = {l["id"]: l for l in yaml.safe_load((src_dir / "script.yaml").read_text(encoding="utf-8"))["lines"]}
+    out_dir.mkdir(parents=True, exist_ok=True)
+    tmp = pathlib.Path(tempfile.mkdtemp())
+
+    # 声の置き場所
+    pieces, subs = [], []
+    for v in vspec["lines"]:
+        wav = next(src_dir.glob(f"{v['id']}_*.wav"))
+        L = dur(wav)
+        sp = v.get("split")
+        if sp:
+            a, b = tmp / f"{v['id']}_a.wav", tmp / f"{v['id']}_b.wav"
+            ff("-i", wav, "-t", sp["at"], a)
+            ff("-ss", sp["at"], "-i", wav, b)
+            pieces += [(v["at"], a), (v["at"] + sp["at"] + sp["gap"], b)]
+            end = v["at"] + L + sp["gap"]
+        else:
+            pieces.append((v["at"], wav))
+            end = v["at"] + L
+        who = NAMES.get(script[v["id"]]["who"], script[v["id"]]["who"])
+        subs.append((v["at"], end, f"{v['id']} {who}「{script[v['id']]['text']}」"))
+
+    # 画面（カットごと）
+    segs, timeline = [], []
+    for i, s in enumerate(shots):
+        start = float(s["tc"])
+        nxt = float(shots[i + 1]["tc"]) if i + 1 < len(shots) else total
+        sec = round(nxt - start, 2)
+        label, color = KIND.get(s.get("kind"), ("", "0x1d2b24"))
+        head = f"{s['id']}   {s.get('kind', '')} {label}   {sec:.1f}秒"
+        body = "\n".join(textwrap.wrap(f"画: {s['shot']}", 36) + [""] + textwrap.wrap(f"動き: {s['acting']}", 36))
+        foot = "\n".join(textwrap.wrap(" ／ ".join(x for x in [s.get("sound"), s.get("notes")] if x), 44))
+        sid = s["id"]
+        draws = [f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_h.txt', head)}':x=40:y=28:fontsize=34:fontcolor=white",
+                 f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_b.txt', body)}':x=60:y=100:fontsize=29:line_spacing=10:fontcolor=0xe8e8e8"]
+        if foot:
+            draws.append(f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_f.txt', foot)}':x=60:y=h-250:fontsize=24:line_spacing=6:fontcolor=0xf0c878")
+        seg = tmp / f"{sid}.mp4"
+        img = ROOT / s["image"] if s.get("image") else None
+        if img and img.exists():
+            # 静止画があれば使う。ショットファイルの camera.move でカメラを動かす（演出ノート P-03）。
+            # camera がないときは K だけゆっくり寄る。カットIDと種別、カメラ位置を左上に小さく出す
+            cam = s.get("camera") or {}
+            mv = cam.get("move") or ("push" if s.get("kind") == "K" else "static")
+            if cam.get("setup"):
+                head += f"   カメラ {cam['setup']}"
+            tag = f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, sid + '_t.txt', head)}':x=20:y=18:fontsize=22" \
+                  f":fontcolor=white:box=1:boxcolor={color}@0.85:boxborderw=8"
+            move = camera_move(mv, sec)
+            ff("-loop", "1", "-i", img, "-vf", f"{move},{tag}", "-t", sec, "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
+        else:
+            ff("-f", "lavfi", "-i", f"color=c={color}:s={W}x{H}:r={FPS}", "-vf", ",".join(draws), "-t", sec,
+               "-c:v", "libx264", "-pix_fmt", "yuv420p", seg)
+        segs.append(seg)
+        timeline.append({"id": sid, "kind": s.get("kind"), "start": start, "sec": sec,
+                         "image": s.get("image") if img and img.exists() else None})
+
+    lst = tmp / "list.txt"
+    lst.write_text("".join(f"file '{p}'\n" for p in segs))
+    video = tmp / "video.mp4"
+    ff("-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video)
+
+    # 字幕とタイムコードを全体に重ねる
+    draws = [f"drawtext=fontfile={FONT}:text='%{{pts\\:hms}}':x=w-tw-30:y=30:fontsize=26:fontcolor=white@0.8"]
+    for k, (a, b, text) in enumerate(subs):
+        t = "\n".join(text[i:i + 34] for i in range(0, len(text), 34))   # 空白で折らない
+        draws.append(f"drawtext=fontfile={FONT}:textfile='{text_file(tmp, f'sub{k}.txt', t)}':x=(w-text_w)/2:y=h-text_h-36"
+                     f":fontsize=30:line_spacing=6:fontcolor=white:borderw=3:bordercolor=black:enable='between(t,{a:.2f},{b + 0.15:.2f})'")
+    video2 = tmp / "video2.mp4"
+    ff("-i", video, "-vf", ",".join(draws), "-c:v", "libx264", "-pix_fmt", "yuv420p", video2)
+
+    inputs, filt = [], []
+    for k, (start, wav) in enumerate(pieces):
+        inputs += ["-i", wav]
+        ms = int(start * 1000)
+        filt.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={ms}|{ms}[v{k}]")
+    filt.append("".join(f"[v{k}]" for k in range(len(pieces))) + f"amix=inputs={len(pieces)}:normalize=0,apad=whole_dur={total}[voice]")
+    audio = tmp / "audio.m4a"
+    ff(*inputs, "-filter_complex", ";".join(filt), "-map", "[voice]", "-t", total, "-c:a", "aac", "-b:a", "160k", audio)
+
+    out = out_dir / f"{name or scene}.mp4"
+    ff("-i", video2, "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "copy", "-t", total, out)
+    tl = out_dir / f"{name or scene}_timeline.yaml"
+    tl.write_text(yaml.safe_dump({"scene": scene, "total_sec": total, "cuts": timeline,
+                                  "voice": [{"text": t, "start": round(a, 2), "end": round(b, 2)} for a, b, t in subs]},
+                                 allow_unicode=True, sort_keys=False), encoding="utf-8")
+    print(f"{out.relative_to(ROOT)}（{total}秒、{len(shots)}カット、台詞 {len(subs)} 本）")
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("scene_dir")
     p.add_argument("--bgm")
     p.add_argument("--out", default="animatic/out")
-    p.add_argument("--cuts", nargs=2, metavar=("FROM", "TO"), help="区間のカットID（両端を含む）")
+    p.add_argument("--cuts", nargs=2, metavar=("FROM", "TO"), help="区間のカットID（両端を含む。voice.yaml がないシーンだけ）")
+    p.add_argument("--name", help="書き出すファイル名（拡張子なし。voice.yaml があるシーンだけ）")
     a = p.parse_args()
-    build(a.scene_dir, a.bgm, ROOT / a.out, a.cuts)
+    if (ROOT / a.scene_dir / "voice.yaml").exists():
+        build_original(a.scene_dir, ROOT / a.out, a.name)   # 原作の台詞（D-045）。A01 など
+    else:
+        build(a.scene_dir, a.bgm, ROOT / a.out, a.cuts)
 
 
 if __name__ == "__main__":

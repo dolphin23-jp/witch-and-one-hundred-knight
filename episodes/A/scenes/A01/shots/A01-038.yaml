@@ -1,28 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-038
-scene: A01          # 魔女邸・居間（朝）
-sec: 2
-shot: 寄り・百騎兵
-acting: 読み上げの声に、首がさっきと反対側にかしぐ
+scene: A01
+tc: 180.2
+sec: 1.8
+kind: M
+shot: 寄り・メタリカ
+acting: 「敬意？」でまばたき。直後の0.9秒の間で、空っぽの顔からにやりとした顔に変わる
 dialogue:
-  - {who: arlecchino, line: ひとつ、スズの音草, delivery: 朗々と、真面目に読み上げる}
+- L25「敬意？」
 sound: null
-notes: 反応の三連、3。台詞はオフ。A01-014 と反対側にかしぐ
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: null
+camera: {setup: C, lens: 寄り, move: push_fast}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
 state:
-  hundred-knight: {}
-refs: [hundred-knight]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: 首がかしぐ
-overlays: [？]   # 漫符は生成せず合成で重ねる（D-027）
-
-# ベイクオフで試作済み（指示文は bakeoff/shots/A01-038.yaml）
-bakeoff_result:
-  image: bakeoff/results/image/A01-038/nano-banana-pro_01.png
-  video: bakeoff/results/video/A01-038/wan-3.0_01.mp4
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-038_gpt-image-2.5_03_crop.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）。_03 を顔の寄りに切り抜き（ユーザー承認 2026-09-27、費用なし）
+refs:
+- metallica
+overlays: []
+fallback: null

@@ -1,23 +1,25 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-022
-scene: A01          # 魔女邸・居間（朝）
-sec: 2.5
-shot: 大寄り・受け皿とポット
-acting: 紅茶が受け皿にあふれる。ポットを静かに置く。受け皿は拭かない
+scene: A01
+tc: 98.8
+sec: 2.4
+kind: M
+shot: 引き・丸テーブル
+acting: あふれた紅茶が赤い布に広がり、ビスコの方へ流れる。ビスコは顔も上げず、自分の皿だけをすっと持ち上げる
 dialogue:
-  - {who: arlecchino, line: ……いえ、当然の結果にございます、はい, delivery: 半拍の間のあと、少し急いで、妙に滑らかに言い直す}
+- L12 後半
+- L13「ようやく」
 sound: null
 notes: null
-difficulty: 手元インサート
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+camera: {setup: E, lens: 俯瞰・テーブル, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-table
 state:
-  arlecchino: {head: あり, props: ティーポット}
-refs: [arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: あふれ始める
-end_pose: ポットが置かれる
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  arlecchino: {}
+  bisco: {}
+image: episodes/A/scenes/A01/images/A01-022_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- arlecchino
+- bisco
+overlays: []
+fallback: null

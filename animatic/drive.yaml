@@ -8,6 +8,97 @@ files:
     content: 声（Gemini TTS）+ BGM（Lyria 3.5）+ 仮の画面。ベイクオフの5カットだけ動画
     built_with: python tools/animatic.py episodes/A/scenes/A01 --bgm audio/music/a01_morning_lyria-3.5.mp3
     drive: null   # Drive に置いたらリンクを書く
+  - name: A01_v02_timing.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: タイミング確認用。原作の声（audio/A01/original、D-045）を voice.yaml の位置に置き、画面はショットの画・動き・音を書いた仮の画面（種別で色分け）。56カット
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v02_timing
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v03_stills.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 原作の声 + 静止画55枚（GPT Image 2.5）。K はゆっくり寄る。A01-038b は未生成（nsfw 判定）のため仮の画面。左上にカットIDと種別
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v03_stills
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v04_camera.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v03 からカメラ位置を分けて33カットを作り直し（P-03、背景の基準 A〜E と窓の外）。全カットにカメラの動き（camera.move）。左上にカットID・種別・カメラ位置。012a は前の画、031 は配置が違う画のまま（どちらも hold）
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v04_camera
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v05_blocking.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 立ち位置とカメラ割り（P-04、blocking.yaml）に合わせて23カットを作り直した版。hold 6（006・010・010a・011・013a・031）。010・010a は前の画
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v05_blocking
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v06_sheets.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v05 の保留6カットを正式な設定画（D-049）で作り直した版。006・031 は配置違いで hold。ほかの45カットは設定画より前の画
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v06_sheets
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v07_sheets.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 人物が映る47カットを正式な設定画（D-049）で作り直した版（残り45カット＋006・031）。hold 3（006 メタリカが2人、007a 百騎兵が2体、023 前と後ろが混ざった体）。hold の画もそのまま使っている
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v07_sheets
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v08_holds.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v07 の hold 3カット（006・007a・023）を作り直し、032a・038 を顔の寄りに切り抜いた版。人物が映る全カットが設定画（D-049）になり、hold なし
+    built_with: python tools/animatic.py episodes/A/scenes/A01 --name A01_v08_holds
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v08_remotion.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v08 と同じ中身を Remotion で組んだ版（組み立ての比較、animatic/assembly-compare.md）。023 に怒りマークを重ねた
+    built_with: python tools/scene_export.py episodes/A/scenes/A01 --overlays && sh animatic/remotion/render.sh A01 A01_v08_remotion
+    drive: null   # 88MB。チャットには並べた版だけ送付
+  - name: A01_v08_hyperframes.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v08 と同じ中身を HyperFrames で組んだ版（組み立ての比較）。023 に怒りマークを重ねた
+    built_with: python tools/scene_export.py episodes/A/scenes/A01 --overlays && sh animatic/hyperframes/render.sh A01 A01_v08_hyperframes
+    drive: null   # 106MB。チャットには並べた版だけ送付
+  - name: A01_assembly_compare.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 25
+    content: 95〜120秒（023 の怒りマークを含む）を Remotion（左）と HyperFrames（右）で並べた比較。音は HyperFrames
+    built_with: ffmpeg（hstack）
+    drive: null   # チャットでユーザーに送付
+  - name: A01_v09_remotion_bgm.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: Remotion で組んだ最初の正式版（D-050）。原作音源から声を分けた残りを BGM としてそのまま敷いた。023 に怒りマーク（漫符の試験）
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v09_remotion_bgm
+    drive: null   # チャットでユーザーに送付。Drive に置いたらリンクを書く
+  - name: A01_v10_video3.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: v09 に見せ場の動画3カット（005a・005c・016、Wan 3.0）を入れた版。ほかは静止画
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v10_video3
+    drive: null   # チャットでユーザーに送付
+  - name: A01_v11_video9.mp4
+    scene: A01
+    made: 2026-09-27
+    sec: 201.3
+    content: 見せ場9カットすべてを Wan 3.0 の動画にした版（段階2）。040a は hold（扉が途中で開いた状態に切り替わる）
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v11_video9
+    drive: null   # チャットでユーザーに送付
   - name: A01b_v01.mp4
     scene: A01b
     made: 2026-09-27

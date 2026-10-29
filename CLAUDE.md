@@ -61,7 +61,7 @@
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音。原作の音源は `audio/original/`（一覧は `index.yaml`）、長い音源から切り出した台詞は `audio/<シーン>/original/` |
 | `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
-| `animatic/` | Animaticの組み立て（HyperFrames または Remotion。それまでは `tools/animatic.py`）と、Drive に置いた動画の一覧 `drive.yaml` |
+| `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、Drive に置いた動画の一覧 `drive.yaml`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
 | `pipeline/` | 役割ごとの実装の設定 |
 | `tools/` | 記録、台詞の切り出し、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QCのスクリプト |
 | `docs/` | 作業ログ、Living Spec への反映待ちの提案 |
@@ -80,6 +80,12 @@
 ## スマホで結果を見せる
 
 ユーザーはスマホかiPadで見ている。生成物を見せるときは、ファイルをコミットしてpushし、GitHub上のパスを伝える。比べるときは、候補を並べた画像（`ffmpeg` で横に連結）を1枚作ると見やすい。
+
+## Animatic の組み立て（D-050）
+
+- `sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v09` で書き出す。中で `tools/scene_export.py` がショットファイルと `voice.yaml` から `animatic/build/<シーン>/`（Git の管理外）を作り、Remotion で画と音を別々に書き出して ffmpeg でまとめる（MP4 に直接音を入れると声が約1フレーム遅れるため）。
+- BGM は原作音源から声を分けた残り（Demucs の声以外）をそのまま使い、シーンより短ければループする。`voice.yaml` の `bgm` に書く。
+- 漫符は `overlays/` の素材を `episodes/<話>/scenes/<シーン>/overlays.yaml` で置く（D-027）。
 
 ## コミット
 
