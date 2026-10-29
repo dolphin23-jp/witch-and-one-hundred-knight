@@ -1,0 +1,28 @@
+# A01 の見せ場（種別 A）9カットを Wan 3.0 で動画にする計画（段階2、D-043・D-047）。承認待ち
+# 今の静止画を最初（start）か最後（end）のフレームにする。頂点の画が動きの終わりにあたるカットは end
+# 720p・音なし（声と BGM は原作音源、D-045）。1秒 1.75 クレジット（Higgsfield の見積もり）
+model: wan3_0
+params: {resolution: 720p, generate_audio: false, aspect_ratio: "16:9"}
+suffix: >-
+  Keep exactly the same characters, costumes, proportions and room as the given frame.
+  2D TV anime, clean line art, cel shading, lively anime timing. No text, no speech bubbles,
+  no manga symbols, no extra people.
+items:
+  - {cut: A01-005a, frame: start, sec: 2, job: aa777c90-ba19-44f8-8bf8-142ea4418717,
+     prompt: "Metallica bounds down the curved wooden staircase three steps at a time toward the camera, envelope held high in one hand, the other hand pressing her hat down; her braids and baggy pants trail behind her. The camera tilts down with her."}
+  - {cut: A01-005b, frame: start, sec: 2, job: 721dfff7-708b-42e7-bbb0-c4299b3c335a,
+     prompt: "Metallica lands from the last step, knees dipping and hat bouncing, then strides two big steps to the right toward the round table. The Hundred Knight, Bisco and Arlecchino stay where they are and turn their heads toward her. The camera pans right with her."}
+  - {cut: A01-005c, frame: start, sec: 2, job: e8af791b-1752-41a6-b431-af0db343235e,
+     prompt: "Right after slamming her hand on the table (the plate and fried egg jump), Metallica pushes the envelope toward the lens and leans over it with a wide toothy grin. A short camera shake on the slam."}
+  - {cut: A01-016, frame: start, sec: 2, job: dc49618e-2ad2-46e2-83fe-26e34f6408a4,
+     prompt: "Seen from high above: Metallica, bent over the table after the pile of books under her foot collapsed, braces with both hands on the table, then springs back upright, flustered. A few books slide across the floor. The others stay in place."}
+  - {cut: A01-024, frame: end, sec: 4, job: 597c44e6-9306-4995-b7ef-ac5716930539,
+     prompt: "Metallica starts with her back to the camera, frozen stiff, then whirls around in one full turn, her long hair, braids and hat brim sweeping in a wide circle, and lands in a wide stance glaring furiously at someone off-screen to the right, mouth open in a shout."}
+  - {cut: A01-025, frame: end, sec: 4, job: 91b138a4-bfff-484c-b293-fee265915e21,
+     prompt: "Metallica strides three big steps across the room from the left toward Arlecchino, who holds a teapot, and jabs her finger at his face, leaning in and shouting. Arlecchino keeps a calm, polite pose. The Hundred Knight and Bisco stay seated."}
+  - {cut: A01-038a, frame: end, sec: 4, job: a7368dce-e2c4-4ce5-87b8-5e42dbf8ae8f,
+     prompt: "Metallica, sitting upright on the left of the red sofa, bursts out laughing and throws herself back into the cushions, swinging her boots up onto the edge of the table so the stacked books jump and the stitched doll beside her bounces. Bisco, seated to her right, flinches in surprise. The Hundred Knight stays seated."}
+  - {cut: A01-040, frame: end, sec: 3, job: 487e8623-5d1e-4b3f-984c-a62841957b65,
+     prompt: "Metallica, leaning back on the sofa with her boots on the table, swings her boots down, springs to her feet and jams her huge hat back on firmly with one hand, grinning at Bisco, who stays seated. The Hundred Knight stays seated."}
+  - {cut: A01-040a, frame: end, sec: 6, job: 381c3b67-fc2b-49a5-a6f1-e5d6f125b200,
+     prompt: "Seen from behind, Metallica strides across the room toward the heavy arched double front door, braids swinging, and throws both doors wide open with both hands; bright emerald-green light floods in and she becomes a dark silhouette against it. Arlecchino stands still at the left, watching. The camera slowly pushes in."}

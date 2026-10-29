@@ -1,0 +1,24 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-012a
+scene: A01
+tc: 48.6
+sec: 4.6
+kind: M
+shot: 寄り・二人
+acting: テーブル越しに身を乗り出し、招待状をビスコの鼻先へ
+dialogue:
+- L06「なんだ、犬コロ。…見たくなったのか？」
+sound: null
+notes: null
+camera: {setup: A, lens: テーブル越しのツーショット（D の作り直しは保留）, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-table
+state:
+  metallica: {}
+  bisco: {}
+image: episodes/A/scenes/A01/images/A01-012a_gpt-image-2.5_04.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+- bisco
+overlays: []
+fallback: null

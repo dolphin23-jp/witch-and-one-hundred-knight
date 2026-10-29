@@ -1,23 +1,21 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-018
-scene: A01          # 魔女邸・居間（朝）
-sec: 3
-shot: 膝上
-acting: 言いながら、座らない。窓辺へ歩き出す
-dialogue:
-  - {who: metallica, line: ワタシの実力を考えれば当然の結果だ。当然すぎて、むしろ遅いくらいだ, delivery: 取り繕って尊大に。まだ少し早口}
-sound: null
-notes: null
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+scene: A01
+tc: 79.6
+sec: 3.5
+kind: M
+shot: 丸窓の前・逆光の寄り
+acting: 背を向けて丸窓へ。招待状を丸窓から差し込む朝の光にかざす。透かし模様。口元が勝手にゆるむ
+dialogue: []
+sound: BGM① を一瞬引く
+notes: 誰も見ていない本音（D-016）
+camera: {setup: F, lens: 窓の外から・寄り, move: push}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-round-window
 state:
-  metallica: {hat: あり, props: 招待状}
-refs: [metallica]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: つばを押さえたまま
-end_pose: 窓辺へ向かって歩く
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-018_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

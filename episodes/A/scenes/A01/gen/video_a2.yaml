@@ -1,0 +1,35 @@
+# A01 見せ場の動画化・2回目の計画（承認待ち）
+# Wan 3.0 は最後のフレームだけの指定を受け付けない（end_image requires start_image、費用なし）。
+# そこで、最初のフレームの静止画を GPT Image 2.5 で作る。今の画（動きの終わり）を参照画像に入れ、
+# カメラ・部屋・ほかの人物はそのままで、メタリカの姿勢だけを動きの始めに変える。そのあと最初と最後のフレームで動画にする。
+keyframes:
+  model: gpt_image_2_5   # quality medium・2k・16:9、1枚1クレジット（D-048）
+  template: >-
+    Recreate the first reference image exactly: the same camera angle, framing, lens, room, lighting,
+    and every other person in the same place and pose. Change only Metallica: {pose}
+    Match her design to her character sheet (the second reference image). 2D TV anime style, clean line art,
+    cel shading. No text, no speech bubbles, no manga symbols. 16:9.
+  items:
+    - {cut: A01-024, refs: [end_still, metallica_sheet_01],
+       pose: "she stands in the same spot with her back to the camera, frozen stiff, fists clenched at her sides, facing the round window; we see only her back, the back of her hat and her braids."}
+    - {cut: A01-025, refs: [end_still, metallica_sheet_01],
+       pose: "she is at the far left edge of the frame, mid-stride, stomping toward Arlecchino with an angry face and swinging arms; she has not reached him yet and is not pointing."}
+    - {cut: A01-038a, refs: [end_still, metallica_sheet_01],
+       pose: "she sits upright on the left part of the red sofa with both feet on the floor, grinning widely, just about to burst out laughing. Bisco looks calm, not startled."}
+    - {cut: A01-040, refs: [end_still, metallica_sheet_01],
+       pose: "she leans back deep in the left part of the red sofa with her arms crossed and her boots up on the edge of the round table, smirking, her huge hat slightly askew."}
+    - {cut: A01-040a, refs: [end_still, metallica_sheet_01],
+       pose: "she is in the middle of the room, walking away from the camera toward the arched double front door, which is still closed; the room is lit only by warm lamplight, with no green light yet."}
+videos:
+  # 最初のフレーム = 上の静止画、最後のフレーム = 今の静止画。指示文は video_a.yaml の同じカットのもの
+  model: wan3_0
+  params: {resolution: 720p, generate_audio: false, aspect_ratio: "16:9"}
+  items:
+    - {cut: A01-024, sec: 4}
+    - {cut: A01-025, sec: 4}
+    - {cut: A01-038a, sec: 4}
+    - {cut: A01-040, sec: 3}
+    - {cut: A01-040a, sec: 6}
+retry:
+  # 005b は存在しない人物が右端から入ってきた（hold）。最初のフレームは同じで、指示文に次を足して作り直す
+  - {cut: A01-005b, sec: 2, add: "Only these four people are in the room; nobody else enters the frame at any time."}

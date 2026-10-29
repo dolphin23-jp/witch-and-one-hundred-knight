@@ -1,23 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-036
-scene: A01          # 魔女邸・居間（朝）
-sec: 2
-shot: 寄り・ビスコ
-acting: 読み上げの声に、耳がぴくりと立つ
+scene: A01
+tc: 168.2
+sec: 6.6
+kind: M
+shot: 胸上・メタリカ
+acting: 「そうだ。」で視線を戻し、直後の0.8秒の間で遠くを見る目になる。そのまま少しやわらいだ顔で語る
 dialogue:
-  - {who: arlecchino, line: ひとつ、尾の先がだるいニワトリ, delivery: 朗々と、真面目に読み上げる}
+- L23
 sound: null
-notes: 反応の三連、1。台詞はオフ（画面外）
-difficulty: 会話（小さな動き）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+notes: 低い声＝思わず出た敬意（P-02、ユーザー確認済み）
+camera: {setup: C, lens: 胸上, move: push}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-sofa
 state:
-  bisco: {}
-refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: null
-end_pose: 耳が立つ
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-036_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null

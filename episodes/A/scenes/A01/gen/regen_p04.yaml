@@ -1,0 +1,295 @@
+# A01 作り直し（P-04）の計画。承認待ち
+scene: A01
+model: gpt_image_2_5
+quality: medium
+resolution: 2k
+aspect_ratio: '16:9'
+credits_each: 1
+note: 立ち位置とカメラ割り（blocking.yaml、演出ノート P-04）に合わせた作り直し。staging は tools/blocking.py の計算
+count: 23
+items:
+- target: A01-002
+  plate: A
+  prompt: 'Camera at eye level, wide-angle lens. Wide establishing shot of breakfast: Arlecchino, standing at the right side of the round table, straightens a plate with his fingertip; the Hundred Knight
+    sits on a low stool at the left side of the table facing right, looking at its plate; Bisco sits on the red sofa behind the table, eating. In frame (exactly 3 people): the Hundred Knight (a small knight,
+    about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the center of the frame, looking toward screen right; Bisco (the black-haired
+    girl in silver armor) in the center of the frame, looking toward screen left; Arlecchino (the tall butler with the white skull mask and pink scarf) on the right of the frame, looking toward screen left.
+    No other people. Behind: the curved wooden staircase with its carved banister, then the back of the red high-backed sofa, then tall bookshelves packed with old books, with a rolling ladder. Use the
+    first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - hundred-knight_official_02
+  - bisco_official_03
+  - arlecchino_official_03
+- target: A01-003
+  plate: A
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Extreme close-up insert of Bisco''s gloved hands spreading butter evenly on a slice of bread over her plate; only
+    her hands and the plate are in focus. In frame (exactly one person): Bisco (the black-haired girl in silver armor) in the center of the frame. No other people. Behind: the back of the red high-backed
+    sofa. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every
+    character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - bisco_official_03
+  - bisco_official_01
+- target: A01-004
+  plate: C
+  prompt: 'Camera at low height, slightly long lens. Close shot at table height across the tabletop: the Hundred Knight, seated at the left side of the table, stares at a fried egg on its plate in the foreground.
+    In frame (exactly one person): the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the center
+    of the frame, looking toward screen right. No other people. Behind: the curved wooden staircase with its carved banister, then the upper landing of the curved wooden staircase. Use the first reference
+    image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face,
+    hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - hundred-knight_official_02
+- target: A01-005b
+  plate: A
+  prompt: 'Camera at eye level, wide-angle lens. Full-body tracking shot: Metallica has just landed from the stairs and takes a big stride toward the round table, holding the wax-sealed envelope up, cape
+    and hair flying; at the table the Hundred Knight, Bisco on the sofa and Arlecchino standing turn to look at her. In frame (exactly 4 people): Metallica (the orange-haired witch in the huge black witch
+    hat) on the left of the frame, looking toward screen right; the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a
+    blue flame plume) in the center of the frame, small in the background, looking toward screen left; Bisco (the black-haired girl in silver armor) on the right of the frame, small in the background, looking
+    toward screen left; Arlecchino (the tall butler with the white skull mask and pink scarf) on the right of the frame, looking toward screen left. No other people. Behind: the curved wooden staircase
+    with its carved banister, then the small round window with pale morning light, then the end of the tall bookshelves. Use the first reference image only for the design of the room (not its composition);
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - metallica_official_02
+  - hundred-knight_official_02
+  - bisco_official_03
+  - arlecchino_official_03
+- target: A01-006
+  plate: A
+  prompt: 'Camera at eye level, slightly long lens. Close-up of the Hundred Knight seated at the table, tilting its round helmeted head to one side in confusion; a blurred strand of Metallica''s orange
+    hair and her shoulder at the right edge of the frame, very close to the camera; Bisco blurred far behind it on the sofa. In frame (exactly 3 people): Bisco (the black-haired girl in silver armor) in
+    the center of the frame; the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the center of
+    the frame, looking toward the camera; Metallica (the orange-haired witch in the huge black witch hat) on the right of the frame. No other people. Behind: the back of the red high-backed sofa, then tall
+    bookshelves packed with old books, with a rolling ladder. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D
+    TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols.
+    16:9.'
+  refs:
+  - plate:A
+  - bisco_official_03
+  - hundred-knight_official_02
+  - metallica_official_02
+- target: A01-007a
+  plate: C
+  prompt: 'Camera at low height, standard lens. Low angle from table height, with the back of the Hundred Knight''s round helmet blurred in the near foreground at the left: Metallica bends down to its eye
+    level and waves the envelope teasingly with a condescending smile. In frame (exactly 2 people): the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet,
+    a black face with orange eyes and a blue flame plume) on the left of the frame; Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward the camera.
+    No other people. Behind: shelves of potion jars and candles, and a coat rack with a spare witch hat, then the bottom steps of the staircase and old jars, then the curved wooden staircase with its carved
+    banister. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - hundred-knight_official_02
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-009
+  plate: C
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Close-up, slightly low angle: Metallica holds the envelope against her chest, eyes half-closed in blissful self-satisfaction,
+    a small proud smile. Soft lamp light. In frame (exactly one person): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other
+    people. Behind: the curved wooden staircase with its carved banister. Use the first reference image only for the design of the room (not its composition); the other references are for character design
+    only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga
+    symbols. 16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-010
+  plate: C
+  prompt: 'Camera at eye level, standard lens. Chest shot: Metallica swings the envelope out wide toward screen right (toward the round window, off-screen) and puffs out her chest proudly. In frame (exactly
+    2 people): the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) on the left of the frame; Metallica
+    (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other people. Behind: shelves of potion jars and candles, and a coat rack with a spare
+    witch hat, then the bottom steps of the staircase and old jars, then the curved wooden staircase with its carved banister. Use the first reference image only for the design of the room (not its composition);
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - hundred-knight_official_02
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-010a
+  plate: D
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Close insert over the Hundred Knight''s shoulder: its dark clawed hand pokes the fried egg with a fork and the yolk
+    breaks and spreads; the edge of its helmet blurred at the left; Arlecchino standing blurred in the background. In frame (exactly one person): the Hundred Knight (a small knight, about waist-high to
+    Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) on the left of the frame. No other people. The edge of the round table with plates is in the foreground
+    at the bottom of the frame. Behind: tall bookshelves packed with old books, with a rolling ladder. Use the first reference image only for the design of the room (not its composition); the other references
+    are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text,
+    no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:D
+  - hundred-knight_official_02
+- target: A01-011
+  plate: A
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Chest shot of Bisco sitting on the red sofa, chewing bread, glancing up at the envelope with a sidelong look. In frame
+    (exactly one person): Bisco (the black-haired girl in silver armor) in the center of the frame, looking toward screen left. No other people. The edge of the round table with plates is in the foreground
+    at the bottom of the frame. Behind: the back of the red high-backed sofa. Use the first reference image only for the design of the room (not its composition); the other references are for character
+    design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles,
+    no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - bisco_official_03
+  - bisco_official_01
+- target: A01-012
+  plate: C
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Close-up of Metallica: her eyes dart sharply toward screen right, catching Bisco looking at her. Suspicious, sly expression.
+    In frame (exactly one person): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other people. The edge of the round table with
+    plates is in the foreground at the bottom of the frame. Behind: the curved wooden staircase with its carved banister. Use the first reference image only for the design of the room (not its composition);
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-012a
+  plate: A
+  prompt: 'Camera at eye level, standard lens. Two-shot across the round table: Metallica, standing at the far left corner of the table, leans across toward Bisco and pushes the envelope right under Bisco''s
+    nose; Bisco, seated on the red sofa, leans back, annoyed. In frame (exactly 2 people): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen
+    right; Bisco (the black-haired girl in silver armor) on the right of the frame, looking toward screen left. No other people. The edge of the round table with plates is in the foreground at the bottom
+    of the frame. Behind: the upper landing of the curved wooden staircase, then the back of the red high-backed sofa. Use the first reference image only for the design of the room (not its composition);
+    the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference
+    images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - metallica_official_02
+  - metallica_official_01
+  - bisco_official_03
+  - bisco_official_01
+- target: A01-013a
+  plate: A
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Chest shot of Metallica, standing by the end of the sofa, ignoring the complaint and casually straightening the edge
+    of the envelope with her fingers. In frame (exactly 2 people): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right; Bisco (the black-haired
+    girl in silver armor) on the right of the frame. No other people. The edge of the round table with plates is in the foreground at the bottom of the frame. Behind: the back of the red high-backed sofa.
+    Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - metallica_official_02
+  - metallica_official_01
+  - bisco_official_03
+  - bisco_official_01
+- target: A01-015
+  plate: C
+  prompt: 'Camera at low height, standard lens. Knee shot from slightly below: Metallica with one boot on the pile of books on the floor, her smug grin freezing as her cheeks turn red. In frame (exactly
+    one person): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other people. Behind: the curved wooden staircase with its carved
+    banister, then the upper landing of the curved wooden staircase. Use the first reference image only for the design of the room (not its composition); the other references are for character design only.
+    2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols.
+    16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-017
+  plate: C
+  prompt: 'Camera at eye level, slightly long lens. Chest shot, camera strongly tilted (Dutch angle): Metallica flails her arms in flustered denial, face red, mouth wide open shouting. In frame (exactly
+    one person): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other people. Behind: the curved wooden staircase with its carved
+    banister. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep
+    every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-017a
+  plate: C
+  prompt: 'Camera at eye level, slightly long lens. Knee shot: Metallica crosses her arms, raises her chin and turns her face away haughtily. In frame (exactly one person): Metallica (the orange-haired
+    witch in the huge black witch hat) in the center of the frame, looking toward screen right. No other people. Behind: the curved wooden staircase with its carved banister, then the upper landing of the
+    curved wooden staircase. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel
+    shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-017b
+  plate: C
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Chest shot: Metallica yanks the brim of her huge witch hat down hard over her eyes, hiding her face. In frame (exactly
+    one person): Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame. No other people. Behind: the curved wooden staircase with its carved banister. Use the first
+    reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design
+    (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:C
+  - metallica_official_02
+  - metallica_official_01
+- target: A01-019
+  plate: A
+  prompt: 'Camera at eye level, telephoto lens with the background softly out of focus. Chest shot of Bisco seated on the red sofa, quietly watching Metallica (off-screen, at the round window) with a thoughtful
+    look. In frame (exactly one person): Bisco (the black-haired girl in silver armor) in the center of the frame, looking toward screen left. No other people. The edge of the round table with plates is
+    in the foreground at the bottom of the frame. Behind: the back of the red high-backed sofa, then the end of the tall bookshelves. Use the first reference image only for the design of the room (not its
+    composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical
+    to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - bisco_official_03
+  - bisco_official_01
+- target: A01-025
+  plate: A
+  prompt: 'Camera at eye level, standard lens. Side-view two-shot: Metallica jabs her finger at Arlecchino''s nose, face close to his, yelling angrily; Arlecchino, holding the teapot, keeps a calm polite
+    smile. Across the table behind them, Bisco sits small on the sofa. Comedic contrast. In frame (exactly 4 people): Metallica (the orange-haired witch in the huge black witch hat) in the center of the
+    frame, looking toward screen right; the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the
+    center of the frame; Arlecchino (the tall butler with the white skull mask and pink scarf) on the right of the frame, looking toward screen left; Bisco (the black-haired girl in silver armor) on the
+    right of the frame, small in the background. No other people. Behind: the upper landing of the curved wooden staircase, then the back of the red high-backed sofa, then the end of the tall bookshelves.
+    Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - metallica_official_02
+  - hundred-knight_official_02
+  - arlecchino_official_03
+  - bisco_official_03
+- target: A01-026
+  plate: A
+  prompt: 'Camera at eye level, slightly long lens. Knee shot: Arlecchino bows politely, unbothered, and starts wiping the tea-stained red tablecloth with a cloth; Metallica''s shoulder partly at the left
+    edge. In frame (exactly 3 people): Metallica (the orange-haired witch in the huge black witch hat) on the left of the frame; the Hundred Knight (a small knight, about waist-high to Metallica, with a
+    round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the center of the frame; Arlecchino (the tall butler with the white skull mask and pink scarf) in the center of
+    the frame, looking toward screen right. No other people. Behind: the curved wooden staircase with its carved banister, then the small round window with pale morning light, then the back of the red high-backed
+    sofa. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every
+    character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - metallica_official_02
+  - hundred-knight_official_02
+  - arlecchino_official_03
+- target: A01-038a
+  plate: A
+  prompt: 'Camera at eye level, wide-angle lens. Knee shot: Metallica throws herself back onto the left part of the red sofa laughing loudly and slams her boots onto the edge of the round table so the stacked
+    books jump; the stitched doll beside her bounces; Bisco, seated to her right on the same sofa, looks at her, startled. Dynamic, on-model. In frame (exactly 4 people): the Hundred Knight (a small knight,
+    about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) on the left of the frame; Metallica (the orange-haired witch in the huge black
+    witch hat) in the center of the frame; Bisco (the black-haired girl in silver armor) in the center of the frame, looking toward screen left; Arlecchino (the tall butler with the white skull mask and
+    pink scarf) on the right of the frame. No other people. Behind: wall, then the back of the red high-backed sofa, then the end of the tall bookshelves. Use the first reference image only for the design
+    of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s design (face, hair color, eye color, costume,
+    hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - hundred-knight_official_02
+  - metallica_official_02
+  - bisco_official_03
+  - arlecchino_official_03
+- target: A01-040
+  plate: A
+  prompt: 'Camera at eye level, standard lens. Knee shot: Metallica springs up from the sofa, boots off the table, and jams her huge hat back on firmly with one hand, grinning at Bisco, who is still seated
+    on the sofa to the right. In frame (exactly 3 people): the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue
+    flame plume) on the left of the frame; Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right; Bisco (the black-haired girl in silver
+    armor) on the right of the frame. No other people. The edge of the round table with plates is in the foreground at the bottom of the frame. Behind: the small round window with pale morning light, then
+    the back of the red high-backed sofa. Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean
+    line art, cel shading. Keep every character''s design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - hundred-knight_official_02
+  - metallica_official_02
+  - bisco_official_03
+- target: A01-031
+  plate: A
+  prompt: 'Camera at eye level, wide-angle lens. Wide, slightly high shot of the whole living room from the front corner near the door: Arlecchino standing at the front of the table wiping the stained tablecloth;
+    the Hundred Knight seated at the left side of the table wiping egg yolk with bread; Bisco on the red sofa sipping tea; Metallica standing between the round window and the table, looking at the dolls
+    on the sofa. A calm breath after the commotion. In frame (exactly 4 people): Arlecchino (the tall butler with the white skull mask and pink scarf) in the center of the frame, looking toward screen right;
+    the Hundred Knight (a small knight, about waist-high to Metallica, with a round blue-and-white helmet, a black face with orange eyes and a blue flame plume) in the center of the frame, looking toward
+    screen right; Metallica (the orange-haired witch in the huge black witch hat) in the center of the frame, looking toward screen right; Bisco (the black-haired girl in silver armor) on the right of the
+    frame, looking toward screen left. No other people. Behind: the curved wooden staircase with its carved banister, then the small round window with pale morning light, then the end of the tall bookshelves.
+    Use the first reference image only for the design of the room (not its composition); the other references are for character design only. 2D TV anime style, clean line art, cel shading. Keep every character''s
+    design (face, hair color, eye color, costume, hat) identical to their reference images. No text, no speech bubbles, no manga symbols. 16:9.'
+  refs:
+  - plate:A
+  - arlecchino_official_03
+  - hundred-knight_official_02
+  - metallica_official_02
+  - bisco_official_03

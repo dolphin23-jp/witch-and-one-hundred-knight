@@ -1,28 +1,21 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-026
-scene: A01          # 魔女邸・居間（朝）
+scene: A01
+tc: 112.6
 sec: 1.5
-shot: 引き（通常の頭身）
-acting: 助走二歩、蹴り。首が天井へ
+kind: M
+shot: 膝上・アルレッキーノ
+acting: 悪びれず一礼し、紅茶の染みた布を拭き始める
 dialogue: []
-sound: 派手な打撃音
-notes: 絵柄は通常のまま（D-042）。ギャグの間だが、メタリカは本気で怒っている。首の穴の緑の光を見せる。ベイクオフで試作済み（前半2.0秒を使用）
-difficulty: 大きな動き
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+sound: 布の音
+notes: 言い返さない落差で笑わせる
+camera: {setup: A, lens: 膝上, move: static}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-table
 state:
-  metallica: {hat: あり, mood: 本気の怒り}
-  arlecchino: {head: 飛ぶ}
-refs: [metallica, arlecchino]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: メタリカが助走の一歩目
-end_pose: 首が天井に当たる瞬間
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-# ベイクオフで試作済み（指示文は bakeoff/shots/A01-026.yaml）
-bakeoff_result:
-  image: bakeoff/results/image/A01-026/nano-banana-pro_03.png
-  video: bakeoff/results/video/A01-026/wan-3.0_01_cut2s.mp4
-
-fallback: 蹴りが当たる瞬間で白フラッシュ。次の画で、首のない胴体と天井に刺さった首を同じ画面に置く。首が飛ぶ途中の画は作らない（ユーザー確認済み 2026-09-26）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  arlecchino: {}
+image: episodes/A/scenes/A01/images/A01-026_gpt-image-2.5_04.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- arlecchino
+overlays: []
+fallback: null

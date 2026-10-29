@@ -1,0 +1,27 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
+id: A01-005c
+scene: A01
+tc: 16.1
+sec: 2.0
+kind: A
+shot: 百騎兵の目の高さ。招待状がレンズの前
+acting: 16.2 テーブルに手を叩きつけ（皿と目玉焼きが跳ねる）、招待状を百騎兵の鼻先へ。17.2「だぞ？」で招待状の上から身を乗り出し、にやりと顔を見せる
+dialogue:
+- L01「招待状だぞ？」
+sound: 16.2 手を叩く音
+notes: 見せ場（P-01）。語尾が上がるので顔で終える
+camera: {setup: C, lens: 百騎兵の目の高さ・広角、招待状がレンズの前, move: shake}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room-table
+state:
+  metallica: {}
+  hundred-knight: {}
+image: episodes/A/scenes/A01/images/A01-005c_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+video: episodes/A/scenes/A01/videos/A01-005c_wan3_0_01.mp4   # 段階2（Wan 3.0、D-043）。今の静止画を最初のフレームにした
+video_fit: speed   # カットの長さに合わせて速める（最大1.6倍）
+refs:
+- metallica
+- hundred-knight
+keyposes: 始め・頂点・終わりの静止画を先に作り、Wan 3.0 でつなぐ（D-047）
+overlays: []
+fallback: null

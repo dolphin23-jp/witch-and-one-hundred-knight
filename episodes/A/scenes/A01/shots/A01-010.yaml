@@ -1,24 +1,22 @@
+# A01 魔女邸・居間（朝）。Living Spec「ショット設計 A01 第3稿」の区間詳細設計から（2026-09-27）
+# kind: S＝止め、K＝止め＋カメラ移動、M＝小さな動きの動画、A＝見せ場（演出ノート「共通の言葉」）
 id: A01-010
-scene: A01          # 魔女邸・居間（朝）
-sec: 3
-shot: 胸上・ビスコ
-acting: ゆっくり咀嚼し、飲み込む間
+scene: A01
+tc: 36.9
+sec: 3.5
+kind: M
+shot: 胸上
+acting: 招待状を丸窓の方へ大きく振り出し、「沼」（39.3）で胸を張る
 dialogue:
-  - {who: bisco, line: 増さない, delivery: 短く、きっぱりと。感情を込めない}
-sound: 咀嚼の音
-notes: 返事の前に1秒の間（D-026）
-difficulty: 会話（小さな動き）
-timing: {lead: 1.0}   # 声の前の間（秒）
-
-# --- 本制作用の項目 ---
-background: living-room-morning
+- L05「つまりこの招待状は、沼の魔女、」
+sound: null
+notes: 0.5秒の間で切る
+camera: {setup: C, lens: 胸上, move: pan_l}   # 演出ノート P-03（提案中）。setup は gen/camera_plan.yaml
+background: living-room
 state:
-  bisco: {seat: 手前}
-refs: [bisco]   # 対象。使う画像は refs/index.yaml から選ぶ
-start_pose: 咀嚼中
-end_pose: 言い終えて無表情
-overlays: []   # 漫符は生成せず合成で重ねる（D-027）
-
-fallback: null      # 残酷表現の代替案（このカットは不要）
-
-# 生成とQCの記録は logs/generations.jsonl（tools/record.py）
+  metallica: {}
+image: episodes/A/scenes/A01/images/A01-010_gpt-image-2.5_03.png   # 静止画（GPT Image 2.5、D-048）。人物は設定画（D-049）
+refs:
+- metallica
+overlays: []
+fallback: null
