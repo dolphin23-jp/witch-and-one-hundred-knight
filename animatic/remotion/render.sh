@@ -13,7 +13,8 @@ cd "$ROOT"
 python3 tools/scene_export.py "$SCENE_DIR" --overlays
 cd animatic/remotion
 [ -d node_modules ] || npm install --no-audit --no-fund
-BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
+# Playwright の版でフォルダ名が変わるので探す（chrome-linux/headless_shell か chrome-headless-shell-linux64/chrome-headless-shell）
+BROWSER=${REMOTION_BROWSER:-$(ls /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell /opt/pw-browsers/chromium_headless_shell-*/chrome-headless-shell-linux64/chrome-headless-shell 2>/dev/null | tail -1)}
 COMMON="--props=../build/${S}/scene.json --public-dir=../build/${S} --browser-executable=${BROWSER} --log=error"
 TMP="../build/${S}/_render"; mkdir -p "$TMP"
 npx remotion render src/index.ts Scene "$TMP/video.mp4" --codec=h264 --crf=28 --muted --concurrency=2 $COMMON

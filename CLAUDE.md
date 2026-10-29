@@ -85,6 +85,7 @@
 ## Animatic の組み立て（D-050）
 
 - `sh animatic/remotion/render.sh episodes/A/scenes/A01 A01_v09` で書き出す。中で `tools/scene_export.py` がショットファイルと `voice.yaml` から `animatic/build/<シーン>/`（Git の管理外）を作り、Remotion で画と音を別々に書き出して ffmpeg でまとめる（MP4 に直接音を入れると声が約1フレーム遅れるため）。
+- `voice.yaml`（台詞の置き場所）がないシーンは、`python tools/voice_yaml.py <シーンのフォルダ>` でショットファイルの tc と台詞から作る（A01b はこれで作った）。台詞の秒を直したら作り直す。
 - BGM は原作音源から声を分けた残り（Demucs の声以外）をそのまま使い、シーンより短ければループする。`voice.yaml` の `bgm` に書く。
 - 漫符は `overlays/` の素材を `episodes/<話>/scenes/<シーン>/overlays.yaml` で置く（D-027）。
 

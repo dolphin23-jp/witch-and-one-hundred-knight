@@ -1,0 +1,148 @@
+status: 承認待ち（2026-10-30 作成。生成なし・クレジットなし）
+section: >-
+  A01b-014〜027「外に出られなかった」「『寂しかったろうな』と盟友」（約60秒、14カット）。順に作る（D-057）。
+  動画が要るのは 016（A）・020（M）・021（A）・023（M）の4カット。ほかの10カット（014・015・017・018・019・022・024〜027）は K（静止画＋カメラの動き）で生成なし。
+  あわせて、前の区間 001〜010 の残り（004・007 の作り直し、008 の扱い）もここで承認を取る。
+decision: 'D-055（標準の作り方: 開始＋終わりの静止画＋設定画＋下絵＋口パク参照）、D-057（順に作る）'
+credits_estimate: 120   # 静止画 3 ＋ 動画 72（014〜027）＋ 動画 45（004・007 の作り直し）。008 は別（下の案による）。残高 1,200 → 約 1,080
+order: >-
+  1. 静止画3枚を作る → Claude が点検 → 2. 動画を作る（静止画が点検で崩れていたら、その動画は作らずに報告）。
+  前回まではユーザーの目視で合格を得てから動画に進んでいたが、承認の回数を減らすため、一つの OK で 1 と 2 を続けて行う案。最終判断は出来上がりのユーザーの目視。
+  失敗しても自動では作り直さない。
+
+finish_001_010:
+  note: 2026-10-16 に生成サービス側で失敗した2本（原因は表示されず、返金済み）を同じ内容で1回ずつ作り直す。開始・終わりの静止画と下絵は作成済み（section_001_010_plan.yaml のまま）
+  items:
+  - {cut: A01b-004, duration: 6, credits: 18, plan: section_001_010_plan.yaml の videos A01b-004}
+  - {cut: A01b-007, duration: 9, credits: 27, plan: section_001_010_plan.yaml の videos A01b-007}
+  a01b_008:
+    issue: 開始の静止画（try10/A01b-008、ユーザー合格済み）が Higgsfield へのアップロード時に nsfw と判定され、動画に進めていない（2026-10-16）。制限を回避する言い換え・加工はしない（CLAUDE.md 守ること 6）
+    options:
+    - id: A
+      what: 同じ画像のまま1回だけアップロードし直す（加工しない）。通れば動画（6秒、18クレジット）。また判定されたら B にする
+      credits: '0（通れば 18）'
+    - id: B
+      what: 動画にせず、静止画＋カメラの動き（K と同じ扱い）で見せる。開始の静止画（大股で歩く）→ 終わりの静止画（胸を張って止まる）を切り替える
+      credits: 0
+    recommend: A（通らなければ B）
+
+stills:
+  note: GPT Image 2.5（Higgsfield、2k、16:9、medium、1枚1クレジット）。023 は止めのカメラで位置も変わらないので、開始と同じ絵を終わりにも使う（0クレジット）
+  credits_estimate: 3
+  items:
+  - id: end_016
+    cut: A01b-016
+    which: end
+    method: 終わりの略図から1枚（カメラが左へ振り終わると、画面にはメタリカ1人。橋のたもとの三人は画面の右の外）
+    refs:
+    - characters/metallica/views/metallica_side.png
+    - characters/metallica/views/metallica_face_side.png
+    - world/witch-house-front/panel_dead-tree.png
+    - episodes/A/scenes/A01b/gen/sketch/A01b-016_end.png
+    - episodes/A/scenes/A01b/stills/try10/A01b-016_gpt-image-2.5_01.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-016_end_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot, 35mm lens, camera height 1.2 m. In frame (exactly one person): Metallica (character reference: images 1, 2), standing in the west part of the dirt clearing, having just stopped
+      walking, one hand sweeping out toward the swamp as she lectures, in the center of the frame, in profile, turned toward screen right, looking toward screen right (at Bisco, off screen). No other people.
+      Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water (image 3 shows the dead trees). Early morning: a pale, clear morning sky with soft low sunlight from the east
+      and a thin mist over the swamp; the swamp still glows green. Height: Metallica 1.6 m. Composition: image 4 is a rough layout sketch with a colored placeholder figure; follow its camera angle, framing
+      and the position and facing of the character, but do not draw the placeholder, labels or flat colors. Image 5 is the first frame of the same shot: keep its background rendering, morning light and the
+      way Metallica is drawn; the camera has panned to the left following her walk, so the house and the other three characters are now out of frame. Keep the character''s design, colors and proportions
+      identical to the character references. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+  - id: end_020
+    cut: A01b-020
+    which: end
+    method: 編集（開始の静止画＝沼を見る後ろ姿を元に、振り向いて鼻で笑う横顔）
+    refs:
+    - episodes/A/scenes/A01b/stills/rest/A01b-020_gpt-image-2.5_01.png
+    - characters/metallica/views/metallica_face_side.png
+    - characters/metallica/views/metallica_side.png
+    output: episodes/A/scenes/A01b/stills/end/A01b-020_end_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the first frame of a shot. Draw the last frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfit, hair and hat, but Metallica has turned
+      around toward the right side of the picture and is now in profile, turned toward screen right, looking at Bisco (off screen, toward screen right), scoffing with a smug, dismissive smile, chin slightly
+      raised, the invitation letter still in her right hand. Keep the character''s design, colors and proportions identical to image 1 and to the references (images 2 and 3). 2D TV anime style, clean line
+      art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - id: start_021
+    cut: A01b-021
+    which: start
+    method: 編集（既存の静止画 try10/A01b-021 は両腕を広げきった姿＝終わり。それを「終わり」に使い、腕を下ろした「開始」を作る）
+    refs:
+    - episodes/A/scenes/A01b/stills/try10/A01b-021_gpt-image-2.5_01.png
+    - characters/metallica/views/metallica_side.png
+    output: episodes/A/scenes/A01b/stills/start/A01b-021_start_gpt-image-2.5_01.png
+    prompt: 'Image 1 is the last frame of a shot. Draw the first frame of the same shot: the identical scene, background, framing, camera height, lighting, colors, outfit, hair and hat, but Metallica stands
+      with her arms down at her sides, the invitation letter held in her right hand at her side, having just turned toward Bisco (off screen, toward screen right), in profile, turned toward screen right,
+      mouth closed, a confident look. Keep the character''s design, colors and proportions identical to image 1 and to the character sheet (image 2). 2D TV anime style, clean line art, cel shading, rich
+      but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    risk: 008 と同じく低い位置から見上げたメタリカの全身。アップロードで nsfw と判定されたら、021 は静止画＋揺れ（K と同じ扱い）にする（言い換え・加工はしない）
+
+videos:
+  model: seedance_2_0
+  mode: std
+  resolution: 480p
+  generate_audio: false
+  credits_estimate: 72   # 480p std は1秒3クレジット（参照を付けても変わらない）
+  note: >-
+    最短 4 秒、整数秒。カットの秒数より長い分は組み立てで速度を少し上げて収める。
+    下絵は 016 だけ（歩きとパン）。020・021・023 はカメラも人物の位置も動かないので省く（003・009 と同じ扱い）。
+    口パクの参照は、喋る人物の口が画面に見えるカットだけ（016・020・021 はメタリカ。023 は声が画面の外のメタリカなので付けない）
+  common_tail: >-
+    2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets.
+    Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  items:
+  - cut: A01b-016
+    sec: 7.7
+    duration: 8
+    credits: 24
+    start_image: episodes/A/scenes/A01b/stills/try10/A01b-016_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-016_end_gpt-image-2.5_01.png（作成後に確定）
+    image_references:
+    - characters/metallica/views/metallica_side.png
+    - characters/metallica/views/metallica_back.png
+    previs: previs/A01b/A01b-016.mp4（0.3〜3.9 秒に広場を西へ歩き、止まって向きを変える。カメラは 0.3〜4.2 秒に左へ振る）
+    audio_reference: audio/A01b/original/L43_metallica.wav（mp3 に変えて渡す）
+    prompt: 'Full shot. Metallica walks across the dirt clearing toward the left side of the picture, away from the three characters standing at the foot of the bridge, lecturing as she goes and wagging
+      her raised index finger; at about 3.9 seconds she stops and turns toward the right side of the picture, and at about 4.7 seconds she sweeps one hand out toward the swamp. The camera pans slowly to
+      the left to follow her, so the house and the three others leave the frame on the right; the shot ends on the given last frame. Her long braids swing as she walks. Sync her mouth movements to the line
+      in audio 1 whenever her face is visible.'
+  - cut: A01b-020
+    sec: 7.7
+    duration: 8
+    credits: 24
+    start_image: episodes/A/scenes/A01b/stills/rest/A01b-020_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/end/A01b-020_end_gpt-image-2.5_01.png（作成後に確定）
+    image_references:
+    - characters/metallica/views/metallica_face_side.png
+    - characters/metallica/views/metallica_back.png
+    previs: なし（止めのカメラ。人物は位置を変えずに振り向くだけ）
+    audio_reference: audio/A01b/original/L47_metallica.wav（mp3 に変えて渡す。頭と途中に無音あり、と lines.md に印）
+    prompt: 'Close-up with a completely still camera. Metallica stands with her back to the camera, looking out over the swamp toward the huge dead tree. After a short beat (about 1.6 seconds) she turns
+      around toward the right side of the picture, ending in profile looking at Bisco off screen, and lets out a scoffing, dismissive smile as she talks. Her braids sway as she turns. The shot ends on the
+      given last frame. Sync her mouth movements to the line in audio 1 once her face is visible.'
+  - cut: A01b-021
+    sec: 3.8
+    duration: 4
+    credits: 12
+    start_image: episodes/A/scenes/A01b/stills/start/A01b-021_start_gpt-image-2.5_01.png（作成後に確定）
+    end_image: episodes/A/scenes/A01b/stills/try10/A01b-021_gpt-image-2.5_01.png
+    image_references:
+    - characters/metallica/views/metallica_side.png
+    - characters/metallica/views/metallica_front.png
+    previs: なし（止めのカメラ。衝撃の揺れは組み立てで足す）
+    audio_reference: audio/A01b/original/L48_metallica.wav（mp3 に変えて渡す）
+    prompt: 'Low-angle full shot from near the ground with a completely still camera. Metallica stands in profile facing the right side of the picture; at about 0.7 seconds she starts to raise her arms and
+      by about 1.2 seconds she has flung both arms wide open, chest thrust out and head high, the invitation letter still in her right hand, then holds the pose proudly while she keeps talking. Her braids
+      and hair swing with the motion. The shot ends on the given last frame. Sync her mouth movements to the line in audio 1.'
+  - cut: A01b-023
+    sec: 3.9
+    duration: 4
+    credits: 12
+    start_image: episodes/A/scenes/A01b/stills/rest/A01b-023_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A01b/stills/rest/A01b-023_gpt-image-2.5_01.png   # 開始と同じ絵（0クレジット）
+    image_references:
+    - characters/arlecchino/views/arlecchino_side.png
+    - characters/arlecchino/views/arlecchino_face_side.png
+    previs: なし（止めのカメラで位置も変わらない）
+    audio_reference: なし（声は画面の外のメタリカ。アルレッキーノは喋らない）
+    prompt: 'Medium close shot with a completely still camera. Arlecchino stands proudly with one hand on his chest, in profile facing the left side of the picture, and nods twice with satisfaction, once
+      at about 0.8 seconds and again at about 2.8 seconds, as if agreeing with what is being said off screen. His scarf moves slightly. The shot ends on the given last frame (the same pose as the first frame).'

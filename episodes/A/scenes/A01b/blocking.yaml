@@ -246,8 +246,9 @@ cuts:
     cam: [12.6, 14.0, 1.2]
     look: m_end
     look_end: m_shore_w
+    cam_t: [0.3, 4.2]   # 歩きを追って左へ振り、止まる少し後で止める（previs.py 用）
     lens: 35
-    move: {metallica: {to: m_shore_w, via: [[9.4, 11.2]], face: '@bisco'}}
+    move: {metallica: {to: m_shore_w, via: [[9.4, 11.2]], face: '@bisco', t: [0.3, 3.9]}}   # 間（3.9秒）で止まって向きを変える
     gaze: {metallica: bisco}
     pose: {metallica: 'walking across the clearing, lecturing, wagging her index finger', bisco: 'small, standing at the foot of the bridge in front of the house', arlecchino: 'small, standing at the foot of the bridge in front of the house', hundred-knight: 'small, standing at the foot of the bridge in front of the house'}
     pose_end: {metallica: 'stopped in the west part of the clearing, one hand sweeping out toward the swamp'}
