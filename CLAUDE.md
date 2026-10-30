@@ -65,7 +65,7 @@
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音。原作の音源は `audio/original/`（一覧は `index.yaml`）、長い音源から切り出した台詞は `audio/<シーン>/original/` |
 | `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
-| `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、Drive に置いた動画の一覧 `drive.yaml`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
+| `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、書き出した動画の一覧 `drive.yaml`。Drive に置けない書き出しは `animatic/exports/`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
 | `pipeline/` | 役割ごとの実装の設定 |
 | `tools/` | 記録、台詞の切り出し、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QCのスクリプト |
 | `docs/` | 作業ログ、Living Spec への反映待ちの提案 |
@@ -95,4 +95,4 @@
 ## コミット
 
 - 作業の区切りごとにコミットする。メッセージは日本語で、何を作ったか・何を記録したかを書く。
-- 動画は1ファイル100MB未満に収める。書き出した動画（Animatic など）は Google Drive の「魔女と百騎兵 Animatic」フォルダに置き、リポジトリには場所の一覧 `animatic/drive.yaml` だけを持つ（D-044）。`animatic/out/` は Git の管理外。
+- 動画は1ファイル100MB未満に収める。書き出した動画（Animatic など）は Google Drive の「魔女と百騎兵 Animatic」フォルダに置き、場所を `animatic/drive.yaml` に書く（D-044）。Drive に置けないとき（受け口は「原作音源」フォルダだけ、コネクタは10MB未満）は `animatic/exports/` にコピーしてコミットし、`drive.yaml` の `git:` に書く（2026-10-31 ユーザー判断）。`animatic/out/` は Git の管理外。

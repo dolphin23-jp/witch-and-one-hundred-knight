@@ -1,4 +1,5 @@
 # 書き出した動画の保存先（D-044）。動画は Google Drive に置き、ここには場所だけを書く。
+# Drive に置けないものは animatic/exports/ に入れて GitHub に置く（2026-10-31 ユーザー判断。git: の欄）。1ファイル100MB未満。
 folder: https://drive.google.com/drive/folders/14Ao_xdXO001DurwE586lYIcFRFK6Sycp   # 「魔女と百騎兵 Animatic」
 files:
   - name: A01_v01.mp4
@@ -113,6 +114,7 @@ files:
     content: Remotion で組んだ A01b の最初の版（D-050。voice.yaml は tools/voice_yaml.py で作成）。静止画73カットのうち動画6カット（001・003・009・030・031・034、Seedance 2.0）+ 原作の台詞65本 + BGM（原作音源パート16 から声を分けた残りをそのまま。場面の BGM の切り替えとは合っていない）+ 字幕。漫符・効果音なし
     built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01b A01b_v02（チャットで送るため crf31 で 21MB に縮めた）
     drive: null   # チャットでユーザーに送付。Drive の「Animatic」フォルダへは、受け口が「原作音源」フォルダだけ・コネクタが10MB未満のため置けていない
+    git: animatic/exports/A01b_v02.mp4   # 2026-10-31 ユーザー判断「animaticもGitHubに入れる」（Drive に置けないため）
   - name: A02_v01.mp4
     scene: A02
     made: 2026-10-30
@@ -120,6 +122,7 @@ files:
     content: A02 魔女邸の前・別れの最初の版（新しい作り方の試験）。16カット中15カットが動画（Seedance 2.0 std 480p、開始＋終わりの静止画＋設定画＋下絵 854x480＋口パク参照）、015 は静止画（左右が逆で hold）+ 原作の台詞13本 + BGM（パート17 の声以外、00:21〜）+ 字幕。漫符・効果音なし。010・014・016 は一次QC で hold
     built_with: sh animatic/remotion/render.sh episodes/A/scenes/A02 A02_v01（13.7MB）
     drive: null   # チャットでユーザーに送付（Drive の受け口は「原作音源」フォルダだけ、コネクタは10MB未満）
+    git: animatic/exports/A02_v01.mp4   # 2026-10-31 ユーザー判断「animaticもGitHubに入れる」（Drive に置けないため）
   - name: A04_v01.mp4
     scene: A04
     made: 2026-10-30
@@ -127,6 +130,7 @@ files:
     content: A04 砂漠と行き倒れの最初の版。23カットすべて動画（Seedance 2.0 fast 480p、開始＋終わりの静止画＋正面の設定画＋下絵 854x480 24fps＋口パク参照）。006・009・015 は開始の画だけ、007 は作り直しの _02、015 は飲む前の開始の画から（nsfw 判定の対処）+ 原作の台詞25本 + BGM（A04_bgm.ogg）+ 字幕。漫符・効果音なし
     built_with: sh animatic/remotion/render.sh episodes/A/scenes/A04 A04_v01（23.9MB）
     drive: null   # チャットでユーザーに送付（Drive の受け口は「原作音源」フォルダだけ、コネクタは10MB未満）
+    git: animatic/exports/A04_v01.mp4   # 2026-10-31 ユーザー判断「animaticもGitHubに入れる」（Drive に置けないため）
   - name: A05_v01.mp4
     scene: A05
     made: 2026-10-30
@@ -134,3 +138,4 @@ files:
     content: A05 砂食み（前半 001〜012）の最初の版。動きの設計（D-060）から作った下絵で動きとカメラを決めてから生成。12カットすべて動画（Seedance 2.0 fast 480p、開始の画＋終わりの画（001・002・005・008・012）＋設定画（砂食みは側面と正面）＋動きの入った下絵 854x480 24fps＋口パク参照（002・005））+ 原作の台詞9本 + BGM（A05_bgm.ogg）+ 字幕。004・006・007 は一次QC で hold。漫符・効果音・スローなし
     built_with: sh animatic/remotion/render.sh episodes/A/scenes/A05 A05_v01（10.1MB）
     drive: null   # チャットでユーザーに送付（Drive の受け口は「原作音源」フォルダだけ、コネクタは10MB未満）
+    git: animatic/exports/A05_v01.mp4   # 2026-10-31 ユーザー判断「animaticもGitHubに入れる」（Drive に置けないため）
