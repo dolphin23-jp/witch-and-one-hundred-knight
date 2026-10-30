@@ -1,0 +1,51 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。村人の見た目の参照画像はまだない（静止画の段階までに要る）
+id: A06-005
+scene: A06
+tc: 35.2
+sec: 10.8
+kind: M
+shot: 全身→寄り・ティト（村人の肩越し）
+acting: 村人Aが松明を振り上げ、村人Cが指をさす。ティトがうつむく
+dialogue:
+- L184「なんの為に、こんなへんぴな土地に住んでいると思ってんだ！」
+- L185「まったく、あんたの旦那といい……！！疫病神もいいところだよ！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 59.6
+  - 32.6
+  - 1.7
+  look: tito
+  lens: 35
+  move: 村人の肩越しにティト → 「あんたの旦那といい」でティトの顔へゆっくり寄る
+background: beast-village
+image: null
+refs:
+- tito
+overlays: []
+fallback: null
+act:
+  start: 村人の肩越しにティト
+  end: うつむくティトの顔
+timing:
+  lead: 0.3
+blocking:
+  start: テ（中央・正面）、村C（中央・背中）
+  end: テ（中央・正面）
+  background: ティトの家の扉の前〔村 家〕
+  panels:
+  - 村 家
+  staging_en: 'In frame (exactly 2 people, from left to right): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
+    a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, facing the angry villagers,
+    in the center of the frame, facing the camera; a beastfolk villager woman (goat-like horns, a red headscarf and apron, holding a burning torch), pointing an accusing finger at her, in the center of
+    the frame, with the back to the camera. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled
+    roof, warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+  staging_en_end: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta
+    cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), looking down, hurt, in the center of the frame, facing the camera.
+    No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light from inside. Night outside
+    the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-005_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-005_end.png

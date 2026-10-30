@@ -1,0 +1,52 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。村人の見た目の参照画像はまだない（静止画の段階までに要る）
+id: A06-003
+scene: A06
+tc: 18.0
+sec: 9.2
+kind: M
+shot: 引き（煽り）・ティト・村人4人
+acting: 扉の前に松明の村人たち。扉を背に立ちふさがるティトが驚いて後ずさる。村人Bが詰め寄る
+dialogue:
+- L180「え、ええっ！？そ、そうなんですか！？」
+- L181「近くで砂食みを見たヤツがいるんだ！恐らくこの村は見つかっちまってる！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 60.6
+  - 31.0
+  - 0.4
+  look: tito
+  lens: 24
+  move: 村人たちの足元から煽り。松明の火。話す村人Bへ速く振る
+background: beast-village
+image: null
+refs:
+- tito
+overlays: []
+fallback: null
+act:
+  start: 外。扉の前に松明を持った村人4人。扉を開けて出てきたティトが扉を背に立ちふさがる
+  end: 一歩詰め寄る村人B
+timing:
+  lead: 0.3
+blocking:
+  start: テ（中央・斜め前（画面左向き））
+  end: 村C（左・横顔（画面右向き））、村D（中央・斜め前（画面右向き））、村B（中央・横顔（画面右向き））、村A（中央・斜め前（画面右向き））
+  background: ティトの家の扉の前〔村 家〕
+  panels:
+  - 村 家
+  staging_en: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+    and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), stepping out of the doorway and blocking it with her back to the door, startled,
+    in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation,
+    barrels and a crate, red tiled roof, warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): a beastfolk villager woman (goat-like horns, a red headscarf and apron, holding a burning torch), standing with a torch, on the left of
+    the frame, in profile, turned toward screen right; a young beastfolk villager (goat-like horns, a beige tunic, holding a burning torch), standing with a torch at the back, in the center of the frame,
+    in three-quarter view, turned toward screen right; a beastfolk villager man (goat-like horns, a dark blue tunic, holding a burning torch), stepping forward with a torch, shouting, in the center of the
+    frame, in profile, turned toward screen right; a beastfolk villager man (goat-like horns, rough brown desert clothes, holding a burning torch), standing with a torch, in the center of the frame, in
+    three-quarter view, turned toward screen right. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red
+    tiled roof, warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-003_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-003_end.png

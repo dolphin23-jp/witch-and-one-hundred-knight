@@ -1,0 +1,50 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。村人の見た目の参照画像はまだない（静止画の段階までに要る）
+id: A06-014
+scene: A06
+tc: 99.8
+sec: 6.8
+kind: M
+shot: 全身・ティト（手前に百騎兵）
+acting: 砂まみれのティトが戻ってきて、息を切らして笑う
+dialogue:
+- L204「私は大丈夫です。こう見えても逃げ足は早いんですから。さあ早く。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 58.9
+  - 30.4
+  - 1.35
+  look: tito
+  lens: 45
+  move: 戻ってくるティトを正面から、止め
+background: beast-village
+image: null
+refs:
+- tito
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 夜の村の東から、砂まみれのティトが歩いて戻ってくる
+  end: 笑うティト
+timing:
+  lead: 0.3
+blocking:
+  start: テ（中央・正面）
+  end: テ（中央・正面）
+  background: 星空の下の村〔村 俯瞰〕
+  panels:
+  - 村 俯瞰
+  staging_en: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+    and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), walking back covered in sand and out of breath, holding the brass horn,
+    in the center of the frame, facing the camera. No other people. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns,
+    red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue starry sky, cool moonlight, warm lamplight from Tito''s doorway falling on her.'
+  staging_en_end: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta
+    cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing, covered in sand and out of breath, smiling, in the center
+    of the frame, facing the camera. No other people. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all
+    around under a deep blue sky full of stars. Night in the village: a deep blue starry sky, cool moonlight, warm lamplight from Tito''s doorway falling on her.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-014_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-014_end.png
