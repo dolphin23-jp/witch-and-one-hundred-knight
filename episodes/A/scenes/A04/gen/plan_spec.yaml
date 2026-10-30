@@ -1,0 +1,46 @@
+# A04 の生成計画の中身（tools/scene_plan.py が読む）。Claude の案（2026-10-30）
+# 動画は Seedance 2.0。fast（480p、1秒1クレジット）を案とする（std は1秒3クレジット）。どちらにするかはユーザーが決める
+video: {model: seedance_2_0, mode: fast, resolution: 480p, credits_per_sec: 1}
+video_note: >-
+  開始＋終わりの静止画＋設定画＋下絵（Blender、854x480）＋口パク参照（ルッキーニィの台詞で口が見えるカットだけ）。最短4秒・整数秒。
+  メタリカの台詞は画に出ない声だけなので、口パクの参照は渡さない（百騎兵には口がない）。生成音声は使わない（generate_audio=false）
+tail: >-
+  2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the
+  first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no
+  mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+no_end:
+  A04-007: 位置もカメラも変わらない（のぞき込むだけ）。開始の画だけで作る
+  A04-018: 位置もカメラも変わらない（首をかしげるだけ）。開始の画だけで作る
+cels: []
+speaker:
+  A04-006: luckiny
+  A04-009: luckiny
+  A04-010: luckiny
+  A04-015: luckiny
+  A04-016: luckiny
+  A04-019: luckiny
+  A04-022: luckiny
+prompts:
+  A04-001: "Extreme wide shot. The camera starts high in the sky looking down on an endless sea of golden dunes, then cranes down and pulls back smoothly over 5 seconds, ending low near the ground. The tiny Hundred Knight walks steadily east across the sand the whole time."
+  A04-002: "Low tracking shot at sand level. The camera moves sideways alongside the Hundred Knight at its walking speed. It trudges through soft sand, its feet sinking with every step; the pale blue flame on its helmet flickers in the heat."
+  A04-003: "Telephoto shot through strong heat haze. In the foreground the huge half-buried rib cage of a long-dead beast; far behind it the tiny Hundred Knight walks from left to right. The camera pans slowly to the right with it."
+  A04-004: "Low angle from in front. The Hundred Knight walks toward the camera and stops at about 2 seconds, then tilts its head up and gazes at the blazing sun for a long moment. At about 7 seconds it lowers its head and walks on toward the camera while the camera glides backward."
+  A04-005: "Over-the-shoulder shot from behind the Hundred Knight. It walks over the crest of a dune and stops short at about 1.5 seconds. Far ahead a small figure in a red hood lies face down in the sand. The camera then pushes in and zooms quickly toward the fallen figure."
+  A04-006: "Close-up at sand level, backlit by the high sun. Luckiny lies face down in the sand, exhausted; behind her stand the Hundred Knight's legs. She slowly opens her eyes halfway, lifts her head a little and looks up at the Hundred Knight, whispering weakly. Static camera."
+  A04-007: "Point-of-view shot from the ground looking up at the Hundred Knight against the bright sky. It bends forward and peers down curiously, tilting its head slightly. Slight handheld sway."
+  A04-008: "The camera looks down over the Hundred Knight's shoulder and slowly moves in. The Hundred Knight reaches into its big gauntlet, pulls out a small folded paper and holds it out in front of the face of Luckiny, who lies in the sand."
+  A04-009: "Close-up at sand level. Luckiny, lying in the sand, slowly reaches a trembling hand toward the small paper held out by the Hundred Knight's gauntlet and whispers; before she can touch it, her hand falls limply onto the sand. Static camera."
+  A04-010: "Shot from the north, looking down at the two. The Hundred Knight leans over Luckiny, who lies in the sand (her mouth stays still while the off-screen voice talks). At about 7 seconds she whispers with cracked dry lips, and the camera pushes in and zooms to a close-up of her face."
+  A04-011: "Shot from behind the Hundred Knight standing over Luckiny, who lies in the sand. It raises its head and looks around. At about 5.5 seconds it turns toward the north-east, and the camera whips quickly toward the distant merchant tents beyond the dunes (swish pan)."
+  A04-012: "Very low handheld shot at a caravan camp. The Hundred Knight dashes past the camera at full speed and charges straight into the entrance of a large striped tent; the tent flap swings behind it. Fast, comic energy."
+  A04-013: "At a merchant's stall full of blue water jars. The Hundred Knight grabs a big blue-glazed water jar and effortlessly lifts it high over its head. The merchant stands frozen in shock with his mouth wide open, then reaches out helplessly. Static camera. Comic timing."
+  A04-014: "Handheld tracking shot from a little above, moving alongside. The Hundred Knight runs down the slope of a dune holding the big blue water jar high over its head, kicking up sprays of sand."
+  A04-015: "Close-up from the front. Luckiny sits in the sand hugging the big blue water jar; she speaks first, then lifts it to her lips and drinks eagerly, and finally lowers it, gasping. Static camera."
+  A04-016: "Close-up of Luckiny sitting in the sand hugging the water jar, catching her breath and talking. From about 3.5 seconds the camera pulls back and zooms out until the Hundred Knight standing beside her is in the frame; she smiles up at it gratefully and bows her head a little."
+  A04-017: "High angle. The camera orbits slowly around the two small figures in the middle of the vast desert; scattered small bones lie in the sand nearby. Luckiny, sitting with the water jar, looks around fearfully and glances over her shoulder while she talks."
+  A04-018: "Low shot over Luckiny's shoulder (out of focus in the foreground). The Hundred Knight stands listening and slowly tilts its head to one side. Static camera. Luckiny does not speak."
+  A04-019: "Medium shot, camera slowly moving in. Luckiny sets the water jar down beside her, stands up and brushes the sand off her clothes, then faces the Hundred Knight and talks earnestly."
+  A04-020: "Over Luckiny's shoulder. She turns toward the far dunes in the north-east and points at them while explaining the way; the Hundred Knight looks where she points. Static camera."
+  A04-021: "Low wide angle from the south, the camera pushing in slowly. Luckiny and the Hundred Knight stand side by side looking toward the far dunes in the north-east; the wind blows thin streams of sand across the ground. Nobody on screen speaks."
+  A04-022: "Close-up from the front of Luckiny looking back over her shoulder to talk to the Hundred Knight behind her; she takes the long brass horn-trumpet from her back and raises it to her lips. The camera pulls back and zooms out until both are in the frame."
+  A04-023: "From behind the two. Luckiny blows the long brass horn-trumpet for about 2.5 seconds, lowers it, calls out, and runs up the dune toward the north-east; the Hundred Knight runs after her. The camera follows them from behind (follow shot)."

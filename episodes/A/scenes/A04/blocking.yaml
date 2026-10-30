@@ -1,0 +1,414 @@
+# A04 砂漠と行き倒れの立ち位置・向き・動きとカメラ割り（演出ノート P-01・P-03・P-04、D-058）。Claude の案（2026-10-30）。ユーザーのイメージを聞いて直す
+# 場所は world/tettara-desert-layout.yaml（x: 西0→東140、y: 北0→南100、m）。方位: 北 0・東 90・南 180・西 270。見た目の資料はユーザーが用意した背景（テッタラ砂漠・商隊キャンプ）
+# 書き方は episodes/A/scenes/A01b/blocking.yaml の頭のコメントと同じ。足した項目:
+#   posture: {人物: lying|sitting|kneeling|crouching|standing}（posture_end: 終わり、posture_t: 変わる秒）。lying はうつ伏せで、face の向きに頭がある
+#   cam_end / cam_t: カメラ本体の移動（tools/previs.py）。look_end / lens_end: 終わりの向きとレンズ
+# 秒は原作の声の実測（audio/A04/original/lines.csv）に、芝居の間を足した目安。確かめるのは python tools/staging.py episodes/A/scenes/A04
+scene: A04
+layout: world/tettara-desert-layout.yaml
+map_ymax: 100
+
+places:
+  hk_a:    [18.0, 51.0]   # 001 歩き始め（西の砂丘）
+  hk_b:    [23.0, 51.0]
+  hk_c:    [25.0, 51.5]   # 002
+  hk_d:    [31.0, 51.8]
+  hk_e:    [33.5, 52.0]   # 003 骨の向こうを通る
+  hk_f:    [38.5, 51.8]
+  hk_g:    [40.5, 51.6]   # 004 立ち止まって太陽を見上げる
+  hk_h:    [44.0, 51.2]
+  hk_i:    [47.5, 50.6]   # 005 砂丘を越えて、倒れた人影に気づく
+  hk_j:    [50.6, 50.0]
+  lk:      [62.4, 50.2]   # ルッキーニィ（伏せている。頭は西南西 250°、頭の位置は約 [61.8, 50.4]）
+  lk_head: [61.8, 50.4]
+  hk_n:    [60.9, 51.6]   # 006〜011 百騎兵（ルッキーニィの頭の南西 1.3m）
+  sun_s:   [44.0, 90.0]   # 南の空（太陽を見上げる向き）
+  tent_in: [97.5, 24.5]   # テントの入口
+  goods:   [101.6, 29.5]  # 水甕と荷物
+  hk_t0:   [94.6, 27.7]   # 012 キャンプへ駆け込む（カメラの右手前から）
+  hk_t1:   [96.9, 25.3]
+  hk_jar:  [100.6, 30.4]  # 013 水甕を奪う
+  mer:     [103.0, 28.4]  # 水瓶売りの商人
+  hk_r0:   [86.5, 36.2]   # 014 水瓶を掲げて駆け戻る
+  hk_r1:   [75.0, 43.2]
+  lk_sit:  [62.2, 50.3]   # 015〜 ルッキーニィ（座る・立つ）
+  hk_s:    [61.0, 51.2]   # 015〜 百騎兵
+  two:     [61.6, 50.75]  # 二人の間
+  ne:      [74.0, 41.0]   # 北東の砂丘（村への抜け道の方）
+  lk_go:   [73.0, 42.2]   # 023 駆けていく先
+  hk_go:   [71.2, 43.4]
+
+start:
+  hundred-knight: {at: hk_a, face: 90}
+  luckiny:        {at: lk, face: 250}
+  water-merchant: {at: mer, face: 200}
+
+# 会話の軸。同じ区間ではカメラを線の同じ側（北）に置く
+axes:
+  - {name: 行き倒れ 百騎兵↔ルッキーニィ, cuts: [A04-006, A04-011], a: hundred-knight, b: luckiny, side: [62.0, 47.0]}
+  - {name: 水を飲む〜立ち上がる 百騎兵↔ルッキーニィ, cuts: [A04-015, A04-019], a: hundred-knight, b: luckiny, side: [62.0, 47.0]}
+
+cuts:
+  # ---------- 砂漠（001〜004） ----------
+  A04-001:
+    frame: 大引き
+    cam: [26.0, 40.0, 16.0]
+    cam_end: [12.0, 45.0, 3.5]
+    look: [22.0, 51.0]
+    look_end: [24.0, 51.0]
+    lens: 28
+    tilt: down
+    only: [hundred-knight]
+    move: {hundred-knight: {to: hk_b, face: 90}}
+    act: {start: 高い空から見下ろす果てのない砂丘。砂の上に小さな点（百騎兵）, do: カメラが下りながら引き、砂丘の稜線をまたいで一人歩く百騎兵を見せる, end: 地平線まで続く砂丘と、その手前を歩く小さな百騎兵, sync: L113「ふーん。これが砂漠というものか。」は 1.0秒から}
+    camera: 高い空から下りながら引く（クレーン）。百騎兵は画面の中で小さく
+    pose: {"hundred-knight": "walking steadily across the sand"}
+    pose_end: {"hundred-knight": "walking steadily across the sand"}
+    kind: A
+  A04-002:
+    frame: 全身
+    cam: [25.0, 54.2, 0.3]
+    cam_end: [31.0, 54.5, 0.3]
+    look: hundred-knight
+    look_h: 0.45
+    lens: 28
+    only: [hundred-knight]
+    move: {hundred-knight: {to: hk_d, face: 90}}
+    set: {hundred-knight: {at: hk_c, face: 90}}
+    act: {start: 砂の高さから、百騎兵の足元。一歩ごとに足が砂に沈む, do: 横に並んで同じ速さで追いかける。頭の炎が熱でゆらゆら揺れる, end: 同じ構図のまま歩き続ける, sync: L114「砂漠とはよく言ったものだ……つまらんな。」}
+    camera: 足元の低い位置で横に並んで追う（トラック）
+    pose: {"hundred-knight": "trudging through soft sand, its feet sinking with every step"}
+    pose_end: {"hundred-knight": "trudging through soft sand, its feet sinking with every step"}
+    kind: M
+  A04-003:
+    frame: 引き
+    cam: [34.0, 78.0, 1.2]
+    look: [36.0, 64.0]
+    look_end: [37.5, 63.5]
+    lens: 85
+    only: [hundred-knight]
+    move: {hundred-knight: {to: hk_f, face: 90}}
+    set: {hundred-knight: {at: hk_e, face: 90}}
+    act: {start: 陽炎で揺らぐ砂の上に、半分埋まった大きな獣のあばら骨。その向こう遠くに小さな百騎兵, do: 骨の向こうを百騎兵が横切っていく。カメラはゆっくり横へ振る, end: 骨と、遠ざかる百騎兵, sync: L119「昼は灼熱、夜は極寒！……死の世界だ。」}
+    camera: 望遠で陽炎を強く。ゆっくり横へ振る（パン）
+    pose: {"hundred-knight": "walking far in the background, small"}
+    pose_end: {"hundred-knight": "walking far in the background, small"}
+    kind: M
+  A04-004:
+    frame: 全身
+    cam: [47.6, 51.0, 0.35]
+    cam_end: [49.0, 50.9, 0.45]
+    cam_t: [6.0, 10.0]
+    look: hundred-knight
+    look_h: 0.9
+    lens: 50
+    only: [hundred-knight]
+    move: {hundred-knight: {to: hk_h, face: 90, t: [0.0, 2.2]}}
+    set: {hundred-knight: {at: hk_g, face: 90}}
+    gaze: {hundred-knight: sun_s}
+    act: {start: 正面の低い位置。百騎兵が歩いてきて止まる, do: 空を見上げ、まぶしい太陽をしばらく見つめる。遠くで角笛の音がかすかに鳴る（BGM の効果音）, end: 視線を戻して、また歩き出す, sync: L121「まあ、オマエの場合は……いらないからな。」で見上げ、L122「いつもと何も変わらんさ。」で歩き出す。角笛の音でカメラが後ろへ引く}
+    camera: 正面の煽り。角笛の音で、後ろへ滑るように引く（ドリー）
+    pose: {"hundred-knight": "walking toward the camera"}
+    pose_end: {"hundred-knight": "standing still, its head tilted up toward the blazing sun"}
+    kind: M
+
+  # ---------- 行き倒れ（005〜011） ----------
+  A04-005:
+    frame: 引き
+    cam: [46.6, 50.9, 1.05]
+    cam_end: [49.6, 50.4, 1.0]
+    cam_t: [1.2, 4.5]
+    look: lk
+    lens: 50
+    lens_end: 100
+    only: [hundred-knight, luckiny]
+    move: {hundred-knight: {to: hk_j, face: 90, t: [0.0, 1.6]}}
+    set: {hundred-knight: {at: hk_i, face: 90}}
+    posture: {luckiny: lying}
+    gaze: {hundred-knight: lk}
+    act: {start: 百騎兵の肩越し。砂丘の稜線を越えた先に、赤いフードの人影が倒れている, do: 百騎兵が止まる。カメラが倒れた人影へ一気に寄る, end: 砂に伏せた赤いフードの小さな体, sync: L123「なんだ、あいつ？行き倒れか……？」}
+    camera: 百騎兵の肩越しから、倒れた人影へ一気に寄る（押し込み＋ズーム）
+    pose: {"hundred-knight": "walking over the crest of a dune, then stopping", "luckiny": "lying face down in the sand, motionless, far ahead"}
+    pose_end: {"hundred-knight": "standing still, staring ahead", "luckiny": "lying face down in the sand, motionless"}
+    kind: M
+  A04-006:
+    frame: 寄り
+    cam: [61.9, 48.2, 0.25]
+    look: lk_head
+    look_h: 0.25
+    lens: 35
+    only: [luckiny, hundred-knight]
+    set: {hundred-knight: {at: hk_n, face: "@luckiny"}}
+    posture: {luckiny: lying}
+    gaze: {luckiny: hundred-knight}
+    act: {start: 砂の高さ。砂に伏せたルッキーニィの顔。奥に百騎兵の足, do: 薄く目を開け、少しだけ顔を上げて百騎兵を見上げる, end: 力なく見上げたまま, sync: L124「う……、う……。あ……、あなたは……？」}
+    camera: 砂の高さの寄り。逆光（南の太陽）。止め
+    pose: {"luckiny": "lying face down in the sand, eyes half closed, too weak to move", "hundred-knight": "standing, only its legs and feet visible behind her"}
+    pose_end: {"luckiny": "lying in the sand with her head lifted a little, looking up weakly with half-open eyes", "hundred-knight": "standing"}
+    kind: M
+  A04-007:
+    frame: 全身
+    cam: [61.6, 50.6, 0.3]
+    look: hundred-knight
+    look_h: 0.75
+    lens: 28
+    only: [hundred-knight]
+    gaze: {hundred-knight: lk_head}
+    axis_free: ルッキーニィの目から見た百騎兵（POV）
+    act: {start: ルッキーニィの目の高さから見上げた百騎兵。背後に白い空, do: 百騎兵が上体をかがめて、じっとのぞき込む。少し首をかしげる, end: のぞき込んだまま止まる, sync: L125「あん？息はあるのか。」でのぞき込み、L126「……ん、待てよ。」で止まる}
+    camera: ルッキーニィの目線（POV）で見上げる。かすかに揺れる
+    pose: {"hundred-knight": "standing over the camera, looking down"}
+    pose_end: {"hundred-knight": "bending forward, peering down curiously, head slightly tilted"}
+    kind: M
+  A04-008:
+    frame: 膝上
+    cam: [58.9, 52.5, 1.45]
+    cam_end: [59.3, 52.2, 1.35]
+    look: hundred-knight
+    look_h: 0.45
+    lens: 50
+    only: [hundred-knight, luckiny]
+    posture: {luckiny: lying}
+    gaze: {hundred-knight: lk_head, luckiny: hundred-knight}
+    act: {start: 横から。百騎兵と、砂に伏せたルッキーニィの頭, do: 百騎兵が大きなガントレットの中から小さな紙（探し物メモ）を取り出し、ルッキーニィの顔の前に差し出す, end: 紙を差し出したまま, sync: L127「おい、百騎兵。そいつに“スズの音草”のありかを聞いてみろ。」}
+    camera: 百騎兵の後ろ斜め上から見下ろし、ゆっくり寄る
+    pose: {"hundred-knight": "standing beside her head, reaching into its big gauntlet", "luckiny": "lying in the sand with her head lifted a little"}
+    pose_end: {"hundred-knight": "crouching slightly, holding out a small folded paper in its gauntlet in front of her face", "luckiny": "lying in the sand, looking at the paper"}
+    kind: M
+  A04-009:
+    frame: 寄り
+    cam: [60.0, 50.3, 0.3]
+    look: [61.4, 50.8]
+    look_h: 0.3
+    lens: 35
+    only: [hundred-knight, luckiny]
+    posture: {luckiny: lying}
+    gaze: {luckiny: hundred-knight}
+    act: {start: 差し出された紙と、ルッキーニィの顔, do: ルッキーニィが震える手を紙へ伸ばす, end: 手が届く前に、力なく砂の上に落ちる, sync: L128「“スズの音草”……？そ、それな……ら……。」の「……ら……」で手が落ちる}
+    camera: 紙と手の寄り。止め
+    pose: {"luckiny": "lying in the sand, slowly reaching a trembling hand toward the paper", "hundred-knight": "holding out the small paper (only its gauntlet and arm visible)"}
+    pose_end: {"luckiny": "lying in the sand, her hand fallen limply onto the sand", "hundred-knight": "still holding out the small paper"}
+    kind: M
+  A04-010:
+    frame: 全身
+    cam: [62.4, 48.3, 1.2]
+    cam_end: [62.1, 49.3, 0.35]
+    cam_t: [6.6, 9.5]
+    look: [61.4, 50.9]
+    look_h: 0.3
+    look_end: lk_head
+    lens: 35
+    lens_end: 70
+    only: [hundred-knight, luckiny]
+    posture: {luckiny: lying}
+    gaze: {luckiny: hundred-knight, hundred-knight: lk_head}
+    act: {start: 北から二人, do: 百騎兵がのぞき込む。ルッキーニィがかすれた声で絞り出す, end: ルッキーニィの乾いた唇の寄り, sync: L129「……あん？知ってるのか？……答えさせろ」の後、L130「み、水を……。」で寄る}
+    camera: 北から二人。「水を」でルッキーニィの唇へ寄る（押し込み＋ズーム）
+    pose: {"hundred-knight": "leaning over her", "luckiny": "lying in the sand, lips cracked and dry"}
+    pose_end: {"hundred-knight": "leaning over her", "luckiny": "lying in the sand, whispering with cracked dry lips, eyes closing"}
+    kind: M
+  A04-011:
+    frame: 全身
+    cam: [59.4, 53.3, 0.9]
+    look: hundred-knight
+    look_h: 0.6
+    look_end: tent_in
+    lens: 35
+    lens_end: 50
+    cam_t: [5.4, 7.0]
+    only: [hundred-knight, luckiny]
+    posture: {luckiny: lying}
+    move: {hundred-knight: {to: hk_n, face: 50, t: [4.6, 6.0]}}
+    gaze: {hundred-knight: lk_head}
+    gaze_end: {hundred-knight: tent_in}
+    act: {start: 百騎兵の背中越し。足元に倒れたルッキーニィ, do: 百騎兵が顔を上げてあたりを見回す, end: カメラがすばやく北東へ振れ、遠くの砂丘の向こうに商人のテントが見える, sync: L131「チッ！……介抱してやれ、百騎兵。」の「介抱してやれ」で振る}
+    camera: 百騎兵の背中越しから、北東のテントへすばやく振る（スウィッシュ・パン）
+    pose: {"hundred-knight": "standing over her, raising its head and looking around", "luckiny": "lying face down in the sand"}
+    pose_end: {"hundred-knight": "seen small from behind, facing the distant tents", "luckiny": "lying face down in the sand"}
+    kind: M
+
+  # ---------- 水（012〜016） ----------
+  A04-012:
+    frame: 全身
+    cam: [92.6, 28.0, 0.3]
+    cam_end: [93.6, 27.6, 0.35]
+    look: tent_in
+    look_h: 0.8
+    lens: 35
+    only: [hundred-knight]
+    set: {hundred-knight: {at: hk_t0, face: 300}}
+    move: {hundred-knight: {to: hk_t1, face: 315, t: [0.2, 2.4]}}
+    act: {start: 商人のキャンプ。大きなテントの入口。右手前に走ってきた百騎兵, do: 百騎兵が猛然と駆け抜け、テントへ突っ込んでいく, end: テントの入口の布が揺れている, sync: 台詞なし。BGM の効果音}
+    camera: 砂の高さの煽りで、手持ち風に追う
+    pose: {"hundred-knight": "dashing at full speed toward the tent"}
+    pose_end: {"hundred-knight": "charging into the tent entrance"}
+    kind: A
+  A04-013:
+    frame: 全身
+    cam: [105.8, 32.8, 1.4]
+    look: goods
+    lens: 28
+    only: [hundred-knight, water-merchant]
+    set: {hundred-knight: {at: hk_jar, face: goods}, water-merchant: {at: mer, face: "@hundred-knight"}}
+    gaze: {water-merchant: hundred-knight}
+    act: {start: 水甕の並ぶ店先。百騎兵が大きな青い水瓶をつかむ。商人が口を開けて固まる, do: 百騎兵が水瓶を軽々と頭の上に持ち上げる, end: 水瓶を掲げた百騎兵と、呆然とする商人, sync: 台詞なし。商人の顔は漫符で崩す（合成、D-027）}
+    camera: 商人の後ろ側（東）のやや高い位置から。止め
+    pose: {"hundred-knight": "grabbing a big blue-glazed water jar with both gauntlets", "water-merchant": "frozen in shock, mouth wide open, hands raised"}
+    pose_end: {"hundred-knight": "lifting the big blue water jar high over its head", "water-merchant": "frozen in shock, mouth wide open, reaching out helplessly"}
+    kind: M
+  A04-014:
+    frame: 全身
+    cam: [89.0, 34.4, 2.2]
+    cam_end: [77.6, 41.4, 2.2]
+    look: hundred-knight
+    look_h: 0.5
+    lens: 35
+    only: [hundred-knight]
+    set: {hundred-knight: {at: hk_r0, face: 240}}
+    move: {hundred-knight: {to: hk_r1, face: 240}}
+    act: {start: 砂丘の斜面, do: 水瓶を頭の上に掲げた百騎兵が、砂を蹴立てて駆け下りてくる, end: 駆け抜けていく, sync: 台詞なし}
+    camera: 砂丘の斜面の上から、横に並んで追う（手持ち風）
+    pose: {"hundred-knight": "running down the dune holding the big blue water jar high over its head, kicking up sand"}
+    pose_end: {"hundred-knight": "running down the dune holding the big blue water jar high over its head, kicking up sand"}
+    kind: A
+  A04-015:
+    frame: 胸上
+    cam: [60.9, 49.8, 0.75]
+    look: luckiny
+    look_h: 0.75
+    lens: 70
+    only: [luckiny]
+    set: {luckiny: {at: lk_sit, face: 235}, hundred-knight: {at: hk_s, face: "@luckiny"}}
+    posture: {luckiny: sitting}
+    act: {start: 砂の上に座り込んだルッキーニィ。大きな青い水瓶を両手で抱えている, do: 水瓶に口をつけ、夢中で水を飲む, end: 水瓶を下ろして息をつく, sync: L132「あ、ありがとうございます……！」は飲む前に}
+    camera: ルッキーニィの正面の寄り。止め
+    pose: {"luckiny": "sitting in the sand, holding a big blue-glazed water jar in both arms and drinking from it eagerly"}
+    pose_end: {"luckiny": "sitting in the sand, lowering the big blue water jar, gasping for breath"}
+    kind: M
+  A04-016:
+    frame: 胸上
+    cam: [60.9, 49.6, 0.8]
+    cam_end: [59.0, 48.8, 1.0]
+    cam_t: [3.5, 7.8]
+    look: luckiny
+    look_h: 0.75
+    look_end: two
+    lens: 70
+    lens_end: 35
+    only: [luckiny, hundred-knight]
+    posture: {luckiny: sitting}
+    gaze: {luckiny: hundred-knight}
+    act: {start: ルッキーニィの正面の寄り。肩で息をしている, do: 息を整え、百騎兵を見上げて、ようやく笑う, end: 二人が入るまで引く。ルッキーニィが小さく頭を下げる, sync: L133「はぁはぁ……。ありがとうございます。」の後、L134「あなたのお陰で助かりました……。」で引く}
+    camera: 寄りから、二人が入るまで引く（ドリー＋ズーム）
+    pose: {"luckiny": "sitting in the sand hugging the water jar, catching her breath", "hundred-knight": "standing"}
+    pose_end: {"luckiny": "sitting in the sand hugging the water jar, smiling up gratefully and bowing her head a little", "hundred-knight": "standing, looking down at her"}
+    kind: M
+
+  # ---------- 砂食みの話と村へ（017〜023） ----------
+  A04-017:
+    frame: 引き
+    cam: [68.5, 44.5, 6.5]
+    cam_end: [56.5, 43.0, 6.5]
+    look: two
+    lens: 35
+    tilt: down
+    only: [luckiny, hundred-knight]
+    posture: {luckiny: sitting}
+    gaze: {luckiny: [70.0, 44.0]}
+    gaze_end: {luckiny: [52.0, 46.0]}
+    axis_free: 高い所から回り込む（広い砂漠の中の小さな二人）
+    act: {start: 高い所から。広い砂漠の真ん中に小さな二人。近くの砂の上に砂羊の骨, do: ルッキーニィがおびえた顔であたりを見回す, end: 回り込み終わる, sync: L135「い、いけない……気づかれます……。」L136「たくさんいた砂羊が……。」}
+    camera: 高い位置から、ゆっくり回り込む（オービット）
+    pose: {"luckiny": "sitting in the sand clutching the water jar, looking around fearfully", "hundred-knight": "standing beside her"}
+    pose_end: {"luckiny": "sitting in the sand clutching the water jar, glancing nervously over her shoulder", "hundred-knight": "standing beside her"}
+    kind: M
+  A04-018:
+    frame: 膝上
+    cam: [63.0, 49.0, 0.55]
+    look: hundred-knight
+    look_h: 0.6
+    lens: 50
+    only: [hundred-knight, luckiny]
+    posture: {luckiny: sitting}
+    gaze: {hundred-knight: luckiny}
+    act: {start: ルッキーニィの肩越しに百騎兵, do: 百騎兵が小さく首をかしげる（メタリカの声を聞いている）, end: 首をかしげたまま, sync: L137「……あん？砂食み？……魔獣の類か？」}
+    camera: ルッキーニィの肩越し、低い位置。止め
+    pose: {"hundred-knight": "standing, listening", "luckiny": "sitting in the foreground, seen from behind, out of focus"}
+    pose_end: {"hundred-knight": "standing, its head tilted curiously", "luckiny": "sitting in the foreground, seen from behind, out of focus"}
+    kind: M
+  A04-019:
+    frame: 全身
+    cam: [59.6, 48.4, 1.0]
+    cam_end: [60.1, 48.8, 1.0]
+    look: luckiny
+    look_h: 0.8
+    lens: 35
+    only: [luckiny, hundred-knight]
+    posture: {luckiny: sitting}
+    posture_end: {luckiny: standing}
+    posture_t: 2.0
+    gaze: {luckiny: hundred-knight}
+    act: {start: 北西から。座ったルッキーニィ, do: 水瓶を砂の上に置いて立ち上がり、服の砂をはらう, end: 立って百騎兵に向き合う, sync: L138「こ、ここは危険です……村にいらしてください。」の頭で立ち上がる}
+    camera: 北西から、ゆっくり寄る
+    pose: {"luckiny": "sitting in the sand, putting the water jar down beside her", "hundred-knight": "standing"}
+    pose_end: {"luckiny": "standing, brushing the sand off her clothes", "hundred-knight": "standing, looking up at her"}
+    kind: M
+  A04-020:
+    frame: 膝上
+    cam: [60.6, 52.2, 1.35]
+    look: ne
+    lens: 35
+    only: [luckiny, hundred-knight]
+    move: {luckiny: {to: lk_sit, face: 50, t: [0.5, 2.0]}}
+    gaze: {luckiny: ne}
+    axis_free: ルッキーニィの肩越しに、村への抜け道の方（北東）を見る
+    act: {start: ルッキーニィの背中越し, do: ルッキーニィが北東の砂丘の方へ向き直り、指さして道を説明する, end: 指さしたまま, sync: L139「テッタラ村には……一緒に行きましょう。」}
+    camera: ルッキーニィの肩越し。止め
+    pose: {"luckiny": "standing, turning toward the far dunes", "hundred-knight": "standing beside her"}
+    pose_end: {"luckiny": "standing, pointing toward the far dunes in the north-east", "hundred-knight": "standing beside her, looking where she points"}
+    kind: M
+  A04-021:
+    frame: 引き
+    cam: [60.0, 56.5, 0.35]
+    cam_end: [60.3, 55.6, 0.4]
+    look: two
+    look_h: 0.9
+    lens: 24
+    only: [luckiny, hundred-knight]
+    gaze: {luckiny: ne, hundred-knight: ne}
+    axis_free: 南の低い位置から、二人と北東の砂丘
+    act: {start: 南の低い位置。並んで北東を見る二人と、その先の砂丘, do: 二人が並んで遠くを見る。風が砂を流す, end: 少し寄って止まる, sync: L140「……こんな砂漠に、村が？……あったりするかもな。」}
+    camera: 低い位置の広角で、ゆっくり押し込む
+    pose: {"luckiny": "standing, looking toward the far dunes", "hundred-knight": "standing beside her, looking toward the far dunes"}
+    pose_end: {"luckiny": "standing, looking toward the far dunes", "hundred-knight": "standing beside her, looking toward the far dunes"}
+    kind: M
+  A04-022:
+    frame: 寄り
+    cam: [63.3, 48.9, 1.3]
+    cam_end: [65.0, 47.8, 1.35]
+    look: luckiny
+    look_h: 1.25
+    lens: 85
+    lens_end: 35
+    only: [luckiny, hundred-knight]
+    gaze: {luckiny: hundred-knight}
+    act: {start: 北東の正面から、ルッキーニィの顔と角笛の寄り, do: 肩越しに百騎兵へ言い、背中の角笛を手に取って口元へ構える, end: 二人が入るまで引く, sync: L141「さあ、こっちです！……角笛の音をたよりに来てください。」}
+    camera: 角笛の寄りから引く（ドリー＋ズーム）
+    pose: {"luckiny": "standing, looking back over her shoulder to speak to the Hundred Knight", "hundred-knight": "standing behind her"}
+    pose_end: {"luckiny": "standing, raising the brass horn-trumpet on her staff to her lips", "hundred-knight": "standing, looking up at her"}
+    kind: M
+  A04-023:
+    frame: 全身
+    cam: [59.0, 54.0, 1.2]
+    cam_end: [66.8, 47.0, 1.3]
+    cam_t: [3.2, 9.1]
+    look: luckiny
+    look_h: 0.8
+    lens: 35
+    only: [luckiny, hundred-knight]
+    move: {luckiny: {to: lk_go, face: 50, t: [3.2, 9.1]}, hundred-knight: {to: hk_go, face: 50, t: [3.6, 9.1]}}
+    act: {start: 二人の後ろから。ルッキーニィが角笛を吹く（音は原作の BGM の効果音）, do: 吹き終えて叫び、北東の砂丘へ駆け出す。百騎兵が続く, end: 砂丘を駆け上がる二人を後ろから追う, sync: 角笛の音（約2.5秒）の後、L142「この音です。さあ……急いで！」で駆け出す}
+    camera: 二人の後ろから追いかける（フォロー）
+    pose: {"luckiny": "standing, blowing the long brass horn-trumpet", "hundred-knight": "standing behind her"}
+    pose_end: {"luckiny": "running up the dune toward the north-east, seen from behind", "hundred-knight": "running after her, seen from behind"}
+    kind: A

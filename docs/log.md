@@ -161,3 +161,8 @@
   - 背景（world/underground-cavern/）: 全景・奥・俯瞰・壁際・井戸の中。一次QC: 俯瞰は真下ではなく高い斜めで、井戸の穴が写った（hold、俯瞰の資料としては使える）。奥は光の柱が画面に入った。並べた画像は world/underground-cavern/contact.jpg。
   - 1回目の送信で 4本が「rate_limit_reached（429）」で受け付けられず（ジョブも費用もなし）、承認済みの同じ内容で送り直した。
 - 2026-10-30: 村人4人と商人の設定画はユーザー判断「全て案1で良い」。refs/<人物>_sheet_01 に登録し、向きごとに切り抜いた（characters/<人物>/views）。地下空洞の背景は world/desert-panels.yaml に足した。
+- 2026-10-30: A04 砂漠と行き倒れの配置とカメラ（ユーザー「続けてください」）。構想タブの17カットを、長い台詞を分けて23カット（約2分42秒）にした。
+  - 砂漠の配置 world/tettara-desert-layout.yaml（140m×100m、昼、ルッキーニィは (62, 50)、商人のキャンプは北東 約45m）。背景のパネルは layout の panels（テッタラ砂漠・商隊キャンプの切り抜き）。
+  - blocking.yaml・ショットファイル・voice.yaml・略図・下絵（previs）。staging の確認: 軸 0、カメラの単調さ 0（向き・止め・高さの続きを直した）。飛び 11 は歩きの省略（意図どおり）。
+  - 道具を場面に依らない形に: staging.py（人物の色と略称を追加、地面の色を layout から、寝る・座るの姿勢 posture、終わりの画で cam_end を使う、砂丘を棒で描かない）、previs.py（地面・空・太陽を layout から、屋敷がなくても動く、砂丘・岩・テント・骨・井戸・水甕の形、姿勢、cam_end で動くときの傾きの誤り）、stills_plan.py（layout の panels、百騎兵の背丈の言い方）、shot_blocking.py・composite.py（新しい人物）。新しく tools/scene_plan.py（gen/plan_spec.yaml から生成計画を作る。a02_plan.py の一般化）。
+  - Seedance 2.0 に fast モード（480p で1秒1クレジット、std は3）があるのを確認（get_cost）。A04 の計画は fast で静止画 44・動画 170、計 214 クレジット（std なら 554）。承認待ち。

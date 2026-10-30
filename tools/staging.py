@@ -25,8 +25,27 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONT = next((f for f in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
                           "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc") if pathlib.Path(f).exists()), None)
-COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight": (160, 220, 255), "arlecchino": (220, 120, 220)}
-SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア"}
+COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight": (160, 220, 255), "arlecchino": (220, 120, 220),
+          "luckiny": (235, 60, 60), "tito": (210, 70, 150), "villager-a": (170, 120, 70), "villager-b": (90, 100, 180), "villager-c": (150, 40, 60),
+          "villager-d": (205, 175, 125), "water-merchant": (235, 125, 40), "sand-eater": (150, 150, 130)}
+SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
+         "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂"}
+POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}   # 立っていないときの背の高さの割合（寝ているときは高さ m）
+
+
+def cam_at(c, which):
+    """終わりの画では、カメラ本体の移動（cam_end）の終わりの位置を使う。"""
+    if which == "end" and c.get("cam_end"):
+        return {**c, "cam": c["cam_end"]}
+    return c
+
+
+def posture_of(c, which, who):
+    """カットの posture（posture_end）。lying（うつ伏せ・寝る）、sitting、kneeling、crouching。立っているときは None。"""
+    p0 = (c.get("posture") or {}).get(who)
+    if which == "end":
+        return (c.get("posture_end") or {}).get(who, p0)
+    return p0
 
 
 # ---------- 幾何 ----------
@@ -171,7 +190,7 @@ class Stage:
         return None
 
     def frame(self, cut, which):
-        c = self.bk["cuts"][cut]
+        c = cam_at(self.bk["cuts"][cut], which)
         pos, face = self.states[cut][which]
         cam = tuple(c["cam"][:2])
         look = c.get("look_end", c["look"]) if which == "end" else c["look"]
@@ -331,7 +350,7 @@ class Stage:
             txt += "No people in frame. "
         h = c["cam"][2]
         if c.get("tilt") == "up" or (h < 0.6 and c.get("frame") in ("全身", "膝上", "ローアングル")):
-            txt += "Low angle looking up; the morning sky fills the upper part of the frame. "
+            txt += "Low angle looking up; the sky fills the upper part of the frame. "
         if c.get("tilt") == "down" or h > 3.0:
             txt += "High angle looking down. "
         txt += "Behind: " + ", then ".join(seen) + "."
@@ -559,11 +578,11 @@ def render(st, out_dir, sections):
                     pts = [p0] + via + [p1]
                     pts = [(q[0] + off[0], q[1] + off[1]) for q in pts]
                     for q0, q1 in zip(pts[:-2], pts[1:-1]):
-                        d.line([P(*q0), P(*q1)], fill=COLORS[who], width=4)
+                        d.line([P(*q0), P(*q1)], fill=COLORS.get(who, (255, 255, 255)), width=4)
                     a0, a1 = pts[-2], pts[-1]
-                    arrow(d, P(*a0), P(*a1), COLORS[who])
+                    arrow(d, P(*a0), P(*a1), COLORS.get(who, (255, 255, 255)))
                     mx, my = P((a0[0] + a1[0]) / 2 + off[0] * 2, (a0[1] + a1[1]) / 2 + off[1] * 2)
-                    d.text((mx, my), cut[-3:], font=fs, fill=COLORS[who], anchor="mm")
+                    d.text((mx, my), cut[-3:], font=fs, fill=COLORS.get(who, (255, 255, 255)), anchor="mm")
                     n_arrow += 1
         s1 = st.states[cuts[-1]]["end"]
         for who, p in s1[0].items():
@@ -613,8 +632,8 @@ def render(st, out_dir, sections):
                 continue
             x, y = P(*p)
             v = vec_of(face[who])
-            d.line([x, y, x + v[0] * 12, y + v[1] * 12], fill=COLORS[who], width=2)
-            d.ellipse([x - 5, y - 5, x + 5, y + 5], fill=COLORS[who])
+            d.line([x, y, x + v[0] * 12, y + v[1] * 12], fill=COLORS.get(who, (255, 255, 255)), width=2)
+            d.ellipse([x - 5, y - 5, x + 5, y + 5], fill=COLORS.get(who, (255, 255, 255)))
         if not c.get("insert"):
             cam = tuple(c["cam"][:2])
             look = c["look"]
@@ -678,7 +697,7 @@ def sketch_areas(st, d, cam, ch, d2, right, ct, stt, f, W, H, hz):
         c3 = _clip_near(pts3)
         if len(c3) >= 3:
             d.polygon([(W / 2 + f * q[0] / q[2], H / 2 - f * q[1] / q[2]) for q in c3], fill=col, outline=outline)
-    d.rectangle([0, hz, W, H], fill=(40, 170, 80))   # 地平線までの沼
+    d.rectangle([0, hz, W, H], fill=tuple(st.lay.get("ground", {}).get("color", [40, 170, 80])))   # 地平線までの地面（屋敷の前は沼）
     hs = st.lay.get("house")
     for a in st.lay.get("areas", []):
         if a["kind"] == "rect" and a["x"][1] - a["x"][0] > 15:
@@ -712,7 +731,7 @@ def sketch_areas(st, d, cam, ch, d2, right, ct, stt, f, W, H, hz):
 
 def sketch(st, cut, which, path, W=1536, H=864):
     """カメラの位置・向き・レンズ・高さから、人物（色の人形）と崖の縁・遠景の方位を透視で描く。構図の参照に使う。"""
-    c = st.bk["cuts"][cut]
+    c = cam_at(st.bk["cuts"][cut], which)
     pos, face = st.states[cut][which]
     cam = tuple(c["cam"][:2])
     ch = c["cam"][2]
@@ -738,7 +757,7 @@ def sketch(st, cut, which, path, W=1536, H=864):
     d = ImageDraw.Draw(im)
     # 地平線と地面
     hz = min(H, max(0, H / 2 + f * math.tan(tilt)))
-    d.rectangle([0, hz, W, H], fill=(70, 80, 55))
+    d.rectangle([0, hz, W, H], fill=tuple(st.lay.get("ground", {}).get("color", [70, 80, 55])))
     fnt = ImageFont.truetype(FONT, 26)
     fs = ImageFont.truetype(FONT, 20)
     if st.lay.get("areas"):
@@ -767,11 +786,14 @@ def sketch(st, cut, which, path, W=1536, H=864):
     for name, pr in st.lay.get("props", {}).items():
         if "at" not in pr or name == "door":
             continue
+        if name.startswith("dune"):   # 砂丘は地面の区分（稜線）で示す。棒には描かない
+            continue
         ph = pr.get("h", 4.0 if name == "dead_tree" else 0.5)
         b = proj(tuple(pr["at"]), 0.0)
         t = proj(tuple(pr["at"]), ph)
         if b and t and -200 < b[0] < W + 200:
-            wpx = max(6, f * (0.5 if ph > 2 else 0.3) / b[2])
+            wm = 2 * pr["r"] if "r" in pr else (0.5 if ph > 2 else 0.3)   # テントや岩は幅（r）で描く
+            wpx = max(6, f * wm / b[2])
             d.rectangle([b[0] - wpx / 2, min(t[1], b[1]), b[0] + wpx / 2, max(t[1], b[1])], fill=(90, 70, 50))
             d.text((b[0], t[1] - 14), pr["ja"][:6], font=fs, fill=(60, 40, 30), anchor="mm")
     # 人物（遠い順に描く）
@@ -785,11 +807,23 @@ def sketch(st, cut, which, path, W=1536, H=864):
             order.append((b[2], who, p))
     for z, who, p in sorted(order, reverse=True):
         hgt = st.lay["people"][who]["h"]
+        pst = posture_of(c, which, who)
+        if pst == "lying":   # 寝ている人物は、体の向きに沿った横長の形で描く（頭が向いている側）
+            fv = vec_of(face[who])
+            q0, q1 = proj((p[0] - fv[0] * hgt * 0.45, p[1] - fv[1] * hgt * 0.45), 0.15), proj((p[0] + fv[0] * hgt * 0.45, p[1] + fv[1] * hgt * 0.45), 0.15)
+            if q0 and q1:
+                wpx = max(8, f * 0.32 / ((q0[2] + q1[2]) / 2))
+                d.line([q0[0], q0[1], q1[0], q1[1]], fill=COLORS.get(who, (255, 255, 255)), width=int(wpx))
+                d.ellipse([q1[0] - wpx * 0.6, q1[1] - wpx * 0.6, q1[0] + wpx * 0.6, q1[1] + wpx * 0.6], fill=COLORS.get(who, (255, 255, 255)), outline=(20, 20, 20), width=3)
+                d.text((q1[0], q1[1] - wpx - 14), f"{st.lay['people'][who]['ja']}（寝ている）", font=fnt, fill=(0, 0, 0), anchor="mm")
+            continue
+        if pst in POSTURE_H:
+            hgt *= POSTURE_H[pst]
         b, t = proj(p, 0.0), proj(p, hgt)
         if not (b and t):
             continue
         w = f * (0.55 if who != "arlecchino" else 0.8) / b[2]
-        col = COLORS[who]
+        col = COLORS.get(who, (255, 255, 255))
         d.rounded_rectangle([b[0] - w / 2, t[1], b[0] + w / 2, b[1]], radius=int(w / 2.2) + 1, fill=col, outline=(20, 20, 20), width=3)
         # 顔の向き（頭の位置に、体の向きの矢印）
         hv = vec_of(face[who])
@@ -817,7 +851,7 @@ def sketches(st, out_dir):
             continue
         sketch(st, cut, "start", sd / f"{cut}_start.png")
         made.append(sd / f"{cut}_start.png")
-        if c.get("move") or c.get("look_end") or c.get("lens_end"):
+        if c.get("move") or c.get("look_end") or c.get("lens_end") or c.get("cam_end") or c.get("posture_end"):
             sketch(st, cut, "end", sd / f"{cut}_end.png")
             made.append(sd / f"{cut}_end.png")
     # 一覧（スマホで見る用）
@@ -839,7 +873,7 @@ def describe(fr):
         return "人物なし"
     out = []
     for e in fr["people"]:
-        s = f"{SHORT[e['who']]}（{e['side']}・{e['body']}"
+        s = f"{SHORT.get(e['who'], e['who'])}（{e['side']}・{e['body']}"
         if e.get("gaze"):
             s += f"・目線 {e['gaze']}"
         out.append(s + "）")
@@ -891,11 +925,11 @@ def main():
         L += [f"- {k}: {'・'.join(v)}（{len(v)}カット）" for k, v in missing.items()]
     L += ["", "## 確かめた結果", ""]
     L.append(f"- 会話の軸をまたいだカット: {len(ck['axis'])}" + ("" if not ck["axis"] else "（" + "、".join(f"{x['cut'][-3:]} {x['axis']}" for x in ck["axis"]) + "）"))
-    L.append(f"- 映っている人物の位置・向きの飛び（カットの間で説明なしに変わる）: {len(ck['jumps'])}" + ("" if not ck["jumps"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT[x['who']]}の{x['kind']}" for x in ck["jumps"]) + "）"))
-    L.append(f"- 画面の外で動いたもの（映っていない間の移動・向き替え）: {len(ck['offscreen'])}" + ("" if not ck["offscreen"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT[x['who']]}の{x['kind']}" for x in ck["offscreen"]) + "）"))
+    L.append(f"- 映っている人物の位置・向きの飛び（カットの間で説明なしに変わる）: {len(ck['jumps'])}" + ("" if not ck["jumps"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT.get(x['who'], x['who'])}の{x['kind']}" for x in ck["jumps"]) + "）"))
+    L.append(f"- 画面の外で動いたもの（映っていない間の移動・向き替え）: {len(ck['offscreen'])}" + ("" if not ck["offscreen"] else "（" + "、".join(f"{x['cut'][-3:]} {SHORT.get(x['who'], x['who'])}の{x['kind']}" for x in ck["offscreen"]) + "）"))
     hid = {}
     for x in ck["hidden"]:
-        hid.setdefault(x["cut"][-3:], set()).add(SHORT[x["who"]])
+        hid.setdefault(x["cut"][-3:], set()).add(SHORT.get(x["who"], x["who"]))
     L.append(f"- 映さないことにしたのに画面に入る人物: {len(hid)}カット" + ("" if not hid else "（" + "、".join(f"{k} {''.join(sorted(v))}" for k, v in hid.items()) + "）"))
     L.append(f"- 人物の重なり（0.45m 未満）: {len(ck['overlap'])}" + ("" if not ck["overlap"] else "（" + "、".join(f"{x['cut'][-3:]}" for x in ck["overlap"]) + "）"))
     L.append(f"- カメラの単調さ（D-058。同じ向き3カット以上・止め3カット以上・同じ高さ4カット以上）: {len(ck['camera'])}" + ("" if not ck["camera"] else "（" + "、".join(f"{x['kind']} {x['cuts'][0][-3:]}〜{x['cuts'][-1][-3:]}" for x in ck["camera"]) + "）"))
