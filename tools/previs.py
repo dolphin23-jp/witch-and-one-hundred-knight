@@ -464,7 +464,7 @@ def main():
     ap.add_argument("scene_dir")
     ap.add_argument("cuts", nargs="*", help="カットID（省略で全カット）")
     ap.add_argument("--fps", type=int, default=24)
-    ap.add_argument("--size", default="768x432")
+    ap.add_argument("--size", default="854x480")   # Seedance は高さ 480 未満の参照動画で失敗する（2026-10-30）
     ap.add_argument("--samples", type=int, default=10)
     ap.add_argument("--out", help="出力先（既定 previs/<シーン>）")
     ap.add_argument("--denoise", action="store_true", help="ノイズ除去を入れる（1フレーム約1秒増える。既定は切る）")
