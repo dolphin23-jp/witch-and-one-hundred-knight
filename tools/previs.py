@@ -569,7 +569,7 @@ def build_site(lay, lighting=None):
         sun.rotation_euler = (math.radians(65), 0, math.radians(-100))   # 東（+X）から西へ、高さ 25°
 
 
-def build_person(who, h):
+def build_person(who, h, torch=False):
     sh = SHAPE.get(who, SHAPE_DEFAULT)
     col = COLORS.get(who, (0.9, 0.9, 0.9))
     r, hr, arm = sh["r"], sh["hr"], sh["arm"]
@@ -615,6 +615,17 @@ def build_person(who, h):
         horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
         for sx in (-1, 1):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
+    if torch:   # 松明: 右手の先に火（点光源）。腕は apply_pose で上げる
+        fire = make_mat(f"{who}_torch", (1.0, 0.55, 0.15), emit=4.0)
+        stick = make_mat(f"{who}_stick", (0.3, 0.2, 0.12))
+        prim("cyl", stick, f"{who}_torch_stick", arms[1], (0, 0, -al - 0.12), radius=0.025, depth=0.4)
+        f = prim("sphere", fire, f"{who}_torch_fire", arms[1], (0, 0, -al - 0.36), radius=0.08, scale=(1, 1, 1.5))
+        bpy.ops.object.light_add(type="POINT", location=(0, 0, 0))
+        lt = bpy.context.object
+        lt.name = f"LGT_{who}_torch"
+        lt.data.energy, lt.data.color, lt.data.shadow_soft_size = 45.0, (1.0, 0.55, 0.2), 0.1
+        lt.parent = f
+        root["torch"] = 1
     return root, head, arms
 
 
@@ -751,6 +762,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (0, sx * -math.radians(120), 0)
     elif pose == "shake":   # 犬のように体を振る
         rz += math.radians(18) * math.sin(2 * math.pi * 6 * t)
+    if root.get("torch") and pose not in ("wave", "point", "arms_up", "lie"):   # 松明を掲げる
+        arms[1].rotation_euler = (math.radians(20), -math.radians(130), 0)
     if pose in ("hold", "kneel_hold"):
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(70), 0, 0)
@@ -776,7 +789,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     plan = Plan(st, cut, sec)
     figs = {}
     for who in plan.people:
-        figs[who] = build_person(who, lay["people"][who]["h"])
+        figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False))
         if who not in plan.shown:   # 画に映さない人物は描かない（静止画と同じ）
             for o in [figs[who][0]] + list(figs[who][0].children_recursive):
                 o.hide_render = True
