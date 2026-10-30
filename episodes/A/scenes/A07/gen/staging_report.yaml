@@ -2,7 +2,7 @@ cuts:
   A07-001:
     cam:
     - 30.0
-    - 30.1
+    - 29.95
     - 26.5
     lens: 24
     bearing: 180
@@ -37,6 +37,8 @@ cuts:
       hundred-knight:
         to: rim
         via:
+        - - 30.0
+          - 31.15
         - rim
         - rim
         t:
@@ -54,37 +56,35 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.02
+        s: -0.01
         dist: 31.7
         side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 背中
       bg: 井戸の中〔井戸の中〕
       props:
       - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
       - 天井からの砂の滝
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
         face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), leaning over the rim of the well and peering down, seen from behind
-        over the shoulder, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. High angle looking down. Behind: inside a deep
-        old stone well shaft, rough stone blocks, darkness below with a faint green glow at the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness with a faint green
-        glow at the very bottom.'
+        over the shoulder, in the center of the frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone
+        blocks, darkness below with a faint green glow at the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness with a faint green glow at the very bottom.'
     end:
       people:
       - who: hundred-knight
-        s: -0.02
+        s: -0.01
         dist: 31.45
         side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 背中
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
         face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), peering down into the well, at the edge of the frame, in the center
-        of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone
-        blocks, darkness below with a faint green glow at the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness with a faint green glow at the very bottom.'
+        of the frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone blocks, darkness below with
+        a faint green glow at the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness with a faint green glow at the very bottom.'
     move:
       hundred-knight:
         to: rim
@@ -118,7 +118,7 @@ cuts:
     - 32.9
     - 31.2
     lens: 28
-    bearing: 344
+    bearing: 347
     frame: 全身
     start:
       people:
@@ -133,7 +133,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
       - 天井からの砂の滝
@@ -159,7 +158,7 @@ cuts:
         via:
         - rim
         - - 30.0
-          - 30.4
+          - 30.3
         - well
         t:
         - 0.0
@@ -186,7 +185,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 光る苔
       - 天井からの砂の滝
@@ -238,7 +236,6 @@ cuts:
       props:
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
-      - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
         face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing, seen from behind over the shoulder, facing the far wall,
         at the far left of the frame, with the back to the camera. No other people. On the far rock wall of the cavern, sand starts trickling and pouring down around a huge dark tunnel. Behind: the huge
@@ -280,7 +277,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
       - 天井からの砂の滝
@@ -294,8 +290,8 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.26
-        dist: 3.43
+        s: -0.24
+        dist: 3.44
         side: 中央
         body: 背中
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
@@ -322,8 +318,8 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.24
-        dist: 4.04
+        s: -0.22
+        dist: 4.05
         side: 中央
         body: 背中
       bg: 地下空洞の全景〔空洞 全景〕
@@ -332,7 +328,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
       - 天井からの砂の滝
@@ -346,7 +341,7 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.49
+        s: -0.47
         dist: 1.71
         side: 左
         body: 背中
@@ -370,20 +365,27 @@ cuts:
     - 31.8
     - 0.6
     lens: 24
-    bearing: 17
+    bearing: 24
     frame: 全身
     start:
-      people: []
+      people:
+      - who: hundred-knight
+        s: 1.01
+        dist: 2.93
+        side: 右
+        body: 斜め後ろ（画面左向き）
       bg: 地下空洞の全景〔空洞 全景〕
       props:
+      - 岩の柱（北東）
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
       - 天井からの砂の滝
       - 獣の骨
-      - ピラー（魔法の柱。A07 の終わりに光り始める）
-      staging: 'No people in frame. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
-        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
-        sand falling from the ceiling, deep shadows.'
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its sword ready as the monster lunges, at the far right of
+        the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
@@ -419,7 +421,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（南西）
       - 西の横穴
       - 光る苔
@@ -476,7 +477,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 光る苔
       - 天井からの砂の滝
@@ -614,7 +614,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
@@ -674,7 +673,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 西の横穴
       - 光る苔
@@ -730,7 +728,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 北の壁の大きな横穴（砂食みの出る所）
       - 天井からの砂の滝
@@ -786,7 +783,6 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 北の壁の大きな横穴（砂食みの出る所）
       - 西の横穴
@@ -835,14 +831,14 @@ cuts:
     - 41.5
     - 38.5
     - 1.3
-    lens: 28
-    bearing: 329
+    lens: 24
+    bearing: 322
     frame: 引き
     start:
       people:
       - who: hundred-knight
-        s: -0.13
-        dist: 6.78
+        s: 0.06
+        dist: 6.79
         side: 中央
         body: 背中
       bg: 地下空洞の全景〔空洞 全景〕
@@ -851,13 +847,15 @@ cuts:
       - 井戸の筒
       - 村の地面（井戸のまわり）
       - 石の井戸の縁
-      - 月の光の柱
       - 岩の柱（北西）
       - 北の壁の大きな横穴（砂食みの出る所）
       - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
       - 天井からの砂の滝
       - 天井からの砂の滝
       - 獣の骨
+      - 岩
       - 岩
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
@@ -868,8 +866,8 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.13
-        dist: 6.78
+        s: 0.06
+        dist: 6.79
         side: 中央
         body: 背中
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
@@ -909,7 +907,7 @@ checks:
     - A07-006
     - A07-007
     - A07-008
-    note: 5カット、344°付近
+    note: 5カット、347°付近
   - kind: 同じ向きが続く
     cuts:
     - A07-016
