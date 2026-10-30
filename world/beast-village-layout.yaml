@@ -18,7 +18,7 @@ light_en: "Dusk in the desert valley: the sun setting in the west behind the red
 # 光の切り替え（カットの lighting で選ぶ。previs.py が太陽・空・明かりの強さを変える）
 lighting:
   dusk:  {sun_from: 262, sun_elev: 5, sun_energy: 2.5, sun_color: [255, 170, 110], sky: [230, 140, 90], sky_strength: 1.0, lamps: 1.0}
-  night: {sun_from: 300, sun_elev: 35, sun_energy: 0.25, sun_color: [150, 170, 255], sky: [20, 28, 60], sky_strength: 0.6, lamps: 1.6}
+  night: {sun_from: 300, sun_elev: 35, sun_energy: 0.6, sun_color: [150, 170, 255], sky: [35, 50, 110], sky_strength: 1.0, lamps: 1.6}
 light_en_night: "Night in the village: a deep blue starry sky, cool faint moonlight, warm orange lamplight from windows and lanterns."
 light_en_interior: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners, cool blue starlight at the window."
 
@@ -63,12 +63,12 @@ props:
   beam_gate:   {from: [18.6, 43.0], to: [21.9, 43.0], h: 0.2, z: 2.7, t: 0.25, ja: 門の梁}
   lantern_gate: {at: [20.25, 43.0], z: 2.45, energy: 40, ja: 門のランプ}
   # 村の中
-  well:        {at: [34.0, 30.0], r: 0.9, glow: [80, 255, 140], ja: 石の井戸（底にかすかな緑）}
-  house_a:     {at: [24.0, 22.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: 0, ja: 家}
-  house_b:     {at: [42.0, 17.0], w: 7.0, d: 5.0, h: 3.2, roof: 2.0, rot: 10, ja: 家}
-  house_c:     {at: [45.0, 38.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: -8, ja: 家}
-  house_d:     {at: [27.0, 34.5], w: 5.0, d: 4.0, h: 2.8, roof: 1.6, rot: 5, ja: 家}
-  house_e:     {at: [37.0, 47.0], w: 6.0, d: 4.5, h: 3.0, roof: 1.8, rot: 0, ja: 家}
+  well:        {at: [34.0, 30.0], r: 0.9, glow: [60, 200, 110], ja: 石の井戸（底にかすかな緑）}
+  house_a:     {windows: 2, at: [24.0, 22.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: 0, ja: 家}
+  house_b:     {windows: 2, at: [42.0, 17.0], w: 7.0, d: 5.0, h: 3.2, roof: 2.0, rot: 10, ja: 家}
+  house_c:     {windows: 2, at: [45.0, 38.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: -8, ja: 家}
+  house_d:     {windows: 2, at: [27.0, 34.5], w: 5.0, d: 4.0, h: 2.8, roof: 1.6, rot: 5, ja: 家}
+  house_e:     {windows: 2, at: [37.0, 47.0], w: 6.0, d: 4.5, h: 3.0, roof: 1.8, rot: 0, ja: 家}
   fence_1:     {from: [29.0, 24.5], to: [38.0, 24.5], h: 1.0, ja: 柵}
   fence_2:     {from: [38.0, 24.5], to: [38.0, 27.5], h: 1.0, ja: 柵}
   fence_3:     {from: [47.0, 30.5], to: [52.0, 30.5], h: 1.0, ja: 柵}
