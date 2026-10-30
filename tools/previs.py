@@ -811,8 +811,8 @@ def build_fx(fx, i):
     kind = fx.get("kind", "plume")
     col = tuple(v / 255 for v in fx["color"]) if fx.get("color") and kind not in ("light",) else None
     m = make_mat(f"fx{i}", col or tuple(min(1.0, c * 1.08) for c in SAND))
-    if kind == "pool":   # 広がる沼（床に平たい円。少し光る）
-        pm = make_mat(f"fx{i}_pool", col or (0.42, 0.18, 0.55), rough=0.3, emit=fx.get("glow", 0.25))
+    if kind == "pool":   # 広がる沼（床に平たい円。少し光る。毒沼だが色は碧、ユーザー指定 2026-10-31）
+        pm = make_mat(f"fx{i}_pool", col or (0.12, 0.56, 0.45), rough=0.3, emit=fx.get("glow", 0.25))
         return [prim("cyl", pm, f"fx{i}_pool", None, (0, 0, -50), radius=1.0, depth=0.04, vertices=48)]
     if kind == "bloom":  # 花のように開く（柱のまわりの花びら。根元で外へ倒れる）
         bm = make_mat(f"fx{i}_petal", col or (0.55, 0.85, 1.0), emit=fx.get("glow", 0.6))
