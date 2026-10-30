@@ -1,0 +1,804 @@
+cuts:
+  A02-001:
+    cam:
+    - 12.6
+    - 13.2
+    - 1.0
+    lens: 28
+    bearing: 337
+    frame: 大引き
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.7
+        dist: 3.23
+        side: 左
+        body: 斜め後ろ（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右・奥寄り
+      - who: bisco
+        s: 0.16
+        dist: 8.65
+        side: 中央
+        body: 正面
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 玄関の扉
+      - 橋の左の街灯
+      - 橋の右の街灯
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right, looking at Bisco; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
+        gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, looking at the Hundred Knight. No other people. Behind: the
+        witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched
+        front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist
+        over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.7
+        dist: 3.23
+        side: 左
+        body: 斜め後ろ（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右・奥寄り
+      - who: bisco
+        s: -0.3
+        dist: 4.27
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right, looking at Bisco; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
+        gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight.
+        No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+        top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east
+        and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning
+        light.)'
+    move:
+      bisco:
+        to: b_stop
+        via:
+        - - 10.05
+          - 7.7
+        face: '@hundred-knight'
+        t:
+        - 0.2
+        - 3.4
+    note: null
+  A02-002:
+    cam:
+    - 11.4
+    - 12.2
+    - 0.95
+    lens: 85
+    bearing: 334
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 2.88
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 橋の左の街灯
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight (off screen, toward screen left).
+        No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+        top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east
+        and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning
+        light.)'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 2.88
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze: 画面右・奥寄り
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen right. No other people. Behind: the witch''s
+        house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door,
+        a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+        the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move: null
+    note: null
+  A02-003:
+    cam:
+    - 13.4
+    - 10.5
+    - 1.0
+    lens: 35
+    bearing: 275
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.35
+        dist: 3.36
+        side: 左
+        body: 横顔（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右
+      - who: bisco
+        s: 0.35
+        dist: 3.32
+        side: 右
+        body: 横顔（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左
+      bg: 西の沼と枯れ木〔枯れ木〕
+      props:
+      - 西の大きな枯れ木
+      - 西のふちの赤いきのこ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen right, looking at Bisco; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt,
+        a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people. Behind: the glowing
+        emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still
+        glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.35
+        dist: 3.36
+        side: 左
+        body: 横顔（画面右向き）
+        gaze: 画面右
+      - who: bisco
+        s: 0.35
+        dist: 3.32
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen right, looking toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the glowing emerald-green swamp
+        with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the
+        lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move: null
+    note: 手と手が触れる画は、人物を1人ずつ作って重ねる作り方では作りにくい。開始（差し出す）と終わり（受け取った後）を別々に重ね、受け渡しは動画に任せる
+  A02-004:
+    cam:
+    - 11.0
+    - 9.25
+    - 1.5
+    lens: 85
+    bearing: 213
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.0
+        dist: 1.84
+        side: 中央
+        body: 正面
+        gaze: 画面右・手前寄り
+      bg: 広場とそのまわりの沼〔用意画像 bg_02〕
+      props: []
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera, looking
+        toward screen right. No other people. Behind: the round dirt clearing edged with red mushrooms, old stumps and lamp posts, and beyond it the glowing emerald-green swamp full of gnarled dead trees
+        stretching to the horizon. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint.
+        (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end: null
+    move: null
+    note: null
+  A02-005:
+    cam:
+    - 12.6
+    - 14.0
+    - 1.3
+    lens: 35
+    bearing: 346
+    frame: 引き
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.92
+        dist: 3.72
+        side: 左
+        body: 斜め後ろ（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右・奥寄り
+      - who: bisco
+        s: -0.54
+        dist: 4.86
+        side: 左
+        body: 斜め前（画面左向き）
+        gaze: 画面右
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 玄関の扉
+      - 橋の左の街灯
+      - 橋の右の街灯
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right, looking at Bisco; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
+        gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen left, looking toward screen right. No
+        other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+        top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east
+        and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning
+        light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.92
+        dist: 3.72
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.63
+        dist: 3.91
+        side: 右
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        three-quarter view, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt,
+        a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight. No other people. Behind:
+        the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched
+        front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist
+        over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move:
+      bisco:
+        to: b_leave
+        face: '@hundred-knight'
+        t:
+        - 0.3
+        - 2.6
+    note: null
+  A02-006:
+    cam:
+    - 10.3
+    - 11.6
+    - 0.95
+    lens: 50
+    bearing: 57
+    frame: 膝上
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.11
+        side: 中央
+        body: 正面
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕／東の沼（遊歩道は広場の北東の端から出る）〔沼の水面〕
+      props:
+      - 東の大きな枯れ木
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen left). No other people. Behind: the
+        witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched
+        front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides, then the glowing emerald-green swamp full of gnarled dead trees. Early morning: a pale, clear
+        morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep
+        its layout and details but render it in morning light.)'
+    end: null
+    move: null
+    note: null
+  A02-007:
+    cam:
+    - 12.0
+    - 10.55
+    - 1.4
+    lens: 85
+    bearing: 263
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 2.02
+        side: 中央
+        body: 正面
+        gaze_to: bisco
+        gaze: カメラの方
+      bg: 西の沼と枯れ木〔枯れ木〕
+      props:
+      - 西のふちの赤いきのこ
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera, looking
+        at Bisco (off screen, toward screen center). No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning: a pale, clear morning sky
+        with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout
+        and details but render it in morning light.)'
+    end: null
+    move: null
+    note: null
+  A02-008:
+    cam:
+    - 10.5
+    - 12.0
+    - 1.0
+    lens: 85
+    bearing: 49
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.19
+        side: 中央
+        body: 正面
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 東の大きな枯れ木
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen left). No other people. Behind: the
+        witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched
+        front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist
+        over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.19
+        side: 中央
+        body: 正面
+        gaze: 画面右・手前寄り
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, looking toward screen right. No other people. Behind: the witch''s house on its round wooden
+        deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with
+        steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows
+        green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move: null
+    note: null
+  A02-009:
+    cam:
+    - 11.4
+    - 14.2
+    - 1.3
+    lens: 35
+    bearing: 357
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.69
+        dist: 3.47
+        side: 左
+        body: 横顔（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右
+      - who: bisco
+        s: 0.79
+        dist: 4.22
+        side: 右
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 玄関の扉
+      - 橋の左の街灯
+      - 橋の右の街灯
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        profile, turned toward screen right, looking at Bisco; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+        belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight. No other people.
+        Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top,
+        the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and
+        a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.69
+        dist: 3.47
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: 0.1
+        dist: 4.0
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze: 奥
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking into the distance away from the camera. No other people.
+        Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top,
+        the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and
+        a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move:
+      bisco:
+        to: b_back
+        face: '@hundred-knight'
+        t:
+        - 0.2
+        - 1.6
+    note: null
+  A02-010:
+    cam:
+    - 9.8
+    - 12.6
+    - 0.95
+    lens: 85
+    bearing: 34
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 2.88
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze: 画面左・奥寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props: []
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left. No other people. Behind: the witch''s
+        house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door,
+        a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+        the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end: null
+    move: null
+    note: 誰も見ていない（と本人が思っている）本音の一瞬。次の 011 で我に返る
+  A02-011:
+    cam:
+    - 10.1
+    - 12.2
+    - 1.0
+    lens: 85
+    bearing: 33
+    frame: 寄り
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 2.39
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props: []
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight (off screen, toward screen left).
+        No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+        top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east
+        and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning
+        light.)'
+    end: null
+    move: null
+    note: null
+  A02-012:
+    cam:
+    - 10.0
+    - 12.9
+    - 1.1
+    lens: 85
+    bearing: 27
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.04
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props: []
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight (off screen, toward screen left).
+        No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+        top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east
+        and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning
+        light.)'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.04
+        side: 中央
+        body: 斜め前（画面左向き）
+        gaze: カメラの方
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left, looking toward the camera. No other people. Behind: the witch''s
+        house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door,
+        a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+        the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move: null
+    note: null
+  A02-013:
+    cam:
+    - 8.0
+    - 13.4
+    - 1.5
+    lens: 35
+    bearing: 38
+    frame: 引き
+    start:
+      people:
+      - who: arlecchino
+        s: -0.89
+        dist: 7.94
+        side: 左
+        body: 正面
+        gaze_to: bisco
+        gaze: 画面右・手前寄り
+      - who: hundred-knight
+        s: -0.01
+        dist: 3.28
+        side: 中央
+        body: 背中
+        gaze_to: arlecchino
+        gaze: 画面左・奥寄り
+      - who: bisco
+        s: 0.31
+        dist: 4.61
+        side: 中央
+        body: 正面
+        gaze_to: hundred-knight
+        gaze: 画面左・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕／東の沼（遊歩道は広場の北東の端から出る）〔沼の水面〕
+      props:
+      - 玄関の扉
+      - 橋の右の街灯
+      - 東の大きな枯れ木
+      staging: 'In frame (exactly 3 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far left of the frame, facing the camera, looking at Bisco; the Hundred
+        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with the back to the camera, looking at Arlecchino; Bisco (short black bob
+        hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the
+        right of the frame, facing the camera, looking at the Hundred Knight. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone
+        roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides,
+        then the glowing emerald-green swamp full of gnarled dead trees. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows
+        green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.01
+        dist: 3.28
+        side: 中央
+        body: 背中
+      - who: arlecchino
+        s: 0.01
+        dist: 5.98
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.31
+        dist: 4.61
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+        gaze_to: arlecchino
+        gaze: 画面左・奥寄り
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with
+        the back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head,
+        pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue
+        eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, seen from behind
+        at an angle, turned toward screen left, looking at Arlecchino. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs
+        with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides, then
+        the glowing emerald-green swamp full of gnarled dead trees. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green;
+        the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move:
+      arlecchino:
+        to: arle_stop
+        via:
+        - - 10.6
+          - 7.6
+        face: '@bisco'
+        t:
+        - 0.0
+        - 2.4
+      bisco:
+        face: '@arlecchino'
+        t:
+        - 1.2
+        - 1.7
+    note: null
+  A02-014:
+    cam:
+    - 10.0
+    - 11.4
+    - 1.6
+    lens: 85
+    bearing: 32
+    frame: 胸上
+    start:
+      people:
+      - who: arlecchino
+        s: 0.0
+        dist: 3.19
+        side: 中央
+        body: 正面
+        gaze_to: bisco
+        gaze: 画面右・手前寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props: []
+      staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera, looking at Bisco (off screen, toward screen
+        right). No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+        green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
+        from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render
+        it in morning light.)'
+    end: null
+    move: null
+    note: null
+  A02-015:
+    cam:
+    - 9.2
+    - 12.8
+    - 1.0
+    lens: 50
+    bearing: 40
+    frame: 膝上
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.93
+        dist: 2.04
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: arlecchino
+        s: -0.43
+        dist: 4.74
+        side: 左
+        body: 正面
+      - who: bisco
+        s: 0.0
+        dist: 3.41
+        side: 中央
+        body: 背中
+        gaze_to: arlecchino
+        gaze: 画面左・奥寄り
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 橋の右の街灯
+      - 東の大きな枯れ木
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
+        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, facing the camera; Bisco (short black bob hair with two
+        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the
+        frame, with the back to the camera, looking at Arlecchino. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with
+        glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning:
+        a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night
+        scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.93
+        dist: 2.04
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: arlecchino
+        s: -0.43
+        dist: 4.74
+        side: 左
+        body: 正面
+      - who: bisco
+        s: 0.0
+        dist: 3.41
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+        gaze: 画面右・奥寄り
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
+        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, facing the camera; Bisco (short black bob hair with two
+        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the
+        frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked
+        orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp
+        posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The
+        background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move:
+      bisco:
+        face: 95
+        t:
+        - 2.4
+        - 3.0
+    note: null
+  A02-016:
+    cam:
+    - 9.4
+    - 17.0
+    - 3.2
+    lens: 28
+    bearing: 26
+    frame: 大引き
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.58
+        dist: 5.84
+        side: 左
+        body: 斜め後ろ（画面右向き）
+        gaze_to: bisco
+        gaze: 画面右・奥寄り
+      - who: arlecchino
+        s: -0.29
+        dist: 8.47
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.26
+        dist: 6.99
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 橋と玄関と屋敷の正面〔用意画像 bg_01〕
+      props:
+      - 玄関の扉
+      - 橋の左の街灯
+      - 橋の右の街灯
+      - 東の大きな枯れ木
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, seen from
+        behind at an angle, turned toward screen right, looking at Bisco; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern,
+        two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, facing the camera; Bisco (short black bob
+        hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the
+        left of the frame, in profile, turned toward screen right. No other people. High angle looking down. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange
+        shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts
+        on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background
+        reference image is a night scene; keep its layout and details but render it in morning light.)'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.58
+        dist: 5.84
+        side: 左
+        body: 背中
+        gaze: 画面左・奥寄り
+      - who: arlecchino
+        s: 0.54
+        dist: 9.62
+        side: 右
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.75
+        dist: 10.32
+        side: 右
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the
+        back to the camera, looking toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen right; Bisco
+        (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
+        standing, at the far right of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: the witch''s house on its round wooden deck over
+        the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps
+        leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green;
+        the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)'
+    move:
+      bisco:
+        to: exit_b
+        t:
+        - 0.3
+        - 5.0
+      arlecchino:
+        to: exit_a
+        via:
+        - - 13.0
+          - 9.3
+        t:
+        - 1.0
+        - 5.6
+      hundred-knight:
+        face: window
+        t:
+        - 4.6
+        - 5.6
+    note: 次の A03（メタリカの自室）へつなぐ
+checks:
+  axis: []
+  jumps:
+  - cut: A02-013
+    who: arlecchino
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  overlap: []
+  offscreen: []
+  hidden: []
