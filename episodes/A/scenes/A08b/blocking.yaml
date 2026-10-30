@@ -25,7 +25,7 @@ places:
   c100:   [58.0, 34.84]
   c160:   [57.1, 35.9]       # 020 から 038 のルッキーニィ
   t1:     [57.6, 33.1]       # 023 止めに入ったティト
-  sprout: [74.0, 30.5]       # 031 イメージ: 村の外の砂地（東の崖の切れ目の外）
+  sprout: [71.5, 30.5]       # 031 イメージ: 村の外の砂地（東の崖の切れ目の外。砂丘 e1 の手前）
   leave:  [49.6, 33.0]       # 039 メタリカが帰っていく先（井戸の方）
 
 start:
@@ -554,9 +554,9 @@ cuts:
       - {kind: sprout, t: [0.6, 9.6], at: sprout, n: 7, h: 0.5, grow: 4.4, wither: 6.2}
       - {kind: plume, t: [6.2, 8.0], at: sprout, r: 0.6, h: 0.3, shape: fall}
     cam_keys:
-      - {t: 0.0, cam: [75.6, 31.4, 0.35], look: sprout, look_h: 0.2, lens: 45, frame: 寄り}
-      - {t: 6.0, cam: [75.2, 31.2, 0.32], look: sprout, look_h: 0.25, lens: 50, ease: linear}
-      - {t: 9.6, cam: [75.2, 31.2, 0.32], look: sprout, look_h: 0.15, lens: 50}
+      - {t: 0.0, cam: [70.0, 31.6, 0.35], look: sprout, look_h: 0.2, lens: 45, frame: 寄り}   # 西から（砂丘の中に入っていて真っ黒だった）
+      - {t: 6.0, cam: [70.3, 31.4, 0.32], look: sprout, look_h: 0.25, lens: 50, ease: linear}
+      - {t: 9.6, cam: [70.3, 31.4, 0.32], look: sprout, look_h: 0.15, lens: 50}
     bg: desert_edge
     light_en: "A dreamlike image: barren sand in soft golden morning light, everything else blurred."
     extra_en: "A tiny sprout pushes up from a seed in the sand and grows quickly into a small plant with bell-shaped buds."
@@ -580,8 +580,8 @@ cuts:
         - {t: 7.6, at: t1, face: 215, pose: look_down}
         - {t: 11.4, at: t1, face: 215, pose: look_down}
     cam_keys:
-      - {t: 0.0, cam: [55.7, 35.6, 1.55], look: tito, look_h: 1.3, lens: 40, frame: 寄り}
-      - {t: 11.4, cam: [55.8, 35.5, 1.55], look: tito, look_h: 1.25, lens: 50, ease: linear}
+      - {t: 0.0, cam: [55.3, 34.9, 1.7], look: tito, look_h: 1.3, lens: 40, frame: 寄り}   # メタリカの右肩の後ろ（真後ろで帽子が画を隠していた）
+      - {t: 11.4, cam: [55.4, 34.8, 1.7], look: tito, look_h: 1.25, lens: 50, ease: linear}
     bg: house_front
     act: {start: メタリカの肩越しにティト, do: メタリカが手を振って問いただす。ティトが向き直り、目を伏せて首を振る, end: うつむくティト, sync: L257「あん？ならば、砂食みがいなくなった今、…生えるということじゃないのか？」は 0.3秒から、L258「残念ですが、砂食みは１匹ではありません。」は 7.1秒から}
     camera: メタリカの肩越しにティト。ゆっくり寄る
@@ -647,8 +647,8 @@ cuts:
         - {t: 1.0, at: m1, face: 159, pose: cross}
         - {t: 11.3, at: m1, face: 159, pose: look_down}
     cam_keys:
-      - {t: 0.0, cam: [56.3, 34.2, 1.6], look: luckiny, look_h: 0.9, lens: 35, frame: 全身}
-      - {t: 11.3, cam: [56.35, 34.3, 1.6], look: luckiny, look_h: 0.75, lens: 38, ease: linear}
+      - {t: 0.0, cam: [56.9, 33.3, 2.1], look: luckiny, look_h: 0.9, lens: 35, frame: 全身}   # メタリカの後ろの高い所（メタリカの中に入っていて真っ黒だった）
+      - {t: 11.3, cam: [56.9, 33.4, 2.1], look: luckiny, look_h: 0.75, lens: 38, ease: linear}
     bg: house_front
     act: {start: メタリカの目の高さから, do: ルッキーニィがメタリカに向き直り、手を組んで頼み、「偉大なる沼の魔女様！」で深く頭を下げる, end: 頭を下げるルッキーニィを見下ろす, sync: L263「お願いです、魔女様！必ず、“スズの音草”は探しておきますので、弟子にしてください！」は 0.3秒から、L264「偉大なる、沼の魔女様！お願いします！」は 6.8秒から}
     camera: メタリカの目の高さから見下ろす（俯瞰。メタリカの肩ごし）
