@@ -3,5 +3,9 @@
 #   正面 → front、斜め前 → front と side、横顔 → side、斜め後ろ → side と back、背中 → back
 #   寄り・大寄り・胸上 は顔の図（face_front か face_side）も添える
 views: [front, side, back, face_front, face_side]
-people: [metallica, bisco, arlecchino, hundred-knight]
+people: [metallica, bisco, arlecchino, hundred-knight, luckiny, tito]
 path: characters/<人物>/views/<人物>_<図>.png
+# 2026-10-30: 砂漠編。luckiny・tito はユーザーが整形した設定画（refs/<人物>_sheet_01）から。ルッキーニィの笑顔（漫符の線つき）は使わない
+# 砂食み（sand-eater）は人ではないので図が違う: side（側面）、top（上面。上からの俯瞰に使う）、front（頭の側から）、back（尾の側から）、eye（目の寄り）
+creatures:
+  sand-eater: [side, top, front, back, eye]
