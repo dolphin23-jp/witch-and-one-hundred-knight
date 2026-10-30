@@ -17,6 +17,10 @@ blocking.yaml に足した任意の項目（staging.py は読まない）:
   move.<人物>.t: [始め, 終わり]   移動する秒（カットの頭から）。省略はカット全体。動きは滑らかに始まり滑らかに止まる
   cam_end: [x, y, 高さ]          カメラ本体が動くとき（押し込み・引き）の終わりの位置
   cam_t: [始め, 終わり]          カメラが動く秒。省略はカット全体
+  動きのキー（D-060）: keys（人物）・cam_keys（カメラ）・shake（揺れ）・creatures（砂食みなど）・fx（砂の噴き上げ・波紋）。
+  書き方は tools/motion.py の頭のコメント。人物は砂丘（layout の dune*）の上では高さが上がる。
+
+動きの確認（D-060）: --motion 0.5 で 0.5秒ごとのコマだけ描き、<カット>_motion.jpg（秒を書いて並べた画像）を作る。動画は作らない。
 
 Blender の描画は Cycles（CPU）。GPU がないクラウド環境では EEVEE と Workbench は使えない。
 """
@@ -33,6 +37,7 @@ import yaml
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import staging  # noqa: E402
+import motion  # noqa: E402  動きのキー（D-060）
 
 import bpy  # noqa: E402
 from bpy_extras.object_utils import world_to_camera_view  # noqa: E402
@@ -92,6 +97,10 @@ class Plan:
         only = self.c.get("only")
         self.shown = [w for w in self.people if only is None or w in only]
         self.posture_t = self.c.get("posture_t", sec / 2)   # 姿勢が変わる秒（posture → posture_end）
+        # 動きのキー（D-060）。keys のある人物は、時刻ごとの位置・高さ・姿勢をキーから取る
+        self.tracks = {w: motion.PersonTrack(ks, st.place) for w, ks in (self.c.get("keys") or {}).items()}
+        self.camtrack = motion.CamTrack(self.c["cam_keys"]) if self.c.get("cam_keys") else None
+        self.creatures = {n: motion.CreatureTrack(s, st.place) for n, s in (self.c.get("creatures") or {}).items()}
 
     # 人物
     def _window(self, who):
@@ -109,6 +118,8 @@ class Plan:
         return smooth((t - t0) / max(1e-6, t1 - t0))
 
     def position(self, who, t):
+        if who in self.tracks:
+            return self.tracks[who].at(t)[0]
         if self.start_pos[who] == self.end_pos[who] and not (self.c.get("move") or {}).get(who, {}).get("via"):
             return tuple(self.start_pos[who])
         return catmull(self._path(who), self.ease(who, t))
@@ -116,7 +127,31 @@ class Plan:
     def positions(self, t):
         return {w: self.position(w, t) for w in self.people}
 
+    def height(self, who, t):
+        """地面からの高さ m（跳ぶ・埋まる）。キーのない人物は 0。"""
+        return self.tracks[who].at(t)[1] if who in self.tracks else 0.0
+
+    def pose_name(self, who, t):
+        if who in self.tracks:
+            return self.tracks[who].at(t)[2]
+        pst = staging.posture_of(self.c, "end" if t >= self.posture_t else "start", who)
+        return {"lying": "lie", "sitting": "sit", "kneeling": "kneel", "crouching": "crouch"}.get(pst, "stand")
+
     def face(self, who, t, pos):
+        if who in self.tracks:
+            kind, fa, fb, u = self.tracks[who].face_key(t)
+
+            def resolve(f):
+                if f is None:
+                    return self.start_face[who]
+                if isinstance(f, str) and f.startswith("@"):
+                    f = f[1:]
+                return self.st.face_of(f, who, pos)
+            if kind == "dir":
+                return fa
+            if kind == "lerp":
+                return lerp_bearing(resolve(fa), resolve(fb), u)
+            return resolve(fa)
         e = self.ease(who, t)
         ts, te = self.s["track_start"].get(who), self.s["track_end"].get(who)
         if te:
@@ -147,6 +182,32 @@ class Plan:
 
     def camera(self, t, pos):
         c = self.c
+        if self.camtrack:
+            def look_pt(v, p):
+                return tuple(p[v]) if isinstance(v, str) and v in p else tuple(self.st.place(v))
+
+            def look_height(v):
+                if isinstance(v, str) and v in self.st.lay["people"]:
+                    return self.st.lay["people"][v]["h"] * 0.75 + (self.height(v, t) if v in pos else 0.0)
+                return 0.0
+            heads = {n: tr.head(t) for n, tr in self.creatures.items()}
+            pos2 = {**pos, **{n: h[:2] for n, h in heads.items()}}
+
+            def base_z(name, x, y):   # follow の高さの土台: 生き物は頭の高さ、人物はカメラの下の地面
+                return heads[name][2] if name in heads else motion.ground_z(self.st.lay, x, y)
+
+            def look_height2(v):
+                if isinstance(v, str) and v in heads:
+                    return heads[v][2]
+                if isinstance(v, str) and v in pos:
+                    x, y = pos[v]
+                    return look_height(v) + motion.ground_z(self.st.lay, x, y)
+                return look_height(v)
+            cam, look, lh, lens = self.camtrack.at(t, pos2, look_pt, look_height2, base_z)
+            pitch = math.atan2(lh - cam[2], max(0.3, math.dist(cam[:2], look)))
+            yaw = staging.bearing_of((look[0] - cam[0], look[1] - cam[1]))
+            sy, sp = motion.shake_at(c.get("shake"), t)
+            return cam, yaw + sy, pitch + math.radians(sp), lens
         t0, t1 = self._cam_t()
         e = smooth((t - t0) / max(1e-6, t1 - t0))
         cam0 = c["cam"]
@@ -161,7 +222,8 @@ class Plan:
         lens = lerp(c["lens"], c.get("lens_end", c["lens"]), e)
         pitch = staging.tilt_of({**c, "cam": cam}, tuple(cam[:2]), look)   # 高さはその時刻のカメラの高さ（cam_end で動くとき）
         yaw = staging.bearing_of((look[0] - cam[0], look[1] - cam[1]))
-        return cam, yaw, pitch, lens
+        sy, sp = motion.shake_at(c.get("shake"), t)
+        return cam, yaw + sy, pitch + math.radians(sp), lens
 
 
 # ---------- Blender の場面 ----------
@@ -359,8 +421,15 @@ def build_person(who, h):
     m_face = make_mat(f"{who}_nose", (1.0, 0.93, 0.8))
     prim("cyl", m_body, f"{who}_body", root, (0, 0, body_h / 2), radius=r, depth=body_h)
     al = body_h * 0.6
-    for sx in (-1, 1):
-        prim("cyl", m_dark, f"{who}_arm{sx}", root, (sx * (r + arm), 0, body_h * 0.92 - al / 2), radius=arm, depth=al)
+    arms = {}
+    for sx in (-1, 1):   # 腕は肩を軸に回せるように、肩の位置の空の親に付ける
+        piv = bpy.data.objects.new(f"SHOULDER_{who}{sx}", None)
+        bpy.context.collection.objects.link(piv)
+        piv.parent = root
+        piv.location = (sx * (r + arm), 0, body_h * 0.92)
+        prim("cyl", m_dark, f"{who}_arm{sx}", piv, (0, 0, -al / 2), radius=arm, depth=al)
+        arms[sx] = piv
+    root["arms"] = 1
     head = bpy.data.objects.new(f"HEAD_{who}", None)
     bpy.context.collection.objects.link(head)
     head.parent = root
@@ -382,7 +451,11 @@ def build_person(who, h):
         horn = make_mat("horn", (0.72, 0.45, 0.2))
         for sx in (-1, 1):
             prim("cyl", horn, f"horn{sx}", head, (sx * hr * 0.55, 0, hr * 2.4 + 0.05), radius=0.03, depth=0.25)
-    return root, head
+    elif who in ("luckiny", "tito"):   # 獣人の角
+        horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
+        for sx in (-1, 1):
+            prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
+    return root, head, arms
 
 
 def setup_render(scene, w, h, samples, denoise=False):
@@ -405,7 +478,126 @@ def setup_render(scene, w, h, samples, denoise=False):
 
 # ---------- 実行 ----------
 
-def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False):
+SAND = (0.86, 0.69, 0.40)
+
+
+def build_creature(name, track):
+    """生き物の体（頭から尾までの球）と、砂の下の浅い所に出る影と盛り上がり。"""
+    col = COLORS.get(name, (0.6, 0.6, 0.5))
+    m_body = make_mat(f"{name}_body", col)
+    m_head = make_mat(f"{name}_head", tuple(c * 0.75 for c in col))
+    m_shadow = make_mat(f"{name}_shadow", (0.35, 0.25, 0.12))
+    m_mound = make_mat(f"{name}_mound", tuple(min(1.0, c * 1.12) for c in SAND))
+    segs, shadows, mounds = [], [], []
+    for i in range(track.segs):
+        segs.append(prim("sphere", m_head if i == 0 else m_body, f"{name}_seg{i}", None, (0, 0, -50), radius=1.0))
+        shadows.append(prim("cyl", m_shadow, f"{name}_shadow{i}", None, (0, 0, -50), radius=1.0, depth=0.02))
+        mounds.append(prim("sphere", m_mound, f"{name}_mound{i}", None, (0, 0, -50), radius=1.0))
+    return segs, shadows, mounds
+
+
+def pose_creature(parts, track, t):
+    segs, shadows, mounds = parts
+    for (p, r), so, sh, mo in zip(track.body(t), segs, shadows, mounds):
+        x, y, z = p
+        so.location = bl((x, y), z)
+        so.scale = (r, r, r)
+        if -2.5 < z < 0.0:   # 砂の下の浅い所: 影（深いほど薄く小さく）と盛り上がり
+            k = 1.0 + z / 2.5
+            sh.location = bl((x, y), 0.03)
+            sh.scale = (r * (1.3 + 0.4 * k), r * (1.3 + 0.4 * k), 1.0)
+            mo.location = bl((x, y), -r * 0.8)
+            mo.scale = (r * 1.4, r * 1.4, r * (0.3 + 0.8 * k))
+        else:
+            sh.location = mo.location = (0, 0, -50)
+
+
+def build_fx(fx, i):
+    kind = fx.get("kind", "plume")
+    m = make_mat(f"fx{i}", tuple(min(1.0, c * 1.08) for c in SAND))
+    if kind == "ring":   # 波紋は平たく細い、少し暗い輪
+        m = make_mat(f"fx{i}_ring", tuple(c * 0.72 for c in SAND))
+        objs = []
+        for j in range(int(fx.get("n", 3))):
+            bpy.ops.mesh.primitive_torus_add(major_radius=1.0, minor_radius=0.025, major_segments=48, minor_segments=6)
+            o = bpy.context.object
+            o.data.materials.append(m)
+            o.location = (0, 0, -50)
+            objs.append(o)
+        return objs
+    return [prim("sphere", m, f"fx{i}_{j}", None, (0, 0, -50), radius=1.0) for j in range(6)]
+
+
+def pose_fx(fx, objs, t, pos, place):
+    at = fx["at"]
+    p = pos[at] if isinstance(at, str) and at in pos else place(at)
+    amt = motion.fx_amount(fx, t)
+    t0, t1 = fx["t"]
+    if fx.get("kind") == "ring":   # 波紋: 輪が順に広がる
+        n = len(objs)
+        for j, o in enumerate(objs):
+            u = ((t - t0) / max(1e-6, t1 - t0) * n - j) % n / n if t0 <= t <= t1 else -1
+            if 0 <= u <= 1:
+                rr = fx.get("r", 3.0) * (0.1 + u)
+                o.location = bl(p, 0.0)
+                o.scale = (rr, rr, 1.0)
+            else:
+                o.location = (0, 0, -50)
+        return
+    r, h = fx.get("r", 2.0), fx.get("h", 4.0)   # 噴き上げ: 球の柱が伸びて広がる
+    for j, o in enumerate(objs):
+        if amt <= 0.01:
+            o.location = (0, 0, -50)
+            continue
+        f = j / max(1, len(objs) - 1)
+        ang = j * 2.4
+        rr = r * (0.35 + 0.65 * f) * amt
+        o.location = bl((p[0] + math.cos(ang) * r * 0.3 * f, p[1] + math.sin(ang) * r * 0.3 * f), h * f * amt)
+        o.scale = (rr, rr, rr * 0.8)
+
+
+def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
+    """姿勢を人形に当てる（走る上下動・前傾、しゃがむ、伏せる、手を振る、指さす、両手を上げる、体を振る）。"""
+    hh = lay["people"][who]["h"]
+    rx, rz, k = 0.0, -math.radians(b), 1.0
+    for sx, piv in arms.items():
+        piv.rotation_euler = (0, 0, 0)
+    if pose == "lie":   # うつ伏せ: 体を前へ倒し、頭が向いている側に（体の中ほどを位置に）
+        r = SHAPE.get(who, SHAPE_DEFAULT)["r"]
+        root.location = bl((x - math.sin(math.radians(b)) * hh / 2, y + math.cos(math.radians(b)) * hh / 2), r + z)
+        root.rotation_euler = (-math.pi / 2, 0, rz)
+        root.scale = (1, 1, 1)
+        return
+    if pose in ("run", "walk"):
+        f, amp, lean, swing = (2.6, 0.06, 14, 45) if pose == "run" else (1.8, 0.025, 4, 25)
+        z += abs(math.sin(2 * math.pi * f * t)) * amp * hh
+        rx = -math.radians(lean)
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(swing) * math.sin(2 * math.pi * f * t / 2 + (0 if sx > 0 else math.pi)), 0, 0)
+    elif pose in ("crouch", "crouching"):
+        k, rx = 0.65, -math.radians(20)
+    elif pose in ("kneel", "kneeling"):
+        k = 0.7
+    elif pose in ("sit", "sitting"):
+        k = 0.6
+    elif pose == "jump":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (0, sx * -math.radians(120), 0)
+    elif pose == "shake":   # 犬のように体を振る
+        rz += math.radians(18) * math.sin(2 * math.pi * 6 * t)
+    if pose == "wave":
+        arms[1].rotation_euler = (0, -math.radians(150 + 20 * math.sin(2 * math.pi * 2.0 * t)), 0)
+    elif pose == "point":
+        arms[1].rotation_euler = (math.radians(90), 0, 0)
+    elif pose == "arms_up":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (0, sx * -math.radians(160), 0)
+    root.location = bl((x, y), z)
+    root.rotation_euler = (rx, 0, rz)
+    root.scale = (1, 1, k)
+
+
+def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False, motion_step=None):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
     build_site(lay)
@@ -416,6 +608,8 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         if who not in plan.shown:   # 画に映さない人物は描かない（静止画と同じ）
             for o in [figs[who][0]] + list(figs[who][0].children_recursive):
                 o.hide_render = True
+    creatures = {n: build_creature(n, tr) for n, tr in plan.creatures.items()}
+    fxs = [(fx, build_fx(fx, i)) for i, fx in enumerate(plan.c.get("fx") or [])]
     bpy.ops.object.camera_add()
     cam = bpy.context.object
     cam.name = "CAM"
@@ -434,22 +628,15 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     def pose(i):
         t = i / fps
         pos = plan.positions(t)
-        for who, (root, head) in figs.items():
+        for who, (root, head, arms) in figs.items():
             b = plan.face(who, t, pos)
             x, y = pos[who]
-            pst = staging.posture_of(plan.c, "end" if t >= plan.posture_t else "start", who)
-            if pst == "lying":   # うつ伏せ: 体を前へ倒し、頭が向いている側に
-                r = SHAPE.get(who, SHAPE_DEFAULT)["r"]
-                hh = lay["people"][who]["h"]   # 体の中ほどを位置に（略図と同じ。頭は向きの側に h×0.45）
-                root.location = bl((x - math.sin(math.radians(b)) * hh / 2, y + math.cos(math.radians(b)) * hh / 2), r)
-                root.rotation_euler = (-math.pi / 2, 0, -math.radians(b))
-                root.scale = (1, 1, 1)
-            else:
-                root.location = bl((x, y))
-                root.rotation_euler = (0, 0, -math.radians(b))
-                k = staging.POSTURE_H.get(pst, 1.0) if pst else 1.0
-                root.scale = (1, 1, k)
+            apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, motion.ground_z(lay, x, y) + plan.height(who, t), t, lay)
             head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
+        for name, parts in creatures.items():
+            pose_creature(parts, plan.creatures[name], t)
+        for fx, objs in fxs:
+            pose_fx(fx, objs, t, pos, st.place)
         (cx, cy, cz), yaw, pitch, lens = plan.camera(t, pos)
         cam.location = bl((cx, cy), cz)
         cam.rotation_euler = (math.pi / 2 + pitch, 0, -math.radians(yaw))
@@ -457,7 +644,13 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         bpy.context.view_layer.update()
         return pos
 
-    for i in ([0, n // 2, n - 1] if preview else range(n)):   # preview: 始め・中ほど・終わりの3枚だけ
+    if motion_step:   # 動きの確認: motion_step 秒ごとのコマだけ描く（動画は作らない）
+        idx = sorted({min(n - 1, round(k * motion_step * fps)) for k in range(int(sec / motion_step) + 1)} | {n - 1})
+    elif preview:     # 始め・中ほど・終わりの3枚だけ
+        idx = [0, n // 2, n - 1]
+    else:
+        idx = range(n)
+    for i in idx:
         pos = pose(i)
         out_of_frame = []
         for who in plan.shown:
@@ -473,7 +666,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             fr = st.frame(cut, which)
             res = []
             for e in fr["people"]:
-                root, head = figs[e["who"]]
+                root = figs[e["who"]][0]
                 p = Vector(root.matrix_world.translation) + Vector((0, 0, lay["people"][e["who"]]["h"] * 0.5))
                 v = world_to_camera_view(scene, cam, p)
                 res.append({"who": e["who"], "staging_s": e["s"], "blender_s": round((v.x - 0.5) * 2, 2)})
@@ -481,14 +674,35 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         scene.render.filepath = str(frames_dir / f"{i:04d}.png")
         bpy.ops.render.render(write_still=True)
     out_dir.mkdir(parents=True, exist_ok=True)
-    mp4 = out_dir / f"{cut}.mp4"
-    if preview:
-        checks["warnings"] = warnings
+    checks["warnings"] = warnings
+    checks["frames"] = list(idx)
+    if preview or motion_step:
         return None, frames_dir, n, checks
+    mp4 = out_dir / f"{cut}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(fps), "-i", str(frames_dir / "%04d.png"),
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", str(mp4)], check=True)
-    checks["warnings"] = warnings
     return mp4, frames_dir, n, checks
+
+
+def motion_sheet(cut, shot, frames_dir, frames, fps, out_dir, cols=4):
+    """動きの確認用: 決まった秒ごとのコマを左上から並べ、秒を書いた画像（D-060）。"""
+    from PIL import Image, ImageDraw, ImageFont
+    W, H = 400, 225
+    rows = (len(frames) + cols - 1) // cols
+    sheet = Image.new("RGB", (W * cols, H * rows + 36), (25, 25, 25))
+    d = ImageDraw.Draw(sheet)
+    font = ImageFont.truetype(staging.FONT, 18) if staging.FONT else None
+    small = ImageFont.truetype(staging.FONT, 16) if staging.FONT else None
+    d.text((10, 8), f"{cut}  {shot.get('sec')}秒  {shot.get('shot', '')}", fill=(230, 230, 230), font=font)
+    for k, i in enumerate(frames):
+        fr = Image.open(frames_dir / f"{i:04d}.png").convert("RGB").resize((W, H))
+        x, y = (k % cols) * W, 36 + (k // cols) * H
+        sheet.paste(fr, (x, y))
+        d.rectangle([x, y, x + 64, y + 22], fill=(0, 0, 0))
+        d.text((x + 6, y + 2), f"{i / fps:.1f}s", fill=(255, 255, 255), font=small)
+    p = out_dir / f"{cut}_motion.jpg"
+    sheet.save(p, quality=85)
+    return p
 
 
 def check_sheet(cut, shot, frames_dir, n, out_dir):
@@ -528,6 +742,7 @@ def main():
     ap.add_argument("--out", help="出力先（既定 previs/<シーン>）")
     ap.add_argument("--denoise", action="store_true", help="ノイズ除去を入れる（1フレーム約1秒増える。既定は切る）")
     ap.add_argument("--preview", action="store_true", help="始め・中ほど・終わりの3枚だけ描いて確認画像を作る（動画は作らない）")
+    ap.add_argument("--motion", type=float, nargs="?", const=0.5, help="動きの確認（D-060）: この秒ごとのコマだけ描いて <カット>_motion.jpg を作る（既定 0.5秒、動画は作らない）")
     a = ap.parse_args()
     st = staging.Stage(a.scene_dir)
     lay = st.lay
@@ -540,8 +755,9 @@ def main():
         for cut in cuts:
             shot = yaml.safe_load((ROOT / a.scene_dir / "shots" / f"{cut}.yaml").read_text(encoding="utf-8"))
             mp4, fdir, n, checks = render_cut(st, lay, cut, float(shot["sec"]), a.fps, size, a.samples, out_dir, work,
-                                              denoise=a.denoise, preview=a.preview)
-            sheet = check_sheet(cut, shot, fdir, n, out_dir)
+                                              denoise=a.denoise, preview=a.preview, motion_step=a.motion)
+            frames = checks.pop("frames")
+            sheet = motion_sheet(cut, shot, fdir, frames, a.fps, out_dir) if a.motion else check_sheet(cut, shot, fdir, n, out_dir)
             print(f"{cut}: {rel(mp4) if mp4 else '（動画なし）'}（{n}フレーム、{shot['sec']}秒）、{rel(sheet)}")
             warn = checks.pop("warnings", [])
             if warn:

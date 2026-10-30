@@ -1,0 +1,55 @@
+# A05 砂食み（砂漠）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05-004
+scene: A05
+tc: 12.0
+sec: 6.0
+kind: A
+shot: 大引き・ルッキーニィ・百騎兵
+acting: 砂の下を 8m の黒い影が横切り、通った跡の砂がうねって盛り上がる。影が百騎兵の真下を通る
+dialogue:
+- L146「おい、まて！オマエの下に、何かいるぞ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.6
+  - 33.6
+  - 24.0
+  look:
+  - 37.6
+  - 33.0
+  lens: 35
+  move: 真上の俯瞰。影の動きに合わせて真上で回りながら下りる
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 真上の高い俯瞰。窪地の小さな二人
+  end: 影が二人の向こうへ抜けていく。カメラは回りながら下りている
+timing:
+  lead: 0.3
+blocking:
+  start: ル（右・斜め前（画面右向き））
+  end: 百（中央・横顔（画面左向き））
+  background: 北の砂丘と岩山〔砂漠 全景〕
+  panels:
+  - 砂漠 全景
+  staging_en: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+    legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low, frozen in fear (seen from directly above), at the far right of the frame, in three-quarter view,
+    turned toward screen right. No other people. High angle looking down. Under the sand a huge dark shadow, about 8 m long, glides toward the two; the sand surface bulges and ripples along its path. Behind:
+    endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue
+    sky, warm golden light, longer shadows, heat haze over the dunes.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), turning to look behind (seen from directly above), in the center of
+    the frame, in profile, turned toward screen left. No other people. High angle looking down. The huge dark shadow under the sand has passed beneath them and glides away; a long ridge of disturbed sand
+    marks its path. Behind: golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Mid-afternoon in the desert: the sun lower in the west-southwest
+    of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+  sketch:
+  - episodes/A/scenes/A05/gen/sketch/A05-004_start.png
+  - episodes/A/scenes/A05/gen/sketch/A05-004_end.png

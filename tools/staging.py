@@ -22,6 +22,8 @@ import pathlib
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
+import motion  # noqa: E402  動きのキー（D-060）
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONT = next((f for f in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
                           "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc") if pathlib.Path(f).exists()), None)
@@ -35,8 +37,11 @@ POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}  
 
 def cam_at(c, which):
     """終わりの画では、カメラ本体の移動（cam_end）の終わりの位置を使う。"""
-    if which == "end" and c.get("cam_end"):
-        return {**c, "cam": c["cam_end"]}
+    if which == "end":
+        if c.get("cam_end"):
+            c = {**c, "cam": c["cam_end"]}
+        if c.get("look_h_end") is not None:
+            c = {**c, "look_h": c["look_h_end"]}
     return c
 
 
@@ -99,7 +104,12 @@ class Stage:
         self.lay = yaml.safe_load((ROOT / self.bk["layout"]).read_text(encoding="utf-8"))
         self.W, self.D = self.lay["size"]["w"], self.lay["size"]["d"]
         self.order = list(self.bk["cuts"])
+        for cut in self.order:   # 動きのキー（keys）から set・move・posture を作る（D-060）
+            self.bk["cuts"][cut] = motion.expand_keys(self.bk["cuts"][cut] or {})
         self.states = self._run()
+        for cut in self.order:   # カメラのキー（cam_keys）から cam・cam_end などを作る（follow は始めと終わりの人物の位置で）
+            if (self.bk["cuts"][cut] or {}).get("cam_keys"):
+                self.bk["cuts"][cut] = motion.expand_cam(self.bk["cuts"][cut], self.states[cut]["start"][0], self.states[cut]["end"][0], self.place)
 
     def place(self, v):
         if v is None:
@@ -353,9 +363,13 @@ class Stage:
             txt += "Low angle looking up; the sky fills the upper part of the frame. "
         if c.get("tilt") == "down" or h > 3.0:
             txt += "High angle looking down. "
+        extra = (c.get("extra_en_end") if which == "end" else None) or c.get("extra_en")   # 人物以外に映るもの（生き物・砂の噴き上げなど、D-060）
+        if extra:
+            txt += extra.strip() + " "
         txt += "Behind: " + ", then ".join(seen) + "."
-        if self.lay.get("light_en"):   # 時刻と光（背景画像の時刻と違うときも、こちらに合わせる）
-            txt += " " + self.lay["light_en"]
+        light = c.get("light_en") or self.bk.get("light_en") or self.lay.get("light_en")   # カット > 場面（blocking.yaml） > layout
+        if light:   # 時刻と光（背景画像の時刻と違うときも、こちらに合わせる）
+            txt += " " + light
         return txt
 
     # ---------- 確かめる ----------

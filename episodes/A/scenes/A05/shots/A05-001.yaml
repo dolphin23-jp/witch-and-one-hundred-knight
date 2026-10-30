@@ -1,0 +1,58 @@
+# A05 砂食み（砂漠）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05-001
+scene: A05
+tc: 0.0
+sec: 4.0
+kind: A
+shot: 全身・ルッキーニィ・百騎兵
+acting: 稜線でルッキーニィが振り返って大きく手招き。百騎兵が追いつき、二人で稜線を越える
+dialogue:
+- L143「こっちです！」
+sound: null
+notes: null
+camera:
+  pos:
+    follow: hundred-knight
+    offset:
+    - -3.2
+    - 1.6
+    z: 1.0
+  look: luckiny
+  lens: 35
+  move: 後ろから走る速さで追い、稜線でクレーンで上がって景色を開く（見せ場）
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 砂丘の斜面を駆け上がるルッキーニィと、後ろを走る百騎兵を後ろから
+  end: カメラが上がり、稜線の向こうに果てしない砂丘が開ける
+timing:
+  lead: 1.3
+blocking:
+  start: 百（左・斜め後ろ（画面右向き））、ル（中央・背中）
+  end: ル（中央・背中）、百（中央・背中）
+  background: 北の砂丘と岩山〔砂漠 全景〕／東の砂丘と岩山〔砂漠 斜めの眺望〕
+  panels:
+  - 砂漠 全景
+  - 砂漠 斜めの眺望
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), running up the dune after her, on the left of the frame,
+    seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+    green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), running up the slope of a dune, in the center of the frame, with the back to the camera, small
+    in the background. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling
+    sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer
+    shadows, heat haze over the dunes.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
+    trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), running down the far side of the dune ridge, on the left of the frame, with the back
+    to the camera; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
+    blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), running down the far side of the dune ridge, on the left of the frame, with the back to the camera.
+    No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Mid-afternoon in the desert: the sun lower in the
+    west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+  sketch:
+  - episodes/A/scenes/A05/gen/sketch/A05-001_start.png
+  - episodes/A/scenes/A05/gen/sketch/A05-001_end.png
