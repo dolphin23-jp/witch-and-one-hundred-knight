@@ -1,0 +1,23 @@
+# 砂漠編（A04〜）の背景の切り抜き。ユーザーが用意した背景（refs/*_bg_01）の各パネルから、札の文字を除いて切り抜いただけ（生成はしていない、2026-10-30）
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）
+tettara-desert:   # refs/tettara-desert_bg_01（A04・A05・A06 の砂漠）
+  wide: world/tettara-desert/panel_wide.png               # 全景。遠くに岩山、渦の砂模様、枯れ木
+  oblique: world/tettara-desert/panel_oblique.png         # 斜めの眺望
+  high: world/tettara-desert/panel_high.png               # やや高所からの見下ろし
+  ground: world/tettara-desert/panel_ground.png           # 地上からの視点
+  closeup: world/tettara-desert/panel_closeup.png         # 砂模様と植物の寄り
+  frame-deadtree: world/tettara-desert/panel_frame-deadtree.png  # 前景に枯れ木のシルエット
+caravan-camp:     # refs/caravan-camp_bg_01（A04 の商人のテント）
+  wide: world/caravan-camp/panel_wide.png
+  high-right: world/caravan-camp/panel_high-right.png
+  tent-entrance: world/caravan-camp/panel_tent-entrance.png
+  goods: world/caravan-camp/panel_goods.png               # 水甕や荷物（水を奪う場面）
+  walkway-watchtower: world/caravan-camp/panel_walkway-watchtower.png
+  high: world/caravan-camp/panel_high.png
+beast-village:    # refs/beast-village_bg_01（A05〜A08 の獣人の村。見出しは「アスタロの隠れ里」）
+  wide: world/beast-village/panel_wide.png                # 全景。中央に石の井戸（A05-008・A07 の井戸）
+  gate: world/beast-village/panel_gate.png                # 石壁の門
+  alley: world/beast-village/panel_alley.png              # 路地
+  house: world/beast-village/panel_house.png              # 家屋の外観（ティトの家の外に使える）
+  corner: world/beast-village/panel_corner.png            # 集落の一角
+  high: world/beast-village/panel_high.png                # やや高所からの俯瞰
