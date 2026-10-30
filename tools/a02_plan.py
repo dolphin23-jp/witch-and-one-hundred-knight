@@ -59,12 +59,12 @@ for cut in st.order:
     stills.append(it2)
 for cut in st.order:
     shot = yaml.safe_load((D / "shots" / f"{cut}.yaml").read_text()); k = cut[-3:]
-    dur = max(2, math.ceil(shot["sec"] - 0.05))
+    dur = max(4, math.ceil(shot["sec"] - 0.05))
     lines = [d.split("「")[0] for d in (shot.get("dialogue") or [])]
     sv = SPEAKER_VISIBLE.get(k)
     end = None if cut == "A02-004" else (f"{R}/stills/start/{cut}_start_gpt-image-2.5_01.png" if cut == "A02-007" else f"{R}/stills/end/{cut}_end_gpt-image-2.5_01.png")
     who = sorted({e["who"] for w in ("start", "end") for e in st.frame(cut, w)["people"]})
-    v = {"cut": cut, "sec": shot["sec"], "duration": dur, "credits": dur * 1,
+    v = {"cut": cut, "sec": shot["sec"], "duration": dur, "credits": dur * 3,
          "start_image": f"{R}/stills/start/{cut}_start_gpt-image-2.5_01.png", "end_image": end,
          "image_references": [f"refs/{w}_sheet_01.png" for w in who],
          "previs": f"previs/A02/{cut}.mp4",
@@ -75,12 +75,12 @@ cs = len([s for s in stills if not s.get("skip")]) + len(cels) + len(comps)
 cv = sum(v["credits"] for v in videos)
 plan = {"status": "承認待ち（2026-10-30 作成。生成なし・クレジットなし）",
         "scene": "A02 魔女邸の前・別れ（朝）。16カット 103.0秒。全カットを動画にする（新しい作り方の試験）",
-        "decision": "D-055 の作り方（開始＋終わりの静止画＋設定画＋下絵＋口パク参照）を Wan 3.0 で行う（ユーザー指示 2026-10-30、Living Spec への反映は確認待ち）、D-057（順に作る）",
+        "decision": "D-055（開始＋終わりの静止画＋設定画＋下絵＋口パク参照、Seedance 2.0）、D-057（順に作る）",
         "credits_estimate": {"stills": cs, "videos": cv, "total": cs + cv},
         "order": "区間ごと（知らせ 001〜004 → 呼び止め 005〜008 → 言い訳 009〜012 → 割り込みと別れ 013〜016）に、静止画（開始→終わり）→ Claude が点検 → 動画。点検で崩れていた静止画の動画は作らずに報告。失敗しても自動では作り直さない",
         "stills": {"model": "gpt_image_2_5", "quality": "medium", "resolution": "2k", "aspect_ratio": "16:9", "note": "1枚1クレジット。終わりは開始の画を添えて作る（同じ背景・光・描き方にそろえる）", "items": stills},
         "cels": {"note": "013・016 は3人が映るので、人物を1人ずつ透明な背景で作り（1枚1クレジット）、tools/composite.py で重ね、1枚編集して朝の光にそろえる", "items": cels, "composite": comps},
-        "videos": {"model": "wan3_0", "resolution": "480p", "generate_audio": False, "note": "Wan 3.0（ユーザー指示 2026-10-30: Seedance は高いので Wan に切り替え、比較なし）。480p は1秒1クレジット（get_cost で確認。720p は1.75）。参照を付けたときの費用は初回の表示で確かめる。最短2秒・整数秒。カットより長い分は組み立てで速度を少し上げて収める。口パクの参照は、喋る人物の口が見えるカットだけ", "items": videos}}
+        "videos": {"model": "seedance_2_0", "mode": "std", "resolution": "480p", "generate_audio": False, "note": "1秒3クレジット（参照を付けても同じ）。最短4秒・整数秒。カットより長い分は組み立てで速度を少し上げて収める。口パクの参照は、喋る人物の口が見えるカットだけ。Wan 3.0 は開始・終わりの画と参照を同時に渡せないため、ユーザー判断で Seedance に戻した（2026-10-30）", "items": videos}}
 p = D / "gen" / "A02_plan.yaml"
 p.write_text("# A02 の生成計画（承認を取るための表。tools/stills_plan.py の指示文に、終わりの画・重ねる画・動画を足したもの）\n" + yaml.safe_dump(plan, allow_unicode=True, sort_keys=False, width=200))
 for v in videos: print(v["cut"], v["sec"], v["duration"], v["credits"], v["audio_reference"])
