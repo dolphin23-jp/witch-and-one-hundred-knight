@@ -1,0 +1,970 @@
+# A02 の生成計画（承認を取るための表。tools/stills_plan.py の指示文に、終わりの画・重ねる画・動画を足したもの）
+status: 承認待ち（2026-10-30 作成。生成なし・クレジットなし）
+scene: A02 魔女邸の前・別れ（朝）。16カット 103.0秒。全カットを動画にする（新しい作り方の試験）
+decision: D-055（開始＋終わりの静止画＋設定画＋下絵＋口パク参照）、D-057（順に作る）
+credits_estimate:
+  stills: 42
+  videos: 330
+  total: 372
+order: 区間ごと（知らせ 001〜004 → 呼び止め 005〜008 → 言い訳 009〜012 → 割り込みと別れ 013〜016）に、静止画（開始→終わり）→ Claude が点検 → 動画。点検で崩れていた静止画の動画は作らずに報告。失敗しても自動では作り直さない
+stills:
+  model: gpt_image_2_5
+  quality: medium
+  resolution: 2k
+  aspect_ratio: '16:9'
+  note: 1枚1クレジット。終わりは開始の画を添えて作る（同じ背景・光・描き方にそろえる）
+  items:
+  - cut: A02-001
+    which: start
+    kind: A
+    frame: 大引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/bisco/views/bisco_front.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-001_start.png
+    prompt: 'Camera: extreme wide shot, 28mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing still, waiting, at
+      the far left of the frame, seen from behind at an angle, turned toward screen right, looking at Bisco; Bisco (character reference: image 3), running down the bridge steps from the front door, one
+      hand raised and waving, in the center of the frame, facing the camera, looking at the Hundred Knight. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp:
+      stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing,
+      lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The
+      background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco); Bisco
+      1.55 m. Background and setting: follow image 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing
+      and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-001_start_gpt-image-2.5_01.png
+  - cut: A02-001
+    which: end
+    kind: A
+    frame: 大引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-001_end.png
+    - episodes/A/scenes/A02/stills/start/A02-001_start_gpt-image-2.5_01.png
+    prompt: 'Camera: extreme wide shot, 28mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing still, looking up,
+      at the far left of the frame, seen from behind at an angle, turned toward screen right, looking at Bisco; Bisco (character reference: images 3, 4), having just stopped running in front of the Hundred
+      Knight, slightly out of breath, one hand on her hip, on the left of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight. No other people. Behind: the witch''s
+      house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door,
+      a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+      the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: the Hundred Knight
+      0.9 m (small, only about waist-high to Metallica and Bisco); Bisco 1.55 m. Background and setting: follow image 5 (same place, same props and layout). Composition: image 6 is a rough layout sketch
+      with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 7 is the first frame
+      of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-001_end_gpt-image-2.5_01.png
+  - cut: A02-002
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-002_start.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 0.95 m. In frame (exactly one person): Bisco (character reference: images 1, 2, 3), standing with both hands on her hips, looking
+      down, in the center of the frame, in three-quarter view, turned toward screen left, looking at the Hundred Knight (off screen, toward screen left). No other people. Behind: the witch''s house on its
+      round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden
+      bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still
+      glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting:
+      follow image 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of
+      the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean
+      line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-002_start_gpt-image-2.5_01.png
+  - cut: A02-002
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-002_end.png
+    - episodes/A/scenes/A02/stills/start/A02-002_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 0.95 m. In frame (exactly one person): Bisco (character reference: images 1, 2, 3), jerking her thumb over her shoulder toward the
+      house, rolling her eyes up in exasperation, sighing, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen right. No other people. Behind: the witch''s
+      house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door,
+      a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+      the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background
+      and setting: follow image 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions
+      and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, morning light and the
+      way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors,
+      16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-002_end_gpt-image-2.5_01.png
+  - cut: A02-003
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/bisco/views/bisco_side.png
+    - world/witch-house-front/panel_dead-tree.png
+    - episodes/A/scenes/A02/gen/sketch/A02-003_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), standing, looking up, on
+      the left of the frame, in profile, turned toward screen right, looking at Bisco; Bisco (character reference: image 2), pulling a small folded paper out of the pouch at her belt, on the right of the
+      frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water. Early morning:
+      a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night
+      scene; keep its layout and details but render it in morning light.) Heights: the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco); Bisco 1.55 m. Background and setting: follow
+      image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-003_start_gpt-image-2.5_01.png
+  - cut: A02-003
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/bisco/views/bisco_side.png
+    - world/witch-house-front/panel_dead-tree.png
+    - episodes/A/scenes/A02/gen/sketch/A02-003_end.png
+    - episodes/A/scenes/A02/stills/start/A02-003_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), holding the small folded
+      paper in both big gauntlets, looking down at it, on the left of the frame, in profile, turned toward screen right, looking toward screen right; Bisco (character reference: image 2), standing up straight
+      again, her hands lowered, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees standing in the water.
+      Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
+      is a night scene; keep its layout and details but render it in morning light.) Heights: the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco); Bisco 1.55 m. Background and
+      setting: follow image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and
+      facing of the characters, but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, morning light and the way
+      the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors,
+      16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-003_end_gpt-image-2.5_01.png
+  - cut: A02-004
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - refs/witch-house-front_bg_02.png
+    - episodes/A/scenes/A02/gen/sketch/A02-004_start.png
+    prompt: 'Camera: medium-long shot (knees up), 70mm lens, camera height 1.5 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), peering down at the small folded paper
+      held in its big gauntlets, in the center of the frame, facing the camera, looking toward screen right. No other people. Behind: the round dirt clearing edged with red mushrooms, old stumps and lamp
+      posts, and beyond it the glowing emerald-green swamp full of gnarled dead trees stretching to the horizon. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin
+      mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights:
+      the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco). Background and setting: follow image 2 (same place, same props and layout). Composition: image 3 is a rough layout sketch
+      with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design,
+      colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga
+      symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-004_start_gpt-image-2.5_01.png
+  - cut: A02-004
+    which: end
+    skip: 百騎兵が画面の外へ走り出て、終わりは人物がいない。背景だけの画は作らない（背景は生成しない）。開始の静止画と下絵だけで作る
+  - cut: A02-005
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/bisco/views/bisco_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-005_start.png
+    prompt: 'Camera: wide shot, 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Bisco (character reference: image 1), standing, starting to reach out one hand, at the far
+      left of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), running toward screen right, gripping the paper, on the left of the frame, in
+      profile, turned toward screen right, looking toward screen right. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs
+      with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early
+      morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is
+      a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco). Background and setting:
+      follow image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of
+      the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean
+      line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-005_start_gpt-image-2.5_01.png
+  - cut: A02-005
+    which: end
+    kind: M
+    frame: 引き
+    refs:
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-005_end.png
+    - episodes/A/scenes/A02/stills/start/A02-005_start_gpt-image-2.5_01.png
+    prompt: 'Camera: wide shot, 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Bisco (character reference: images 1, 2), having taken half a step forward, one arm stretched
+      out toward the Hundred Knight, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (character reference: image 3), having stopped short and turned around,
+      at the far right of the frame, in profile, turned toward screen left, looking at Bisco. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange
+      shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on
+      both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background
+      reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco).
+      Background and setting: follow image 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the
+      positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, morning light
+      and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-005_end_gpt-image-2.5_01.png
+  - cut: A02-006
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/bisco/views/bisco_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/witch-house-front/panel_dead-tree.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-006_start.png
+    prompt: 'Camera: medium-long shot (knees up), 50mm lens, camera height 0.95 m. In frame (exactly 2 people, from left to right): Bisco (character reference: image 1), starting to walk briskly toward
+      the Hundred Knight, pointing at her own chest with her thumb, on the left of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: images 2, 3), standing,
+      looking up, on the right of the frame, seen from behind at an angle, turned toward screen left, looking at Bisco. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees
+      standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+      top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and
+      a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)
+      Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco). Background and setting: follow images 4, 5 (same place, same props and layout). Composition:
+      image 6 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no
+      captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-006_start_gpt-image-2.5_01.png
+  - cut: A02-006
+    which: end
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/bisco/views/bisco_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/witch-house-front/panel_dead-tree.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-006_end.png
+    - episodes/A/scenes/A02/stills/start/A02-006_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium-long shot (knees up), 50mm lens, camera height 0.95 m. In frame (exactly 2 people, from left to right): Bisco (character reference: image 1), bending down to the Hundred Knight''s
+      eye level, smiling a little shyly, holding out a small fist, in the center of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: images 2, 3), standing,
+      looking up, on the right of the frame, seen from behind at an angle, turned toward screen left, looking at Bisco. No other people. Behind: the glowing emerald-green swamp with huge gnarled dead trees
+      standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped
+      top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and
+      a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.)
+      Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco). Background and setting: follow images 4, 5 (same place, same props and layout). Composition:
+      image 6 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Image 7 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-006_end_gpt-image-2.5_01.png
+  - cut: A02-007
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - refs/witch-house-front_bg_01.png
+    - world/witch-house-front/panel_swamp-water.png
+    - episodes/A/scenes/A02/gen/sketch/A02-007_start.png
+    prompt: 'Camera: close-up, 85mm lens, camera height 1.4 m. In frame (exactly one person): the Hundred Knight (character reference: images 1, 2, 3), standing, looking up, in the center of the frame,
+      in three-quarter view, turned toward screen left, looking at Bisco (off screen, toward screen left). No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp:
+      stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing,
+      lamp posts on both sides, then the glowing emerald-green swamp full of gnarled dead trees. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp;
+      the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: the Hundred Knight
+      0.9 m (small, only about waist-high to Metallica and Bisco). Background and setting: follow images 4, 5 (same place, same props and layout). Composition: image 6 is a rough layout sketch with colored
+      placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors
+      and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-007_start_gpt-image-2.5_01.png
+  - cut: A02-007
+    which: end
+    skip: 位置も向きも変わらない（頷くだけ）。開始と同じ画を終わりにも使う
+  - cut: A02-008
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - world/witch-house-front/panel_dead-tree.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-008_start.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: images 1, 2), still bent forward, blinking in surprise, mouth
+      slightly open, in the center of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: the glowing emerald-green swamp with huge gnarled
+      dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing
+      green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight
+      from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it
+      in morning light.) Heights: Bisco 1.55 m. Background and setting: follow images 3, 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures;
+      follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-008_start_gpt-image-2.5_01.png
+  - cut: A02-008
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - world/witch-house-front/panel_dead-tree.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-008_end.png
+    - episodes/A/scenes/A02/stills/start/A02-008_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: images 1, 2), standing up straight, her eyes wandering away, a
+      small fist clenched in front of her chest, nodding to herself, her tail swaying restlessly, in the center of the frame, facing the camera, looking toward screen left. No other people. Behind: the
+      glowing emerald-green swamp with huge gnarled dead trees standing in the water, then the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with
+      glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning:
+      a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night
+      scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow images 3, 4 (same place, same props and layout). Composition: image 5 is a
+      rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image
+      6 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-008_end_gpt-image-2.5_01.png
+  - cut: A02-009
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/bisco/views/bisco_side.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-009_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.3 m. In frame (exactly 2 people, from left to right): Bisco (character reference: image 1), flustered, waving both hands in front
+      of her chest, in the center of the frame, in profile, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), standing, looking up, on the right
+      of the frame, in profile, turned toward screen left, looking at Bisco. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone
+      roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.
+      Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
+      is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about waist-high to Metallica and Bisco). Background and
+      setting: follow image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and
+      facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime
+      style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-009_start_gpt-image-2.5_01.png
+  - cut: A02-009
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/bisco/views/bisco_side.png
+    - characters/bisco/views/bisco_back.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-009_end.png
+    - episodes/A/scenes/A02/stills/start/A02-009_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.3 m. In frame (exactly 2 people, from left to right): Bisco (character reference: images 1, 2), half turned toward the house, pointing
+      over her shoulder at the house with her thumb, glancing sideways, on the left of the frame, seen from behind at an angle, turned toward screen left, looking at the Hundred Knight; the Hundred Knight
+      (character reference: image 3), standing, looking up, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the witch''s house on its round wooden deck over the
+      glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading
+      down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps
+      are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m; the Hundred Knight 0.9 m (small, only about
+      waist-high to Metallica and Bisco). Background and setting: follow image 4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow
+      its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its
+      background rendering, morning light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean
+      line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-009_end_gpt-image-2.5_01.png
+  - cut: A02-010
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - world/witch-house-front/panel_swamp-water.png
+    - episodes/A/scenes/A02/gen/sketch/A02-010_start.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: images 1, 2, 3), looking up at the second-floor window of the
+      house, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left. No other people. Behind: the glowing emerald-green swamp full of gnarled dead trees.
+      Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
+      is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow image 4 (same place, same props and layout). Composition: image
+      5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors.
+      Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-010_start_gpt-image-2.5_01.png
+  - cut: A02-010
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    - world/witch-house-front/panel_swamp-water.png
+    - episodes/A/scenes/A02/gen/sketch/A02-010_end.png
+    - episodes/A/scenes/A02/stills/start/A02-010_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: images 1, 2, 3), looking up at the second-floor window, her eyes
+      softly narrowed, a faint gentle smile, in the center of the frame, in three-quarter view, turned toward screen left, looking toward screen left. No other people. Behind: the glowing emerald-green
+      swamp full of gnarled dead trees. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or
+      faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow image 4 (same place, same
+      props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw
+      the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character''s
+      design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-010_end_gpt-image-2.5_01.png
+  - cut: A02-011
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/bisco/views/bisco_back.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-011_start.png
+    prompt: 'Camera: close-up, 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: image 1), still looking up toward the house window, in the center of the frame,
+      with the back to the camera, looking toward screen right. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with
+      glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning:
+      a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night
+      scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow image 2 (same place, same props and layout). Composition: image 3 is a rough
+      layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-011_start_gpt-image-2.5_01.png
+  - cut: A02-011
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-011_end.png
+    - episodes/A/scenes/A02/stills/start/A02-011_start_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 85mm lens, camera height 1.0 m. In frame (exactly one person): Bisco (character reference: images 1, 2), turned back, one hand pressed to her chest, eyes darting away, cheeks
+      slightly flushed, embarrassed, in the center of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: the witch''s house on its round
+      wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge
+      with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows
+      green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow
+      image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn.
+      Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-011_end_gpt-image-2.5_01.png
+  - cut: A02-012
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-012_start.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.1 m. In frame (exactly one person): Bisco (character reference: images 1, 2), lowering the hand from her chest, in the center
+      of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp:
+      stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing,
+      lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The
+      background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting: follow image 3 (same place, same props and
+      layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders,
+      labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-012_start_gpt-image-2.5_01.png
+  - cut: A02-012
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/bisco/views/bisco_face_front.png
+    - characters/bisco/views/bisco_front.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-012_end.png
+    - episodes/A/scenes/A02/stills/start/A02-012_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.1 m. In frame (exactly one person): Bisco (character reference: images 1, 2), a fist clenched tightly in front of her chest, eyes
+      cast down at her feet, brows drawn together, a troubled, brooding expression, lips pressed together, in the center of the frame, facing the camera. No other people. Behind: the witch''s house on its
+      round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden
+      bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still
+      glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Bisco 1.55 m. Background and setting:
+      follow image 3 (same place, same props and layout). Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of
+      the characters, but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters
+      are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text,
+      no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-012_end_gpt-image-2.5_01.png
+  - cut: A02-014
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/arlecchino/views/arlecchino_face_front.png
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/arlecchino/views/arlecchino_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-014_start.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.65 m. In frame (exactly one person): Arlecchino (character reference: images 1, 2, 3), standing upright, one hand on his chest,
+      in the center of the frame, in three-quarter view, turned toward screen right, looking at Bisco (off screen, toward screen right). No other people. Behind: the witch''s house on its round wooden deck
+      over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps
+      leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the
+      lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Arlecchino 1.9 m. Background and setting: follow image
+      4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-014_start_gpt-image-2.5_01.png
+  - cut: A02-014
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/arlecchino/views/arlecchino_face_front.png
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/arlecchino/views/arlecchino_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-014_end.png
+    - episodes/A/scenes/A02/stills/start/A02-014_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 85mm lens, camera height 1.65 m. In frame (exactly one person): Arlecchino (character reference: images 1, 2, 3), bowing politely, one hand on his chest,
+      in the center of the frame, in three-quarter view, turned toward screen right, looking at Bisco (off screen, toward screen right). No other people. Behind: the witch''s house on its round wooden deck
+      over the glowing green swamp: stacked orange shingled cone roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps
+      leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the
+      lamps are unlit or faint. (The background reference image is a night scene; keep its layout and details but render it in morning light.) Heights: Arlecchino 1.9 m. Background and setting: follow image
+      4 (same place, same props and layout). Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn.
+      Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-014_end_gpt-image-2.5_01.png
+  - cut: A02-015
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/arlecchino/views/arlecchino_side.png
+    - characters/bisco/views/bisco_side.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-015_start.png
+    prompt: 'Camera: medium-long shot (knees up), 40mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Arlecchino (character reference: images 1, 2), standing, one hand on his
+      chest, on the left of the frame, in three-quarter view, turned toward screen right; Bisco (character reference: image 3), startled, snapping upright, on the right of the frame, in profile, turned
+      toward screen left, looking at Arlecchino. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone roofs with glowing green
+      magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides. Early morning: a pale, clear
+      morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image is a night scene; keep its
+      layout and details but render it in morning light.) Heights: Arlecchino 1.9 m; Bisco 1.55 m. Background and setting: follow image 4 (same place, same props and layout). Composition: image 5 is a rough
+      layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-015_start_gpt-image-2.5_01.png
+  - cut: A02-015
+    which: end
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/arlecchino/views/arlecchino_side.png
+    - characters/bisco/views/bisco_side.png
+    - characters/bisco/views/bisco_back.png
+    - refs/witch-house-front_bg_01.png
+    - episodes/A/scenes/A02/gen/sketch/A02-015_end.png
+    - episodes/A/scenes/A02/stills/start/A02-015_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium-long shot (knees up), 40mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Arlecchino (character reference: images 1, 2), standing, on the left of
+      the frame, in three-quarter view, turned toward screen right; Bisco (character reference: images 3, 4), one fist raised energetically, turning to stride off, on the right of the frame, seen from behind
+      at an angle, turned toward screen right, looking toward screen right. No other people. Behind: the witch''s house on its round wooden deck over the glowing green swamp: stacked orange shingled cone
+      roofs with glowing green magic-circle patterns, a glowing green lantern-shaped top, the arched front door, a short wooden bridge with steps leading down to the clearing, lamp posts on both sides.
+      Early morning: a pale, clear morning sky with soft low sunlight from the east and a thin mist over the swamp; the swamp still glows green; the lamps are unlit or faint. (The background reference image
+      is a night scene; keep its layout and details but render it in morning light.) Heights: Arlecchino 1.9 m; Bisco 1.55 m. Background and setting: follow image 5 (same place, same props and layout).
+      Composition: image 6 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels
+      or flat colors. Image 7 is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character''s design, colors and
+      proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no
+      anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-015_end_gpt-image-2.5_01.png
+cels:
+  note: 013・016 は3人が映るので、人物を1人ずつ透明な背景で作り（1枚1クレジット）、tools/composite.py で重ね、1枚編集して朝の光にそろえる
+  items:
+  - cut: A02-013
+    who: arlecchino
+    which: start
+    refs:
+    - characters/arlecchino/views/arlecchino_front.png
+    prompt: 'A single full-body character cel of Arlecchino (character reference: image 1), coming down the bridge steps, facing the viewer, looking toward the left side of the picture, seen at eye level.
+      Height 1.9 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference.
+      2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 正面
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_start_arlecchino.png
+  - cut: A02-013
+    who: bisco
+    which: start
+    refs:
+    - characters/bisco/views/bisco_front.png
+    - characters/bisco/views/bisco_side.png
+    prompt: 'A single full-body character cel of Bisco (character reference: images 1, 2), standing with her head bowed, brooding, in three-quarter view, turned toward the right side of the picture, seen
+      at eye level. Height 1.55 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical
+      to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 斜め前（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_start_bisco.png
+  - cut: A02-013
+    who: hundred-knight
+    which: start
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    prompt: 'A single full-body character cel of the Hundred Knight (character reference: image 1), standing, looking up, in profile, turned toward the left side of the picture, looking toward the left
+      side of the picture, seen at eye level. Height 0.9 m (small, only about waist-high to an adult). Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft
+      early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_start_hundred-knight.png
+  - cut: A02-013
+    who: arlecchino
+    which: end
+    refs:
+    - characters/arlecchino/views/arlecchino_front.png
+    prompt: 'A single full-body character cel of Arlecchino (character reference: image 1), standing at the foot of the bridge, one hand on his chest, facing the viewer, seen at eye level. Height 1.9 m.
+      Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime
+      style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 正面
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_end_arlecchino.png
+  - cut: A02-013
+    who: bisco
+    which: end
+    refs:
+    - characters/bisco/views/bisco_side.png
+    - characters/bisco/views/bisco_back.png
+    prompt: 'A single full-body character cel of Bisco (character reference: images 1, 2), turned around in surprise, shoulders raised, seen from behind at an angle, turned toward the left side of the picture,
+      looking toward the left side of the picture, seen at eye level. Height 1.55 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light.
+      Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).'
+    body: 斜め後ろ（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_end_bisco.png
+  - cut: A02-013
+    who: hundred-knight
+    which: end
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    prompt: 'A single full-body character cel of the Hundred Knight (character reference: image 1), standing, its head turned, in profile, turned toward the left side of the picture, looking toward the
+      left side of the picture, seen at eye level. Height 0.9 m (small, only about waist-high to an adult). Transparent background: no scenery, no ground, no floor shadow, no other characters, no text.
+      Soft early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-013_end_hundred-knight.png
+  - cut: A02-016
+    who: arlecchino
+    which: start
+    refs:
+    - characters/arlecchino/views/arlecchino_front.png
+    - characters/arlecchino/views/arlecchino_side.png
+    prompt: 'A single full-body character cel of Arlecchino (character reference: images 1, 2), walking after her, in three-quarter view, turned toward the right side of the picture, seen from slightly
+      above. Height 1.9 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the
+      reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 斜め前（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_start_arlecchino.png
+  - cut: A02-016
+    who: bisco
+    which: start
+    refs:
+    - characters/bisco/views/bisco_side.png
+    prompt: 'A single full-body character cel of Bisco (character reference: image 1), striding away toward the boardwalk, in profile, turned toward the right side of the picture, seen from slightly above.
+      Height 1.55 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference.
+      2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_start_bisco.png
+  - cut: A02-016
+    who: hundred-knight
+    which: start
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    prompt: 'A single full-body character cel of the Hundred Knight (character reference: image 1), standing, watching them go, in profile, turned toward the left side of the picture, looking toward the
+      left side of the picture, seen from slightly above. Height 0.9 m (small, only about waist-high to an adult). Transparent background: no scenery, no ground, no floor shadow, no other characters, no
+      text. Soft early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 横顔（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_start_hundred-knight.png
+  - cut: A02-016
+    who: hundred-knight
+    which: end
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    prompt: 'A single full-body character cel of the Hundred Knight (character reference: images 1, 2), turned around, looking up at the second-floor window of the house, seen from behind at an angle, turned
+      toward the left side of the picture, seen from slightly above. Height 0.9 m (small, only about waist-high to an adult). Transparent background: no scenery, no ground, no floor shadow, no other characters,
+      no text. Soft early-morning light. Keep the design, colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    body: 斜め後ろ（画面左向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_end_hundred-knight.png
+  - cut: A02-016
+    who: arlecchino
+    which: end
+    refs:
+    - characters/arlecchino/views/arlecchino_side.png
+    - characters/arlecchino/views/arlecchino_back.png
+    prompt: 'A single full-body character cel of Arlecchino (character reference: images 1, 2), walking away along the boardwalk, small in the distance, seen from behind at an angle, turned toward the right
+      side of the picture, seen from slightly above. Height 1.9 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design,
+      colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    body: 斜め後ろ（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_end_arlecchino.png
+  - cut: A02-016
+    who: bisco
+    which: end
+    refs:
+    - characters/bisco/views/bisco_side.png
+    - characters/bisco/views/bisco_back.png
+    prompt: 'A single full-body character cel of Bisco (character reference: images 1, 2), walking away along the boardwalk, small in the distance, seen from behind at an angle, turned toward the right
+      side of the picture, seen from slightly above. Height 1.55 m. Transparent background: no scenery, no ground, no floor shadow, no other characters, no text. Soft early-morning light. Keep the design,
+      colors and proportions identical to the reference. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    body: 斜め後ろ（画面右向き）
+    background: transparent
+    output: episodes/A/scenes/A02/stills/cels/A02-016_end_bisco.png
+  composite:
+  - cut: A02-013
+    which: start
+    method: python tools/composite.py episodes/A/scenes/A02 A02-013 --which start --cels episodes/A/scenes/A02/stills/cels --plate refs/witch-house-front_bg_01.png（生成なし）→ 重ねた画を1枚編集して朝の光にそろえる（1クレジット）
+    prompt: 'Image 1 is a rough composite: separately drawn character cels pasted onto a background. Redraw it as one finished anime frame: keep every character''s position, size, pose, facing and design
+      exactly as in image 1, keep the house and bridge layout, but unify everything into soft early-morning light (pale clear sky, low sun from the east, a thin mist over the swamp, the swamp still glowing
+      green, lamps unlit), add natural contact shadows on the ground and fix the edges. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-013_start_gpt-image-2.5_01.png
+  - cut: A02-013
+    which: end
+    method: python tools/composite.py episodes/A/scenes/A02 A02-013 --which end --cels episodes/A/scenes/A02/stills/cels --plate refs/witch-house-front_bg_01.png（生成なし）→ 重ねた画を1枚編集して朝の光にそろえる（1クレジット）
+    prompt: 'Image 1 is a rough composite: separately drawn character cels pasted onto a background. Redraw it as one finished anime frame: keep every character''s position, size, pose, facing and design
+      exactly as in image 1, keep the house and bridge layout, but unify everything into soft early-morning light (pale clear sky, low sun from the east, a thin mist over the swamp, the swamp still glowing
+      green, lamps unlit), add natural contact shadows on the ground and fix the edges. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-013_end_gpt-image-2.5_01.png
+  - cut: A02-016
+    which: start
+    method: python tools/composite.py episodes/A/scenes/A02 A02-016 --which start --cels episodes/A/scenes/A02/stills/cels --plate refs/witch-house-front_bg_01.png（生成なし）→ 重ねた画を1枚編集して朝の光にそろえる（1クレジット）
+    prompt: 'Image 1 is a rough composite: separately drawn character cels pasted onto a background. Redraw it as one finished anime frame: keep every character''s position, size, pose, facing and design
+      exactly as in image 1, keep the house and bridge layout, but unify everything into soft early-morning light (pale clear sky, low sun from the east, a thin mist over the swamp, the swamp still glowing
+      green, lamps unlit), add natural contact shadows on the ground and fix the edges. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/start/A02-016_start_gpt-image-2.5_01.png
+  - cut: A02-016
+    which: end
+    method: python tools/composite.py episodes/A/scenes/A02 A02-016 --which end --cels episodes/A/scenes/A02/stills/cels --plate refs/witch-house-front_bg_01.png（生成なし）→ 重ねた画を1枚編集して朝の光にそろえる（1クレジット）
+    prompt: 'Image 1 is a rough composite: separately drawn character cels pasted onto a background. Redraw it as one finished anime frame: keep every character''s position, size, pose, facing and design
+      exactly as in image 1, keep the house and bridge layout, but unify everything into soft early-morning light (pale clear sky, low sun from the east, a thin mist over the swamp, the swamp still glowing
+      green, lamps unlit), add natural contact shadows on the ground and fix the edges. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A02/stills/end/A02-016_end_gpt-image-2.5_01.png
+videos:
+  model: seedance_2_0
+  mode: std
+  resolution: 480p
+  generate_audio: false
+  note: 1秒3クレジット。最短4秒・整数秒。カットより長い分は組み立てで速度を少し上げて収める。口パクの参照は、喋る人物の口が見えるカットだけ
+  items:
+  - cut: A02-001
+    sec: 9.7
+    duration: 10
+    credits: 30
+    start_image: episodes/A/scenes/A02/stills/start/A02-001_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-001_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-001.mp4
+    audio_reference: audio/A02/original/L94_bisco.wav（mp3 に変えて渡す）
+    prompt: Extreme wide shot, static camera. The Hundred Knight stands still in the foreground with its back to us. Bisco bursts out of the front door, waves one hand and runs down the bridge steps across
+      the clearing, slowing down and stopping in front of the Hundred Knight at about 4.6 seconds, slightly out of breath, one hand on her hip, and keeps talking to it. Sync the speaking character's mouth
+      to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors
+      and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat
+      drops or question marks).
+  - cut: A02-002
+    sec: 7.9
+    duration: 8
+    credits: 24
+    start_image: episodes/A/scenes/A02/stills/start/A02-002_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-002_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-002.mp4
+    audio_reference: audio/A02/original/L95_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium close-up of Bisco, static low camera looking up at her from the Hundred Knight's eye level. She stands with her hands on her hips, talking down to the Hundred Knight; on 'mattaku' she
+      jerks her thumb over her shoulder toward the house and rolls her eyes in exasperation, ending with a small sigh. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible.
+      The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and
+      the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-003
+    sec: 7.0
+    duration: 7
+    credits: 21
+    start_image: episodes/A/scenes/A02/stills/start/A02-003_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-003_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-003.mp4
+    audio_reference: audio/A02/original/L96_bisco.wav（mp3 に変えて渡す）
+    prompt: Full shot from the side, static camera. Bisco pulls a small folded paper out of the pouch at her belt, bends down a little and hands it to the Hundred Knight; the Hundred Knight takes it with
+      its big gauntlets and looks down at it. Bisco straightens up. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV
+      anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light, a
+      thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-004
+    sec: 3.8
+    duration: 4
+    credits: 12
+    start_image: episodes/A/scenes/A02/stills/start/A02-004_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-004.mp4
+    audio_reference: null
+    prompt: Medium-long shot looking down at the Hundred Knight, static camera. It peers at the small paper in its big gauntlets, nods once, grips the paper, turns toward the right side of the picture and
+      at about 2.2 seconds starts running, leaving the frame on the right by about 3.6 seconds. The shot ends on the empty clearing. 2D TV anime style, clean line art, cel shading, rich but soft colors.
+      Keep every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-005
+    sec: 3.6
+    duration: 4
+    credits: 12
+    start_image: episodes/A/scenes/A02/stills/start/A02-005_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-005_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-005.mp4
+    audio_reference: audio/A02/original/L97_bisco.wav（mp3 に変えて渡す）
+    prompt: Wide shot, static low camera. The Hundred Knight runs from the left toward the right of the picture; in the background on the left Bisco takes half a step forward and stretches one arm out,
+      calling to it. The Hundred Knight stops short at about 2 seconds and turns around to look back at Bisco. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The
+      shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the
+      character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-006
+    sec: 10.6
+    duration: 11
+    credits: 33
+    start_image: episodes/A/scenes/A02/stills/start/A02-006_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-006_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-006.mp4
+    audio_reference: audio/A02/original/L98_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium-long shot over the Hundred Knight's shoulder, static camera at its eye level. Bisco walks briskly toward the Hundred Knight, pointing at her own chest with her thumb, then gestures toward
+      the distance with one hand; at about 6 seconds she bends down to the Hundred Knight's eye level, smiles a little shyly and holds out a small fist. Sync the speaking character's mouth to the line in
+      audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions
+      identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question
+      marks).
+  - cut: A02-007
+    sec: 2.2
+    duration: 4
+    credits: 12
+    start_image: episodes/A/scenes/A02/stills/start/A02-007_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/start/A02-007_start_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-007.mp4
+    audio_reference: null
+    prompt: Close-up looking down at the Hundred Knight, static camera. It looks up at Bisco (off screen) and gives one big, slow nod, then keeps looking up. The shot ends on the given last frame. 2D TV
+      anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light, a
+      thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-008
+    sec: 4.6
+    duration: 5
+    credits: 15
+    start_image: episodes/A/scenes/A02/stills/start/A02-008_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-008_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-008.mp4
+    audio_reference: audio/A02/original/L99_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium close-up of Bisco, static camera slightly below her. Still bent forward, she blinks in surprise; after a short pause she straightens up, her eyes wander away, she scratches her cheek,
+      then clenches a small fist in front of her chest and nods to herself. Her tail sways restlessly. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot ends
+      on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character
+      sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-009
+    sec: 8.6
+    duration: 9
+    credits: 27
+    start_image: episodes/A/scenes/A02/stills/start/A02-009_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-009_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-009.mp4
+    audio_reference: audio/A02/original/L100_bisco.wav（mp3 に変えて渡す）
+    prompt: Full shot of both characters from the south, static camera. Bisco, flustered, waves both hands in front of her chest and takes half a step back, turns halfway toward the house and points over
+      her shoulder at it with her thumb, then glances sideways at the Hundred Knight to see its reaction. Her tail swishes busily. The Hundred Knight stands still, looking up at her. Sync the speaking character's
+      mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design,
+      colors and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).
+  - cut: A02-010
+    sec: 6.2
+    duration: 7
+    credits: 21
+    start_image: episodes/A/scenes/A02/stills/start/A02-010_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-010_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-010.mp4
+    audio_reference: audio/A02/original/L101_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium close-up of Bisco in profile, low camera, slow push in. She looks up at the second-floor window of the house; her voice softens, her eyes narrow gently and a faint smile appears. Sync
+      the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep
+      every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-011
+    sec: 7.8
+    duration: 8
+    credits: 24
+    start_image: episodes/A/scenes/A02/stills/start/A02-011_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-011_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-011.mp4
+    audio_reference: audio/A02/original/L102_bisco.wav（mp3 に変えて渡す）
+    prompt: Close-up of Bisco, static camera. She snaps out of it and turns back toward the Hundred Knight (off screen), raises her index finger, then presses one hand to her chest and talks quickly with
+      her eyes darting away, cheeks slightly flushed. One ear twitches. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D
+      TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light,
+      a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-012
+    sec: 6.8
+    duration: 7
+    credits: 21
+    start_image: episodes/A/scenes/A02/stills/start/A02-012_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-012_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-012.mp4
+    audio_reference: audio/A02/original/L103_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium close-up of Bisco, slow push in. She lowers the hand from her chest and clenches a fist tightly in front of it; her eyes drop to her feet and her brows draw together into a troubled,
+      brooding look. Her lips start to move and stop. Her tail goes still. Hold on her silent face at the end. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The
+      shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the
+      character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-013
+    sec: 5.9
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A02/stills/start/A02-013_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-013_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/arlecchino_sheet_01.png
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-013.mp4
+    audio_reference: null
+    prompt: Wide shot from the south, static camera. Bisco stands with her head bowed; the Hundred Knight stands in the foreground on the right, looking up at her. Arlecchino comes down the bridge steps;
+      when he starts to speak, Bisco jumps, her shoulders flinch up, and she turns around toward him; the Hundred Knight turns its head toward him too. Arlecchino stops at the foot of the bridge, one hand
+      on his chest. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first
+      frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-014
+    sec: 7.1
+    duration: 8
+    credits: 24
+    start_image: episodes/A/scenes/A02/stills/start/A02-014_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-014_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/arlecchino_sheet_01.png
+    previs: previs/A02/A02-014.mp4
+    audio_reference: null
+    prompt: Medium close-up of Arlecchino, static camera. He stands upright with one hand on his chest and speaks politely; on 'nonbiri' he freezes for an instant, then continues as if nothing happened
+      and bows. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first
+      frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-015
+    sec: 5.2
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A02/stills/start/A02-015_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-015_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/arlecchino_sheet_01.png
+    - refs/bisco_sheet_01.png
+    previs: previs/A02/A02-015.mp4
+    audio_reference: audio/A02/original/L106_bisco.wav（mp3 に変えて渡す）
+    prompt: Medium-long shot from the south-west, static camera, Arlecchino in the background. Bisco snaps upright, looks from Arlecchino to the Hundred Knight and back, then raises a fist energetically;
+      at about 3.8 seconds she turns toward the right side of the picture and starts to stride off. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot ends
+      on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character
+      sheets. Early morning light, a thin mist over the swamp. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A02-016
+    sec: 6.0
+    duration: 6
+    credits: 18
+    start_image: episodes/A/scenes/A02/stills/start/A02-016_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A02/stills/end/A02-016_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/arlecchino_sheet_01.png
+    - refs/bisco_sheet_01.png
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A02/A02-016.mp4
+    audio_reference: null
+    prompt: Extreme wide high-angle shot from the south, static camera. Bisco strides away east along the boardwalk, Arlecchino follows a little behind, both growing smaller in the morning mist. The Hundred
+      Knight watches them go, then at about 4.6 seconds turns around and looks up at the second-floor window of the house. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading,
+      rich but soft colors. Keep every character's design, colors and proportions identical to the first frame and the character sheets. Early morning light, a thin mist over the swamp. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).

@@ -106,7 +106,7 @@ def build(st, cut, which="start"):
         refs.append(f)
         bg_idx.append(n)
     n += 1
-    sk = f"episodes/A/scenes/A01b/gen/sketch/{cut}_{which}.png"
+    sk = f"{st.dir.relative_to(ROOT)}/gen/sketch/{cut}_{which}.png"
     refs.append(sk)
     x, y, h = c["cam"]
     cam = f"Camera: {FRAME_EN.get(c['frame'], c['frame'])}, {c['lens']}mm lens, camera height {h} m"

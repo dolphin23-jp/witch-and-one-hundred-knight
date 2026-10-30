@@ -1,7 +1,7 @@
 # A02 魔女邸の前・別れの立ち位置・向き・動きとカメラ割り（演出ノート P-01・P-03・P-04）。Claude の構想（2026-10-30）。ユーザーのイメージを聞いて直す
 # 場所は A01b と同じ屋敷の前の土の広場（world/witch-house-front-layout.yaml）。位置関係はユーザーが用意した背景画像（refs/witch-house-front_bg_01・02）が基準。Claude は背景を作らない
 # 全カットを動画にする前提（新しい作り方の試験、ユーザー指定 2026-10-30）。kind はすべて M（小さな動き）か A（見せ場）
-# 書き方は episodes/A/scenes/A01b/blocking.yaml の頭のコメントと同じ。確かめるのは python tools/staging.py episodes/A/scenes/A02
+# 書き方は episodes/A/scenes/A01b/blocking.yaml の頭のコメントと同じ。pose・pose_end は静止画の指示文に入る芝居（英語、見た目は書かない）。確かめるのは python tools/staging.py episodes/A/scenes/A02
 # 秒は shots/ のショットファイル（原作の声の実測、2026-10-30）。動きの t はその秒に合わせた。台詞は audio/A02/original/script.yaml の番号
 scene: A02
 layout: world/witch-house-front-layout.yaml
@@ -45,6 +45,8 @@ cuts:
     gaze: {bisco: hundred-knight, hundred-knight: bisco}
     act: {start: 広場の中ほどに百騎兵が一人、背中を見せて立つ。奥の玄関の扉が開く, do: ビスコが玄関から飛び出し、手を振りながら橋を駆け下りてくる, end: 百騎兵の前で止まり、息を弾ませる, sync: 「百騎兵！」で駆け出し、「わかったぞ」で止まる}
     camera: 広場の南東の低い位置から。手前に百騎兵の背中、奥に屋敷の正面。止め
+    pose: {"bisco": "running down the bridge steps from the front door, one hand raised and waving", "hundred-knight": "standing still, waiting"}
+    pose_end: {"bisco": "having just stopped running in front of the Hundred Knight, slightly out of breath, one hand on her hip", "hundred-knight": "standing still, looking up"}
     kind: A
   A02-002:
     frame: 胸上
@@ -57,6 +59,8 @@ cuts:
     gaze_end: {bisco: window}
     act: {start: 腰に手を当てて百騎兵を見下ろす, do: 「まったく」で親指を立てて肩越しに屋敷を指し、呆れ顔で目を上げる, end: 屋敷の方を見て、ため息, sync: 「人使いの荒いヤツだ」で親指}
     camera: 百騎兵の目の高さ（0.95m）で、百騎兵の後ろ（南東）から見上げる。奥に屋敷。止め
+    pose: {"bisco": "standing with both hands on her hips, looking down"}
+    pose_end: {"bisco": "jerking her thumb over her shoulder toward the house, rolling her eyes up in exasperation, sighing"}
     kind: M
   A02-003:
     frame: 全身
@@ -69,6 +73,8 @@ cuts:
     act: {start: 二人を真横から。ビスコが腰の袋から折りたたんだ紙を出す, do: 身をかがめて紙を差し出し、百騎兵が大きな手で受け取る, end: 百騎兵が両手で紙を持って見下ろす。ビスコは背を伸ばす, sync: 「手紙に書き付けてあるから」で差し出す}
     camera: 東から真横。背丈の差を見せる。止め
     note: 手と手が触れる画は、人物を1人ずつ作って重ねる作り方では作りにくい。開始（差し出す）と終わり（受け取った後）を別々に重ね、受け渡しは動画に任せる
+    pose: {"bisco": "pulling a small folded paper out of the pouch at her belt", "hundred-knight": "standing, looking up"}
+    pose_end: {"bisco": "standing up straight again, her hands lowered", "hundred-knight": "holding the small folded paper in both big gauntlets, looking down at it"}
     kind: M
   A02-004:
     frame: 膝上
@@ -83,6 +89,7 @@ cuts:
     act: {start: 大きなガントレットの中の小さな紙を、百騎兵がのぞき込む, do: 紙を確かめて小さく一度うなずき、紙を握って東（砂漠の方）へ向き直り、走り出す, end: 画面の右へ走り出ていく, sync: 台詞なし（原作の『探し物メモ』を手に入れた）。2.2秒で走り出す}
     camera: ビスコの右横、肩の高さから見下ろす。止め（百騎兵が画面から走り出る）
     note: ユーザーのイメージ（2026-10-30）。後で呼び止められるので、紙を確かめたらすぐ出発しようと走り出す
+    pose: {"hundred-knight": "peering down at the small folded paper held in its big gauntlets"}
     kind: M
 
   # ---------- 呼び止め（005〜008） ----------
@@ -101,6 +108,8 @@ cuts:
     act: {start: 百騎兵がこちらへ走ってくる。奥にビスコ, do: 「あ、おい、百騎兵！」でビスコが半歩踏み出して手を伸ばす。百騎兵が急に止まり、くるりと振り返る, end: 振り返った百騎兵の背中越しに、手を伸ばしたビスコ, sync: 「あ、おい」で手を伸ばし、「百騎兵！」で百騎兵が止まる}
     camera: 南の低い位置から。左の奥にビスコ、百騎兵は左から右へ走る。止め
     note: ユーザーのイメージ（2026-10-30）。走り出した百騎兵をビスコが呼び止める
+    pose: {"hundred-knight": "running toward screen right, gripping the paper", "bisco": "standing, starting to reach out one hand"}
+    pose_end: {"hundred-knight": "having stopped short and turned around", "bisco": "having taken half a step forward, one arm stretched out toward the Hundred Knight"}
     kind: M
   A02-006:
     frame: 膝上
@@ -114,6 +123,8 @@ cuts:
     act: {start: 呼び止めたビスコ, do: 小走りに近づきながら、「私の方の」で親指で自分の胸を指す。「ヴァレンティーヌ領に」で遠くの方角を手で示し、「お互い、頑張って見つけような」で少しかがんで百騎兵と目の高さを合わせ、照れくさそうに笑って拳を小さく突き出す, end: かがんで拳を出したまま笑う, sync: 「お互い」でかがむ}
     camera: 百騎兵の肩越し（手前に兜の端）、百騎兵の目の高さから。止め
     note: ユーザーのイメージ（2026-10-30）。止めや口パクだけにせず、細かい動きでもビスコを動かす
+    pose: {"bisco": "starting to walk briskly toward the Hundred Knight, pointing at her own chest with her thumb", "hundred-knight": "standing, looking up"}
+    pose_end: {"bisco": "bending down to the Hundred Knight's eye level, smiling a little shyly, holding out a small fist", "hundred-knight": "standing, looking up"}
     kind: M
   A02-007:
     frame: 寄り
@@ -125,6 +136,8 @@ cuts:
     gaze: {hundred-knight: bisco}
     act: {start: 百騎兵がビスコを見上げている, do: こくりと一度、大きく頷く, end: 頷いて見上げたまま, sync: 台詞なし（原作の「百騎兵、頷く」）}
     camera: ビスコの目の高さから見下ろす。奥は東の沼。止め
+    pose: {"hundred-knight": "standing, looking up"}
+    pose_end: {"hundred-knight": "standing, having nodded once, still looking up"}
     kind: M
   A02-008:
     frame: 胸上
@@ -138,6 +151,8 @@ cuts:
     act: {start: かがんだまま、素直に頷かれて一瞬きょとんとする（まばたき）, do: 背を伸ばしながら「そ、そうだな」で目が泳ぎ、頬をかく。「頑張るぞ、うん」で胸の前で小さく拳を握り、自分に言い聞かせるように頷く。尻尾がそわそわ揺れる, end: 目をそらしたまま拳, sync: 「そ、そうだな」の前に半拍の間}
     camera: 百騎兵の側から少し見上げる。奥に屋敷。止め
     note: ユーザーのイメージ（2026-10-30）。止めや口だけにしない
+    pose: {"bisco": "still bent forward, blinking in surprise, mouth slightly open"}
+    pose_end: {"bisco": "standing up straight, her eyes wandering away, a small fist clenched in front of her chest, nodding to herself, her tail swaying restlessly"}
     kind: M
 
   # ---------- 言い訳（009〜012） ----------
@@ -147,24 +162,28 @@ cuts:
     look: [12.4, 9.9]
     lens: 35
     only: [bisco, hundred-knight]
-    move: {bisco: {to: b_turn, face: window, t: [0.4, 2.6]}}
+    move: {bisco: {to: b_turn, face: [8.5, 7.5], t: [0.4, 2.6]}}   # 屋敷の方へ半分（西北西）。真北の窓に向けると背中だけになる（2026-10-30 直し）
     gaze: {bisco: hundred-knight, hundred-knight: bisco}
     gaze_end: {bisco: hundred-knight}
     act: {start: 二人を全身で。ビスコが我に返る, do: 「い、いや、ほら！」で両手を胸の前でぱたぱた振り、半歩下がる。言い訳を探すように体を屋敷の方へ半分向け、「メタリカの奴」で肩越しに親指で屋敷を指す。「憧れてたみたいだろ？」で横目に百騎兵の反応をうかがう。尻尾が忙しく揺れる, end: 屋敷を指したまま、横目で百騎兵を見る, sync: 「い、いや」で手を振り、「メタリカの奴」で親指、「だろ？」で横目}
     camera: 南から二人を全身で。奥に屋敷。止め
     note: ユーザーのイメージ（2026-10-30）。ビスコの動きをつけ、案からさらに膨らませる
+    pose: {"bisco": "flustered, waving both hands in front of her chest", "hundred-knight": "standing, looking up"}
+    pose_end: {"bisco": "half turned toward the house, pointing over her shoulder at the house with her thumb, glancing sideways", "hundred-knight": "standing, looking up"}
     kind: M
   A02-010:
     frame: 胸上
-    cam: [13.2, 12.0, 0.95]
+    cam: [9.2, 9.9, 1.0]   # 2026-10-30 直し: 前の位置（南東）では窓を見上げる背中しか映らず、表情が見えなかった。西から横顔にする（軸の同じ側）
     look: b_turn
     lens: 85
     look_h: 1.35
     only: [bisco]
     gaze: {bisco: window}
     act: {start: 屋敷の二階の窓を見上げる横顔, do: 声が少し柔らかくなる。目を細め、口元がわずかにゆるむ, end: 見上げたまま, sync: 「夢みたいだしさ」で目を細める}
-    camera: 百騎兵の側から見上げる。奥に屋敷。ゆっくり寄る（push）
+    camera: 西の低い位置から、窓を見上げる横顔を見上げる。奥は東の遊歩道と沼。ゆっくり寄る（push）
     note: 誰も見ていない（と本人が思っている）本音の一瞬。次の 011 で我に返る
+    pose: {"bisco": "looking up at the second-floor window of the house"}
+    pose_end: {"bisco": "looking up at the second-floor window, her eyes softly narrowed, a faint gentle smile"}
     kind: M
   A02-011:
     frame: 寄り
@@ -179,6 +198,8 @@ cuts:
     act: {start: 窓を見上げていたビスコ, do: はっとして百騎兵に向き直り、「そ、それに！」で人差し指を立てる。少し頬が赤い。「私に呪いをかけた魔女」で自分の胸に手を当て、目をそらしながら早口で続ける（メタリカのためだと思われるのが恥ずかしく、自分のためでもあると付け加えている）。耳がぴくりと動く, end: 胸に手を当て、目をそらしたまま, sync: 「そ、それに！」で向き直って指}
     camera: 百騎兵の側から。止め
     note: ユーザーのイメージ（2026-10-30）。少し照れている。メタリカのため、というのが恥ずかしいので、自分のためでもあると付け加えている
+    pose: {"bisco": "still looking up toward the house window"}
+    pose_end: {"bisco": "turned back, one hand pressed to her chest, eyes darting away, cheeks slightly flushed, embarrassed"}
     kind: M
   A02-012:
     frame: 胸上
@@ -193,6 +214,8 @@ cuts:
     act: {start: 胸に当てていた手を下ろす, do: 「私も頑張らなくちゃいけないしな」で胸の前で拳を握りしめ、目を伏せる。眉が寄り、思いつめた表情になる。「だから……」で唇が動きかけて止まる。尻尾が止まる, end: 拳を握ったまま、足元を見つめて黙る, sync: 「だから……」の後に1拍の間}
     camera: ゆっくり寄る（push）
     note: ユーザーのイメージ（2026-10-30）。思いつめた表情
+    pose: {"bisco": "lowering the hand from her chest"}
+    pose_end: {"bisco": "a fist clenched tightly in front of her chest, eyes cast down at her feet, brows drawn together, a troubled, brooding expression, lips pressed together"}
     kind: M
 
   # ---------- 割り込みと別れ（013〜016） ----------
@@ -209,6 +232,8 @@ cuts:
     gaze_end: {bisco: arlecchino, hundred-knight: arlecchino}
     act: {start: 思いつめてうつむくビスコと、見上げる百騎兵（手前の右）。奥の橋をアルレッキーノが下りてくる, do: 「ワタクシは」の声にビスコがびくりと肩を跳ね上げて振り向く。百騎兵も首を向ける, end: ビスコがアルレッキーノを見る, sync: 「ワタクシは」でビスコが振り向く}
     camera: 南から三人。手前の右に百騎兵。止め
+    pose: {"bisco": "standing with her head bowed, brooding", "hundred-knight": "standing, looking up", "arlecchino": "coming down the bridge steps"}
+    pose_end: {"bisco": "turned around in surprise, shoulders raised", "hundred-knight": "standing, its head turned", "arlecchino": "standing at the foot of the bridge, one hand on his chest"}
     kind: M
   A02-014:
     frame: 胸上
@@ -220,6 +245,8 @@ cuts:
     gaze: {arlecchino: bisco}
     act: {start: 胸に手を当てて立つ, do: 「のんびり……」で言いかけて一瞬固まり、「いえ、早急に」で何事もなかったように一礼, end: 一礼, sync: 「……いえ」で一瞬止まる}
     camera: ビスコの側から。奥に屋敷。止め
+    pose: {"arlecchino": "standing upright, one hand on his chest"}
+    pose_end: {"arlecchino": "bowing politely, one hand on his chest"}
     kind: M
   A02-015:
     frame: 膝上
@@ -232,6 +259,8 @@ cuts:
     gaze_end: {bisco: exit_b}
     act: {start: 我に返ったビスコ, do: 「あ、ああ」で慌てて背筋を伸ばし、アルレッキーノと百騎兵を見比べる。「お互い頑張ろうな！」で照れ隠しに勢いよく拳を上げ、くるりと東へ向き直って大股で歩き出す, end: 東の遊歩道へ歩き出す, sync: 「頑張ろうな！」で拳}
     camera: 南西から。奥にアルレッキーノ。止め
+    pose: {"bisco": "startled, snapping upright", "hundred-knight": "standing", "arlecchino": "standing, one hand on his chest"}
+    pose_end: {"bisco": "one fist raised energetically, turning to stride off", "hundred-knight": "standing", "arlecchino": "standing"}
     kind: M
   A02-016:
     frame: 大引き
@@ -247,4 +276,6 @@ cuts:
     act: {start: 東の遊歩道へ向かうビスコ、少し遅れてアルレッキーノ。百騎兵が見送る, do: 二人が朝靄の遊歩道へ遠ざかる。見送った百騎兵が、振り返って屋敷の二階の窓を見上げる, end: 屋敷の二階の窓を見上げる百騎兵, sync: 台詞なし（BGM）}
     camera: 広場の南の高い位置から。止め
     note: 次の A03（メタリカの自室）へつなぐ
+    pose: {"bisco": "striding away toward the boardwalk", "arlecchino": "walking after her", "hundred-knight": "standing, watching them go"}
+    pose_end: {"bisco": "walking away along the boardwalk, small in the distance", "arlecchino": "walking away along the boardwalk, small in the distance", "hundred-knight": "turned around, looking up at the second-floor window of the house"}
     kind: A
