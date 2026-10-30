@@ -59,6 +59,9 @@ def main():
         sv = speaker.get(cut)
         end = None if cut in no_end else f"{rel}/stills/end/{cut}_end_gpt-image-2.5_01.png"
         who = sorted({e["who"] for w in ("start", "end") for e in st.frame(cut, w)["people"]})
+        for n in (st.bk["cuts"][cut].get("creatures") or {}):   # 生き物（D-060）: 動画の指示文に出てくるときは設定画も添える
+            if n.replace("-", " ") in spec["prompts"][cut].replace("-", " "):
+                who.append(n)
         sv_lines = [l for l in lines if list((ROOT / "audio" / scene / "original").glob(f"{l}_{sv}.wav"))] if sv else []
         v = {"cut": cut, "sec": shot["sec"], "duration": dur, "credits": dur * vid["credits_per_sec"],
              "start_image": f"{rel}/stills/start/{cut}_start_gpt-image-2.5_01.png", "end_image": end,

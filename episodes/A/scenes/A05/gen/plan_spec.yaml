@@ -1,0 +1,35 @@
+# A05 の生成計画の中身（tools/scene_plan.py が読む）。Claude の案（2026-10-30）。D-060: 動きは下絵で決め、終わりの画は着地点を固めたいカットだけ
+video: {model: seedance_2_0, mode: fast, resolution: 480p, credits_per_sec: 1}
+video_note: >-
+  開始の画＋（必要なカットだけ終わりの画）＋設定画＋下絵（Blender、854x480、動きのキー入り）＋口パク参照（ルッキーニィの台詞で口が見えるカット）。最短4秒・整数秒。
+  006 は fast と std（1秒3クレジット）を比べてから、残りの見せ場の作り方を決める（D-060）。生成音声は使わない（generate_audio=false）
+tail: >-
+  2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions
+  identical to the first frame and the reference sheets. Mid-afternoon desert light: the sun lower in the west-southwest, warm golden light, longer
+  shadows, heat haze. The Hundred Knight has no mouth and never speaks; its face is black with only two glowing orange eyes. No one else appears.
+  No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+no_end:
+  A05-003: 小さな前進だけ。下絵に従わせる
+  A05-004: 真上の俯瞰で回りながら下りる。下絵に従わせる
+  A05-006: 見せ場の大きな動き（飛び出して弧を描く）。終わりの画で途中を省かせない（D-060）
+  A05-007: 見せ場の大きな動き（砂食みと一緒に動く）
+  A05-009: ゆっくり上がりながら引くだけ
+  A05-010: 遠くで跳ねる大きな動き
+  A05-011: 止め（頭がぽこっと出るだけ）
+cels: []
+speaker:
+  A05-002: luckiny
+  A05-005: luckiny
+prompts:
+  A05-001: "Low tracking shot from behind and to the side, moving at running speed. Luckiny runs up the slope of a big dune ahead of the Hundred Knight; at about 1.3 seconds she stops on the ridge, turns back and waves her arm wide, calling to it. The Hundred Knight catches up and both turn and run over the ridge. From about 2.3 seconds the camera rises like a crane over the ridge, revealing an endless sea of dunes beyond."
+  A05-002: "Telephoto shot from the front. Luckiny and the Hundred Knight run down the dune slope toward the camera, sand sliding under their feet. At about 1.6 seconds Luckiny stops abruptly, crouches low and throws one arm out to the side to stop the Hundred Knight, who bumps into her arm. At about 2.4 seconds the camera snaps into a fast zoom on her tense face."
+  A05-003: "Extreme low shot just above the sand, the camera slowly sliding forward toward the two. Grains of sand tremble and hop, concentric ripples spread across the sand, and small sand-sheep bones in the foreground rattle. In the background Luckiny crouches low, trembling and looking around; the Hundred Knight stands still beside her."
+  A05-004: "Top-down view from high above, the camera slowly rotating and descending. A huge dark shadow, about 8 m long, glides under the sand toward the two tiny figures, the sand surface bulging and rippling along its path; it passes right beneath the Hundred Knight and continues away. The two stay frozen; at the end the Hundred Knight turns to look after it."
+  A05-005: "Close shot of Luckiny crouching and facing the camera. At about 0.3 seconds she screams in terror and the camera crash-zooms in on her face and shakes. Behind her, a little to the left, a huge fountain of sand bursts up from the ground."
+  A05-006: "Low angle at sand level, looking toward the sun. Right beside the two, the huge sand-eater bursts out of the sand in a fountain of sand and rises in a great arc into the sky, sand pouring off its body like a waterfall. Luckiny throws herself flat on the sand and the Hundred Knight crouches. The camera tilts up following the arc; at the top the sand-eater is a dark silhouette against the blazing sun, then it curves down past the camera."
+  A05-007: "The camera rides alongside, just above and to the side of the head of the huge sand-eater as it flies through the air: its pale segmented body is in the lower left of the frame, and far below on the sand the two tiny figures pass beneath. The camera moves with the sand-eater; at the end the sand ahead rushes closer as it starts to dive."
+  A05-008: "Wide side view. The huge sand-eater plunges head first back into the sand beyond the two; the camera whip-pans to follow the dive, then shakes with the impact. A great wave of sand bursts up where it dived and a shower of sand rains down over the two; the Hundred Knight is left buried up to the chest."
+  A05-009: "Seen from behind the two: Luckiny lies flat on the sand and the Hundred Knight is buried up to the chest. Far ahead, a long ridge of churned sand races away toward the distant dunes as the sand-eater swims off under the surface; the sand dust in the air slowly settles. The camera slowly rises and pulls back."
+  A05-010: "Telephoto shot across the desert through heat haze. Far away beyond a big dune, the sand-eater leaps out of the sand in a high arc, sand streaming off its body, and dives back down; a plume of sand rises and slowly falls. The camera pans slowly to the right with it. Nobody else is in the frame."
+  A05-011: "Front close shot, static with a very slow push-in. From a heap of sand the Hundred Knight's helmet pops up out of the sand up to its neck. It stares blankly; the pale blue flame on its head droops and shrinks. Luckiny lies on the sand in the background."
+  A05-012: "Slight handheld camera. The Hundred Knight climbs out of the sand heap, then shakes its whole body quickly from side to side like a dog to shake off the sand, sand flying off. Behind it, Luckiny pushes herself up and sits slumped on the sand, exhausted with relief."

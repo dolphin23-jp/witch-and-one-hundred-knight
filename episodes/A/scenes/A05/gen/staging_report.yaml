@@ -157,7 +157,7 @@ cuts:
         dist: 6.79
         side: 中央
         body: 斜め前（画面右向き）
-      bg: 西の砂丘と岩〔砂漠 見下ろし〕／北の砂丘と岩山〔砂漠 全景〕
+      bg: 砂の表面〔砂漠 砂模様の寄り〕
       props:
       - 南北に長い砂丘（二人が越える）
       - 赤い岩（大）
@@ -167,9 +167,8 @@ cuts:
         center of the frame, in three-quarter view, turned toward screen right, small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood
         and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low and trembling, looking around in
         fear, in the center of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. In the foreground the sand surface trembles: fine grains hop and concentric
-        ripples spread across the sand; small scattered sand-sheep bones rattle on the sand. Behind: golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on
-        the horizon, then endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Mid-afternoon in the desert: the sun lower in the west-southwest
-        of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+        ripples spread across the sand; small scattered sand-sheep bones rattle on the sand. Behind: the rippled surface of golden sand with fine swirling patterns, a few dry shrubs. Mid-afternoon in the
+        desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
     end:
       people:
       - who: hundred-knight
@@ -186,9 +185,9 @@ cuts:
         on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing still beside her, looking around, in the
         center of the frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
         legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low and trembling, looking around in fear, in the center of the frame, facing the camera. No other
-        people. In the foreground the sand surface trembles: fine grains hop and concentric ripples spread across the sand; small scattered sand-sheep bones rattle on the sand. Behind: golden dunes with
-        swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon, then endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock
-        pillars on the horizon. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+        people. In the foreground the sand surface trembles: fine grains hop and concentric ripples spread across the sand; small scattered sand-sheep bones rattle on the sand. Behind: the rippled surface
+        of golden sand with fine swirling patterns, a few dry shrubs. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over
+        the dunes.'
     move:
       luckiny:
         to: lk_stop
@@ -213,30 +212,44 @@ cuts:
     frame: 大引き
     start:
       people:
-      - who: luckiny
-        s: 0.65
-        dist: 1.2
-        side: 右
+      - who: hundred-knight
+        s: -0.02
+        dist: 24.0
+        side: 中央
         body: 斜め前（画面右向き）
-      bg: 北の砂丘と岩山〔砂漠 全景〕
+      - who: luckiny
+        s: 0.03
+        dist: 24.0
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 高い空から見下ろす砂漠〔砂漠 見下ろし〕
       props: []
-      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low, frozen in fear (seen from directly above), at the far right of the frame, in three-quarter
-        view, turned toward screen right. No other people. High angle looking down. Under the sand a huge dark shadow, about 8 m long, glides toward the two; the sand surface bulges and ripples along its
-        path. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Mid-afternoon in the desert: the sun lower in the west-southwest
-        of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing still (seen from directly above), in the
+        center of the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with
+        white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low, frozen in fear (seen from directly above), in the center
+        of the frame, in three-quarter view, turned toward screen right. No other people. High angle looking down. Under the sand a huge dark shadow, about 8 m long, glides toward the two; the sand surface
+        bulges and ripples along its path. Behind: seen from high above: golden dunes with swirling sand patterns, long dune ridges and scattered red rocks. Mid-afternoon in the desert: the sun lower in
+        the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
     end:
       people:
       - who: hundred-knight
-        s: -0.16
-        dist: 1.49
+        s: -0.02
+        dist: 15.0
         side: 中央
         body: 横顔（画面左向き）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), turning to look behind (seen from directly above), in the center
-        of the frame, in profile, turned toward screen left. No other people. High angle looking down. The huge dark shadow under the sand has passed beneath them and glides away; a long ridge of disturbed
-        sand marks its path. Behind: golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Mid-afternoon in the desert: the sun lower in the
-        west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+      - who: luckiny
+        s: 0.08
+        dist: 15.0
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), turning to look behind (seen from directly above),
+        in the center of the frame, in profile, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white
+        fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), crouching low, frozen in fear (seen from directly above), in the center of the
+        frame, facing the camera. No other people. High angle looking down. The huge dark shadow under the sand has passed beneath them and glides away; a long ridge of disturbed sand marks its path. Behind:
+        seen from high above: golden dunes with swirling sand patterns, long dune ridges and scattered red rocks. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm
+        golden light, longer shadows, heat haze over the dunes.'
     move:
       hundred-knight:
         to: hk_stop
@@ -349,16 +362,16 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.16
-        dist: 3.12
+        s: -0.06
+        dist: 8.6
         side: 中央
         body: 斜め前（画面左向き）
       - who: luckiny
-        s: 0.19
-        dist: 3.98
+        s: 0.09
+        dist: 8.6
         side: 中央
         body: 斜め後ろ（画面右向き）
-      bg: 北の砂丘と岩山〔砂漠 全景〕
+      bg: 高い空から見下ろす砂漠〔砂漠 見下ろし〕
       props:
       - 赤い岩（大）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
@@ -366,13 +379,13 @@ cuts:
         the frame, in three-quarter view, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
         trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), lying flat on the sand far below, in the center of the frame, seen from behind at
         an angle, turned toward screen right. No other people. High angle looking down. Seen from just behind the head of the huge sand-eater as it flies through the air: its pale segmented back fills the
-        bottom of the frame, and far below on the sand lie the two tiny figures. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon.
-        Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+        bottom of the frame, and far below on the sand lie the two tiny figures. Behind: seen from high above: golden dunes with swirling sand patterns, long dune ridges and scattered red rocks. Mid-afternoon
+        in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
     end:
       people: []
       staging: 'No people in frame. High angle looking down. Seen from just behind the head of the huge sand-eater as it flies through the air: its pale segmented back fills the bottom of the frame, and
-        far below on the sand lie the two tiny figures. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Mid-afternoon in the
-        desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+        far below on the sand lie the two tiny figures. Behind: seen from high above: golden dunes with swirling sand patterns, long dune ridges and scattered red rocks. Mid-afternoon in the desert: the
+        sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
     move: {}
     note: null
   A05-008:
