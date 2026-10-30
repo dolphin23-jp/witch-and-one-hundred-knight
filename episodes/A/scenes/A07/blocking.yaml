@@ -428,12 +428,12 @@ cuts:
     shake:
       - {t: [1.0, 1.7], amp: 0.9}
     cam_keys:
-      - {t: 0.0, cam: [27.9, 32.3, 4.9], look: hundred-knight, lens: 32, frame: 寄り}   # 西から、頭の高さより少し下（015 の回り込みの続き）
-      - {t: 3.6, cam: [28.1, 32.2, 4.8], look: hundred-knight, lens: 38, ease: linear}
+      - {t: 0.0, cam: [28.2, 32.2, 6.3], look: hundred-knight, lens: 32, frame: 寄り}   # 西から。頭のてっぺんより少し上（頭の上の百騎兵が隠れないように。015 の回り込みの続き）
+      - {t: 3.6, cam: [28.4, 32.1, 5.9], look: hundred-knight, lens: 38, ease: linear}
     bg: cave_wide
     extra_en_end: "The Hundred Knight drives its sword deep into the monster's huge eye; sparks and sand burst out."
     act: {start: 砂食みの目の高さから、落ちてくる百騎兵を見上げる, do: 落ちながら砂食みの目に剣を突き立てる（「串刺し」の回収。突き立てる瞬間は一瞬のスロー）, end: 砂食みの頭の上で剣を突き立てた百騎兵, sync: （台詞なし）}
-    camera: 砂食みの目の高さから見上げる。突き立てる瞬間は一瞬のスロー（Animatic で入れる）
+    camera: 砂食みの頭の少し上の高さから、落ちてくる百騎兵を見上げ、頭の上で剣を突き立てるのを見せる。突き立てる瞬間は一瞬のスロー（Animatic で入れる）
     pose: {hundred-knight: "falling from above with its sword pointed straight down"}
     pose_end: {hundred-knight: "on top of the monster's head, its sword driven deep into the monster's eye"}
     kind: A
