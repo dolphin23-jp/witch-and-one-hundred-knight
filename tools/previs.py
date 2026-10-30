@@ -454,7 +454,7 @@ def build_cave(name, pr, x, y):
                                             location=bl((x, y), (pr["z0"] + pr["z1"]) / 2))
         o = bpy.context.object
         o.name = f"ENV_{name}"
-        o.data.materials.append(beam_mat(f"{name}_m", (0.75, 0.85, 1.0)))
+        o.data.materials.append(beam_mat(f"{name}_m", (0.75, 0.85, 1.0), strength=0.25, alpha=0.95))
         return True
     if name.startswith("column"):
         prim("cyl", rockc, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=pr.get("r", 2.0), depth=pr["h"])
@@ -653,6 +653,9 @@ def build_site(lay, lighting=None):
     bpy.ops.object.light_add(type="SUN")
     sun = bpy.context.object
     sun.name = "LGT_sun"
+    if lit.get("fill"):   # 洞窟などの弱い補助光（大きな点光源）
+        fl = lit["fill"]
+        point_light("LGT_fill", fl["at"][0], fl["at"][1], fl.get("z", 8.0), fl.get("energy", 500), tuple(v / 255 for v in fl.get("color", [180, 190, 220])), fl.get("radius", 4.0))
     sun.data.energy = lit.get("sun_energy", 4.0)
     if lit.get("sun_color"):
         sun.data.color = tuple(v / 255 for v in lit["sun_color"])
