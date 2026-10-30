@@ -21,7 +21,7 @@
 3. **人物の見た目は指示文ではなく参照画像で固定する。** 指示文に書くのは構図、芝居、背景、光だけ。参照画像はユーザーが選んだもので、`refs/` にある。どの画像に何が写っているかは `refs/index.yaml` にある。公式資料は、人物は三面図の載った設定画（`<人物>_sheet_01`）、背景はカットが複数載ったイメージ画（`witch-house-*_sheet_01`）だけ。ほかの画像は参照しない（D-054）。背景は、ユーザーが用意した背景画像（`<場所>_bg_<連番>`）も使い、位置関係はそちらを優先する。背景を Claude が生成しない。
 4. **漫符（怒りマーク、「？」、青い縦線、湯気など）は生成しない。** 合成で重ねる（D-027）。
 5. **声と BGM は原作の音源（D-045）。** 台詞は原作の台詞だけを使い、脚本で書き足した台詞は使わない。音源はユーザーが用意し、Google Drive の「魔女と百騎兵 原作音源」フォルダ（`台詞/`、`BGM/`）で受け取る。AI で声や BGM を作らない。原作の声を材料にして声を作ること（複製）はしない。実在の声優の名前を指示に使わない。
-   - 動画生成（Wan 3.0。以前は Seedance）では、生成される音声を使わない（`generate_audio=false`。出てきても捨てる）。口パクの参照（audio reference）にだけ、切り出した原作の台詞を渡してよい（ユーザー判断、D-055）。声は原作の音源だけを使う。
+   - 動画生成（Seedance）では、生成される音声を使わない（`generate_audio=false`。出てきても捨てる）。口パクの参照（audio reference）にだけ、切り出した原作の台詞を渡してよい（ユーザー判断、D-055）。声は原作の音源だけを使う。
    - 受け取った音源は `audio/original/` に置き、どのファイルのどこがどの台詞かを `audio/original/index.yaml` に書く。GitHub のリポジトリは公開のままでよい（ユーザー判断、D-056）。
    - プレイ録画などの長い音源から台詞を切り出すときは `tools/extract_lines.py` を使う（Demucs で声と BGM を分け、Whisper の時刻で脚本と突き合わせる）。元の長い音源はリポジトリに入れず、切り出した台詞と一覧（`lines.md`）を `audio/<シーン>/original/` に置く。自信のない台詞と途切れの疑いには印を付け、ユーザーに聞いてもらう。
    - プレイ録画をパートごとに声と BGM・効果音に分けたものは、Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」に置く（`tools/separate.py`。記録は `audio/original/separated.yaml`、書き起こしは `audio/original/transcripts/`）。
@@ -42,7 +42,7 @@
 ## 生成サービスへのつなぎ方
 
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
-- 動画は Wan 3.0（Higgsfield 経由、モデル ID `wan3_0`。ユーザー指示 2026-10-30: Seedance は1秒3クレジットで高いので切り替え。480p は1秒1クレジット。Seedance 2.0 は予備）。標準の作り方は 「開始の静止画＋終わりの静止画＋設定画＋下絵（Blender）＋口パク参照（原作の台詞。mp3 に変えて渡す）」で、生成音声は使わない（`generate_audio=false`）。動画にするカットごとに終わりの静止画が要る（3人以上は人物を1人ずつ作り、`tools/composite.py --which end` で重ねて朝の光で描き直す）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は動画生成に参照動画として渡す。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
+- 動画は Seedance 2.0（Higgsfield 経由。std・480p の試験で合格。2.5 は未試験。D-055。Wan 3.0 は予備）。標準の作り方は 「開始の静止画＋終わりの静止画＋設定画＋下絵（Blender）＋口パク参照（原作の台詞。mp3 に変えて渡す）」で、生成音声は使わない（`generate_audio=false`）。動画にするカットごとに終わりの静止画が要る（3人以上は人物を1人ずつ作り、`tools/composite.py --which end` で重ねて朝の光で描き直す）。480p の std は1秒3クレジット（参照を付けても変わらない）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は Seedance に参照動画として渡す。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
   - Higgsfield への受け渡し: `media_upload` で署名付き URL をもらい、`curl -X PUT -H "Content-Type: …" -H "If-None-Match: *"` で上げて `media_confirm`。音声は WAV が audio/mpeg 扱いになるので mp3（192k）にして上げる。送信がプリセットの推薦（「IN THE DARK」など）で止まったら、ジョブも課金も作られていないので、`declined_preset_id` を付けて同じ内容で出し直す。生成は `generate_video_batch`、完成は `jobs_wait` で待つ。
 - 声・BGM: 原作の音源（D-045）。Drive の「魔女と百騎兵 原作音源」フォルダから取り込み、長い音源は `python tools/extract_lines.py` で台詞に切り出す（Demucs・Whisper は重いので、セッションごとに作業用の venv に入れる）。`tools/gemini_tts.py` と `tools/lyria.py` は使わない（ベイクオフの記録として残す）。
 - Gemini API のキーはクラウド環境の「API認証情報」で自動付与されるので、キーをファイルやコマンドに書かない。

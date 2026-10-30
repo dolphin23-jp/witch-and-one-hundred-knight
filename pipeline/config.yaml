@@ -21,7 +21,7 @@ roles:
 
   previs:
     input: blocking.yaml（人物の位置・向き・移動、カメラ、レンズ）+ ショットファイルの秒
-    output: 人形が動く下絵動画 (MP4、音なし)。動画生成（Wan 3.0）の参照動画に渡す（D-055）
+    output: 人形が動く下絵動画 (MP4、音なし)。Seedance の参照動画に渡す（D-055）
     implementations:
       - {name: blender-bpy, via: local, status: adopted, tool: tools/previs.py, note: "配置・動き・カメラだけを写す。顔と衣装は写さない。Cycles（CPU）で描く。セッションごとに venv へ pip install bpy pyyaml pillow（約20秒）。1フレーム約2秒（768x432、10サンプル）"}
       - {name: 3d-jutsu, via: higgsfield, status: fallback, note: "Higgsfield 上の Blender。自前のモデルは読み込めない（カタログのみ）。Seedance 2.5 に描画を開始フレームとして渡せる"}
@@ -30,10 +30,10 @@ roles:
     input: 開始の静止画（必要なら終わりの静止画）+ 動きの指定 + プリビズ動画（動きとカメラの参照）+ 口パクの参照（原作の声）
     output: 数秒の動画 (MP4)。生成された音声は使わない（generate_audio=false。声は原作の音源だけ、D-045）
     implementations:
-      - {name: seedance-2.0, via: higgsfield, status: fallback, note: "2026-10-30 ユーザー指示で Wan 3.0 に切り替え（費用が3倍のため）。D-055 で動画は Seedance に決定していた。2.0 の std・480p の試験で合格（ユーザー確認 2026-10-15）。標準の作り方は 開始＋終わりの静止画＋設定画＋下絵＋口パク参照。std は Plus 以上。5秒の見積もり: 720p 22.5クレジット、480p 15、fast 480p 5（参照なしの見積もり。参照を付けると変わるかは未確認）。参照は 開始・終了フレーム、画像、動画、音声。試験2（A01b-001・030・031）で、開始＋終わりの静止画＋設定画＋下絵＋口パク参照を付けた3本は終わりの静止画に着地した（480p の std は1秒3クレジット）"}
+      - {name: seedance-2.0, via: higgsfield, status: adopted, note: "D-055 で動画は Seedance に決定。2.0 の std・480p の試験で合格（ユーザー確認 2026-10-15）。標準の作り方は 開始＋終わりの静止画＋設定画＋下絵＋口パク参照。std は Plus 以上。5秒の見積もり: 720p 22.5クレジット、480p 15、fast 480p 5（参照なしの見積もり。参照を付けると変わるかは未確認）。参照は 開始・終了フレーム、画像、動画、音声。試験2（A01b-001・030・031）で、開始＋終わりの静止画＋設定画＋下絵＋口パク参照を付けた3本は終わりの静止画に着地した（480p の std は1秒3クレジット）"}
       - {name: seedance-2.5, via: higgsfield, status: candidate, note: "未試験（ユーザー指示で試験は 2.0 のみ）。5秒の見積もり: 720p 35クレジット、480p のドラフト 15（7日以内に 1080p へ仕上げられる）。4〜30秒、omni_reference で画像・動画・音声の参照"}
       - {name: seedance-2.0-mini, via: higgsfield, status: candidate, note: "5秒 720p 5クレジット。構図や動きの確認用の候補"}
-      - {name: wan-3.0, via: higgsfield, status: adopted, note: "2026-10-30 ユーザー指示で採用（Seedance は高い。比較なしで Wan で進める）。モデル ID wan3_0。参照は 開始・終了フレーム、画像、動画、音声（Seedance と同じ作り方ができる）。get_cost で 480p 1秒1クレジット、720p 1.75（参照なし）。2〜30秒。generate_audio=false。D-055 では予備、D-043 では採用だった"}
+      - {name: wan-3.0, via: higgsfield, status: fallback, note: "2026-10-30 に一度採用したが、開始・終わりの画と参照（画像・動画・音声）を同時に渡せない（422「start_image/end_image cannot be combined with reference media」）ため、ユーザー判断で Seedance に戻した。480p は1秒1クレジット。D-055 で予備に変更（D-043 は採用だった）。最初のフレームに忠実。720p・4秒で7クレジット"}
       - {name: wan-3.0, via: alibaba-model-studio, status: fallback, note: "公式API。アカウント手続きが途中のため未使用"}
       - {name: kling-3.0, via: higgsfield, status: fallback, note: "1本6クレジット（4秒）"}
       - {name: veo-3.1, via: higgsfield, status: dropped}
