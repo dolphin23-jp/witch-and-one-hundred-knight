@@ -1,11 +1,11 @@
 # A02 の生成計画（承認を取るための表。tools/stills_plan.py の指示文に、終わりの画・重ねる画・動画を足したもの）
 status: 承認待ち（2026-10-30 作成。生成なし・クレジットなし）
 scene: A02 魔女邸の前・別れ（朝）。16カット 103.0秒。全カットを動画にする（新しい作り方の試験）
-decision: D-055（開始＋終わりの静止画＋設定画＋下絵＋口パク参照）、D-057（順に作る）
+decision: D-055 の作り方（開始＋終わりの静止画＋設定画＋下絵＋口パク参照）を Wan 3.0 で行う（ユーザー指示 2026-10-30、Living Spec への反映は確認待ち）、D-057（順に作る）
 credits_estimate:
   stills: 42
-  videos: 330
-  total: 372
+  videos: 109
+  total: 151
 order: 区間ごと（知らせ 001〜004 → 呼び止め 005〜008 → 言い訳 009〜012 → 割り込みと別れ 013〜016）に、静止画（開始→終わり）→ Claude が点検 → 動画。点検で崩れていた静止画の動画は作らずに報告。失敗しても自動では作り直さない
 stills:
   model: gpt_image_2_5
@@ -727,16 +727,15 @@ cels:
       no manga symbols (no anger marks, sweat drops or question marks).'
     output: episodes/A/scenes/A02/stills/end/A02-016_end_gpt-image-2.5_01.png
 videos:
-  model: seedance_2_0
-  mode: std
+  model: wan3_0
   resolution: 480p
   generate_audio: false
-  note: 1秒3クレジット。最短4秒・整数秒。カットより長い分は組み立てで速度を少し上げて収める。口パクの参照は、喋る人物の口が見えるカットだけ
+  note: 'Wan 3.0（ユーザー指示 2026-10-30: Seedance は高いので Wan に切り替え、比較なし）。480p は1秒1クレジット（get_cost で確認。720p は1.75）。参照を付けたときの費用は初回の表示で確かめる。最短2秒・整数秒。カットより長い分は組み立てで速度を少し上げて収める。口パクの参照は、喋る人物の口が見えるカットだけ'
   items:
   - cut: A02-001
     sec: 9.7
     duration: 10
-    credits: 30
+    credits: 10
     start_image: episodes/A/scenes/A02/stills/start/A02-001_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-001_end_gpt-image-2.5_01.png
     image_references:
@@ -752,7 +751,7 @@ videos:
   - cut: A02-002
     sec: 7.9
     duration: 8
-    credits: 24
+    credits: 8
     start_image: episodes/A/scenes/A02/stills/start/A02-002_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-002_end_gpt-image-2.5_01.png
     image_references:
@@ -766,7 +765,7 @@ videos:
   - cut: A02-003
     sec: 7.0
     duration: 7
-    credits: 21
+    credits: 7
     start_image: episodes/A/scenes/A02/stills/start/A02-003_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-003_end_gpt-image-2.5_01.png
     image_references:
@@ -781,7 +780,7 @@ videos:
   - cut: A02-004
     sec: 3.8
     duration: 4
-    credits: 12
+    credits: 4
     start_image: episodes/A/scenes/A02/stills/start/A02-004_start_gpt-image-2.5_01.png
     end_image: null
     image_references:
@@ -795,7 +794,7 @@ videos:
   - cut: A02-005
     sec: 3.6
     duration: 4
-    credits: 12
+    credits: 4
     start_image: episodes/A/scenes/A02/stills/start/A02-005_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-005_end_gpt-image-2.5_01.png
     image_references:
@@ -810,7 +809,7 @@ videos:
   - cut: A02-006
     sec: 10.6
     duration: 11
-    credits: 33
+    credits: 11
     start_image: episodes/A/scenes/A02/stills/start/A02-006_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-006_end_gpt-image-2.5_01.png
     image_references:
@@ -825,8 +824,8 @@ videos:
       marks).
   - cut: A02-007
     sec: 2.2
-    duration: 4
-    credits: 12
+    duration: 3
+    credits: 3
     start_image: episodes/A/scenes/A02/stills/start/A02-007_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/start/A02-007_start_gpt-image-2.5_01.png
     image_references:
@@ -839,7 +838,7 @@ videos:
   - cut: A02-008
     sec: 4.6
     duration: 5
-    credits: 15
+    credits: 5
     start_image: episodes/A/scenes/A02/stills/start/A02-008_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-008_end_gpt-image-2.5_01.png
     image_references:
@@ -853,7 +852,7 @@ videos:
   - cut: A02-009
     sec: 8.6
     duration: 9
-    credits: 27
+    credits: 9
     start_image: episodes/A/scenes/A02/stills/start/A02-009_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-009_end_gpt-image-2.5_01.png
     image_references:
@@ -869,7 +868,7 @@ videos:
   - cut: A02-010
     sec: 6.2
     duration: 7
-    credits: 21
+    credits: 7
     start_image: episodes/A/scenes/A02/stills/start/A02-010_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-010_end_gpt-image-2.5_01.png
     image_references:
@@ -883,7 +882,7 @@ videos:
   - cut: A02-011
     sec: 7.8
     duration: 8
-    credits: 24
+    credits: 8
     start_image: episodes/A/scenes/A02/stills/start/A02-011_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-011_end_gpt-image-2.5_01.png
     image_references:
@@ -897,7 +896,7 @@ videos:
   - cut: A02-012
     sec: 6.8
     duration: 7
-    credits: 21
+    credits: 7
     start_image: episodes/A/scenes/A02/stills/start/A02-012_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-012_end_gpt-image-2.5_01.png
     image_references:
@@ -911,7 +910,7 @@ videos:
   - cut: A02-013
     sec: 5.9
     duration: 6
-    credits: 18
+    credits: 6
     start_image: episodes/A/scenes/A02/stills/start/A02-013_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-013_end_gpt-image-2.5_01.png
     image_references:
@@ -927,7 +926,7 @@ videos:
   - cut: A02-014
     sec: 7.1
     duration: 8
-    credits: 24
+    credits: 8
     start_image: episodes/A/scenes/A02/stills/start/A02-014_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-014_end_gpt-image-2.5_01.png
     image_references:
@@ -940,7 +939,7 @@ videos:
   - cut: A02-015
     sec: 5.2
     duration: 6
-    credits: 18
+    credits: 6
     start_image: episodes/A/scenes/A02/stills/start/A02-015_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-015_end_gpt-image-2.5_01.png
     image_references:
@@ -955,7 +954,7 @@ videos:
   - cut: A02-016
     sec: 6.0
     duration: 6
-    credits: 18
+    credits: 6
     start_image: episodes/A/scenes/A02/stills/start/A02-016_start_gpt-image-2.5_01.png
     end_image: episodes/A/scenes/A02/stills/end/A02-016_end_gpt-image-2.5_01.png
     image_references:
