@@ -1,0 +1,137 @@
+# 砂漠編の新しい人物（獣人の村人4人・水瓶売りの商人）の設定画と、地下空洞の背景の参考画の生成計画（承認待ち）
+# ユーザー指示（2026-10-30 14:31）:「獣人はルッキーニィとティトの画像から同種族の別キャラクターを用意して欲しい。
+#   商人も共通の絵柄であれば後は用意して欲しい。地下空洞の背景画像もないので作ってください」
+# 原作に画像がない人物なので、設定画は Claude が生成し、ユーザーが候補から選んだものを refs/<人物>_sheet_01 として登録する。
+# 背景は D-058（用意画像と設定画を元に参考画を作ってよい。承認を取る）。
+# 性別・年齢は台詞と声の高さからの推定（ユーザーが直してよい）:
+#   怯えきった獣人 L178・L179・L182・L184「旅人がいるだろう！」「〜と思ってんだ！」→ 中年の男
+#   蒼白な獣人 L181「見つかっちまってる！」→ 若い男
+#   冷淡な獣人 L183・L185「とんでもないものを連れてきてくれたね！」「疫病神もいいところだよ！！」→ 年配の女（声は村人の中で低め 約236Hz）
+#   恐慌状態の獣人 L188「逃げろーーーっ！！」→ 年配の男
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k}
+credits_per_image: 1
+status: 承認待ち
+
+common:
+  character: >-
+    Character design sheet of a NEW character, drawn in exactly the same 2D anime art style, line art, cel shading and
+    color treatment as the two reference sheets (images 1 and 2). The new character is the same species as the characters
+    in the references but a different person: a goat-like beastfolk with ridged horns growing from the head, shaggy fur on
+    the legs, digitigrade goat legs ending in dark cloven hooves, a fluffy tail, and a human face and hands. Do not copy the
+    reference characters' faces, hair, outfits or colors. Layout like the references, on a plain white background:
+    full-body front view, side view and back view standing in a row, plus two head close-ups (front and three-quarter) on
+    the right. Neutral standing pose, neutral expression. No text, no labels, no captions, no manga symbols, no color
+    palette swatches.
+  cave: >-
+    Background art only: no characters, no creatures, no text. A 2D anime background painting in the same style, colors and
+    materials as the reference images (golden desert sand with swirl patterns, red-brown sandstone rocks, the stone well of a
+    small desert village); they only show the look of the materials, do not copy their viewpoints. The place: a vast natural
+    cavern deep under a small desert village, hollowed out of layered red-brown sandstone, as tall as a cathedral (about
+    30 m high and 60 m across). The floor is a wide basin of golden sand with faint swirl patterns, scattered rocks and old
+    bones. Thin streams of sand trickle down from cracks in the ceiling. Large round tunnels, bored by a giant
+    sand-burrowing beast about 8 m long, open into the walls. Night: the only openings are the small round mouth of the
+    village well in the ceiling, through which a narrow shaft of pale moonlight falls onto the sand, and patches of softly
+    glowing green moss and fungus on the walls and rock columns, giving a dim, eerie green light with deep shadows.
+
+characters:
+  - who: villager-a
+    ja: 怯えきった獣人（中年の男）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/luckiny_sheet_01.jpg, refs/tito_sheet_01.png]
+    prompt: >-
+      {character} This character: a nervous middle-aged man of a desert shepherd village, about 40 years old, stocky build.
+      Short, thick backward-curving horns, short brown hair and stubble, worried eyebrows. Brown leg fur and tail. Clothes: a
+      sand-colored hooded tunic with rolled sleeves, a brown leather apron and a belt pouch, cloth-wrapped forearms.
+    out: characters/villager-a/design/villager-a_design_gpt-image-2.5_0{n}.png
+  - who: villager-b
+    ja: 蒼白な獣人（若い男）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/luckiny_sheet_01.jpg, refs/tito_sheet_01.png]
+    prompt: >-
+      {character} This character: a thin young man, about 20, with a pale complexion and anxious wide eyes. Long, slim horns
+      that spiral outward, messy ash-blond hair. Gray leg fur and tail. Clothes: a faded indigo hooded poncho over a cream
+      shirt, a rope belt, simple cloth wraps on the shins.
+    out: characters/villager-b/design/villager-b_design_gpt-image-2.5_0{n}.png
+  - who: villager-c
+    ja: 冷淡な獣人（年配の女）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/luckiny_sheet_01.jpg, refs/tito_sheet_01.png]
+    prompt: >-
+      {character} This character: a stern woman of about 50, tall and thin, with sharp narrow eyes and a cold, disapproving
+      face. Smooth horns swept straight back, gray-streaked dark hair tied in a bun. Pale gray-white leg fur and tail.
+      Clothes: a long dark red hooded shawl over a mustard-yellow dress, a beaded necklace.
+    out: characters/villager-c/design/villager-c_design_gpt-image-2.5_0{n}.png
+  - who: villager-d
+    ja: 恐慌状態の獣人（年配の男）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/luckiny_sheet_01.jpg, refs/tito_sheet_01.png]
+    prompt: >-
+      {character} This character: a small elderly man of about 65, slightly hunched, with a long white beard and bushy white
+      eyebrows. Large heavy horns curling around the ears like a ram's. Tan leg fur and tail. Clothes: a patched brown hooded
+      robe tied with a sash, a small water gourd at the hip, a wooden walking staff in one hand.
+    out: characters/villager-d/design/villager-d_design_gpt-image-2.5_0{n}.png
+  - who: water-merchant
+    ja: 水瓶売りの商人（人間の男）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/luckiny_sheet_01.jpg, refs/tito_sheet_01.png, world/caravan-camp/panel_goods.png]
+    prompt: >-
+      Character design sheet of a NEW character, drawn in exactly the same 2D anime art style, line art, cel shading and
+      color treatment as the two reference sheets (images 1 and 2). He is a HUMAN, not a beastfolk: no horns, no fur, no
+      tail, human legs in boots. A water-jar merchant of a desert caravan camp: a plump middle-aged man of about 45 with a
+      round face, a thick black mustache and a greedy but cowardly look. Clothes: an orange-and-indigo striped turban,
+      layered loose desert robes in rust orange and indigo with a wide sash, a coin purse, pointed leather boots. He holds a
+      large blue-glazed ceramic water jar with a diamond emblem, like the jars in image 3. Layout like the references, on a
+      plain white background: full-body front view, side view and back view standing in a row, plus two head close-ups
+      (front and three-quarter) on the right. Neutral standing pose. No text, no labels, no captions, no manga symbols, no
+      color palette swatches.
+    out: characters/water-merchant/design/water-merchant_design_gpt-image-2.5_0{n}.png
+
+backgrounds:   # 16:9、各1枚。添付: 砂の渦模様・砂岩・村の井戸の見た目
+  refs: [world/tettara-desert/panel_closeup.png, world/tettara-desert/panel_wide.png, world/beast-village/panel_wide.png]
+  items:
+    - id: cavern-wide
+      ja: 全景（床から、井戸の穴から落ちる月の光の柱を見る）。A07-005・A08-003 など
+      prompt: >-
+        {cave} Camera: on the sand floor near one wall, eye level 1.5 m, wide-angle lens, looking across the cavern toward
+        the shaft of moonlight falling from the well opening in the ceiling at the center; the far walls fade into darkness.
+      out: world/underground-cavern/cavern-wide_gpt-image-2.5_01.png
+    - id: cavern-deep
+      ja: 奥（光の下から、奥の大きな穴を見る）。A07-007・戦い
+      prompt: >-
+        {cave} Camera: standing in the moonlight under the well opening, looking toward the far end of the cavern, where the
+        largest tunnel mouth (about 8 m across) gapes in the wall, dark inside, with sand spilling out of it. The light shaft
+        is behind the camera and casts a pale pool of light in the foreground.
+      out: world/underground-cavern/cavern-deep_gpt-image-2.5_01.png
+    - id: cavern-top
+      ja: 俯瞰（井戸の穴のすぐ下から真下を見る）。A07-004 の落下・A07-005
+      prompt: >-
+        {cave} Camera: just below the well opening in the ceiling, looking straight down from about 30 m: the round pool of
+        moonlight on the sand far below, the edges of the cavern disappearing into green-lit darkness, streams of sand
+        falling past the camera.
+      out: world/underground-cavern/cavern-top_gpt-image-2.5_01.png
+    - id: cavern-wall
+      ja: 壁際（低い位置、砂の滝と光る苔と横穴）。A07-006・戦い
+      prompt: >-
+        {cave} Camera: low, 0.5 m above the sand, close to a cavern wall: layered sandstone with glowing green moss, a
+        curtain of trickling sand in the foreground, the mouth of a tunnel at ground level beside it; the cavern behind is
+        softly out of focus.
+      out: world/underground-cavern/cavern-wall_gpt-image-2.5_01.png
+    - id: well-shaft
+      ja: （任意）井戸の中（縦穴を真下に見る）。A07-001〜004
+      optional: true
+      prompt: >-
+        Background art only: no characters, no text. A 2D anime background painting in the same style and materials as the
+        reference images (they only show the look of the materials). Inside the shaft of an old stone well of a desert
+        village: the camera looks straight down the narrow round shaft of rough stacked sandstone blocks into deep darkness,
+        with a faint eerie green glow far at the bottom. Night: pale moonlight from above lights the top rows of stones. No
+        water, no rope, no bucket.
+      out: world/underground-cavern/well-shaft_gpt-image-2.5_01.png
+
+total_images: 15   # 人物 5人×2 = 10、背景 4（＋任意 1）
+credits_estimate: 15
