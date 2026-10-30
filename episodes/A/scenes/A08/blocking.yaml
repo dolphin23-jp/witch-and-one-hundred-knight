@@ -77,6 +77,14 @@ cuts:
       hundred-knight:
         - {t: 0.0, at: hk_a, face: 305, pose: look_up}
         - {t: 8.6, at: hk_a, face: 300, pose: look_up}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 8.6, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
@@ -111,6 +119,14 @@ cuts:
         - {t: 2.4, at: hk_b, face: 317, pose: walk, ease: out}
         - {t: 2.6, at: hk_b, face: 317, pose: look_up}
         - {t: 7.0, at: hk_b, face: 317, pose: look_up}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 7.0, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
@@ -134,12 +150,20 @@ cuts:
         - {t: 1.6, at: peek, face: 55, pose: crouch}
         - {t: 2.6, at: peek, face: 55, pose: stand, ease: out}
         - {t: 6.6, at: peek, face: 58, pose: stand}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 6.6, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
       - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
     cam_keys:
-      - {t: 0.0, cam: [24.0, 31.6, 1.0], look: luckiny, look_h: 0.9, lens: 45, frame: 寄り}   # 岩の端から顔を出すように見える向き
-      - {t: 6.6, cam: [23.6, 31.5, 1.1], look: luckiny, look_h: 1.15, lens: 55, ease: inout}
+      - {t: 0.0, cam: [24.0, 30.4, 1.0], look: luckiny, look_h: 0.9, lens: 45, frame: 寄り}   # 岩の端から顔を出すように見える向き
+      - {t: 6.6, cam: [23.6, 30.5, 1.1], look: luckiny, look_h: 1.15, lens: 55, ease: inout}
     bg: cave_wide
     extra_en: "Luckiny's eyes sparkle with excitement and awe."
     act: {start: 西の岩の陰, do: 岩の陰から顔を出していたルッキーニィが、思わず身を乗り出す。目を輝かせる, end: 岩の上に身を乗り出し、メタリカを見つめるルッキーニィ, sync: L219「す、すごい……！魔女だ！本物の魔女様だ！」は 0.3秒から}
@@ -156,6 +180,14 @@ cuts:
         - {t: 2.4, at: peek, face: 58, pose: stand}
         - {t: 3.0, at: peek, face: 40, pose: cover, ease: inout}
         - {t: 8.4, at: peek, face: 35, pose: cover}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 8.4, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
       - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
@@ -190,6 +222,14 @@ cuts:
         - {t: 3.0, at: hk_b, face: 317, pose: stand}
         - {t: 4.0, at: hk_b, face: 250, pose: stand}
         - {t: 8.2, at: hk_b, face: 250, pose: stand}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 8.2, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
@@ -212,6 +252,14 @@ cuts:
       metallica:
         - {t: 0.0, at: rise, face: 216, pose: look_down}
         - {t: 3.0, at: rise, face: 214, pose: look_down}
+    creatures:
+      sand-eater:   # 倒れたまま（A08-001 の続き）
+        after: A08-001
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4}
+          - {t: 3.0, at: [31.6, 22.8], z: 0.4}
     fx:
       - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
     cam_keys:
