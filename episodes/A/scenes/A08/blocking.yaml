@@ -90,7 +90,7 @@ cuts:
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
       - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
       - {kind: ring, t: [0.0, 3.0], at: rise, r: 2.2, n: 3, color: [120, 60, 150]}
-      - {kind: plume, t: [0.2, 2.6], at: rise, r: 0.9, h: 1.6, color: [110, 50, 140]}
+      - {kind: plume, t: [0.2, 1.5], at: rise, r: 0.45, h: 0.7, color: [110, 50, 140]}   # 水面の盛り上がり（大きいと手前を隠す）
     cam_keys:
       - {t: 0.0, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.1, lens: 28, frame: 寄り}
       - {t: 0.8, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.4, lens: 28}
