@@ -100,7 +100,8 @@ class Plan:
         # 動きのキー（D-060）。keys のある人物は、時刻ごとの位置・高さ・姿勢をキーから取る
         self.tracks = {w: motion.PersonTrack(ks, st.place) for w, ks in (self.c.get("keys") or {}).items()}
         self.camtrack = motion.CamTrack(self.c["cam_keys"]) if self.c.get("cam_keys") else None
-        self.creatures = {n: motion.CreatureTrack(s, st.place) for n, s in (self.c.get("creatures") or {}).items()}
+        self.creatures = {n: motion.CreatureTrack(motion.creature_spec(st.bk["cuts"], cut, n), st.place)
+                          for n in (self.c.get("creatures") or {})}
 
     # 人物
     def _window(self, who):
@@ -335,6 +336,7 @@ def point_light(name, x, y, z, energy, color=(1.0, 0.62, 0.3), radius=0.15):
     o.data.energy = energy
     o.data.color = color
     o.data.shadow_soft_size = radius
+    o.visible_camera = False   # 光の玉そのものは映さない（大きな補助光が円盤に見えて手前の物を隠した。A07-003）
     return o
 
 
@@ -428,6 +430,12 @@ def build_cave(name, pr, x, y):
     if name.startswith("cave"):
         dome = prim("sphere", rockc, f"ENV_{name}", loc=bl((x, y), 0.0), radius=1.0, scale=(pr["rx"], pr["ry"], pr["h"]))
         if pr.get("hole"):
+            # 球は中身の詰まった形として扱われ、くり抜くと穴の底（z h-3）にふたができて床が見えなかった（A07-003）。
+            # 厚みのある殻にしてからくり抜く（厚みは物体の大きさで伸びるので小さめ。東西 約1.2m）
+            sol = dome.modifiers.new("shell", "SOLIDIFY")
+            sol.thickness, sol.offset = 0.06, 1.0
+            bpy.context.view_layer.objects.active = dome
+            bpy.ops.object.modifier_apply(modifier=sol.name)
             bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr["hole"], depth=6.0, location=bl((x, y), pr["h"]))
             bool_diff(dome, bpy.context.object)
         return True
@@ -801,9 +809,40 @@ def pose_creature(parts, track, t):
 
 def build_fx(fx, i):
     kind = fx.get("kind", "plume")
-    m = make_mat(f"fx{i}", tuple(min(1.0, c * 1.08) for c in SAND))
+    col = tuple(v / 255 for v in fx["color"]) if fx.get("color") and kind not in ("light",) else None
+    m = make_mat(f"fx{i}", col or tuple(min(1.0, c * 1.08) for c in SAND))
+    if kind == "pool":   # 広がる沼（床に平たい円。少し光る）
+        pm = make_mat(f"fx{i}_pool", col or (0.42, 0.18, 0.55), rough=0.3, emit=fx.get("glow", 0.25))
+        return [prim("cyl", pm, f"fx{i}_pool", None, (0, 0, -50), radius=1.0, depth=0.04, vertices=48)]
+    if kind == "bloom":  # 花のように開く（柱のまわりの花びら。根元で外へ倒れる）
+        bm = make_mat(f"fx{i}_petal", col or (0.55, 0.85, 1.0), emit=fx.get("glow", 0.6))
+        objs = []
+        for j in range(int(fx.get("n", 6))):
+            o = prim("cube", bm, f"fx{i}_petal{j}", None, (0, 0, 0), size=1.0)
+            o.scale = (fx.get("w", 0.55), 0.08, fx.get("len", 2.2))
+            bpy.context.view_layer.objects.active = o
+            o.select_set(True)
+            bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+            for v in o.data.vertices:   # 根元（下の端）を原点に
+                v.co.z += fx.get("len", 2.2) / 2
+            o.location = (0, 0, -50)
+            objs.append(o)
+        return objs
+    if kind == "sprout":  # 芽吹いて伸び、恐怖で一瞬に枯れる草（緑の茎と、枯れた茶色の茎）
+        g = make_mat(f"fx{i}_green", (0.35, 0.75, 0.3))
+        d = make_mat(f"fx{i}_dead", (0.45, 0.33, 0.2))
+        n = int(fx.get("n", 7))
+        objs = []
+        for mat, tag in ((g, "g"), (d, "d")):
+            for j in range(n):
+                o = prim("cone", mat, f"fx{i}_{tag}{j}", None, (0, 0, 0), radius1=0.04, radius2=0.0, depth=1.0, vertices=8)
+                for v in o.data.vertices:
+                    v.co.z += 0.5
+                o.location = (0, 0, -50)
+                objs.append(o)
+        return objs
     if kind == "ring":   # 波紋は平たく細い、少し暗い輪
-        m = make_mat(f"fx{i}_ring", tuple(c * 0.72 for c in SAND))
+        m = make_mat(f"fx{i}_ring", col or tuple(c * 0.72 for c in SAND))
         objs = []
         for j in range(int(fx.get("n", 3))):
             bpy.ops.mesh.primitive_torus_add(major_radius=1.0, minor_radius=0.025, major_segments=48, minor_segments=6)
@@ -857,6 +896,50 @@ def pose_fx(fx, objs, t, pos, place):
             o.location = bl((p[0] + math.cos(ang) * d, p[1] + math.sin(ang) * d), z0 + 0.3 * math.sin(j) * amt)
             rr = 0.08 + 0.06 * amt
             o.scale = (rr, rr, rr)
+        return
+    if kind == "pool":    # 沼: t の間に r0 から r まで広がり、その後はそのまま
+        u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
+        u = 1 - (1 - u) * (1 - u)
+        rr = fx.get("r0", 0.3) + (fx.get("r", 10.0) - fx.get("r0", 0.3)) * u
+        o = objs[0]
+        if t < t0:
+            o.location = (0, 0, -50)
+        else:
+            o.location = bl(p, z0 + 0.02)
+            o.scale = (rr, rr * fx.get("ry", 1.0), 1.0)
+        return
+    if kind == "bloom":   # 花びら: t の間に 0 度から open 度まで外へ倒れる
+        u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
+        u = u * u * (3 - 2 * u)
+        ang = math.radians(fx.get("open", 55)) * u
+        n = len(objs)
+        rad = fx.get("r", 0.75)
+        for j, o in enumerate(objs):
+            a = 2 * math.pi * j / n
+            o.location = bl((p[0] + math.sin(a) * rad, p[1] - math.cos(a) * rad), z0)
+            # 外向き（方位 a）へ倒す: 方位へ向けてから、x 軸のまわりに傾ける
+            o.rotation_euler = (ang, 0, -a + math.pi)
+        return
+    if kind == "sprout":  # 草: t0 から grow 秒で伸び、wither の時刻から 0.5 秒で茶色になってしおれる
+        n = len(objs) // 2
+        grow = fx.get("grow", 3.0)
+        tw = fx.get("wither", t1)
+        hmax = fx.get("h", 0.5)
+        g = 0.0 if t < t0 else min(1.0, (t - t0) / grow)
+        w = 0.0 if t < tw else min(1.0, (t - tw) / 0.5)
+        for j in range(n):
+            a = 2 * math.pi * j / n + 0.4
+            rr = 0.12 * (j % 3)
+            x, y = p[0] + math.cos(a) * rr, p[1] + math.sin(a) * rr
+            hh = hmax * (0.6 + 0.4 * ((j * 7) % 5) / 4)
+            for k, o in ((0, objs[j]), (1, objs[n + j])):
+                show = g > 0.01 and ((k == 0 and w < 0.5) or (k == 1 and w >= 0.5))
+                if not show:
+                    o.location = (0, 0, -50)
+                    continue
+                o.location = bl((x, y), z0)
+                o.scale = (1.0, 1.0, max(0.02, hh * g * (1 - 0.45 * w)))
+                o.rotation_euler = (math.radians(12 + 70 * w) * (1 if j % 2 else -1), 0, a)
         return
     if kind == "light":   # 光: 時刻とともに強くなる（shape rise）
         u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
@@ -924,6 +1007,12 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         rx = -math.radians(12)
     elif pose == "proud":       # 胸を張る（両手を腰に）
         rx = math.radians(6)
+    elif pose == "cover":       # 片手で口を押さえる（少し前かがみ）
+        rx = -math.radians(10)
+    elif pose == "cross":       # 腕を組んでふんぞり返る
+        rx = math.radians(8)
+    elif pose == "lean":        # 顔をずいと近づける（前へ大きく傾く）
+        rx = -math.radians(28)
     elif pose == "stroke":      # かがんで相手の頭をなでる
         k, rx = 0.8, -math.radians(15)
     elif pose == "jump":
@@ -945,6 +1034,11 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (0, sx * math.radians(35), 0)
     elif pose == "stroke":
         arms[1].rotation_euler = (math.radians(95 + 10 * math.sin(2 * math.pi * 1.2 * t)), 0, 0)
+    elif pose == "cover":
+        arms[1].rotation_euler = (math.radians(145), 0, math.radians(30))
+    elif pose == "cross":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(75), 0, -sx * math.radians(45))
     elif pose == "horn":        # 角笛を口に当てて吹く（両腕を前に上げる）
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(115), 0, sx * -math.radians(15))

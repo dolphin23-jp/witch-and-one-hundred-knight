@@ -20,6 +20,8 @@ light_en: "Dusk in the desert valley: the sun setting in the west behind the red
 lighting:
   dusk:  {sun_from: 262, sun_elev: 5, sun_energy: 2.5, sun_color: [255, 170, 110], sky: [230, 140, 90], sky_strength: 1.0, lamps: 1.0}
   night: {sun_from: 300, sun_elev: 35, sun_energy: 0.6, sun_color: [150, 170, 255], sky: [35, 50, 110], sky_strength: 1.0, lamps: 1.6}
+  dawn:  {sun_from: 95, sun_elev: 12, sun_energy: 3.0, sun_color: [255, 200, 150], sky: [150, 175, 215], sky_strength: 1.0, lamps: 0.2}   # A08b 夜明け（東の崖の切れ目から朝日）
+light_en_dawn: "Early morning in the village: the low sun rising in the east through the gap in the red cliffs, a pale blue sky with warm golden light, long soft shadows on the sand, the lamps going out."
 light_en_night: "Night in the village: a deep blue starry sky, cool faint moonlight, warm orange lamplight from windows and lanterns."
 light_en_interior: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners, cool blue starlight at the window."
 
@@ -109,11 +111,14 @@ people:
   villager-c:     {ja: 村人C（冷淡な年配の女）, eye: 1.38, h: 1.5, torch: true, en: "an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch"}
   villager-d:     {ja: 村人D（恐慌状態の年配の男）, eye: 1.48, h: 1.6, torch: true, en: "an elderly beastfolk villager man, as in his reference sheet, holding a burning torch"}
   tito:           {ja: ティト, eye: 1.4, h: 1.5, en: "Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail)"}
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
 
 creatures:
   sand-eater: {ja: 砂食み, len: 8.0, r: 0.75, en: "the sand-eater: a huge pale segmented larva-like desert worm about 8 m long, as designed in its reference sheet"}
 
 views:
+  house_front:   {ja: ティトの家の前（朝）, panel: 村 家, en: "the front of Tito's small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind"}
+  desert_edge:   {ja: 村の外の荒れた砂地（朝）, panel: 村 一角, en: "dry, barren sand just outside the village: cracked ground, a few dead tufts of grass, the red cliffs in the distance"}
   desert_night:  {ja: 夜の砂漠, panel: 村 俯瞰, en: "the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind"}
   door_out:      {ja: ティトの家の扉の前, panel: 村 家, en: "the front of Tito's small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light from inside"}
   village_high:  {ja: 谷の村の全景, panel: 村 俯瞰, en: "seen from above: a small village of wooden houses with red tiled roofs in a sandy valley, low stone walls, wooden fences, a stone well in the middle, red rock cliffs all around"}

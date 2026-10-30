@@ -1,0 +1,52 @@
+# A08b ピラーと弟子入り（後半、夜明けの村のティトの家の前）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。カットの番号は A08 の続き（008〜039）'}
+id: A08b-011
+scene: A08b
+tc: 21.8
+sec: 10.2
+kind: M
+shot: 全身（煽り）・メタリカ
+acting: 腕を組んでふんぞり返り、「体調もすこぶる良好だ」で胸を張る
+dialogue:
+- L227「ふん！ピラーのついでだ。大したことではない。」
+- L228「沼はこの村の真下に広がっているしな。体調もすこぶる良好だ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 57.6
+  - 32.0
+  - 0.5
+  look: metallica
+  lens: 28
+  move: 低い位置から煽る（ティトの側から）。ゆっくり寄る
+background: beast-village
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 足元からの煽りのメタリカ
+  end: 胸を張るメタリカ
+timing:
+  lead: 0.3
+blocking:
+  start: メ（中央・正面）
+  end: メ（中央・正面）
+  background: ティトの家の前（朝）〔村 家〕
+  panels:
+  - 村 家
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+    in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, chin up, smug, seen from below, in the center
+    of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the front of Tito''s small wooden house in the morning: a wooden door with
+    iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west
+    behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
+    ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), hands on her hips, chest out, very pleased with
+    herself, seen from below, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the front of Tito''s small wooden house
+    in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert
+    valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+  sketch:
+  - episodes/A/scenes/A08b/gen/sketch/A08b-011_start.png
+  - episodes/A/scenes/A08b/gen/sketch/A08b-011_end.png
