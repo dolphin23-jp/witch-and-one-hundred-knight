@@ -1,0 +1,51 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
+# kind: M＝小さな動き、A＝見せ場
+id: A07-005
+scene: A07
+tc: 29.6
+sec: 8.0
+kind: A
+shot: 全身→大引き・百騎兵・地下空洞
+acting: 光の柱の中に着地。カメラが上へ引いて巨大な地下空洞を見せる
+dialogue:
+- L212「キヒヒ、やはり地下空洞か。間違いない、ここからピラーの気配を感じるぞ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.4
+  - 31.7
+  - 0.9
+  look: land
+  lens: 28
+  move: 着地の瞬間から、天井まで広がる空洞を見せるように上へ大きく引く
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 月の光の柱の中に、百騎兵が上から落ちてきて着地する
+  end: 巨大な空洞の真ん中に小さな百騎兵、光の柱
+timing:
+  lead: 0.3
+blocking:
+  start: 百（中央・斜め後ろ（画面右向き））
+  end: 百（中央・横顔（画面左向き））
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), landing in a crouch in the column of moonlight on the sandy floor, in the
+    center of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+    glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the
+    sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing small in the middle of the huge cavern, looking around, in the
+    center of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+    glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the
+    sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-005_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-005_end.png

@@ -1,0 +1,47 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
+# kind: M＝小さな動き、A＝見せ場
+id: A07-009
+scene: A07
+tc: 61.6
+sec: 3.0
+kind: A
+shot: 全身・百騎兵・砂食み
+acting: 砂食みが口を開けて突進
+dialogue: []
+sound: 台詞なし。パート17 の戦闘の BGM
+notes: null
+camera:
+  pos:
+  - 29.5
+  - 31.5
+  - 0.6
+  look: sand-eater
+  lens: 24
+  move: 百騎兵の横の低い所から、迫る頭を見上げる
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の横の低い所から
+  end: 迫る砂食みの頭
+blocking:
+  start: （人物なし）
+  end: 百（中央・斜め後ろ（画面左向き））
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'No people in frame. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
+    Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand
+    falling from the ceiling, deep shadows.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), about to leap aside, the monster''s open mouth right in front of it, in
+    the center of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+    glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the
+    sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-009_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-009_end.png

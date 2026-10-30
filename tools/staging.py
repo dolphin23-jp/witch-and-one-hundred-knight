@@ -204,6 +204,11 @@ class Stage:
         pos, face = self.states[cut][which]
         cam = tuple(c["cam"][:2])
         look = c.get("look_end", c["look"]) if which == "end" else c["look"]
+        cc = self.bk["cuts"][cut]
+        if isinstance(look, str) and look in (cc.get("creatures") or {}):   # 生き物の頭を見る（始めか終わりの時刻）
+            ks = cc["creatures"][look]["keys"]
+            tt = 0.0 if which == "start" else max(float(k["t"]) for k in ks)
+            look = motion.creature_head(cc, look, tt, self.place)[:2]
         look = pos[look] if isinstance(look, str) and look in pos else self.place(look)
         d = norm((look[0] - cam[0], look[1] - cam[1]))
         right = (-d[1], d[0])
