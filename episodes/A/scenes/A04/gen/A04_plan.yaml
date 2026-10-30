@@ -1,0 +1,1258 @@
+# A04 の生成計画（承認を取るための表。tools/scene_plan.py が gen/plan_spec.yaml と blocking から作る）
+status: 承認待ち（生成なし・クレジットなし）
+scene: A04。23カット 161.7秒
+credits_estimate:
+  stills: 44
+  videos: 170
+  total: 214
+order: 区間ごとに、静止画（開始→終わり）→ Claude が点検 → 動画。崩れた静止画の動画は作らずに報告。失敗しても自動では作り直さない
+stills:
+  model: gpt_image_2_5
+  quality: medium
+  resolution: 2k
+  aspect_ratio: '16:9'
+  note: 1枚1クレジット。終わりは開始の画を添えて作る
+  items:
+  - cut: A04-001
+    which: start
+    kind: A
+    frame: 大引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-001_start.png
+    prompt: 'Camera: extreme wide shot, 28mm lens, camera height 16.0 m, high angle looking down. In frame (exactly one person): the Hundred Knight (character reference: images 1, 2), walking steadily across
+      the sand, on the right of the frame, in three-quarter view, turned toward screen left. No other people. High angle looking down. Behind: a wide flat stretch of golden sand with swirling patterns,
+      low dunes and distant red rock pillars under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert:
+      a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult).
+      Background: images 3, 4 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south; draw only what is behind the
+      characters in that direction, as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the
+      characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line
+      art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-001_start_gpt-image-2.5_01.png
+  - cut: A04-001
+    which: end
+    kind: A
+    frame: 大引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-001_end.png
+    - episodes/A/scenes/A04/stills/start/A04-001_start_gpt-image-2.5_01.png
+    prompt: 'Camera: extreme wide shot, 28mm lens, camera height 16.0 m, high angle looking down. In frame (exactly one person): the Hundred Knight (character reference: image 1), walking steadily across
+      the sand, in the center of the frame, with the back to the camera. No other people. High angle looking down. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few
+      dead trees, red sandstone mesas far away, then a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday in the desert: a blazing sun
+      high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background:
+      images 2, 3 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-east; draw only what is behind the characters
+      in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-001_end_gpt-image-2.5_01.png
+  - cut: A04-002
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_wide.png
+    - episodes/A/scenes/A04/gen/sketch/A04-002_start.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), trudging through soft
+      sand, its feet sinking with every step, in the center of the frame, in profile, turned toward screen right. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind:
+      endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with
+      short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like
+      (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is behind the characters in that direction, as described above. Composition:
+      image 3 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no
+      captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-002_start_gpt-image-2.5_01.png
+  - cut: A04-002
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_wide.png
+    - episodes/A/scenes/A04/gen/sketch/A04-002_end.png
+    - episodes/A/scenes/A04/stills/start/A04-002_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), trudging through soft
+      sand, its feet sinking with every step, in the center of the frame, in profile, turned toward screen right. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind:
+      endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with
+      short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like
+      (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is behind the characters in that direction, as described above. Composition:
+      image 3 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Image 4 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-002_end_gpt-image-2.5_01.png
+  - cut: A04-003
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_wide.png
+    - episodes/A/scenes/A04/gen/sketch/A04-003_start.png
+    prompt: 'Camera: wide shot, 85mm lens, camera height 1.2 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), walking far in the background, small, at the far left of
+      the frame, in profile, turned toward screen right. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Midday
+      in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult). Background: image 2 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is
+      behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 3 is a rough layout sketch with colored placeholder
+      figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-003_start_gpt-image-2.5_01.png
+  - cut: A04-003
+    which: end
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_wide.png
+    - episodes/A/scenes/A04/gen/sketch/A04-003_end.png
+    - episodes/A/scenes/A04/stills/start/A04-003_start_gpt-image-2.5_01.png
+    prompt: 'Camera: wide shot, 85mm lens, camera height 1.2 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), walking far in the background, small, on the left of the
+      frame, in profile, turned toward screen right. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Midday
+      in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult). Background: image 2 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is
+      behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 3 is a rough layout sketch with colored placeholder
+      figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 4 is the first frame of the same shot (made
+      first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime
+      style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-003_end_gpt-image-2.5_01.png
+  - cut: A04-004
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-004_start.png
+    prompt: 'Camera: full shot (whole body), 50mm lens, camera height 0.35 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), walking toward the camera,
+      in the center of the frame, facing the camera, small in the background, looking toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: golden
+      dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark
+      shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces west; draw only what is behind the characters in that direction, as described above. Composition: image 3 is
+      a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep
+      each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no
+      speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-004_start_gpt-image-2.5_01.png
+  - cut: A04-004
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-004_end.png
+    - episodes/A/scenes/A04/stills/start/A04-004_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 50mm lens, camera height 0.35 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), standing still, its
+      head tilted up toward the blazing sun, in the center of the frame, facing the camera, looking toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame.
+      Behind: golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light
+      with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks
+      like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces west; draw only what is behind the characters in that direction, as described above. Composition:
+      image 3 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Image 4 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-004_end_gpt-image-2.5_01.png
+  - cut: A04-005
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-005_start.png
+    prompt: 'Camera: wide shot, 50mm lens, camera height 1.05 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), walking over the crest of a dune, then
+      stopping, at the far left of the frame, with the back to the camera, looking into the distance away from the camera; Luckiny (character reference: image 2), lying face down in the sand, motionless,
+      far ahead, in the center of the frame, facing the camera. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas
+      far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only
+      about waist-high to an adult); Luckiny 1.4 m. Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here
+      faces east; draw only what is behind the characters in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle,
+      framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-005_start_gpt-image-2.5_01.png
+  - cut: A04-005
+    which: end
+    kind: M
+    frame: 引き
+    refs:
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-005_end.png
+    - episodes/A/scenes/A04/stills/start/A04-005_start_gpt-image-2.5_01.png
+    prompt: 'Camera: wide shot, 50mm lens, camera height 1.05 m. In frame (exactly one person): Luckiny (character reference: image 1), lying face down in the sand, motionless, in the center of the frame,
+      facing the camera. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing
+      sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m. Background: image 2 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces east; draw only what is behind the characters in that direction, as described above. Composition: image 3 is
+      a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image
+      4 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their
+      character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question
+      marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-005_end_gpt-image-2.5_01.png
+  - cut: A04-006
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_side.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_ground.png
+    - episodes/A/scenes/A04/gen/sketch/A04-006_start.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 0.25 m, low angle looking up. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2), lying face down in the
+      sand, eyes half closed, too weak to move, on the left of the frame, in profile, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character reference: images 3, 4, 5),
+      standing, only its legs and feet visible behind her, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: a wide flat stretch of golden sand with swirling
+      patterns, low dunes and distant red rock pillars under the sky. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden
+      dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 6 only shows what this place looks like (buildings, trees, materials, colors);
+      do not copy its viewpoint or framing. The camera here faces south; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth
+      of field). Composition: image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders,
+      labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-006_start_gpt-image-2.5_01.png
+  - cut: A04-006
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_side.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_ground.png
+    - episodes/A/scenes/A04/gen/sketch/A04-006_start.png
+    - episodes/A/scenes/A04/stills/start/A04-006_start_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 0.25 m, low angle looking up. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2), lying in the sand with
+      her head lifted a little, looking up weakly with half-open eyes, on the left of the frame, in profile, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character reference:
+      images 3, 4, 5), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes
+      and distant red rock pillars under the sky. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny
+      1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 6 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint
+      or framing. The camera here faces south; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition:
+      image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Image 8 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-006_end_gpt-image-2.5_01.png
+  - cut: A04-007
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-007_start.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), standing over the camera,
+      looking down, in the center of the frame, facing the camera, looking toward the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: a wide flat stretch
+      of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas
+      on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small,
+      only about waist-high to an adult). Background: images 2, 3 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces
+      south-west; draw only what is behind the characters in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle,
+      framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-007_start_gpt-image-2.5_01.png
+  - cut: A04-007
+    which: end
+    skip: 位置もカメラも変わらない（のぞき込むだけ）。開始の画だけで作る
+  - cut: A04-008
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/luckiny/views/luckiny_front.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-008_start.png
+    prompt: 'Camera: medium-long shot (knees up), 50mm lens, camera height 1.45 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), lying in the sand with her head
+      lifted a little, on the left of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), standing beside her head, reaching into its big gauntlet,
+      in the center of the frame, with the back to the camera, looking toward screen left. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead
+      trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny
+      1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint
+      or framing. The camera here faces north-east; draw only what is behind the characters in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder
+      figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-008_start_gpt-image-2.5_01.png
+  - cut: A04-008
+    which: end
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/luckiny/views/luckiny_front.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-008_end.png
+    - episodes/A/scenes/A04/stills/start/A04-008_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium-long shot (knees up), 50mm lens, camera height 1.45 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), lying in the sand, looking at
+      the paper, on the left of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), crouching slightly, holding out a small folded paper in its
+      gauntlet in front of her face, in the center of the frame, with the back to the camera, looking toward screen left. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered
+      dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden
+      dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only shows what this place looks like (buildings, trees, materials, colors);
+      do not copy its viewpoint or framing. The camera here faces east; draw only what is behind the characters in that direction, as described above. Composition: image 4 is a rough layout sketch with
+      colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of
+      the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-008_end_gpt-image-2.5_01.png
+  - cut: A04-009
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-009_start.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): Luckiny (character reference: images 1, 2), lying in the sand, slowly reaching a trembling
+      hand toward the paper, at the far left of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: rolling golden dunes with swirling
+      sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering
+      heat haze over the golden dunes. Heights: Luckiny 1.4 m. Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The
+      camera here faces east; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 4 is a rough
+      layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-009_start_gpt-image-2.5_01.png
+  - cut: A04-009
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-009_start.png
+    - episodes/A/scenes/A04/stills/start/A04-009_start_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): Luckiny (character reference: images 1, 2), lying in the sand, her hand fallen limply
+      onto the sand, at the far left of the frame, facing the camera, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: rolling golden dunes with swirling sand patterns,
+      scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over
+      the golden dunes. Heights: Luckiny 1.4 m. Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces
+      east; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 4 is a rough layout sketch
+      with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 5 is the first frame
+      of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-009_end_gpt-image-2.5_01.png
+  - cut: A04-010
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-010_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.2 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), lying in the sand, lips cracked and
+      dry, at the far left of the frame, in profile, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), leaning over her, in the center of the
+      frame, facing the camera, looking toward screen left. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky, then
+      golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short
+      dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images 3, 4 only show what this place
+      looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south; draw only what is behind the characters in that direction, as described above.
+      Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels
+      or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No
+      text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-010_start_gpt-image-2.5_01.png
+  - cut: A04-010
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-010_end.png
+    - episodes/A/scenes/A04/stills/start/A04-010_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.2 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), leaning over her, at the far right of the frame,
+      facing the camera, looking toward screen left. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday in the
+      desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an
+      adult). Background: images 2, 3 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south; draw only what is behind
+      the characters in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing
+      of the characters, but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters
+      are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text,
+      no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-010_end_gpt-image-2.5_01.png
+  - cut: A04-011
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-011_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 0.9 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), standing over her, raising
+      its head and looking around, in the center of the frame, with the back to the camera, looking into the distance away from the camera; Luckiny (character reference: image 2), lying face down in the
+      sand, in the center of the frame, facing the camera. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon,
+      then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light
+      with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Luckiny 1.4 m. Background: images 3, 4 only show
+      what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in that direction,
+      as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw
+      the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-011_start_gpt-image-2.5_01.png
+  - cut: A04-011
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-011_end.png
+    - episodes/A/scenes/A04/stills/start/A04-011_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 0.9 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), seen small from behind, facing
+      the distant tents, on the left of the frame, with the back to the camera, looking into the distance away from the camera; Luckiny (character reference: image 2), lying face down in the sand, on the
+      left of the frame, facing the camera. No other people. Behind: a small caravan camp in the desert: round striped tents, a wooden fence, a boardwalk, torches, crates and blue water jars. Midday in
+      the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult); Luckiny 1.4 m. Background: images 3, 4 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces north-east;
+      draw only what is behind the characters in that direction, as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and
+      the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, light
+      and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-011_end_gpt-image-2.5_01.png
+  - cut: A04-012
+    which: start
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/caravan-camp/panel_tent-entrance.png
+    - episodes/A/scenes/A04/gen/sketch/A04-012_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: images 1, 2), dashing at full speed
+      toward the tent, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the entrance
+      of a large round merchant tent of striped orange, brown and cream canvas with a wooden door, clay jars and sacks beside it. Midday in the desert: a blazing sun high in a pale blue sky, harsh light
+      with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only shows what this place looks
+      like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in that direction, as described above. Composition:
+      image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no
+      captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-012_start_gpt-image-2.5_01.png
+  - cut: A04-012
+    which: end
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/caravan-camp/panel_tent-entrance.png
+    - episodes/A/scenes/A04/gen/sketch/A04-012_end.png
+    - episodes/A/scenes/A04/stills/start/A04-012_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 0.3 m, low angle looking up. In frame (exactly one person): the Hundred Knight (character reference: image 1), charging into the tent
+      entrance, in the center of the frame, in profile, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the entrance of a large round
+      merchant tent of striped orange, brown and cream canvas with a wooden door, clay jars and sacks beside it. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark
+      shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in that direction, as described above. Composition: image
+      3 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors.
+      Image 4 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-012_end_gpt-image-2.5_01.png
+  - cut: A04-013
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/water-merchant/views/water-merchant_side.png
+    - world/caravan-camp/panel_goods.png
+    - episodes/A/scenes/A04/gen/sketch/A04-013_start.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 1.4 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), grabbing a big blue-glazed
+      water jar with both gauntlets, on the left of the frame, in three-quarter view, turned toward screen right; the water-jar merchant (character reference: image 3), frozen in shock, mouth wide open,
+      hands raised, on the right of the frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people. Behind: a merchant''s stall of wooden crates, sacks and big blue-glazed
+      water jars under a purple awning. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred
+      Knight 0.9 m (small, only about waist-high to an adult); the water-jar merchant 1.7 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy
+      its viewpoint or framing. The camera here faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 5 is a rough layout sketch with colored
+      placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors
+      and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-013_start_gpt-image-2.5_01.png
+  - cut: A04-013
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/water-merchant/views/water-merchant_side.png
+    - world/caravan-camp/panel_goods.png
+    - episodes/A/scenes/A04/gen/sketch/A04-013_start.png
+    - episodes/A/scenes/A04/stills/start/A04-013_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 1.4 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), lifting the big blue
+      water jar high over its head, on the left of the frame, in three-quarter view, turned toward screen right; the water-jar merchant (character reference: image 3), frozen in shock, mouth wide open,
+      reaching out helplessly, on the right of the frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people. Behind: a merchant''s stall of wooden crates, sacks and big
+      blue-glazed water jars under a purple awning. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights:
+      the Hundred Knight 0.9 m (small, only about waist-high to an adult); the water-jar merchant 1.7 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors);
+      do not copy its viewpoint or framing. The camera here faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 5 is a rough layout sketch
+      with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame
+      of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-013_end_gpt-image-2.5_01.png
+  - cut: A04-014
+    which: start
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-014_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 2.2 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), running down the dune holding the big blue
+      water jar high over its head, kicking up sand, in the center of the frame, with the back to the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes
+      and distant red rock pillars under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing
+      sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background:
+      images 2, 3 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters
+      in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-014_start_gpt-image-2.5_01.png
+  - cut: A04-014
+    which: end
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-014_end.png
+    - episodes/A/scenes/A04/stills/start/A04-014_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 2.2 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), running down the dune holding the big blue
+      water jar high over its head, kicking up sand, in the center of the frame, with the back to the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes
+      and distant red rock pillars under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing
+      sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background:
+      images 2, 3 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters
+      in that direction, as described above. Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-014_end_gpt-image-2.5_01.png
+  - cut: A04-015
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_side.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-015_start.png
+    prompt: 'Camera: medium close-up (chest up), 70mm lens, camera height 0.75 m. In frame (exactly one person): Luckiny (character reference: images 1, 2, 3), sitting in the sand, holding a big blue-glazed
+      water jar in both arms and drinking from it eagerly, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: rolling golden dunes with swirling sand
+      patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat
+      haze over the golden dunes. Heights: Luckiny 1.4 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera
+      here faces east; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 5 is a rough layout
+      sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s
+      design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-015_start_gpt-image-2.5_01.png
+  - cut: A04-015
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_side.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-015_start.png
+    - episodes/A/scenes/A04/stills/start/A04-015_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 70mm lens, camera height 0.75 m. In frame (exactly one person): Luckiny (character reference: images 1, 2, 3), sitting in the sand, lowering the big blue
+      water jar, gasping for breath, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry
+      shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes.
+      Heights: Luckiny 1.4 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces east; draw only
+      what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 5 is a rough layout sketch with colored placeholder
+      figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made
+      first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime
+      style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-015_end_gpt-image-2.5_01.png
+  - cut: A04-016
+    which: start
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_side.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-016_start.png
+    prompt: 'Camera: medium close-up (chest up), 70mm lens, camera height 0.8 m. In frame (exactly one person): Luckiny (character reference: images 1, 2, 3), sitting in the sand hugging the water jar,
+      catching her breath, in the center of the frame, in three-quarter view, turned toward screen right, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: rolling
+      golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short
+      dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint
+      or framing. The camera here faces south-east; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition:
+      image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat
+      colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no
+      captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-016_start_gpt-image-2.5_01.png
+  - cut: A04-016
+    which: end
+    kind: M
+    frame: 胸上
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_face_side.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-016_end.png
+    - episodes/A/scenes/A04/stills/start/A04-016_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium close-up (chest up), 70mm lens, camera height 0.8 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2, 3), sitting in the sand hugging
+      the water jar, smiling up gratefully and bowing her head a little, on the left of the frame, in three-quarter view, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character
+      reference: images 4, 5), standing, looking down at her, on the right of the frame, in profile, turned toward screen left. No other people. Behind: rolling golden dunes with swirling sand patterns,
+      scattered dry shrubs and a few dead trees, red sandstone mesas far away, then a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday
+      in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only
+      about waist-high to an adult). Background: image 6 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces south-east;
+      draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 7 is a rough layout sketch with
+      colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 8 is the first frame of
+      the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-016_end_gpt-image-2.5_01.png
+  - cut: A04-017
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/luckiny/views/luckiny_back.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-017_start.png
+    prompt: 'Camera: wide shot, 35mm lens, camera height 6.5 m, high angle looking down. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), sitting in the sand clutching
+      the water jar, looking around fearfully, in the center of the frame, with the back to the camera, looking toward the camera; the Hundred Knight (character reference: image 2), standing beside her,
+      in the center of the frame, facing the camera. No other people. High angle looking down. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under
+      the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh
+      light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images 3, 4 only
+      show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters in that direction,
+      as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw
+      the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-017_start_gpt-image-2.5_01.png
+  - cut: A04-017
+    which: end
+    kind: M
+    frame: 引き
+    refs:
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-017_end.png
+    - episodes/A/scenes/A04/stills/start/A04-017_start_gpt-image-2.5_01.png
+    prompt: 'Camera: wide shot, 35mm lens, camera height 6.5 m, high angle looking down. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), sitting in the sand clutching
+      the water jar, glancing nervously over her shoulder, in the center of the frame, in profile, turned toward screen right, looking toward screen right; the Hundred Knight (character reference: image
+      2), standing beside her, in the center of the frame, in profile, turned toward screen left. No other people. High angle looking down. Behind: rolling golden dunes with swirling sand patterns, scattered
+      dry shrubs and a few dead trees, red sandstone mesas far away, then a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday in the desert:
+      a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult). Background: images 3, 4 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-east; draw only
+      what is behind the characters in that direction, as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions
+      and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, light and the way the
+      characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-017_end_gpt-image-2.5_01.png
+  - cut: A04-018
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/luckiny/views/luckiny_back.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-018_start.png
+    prompt: 'Camera: medium-long shot (knees up), 50mm lens, camera height 0.55 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), sitting in the foreground, seen
+      from behind, out of focus, on the left of the frame, with the back to the camera; the Hundred Knight (character reference: image 2), standing, listening, in the center of the frame, facing the camera,
+      looking at Luckiny. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock
+      pillars under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue
+      sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images
+      3, 4 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters in
+      that direction, as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-018_start_gpt-image-2.5_01.png
+  - cut: A04-018
+    which: end
+    skip: 位置もカメラも変わらない（首をかしげるだけ）。開始の画だけで作る
+  - cut: A04-019
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tettara-desert/panel_oblique.png
+    - world/tettara-desert/panel_ground.png
+    - episodes/A/scenes/A04/gen/sketch/A04-019_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), sitting in the sand, putting the water
+      jar down beside her, in the center of the frame, in profile, turned toward screen right, looking at the Hundred Knight; the Hundred Knight (character reference: image 2), standing, at the far right
+      of the frame, in profile, turned toward screen left. No other people. Behind: rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away,
+      then a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with
+      short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images 3, 4 only show what
+      this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-east; draw only what is behind the characters in that direction, as
+      described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the
+      placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft
+      colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-019_start_gpt-image-2.5_01.png
+  - cut: A04-019
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_side.png
+    - world/tettara-desert/panel_oblique.png
+    - world/tettara-desert/panel_ground.png
+    - episodes/A/scenes/A04/gen/sketch/A04-019_end.png
+    - episodes/A/scenes/A04/stills/start/A04-019_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.0 m. In frame (exactly one person): Luckiny (character reference: image 1), standing, brushing the sand off her clothes, in the center
+      of the frame, in profile, turned toward screen right, looking at the Hundred Knight (off screen, toward screen right). No other people. Behind: rolling golden dunes with swirling sand patterns, scattered
+      dry shrubs and a few dead trees, red sandstone mesas far away, then a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky. Midday in the desert:
+      a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: Luckiny 1.4 m. Background: images 2, 3 only show what this place looks
+      like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-east; draw only what is behind the characters in that direction, as described above.
+      Composition: image 4 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels
+      or flat colors. Image 5 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-019_end_gpt-image-2.5_01.png
+  - cut: A04-020
+    which: start
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-020_start.png
+    prompt: 'Camera: medium-long shot (knees up), 35mm lens, camera height 1.35 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing beside
+      her, at the far left of the frame, seen from behind at an angle, turned toward screen right; Luckiny (character reference: image 3), standing, turning toward the far dunes, on the left of the frame,
+      facing the camera, looking into the distance away from the camera. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on
+      the horizon, then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue
+      sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Luckiny 1.4 m. Background: images
+      4, 5 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in
+      that direction, as described above. Composition: image 6 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-020_start_gpt-image-2.5_01.png
+  - cut: A04-020
+    which: end
+    kind: M
+    frame: 膝上
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_back.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-020_end.png
+    - episodes/A/scenes/A04/stills/start/A04-020_start_gpt-image-2.5_01.png
+    prompt: 'Camera: medium-long shot (knees up), 35mm lens, camera height 1.35 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing beside
+      her, looking where she points, at the far left of the frame, seen from behind at an angle, turned toward screen right; Luckiny (character reference: image 3), standing, pointing toward the far dunes
+      in the north-east, on the left of the frame, with the back to the camera, looking into the distance away from the camera. No other people. Behind: endless golden dunes covered in swirling sand patterns,
+      with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday
+      in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult); Luckiny 1.4 m. Background: images 4, 5 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces north-east;
+      draw only what is behind the characters in that direction, as described above. Composition: image 6 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and
+      the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 7 is the first frame of the same shot (made first): keep its background rendering, light
+      and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-020_end_gpt-image-2.5_01.png
+  - cut: A04-021
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/luckiny/views/luckiny_back.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-021_start.png
+    prompt: 'Camera: wide shot, 24mm lens, camera height 0.35 m, low angle looking up. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing beside
+      her, looking toward the far dunes, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right; Luckiny (character reference: images 3, 4), standing,
+      looking toward the far dunes, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: endless golden dunes covered
+      in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone
+      mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small,
+      only about waist-high to an adult); Luckiny 1.4 m. Background: images 5, 6 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera
+      here faces north; draw only what is behind the characters in that direction, as described above. Composition: image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle,
+      framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-021_start_gpt-image-2.5_01.png
+  - cut: A04-021
+    which: end
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/luckiny/views/luckiny_back.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-021_end.png
+    - episodes/A/scenes/A04/stills/start/A04-021_start_gpt-image-2.5_01.png
+    prompt: 'Camera: wide shot, 24mm lens, camera height 0.35 m, low angle looking up. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing beside
+      her, looking toward the far dunes, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right; Luckiny (character reference: images 3, 4), standing,
+      looking toward the far dunes, in the center of the frame, seen from behind at an angle, turned toward screen right, looking toward screen right. No other people. Behind: endless golden dunes covered
+      in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone
+      mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small,
+      only about waist-high to an adult); Luckiny 1.4 m. Background: images 5, 6 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera
+      here faces north; draw only what is behind the characters in that direction, as described above. Composition: image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle,
+      framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Image 8 is the first frame of the same shot (made first): keep its background rendering,
+      light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich
+      but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-021_end_gpt-image-2.5_01.png
+  - cut: A04-022
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-022_start.png
+    prompt: 'Camera: close-up, 85mm lens, camera height 1.3 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2), standing, looking back over her shoulder to speak
+      to the Hundred Knight, in the center of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: images 3, 4), standing behind her, on the right of the
+      frame, facing the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky, then golden dunes with swirling
+      patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering
+      heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images 5, 6 only show what this place looks like (buildings,
+      trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters in that direction, as described above, with the background
+      softly out of focus (shallow depth of field). Composition: image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-022_start_gpt-image-2.5_01.png
+  - cut: A04-022
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/luckiny/views/luckiny_face_front.png
+    - characters/luckiny/views/luckiny_front.png
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - world/tettara-desert/panel_ground.png
+    - world/tettara-desert/panel_high.png
+    - episodes/A/scenes/A04/gen/sketch/A04-022_end.png
+    - episodes/A/scenes/A04/stills/start/A04-022_start_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 85mm lens, camera height 1.3 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2), standing, raising the brass horn-trumpet on her
+      staff to her lips, in the center of the frame, facing the camera, looking at the Hundred Knight; the Hundred Knight (character reference: images 3, 4), standing, looking up at her, in the center of
+      the frame, facing the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky, then golden dunes with swirling
+      patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering
+      heat haze over the golden dunes. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images 5, 6 only show what this place looks like (buildings,
+      trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-west; draw only what is behind the characters in that direction, as described above, with the background
+      softly out of focus (shallow depth of field). Composition: image 7 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters,
+      but do not draw the placeholders, labels or flat colors. Image 8 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each
+      character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech
+      bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-022_end_gpt-image-2.5_01.png
+  - cut: A04-023
+    which: start
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_back.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-023_start.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.2 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), standing behind her, in the
+      center of the frame, with the back to the camera; Luckiny (character reference: image 2), standing, blowing the long brass horn-trumpet, in the center of the frame, with the back to the camera. No
+      other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling sand patterns,
+      scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering heat haze over
+      the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Luckiny 1.4 m. Background: images 3, 4 only show what this place looks like (buildings, trees, materials,
+      colors); do not copy their viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in that direction, as described above. Composition: image 5 is a rough layout
+      sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw the placeholders, labels or flat colors. Keep each character''s
+      design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/start/A04-023_start_gpt-image-2.5_01.png
+  - cut: A04-023
+    which: end
+    kind: A
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_back.png
+    - world/tettara-desert/panel_wide.png
+    - world/tettara-desert/panel_oblique.png
+    - episodes/A/scenes/A04/gen/sketch/A04-023_end.png
+    - episodes/A/scenes/A04/stills/start/A04-023_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.2 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), running after her, seen from
+      behind, in the center of the frame, with the back to the camera; Luckiny (character reference: image 2), running up the dune toward the north-east, seen from behind, in the center of the frame, with
+      the back to the camera, small in the background. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then
+      rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Midday in the desert: a blazing sun high in a pale blue sky, harsh light
+      with short dark shadows, shimmering heat haze over the golden dunes. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Luckiny 1.4 m. Background: images 3, 4 only show
+      what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces north-east; draw only what is behind the characters in that direction,
+      as described above. Composition: image 5 is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and facing of the characters, but do not draw
+      the placeholders, labels or flat colors. Image 6 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s
+      design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A04/stills/end/A04-023_end_gpt-image-2.5_01.png
+videos:
+  model: seedance_2_0
+  mode: fast
+  resolution: 480p
+  credits_per_sec: 1
+  generate_audio: false
+  note: 開始＋終わりの静止画＋設定画＋下絵（Blender、854x480）＋口パク参照（ルッキーニィの台詞で口が見えるカットだけ）。最短4秒・整数秒。 メタリカの台詞は画に出ない声だけなので、口パクの参照は渡さない（百騎兵には口がない）。生成音声は使わない（generate_audio=false）
+  items:
+  - cut: A04-001
+    sec: 5.5
+    duration: 6
+    credits: 6
+    start_image: episodes/A/scenes/A04/stills/start/A04-001_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-001_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-001.mp4
+    audio_reference: null
+    prompt: 'Extreme wide shot. The camera starts high in the sky looking down on an endless sea of golden dunes, then cranes down and pulls back smoothly over 5 seconds, ending low near the ground. The
+      tiny Hundred Knight walks steadily east across the sand the whole time. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth
+      and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-002
+    sec: 7.8
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-002_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-002_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-002.mp4
+    audio_reference: null
+    prompt: 'Low tracking shot at sand level. The camera moves sideways alongside the Hundred Knight at its walking speed. It trudges through soft sand, its feet sinking with every step; the pale blue flame
+      on its helmet flickers in the heat. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions
+      identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else
+      appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-003
+    sec: 7.0
+    duration: 7
+    credits: 7
+    start_image: episodes/A/scenes/A04/stills/start/A04-003_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-003_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-003.mp4
+    audio_reference: null
+    prompt: 'Telephoto shot through strong heat haze. In the foreground the huge half-buried rib cage of a long-dead beast; far behind it the tiny Hundred Knight walks from left to right. The camera pans
+      slowly to the right with it. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical
+      to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-004
+    sec: 10.0
+    duration: 10
+    credits: 10
+    start_image: episodes/A/scenes/A04/stills/start/A04-004_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-004_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-004.mp4
+    audio_reference: null
+    prompt: 'Low angle from in front. The Hundred Knight walks toward the camera and stops at about 2 seconds, then tilts its head up and gazes at the blazing sun for a long moment. At about 7 seconds it
+      lowers its head and walks on toward the camera while the camera glides backward. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every
+      character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight
+      has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-005
+    sec: 4.5
+    duration: 5
+    credits: 5
+    start_image: episodes/A/scenes/A04/stills/start/A04-005_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-005_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-005.mp4
+    audio_reference: null
+    prompt: 'Over-the-shoulder shot from behind the Hundred Knight. It walks over the crest of a dune and stops short at about 1.5 seconds. Far ahead a small figure in a red hood lies face down in the sand.
+      The camera then pushes in and zooms quickly toward the fallen figure. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth
+      and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-006
+    sec: 7.8
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-006_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-006_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-006.mp4
+    audio_reference:
+    - audio/A04/original/L124_luckiny.wav
+    prompt: 'Close-up at sand level, backlit by the high sun. Luckiny lies face down in the sand, exhausted; behind her stand the Hundred Knight''s legs. She slowly opens her eyes halfway, lifts her head
+      a little and looks up at the Hundred Knight, whispering weakly. Static camera. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the given
+      last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday
+      desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga
+      symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-007
+    sec: 8.2
+    duration: 9
+    credits: 9
+    start_image: episodes/A/scenes/A04/stills/start/A04-007_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-007.mp4
+    audio_reference: null
+    prompt: 'Point-of-view shot from the ground looking up at the Hundred Knight against the bright sky. It bends forward and peers down curiously, tilting its head slightly. Slight handheld sway. 2D TV
+      anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing
+      sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+  - cut: A04-008
+    sec: 5.0
+    duration: 5
+    credits: 5
+    start_image: episodes/A/scenes/A04/stills/start/A04-008_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-008_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-008.mp4
+    audio_reference: null
+    prompt: 'The camera looks down over the Hundred Knight''s shoulder and slowly moves in. The Hundred Knight reaches into its big gauntlet, pulls out a small folded paper and holds it out in front of
+      the face of Luckiny, who lies in the sand. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions
+      identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else
+      appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-009
+    sec: 7.8
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-009_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-009_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-009.mp4
+    audio_reference:
+    - audio/A04/original/L128_luckiny.wav
+    prompt: 'Close-up at sand level. Luckiny, lying in the sand, slowly reaches a trembling hand toward the small paper held out by the Hundred Knight''s gauntlet and whispers; before she can touch it,
+      her hand falls limply onto the sand. Static camera. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style,
+      clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high
+      in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat
+      drops or question marks).'
+  - cut: A04-010
+    sec: 10.0
+    duration: 10
+    credits: 10
+    start_image: episodes/A/scenes/A04/stills/start/A04-010_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-010_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-010.mp4
+    audio_reference:
+    - audio/A04/original/L130_luckiny.wav
+    prompt: 'Shot from the north, looking down at the two. The Hundred Knight leans over Luckiny, who lies in the sand (her mouth stays still while the off-screen voice talks). At about 7 seconds she whispers
+      with cracked dry lips, and the camera pushes in and zooms to a close-up of her face. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the
+      given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets.
+      Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-011
+    sec: 8.0
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-011_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-011_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-011.mp4
+    audio_reference: null
+    prompt: 'Shot from behind the Hundred Knight standing over Luckiny, who lies in the sand. It raises its head and looks around. At about 5.5 seconds it turns toward the north-east, and the camera whips
+      quickly toward the distant merchant tents beyond the dunes (swish pan). The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth
+      and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-012
+    sec: 3.0
+    duration: 4
+    credits: 4
+    start_image: episodes/A/scenes/A04/stills/start/A04-012_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-012_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-012.mp4
+    audio_reference: null
+    prompt: 'Very low handheld shot at a caravan camp. The Hundred Knight dashes past the camera at full speed and charges straight into the entrance of a large striped tent; the tent flap swings behind
+      it. Fast, comic energy. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical
+      to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-013
+    sec: 3.5
+    duration: 4
+    credits: 4
+    start_image: episodes/A/scenes/A04/stills/start/A04-013_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-013_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/water-merchant_sheet_01.png
+    previs: previs/A04/A04-013.mp4
+    audio_reference: null
+    prompt: 'At a merchant''s stall full of blue water jars. The Hundred Knight grabs a big blue-glazed water jar and effortlessly lifts it high over its head. The merchant stands frozen in shock with his
+      mouth wide open, then reaches out helplessly. Static camera. Comic timing. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth
+      and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-014
+    sec: 3.5
+    duration: 4
+    credits: 4
+    start_image: episodes/A/scenes/A04/stills/start/A04-014_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-014_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A04/A04-014.mp4
+    audio_reference: null
+    prompt: 'Handheld tracking shot from a little above, moving alongside. The Hundred Knight runs down the slope of a dune holding the big blue water jar high over its head, kicking up sprays of sand.
+      The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and
+      the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-015
+    sec: 6.0
+    duration: 6
+    credits: 6
+    start_image: episodes/A/scenes/A04/stills/start/A04-015_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-015_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-015.mp4
+    audio_reference:
+    - audio/A04/original/L132_luckiny.wav
+    prompt: 'Close-up from the front. Luckiny sits in the sand hugging the big blue water jar; she speaks first, then lifts it to her lips and drinks eagerly, and finally lowers it, gasping. Static camera.
+      Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors.
+      Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The
+      Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-016
+    sec: 7.8
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-016_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-016_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-016.mp4
+    audio_reference:
+    - audio/A04/original/L133_luckiny.wav
+    - audio/A04/original/L134_luckiny.wav
+    prompt: 'Close-up of Luckiny sitting in the sand hugging the water jar, catching her breath and talking. From about 3.5 seconds the camera pulls back and zooms out until the Hundred Knight standing
+      beside her is in the frame; she smiles up at it gratefully and bows her head a little. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the
+      given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets.
+      Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no
+      manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-017
+    sec: 10.5
+    duration: 11
+    credits: 11
+    start_image: episodes/A/scenes/A04/stills/start/A04-017_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-017_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-017.mp4
+    audio_reference: null
+    prompt: 'High angle. The camera orbits slowly around the two small figures in the middle of the vast desert; scattered small bones lie in the sand nearby. Luckiny, sitting with the water jar, looks
+      around fearfully and glances over her shoulder while she talks. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s
+      design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth
+      and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-018
+    sec: 6.8
+    duration: 7
+    credits: 7
+    start_image: episodes/A/scenes/A04/stills/start/A04-018_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-018.mp4
+    audio_reference: null
+    prompt: 'Low shot over Luckiny''s shoulder (out of focus in the foreground). The Hundred Knight stands listening and slowly tilts its head to one side. Static camera. Luckiny does not speak. 2D TV anime
+      style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing
+      sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+  - cut: A04-019
+    sec: 6.8
+    duration: 7
+    credits: 7
+    start_image: episodes/A/scenes/A04/stills/start/A04-019_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-019_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-019.mp4
+    audio_reference:
+    - audio/A04/original/L138_luckiny.wav
+    prompt: 'Medium shot, camera slowly moving in. Luckiny sets the water jar down beside her, stands up and brushes the sand off her clothes, then faces the Hundred Knight and talks earnestly. Sync the
+      speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every
+      character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight
+      has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-020
+    sec: 9.1
+    duration: 10
+    credits: 10
+    start_image: episodes/A/scenes/A04/stills/start/A04-020_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-020_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-020.mp4
+    audio_reference: null
+    prompt: 'Over Luckiny''s shoulder. She turns toward the far dunes in the north-east and points at them while explaining the way; the Hundred Knight looks where she points. Static camera. The shot ends
+      on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character
+      sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles,
+      no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-021
+    sec: 7.8
+    duration: 8
+    credits: 8
+    start_image: episodes/A/scenes/A04/stills/start/A04-021_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-021_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-021.mp4
+    audio_reference: null
+    prompt: 'Low wide angle from the south, the camera pushing in slowly. Luckiny and the Hundred Knight stand side by side looking toward the far dunes in the north-east; the wind blows thin streams of
+      sand across the ground. Nobody on screen speaks. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors
+      and proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks.
+      No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A04-022
+    sec: 6.2
+    duration: 7
+    credits: 7
+    start_image: episodes/A/scenes/A04/stills/start/A04-022_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-022_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-022.mp4
+    audio_reference:
+    - audio/A04/original/L141_luckiny.wav
+    prompt: 'Close-up from the front of Luckiny looking back over her shoulder to talk to the Hundred Knight behind her; she takes the long brass horn-trumpet from her back and raises it to her lips. The
+      camera pulls back and zooms out until both are in the frame. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV
+      anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and proportions identical to the first frame and the character sheets. Midday desert light: blazing
+      sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+  - cut: A04-023
+    sec: 9.1
+    duration: 10
+    credits: 10
+    start_image: episodes/A/scenes/A04/stills/start/A04-023_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A04/stills/end/A04-023_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A04/A04-023.mp4
+    audio_reference: null
+    prompt: 'From behind the two. Luckiny blows the long brass horn-trumpet for about 2.5 seconds, lowers it, calls out, and runs up the dune toward the north-east; the Hundred Knight runs after her. The
+      camera follows them from behind (follow shot). The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors. Keep every character''s design, colors and
+      proportions identical to the first frame and the character sheets. Midday desert light: blazing sun high in the sky, harsh short shadows, heat haze. The Hundred Knight has no mouth and never speaks.
+      No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'

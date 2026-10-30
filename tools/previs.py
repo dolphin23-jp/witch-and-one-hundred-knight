@@ -91,6 +91,7 @@ class Plan:
         self.people = list(self.start_pos)
         only = self.c.get("only")
         self.shown = [w for w in self.people if only is None or w in only]
+        self.posture_t = self.c.get("posture_t", sec / 2)   # 姿勢が変わる秒（posture → posture_end）
 
     # 人物
     def _window(self, who):
@@ -158,21 +159,25 @@ class Plan:
         look1 = pt(c.get("look_end", c["look"]))
         look = lerp_pt(look0, look1, e)
         lens = lerp(c["lens"], c.get("lens_end", c["lens"]), e)
-        pitch = staging.tilt_of(c, tuple(cam[:2]), look)
+        pitch = staging.tilt_of({**c, "cam": cam}, tuple(cam[:2]), look)   # 高さはその時刻のカメラの高さ（cam_end で動くとき）
         yaw = staging.bearing_of((look[0] - cam[0], look[1] - cam[1]))
         return cam, yaw, pitch, lens
 
 
 # ---------- Blender の場面 ----------
 
-COLORS = {"metallica": (1.0, 0.59, 0.16), "bisco": (0.35, 0.59, 1.0), "hundred-knight": (0.63, 0.86, 1.0), "arlecchino": (0.86, 0.47, 0.86)}
+COLORS = {who: tuple(v / 255 for v in rgb) for who, rgb in staging.COLORS.items()}   # 略図と同じ色
 # 人形の形。r: 体の半径、hr: 頭の半径、arm: 腕の太さ。背の高さは layout の people.<人物>.h
 SHAPE = {
     "metallica": {"r": 0.16, "hr": 0.13, "arm": 0.045},
     "bisco": {"r": 0.15, "hr": 0.125, "arm": 0.045},
     "hundred-knight": {"r": 0.17, "hr": 0.20, "arm": 0.07},
     "arlecchino": {"r": 0.27, "hr": 0.21, "arm": 0.09},
+    "luckiny": {"r": 0.14, "hr": 0.12, "arm": 0.04},
+    "tito": {"r": 0.15, "hr": 0.125, "arm": 0.045},
+    "water-merchant": {"r": 0.24, "hr": 0.14, "arm": 0.06},
 }
+SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
 
 
 def linear(rgb):
@@ -237,8 +242,10 @@ def poly_mesh(name, pts, z, mat):
 
 def build_site(lay):
     """屋敷の前の広場（world/witch-house-front-layout.yaml）を、平らな色分けと簡単な立体で作る。"""
-    swamp = make_mat("swamp", (0.16, 0.62, 0.32))
-    poly_mesh("ENV_swamp_far", [(-300, -300), (300, -300), (300, 300), (-300, 300)], -0.03, swamp)
+    g = lay.get("ground") or {}
+    gcol = tuple(v / 255 for v in g.get("color", [41, 158, 82]))
+    swamp = make_mat("swamp", gcol)
+    poly_mesh("ENV_swamp_far", [(-600, -600), (600, -600), (600, 600), (-600, 600)], -0.03, swamp)
     kinds = {"翠の沼": swamp}
     for i, a in enumerate(lay.get("areas", [])):
         col = tuple(min(1.0, v / 255 * 1.35) for v in a.get("color", [128, 128, 128]))   # 下絵で見分けやすいよう少し明るく
@@ -253,26 +260,64 @@ def build_site(lay):
             cx, cy = a["center"]
             pts = [(cx + a["r"] * math.cos(2 * math.pi * k / n), cy + a["r"] * math.sin(2 * math.pi * k / n)) for k in range(n)]
         poly_mesh(f"ENV_{a['ja']}", pts, z, m)
-    h = lay["house"]
-    wall = make_mat("wall", (0.55, 0.32, 0.18))
-    roof = make_mat("roof", (0.95, 0.55, 0.2))
-    cx, cy = h["center"]
-    prim("cyl", wall, "ENV_house_wall", loc=bl((cx, cy), h["h"] / 2), radius=h["r"], depth=h["h"])
-    prim("cone", roof, "ENV_house_roof", loc=bl((cx, cy), h["h"] + h["roof"] / 2), radius1=h["r"] + 0.5, radius2=0.0, depth=h["roof"])
-    lantern = make_mat("lantern", (0.4, 1.0, 0.6), emit=2.0)
-    prim("sphere", lantern, "ENV_house_top", loc=bl((cx, cy), h["h"] + h["roof"] + 0.3), radius=0.45)
-    door = make_mat("door", (0.18, 0.1, 0.06))
-    d = lay["props"]["door"]["at"]
-    prim("cube", door, "ENV_door", loc=bl((d[0], d[1] - 0.05), 1.1), scale=(0.6, 0.12, 1.1), size=2.0)
+    h = lay.get("house")
+    if h:
+        wall = make_mat("wall", (0.55, 0.32, 0.18))
+        roof = make_mat("roof", (0.95, 0.55, 0.2))
+        cx, cy = h["center"]
+        prim("cyl", wall, "ENV_house_wall", loc=bl((cx, cy), h["h"] / 2), radius=h["r"], depth=h["h"])
+        prim("cone", roof, "ENV_house_roof", loc=bl((cx, cy), h["h"] + h["roof"] / 2), radius1=h["r"] + 0.5, radius2=0.0, depth=h["roof"])
+        lantern = make_mat("lantern", (0.4, 1.0, 0.6), emit=2.0)
+        prim("sphere", lantern, "ENV_house_top", loc=bl((cx, cy), h["h"] + h["roof"] + 0.3), radius=0.45)
+    if (lay.get("props") or {}).get("door"):
+        door = make_mat("door", (0.18, 0.1, 0.06))
+        d = lay["props"]["door"]["at"]
+        prim("cube", door, "ENV_door", loc=bl((d[0], d[1] - 0.05), 1.1), scale=(0.6, 0.12, 1.1), size=2.0)
+    sand = make_mat("dune", tuple(min(1.0, v * 1.12) for v in gcol))
+    rockm = make_mat("rock", (0.55, 0.3, 0.2))
+    tentm = make_mat("tent", (0.8, 0.45, 0.25))
+    bonem = make_mat("bone", (0.92, 0.9, 0.82))
+    stone = make_mat("stone", (0.6, 0.58, 0.52))
+    jar = make_mat("jar", (0.35, 0.45, 0.75))
     pole = make_mat("pole", (0.2, 0.2, 0.22))
     lamp = make_mat("lamp", (1.0, 0.85, 0.5), emit=1.5)
     trunk = make_mat("trunk", (0.38, 0.28, 0.2))
     red = make_mat("mush", (0.9, 0.2, 0.18))
     stump = make_mat("stump", (0.45, 0.33, 0.22))
-    for name, pr in lay["props"].items():
+    for name, pr in (lay.get("props") or {}).items():
         if "at" not in pr or name == "door":
             continue
         x, y = pr["at"]
+        if name.startswith("dune"):   # 砂丘: 平たい半球（r は半径、h は高さ）
+            prim("sphere", sand, f"ENV_{name}", loc=bl((x, y), 0.0), radius=1.0, scale=(pr.get("r", 10), pr.get("r", 10) * pr.get("ry", 0.6), pr.get("h", 4)))
+            continue
+        if name.startswith("rock") or name.startswith("mesa"):
+            hh = pr.get("h", 1.5)
+            prim("cube", rockm, f"ENV_{name}", loc=bl((x, y), hh / 2), scale=(pr.get("r", hh * 0.6), pr.get("r", hh * 0.6) * 0.8, hh / 2))
+            continue
+        if name.startswith("tent"):
+            hh = pr.get("h", 3.5)
+            prim("cyl", tentm, f"ENV_{name}", loc=bl((x, y), hh * 0.3), radius=pr.get("r", 2.5), depth=hh * 0.6)
+            prim("cone", tentm, f"ENV_{name}_roof", loc=bl((x, y), hh * 0.8), radius1=pr.get("r", 2.5) + 0.2, radius2=0.0, depth=hh * 0.45)
+            continue
+        if name.startswith("bones"):
+            for k, (dx, dy) in enumerate(((0, 0), (0.6, 0.2), (-0.5, 0.3), (0.2, -0.5))):
+                prim("cyl", bonem, f"ENV_{name}_{k}", loc=bl((x + dx, y + dy), 0.06), rot=(math.pi / 2, 0, k * 0.8), radius=0.05, depth=pr.get("r", 1.0))
+            continue
+        if name.startswith("skeleton"):   # 大きな獣の骨: 半分砂に埋まった弓なりのあばら（輪を縦に立てて下半分を砂に埋める）
+            for k in range(6):
+                bpy.ops.mesh.primitive_torus_add(major_radius=pr.get("h", 2.2) * (0.9 - 0.08 * abs(k - 2.5)), minor_radius=0.08,
+                                                 location=bl((x + k * 0.7 - 1.8, y), 0.0), rotation=(math.pi / 2, 0, math.pi / 2))
+                o = bpy.context.object
+                o.name = f"ENV_{name}_{k}"
+                o.data.materials.append(bonem)
+            continue
+        if name.startswith("well"):
+            prim("cyl", stone, f"ENV_{name}", loc=bl((x, y), 0.4), radius=pr.get("r", 0.9), depth=0.8)
+            continue
+        if name.startswith("jar") or name.startswith("goods"):
+            prim("sphere", jar, f"ENV_{name}", loc=bl((x, y), 0.4), radius=pr.get("r", 0.4))
+            continue
         if name.startswith("lamp"):
             prim("cyl", pole, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=0.05, depth=pr["h"])
             prim("sphere", lamp, f"ENV_{name}_light", loc=bl((x, y), pr["h"] + 0.1), radius=0.14)
@@ -287,7 +332,7 @@ def build_site(lay):
     world = bpy.data.worlds.new("sky")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (*linear((0.62, 0.78, 0.95)), 1.0)
+    bg.inputs["Color"].default_value = (*linear(tuple(v / 255 for v in (lay.get("sky") or {}).get("color", [158, 199, 242]))), 1.0)
     bg.inputs["Strength"].default_value = 1.4
     bpy.context.scene.world = world
     # 朝の光: 東の低い所から
@@ -295,12 +340,16 @@ def build_site(lay):
     sun = bpy.context.object
     sun.name = "LGT_sun"
     sun.data.energy = 4.0
-    sun.rotation_euler = (math.radians(65), 0, math.radians(-100))   # 東（+X）から西へ、高さ 25°
+    sn = lay.get("sun") or {}
+    if sn:   # 太陽の方位（北 0・東 90）と高さ（°）
+        sun.rotation_euler = (math.radians(90 - sn.get("elev", 25)), 0, math.radians(-sn.get("from", 90) + 180 - 90 + 90))
+    else:
+        sun.rotation_euler = (math.radians(65), 0, math.radians(-100))   # 東（+X）から西へ、高さ 25°
 
 
 def build_person(who, h):
-    sh = SHAPE[who]
-    col = COLORS[who]
+    sh = SHAPE.get(who, SHAPE_DEFAULT)
+    col = COLORS.get(who, (0.9, 0.9, 0.9))
     r, hr, arm = sh["r"], sh["hr"], sh["arm"]
     body_h = max(0.2, h - 2 * hr)
     root = bpy.data.objects.new(f"FIG_{who}", None)
@@ -388,8 +437,18 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         for who, (root, head) in figs.items():
             b = plan.face(who, t, pos)
             x, y = pos[who]
-            root.location = bl((x, y))
-            root.rotation_euler = (0, 0, -math.radians(b))
+            pst = staging.posture_of(plan.c, "end" if t >= plan.posture_t else "start", who)
+            if pst == "lying":   # うつ伏せ: 体を前へ倒し、頭が向いている側に
+                r = SHAPE.get(who, SHAPE_DEFAULT)["r"]
+                hh = lay["people"][who]["h"]   # 体の中ほどを位置に（略図と同じ。頭は向きの側に h×0.45）
+                root.location = bl((x - math.sin(math.radians(b)) * hh / 2, y + math.cos(math.radians(b)) * hh / 2), r)
+                root.rotation_euler = (-math.pi / 2, 0, -math.radians(b))
+                root.scale = (1, 1, 1)
+            else:
+                root.location = bl((x, y))
+                root.rotation_euler = (0, 0, -math.radians(b))
+                k = staging.POSTURE_H.get(pst, 1.0) if pst else 1.0
+                root.scale = (1, 1, k)
             head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
         (cx, cy, cz), yaw, pitch, lens = plan.camera(t, pos)
         cam.location = bl((cx, cy), cz)

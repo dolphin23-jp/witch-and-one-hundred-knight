@@ -1,0 +1,55 @@
+# A04 砂漠と行き倒れ（昼）。blocking.yaml（Claude の案 2026-10-30）から作成。秒は原作の声の実測（audio/A04/original/lines.csv）に芝居の間を足した目安
+# kind: M＝小さな動きの動画、A＝見せ場。全カットを動画にする前提（A02 と同じ作り方、D-058 のカメラ）
+id: A04-013
+scene: A04
+tc: 84.6
+sec: 3.5
+kind: M
+shot: 全身・百騎兵・商人
+acting: 百騎兵が水瓶を軽々と頭の上に持ち上げる
+dialogue: null
+sound: 商人の悲鳴（声は使わない。原作の台詞「水はここじゃ貴重なんだ！！」などは選別で削った）
+notes: null
+camera:
+  pos:
+  - 105.8
+  - 32.8
+  - 1.4
+  look: goods
+  lens: 28
+  move: 商人の後ろ側（東）のやや高い位置から。止め
+background: caravan-camp
+image: null
+refs:
+- hundred-knight
+- water-merchant
+overlays:
+- who: water-merchant
+  kind: 驚き（目が点・汗）
+  note: D-027 で合成
+fallback: null
+act:
+  start: 水甕の並ぶ店先。百騎兵が大きな青い水瓶をつかむ。商人が口を開けて固まる
+  end: 水瓶を掲げた百騎兵と、呆然とする商人
+  sync: 台詞なし。商人の顔は漫符で崩す（合成、D-027）
+blocking:
+  start: 百（左・斜め前（画面右向き））、商（右・横顔（画面左向き）・目線 画面左）
+  end: 百（左・斜め前（画面右向き））、商（右・横顔（画面左向き）・目線 画面左）
+  background: 物資と水甕〔キャンプ 物資と水甕〕
+  panels:
+  - キャンプ 物資と水甕
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), grabbing a big blue-glazed water jar with both gauntlets,
+    on the left of the frame, in three-quarter view, turned toward screen right; the water-jar merchant (a plump human man with a thick black mustache, an orange-and-indigo striped turban, loose rust-orange
+    and indigo desert robes), frozen in shock, mouth wide open, hands raised, on the right of the frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people. Behind: a
+    merchant''s stall of wooden crates, sacks and big blue-glazed water jars under a purple awning. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows, shimmering
+    heat haze over the golden dunes.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+    plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), lifting the big blue water jar high over its head,
+    on the left of the frame, in three-quarter view, turned toward screen right; the water-jar merchant (a plump human man with a thick black mustache, an orange-and-indigo striped turban, loose rust-orange
+    and indigo desert robes), frozen in shock, mouth wide open, reaching out helplessly, on the right of the frame, in profile, turned toward screen left, looking at the Hundred Knight. No other people.
+    Behind: a merchant''s stall of wooden crates, sacks and big blue-glazed water jars under a purple awning. Midday in the desert: a blazing sun high in a pale blue sky, harsh light with short dark shadows,
+    shimmering heat haze over the golden dunes.'
+  sketch:
+  - episodes/A/scenes/A04/gen/sketch/A04-013_start.png
+  - episodes/A/scenes/A04/gen/sketch/A04-013_end.png

@@ -72,7 +72,7 @@ def main():
         cel = cel.crop(bb)
         h = st.lay["people"][o["who"]]["h"]
         part = (h - a.from_h) / h
-        k = o["height"] * part * EXTRA[o["who"]] / cel.height
+        k = o["height"] * part * EXTRA.get(o["who"], 1.1) / cel.height
         cel = cel.resize((max(1, round(cel.width * k)), max(1, round(cel.height * k))), Image.LANCZOS)
         o["foot"] -= o["height"] * a.from_h / h
         if a.blur_far and o["z"] > a.blur_far:

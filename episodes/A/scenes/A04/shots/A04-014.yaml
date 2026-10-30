@@ -1,0 +1,50 @@
+# A04 砂漠と行き倒れ（昼）。blocking.yaml（Claude の案 2026-10-30）から作成。秒は原作の声の実測（audio/A04/original/lines.csv）に芝居の間を足した目安
+# kind: M＝小さな動きの動画、A＝見せ場。全カットを動画にする前提（A02 と同じ作り方、D-058 のカメラ）
+id: A04-014
+scene: A04
+tc: 88.1
+sec: 3.5
+kind: A
+shot: 全身・百騎兵
+acting: 水瓶を頭の上に掲げた百騎兵が、砂を蹴立てて駆け下りてくる
+dialogue: null
+sound: null
+notes: null
+camera:
+  pos:
+  - 89.0
+  - 34.4
+  - 2.2
+  look: hundred-knight
+  lens: 35
+  move: 砂丘の斜面の上から、横に並んで追う（手持ち風）
+background: tettara-desert
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 砂丘の斜面
+  end: 駆け抜けていく
+  sync: 台詞なし
+blocking:
+  start: 百（中央・背中）
+  end: 百（中央・背中）
+  background: 南の砂丘〔砂漠 地上の視点〕／西の砂丘と岩〔砂漠 見下ろし〕
+  panels:
+  - 砂漠 地上の視点
+  - 砂漠 見下ろし
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), running down the dune holding the big blue water jar high over its
+    head, kicking up sand, in the center of the frame, with the back to the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars
+    under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh
+    light with short dark shadows, shimmering heat haze over the golden dunes.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), running down the dune holding the big blue water jar high over its
+    head, kicking up sand, in the center of the frame, with the back to the camera. No other people. Behind: a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars
+    under the sky, then golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon. Midday in the desert: a blazing sun high in a pale blue sky, harsh
+    light with short dark shadows, shimmering heat haze over the golden dunes.'
+  sketch:
+  - episodes/A/scenes/A04/gen/sketch/A04-014_start.png
+  - episodes/A/scenes/A04/gen/sketch/A04-014_end.png

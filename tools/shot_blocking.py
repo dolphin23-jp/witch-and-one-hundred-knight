@@ -21,7 +21,7 @@ NAME = {"metallica": "メ", "bisco": "ビ", "arlecchino": "ア", "hundred-knight
 
 
 def people_ja(fr):
-    return "、".join(f"{NAME[e['who']]}（{e['side']}・{e['body']}" + (f"・目線 {e['gaze']}" if e.get("gaze") else "") + "）"
+    return "、".join(f"{staging.SHORT.get(e['who'], NAME.get(e['who'], e['who']))}（{e['side']}・{e['body']}" + (f"・目線 {e['gaze']}" if e.get("gaze") else "") + "）"
                     for e in fr["people"]) or "（人物なし）"
 
 

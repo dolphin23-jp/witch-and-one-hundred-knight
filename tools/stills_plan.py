@@ -103,9 +103,10 @@ def build(st, cut, which="start"):
         for e in fr["people"]:
             pl = st.lay["people"][e["who"]]
             name = pl["en"].split(" (")[0]
-            sizes.append(f"{name} {pl['h']} m" + (" (small, only about waist-high to Metallica and Bisco)" if e["who"] == "hundred-knight" else ""))
+            sizes.append(f"{name} {pl['h']} m" + (" (small, only about waist-high to an adult)" if e["who"] == "hundred-knight" else ""))
         text += " Heights: " + "; ".join(sizes) + "."
-    bgs = [PANEL_FILE[p] for p in b["panels"] if p in PANEL_FILE]
+    pf = {**PANEL_FILE, **(st.lay.get("panels") or {})}   # 場所ごとのパネル（layout の panels）
+    bgs = [pf[p] for p in b["panels"] if p in pf]
     bg_idx = []
     for f in dict.fromkeys(bgs):
         n += 1
