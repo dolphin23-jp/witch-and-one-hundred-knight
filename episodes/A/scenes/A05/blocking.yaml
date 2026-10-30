@@ -51,7 +51,7 @@ cuts:
     cam_keys:
       - {t: 0.0, cam: {follow: luckiny, offset: [-5.5, 3.0], z: 1.2}, look: luckiny, lens: 35, frame: 全身}
       - {t: 2.2, cam: {follow: luckiny, offset: [-4.5, 2.6], z: 1.5}, look: luckiny, lens: 35, ease: linear}
-      - {t: 4.0, cam: [26.0, 33.4, 7.0], look: [44.0, 31.0], look_h: 1.0, lens: 24, frame: 大引き}
+      - {t: 4.0, cam: [26.0, 33.4, 7.0], look: [41.0, 31.5], look_h: 0.0, lens: 24, frame: 大引き}
     act: {start: 砂丘の斜面を駆け上がるルッキーニィと、後ろを走る百騎兵を後ろから, do: 稜線でルッキーニィが振り返って大きく手招き。百騎兵が追いつき、二人で稜線を越える, end: カメラが上がり、稜線の向こうに果てしない砂丘が開ける, sync: L143「こっちです！」は 1.3秒から（手招き）}
     camera: 後ろから走る速さで追い、稜線でクレーンで上がって景色を開く（見せ場）
     pose: {luckiny: "running up the slope of a dune", hundred-knight: "running up the dune after her"}
@@ -83,7 +83,7 @@ cuts:
 
   # ---------- 気配（003〜004） ----------
   A05-003:
-    frame: 寄り
+    frame: 引き
     only: [luckiny, hundred-knight]
     keys:
       luckiny:
@@ -93,7 +93,7 @@ cuts:
         - {t: 0.0, at: hk_stop, face: 70, pose: stand}
         - {t: 4.5, at: hk_stop, face: 110, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [44.5, 34.4, 0.15], look: [38.0, 32.8], look_h: 0.35, lens: 24, frame: 寄り}
+      - {t: 0.0, cam: [44.5, 34.4, 0.15], look: [38.0, 32.8], look_h: 0.35, lens: 24, frame: 引き}
       - {t: 4.5, cam: [41.4, 33.9, 0.2], look: [38.0, 32.8], look_h: 0.45, lens: 24, ease: linear}
     fx:
       - {kind: ring, t: [0.0, 4.5], at: [39.6, 33.6], r: 3.0, n: 4}
