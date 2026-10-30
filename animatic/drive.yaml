@@ -113,3 +113,10 @@ files:
     content: Remotion で組んだ A01b の最初の版（D-050。voice.yaml は tools/voice_yaml.py で作成）。静止画73カットのうち動画6カット（001・003・009・030・031・034、Seedance 2.0）+ 原作の台詞65本 + BGM（原作音源パート16 から声を分けた残りをそのまま。場面の BGM の切り替えとは合っていない）+ 字幕。漫符・効果音なし
     built_with: sh animatic/remotion/render.sh episodes/A/scenes/A01b A01b_v02（チャットで送るため crf31 で 21MB に縮めた）
     drive: null   # チャットでユーザーに送付。Drive の「Animatic」フォルダへは、受け口が「原作音源」フォルダだけ・コネクタが10MB未満のため置けていない
+  - name: A02_v01.mp4
+    scene: A02
+    made: 2026-10-30
+    sec: 103.0
+    content: A02 魔女邸の前・別れの最初の版（新しい作り方の試験）。16カット中15カットが動画（Seedance 2.0 std 480p、開始＋終わりの静止画＋設定画＋下絵 854x480＋口パク参照）、015 は静止画（左右が逆で hold）+ 原作の台詞13本 + BGM（パート17 の声以外、00:21〜）+ 字幕。漫符・効果音なし。010・014・016 は一次QC で hold
+    built_with: sh animatic/remotion/render.sh episodes/A/scenes/A02 A02_v01（13.7MB）
+    drive: null   # チャットでユーザーに送付（Drive の受け口は「原作音源」フォルダだけ、コネクタは10MB未満）
