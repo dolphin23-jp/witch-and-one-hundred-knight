@@ -1,0 +1,226 @@
+# A08 ピラーと弟子入り（前半、地下空洞。001〜007）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-10-31）
+# 「砂漠編 台詞と画（構想）」の A08 001〜005 を、台詞の長さで 7 カットに分けた。後半（夜明けの村、008〜039）は A08b
+# ユーザー承認: 3D の段階を進める「OKです。進んでください」（2026-10-31）
+# 場所は world/underground-cavern-layout.yaml（x: 西0→東60、y: 北0→南60、m）。A07 の終わりの続き:
+#   砂食みは北東に倒れている（頭 (31.6, 22.8)、体は東の (36.5, 26) へ床に伸びる）。百騎兵は (36, 33)。ピラー (23.5, 21.5) が光っている
+# ピラーが花のように開き（効果 bloom）、紫の沼が床に広がる（効果 pool）。メタリカは沼から転移して現れる（z が負＝沼の下）
+# ルッキーニィは井戸を降りてきて、西の岩（rock_3）の陰からのぞいている
+scene: A08
+layout: world/underground-cavern-layout.yaml
+map_ymax: 60
+lighting: cave
+
+places:
+  pillar:   [23.5, 21.5]
+  rise:     [27.5, 25.5]   # メタリカが沼から現れる所
+  hk_a:     [30.5, 27.6]   # 001 で百騎兵が歩いてくる先
+  hk_b:     [28.6, 26.7]   # 003 メタリカの横
+  peek:     [19.9, 31.2]   # ルッキーニィ（岩の陰）
+  kneel:    [26.7, 26.6]   # 006 ルッキーニィがひざまずく所
+
+start:
+  hundred-knight: {at: [36.0, 33.0], face: 300}
+  metallica: {at: rise, face: 130}
+  luckiny: {at: peek, face: 55}
+
+cuts:
+  A08-001:
+    frame: 全身
+    only: [hundred-knight]
+    hidden_ok: [metallica]   # まだ現れていない（002 で沼から出る）
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [36.0, 33.0], face: 300, pose: stand}
+        - {t: 1.2, at: [36.0, 33.0], face: 300, pose: stand}
+        - {t: 6.0, at: hk_a, face: 305, pose: walk, ease: inout}
+        - {t: 7.0, at: hk_a, face: 305, pose: look_up}
+    creatures:
+      sand-eater:   # A07-017 の終わりの形（倒れたまま）
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: -5.0, at: [31.0, 31.0], z: 4.4}
+          - {t: -4.4, at: [31.0, 31.0], z: 4.6}
+          - {t: -3.6, at: [30.0, 28.8], z: 6.6, ease: out}
+          - {t: -2.6, at: [34.5, 27.5], z: 2.4, ease: inout}
+          - {t: -2.2, at: [36.2, 27.0], z: 0.9, ease: in}
+          - {t: -1.6, at: [36.5, 26.0], z: 0.7, ease: out}
+          - {t: -1.0, at: [36.0, 24.3], z: 0.6, ease: linear}
+          - {t: -0.5, at: [34.0, 23.3], z: 0.5, ease: linear}
+          - {t: 0.0, at: [31.6, 22.8], z: 0.4, ease: out}
+          - {t: 7.0, at: [31.6, 22.8], z: 0.4}
+    fx:
+      - {kind: light, t: [0.0, 1.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+      - {kind: bloom, t: [0.5, 4.5], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
+      - {kind: pool, t: [2.0, 7.0], at: pillar, r0: 0.8, r: 16.0}
+    cam_keys:   # ピラーから半径 7.5m の円を南東→南西へ（方位 140→170→200）
+      - {t: 0.0, cam: [28.3, 27.25, 1.0], look: pillar, look_h: 2.4, lens: 24, frame: 全身}
+      - {t: 3.5, cam: [24.8, 28.9, 0.9], look: pillar, look_h: 2.2, lens: 24, ease: linear}
+      - {t: 7.0, cam: [20.9, 28.55, 0.8], look: pillar, look_h: 2.0, lens: 24, ease: linear}
+    bg: cave_wide
+    light_en: "Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls."
+    extra_en: "The tall crystal Pillar opens like a flower, its glowing petals spreading outward."
+    extra_en_end: "A glossy dark purple swamp spreads across the sandy cavern floor from the base of the open Pillar."
+    act: {start: 倒れた砂食みの奥で光るピラー, do: ピラーが花のように開き、根元から紫の沼が床に広がっていく。百騎兵が歩いてきて見上げる（画の外）, end: 開いたピラーと、床いっぱいに広がる紫の沼, sync: （台詞なし）}
+    camera: 低い所から、開くピラーを見上げてゆっくり回り込む（南東→南西）
+    kind: A
+  A08-002:
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: rise, z: -1.7, face: 130, pose: stand}
+        - {t: 0.3, at: rise, z: -1.7, face: 130, pose: stand}
+        - {t: 2.8, at: rise, z: 0.0, face: 130, pose: stand, ease: out}
+        - {t: 3.6, at: rise, face: 130, pose: proud}
+        - {t: 8.6, at: rise, face: 130, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: hk_a, face: 305, pose: look_up}
+        - {t: 8.6, at: hk_a, face: 300, pose: look_up}
+    fx:
+      - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
+      - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+      - {kind: ring, t: [0.0, 3.0], at: rise, r: 2.2, n: 3, color: [120, 60, 150]}
+      - {kind: plume, t: [0.2, 2.6], at: rise, r: 0.9, h: 1.6, color: [110, 50, 140]}
+    cam_keys:
+      - {t: 0.0, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.1, lens: 28, frame: 寄り}
+      - {t: 0.8, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.4, lens: 28}
+      - {t: 3.5, cam: [29.3, 27.8, 1.5], look: metallica, look_h: 1.3, lens: 28, frame: 全身, ease: inout}
+      - {t: 8.6, cam: [29.4, 27.9, 1.6], look: metallica, look_h: 1.35, lens: 30, ease: linear}
+    bg: cave_wide
+    extra_en: "The surface of the purple swamp bulges and ripples as someone rises out of it."
+    act: {start: 紫の沼の水面すれすれ, do: 沼の水面が盛り上がり、メタリカが沼から立ち上がるように転移して現れる。胸を張って百騎兵をほめる, end: 沼の上に立つメタリカ, sync: L217「キヒヒ！よくやった、百騎兵！…上出来だぞ！」は 0.3秒から}
+    camera: 沼の水面の寄りから、立ち上がるメタリカを追って上へ（クレーン）
+    pose: {metallica: "rising up out of the purple swamp, appearing by magic", hundred-knight: "looking up at her, small at the edge of the frame"}
+    pose_end: {metallica: "standing tall on the swamp with hands on her hips, grinning", hundred-knight: "looking up at her"}
+    kind: A
+  A08-003:
+    frame: 引き
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: rise, face: 130, pose: proud}
+        - {t: 1.2, at: rise, face: 110, pose: arms_up, ease: inout}
+        - {t: 4.0, at: rise, face: 110, pose: arms_up}
+        - {t: 4.6, at: rise, face: 130, pose: proud}
+        - {t: 7.0, at: rise, face: 140, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: hk_a, face: 300, pose: look_up}
+        - {t: 0.6, at: hk_a, face: 300, pose: walk}
+        - {t: 2.4, at: hk_b, face: 317, pose: walk, ease: out}
+        - {t: 2.6, at: hk_b, face: 317, pose: look_up}
+        - {t: 7.0, at: hk_b, face: 317, pose: look_up}
+    fx:
+      - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
+      - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [24.5, 24.4, 2.4], look: [34.0, 30.0], look_h: 1.0, lens: 24, frame: 引き}
+      - {t: 7.0, cam: [24.0, 24.6, 3.4], look: [34.0, 30.0], look_h: 0.8, lens: 22, ease: linear}
+    bg: cave_wide
+    extra_en: "A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying in it."
+    act: {start: メタリカの背中越しに、沼に満ちた空洞, do: メタリカが両手を広げて沼を見渡し、満足げに笑う。百騎兵が横へ来て見上げる, end: 沼と空洞の引き、メタリカと百騎兵の背中, sync: L218「なかなかに、上物な沼じゃないか。…わかるか？」は 0.3秒から}
+    camera: メタリカの背中越しの引き。ゆっくり上がりながら下がる
+    pose: {metallica: "seen from behind, spreading her arms wide over the swamp, delighted", hundred-knight: "walking up beside her"}
+    pose_end: {metallica: "seen from behind, hands on her hips, admiring the swamp", hundred-knight: "standing beside her, looking up at her"}
+    kind: M
+  A08-004:
+    frame: 寄り
+    only: [luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: peek, face: 55, pose: crouch}
+        - {t: 1.6, at: peek, face: 55, pose: crouch}
+        - {t: 2.6, at: peek, face: 55, pose: stand, ease: out}
+        - {t: 6.6, at: peek, face: 58, pose: stand}
+    fx:
+      - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [24.0, 31.6, 1.0], look: luckiny, look_h: 0.9, lens: 45, frame: 寄り}   # 岩の端から顔を出すように見える向き
+      - {t: 6.6, cam: [23.6, 31.5, 1.1], look: luckiny, look_h: 1.15, lens: 55, ease: inout}
+    bg: cave_wide
+    extra_en: "Luckiny's eyes sparkle with excitement and awe."
+    act: {start: 西の岩の陰, do: 岩の陰から顔を出していたルッキーニィが、思わず身を乗り出す。目を輝かせる, end: 岩の上に身を乗り出し、メタリカを見つめるルッキーニィ, sync: L219「す、すごい……！魔女だ！本物の魔女様だ！」は 0.3秒から}
+    camera: ルッキーニィの正面の寄り（岩ごし）。ゆっくり寄る
+    pose: {luckiny: "peeking out from behind a big rock, crouching, eyes wide"}
+    pose_end: {luckiny: "leaning out over the rock, eyes sparkling with awe"}
+    kind: M
+  A08-005:
+    frame: 寄り
+    only: [luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: peek, face: 58, pose: stand}
+        - {t: 2.4, at: peek, face: 58, pose: stand}
+        - {t: 3.0, at: peek, face: 40, pose: cover, ease: inout}
+        - {t: 8.4, at: peek, face: 35, pose: cover}
+    fx:
+      - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [21.4, 33.5, 1.6], look: luckiny, look_h: 1.1, lens: 40, frame: 寄り}
+      - {t: 8.4, cam: [21.2, 33.1, 1.6], look: luckiny, look_h: 1.15, lens: 50, ease: linear}
+    bg: cave_wide
+    extra_en: "A faint purple miasma drifts through the air from the swamp."
+    act: {start: 岩の陰のルッキーニィを横から, do: 心の声。沼の瘴気に顔をしかめ、片手で口を押さえる（口は動かさない）, end: 口を押さえてしかめ面のルッキーニィ, sync: L220（心の声）「（そ、それにしても……す、凄い瘴気だ……！）」は 0.3秒から。口は動かさない}
+    camera: 横（南東）の少し高い所から、ゆっくり寄る
+    pose: {luckiny: "standing behind the rock, staring in awe, seen from the side"}
+    pose_end: {luckiny: "grimacing and covering her mouth with one hand against the foul air, seen from the side"}
+    kind: M
+  A08-006:
+    frame: 全身
+    only: [luckiny, metallica, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: peek, face: 35, pose: cover}
+        - {t: 0.3, at: peek, face: 90, pose: stand}
+        - {t: 1.0, at: [21.0, 32.0], face: 90, pose: run}
+        - {t: 3.6, at: [26.1, 27.1], face: 45, pose: run, ease: linear}
+        - {t: 4.0, at: kneel, face: 36, pose: kneel, ease: out}
+        - {t: 8.2, at: kneel, face: 36, pose: kneel}
+      metallica:
+        - {t: 0.0, at: rise, face: 140, pose: proud}
+        - {t: 3.0, at: rise, face: 140, pose: proud}
+        - {t: 3.8, at: rise, face: 216, pose: stand}
+        - {t: 8.2, at: rise, face: 216, pose: look_down}
+      hundred-knight:
+        - {t: 0.0, at: hk_b, face: 317, pose: look_up}
+        - {t: 3.0, at: hk_b, face: 317, pose: stand}
+        - {t: 4.0, at: hk_b, face: 250, pose: stand}
+        - {t: 8.2, at: hk_b, face: 250, pose: stand}
+    fx:
+      - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
+      - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [22.4, 26.0, 1.0], look: luckiny, look_h: 0.9, lens: 28, frame: 全身}
+      - {t: 4.0, cam: [23.2, 25.3, 1.0], look: luckiny, look_h: 0.8, lens: 28, ease: inout}
+      - {t: 8.2, cam: [23.4, 25.2, 1.0], look: [26.9, 26.2], look_h: 0.9, lens: 30, ease: inout}
+    bg: cave_wide
+    act: {start: 岩の陰から飛び出すルッキーニィ, do: 沼の上を駆けてメタリカの前でひざまずく。メタリカと百騎兵が振り向く, end: ひざまずくルッキーニィと、見下ろすメタリカ, sync: L221「お、お願いです、魔女様……！」は 0.3秒から、L222「ボクを弟子にしてください！！」は 4.2秒から}
+    camera: 横（北西）から、駆け寄るルッキーニィに合わせて振る
+    pose: {luckiny: "dashing out from behind the rock across the swamp", metallica: "standing on the swamp, turning", hundred-knight: "standing beside the witch"}
+    pose_end: {luckiny: "kneeling at the witch's feet, pleading", metallica: "looking down at the kneeling girl", hundred-knight: "standing beside the witch, looking at the girl"}
+    kind: A
+  A08-007:
+    frame: 寄り
+    only: [metallica]
+    hidden_ok: [luckiny]   # カメラのすぐ横（ルッキーニィの目の高さ）
+    keys:
+      metallica:
+        - {t: 0.0, at: rise, face: 216, pose: look_down}
+        - {t: 3.0, at: rise, face: 214, pose: look_down}
+    fx:
+      - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [26.4, 26.8, 0.95], look: metallica, look_h: 1.45, lens: 35, frame: 寄り}
+      - {t: 1.2, cam: [26.6, 26.6, 1.05], look: metallica, look_h: 1.5, lens: 55, ease: out}
+      - {t: 3.0, cam: [26.6, 26.6, 1.05], look: metallica, look_h: 1.5, lens: 55}
+    bg: cave_wide
+    act: {start: ひざまずいたルッキーニィの目の高さから, do: 「あん？」。メタリカの怪訝な顔へ素早く寄る, end: 怪訝な顔で見下ろすメタリカ, sync: L223「あん？」は 0.3秒から}
+    camera: ルッキーニィの目の高さから見上げて、メタリカの顔へ素早く寄る
+    pose: {metallica: "looking down with a puzzled, annoyed frown, seen from below"}
+    pose_end: {metallica: "frowning down, close up from below"}
+    kind: M

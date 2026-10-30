@@ -1,0 +1,58 @@
+# A08 ピラーと弟子入り（前半、地下空洞）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。メタリカはここで初めて砂漠編の画に出る（沼から転移）'}
+id: A08-006
+scene: A08
+tc: 37.6
+sec: 8.2
+kind: A
+shot: 全身・ルッキーニィ・メタリカ・百騎兵
+acting: 沼の上を駆けてメタリカの前でひざまずく。メタリカと百騎兵が振り向く
+dialogue:
+- L221「お、お願いです、魔女様……！」
+- L222「ボクを弟子にしてください！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 22.4
+  - 26.0
+  - 1.0
+  look: luckiny
+  lens: 28
+  move: 横（北西）から、駆け寄るルッキーニィに合わせて振る
+background: underground-cavern
+image: null
+refs:
+- luckiny
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 岩の陰から飛び出すルッキーニィ
+  end: ひざまずくルッキーニィと、見下ろすメタリカ
+timing:
+  lead: 0.3
+blocking:
+  start: ル（中央・正面）
+  end: メ（左・斜め前（画面右向き））、百（中央・斜め前（画面右向き））、ル（中央・横顔（画面左向き））
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+    legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), dashing out from behind the rock across the swamp, in the center of the frame, facing the camera. No other people.
+    Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground
+    cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep
+    shadows.'
+  staging_en_end: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), looking down at the kneeling girl,
+    on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale
+    blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing beside the witch, looking at the
+    girl, in the center of the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red
+    cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), kneeling at the witch''s feet, pleading, on the right of the frame,
+    in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight
+    from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock
+    walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A08/gen/sketch/A08-006_start.png
+  - episodes/A/scenes/A08/gen/sketch/A08-006_end.png

@@ -28,6 +28,7 @@ bpy を使わないので staging.py からも読める。
       r: 0.7                              # 太さ（半径）m
       keys: [{t: 0.0, at: [x, y], z: -3}, {t: 1.5, at: [x, y], z: 4, ease: linear}, {t: 3.0, at: [x, y], z: -3}]
     z が負の所は砂の下（地面に隠れる）。浅い所（0〜-2.5m）は砂の上に影と盛り上がりを描く。
+      after: A07-007                      # 前のカットの続き（前のカットの通り道を体の形に使う。最初のキーは前のカットの終わりと同じ所に）
 
   fx:                                     # 効果
     - {kind: plume, t: [0.8, 2.5], at: [x, y], r: 2.0, h: 5.0}   # 砂の噴き上げ（at は人物名でも）
@@ -166,6 +167,22 @@ def resolve_cam(cam, pos, base_z=None):
         z0 = base_z(cam["follow"], x, y) if base_z else 0.0
         return [x, y, z0 + float(cam.get("z", 1.2))]
     return [float(v) for v in cam]
+
+
+def creature_spec(cuts, cut, name, depth=0):
+    """生き物の creatures の設定。after: <前のカット> があれば、前のカットの頭の通り道を負の時刻で前に足す
+    （体は頭の通った道をたどるので、カットの始めの体の形が前のカットの終わりの続きになる）。
+    前のカットの最後のキーは、このカットの最初のキーと同じ所とみなして捨てる。"""
+    spec = dict(cuts[cut]["creatures"][name])
+    prev = spec.get("after")
+    if not prev or depth > 20 or name not in (cuts.get(prev, {}).get("creatures") or {}):
+        return spec
+    ps = creature_spec(cuts, prev, name, depth + 1)
+    pk = sorted_keys(ps["keys"])
+    own = sorted_keys(spec["keys"])
+    shift = float(own[0]["t"]) - float(pk[-1]["t"])
+    spec["keys"] = [{**k, "t": float(k["t"]) + shift} for k in pk[:-1]] + own
+    return spec
 
 
 def creature_head(c, name, t, place):

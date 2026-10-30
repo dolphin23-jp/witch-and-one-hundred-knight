@@ -1,0 +1,47 @@
+# A08 ピラーと弟子入り（前半、地下空洞）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。メタリカはここで初めて砂漠編の画に出る（沼から転移）'}
+id: A08-001
+scene: A08
+tc: 0.0
+sec: 7.0
+kind: A
+shot: 全身（煽り）・ピラー・紫の沼
+acting: ピラーが花のように開き、根元から紫の沼が床に広がっていく。百騎兵が歩いてきて見上げる（画の外）
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 26.1
+  - 24.6
+  - 0.5
+  look: pillar
+  lens: 28
+  move: 低い所から、開くピラーを見上げてゆっくり回り込む（南東→南西）
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 倒れた砂食みの奥で光るピラー
+  end: 開いたピラーと、床いっぱいに広がる紫の沼
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'No people in frame. Low angle looking up; the sky fills the upper part of the frame. The tall crystal Pillar opens like a flower, its glowing petals spreading outward. Behind: the huge underground
+    cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall
+    crystal Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls.'
+  staging_en_end: 'No people in frame. Low angle looking up; the sky fills the upper part of the frame. A glossy dark purple swamp spreads across the sandy cavern floor from the base of the open Pillar.
+    Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground
+    cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls.'
+  sketch:
+  - episodes/A/scenes/A08/gen/sketch/A08-001_start.png
+  - episodes/A/scenes/A08/gen/sketch/A08-001_end.png

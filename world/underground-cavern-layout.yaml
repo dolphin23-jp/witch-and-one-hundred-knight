@@ -4,7 +4,7 @@
 # 座標: x は西 0 → 東 60。y は北 0 → 南 60。高さ z は空洞の床が 0、村の地面が 30（井戸の口）。方位: 北 0・東 90・南 180・西 270
 # 空洞は中心 (30, 30)、東西 40m・南北 36m・天井の高さ 14m の丸い大きな洞。天井の真ん中の穴（井戸の底）から月の光の柱が落ちる。
 #   床は砂。岩の柱4本、壁に横穴3つ、緑に光る苔、天井からの砂の滝、獣の骨。北の壁の奥（30, 12）から砂食みが壁を破って出てくる。
-#   ピラー（魔法の柱）は床の北西寄り（23.5, 21.5）。A07 の終わりに光り始める（A08）。
+#   ピラー（魔法の柱）は床の北西寄り（23.5, 21.5）。A07 の終わりに光り始め、A08 で花のように開いて紫の沼が床に広がる（効果 bloom・pool）。
 # 井戸は (30, 30) の真上。井戸の筒は z 14〜30（内側の半径 0.65m）。地上は z 30 の円い地面と石の井戸の縁（A07-001〜004）。
 id: underground-cavern
 size: {w: 60.0, d: 60.0}
@@ -59,11 +59,14 @@ props:
   bones_1:    {at: [24.0, 37.0], r: 0.8, ja: 獣の骨}
   bones_2:    {at: [38.0, 23.0], r: 0.7, ja: 獣の骨}
   rock_1:     {at: [22.0, 33.0], h: 0.8, r: 0.6, ja: 岩}
-  rock_2:     {at: [37.5, 34.0], h: 0.6, r: 0.5, ja: 岩}
+  rock_2:     {at: [38.5, 36.5], h: 0.6, r: 0.5, ja: 岩}   # A07-017 で百騎兵の着地を隠さない所へ
+  rock_3:     {at: [20.5, 30.5], h: 1.3, r: 0.9, ja: 岩（A08 でルッキーニィが陰からのぞく）}
   crystal_1:  {at: [23.5, 21.5], r: 0.7, h: 4.5, glow: 0.4, ja: ピラー（魔法の柱。A07 の終わりに光り始める）}
 
 people:
   hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword)"}
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  luckiny:        {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff)"}
 
 creatures:
   sand-eater: {ja: 砂食み, len: 8.0, r: 0.75, en: "the sand-eater: a huge pale segmented larva-like desert worm about 8 m long, as designed in its reference sheet"}

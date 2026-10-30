@@ -1,0 +1,51 @@
+# A08b ピラーと弟子入り（後半、夜明けの村のティトの家の前）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。カットの番号は A08 の続き（008〜039）'}
+id: A08b-037
+scene: A08b
+tc: 237.4
+sec: 5.7
+kind: M
+shot: 寄り（やや煽り）・メタリカ
+acting: 東（村の外）の方へ顔を向け、企むように笑う
+dialogue:
+- L266「だが、とにかく今日はダメだ。少し、用事ができたからな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 58.4
+  - 36.4
+  - 1.1
+  look: metallica
+  lens: 40
+  move: 南東の少し低い所から、ゆっくり寄る
+background: beast-village
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 下からメタリカ
+  end: 朝日を受けて企み顔のメタリカ
+timing:
+  lead: 0.3
+blocking:
+  start: メ（中央・正面）
+  end: メ（中央・斜め前（画面右向き））
+  background: ティトの家の前（朝）〔村 家〕
+  panels:
+  - 村 家
+  staging_en: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+    in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, seen from slightly below, in the center
+    of the frame, facing the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof,
+    the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead,
+    long soft shadows, warm light on the walls, the first lamps lit.'
+  staging_en_end: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
+    ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), turning toward the morning sun with a scheming
+    grin, seen from slightly below, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden
+    door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting
+    in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+  sketch:
+  - episodes/A/scenes/A08b/gen/sketch/A08b-037_start.png
+  - episodes/A/scenes/A08b/gen/sketch/A08b-037_end.png

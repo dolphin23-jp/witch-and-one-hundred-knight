@@ -1,0 +1,404 @@
+cuts:
+  A08-001:
+    cam:
+    - 28.3
+    - 27.25
+    - 1.0
+    lens: 24
+    bearing: 320
+    frame: 全身
+    start:
+      people: []
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（北西）
+      - 天井からの砂の滝
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'No people in frame. The tall crystal Pillar opens like a flower, its glowing petals spreading outward. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
+        in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight
+        from the hole in the ceiling, glowing green moss on the rock walls.'
+    end:
+      people: []
+      staging: 'No people in frame. A glossy dark purple swamp spreads across the sandy cavern floor from the base of the open Pillar. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
+        round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white,
+        a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls.'
+    move:
+      hundred-knight:
+        to: hk_a
+        face: 305
+        via:
+        - - 36.0
+          - 33.0
+        - hk_a
+        t:
+        - 0.0
+        - 7.0
+    note: null
+  A08-002:
+    cam:
+    - 29.0
+    - 27.4
+    - 0.25
+    lens: 28
+    bearing: 322
+    frame: 寄り
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 2.42
+        side: 中央
+        body: 正面
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（北西）
+      - 天井からの砂の滝
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), rising up out of the purple swamp, appearing by magic,
+        in the center of the frame, facing the camera. No other people. The surface of the purple swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern: a sandy floor,
+        massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight
+        falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 3.06
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing tall on the swamp with hands on her hips,
+        grinning, in the center of the frame, facing the camera. No other people. The surface of the purple swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern: a sandy
+        floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of
+        moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      metallica:
+        to: rise
+        via:
+        - rise
+        - rise
+        - rise
+        t:
+        - 0.0
+        - 8.6
+      hundred-knight:
+        to: hk_a
+        face: 300
+        t:
+        - 0.0
+        - 8.6
+    note: null
+  A08-003:
+    cam:
+    - 24.5
+    - 24.4
+    - 2.4
+    lens: 24
+    bearing: 121
+    frame: 引き
+    start:
+      people:
+      - who: metallica
+        s: -0.24
+        dist: 3.14
+        side: 中央
+        body: 背中
+      - who: hundred-knight
+        s: -0.06
+        dist: 6.79
+        side: 中央
+        body: 正面
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（南東）
+      - 東の横穴
+      - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
+      - 天井からの砂の滝
+      - 獣の骨
+      - 岩
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind, spreading
+        her arms wide over the swamp, delighted, on the left of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold
+        crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), walking up beside
+        her, in the center of the frame, facing the camera. No other people. A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying in it. Behind: the huge underground
+        cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale
+        blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: metallica
+        s: -0.3
+        dist: 3.51
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: -0.08
+        dist: 5.05
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind, hands on
+        her hips, admiring the swamp, on the left of the frame, seen from behind at an angle, turned toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword),
+        standing beside her, looking up at her, in the center of the frame, facing the camera. No other people. A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying
+        in it. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge
+        underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from
+        the ceiling, deep shadows.'
+    move:
+      metallica:
+        to: rise
+        face: 140
+        via:
+        - rise
+        - rise
+        - rise
+        t:
+        - 0.0
+        - 7.0
+      hundred-knight:
+        to: hk_b
+        face: 317
+        via:
+        - hk_a
+        - hk_b
+        - hk_b
+        t:
+        - 0.0
+        - 7.0
+    note: null
+  A08-004:
+    cam:
+    - 24.0
+    - 31.6
+    - 1.0
+    lens: 45
+    bearing: 276
+    frame: 寄り
+    start:
+      people:
+      - who: luckiny
+        s: 0.0
+        dist: 4.12
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 西の横穴
+      - 岩（A08 でルッキーニィが陰からのぞく）
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), peeking out from behind a big rock, crouching, eyes wide, in the center of the frame, in three-quarter view,
+        turned toward screen right. No other people. Luckiny''s eyes sparkle with excitement and awe. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+        glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto
+        the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.0
+        dist: 3.71
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), leaning out over the rock, eyes sparkling with awe, in the center of the frame, in three-quarter view, turned
+        toward screen right. No other people. Luckiny''s eyes sparkle with excitement and awe. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      luckiny:
+        to: peek
+        face: 58
+        via:
+        - peek
+        - peek
+        t:
+        - 0.0
+        - 6.6
+    note: null
+  A08-005:
+    cam:
+    - 21.4
+    - 33.5
+    - 1.6
+    lens: 40
+    bearing: 327
+    frame: 寄り
+    start:
+      people:
+      - who: luckiny
+        s: 0.0
+        dist: 2.75
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（北西）
+      - 光る苔
+      - 岩（A08 でルッキーニィが陰からのぞく）
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing behind the rock, staring in awe, seen from the side, in the center of the frame, in profile, turned
+        toward screen right. No other people. A faint purple miasma drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the
+        walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: luckiny
+        s: 0.0
+        dist: 2.3
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), grimacing and covering her mouth with one hand against the foul air, seen from the side, in the center of
+        the frame, in profile, turned toward screen right. No other people. A faint purple miasma drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock
+        pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling
+        from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      luckiny:
+        to: peek
+        face: 35
+        via:
+        - peek
+        - peek
+        t:
+        - 0.0
+        - 8.4
+    note: null
+  A08-006:
+    cam:
+    - 22.4
+    - 26.0
+    - 1.0
+    lens: 28
+    bearing: 206
+    frame: 全身
+    start:
+      people:
+      - who: luckiny
+        s: 0.0
+        dist: 5.77
+        side: 中央
+        body: 正面
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（南西）
+      - 光る苔
+      - 岩
+      - 岩（A08 でルッキーニィが陰からのぞく）
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), dashing out from behind the rock across the swamp, in the center of the frame, facing the camera. No other
+        people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge
+        underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from
+        the ceiling, deep shadows.'
+    end:
+      people:
+      - who: metallica
+        s: -0.35
+        dist: 4.02
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.0
+        dist: 5.41
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: luckiny
+        s: 0.21
+        dist: 3.56
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), looking down at the kneeling
+        girl, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece
+        and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing beside the witch,
+        looking at the girl, in the center of the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red
+        hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), kneeling at the witch''s feet, pleading, on
+        the right of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
+        moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
+        glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      luckiny:
+        to: kneel
+        face: 36
+        via:
+        - peek
+        - - 21.0
+          - 32.0
+        - - 26.1
+          - 27.1
+        - kneel
+        t:
+        - 0.0
+        - 8.2
+      metallica:
+        to: rise
+        face: 216
+        via:
+        - rise
+        - rise
+        t:
+        - 0.0
+        - 8.2
+      hundred-knight:
+        to: hk_b
+        face: 250
+        via:
+        - hk_b
+        - hk_b
+        t:
+        - 0.0
+        - 8.2
+    note: null
+  A08-007:
+    cam:
+    - 26.4
+    - 26.8
+    - 0.95
+    lens: 35
+    bearing: 40
+    frame: 寄り
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 1.7
+        side: 中央
+        body: 正面
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), looking down with a puzzled, annoyed frown, seen from
+        below, in the center of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a
+        column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
+        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 1.42
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), frowning down, close up from below, in the center
+        of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight
+        from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the
+        rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      metallica:
+        to: rise
+        face: 214
+        t:
+        - 0.0
+        - 3.0
+    note: null
+checks:
+  axis: []
+  jumps: []
+  overlap: []
+  offscreen: []
+  hidden: []
+  camera: []

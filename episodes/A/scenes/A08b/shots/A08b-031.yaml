@@ -1,0 +1,44 @@
+# A08b ピラーと弟子入り（後半、夜明けの村のティトの家の前）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。カットの番号は A08 の続き（008〜039）'}
+id: A08b-031
+scene: A08b
+tc: 179.1
+sec: 9.6
+kind: A
+shot: 寄り・スズの音草（イメージ）
+acting: 種から芽が出てすくすく伸びる。「恐怖の感情を感じると」で一瞬にして茶色く枯れてしおれる
+dialogue:
+- L256「“スズの音草”は“種”から数時間で成長するらしいのですが、恐怖の感情を感じると一瞬にして枯れてしまうそうなんです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 75.6
+  - 31.4
+  - 0.35
+  look: sprout
+  lens: 45
+  move: 砂の高さの寄り。伸びる草にゆっくり寄る
+background: beast-village
+image: null
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 荒れた砂地の寄り（イメージ）
+  end: 枯れて砂に崩れた草
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 村の外の荒れた砂地（朝）〔村 一角〕
+  panels:
+  - 村 一角
+  staging_en: 'No people in frame. A tiny sprout pushes up from a seed in the sand and grows quickly into a small plant with bell-shaped buds. Behind: dry, barren sand just outside the village: cracked
+    ground, a few dead tufts of grass, the red cliffs in the distance. A dreamlike image: barren sand in soft golden morning light, everything else blurred.'
+  staging_en_end: 'No people in frame. The little plant suddenly withers and droops, turning brown, crumbling into the sand. Behind: dry, barren sand just outside the village: cracked ground, a few dead
+    tufts of grass, the red cliffs in the distance. A dreamlike image: barren sand in soft golden morning light, everything else blurred.'
+  sketch:
+  - episodes/A/scenes/A08b/gen/sketch/A08b-031_start.png
+  - episodes/A/scenes/A08b/gen/sketch/A08b-031_end.png

@@ -1,0 +1,746 @@
+# A08b ピラーと弟子入り（後半、夜明けの村。008〜039）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-10-31）
+# 「砂漠編 台詞と画（構想）」の A08 006〜018 を、台詞の長さで 32 カットに分けた（1カット 5〜11秒）。前半（地下空洞、001〜007）は A08
+# ユーザー承認: 3D の段階を進める「OKです。進んでください」（2026-10-31）
+# 場所は world/beast-village-layout.yaml（x: 西0→東130、y: 北0→南60、m）。ティトの家は x 53〜60、y 23〜29、扉は南の壁の x 57.8
+# 光は dawn（夜明け。東の崖の切れ目から朝日、太陽は方位 95・高さ 12度）
+# 立ち位置: ティトは扉の前、メタリカはその南でティトと向き合い、百騎兵はメタリカの西に少し離れて立つ。ルッキーニィは東から割り込み、
+#   014 からメタリカのまわりを回りながら質問攻めにする（015〜020、半径 1.4m の円）。ティトは 023 で止めに入り、輪に加わる
+# メタリカは腕を組む（cross）・胸を張る（proud）・顔を近づける（lean）。ルッキーニィは跳ぶ（z のキーと arms_up）
+scene: A08b
+layout: world/beast-village-layout.yaml
+map_ymax: 60
+lighting: dawn
+
+places:
+  door_front: [57.6, 30.6]   # ティト（扉の前）
+  m0:     [57.0, 33.8]       # メタリカ
+  h0:     [54.6, 32.9]       # 百騎兵
+  l0:     [59.0, 32.3]       # ルッキーニィ
+  l1:     [58.0, 32.6]       # 012 割り込む
+  m1:     [56.6, 34.6]       # 014 そっぽを向いて離れた所（015〜038 のメタリカ）
+  c220:   [55.7, 35.67]      # メタリカのまわりの円（m1 から方位○度、半径 1.4m）
+  c275:   [55.2, 34.48]
+  c330:   [55.9, 33.39]
+  c40:    [57.5, 33.53]
+  c100:   [58.0, 34.84]
+  c160:   [57.1, 35.9]       # 020 から 038 のルッキーニィ
+  t1:     [57.6, 33.1]       # 023 止めに入ったティト
+  sprout: [74.0, 30.5]       # 031 イメージ: 村の外の砂地（東の崖の切れ目の外）
+  leave:  [49.6, 33.0]       # 039 メタリカが帰っていく先（井戸の方）
+
+start:
+  tito: {at: door_front, face: 180}
+  metallica: {at: m0, face: 10}
+  hundred-knight: {at: h0, face: 60}
+  luckiny: {at: l0, face: 280}
+
+cuts:
+  # ---------- 夜明けの村（008〜011） ----------
+  A08b-008:
+    frame: 大引き
+    keys:
+      tito: [{t: 0.0, at: door_front, face: 180, pose: stand}, {t: 6.0, at: door_front, face: 180, pose: stand}]
+      metallica: [{t: 0.0, at: m0, face: 10, pose: stand}, {t: 6.0, at: m0, face: 10, pose: stand}]
+      hundred-knight: [{t: 0.0, at: h0, face: 60, pose: stand}, {t: 6.0, at: h0, face: 60, pose: stand}]
+      luckiny: [{t: 0.0, at: l0, face: 280, pose: stand}, {t: 6.0, at: l0, face: 280, pose: stand}]
+    cam_keys:
+      - {t: 0.0, cam: [36.0, 46.0, 24.0], look: [46.0, 30.0], look_h: 0.0, lens: 24, frame: 大引き}
+      - {t: 6.0, cam: [49.0, 40.5, 3.6], look: [57.2, 31.8], look_h: 1.2, lens: 28, ease: inout}
+    bg: village_high
+    light_en: "Early morning in the village: the low sun rising in the east through the gap in the red cliffs, a pale blue sky with warm golden light, long soft shadows on the sand, the lamps going out."
+    act: {start: 夜明けの谷の村を高い空から, do: 朝日が東の崖の切れ目から差し、静かな家々に光が届く。カメラが村へ下りていく, end: ティトの家の前に立つ4人を遠くに, sync: （台詞なし）}
+    camera: 高い位置から村へ下りる（クレーン）。ティトの家の前で止まる
+    pose: {tito: "standing at her door, tiny in the distance", metallica: "standing, tiny in the distance", hundred-knight: "standing, tiny", luckiny: "standing, tiny"}
+    pose_end: {tito: "standing at her door, small in the distance", metallica: "standing with her back to the camera, small", hundred-knight: "standing, small", luckiny: "standing, small"}
+    kind: A
+  A08b-009:
+    frame: 引き
+    keys:
+      tito:
+        - {t: 0.0, at: door_front, face: 180, pose: stand}
+        - {t: 0.5, at: door_front, face: 180, pose: bow}
+        - {t: 3.6, at: door_front, face: 180, pose: bow}
+        - {t: 4.4, at: door_front, face: 180, pose: stand}
+        - {t: 10.6, at: door_front, face: 185, pose: stand}
+      metallica: [{t: 0.0, at: m0, face: 10, pose: stand}, {t: 10.6, at: m0, face: 10, pose: stand}]
+      hundred-knight: [{t: 0.0, at: h0, face: 60, pose: stand}, {t: 10.6, at: h0, face: 50, pose: stand}]
+      luckiny: [{t: 0.0, at: l0, face: 280, pose: stand}, {t: 10.6, at: l0, face: 300, pose: stand}]
+    cam_keys:
+      - {t: 0.0, cam: [61.5, 38.5, 1.5], look: [57.5, 32.0], look_h: 1.0, lens: 28, frame: 引き}
+      - {t: 10.6, cam: [60.2, 36.2, 1.45], look: tito, look_h: 1.2, lens: 35, ease: inout}
+    bg: house_front
+    act: {start: ティトの家の前の4人の引き, do: ティトが深く頭を下げて礼を言い、顔を上げて「魔女様だったとは」と驚く, end: ティトへ寄った画、横にルッキーニィ, sync: L224「あの砂食みを倒してくださったそうで、…」は 0.3秒から、L225「我が子……ラナと村をお救いくださったのが、魔女様だったとは。」は 5.4秒から}
+    camera: 南東から4人の引き。頭を下げるティトへゆっくり寄る
+    pose: {tito: "bowing deeply in front of her door", metallica: "standing with her back half to the camera", hundred-knight: "standing to the side", luckiny: "standing beside her mother"}
+    pose_end: {tito: "standing upright again, surprised and grateful", metallica: "standing with her back half to the camera", hundred-knight: "standing to the side", luckiny: "standing beside her mother"}
+    kind: M
+  A08b-010:
+    frame: 寄り
+    only: [tito]
+    keys:
+      tito:
+        - {t: 0.0, at: door_front, face: 185, pose: stand}
+        - {t: 0.6, at: door_front, face: 185, pose: bow, ease: inout}
+        - {t: 5.2, at: door_front, face: 185, pose: bow}
+    cam_keys:
+      - {t: 0.0, cam: [54.6, 31.4, 1.1], look: tito, look_h: 1.15, lens: 40, frame: 寄り}
+      - {t: 5.2, cam: [54.8, 31.3, 1.0], look: tito, look_h: 1.0, lens: 45, ease: linear}
+    bg: house_front
+    act: {start: ティトの横顔, do: 「偉大なる沼の魔女様と従者様に」と、もう一度深く頭を下げる, end: 頭を下げたままのティト, sync: L226「偉大なる沼の魔女様と従者様に心よりの感謝を……。」は 0.3秒から}
+    camera: 西からの横顔の寄り。頭を下げるのに合わせて少し下がる
+    pose: {tito: "in profile, starting to bow deeply"}
+    pose_end: {tito: "in profile, bowing deeply with her hands together"}
+    kind: M
+  A08b-011:
+    frame: 全身
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m0, face: 10, pose: stand}
+        - {t: 0.4, at: m0, face: 10, pose: cross}
+        - {t: 4.6, at: m0, face: 10, pose: cross}
+        - {t: 5.0, at: m0, face: 15, pose: proud}
+        - {t: 10.2, at: m0, face: 15, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [57.6, 32.0, 0.5], look: metallica, look_h: 1.5, lens: 28, frame: 全身}
+      - {t: 10.2, cam: [57.5, 32.3, 0.55], look: metallica, look_h: 1.45, lens: 32, ease: linear}
+    bg: house_front
+    act: {start: 足元からの煽りのメタリカ, do: 腕を組んでふんぞり返り、「体調もすこぶる良好だ」で胸を張る, end: 胸を張るメタリカ, sync: L227「ふん！ピラーのついでだ。大したことではない。」は 0.3秒から、L228「沼はこの村の真下に…体調もすこぶる良好だ。」は 4.7秒から}
+    camera: 低い位置から煽る（ティトの側から）。ゆっくり寄る
+    pose: {metallica: "arms crossed, chin up, smug, seen from below"}
+    pose_end: {metallica: "hands on her hips, chest out, very pleased with herself, seen from below"}
+    kind: M
+
+  # ---------- 弟子入りの押し問答（012〜027） ----------
+  A08b-012:
+    frame: 寄り
+    only: [luckiny, metallica]
+    hidden_ok: [tito]   # 奥の扉の前（ぼける）
+    keys:
+      luckiny:
+        - {t: 0.0, at: l0, face: 280, pose: stand}
+        - {t: 0.3, at: l0, face: 240, pose: walk}
+        - {t: 1.3, at: l1, face: 220, pose: walk, ease: out}
+        - {t: 1.6, at: l1, face: 220, pose: arms_up}
+        - {t: 4.0, at: l1, face: 220, pose: arms_up}
+        - {t: 4.6, at: l1, face: 220, pose: bow}
+        - {t: 7.2, at: l1, face: 220, pose: bow}
+      metallica:
+        - {t: 0.0, at: m0, face: 15, pose: proud}
+        - {t: 1.2, at: m0, face: 40, pose: stand}
+        - {t: 7.2, at: m0, face: 40, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [56.5, 34.9, 1.6], look: luckiny, look_h: 1.15, lens: 40, frame: 寄り}
+      - {t: 7.2, cam: [56.5, 34.8, 1.6], look: luckiny, look_h: 1.0, lens: 45, ease: linear}
+    bg: house_front
+    act: {start: メタリカの肩越し, do: ルッキーニィが横から割り込んできて、両手を上げて喜び、ぺこりと頭を下げる, end: 頭を下げるルッキーニィ, sync: L229「それはよかったです！では、早速ですが魔女様！弟子にしてください！」は 0.3秒から}
+    camera: メタリカの肩越しにルッキーニィ（切り返しの1）
+    pose: {luckiny: "stepping in eagerly, seen over the witch's shoulder", metallica: "seen from behind at the edge of the frame"}
+    pose_end: {luckiny: "bowing her head, seen over the witch's shoulder", metallica: "seen from behind at the edge of the frame"}
+    kind: M
+  A08b-013:
+    frame: 寄り
+    only: [metallica, luckiny]
+    keys:
+      metallica:
+        - {t: 0.0, at: m0, face: 40, pose: stand}
+        - {t: 0.4, at: m0, face: 40, pose: cross}
+        - {t: 6.7, at: m0, face: 40, pose: cross}
+      luckiny:
+        - {t: 0.0, at: l1, face: 220, pose: bow}
+        - {t: 0.6, at: l1, face: 220, pose: stand}
+        - {t: 6.7, at: l1, face: 220, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [58.7, 32.1, 1.3], look: metallica, look_h: 1.45, lens: 40, frame: 寄り}
+      - {t: 6.7, cam: [58.6, 32.2, 1.3], look: metallica, look_h: 1.45, lens: 45, ease: linear}
+    bg: house_front
+    act: {start: ルッキーニィの肩越し, do: メタリカが腕を組み、あきれ顔で突き放す, end: 腕を組むメタリカ, sync: L230「あん？何が“では早速”だ？お前に構っている暇はない。」は 0.3秒から}
+    camera: ルッキーニィの肩越しにメタリカ（切り返しの2）
+    pose: {metallica: "arms crossed, frowning, seen over the girl's shoulder", luckiny: "seen from behind at the edge of the frame"}
+    pose_end: {metallica: "arms crossed, brushing her off", luckiny: "seen from behind at the edge of the frame"}
+    kind: M
+  A08b-014:
+    frame: 全身
+    only: [metallica, luckiny, tito]
+    keys:
+      metallica:
+        - {t: 0.0, at: m0, face: 40, pose: cross}
+        - {t: 0.8, at: m0, face: 200, pose: cross}
+        - {t: 2.2, at: m1, face: 215, pose: walk, ease: inout}
+        - {t: 2.4, at: m1, face: 220, pose: cross}
+        - {t: 8.1, at: m1, face: 220, pose: cross}
+      luckiny:
+        - {t: 0.0, at: l1, face: 220, pose: stand}
+        - {t: 8.1, at: l1, face: 215, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [54.0, 36.6, 1.4], look: metallica, look_h: 1.3, lens: 35, frame: 全身}
+      - {t: 8.1, cam: [54.2, 36.8, 1.4], look: metallica, look_h: 1.3, lens: 40, ease: linear}
+    bg: house_front
+    act: {start: 南西から、腕を組むメタリカ, do: メタリカがそっぽを向いて数歩離れる。奥に取り残されるルッキーニィ, end: そっぽを向いたメタリカ、奥にルッキーニィ, sync: L231「ワタシは忙しいんだ。これから、ヴァルプルギスの夜会の準備があるからな。」は 0.3秒から}
+    camera: 南西から。そっぽを向いて離れるメタリカの正面
+    pose: {metallica: "arms crossed, turning away", luckiny: "standing behind her in the background"}
+    pose_end: {metallica: "arms crossed, facing away from the girl, nose in the air", luckiny: "left standing in the background"}
+    kind: M
+  A08b-015:
+    frame: 全身
+    keys:
+      luckiny:
+        - {t: 0.0, at: l1, face: 215, pose: stand}
+        - {t: 0.4, at: l1, face: 180, pose: run}
+        - {t: 1.6, at: [58.4, 34.8], face: 200, pose: run, ease: linear}
+        - {t: 2.6, at: [57.0, 36.2], face: 260, pose: run, ease: linear}
+        - {t: 3.2, at: c220, face: 40, pose: arms_up, ease: out}
+        - {t: 7.7, at: c220, face: 40, pose: arms_up}
+      metallica:
+        - {t: 0.0, at: m1, face: 220, pose: cross}
+        - {t: 7.7, at: m1, face: 210, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [61.0, 36.5, 1.2], look: luckiny, look_h: 1.0, lens: 32, frame: 全身}
+      - {t: 7.7, cam: [60.5, 37.5, 1.2], look: [56.2, 35.1], look_h: 1.1, lens: 32, ease: inout}
+    bg: house_front
+    act: {start: 東から、立ち尽くすルッキーニィ, do: 「夜会」に目を輝かせ、メタリカの前へ回り込んで両手を上げる, end: メタリカの前で両手を上げて興奮するルッキーニィ, sync: L232「ヴァ、ヴァルプルギスの！？スゴイ！本当に夜会って開かれてるんだ！」は 0.3秒から}
+    camera: 東から、回り込むルッキーニィを追って振る
+    pose: {luckiny: "eyes shining with excitement", metallica: "arms crossed, facing away"}
+    pose_end: {luckiny: "in front of the witch, both arms up, thrilled", metallica: "arms crossed, ignoring her"}
+    kind: A
+  A08b-016:
+    frame: 全身
+    keys:
+      luckiny:
+        - {t: 0.0, at: c220, face: 40, pose: arms_up}
+        - {t: 0.4, at: c220, face: 40, pose: walk}
+        - {t: 3.9, at: c275, face: 95, pose: walk, ease: linear}
+        - {t: 7.6, at: c330, face: 150, pose: walk, ease: linear}
+        - {t: 7.9, at: c330, face: 150, pose: gesture}
+      metallica:
+        - {t: 0.0, at: m1, face: 210, pose: cross}
+        - {t: 3.9, at: m1, face: 170, pose: cross}
+        - {t: 7.9, at: m1, face: 140, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [56.2, 38.8, 1.3], look: metallica, look_h: 1.2, lens: 32, frame: 全身}
+      - {t: 3.9, cam: [53.0, 36.7, 1.3], look: metallica, look_h: 1.2, lens: 32, ease: linear}
+      - {t: 7.9, cam: [52.8, 32.8, 1.3], look: metallica, look_h: 1.2, lens: 32, ease: linear}
+    bg: house_front
+    act: {start: メタリカの前のルッキーニィ, do: ルッキーニィがメタリカのまわりを回りながら質問攻め。メタリカは顔をそむけ続ける, end: メタリカの北で手振りを交えて話すルッキーニィ, sync: L234「で、では森の賢者と呼ばれる魔女マーリカ様は…人格者だとか！」は 0.3秒から}
+    camera: ルッキーニィを追ってメタリカのまわりを回る（オービット、南→西→北西）
+    pose: {luckiny: "walking around the witch, chattering", metallica: "arms crossed, turning her face away"}
+    pose_end: {luckiny: "gesturing eagerly as she talks", metallica: "arms crossed, face turned away"}
+    kind: A
+  A08b-017:
+    frame: 寄り
+    only: [metallica]
+    hidden_ok: [hundred-knight, luckiny]   # 奥（ぼける）
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 140, pose: cross}
+        - {t: 1.2, at: m1, face: 140, pose: cross}
+        - {t: 1.8, at: m1, face: 150, pose: gesture}
+        - {t: 9.8, at: m1, face: 150, pose: gesture}
+    cam_keys:
+      - {t: 0.0, cam: [57.4, 35.6, 1.5], look: metallica, look_h: 1.5, lens: 45, frame: 寄り}
+      - {t: 9.8, cam: [57.3, 35.4, 1.5], look: metallica, look_h: 1.5, lens: 55, ease: linear}
+    bg: house_front
+    act: {start: メタリカの寄り, do: 「何が賢者マーリカ様だ」と鼻で笑い、片手を振って毒づく, end: 毒づくメタリカの寄り, sync: L235「キヒヒ、何が賢者マーリカ様だ。あんな奴、ただのゲロクソの性悪魔女だ。」は 0.3秒から}
+    camera: 正面（南東）の寄り。ゆっくり寄る
+    pose: {metallica: "arms crossed, sneering"}
+    pose_end: {metallica: "waving one hand dismissively, sneering"}
+    kind: M
+  A08b-018:
+    frame: 引き
+    keys:
+      luckiny:
+        - {t: 0.0, at: c330, face: 150, pose: gesture}
+        - {t: 0.4, at: c330, face: 150, pose: walk}
+        - {t: 8.7, at: c40, face: 220, pose: walk, ease: linear}
+      metallica:
+        - {t: 0.0, at: m1, face: 150, pose: gesture}
+        - {t: 1.0, at: m1, face: 150, pose: cross}
+        - {t: 8.7, at: m1, face: 120, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [59.5, 37.5, 4.5], look: [56.4, 34.4], look_h: 0.8, lens: 28, frame: 引き}
+      - {t: 8.7, cam: [59.9, 36.6, 4.6], look: [56.6, 34.2], look_h: 0.8, lens: 28, ease: linear}
+    bg: house_front
+    act: {start: 上からの二人, do: ルッキーニィがメタリカのまわりを回り続け、次の魔女のことを聞く, end: メタリカの北東のルッキーニィ, sync: L237「じゃあ、薄氷のリリーは？…人気投票ナンバー１なんですか？」は 0.3秒から}
+    camera: 高い位置（南東）から見下ろす。回る動きを上から見せる
+    pose: {luckiny: "walking around the witch, chattering, seen from above", metallica: "arms crossed, seen from above"}
+    pose_end: {luckiny: "still circling, seen from above", metallica: "arms crossed, seen from above"}
+    kind: M
+  A08b-019:
+    frame: 全身
+    only: [luckiny, metallica, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: c40, face: 220, pose: walk}
+        - {t: 3.0, at: [57.9, 34.1], face: 250, pose: walk, ease: linear}
+        - {t: 3.3, at: [57.9, 34.1], face: 250, pose: slash}
+        - {t: 5.6, at: [57.9, 34.1], face: 250, pose: slash}
+        - {t: 6.0, at: [57.9, 34.1], face: 250, pose: walk}
+        - {t: 9.1, at: c100, face: 280, pose: walk, ease: linear}
+      metallica:
+        - {t: 0.0, at: m1, face: 120, pose: cross}
+        - {t: 9.1, at: m1, face: 200, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: h0, face: 50, pose: stand}
+        - {t: 1.2, at: h0, face: 110, pose: stand}
+        - {t: 9.1, at: h0, face: 125, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [53.6, 32.3, 0.65], look: [56.8, 34.4], look_h: 1.0, lens: 32, frame: 全身}
+      - {t: 9.1, cam: [53.7, 32.5, 0.65], look: [57.0, 34.6], look_h: 1.0, lens: 32, ease: linear}
+    bg: house_front
+    act: {start: 百騎兵の後ろの低い所から, do: ルッキーニィが拳を突き出して「素手で壁に穴を」をまねしながら回る。百騎兵がぼんやり目で追う, end: メタリカの東へ回ったルッキーニィ, sync: L238「砂塵の魔女、パープルピールは…素手で壁に穴をあけるとか！」は 0.3秒から}
+    camera: 百騎兵の後ろの低い所から（百騎兵の目の高さ）。二人を遠目に
+    pose: {luckiny: "circling the witch, throwing pretend punches", metallica: "arms crossed", hundred-knight: "seen from behind, watching"}
+    pose_end: {luckiny: "circling the witch, chattering", metallica: "arms crossed", hundred-knight: "seen from behind, watching blankly"}
+    kind: M
+  A08b-020:
+    frame: 全身
+    keys:
+      luckiny:
+        - {t: 0.0, at: c100, face: 280, pose: walk}
+        - {t: 4.0, at: c160, face: 340, pose: walk, ease: linear}
+        - {t: 4.3, at: c160, face: 340, pose: gesture}
+        - {t: 7.7, at: c160, face: 340, pose: gesture}
+      metallica:
+        - {t: 0.0, at: m1, face: 200, pose: cross}
+        - {t: 7.7, at: m1, face: 250, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [60.2, 38.6, 0.8], look: metallica, look_h: 1.2, lens: 35, frame: 全身}
+      - {t: 7.7, cam: [59.0, 39.2, 0.8], look: metallica, look_h: 1.2, lens: 35, ease: linear}
+    bg: house_front
+    act: {start: 南東の低い所から, do: ルッキーニィがメタリカの南へ回り込み、首をかしげて聞く。メタリカの顔がだんだん険しくなる, end: メタリカの南で話すルッキーニィ、そむけた顔のメタリカ, sync: L239「あ、あと霧の魔女ネザリアって…議長なんですよね？」は 0.3秒から}
+    camera: 南東の低い所から、回り込みの続き（ゆっくり横へ）
+    pose: {luckiny: "circling the witch, chattering", metallica: "arms crossed, getting annoyed"}
+    pose_end: {luckiny: "tilting her head, asking", metallica: "arms crossed, face turned away, annoyed"}
+    kind: M
+  A08b-021:
+    frame: 寄り
+    only: [metallica, luckiny]
+    hidden_ok: [hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 250, pose: cross}
+        - {t: 0.6, at: m1, face: 159, pose: lean}
+        - {t: 5.2, at: m1, face: 159, pose: lean}
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: gesture}
+        - {t: 0.8, at: c160, face: 340, pose: stand}
+        - {t: 5.2, at: c160, face: 340, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [57.5, 35.9, 1.35], look: metallica, look_h: 1.35, lens: 50, frame: 寄り}
+      - {t: 1.0, cam: [57.5, 35.85, 1.35], look: metallica, look_h: 1.3, lens: 70, ease: out}
+      - {t: 5.2, cam: [57.5, 35.85, 1.35], look: metallica, look_h: 1.3, lens: 70}
+    bg: house_front
+    act: {start: ルッキーニィの肩越しにメタリカ, do: メタリカがずいと顔を近づける。カメラも顔へ寄る, end: メタリカの顔の大寄り, sync: L241「お前……そんな三流魔女どもに興味があるのか？」は 0.3秒から}
+    camera: ルッキーニィの肩越しから、近づくメタリカの顔の大寄りへ
+    pose: {metallica: "leaning in close with narrowed eyes", luckiny: "seen from behind at the edge of the frame"}
+    pose_end: {metallica: "her face very close, eyes narrowed, menacing"}
+    kind: M
+  A08b-022:
+    frame: 寄り
+    only: [luckiny, metallica]
+    keys:
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: stand}
+        - {t: 0.3, at: c160, face: 340, pose: shake}
+        - {t: 2.2, at: c160, face: 340, pose: shake}
+        - {t: 2.6, at: c160, face: 340, pose: stand}
+        - {t: 6.4, at: c160, face: 340, pose: hold}
+        - {t: 11.1, at: c160, face: 340, pose: hold}
+      metallica:
+        - {t: 0.0, at: m1, face: 159, pose: lean}
+        - {t: 1.0, at: m1, face: 159, pose: stand}
+        - {t: 11.1, at: m1, face: 159, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [56.3, 34.9, 1.45], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り}
+      - {t: 11.1, cam: [56.35, 35.0, 1.45], look: luckiny, look_h: 1.15, lens: 50, ease: linear}
+    bg: house_front
+    act: {start: メタリカの肩越しにルッキーニィ, do: 慌てて首を振り、それから胸の前で手を組んで真剣に訴える, end: 手を組んで見上げるルッキーニィ, sync: L242「そ！そんなことはありません！沼の魔女様が一番です！」は 0.3秒から、L243「命の恩人であるメタリカ様の弟子になりたいんです」は 6.2秒から}
+    camera: メタリカの肩越しの寄り
+    pose: {luckiny: "shaking her head frantically, seen over the witch's shoulder"}
+    pose_end: {luckiny: "hands clasped at her chest, looking up earnestly"}
+    kind: M
+  A08b-023:
+    frame: 引き
+    only: [metallica, luckiny, tito, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 159, pose: cross}
+        - {t: 0.4, at: m1, face: 159, pose: gesture}
+        - {t: 4.2, at: m1, face: 159, pose: cross}
+        - {t: 8.7, at: m1, face: 150, pose: cross}
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: hold}
+        - {t: 8.7, at: c160, face: 340, pose: hold}
+      tito:
+        - {t: 0.0, at: door_front, face: 185, pose: stand}
+        - {t: 3.8, at: door_front, face: 185, pose: stand}
+        - {t: 6.4, at: t1, face: 195, pose: walk, ease: inout}
+        - {t: 6.8, at: t1, face: 200, pose: gesture}
+        - {t: 8.7, at: t1, face: 200, pose: gesture}
+      hundred-knight:
+        - {t: 0.0, at: h0, face: 125, pose: stand}
+        - {t: 8.7, at: h0, face: 100, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [51.0, 34.0, 1.4], look: [57.0, 33.6], look_h: 1.0, lens: 28, frame: 引き}
+      - {t: 8.7, cam: [51.3, 34.2, 1.4], look: [57.2, 33.8], look_h: 1.0, lens: 30, ease: linear}
+    bg: house_front
+    act: {start: 西からの引き。手前に百騎兵, do: メタリカが「ダメだダメだ！」と手を振る。ティトが扉の前から歩み出て、ルッキーニィをたしなめる, end: 4人がそろった引き, sync: L244「何度も言わせるな。ダメだダメだ！さっさと諦めろ。」は 0.3秒から、L245「よしなさい、ラナ！魔女様が困ってらっしゃるわ。」は 4.6秒から}
+    camera: 西からの引き（目の高さ）。手前に百騎兵
+    pose: {metallica: "waving her hand, refusing", luckiny: "hands clasped, pleading", tito: "at her door", hundred-knight: "standing in the foreground, seen from behind"}
+    pose_end: {metallica: "arms crossed", luckiny: "hands clasped", tito: "stepping in, scolding her daughter gently", hundred-knight: "standing in the foreground, seen from behind"}
+    kind: M
+  A08b-024:
+    frame: 全身
+    only: [luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: hold}
+        - {t: 0.4, at: c160, face: 340, pose: arms_up}
+        - {t: 2.8, at: c160, face: 340, pose: arms_up}
+        - {t: 3.2, at: c160, face: 340, pose: bow}
+        - {t: 6.7, at: c160, face: 340, pose: bow}
+    cam_keys:
+      - {t: 0.0, cam: [58.6, 34.2, 0.5], look: luckiny, look_h: 1.2, lens: 32, frame: 全身}
+      - {t: 6.7, cam: [58.5, 34.4, 0.5], look: luckiny, look_h: 1.0, lens: 35, ease: linear}
+    bg: house_front
+    act: {start: 低い位置からルッキーニィ, do: 「諦めません！」と両手を振り上げ、「どうか弟子に」で深く頭を下げる, end: 頭を下げるルッキーニィ, sync: L246「あ、諦めません！何でもしますから！どうか弟子にしてください！」は 0.3秒から}
+    camera: 北東の低い位置から煽る
+    pose: {luckiny: "fists raised, refusing to give up, seen from below"}
+    pose_end: {luckiny: "bowing deeply, seen from below"}
+    kind: M
+  A08b-025:
+    frame: 引き
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 150, pose: cross}
+        - {t: 0.4, at: m1, face: 159, pose: gesture}
+        - {t: 4.4, at: m1, face: 159, pose: gesture}
+        - {t: 5.0, at: m1, face: 240, pose: cross}
+        - {t: 8.0, at: m1, face: 245, pose: cross}
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: bow}
+        - {t: 1.0, at: c160, face: 340, pose: stand}
+        - {t: 8.0, at: c160, face: 340, pose: stand}
+      tito:
+        - {t: 0.0, at: t1, face: 200, pose: gesture}
+        - {t: 1.0, at: t1, face: 200, pose: stand}
+        - {t: 8.0, at: t1, face: 200, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [60.5, 30.5, 4.2], look: [56.8, 34.4], look_h: 0.8, lens: 28, frame: 引き}
+      - {t: 8.0, cam: [60.7, 30.9, 4.0], look: [56.8, 34.6], look_h: 0.8, lens: 28, ease: linear}
+    bg: house_front
+    act: {start: 北東の高い所から3人, do: メタリカが怒鳴って手を振り、それからそっぽを向いて「スズの音草」とつぶやく, end: そっぽを向くメタリカ、立ち尽くすルッキーニィとティト, sync: L247「だから言ってるだろうが！…暇などない！」は 0.3秒から、L248「さっさと“スズの音草”を手に入れてだな……。」は 4.6秒から}
+    camera: 北東の高い位置からの引き
+    pose: {metallica: "shouting and waving her hand, seen from above", luckiny: "bowing, seen from above", tito: "standing by, seen from above"}
+    pose_end: {metallica: "arms crossed, turned away, muttering", luckiny: "standing, seen from above", tito: "standing, seen from above"}
+    kind: M
+  A08b-026:
+    frame: 全身
+    keys:
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: stand}
+        - {t: 0.4, at: c160, face: 340, pose: arms_up}
+        - {t: 4.2, at: c160, face: 340, pose: arms_up}
+        - {t: 4.6, at: c160, face: 340, pose: stand}
+        - {t: 7.9, at: c160, face: 340, pose: stand}
+      metallica:
+        - {t: 0.0, at: m1, face: 245, pose: cross}
+        - {t: 4.3, at: m1, face: 245, pose: cross}
+        - {t: 4.7, at: m1, face: 159, pose: stand, ease: out}
+        - {t: 7.9, at: m1, face: 159, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [54.4, 37.0, 1.4], look: luckiny, look_h: 1.1, lens: 35, frame: 全身}
+      - {t: 4.3, cam: [54.5, 37.0, 1.4], look: luckiny, look_h: 1.1, lens: 35}
+      - {t: 4.9, cam: [55.4, 36.0, 1.45], look: metallica, look_h: 1.5, lens: 55, frame: 寄り, ease: out}
+      - {t: 7.9, cam: [55.5, 35.9, 1.45], look: metallica, look_h: 1.5, lens: 55}
+    bg: house_front
+    act: {start: 南西からルッキーニィ, do: ルッキーニィが「ボクが探しておきます！」と手を上げる。「なに？」でメタリカが振り向き、カメラが素早く寄る, end: 振り向いたメタリカの寄り, sync: L249「そうだ！“スズの音草”は、ボクが探しておきます！」は 0.3秒から、L250「なに？“スズの音草”があるのか？」は 4.5秒から}
+    camera: 南西から。「なに？」でメタリカへ素早く寄る
+    pose: {luckiny: "raising her hand eagerly", metallica: "arms crossed, turned away"}
+    pose_end: {metallica: "turned around sharply, interested, close up"}
+    kind: M
+  A08b-027:
+    frame: 寄り
+    only: [tito, luckiny, metallica]
+    hidden_ok: [hundred-knight]
+    keys:
+      tito:
+        - {t: 0.0, at: t1, face: 200, pose: stand}
+        - {t: 0.4, at: t1, face: 190, pose: gesture}
+        - {t: 3.8, at: t1, face: 200, pose: stand}
+        - {t: 8.1, at: t1, face: 215, pose: stand}
+      luckiny:
+        - {t: 0.0, at: c160, face: 340, pose: stand}
+        - {t: 0.6, at: c160, face: 15, pose: look_down}
+        - {t: 8.1, at: c160, face: 15, pose: look_down}
+      metallica:
+        - {t: 0.0, at: m1, face: 159, pose: stand}
+        - {t: 3.8, at: m1, face: 159, pose: stand}
+        - {t: 4.3, at: m1, face: 39, pose: cross}
+        - {t: 8.1, at: m1, face: 39, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [60.0, 34.2, 2.4], look: [57.2, 34.4], look_h: 1.2, lens: 35, frame: 寄り}
+      - {t: 8.1, cam: [59.8, 34.0, 2.3], look: [57.0, 34.1], look_h: 1.25, lens: 40, ease: linear}
+    bg: house_front
+    act: {start: 東から3人, do: ティトが慌ててルッキーニィをたしなめる。メタリカがティトへ向き直って説明を求める, end: 腕を組んでティトを見るメタリカ, sync: L251「ラナ！軽はずみなことを言ってはいけません！」は 0.3秒から、L252「あん？どういうことだ？説明しろ。」は 3.9秒から}
+    camera: 東の少し高い所からの3人。ゆっくり寄る
+    pose: {tito: "flustered, holding out her hand to stop her daughter", luckiny: "shrinking back", metallica: "turning toward Tito"}
+    pose_end: {tito: "worried", luckiny: "looking down", metallica: "arms crossed, demanding an explanation"}
+    kind: M
+
+  # ---------- スズの音草（028〜033） ----------
+  A08b-028:
+    frame: 寄り
+    only: [tito, metallica]
+    keys:
+      tito:
+        - {t: 0.0, at: t1, face: 215, pose: stand}
+        - {t: 0.4, at: t1, face: 215, pose: bow}
+        - {t: 1.4, at: t1, face: 215, pose: stand}
+        - {t: 2.4, at: t1, face: 215, pose: gesture}
+        - {t: 8.1, at: t1, face: 215, pose: gesture}
+      metallica:
+        - {t: 0.0, at: m1, face: 39, pose: cross}
+        - {t: 8.1, at: m1, face: 39, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [59.3, 34.7, 1.3], look: tito, look_h: 1.3, lens: 50, frame: 寄り}
+      - {t: 8.1, cam: [59.2, 34.6, 1.3], look: tito, look_h: 1.3, lens: 55, ease: linear}
+    bg: house_front
+    act: {start: ティトの横顔, do: 小さく頭を下げてから、手振りを交えて「スズの音草」を説明する, end: 説明するティトの横顔, sync: L253「申し訳ありません。“スズの音草”とは人々の感情に反応する不思議な草のことです。」は 0.3秒から}
+    camera: 南東からティトの横顔の寄り
+    pose: {tito: "in profile, apologizing with a small bow"}
+    pose_end: {tito: "in profile, explaining with a gentle gesture"}
+    kind: M
+  A08b-029:
+    frame: 寄り
+    only: [tito]
+    keys:
+      tito:
+        - {t: 0.0, at: t1, face: 215, pose: gesture}
+        - {t: 1.0, at: t1, face: 95, pose: stand, ease: inout}
+        - {t: 5.5, at: t1, face: 95, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [56.4, 33.2, 1.5], look: tito, look_h: 1.3, lens: 40, frame: 寄り}
+      - {t: 1.2, cam: [56.4, 33.2, 1.5], look: tito, look_h: 1.3, lens: 40}
+      - {t: 5.5, cam: [56.3, 33.3, 1.5], look: [72.0, 31.0], look_h: 1.0, lens: 40, frame: 大引き, ease: inout}
+    bg: desert_edge
+    light_en: "Early morning: the low sun rising in the east through the gap in the red cliffs, barren sand outside the village glowing gold."
+    act: {start: ティトの肩越し, do: ティトが村の外の方を見る。カメラがティトの横顔から、崖の切れ目の外の荒れた砂地へゆっくり振る, end: 村の外の荒れた砂地と朝日, sync: L254「昔はこの辺りに生えていたらしいのですが、今ではもう……。」は 0.3秒から}
+    camera: ティトの肩越しから、村の外の砂地へゆっくり振る（パン）
+    pose: {tito: "seen from behind over her shoulder, looking toward the desert"}
+    kind: M
+  A08b-030:
+    frame: 寄り
+    only: [tito]
+    hidden_ok: [hundred-knight]
+    keys:
+      tito:
+        - {t: 0.0, at: t1, face: 95, pose: stand}
+        - {t: 1.0, at: t1, face: 95, pose: look_down}
+        - {t: 4.9, at: t1, face: 95, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [59.2, 33.7, 0.9], look: tito, look_h: 1.3, lens: 45, frame: 寄り}
+      - {t: 4.9, cam: [59.0, 33.6, 0.9], look: tito, look_h: 1.25, lens: 50, ease: linear}
+    bg: house_front
+    act: {start: ティトの正面（朝日の側）, do: 目を伏せる, end: うつむくティト, sync: L255「……おそらく、砂食みのせいで、村が恐怖で満ちたせいです。」は 0.3秒から}
+    camera: 正面（東、朝日の側）の低い所からの寄り
+    pose: {tito: "facing the camera, sad, lit by the morning sun"}
+    pose_end: {tito: "eyes lowered, sad"}
+    kind: M
+  A08b-031:
+    frame: 寄り
+    only: []
+    fx:
+      - {kind: sprout, t: [0.6, 9.6], at: sprout, n: 7, h: 0.5, grow: 4.4, wither: 6.2}
+      - {kind: plume, t: [6.2, 8.0], at: sprout, r: 0.6, h: 0.3, shape: fall}
+    cam_keys:
+      - {t: 0.0, cam: [75.6, 31.4, 0.35], look: sprout, look_h: 0.2, lens: 45, frame: 寄り}
+      - {t: 6.0, cam: [75.2, 31.2, 0.32], look: sprout, look_h: 0.25, lens: 50, ease: linear}
+      - {t: 9.6, cam: [75.2, 31.2, 0.32], look: sprout, look_h: 0.15, lens: 50}
+    bg: desert_edge
+    light_en: "A dreamlike image: barren sand in soft golden morning light, everything else blurred."
+    extra_en: "A tiny sprout pushes up from a seed in the sand and grows quickly into a small plant with bell-shaped buds."
+    extra_en_end: "The little plant suddenly withers and droops, turning brown, crumbling into the sand."
+    act: {start: 荒れた砂地の寄り（イメージ）, do: 種から芽が出てすくすく伸びる。「恐怖の感情を感じると」で一瞬にして茶色く枯れてしおれる, end: 枯れて砂に崩れた草, sync: L256「“スズの音草”は“種”から数時間で…一瞬にして枯れてしまうそうなんです。」は 0.3秒から（ティトの声だけ）}
+    camera: 砂の高さの寄り。伸びる草にゆっくり寄る
+    kind: A
+  A08b-032:
+    frame: 寄り
+    only: [metallica, tito]
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 39, pose: cross}
+        - {t: 0.4, at: m1, face: 39, pose: gesture}
+        - {t: 6.8, at: m1, face: 39, pose: cross}
+        - {t: 11.4, at: m1, face: 39, pose: cross}
+      tito:
+        - {t: 0.0, at: t1, face: 95, pose: look_down}
+        - {t: 1.0, at: t1, face: 215, pose: stand}
+        - {t: 7.0, at: t1, face: 215, pose: stand}
+        - {t: 7.6, at: t1, face: 215, pose: look_down}
+        - {t: 11.4, at: t1, face: 215, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [55.7, 35.6, 1.55], look: tito, look_h: 1.3, lens: 40, frame: 寄り}
+      - {t: 11.4, cam: [55.8, 35.5, 1.55], look: tito, look_h: 1.25, lens: 50, ease: linear}
+    bg: house_front
+    act: {start: メタリカの肩越しにティト, do: メタリカが手を振って問いただす。ティトが向き直り、目を伏せて首を振る, end: うつむくティト, sync: L257「あん？ならば、砂食みがいなくなった今、…生えるということじゃないのか？」は 0.3秒から、L258「残念ですが、砂食みは１匹ではありません。」は 7.1秒から}
+    camera: メタリカの肩越しにティト。ゆっくり寄る
+    pose: {metallica: "seen from behind over her shoulder, questioning", tito: "turning back to face the witch"}
+    pose_end: {tito: "eyes lowered, shaking her head sadly"}
+    kind: M
+  A08b-033:
+    frame: 寄り
+    only: [tito, metallica]
+    keys:
+      tito:
+        - {t: 0.0, at: t1, face: 215, pose: look_down}
+        - {t: 3.0, at: t1, face: 215, pose: stand}
+        - {t: 7.0, at: t1, face: 210, pose: stand}
+        - {t: 7.6, at: t1, face: 210, pose: look_down}
+        - {t: 11.4, at: t1, face: 210, pose: look_down}
+      metallica:
+        - {t: 0.0, at: m1, face: 39, pose: cross}
+        - {t: 11.4, at: m1, face: 39, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [54.0, 34.2, 0.95], look: tito, look_h: 1.3, lens: 35, frame: 寄り}
+      - {t: 11.4, cam: [55.0, 34.0, 0.95], look: tito, look_h: 1.3, lens: 45, ease: linear}
+    bg: house_front
+    act: {start: 西からティト、手前の端にメタリカ, do: ティトが静かに話し、「恐怖を取り払う方法はないのです」で目を伏せる。カメラがゆっくり寄る, end: うつむくティトの寄り, sync: L261「蔓延する恐怖を完全に取り払わなければ、…恐怖を取り払う方法はないのです。」は 0.3秒から}
+    camera: 西の低い所から、ゆっくり寄る（トラックイン）
+    pose: {tito: "speaking quietly, sad", metallica: "at the edge of the frame, arms crossed"}
+    pose_end: {tito: "eyes lowered, resigned"}
+    kind: M
+
+  # ---------- 約束（034〜039） ----------
+  A08b-034:
+    frame: 寄り
+    only: [luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: c160, face: 15, pose: look_down}
+        - {t: 0.4, at: c160, face: 5, pose: stand}
+        - {t: 1.0, at: [57.2, 35.6], face: 5, pose: arms_up, ease: out}
+        - {t: 5.0, at: [57.2, 35.6], face: 5, pose: arms_up}
+    cam_keys:
+      - {t: 0.0, cam: [57.5, 34.3, 0.8], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り}
+      - {t: 1.0, cam: [57.5, 34.35, 0.8], look: luckiny, look_h: 1.2, lens: 50, ease: out}
+      - {t: 5.0, cam: [57.5, 34.35, 0.8], look: luckiny, look_h: 1.2, lens: 50}
+    bg: house_front
+    act: {start: うつむくルッキーニィ（ティトの側から）, do: 顔を上げ、一歩踏み出して両手を振り上げる, end: 両手を上げて訴えるルッキーニィ, sync: L262「そんな！何か、方法はあるはずだよ！」は 0.3秒から}
+    camera: 北（ティトの側）からの寄り。踏み出しに合わせて少し寄る
+    pose: {luckiny: "looking down, then lifting her head"}
+    pose_end: {luckiny: "stepping forward with both fists raised, desperate"}
+    kind: M
+  A08b-035:
+    frame: 全身
+    only: [luckiny, metallica]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [57.2, 35.6], face: 5, pose: arms_up}
+        - {t: 0.8, at: c160, face: 339, pose: stand}
+        - {t: 1.2, at: c160, face: 339, pose: hold}
+        - {t: 6.6, at: c160, face: 339, pose: hold}
+        - {t: 7.0, at: c160, face: 339, pose: bow}
+        - {t: 11.3, at: c160, face: 339, pose: bow}
+      metallica:
+        - {t: 0.0, at: m1, face: 39, pose: cross}
+        - {t: 1.0, at: m1, face: 159, pose: cross}
+        - {t: 11.3, at: m1, face: 159, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [56.3, 34.2, 1.6], look: luckiny, look_h: 0.9, lens: 35, frame: 全身}
+      - {t: 11.3, cam: [56.35, 34.3, 1.6], look: luckiny, look_h: 0.75, lens: 38, ease: linear}
+    bg: house_front
+    act: {start: メタリカの目の高さから, do: ルッキーニィがメタリカに向き直り、手を組んで頼み、「偉大なる沼の魔女様！」で深く頭を下げる, end: 頭を下げるルッキーニィを見下ろす, sync: L263「お願いです、魔女様！必ず、“スズの音草”は探しておきますので、弟子にしてください！」は 0.3秒から、L264「偉大なる、沼の魔女様！お願いします！」は 6.8秒から}
+    camera: メタリカの目の高さから見下ろす（俯瞰。メタリカの肩ごし）
+    pose: {luckiny: "turning to the witch, hands clasped, seen from above", metallica: "at the edge of the frame"}
+    pose_end: {luckiny: "bowing deeply, seen from above"}
+    kind: M
+  A08b-036:
+    frame: 寄り
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 159, pose: look_down}
+        - {t: 1.4, at: m1, face: 159, pose: look_down}
+        - {t: 2.0, at: m1, face: 159, pose: cross}
+        - {t: 9.6, at: m1, face: 159, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [58.1, 34.0, 1.5], look: metallica, look_h: 1.5, lens: 50, frame: 寄り}
+      - {t: 9.6, cam: [58.1, 34.0, 1.5], look: metallica, look_h: 1.5, lens: 50}
+    bg: house_front
+    act: {start: メタリカの横顔, do: 黙って見下ろしていたメタリカが目を細める（何か思いついた顔）。それから腕を組んで条件を出す, end: 腕を組むメタリカの横顔, sync: 1.5秒の間の後、L265「いいだろう。明日もう一度来たときに、…考えてやらんでもない。」は 1.5秒から}
+    camera: 横顔の寄り、止め
+    pose: {metallica: "in profile, looking down silently"}
+    pose_end: {metallica: "in profile, arms crossed, eyes narrowed with a hidden idea"}
+    kind: M
+  A08b-037:
+    frame: 寄り
+    only: [metallica]
+    hidden_ok: [hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 159, pose: cross}
+        - {t: 1.6, at: m1, face: 100, pose: cross, ease: inout}
+        - {t: 5.7, at: m1, face: 100, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [58.4, 36.4, 1.1], look: metallica, look_h: 1.5, lens: 40, frame: 寄り}
+      - {t: 5.7, cam: [58.1, 36.1, 1.15], look: metallica, look_h: 1.5, lens: 50, ease: linear}
+    bg: house_front
+    act: {start: 下からメタリカ, do: 東（村の外）の方へ顔を向け、企むように笑う, end: 朝日を受けて企み顔のメタリカ, sync: L266「だが、とにかく今日はダメだ。少し、用事ができたからな。」は 0.3秒から}
+    camera: 南東の少し低い所から、ゆっくり寄る
+    pose: {metallica: "arms crossed, seen from slightly below"}
+    pose_end: {metallica: "turning toward the morning sun with a scheming grin, seen from slightly below"}
+    kind: M
+  A08b-038:
+    frame: 全身
+    keys:
+      luckiny:
+        - {t: 0.0, at: c160, face: 339, pose: bow}
+        - {t: 0.4, at: c160, face: 339, pose: stand}
+        - {t: 0.8, at: c160, face: 339, pose: crouch}
+        - {t: 1.2, at: c160, z: 0.6, face: 339, pose: arms_up, ease: out}
+        - {t: 1.6, at: c160, z: 0.0, face: 339, pose: crouch, ease: in}
+        - {t: 2.0, at: c160, z: 0.6, face: 339, pose: arms_up, ease: out}
+        - {t: 2.4, at: c160, z: 0.0, face: 339, pose: stand, ease: in}
+        - {t: 6.6, at: c160, face: 339, pose: bow}
+        - {t: 7.4, at: c160, face: 339, pose: arms_up}
+        - {t: 9.9, at: c160, face: 339, pose: arms_up}
+    cam_keys:
+      - {t: 0.0, cam: [54.6, 36.6, 0.35], look: luckiny, look_h: 1.0, lens: 28, frame: 全身}
+      - {t: 9.9, cam: [54.8, 36.5, 0.35], look: luckiny, look_h: 1.1, lens: 28, ease: linear}
+    bg: house_front
+    act: {start: 西の低い位置から（背後に朝日）, do: ルッキーニィが跳び上がって喜び、礼を言って頭を下げ、また手を上げる, end: 両手を上げて喜ぶルッキーニィ、背後に朝日, sync: L267「ほ、本当ですか！ありがとうございます！」は 0.3秒から、L268「“スズの音草”は、必ず探しておきます！」は 6.4秒から}
+    camera: 西の低い位置から煽る。背後に朝日（逆光）
+    pose: {luckiny: "jumping for joy, both arms up, backlit by the morning sun, seen from below"}
+    pose_end: {luckiny: "both arms up, beaming, backlit by the morning sun, seen from below"}
+    kind: A
+  A08b-039:
+    frame: 大引き
+    keys:
+      metallica:
+        - {t: 0.0, at: m1, face: 100, pose: proud}
+        - {t: 0.4, at: m1, face: 280, pose: stand}
+        - {t: 4.2, at: m1, face: 280, pose: stand}
+        - {t: 9.2, at: leave, face: 265, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: h0, face: 100, pose: stand}
+        - {t: 4.2, at: h0, face: 270, pose: stand}
+        - {t: 9.2, at: [48.4, 32.4], face: 265, pose: walk, ease: linear}
+      luckiny:
+        - {t: 0.0, at: c160, face: 339, pose: arms_up}
+        - {t: 4.4, at: c160, face: 280, pose: wave}
+        - {t: 9.2, at: c160, face: 275, pose: wave}
+      tito:
+        - {t: 0.0, at: t1, face: 210, pose: stand}
+        - {t: 4.4, at: t1, face: 260, pose: bow}
+        - {t: 9.2, at: t1, face: 260, pose: bow}
+    cam_keys:
+      - {t: 0.0, cam: [55.4, 38.6, 1.6], look: metallica, look_h: 1.3, lens: 32, frame: 全身}
+      - {t: 4.2, cam: [56.5, 39.5, 3.0], look: [55.0, 34.0], look_h: 1.0, lens: 30, ease: inout}
+      - {t: 9.2, cam: [64.0, 46.0, 17.0], look: [48.0, 30.0], look_h: 0.0, lens: 24, frame: 大引き, ease: in}
+    bg: village_high
+    act: {start: 南からメタリカ, do: 「帰るぞ、百騎兵」。メタリカと百騎兵が西へ歩き去り、ルッキーニィが手を振り、ティトが頭を下げる。カメラが大きく引いて上がる, end: 朝日の村と砂漠の全景（砂漠編の締め）, sync: L269「では帰るぞ、百騎兵。犬コロたちの様子が気になる。」は 0.3秒から}
+    camera: 南から。大きく引いて上がり（クレーン）、村と砂漠の全景で締める
+    pose: {metallica: "turning to leave", hundred-knight: "standing", luckiny: "waving", tito: "standing"}
+    pose_end: {metallica: "walking away westward, tiny", hundred-knight: "following her, tiny", luckiny: "waving goodbye, tiny", tito: "bowing, tiny"}
+    kind: A
