@@ -14,7 +14,8 @@ for v in plan["videos"]["items"]:
     for r in v["image_references"]:
         who = r.split("/")[1].replace("_sheet_01.png", "")
         med.append({"role": "image_references", "value": m[VIEW[who]]}); refs.append(VIEW[who])
-    med.append({"role": "video_references", "value": m[v["previs"]]}); refs.append(v["previs"])
+    p480 = v["previs"].replace("previs/A02/", "tmp/hf/previs480/")   # 854x480 に変換した下絵（768x432 のままだと失敗した、2026-10-30）
+    med.append({"role": "video_references", "value": m[p480]}); refs.append(v["previs"] + "（854x480 に変換）")
     if v["audio_reference"]:
         a = v["audio_reference"].split("（")[0]
         med.append({"role": "audio_references", "value": m[a]}); refs.append(a)
