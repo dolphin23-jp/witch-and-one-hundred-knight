@@ -386,7 +386,49 @@ class Stage:
                             res["overlap"].append({"cut": cut, "which": which, "who": [ws[i], ws[j]],
                                                    "d": round(math.dist(pos[ws[i]], pos[ws[j]]), 2)})
             prev_vis = {e["who"] for e in self.frame(cut, "end")["people"]}
+        res["camera"] = self.camera_variety()
         return res
+
+    # カメラの単調さ（D-058）: 同じ向き・止め・同じ高さが続くと、背景が動かず低予算に見える
+    MOVE_WORDS = ("push", "pull", "pan", "tilt", "track", "follow", "crane", "寄る", "引く", "振る", "追", "クレーン", "動く")
+
+    def is_moving(self, cut):
+        c = self.bk["cuts"][cut]
+        if any(k in c for k in ("cam_end", "look_end", "lens_end", "cam_t")):
+            return True
+        txt = str(c.get("camera", "")) + str(c.get("cam_move", ""))
+        return any(w in txt for w in self.MOVE_WORDS) and "止め" not in txt
+
+    def camera_variety(self):
+        out = []
+        cuts = [c for c in self.order if not self.bk["cuts"][c].get("insert")]
+        bear = {c: self.frame(c, "start")["bearing"] for c in cuts}
+        h = {c: self.bk["cuts"][c]["cam"][2] for c in cuts}
+
+        def diff(a, b):
+            d = abs(a - b) % 360
+            return min(d, 360 - d)
+
+        def runs(ok):   # ok(prev_run_first, cut) が続く間を1つの並びにする
+            run = [cuts[0]] if cuts else []
+            for c in cuts[1:]:
+                if ok(run[0], c):
+                    run.append(c)
+                else:
+                    yield run
+                    run = [c]
+            if run:
+                yield run
+        for r in runs(lambda f, c: diff(bear[f], bear[c]) <= 30):
+            if len(r) >= 3:
+                out.append({"kind": "同じ向きが続く", "cuts": r, "note": f"{len(r)}カット、{bear[r[0]]}°付近"})
+        for r in runs(lambda f, c: not self.is_moving(f) and not self.is_moving(c)):
+            if len(r) >= 3 and not self.is_moving(r[0]):
+                out.append({"kind": "止めが続く", "cuts": r, "note": f"{len(r)}カット"})
+        for r in runs(lambda f, c: abs(h[f] - h[c]) <= 0.4):
+            if len(r) >= 4:
+                out.append({"kind": "同じ高さが続く", "cuts": r, "note": f"{len(r)}カット、{h[r[0]]}m 付近"})
+        return out
 
 
 # ---------- 図 ----------
@@ -856,6 +898,7 @@ def main():
         hid.setdefault(x["cut"][-3:], set()).add(SHORT[x["who"]])
     L.append(f"- 映さないことにしたのに画面に入る人物: {len(hid)}カット" + ("" if not hid else "（" + "、".join(f"{k} {''.join(sorted(v))}" for k, v in hid.items()) + "）"))
     L.append(f"- 人物の重なり（0.45m 未満）: {len(ck['overlap'])}" + ("" if not ck["overlap"] else "（" + "、".join(f"{x['cut'][-3:]}" for x in ck["overlap"]) + "）"))
+    L.append(f"- カメラの単調さ（D-058。同じ向き3カット以上・止め3カット以上・同じ高さ4カット以上）: {len(ck['camera'])}" + ("" if not ck["camera"] else "（" + "、".join(f"{x['kind']} {x['cuts'][0][-3:]}〜{x['cuts'][-1][-3:]}" for x in ck["camera"]) + "）"))
     (out_dir / "staging_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     (out_dir / "staging_report.yaml").write_text(yaml.safe_dump({"cuts": data, "checks": ck}, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
     files = render(st, out_dir, scene.get("sections", []))
@@ -863,8 +906,8 @@ def main():
     print(out_dir / "staging_report.md")
     for p in files:
         print(p)
-    print("軸", len(ck["axis"]), "飛び", len(ck["jumps"]), "画面外", len(ck["offscreen"]), "重なり", len(ck["overlap"]), "隠れ", len(ck["hidden"]))
-    for k in ("axis", "jumps", "overlap", "hidden"):
+    print("軸", len(ck["axis"]), "飛び", len(ck["jumps"]), "画面外", len(ck["offscreen"]), "重なり", len(ck["overlap"]), "隠れ", len(ck["hidden"]), "カメラの単調さ", len(ck["camera"]))
+    for k in ("axis", "jumps", "overlap", "hidden", "camera"):
         for x in ck[k]:
             print(" ", k, x)
 

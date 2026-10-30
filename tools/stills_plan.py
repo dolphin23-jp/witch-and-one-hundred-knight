@@ -29,6 +29,12 @@ STYLE = ("2D TV anime style, clean line art, cel shading, rich but soft colors, 
 CLOSE = ("寄り", "大寄り", "胸上")
 
 
+def compass(b):
+    """カメラの向き（方位、北が 0°・東が 90°）を英語の方角に。"""
+    names = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"]
+    return names[round((b % 360) / 45) % 8]
+
+
 def view_files(who, body, frame):
     """体の向き（staging の body）に合う設定画の切り抜き（characters/<人物>/views、characters/views.yaml）。"""
     if body.startswith("正面"):
@@ -115,7 +121,9 @@ def build(st, cut, which="start"):
     if c.get("tilt") == "down" or h > 3.0:
         cam += ", high angle looking down"
     prompt = (f"{cam}. {text} "
-              f"Background and setting: follow image{'s' if len(bg_idx) > 1 else ''} {', '.join(map(str, bg_idx))} (same place, same props and layout). "
+              f"Background: image{'s' if len(bg_idx) > 1 else ''} {', '.join(map(str, bg_idx))} only show{'' if len(bg_idx) > 1 else 's'} what this place looks like (buildings, trees, materials, colors); "
+              f"do not copy {'their' if len(bg_idx) > 1 else 'its'} viewpoint or framing. The camera here faces {compass(fr['bearing'])}; draw only what is behind the characters in that direction, as described above"
+              + (", with the background softly out of focus (shallow depth of field)" if c["frame"] in CLOSE or c["lens"] >= 70 else "") + ". "
               f"Composition: image {n} is a rough layout sketch with colored placeholder figures; follow its camera angle, framing and the positions and "
               f"facing of the characters, but do not draw the placeholders, labels or flat colors. "
               f"Keep each character's design, colors and proportions identical to their character reference images. {STYLE}")
