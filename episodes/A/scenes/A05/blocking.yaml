@@ -98,6 +98,7 @@ cuts:
     fx:
       - {kind: ring, t: [0.0, 4.5], at: [39.6, 33.6], r: 3.0, n: 4}
       - {kind: ring, t: [0.6, 4.5], at: [42.6, 34.0], r: 2.0, n: 3}
+    bg: sand
     extra_en: "In the foreground the sand surface trembles: fine grains hop and concentric ripples spread across the sand; small scattered sand-sheep bones rattle on the sand."
     act: {start: 砂の表面すれすれ。砂粒が震え、同心円の波紋が広がる。手前の砂羊の骨がカタカタ跳ねる, do: カメラが砂の上を這うように二人へ近づく。奥で身を低くしたルッキーニィが震えながら周りを見る, end: 二人の足元と、広がる波紋, sync: L145「あん？そいつら、何かに怯えているのか？」}
     camera: 砂すれすれの低いドリーで二人へ前進
@@ -131,6 +132,7 @@ cuts:
     pose: {luckiny: "crouching low, frozen in fear (seen from directly above)", hundred-knight: "standing still (seen from directly above)"}
     pose_end: {luckiny: "crouching low, frozen in fear (seen from directly above)", hundred-knight: "turning to look behind (seen from directly above)"}
     tilt: down
+    bg: overhead
     kind: A
 
   # ---------- 砂食み（005〜008） ----------
@@ -218,6 +220,7 @@ cuts:
     pose: {luckiny: "lying flat on the sand far below", hundred-knight: "crouching on the sand far below"}
     pose_end: {luckiny: "lying flat on the sand far below", hundred-knight: "crouching on the sand far below"}
     tilt: down
+    bg: overhead
     kind: A
   A05-008:
     frame: 大引き

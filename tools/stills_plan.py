@@ -107,6 +107,15 @@ def build(st, cut, which="start"):
             name = pl["en"].split(" (")[0]
             sizes.append(f"{name} {pl['h']} m" + (" (small, only about waist-high to an adult)" if e["who"] == "hundred-knight" else ""))
         text += " Heights: " + "; ".join(sizes) + "."
+    for name, cr in (st.lay.get("creatures") or {}).items():   # 生き物（D-060）: 指示文に出てくるときだけ設定画の切り抜きを添える
+        if name not in (st.bk["cuts"][cut].get("creatures") or {}) or name.replace("-", " ") not in text.replace("-", " "):
+            continue
+        files = [f"characters/{name}/views/{name}_{v}.png" for v in ("side", "front") if (ROOT / f"characters/{name}/views/{name}_{v}.png").exists()]
+        idx = list(range(n + 1, n + 1 + len(files)))
+        n += len(files)
+        refs += files
+        en = cr["en"].split(":")[0]
+        text += f" {en[0].upper() + en[1:]} (design reference: image{'s' if len(idx) > 1 else ''} {', '.join(map(str, idx))}): {cr['en'].split(':', 1)[-1].strip()}; keep its shape, segments and colors identical to the reference."
     pf = {**PANEL_FILE, **(st.lay.get("panels") or {})}   # 場所ごとのパネル（layout の panels）
     bgs = [pf[p] for p in b["panels"] if p in pf]
     bg_idx = []

@@ -228,11 +228,19 @@ class Stage:
                 continue
             v = (p[0] - cam[0], p[1] - cam[1])
             z = dot(v, d)
-            if z <= 0.2:
-                continue
-            s = dot(v, right) / z / th
-            if abs(s) > 1.1:
-                continue
+            ch = c["cam"][2]
+            if ch > 6.0 and math.dist(cam, look) < ch * 0.5:   # 真上に近い俯瞰: 見る点からの地面のずれを、高さで割って画面の左右にする
+                lv = (p[0] - look[0], p[1] - look[1])
+                s = dot(lv, right) / (ch * th)
+                if abs(s) > 1.1 or abs(dot(lv, d)) > ch * th * 9 / 16 * 1.1:
+                    continue
+                z = ch
+            else:
+                if z <= 0.2:
+                    continue
+                s = dot(v, right) / z / th
+                if abs(s) > 1.1:
+                    continue
             e = {"who": who, "s": round(s, 2), "dist": round(z, 2)}
             e["side"] = "左" if s < -0.33 else ("右" if s > 0.33 else "中央")
             # 体の向き: 人物からカメラへの向きと、体の向きの差
@@ -838,7 +846,10 @@ def sketch(st, cut, which, path, W=1536, H=864):
             continue
         w = f * (0.55 if who != "arlecchino" else 0.8) / b[2]
         col = COLORS.get(who, (255, 255, 255))
-        d.rounded_rectangle([b[0] - w / 2, t[1], b[0] + w / 2, b[1]], radius=int(w / 2.2) + 1, fill=col, outline=(20, 20, 20), width=3)
+        y0, y1 = sorted((t[1], b[1]))   # 真上からの俯瞰では頭が足より下に写ることがある
+        if y1 - y0 < w:   # 真上から見ると縦が潰れるので、丸く描く
+            y0, y1 = (y0 + y1) / 2 - w / 2, (y0 + y1) / 2 + w / 2
+        d.rounded_rectangle([b[0] - w / 2, y0, b[0] + w / 2, y1], radius=int(w / 2.2) + 1, fill=col, outline=(20, 20, 20), width=3)
         # 顔の向き（頭の位置に、体の向きの矢印）
         hv = vec_of(face[who])
         sx = dot(hv, right)
