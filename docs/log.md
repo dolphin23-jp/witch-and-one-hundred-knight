@@ -160,3 +160,4 @@
   - 人物（各2案、characters/<人物>/design/）: 怯えきった獣人（villager-a、中年の男）、蒼白な獣人（villager-b、若い男）、冷淡な獣人（villager-c、年配の女）、恐慌状態の獣人（villager-d、年配の男）、水瓶売りの商人（water-merchant、人間）。性別と年齢は台詞と声の高さからの推定。候補を並べた画像は characters/gen/<人物>_candidates.jpg（上が案1、下が案2）。ユーザーが選んだら refs/<人物>_sheet_01 として登録し、向きごとに切り抜く。
   - 背景（world/underground-cavern/）: 全景・奥・俯瞰・壁際・井戸の中。一次QC: 俯瞰は真下ではなく高い斜めで、井戸の穴が写った（hold、俯瞰の資料としては使える）。奥は光の柱が画面に入った。並べた画像は world/underground-cavern/contact.jpg。
   - 1回目の送信で 4本が「rate_limit_reached（429）」で受け付けられず（ジョブも費用もなし）、承認済みの同じ内容で送り直した。
+- 2026-10-30: 村人4人と商人の設定画はユーザー判断「全て案1で良い」。refs/<人物>_sheet_01 に登録し、向きごとに切り抜いた（characters/<人物>/views）。地下空洞の背景は world/desert-panels.yaml に足した。
