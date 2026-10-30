@@ -1,0 +1,47 @@
+# A05b 村とティトの家（A05 の 013〜020）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05b-020
+scene: A05b
+tc: 42.9
+sec: 10.0
+kind: A
+shot: 寄り→大引き・ティトの家の窓・村
+acting: 外。ティトの家の窓明かりから、カメラが大きく上がって星空の下の村全体へ
+dialogue:
+- L168「あん？こいつら、もしかして“星読み”か。」
+- L173「……だが、その“星読み”自身が道に迷って行き倒れているんじゃ、話にならん！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 53.4
+  - 20.6
+  - 1.7
+  look: window
+  lens: 35
+  move: 窓から離れて大きく上がり（クレーン）、星空の下の村全体へ（見せ場）
+background: beast-village
+image: null
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 外。ティトの家の窓明かりの寄り
+  end: 星空の下の村全体
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 星空の下の村〔村 俯瞰〕
+  panels:
+  - 村 俯瞰
+  staging_en: 'No people in frame. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky. Behind: the small village
+    in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue
+    sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+  staging_en_end: 'No people in frame. High above the whole small village in the valley at night: dark houses with red tiled roofs, a few warm lit windows, red cliffs all around under a sky full of stars.
+    Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night
+    in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+  sketch:
+  - episodes/A/scenes/A05b/gen/sketch/A05b-020_start.png
+  - episodes/A/scenes/A05b/gen/sketch/A05b-020_end.png

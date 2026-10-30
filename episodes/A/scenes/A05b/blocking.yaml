@@ -1,0 +1,223 @@
+# A05b 村とティトの家（013〜020）の立ち位置・動き・カメラ（D-058、D-060「動きを先に決める」、D-062「3D を全編先に」）。Claude の案（2026-10-30）
+# Living Spec「A05 動きの設計（案）」タブの 013〜020（ユーザー承認: 進め方）。カットの番号は A05 の続き
+# 場所は world/beast-village-layout.yaml（x: 西0→東70、y: 北0→南60、m）。方位: 北 0・東 90・南 180・西 270
+# ティトの家（x 53〜60、y 23〜29）は中に入れる: 南の壁に扉（x 57.8）、北の壁の西寄りに窓（x 54.6）、東寄りに奥の部屋への出入口（x 58.6、カーテン）
+# 光: 013〜015 は夕方（lighting: dusk）、016〜019 は夜の家の中、020 は夜の外（lighting: night）
+# 動きのキーの書き方は episodes/A/scenes/A05/blocking.yaml の頭のコメント。姿勢に bow（お辞儀）・look_up（見上げる）・hold / kneel_hold（両手で包む）・gesture（片手で示す）を足した
+scene: A05b
+layout: world/beast-village-layout.yaml
+map_ymax: 60
+lighting: dusk
+
+places:
+  lk_a:    [12.6, 54.0]   # 013 ルッキーニィ 岩の隙間の手前
+  hk_a:    [12.6, 55.8]   # 013 百騎兵
+  lk_b:    [13.3, 46.2]   # 013 終わり（隙間を抜けた先）
+  hk_b:    [12.9, 47.8]
+  hk_c0:   [20.3, 41.6]   # 014 門を入ったところ
+  lk_c0:   [21.5, 40.4]
+  hk_c1:   [22.6, 39.6]   # 014 百騎兵が止まる
+  lk_run:  [31.5, 36.8]   # 014 ルッキーニィが走り去る先（東のはずれのティトの家の方）
+  hk_w0:   [32.4, 27.0]   # 015 井戸の奥を通る
+  hk_w1:   [34.6, 27.1]   # 015 立ち止まる
+  well:    [34.0, 30.0]
+  hk_in:   [57.65, 27.6]   # 016〜019 家の中の百騎兵（扉を入ったところ）
+  ti_back: [58.6, 22.2]   # 016 ティト 奥の部屋
+  ti_cur:  [58.6, 23.6]   # 016 カーテンを抜けたところ
+  ti_kn:   [57.65, 26.85]  # 016〜018 百騎兵の前でひざをつく
+  ti_via:  [57.3, 25.4]   # 018 窓へ歩く途中（テーブルを避ける）
+  ti_win:  [54.7, 23.95]  # 018〜019 窓辺
+  window:  [54.6, 23.0]
+
+start:
+  hundred-knight: {at: hk_a, face: 0}
+  luckiny:        {at: lk_a, face: 0}
+  tito:           {at: ti_back, face: 180}
+
+cuts:
+  # ---------- 村に着く（013〜015、夕方） ----------
+  A05b-013:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_a, pose: walk}
+        - {t: 1.4, at: [12.8, 51.4], pose: walk, ease: linear}
+        - {t: 2.6, at: [13.0, 49.4], face: 190, pose: walk, ease: linear}
+        - {t: 4.5, at: lk_b, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: hk_a, pose: walk}
+        - {t: 4.5, at: hk_b, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: {follow: hundred-knight, offset: [0.4, 3.0], z: 1.3}, look: luckiny, look_h: 1.0, lens: 35, frame: 全身}
+      - {t: 2.2, cam: {follow: hundred-knight, offset: [0.4, 2.6], z: 1.7}, look: luckiny, look_h: 1.0, lens: 35, ease: linear}
+      - {t: 4.5, cam: [13.4, 49.6, 10.0], look: [36.0, 30.0], look_h: 0.0, lens: 24, frame: 大引き}
+    extra_en_end: "Beyond the rocks, the whole small village in the sandy valley comes into view below: wooden houses with red tiled roofs, low stone walls, a stone well in the middle, red cliffs all around in the sunset."
+    act: {start: 夕焼け。赤い岩の狭い隙間を、ルッキーニィと百騎兵が後ろから見て抜けていく, do: ルッキーニィが振り返って「お疲れ様でした」。隙間を抜けたところでカメラが岩の上へクレーンで上がる, end: 夕日の谷に村が一望できる, sync: L154「お疲れ様でした！なんとか、たどり着きましたね。」は 0.3秒から}
+    camera: 後ろから追い、岩の上へクレーンで上がると谷の村が見える（見せ場）
+    pose: {luckiny: "walking ahead through the narrow gap between the red rocks", hundred-knight: "walking behind her"}
+    pose_end: {luckiny: "walking out of the gap toward the village, small in the frame", hundred-knight: "walking behind her, small in the frame"}
+    kind: A
+  A05b-014:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_c0, face: 225, pose: walk}
+        - {t: 1.0, at: [22.2, 39.8], face: 225, pose: bow, ease: linear}
+        - {t: 2.4, at: [23.2, 39.0], face: 225, pose: bow, ease: linear}
+        - {t: 2.9, at: [23.6, 38.7], face: 225, pose: stand, ease: out}
+        - {t: 3.2, at: [23.9, 38.6], face: 100, pose: run}
+        - {t: 4.8, at: lk_run, pose: run, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: hk_c0, pose: walk}
+        - {t: 3.0, at: [22.4, 39.8], pose: walk, ease: linear}
+        - {t: 3.4, at: hk_c1, face: 60, pose: stand, ease: out}
+        - {t: 4.8, at: hk_c1, face: 95, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: hundred-knight, offset: [-1.2, -3.0], z: 1.15}, look: hundred-knight, look_h: 0.9, lens: 35, frame: 全身}
+      - {t: 3.0, cam: {follow: hundred-knight, offset: [-1.2, -3.0], z: 1.15}, look: luckiny, look_h: 1.0, lens: 35, ease: linear}
+      - {t: 4.8, cam: [21.4, 36.6, 1.15], look: luckiny, look_h: 0.9, lens: 45, ease: out}
+    act: {start: 門を入った村の道。百騎兵の前を、ルッキーニィが後ろ向きに歩く, do: ルッキーニィが頭を下げて「家に来てください」と誘い、くるっと向きを変えて東のはずれの家の方へ駆けていく, end: 小さくなるルッキーニィの背中と、見送る百騎兵, sync: L155「助けて頂いたお礼にご馳走しますので、家に来てください。」は 0.2秒から}
+    camera: 二人の前を後ろ向きに進む → 止まって、走り去るルッキーニィを追って振る
+    pose: {luckiny: "walking backward in front of the Hundred Knight, bowing politely", hundred-knight: "walking toward her"}
+    pose_end: {luckiny: "running off toward a house at the far edge of the village, seen from behind", hundred-knight: "standing, watching her go"}
+    kind: M
+  A05b-015:
+    frame: 引き
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_w0, pose: walk}
+        - {t: 1.2, at: hk_w1, pose: walk, ease: linear}
+        - {t: 1.5, at: hk_w1, face: 90, pose: stand, ease: out}
+        - {t: 2.2, at: hk_w1, face: 195, pose: stand}
+        - {t: 7.4, at: hk_w1, face: 195, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [36.6, 32.2, 0.75], look: [33.8, 27.8], look_h: 0.6, lens: 32, frame: 引き}
+      - {t: 2.8, cam: [36.6, 32.2, 0.75], look: [34.3, 28.3], look_h: 0.6, lens: 32}
+      - {t: 7.4, cam: [34.85, 30.85, 1.6], look: well, look_h: 0.4, lens: 55, frame: 寄り, ease: inout}
+    bg: well
+    extra_en: "In the foreground stands an old round stone well with a dark open mouth."
+    extra_en_end: "Close on the dark mouth of the old stone well; deep at the bottom there is a faint green glow."
+    act: {start: 手前に古い石の井戸。奥を百騎兵が横切る, do: メタリカの「あん？」で百騎兵が立ち止まり、振り返る。ピントが井戸に移り、カメラが井戸の暗い口へゆっくり寄る, end: 井戸の底にかすかな緑の光, sync: L158「あん？その付近にピラーの存在を感じるぞ……。」は 0.3秒から、L159「だが、位置がよくわからんな……？」は 4.8秒から}
+    camera: 南東から井戸を手前に低く、西日の逆光。台詞でピントを井戸へ送り、口へゆっくり寄る（下絵ではピント送りはしない）
+    pose: {hundred-knight: "walking past behind the well, then stopping and looking back"}
+    pose_end: {hundred-knight: "standing still behind the well, looking back toward it"}
+    kind: M
+
+  # ---------- ティトの家（016〜019、夜の家の中） ----------
+  A05b-016:
+    frame: 全身
+    lighting: night
+    only: [tito, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 0, pose: stand}
+        - {t: 6.2, at: hk_in, face: 0, pose: stand}
+      tito:
+        - {t: 0.0, at: ti_back, face: 180, pose: walk}
+        - {t: 0.6, at: ti_cur, pose: walk, ease: linear}
+        - {t: 2.2, at: [57.9, 26.6], pose: walk, ease: linear}
+        - {t: 2.6, at: ti_kn, face: 180, pose: kneel_hold, ease: out}
+        - {t: 6.2, at: ti_kn, face: 180, pose: kneel_hold}
+    cam_keys:
+      - {t: 0.0, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, frame: 全身}
+      - {t: 2.6, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
+      - {t: 6.2, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
+    bg: tito_room
+    light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
+    act: {start: 家の中。扉を入ったところに立つ百騎兵の後ろから、奥のカーテンの出入口を見る, do: ティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 0.2秒から}
+    camera: 百騎兵の後ろからティトを追って振り、肩越しで止まる
+    pose: {tito: "hurrying out through the curtained doorway at the back", hundred-knight: "standing in the room, seen from behind"}
+    pose_end: {tito: "kneeling in front of the Hundred Knight, holding its gauntlet in both hands", hundred-knight: "standing, seen from behind over the shoulder"}
+    kind: M
+  A05b-017:
+    frame: 寄り
+    lighting: night
+    only: [tito, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 0, pose: stand}
+      tito:
+        - {t: 0.0, at: ti_kn, face: 180, pose: kneel_hold}
+        - {t: 1.6, at: ti_kn, face: 180, pose: kneel}
+        - {t: 5.0, at: ti_kn, face: 180, pose: kneel}
+    cam_keys:
+      - {t: 0.0, cam: [57.25, 28.1, 0.95], look: tito, look_h: 0.95, lens: 50, frame: 寄り}
+      - {t: 5.0, cam: [57.35, 27.85, 0.95], look: tito, look_h: 0.95, lens: 60, ease: linear}
+    bg: tito_door
+    light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
+    act: {start: 切り返し。ひざをついたティトの寄り, do: 手を離し、心配そうに笑う, end: ティトの顔, sync: L163「魔女になると言って、３日前に出ていったきりで、心配してたんです。」は 0.15秒から}
+    camera: 切り返しの寄り。ゆっくり寄る
+    pose: {tito: "kneeling, holding the Hundred Knight's gauntlet, smiling with worry", hundred-knight: "standing in the foreground, seen from behind at the edge of the frame"}
+    pose_end: {tito: "kneeling, smiling with worry", hundred-knight: "standing in the foreground at the edge of the frame"}
+    kind: M
+  A05b-018:
+    frame: 全身
+    lighting: night
+    only: [tito, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 0, pose: stand}
+        - {t: 8.8, at: hk_in, face: "@tito", pose: stand}
+      tito:
+        - {t: 0.0, at: ti_kn, face: 180, pose: kneel}
+        - {t: 0.8, at: ti_kn, face: 180, pose: stand, ease: out}
+        - {t: 1.4, at: [57.6, 26.6], face: 300, pose: gesture}
+        - {t: 3.4, at: ti_via, pose: gesture, ease: linear}
+        - {t: 6.8, at: [54.8, 24.05], pose: walk, ease: linear}
+        - {t: 7.4, at: ti_win, face: 0, pose: stand, ease: out}
+        - {t: 8.8, at: ti_win, face: 0, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: tito, offset: [1.2, -0.6], z: 1.3}, look: tito, look_h: 1.0, lens: 28, frame: 全身}
+      - {t: 8.8, cam: {follow: tito, offset: [1.2, -0.6], z: 1.3}, look: tito, look_h: 1.1, lens: 28}
+    bg: tito_door
+    light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
+    act: {start: ひざをついたティトが立ち上がる, do: 何もない家の中を片手で示しながら、テーブルをよけて窓の方へ歩く, end: 窓辺で立ち止まる, sync: L164「何か、お礼をさせて頂きたいのですが、今は、砂羊の出荷が全て終わった時期でして村には何もないのです……。」は 0.2秒から}
+    camera: ティトの横に並んで一緒に動く（トラック）
+    pose: {tito: "getting up from kneeling, gesturing at the bare room with one hand", hundred-knight: "standing near the door, watching her"}
+    pose_end: {tito: "standing at the small window, her back half turned", hundred-knight: "standing near the door"}
+    kind: M
+  A05b-019:
+    frame: 寄り
+    lighting: night
+    only: [tito]
+    keys:
+      tito:
+        - {t: 0.0, at: ti_win, face: 0, pose: stand}
+        - {t: 0.6, at: ti_win, face: 0, pose: look_up}
+        - {t: 2.2, at: ti_win, face: 0, pose: look_up}
+        - {t: 3.0, at: ti_win, face: 150, pose: stand}
+        - {t: 6.2, at: ti_win, face: 150, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [55.45, 24.95, 1.45], look: tito, look_h: 1.35, lens: 35, frame: 寄り}
+      - {t: 3.4, cam: [55.45, 24.95, 1.45], look: tito, look_h: 1.35, lens: 35}
+      - {t: 5.4, cam: [55.2, 24.7, 1.3], look: [54.5, 20.5], look_h: 4.0, lens: 28, ease: inout}
+      - {t: 6.2, cam: [55.2, 24.7, 1.3], look: [54.5, 20.5], look_h: 4.0, lens: 28}
+    bg: tito_window
+    light_en: "Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window."
+    extra_en_end: "Through the small window, a deep blue night sky full of bright stars."
+    act: {start: 窓辺のティトの肩越し。窓の外の星空を見上げる, do: 振り返って、申し訳なさそうに笑う。カメラが肩越しから窓の外の星空へ上へ振る, end: 窓の外の満天の星, sync: L165「それに、何かお手伝いしようにも私たちは“星を読む”ことしかできないもので……。」は 0.2秒から}
+    camera: 肩越しから、窓の外の星空へ上へ振る（ティルト）
+    pose: {tito: "standing at the window, looking up at the starry sky"}
+    pose_end: {tito: "turned back toward the room with an apologetic smile, below the window"}
+    kind: M
+
+  # ---------- 星読み（020、夜の外） ----------
+  A05b-020:
+    frame: 寄り
+    lighting: night
+    only: []
+    cam_keys:
+      - {t: 0.0, cam: [53.4, 20.6, 1.7], look: window, look_h: 1.55, lens: 35, frame: 寄り}
+      - {t: 1.2, cam: [53.4, 20.6, 1.7], look: window, look_h: 1.55, lens: 35}
+      - {t: 9.0, cam: [40.0, 10.0, 16.0], look: [38.0, 30.0], look_h: 0.0, lens: 24, frame: 大引き, ease: inout}
+      - {t: 10.0, cam: [40.0, 10.0, 16.0], look: [38.0, 30.0], look_h: 0.0, lens: 24}
+    bg: village_night
+    light_en: "Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns."
+    extra_en: "Close on the small lit window of Tito's house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky."
+    extra_en_end: "High above the whole small village in the valley at night: dark houses with red tiled roofs, a few warm lit windows, red cliffs all around under a sky full of stars."
+    act: {start: 外。ティトの家の窓明かりの寄り, do: メタリカの声のなか、カメラが窓から離れて大きく上がる（クレーン）, end: 星空の下の村全体, sync: L168「あん？こいつら、もしかして“星読み”か。」は 0.3秒から、L173「……だが、その“星読み”自身が道に迷って行き倒れているんじゃ、話にならん！」は 3.6秒から}
+    camera: 窓から離れて大きく上がり（クレーン）、星空の下の村全体へ（見せ場）
+    kind: A

@@ -1,0 +1,49 @@
+# A05b 村とティトの家（A05 の 013〜020）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05b-014
+scene: A05b
+tc: 4.5
+sec: 4.8
+kind: M
+shot: 全身・ルッキーニィ・百騎兵
+acting: ルッキーニィが後ろ向きに歩きながら頭を下げて誘い、向きを変えて家の方へ駆けていく
+dialogue:
+- L155「助けて頂いたお礼にご馳走しますので、家に来てください。」
+sound: null
+notes: null
+camera:
+  pos: follow hundred-knight offset [-1.2, -3.0] z 1.15
+  look: hundred-knight
+  lens: 35
+  move: 二人の前を後ろ向きに進む → 止まって、走り去るルッキーニィを追って振る
+background: beast-village
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 門を入った村の道。百騎兵の前を、ルッキーニィが後ろ向きに歩く
+  end: 小さくなるルッキーニィの背中と、見送る百騎兵
+timing:
+  lead: 0.2
+blocking:
+  start: 百（中央・正面）
+  end: ル（中央・背中）
+  background: 東の崖〔村 一角〕／南の崖〔村 路地〕
+  panels:
+  - 村 一角
+  - 村 路地
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), walking toward her, in the center of the frame, facing the camera.
+    No other people. Behind: wooden houses with red tiled roofs, low stone walls and wooden fences, dry grass, red cliffs behind, then a narrow lane between wooden houses with stone foundations, clay jars,
+    the red cliffs beyond. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first
+    lamps lit.'
+  staging_en_end: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry
+    goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), running off toward a house at the far edge of the village, seen from behind, in the center of the frame,
+    with the back to the camera, small in the background. No other people. Behind: wooden houses with red tiled roofs, low stone walls and wooden fences, dry grass, red cliffs behind. Dusk in the desert
+    valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+  sketch:
+  - episodes/A/scenes/A05b/gen/sketch/A05b-014_start.png
+  - episodes/A/scenes/A05b/gen/sketch/A05b-014_end.png
