@@ -647,8 +647,8 @@ cuts:
         - {t: 1.0, at: m1, face: 159, pose: cross}
         - {t: 11.3, at: m1, face: 159, pose: look_down}
     cam_keys:
-      - {t: 0.0, cam: [56.9, 33.3, 2.1], look: luckiny, look_h: 0.9, lens: 35, frame: 全身}   # メタリカの後ろの高い所（メタリカの中に入っていて真っ黒だった）
-      - {t: 11.3, cam: [56.9, 33.4, 2.1], look: luckiny, look_h: 0.75, lens: 38, ease: linear}
+      - {t: 0.0, cam: [57.6, 33.3, 2.1], look: luckiny, look_h: 0.9, lens: 35, frame: 全身}   # メタリカの右後ろの高い所（メタリカは画の左の端）
+      - {t: 11.3, cam: [57.6, 33.4, 2.1], look: luckiny, look_h: 0.75, lens: 38, ease: linear}
     bg: house_front
     act: {start: メタリカの目の高さから, do: ルッキーニィがメタリカに向き直り、手を組んで頼み、「偉大なる沼の魔女様！」で深く頭を下げる, end: 頭を下げるルッキーニィを見下ろす, sync: L263「お願いです、魔女様！必ず、“スズの音草”は探しておきますので、弟子にしてください！」は 0.3秒から、L264「偉大なる、沼の魔女様！お願いします！」は 6.8秒から}
     camera: メタリカの目の高さから見下ろす（俯瞰。メタリカの肩ごし）
