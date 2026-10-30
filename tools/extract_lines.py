@@ -39,7 +39,8 @@ import soundfile as sf
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-NAMES = {"metallica": "メタリカ", "bisco": "ビスコ", "arlecchino": "アルレッキーノ"}
+NAMES = {"metallica": "メタリカ", "bisco": "ビスコ", "arlecchino": "アルレッキーノ", "luckiny": "ルッキーニィ", "tito": "ティト",
+         "villager-a": "怯えきった獣人", "villager-b": "蒼白な獣人", "villager-c": "冷淡な獣人", "villager-d": "恐慌状態の獣人"}
 
 HOP = 0.01          # 音量を測る間隔（秒）
 PRE_PAD = 0.08      # 声の前に残す余白
