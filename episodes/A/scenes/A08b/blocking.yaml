@@ -351,8 +351,8 @@ cuts:
         - {t: 1.0, at: m1, face: 159, pose: stand}
         - {t: 11.1, at: m1, face: 159, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [56.3, 34.9, 1.45], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り}
-      - {t: 11.1, cam: [56.35, 35.0, 1.45], look: luckiny, look_h: 1.15, lens: 50, ease: linear}
+      - {t: 0.0, cam: [55.85, 33.9, 1.5], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り}   # メタリカの右肩の後ろ（近すぎてメタリカが画を隠していた）
+      - {t: 11.1, cam: [55.9, 34.0, 1.5], look: luckiny, look_h: 1.15, lens: 50, ease: linear}
     bg: house_front
     act: {start: メタリカの肩越しにルッキーニィ, do: 慌てて首を振り、それから胸の前で手を組んで真剣に訴える, end: 手を組んで見上げるルッキーニィ, sync: L242「そ！そんなことはありません！沼の魔女様が一番です！」は 0.3秒から、L243「命の恩人であるメタリカ様の弟子になりたいんです」は 6.2秒から}
     camera: メタリカの肩越しの寄り
@@ -479,8 +479,8 @@ cuts:
         - {t: 4.3, at: m1, face: 39, pose: cross}
         - {t: 8.1, at: m1, face: 39, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [60.0, 34.2, 2.4], look: [57.2, 34.4], look_h: 1.2, lens: 35, frame: 寄り}
-      - {t: 8.1, cam: [59.8, 34.0, 2.3], look: [57.0, 34.1], look_h: 1.25, lens: 40, ease: linear}
+      - {t: 0.0, cam: [60.0, 34.2, 2.4], look: [57.2, 34.4], look_h: 1.2, lens: 30, frame: 寄り}
+      - {t: 8.1, cam: [59.8, 34.0, 2.3], look: [57.0, 34.1], look_h: 1.25, lens: 34, ease: linear}
     bg: house_front
     act: {start: 東から3人, do: ティトが慌ててルッキーニィをたしなめる。メタリカがティトへ向き直って説明を求める, end: 腕を組んでティトを見るメタリカ, sync: L251「ラナ！軽はずみなことを言ってはいけません！」は 0.3秒から、L252「あん？どういうことだ？説明しろ。」は 3.9秒から}
     camera: 東の少し高い所からの3人。ゆっくり寄る
@@ -503,11 +503,11 @@ cuts:
         - {t: 0.0, at: m1, face: 39, pose: cross}
         - {t: 8.1, at: m1, face: 39, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [59.3, 34.7, 1.3], look: tito, look_h: 1.3, lens: 50, frame: 寄り}
-      - {t: 8.1, cam: [59.2, 34.6, 1.3], look: tito, look_h: 1.3, lens: 55, ease: linear}
+      - {t: 0.0, cam: [55.8, 31.85, 1.3], look: tito, look_h: 1.3, lens: 50, frame: 寄り}   # 北西から（029〜031 が東・南東からなので向きを変える）
+      - {t: 8.1, cam: [55.9, 31.9, 1.3], look: tito, look_h: 1.3, lens: 55, ease: linear}
     bg: house_front
     act: {start: ティトの横顔, do: 小さく頭を下げてから、手振りを交えて「スズの音草」を説明する, end: 説明するティトの横顔, sync: L253「申し訳ありません。“スズの音草”とは人々の感情に反応する不思議な草のことです。」は 0.3秒から}
-    camera: 南東からティトの横顔の寄り
+    camera: 北西からティトの横顔の寄り
     pose: {tito: "in profile, apologizing with a small bow"}
     pose_end: {tito: "in profile, explaining with a gentle gesture"}
     kind: M
@@ -520,14 +520,14 @@ cuts:
         - {t: 1.0, at: t1, face: 95, pose: stand, ease: inout}
         - {t: 5.5, at: t1, face: 95, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [56.4, 33.2, 1.5], look: tito, look_h: 1.3, lens: 40, frame: 寄り}
-      - {t: 1.2, cam: [56.4, 33.2, 1.5], look: tito, look_h: 1.3, lens: 40}
-      - {t: 5.5, cam: [56.3, 33.3, 1.5], look: [72.0, 31.0], look_h: 1.0, lens: 40, frame: 大引き, ease: inout}
+      - {t: 0.0, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.3, lens: 40, frame: 寄り}   # ティトの南東。横顔から東の砂地へ約100度振る
+      - {t: 1.2, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.3, lens: 40}
+      - {t: 5.5, cam: [58.5, 34.4, 1.5], look: [72.0, 31.0], look_h: 1.0, lens: 40, frame: 大引き, ease: inout}
     bg: desert_edge
     light_en: "Early morning: the low sun rising in the east through the gap in the red cliffs, barren sand outside the village glowing gold."
-    act: {start: ティトの肩越し, do: ティトが村の外の方を見る。カメラがティトの横顔から、崖の切れ目の外の荒れた砂地へゆっくり振る, end: 村の外の荒れた砂地と朝日, sync: L254「昔はこの辺りに生えていたらしいのですが、今ではもう……。」は 0.3秒から}
-    camera: ティトの肩越しから、村の外の砂地へゆっくり振る（パン）
-    pose: {tito: "seen from behind over her shoulder, looking toward the desert"}
+    act: {start: ティトの横顔, do: ティトが村の外の方を見る。カメラがティトの横顔から、崖の切れ目の外の荒れた砂地へゆっくり振る, end: 村の外の荒れた砂地と朝日, sync: L254「昔はこの辺りに生えていたらしいのですが、今ではもう……。」は 0.3秒から}
+    camera: ティトの横顔（南東から）から、村の外の砂地へゆっくり振る（パン）
+    pose: {tito: "in profile, turning to look toward the desert outside the village"}
     kind: M
   A08b-030:
     frame: 寄り
