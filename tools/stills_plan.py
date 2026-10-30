@@ -85,6 +85,8 @@ def build_cel(st, cut, who, which="start"):
 
 def build(st, cut, which="start"):
     c = st.bk["cuts"][cut]
+    if which == "end":   # 終わりの画はカメラの終わり（cam_end・lens_end・frame_end）で書く
+        c = {**staging.cam_at(c, "end"), "lens": c.get("lens_end", c["lens"]), "frame": c.get("frame_end", c["frame"])}
     shot = yaml.safe_load((st.dir / "shots" / f"{cut}.yaml").read_text(encoding="utf-8"))
     b = shot["blocking"]
     text = b["staging_en"] if which == "start" else b.get("staging_en_end", b["staging_en"])
