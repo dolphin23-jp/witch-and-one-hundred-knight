@@ -2,7 +2,7 @@
 # 場所は A01b と同じ屋敷の前の土の広場（world/witch-house-front-layout.yaml）。位置関係はユーザーが用意した背景画像（refs/witch-house-front_bg_01・02）が基準。Claude は背景を作らない
 # 全カットを動画にする前提（新しい作り方の試験、ユーザー指定 2026-10-30）。kind はすべて M（小さな動き）か A（見せ場）
 # 書き方は episodes/A/scenes/A01b/blocking.yaml の頭のコメントと同じ。確かめるのは python tools/staging.py episodes/A/scenes/A02
-# 秒は仮（原作の声を切り出したら実測で直す）。台詞は audio/A02/original/script.yaml の番号
+# 秒は shots/ のショットファイル（原作の声の実測、2026-10-30）。動きの t はその秒に合わせた。台詞は audio/A02/original/script.yaml の番号
 scene: A02
 layout: world/witch-house-front-layout.yaml
 map_ymax: 18.5
@@ -41,7 +41,7 @@ cuts:
     look: [10.2, 7.6]
     lens: 28
     only: [bisco, hundred-knight]
-    move: {bisco: {to: b_stop, via: [[10.05, 7.7]], face: "@hundred-knight", t: [0.2, 3.4]}}
+    move: {bisco: {to: b_stop, via: [[10.05, 7.7]], face: "@hundred-knight", t: [0.6, 4.6]}}
     gaze: {bisco: hundred-knight, hundred-knight: bisco}
     act: {start: 広場の中ほどに百騎兵が一人、背中を見せて立つ。奥の玄関の扉が開く, do: ビスコが玄関から飛び出し、手を振りながら橋を駆け下りてくる, end: 百騎兵の前で止まり、息を弾ませる, sync: 「百騎兵！」で駆け出し、「わかったぞ」で止まる}
     camera: 広場の南東の低い位置から。手前に百騎兵の背中、奥に屋敷の正面。止め
@@ -94,8 +94,8 @@ cuts:
     only: [bisco, hundred-knight]
     set: {hundred-knight: {at: hk_go, face: 90}}
     move:
-      hundred-knight: {to: hk_stop, face: "@bisco", t: [0.0, 1.6]}
-      bisco: {to: b_call, face: "@hundred-knight", t: [1.0, 1.8]}
+      hundred-knight: {to: hk_stop, face: "@bisco", t: [0.0, 2.0]}
+      bisco: {to: b_call, face: "@hundred-knight", t: [0.4, 1.2]}
     gaze: {hundred-knight: hk_stop, bisco: hundred-knight}
     gaze_end: {hundred-knight: bisco}
     act: {start: 百騎兵がこちらへ走ってくる。奥にビスコ, do: 「あ、おい、百騎兵！」でビスコが半歩踏み出して手を伸ばす。百騎兵が急に止まり、くるりと振り返る, end: 振り返った百騎兵の背中越しに、手を伸ばしたビスコ, sync: 「あ、おい」で手を伸ばし、「百騎兵！」で百騎兵が止まる}
@@ -204,7 +204,7 @@ cuts:
     set: {arlecchino: {at: door_out, face: "@bisco"}}
     move:
       arlecchino: {to: arle_stop, via: [[10.4, 7.6]], face: "@bisco", t: [0.0, 2.4]}
-      bisco: {face: "@arlecchino", t: [1.2, 1.7]}
+      bisco: {face: "@arlecchino", t: [0.6, 1.1]}
     gaze: {bisco: [12.6, 10.4], hundred-knight: bisco, arlecchino: bisco}
     gaze_end: {bisco: arlecchino, hundred-knight: arlecchino}
     act: {start: 思いつめてうつむくビスコと、見上げる百騎兵（手前の右）。奥の橋をアルレッキーノが下りてくる, do: 「ワタクシは」の声にビスコがびくりと肩を跳ね上げて振り向く。百騎兵も首を向ける, end: ビスコがアルレッキーノを見る, sync: 「ワタクシは」でビスコが振り向く}
@@ -227,7 +227,7 @@ cuts:
     look: [11.2, 9.0]
     lens: 40
     look_h: 1.0
-    move: {bisco: {face: 90, t: [2.0, 2.6]}}
+    move: {bisco: {face: 90, t: [3.8, 4.4]}}
     gaze: {bisco: arlecchino}
     gaze_end: {bisco: exit_b}
     act: {start: 我に返ったビスコ, do: 「あ、ああ」で慌てて背筋を伸ばし、アルレッキーノと百騎兵を見比べる。「お互い頑張ろうな！」で照れ隠しに勢いよく拳を上げ、くるりと東へ向き直って大股で歩き出す, end: 東の遊歩道へ歩き出す, sync: 「頑張ろうな！」で拳}
