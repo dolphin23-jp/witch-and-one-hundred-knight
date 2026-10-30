@@ -1,0 +1,349 @@
+# A05 砂食み（砂漠、001〜012）の立ち位置・動き・カメラ（D-058、D-060「動きを先に決める」）。Claude の案（2026-10-30）
+# Living Spec「A05 動きの設計（案）」タブの 001〜012（ユーザー承認: 進め方・006〜008 の見せ場を足す）。013〜020（村とティトの家）は A05b
+# 場所は world/tettara-dunes-layout.yaml（x: 西0→東80、y: 北0→南60、m）。方位: 北 0・東 90・南 180・西 270
+# 動きのキー（tools/motion.py の頭のコメント）:
+#   keys:      人物の時刻ごとの位置・向き・高さ・姿勢（t はカットの頭からの秒）
+#   cam_keys:  カメラの時刻ごとの位置（follow で人物・生き物を追う）・見る点・レンズ
+#   shake:     カメラの揺れ（度）
+#   creatures: 砂食み（体長 8m。z が負は砂の下で、浅い所は砂の上に影と盛り上がり）
+#   fx:        砂の噴き上げ（plume）、波紋（ring）
+#   extra_en / extra_en_end: 静止画の指示文に足す、人物以外に映るもの（砂食み・砂の噴き上げ）
+# 確かめるのは python tools/staging.py episodes/A/scenes/A05（略図）と tools/previs.py --motion（0.5秒ごとのコマ）
+scene: A05
+layout: world/tettara-dunes-layout.yaml
+map_ymax: 60
+
+places:
+  lk0:       [19.0, 33.6]   # 001 ルッキーニィ 走り始め（砂丘 dune_a の西のふもと）
+  hk0:       [16.2, 34.3]   # 001 百騎兵
+  lk_crest:  [27.6, 31.6]   # 砂丘の稜線（高さ約3m）
+  hk_crest:  [26.8, 32.3]
+  lk1:       [31.0, 31.6]   # 001 終わり（稜線を越えて東の斜面）
+  hk1:       [29.6, 32.2]
+  lk_stop:   [38.0, 32.4]   # 002〜005 ルッキーニィが止まって身を低くする（窪地）
+  hk_stop:   [37.3, 33.1]   # 002〜012 百騎兵
+  lk_flat:   [38.2, 32.2]   # 006〜 ルッキーニィが伏せる
+  two:       [37.65, 32.75] # 二人の間
+  rise:      [34.6, 37.4]   # 砂食みが飛び出す所（南西）
+  dive:      [41.6, 27.8]   # 砂食みが潜る所（北東）
+  far_ne:    [52.0, 19.0]   # 去っていく先（北東の大きな砂丘の方）
+
+start:
+  hundred-knight: {at: hk0, face: 80}
+  luckiny:        {at: lk0, face: 80}
+
+cuts:
+  # ---------- 砂丘越え（001〜002） ----------
+  A05-001:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk0, pose: run}
+        - {t: 1.3, at: lk_crest, face: 265, pose: wave, ease: out}
+        - {t: 2.1, at: lk_crest, face: 265, pose: wave}
+        - {t: 2.5, at: lk_crest, face: 80, pose: run}
+        - {t: 4.0, at: lk1, pose: run, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: hk0, pose: run}
+        - {t: 2.6, at: hk_crest, pose: run, ease: linear}
+        - {t: 4.0, at: hk1, pose: run, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: {follow: luckiny, offset: [-5.5, 3.0], z: 1.2}, look: luckiny, lens: 35, frame: 全身}
+      - {t: 2.2, cam: {follow: luckiny, offset: [-4.5, 2.6], z: 1.5}, look: luckiny, lens: 35, ease: linear}
+      - {t: 4.0, cam: [26.0, 33.4, 7.0], look: [44.0, 31.0], look_h: 1.0, lens: 24, frame: 大引き}
+    act: {start: 砂丘の斜面を駆け上がるルッキーニィと、後ろを走る百騎兵を後ろから, do: 稜線でルッキーニィが振り返って大きく手招き。百騎兵が追いつき、二人で稜線を越える, end: カメラが上がり、稜線の向こうに果てしない砂丘が開ける, sync: L143「こっちです！」は 1.3秒から（手招き）}
+    camera: 後ろから走る速さで追い、稜線でクレーンで上がって景色を開く（見せ場）
+    pose: {luckiny: "running up the slope of a dune", hundred-knight: "running up the dune after her"}
+    pose_end: {luckiny: "running down the far side of the dune ridge", hundred-knight: "running down the far side of the dune ridge"}
+    kind: A
+  A05-002:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk1, pose: run}
+        - {t: 1.6, at: [37.4, 32.4], pose: run, ease: linear}
+        - {t: 1.8, at: lk_stop, face: 90, pose: crouch, ease: out}
+        - {t: 3.5, at: lk_stop, face: 70, pose: crouch}
+      hundred-knight:
+        - {t: 0.0, at: hk1, pose: run}
+        - {t: 1.9, at: [36.9, 33.0], pose: run, ease: linear}
+        - {t: 2.1, at: hk_stop, face: 70, pose: stand, ease: out}
+    cam_keys:
+      - {t: 0.0, cam: [53.0, 34.6, 1.6], look: luckiny, look_h: 1.0, lens: 85, frame: 全身}
+      - {t: 2.3, cam: [53.0, 34.6, 1.6], look: luckiny, look_h: 1.0, lens: 85}
+      - {t: 2.6, cam: [53.0, 34.6, 1.6], look: luckiny, look_h: 0.8, lens: 160, frame: 寄り, ease: out}
+      - {t: 3.5, cam: [53.0, 34.6, 1.6], look: luckiny, look_h: 0.8, lens: 160}
+    act: {start: 砂丘の斜面を、砂ごと滑るように駆け下りる二人を正面の望遠で, do: ルッキーニィが急に止まって身を低くし、片腕を横に出して百騎兵を止める。百騎兵が腕にぶつかって止まる, end: 「くっ」でルッキーニィの顔へ一気にズーム, sync: L144「くっ……。」は 2.4秒から}
+    camera: 正面の望遠。止まった直後にスナップズーム
+    pose: {luckiny: "running down the dune slope toward the camera", hundred-knight: "running behind her"}
+    pose_end: {luckiny: "crouching low, tense, one arm stretched out to the side to stop the Hundred Knight", hundred-knight: "stopped short against her arm"}
+    kind: M
+
+  # ---------- 気配（003〜004） ----------
+  A05-003:
+    frame: 寄り
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_stop, face: 70, pose: crouch}
+        - {t: 4.5, at: lk_stop, face: 130, pose: crouch}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 70, pose: stand}
+        - {t: 4.5, at: hk_stop, face: 110, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [44.5, 34.4, 0.15], look: [38.0, 32.8], look_h: 0.35, lens: 24, frame: 寄り}
+      - {t: 4.5, cam: [41.4, 33.9, 0.2], look: [38.0, 32.8], look_h: 0.45, lens: 24, ease: linear}
+    fx:
+      - {kind: ring, t: [0.0, 4.5], at: [39.6, 33.6], r: 3.0, n: 4}
+      - {kind: ring, t: [0.6, 4.5], at: [42.6, 34.0], r: 2.0, n: 3}
+    extra_en: "In the foreground the sand surface trembles: fine grains hop and concentric ripples spread across the sand; small scattered sand-sheep bones rattle on the sand."
+    act: {start: 砂の表面すれすれ。砂粒が震え、同心円の波紋が広がる。手前の砂羊の骨がカタカタ跳ねる, do: カメラが砂の上を這うように二人へ近づく。奥で身を低くしたルッキーニィが震えながら周りを見る, end: 二人の足元と、広がる波紋, sync: L145「あん？そいつら、何かに怯えているのか？」}
+    camera: 砂すれすれの低いドリーで二人へ前進
+    pose: {luckiny: "crouching low and trembling, looking around in fear", hundred-knight: "standing still beside her, looking around"}
+    pose_end: {luckiny: "crouching low and trembling, looking around in fear", hundred-knight: "standing still beside her, looking around"}
+    kind: M
+  A05-004:
+    frame: 大引き
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_stop, face: 130, pose: crouch}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 110, pose: stand}
+        - {t: 6.0, at: hk_stop, face: 200, pose: stand}
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.9
+        keys:
+          - {t: 0.0, at: [22.0, 46.0], z: -1.4}
+          - {t: 3.0, at: [37.3, 33.3], z: -1.0, ease: linear}
+          - {t: 6.0, at: [52.0, 21.0], z: -1.4, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [37.6, 33.6, 24.0], look: [37.6, 33.0], look_h: 0.0, lens: 35, frame: 大引き}
+      - {t: 6.0, cam: [38.8, 33.1, 15.0], look: [37.6, 33.0], look_h: 0.0, lens: 35}
+    extra_en: "Under the sand a huge dark shadow, about 8 m long, glides toward the two; the sand surface bulges and ripples along its path."
+    extra_en_end: "The huge dark shadow under the sand has passed beneath them and glides away; a long ridge of disturbed sand marks its path."
+    act: {start: 真上の高い俯瞰。窪地の小さな二人, do: 砂の下を 8m の黒い影が横切り、通った跡の砂がうねって盛り上がる。影が百騎兵の真下を通る, end: 影が二人の向こうへ抜けていく。カメラは回りながら下りている, sync: L146「おい、まて！オマエの下に、何かいるぞ……。」}
+    camera: 真上の俯瞰。影の動きに合わせて真上で回りながら下りる
+    pose: {luckiny: "crouching low, frozen in fear (seen from directly above)", hundred-knight: "standing still (seen from directly above)"}
+    pose_end: {luckiny: "crouching low, frozen in fear (seen from directly above)", hundred-knight: "turning to look behind (seen from directly above)"}
+    tilt: down
+    kind: A
+
+  # ---------- 砂食み（005〜008） ----------
+  A05-005:
+    frame: 胸上
+    only: [luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_stop, face: 45, pose: crouch}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 200, pose: stand}
+        - {t: 1.2, at: hk_stop, face: 225, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [40.6, 29.9, 0.9], look: luckiny, look_h: 0.75, lens: 35, frame: 胸上}
+      - {t: 0.35, cam: [40.6, 29.9, 0.9], look: luckiny, look_h: 0.75, lens: 35}
+      - {t: 0.6, cam: [39.7, 30.8, 0.85], look: luckiny, look_h: 0.75, lens: 60, frame: 寄り, ease: out}
+      - {t: 3.2, cam: [39.7, 30.8, 0.85], look: luckiny, look_h: 0.75, lens: 60}
+    shake: [{t: [0.5, 3.2], amp: 1.0}]
+    fx:
+      - {kind: plume, t: [0.9, 3.2], at: rise, r: 2.5, h: 6.0}
+    extra_en: "Behind her, a little to the left, sand begins to erupt from the ground."
+    extra_en_end: "Behind her a huge fountain of sand bursts up from the ground."
+    act: {start: 身を低くしたルッキーニィの顔, do: 「砂食み！！」と叫ぶ。叫びの頭でカメラが一気に寄り、揺れる, end: 叫ぶ顔の寄り。後ろで砂が噴き上がる, sync: L147「す、砂食み！！」は 0.3秒から}
+    camera: クラッシュズーム＋揺れ
+    pose: {luckiny: "crouching, eyes wide with terror, starting to scream"}
+    pose_end: {luckiny: "screaming in terror"}
+    kind: M
+  A05-006:
+    frame: 大引き
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_stop, face: 225, pose: crouch}
+        - {t: 0.9, at: lk_flat, face: 45, pose: lie, ease: out}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 225, pose: stand}
+        - {t: 1.0, at: hk_stop, face: 225, pose: crouch}
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [33.4, 38.8], z: -3.0}
+          - {t: 0.6, at: rise, z: 0.8, ease: linear}
+          - {t: 1.9, at: [37.8, 33.0], z: 7.5, ease: out}
+          - {t: 3.2, at: [41.0, 28.6], z: 0.8, ease: in}
+          - {t: 4.0, at: [42.0, 27.4], z: -2.5, ease: linear}
+    fx:
+      - {kind: plume, t: [0.3, 2.6], at: rise, r: 3.0, h: 6.0}
+    cam_keys:
+      - {t: 0.0, cam: [43.0, 31.2, 0.35], look: rise, look_h: 1.0, lens: 20, frame: 大引き}
+      - {t: 1.9, cam: [43.0, 31.2, 0.35], look: [37.8, 33.0], look_h: 7.5, lens: 20, ease: out}
+      - {t: 4.0, cam: [43.0, 31.2, 0.35], look: [41.0, 28.6], look_h: 2.0, lens: 20}
+    extra_en: "Right beside them a huge sand-eater bursts out of the sand in a fountain of sand, rising in a great arc toward the sky."
+    extra_en_end: "The huge sand-eater arcs over them high against the bright sun, sand pouring off its body like a waterfall."
+    slow: {t: [1.6, 2.3], rate: 0.5}   # Animatic で頂点の一瞬をスローに（D-060）
+    act: {start: 砂の高さの煽り。二人のすぐ横で砂が噴き上がる, do: 砂食みが砂を突き破って飛び出し、大きな弧を描く。体から砂が滝のように落ちる。ルッキーニィは砂に伏せ、百騎兵は身を低くする, end: 太陽を背に二人の上を越えていく砂食みのシルエット, sync: 台詞なし}
+    camera: 砂の高さの煽り。弧を追って下から上へ振り上げる。頂点で一瞬スロー（見せ場）
+    pose: {luckiny: "throwing herself flat onto the sand", hundred-knight: "crouching low"}
+    pose_end: {luckiny: "lying flat on the sand, covering her head", hundred-knight: "crouching low, looking up"}
+    tilt: up
+    kind: A
+  A05-007:
+    frame: 大引き
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_flat, face: 45, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 225, pose: crouch}
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [36.4, 34.6], z: 6.4}
+          - {t: 1.2, at: [37.8, 33.0], z: 7.5, ease: out}
+          - {t: 3.0, at: [40.6, 29.6], z: 2.2, ease: in}
+    cam_keys:
+      - {t: 0.0, cam: {follow: sand-eater, offset: [1.4, 1.6], z: 2.2}, look: two, look_h: 0.0, lens: 24, frame: 大引き}
+      - {t: 3.0, cam: {follow: sand-eater, offset: [1.4, 1.6], z: 2.2}, look: [42.6, 27.2], look_h: 0.0, lens: 24, ease: linear}
+    extra_en: "Seen from just behind the head of the huge sand-eater as it flies through the air: its pale segmented back fills the bottom of the frame, and far below on the sand lie the two tiny figures."
+    act: {start: 砂食みの頭の後ろから見下ろす。真下の砂に伏せた二人, do: 砂食みと一緒に動き、二人の真上を越えていく, end: 前方の砂が迫る（潜る直前）, sync: 台詞なし}
+    camera: 砂食みの頭の後ろに乗るような視点で一緒に動く
+    pose: {luckiny: "lying flat on the sand far below", hundred-knight: "crouching on the sand far below"}
+    pose_end: {luckiny: "lying flat on the sand far below", hundred-knight: "crouching on the sand far below"}
+    tilt: down
+    kind: A
+  A05-008:
+    frame: 大引き
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_flat, face: 45, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 225, pose: crouch}
+        - {t: 1.8, at: hk_stop, face: 45, pose: stand}
+        - {t: 2.8, at: hk_stop, face: 45, z: -0.45, pose: stand}
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [39.6, 30.8], z: 4.2}
+          - {t: 1.3, at: dive, z: -0.3, ease: in}
+          - {t: 2.4, at: [43.0, 25.8], z: -4.0, ease: linear}
+          - {t: 3.5, at: [44.5, 24.0], z: -4.0, ease: linear}
+    fx:
+      - {kind: plume, t: [1.1, 3.5], at: dive, r: 3.5, h: 4.5}
+      - {kind: plume, t: [1.5, 3.5], at: hundred-knight, r: 1.2, h: 1.8}
+    cam_keys:
+      - {t: 0.0, cam: [46.5, 39.0, 1.4], look: two, look_h: 0.8, lens: 28, frame: 大引き}
+      - {t: 0.8, cam: [46.5, 39.0, 1.4], look: two, look_h: 0.8, lens: 28}
+      - {t: 1.25, cam: [46.5, 39.0, 1.4], look: dive, look_h: 1.0, lens: 28}
+      - {t: 3.5, cam: [46.5, 39.0, 1.4], look: [41.2, 28.6], look_h: 0.8, lens: 28}
+    shake: [{t: [1.3, 2.6], amp: 2.0}]
+    extra_en: "The huge sand-eater plunges head first back into the sand beyond them."
+    extra_en_end: "A great wave of sand crashes down where the sand-eater dived; a shower of sand rains down over the Hundred Knight, burying it up to the chest."
+    act: {start: 横からの引き。宙の砂食みと、伏せた二人, do: 砂食みが反対側の砂へ頭から潜る。速いパンで追い、潜った瞬間に揺れ。砂の大波と砂の雨が二人に降りかかる, end: 舞い上がった砂。百騎兵は胸まで砂に埋まっている, sync: 台詞なし}
+    camera: 横からの引き。潜る動きを速いパン（ウィップ）で追い、潜った瞬間に揺れ
+    pose: {luckiny: "lying flat on the sand, covering her head", hundred-knight: "crouching"}
+    pose_end: {luckiny: "lying flat on the sand under falling sand", hundred-knight: "standing, buried up to the chest in a fresh heap of sand"}
+    kind: A
+
+  # ---------- 去る（009〜010） ----------
+  A05-009:
+    frame: 引き
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_flat, face: 45, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 45, z: -0.45, pose: stand}
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.9
+        keys:
+          - {t: 0.0, at: [45.0, 23.5], z: -1.0}
+          - {t: 6.5, at: [62.0, 11.0], z: -1.3, ease: linear}
+          - {t: 8.0, at: [66.0, 8.0], z: -2.6, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [34.0, 36.6, 1.1], look: [46.0, 23.0], look_h: 0.5, lens: 35, frame: 引き}
+      - {t: 8.0, cam: [33.2, 37.8, 2.8], look: [52.0, 19.0], look_h: 0.6, lens: 30}
+    extra_en: "Far ahead, a long ridge of churned sand races away toward the distant dunes as the sand-eater swims off beneath the surface; sand dust still hangs in the air and slowly settles."
+    act: {start: 二人の背中越し。伏せたルッキーニィと、胸まで砂に埋まった百騎兵, do: 砂食みの背の盛り上がりが砂丘の向こうへ遠ざかり、砂の筋が残る。舞った砂がゆっくり落ちる, end: 静かになった砂漠, sync: L148「キヒヒ、なるほど。今のが砂食みってやつか。思っていたよりも強そうだな……」}
+    camera: 背中越し。ゆっくり上がりながら引く
+    pose: {luckiny: "lying flat on the sand, seen from behind", hundred-knight: "buried up to the chest in sand, seen from behind"}
+    pose_end: {luckiny: "lying flat on the sand, seen from behind", hundred-knight: "buried up to the chest in sand, seen from behind"}
+    kind: M
+  A05-010:
+    frame: 引き
+    only: []
+    creatures:
+      sand-eater:
+        len: 8.0
+        r: 0.75
+        keys:
+          - {t: 0.0, at: [70.0, 10.0], z: 3.0}
+          - {t: 1.6, at: [73.0, 7.0], z: 12.0, ease: out}
+          - {t: 3.2, at: [76.0, 4.0], z: 3.0, ease: in}
+          - {t: 4.0, at: [77.0, 3.0], z: -1.0, ease: linear}
+    fx:
+      - {kind: plume, t: [0.4, 2.8], at: [71.0, 9.0], r: 3.0, h: 7.5}
+      - {kind: plume, t: [3.0, 5.5], at: [76.5, 3.5], r: 3.0, h: 7.0}
+    cam_keys:
+      - {t: 0.0, cam: [36.0, 34.0, 1.6], look: [69.0, 11.0], look_h: 8.0, lens: 100, frame: 引き}
+      - {t: 5.5, cam: [36.0, 34.0, 1.6], look: [76.5, 5.0], look_h: 6.5, lens: 100}
+    extra_en: "Far away beyond a big dune, seen through shimmering heat haze, the sand-eater leaps out of the sand once more in a high arc."
+    extra_en_end: "Far away beyond the big dune, the sand-eater dives back into the sand and a plume of sand slowly falls; heat haze."
+    act: {start: 望遠。遠くの大きな砂丘, do: その向こうで砂食みがもう一度跳ね、地平線の方へ潜る。陽炎, end: 落ちていく砂煙, sync: L149「砂漠の獣を糧にしているようだが並みのチカラでは太刀打ちできまい。」}
+    camera: 望遠。跳ねる砂食みを追ってゆっくり横へ振る
+    kind: M
+
+  # ---------- 無視された（011〜012） ----------
+  A05-011:
+    frame: 寄り
+    only: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: lk_flat, face: 45, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 180, z: -0.62, pose: stand}
+        - {t: 0.5, at: hk_stop, face: 180, z: -0.42, pose: stand, ease: out}
+        - {t: 3.5, at: hk_stop, face: 180, z: -0.42, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [37.3, 35.0, 0.35], look: hundred-knight, look_h: 0.3, lens: 50, frame: 寄り}
+      - {t: 3.5, cam: [37.3, 35.0, 0.35], look: hundred-knight, look_h: 0.3, lens: 56, ease: linear}
+    act: {start: 砂の山, do: 砂山から百騎兵の頭がぽこっと出る。頭の炎がしぼむ（漫符は合成、D-027）, end: 砂に埋まったまま立ち尽くす百騎兵, sync: L150「それにしてもオマエ、見事に無視されたな。」}
+    camera: 正面の寄り、止め（動きの後の止めで笑いを作る）。わずかに寄る
+    pose: {hundred-knight: "buried in a heap of sand up to its neck, only the helmet sticking out, its head flame drooping", luckiny: "lying flat on the sand in the background"}
+    pose_end: {hundred-knight: "buried in sand up to its neck, staring blankly, its head flame drooping", luckiny: "lying flat on the sand in the background"}
+    kind: M
+  A05-012:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_stop, face: 180, z: -0.42, pose: stand}
+        - {t: 1.1, at: hk_stop, face: 170, z: 0.0, pose: stand, ease: out}
+        - {t: 1.3, at: hk_stop, face: 170, pose: shake}
+        - {t: 3.0, at: hk_stop, face: 170, pose: shake}
+        - {t: 3.2, at: hk_stop, face: 160, pose: stand}
+      luckiny:
+        - {t: 0.0, at: lk_flat, face: 45, pose: lie}
+        - {t: 2.0, at: lk_flat, face: 45, pose: lie}
+        - {t: 2.6, at: [38.2, 32.2], face: 200, pose: sit, ease: out}
+    cam_keys:
+      - {t: 0.0, cam: [36.2, 35.3, 0.8], look: hundred-knight, look_h: 0.5, lens: 40, frame: 全身}
+      - {t: 4.0, cam: [36.6, 35.6, 0.85], look: [37.7, 32.7], look_h: 0.6, lens: 38}
+    shake: [{t: [0.0, 4.0], amp: 0.35}]
+    act: {start: 砂に埋まった百騎兵, do: 砂から抜け出し、体をぶるぶる振って砂を払う（犬のように）。後ろでルッキーニィが体を起こしてへたり込む, end: 砂を払った百騎兵と、へたり込んだルッキーニィ, sync: L151「キヒヒ、魔法生物は食いでがないんだとよ。」}
+    camera: 少し手持ちで揺らす
+    pose: {hundred-knight: "climbing out of a heap of sand", luckiny: "lying flat on the sand behind it"}
+    pose_end: {hundred-knight: "shaking the sand off its body like a dog", luckiny: "sitting slumped on the sand behind it, exhausted with relief"}
+    kind: M

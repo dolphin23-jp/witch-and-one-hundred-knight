@@ -1,0 +1,49 @@
+# テッタラ砂漠の砂丘地帯（A05 の砂食み）の配置（上から見た図の座標、単位はメートル）。Claude の構想（2026-10-30）
+# A04 の場所（world/tettara-desert-layout.yaml）から北東へ進んだ先、村へ向かう途中の砂丘。見た目の資料は同じテッタラ砂漠の背景（refs/tettara-desert_bg_01、切り抜きは world/desert-panels.yaml）。
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図に従う
+# 座標: x は西 0 → 東 80。y は北 0 → 南 60。方位: 北 0・東 90・南 180・西 270。
+# 二人は西から東へ進む。中ほどの南北に長い砂丘（dune_a）を越えた先の窪地（38, 33）で砂食みに出会う。砂食みは南西から北東へ二人の上を越え、北東の大きな砂丘（dune_b）の方へ去る
+id: tettara-dunes
+size: {w: 80.0, d: 60.0}
+compass: 北 0、東 90、南 180、西 270（村は北東の砂丘の向こう）
+time: 昼過ぎ
+ground: {color: [222, 176, 92], ja: 砂}
+sky: {color: [160, 196, 235]}
+sun: {from: 245, elev: 38}   # 昼過ぎ。西南西のやや低い太陽
+light_en: "Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes."
+
+panels:
+  砂漠 全景: world/tettara-desert/panel_wide.png
+  砂漠 斜めの眺望: world/tettara-desert/panel_oblique.png
+  砂漠 地上の視点: world/tettara-desert/panel_ground.png
+  砂漠 見下ろし: world/tettara-desert/panel_high.png
+  砂漠 砂模様の寄り: world/tettara-desert/panel_closeup.png
+
+areas:
+  - {kind: circle, center: [38.0, 33.0], r: 7.0, ja: 窪地（平らな砂）, color: [214, 168, 86]}
+
+horizon:
+  - {from: 315, to: 45, ja: 北の砂丘と岩山, panel: 砂漠 全景, en: "endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon"}
+  - {from: 45, to: 135, ja: 東の砂丘と岩山, panel: 砂漠 斜めの眺望, en: "rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away"}
+  - {from: 135, to: 225, ja: 南の砂丘, panel: 砂漠 地上の視点, en: "a wide flat stretch of golden sand with swirling patterns, low dunes and distant red rock pillars under the sky"}
+  - {from: 225, to: 315, ja: 西の砂丘と岩, panel: 砂漠 見下ろし, en: "golden dunes with swirling patterns, scattered red rocks and dry thorny shrubs, red sandstone mesas on the horizon"}
+
+props:
+  dune_a:  {at: [27.0, 31.0], r: 7.5, ry: 2.4, h: 3.0, ja: 南北に長い砂丘（二人が越える）}
+  dune_b:  {at: [66.0, 14.0], r: 14.0, ry: 0.6, h: 5.0, ja: 北東の大きな砂丘（砂食みが去る方）}
+  dune_c:  {at: [8.0, 52.0], r: 10.0, ry: 0.6, h: 3.0, ja: 南西の砂丘}
+  dune_d:  {at: [52.0, 50.0], r: 9.0, ry: 0.5, h: 2.2, ja: 南東の低い砂丘}
+  rock_1:  {at: [45.0, 41.0], h: 1.8, ja: 赤い岩}
+  rock_2:  {at: [22.0, 14.0], h: 2.4, ja: 赤い岩（大）}
+  bones_1: {at: [40.6, 34.6], r: 0.6, ja: 砂羊の骨, en: "the small scattered bones of sand sheep"}
+
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
+  luckiny:        {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff)"}
+
+creatures:
+  sand-eater: {ja: 砂食み, len: 8.0, r: 0.75, en: "the sand-eater: a huge pale segmented larva-like desert worm about 8 m long, as designed in its reference sheet"}
+
+views:
+  overhead:  {ja: 高い空から見下ろす砂漠, panel: 砂漠 見下ろし, en: "seen from high above: golden dunes with swirling sand patterns, long dune ridges and scattered red rocks"}
+  sand:      {ja: 砂の表面, panel: 砂漠 砂模様の寄り, en: "the rippled surface of golden sand with fine swirling patterns, a few dry shrubs"}

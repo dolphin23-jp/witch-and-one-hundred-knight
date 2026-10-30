@@ -1,0 +1,49 @@
+# A05 砂食み（砂漠）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05-010
+scene: A05
+tc: 39.7
+sec: 5.5
+kind: M
+shot: 引き・砂食み（遠景）
+acting: その向こうで砂食みがもう一度跳ね、地平線の方へ潜る。陽炎
+dialogue:
+- L149「砂漠の獣を糧にしているようだが並みのチカラでは太刀打ちできまい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.0
+  - 34.0
+  - 1.6
+  look:
+  - 69.0
+  - 11.0
+  lens: 135
+  move: 望遠。跳ねる砂食みを追ってゆっくり横へ振る
+background: tettara-desert
+image: null
+refs:
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 望遠。遠くの大きな砂丘
+  end: 落ちていく砂煙
+timing:
+  lead: 0.15
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 東の砂丘と岩山〔砂漠 斜めの眺望〕
+  panels:
+  - 砂漠 斜めの眺望
+  staging_en: 'No people in frame. Far away beyond a big dune, seen through shimmering heat haze, the sand-eater leaps out of the sand once more in a high arc. Behind: rolling golden dunes with swirling
+    sand patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer
+    shadows, heat haze over the dunes.'
+  staging_en_end: 'No people in frame. Far away beyond the big dune, the sand-eater dives back into the sand and a plume of sand slowly falls; heat haze. Behind: rolling golden dunes with swirling sand
+    patterns, scattered dry shrubs and a few dead trees, red sandstone mesas far away. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows,
+    heat haze over the dunes.'
+  sketch:
+  - episodes/A/scenes/A05/gen/sketch/A05-010_start.png
+  - episodes/A/scenes/A05/gen/sketch/A05-010_end.png

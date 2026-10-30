@@ -1,0 +1,55 @@
+# A05 砂食み（砂漠）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A05-012
+scene: A05
+tc: 48.7
+sec: 4.0
+kind: M
+shot: 全身・ルッキーニィ・百騎兵
+acting: 砂から抜け出し、体をぶるぶる振って砂を払う（犬のように）。後ろでルッキーニィが体を起こしてへたり込む
+dialogue:
+- L151「キヒヒ、魔法生物は食いでがないんだとよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.2
+  - 35.3
+  - 0.8
+  look: hundred-knight
+  lens: 40
+  move: 少し手持ちで揺らす
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 砂に埋まった百騎兵
+  end: 砂を払った百騎兵と、へたり込んだルッキーニィ
+timing:
+  lead: 0.1
+blocking:
+  start: 百（中央・正面）、ル（中央・背中）
+  end: 百（中央・斜め前（画面右向き））、ル（中央・正面）
+  background: 北の砂丘と岩山〔砂漠 全景〕／東の砂丘と岩山〔砂漠 斜めの眺望〕
+  panels:
+  - 砂漠 全景
+  - 砂漠 斜めの眺望
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), climbing out of a heap of sand, in the center of the
+    frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark
+    hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), lying flat on the sand behind it, on the right of the frame, with the back to the camera. No other people. Behind: endless
+    golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon, then rolling golden dunes with swirling sand patterns, scattered dry shrubs and a few dead
+    trees, red sandstone mesas far away. Mid-afternoon in the desert: the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+    plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), shaking the sand off its body like a dog, in the
+    center of the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white
+    fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), sitting slumped on the sand behind it, exhausted with relief, in the center of the
+    frame, facing the camera. No other people. Behind: endless golden dunes covered in swirling sand patterns, with tall red sandstone mesas and rock pillars on the horizon. Mid-afternoon in the desert:
+    the sun lower in the west-southwest of a pale blue sky, warm golden light, longer shadows, heat haze over the dunes.'
+  sketch:
+  - episodes/A/scenes/A05/gen/sketch/A05-012_start.png
+  - episodes/A/scenes/A05/gen/sketch/A05-012_end.png
