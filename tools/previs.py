@@ -400,6 +400,16 @@ def build_extra(name, pr, x, y, lit):
         w, d, h = pr.get("w", 6), pr.get("d", 5), pr.get("h", 3)
         box(mat_of("wood"), f"ENV_{name}", x, y, w, d, h, 0.0, rot)
         roof_on(mat_of("roof"), f"ENV_{name}_roof", x, y, w + 0.6, d + 0.6, h, pr.get("roof", 1.8), rot)
+        n = pr.get("windows", 0)
+        if n:   # 窓明かり: 南と北の壁に、ランプの強さに合わせて光る窓（夕方は弱く、夜は強く）
+            win = make_mat(f"{name}_win", (1.0, 0.7, 0.35), emit=1.5 * lamps)
+            a = math.radians(rot)
+            for k in range(n):
+                u = (k + 1) / (n + 1) - 0.5
+                for sy in (-1, 1):
+                    dx, dy = u * w, sy * (d / 2 + 0.02)
+                    wx, wy = x + dx * math.cos(a) - dy * math.sin(a), y + dx * math.sin(a) + dy * math.cos(a)
+                    box(win, f"ENV_{name}_win{k}{sy}", wx, wy, 0.6, 0.03, 0.6, 1.2, rot)
         return True
     if name.startswith("pillar"):
         r = pr.get("r", 0.3)
@@ -435,6 +445,7 @@ def build_extra(name, pr, x, y, lit):
 
 def build_site(lay, lighting=None):
     """場所（world/*-layout.yaml）を、平らな色分けと簡単な立体で作る。lighting は layout の lighting の名前（夕方・夜など）。"""
+    MATS.clear()   # カットごとに場面を作り直すので、前のカットの材質は使えない
     g = lay.get("ground") or {}
     gcol = tuple(v / 255 for v in g.get("color", [41, 158, 82]))
     swamp = make_mat("swamp", gcol)
@@ -516,8 +527,8 @@ def build_site(lay, lighting=None):
             if pr.get("glow"):   # 井戸の口: 暗い穴と、底のかすかな光
                 hole = make_mat(f"{name}_hole", (0.02, 0.02, 0.02))
                 prim("cyl", hole, f"ENV_{name}_hole", loc=bl((x, y), 0.805), radius=pr.get("r", 0.9) * 0.72, depth=0.01)
-                g = make_mat(f"{name}_glow", tuple(v / 255 for v in pr["glow"]), emit=0.8)
-                prim("cyl", g, f"ENV_{name}_glow", loc=bl((x, y), 0.81), radius=pr.get("r", 0.9) * 0.25, depth=0.005)
+                g = make_mat(f"{name}_glow", tuple(v / 255 for v in pr["glow"]), emit=0.35)
+                prim("cyl", g, f"ENV_{name}_glow", loc=bl((x, y), 0.81), radius=pr.get("r", 0.9) * 0.16, depth=0.005)
             continue
         if build_extra(name, pr, x, y, lit):
             continue
