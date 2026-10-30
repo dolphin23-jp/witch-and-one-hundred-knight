@@ -22,3 +22,9 @@ images:
   # 画像は夜。A01b は朝に合わせる（ユーザー指定「朝に合わせる」）。光は指示文で朝にする
   witch-house-front_bg_01: {subjects: [witch-house, swamp], kind: 背景, note: 屋敷前の画像（広場から屋敷の正面を見た向き）。位置関係の基準はこちらの画像が優先。小道はない, primary: true}
   witch-house-front_bg_02: {subjects: [witch-house, swamp], kind: 背景, note: 屋敷前の画像（屋敷の橋から広場を見た向き）。位置関係の基準はこちらの画像が優先。小道はない, primary: true}
+  # 2026-10-30: ユーザーが砂漠編（A04〜）の人物の画像を用意。「1、2枚目はルッキーニィ、2枚目はティト、3枚目は砂食みです。必要ならこちらで生成AIに投げてより動画で参照しやすい形に整形してきます」
+  # （添付は4枚。3枚目にティト、4枚目に砂食みが写っているので、そのように登録した）。三面図の設定画がない人物なので、ユーザーが選んだこれらを参照する（D-054 の例外として扱う。整形版が届いたら差し替える）
+  luckiny_ref_01: {subjects: [luckiny], kind: 立ち絵, note: ルッキーニィ（640x460、白い背景、角笛を担いで笑う姿。人物は小さめ）}
+  luckiny_ref_02: {subjects: [luckiny], kind: イラスト, note: ルッキーニィ（307x450、杖と角笛を持つ立ち姿。足元に牛乳缶と柵のある草地）}
+  tito_ingame_01: {subjects: [tito, tito-house, hundred-knight], kind: ゲーム画面, note: ティト（800x600、ゲーム画面の写真。ティトの家の中。左に百騎兵、下に会話の枠と「ティト」の名札。ティトは膝から上）}
+  sand-eater_ingame_01: {subjects: [sand-eater], kind: ゲーム画面, note: 砂食み（500x281、ゲーム画面。砂の上を上から見た姿。会話の枠と吹き出し「…」が重なる）}
