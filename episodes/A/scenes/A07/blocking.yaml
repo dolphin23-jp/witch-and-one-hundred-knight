@@ -394,7 +394,7 @@ cuts:
         r: 0.75
         keys:
           - {t: 0.0, at: [31.1, 31.0], z: 6.0}
-          - {t: 3.0, at: [31.3, 30.9], z: 5.2, ease: inout}
+          - {t: 3.0, at: [31.3, 30.9], z: 6.2, ease: inout}   # 頭は下げない（体は頭の通った道をたどるので、下げると体が頭の上に残る）
     cam_keys:
       - {t: 0.0, cam: [34.7, 30.9, 10.4], look: hundred-knight, lens: 32, frame: 全身}
       - {t: 1.5, cam: [31.9, 33.7, 10.0], look: hundred-knight, lens: 32, ease: linear}
@@ -412,24 +412,24 @@ cuts:
     keys:
       hundred-knight:
         - {t: 0.0, at: [31.6, 30.6], z: 9.2, face: 300, pose: stand}
-        - {t: 1.0, at: [31.3, 30.9], z: 5.86, face: 300, pose: stand, ease: in}   # 頭のてっぺん（頭の高さ＋0.86）
-        - {t: 3.6, at: [31.0, 31.0], z: 5.26, face: 300, pose: crouch, ease: out}
+        - {t: 1.0, at: [31.3, 30.9], z: 7.11, face: 300, pose: stand, ease: in}   # 頭のてっぺん（頭の高さ＋0.86）
+        - {t: 3.6, at: [31.1, 30.95], z: 7.16, face: 300, pose: crouch, ease: out}
     creatures:
       sand-eater:
         after: A07-015
         len: 8.0
         r: 0.75
         keys:
-          - {t: 0.0, at: [31.3, 30.9], z: 5.2}
-          - {t: 1.0, at: [31.3, 30.9], z: 5.0}
-          - {t: 3.6, at: [31.0, 31.0], z: 4.4, ease: out}
+          - {t: 0.0, at: [31.3, 30.9], z: 6.2}
+          - {t: 1.0, at: [31.3, 30.9], z: 6.25}
+          - {t: 3.6, at: [31.1, 30.95], z: 6.3, ease: out}
     fx:
-      - {kind: spark, t: [1.0, 1.7], at: [31.3, 30.95], z: 5.2}
+      - {kind: spark, t: [1.0, 1.7], at: [31.3, 30.95], z: 6.9}
     shake:
       - {t: [1.0, 1.7], amp: 0.9}
     cam_keys:
-      - {t: 0.0, cam: [28.2, 32.2, 6.3], look: hundred-knight, lens: 32, frame: 寄り}   # 西から。頭のてっぺんより少し上（頭の上の百騎兵が隠れないように。015 の回り込みの続き）
-      - {t: 3.6, cam: [28.4, 32.1, 5.9], look: hundred-knight, lens: 38, ease: linear}
+      - {t: 0.0, cam: [28.2, 32.2, 6.6], look: hundred-knight, lens: 32, frame: 寄り}   # 西から、砂食みの目の高さ（015 の回り込みの続き）
+      - {t: 3.6, cam: [28.4, 32.1, 6.7], look: hundred-knight, lens: 38, ease: linear}
     bg: cave_wide
     extra_en_end: "The Hundred Knight drives its sword deep into the monster's huge eye; sparks and sand burst out."
     act: {start: 砂食みの目の高さから、落ちてくる百騎兵を見上げる, do: 落ちながら砂食みの目に剣を突き立てる（「串刺し」の回収。突き立てる瞬間は一瞬のスロー）, end: 砂食みの頭の上で剣を突き立てた百騎兵, sync: （台詞なし）}
@@ -442,8 +442,8 @@ cuts:
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: [31.0, 31.0], z: 5.26, face: 300, pose: crouch}
-        - {t: 0.6, at: [31.0, 31.0], z: 5.46, face: 120, pose: crouch}
+        - {t: 0.0, at: [31.1, 30.95], z: 7.16, face: 300, pose: crouch}
+        - {t: 0.6, at: [31.1, 30.95], z: 7.36, face: 120, pose: crouch}
         - {t: 1.1, at: [33.8, 32.2], z: 3.8, face: 120, pose: jump, ease: out}
         - {t: 1.7, at: hk_end, z: 0.0, face: 300, pose: crouch, ease: in}
         - {t: 2.6, at: hk_end, face: 300, pose: stand}
@@ -454,8 +454,8 @@ cuts:
         len: 8.0
         r: 0.75
         keys:
-          - {t: 0.0, at: [31.0, 31.0], z: 4.4}
-          - {t: 0.6, at: [31.0, 31.0], z: 4.6}
+          - {t: 0.0, at: [31.1, 30.95], z: 6.3}
+          - {t: 0.6, at: [31.0, 30.6], z: 6.5}
           - {t: 1.4, at: [30.0, 28.8], z: 6.6, ease: out}
           - {t: 2.4, at: [34.5, 27.5], z: 2.4, ease: inout}
           - {t: 2.8, at: [36.2, 27.0], z: 0.9, ease: in}
