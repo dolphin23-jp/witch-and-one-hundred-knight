@@ -1,0 +1,34 @@
+# A02 魔女邸の前・別れ（朝）。blocking.yaml（Claude の構想 2版、ユーザーのコメント反映）から作成（2026-10-30）。秒は原作の声の実測（audio/A02/original/lines.csv）
+# kind: M＝小さな動きの動画、A＝見せ場。全カットを動画にする（新しい作り方の試験）
+id: A02-003
+scene: A02
+tc: 17.6
+sec: 7.0
+kind: M
+shot: 全身・ビスコ・百騎兵
+acting: 身をかがめて紙を差し出し、百騎兵が大きな手で受け取る
+dialogue:
+- L96「今回も探し物の名前は手紙に書き付けてあるから、必要なら見せながら探してくれ。」
+sound: null
+notes: 手と手が触れる画は、人物を1人ずつ作って重ねる作り方では作りにくい。開始（差し出す）と終わり（受け取った後）を別々に重ね、受け渡しは動画に任せる
+camera:
+  pos:
+  - 13.4
+  - 10.5
+  - 1.0
+  look:
+  - 10.1
+  - 10.2
+  lens: 35
+  move: null
+background: witch-house-front
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 二人を真横から。ビスコが腰の袋から折りたたんだ紙を出す
+  end: 百騎兵が両手で紙を持って見下ろす。ビスコは背を伸ばす
+  sync: 「手紙に書き付けてあるから」で差し出す

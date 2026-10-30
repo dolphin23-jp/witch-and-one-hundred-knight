@@ -1,0 +1,34 @@
+# A02 魔女邸の前・別れ（朝）。blocking.yaml（Claude の構想 2版、ユーザーのコメント反映）から作成（2026-10-30）。秒は原作の声の実測（audio/A02/original/lines.csv）
+# kind: M＝小さな動きの動画、A＝見せ場。全カットを動画にする（新しい作り方の試験）
+id: A02-005
+scene: A02
+tc: 28.4
+sec: 3.6
+kind: M
+shot: 引き・ビスコ・百騎兵
+acting: 「あ、おい、百騎兵！」でビスコが半歩踏み出して手を伸ばす。百騎兵が急に止まり、くるりと振り返る
+dialogue:
+- L97「あ、おい、百騎兵！」
+sound: null
+notes: ユーザーのイメージ（2026-10-30）。走り出した百騎兵をビスコが呼び止める
+camera:
+  pos:
+  - 12.0
+  - 14.0
+  - 1.0
+  look:
+  - 11.8
+  - 10.0
+  lens: 35
+  move: null
+background: witch-house-front
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 百騎兵がこちらへ走ってくる。奥にビスコ
+  end: 振り返った百騎兵の背中越しに、手を伸ばしたビスコ
+  sync: 「あ、おい」で手を伸ばし、「百騎兵！」で百騎兵が止まる

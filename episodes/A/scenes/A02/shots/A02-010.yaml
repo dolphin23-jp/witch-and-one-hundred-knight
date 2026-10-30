@@ -1,0 +1,31 @@
+# A02 魔女邸の前・別れ（朝）。blocking.yaml（Claude の構想 2版、ユーザーのコメント反映）から作成（2026-10-30）。秒は原作の声の実測（audio/A02/original/lines.csv）
+# kind: M＝小さな動きの動画、A＝見せ場。全カットを動画にする（新しい作り方の試験）
+id: A02-010
+scene: A02
+tc: 58.0
+sec: 6.2
+kind: M
+shot: 胸上・ビスコ
+acting: 声が少し柔らかくなる。目を細め、口元がわずかにゆるむ
+dialogue:
+- L101「ヴァルプルギスの夜会に行くのも夢みたいだしさ。」
+sound: null
+notes: 誰も見ていない（と本人が思っている）本音の一瞬。次の 011 で我に返る
+camera:
+  pos:
+  - 13.2
+  - 12.0
+  - 0.95
+  look: b_turn
+  lens: 85
+  move: push
+background: witch-house-front
+image: null
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 屋敷の二階の窓を見上げる横顔
+  end: 見上げたまま
+  sync: 「夢みたいだしさ」で目を細める
