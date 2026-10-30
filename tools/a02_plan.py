@@ -48,6 +48,9 @@ for cut in st.order:
         it2 = {"cut": cut, "which": "end", "skip": NO_END[cut]}
     else:
         it2 = sp.build(st, cut, "end")
+        sk_end = f"{R}/gen/sketch/{cut}_end.png"
+        if not (D / "gen" / "sketch" / f"{cut}_end.png").exists():   # 位置が動かないカットは終わりの略図がない。開始の略図を使う
+            it2["refs"] = [f"{R}/gen/sketch/{cut}_start.png" if r == sk_end else r for r in it2["refs"]]
         it2["refs"].append(out("start"))
         it2["prompt"] = it2["prompt"].replace(" Keep each character", f" Image {len(it2['refs'])} is the first frame of the same shot (made first): keep its background rendering, morning light and the way the characters are drawn. Keep each character")
         if cut == "A02-012":
