@@ -3,7 +3,7 @@
 # ユーザー承認: 3D の段階を進める「OKです。進んでください」（2026-10-31）
 # 場所は world/underground-cavern-layout.yaml（x: 西0→東60、y: 北0→南60、m）。A07 の終わりの続き:
 #   砂食みは北東に倒れている（頭 (31.6, 22.8)、体は東の (36.5, 26) へ床に伸びる）。百騎兵は (36, 33)。ピラー (23.5, 21.5) が光っている
-# ピラーが花のように開き（効果 bloom）、紫の沼が床に広がる（効果 pool）。メタリカは沼から転移して現れる（z が負＝沼の下）
+# ピラーが花のように開き（効果 bloom）、碧の沼が床に広がる（効果 pool）。メタリカは沼から転移して現れる（z が負＝沼の下）
 # ルッキーニィは井戸を降りてきて、西の岩（rock_3）の陰からのぞいている
 scene: A08
 layout: world/underground-cavern-layout.yaml
@@ -60,8 +60,8 @@ cuts:
     bg: cave_wide
     light_en: "Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls."
     extra_en: "The tall crystal Pillar opens like a flower, its glowing petals spreading outward."
-    extra_en_end: "A glossy dark purple swamp spreads across the sandy cavern floor from the base of the open Pillar."
-    act: {start: 倒れた砂食みの奥で光るピラー, do: ピラーが花のように開き、根元から紫の沼が床に広がっていく。百騎兵が歩いてきて見上げる（画の外）, end: 開いたピラーと、床いっぱいに広がる紫の沼, sync: （台詞なし）}
+    extra_en_end: "A glossy, faintly glowing blue-green (teal) poison swamp spreads across the sandy cavern floor from the base of the open Pillar."
+    act: {start: 倒れた砂食みの奥で光るピラー, do: ピラーが花のように開き、根元から碧の沼が床に広がっていく。百騎兵が歩いてきて見上げる（画の外）, end: 開いたピラーと、床いっぱいに広がる碧の沼, sync: （台詞なし）}
     camera: 低い所から、開くピラーを見上げてゆっくり回り込む（南東→南西）
     kind: A
   A08-002:
@@ -89,18 +89,18 @@ cuts:
       - {kind: bloom, t: [-1.0, 0.0], at: pillar, n: 6, r: 0.75, len: 1.8, w: 0.45, open: 60}
       - {kind: pool, t: [-1.0, 0.0], at: pillar, r0: 16.0, r: 16.0}
       - {kind: light, t: [-1.0, 0.0], at: pillar, z: 3.0, energy: 400, color: [150, 220, 255]}
-      - {kind: ring, t: [0.0, 3.0], at: rise, r: 2.2, n: 3, color: [120, 60, 150]}
-      - {kind: plume, t: [0.2, 1.5], at: rise, r: 0.45, h: 0.7, color: [110, 50, 140]}   # 水面の盛り上がり（大きいと手前を隠す）
+      - {kind: ring, t: [0.0, 3.0], at: rise, r: 2.2, n: 3, color: [40, 170, 140]}
+      - {kind: plume, t: [0.2, 1.5], at: rise, r: 0.45, h: 0.7, color: [30, 140, 115]}   # 水面の盛り上がり（大きいと手前を隠す）
     cam_keys:
       - {t: 0.0, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.1, lens: 28, frame: 寄り}
       - {t: 0.8, cam: [29.0, 27.4, 0.25], look: rise, look_h: 0.4, lens: 28}
       - {t: 3.5, cam: [29.3, 27.8, 1.5], look: metallica, look_h: 1.3, lens: 28, frame: 全身, ease: inout}
       - {t: 8.6, cam: [29.4, 27.9, 1.6], look: metallica, look_h: 1.35, lens: 30, ease: linear}
     bg: cave_wide
-    extra_en: "The surface of the purple swamp bulges and ripples as someone rises out of it."
-    act: {start: 紫の沼の水面すれすれ, do: 沼の水面が盛り上がり、メタリカが沼から立ち上がるように転移して現れる。胸を張って百騎兵をほめる, end: 沼の上に立つメタリカ, sync: L217「キヒヒ！よくやった、百騎兵！…上出来だぞ！」は 0.3秒から}
+    extra_en: "The surface of the blue-green swamp bulges and ripples as someone rises out of it."
+    act: {start: 碧の沼の水面すれすれ, do: 沼の水面が盛り上がり、メタリカが沼から立ち上がるように転移して現れる。胸を張って百騎兵をほめる, end: 沼の上に立つメタリカ, sync: L217「キヒヒ！よくやった、百騎兵！…上出来だぞ！」は 0.3秒から}
     camera: 沼の水面の寄りから、立ち上がるメタリカを追って上へ（クレーン）
-    pose: {metallica: "rising up out of the purple swamp, appearing by magic", hundred-knight: "looking up at her, small at the edge of the frame"}
+    pose: {metallica: "rising up out of the blue-green swamp, appearing by magic", hundred-knight: "looking up at her, small at the edge of the frame"}
     pose_end: {metallica: "standing tall on the swamp with hands on her hips, grinning", hundred-knight: "looking up at her"}
     kind: A
   A08-003:
@@ -135,7 +135,7 @@ cuts:
       - {t: 0.0, cam: [24.5, 24.4, 2.4], look: [34.0, 30.0], look_h: 1.0, lens: 24, frame: 引き}
       - {t: 7.0, cam: [24.0, 24.6, 3.4], look: [34.0, 30.0], look_h: 0.8, lens: 22, ease: linear}
     bg: cave_wide
-    extra_en: "A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying in it."
+    extra_en: "A vast glossy blue-green (teal) poison swamp now covers the whole cavern floor, the fallen sand-eater lying in it."
     act: {start: メタリカの背中越しに、沼に満ちた空洞, do: メタリカが両手を広げて沼を見渡し、満足げに笑う。百騎兵が横へ来て見上げる, end: 沼と空洞の引き、メタリカと百騎兵の背中, sync: L218「なかなかに、上物な沼じゃないか。…わかるか？」は 0.3秒から}
     camera: メタリカの背中越しの引き。ゆっくり上がりながら下がる
     pose: {metallica: "seen from behind, spreading her arms wide over the swamp, delighted", hundred-knight: "walking up beside her"}
@@ -195,7 +195,7 @@ cuts:
       - {t: 0.0, cam: [21.4, 33.5, 1.6], look: luckiny, look_h: 1.1, lens: 40, frame: 寄り}
       - {t: 8.4, cam: [21.2, 33.1, 1.6], look: luckiny, look_h: 1.15, lens: 50, ease: linear}
     bg: cave_wide
-    extra_en: "A faint purple miasma drifts through the air from the swamp."
+    extra_en: "A faint miasma haze drifts through the air from the swamp."
     act: {start: 岩の陰のルッキーニィを横から, do: 心の声。沼の瘴気に顔をしかめ、片手で口を押さえる（口は動かさない）, end: 口を押さえてしかめ面のルッキーニィ, sync: L220（心の声）「（そ、それにしても……す、凄い瘴気だ……！）」は 0.3秒から。口は動かさない}
     camera: 横（南東）の少し高い所から、ゆっくり寄る
     pose: {luckiny: "standing behind the rock, staring in awe, seen from the side"}
