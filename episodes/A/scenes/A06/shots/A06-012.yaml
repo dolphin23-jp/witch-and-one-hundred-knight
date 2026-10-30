@@ -1,0 +1,49 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。村人の見た目の参照画像はまだない（静止画の段階までに要る）
+id: A06-012
+scene: A06
+tc: 84.8
+sec: 7.6
+kind: A
+shot: 大引き（空撮）・ティト・砂食みのうねり
+acting: 夜の砂漠を角笛を吹きながら走るティトを、砂の下のうねりが追う
+dialogue:
+- L196「さあこっちよ、砂食み！！砂漠にお帰りなさい！」
+- L197「さあ、いらっしゃい！！あなたの餌はここよ！」
+sound: null
+notes: null
+camera:
+  pos: follow tito offset [-7.0, 9.0] z 14.0
+  look: tito
+  lens: 28
+  move: 高い空から、走るティトとうねりを追う空撮（見せ場）
+background: beast-village
+image: null
+refs:
+- tito
+overlays: []
+fallback: null
+act:
+  start: 夜の砂漠を高い空から。村の東の切れ目から、ティトが角笛を吹きながら走り出る
+  end: 砂丘を越えていくティトとうねり
+timing:
+  lead: 0.3
+blocking:
+  start: テ（中央・斜め後ろ（画面右向き））
+  end: テ（中央・横顔（画面右向き））
+  background: 夜の砂漠〔村 俯瞰〕
+  panels:
+  - 村 俯瞰
+  staging_en: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+    and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running across the moonlit dunes while blowing the long brass horn, in the
+    center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under
+    the surface, sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind.
+    Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
+  staging_en_end: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta
+    cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running over a dune while blowing the horn, small in the frame, in
+    the center of the frame, in profile, turned toward screen right. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under the surface,
+    sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind. Night in
+    the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-012_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-012_end.png

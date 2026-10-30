@@ -1,13 +1,14 @@
 # 獣人の村（アスタロの隠れ里、原作テキストでは「テッタラ村」）とティトの家の配置（上から見た図の座標、単位はメートル）。Claude の構想（2026-10-30、A05b 用）
 # 見た目の資料: 村は refs/beast-village_bg_01（切り抜きは world/beast-village/panel_*.png）、ティトの家の中は world/tito-house/（D-058 の参考画）
 # 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う
-# 座標: x は西 0 → 東 70。y は北 0 → 南 60。方位: 北 0・東 90・南 180・西 270
+# 座標: x は西 0 → 東 130（村は 0〜70、その東は砂漠）。y は北 0 → 南 60。方位: 北 0・東 90・南 180・西 270
+# 東の崖（rock_rim_5 と rock_rim_6）の間、y 21〜40 が砂漠への切れ目（A06 でティトが砂食みを連れ出す）
 # 村は赤い岩の崖に囲まれた谷。南西の岩の狭い隙間（幅2m）から入り、石壁の門を抜けると、中央に石の井戸、まわりに赤い瓦の木の家と柵。
 # ティトの家は村の東のはずれ（x 53〜60、y 23〜29）。中に入れる（壁・扉・窓・奥の部屋への出入口を作る）。
 #   南の壁に扉（外から入る）、北の壁の西寄りに窓（星空が見える）、北の壁の東寄りにカーテンの出入口（奥の部屋）。
 #   西の壁に棚、中央に赤い布のテーブルと丸椅子、東の壁に小さな暖炉、北の壁ぞいに寝台、南東の隅に藁の木箱と壺。
 id: beast-village
-size: {w: 70.0, d: 60.0}
+size: {w: 130.0, d: 60.0}   # x 70〜130 は東の崖の切れ目の外に広がる砂漠（A06-012）
 compass: 北 0、東 90、南 180、西 270（村の入口は南西の岩の隙間）
 time: 夕方〜夜
 ground: {color: [214, 170, 96], ja: 砂}
@@ -93,13 +94,28 @@ props:
   lantern_t2:  {at: [56.0, 26.3], z: 0.95, energy: 20, ja: テーブルの小さなランプ}
   lantern_t3:  {at: [53.6, 23.5], z: 0.9, energy: 25, ja: 窓辺のランプ}
   lantern_win: {at: [54.6, 22.6], z: 1.5, energy: 0, ja: 窓の外（外から見た窓明かりの目印）}
+  horn_wall:   {at: [53.2, 27.6], z: 1.6, ja: 壁に掛けた角笛（A06-008 でティトが取る）}
+  # 東の砂漠（A06-012）
+  dune_e1:     {at: [84.0, 30.0], r: 10.0, ry: 0.6, h: 3.0, ja: 東の砂丘}
+  dune_e2:     {at: [104.0, 18.0], r: 14.0, ry: 0.6, h: 5.0, ja: 東の大きな砂丘}
+  dune_e3:     {at: [100.0, 45.0], r: 12.0, ry: 0.5, h: 3.5, ja: 南東の砂丘}
+  dune_e4:     {at: [120.0, 32.0], r: 10.0, ry: 0.6, h: 4.0, ja: 遠くの砂丘}
 
 people:
   hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
   luckiny:        {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff)"}
+  villager-a:     {ja: 村人A, eye: 1.6, h: 1.75, torch: true, en: "a beastfolk villager man (goat-like horns, rough brown desert clothes, holding a burning torch)"}
+  villager-b:     {ja: 村人B, eye: 1.6, h: 1.7, torch: true, en: "a beastfolk villager man (goat-like horns, a dark blue tunic, holding a burning torch)"}
+  villager-c:     {ja: 村人C, eye: 1.5, h: 1.6, torch: true, en: "a beastfolk villager woman (goat-like horns, a red headscarf and apron, holding a burning torch)"}
+  villager-d:     {ja: 村人D, eye: 1.5, h: 1.65, torch: true, en: "a young beastfolk villager (goat-like horns, a beige tunic, holding a burning torch)"}
   tito:           {ja: ティト, eye: 1.4, h: 1.5, en: "Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail)"}
 
+creatures:
+  sand-eater: {ja: 砂食み, len: 8.0, r: 0.75, en: "the sand-eater: a huge pale segmented larva-like desert worm about 8 m long, as designed in its reference sheet"}
+
 views:
+  desert_night:  {ja: 夜の砂漠, panel: 村 俯瞰, en: "the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind"}
+  door_out:      {ja: ティトの家の扉の前, panel: 村 家, en: "the front of Tito's small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light from inside"}
   village_high:  {ja: 谷の村の全景, panel: 村 俯瞰, en: "seen from above: a small village of wooden houses with red tiled roofs in a sandy valley, low stone walls, wooden fences, a stone well in the middle, red rock cliffs all around"}
   well:          {ja: 村の中ほど, panel: 村 全景, en: "the middle of the village: sandy ground with swirling patterns, wooden houses with red tiled roofs, fences and dry grass"}
   tito_door:     {ja: ティトの家の中（扉側）, panel: ティトの家 扉側, en: "inside Tito's small house: rough stone-brick walls, a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth, round wooden stools, a straw crate, a clay jar, an arched wooden door"}

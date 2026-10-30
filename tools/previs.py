@@ -411,6 +411,10 @@ def build_extra(name, pr, x, y, lit):
                     wx, wy = x + dx * math.cos(a) - dy * math.sin(a), y + dx * math.sin(a) + dy * math.cos(a)
                     box(win, f"ENV_{name}_win{k}{sy}", wx, wy, 0.6, 0.03, 0.6, 1.2, rot)
         return True
+    if name.startswith("horn"):   # 壁に掛けた角笛（真鍮の円錐）
+        brass = make_mat(f"{name}_m", (0.85, 0.65, 0.25))
+        prim("cone", brass, f"ENV_{name}", loc=bl((x, y), pr.get("z", 1.5)), rot=(0, math.pi / 2, 0), radius1=0.12, radius2=0.03, depth=0.6)
+        return True
     if name.startswith("pillar"):
         r = pr.get("r", 0.3)
         box(mat_of("stonewall"), f"ENV_{name}", x, y, 2 * r, 2 * r, pr.get("h", 2.5))
@@ -611,7 +615,7 @@ def build_person(who, h, torch=False):
         horn = make_mat("horn", (0.72, 0.45, 0.2))
         for sx in (-1, 1):
             prim("cyl", horn, f"horn{sx}", head, (sx * hr * 0.55, 0, hr * 2.4 + 0.05), radius=0.03, depth=0.25)
-    elif who in ("luckiny", "tito"):   # 獣人の角
+    elif who in ("luckiny", "tito") or who.startswith("villager"):   # 獣人の角
         horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
         for sx in (-1, 1):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
@@ -757,6 +761,12 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         rx = math.radians(10)
     elif pose == "kneel_hold":  # ひざをついて、両手で相手の手を包む
         k = 0.7
+    elif pose == "look_down":   # うつむく
+        rx = -math.radians(12)
+    elif pose == "proud":       # 胸を張る（両手を腰に）
+        rx = math.radians(6)
+    elif pose == "stroke":      # かがんで相手の頭をなでる
+        k, rx = 0.8, -math.radians(15)
     elif pose == "jump":
         for sx, piv in arms.items():
             piv.rotation_euler = (0, sx * -math.radians(120), 0)
@@ -767,6 +777,14 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
     if pose in ("hold", "kneel_hold"):
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(70), 0, 0)
+    elif pose == "proud":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (0, sx * math.radians(35), 0)
+    elif pose == "stroke":
+        arms[1].rotation_euler = (math.radians(95 + 10 * math.sin(2 * math.pi * 1.2 * t)), 0, 0)
+    elif pose == "horn":        # 角笛を口に当てて吹く（両腕を前に上げる）
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(115), 0, sx * -math.radians(15))
     elif pose == "gesture":    # 片手を横に広げて部屋を示す
         arms[1].rotation_euler = (math.radians(30), -math.radians(70 + 20 * math.sin(2 * math.pi * 0.6 * t)), 0)
     if pose == "wave":
