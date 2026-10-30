@@ -993,8 +993,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         k = 0.7
     elif pose in ("sit", "sitting"):
         k = 0.6
-    elif pose == "bow":        # お辞儀: 上体を前へ倒す
-        rx = -math.radians(35)
+    elif pose == "bow":        # お辞儀: 上体を前へ倒す（人形は腰で曲がらないので、体ごと少し倒して低くする。35度では倒れて見えた）
+        k, rx = 0.93, -math.radians(20)
     elif pose == "look_up":    # 見上げる: 少し反る
         rx = math.radians(10)
     elif pose == "kneel_hold":  # ひざをついて、両手で相手の手を包む
@@ -1011,8 +1011,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         rx = -math.radians(10)
     elif pose == "cross":       # 腕を組んでふんぞり返る
         rx = math.radians(8)
-    elif pose == "lean":        # 顔をずいと近づける（前へ大きく傾く）
-        rx = -math.radians(28)
+    elif pose == "lean":        # 顔をずいと近づける（前へ傾く）
+        rx = -math.radians(18)
     elif pose == "stroke":      # かがんで相手の頭をなでる
         k, rx = 0.8, -math.radians(15)
     elif pose == "jump":
@@ -1036,9 +1036,9 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         arms[1].rotation_euler = (math.radians(95 + 10 * math.sin(2 * math.pi * 1.2 * t)), 0, 0)
     elif pose == "cover":
         arms[1].rotation_euler = (math.radians(145), 0, math.radians(30))
-    elif pose == "cross":
+    elif pose == "cross":       # 腕を前へ上げて内へ寄せる（胸の前で組む。符号を逆にすると横へ広がる）
         for sx, piv in arms.items():
-            piv.rotation_euler = (math.radians(75), 0, -sx * math.radians(45))
+            piv.rotation_euler = (math.radians(80), 0, sx * math.radians(55))
     elif pose == "horn":        # 角笛を口に当てて吹く（両腕を前に上げる）
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(115), 0, sx * -math.radians(15))

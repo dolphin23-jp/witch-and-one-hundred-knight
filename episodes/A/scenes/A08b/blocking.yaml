@@ -130,8 +130,8 @@ cuts:
         - {t: 1.2, at: m0, face: 40, pose: stand}
         - {t: 7.2, at: m0, face: 40, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [56.5, 34.9, 1.6], look: luckiny, look_h: 1.15, lens: 40, frame: 寄り}
-      - {t: 7.2, cam: [56.5, 34.8, 1.6], look: luckiny, look_h: 1.0, lens: 45, ease: linear}
+      - {t: 0.0, cam: [56.8, 35.6, 1.7], look: luckiny, look_h: 1.1, lens: 40, frame: 寄り}   # メタリカの右肩の後ろ（重ならない向き）
+      - {t: 7.2, cam: [56.8, 35.5, 1.7], look: luckiny, look_h: 0.95, lens: 45, ease: linear}
     bg: house_front
     act: {start: メタリカの肩越し, do: ルッキーニィが横から割り込んできて、両手を上げて喜び、ぺこりと頭を下げる, end: 頭を下げるルッキーニィ, sync: L229「それはよかったです！では、早速ですが魔女様！弟子にしてください！」は 0.3秒から}
     camera: メタリカの肩越しにルッキーニィ（切り返しの1）
@@ -151,8 +151,8 @@ cuts:
         - {t: 0.6, at: l1, face: 220, pose: stand}
         - {t: 6.7, at: l1, face: 220, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [58.7, 32.1, 1.3], look: metallica, look_h: 1.45, lens: 40, frame: 寄り}
-      - {t: 6.7, cam: [58.6, 32.2, 1.3], look: metallica, look_h: 1.45, lens: 45, ease: linear}
+      - {t: 0.0, cam: [58.3, 31.15, 1.35], look: metallica, look_h: 1.45, lens: 40, frame: 寄り}   # ルッキーニィの右肩の後ろ
+      - {t: 6.7, cam: [58.3, 31.25, 1.35], look: metallica, look_h: 1.45, lens: 45, ease: linear}
     bg: house_front
     act: {start: ルッキーニィの肩越し, do: メタリカが腕を組み、あきれ顔で突き放す, end: 腕を組むメタリカ, sync: L230「あん？何が“では早速”だ？お前に構っている暇はない。」は 0.3秒から}
     camera: ルッキーニィの肩越しにメタリカ（切り返しの2）
@@ -284,8 +284,8 @@ cuts:
         - {t: 1.2, at: h0, face: 110, pose: stand}
         - {t: 9.1, at: h0, face: 125, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [53.6, 32.3, 0.65], look: [56.8, 34.4], look_h: 1.0, lens: 32, frame: 全身}
-      - {t: 9.1, cam: [53.7, 32.5, 0.65], look: [57.0, 34.6], look_h: 1.0, lens: 32, ease: linear}
+      - {t: 0.0, cam: [52.4, 32.6, 0.7], look: [56.8, 34.4], look_h: 1.0, lens: 32, frame: 全身}   # 百騎兵の 2.2m 後ろ（百騎兵は画の左の手前）
+      - {t: 9.1, cam: [52.5, 32.7, 0.7], look: [57.0, 34.6], look_h: 1.0, lens: 32, ease: linear}
     bg: house_front
     act: {start: 百騎兵の後ろの低い所から, do: ルッキーニィが拳を突き出して「素手で壁に穴を」をまねしながら回る。百騎兵がぼんやり目で追う, end: メタリカの東へ回ったルッキーニィ, sync: L238「砂塵の魔女、パープルピールは…素手で壁に穴をあけるとか！」は 0.3秒から}
     camera: 百騎兵の後ろの低い所から（百騎兵の目の高さ）。二人を遠目に
@@ -305,7 +305,7 @@ cuts:
         - {t: 7.7, at: m1, face: 250, pose: cross}
     cam_keys:
       - {t: 0.0, cam: [60.2, 38.6, 0.8], look: metallica, look_h: 1.2, lens: 35, frame: 全身}
-      - {t: 7.7, cam: [59.0, 39.2, 0.8], look: metallica, look_h: 1.2, lens: 35, ease: linear}
+      - {t: 7.7, cam: [60.6, 37.6, 0.8], look: metallica, look_h: 1.2, lens: 35, ease: linear}   # 終わりに二人が重ならない向き
     bg: house_front
     act: {start: 南東の低い所から, do: ルッキーニィがメタリカの南へ回り込み、首をかしげて聞く。メタリカの顔がだんだん険しくなる, end: メタリカの南で話すルッキーニィ、そむけた顔のメタリカ, sync: L239「あ、あと霧の魔女ネザリアって…議長なんですよね？」は 0.3秒から}
     camera: 南東の低い所から、回り込みの続き（ゆっくり横へ）
@@ -326,9 +326,9 @@ cuts:
         - {t: 0.8, at: c160, face: 340, pose: stand}
         - {t: 5.2, at: c160, face: 340, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [57.5, 35.9, 1.35], look: metallica, look_h: 1.35, lens: 50, frame: 寄り}
-      - {t: 1.0, cam: [57.5, 35.85, 1.35], look: metallica, look_h: 1.3, lens: 70, ease: out}
-      - {t: 5.2, cam: [57.5, 35.85, 1.35], look: metallica, look_h: 1.3, lens: 70}
+      - {t: 0.0, cam: [57.9, 36.4, 1.35], look: metallica, look_h: 1.35, lens: 50, frame: 寄り}   # 帽子のつばに入らない距離（2.2m）
+      - {t: 1.0, cam: [57.85, 36.35, 1.35], look: metallica, look_h: 1.3, lens: 80, ease: out}
+      - {t: 5.2, cam: [57.85, 36.35, 1.35], look: metallica, look_h: 1.3, lens: 80}
     bg: house_front
     act: {start: ルッキーニィの肩越しにメタリカ, do: メタリカがずいと顔を近づける。カメラも顔へ寄る, end: メタリカの顔の大寄り, sync: L241「お前……そんな三流魔女どもに興味があるのか？」は 0.3秒から}
     camera: ルッキーニィの肩越しから、近づくメタリカの顔の大寄りへ

@@ -66,36 +66,36 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.19
-        dist: 9.37
+        s: -0.35
+        dist: 7.84
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: tito
+        s: -0.05
+        dist: 11.37
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.14
+        dist: 8.32
         side: 中央
         body: 背中
-      - who: tito
-        s: -0.06
-        dist: 13.1
-        side: 中央
-        body: 斜め前（画面右向き）
-      - who: metallica
-        s: 0.18
-        dist: 10.36
-        side: 中央
-        body: 斜め後ろ（画面左向き）
       - who: luckiny
-        s: 0.2
-        dist: 12.83
+        s: 0.25
+        dist: 10.65
         side: 中央
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, small, in the center of the frame, with
-        the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with
-        a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing at her door, small in the distance, in the center of the frame, in three-quarter
-        view, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
-        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing with her back to the camera, small, in the
-        center of the frame, seen from behind at an angle, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape
-        with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, small, in the center of the frame, in three-quarter view,
-        turned toward screen left. No other people. High angle looking down. Behind: seen from above: a small village of wooden houses with red tiled roofs in a sandy valley, low stone walls, wooden fences,
-        a stone well in the middle, red rock cliffs all around. Early morning in the village: the low sun rising in the east through the gap in the red cliffs, a pale blue sky with warm golden light, long
-        soft shadows on the sand, the lamps going out.'
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, small, on the left of the frame, seen from
+        behind at an angle, turned toward screen right; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta
+        cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing at her door, small in the distance, in the center of the
+        frame, facing the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two
+        long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing with her back to the camera, small, in the center
+        of the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry
+        goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, small, on the right of the frame, in three-quarter view, turned toward screen left. No other
+        people. High angle looking down. Behind: seen from above: a small village of wooden houses with red tiled roofs in a sandy valley, low stone walls, wooden fences, a stone well in the middle, red
+        rock cliffs all around. Early morning in the village: the low sun rising in the east through the gap in the red cliffs, a pale blue sky with warm golden light, long soft shadows on the sand, the
+        lamps going out.'
     move:
       tito:
         to: door_front
@@ -332,55 +332,49 @@ cuts:
     note: null
   A08b-012:
     cam:
-    - 56.5
-    - 34.9
-    - 1.6
+    - 56.8
+    - 35.6
+    - 1.7
     lens: 40
-    bearing: 44
+    bearing: 34
     frame: 寄り
     start:
       people:
-      - who: metallica
-        s: -0.78
-        dist: 1.14
-        side: 左
-        body: 背中
       - who: luckiny
         s: 0.0
-        dist: 3.61
+        dist: 3.97
         side: 中央
         body: 斜め前（画面左向き）
       bg: ティトの家の前（朝）〔村 家〕
       props:
       - 東の崖
+      - 暖炉
       - 藁の木箱
       - 大きな壺
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind at the edge
-        of the frame, at the far left of the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with
-        white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), stepping in eagerly, seen over the witch''s shoulder, in the center of
-        the frame, in three-quarter view, turned toward screen left. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation,
-        barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red
-        sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), stepping in eagerly, seen over the witch''s shoulder, in the center of the frame, in three-quarter view,
+        turned toward screen left. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof,
+        the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead,
+        long soft shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
       - who: metallica
-        s: -0.34
-        dist: 1.11
+        s: -0.71
+        dist: 1.65
         side: 左
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       - who: luckiny
         s: 0.0
-        dist: 2.66
+        dist: 3.14
         side: 中央
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind at the edge
-        of the frame, on the left of the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white
-        fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), bowing her head, seen over the witch''s shoulder, in the center of the frame,
-        facing the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy
-        lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft
-        shadows, warm light on the walls, the first lamps lit.'
+        of the frame, at the far left of the frame, seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red
+        hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), bowing her head, seen over the witch''s shoulder,
+        in the center of the frame, facing the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a
+        crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky
+        fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     move:
       luckiny:
         to: l1
@@ -405,57 +399,53 @@ cuts:
     note: null
   A08b-013:
     cam:
-    - 58.7
-    - 32.1
-    - 1.3
+    - 58.3
+    - 31.15
+    - 1.35
     lens: 40
-    bearing: 225
+    bearing: 206
     frame: 寄り
     start:
       people:
+      - who: luckiny
+        s: -0.57
+        dist: 1.43
+        side: 左
+        body: 背中
       - who: metallica
         s: 0.0
-        dist: 2.4
+        dist: 2.95
         side: 中央
         body: 正面
-      - who: luckiny
-        s: 0.37
-        dist: 0.85
-        side: 右
-        body: 背中
       bg: ティトの家の前（朝）〔村 家〕
       props:
-      - 入口の岩（東）
       - 南の崖
-      - 南の崖（西）
-      - 家
-      - 家
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, frowning, seen
-        over the girl''s shoulder, in the center of the frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with
-        white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), seen from behind at the edge of the frame, on the right of the frame, with
-        the back to the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof,
-        the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead,
-        long soft shadows, warm light on the walls, the first lamps lit.'
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), seen from behind at the edge of the frame, on the left of the frame, with the back to the
+        camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with
+        green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, frowning, seen over the girl''s shoulder, in the center of the frame,
+        facing the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy
+        lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft
+        shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
+      - who: luckiny
+        s: -0.65
+        dist: 1.34
+        side: 左
+        body: 背中
       - who: metallica
-        s: 0.0
-        dist: 2.26
+        s: -0.0
+        dist: 2.86
         side: 中央
         body: 正面
-      - who: luckiny
-        s: 0.5
-        dist: 0.71
-        side: 右
-        body: 背中
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, brushing her
-        off, in the center of the frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green
-        furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), seen from behind at the edge of the frame, on the right of the frame, with the back to the camera.
-        No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village
-        with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light
-        on the walls, the first lamps lit.'
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), seen from behind at the edge of the frame, at the far left of the frame, with the back
+        to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids
+        tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, brushing her off, in the center of the frame, facing the
+        camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of
+        the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows,
+        warm light on the walls, the first lamps lit.'
     move:
       metallica:
         to: m0
@@ -933,57 +923,59 @@ cuts:
     note: null
   A08b-019:
     cam:
-    - 53.6
-    - 32.3
-    - 0.65
+    - 52.4
+    - 32.6
+    - 0.7
     lens: 32
-    bearing: 123
+    bearing: 112
     frame: 全身
     start:
       people:
+      - who: hundred-knight
+        s: -0.46
+        dist: 2.15
+        side: 左
+        body: 斜め後ろ（画面左向き）
       - who: luckiny
-        s: -0.5
-        dist: 3.94
+        s: -0.38
+        dist: 5.07
         side: 左
         body: 斜め前（画面右向き）
-      - who: hundred-knight
-        s: -0.07
-        dist: 1.17
-        side: 中央
-        body: 横顔（画面左向き）
       - who: metallica
-        s: 0.13
-        dist: 3.77
+        s: 0.1
+        dist: 4.64
         side: 中央
         body: 背中
       bg: ティトの家の前（朝）〔村 家〕
       props:
       - 南東の崖
+      - 東の砂丘
       - 南東の砂丘
-      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+      - 遠くの砂丘
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), seen from behind, watching, on the left of the frame,
+        seen from behind at an angle, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
         green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), circling the witch, throwing pretend punches, on the left of the frame, in three-quarter
-        view, turned toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face
-        with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), seen from behind, watching, in the center of the frame, in profile,
-        turned toward screen left; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two
-        long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, in the center of the frame, with the back to
-        the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane
-        of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows,
-        warm light on the walls, the first lamps lit.'
+        view, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, in the center of the frame, with the
+        back to the camera. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the
+        sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead,
+        long soft shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
       - who: hundred-knight
-        s: -0.27
-        dist: 0.97
-        side: 中央
+        s: -0.56
+        dist: 2.01
+        side: 左
         body: 背中
       - who: luckiny
-        s: -0.12
-        dist: 4.88
+        s: -0.05
+        dist: 5.9
         side: 中央
         body: 正面
       - who: metallica
-        s: 0.11
-        dist: 3.57
+        s: 0.06
+        dist: 4.52
         side: 中央
         body: 横顔（画面右向き）
       staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
@@ -1087,36 +1079,30 @@ cuts:
         on the walls, the first lamps lit.'
     end:
       people:
+      - who: luckiny
+        s: -0.38
+        dist: 3.82
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: metallica
+        s: 0.0
+        dist: 5.0
+        side: 中央
+        body: 斜め後ろ（画面左向き）
       - who: hundred-knight
-        s: -0.25
+        s: 0.04
         dist: 7.62
         side: 中央
         body: 正面
-      - who: luckiny
-        s: -0.08
-        dist: 3.8
-        side: 中央
-        body: 背中
-      - who: metallica
-        s: 0.0
-        dist: 5.19
-        side: 中央
-        body: 横顔（画面左向き）
-      - who: tito
-        s: 0.64
-        dist: 8.27
-        side: 右
-        body: 正面
-      staging: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, facing the camera,
-        small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark
-        hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), tilting her head, asking, in the center of the frame, with the back to the camera; Metallica (the orange-haired witch:
-        huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
-        baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, face turned away, annoyed, in the center of the frame, in profile, turned toward screen left; Tito (a gentle
-        goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless
-        gloves, green furry goat legs with dark hooves, a green fluffy tail), standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: the front of Tito''s
-        small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, the sandy lane of the village with other houses and the red cliffs behind.
-        Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), tilting her head, asking, on the left of the frame, seen from behind at an angle, turned
+        toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long
+        braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), arms crossed, face turned away, annoyed, in the center of the
+        frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue
+        flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame,
+        facing the camera, small in the background. No other people. Behind: the front of Tito''s small wooden house in the morning: a wooden door with iron fittings, stone foundation, barrels and a crate,
+        red tiled roof, the sandy lane of the village with other houses and the red cliffs behind. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading
+        to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     move:
       luckiny:
         to: c160
@@ -1136,17 +1122,17 @@ cuts:
     note: null
   A08b-021:
     cam:
-    - 57.5
-    - 35.9
+    - 57.9
+    - 36.4
     - 1.35
     lens: 50
-    bearing: 325
+    bearing: 324
     frame: 寄り
     start:
       people:
       - who: metallica
         s: 0.0
-        dist: 1.58
+        dist: 2.22
         side: 中央
         body: 横顔（画面左向き）
       bg: ティトの家の前（朝）〔村 家〕
@@ -1165,8 +1151,8 @@ cuts:
     end:
       people:
       - who: metallica
-        s: -0.0
-        dist: 1.54
+        s: 0.0
+        dist: 2.15
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
