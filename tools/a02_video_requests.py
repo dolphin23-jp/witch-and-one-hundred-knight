@@ -7,10 +7,10 @@ VIEW = {"bisco": "characters/bisco/views/bisco_front.png", "hundred-knight": "ch
 want = sys.argv[1].split(","); reqs = []; meta = []
 for v in plan["videos"]["items"]:
     if v["cut"] not in want: continue
-    med = [{"role": "start_image", "value": j[v["start_image"]]}]
+    med = [{"role": "start_image", "value": m.get(v["start_image"]) or j[v["start_image"]]}]   # ファイルとして上げた画を優先（生成ジョブの ID のままだと失敗した、2026-10-30）
     refs = [v["start_image"]]
     if v["end_image"]:
-        med.append({"role": "end_image", "value": j[v["end_image"]]}); refs.append(v["end_image"])
+        med.append({"role": "end_image", "value": m.get(v["end_image"]) or j[v["end_image"]]}); refs.append(v["end_image"])
     for r in v["image_references"]:
         who = r.split("/")[1].replace("_sheet_01.png", "")
         med.append({"role": "image_references", "value": m[VIEW[who]]}); refs.append(VIEW[who])
