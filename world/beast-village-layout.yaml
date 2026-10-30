@@ -1,0 +1,108 @@
+# 獣人の村（アスタロの隠れ里、原作テキストでは「テッタラ村」）とティトの家の配置（上から見た図の座標、単位はメートル）。Claude の構想（2026-10-30、A05b 用）
+# 見た目の資料: 村は refs/beast-village_bg_01（切り抜きは world/beast-village/panel_*.png）、ティトの家の中は world/tito-house/（D-058 の参考画）
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う
+# 座標: x は西 0 → 東 70。y は北 0 → 南 60。方位: 北 0・東 90・南 180・西 270
+# 村は赤い岩の崖に囲まれた谷。南西の岩の狭い隙間（幅2m）から入り、石壁の門を抜けると、中央に石の井戸、まわりに赤い瓦の木の家と柵。
+# ティトの家は村の東のはずれ（x 53〜60、y 23〜29）。中に入れる（壁・扉・窓・奥の部屋への出入口を作る）。
+#   南の壁に扉（外から入る）、北の壁の西寄りに窓（星空が見える）、北の壁の東寄りにカーテンの出入口（奥の部屋）。
+#   西の壁に棚、中央に赤い布のテーブルと丸椅子、東の壁に小さな暖炉、北の壁ぞいに寝台、南東の隅に藁の木箱と壺。
+id: beast-village
+size: {w: 70.0, d: 60.0}
+compass: 北 0、東 90、南 180、西 270（村の入口は南西の岩の隙間）
+time: 夕方〜夜
+ground: {color: [214, 170, 96], ja: 砂}
+sky: {color: [230, 140, 90]}
+sun: {from: 262, elev: 5}   # 夕方。西の岩の向こうに沈む
+light_en: "Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit."
+
+# 光の切り替え（カットの lighting で選ぶ。previs.py が太陽・空・明かりの強さを変える）
+lighting:
+  dusk:  {sun_from: 262, sun_elev: 5, sun_energy: 2.5, sun_color: [255, 170, 110], sky: [230, 140, 90], sky_strength: 1.0, lamps: 1.0}
+  night: {sun_from: 300, sun_elev: 35, sun_energy: 0.25, sun_color: [150, 170, 255], sky: [20, 28, 60], sky_strength: 0.6, lamps: 1.6}
+light_en_night: "Night in the village: a deep blue starry sky, cool faint moonlight, warm orange lamplight from windows and lanterns."
+light_en_interior: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners, cool blue starlight at the window."
+
+panels:
+  村 全景: world/beast-village/panel_wide.png
+  村 門: world/beast-village/panel_gate.png
+  村 路地: world/beast-village/panel_alley.png
+  村 家: world/beast-village/panel_house.png
+  村 一角: world/beast-village/panel_corner.png
+  村 俯瞰: world/beast-village/panel_high.png
+  ティトの家 扉側: world/tito-house/tito-house_door_gpt-image-2.5_01.png
+  ティトの家 窓側: world/tito-house/tito-house_window_gpt-image-2.5_01.png
+  ティトの家 入口から: world/tito-house/tito-house_room_gpt-image-2.5_01.png
+
+areas:
+  - {kind: poly, points: [[11.6, 60], [13.6, 60], [13.6, 47.0], [19.0, 43.0], [21.5, 43.0], [21.5, 41.0], [33.0, 31.5], [35.5, 32.0], [23.0, 42.5], [21.5, 44.5], [14.5, 48.5], [14.5, 60]], ja: 踏み固めた道, color: [196, 150, 84]}
+  - {kind: rect, x: [53.0, 60.0], y: [23.0, 29.0], ja: ティトの家の床, color: [70, 64, 60]}
+
+horizon:
+  - {from: 315, to: 45, ja: 北の崖, panel: 村 全景, en: "the red rock cliffs that enclose the valley, with a few wooden houses with red tiled roofs below them"}
+  - {from: 45, to: 135, ja: 東の崖, panel: 村 一角, en: "wooden houses with red tiled roofs, low stone walls and wooden fences, dry grass, red cliffs behind"}
+  - {from: 135, to: 225, ja: 南の崖, panel: 村 路地, en: "a narrow lane between wooden houses with stone foundations, clay jars, the red cliffs beyond"}
+  - {from: 225, to: 315, ja: 西の崖と門, panel: 村 門, en: "a low mossy stone wall with a wooden gate and a hanging lantern, the tall red rocks of the valley entrance behind"}
+
+props:
+  # 入口の岩（隙間は x 11.6〜13.6）と、谷を囲む崖
+  rock_gate_w: {at: [8.6, 50.0], h: 7.0, r: 3.0, ja: 入口の岩（西）}
+  rock_gate_e: {at: [16.6, 50.5], h: 7.5, r: 3.0, ja: 入口の岩（東）}
+  rock_rim_1:  {at: [3.0, 30.0], h: 9.0, r: 4.0, ja: 西の崖}
+  rock_rim_2:  {at: [5.0, 9.0], h: 10.0, r: 5.0, ja: 北西の崖}
+  rock_rim_3:  {at: [28.0, 3.0], h: 9.0, r: 6.0, ja: 北の崖}
+  rock_rim_4:  {at: [50.0, 4.0], h: 10.0, r: 6.0, ja: 北の崖（東）}
+  rock_rim_5:  {at: [67.0, 18.0], h: 9.0, r: 4.0, ja: 東の崖}
+  rock_rim_6:  {at: [67.0, 44.0], h: 8.0, r: 4.0, ja: 南東の崖}
+  rock_rim_7:  {at: [42.0, 57.0], h: 7.0, r: 5.0, ja: 南の崖}
+  rock_rim_8:  {at: [26.0, 57.0], h: 6.0, r: 4.0, ja: 南の崖（西）}
+  # 石壁と門（門の口は x 18.9〜21.6）
+  wall_1:      {from: [14.0, 43.0], to: [18.9, 43.0], h: 1.6, t: 0.5, ja: 石壁}
+  wall_2:      {from: [21.6, 43.0], to: [27.0, 43.0], h: 1.6, t: 0.5, ja: 石壁}
+  pillar_gw:   {at: [18.6, 43.0], h: 2.8, r: 0.35, ja: 門の柱}
+  pillar_ge:   {at: [21.9, 43.0], h: 2.8, r: 0.35, ja: 門の柱}
+  beam_gate:   {from: [18.6, 43.0], to: [21.9, 43.0], h: 0.2, z: 2.7, t: 0.25, ja: 門の梁}
+  lantern_gate: {at: [20.25, 43.0], z: 2.45, energy: 40, ja: 門のランプ}
+  # 村の中
+  well:        {at: [34.0, 30.0], r: 0.9, glow: [80, 255, 140], ja: 石の井戸（底にかすかな緑）}
+  house_a:     {at: [24.0, 22.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: 0, ja: 家}
+  house_b:     {at: [42.0, 17.0], w: 7.0, d: 5.0, h: 3.2, roof: 2.0, rot: 10, ja: 家}
+  house_c:     {at: [45.0, 38.0], w: 6.0, d: 5.0, h: 3.0, roof: 1.8, rot: -8, ja: 家}
+  house_d:     {at: [27.0, 34.5], w: 5.0, d: 4.0, h: 2.8, roof: 1.6, rot: 5, ja: 家}
+  house_e:     {at: [37.0, 47.0], w: 6.0, d: 4.5, h: 3.0, roof: 1.8, rot: 0, ja: 家}
+  fence_1:     {from: [29.0, 24.5], to: [38.0, 24.5], h: 1.0, ja: 柵}
+  fence_2:     {from: [38.0, 24.5], to: [38.0, 27.5], h: 1.0, ja: 柵}
+  fence_3:     {from: [47.0, 30.5], to: [52.0, 30.5], h: 1.0, ja: 柵}
+  jar_v1:      {at: [30.5, 33.0], r: 0.35, ja: 壺}
+  lantern_v1:  {at: [44.0, 34.8], z: 2.2, energy: 30, ja: 家の前のランプ}
+  lantern_v2:  {at: [26.5, 25.2], z: 2.2, energy: 30, ja: 家の前のランプ}
+  # ティトの家（中に入れる）
+  room_tito:   {x: [53.0, 60.0], y: [23.0, 29.0], h: 3.0, roof: 2.0, ja: ティトの家,
+                openings: [{side: s, c: 57.8, w: 1.1, h: 2.1, ja: 扉}, {side: n, c: 54.6, w: 0.9, h: 0.9, sill: 1.1, ja: 窓}, {side: n, c: 58.6, w: 1.0, h: 2.0, ja: 奥の部屋への出入口}]}
+  room_back:   {x: [57.6, 60.0], y: [20.0, 23.0], h: 2.8, roof: 1.6, walls: [n, e, w], ja: ティトの家の奥の部屋}
+  curtain_1:   {at: [58.6, 23.05], w: 1.0, h: 1.9, rot: 0, ja: 出入口のカーテン}
+  shelf_1:     {at: [53.35, 25.6], w: 0.5, d: 1.8, h: 2.0, ja: 壺とパンの棚}
+  table_1:     {at: [56.0, 26.3], w: 1.6, d: 0.9, h: 0.75, ja: 赤い布のテーブル}
+  stool_1:     {at: [55.3, 27.2], ja: 丸椅子}
+  stool_2:     {at: [56.8, 27.2], ja: 丸椅子}
+  stool_3:     {at: [56.0, 25.4], ja: 丸椅子}
+  bed_1:       {at: [56.3, 23.6], w: 1.9, d: 0.9, h: 0.5, ja: 寝台}
+  hearth_1:    {at: [59.65, 26.0], w: 0.6, d: 1.4, h: 1.1, energy: 120, ja: 暖炉}
+  crate_1:     {at: [59.3, 28.3], w: 0.7, d: 0.5, h: 0.5, ja: 藁の木箱}
+  jar_t1:      {at: [59.55, 27.6], r: 0.3, ja: 大きな壺}
+  lantern_t1:  {at: [55.0, 28.4], z: 2.3, energy: 70, ja: 扉の横のランプ}
+  lantern_t2:  {at: [56.0, 26.3], z: 0.95, energy: 20, ja: テーブルの小さなランプ}
+  lantern_t3:  {at: [53.6, 23.5], z: 0.9, energy: 25, ja: 窓辺のランプ}
+  lantern_win: {at: [54.6, 22.6], z: 1.5, energy: 0, ja: 窓の外（外から見た窓明かりの目印）}
+
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)"}
+  luckiny:        {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff)"}
+  tito:           {ja: ティト, eye: 1.4, h: 1.5, en: "Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail)"}
+
+views:
+  village_high:  {ja: 谷の村の全景, panel: 村 俯瞰, en: "seen from above: a small village of wooden houses with red tiled roofs in a sandy valley, low stone walls, wooden fences, a stone well in the middle, red rock cliffs all around"}
+  well:          {ja: 村の中ほど, panel: 村 全景, en: "the middle of the village: sandy ground with swirling patterns, wooden houses with red tiled roofs, fences and dry grass"}
+  tito_door:     {ja: ティトの家の中（扉側）, panel: ティトの家 扉側, en: "inside Tito's small house: rough stone-brick walls, a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth, round wooden stools, a straw crate, a clay jar, an arched wooden door"}
+  tito_window:   {ja: ティトの家の中（窓側）, panel: ティトの家 窓側, en: "inside Tito's small house: a small square window with a starry night sky, a shelf with rolled star charts and a brass astrolabe, a simple wooden bed, stone-brick walls"}
+  tito_room:     {ja: ティトの家の中（奥）, panel: ティトの家 入口から, en: "inside Tito's small house: a table with a red cloth and stools in the middle, shelves with pots and bread, a small stone hearth with a low fire, a curtained doorway at the back"}
+  village_night: {ja: 星空の下の村, panel: 村 俯瞰, en: "the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars"}

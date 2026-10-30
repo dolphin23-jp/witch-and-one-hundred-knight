@@ -268,7 +268,7 @@ def prim(kind, mat, name, parent=None, loc=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1
     if kind == "cyl":
         bpy.ops.mesh.primitive_cylinder_add(vertices=28, **kw)
     elif kind == "cone":
-        bpy.ops.mesh.primitive_cone_add(vertices=28, **kw)
+        bpy.ops.mesh.primitive_cone_add(**{"vertices": 28, **kw})
     elif kind == "sphere":
         bpy.ops.mesh.primitive_uv_sphere_add(segments=28, ring_count=14, **kw)
     elif kind == "cube":
@@ -302,8 +302,139 @@ def poly_mesh(name, pts, z, mat):
     return o
 
 
-def build_site(lay):
-    """屋敷の前の広場（world/witch-house-front-layout.yaml）を、平らな色分けと簡単な立体で作る。"""
+def box(mat, name, cx, cy, w, d, h, z0=0.0, rot=0.0):
+    """底の中心 (cx, cy)・高さ z0 から、幅 w（東西）・奥行き d（南北）・高さ h の箱。rot は上から見て時計回りの度。"""
+    return prim("cube", mat, name, loc=bl((cx, cy), z0 + h / 2), rot=(0, 0, -math.radians(rot)), scale=(w / 2, d / 2, h / 2), size=2.0)
+
+
+def roof_on(mat, name, cx, cy, w, d, z0, rh, rot=0.0):
+    """四角錐の屋根（下絵なので切妻ではなく寄棟の目安）。"""
+    o = prim("cone", mat, name, loc=bl((cx, cy), z0 + rh / 2), rot=(0, 0, -math.radians(rot) + math.pi / 4), radius1=1.0, radius2=0.0, depth=rh, vertices=4)
+    o.scale = (w / math.sqrt(2), d / math.sqrt(2), 1.0)
+    o.rotation_euler = (0, 0, -math.radians(rot))
+    o.data.transform(__import__("mathutils").Matrix.Rotation(math.pi / 4, 4, "Z"))
+    return o
+
+
+MATS = {}
+
+
+def mat_of(key):
+    cols = {"wood": (0.62, 0.42, 0.25), "roof": (0.78, 0.33, 0.2), "stonewall": (0.62, 0.6, 0.48), "fence": (0.38, 0.26, 0.16),
+            "inwall": (0.5, 0.52, 0.42), "cloth": (0.75, 0.18, 0.15), "curtain": (0.82, 0.74, 0.6), "furn": (0.45, 0.3, 0.18),
+            "bed": (0.7, 0.3, 0.2), "hearth": (0.45, 0.42, 0.38), "straw": (0.85, 0.72, 0.38)}
+    if key not in MATS:
+        MATS[key] = make_mat(f"m_{key}", cols[key])
+    return MATS[key]
+
+
+def point_light(name, x, y, z, energy, color=(1.0, 0.62, 0.3), radius=0.15):
+    bpy.ops.object.light_add(type="POINT", location=bl((x, y), z))
+    o = bpy.context.object
+    o.name = name
+    o.data.energy = energy
+    o.data.color = color
+    o.data.shadow_soft_size = radius
+    return o
+
+
+def build_span(name, pr):
+    """from→to に沿った壁・柵・梁（高さ h、厚さ t、下端 z）。"""
+    (x0, y0), (x1, y1) = pr["from"], pr["to"]
+    L = math.dist((x0, y0), (x1, y1))
+    rot = -math.degrees(math.atan2(-(y1 - y0), x1 - x0))   # 東西に長い箱を、from→to の向きに回す（box の rot は上から見て時計回り）
+    key = "fence" if name.startswith("fence") else ("wood" if name.startswith("beam") else "stonewall")
+    t = pr.get("t", 0.08 if key == "fence" else 0.4)
+    if key == "fence":   # 柵は横木2本と杭
+        for k, zz in enumerate((0.45, 0.85)):
+            box(mat_of(key), f"ENV_{name}_rail{k}", (x0 + x1) / 2, (y0 + y1) / 2, L, t, 0.08, zz * pr.get("h", 1.0), rot)
+        n = max(2, int(L / 1.5) + 1)
+        for k in range(n):
+            u = k / (n - 1)
+            box(mat_of(key), f"ENV_{name}_post{k}", x0 + (x1 - x0) * u, y0 + (y1 - y0) * u, 0.12, 0.12, pr.get("h", 1.0))
+        return
+    box(mat_of(key), f"ENV_{name}", (x0 + x1) / 2, (y0 + y1) / 2, L, t, pr.get("h", 1.5), pr.get("z", 0.0), rot)
+
+
+def build_room(name, pr):
+    """中に入れる部屋: x・y の範囲の4つの壁（openings で扉・窓・出入口を開ける）、床、屋根。walls で作る壁を選べる。"""
+    (xa, xb), (ya, yb) = pr["x"], pr["y"]
+    H, T = pr.get("h", 3.0), 0.18
+    sides = pr.get("walls") or ["n", "s", "e", "w"]
+    m = mat_of("inwall")
+    for side in sides:
+        horiz = side in ("n", "s")
+        a0, a1 = (xa, xb) if horiz else (ya, yb)
+        fixed = {"n": ya, "s": yb, "w": xa, "e": xb}[side]
+        ops = sorted([o for o in pr.get("openings", []) if o["side"] == side], key=lambda o: o["c"])
+        cuts_ = [a0]
+        pieces = []
+        for o in ops:
+            lo, hi = o["c"] - o["w"] / 2, o["c"] + o["w"] / 2
+            pieces.append((cuts_[-1], lo, 0.0, H))
+            sill = o.get("sill", 0.0)
+            if sill > 0:
+                pieces.append((lo, hi, 0.0, sill))
+            top = sill + o["h"]
+            if top < H:
+                pieces.append((lo, hi, top, H))
+            cuts_.append(hi)
+        pieces.append((cuts_[-1], a1, 0.0, H))
+        for k, (u0, u1, z0, z1) in enumerate(pieces):
+            if u1 - u0 < 0.01:
+                continue
+            c = (u0 + u1) / 2
+            if horiz:
+                box(m, f"ENV_{name}_{side}{k}", c, fixed, u1 - u0, T, z1 - z0, z0)
+            else:
+                box(m, f"ENV_{name}_{side}{k}", fixed, c, T, u1 - u0, z1 - z0, z0)
+    box(mat_of("hearth"), f"ENV_{name}_floor", (xa + xb) / 2, (ya + yb) / 2, xb - xa, yb - ya, 0.02)
+    roof_on(mat_of("roof"), f"ENV_{name}_roof", (xa + xb) / 2, (ya + yb) / 2, xb - xa + 0.6, yb - ya + 0.6, H, pr.get("roof", 1.8))
+
+
+def build_extra(name, pr, x, y, lit):
+    """家・柱・家具・ランプなど（村とティトの家、A05b）。作ったら True。"""
+    rot = pr.get("rot", 0)
+    lamps = lit.get("lamps", 1.0) if lit else 1.0
+    if name.startswith("house"):
+        w, d, h = pr.get("w", 6), pr.get("d", 5), pr.get("h", 3)
+        box(mat_of("wood"), f"ENV_{name}", x, y, w, d, h, 0.0, rot)
+        roof_on(mat_of("roof"), f"ENV_{name}_roof", x, y, w + 0.6, d + 0.6, h, pr.get("roof", 1.8), rot)
+        return True
+    if name.startswith("pillar"):
+        r = pr.get("r", 0.3)
+        box(mat_of("stonewall"), f"ENV_{name}", x, y, 2 * r, 2 * r, pr.get("h", 2.5))
+        return True
+    if name.startswith("lantern"):
+        z = pr.get("z", 2.2)
+        lampm = make_mat(f"{name}_m", (1.0, 0.8, 0.45), emit=3.0 * lamps if pr.get("energy", 30) else 0.0)
+        if pr.get("energy", 30):
+            prim("sphere", lampm, f"ENV_{name}", loc=bl((x, y), z), radius=0.09)
+            point_light(f"LGT_{name}", x, y, z, pr.get("energy", 30) * lamps)
+        return True
+    if name.startswith("hearth"):
+        box(mat_of("hearth"), f"ENV_{name}", x, y, pr.get("w", 0.6), pr.get("d", 1.4), pr.get("h", 1.1), 0.0, rot)
+        fire = make_mat(f"{name}_fire", (1.0, 0.45, 0.1), emit=4.0)
+        box(fire, f"ENV_{name}_fire", x - pr.get("w", 0.6) / 2 - 0.01, y, 0.02, 0.6, 0.35, 0.15)
+        point_light(f"LGT_{name}", x - 0.5, y, 0.5, pr.get("energy", 100) * lamps, (1.0, 0.5, 0.2), 0.3)
+        return True
+    if name.startswith("stool"):
+        prim("cyl", mat_of("furn"), f"ENV_{name}", loc=bl((x, y), 0.22), radius=0.18, depth=0.45)
+        return True
+    if name.startswith("curtain"):
+        box(mat_of("curtain"), f"ENV_{name}", x, y, pr.get("w", 1.0), 0.04, pr.get("h", 1.9), 0.0, rot)
+        return True
+    for key, mk in (("table", "furn"), ("shelf", "furn"), ("bed", "bed"), ("crate", "straw")):
+        if name.startswith(key):
+            box(mat_of(mk), f"ENV_{name}", x, y, pr.get("w", 1.0), pr.get("d", 0.6), pr.get("h", 0.8), 0.0, rot)
+            if key == "table":   # 赤い布
+                box(mat_of("cloth"), f"ENV_{name}_cloth", x, y, pr.get("w", 1.0) * 0.6, pr.get("d", 0.6) + 0.06, 0.02, pr.get("h", 0.8))
+            return True
+    return False
+
+
+def build_site(lay, lighting=None):
+    """場所（world/*-layout.yaml）を、平らな色分けと簡単な立体で作る。lighting は layout の lighting の名前（夕方・夜など）。"""
     g = lay.get("ground") or {}
     gcol = tuple(v / 255 for v in g.get("color", [41, 158, 82]))
     swamp = make_mat("swamp", gcol)
@@ -346,6 +477,12 @@ def build_site(lay):
     trunk = make_mat("trunk", (0.38, 0.28, 0.2))
     red = make_mat("mush", (0.9, 0.2, 0.18))
     stump = make_mat("stump", (0.45, 0.33, 0.22))
+    lit = (lay.get("lighting") or {}).get(lighting) or {}
+    for name, pr in (lay.get("props") or {}).items():
+        if "from" in pr:
+            build_span(name, pr)
+        elif name.startswith("room"):
+            build_room(name, pr)
     for name, pr in (lay.get("props") or {}).items():
         if "at" not in pr or name == "door":
             continue
@@ -376,6 +513,13 @@ def build_site(lay):
             continue
         if name.startswith("well"):
             prim("cyl", stone, f"ENV_{name}", loc=bl((x, y), 0.4), radius=pr.get("r", 0.9), depth=0.8)
+            if pr.get("glow"):   # 井戸の口: 暗い穴と、底のかすかな光
+                hole = make_mat(f"{name}_hole", (0.02, 0.02, 0.02))
+                prim("cyl", hole, f"ENV_{name}_hole", loc=bl((x, y), 0.805), radius=pr.get("r", 0.9) * 0.72, depth=0.01)
+                g = make_mat(f"{name}_glow", tuple(v / 255 for v in pr["glow"]), emit=0.8)
+                prim("cyl", g, f"ENV_{name}_glow", loc=bl((x, y), 0.81), radius=pr.get("r", 0.9) * 0.25, depth=0.005)
+            continue
+        if build_extra(name, pr, x, y, lit):
             continue
         if name.startswith("jar") or name.startswith("goods"):
             prim("sphere", jar, f"ENV_{name}", loc=bl((x, y), 0.4), radius=pr.get("r", 0.4))
@@ -394,15 +538,20 @@ def build_site(lay):
     world = bpy.data.worlds.new("sky")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (*linear(tuple(v / 255 for v in (lay.get("sky") or {}).get("color", [158, 199, 242]))), 1.0)
-    bg.inputs["Strength"].default_value = 1.4
+    sky = lit.get("sky") or (lay.get("sky") or {}).get("color", [158, 199, 242])
+    bg.inputs["Color"].default_value = (*linear(tuple(v / 255 for v in sky)), 1.0)
+    bg.inputs["Strength"].default_value = lit.get("sky_strength", 1.4)
     bpy.context.scene.world = world
     # 朝の光: 東の低い所から
     bpy.ops.object.light_add(type="SUN")
     sun = bpy.context.object
     sun.name = "LGT_sun"
-    sun.data.energy = 4.0
-    sn = lay.get("sun") or {}
+    sun.data.energy = lit.get("sun_energy", 4.0)
+    if lit.get("sun_color"):
+        sun.data.color = tuple(v / 255 for v in lit["sun_color"])
+    sn = dict(lay.get("sun") or {})
+    if lit:
+        sn.update({"from": lit.get("sun_from", sn.get("from", 90)), "elev": lit.get("sun_elev", sn.get("elev", 25))})
     if sn:   # 太陽の方位（北 0・東 90）と高さ（°）
         sun.rotation_euler = (math.radians(90 - sn.get("elev", 25)), 0, math.radians(-sn.get("from", 90) + 180 - 90 + 90))
     else:
@@ -580,11 +729,22 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         k = 0.7
     elif pose in ("sit", "sitting"):
         k = 0.6
+    elif pose == "bow":        # お辞儀: 上体を前へ倒す
+        rx = -math.radians(35)
+    elif pose == "look_up":    # 見上げる: 少し反る
+        rx = math.radians(10)
+    elif pose == "kneel_hold":  # ひざをついて、両手で相手の手を包む
+        k = 0.7
     elif pose == "jump":
         for sx, piv in arms.items():
             piv.rotation_euler = (0, sx * -math.radians(120), 0)
     elif pose == "shake":   # 犬のように体を振る
         rz += math.radians(18) * math.sin(2 * math.pi * 6 * t)
+    if pose in ("hold", "kneel_hold"):
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(70), 0, 0)
+    elif pose == "gesture":    # 片手を横に広げて部屋を示す
+        arms[1].rotation_euler = (math.radians(30), -math.radians(70 + 20 * math.sin(2 * math.pi * 0.6 * t)), 0)
     if pose == "wave":
         arms[1].rotation_euler = (0, -math.radians(150 + 20 * math.sin(2 * math.pi * 2.0 * t)), 0)
     elif pose == "point":
@@ -600,7 +760,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
 def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False, motion_step=None):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
-    build_site(lay)
+    c_ = st.bk["cuts"][cut]
+    build_site(lay, c_.get("lighting") or st.bk.get("lighting"))
     plan = Plan(st, cut, sec)
     figs = {}
     for who in plan.people:
