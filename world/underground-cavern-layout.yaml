@@ -1,0 +1,77 @@
+# 村の下の地下空洞と、そこへ通じる井戸（A07・A08）の配置（上から見た図の座標、単位はメートル）。Claude の構想（2026-10-31、D-062 の 3D の段階）
+# 見た目の資料: world/underground-cavern/（D-058 の参考画。全景・奥・俯瞰・壁際・井戸の中）。村の地上は world/beast-village/panel_*.png
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う
+# 座標: x は西 0 → 東 60。y は北 0 → 南 60。高さ z は空洞の床が 0、村の地面が 30（井戸の口）。方位: 北 0・東 90・南 180・西 270
+# 空洞は中心 (30, 30)、東西 40m・南北 36m・天井の高さ 14m の丸い大きな洞。天井の真ん中の穴（井戸の底）から月の光の柱が落ちる。
+#   床は砂。岩の柱4本、壁に横穴3つ、緑に光る苔、天井からの砂の滝、獣の骨。北の壁の奥（30, 12）から砂食みが壁を破って出てくる。
+#   ピラー（魔法の柱）は床の北寄り（30, 21）。A07 の終わりに光り始める（A08）。
+# 井戸は (30, 30) の真上。井戸の筒は z 14〜30（内側の半径 0.65m）。地上は z 30 の円い地面と石の井戸の縁（A07-001〜004）。
+id: underground-cavern
+size: {w: 60.0, d: 60.0}
+compass: 北 0、東 90、南 180、西 270（井戸は空洞の真上）
+time: 夜
+ground: {color: [205, 160, 90], ja: 空洞の床の砂}
+sky: {color: [35, 50, 110]}
+sun: {from: 0, elev: 89.6}   # 月: ほぼ真上。井戸の穴を通って床に光の円
+light_en: "Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows."
+
+lighting:
+  cave: {sun_from: 0, sun_elev: 89.6, sun_energy: 6.0, sun_color: [170, 190, 255], sky: [35, 50, 110], sky_strength: 0.8, lamps: 1.0}
+light_en_top: "Night in the village above: a deep blue starry sky with a bright moon, cool moonlight on the old stone well."
+
+panels:
+  空洞 全景: world/underground-cavern/cavern-wide_gpt-image-2.5_01.png
+  空洞 奥: world/underground-cavern/cavern-deep_gpt-image-2.5_01.png
+  空洞 俯瞰: world/underground-cavern/cavern-top_gpt-image-2.5_01.png
+  空洞 壁際: world/underground-cavern/cavern-wall_gpt-image-2.5_01.png
+  井戸の中: world/underground-cavern/well-shaft_gpt-image-2.5_01.png
+  村 全景: world/beast-village/panel_wide.png
+
+areas:
+  - {kind: circle, center: [30.0, 30.0], r: 3.0, ja: 月の光の円, color: [235, 215, 160]}
+
+horizon:
+  - {from: 315, to: 45, ja: 北の壁（砂食みの出る所）, panel: 空洞 奥, en: "the far rock wall of the cavern with a huge dark round tunnel, glowing green moss, thin streams of falling sand"}
+  - {from: 45, to: 135, ja: 東の壁と柱, panel: 空洞 壁際, en: "massive layered red-brown rock pillars and walls with glowing green moss, a round side tunnel, sand pouring down"}
+  - {from: 135, to: 225, ja: 南の壁, panel: 空洞 全景, en: "the curved rock wall of the cavern with round tunnels, scattered rocks and old bones on the sandy floor, green moss glowing in the dark"}
+  - {from: 225, to: 315, ja: 西の壁と横穴, panel: 空洞 全景, en: "the red-brown rock wall of the cavern with a large round side tunnel, glowing green moss, rocks and bones on the sand"}
+
+props:
+  cave_1:     {at: [30.0, 30.0], rx: 20.0, ry: 18.0, h: 14.0, hole: 0.75, ja: 地下空洞（丸い洞。天井の真ん中に井戸の穴）}
+  shaft_1:    {at: [30.0, 30.0], r: 0.65, z0: 13.0, z1: 30.0, ja: 井戸の筒}
+  plate_top:  {at: [30.0, 30.0], r: 14.0, hole: 0.65, z: 30.0, ja: 村の地面（井戸のまわり）}
+  rim_well:   {at: [30.0, 30.0], r: 0.9, inner: 0.65, z: 30.0, h: 0.8, ja: 石の井戸の縁}
+  beam_1:     {at: [30.0, 30.0], r: 0.7, z0: 0.0, z1: 14.0, ja: 月の光の柱}
+  column_1:   {at: [16.0, 22.0], r: 2.2, h: 14.0, ja: 岩の柱（北西）}
+  column_2:   {at: [45.0, 20.0], r: 2.6, h: 14.0, ja: 岩の柱（北東）}
+  column_3:   {at: [43.0, 42.0], r: 2.0, h: 14.0, ja: 岩の柱（南東）}
+  column_4:   {at: [17.0, 40.0], r: 1.8, h: 14.0, ja: 岩の柱（南西）}
+  tunnel_n:   {at: [30.0, 13.0], z: 3.5, r: 3.2, face: 180, ja: 北の壁の大きな横穴（砂食みの出る所）}
+  tunnel_w:   {at: [11.0, 31.0], z: 2.5, r: 2.4, face: 90, ja: 西の横穴}
+  tunnel_e:   {at: [49.0, 33.0], z: 2.2, r: 2.0, face: 270, ja: 東の横穴}
+  moss_1:     {at: [13.0, 25.0], z: 3.0, energy: 18, ja: 光る苔}
+  moss_2:     {at: [46.5, 26.0], z: 4.0, energy: 18, ja: 光る苔}
+  moss_3:     {at: [35.0, 14.5], z: 4.5, energy: 18, ja: 光る苔}
+  moss_4:     {at: [21.0, 44.5], z: 3.0, energy: 18, ja: 光る苔}
+  moss_5:     {at: [40.0, 44.0], z: 3.5, energy: 18, ja: 光る苔}
+  sandfall_1: {at: [25.0, 24.0], z1: 14.0, ja: 天井からの砂の滝}
+  sandfall_2: {at: [37.0, 37.0], z1: 14.0, ja: 天井からの砂の滝}
+  sandfall_3: {at: [40.0, 27.0], z1: 14.0, ja: 天井からの砂の滝}
+  bones_1:    {at: [24.0, 37.0], r: 0.8, ja: 獣の骨}
+  bones_2:    {at: [38.0, 23.0], r: 0.7, ja: 獣の骨}
+  rock_1:     {at: [22.0, 33.0], h: 0.8, r: 0.6, ja: 岩}
+  rock_2:     {at: [37.5, 34.0], h: 0.6, r: 0.5, ja: 岩}
+  crystal_1:  {at: [30.0, 21.0], r: 0.7, h: 4.5, glow: 0.4, ja: ピラー（魔法の柱。A07 の終わりに光り始める）}
+
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword)"}
+
+creatures:
+  sand-eater: {ja: 砂食み, len: 8.0, r: 0.75, en: "the sand-eater: a huge pale segmented larva-like desert worm about 8 m long, as designed in its reference sheet"}
+
+views:
+  well_top:   {ja: 夜の井戸の口, panel: 村 全景, en: "the old round stone well in the middle of the night village, wooden houses with red tiled roofs around, a deep blue starry sky with a bright moon"}
+  well_shaft: {ja: 井戸の中, panel: 井戸の中, en: "inside a deep old stone well shaft, rough stone blocks, darkness below with a faint green glow at the bottom"}
+  well_up:    {ja: 井戸の中から見上げる, panel: 井戸の中, en: "looking up from inside the deep stone well: the round stone rim far above against the night sky with the bright moon"}
+  cave_wide:  {ja: 地下空洞の全景, panel: 空洞 全景, en: "the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling"}
+  cave_top:   {ja: 地下空洞の俯瞰, panel: 空洞 俯瞰, en: "the huge underground cavern seen from high above near the ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss"}

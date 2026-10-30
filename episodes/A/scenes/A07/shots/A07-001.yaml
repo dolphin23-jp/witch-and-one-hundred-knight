@@ -1,0 +1,51 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
+# kind: M＝小さな動き、A＝見せ場
+id: A07-001
+scene: A07
+tc: 0.0
+sec: 5.0
+kind: M
+shot: 寄り（井戸の中から見上げ）・百騎兵
+acting: 百騎兵が井戸の縁まで来てのぞき込む
+dialogue:
+- L206「おい……その井戸……臭うぞ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.0
+  - 30.1
+  - 26.5
+  look:
+  - 30.0
+  - 30.7
+  lens: 24
+  move: 井戸の中から見上げる（井戸の縁と百騎兵の顔、その上に月）
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 井戸の中から見上げる。丸い井戸の口と月
+  end: 井戸の縁から見下ろす百騎兵の顔と、その上の月
+timing:
+  lead: 0.3
+blocking:
+  start: 百（中央・正面）
+  end: 百（中央・正面）
+  background: 井戸の中から見上げる〔井戸の中〕
+  panels:
+  - 井戸の中
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), walking up to the rim of the well above, then leaning over and peering
+    down into it, in the center of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: looking up from inside the deep stone well: the round stone rim
+    far above against the night sky with the bright moon. Night: looking up from inside the deep stone well, the round rim far above against a deep blue starry sky with a bright moon.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), leaning over the rim far above, peering down, silhouetted against the moonlit
+    sky, in the center of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: looking up from inside the deep stone well: the round stone rim far above
+    against the night sky with the bright moon. Night: looking up from inside the deep stone well, the round rim far above against a deep blue starry sky with a bright moon.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-001_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-001_end.png

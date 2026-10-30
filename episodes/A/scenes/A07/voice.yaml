@@ -1,0 +1,32 @@
+# tools/voice_yaml.py が書く。台詞の秒を変えたらショットファイルを直して作り直す
+scene: A07
+source: audio/A07/original（ショットファイルの台詞から tools/voice_yaml.py で作成）
+note: 台詞の置き場所（シーンの頭からの秒）。カットの頭はショットファイルの tc
+total_sec: 97.6
+bgm:
+  src: audio/A07/original/A07_bgm.ogg
+  from: 0.0
+  volume: 1.0
+lines:
+- id: L206
+  at: 0.3
+- id: L207
+  at: 5.3
+- id: L208
+  at: 10.02
+- id: L209
+  at: 18.5
+- id: L210
+  at: 21.7
+- id: L211
+  at: 26.9
+- id: L212
+  at: 29.9
+- id: L213
+  at: 37.9
+- id: L214
+  at: 41.5
+- id: L215
+  at: 48.27
+- id: L216
+  at: 54.3

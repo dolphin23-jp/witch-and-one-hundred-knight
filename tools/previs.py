@@ -266,7 +266,7 @@ def smooth_shade(obj):
 
 def prim(kind, mat, name, parent=None, loc=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1), **kw):
     if kind == "cyl":
-        bpy.ops.mesh.primitive_cylinder_add(vertices=28, **kw)
+        bpy.ops.mesh.primitive_cylinder_add(**{"vertices": 28, **kw})
     elif kind == "cone":
         bpy.ops.mesh.primitive_cone_add(**{"vertices": 28, **kw})
     elif kind == "sphere":
@@ -392,10 +392,102 @@ def build_room(name, pr):
     roof_on(mat_of("roof"), f"ENV_{name}_roof", (xa + xb) / 2, (ya + yb) / 2, xb - xa + 0.6, yb - ya + 0.6, H, pr.get("roof", 1.8))
 
 
+def bool_diff(obj, cutter):
+    """obj から cutter の形をくり抜く（cutter は消す）。"""
+    mod = obj.modifiers.new("cut", "BOOLEAN")
+    mod.operation = "DIFFERENCE"
+    mod.object = cutter
+    bpy.context.view_layer.objects.active = obj
+    bpy.ops.object.modifier_apply(modifier=mod.name)
+    bpy.data.objects.remove(cutter, do_unlink=True)
+
+
+def beam_mat(name, rgb, strength=0.6, alpha=0.85):
+    """光の柱: 半分透ける発光（下絵の目安）。"""
+    m = bpy.data.materials.new(name)
+    m.use_nodes = True
+    nt = m.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    mix = nt.nodes.new("ShaderNodeMixShader")
+    em = nt.nodes.new("ShaderNodeEmission")
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    em.inputs["Color"].default_value = (*linear(rgb), 1.0)
+    em.inputs["Strength"].default_value = strength
+    mix.inputs["Fac"].default_value = alpha
+    nt.links.new(em.outputs[0], mix.inputs[1])
+    nt.links.new(tr.outputs[0], mix.inputs[2])
+    nt.links.new(mix.outputs[0], out.inputs["Surface"])
+    return m
+
+
+def build_cave(name, pr, x, y):
+    """地下空洞・井戸の筒・地上の円い地面・井戸の縁・光の柱・岩の柱・横穴・苔・砂の滝・ピラー（A07・A08）。作ったら True。"""
+    rockc = make_mat(f"{name}_rock", (0.42, 0.24, 0.15))
+    if name.startswith("cave"):
+        dome = prim("sphere", rockc, f"ENV_{name}", loc=bl((x, y), 0.0), radius=1.0, scale=(pr["rx"], pr["ry"], pr["h"]))
+        if pr.get("hole"):
+            bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr["hole"], depth=6.0, location=bl((x, y), pr["h"]))
+            bool_diff(dome, bpy.context.object)
+        return True
+    if name.startswith("shaft"):
+        bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr.get("r", 0.65), depth=pr["z1"] - pr["z0"], end_fill_type="NOTHING",
+                                            location=bl((x, y), (pr["z0"] + pr["z1"]) / 2))
+        o = bpy.context.object
+        o.name = f"ENV_{name}"
+        o.data.materials.append(make_mat(f"{name}_stone", (0.55, 0.52, 0.46)))
+        return True
+    if name.startswith("plate"):
+        disc = prim("cyl", make_mat(f"{name}_sand", (0.78, 0.62, 0.36)), f"ENV_{name}", loc=bl((x, y), pr["z"] - 0.1), radius=pr["r"], depth=0.2)
+        if pr.get("hole"):
+            bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr["hole"], depth=2.0, location=bl((x, y), pr["z"]))
+            bool_diff(disc, bpy.context.object)
+        return True
+    if name.startswith("rim"):
+        ring = prim("cyl", make_mat(f"{name}_stone", (0.62, 0.6, 0.54)), f"ENV_{name}", loc=bl((x, y), pr["z"] + pr.get("h", 0.8) / 2), radius=pr["r"], depth=pr.get("h", 0.8))
+        bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr.get("inner", 0.65), depth=3.0, location=bl((x, y), pr["z"]))
+        bool_diff(ring, bpy.context.object)
+        return True
+    if name.startswith("beam"):
+        bpy.ops.mesh.primitive_cylinder_add(vertices=24, radius=pr.get("r", 0.7), depth=pr["z1"] - pr["z0"], end_fill_type="NOTHING",
+                                            location=bl((x, y), (pr["z0"] + pr["z1"]) / 2))
+        o = bpy.context.object
+        o.name = f"ENV_{name}"
+        o.data.materials.append(beam_mat(f"{name}_m", (0.75, 0.85, 1.0)))
+        return True
+    if name.startswith("column"):
+        prim("cyl", rockc, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=pr.get("r", 2.0), depth=pr["h"])
+        return True
+    if name.startswith("tunnel"):   # 横穴: 壁に貼った暗い円（向き face は穴が口を開ける方位）
+        dark = make_mat(f"{name}_dark", (0.03, 0.02, 0.02))
+        prim("cyl", dark, f"ENV_{name}", loc=bl((x, y), pr.get("z", 2.5)), rot=(math.pi / 2, 0, -math.radians(pr.get("face", 0))), radius=pr.get("r", 2.0), depth=0.6)
+        return True
+    if name.startswith("moss"):
+        g = make_mat(f"{name}_m", (0.45, 1.0, 0.35), emit=2.0)
+        prim("sphere", g, f"ENV_{name}", loc=bl((x, y), pr.get("z", 3.0)), radius=0.45, scale=(1, 1, 0.6))
+        point_light(f"LGT_{name}", x, y, pr.get("z", 3.0), pr.get("energy", 15), (0.45, 1.0, 0.4), 0.5)
+        return True
+    if name.startswith("sandfall"):
+        sm = make_mat(f"{name}_m", (0.85, 0.7, 0.45))
+        prim("cyl", sm, f"ENV_{name}", loc=bl((x, y), pr.get("z1", 14.0) / 2), radius=0.06, depth=pr.get("z1", 14.0))
+        return True
+    if name.startswith("crystal"):   # ピラー: 縦長の結晶（glow で光る強さ）
+        cm = make_mat(f"{name}_m", (0.55, 0.85, 1.0), emit=pr.get("glow", 0.0))
+        prim("cyl", cm, f"ENV_{name}", loc=bl((x, y), pr.get("h", 4.0) / 2), radius=pr.get("r", 0.6), depth=pr.get("h", 4.0), vertices=6)
+        prim("cone", cm, f"ENV_{name}_tip", loc=bl((x, y), pr.get("h", 4.0) + 0.5), radius1=pr.get("r", 0.6), radius2=0.0, depth=1.0, vertices=6)
+        if pr.get("glow"):
+            point_light(f"LGT_{name}", x, y, pr.get("h", 4.0) * 0.6, 60 * pr["glow"], (0.6, 0.85, 1.0), 0.5)
+        return True
+    return False
+
+
 def build_extra(name, pr, x, y, lit):
     """家・柱・家具・ランプなど（村とティトの家、A05b）。作ったら True。"""
     rot = pr.get("rot", 0)
     lamps = lit.get("lamps", 1.0) if lit else 1.0
+    if build_cave(name, pr, x, y):
+        return True
     if name.startswith("house"):
         w, d, h = pr.get("w", 6), pr.get("d", 5), pr.get("h", 3)
         box(mat_of("wood"), f"ENV_{name}", x, y, w, d, h, 0.0, rot)
@@ -573,7 +665,7 @@ def build_site(lay, lighting=None):
         sun.rotation_euler = (math.radians(65), 0, math.radians(-100))   # 東（+X）から西へ、高さ 25°
 
 
-def build_person(who, h, torch=False):
+def build_person(who, h, torch=False, sword=False):
     sh = SHAPE.get(who, SHAPE_DEFAULT)
     col = COLORS.get(who, (0.9, 0.9, 0.9))
     r, hr, arm = sh["r"], sh["hr"], sh["arm"]
@@ -619,6 +711,12 @@ def build_person(who, h, torch=False):
         horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
         for sx in (-1, 1):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
+    if sword:   # 剣: 右手の先から刃（百騎兵、A07）
+        blade = make_mat(f"{who}_blade", (0.85, 0.88, 0.95))
+        hilt = make_mat(f"{who}_hilt", (0.25, 0.2, 0.15))
+        prim("cyl", hilt, f"{who}_hilt", arms[1], (0, 0, -al - 0.06), radius=0.03, depth=0.16)
+        prim("cube", blade, f"{who}_blade", arms[1], (0, 0, -al - 0.14 - 0.45), scale=(0.05, 0.012, 0.45), size=2.0)
+        root["sword"] = 1
     if torch:   # 松明: 右手の先に火（点光源）。腕は apply_pose で上げる
         fire = make_mat(f"{who}_torch", (1.0, 0.55, 0.15), emit=4.0)
         stick = make_mat(f"{who}_stick", (0.3, 0.2, 0.12))
@@ -637,6 +735,17 @@ def setup_render(scene, w, h, samples, denoise=False):
     scene.render.engine = "CYCLES"
     scene.cycles.device = "CPU"
     scene.cycles.samples = samples
+    # 下絵なので光の跳ね返りを減らして速くする
+    for k, v in (("max_bounces", 3), ("diffuse_bounces", 2), ("glossy_bounces", 0), ("transmission_bounces", 0),
+                 ("volume_bounces", 0), ("transparent_max_bounces", 2)):
+        try:
+            setattr(scene.cycles, k, v)
+        except Exception:
+            pass
+    try:
+        scene.cycles.caustics_reflective = scene.cycles.caustics_refractive = False
+    except Exception:
+        pass
     try:
         scene.cycles.use_denoising = denoise
     except Exception:
@@ -661,7 +770,7 @@ def build_creature(name, track):
     col = COLORS.get(name, (0.6, 0.6, 0.5))
     m_body = make_mat(f"{name}_body", col)
     m_head = make_mat(f"{name}_head", tuple(c * 0.75 for c in col))
-    m_shadow = make_mat(f"{name}_shadow", (0.35, 0.25, 0.12))
+    m_shadow = make_mat(f"{name}_shadow", (0.5, 0.38, 0.22))
     m_mound = make_mat(f"{name}_mound", tuple(min(1.0, c * 1.12) for c in SAND))
     segs, shadows, mounds = [], [], []
     for i in range(track.segs):
@@ -679,10 +788,10 @@ def pose_creature(parts, track, t):
         so.scale = (r, r, r)
         if -2.5 < z < 0.0:   # 砂の下の浅い所: 影（深いほど薄く小さく）と盛り上がり
             k = 1.0 + z / 2.5
-            sh.location = bl((x, y), 0.03)
-            sh.scale = (r * (1.3 + 0.4 * k), r * (1.3 + 0.4 * k), 1.0)
-            mo.location = bl((x, y), -r * 0.8)
-            mo.scale = (r * 1.4, r * 1.4, r * (0.3 + 0.8 * k))
+            sh.location = bl((x, y), 0.02)
+            sh.scale = (r * (1.1 + 0.3 * k), r * (1.1 + 0.3 * k), 1.0)
+            mo.location = bl((x, y), 0.0)   # 盛り上がり: 地面から 0.2〜0.6m（浅いほど高い）
+            mo.scale = (r * 1.5, r * 1.5, 0.2 + 0.4 * k)
         else:
             sh.location = mo.location = (0, 0, -50)
 
@@ -700,6 +809,19 @@ def build_fx(fx, i):
             o.location = (0, 0, -50)
             objs.append(o)
         return objs
+    if kind == "eyes":    # 闇の中で光る目（2つ）
+        em = make_mat(f"fx{i}_eye", (1.0, 0.75, 0.2), emit=6.0)
+        return [prim("sphere", em, f"fx{i}_eye{j}", None, (0, 0, -50), radius=1.0) for j in range(2)]
+    if kind == "spark":   # 火花（明るい小さな光）
+        em = make_mat(f"fx{i}_spark", (1.0, 0.9, 0.5), emit=8.0)
+        return [prim("sphere", em, f"fx{i}_sp{j}", None, (0, 0, -50), radius=1.0) for j in range(5)]
+    if kind == "light":   # だんだん強くなる光（ピラーが光り始める）
+        bpy.ops.object.light_add(type="POINT", location=(0, 0, -50))
+        lt = bpy.context.object
+        lt.name = f"LGT_fx{i}"
+        lt.data.color = tuple(v / 255 for v in fx.get("color", [150, 220, 255]))
+        lt.data.shadow_soft_size = 0.6
+        return [lt]
     return [prim("sphere", m, f"fx{i}_{j}", None, (0, 0, -50), radius=1.0) for j in range(6)]
 
 
@@ -708,6 +830,36 @@ def pose_fx(fx, objs, t, pos, place):
     p = pos[at] if isinstance(at, str) and at in pos else place(at)
     amt = motion.fx_amount(fx, t)
     t0, t1 = fx["t"]
+    kind = fx.get("kind", "plume")
+    z0 = fx.get("z", 0.0)
+    if kind == "eyes":    # 目: t の間だけ、開くように縦に伸びる
+        on = t0 <= t <= t1
+        op = min(1.0, (t - t0) / 0.4) if on else 0.0
+        for j, o in enumerate(objs):
+            if not on:
+                o.location = (0, 0, -50)
+                continue
+            dx = (j - 0.5) * fx.get("gap", 0.9)
+            o.location = bl((p[0] + dx, p[1]), z0)
+            rr = fx.get("r", 0.18)
+            o.scale = (rr, rr, rr * max(0.08, op))
+        return
+    if kind == "spark":   # 火花: 一瞬だけ散る
+        for j, o in enumerate(objs):
+            if amt <= 0.01:
+                o.location = (0, 0, -50)
+                continue
+            ang = j * 1.3
+            d = 0.6 * amt
+            o.location = bl((p[0] + math.cos(ang) * d, p[1] + math.sin(ang) * d), z0 + 0.3 * math.sin(j) * amt)
+            rr = 0.08 + 0.06 * amt
+            o.scale = (rr, rr, rr)
+        return
+    if kind == "light":   # 光: 時刻とともに強くなる（shape rise）
+        u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
+        objs[0].location = bl(p, z0)
+        objs[0].data.energy = fx.get("energy", 300) * u
+        return
     if fx.get("kind") == "ring":   # 波紋: 輪が順に広がる
         n = len(objs)
         for j, o in enumerate(objs):
@@ -761,6 +913,10 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         rx = math.radians(10)
     elif pose == "kneel_hold":  # ひざをついて、両手で相手の手を包む
         k = 0.7
+    elif pose == "ready":       # 剣を構える（前かがみ）
+        rx = -math.radians(10)
+    elif pose == "slash":       # 斬る（前へ踏み込む）
+        rx = -math.radians(18)
     elif pose == "look_down":   # うつむく
         rx = -math.radians(12)
     elif pose == "proud":       # 胸を張る（両手を腰に）
@@ -777,6 +933,10 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
     if pose in ("hold", "kneel_hold"):
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(70), 0, 0)
+    elif pose == "ready":
+        arms[1].rotation_euler = (math.radians(60), 0, 0)
+    elif pose == "slash":       # 右腕を上から斜めに振り下ろす
+        arms[1].rotation_euler = (math.radians(160 - 140 * min(1.0, (t * 3.0) % 1.0)), 0, -math.radians(30))
     elif pose == "proud":
         for sx, piv in arms.items():
             piv.rotation_euler = (0, sx * math.radians(35), 0)
@@ -807,7 +967,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     plan = Plan(st, cut, sec)
     figs = {}
     for who in plan.people:
-        figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False))
+        figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False), lay["people"][who].get("sword", False))
         if who not in plan.shown:   # 画に映さない人物は描かない（静止画と同じ）
             for o in [figs[who][0]] + list(figs[who][0].children_recursive):
                 o.hide_render = True

@@ -1,0 +1,52 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
+# kind: M＝小さな動き、A＝見せ場
+id: A07-008
+scene: A07
+tc: 54.0
+sec: 7.6
+kind: A
+shot: 大引き→全身・百騎兵（背中）・砂食み
+acting: 百騎兵が剣を構え、頭の炎が燃え上がる
+dialogue:
+- L216「さあ、百騎兵！この虫ケラに味あわせてやれ！絶対的搾取の恐怖をな！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.9
+  - 34.0
+  - 0.5
+  look: sand-eater
+  lens: 24
+  move: 百騎兵の後ろから、砂食みを見上げる煽り。一気に寄る
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の後ろから、砂食みを見上げる煽り
+  end: 剣を構えた百騎兵の背中と、見下ろす砂食み
+timing:
+  lead: 0.3
+blocking:
+  start: 百（中央・背中）
+  end: 百（左・背中）
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), raising its big sword, seen from behind and below, on the left of the frame,
+    with the back to the camera. No other people. The pale blue flame on the Hundred Knight''s head flares up high. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
+    in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+    onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its big sword ready, its head flame blazing, seen from behind and
+    below, on the left of the frame, with the back to the camera. No other people. The pale blue flame on the Hundred Knight''s head flares up high. Behind: the huge underground cavern: a sandy floor, massive
+    rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling
+    from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-008_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-008_end.png

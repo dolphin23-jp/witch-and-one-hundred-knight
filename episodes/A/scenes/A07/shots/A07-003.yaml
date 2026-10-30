@@ -1,0 +1,48 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
+# kind: M＝小さな動き、A＝見せ場
+id: A07-003
+scene: A07
+tc: 18.2
+sec: 8.4
+kind: M
+shot: 寄り（真下）・井戸の底
+acting: 井戸の底の闇へ一気に寄る。闇の中で目が開く
+dialogue:
+- L209「百騎兵、目指すものはその中だ！」
+- L210「闇の深遠から覗くその瞳……串刺しにしてやれ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.0
+  - 30.08
+  - 29.0
+  look:
+  - 30.0
+  - 30.1
+  lens: 35
+  move: 井戸の底の闇へ一気に寄る。目が開く瞬間で止め
+background: underground-cavern
+image: null
+refs:
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 井戸の中を真下に
+  end: 闇の中で何かの目が開く瞬間で止め
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 井戸の中〔井戸の中〕
+  panels:
+  - 井戸の中
+  staging_en: 'No people in frame. High angle looking down. Behind: inside a deep old stone well shaft, rough stone blocks, darkness below with a faint green glow at the bottom. Darkness deep inside the
+    stone well shaft, a faint green glow far below.'
+  staging_en_end: 'No people in frame. High angle looking down. Deep in the darkness at the bottom of the well, a pair of huge glowing eyes opens. Behind: inside a deep old stone well shaft, rough stone
+    blocks, darkness below with a faint green glow at the bottom. Darkness deep inside the stone well shaft, a faint green glow far below.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-003_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-003_end.png
