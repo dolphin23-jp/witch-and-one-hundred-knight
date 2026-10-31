@@ -34,7 +34,8 @@ cuts:
       - 木組みの家
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       - 広場の入口の石の柱（西）
       - 広場の入口の石の柱（東）
       - 柱の上のランタン
@@ -218,7 +219,8 @@ cuts:
       - 木組みの家
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
       - 花壇の花（桃色）
       - 広場のランタンの柱
@@ -720,7 +722,8 @@ cuts:
       - 木組みの家
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       - 広場の入口の石の柱（西）
       - 広場の入口の石の柱（東）
       - 柱の上のランタン
@@ -784,51 +787,56 @@ cuts:
     note: null
   A11-011:
     cam:
-    - 120.5
-    - 25.3
-    - 0.8
-    lens: 32
+    - 120.9
+    - 26.3
+    - 1.0
+    lens: 30
     bearing: 341
     frame: 全身
     start:
       people:
-      - who: bisco
-        s: 0.0
-        dist: 15.12
-        side: 中央
-        body: 正面
       - who: hundred-knight
-        s: 0.01
-        dist: 1.9
+        s: -0.02
+        dist: 2.97
         side: 中央
         body: 背中
+      - who: bisco
+        s: 0.0
+        dist: 16.19
+        side: 中央
+        body: 正面
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 木組みの家
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
+      - 広場の入口の石の柱（西）
+      - 柱の上のランタン
       - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
       - 花壇の花（桃色）
       - 広場のランタンの柱
       - 花壇の花
       - 花壇の花
-      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, about waist-high to
-        Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
-        brown shoes; it carries no sword here), standing, in the center of the frame, with the back to the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks
-        in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow
-        flowers.'
+      - 丸い木
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with
+        the back to the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+        tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown
+        bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and
+        yellow flowers.'
     end:
       people:
       - who: bisco
         s: 0.0
-        dist: 3.18
+        dist: 4.16
         side: 中央
         body: 正面
       - who: hundred-knight
-        s: 0.33
-        dist: 1.87
-        side: 右
+        s: 0.22
+        dist: 2.86
+        side: 中央
         body: 背中
       staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
         brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
@@ -862,22 +870,22 @@ cuts:
     note: null
   A11-012:
     cam:
-    - 117.6
-    - 17.4
-    - 0.9
+    - 116.6
+    - 18.6
+    - 0.45
     lens: 35
-    bearing: 44
+    bearing: 42
     frame: 全身
     start:
       people:
       - who: bisco
-        s: -0.7
-        dist: 1.85
+        s: -0.38
+        dist: 3.43
         side: 左
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.74
-        dist: 1.75
+        s: 0.4
+        dist: 3.29
         side: 右
         body: 横顔（画面左向き）
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
@@ -887,29 +895,29 @@ cuts:
       - 広場のランタンの柱
       - 花壇の花
       staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high
-        to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
-        shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved
-        with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with
-        pink, purple and yellow flowers.'
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica:
+        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown
+        shoes; it carries no sword here), standing, on the right of the frame, in profile, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind:
+        St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped
+        with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     end:
       people:
       - who: bisco
-        s: -0.84
-        dist: 1.78
+        s: -0.45
+        dist: 3.29
         side: 左
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.89
-        dist: 1.68
+        s: 0.47
+        dist: 3.15
         side: 右
         body: 横顔（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high
-        to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
-        shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved
-        with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with
-        pink, purple and yellow flowers.'
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica:
+        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown
+        shoes; it carries no sword here), standing, on the right of the frame, in profile, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind:
+        St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped
+        with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     move:
       bisco:
         to: b_meet
@@ -959,9 +967,22 @@ cuts:
         with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with
         pink, purple and yellow flowers.'
     end:
-      people: []
-      staging: 'No people in frame. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging
-        by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
+      people:
+      - who: bisco
+        s: -0.4
+        dist: 4.74
+        side: 左
+        body: 正面
+      - who: hundred-knight
+        s: 0.57
+        dist: 3.22
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword
+        here), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern,
+        half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     move:
       bisco:
         to: b_walk
@@ -990,13 +1011,13 @@ cuts:
     - 118.0
     - 16.6
     - 1.3
-    lens: 35
+    lens: 32
     bearing: 7
     frame: 引き
     start:
       people:
       - who: bisco
-        s: 0.58
+        s: 0.53
         dist: 3.35
         side: 右
         body: 正面
@@ -1004,7 +1025,10 @@ cuts:
       props:
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
+      - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
+      - 花壇の花（桃色）
       staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
         black-and-white tail, silver armored boots), standing, on the right of the frame, facing the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks
         in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow
@@ -1012,12 +1036,12 @@ cuts:
     end:
       people:
       - who: bisco
-        s: 0.48
+        s: 0.43
         dist: 4.33
         side: 右
         body: 背中
       - who: hundred-knight
-        s: 0.82
+        s: 0.74
         dist: 1.89
         side: 右
         body: 背中
@@ -1067,7 +1091,8 @@ cuts:
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
         black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown
         bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and
@@ -1195,7 +1220,8 @@ cuts:
       props:
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
         in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera.
         No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the
@@ -1523,7 +1549,8 @@ cuts:
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
         in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
         view, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled
@@ -1643,7 +1670,8 @@ cuts:
       props:
       - 木組みの家
       - 木組みの家
-      - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
+      - 館の丘
       - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
       - 花壇の花（桃色）
       - 広場のランタンの柱
@@ -1719,6 +1747,9 @@ checks:
     which: start
     who: metallica
   - cut: A11-011
+    which: end
+    who: metallica
+  - cut: A11-013
     which: end
     who: metallica
   - cut: A11-014

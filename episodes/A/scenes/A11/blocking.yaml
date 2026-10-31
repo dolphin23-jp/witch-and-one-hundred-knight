@@ -299,9 +299,9 @@ cuts:
         - {t: 3.0, at: hk_meet, face: 318, pose: stand}
         - {t: 5.5, at: hk_meet, face: 318, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: {follow: hundred-knight, offset: [0.6, 1.8], z: 0.8}, look: bisco, lens: 32, frame: 全身}
-      - {t: 3.0, cam: [119.9, 18.5, 0.8], look: bisco, lens: 32}
-      - {t: 5.5, cam: [119.9, 18.4, 0.8], look: bisco, lens: 35}
+      - {t: 0.0, cam: {follow: hundred-knight, offset: [1.0, 2.8], z: 1.0}, look: bisco, lens: 30, frame: 全身}
+      - {t: 3.0, cam: [120.3, 19.4, 1.0], look: bisco, lens: 30}
+      - {t: 5.5, cam: [120.3, 19.3, 1.0], look: bisco, lens: 33}
     bg: town
     act: {start: 花壇に座るビスコ, do: 百騎兵に気づいて跳ね起き、駆け寄る, end: 向き合うビスコと百騎兵}
     camera: 百騎兵の後ろの低い所から追い、広場で止まる
@@ -320,11 +320,11 @@ cuts:
         - {t: 0.8, at: hk_meet, face: 318, pose: look_up}
         - {t: 5.1, at: hk_meet, face: 318, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [117.6, 17.4, 0.9], look: [118.85, 16.1], look_h: 0.75, lens: 35, frame: 全身}
-      - {t: 5.1, cam: [117.65, 17.35, 0.85], look: [118.85, 16.1], look_h: 0.7, lens: 40}
+      - {t: 0.0, cam: [116.6, 18.6, 0.45], look: [118.85, 16.1], look_h: 0.7, lens: 35, frame: 全身}
+      - {t: 5.1, cam: [116.7, 18.5, 0.45], look: [118.85, 16.1], look_h: 0.65, lens: 40}
     bg: town
     act: {start: 向き合う二人, do: ビスコがしゃがんで百騎兵の目の高さになり、困った顔で打ち明ける, end: しゃがんだビスコと百騎兵}
-    camera: 南西から二人を横に並べる
+    camera: 南西の低い所（百騎兵の目の高さ）から二人を横に並べる
     kind: M
   A11-013:
     frame: 全身
@@ -347,10 +347,10 @@ cuts:
     cam_keys:
       - {t: 0.0, cam: {follow: bisco, offset: [-2.2, 0.8], z: 1.2}, look: bisco, lens: 32, frame: 全身}
       - {t: 4.4, cam: {follow: bisco, offset: [-2.2, 0.8], z: 1.2}, look: bisco, lens: 32, ease: linear}
-      - {t: 10.8, cam: [117.4, 14.4, 1.2], look: [119.3, 14.6], look_h: 1.0, lens: 32}
+      - {t: 10.8, cam: [115.8, 16.8, 1.4], look: [119.4, 15.0], look_h: 1.0, lens: 24}
     bg: town
     act: {start: しゃがんだビスコ, do: 立ち上がって広場の中ほどへ数歩歩きながら、ネコの話をする。振り返って手で示す, end: 手で示すビスコと見上げる百騎兵}
-    camera: 西から歩くビスコに並走し、二人を入れて止まる
+    camera: 西から歩くビスコに並走し、引きながら二人を入れる
     kind: M
   A11-014:
     frame: 引き
@@ -371,8 +371,8 @@ cuts:
         - {t: 4.4, at: hk_mid, face: 10, pose: stand}
         - {t: 7.9, at: hk_mid, face: 10, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [118.0, 16.6, 1.3], look: [119.8, 2.0], look_h: 2.5, lens: 35, frame: 引き}
-      - {t: 7.9, cam: [118.1, 16.4, 1.3], look: [119.9, 0.0], look_h: 3.5, lens: 40}
+      - {t: 0.0, cam: [118.0, 16.6, 1.3], look: [119.8, 2.0], look_h: 3.0, lens: 32, frame: 引き}
+      - {t: 7.9, cam: [118.1, 16.4, 1.3], look: [119.9, 0.0], look_h: 4.5, lens: 36}
     bg: town
     act: {start: 手で示すビスコ, do: 北へ向き直って数歩、遠くの丘の上の大公爵の館を見る。百騎兵も並ぶ, end: 館を見るビスコと百騎兵の後ろ姿}
     camera: 二人の後ろ（南西）から、北の道の先の館へ
