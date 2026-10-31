@@ -14,7 +14,7 @@ places:
   a_up:     [14.3, 8.4]    # 立ち上がった所
   a_talk:   [14.9, 9.6]    # 003〜008 の報告の位置
   hk_talk:  [14.75, 10.6]  # 百騎兵（アルレッキーノの南）
-  sc_bush:  [19.5, 10.9]   # 004 スケアコッコ。茂み bush_peek の西の陰
+  sc_bush:  [19.85, 12.1]  # 004 スケアコッコ。茂み bush_peek の西の陰
   hk_peek:  [11.5, 9.9]    # 012 根の陰をのぞく
   hk_bush:  [10.5, 13.4]   # 012 茂みをのぞく
   sc_meet:  [11.3, 12.5]   # 013 百騎兵のすぐ後ろ
@@ -63,11 +63,11 @@ cuts:
         - {t: 4.0, at: hk_talk, face: 355, pose: stand}
         - {t: 9.0, at: hk_talk, face: 355, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [15.6, 13.4, 0.8], look: arlecchino, lens: 35, frame: 全身}
-      - {t: 9.0, cam: [15.6, 13.2, 0.8], look: arlecchino, lens: 38}
+      - {t: 0.0, cam: [17.2, 12.0, 0.8], look: [14.6, 9.2], look_h: 1.1, lens: 35, frame: 全身}
+      - {t: 9.0, cam: [17.1, 11.9, 0.8], look: [14.55, 9.4], look_h: 1.0, lens: 38}
     bg: forest
     act: {start: 石段で居眠りするアルレッキーノ, do: 気づいて立ち上がり、丁寧にお辞儀。百騎兵がカメラの脇を抜けて歩いていく, end: 向き合う二人}
-    camera: 百騎兵の後ろの低い所から。百騎兵がカメラの脇を抜けて画に入る
+    camera: 百騎兵の斜め後ろの低い所から。百騎兵が画の左から入ってくる
     kind: M
   A10-003:
     frame: 全身
@@ -112,11 +112,11 @@ cuts:
         - {t: 8.6, at: sc_bush, face: 280, pose: stand}
         - {t: 9.0, at: sc_bush, face: 280, pose: crouch}
         - {t: 9.4, at: sc_bush, face: 160, pose: run}
-        - {t: 10.8, at: [20.8, 13.8], face: 150, pose: run}
-        - {t: 12.1, at: [21.8, 15.8], face: 150, pose: run}
+        - {t: 10.8, at: [21.0, 14.2], face: 150, pose: run}
+        - {t: 12.1, at: [22.0, 16.0], face: 150, pose: run}
     cam_keys:
-      - {t: 0.0, cam: [21.5, 11.2, 0.55], look: [14.85, 10.1], look_h: 1.2, lens: 35, frame: 全身}
-      - {t: 12.1, cam: [21.2, 11.1, 0.6], look: [14.85, 10.1], look_h: 1.2, lens: 40}
+      - {t: 0.0, cam: [21.8, 12.9, 0.55], look: [14.85, 10.1], look_h: 1.2, lens: 35, frame: 全身}
+      - {t: 12.1, cam: [21.6, 12.8, 0.6], look: [14.85, 10.1], look_h: 1.2, lens: 40}
     bg: forest
     act: {start: 手前に茂み、奥で説明するアルレッキーノと百騎兵, do: 森を示して向きを変えながら話す。手前の茂みからスケアコッコがひょっこり顔を出して二人を眺め、また走り去る, end: 気づかない二人}
     camera: 東の茂みの後ろの低い所から。手前に茂みとスケアコッコ、奥に二人。ゆっくり寄る
@@ -154,8 +154,8 @@ cuts:
         - {t: 0.0, at: hk_talk, face: 10, pose: look_up}
         - {t: 8.6, at: hk_talk, face: 10, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [16.3, 8.6, 1.6], look: [14.8, 10.1], look_h: 0.9, lens: 32, frame: 全身}
-      - {t: 8.6, cam: [16.2, 8.75, 1.55], look: [14.8, 10.2], look_h: 0.8, lens: 35}
+      - {t: 0.0, cam: [16.8, 8.2, 1.7], look: [14.8, 10.1], look_h: 0.9, lens: 32, frame: 全身}
+      - {t: 8.6, cam: [16.7, 8.3, 1.65], look: [14.8, 10.2], look_h: 0.8, lens: 35}
     bg: forest
     act: {start: 腕を組むアルレッキーノとじっと見る百騎兵, do: 「お昼寝」で腰を落として寝る仕草、「いえ」で姿勢を正して腕を組み、思案のふり, end: 腕を組むアルレッキーノと百騎兵}
     camera: アルレッキーノの肩ごし（北東）から、百騎兵の顔へ

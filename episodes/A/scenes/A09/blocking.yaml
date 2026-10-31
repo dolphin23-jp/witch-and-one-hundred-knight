@@ -99,14 +99,14 @@ cuts:
         - {t: 5.2, at: m_up, face: 160, pose: cross}
         - {t: 7.4, at: m_up, face: 160, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [2.3, 1.5, 0.7], look: [4.3, 0.85], look_h: 0.55, lens: 30, frame: 全身}
-      - {t: 1.9, cam: [2.3, 1.5, 0.7], look: [4.3, 0.85], look_h: 0.55, lens: 30}
-      - {t: 2.6, cam: [2.25, 1.5, 0.7], look: metallica, look_h: 1.25, lens: 28}
-      - {t: 7.4, cam: [2.2, 1.5, 0.75], look: metallica, look_h: 1.25, lens: 28}
+      - {t: 0.0, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30, frame: 全身}
+      - {t: 1.9, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30}
+      - {t: 2.6, cam: [1.85, 2.65, 0.85], look: metallica, look_h: 1.1, lens: 28}
+      - {t: 7.4, cam: [1.8, 2.7, 0.9], look: metallica, look_h: 1.1, lens: 28}
     shake: [{t: [2.1, 2.9], amp: 1.5}]
     bg: living
     act: {start: 朝の光。ソファで寝てしまったメタリカ, do: 「遅いっ」で跳ね起き、両腕を振り上げて怒鳴る, end: 腕を組んで玄関をにらむメタリカ}
-    camera: 西の低い所からソファぞいに。跳ね起きに合わせて上へ振る（ティルト）＋揺れ
+    camera: 南西の低い所からソファへ。跳ね起きに合わせて上へ振る（ティルト）＋揺れ
     kind: A
   A09-004:
     frame: 全身
