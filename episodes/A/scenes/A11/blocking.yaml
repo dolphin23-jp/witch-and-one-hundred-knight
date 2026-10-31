@@ -65,12 +65,12 @@ cuts:
         - {t: 7.2, at: a_greet, face: 135, pose: stand}
         - {t: 8.9, at: a_greet, face: 135, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [4.0, 4.2, 0.75], look: [6.9, 7.0], look_h: 1.2, lens: 28, frame: 全身}
-      - {t: 2.4, cam: [4.0, 4.2, 0.75], look: hundred-knight, look_h: 0.9, lens: 28}
-      - {t: 8.9, cam: [3.9, 4.15, 0.8], look: [6.1, 5.1], look_h: 1.1, lens: 28}
+      - {t: 0.0, cam: [4.6, 6.2, 0.9], look: [6.9, 7.0], look_h: 1.2, lens: 28, frame: 全身}
+      - {t: 2.4, cam: [4.6, 6.2, 0.9], look: hundred-knight, look_h: 0.9, lens: 28}
+      - {t: 8.9, cam: [4.55, 6.15, 0.95], look: [6.0, 5.0], look_h: 1.2, lens: 28}
     bg: living
     act: {start: 昼の居間。玄関の扉が開く, do: トーチカを抱えた百騎兵が入ってくる。アルレッキーノが振り向いて両手を広げ、歩み寄る, end: 向き合うアルレッキーノと百騎兵}
-    camera: テーブルの南西の低い所から、玄関へ。入ってくる百騎兵から、歩み寄るアルレッキーノへ振る
+    camera: 薬瓶の棚の前（南西）の低い所から、玄関へ。入ってくる百騎兵から、歩み寄るアルレッキーノへ振る
     kind: M
   A11-002:
     frame: 全身（煽り）
@@ -134,12 +134,12 @@ cuts:
         - {t: 3.0, at: hk_give, face: 340, pose: stand}
         - {t: 8.5, at: hk_give, face: 340, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: {follow: arlecchino, offset: [1.4, 1.2], z: 1.3}, look: arlecchino, lens: 30, frame: 全身}
-      - {t: 4.0, cam: {follow: arlecchino, offset: [1.3, 1.0], z: 1.3}, look: arlecchino, lens: 30}
-      - {t: 8.5, cam: [6.5, 3.5, 1.4], look: table, look_h: 0.8, lens: 35}
+      - {t: 0.0, cam: {follow: arlecchino, offset: [1.4, 1.2], z: 2.3}, look: arlecchino, look_h: 1.2, lens: 30, frame: 全身}
+      - {t: 4.0, cam: {follow: arlecchino, offset: [1.3, 1.0], z: 2.3}, look: arlecchino, look_h: 1.1, lens: 30}
+      - {t: 8.5, cam: [6.5, 3.5, 2.1], look: table, look_h: 0.8, lens: 35}
     bg: living
     act: {start: トーチカを受け取るアルレッキーノ, do: 受け取ったトーチカを、テーブルへ運んで置く（夜会の品のひとつ）, end: テーブルの上のトーチカ}
-    camera: アルレッキーノを東から追い、テーブルの上へ
+    camera: アルレッキーノを東のやや高い所から追い、テーブルの上へ
     kind: M
   A11-005:
     frame: 全身

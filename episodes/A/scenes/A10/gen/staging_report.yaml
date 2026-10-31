@@ -603,27 +603,30 @@ cuts:
     note: null
   A10-009:
     cam:
-    - 17.0
-    - 8.0
+    - 17.3
+    - 9.0
     - 1.5
     lens: 30
-    bearing: 218
+    bearing: 246
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: 0.1
-        dist: 3.43
+        s: -0.23
+        dist: 2.98
         side: 中央
         body: 斜め前（画面右向き）
       - who: arlecchino
-        s: 0.45
-        dist: 2.55
-        side: 右
-        body: 斜め後ろ（画面左向き）
+        s: 0.3
+        dist: 2.44
+        side: 中央
+        body: 横顔（画面左向き）
       bg: マーリカの森の広場〔マーリカの森〕
       props:
+      - 地面から出た根（012 で百騎兵がのぞく）
       - 吊りランタンの木の柱
+      - 吊りランタンの木の柱
+      - ランタンの灯り
       - ランタンの灯り
       - 茂み（012 で百騎兵がのぞく）
       - シダの茂み
@@ -631,24 +634,24 @@ cuts:
       - 森の木
       - 森の木
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in three-quarter
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in three-quarter
         view, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
-        on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people.
-        Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral
-        patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns, drifting
-        fireflies and small teal glowing spots on the mossy ground.'
+        on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: Marika''s
+        forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral patterns of
+        stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns, drifting fireflies
+        and small teal glowing spots on the mossy ground.'
     end:
       people:
       - who: arlecchino
-        s: -0.0
-        dist: 6.53
+        s: 0.0
+        dist: 5.51
         side: 中央
         body: 背中
       staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
-        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, with the back to the camera, small in the background. No other
-        people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns,
-        spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns,
-        drifting fireflies and small teal glowing spots on the mossy ground.'
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, with the back to the camera. No other people. Behind: Marika''s
+        forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral patterns of
+        stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns, drifting fireflies
+        and small teal glowing spots on the mossy ground.'
     move:
       arlecchino:
         to:
@@ -782,7 +785,7 @@ cuts:
     - 19.5
     - 15.5
     - 1.6
-    lens: 24
+    lens: 30
     bearing: 316
     frame: 引き
     start:
@@ -804,7 +807,6 @@ cuts:
       - 地面から出た根（012 で百騎兵がのぞく）
       - 吊りランタンの木の柱
       - ランタンの灯り
-      - 茂み（012 で百騎兵がのぞく）
       - シダの茂み
       - 森の木
       - 森の木
@@ -816,14 +818,14 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.33
-        dist: 8.83
+        s: -0.49
+        dist: 8.68
         side: 左
         body: 斜め後ろ（画面左向き）
       - who: scarecocco
-        s: 0.35
-        dist: 9.17
-        side: 右
+        s: 0.31
+        dist: 9.3
+        side: 中央
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
         plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, seen from
@@ -1019,22 +1021,22 @@ cuts:
     note: null
   A10-015:
     cam:
-    - 14.200000000000001
-    - 16.3
-    - 1.0
+    - 13.200000000000001
+    - 16.5
+    - 1.7
     lens: 28
-    bearing: 50
+    bearing: 55
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: -0.45
-        dist: 2.77
-        side: 左
+        s: -0.28
+        dist: 3.62
+        side: 中央
         body: 背中
       - who: scarecocco
         s: 0.0
-        dist: 4.33
+        dist: 5.24
         side: 中央
         body: 背中
       bg: マーリカの森の広場〔マーリカの森〕
@@ -1042,6 +1044,8 @@ cuts:
       - 大樹の太い根（東）
       - 地面から出た太い根（015 で跳び越える）
       - 吊りランタンの木の柱
+      - 吊りランタンの木の柱
+      - ランタンの灯り
       - ランタンの灯り
       - 茂み（004 でスケアコッコが隠れる）
       - シダの茂み
@@ -1059,12 +1063,12 @@ cuts:
       people:
       - who: scarecocco
         s: 0.0
-        dist: 2.47
+        dist: 2.81
         side: 中央
         body: 横顔（画面左向き）
       - who: hundred-knight
-        s: 0.94
-        dist: 2.33
+        s: 0.75
+        dist: 2.91
         side: 右
         body: 横顔（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest,
@@ -1202,24 +1206,24 @@ cuts:
     note: null
   A10-017:
     cam:
-    - 14.8
     - 10.6
-    - 1.2
+    - 9.7
+    - 1.1
     lens: 28
-    bearing: 350
+    bearing: 67
     frame: 全身
     start:
       people:
-      - who: scarecocco
-        s: -0.17
-        dist: 2.08
-        side: 中央
-        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.94
-        dist: 2.93
-        side: 右
-        body: 斜め前（画面左向き）
+        s: -0.0
+        dist: 5.87
+        side: 中央
+        body: 正面
+      - who: scarecocco
+        s: 0.16
+        dist: 3.74
+        side: 中央
+        body: 背中
       bg: マーリカの森の広場〔マーリカの森〕
       props:
       - 大樹（マーリカの家）
@@ -1227,34 +1231,39 @@ cuts:
       - 扉の前の石段（上の段）
       - 扉の前の石段（下の段。座る人物は z 0.3）
       - 扉の脇の灯り（西）
-      - 大樹の太い根（西）
+      - 扉の脇の灯り（東）
+      - 大樹の太い根（東）
+      - 地面から出た太い根（015 で跳び越える）
+      - 吊りランタンの木の柱
+      - ランタンの灯り
       - 森の木
-      staging: 'In frame (exactly 2 people, from left to right): Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest,
-        a slightly large head with a jagged dark comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, in the
-        center of the frame, in profile, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in
-        three-quarter view, turned toward screen left. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered
-        stone steps, wooden lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering
-        down through the thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
+      - 森の木
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing
+        the camera; Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest, a slightly large head with a jagged dark
+        comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, in the center of the frame, with the back to the
+        camera. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts
+        with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy,
+        warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
     end:
       people:
       - who: scarecocco
         s: -0.41
-        dist: 2.63
+        dist: 2.92
         side: 左
-        body: 斜め後ろ（画面左向き）
+        body: 横顔（画面左向き）
       - who: hundred-knight
-        s: 0.58
-        dist: 2.23
+        s: 0.38
+        dist: 3.23
         side: 右
-        body: 斜め前（画面左向き）
+        body: 正面
       staging: 'In frame (exactly 2 people, from left to right): Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest,
         a slightly large head with a jagged dark comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, on the
-        left of the frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and
-        a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of
-        the frame, in three-quarter view, turned toward screen left. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway
-        and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim
-        green light filtering down through the thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
+        left of the frame, in profile, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, facing
+        the camera. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts
+        with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy,
+        warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
     move:
       scarecocco:
         to: sc_down
@@ -1296,57 +1305,49 @@ cuts:
     note: null
   A10-018:
     cam:
-    - 14.6
-    - 9.4
-    - 0.5
+    - 12.6
+    - 10.0
+    - 0.6
     lens: 32
-    bearing: 309
+    bearing: 7
     frame: 寄り
     start:
       people:
       - who: scarecocco
-        s: -0.12
-        dist: 2.87
-        side: 中央
-        body: 背中
-      - who: hundred-knight
-        s: 0.23
-        dist: 1.65
-        side: 中央
+        s: -0.51
+        dist: 2.19
+        side: 左
         body: 斜め後ろ（画面左向き）
+      - who: hundred-knight
+        s: 0.59
+        dist: 1.89
+        side: 右
+        body: 斜め前（画面左向き）
       bg: マーリカの森の広場〔マーリカの森〕
       props:
+      - 大樹（マーリカの家）
+      - 大樹の石のアーチの扉（暗い入口）
       - 扉の脇の灯り（西）
       - 大樹の太い根（西）
-      - 地面から出た根（012 で百騎兵がのぞく）
-      - 森の木
-      - 森の木
       staging: 'In frame (exactly 2 people, from left to right): Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest,
-        a slightly large head with a jagged dark comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, in the
-        center of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on
-        top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, seen from behind
-        at an angle, turned toward screen left. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone
-        steps, wooden lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering
-        down through the thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
+        a slightly large head with a jagged dark comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, on the
+        left of the frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and
+        a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of
+        the frame, in three-quarter view, turned toward screen left. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway
+        and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim
+        green light filtering down through the thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
     end:
       people:
-      - who: scarecocco
-        s: -0.81
-        dist: 2.6
-        side: 左
-        body: 背中
       - who: hundred-knight
-        s: 0.0
-        dist: 1.73
+        s: -0.0
+        dist: 1.42
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest,
-        a slightly large head with a jagged dark comb, sharp bird claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow), standing, at the
-        far left of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the
-        camera. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts
-        with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy,
-        warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera. No other
+        people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns,
+        spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns,
+        drifting fireflies and small teal glowing spots on the mossy ground.'
     move:
       scarecocco:
         to: sc_down
@@ -1358,7 +1359,7 @@ cuts:
         - 5.5
       hundred-knight:
         to: hk_strike
-        face: 155
+        face: 190
         via:
         - hk_strike
         - hk_strike
@@ -1369,19 +1370,19 @@ cuts:
     note: null
   A10-019:
     cam:
-    - 14.0
-    - 11.0
-    - 2.0
+    - 11.6
+    - 9.4
+    - 1.8
     lens: 24
-    bearing: 349
+    bearing: 57
     frame: 大引き
     start:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 2.85
+        dist: 2.21
         side: 中央
-        body: 正面
+        body: 斜め前（画面右向き）
       bg: マーリカの森の広場〔マーリカの森〕
       props:
       - 大樹（マーリカの家）
@@ -1389,25 +1390,29 @@ cuts:
       - 扉の前の石段（上の段）
       - 扉の前の石段（下の段。座る人物は z 0.3）
       - 扉の脇の灯り（西）
-      - 大樹の太い根（西）
+      - 扉の脇の灯り（東）
+      - 大樹の太い根（東）
+      - 吊りランタンの木の柱
+      - ランタンの灯り
+      - 森の木
       - 森の木
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera. No other
-        people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns,
-        spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns,
-        drifting fireflies and small teal glowing spots on the mossy ground.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in three-quarter view, turned
+        toward screen right. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden
+        lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the
+        thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
     end:
       people:
       - who: hundred-knight
-        s: -0.0
-        dist: 7.87
+        s: -0.32
+        dist: 5.01
         side: 中央
-        body: 正面
+        body: 斜め前（画面右向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera. No other
-        people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns,
-        spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns,
-        drifting fireflies and small teal glowing spots on the mossy ground.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in three-quarter view, turned
+        toward screen right. No other people. Behind: Marika''s forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden
+        lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies. Daytime deep in the forest: dim green light filtering down through the
+        thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground.'
     move:
       hundred-knight:
         to: hk_strike
@@ -1443,9 +1448,6 @@ checks:
     who: scarecocco
     kind: 位置
   hidden:
-  - cut: A10-009
-    which: end
-    who: scarecocco
   - cut: A10-012
     which: start
     who: arlecchino
@@ -1458,9 +1460,6 @@ checks:
   - cut: A10-015
     which: start
     who: arlecchino
-  - cut: A10-019
-    which: start
-    who: scarecocco
   - cut: A10-019
     which: end
     who: scarecocco

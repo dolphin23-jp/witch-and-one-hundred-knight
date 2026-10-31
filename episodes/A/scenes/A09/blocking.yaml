@@ -28,7 +28,7 @@ places:
   hk_peek:    [17.0, 0.2]    # 010 扉からのぞく
   hk_bed:     [15.05, 2.3]   # ベッドの足もと（メタリカの頭の前）
   m_floor:    [15.75, 2.4]   # 013 ベッドから下りて叱る所
-  m_round:    [14.5, 1.55]   # 014 説教しながら北側を歩いた先（百騎兵の北西）
+  m_round:    [15.0, 1.3]    # 014 説教しながら北側を歩いた先（百騎兵の北）
 
 start:
   metallica: {at: [0.8, 1.3], face: 180}       # 階段の上（001 で下りてくる）
@@ -123,11 +123,11 @@ cuts:
         - {t: 6.8, at: m_pace, face: 100, pose: cross}
         - {t: 7.5, at: m_pace, face: 100, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: {follow: metallica, offset: [0.25, 2.1], z: 1.25}, look: metallica, lens: 32, frame: 全身}
-      - {t: 7.5, cam: {follow: metallica, offset: [0.25, 2.1], z: 1.25}, look: metallica, lens: 32, ease: linear}
+      - {t: 0.0, cam: {follow: metallica, offset: [0.25, 2.1], z: 2.0}, look: metallica, look_h: 1.0, lens: 30, frame: 全身}
+      - {t: 7.5, cam: {follow: metallica, offset: [0.25, 2.1], z: 2.0}, look: metallica, look_h: 1.0, lens: 30, ease: linear}
     bg: living
     act: {start: 腕を組んだメタリカ, do: テーブルの西を南へ歩き、振り返って北へ戻る（いらいらと行ったり来たり）, end: 立ち止まって腕を組むメタリカ}
-    camera: 歩くメタリカの前を、後ずさりしながら追う（南から）
+    camera: 歩くメタリカの前を、やや高い所から後ずさりしながら追う（南から）
     kind: M
   A09-005:
     frame: 全身
@@ -309,9 +309,9 @@ cuts:
         - {t: 3.0, at: hk_bed, face: 180, pose: crouch}
     cam_keys:
       - {t: 0.0, cam: [13.2, 1.6, 1.0], look: [15.03, 2.75], look_h: 0.95, lens: 35, frame: 寄り}
-      - {t: 1.4, cam: [13.2, 1.6, 1.0], look: [15.03, 2.75], look_h: 1.1, lens: 35}
-      - {t: 1.7, cam: [13.25, 1.65, 1.0], look: [15.03, 2.7], look_h: 1.0, lens: 45}
-      - {t: 3.0, cam: [13.25, 1.65, 1.0], look: [15.03, 2.7], look_h: 1.0, lens: 45}
+      - {t: 1.4, cam: [13.2, 1.6, 1.0], look: [15.03, 2.75], look_h: 1.2, lens: 35}
+      - {t: 1.7, cam: [13.25, 1.65, 1.05], look: [15.03, 2.7], look_h: 1.35, lens: 40}
+      - {t: 3.0, cam: [13.25, 1.65, 1.05], look: [15.03, 2.7], look_h: 1.35, lens: 40}
     shake: [{t: [1.45, 2.1], amp: 2.0}]
     bg: bedroom
     act: {start: うつ伏せのメタリカの目の前に百騎兵, do: 気づいて「あん？」→ 跳ね起きて鉄拳を兜の脳天へ。百騎兵がつぶれる, end: 腕を組むメタリカと、うずくまる百騎兵}
@@ -350,19 +350,19 @@ cuts:
         - {t: 0.5, at: m_floor, face: 275, pose: proud}
         - {t: 1.3, at: m_floor, face: 350, pose: walk}
         - {t: 2.3, at: [15.6, 1.5], face: 300, pose: walk}
-        - {t: 3.6, at: [15.0, 1.35], face: 260, pose: walk}
-        - {t: 4.8, at: m_round, face: 230, pose: walk}
-        - {t: 5.3, at: m_round, face: 144, pose: proud}
-        - {t: 8.0, at: m_round, face: 144, pose: proud}
+        - {t: 3.6, at: [15.35, 1.2], face: 265, pose: walk}
+        - {t: 4.6, at: m_round, face: 250, pose: walk, ease: out}
+        - {t: 5.1, at: m_round, face: 177, pose: proud}
+        - {t: 8.0, at: m_round, face: 177, pose: proud}
       hundred-knight:
         - {t: 0.0, at: hk_bed, face: 95, pose: cover}
         - {t: 1.5, at: hk_bed, face: 95, pose: stand}
         - {t: 3.0, at: hk_bed, face: 10, pose: stand}
-        - {t: 5.0, at: hk_bed, face: 324, pose: stand}
-        - {t: 8.0, at: hk_bed, face: 324, pose: stand}
+        - {t: 5.0, at: hk_bed, face: 357, pose: stand}
+        - {t: 8.0, at: hk_bed, face: 357, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [12.9, 0.7, 2.2], look: [15.2, 2.0], look_h: 0.9, lens: 26, frame: 全身}
-      - {t: 8.0, cam: [13.3, 0.95, 2.0], look: [15.0, 1.95], look_h: 0.9, lens: 30}
+      - {t: 8.0, cam: [13.0, 0.8, 2.1], look: [15.0, 1.8], look_h: 0.9, lens: 28}
     bg: bedroom
     act: {start: 指さすメタリカ, do: 胸を張り、説教しながら百騎兵の北側を歩く, end: 胸を張って百騎兵を見下ろすメタリカ}
     camera: 北西の高い所から、説教しながら歩くメタリカと百騎兵へゆっくり寄る
@@ -373,17 +373,18 @@ cuts:
     only: [metallica, hundred-knight]
     keys:
       metallica:
-        - {t: 0.0, at: m_round, face: 144, pose: proud}
-        - {t: 0.4, at: m_round, face: 135, pose: wave}
-        - {t: 2.4, at: m_round, face: 135, pose: wave}
-        - {t: 2.8, at: m_round, face: 150, pose: walk}
-        - {t: 3.8, at: [14.7, 2.55], face: 170, pose: walk}
+        - {t: 0.0, at: m_round, face: 177, pose: proud}
+        - {t: 0.4, at: m_round, face: 177, pose: wave}
+        - {t: 2.4, at: m_round, face: 177, pose: wave}
+        - {t: 2.8, at: m_round, face: 240, pose: walk}
+        - {t: 3.3, at: [14.4, 1.9], face: 190, pose: walk}
+        - {t: 3.9, at: [14.6, 2.65], face: 170, pose: walk}
         - {t: 4.5, at: [14.9, 3.3], z: 0.55, face: 170, pose: sit}
         - {t: 5.3, at: m_read, z: 0.55, face: 0, pose: lie}
         - {t: 7.5, at: m_read, z: 0.55, face: 0, pose: lie}
       hundred-knight:
-        - {t: 0.0, at: hk_bed, face: 324, pose: stand}
-        - {t: 1.2, at: hk_bed, face: 324, pose: look_down}
+        - {t: 0.0, at: hk_bed, face: 357, pose: stand}
+        - {t: 1.2, at: hk_bed, face: 357, pose: look_down}
         - {t: 2.4, at: hk_bed, face: 40, pose: walk}
         - {t: 4.6, at: [16.7, 0.75], face: 40, pose: walk}
         - {t: 5.8, at: [17.0, -0.3], face: 0, pose: walk}
