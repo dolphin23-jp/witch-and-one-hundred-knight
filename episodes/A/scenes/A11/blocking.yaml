@@ -20,7 +20,7 @@ places:
   hk_give:  [6.05, 5.15]   # トーチカを渡す所
   a_table:  [5.35, 2.6]    # テーブルの東（トーチカを置く）
   a_talk:   [5.6, 3.6]     # 005〜006 の伝言の位置
-  a_stair:  [2.7, 4.5]     # 007 階段の上をうかがう（カメラの右手前）
+  a_stair:  [3.0, 3.9]     # 007 階段の上をうかがう（カメラの右）
   a_warn:   [5.5, 4.85]    # 008 百騎兵に顔を近づけて念を押す
   landing:  [0.8, 0.6]     # 階段の上（メタリカの部屋の前）
   table:    [4.2, 2.4]
@@ -65,12 +65,12 @@ cuts:
         - {t: 7.2, at: a_greet, face: 135, pose: stand}
         - {t: 8.9, at: a_greet, face: 135, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [4.6, 6.2, 0.9], look: [6.9, 7.0], look_h: 1.2, lens: 28, frame: 全身}
-      - {t: 2.4, cam: [4.6, 6.2, 0.9], look: hundred-knight, look_h: 0.9, lens: 28}
-      - {t: 8.9, cam: [4.55, 6.15, 0.95], look: [6.0, 5.0], look_h: 1.2, lens: 28}
+      - {t: 0.0, cam: [3.4, 5.9, 1.3], look: [6.9, 7.0], look_h: 1.2, lens: 24, frame: 全身}
+      - {t: 2.4, cam: [3.4, 5.9, 1.3], look: hundred-knight, look_h: 0.9, lens: 24}
+      - {t: 8.9, cam: [3.35, 5.9, 1.3], look: [6.05, 5.1], look_h: 1.1, lens: 24}
     bg: living
     act: {start: 昼の居間。玄関の扉が開く, do: トーチカを抱えた百騎兵が入ってくる。アルレッキーノが振り向いて両手を広げ、歩み寄る, end: 向き合うアルレッキーノと百騎兵}
-    camera: 薬瓶の棚の前（南西）の低い所から、玄関へ。入ってくる百騎兵から、歩み寄るアルレッキーノへ振る
+    camera: 薬瓶の棚の前（南西）から、玄関へ。入ってくる百騎兵から、歩み寄るアルレッキーノへ振る
     kind: M
   A11-002:
     frame: 全身（煽り）
@@ -195,11 +195,11 @@ cuts:
         - {t: 0.0, at: a_talk, face: 160, pose: stand}
         - {t: 0.5, at: a_talk, face: 240, pose: walk}
         - {t: 3.0, at: a_stair, face: 300, pose: walk, ease: out}
-        - {t: 3.4, at: a_stair, face: 334, pose: look_up}
-        - {t: 5.6, at: a_stair, face: 334, pose: look_up}
-        - {t: 6.0, at: a_stair, face: 334, pose: shake}
-        - {t: 6.8, at: a_stair, face: 334, pose: look_up}
-        - {t: 9.8, at: a_stair, face: 334, pose: look_up}
+        - {t: 3.4, at: a_stair, face: 326, pose: look_up}
+        - {t: 5.6, at: a_stair, face: 326, pose: look_up}
+        - {t: 6.0, at: a_stair, face: 326, pose: shake}
+        - {t: 6.8, at: a_stair, face: 326, pose: look_up}
+        - {t: 9.8, at: a_stair, face: 326, pose: look_up}
     fx:
       - {kind: light, t: [5.6, 5.9], at: landing, z: 3.4, energy: 300, color: [200, 120, 255], fade: 0.8}
       - {kind: spark, t: [5.6, 6.2], at: landing, z: 3.4, color: [200, 120, 255]}
@@ -217,7 +217,7 @@ cuts:
     only: [arlecchino, hundred-knight]
     keys:
       arlecchino:
-        - {t: 0.0, at: a_stair, face: 334, pose: look_up}
+        - {t: 0.0, at: a_stair, face: 326, pose: look_up}
         - {t: 0.3, at: a_stair, face: 100, pose: arms_up}
         - {t: 2.6, at: a_stair, face: 100, pose: arms_up}
         - {t: 3.0, at: a_stair, face: 100, pose: shake}
@@ -440,11 +440,11 @@ cuts:
       - {kind: light, t: [0.8, 1.2], at: m_ghost, z: 1.2, energy: 300, color: [180, 210, 255], fade: 1.0}
       - {kind: spark, t: [0.9, 1.5], at: m_ghost, z: 1.0, color: [200, 220, 255]}
     cam_keys:
-      - {t: 0.0, cam: [117.6, 13.4, 0.5], look: m_ghost, look_h: 1.0, lens: 22, frame: 全身（煽り）}
-      - {t: 7.4, cam: [117.65, 13.35, 0.5], look: m_ghost, look_h: 1.1, lens: 24}
+      - {t: 0.0, cam: [116.0, 14.6, 0.5], look: [117.5, 11.5], look_h: 1.1, lens: 22, frame: 全身（煽り）}
+      - {t: 7.4, cam: [116.05, 14.5, 0.5], look: [117.6, 11.5], look_h: 1.2, lens: 24}
     bg: town
     act: {start: 花壇の縁のビスコ, do: 光とともにメタリカの幻影が現れ、腕を組んでふんぞり返る。ビスコが驚いて立ち上がる, end: 浮かぶメタリカの幻影と、立ち上がったビスコ}
-    camera: 低い所から幻影を見上げる煽り
+    camera: 南西の低い所から、幻影とビスコを見上げる煽り
     kind: A
   A11-018:
     frame: 膝上
@@ -533,11 +533,11 @@ cuts:
         - {t: 0.0, at: [118.6, 17.5], face: 170, pose: walk}
         - {t: 6.1, at: [119.4, 25.0], face: 175, pose: walk}
     cam_keys:
-      - {t: 0.0, cam: [119.3, 14.0, 0.75], look: metallica, look_h: 1.3, lens: 30, frame: 全身（煽り）}
-      - {t: 6.1, cam: [119.25, 13.9, 0.75], look: metallica, look_h: 1.4, lens: 34}
+      - {t: 0.0, cam: [119.6, 15.2, 0.7], look: [118.4, 11.8], look_h: 1.3, lens: 28, frame: 全身（煽り）}
+      - {t: 6.1, cam: [119.55, 15.1, 0.7], look: [118.5, 11.7], look_h: 1.4, lens: 30}
     bg: town
     act: {start: 腕を組む幻影, do: 百騎兵に向き直り、腰に手を当ててにやりと笑う, end: 胸を張る幻影}
-    camera: 百騎兵の目の高さから、幻影を見上げる
+    camera: 百騎兵の後ろの目の高さから、幻影を見上げる
     kind: M
   A11-022:
     frame: 全身
@@ -558,9 +558,9 @@ cuts:
       - {kind: spark, t: [0.6, 1.4], at: m_ghost, z: 1.9, color: [200, 220, 255]}
       - {kind: spark, t: [2.0, 2.8], at: m_ghost, z: 1.7, color: [200, 220, 255]}
     cam_keys:
-      - {t: 0.0, cam: [120.4, 13.0, 1.3], look: metallica, lens: 30, frame: 全身}
-      - {t: 2.8, cam: [119.6, 13.6, 1.3], look: metallica, lens: 30}
-      - {t: 5.6, cam: [117.0, 13.2, 1.3], look: metallica, lens: 30}
+      - {t: 0.0, cam: [121.4, 13.0, 1.4], look: metallica, lens: 28, frame: 全身}
+      - {t: 2.8, cam: [119.4, 14.8, 2.0], look: metallica, lens: 28}
+      - {t: 5.6, cam: [116.2, 13.4, 1.4], look: metallica, lens: 28}
     bg: town
     act: {start: 胸を張る幻影, do: 両手を広げて錬金術を語る。手のまわりに光の粒, end: 片手を広げる幻影}
     camera: 幻影のまわりを東から西へ回り込む（オービット）

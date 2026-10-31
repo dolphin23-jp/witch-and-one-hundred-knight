@@ -1,18 +1,18 @@
 cuts:
   A11-001:
     cam:
-    - 4.6
-    - 6.2
-    - 0.9
-    lens: 28
-    bearing: 109
+    - 3.4
+    - 5.9
+    - 1.3
+    lens: 24
+    bearing: 107
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: 0.39
-        dist: 2.67
-        side: 右
+        s: 0.23
+        dist: 3.88
+        side: 中央
         body: 斜め前（画面左向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
@@ -21,9 +21,14 @@ cuts:
       - 赤い天蓋のベッド（上の人物は z 0.55）
       - 天蓋の柱
       - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
       - ベッド脇の小机（燭台）
       - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 窓の下手の引き出し
       - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
       - 木組みの家（紫の屋根）
       - 木組みの家
       - 木組みの家
@@ -67,19 +72,19 @@ cuts:
     end:
       people:
       - who: arlecchino
-        s: -0.57
-        dist: 1.71
+        s: -0.35
+        dist: 2.43
         side: 左
         body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.67
-        dist: 1.95
-        side: 右
+        s: 0.26
+        dist: 3.2
+        side: 中央
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
         copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred
         Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
         the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
         vines on dark wood paneling, a small round window.'
     move:
@@ -529,7 +534,7 @@ cuts:
       people:
       - who: arlecchino
         s: 0.73
-        dist: 1.44
+        dist: 2.0
         side: 右
         body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
@@ -539,7 +544,7 @@ cuts:
     move:
       arlecchino:
         to: a_stair
-        face: 334
+        face: 326
         via:
         - a_talk
         - a_stair
@@ -557,18 +562,17 @@ cuts:
     - 6.45
     - 1.3
     lens: 26
-    bearing: 328
+    bearing: 341
     frame: 全身
     start:
       people:
       - who: arlecchino
         s: 0.0
-        dist: 2.29
+        dist: 2.7
         side: 中央
         body: 背中
       bg: 魔女邸の居間〔居間 正面〕
       props:
-      - 階段の2段目（上面 0.62m）
       - 階段の3段目（上面 0.93m）
       - 階段の4段目（上面 1.24m）
       - 階段の5段目（上面 1.56m）
@@ -577,7 +581,11 @@ cuts:
       - 階段の8段目（上面 2.49m）
       - 階段の9段目（上面 2.8m）
       - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
       - 床に積んだ本の山
+      - テーブルの上の吊りランプ
       staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
         pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, with the back to the camera. No other people. Behind: the witch''s
         living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
@@ -1203,40 +1211,56 @@ cuts:
     note: null
   A11-017:
     cam:
-    - 117.6
-    - 13.4
+    - 116.0
+    - 14.6
     - 0.5
     lens: 22
-    bearing: 29
+    bearing: 26
     frame: 全身（煽り）
     start:
       people:
+      - who: bisco
+        s: -0.47
+        dist: 3.37
+        side: 左
+        body: 正面
       - who: metallica
-        s: 0.0
-        dist: 2.06
+        s: 0.33
+        dist: 3.83
         side: 中央
         body: 正面
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
       - 木組みの家
       - 木組みの家
+      - 木組みの家
       - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
       - 館の丘
-      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
-        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera.
-        No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the
-        doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
+      - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
+      - 花壇の花（桃色）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, facing the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red
+        jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric
+        circles, curled-toe boots), standing, on the right of the frame, facing the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern,
+        half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     end:
       people:
+      - who: bisco
+        s: -0.51
+        dist: 2.91
+        side: 左
+        body: 横顔（画面右向き）
       - who: metallica
-        s: 0.0
-        dist: 1.99
-        side: 中央
+        s: 0.33
+        dist: 3.75
+        side: 右
         body: 正面
-      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
-        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera.
-        No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the
-        doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; Metallica (the orange-haired witch: huge dark purple
+        witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple
+        pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, facing the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown
+        bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and
+        yellow flowers.'
     move:
       metallica:
         to: m_ghost
@@ -1533,39 +1557,56 @@ cuts:
     note: null
   A11-021:
     cam:
-    - 119.3
-    - 14.0
-    - 0.75
-    lens: 30
-    bearing: 344
+    - 119.6
+    - 15.2
+    - 0.7
+    lens: 28
+    bearing: 341
     frame: 全身（煽り）
     start:
       people:
+      - who: hundred-knight
+        s: -0.74
+        dist: 0.77
+        side: 左
+        body: 横顔（画面左向き）
       - who: metallica
-        s: -0.0
-        dist: 2.5
+        s: 0.11
+        dist: 3.73
         side: 中央
         body: 斜め前（画面左向き）
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
       - 木組みの家
+      - 木組みの家
       - 遠くの丘の上の大公爵ヴァレンティーヌの館（下の半分は丘に埋まる）
       - 館の丘
-      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+      - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
+      - 花壇の花（桃色）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        profile, turned toward screen left; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
         in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
         view, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled
         roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     end:
       people:
+      - who: hundred-knight
+        s: -0.98
+        dist: 0.64
+        side: 左
+        body: 斜め後ろ（画面右向き）
       - who: metallica
-        s: 0.0
-        dist: 2.39
+        s: 0.06
+        dist: 3.62
         side: 中央
         body: 正面
-      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
-        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera.
-        No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the
-        doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+        orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the
+        frame, facing the camera. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs,
+        lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers.'
     move:
       metallica:
         to: m_ghost
@@ -1595,26 +1636,65 @@ cuts:
     note: null
   A11-022:
     cam:
-    - 120.4
+    - 121.4
     - 13.0
-    - 1.3
-    lens: 30
-    bearing: 308
+    - 1.4
+    lens: 28
+    bearing: 297
     frame: 全身
     start:
       people:
       - who: metallica
         s: 0.0
-        dist: 2.28
+        dist: 3.13
         side: 中央
         body: 斜め前（画面左向き）
       bg: セント・ドルチェの広場〔セント・ドルチェ〕
       props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
       - 木組みの家
       - 木組みの家
       - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
       - 花壇の花（桃色）
       - 広場のランタンの柱
+      - 花壇の花
+      - 丸い木
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
         in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
         view, turned toward screen left. No other people. Behind: St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled
@@ -1623,7 +1703,7 @@ cuts:
       people:
       - who: metallica
         s: 0.0
-        dist: 2.26
+        dist: 3.0
         side: 中央
         body: 斜め前（画面右向き）
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
@@ -1731,6 +1811,12 @@ checks:
   - cut: A11-001
     which: start
     who: metallica
+  - cut: A11-001
+    which: end
+    who: bisco
+  - cut: A11-001
+    which: end
+    who: metallica
   - cut: A11-003
     which: start
     who: bisco
@@ -1769,5 +1855,8 @@ checks:
     who: arlecchino
   - cut: A11-019
     which: end
+    who: arlecchino
+  - cut: A11-022
+    which: start
     who: arlecchino
   camera: []
