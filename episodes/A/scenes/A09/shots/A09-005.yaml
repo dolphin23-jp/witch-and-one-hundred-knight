@@ -1,0 +1,33 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-005
+scene: A09
+tc: 32.4
+sec: 4.1
+kind: M
+shot: 全身（肩ごし・煽り）・メタリカ・百騎兵
+acting: 振り向いて、玄関の脇の百騎兵を指さす
+dialogue:
+- L275「おい、百騎兵。あいつらの様子を見てこい！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.3
+  - 6.6
+  - 0.75
+  look: metallica
+  lens: 35
+  move: 百騎兵の肩ごし（低い）から、指さすメタリカを煽りで
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 腕を組んだメタリカ
+  end: 百騎兵を指さすメタリカ
+timing:
+  lead: 0.4

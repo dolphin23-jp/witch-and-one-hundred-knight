@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-021
+scene: A11
+tc: 132.6
+sec: 6.1
+kind: M
+shot: 全身（煽り）・メタリカの幻影・百騎兵
+acting: 百騎兵に向き直り、腰に手を当ててにやりと笑う
+dialogue:
+- L323「キヒヒ、探しているネコは、錬金術で作ればいい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 119.6
+  - 15.2
+  - 0.7
+  look:
+  - 118.4
+  - 11.8
+  lens: 28
+  move: 百騎兵の後ろの目の高さから、幻影を見上げる
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 腕を組む幻影
+  end: 胸を張る幻影
+timing:
+  lead: 0.3

@@ -1,0 +1,33 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-010
+scene: A09
+tc: 68.2
+sec: 9.0
+kind: M
+shot: 全身（煽り）・メタリカ・百騎兵（奥の扉）
+acting: 起き上がってベッドの上に立ち、胸を張る。奥で扉がそっと開き、百騎兵がのぞく
+dialogue:
+- L283「フン、ならばワタシは適任だな。ワタシほどの人徳を持ったすばらしい魔女など他にいるまい！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.8
+  - 4.55
+  - 0.7
+  look: metallica
+  lens: 20
+  move: ベッドの西の低い所から煽り。奥の左に扉
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うつ伏せで本を読むメタリカ
+  end: ベッドの上で胸を張るメタリカと、扉からのぞく百騎兵
+timing:
+  lead: 0.4

@@ -1,0 +1,33 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-006
+scene: A12
+tc: 28.1
+sec: 8.8
+kind: M
+shot: 全身・ビスコ・百騎兵
+acting: ソファへ崩れるように座り込み、背もたれにのけぞってため息。百騎兵がソファの端に寄る
+dialogue:
+- L332「はあ……今度は砂漠の村か……。少し休ませてくれ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.3
+  - 3.6
+  - 1.7
+  look: bisco
+  lens: 28
+  move: ソファの南から、座り込むビスコの高さに合わせて下がる（クレーン下げ）
+background: witch-house
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 玄関の前のビスコ
+  end: ソファにのけぞるビスコ
+timing:
+  lead: 1.0

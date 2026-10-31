@@ -1,0 +1,33 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-019
+scene: A11
+tc: 121.0
+sec: 4.0
+kind: M
+shot: 膝上（肩ごし）・ビスコ・メタリカの幻影
+acting: 小さくうなずく
+dialogue:
+- L321「そうか。……わかった。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 119.6
+  - 12.2
+  - 1.6
+  look: bisco
+  lens: 35
+  move: 幻影の肩ごしからビスコへ（切り返し）
+background: witch-house
+image: null
+refs:
+- metallica
+- bisco
+overlays: []
+fallback: null
+act:
+  start: ビスコ
+  end: うなずいたビスコ
+timing:
+  lead: 0.3

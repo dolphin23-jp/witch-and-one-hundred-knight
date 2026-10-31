@@ -1,0 +1,34 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-007
+scene: A11
+tc: 43.5
+sec: 9.8
+kind: M
+shot: 全身（煽り）・アルレッキーノ・階段の上の光と煙
+acting: 階段の下へ寄って、上のメタリカの部屋をうかがう。部屋から紫の光と煙がぼんと上がり、びくっとする
+dialogue:
+- L309「あと、現在リカ様は何やら怪しげな……いえ、素晴らしい魔法の道具を作っておられるようで……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.9
+  - 6.1
+  - 0.5
+  look:
+  - 2.9
+  - 4.2
+  lens: 22
+  move: 階段の下の低い所から、階段の上と、寄ってくるアルレッキーノを見上げる
+background: witch-house
+image: null
+refs:
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 歩き出すアルレッキーノ
+  end: 階段の上を見上げるアルレッキーノ
+timing:
+  lead: 0.4

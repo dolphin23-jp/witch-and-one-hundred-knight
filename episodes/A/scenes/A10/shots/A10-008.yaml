@@ -1,0 +1,33 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-008
+scene: A10
+tc: 58.8
+sec: 8.3
+kind: M
+shot: 全身（煽り）・アルレッキーノ
+acting: 空を見上げたまま、背筋を伸ばして聞く
+dialogue:
+- L296「あとは百騎兵にやらせた方が早い。とりあえず、アルレッキーノお前は戻って来い。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.6
+  - 11.3
+  - 0.4
+  look: arlecchino
+  lens: 24
+  move: 足もとから大きく見上げる煽り（背景は森の天井）
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 見上げるアルレッキーノ
+  end: 背筋を伸ばしたアルレッキーノ
+timing:
+  lead: 0.4

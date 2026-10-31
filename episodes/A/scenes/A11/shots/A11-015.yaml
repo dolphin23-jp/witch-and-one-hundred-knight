@@ -1,0 +1,32 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-015
+scene: A11
+tc: 100.9
+sec: 3.6
+kind: M
+shot: 胸上・ビスコ
+acting: 振り返り、しょんぼりとうつむく
+dialogue:
+- L316「その猫は、とうの昔に死んでしまっているらしいんだよ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 118.6
+  - 14.9
+  - 0.85
+  look: bisco
+  lens: 55
+  move: 百騎兵の目の高さから、ビスコの寄り（望遠）
+background: witch-house
+image: null
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 館を見るビスコ
+  end: うつむくビスコ
+timing:
+  lead: 0.3

@@ -1,0 +1,34 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-001
+scene: A10
+tc: 0.0
+sec: 4.0
+kind: M
+shot: 大引き・森の広場・大樹・アルレッキーノ・百騎兵
+acting: 広場へ下りていく。石段で居眠りするアルレッキーノ、南の小道から入ってくる百騎兵
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.0
+  - 24.0
+  - 9.0
+  look:
+  - 15.0
+  - 9.0
+  lens: 24
+  move: 南の高い所（森の天井）から広場へ下りる（クレーン）
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 森の天井の高さから見た広場と大樹
+  end: 広場の全景
+timing:
+  lead: 0.3
