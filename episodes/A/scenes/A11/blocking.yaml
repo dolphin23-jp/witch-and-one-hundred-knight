@@ -20,7 +20,7 @@ places:
   hk_give:  [6.05, 5.15]   # トーチカを渡す所
   a_table:  [5.35, 2.6]    # テーブルの東（トーチカを置く）
   a_talk:   [5.6, 3.6]     # 005〜006 の伝言の位置
-  a_stair:  [2.7, 4.5]     # 007 階段の上をうかがう
+  a_stair:  [2.7, 4.5]     # 007 階段の上をうかがう（カメラの右手前）
   a_warn:   [5.5, 4.85]    # 008 百騎兵に顔を近づけて念を押す
   landing:  [0.8, 0.6]     # 階段の上（メタリカの部屋の前）
   table:    [4.2, 2.4]
@@ -85,11 +85,11 @@ cuts:
         - {t: 0.0, at: hk_in, face: 320, pose: hold}
         - {t: 3.9, at: hk_in, face: 320, pose: hold}
     cam_keys:
-      - {t: 0.0, cam: [6.0, 5.3, 0.6], look: arlecchino, look_h: 1.7, lens: 28, frame: 全身（煽り）}
-      - {t: 3.9, cam: [6.0, 5.3, 0.6], look: arlecchino, look_h: 1.8, lens: 32}
+      - {t: 0.0, cam: [6.5, 6.4, 0.5], look: arlecchino, look_h: 1.5, lens: 24, frame: 全身（煽り）}
+      - {t: 3.9, cam: [6.45, 6.35, 0.5], look: arlecchino, look_h: 1.6, lens: 26}
     bg: living
     act: {start: アルレッキーノ, do: メタリカの口まねで、腰に手を当てて胸を張り、百騎兵をびしっと指さす, end: 指さすアルレッキーノ}
-    camera: 百騎兵のそばの低い所から見上げる煽り
+    camera: 玄関の内側の低い所から見上げる煽り
     kind: M
   A11-003:
     frame: 全身
@@ -109,8 +109,8 @@ cuts:
         - {t: 7.7, at: hk_give, face: 320, pose: hold}
         - {t: 8.6, at: hk_give, face: 320, pose: hold}
     cam_keys:
-      - {t: 0.0, cam: [4.9, 5.9, 1.2], look: [6.0, 5.1], look_h: 1.0, lens: 32, frame: 全身}
-      - {t: 8.6, cam: [4.95, 5.85, 1.15], look: [5.8, 4.9], look_h: 1.0, lens: 35}
+      - {t: 0.0, cam: [3.6, 6.3, 1.2], look: [6.0, 5.1], look_h: 1.0, lens: 30, frame: 全身}
+      - {t: 8.6, cam: [3.65, 6.25, 1.2], look: [5.8, 4.9], look_h: 1.0, lens: 32}
     bg: living
     act: {start: 指さすアルレッキーノと百騎兵, do: 我に返ってお辞儀し、両手を差し出す。百騎兵がトーチカを差し出して歩み寄る, end: 両手を差し出すアルレッキーノと、トーチカを差し出す百騎兵}
     camera: 南西から二人を横に並べる
@@ -158,8 +158,8 @@ cuts:
         - {t: 1.6, at: hk_give, face: 345, pose: look_up}
         - {t: 5.1, at: hk_give, face: 345, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [6.5, 5.8, 0.75], look: arlecchino, lens: 35, frame: 全身}
-      - {t: 5.1, cam: [6.45, 5.75, 0.75], look: arlecchino, lens: 38}
+      - {t: 0.0, cam: [7.2, 6.0, 0.8], look: arlecchino, lens: 32, frame: 全身}
+      - {t: 5.1, cam: [7.15, 5.95, 0.8], look: arlecchino, lens: 35}
     bg: living
     act: {start: テーブルのアルレッキーノ, do: 百騎兵の前へ戻り、胸に手を当てて小さくお辞儀, end: 百騎兵の前のアルレッキーノ}
     camera: 百騎兵の肩ごし（低い）から
@@ -181,11 +181,11 @@ cuts:
         - {t: 5.5, at: hk_give, face: 340, pose: look_up}
         - {t: 8.5, at: hk_give, face: 340, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [4.9, 1.0, 2.3], look: [6.0, 5.4], look_h: 0.8, lens: 28, frame: 引き}
-      - {t: 8.5, cam: [5.1, 1.05, 2.2], look: [6.2, 5.6], look_h: 0.8, lens: 30}
+      - {t: 0.0, cam: [6.9, 1.8, 2.6], look: [6.0, 5.2], look_h: 0.8, lens: 28, frame: 引き}
+      - {t: 8.5, cam: [6.85, 1.85, 2.5], look: [6.2, 5.6], look_h: 0.8, lens: 30}
     bg: living
     act: {start: 向き合う二人, do: アルレッキーノが玄関（南）の方を指して、セント・ドルチェへ向かうよう伝える。百騎兵も玄関を見る, end: 向き合う二人と玄関}
-    camera: ソファの側（北）の高い所から、玄関の方へ
+    camera: 本棚の側（北東）の高い所から、玄関の方へ
     kind: M
   A11-007:
     frame: 全身（煽り）
@@ -205,12 +205,12 @@ cuts:
       - {kind: spark, t: [5.6, 6.2], at: landing, z: 3.4, color: [200, 120, 255]}
       - {kind: plume, t: [5.8, 8.8], at: landing, z: 2.8, r: 0.5, h: 1.0, color: [150, 110, 190]}
     cam_keys:
-      - {t: 0.0, cam: [2.9, 6.2, 0.6], look: [2.6, 4.2], look_h: 1.6, lens: 24, frame: 全身（煽り）}
-      - {t: 3.4, cam: [2.9, 6.2, 0.6], look: [1.5, 1.8], look_h: 2.6, lens: 24}
-      - {t: 9.8, cam: [2.95, 6.15, 0.6], look: [1.2, 1.4], look_h: 2.9, lens: 26}
+      - {t: 0.0, cam: [1.9, 6.1, 0.5], look: [2.9, 4.2], look_h: 1.4, lens: 22, frame: 全身（煽り）}
+      - {t: 3.4, cam: [1.9, 6.1, 0.5], look: [1.6, 2.2], look_h: 2.2, lens: 20}
+      - {t: 9.8, cam: [1.95, 6.05, 0.5], look: [1.4, 1.8], look_h: 2.5, lens: 20}
     bg: living
     act: {start: 歩き出すアルレッキーノ, do: 階段の下へ寄って、上のメタリカの部屋をうかがう。部屋から紫の光と煙がぼんと上がり、びくっとする, end: 階段の上を見上げるアルレッキーノ}
-    camera: 階段の下の低い所から、アルレッキーノ越しに階段の上を見上げる
+    camera: 階段の下の低い所から、階段の上と、寄ってくるアルレッキーノを見上げる
     kind: M
   A11-008:
     frame: 全身
@@ -232,9 +232,9 @@ cuts:
         - {t: 7.0, at: hk_give, face: 298, pose: look_up}
         - {t: 9.4, at: hk_give, face: 298, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [3.6, 6.3, 1.0], look: arlecchino, lens: 30, frame: 全身}
-      - {t: 4.4, cam: [3.8, 6.3, 1.0], look: arlecchino, lens: 30}
-      - {t: 9.4, cam: [4.6, 6.35, 1.0], look: [5.8, 5.0], look_h: 1.1, lens: 32}
+      - {t: 0.0, cam: [3.9, 6.45, 1.3], look: arlecchino, lens: 26, frame: 全身}
+      - {t: 4.4, cam: [3.6, 6.45, 1.35], look: arlecchino, lens: 26}
+      - {t: 9.4, cam: [3.4, 6.45, 1.4], look: [5.75, 5.0], look_h: 1.0, lens: 26}
     bg: living
     act: {start: 階段の上を見上げるアルレッキーノ, do: メタリカの口まねで両手を振り上げ「キヒヒ！」、自分で身震いしてから、百騎兵に顔を近づけて念を押す, end: 百騎兵に顔を近づけるアルレッキーノ}
     camera: 南の低い所から、歩くアルレッキーノを追う
@@ -256,11 +256,11 @@ cuts:
         - {t: 3.2, at: [6.9, 7.3], face: 175, pose: run}
         - {t: 4.9, at: [6.9, 9.0], face: 180, pose: run}
     cam_keys:
-      - {t: 0.0, cam: [5.6, 2.6, 1.3], look: [6.2, 5.6], look_h: 1.0, lens: 28, frame: 全身}
-      - {t: 4.9, cam: [5.6, 2.65, 1.3], look: [6.9, 7.2], look_h: 1.0, lens: 30}
+      - {t: 0.0, cam: [7.0, 3.2, 1.3], look: [6.2, 5.4], look_h: 1.0, lens: 24, frame: 全身}
+      - {t: 4.9, cam: [7.0, 3.25, 1.3], look: [6.8, 6.6], look_h: 1.0, lens: 26}
     bg: living
     act: {start: 顔を近づけるアルレッキーノ, do: 丁寧にお辞儀。百騎兵が玄関から外の光の中へ走り出る, end: お辞儀のアルレッキーノと開いた玄関}
-    camera: テーブルの東から玄関の方へ
+    camera: 本棚の前（東）から玄関の方へ
     kind: M
   A11-010:
     frame: 大引き

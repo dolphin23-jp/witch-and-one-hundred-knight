@@ -109,21 +109,27 @@ cuts:
     note: null
   A11-002:
     cam:
-    - 6.0
-    - 5.3
-    - 0.6
-    lens: 28
-    bearing: 324
+    - 6.5
+    - 6.4
+    - 0.5
+    lens: 24
+    bearing: 331
     frame: 全身（煽り）
     start:
       people:
       - who: arlecchino
         s: -0.0
-        dist: 0.86
+        dist: 2.06
         side: 中央
         body: 正面
+      - who: hundred-knight
+        s: 0.98
+        dist: 0.65
+        side: 右
+        body: 斜め後ろ（画面左向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
+      - 階段の4段目（上面 1.24m）
       - 階段の5段目（上面 1.56m）
       - 階段の6段目（上面 1.87m）
       - 階段の7段目（上面 2.18m）
@@ -135,15 +141,17 @@ cuts:
       - 赤い布の丸テーブル（A12 では三品が載る）
       - 床に積んだ本の山
       - テーブルの上の吊りランプ
-      staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
-        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s living
-        room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood
-        paneling, a small round window.'
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small,
+        about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with
+        black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the
+        witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines
+        on dark wood paneling, a small round window.'
     end:
       people:
       - who: arlecchino
-        s: -0.0
-        dist: 0.86
+        s: 0.0
+        dist: 1.99
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
@@ -167,65 +175,82 @@ cuts:
     note: null
   A11-003:
     cam:
-    - 4.9
-    - 5.9
+    - 3.6
+    - 6.3
     - 1.2
-    lens: 32
-    bearing: 54
+    lens: 30
+    bearing: 63
     frame: 全身
     start:
       people:
       - who: arlecchino
-        s: -0.99
-        dist: 1.25
+        s: -0.45
+        dist: 2.46
         side: 左
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.87
-        dist: 1.55
+        s: 0.4
+        dist: 3.0
         side: 右
         body: 斜め前（画面左向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
       - 天井までの本棚（北）
       - 天井までの本棚（南）
+      - 本棚の端の燭台
       - 赤い天蓋のベッド（上の人物は z 0.55）
       - 天蓋の柱
       - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
       - ベッド脇の小机（燭台）
+      - ベッド脇の小机
       - 天井までの本棚（西の壁）
       - 本と薬瓶の机（西の壁）
       - 机の椅子
       - 窓の下手の引き出し
       - 古い長持（人形の棚の下）
       - 床に積んだ本
+      - 床に積んだ本と巻物
       - 天井の真鍮のランプ
       - 机の上のランプ
+      - 木組みの家
+      - 木組みの家
+      - 木組みの家
+      - 木組みの家
       - 遠くの丘の上の大公爵ヴァレンティーヌの館
+      - 広場の北西の石の花壇（縁にビスコが座る。z 0.45）
+      - 花壇の花（桃色）
+      - 広場のランタンの柱
+      - 広場のランタンの柱
+      - 花壇の花
+      - 花壇の花
+      - 丸い木
+      - 丸い木
       staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
-        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far left of the frame, in three-quarter view, turned toward screen
-        right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
-        blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other
-        people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp,
-        glowing green vines on dark wood paneling, a small round window.'
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred
+        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
+        vines on dark wood paneling, a small round window.'
     end:
       people:
       - who: arlecchino
-        s: -0.63
-        dist: 1.3
-        side: 左
-        body: 斜め前（画面右向き）
+        s: -0.3
+        dist: 2.44
+        side: 中央
+        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.55
-        dist: 1.26
-        side: 右
+        s: 0.23
+        dist: 2.62
+        side: 中央
         body: 横顔（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
-        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far left of the frame, in three-quarter view, turned toward screen
-        right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
-        blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind:
-        the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
-        vines on dark wood paneling, a small round window.'
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred
+        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the witch''s
+        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
+        wood paneling, a small round window.'
     move:
       arlecchino:
         to: a_greet
@@ -326,54 +351,57 @@ cuts:
     note: null
   A11-005:
     cam:
-    - 6.5
-    - 5.8
-    - 0.75
-    lens: 35
-    bearing: 340
+    - 7.2
+    - 6.0
+    - 0.8
+    lens: 32
+    bearing: 331
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: -0.52
-        dist: 0.76
+        s: -0.83
+        dist: 1.3
         side: 左
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       - who: arlecchino
-        s: 0.0
-        dist: 3.4
+        s: -0.0
+        dist: 3.87
         side: 中央
         body: 正面
       bg: 魔女邸の居間〔居間 正面〕
       props:
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
       - 赤いソファの座面（座る人物は z 0.42）
       - 赤いソファの高い背もたれ
       - 赤い布の丸テーブル（A12 では三品が載る）
       - テーブルの上の吊りランプ
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the
-        back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head,
-        pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s living room: a round table
-        with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round
-        window.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
+        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s
+        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
+        wood paneling, a small round window.'
     end:
       people:
       - who: hundred-knight
-        s: -0.45
-        dist: 0.71
+        s: -0.73
+        dist: 1.27
         side: 左
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       - who: arlecchino
-        s: -0.0
-        dist: 2.31
+        s: 0.0
+        dist: 2.82
         side: 中央
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the
-        back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head,
-        pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s living room: a round table
-        with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round
-        window.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, seen
+        from behind at an angle, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
+        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s
+        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
+        wood paneling, a small round window.'
     move:
       arlecchino:
         to: a_talk
@@ -398,54 +426,53 @@ cuts:
     note: null
   A11-006:
     cam:
-    - 4.9
-    - 1.0
-    - 2.3
+    - 6.9
+    - 1.8
+    - 2.6
     lens: 28
-    bearing: 166
+    bearing: 195
     frame: 引き
     start:
       people:
       - who: hundred-knight
-        s: -0.04
-        dist: 4.31
+        s: -0.02
+        dist: 3.46
         side: 中央
         body: 正面
       - who: arlecchino
-        s: -0.03
-        dist: 2.69
-        side: 中央
-        body: 背中
+        s: 0.6
+        dist: 2.07
+        side: 右
+        body: 斜め後ろ（画面左向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
-      - 天井までの本棚（南）
       - 薬瓶と燭台の棚
       - 玄関の横の燭台
       - 本棚の端の燭台
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
         plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing
         the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf,
-        black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, with the back to the camera. No other people. Behind: the witch''s living room: a round table
-        with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round
-        window.'
+        black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the witch''s
+        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
+        wood paneling, a small round window.'
     end:
       people:
       - who: hundred-knight
-        s: 0.02
-        dist: 4.21
+        s: 0.11
+        dist: 3.39
         side: 中央
-        body: 正面
+        body: 斜め前（画面右向き）
       - who: arlecchino
-        s: 0.07
-        dist: 2.6
-        side: 中央
-        body: 背中
+        s: 0.8
+        dist: 1.94
+        side: 右
+        body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing
-        the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf,
-        black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, with the back to the camera. No other people. Behind: the witch''s living room: a round table
-        with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round
-        window.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in three-quarter
+        view, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
+        on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No other
+        people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp,
+        glowing green vines on dark wood paneling, a small round window.'
     move:
       arlecchino:
         to: a_talk
@@ -469,41 +496,44 @@ cuts:
     note: null
   A11-007:
     cam:
-    - 2.9
-    - 6.2
-    - 0.6
-    lens: 24
-    bearing: 351
+    - 1.9
+    - 6.1
+    - 0.5
+    lens: 22
+    bearing: 28
     frame: 全身（煽り）
     start:
-      people: []
+      people:
+      - who: arlecchino
+        s: 0.66
+        dist: 3.94
+        side: 右
+        body: 横顔（画面右向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
-      - 階段の4段目（上面 1.24m）
-      - 階段の5段目（上面 1.56m）
-      - 階段の6段目（上面 1.87m）
-      - 階段の7段目（上面 2.18m）
-      - 階段の8段目（上面 2.49m）
-      - 階段の9段目（上面 2.8m）
-      - 階段の上の踊り場
       - 赤いソファの座面（座る人物は z 0.42）
       - 赤いソファの高い背もたれ
       - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
       - 床に積んだ本の山
       - テーブルの上の吊りランプ
-      staging: 'No people in frame. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase,
-        a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, in profile, turned toward screen right. No other people. Behind:
+        the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
+        vines on dark wood paneling, a small round window.'
     end:
       people:
       - who: arlecchino
-        s: 0.3
-        dist: 1.63
-        side: 中央
-        body: 背中
+        s: 0.73
+        dist: 1.44
+        side: 右
+        body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly one person): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
-        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, with the back to the camera. No other people. Behind: the witch''s
-        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
-        wood paneling, a small round window.'
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No
+        other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass
+        lamp, glowing green vines on dark wood paneling, a small round window.'
     move:
       arlecchino:
         to: a_stair
@@ -521,21 +551,22 @@ cuts:
     note: null
   A11-008:
     cam:
-    - 3.6
-    - 6.3
-    - 1.0
-    lens: 30
-    bearing: 333
+    - 3.9
+    - 6.45
+    - 1.3
+    lens: 26
+    bearing: 328
     frame: 全身
     start:
       people:
       - who: arlecchino
         s: 0.0
-        dist: 2.01
+        dist: 2.29
         side: 中央
         body: 背中
       bg: 魔女邸の居間〔居間 正面〕
       props:
+      - 階段の2段目（上面 0.62m）
       - 階段の3段目（上面 0.93m）
       - 階段の4段目（上面 1.24m）
       - 階段の5段目（上面 1.56m）
@@ -552,19 +583,19 @@ cuts:
     end:
       people:
       - who: arlecchino
-        s: -0.33
-        dist: 1.72
-        side: 左
+        s: -0.14
+        dist: 2.63
+        side: 中央
         body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.27
-        dist: 1.86
+        s: 0.14
+        dist: 2.94
         side: 中央
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
-        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred
-        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, in profile, turned toward screen right; the
+        Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
         the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
         vines on dark wood paneling, a small round window.'
     move:
@@ -594,50 +625,44 @@ cuts:
     note: null
   A11-009:
     cam:
-    - 5.6
-    - 2.6
+    - 7.0
+    - 3.2
     - 1.3
-    lens: 28
-    bearing: 169
+    lens: 24
+    bearing: 200
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: 0.04
-        dist: 2.59
+        s: 0.14
+        dist: 2.16
         side: 中央
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       - who: arlecchino
-        s: 0.38
-        dist: 2.19
+        s: 0.55
+        dist: 2.06
         side: 右
-        body: 斜め後ろ（画面左向き）
+        body: 横顔（画面左向き）
       bg: 魔女邸の居間〔居間 正面〕
       props:
+      - 薬瓶と燭台の棚
       - 玄関の横の燭台
       - 本棚の端の燭台
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in three-quarter
-        view, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
-        on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people.
-        Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing
-        green vines on dark wood paneling, a small round window.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in profile,
+        turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the
+        head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the witch''s
+        living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark
+        wood paneling, a small round window.'
     end:
       people:
       - who: hundred-knight
-        s: 0.13
-        dist: 6.46
+        s: -0.06
+        dist: 5.75
         side: 中央
         body: 背中
-      - who: arlecchino
-        s: 0.56
-        dist: 2.09
-        side: 右
-        body: 斜め後ろ（画面左向き）
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with
-        the back to the camera, small in the background; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper
-        horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen left.
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with the back to the camera.
         No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging
         brass lamp, glowing green vines on dark wood paneling, a small round window.'
     move:
@@ -1676,6 +1701,12 @@ checks:
     which: start
     who: bisco
   - cut: A11-001
+    which: start
+    who: metallica
+  - cut: A11-003
+    which: start
+    who: bisco
+  - cut: A11-003
     which: start
     who: metallica
   - cut: A11-010
