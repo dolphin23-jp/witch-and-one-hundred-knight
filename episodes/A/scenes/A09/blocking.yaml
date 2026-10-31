@@ -1,0 +1,397 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜会編 回1 の最初、選別の 1・2）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-10-31）
+# Living Spec「A09 動きの設計（案）」（15カット・約110秒）。ユーザー指示「9-11を始めて良い」（2026-10-31）
+# 場所は world/witch-house-3d-layout.yaml。前半（001〜008）は居間（x: 西0→東8、y: 北0→南7、m）、後半（009〜015）はメタリカの寝室
+#   （下絵では居間の東に別に置いた x 12〜18、y 0〜5。扉は北の壁の x 17.0、東の壁に窓、南の壁ぞいにベッド、西の壁に机と本棚）
+# 階段の上の人物は z = 2.8 × (5.4 − y) / 4.5。ソファの座面は z 0.42、ベッドの上は z 0.55
+# 光: 001・002 は夜（night）、003 以降は朝（morning）。カットごとの lighting で変える
+# 漫符（003 の怒りマーク、012 の星と衝撃、013 の涙）は合成（D-027）。下絵では描かない
+scene: A09
+layout: world/witch-house-3d-layout.yaml
+map_ymax: 7
+lighting: morning
+
+places:
+  stairs_ft:  [0.85, 5.6]    # 階段の下
+  m_look:     [2.0, 5.25]    # 001 階段を下りて見回す所
+  hk_door:    [5.7, 6.1]     # 百騎兵。玄関の脇で二人の帰りを待つ
+  m_sofa_sit: [4.0, 0.85]    # ソファに座る（z 0.42）
+  m_sofa_lie: [4.4, 0.8]     # ソファに横になる（z 0.42、頭は西）
+  m_up:       [4.3, 1.45]    # 003 跳ね起きた所（ソファの前）
+  m_pace:     [2.85, 3.0]    # 004 行ったり来たりの終わり（テーブルの西）
+  m_window:   [2.3, 1.8]     # 006 丸窓の前
+  m_table:    [3.15, 2.6]    # 007 テーブルの西（地図とペンデュラム）
+  hk_table:   [3.6, 3.65]    # 007 百騎兵がテーブルの南西に寄る（008 で手前から階段へ）
+  table:      [4.2, 2.4]
+  # 寝室
+  m_read:     [15.0, 3.6]    # ベッドにうつ伏せ（z 0.55、頭は北）
+  m_bed:      [15.0, 3.75]   # ベッドの上に立つ（z 0.55）
+  hk_peek:    [17.0, 0.2]    # 010 扉からのぞく
+  hk_bed:     [15.05, 2.3]   # ベッドの足もと（メタリカの頭の前）
+  m_floor:    [15.75, 2.4]   # 013 ベッドから下りて叱る所
+  m_round:    [14.5, 1.55]   # 014 説教しながら北側を歩いた先（百騎兵の北西）
+
+start:
+  metallica: {at: [0.8, 1.3], face: 180}       # 階段の上（001 で下りてくる）
+  hundred-knight: {at: hk_door, face: 160}
+
+cuts:
+  A09-001:
+    frame: 全身
+    lighting: night
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: [0.8, 1.3], z: 2.55, face: 180, pose: stand}
+        - {t: 0.5, at: [0.8, 1.3], z: 2.55, face: 180, pose: walk}
+        - {t: 3.6, at: [0.85, 5.45], z: 0.0, face: 180, pose: walk, ease: inout}
+        - {t: 4.6, at: m_look, face: 105, pose: walk}
+        - {t: 5.0, at: m_look, face: 110, pose: stand}
+        - {t: 6.6, at: m_look, face: 40, pose: stand}
+        - {t: 8.0, at: m_look, face: 120, pose: cross}
+        - {t: 9.5, at: m_look, face: 120, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: hk_door, face: 160, pose: stand}
+        - {t: 2.0, at: hk_door, face: 160, pose: stand}
+        - {t: 2.8, at: hk_door, face: 285, pose: stand}
+        - {t: 9.5, at: hk_door, face: 285, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [7.3, 6.0, 1.1], look: [1.6, 3.4], look_h: 1.9, lens: 28, frame: 全身}
+      - {t: 4.0, cam: [7.25, 5.95, 1.1], look: [2.2, 4.4], look_h: 1.4, lens: 30}
+      - {t: 9.5, cam: [7.0, 5.8, 1.05], look: [2.4, 5.0], look_h: 1.25, lens: 35}
+    bg: living
+    act: {start: 夜の居間。階段の上のメタリカ、玄関の脇で待つ百騎兵, do: メタリカが階段を下りて数歩、がらんとした居間を見回す。百騎兵が振り向く, end: 腕を組んで玄関の方を見るメタリカ}
+    camera: 玄関の脇の低い所（東）から、左下に百騎兵の兜なめで、階段を下りるメタリカへゆっくり寄る
+    kind: A
+  A09-002:
+    frame: 全身
+    lighting: night
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_look, face: 120, pose: cross}
+        - {t: 1.0, at: m_look, face: 120, pose: stand}
+        - {t: 1.4, at: m_look, face: 40, pose: walk}
+        - {t: 3.0, at: [3.0, 2.75], face: 25, pose: walk}
+        - {t: 4.4, at: [3.95, 1.45], face: 20, pose: walk, ease: out}
+        - {t: 4.9, at: m_sofa_sit, z: 0.42, face: 180, pose: sit}
+        - {t: 6.4, at: m_sofa_sit, z: 0.42, face: 180, pose: sit}
+        - {t: 7.2, at: m_sofa_lie, z: 0.42, face: 270, pose: lie}
+        - {t: 8.0, at: m_sofa_lie, z: 0.42, face: 270, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [6.9, 2.7, 0.95], look: metallica, lens: 30, frame: 全身}
+      - {t: 4.6, cam: [6.8, 2.5, 0.92], look: metallica, lens: 32}
+      - {t: 8.0, cam: [6.6, 2.2, 0.9], look: [4.4, 0.85], look_h: 0.6, lens: 35}
+    bg: living
+    act: {start: 腕を組んだメタリカ, do: 肩をすくめてソファへ歩き、どさりと座って、そのまま横になる, end: ソファで横になったメタリカ}
+    camera: 東の低い所から、ソファへ向かうメタリカを追って振る（パン）
+    kind: M
+  A09-003:
+    frame: 全身
+    lighting: morning
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_sofa_lie, z: 0.42, face: 270, pose: lie}
+        - {t: 1.85, at: m_sofa_lie, z: 0.42, face: 270, pose: lie}
+        - {t: 2.15, at: [4.2, 1.25], z: 0.7, face: 200, pose: jump}
+        - {t: 2.5, at: m_up, z: 0.0, face: 200, pose: arms_up}
+        - {t: 4.6, at: m_up, face: 200, pose: arms_up}
+        - {t: 5.2, at: m_up, face: 160, pose: cross}
+        - {t: 7.4, at: m_up, face: 160, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: [2.3, 1.5, 0.7], look: [4.3, 0.85], look_h: 0.55, lens: 30, frame: 全身}
+      - {t: 1.9, cam: [2.3, 1.5, 0.7], look: [4.3, 0.85], look_h: 0.55, lens: 30}
+      - {t: 2.6, cam: [2.25, 1.5, 0.7], look: metallica, look_h: 1.25, lens: 28}
+      - {t: 7.4, cam: [2.2, 1.5, 0.75], look: metallica, look_h: 1.25, lens: 28}
+    shake: [{t: [2.1, 2.9], amp: 1.5}]
+    bg: living
+    act: {start: 朝の光。ソファで寝てしまったメタリカ, do: 「遅いっ」で跳ね起き、両腕を振り上げて怒鳴る, end: 腕を組んで玄関をにらむメタリカ}
+    camera: 西の低い所からソファぞいに。跳ね起きに合わせて上へ振る（ティルト）＋揺れ
+    kind: A
+  A09-004:
+    frame: 全身
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_up, face: 160, pose: cross}
+        - {t: 0.4, at: m_up, face: 260, pose: walk}
+        - {t: 1.1, at: [3.3, 1.35], face: 250, pose: walk}
+        - {t: 1.8, at: [2.85, 1.9], face: 200, pose: walk}
+        - {t: 3.9, at: [2.85, 4.3], face: 180, pose: walk}
+        - {t: 4.4, at: [2.85, 4.3], face: 0, pose: stand}
+        - {t: 6.3, at: m_pace, face: 0, pose: walk}
+        - {t: 6.8, at: m_pace, face: 100, pose: cross}
+        - {t: 7.5, at: m_pace, face: 100, pose: cross}
+    cam_keys:
+      - {t: 0.0, cam: {follow: metallica, offset: [0.25, 2.1], z: 1.25}, look: metallica, lens: 32, frame: 全身}
+      - {t: 7.5, cam: {follow: metallica, offset: [0.25, 2.1], z: 1.25}, look: metallica, lens: 32, ease: linear}
+    bg: living
+    act: {start: 腕を組んだメタリカ, do: テーブルの西を南へ歩き、振り返って北へ戻る（いらいらと行ったり来たり）, end: 立ち止まって腕を組むメタリカ}
+    camera: 歩くメタリカの前を、後ずさりしながら追う（南から）
+    kind: M
+  A09-005:
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_pace, face: 100, pose: cross}
+        - {t: 0.35, at: m_pace, face: 135, pose: point}
+        - {t: 4.1, at: m_pace, face: 135, pose: point}
+      hundred-knight:
+        - {t: 0.0, at: hk_door, face: 285, pose: stand}
+        - {t: 0.6, at: hk_door, face: 315, pose: stand}
+        - {t: 4.1, at: hk_door, face: 315, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [6.3, 6.6, 0.75], look: metallica, lens: 35, frame: 全身}
+      - {t: 4.1, cam: [6.25, 6.55, 0.75], look: metallica, lens: 38}
+    bg: living
+    act: {start: 腕を組んだメタリカ, do: 振り向いて、玄関の脇の百騎兵を指さす, end: 百騎兵を指さすメタリカ}
+    camera: 百騎兵の肩ごし（低い）から、指さすメタリカを煽りで
+    kind: M
+  A09-006:
+    frame: 全身
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_pace, face: 135, pose: point}
+        - {t: 2.0, at: m_pace, face: 135, pose: stand}
+        - {t: 2.4, at: m_pace, face: 345, pose: walk}
+        - {t: 4.6, at: m_window, face: 345, pose: walk, ease: out}
+        - {t: 5.0, at: m_window, face: 350, pose: point}
+        - {t: 7.3, at: m_window, face: 350, pose: point}
+    cam_keys:
+      - {t: 0.0, cam: [2.85, 0.55, 1.45], look: metallica, lens: 28, frame: 全身}
+      - {t: 7.3, cam: [2.9, 0.55, 1.45], look: metallica, lens: 30}
+    bg: living
+    act: {start: 指を立てたメタリカ（テーブルの西）, do: 丸窓へ歩いてきて、窓の外の森の方角を指す。「ゲロクソオンナ」で顔をしかめる, end: 窓の外（カメラ）を指すメタリカの寄り}
+    camera: 丸窓の脇（北）から、近づいてくるメタリカを正面で。最後は窓の外を指す寄り
+    kind: M
+  A09-007:
+    frame: 俯瞰
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_window, face: 350, pose: point}
+        - {t: 0.5, at: m_window, face: 150, pose: walk}
+        - {t: 2.3, at: m_table, face: 95, pose: walk, ease: out}
+        - {t: 2.7, at: m_table, face: 90, pose: hold}
+        - {t: 7.3, at: m_table, face: 90, pose: hold}
+      hundred-knight:
+        - {t: 0.0, at: hk_door, face: 315, pose: stand}
+        - {t: 0.8, at: hk_door, face: 330, pose: walk}
+        - {t: 3.2, at: hk_table, face: 320, pose: walk, ease: out}
+        - {t: 3.6, at: hk_table, face: 336, pose: look_up}
+        - {t: 7.3, at: hk_table, face: 336, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [4.9, 2.4, 3.7], look: [3.8, 2.8], look_h: 0.6, lens: 22, frame: 俯瞰}
+      - {t: 2.8, cam: [4.95, 2.35, 3.5], look: [3.7, 2.8], look_h: 0.7, lens: 24}
+      - {t: 7.3, cam: [5.25, 2.0, 1.6], look: metallica, look_h: 1.3, lens: 35}
+    bg: living
+    act: {start: テーブルの真上から（地図が広げてある）, do: メタリカがテーブルへ戻り、地図の上にペンデュラムを垂らす。百騎兵もテーブルに寄って見上げる, end: ペンデュラムを垂らすメタリカの胸上}
+    camera: テーブルの真上から見下ろし（俯瞰）、メタリカの顔の高さまで下がる（クレーン）
+    kind: M
+  A09-008:
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_table, face: 90, pose: hold}
+        - {t: 0.4, at: m_table, face: 115, pose: wave}
+        - {t: 2.2, at: m_table, face: 115, pose: wave}
+        - {t: 2.7, at: m_table, face: 200, pose: walk}
+        - {t: 3.4, at: [2.9, 3.6], face: 195, pose: walk}
+        - {t: 5.0, at: [1.55, 5.25], face: 230, pose: walk}
+        - {t: 5.6, at: [0.85, 5.6], face: 300, pose: walk}
+        - {t: 5.8, at: [0.85, 5.5], z: 0.0, face: 0, pose: walk}
+        - {t: 8.0, at: [0.8, 3.2], z: 1.37, face: 0, pose: walk}
+        - {t: 9.0, at: [0.8, 2.2], z: 1.99, face: 0, pose: walk}
+      hundred-knight:
+        - {t: 0.0, at: hk_table, face: 336, pose: look_up}
+        - {t: 0.6, at: hk_table, face: 320, pose: stand}
+        - {t: 5.0, at: hk_table, face: 250, pose: stand}
+        - {t: 6.0, at: hk_table, face: 245, pose: stand}
+        - {t: 6.3, at: hk_table, face: 245, pose: run}
+        - {t: 8.2, at: [1.45, 5.55], face: 250, pose: run}
+        - {t: 9.0, at: [0.9, 5.45], z: 0.0, face: 345, pose: walk}
+    cam_keys:
+      - {t: 0.0, cam: [6.3, 4.4, 0.8], look: [2.6, 3.6], look_h: 1.4, lens: 28, frame: 全身}
+      - {t: 4.5, cam: [6.3, 4.4, 0.8], look: [2.2, 4.2], look_h: 1.4, lens: 28}
+      - {t: 9.0, cam: [6.3, 4.4, 0.8], look: [2.0, 4.0], look_h: 1.6, lens: 28}
+    bg: living
+    act: {start: テーブルのメタリカと百騎兵, do: 手で追い払い、メタリカは階段を上っていく。残された百騎兵は首をかしげ、こっそり後を追って階段へ, end: 階段を上るメタリカと、階段の下の百騎兵}
+    camera: 部屋の東、百騎兵の目の高さ（0.8m）から。手前の百騎兵が奥の階段へ歩いていく
+    kind: A
+  A09-009:
+    lighting: bedroom
+    frame: 引き
+    only: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 8.1, at: m_read, z: 0.55, face: 0, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [16.95, 0.45, 1.6], look: [16.3, 3.9], look_h: 0.9, lens: 20, frame: 引き}
+      - {t: 8.1, cam: [16.55, 1.05, 1.35], look: [15.4, 3.6], look_h: 0.7, lens: 24}
+    bg: bedroom
+    act: {start: 朝の寝室。ベッドにうつ伏せで本を読むメタリカ, do: 足をぶらぶらさせながら、分厚い本を熱心に読む, end: 本を読むメタリカ}
+    camera: 扉の内側から、ベッドへゆっくり寄る（参考画の向き）
+    kind: M
+  A09-010:
+    lighting: bedroom
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 0.4, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 1.2, at: [15.0, 3.7], z: 0.55, face: 0, pose: sit}
+        - {t: 2.6, at: [15.0, 3.7], z: 0.55, face: 0, pose: sit}
+        - {t: 3.2, at: m_bed, z: 0.55, face: 330, pose: stand}
+        - {t: 3.6, at: m_bed, z: 0.55, face: 320, pose: proud}
+        - {t: 9.0, at: m_bed, z: 0.55, face: 320, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: [17.0, -0.9], face: 180, pose: stand}
+        - {t: 5.0, at: [17.0, -0.9], face: 180, pose: stand}
+        - {t: 5.8, at: hk_peek, face: 200, pose: walk}
+        - {t: 6.2, at: hk_peek, face: 215, pose: stand}
+        - {t: 9.0, at: hk_peek, face: 215, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [12.8, 4.55, 0.7], look: metallica, look_h: 1.0, lens: 20, frame: 全身}
+      - {t: 3.4, cam: [12.8, 4.55, 0.7], look: metallica, look_h: 1.3, lens: 20}
+      - {t: 9.0, cam: [12.85, 4.5, 0.7], look: metallica, look_h: 1.3, lens: 20}
+    bg: bedroom
+    act: {start: うつ伏せで本を読むメタリカ, do: 起き上がってベッドの上に立ち、胸を張る。奥で扉がそっと開き、百騎兵がのぞく, end: ベッドの上で胸を張るメタリカと、扉からのぞく百騎兵}
+    camera: ベッドの西の低い所から煽り。奥の左に扉
+    kind: M
+  A09-011:
+    lighting: bedroom
+    frame: 俯瞰
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_bed, z: 0.55, face: 320, pose: proud}
+        - {t: 0.5, at: [15.0, 3.7], z: 0.55, face: 0, pose: sit}
+        - {t: 1.2, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 7.8, at: m_read, z: 0.55, face: 0, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_peek, face: 215, pose: stand}
+        - {t: 1.6, at: hk_peek, face: 220, pose: stand}
+        - {t: 2.0, at: [16.85, 0.4], face: 225, pose: crouch}
+        - {t: 5.6, at: hk_bed, face: 200, pose: crouch}
+        - {t: 6.1, at: hk_bed, face: 180, pose: lean}
+        - {t: 7.8, at: hk_bed, face: 180, pose: lean}
+    cam_keys:
+      - {t: 0.0, cam: [15.2, 4.75, 2.1], look: [15.5, 1.6], look_h: 0.5, lens: 24, frame: 俯瞰}
+      - {t: 7.8, cam: [15.15, 4.7, 2.0], look: [15.2, 2.0], look_h: 0.6, lens: 26}
+    bg: bedroom
+    act: {start: ベッドの上に立つメタリカ, do: またうつ伏せで読み始める。百騎兵が忍び足でベッドの足もとまで来て、本をのぞき込む, end: 本をのぞき込む百騎兵と、気づかないメタリカ}
+    camera: ベッドの頭の側（南）の高い所から、メタリカの背中ごしに、近づく百騎兵を（俯瞰）
+    kind: M
+  A09-012:
+    lighting: bedroom
+    frame: 寄り
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 0.35, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 0.9, at: [15.0, 3.3], z: 0.55, face: 0, pose: kneel}
+        - {t: 1.25, at: [15.0, 3.2], z: 0.55, face: 0, pose: arms_up}
+        - {t: 1.45, at: [15.0, 3.1], z: 0.55, face: 0, pose: point}
+        - {t: 2.0, at: [15.0, 3.1], z: 0.55, face: 0, pose: point}
+        - {t: 2.4, at: [15.0, 3.1], z: 0.55, face: 0, pose: cross}
+        - {t: 3.0, at: [15.0, 3.1], z: 0.55, face: 0, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: hk_bed, face: 180, pose: lean}
+        - {t: 1.0, at: hk_bed, face: 180, pose: stand}
+        - {t: 1.45, at: hk_bed, face: 180, pose: stand}
+        - {t: 1.6, at: hk_bed, face: 180, pose: crouch}
+        - {t: 3.0, at: hk_bed, face: 180, pose: crouch}
+    cam_keys:
+      - {t: 0.0, cam: [13.2, 1.6, 1.0], look: [15.03, 2.75], look_h: 0.95, lens: 35, frame: 寄り}
+      - {t: 1.4, cam: [13.2, 1.6, 1.0], look: [15.03, 2.75], look_h: 1.1, lens: 35}
+      - {t: 1.7, cam: [13.25, 1.65, 1.0], look: [15.03, 2.7], look_h: 1.0, lens: 45}
+      - {t: 3.0, cam: [13.25, 1.65, 1.0], look: [15.03, 2.7], look_h: 1.0, lens: 45}
+    shake: [{t: [1.45, 2.1], amp: 2.0}]
+    bg: bedroom
+    act: {start: うつ伏せのメタリカの目の前に百騎兵, do: 気づいて「あん？」→ 跳ね起きて鉄拳を兜の脳天へ。百騎兵がつぶれる, end: 腕を組むメタリカと、うずくまる百騎兵}
+    camera: 机の側（北西）の低い所から二人の寄り。殴った瞬間に寄って揺れる
+    kind: A
+  A09-013:
+    lighting: bedroom
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: [15.0, 3.1], z: 0.55, face: 0, pose: cross}
+        - {t: 0.4, at: [15.0, 3.1], z: 0.55, face: 20, pose: walk}
+        - {t: 1.1, at: m_floor, z: 0.0, face: 270, pose: walk}
+        - {t: 1.4, at: m_floor, face: 275, pose: point}
+        - {t: 6.8, at: m_floor, face: 275, pose: point}
+      hundred-knight:
+        - {t: 0.0, at: hk_bed, face: 180, pose: crouch}
+        - {t: 0.8, at: hk_bed, face: 180, pose: crouch}
+        - {t: 1.3, at: hk_bed, face: 95, pose: cover}
+        - {t: 6.8, at: hk_bed, face: 95, pose: cover}
+    cam_keys:
+      - {t: 0.0, cam: [14.6, 1.55, 0.7], look: metallica, lens: 20, frame: 全身}
+      - {t: 6.8, cam: [14.65, 1.6, 0.7], look: metallica, lens: 22}
+    bg: bedroom
+    act: {start: 腕を組むメタリカと、うずくまる百騎兵, do: ベッドから下りて仁王立ち、指さして叱る。百騎兵は頭を押さえる, end: 指さすメタリカと、頭を押さえる百騎兵}
+    camera: 百騎兵の目の高さから見上げる広角の煽り
+    kind: M
+  A09-014:
+    lighting: bedroom
+    frame: 全身
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_floor, face: 275, pose: point}
+        - {t: 0.5, at: m_floor, face: 275, pose: proud}
+        - {t: 1.3, at: m_floor, face: 350, pose: walk}
+        - {t: 2.3, at: [15.6, 1.5], face: 300, pose: walk}
+        - {t: 3.6, at: [15.0, 1.35], face: 260, pose: walk}
+        - {t: 4.8, at: m_round, face: 230, pose: walk}
+        - {t: 5.3, at: m_round, face: 144, pose: proud}
+        - {t: 8.0, at: m_round, face: 144, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: hk_bed, face: 95, pose: cover}
+        - {t: 1.5, at: hk_bed, face: 95, pose: stand}
+        - {t: 3.0, at: hk_bed, face: 10, pose: stand}
+        - {t: 5.0, at: hk_bed, face: 324, pose: stand}
+        - {t: 8.0, at: hk_bed, face: 324, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [12.9, 0.7, 2.2], look: [15.2, 2.0], look_h: 0.9, lens: 26, frame: 全身}
+      - {t: 8.0, cam: [13.3, 0.95, 2.0], look: [15.0, 1.95], look_h: 0.9, lens: 30}
+    bg: bedroom
+    act: {start: 指さすメタリカ, do: 胸を張り、説教しながら百騎兵の北側を歩く, end: 胸を張って百騎兵を見下ろすメタリカ}
+    camera: 北西の高い所から、説教しながら歩くメタリカと百騎兵へゆっくり寄る
+    kind: M
+  A09-015:
+    lighting: bedroom
+    frame: 引き
+    only: [metallica, hundred-knight]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_round, face: 144, pose: proud}
+        - {t: 0.4, at: m_round, face: 135, pose: wave}
+        - {t: 2.4, at: m_round, face: 135, pose: wave}
+        - {t: 2.8, at: m_round, face: 150, pose: walk}
+        - {t: 3.8, at: [14.7, 2.55], face: 170, pose: walk}
+        - {t: 4.5, at: [14.9, 3.3], z: 0.55, face: 170, pose: sit}
+        - {t: 5.3, at: m_read, z: 0.55, face: 0, pose: lie}
+        - {t: 7.5, at: m_read, z: 0.55, face: 0, pose: lie}
+      hundred-knight:
+        - {t: 0.0, at: hk_bed, face: 324, pose: stand}
+        - {t: 1.2, at: hk_bed, face: 324, pose: look_down}
+        - {t: 2.4, at: hk_bed, face: 40, pose: walk}
+        - {t: 4.6, at: [16.7, 0.75], face: 40, pose: walk}
+        - {t: 5.8, at: [17.0, -0.3], face: 0, pose: walk}
+        - {t: 7.5, at: [17.0, -1.2], face: 0, pose: walk}
+    cam_keys:
+      - {t: 0.0, cam: [12.6, 4.6, 2.6], look: [15.6, 1.6], look_h: 0.6, lens: 24, frame: 引き}
+      - {t: 7.5, cam: [12.65, 4.6, 2.7], look: [16.0, 1.2], look_h: 0.6, lens: 22}
+    bg: bedroom
+    act: {start: 胸を張るメタリカと百騎兵, do: 手で追い払い、ベッドにどさりと戻って本を開く。百騎兵はとぼとぼと扉から出ていく, end: 本を読むメタリカと、閉まりかけの扉}
+    camera: 寝室の奥（南西）の高い所から、扉の方へ（引き）
+    kind: M

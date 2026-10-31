@@ -1,0 +1,34 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-004
+scene: A09
+tc: 24.9
+sec: 7.5
+kind: M
+shot: 全身・メタリカ（後ずさりの追い）
+acting: テーブルの西を南へ歩き、振り返って北へ戻る（いらいらと行ったり来たり）
+dialogue:
+- L274「まったく、何をやっているんだ。早いところ護符を作らねばならんのに……。」
+sound: null
+notes: null
+camera:
+  pos:
+    follow: metallica
+    offset:
+    - 0.25
+    - 2.1
+    z: 1.25
+  look: metallica
+  lens: 32
+  move: 歩くメタリカの前を、後ずさりしながら追う（南から）
+background: witch-house
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 腕を組んだメタリカ
+  end: 立ち止まって腕を組むメタリカ
+timing:
+  lead: 0.4

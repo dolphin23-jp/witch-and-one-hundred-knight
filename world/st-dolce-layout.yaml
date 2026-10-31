@@ -1,0 +1,93 @@
+# セント・ドルチェ（ヴァレンティーヌ領の町）の下絵用の配置（上から見た図の座標、単位はメートル）。Claude の案（2026-10-31、A11 用）
+# 見た目の資料: refs/st-dolce_bg_01（ユーザーが用意した背景。赤茶のレンガ敷きの道、紫の瓦屋根の木組みの家、玄関の吊りランタン、
+#   石の柱の上のランタン、家々の前の花壇（桃色・紫・黄色の花）、レンガの円い模様の広場、桃色の夕空）
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う
+# 座標: x は西 0 → 東 40、y は北 0 → 南 36。方位: 北 0・東 90・南 180・西 270
+# 町の中ほどに円い広場（中心 20, 16、半径 6.5）。南の道（x 18〜22）から入る。北の道の先、遠くの丘の上に華の大公爵ヴァレンティーヌの館
+id: st-dolce
+size: {w: 40.0, d: 36.0}
+compass: 北 0、東 90、南 180、西 270（南から入り、北の遠くに大公爵の館）
+time: 夕方近い午後（桃色の空）
+ground: {color: [96, 120, 70], ja: 芝}
+sky: {color: [235, 170, 190]}
+sun: {from: 255, elev: 14}
+light_en: "Late afternoon in the town: a soft pink and lavender sky with warm golden sunlight from the west, long gentle shadows on the brick paving, the lanterns just beginning to glow."
+
+lighting:   # 名前は居間の配置の光と重ならないように（A11 は layout_extra で居間の配置に足す）。ground は地面の色
+  dolce: {sun_from: 255, sun_elev: 14, sun_energy: 3.0, sun_color: [255, 190, 165], sky: [235, 170, 190], sky_strength: 1.0, lamps: 0.8, ground: [96, 120, 70]}
+
+areas:
+  - {kind: circle, center: [20.0, 16.0], r: 6.5, ja: レンガの円い広場, color: [170, 92, 86]}
+  - {kind: rect, x: [18.0, 22.0], y: [22.0, 36.0], ja: 南の道（レンガ）, color: [160, 88, 82]}
+  - {kind: rect, x: [18.5, 21.5], y: [0.0, 10.0], ja: 北の道（レンガ）, color: [160, 88, 82]}
+  - {kind: rect, x: [0.0, 14.0], y: [14.6, 17.4], ja: 西の道（レンガ）, color: [160, 88, 82]}
+  - {kind: rect, x: [26.0, 40.0], y: [14.6, 17.4], ja: 東の道（レンガ）, color: [160, 88, 82]}
+
+horizon:
+  - {from: 330, to: 30, ja: 北の道と大公爵の館, en: "a brick street leading north between half-timbered houses with purple tiled roofs, and far beyond, on a hill, the grand mansion of the Flower Duke Valentine"}
+  - {from: 30, to: 150, ja: 東の家並み, en: "half-timbered cottages with steep purple tiled roofs, glowing lanterns by the doors, flower beds of pink, purple and yellow flowers"}
+  - {from: 150, to: 210, ja: 南の道, en: "a brick street leading south between half-timbered cottages with purple tiled roofs, stone lamp pillars and flower beds, trees and more purple roofs beyond"}
+  - {from: 210, to: 330, ja: 西の家並み, en: "half-timbered cottages with steep purple tiled roofs, glowing lanterns by the doors, flower beds of pink, purple and yellow flowers, round green trees"}
+
+views:
+  town:
+    ja: セント・ドルチェの広場
+    panel: セント・ドルチェ
+    en: "St. Dolce, a flower town: a round plaza paved with red-brown bricks in a circular pattern, half-timbered cottages with steep purple tiled roofs, lanterns hanging by the doors, stone pillars topped with lanterns, flower beds overflowing with pink, purple and yellow flowers"
+
+props:
+  house_s1: {at: [14.0, 27.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家（紫の屋根）}
+  house_s2: {at: [26.0, 27.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家}
+  house_s3: {at: [14.0, 33.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [140, 60, 130], ja: 木組みの家}
+  house_s4: {at: [26.0, 33.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [140, 60, 130], ja: 木組みの家}
+  house_nw: {at: [11.0, 8.5], w: 6.0, d: 5.0, h: 3.8, roof: 2.8, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家}
+  house_ne: {at: [29.0, 8.5], w: 6.0, d: 5.0, h: 3.8, roof: 2.8, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家}
+  house_w1: {at: [9.0, 21.5], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [140, 60, 130], ja: 木組みの家}
+  house_e1: {at: [31.0, 21.5], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [140, 60, 130], ja: 木組みの家}
+  house_n1: {at: [14.5, 3.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家}
+  house_n2: {at: [25.5, 3.0], w: 6.0, d: 5.0, h: 3.5, roof: 2.6, windows: 2, wall: [225, 205, 175], roof_color: [150, 70, 140], ja: 木組みの家}
+  house_manor: {at: [20.0, -16.0], w: 18.0, d: 10.0, h: 9.0, roof: 6.0, windows: 5, wall: [235, 220, 225], roof_color: [120, 50, 120], ja: 遠くの丘の上の大公爵ヴァレンティーヌの館}
+  pillar_lamp_w: {at: [17.3, 22.8], r: 0.35, h: 1.4, ja: 広場の入口の石の柱（西）}
+  pillar_lamp_e: {at: [22.7, 22.8], r: 0.35, h: 1.4, ja: 広場の入口の石の柱（東）}
+  lantern_pillar_w: {at: [17.3, 22.8], z: 1.75, energy: 35, ja: 柱の上のランタン}
+  lantern_pillar_e: {at: [22.7, 22.8], z: 1.75, energy: 35, ja: 柱の上のランタン}
+  crate_planter: {at: [15.6, 10.75], w: 2.4, d: 0.7, h: 0.45, ja: 広場の北西の石の花壇（縁にビスコが座る。z 0.45）}
+  mushrooms_planter: {at: [15.6, 10.6], ja: 花壇の花（桃色）}
+  lamp_1: {at: [17.6, 29.0], h: 2.6, ja: 道のランタンの柱}
+  lamp_2: {at: [22.4, 29.0], h: 2.6, ja: 道のランタンの柱}
+  lamp_3: {at: [17.6, 34.0], h: 2.6, ja: 道のランタンの柱}
+  lamp_4: {at: [22.4, 34.0], h: 2.6, ja: 道のランタンの柱}
+  lamp_5: {at: [14.2, 12.0], h: 2.6, ja: 広場のランタンの柱}
+  lamp_6: {at: [25.8, 12.0], h: 2.6, ja: 広場のランタンの柱}
+  mushrooms_1: {at: [16.6, 24.6], ja: 花壇の花}
+  mushrooms_2: {at: [23.4, 24.6], ja: 花壇の花}
+  mushrooms_3: {at: [13.2, 13.6], ja: 花壇の花}
+  mushrooms_4: {at: [26.8, 13.6], ja: 花壇の花}
+  mushrooms_5: {at: [13.4, 18.6], ja: 花壇の花}
+  mushrooms_6: {at: [26.6, 18.6], ja: 花壇の花}
+  jar_1: {at: [16.8, 30.5], r: 0.3, ja: 鉢植え}
+  jar_2: {at: [23.2, 30.5], r: 0.3, ja: 鉢植え}
+  tree_1: {at: [5.0, 12.0], h: 7, r: 0.35, crown: 2.6, leaf: [70, 120, 60], ja: 丸い木}
+  tree_2: {at: [35.0, 12.0], h: 7, r: 0.35, crown: 2.6, leaf: [70, 120, 60], ja: 丸い木}
+  tree_3: {at: [6.0, 30.0], h: 7, r: 0.35, crown: 2.6, leaf: [70, 120, 60], ja: 丸い木}
+  tree_4: {at: [34.0, 30.0], h: 7, r: 0.35, crown: 2.6, leaf: [70, 120, 60], ja: 丸い木}
+
+people:
+  bisco:
+    ja: ビスコ
+    eye: 1.5
+    h: 1.55
+    en: Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored
+      boots)
+  hundred-knight:
+    ja: 百騎兵
+    eye: 0.8
+    h: 0.9
+    en: 'the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+      gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)'
+  metallica:
+    ja: メタリカ（幻影）
+    eye: 1.5
+    h: 1.6
+    en: 'a translucent, softly glowing phantom of Metallica floating a little above the ground (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its
+      bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)'

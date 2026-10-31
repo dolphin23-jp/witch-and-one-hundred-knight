@@ -1,0 +1,33 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-006
+scene: A09
+tc: 36.5
+sec: 7.3
+kind: M
+shot: 全身→寄り・メタリカ
+acting: 丸窓へ歩いてきて、窓の外の森の方角を指す。「ゲロクソオンナ」で顔をしかめる
+dialogue:
+- L276「まずは、アルレッキーノからだ。」
+- L278「向かった先は、ゲロクソオンナの森のはずだ。すぐに見つかるだろう。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.75
+  - 0.7
+  - 1.45
+  look: metallica
+  lens: 28
+  move: 丸窓の脇（北）から、近づいてくるメタリカを正面で。最後は窓の外を指す寄り
+background: witch-house
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 指を立てたメタリカ（テーブルの西）
+  end: 窓の外（カメラ）を指すメタリカの寄り
+timing:
+  lead: 0.3

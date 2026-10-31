@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-006
+scene: A11
+tc: 35.0
+sec: 8.5
+kind: M
+shot: 引き（俯瞰）・アルレッキーノ・百騎兵・玄関
+acting: アルレッキーノが玄関（南）の方を指して、セント・ドルチェへ向かうよう伝える。百騎兵も玄関を見る
+dialogue:
+- L308「現在、ビスコ様はヴァレンティーヌ領のセント・ドルチェにおられるとのことでそちらに向かうように……とのことです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.9
+  - 1.0
+  - 2.3
+  look:
+  - 6.0
+  - 5.4
+  lens: 28
+  move: ソファの側（北）の高い所から、玄関の方へ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 向き合う二人
+  end: 向き合う二人と玄関
+timing:
+  lead: 0.3

@@ -1,0 +1,35 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-006
+scene: A10
+tc: 40.0
+sec: 8.6
+kind: M
+shot: 全身（肩ごし）・アルレッキーノ・百騎兵
+acting: 「お昼寝」で腰を落として寝る仕草、「いえ」で姿勢を正して腕を組み、思案のふり
+dialogue:
+- L293「そこでワタクシ、早々にギブアップしてお昼寝……いえ、どうしたものかと思案していたところです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.3
+  - 8.6
+  - 1.6
+  look:
+  - 14.8
+  - 10.1
+  lens: 32
+  move: アルレッキーノの肩ごし（北東）から、百騎兵の顔へ
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 腕を組むアルレッキーノとじっと見る百騎兵
+  end: 腕を組むアルレッキーノと百騎兵
+timing:
+  lead: 0.4

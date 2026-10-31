@@ -1,0 +1,32 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-005
+scene: A10
+tc: 33.8
+sec: 6.2
+kind: M
+shot: 胸上・アルレッキーノ
+acting: 首を振って肩を落とし、腕を組む
+dialogue:
+- L292「これが、なかなかどうして探しても探してもみつかりませぬ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.2
+  - 11.0
+  - 1.2
+  look: arlecchino
+  lens: 50
+  move: 南東からアルレッキーノの寄り（望遠）
+background: marika-forest
+image: null
+refs:
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノの胸上
+  end: 腕を組むアルレッキーノ
+timing:
+  lead: 0.3

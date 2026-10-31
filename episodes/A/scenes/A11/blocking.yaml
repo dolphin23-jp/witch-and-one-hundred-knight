@@ -1,0 +1,595 @@
+# A11 伝言とセント・ドルチェ（夜会編 回1、選別の 5・6）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-10-31）
+# Living Spec「A11 動きの設計（案）」（23カット・約150秒）。ユーザー指示「9-11を始めて良い」（2026-10-31）
+# 場所: 前半（001〜009）は魔女邸の居間（world/witch-house-3d-layout.yaml。x: 西0→東8、y: 北0→南7）、昼（noon）
+#       後半（010〜023）はセント・ドルチェ（world/st-dolce-layout.yaml を layout_extra で x を +100 ずらして足した。x 100〜140、y 0〜36）、夕方近い午後（dolce）
+#   広場の中心は (120, 16)。南の道（x 118〜122）から入る。北西に石の花壇（ビスコが縁に座る、z 0.45）。北の遠くに大公爵の館
+# 017〜023 のメタリカは幻影（下絵では半分透ける青白い人形。ghost）。少し浮いている（z 0.3）
+# 漫符（002・008 のアルレッキーノの汗、007 の「？」、016 のビスコの青い縦線）は合成（D-027）
+scene: A11
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+  - {file: world/st-dolce-layout.yaml, offset: [100, 0]}
+map_ymax: 7
+lighting: noon
+
+places:
+  # 居間
+  hk_in:    [6.6, 5.6]     # 百騎兵。玄関から2歩入った所
+  a_wait:   [4.8, 3.9]     # アルレッキーノ。テーブルの南東で待つ
+  a_greet:  [5.5, 4.6]
+  hk_give:  [6.05, 5.15]   # トーチカを渡す所
+  a_table:  [5.35, 2.6]    # テーブルの東（トーチカを置く）
+  a_talk:   [5.6, 3.6]     # 005〜006 の伝言の位置
+  a_stair:  [2.7, 4.5]     # 007 階段の上をうかがう
+  a_warn:   [5.5, 4.85]    # 008 百騎兵に顔を近づけて念を押す
+  landing:  [0.8, 0.6]     # 階段の上（メタリカの部屋の前）
+  table:    [4.2, 2.4]
+  # セント・ドルチェ（x は +100）
+  b_sit:    [115.6, 11.0]  # ビスコ。花壇の縁に座る（z 0.45）
+  b_meet:   [118.4, 15.6]
+  hk_meet:  [119.3, 16.6]
+  b_walk:   [119.4, 13.4]
+  b_look:   [119.5, 12.2]  # 北の大公爵の館を見る
+  hk_mid:   [119.0, 14.6]
+  b_sit2:   [116.3, 11.0]  # 016 もう一度花壇に座る（z 0.45）
+  b_stand:  [116.4, 11.4]
+  m_ghost:  [118.6, 11.6]  # メタリカの幻影（z 0.3）
+  plaza:    [120.0, 16.0]
+
+start:
+  arlecchino: {at: a_wait, face: 250}
+  hundred-knight: {at: [6.9, 7.7], face: 340}   # 玄関の外（001 で入る）
+  bisco: {at: b_sit, face: 180}                 # セント・ドルチェの花壇
+  metallica: {at: m_ghost, face: 230}           # 017 から幻影で現れる
+
+cuts:
+  A11-001:
+    frame: 全身
+    lighting: noon
+    only: [arlecchino, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [6.9, 7.7], face: 340, pose: walk}
+        - {t: 2.0, at: hk_in, face: 330, pose: walk, ease: out}
+        - {t: 2.4, at: hk_in, face: 320, pose: hold}
+        - {t: 8.9, at: hk_in, face: 320, pose: hold}
+      arlecchino:
+        - {t: 0.0, at: a_wait, face: 250, pose: stand}
+        - {t: 0.8, at: a_wait, face: 140, pose: stand}
+        - {t: 1.3, at: a_wait, face: 140, pose: arms_up}
+        - {t: 3.0, at: a_wait, face: 140, pose: arms_up}
+        - {t: 3.4, at: a_wait, face: 140, pose: walk}
+        - {t: 4.4, at: a_greet, face: 135, pose: walk, ease: out}
+        - {t: 4.8, at: a_greet, face: 135, pose: stand}
+        - {t: 6.0, at: a_greet, face: 135, pose: bow}
+        - {t: 7.2, at: a_greet, face: 135, pose: stand}
+        - {t: 8.9, at: a_greet, face: 135, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.0, 4.2, 0.75], look: [6.9, 7.0], look_h: 1.2, lens: 28, frame: 全身}
+      - {t: 2.4, cam: [4.0, 4.2, 0.75], look: hundred-knight, look_h: 0.9, lens: 28}
+      - {t: 8.9, cam: [3.9, 4.15, 0.8], look: [6.1, 5.1], look_h: 1.1, lens: 28}
+    bg: living
+    act: {start: 昼の居間。玄関の扉が開く, do: トーチカを抱えた百騎兵が入ってくる。アルレッキーノが振り向いて両手を広げ、歩み寄る, end: 向き合うアルレッキーノと百騎兵}
+    camera: テーブルの南西の低い所から、玄関へ。入ってくる百騎兵から、歩み寄るアルレッキーノへ振る
+    kind: M
+  A11-002:
+    frame: 全身（煽り）
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_greet, face: 135, pose: stand}
+        - {t: 0.3, at: a_greet, face: 135, pose: proud}
+        - {t: 1.6, at: a_greet, face: 135, pose: point}
+        - {t: 3.9, at: a_greet, face: 135, pose: point}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 320, pose: hold}
+        - {t: 3.9, at: hk_in, face: 320, pose: hold}
+    cam_keys:
+      - {t: 0.0, cam: [6.0, 5.3, 0.6], look: arlecchino, look_h: 1.7, lens: 28, frame: 全身（煽り）}
+      - {t: 3.9, cam: [6.0, 5.3, 0.6], look: arlecchino, look_h: 1.8, lens: 32}
+    bg: living
+    act: {start: アルレッキーノ, do: メタリカの口まねで、腰に手を当てて胸を張り、百騎兵をびしっと指さす, end: 指さすアルレッキーノ}
+    camera: 百騎兵のそばの低い所から見上げる煽り
+    kind: M
+  A11-003:
+    frame: 全身
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_greet, face: 135, pose: point}
+        - {t: 0.6, at: a_greet, face: 135, pose: stand}
+        - {t: 1.5, at: a_greet, face: 135, pose: bow}
+        - {t: 3.0, at: a_greet, face: 135, pose: stand}
+        - {t: 5.5, at: a_greet, face: 135, pose: hold}
+        - {t: 8.6, at: a_greet, face: 135, pose: hold}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 320, pose: hold}
+        - {t: 6.4, at: hk_in, face: 320, pose: hold}
+        - {t: 7.4, at: hk_give, face: 320, pose: walk, ease: out}
+        - {t: 7.7, at: hk_give, face: 320, pose: hold}
+        - {t: 8.6, at: hk_give, face: 320, pose: hold}
+    cam_keys:
+      - {t: 0.0, cam: [4.9, 5.9, 1.2], look: [6.0, 5.1], look_h: 1.0, lens: 32, frame: 全身}
+      - {t: 8.6, cam: [4.95, 5.85, 1.15], look: [5.8, 4.9], look_h: 1.0, lens: 35}
+    bg: living
+    act: {start: 指さすアルレッキーノと百騎兵, do: 我に返ってお辞儀し、両手を差し出す。百騎兵がトーチカを差し出して歩み寄る, end: 両手を差し出すアルレッキーノと、トーチカを差し出す百騎兵}
+    camera: 南西から二人を横に並べる
+    kind: M
+  A11-004:
+    frame: 全身
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_greet, face: 135, pose: hold}
+        - {t: 1.2, at: a_greet, face: 135, pose: hold}
+        - {t: 1.6, at: a_greet, face: 330, pose: walk}
+        - {t: 3.6, at: a_table, face: 340, pose: walk, ease: out}
+        - {t: 4.0, at: a_table, face: 270, pose: hold}
+        - {t: 6.0, at: a_table, face: 270, pose: hold}
+        - {t: 6.5, at: a_table, face: 180, pose: stand}
+        - {t: 8.5, at: a_table, face: 180, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_give, face: 320, pose: hold}
+        - {t: 1.2, at: hk_give, face: 320, pose: stand}
+        - {t: 3.0, at: hk_give, face: 340, pose: stand}
+        - {t: 8.5, at: hk_give, face: 340, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: arlecchino, offset: [1.4, 1.2], z: 1.3}, look: arlecchino, lens: 30, frame: 全身}
+      - {t: 4.0, cam: {follow: arlecchino, offset: [1.3, 1.0], z: 1.3}, look: arlecchino, lens: 30}
+      - {t: 8.5, cam: [6.5, 3.5, 1.4], look: table, look_h: 0.8, lens: 35}
+    bg: living
+    act: {start: トーチカを受け取るアルレッキーノ, do: 受け取ったトーチカを、テーブルへ運んで置く（夜会の品のひとつ）, end: テーブルの上のトーチカ}
+    camera: アルレッキーノを東から追い、テーブルの上へ
+    kind: M
+  A11-005:
+    frame: 全身
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_table, face: 180, pose: stand}
+        - {t: 0.4, at: a_table, face: 165, pose: walk}
+        - {t: 1.6, at: a_talk, face: 160, pose: walk, ease: out}
+        - {t: 2.0, at: a_talk, face: 160, pose: stand}
+        - {t: 2.4, at: a_talk, face: 160, pose: bow}
+        - {t: 3.4, at: a_talk, face: 160, pose: stand}
+        - {t: 5.1, at: a_talk, face: 160, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_give, face: 340, pose: stand}
+        - {t: 1.6, at: hk_give, face: 345, pose: look_up}
+        - {t: 5.1, at: hk_give, face: 345, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [6.5, 5.8, 0.75], look: arlecchino, lens: 35, frame: 全身}
+      - {t: 5.1, cam: [6.45, 5.75, 0.75], look: arlecchino, lens: 38}
+    bg: living
+    act: {start: テーブルのアルレッキーノ, do: 百騎兵の前へ戻り、胸に手を当てて小さくお辞儀, end: 百騎兵の前のアルレッキーノ}
+    camera: 百騎兵の肩ごし（低い）から
+    kind: M
+  A11-006:
+    frame: 引き
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_talk, face: 160, pose: stand}
+        - {t: 2.6, at: a_talk, face: 160, pose: stand}
+        - {t: 3.0, at: a_talk, face: 159, pose: point}
+        - {t: 6.5, at: a_talk, face: 159, pose: point}
+        - {t: 7.0, at: a_talk, face: 160, pose: stand}
+        - {t: 8.5, at: a_talk, face: 160, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_give, face: 345, pose: look_up}
+        - {t: 3.5, at: hk_give, face: 155, pose: stand}
+        - {t: 5.5, at: hk_give, face: 340, pose: look_up}
+        - {t: 8.5, at: hk_give, face: 340, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [4.9, 1.0, 2.3], look: [6.0, 5.4], look_h: 0.8, lens: 28, frame: 引き}
+      - {t: 8.5, cam: [5.1, 1.05, 2.2], look: [6.2, 5.6], look_h: 0.8, lens: 30}
+    bg: living
+    act: {start: 向き合う二人, do: アルレッキーノが玄関（南）の方を指して、セント・ドルチェへ向かうよう伝える。百騎兵も玄関を見る, end: 向き合う二人と玄関}
+    camera: ソファの側（北）の高い所から、玄関の方へ
+    kind: M
+  A11-007:
+    frame: 全身（煽り）
+    only: [arlecchino]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_talk, face: 160, pose: stand}
+        - {t: 0.5, at: a_talk, face: 240, pose: walk}
+        - {t: 3.0, at: a_stair, face: 300, pose: walk, ease: out}
+        - {t: 3.4, at: a_stair, face: 334, pose: look_up}
+        - {t: 5.6, at: a_stair, face: 334, pose: look_up}
+        - {t: 6.0, at: a_stair, face: 334, pose: shake}
+        - {t: 6.8, at: a_stair, face: 334, pose: look_up}
+        - {t: 9.8, at: a_stair, face: 334, pose: look_up}
+    fx:
+      - {kind: light, t: [5.6, 5.9], at: landing, z: 3.4, energy: 300, color: [200, 120, 255], fade: 0.8}
+      - {kind: spark, t: [5.6, 6.2], at: landing, z: 3.4, color: [200, 120, 255]}
+      - {kind: plume, t: [5.8, 8.8], at: landing, z: 2.8, r: 0.5, h: 1.0, color: [150, 110, 190]}
+    cam_keys:
+      - {t: 0.0, cam: [2.9, 6.2, 0.6], look: [2.6, 4.2], look_h: 1.6, lens: 24, frame: 全身（煽り）}
+      - {t: 3.4, cam: [2.9, 6.2, 0.6], look: [1.5, 1.8], look_h: 2.6, lens: 24}
+      - {t: 9.8, cam: [2.95, 6.15, 0.6], look: [1.2, 1.4], look_h: 2.9, lens: 26}
+    bg: living
+    act: {start: 歩き出すアルレッキーノ, do: 階段の下へ寄って、上のメタリカの部屋をうかがう。部屋から紫の光と煙がぼんと上がり、びくっとする, end: 階段の上を見上げるアルレッキーノ}
+    camera: 階段の下の低い所から、アルレッキーノ越しに階段の上を見上げる
+    kind: M
+  A11-008:
+    frame: 全身
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_stair, face: 334, pose: look_up}
+        - {t: 0.3, at: a_stair, face: 100, pose: arms_up}
+        - {t: 2.6, at: a_stair, face: 100, pose: arms_up}
+        - {t: 3.0, at: a_stair, face: 100, pose: shake}
+        - {t: 4.0, at: a_stair, face: 100, pose: stand}
+        - {t: 4.4, at: a_stair, face: 100, pose: walk}
+        - {t: 6.6, at: a_warn, face: 105, pose: walk, ease: out}
+        - {t: 7.0, at: a_warn, face: 118, pose: lean}
+        - {t: 9.4, at: a_warn, face: 118, pose: lean}
+      hundred-knight:
+        - {t: 0.0, at: hk_give, face: 340, pose: look_up}
+        - {t: 1.0, at: hk_give, face: 285, pose: stand}
+        - {t: 7.0, at: hk_give, face: 298, pose: look_up}
+        - {t: 9.4, at: hk_give, face: 298, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [3.6, 6.3, 1.0], look: arlecchino, lens: 30, frame: 全身}
+      - {t: 4.4, cam: [3.8, 6.3, 1.0], look: arlecchino, lens: 30}
+      - {t: 9.4, cam: [4.6, 6.35, 1.0], look: [5.8, 5.0], look_h: 1.1, lens: 32}
+    bg: living
+    act: {start: 階段の上を見上げるアルレッキーノ, do: メタリカの口まねで両手を振り上げ「キヒヒ！」、自分で身震いしてから、百騎兵に顔を近づけて念を押す, end: 百騎兵に顔を近づけるアルレッキーノ}
+    camera: 南の低い所から、歩くアルレッキーノを追う
+    kind: M
+  A11-009:
+    frame: 全身
+    only: [arlecchino, hundred-knight]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: a_warn, face: 118, pose: lean}
+        - {t: 0.4, at: a_warn, face: 118, pose: bow}
+        - {t: 2.6, at: a_warn, face: 118, pose: bow}
+        - {t: 3.0, at: a_warn, face: 140, pose: stand}
+        - {t: 4.9, at: a_warn, face: 140, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_give, face: 298, pose: look_up}
+        - {t: 1.2, at: hk_give, face: 160, pose: stand}
+        - {t: 1.5, at: hk_give, face: 165, pose: run}
+        - {t: 3.2, at: [6.9, 7.3], face: 175, pose: run}
+        - {t: 4.9, at: [6.9, 9.0], face: 180, pose: run}
+    cam_keys:
+      - {t: 0.0, cam: [5.6, 2.6, 1.3], look: [6.2, 5.6], look_h: 1.0, lens: 28, frame: 全身}
+      - {t: 4.9, cam: [5.6, 2.65, 1.3], look: [6.9, 7.2], look_h: 1.0, lens: 30}
+    bg: living
+    act: {start: 顔を近づけるアルレッキーノ, do: 丁寧にお辞儀。百騎兵が玄関から外の光の中へ走り出る, end: お辞儀のアルレッキーノと開いた玄関}
+    camera: テーブルの東から玄関の方へ
+    kind: M
+  A11-010:
+    frame: 大引き
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [120.0, 30.0], face: 0, pose: run}
+        - {t: 4.0, at: [119.9, 23.5], face: 355, pose: run}
+      bisco:
+        - {t: 0.0, at: b_sit, z: 0.45, face: 180, pose: sit}
+        - {t: 4.0, at: b_sit, z: 0.45, face: 180, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [120.5, 38.0, 12.0], look: [120.0, 18.0], look_h: 0.0, lens: 24, frame: 大引き}
+      - {t: 4.0, cam: [120.3, 33.0, 4.5], look: [119.5, 17.0], look_h: 1.0, lens: 24}
+    bg: town
+    act: {start: 紫の屋根の町を高い所から, do: 屋根の上から広場へ下りていく。レンガの道を百騎兵が走ってくる。広場の端の花壇に、うなだれたビスコ, end: 広場の全景}
+    camera: 南の高い所から、屋根を越えて広場へ下りる（クレーン）
+    kind: M
+  A11-011:
+    frame: 全身
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_sit, z: 0.45, face: 180, pose: sit}
+        - {t: 0.5, at: b_sit, z: 0.45, face: 150, pose: sit}
+        - {t: 0.9, at: [115.6, 11.35], z: 0.0, face: 150, pose: stand}
+        - {t: 1.3, at: [115.6, 11.35], face: 147, pose: run}
+        - {t: 3.8, at: b_meet, face: 147, pose: run, ease: out}
+        - {t: 4.1, at: b_meet, face: 138, pose: stand}
+        - {t: 5.5, at: b_meet, face: 138, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [119.9, 23.5], face: 355, pose: run}
+        - {t: 2.6, at: hk_meet, face: 340, pose: run, ease: out}
+        - {t: 3.0, at: hk_meet, face: 318, pose: stand}
+        - {t: 5.5, at: hk_meet, face: 318, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: hundred-knight, offset: [0.6, 1.8], z: 0.8}, look: bisco, lens: 32, frame: 全身}
+      - {t: 3.0, cam: [119.9, 18.5, 0.8], look: bisco, lens: 32}
+      - {t: 5.5, cam: [119.9, 18.4, 0.8], look: bisco, lens: 35}
+    bg: town
+    act: {start: 花壇に座るビスコ, do: 百騎兵に気づいて跳ね起き、駆け寄る, end: 向き合うビスコと百騎兵}
+    camera: 百騎兵の後ろの低い所から追い、広場で止まる
+    kind: M
+  A11-012:
+    frame: 全身
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_meet, face: 138, pose: stand}
+        - {t: 0.6, at: b_meet, face: 138, pose: crouch}
+        - {t: 5.1, at: b_meet, face: 138, pose: crouch}
+      hundred-knight:
+        - {t: 0.0, at: hk_meet, face: 318, pose: stand}
+        - {t: 0.8, at: hk_meet, face: 318, pose: look_up}
+        - {t: 5.1, at: hk_meet, face: 318, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [117.6, 17.4, 0.9], look: [118.85, 16.1], look_h: 0.75, lens: 35, frame: 全身}
+      - {t: 5.1, cam: [117.65, 17.35, 0.85], look: [118.85, 16.1], look_h: 0.7, lens: 40}
+    bg: town
+    act: {start: 向き合う二人, do: ビスコがしゃがんで百騎兵の目の高さになり、困った顔で打ち明ける, end: しゃがんだビスコと百騎兵}
+    camera: 南西から二人を横に並べる
+    kind: M
+  A11-013:
+    frame: 全身
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_meet, face: 138, pose: crouch}
+        - {t: 0.6, at: b_meet, face: 138, pose: stand}
+        - {t: 1.2, at: b_meet, face: 20, pose: walk}
+        - {t: 4.0, at: b_walk, face: 20, pose: walk, ease: out}
+        - {t: 4.4, at: b_walk, face: 160, pose: stand}
+        - {t: 7.0, at: b_walk, face: 200, pose: gesture}
+        - {t: 10.8, at: b_walk, face: 200, pose: gesture}
+      hundred-knight:
+        - {t: 0.0, at: hk_meet, face: 318, pose: look_up}
+        - {t: 1.5, at: hk_meet, face: 0, pose: stand}
+        - {t: 5.0, at: hk_meet, face: 355, pose: stand}
+        - {t: 10.8, at: hk_meet, face: 355, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: bisco, offset: [-2.2, 0.8], z: 1.2}, look: bisco, lens: 32, frame: 全身}
+      - {t: 4.4, cam: {follow: bisco, offset: [-2.2, 0.8], z: 1.2}, look: bisco, lens: 32, ease: linear}
+      - {t: 10.8, cam: [117.4, 14.4, 1.2], look: [119.3, 14.6], look_h: 1.0, lens: 32}
+    bg: town
+    act: {start: しゃがんだビスコ, do: 立ち上がって広場の中ほどへ数歩歩きながら、ネコの話をする。振り返って手で示す, end: 手で示すビスコと見上げる百騎兵}
+    camera: 西から歩くビスコに並走し、二人を入れて止まる
+    kind: M
+  A11-014:
+    frame: 引き
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_walk, face: 200, pose: gesture}
+        - {t: 0.6, at: b_walk, face: 0, pose: stand}
+        - {t: 1.0, at: b_walk, face: 0, pose: walk}
+        - {t: 2.4, at: b_look, face: 0, pose: walk, ease: out}
+        - {t: 2.8, at: b_look, face: 0, pose: stand}
+        - {t: 7.9, at: b_look, face: 0, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_meet, face: 355, pose: stand}
+        - {t: 2.0, at: hk_meet, face: 355, pose: walk}
+        - {t: 4.0, at: hk_mid, face: 10, pose: walk, ease: out}
+        - {t: 4.4, at: hk_mid, face: 10, pose: stand}
+        - {t: 7.9, at: hk_mid, face: 10, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [118.0, 16.6, 1.3], look: [119.8, 2.0], look_h: 2.5, lens: 35, frame: 引き}
+      - {t: 7.9, cam: [118.1, 16.4, 1.3], look: [119.9, 0.0], look_h: 3.5, lens: 40}
+    bg: town
+    act: {start: 手で示すビスコ, do: 北へ向き直って数歩、遠くの丘の上の大公爵の館を見る。百騎兵も並ぶ, end: 館を見るビスコと百騎兵の後ろ姿}
+    camera: 二人の後ろ（南西）から、北の道の先の館へ
+    kind: M
+  A11-015:
+    frame: 胸上
+    lighting: dolce
+    only: [bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_look, face: 0, pose: stand}
+        - {t: 0.4, at: b_look, face: 170, pose: stand}
+        - {t: 1.0, at: b_look, face: 170, pose: look_down}
+        - {t: 3.6, at: b_look, face: 170, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [118.6, 14.9, 0.85], look: bisco, look_h: 1.3, lens: 55, frame: 胸上}
+      - {t: 3.6, cam: [118.6, 14.85, 0.85], look: bisco, look_h: 1.3, lens: 60}
+    bg: town
+    act: {start: 館を見るビスコ, do: 振り返り、しょんぼりとうつむく, end: うつむくビスコ}
+    camera: 百騎兵の目の高さから、ビスコの寄り（望遠）
+    kind: M
+  A11-016:
+    frame: 俯瞰
+    lighting: dolce
+    only: [bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_look, face: 170, pose: look_down}
+        - {t: 0.6, at: b_look, face: 250, pose: walk}
+        - {t: 3.0, at: [116.3, 11.55], face: 250, pose: walk, ease: out}
+        - {t: 3.4, at: b_sit2, z: 0.45, face: 160, pose: sit}
+        - {t: 5.6, at: b_sit2, z: 0.45, face: 160, pose: sit}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 350, pose: stand}
+        - {t: 2.0, at: hk_mid, face: 300, pose: stand}
+        - {t: 5.6, at: hk_mid, face: 290, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [114.6, 9.3, 4.2], look: [117.6, 12.0], look_h: 0.6, lens: 28, frame: 俯瞰}
+      - {t: 5.6, cam: [114.7, 9.4, 4.4], look: [116.6, 11.4], look_h: 0.5, lens: 30}
+    bg: town
+    act: {start: うつむくビスコ, do: 花壇へとぼとぼ歩き、縁に腰を落とす, end: 花壇の縁で肩を落とすビスコ}
+    camera: 北西の高い所から見下ろす（俯瞰）
+    kind: M
+  A11-017:
+    frame: 全身（煽り）
+    lighting: dolce
+    only: [metallica, bisco, hundred-knight]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: -2.5, face: 230, pose: cross}
+        - {t: 0.9, at: m_ghost, z: -2.5, face: 230, pose: cross}
+        - {t: 1.2, at: m_ghost, z: 0.3, face: 230, pose: cross}
+        - {t: 7.4, at: m_ghost, z: 0.3, face: 230, pose: cross}
+      bisco:
+        - {t: 0.0, at: b_sit2, z: 0.45, face: 160, pose: sit}
+        - {t: 1.4, at: b_sit2, z: 0.45, face: 110, pose: sit}
+        - {t: 2.0, at: b_stand, z: 0.0, face: 95, pose: stand}
+        - {t: 7.4, at: b_stand, face: 95, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 290, pose: stand}
+        - {t: 1.5, at: hk_mid, face: 352, pose: look_up}
+        - {t: 7.4, at: hk_mid, face: 352, pose: look_up}
+    fx:
+      - {kind: light, t: [0.8, 1.2], at: m_ghost, z: 1.2, energy: 300, color: [180, 210, 255], fade: 1.0}
+      - {kind: spark, t: [0.9, 1.5], at: m_ghost, z: 1.0, color: [200, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [117.6, 13.4, 0.5], look: m_ghost, look_h: 1.0, lens: 22, frame: 全身（煽り）}
+      - {t: 7.4, cam: [117.65, 13.35, 0.5], look: m_ghost, look_h: 1.1, lens: 24}
+    bg: town
+    act: {start: 花壇の縁のビスコ, do: 光とともにメタリカの幻影が現れ、腕を組んでふんぞり返る。ビスコが驚いて立ち上がる, end: 浮かぶメタリカの幻影と、立ち上がったビスコ}
+    camera: 低い所から幻影を見上げる煽り
+    kind: A
+  A11-018:
+    frame: 膝上
+    lighting: dolce
+    only: [metallica, bisco]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 230, pose: cross}
+        - {t: 0.3, at: m_ghost, z: 0.3, face: 275, pose: point}
+        - {t: 3.5, at: m_ghost, z: 0.3, face: 275, pose: point}
+      bisco:
+        - {t: 0.0, at: b_stand, face: 95, pose: stand}
+        - {t: 3.5, at: b_stand, face: 95, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [115.6, 12.0, 1.4], look: metallica, lens: 35, frame: 膝上}
+      - {t: 3.5, cam: [115.65, 12.0, 1.4], look: metallica, lens: 38}
+    bg: town
+    act: {start: 幻影のメタリカ, do: ビスコを指さす, end: 指さす幻影}
+    camera: ビスコの肩ごしから幻影へ
+    kind: M
+  A11-019:
+    frame: 膝上
+    lighting: dolce
+    only: [metallica, bisco]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 275, pose: point}
+        - {t: 4.0, at: m_ghost, z: 0.3, face: 275, pose: point}
+      bisco:
+        - {t: 0.0, at: b_stand, face: 95, pose: stand}
+        - {t: 1.5, at: b_stand, face: 95, pose: look_down}
+        - {t: 2.2, at: b_stand, face: 95, pose: stand}
+        - {t: 4.0, at: b_stand, face: 95, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [119.6, 12.2, 1.6], look: bisco, lens: 35, frame: 膝上}
+      - {t: 4.0, cam: [119.55, 12.2, 1.6], look: bisco, lens: 38}
+    bg: town
+    act: {start: ビスコ, do: 小さくうなずく, end: うなずいたビスコ}
+    camera: 幻影の肩ごしからビスコへ（切り返し）
+    kind: M
+  A11-020:
+    frame: 引き
+    lighting: dolce
+    only: [metallica, bisco, hundred-knight]
+    ghost: [metallica]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_stand, face: 95, pose: stand}
+        - {t: 0.5, at: b_stand, face: 95, pose: look_down}
+        - {t: 2.6, at: b_stand, face: 160, pose: stand}
+        - {t: 3.0, at: b_stand, face: 160, pose: walk}
+        - {t: 7.6, at: [118.6, 17.5], face: 170, pose: walk}
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 275, pose: point}
+        - {t: 0.6, at: m_ghost, z: 0.3, face: 230, pose: cross}
+        - {t: 7.6, at: m_ghost, z: 0.3, face: 200, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 352, pose: look_up}
+        - {t: 3.5, at: hk_mid, face: 280, pose: stand}
+        - {t: 7.6, at: hk_mid, face: 225, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [118.0, 8.6, 2.2], look: [118.0, 14.0], look_h: 0.9, lens: 28, frame: 引き}
+      - {t: 7.6, cam: [118.1, 8.7, 2.2], look: [118.4, 16.5], look_h: 0.8, lens: 28}
+    bg: town
+    act: {start: うなずいたビスコと幻影, do: すまなそうにうつむき、尻尾を垂らして南の道へ帰っていく, end: 遠ざかるビスコと、見送る幻影と百騎兵}
+    camera: 北（幻影の背中ごし）から、南の道へ帰るビスコを
+    kind: M
+  A11-021:
+    frame: 全身（煽り）
+    lighting: dolce
+    only: [metallica, hundred-knight]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 200, pose: cross}
+        - {t: 0.6, at: m_ghost, z: 0.3, face: 172, pose: stand}
+        - {t: 1.4, at: m_ghost, z: 0.3, face: 172, pose: proud}
+        - {t: 6.1, at: m_ghost, z: 0.3, face: 172, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 225, pose: stand}
+        - {t: 0.8, at: hk_mid, face: 352, pose: look_up}
+        - {t: 6.1, at: hk_mid, face: 352, pose: look_up}
+      bisco:
+        - {t: 0.0, at: [118.6, 17.5], face: 170, pose: walk}
+        - {t: 6.1, at: [119.4, 25.0], face: 175, pose: walk}
+    cam_keys:
+      - {t: 0.0, cam: [119.3, 14.0, 0.75], look: metallica, look_h: 1.3, lens: 30, frame: 全身（煽り）}
+      - {t: 6.1, cam: [119.25, 13.9, 0.75], look: metallica, look_h: 1.4, lens: 34}
+    bg: town
+    act: {start: 腕を組む幻影, do: 百騎兵に向き直り、腰に手を当ててにやりと笑う, end: 胸を張る幻影}
+    camera: 百騎兵の目の高さから、幻影を見上げる
+    kind: M
+  A11-022:
+    frame: 全身
+    lighting: dolce
+    only: [metallica, hundred-knight]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 172, pose: proud}
+        - {t: 0.5, at: m_ghost, z: 0.3, face: 172, pose: arms_up}
+        - {t: 3.0, at: m_ghost, z: 0.3, face: 172, pose: arms_up}
+        - {t: 3.4, at: m_ghost, z: 0.3, face: 172, pose: gesture}
+        - {t: 5.6, at: m_ghost, z: 0.3, face: 172, pose: gesture}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 352, pose: look_up}
+        - {t: 5.6, at: hk_mid, face: 352, pose: look_up}
+    fx:
+      - {kind: spark, t: [0.6, 1.4], at: m_ghost, z: 1.9, color: [200, 220, 255]}
+      - {kind: spark, t: [2.0, 2.8], at: m_ghost, z: 1.7, color: [200, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [120.4, 13.0, 1.3], look: metallica, lens: 30, frame: 全身}
+      - {t: 2.8, cam: [119.6, 13.6, 1.3], look: metallica, lens: 30}
+      - {t: 5.6, cam: [117.0, 13.2, 1.3], look: metallica, lens: 30}
+    bg: town
+    act: {start: 胸を張る幻影, do: 両手を広げて錬金術を語る。手のまわりに光の粒, end: 片手を広げる幻影}
+    camera: 幻影のまわりを東から西へ回り込む（オービット）
+    kind: M
+  A11-023:
+    frame: 引き
+    lighting: dolce
+    only: [metallica, hundred-knight]
+    ghost: [metallica]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_ghost, z: 0.3, face: 172, pose: gesture}
+        - {t: 0.3, at: m_ghost, z: 0.3, face: 172, pose: point}
+        - {t: 2.8, at: m_ghost, z: 0.3, face: 172, pose: point}
+        - {t: 3.2, at: m_ghost, z: 0.3, face: 172, pose: point}
+        - {t: 3.5, at: m_ghost, z: -2.5, face: 172, pose: point}
+        - {t: 5.8, at: m_ghost, z: -2.5, face: 172, pose: point}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 352, pose: look_up}
+        - {t: 3.6, at: hk_mid, face: 180, pose: stand}
+        - {t: 3.9, at: hk_mid, face: 175, pose: run}
+        - {t: 5.8, at: [119.6, 20.5], face: 175, pose: run}
+    fx:
+      - {kind: light, t: [3.0, 3.3], at: m_ghost, z: 1.2, energy: 250, color: [180, 210, 255], fade: 0.6}
+      - {kind: spark, t: [3.1, 3.6], at: m_ghost, z: 1.0, color: [200, 220, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [120.6, 15.6, 1.6], look: [118.8, 12.6], look_h: 1.2, lens: 28, frame: 引き}
+      - {t: 5.8, cam: [121.0, 19.0, 7.0], look: [119.4, 15.5], look_h: 0.5, lens: 24}
+    bg: town
+    act: {start: 片手を広げる幻影, do: 百騎兵を指さして命じ、光とともに消える。百騎兵が南の道へ走り出す, end: 広場を走り去る百騎兵}
+    camera: 上へ引いていく（クレーン上げ）
+    kind: M

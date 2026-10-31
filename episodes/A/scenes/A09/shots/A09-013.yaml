@@ -1,0 +1,33 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-013
+scene: A09
+tc: 88.0
+sec: 6.8
+kind: M
+shot: 全身（煽り）・メタリカ・百騎兵
+acting: ベッドから下りて仁王立ち、指さして叱る。百騎兵は頭を押さえる
+dialogue:
+- L286「おい！オマエ、ノックくらいしろ！あと、寝室に黙って入ってくるんじゃない！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 14.6
+  - 1.55
+  - 0.7
+  look: metallica
+  lens: 20
+  move: 百騎兵の目の高さから見上げる広角の煽り
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 腕を組むメタリカと、うずくまる百騎兵
+  end: 指さすメタリカと、頭を押さえる百騎兵
+timing:
+  lead: 0.4

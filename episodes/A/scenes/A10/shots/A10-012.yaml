@@ -1,0 +1,33 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-012
+scene: A10
+tc: 88.3
+sec: 12.0
+kind: M
+shot: 引き・百騎兵・スケアコッコ（奥）
+acting: 広場を探し回り、根や茂みの後ろをのぞく。その奥をスケアコッコがのんびり横切る
+dialogue:
+- L301「獲物を殺さない程度に十分に痛めつけてから、トーチカで捕獲するだけだ。キヒヒ、簡単だろ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 19.5
+  - 15.5
+  - 1.6
+  look: hundred-knight
+  lens: 24
+  move: 南東の引きから、百騎兵を追って振る（パン）
+background: marika-forest
+image: null
+refs:
+- hundred-knight
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: トーチカを持つ百騎兵
+  end: 茂みをのぞく百騎兵と、奥で立ち止まるスケアコッコ
+timing:
+  lead: 0.4

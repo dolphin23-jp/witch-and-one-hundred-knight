@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-004
+scene: A11
+tc: 21.4
+sec: 8.5
+kind: M
+shot: 全身→テーブル・アルレッキーノ・トーチカ
+acting: 受け取ったトーチカを、テーブルへ運んで置く（夜会の品のひとつ）
+dialogue:
+- L306「ありがとうございます。百騎兵様。これで夜会に行くのに必要な品のひとつが手に入りました。」
+sound: null
+notes: null
+camera:
+  pos:
+    follow: arlecchino
+    offset:
+    - 1.4
+    - 1.2
+    z: 1.3
+  look: arlecchino
+  lens: 30
+  move: アルレッキーノを東から追い、テーブルの上へ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: トーチカを受け取るアルレッキーノ
+  end: テーブルの上のトーチカ
+timing:
+  lead: 0.3

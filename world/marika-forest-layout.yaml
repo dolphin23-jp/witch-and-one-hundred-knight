@@ -1,0 +1,99 @@
+# マーリカの森（ゲロクソオンナの森）の下絵用の配置（上から見た図の座標、単位はメートル）。Claude の案（2026-10-31、A10 用）
+# 見た目の資料: refs/marika-forest_bg_01（ユーザーが用意した背景。苔の広場、扉と石段のある大樹、木の柱の吊りランタン、苔の中の石の渦の模様、碧く光る点、蛍）
+# 背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う
+# 座標: x は西 0 → 東 30、y は北 0 → 南 26。方位: 北 0・東 90・南 180・西 270
+# 広場（中心 15, 13、半径約9m）の北に大樹（マーリカの家。幹の南面に石のアーチの扉と石段）。南から小道が入る。まわりは深い森
+id: marika-forest
+size: {w: 30.0, d: 26.0}
+compass: 北 0、東 90、南 180、西 270（大樹は北、小道は南）
+time: 昼（森の奥なので薄暗い）
+ground: {color: [64, 96, 44], ja: 苔}
+sky: {color: [40, 70, 66]}
+sun: {from: 160, elev: 60}
+light_en: "Daytime deep in the forest: dim green light filtering down through the thick canopy, warm glowing lanterns, drifting fireflies and small teal glowing spots on the mossy ground."
+
+lighting:
+  day: {sun_from: 160, sun_elev: 60, sun_energy: 1.6, sun_color: [215, 245, 190], sky: [70, 110, 100], sky_strength: 0.8, lamps: 1.0}
+
+areas:
+  - {kind: circle, center: [15.0, 13.0], r: 9.0, ja: 苔の広場, color: [88, 128, 52]}
+  - {kind: rect, x: [14.0, 16.2], y: [21.0, 26.0], ja: 南の小道, color: [96, 112, 60]}
+  - {kind: circle, center: [11.0, 15.5], r: 0.8, ja: 石の渦, color: [118, 124, 112]}
+  - {kind: circle, center: [18.5, 17.0], r: 0.8, ja: 石の渦, color: [118, 124, 112]}
+  - {kind: circle, center: [14.5, 19.5], r: 0.8, ja: 石の渦, color: [118, 124, 112]}
+  - {kind: circle, center: [20.5, 12.0], r: 0.7, ja: 石の渦, color: [118, 124, 112]}
+  - {kind: circle, center: [9.0, 11.0], r: 0.7, ja: 石の渦, color: [118, 124, 112]}
+  - {kind: circle, center: [8.0, 14.0], r: 0.35, ja: 碧く光る点, color: [60, 200, 170]}
+  - {kind: circle, center: [22.0, 9.5], r: 0.35, ja: 碧く光る点, color: [60, 200, 170]}
+  - {kind: circle, center: [12.5, 21.5], r: 0.35, ja: 碧く光る点, color: [60, 200, 170]}
+  - {kind: circle, center: [19.5, 20.5], r: 0.35, ja: 碧く光る点, color: [60, 200, 170]}
+
+horizon:
+  - {from: 330, to: 30, ja: 大樹と扉, en: "the gigantic ancient tree with thick gnarled roots and ivy, an arched stone doorway in its trunk with moss-covered stone steps, small lanterns on posts on both sides"}
+  - {from: 30, to: 150, ja: 東の森, en: "a dense dark forest of huge gnarled trees covered in ivy, drifting fireflies, a wooden post with a glowing lantern"}
+  - {from: 150, to: 210, ja: 南の小道, en: "a narrow mossy path leading away into the dark forest between huge gnarled trees, fireflies"}
+  - {from: 210, to: 330, ja: 西の森, en: "a dense dark forest of huge gnarled trees covered in ivy, ferns and roots, drifting fireflies, a wooden post with a glowing lantern"}
+
+views:
+  forest:
+    ja: マーリカの森の広場
+    panel: マーリカの森
+    en: "Marika's forest: a mossy clearing deep in a dark forest, a gigantic ancient tree with an arched stone doorway and moss-covered stone steps, wooden lantern posts with glowing lanterns, spiral patterns of stones set in the moss, small teal glowing spots, drifting fireflies"
+
+props:
+  tree_giant: {at: [15.0, 3.5], h: 15, r: 3.2, crown: 9.0, leaf: [40, 80, 40], ja: 大樹（マーリカの家）}
+  curtain_door: {at: [15.0, 6.6], w: 1.3, h: 2.4, ja: 大樹の石のアーチの扉（暗い入口）}
+  shelf_step_2: {at: [15.0, 7.25], w: 2.2, d: 0.5, h: 0.6, ja: 扉の前の石段（上の段）}
+  shelf_step_1: {at: [15.0, 7.75], w: 2.4, d: 0.5, h: 0.3, ja: 扉の前の石段（下の段。座る人物は z 0.3）}
+  lantern_door_w: {at: [13.4, 6.9], z: 1.4, energy: 30, ja: 扉の脇の灯り（西）}
+  lantern_door_e: {at: [16.6, 6.7], z: 1.4, energy: 30, ja: 扉の脇の灯り（東）}
+  rock_root_1: {at: [11.5, 6.4], h: 0.9, r: 1.1, ja: 大樹の太い根（西）}
+  rock_root_e: {at: [18.8, 6.3], h: 0.8, r: 1.0, ja: 大樹の太い根（東）}
+  rock_root_w: {at: [11.0, 8.7], h: 0.6, r: 0.7, ja: 地面から出た根（012 で百騎兵がのぞく）}
+  rock_root_s: {at: [19.5, 10.5], h: 0.6, r: 1.2, ja: 地面から出た太い根（015 で跳び越える）}
+  lamp_1: {at: [9.5, 9.0], h: 2.4, ja: 吊りランタンの木の柱}
+  lamp_2: {at: [21.5, 8.6], h: 2.4, ja: 吊りランタンの木の柱}
+  lamp_3: {at: [7.0, 16.0], h: 2.4, ja: 吊りランタンの木の柱}
+  lamp_4: {at: [23.0, 16.0], h: 2.4, ja: 吊りランタンの木の柱}
+  lantern_1: {at: [9.5, 9.0], z: 2.3, energy: 40, ja: ランタンの灯り}
+  lantern_2: {at: [21.5, 8.6], z: 2.3, energy: 40, ja: ランタンの灯り}
+  lantern_3: {at: [7.0, 16.0], z: 2.3, energy: 40, ja: ランタンの灯り}
+  lantern_4: {at: [23.0, 16.0], z: 2.3, energy: 40, ja: ランタンの灯り}
+  bush_peek: {at: [20.0, 10.9], r: 0.6, h: 0.55, ja: 茂み（004 でスケアコッコが隠れる）}
+  bush_w: {at: [9.6, 13.9], r: 0.8, h: 0.7, ja: 茂み（012 で百騎兵がのぞく）}
+  bush_3: {at: [6.5, 11.5], r: 1.0, h: 0.8, ja: シダの茂み}
+  bush_4: {at: [24.0, 12.0], r: 1.0, h: 0.8, ja: シダの茂み}
+  bush_5: {at: [10.5, 20.5], r: 0.9, h: 0.7, ja: シダの茂み}
+  bush_6: {at: [20.0, 21.0], r: 0.9, h: 0.7, ja: シダの茂み}
+  mushrooms_1: {at: [6.2, 13.6], ja: きのこ}
+  stumps_1: {at: [23.5, 19.5], ja: 切り株}
+  tree_01: {at: [21.0, 2.6], h: 11, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_02: {at: [26.1, 6.6], h: 14, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_03: {at: [27.0, 13.0], h: 13, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_04: {at: [26.1, 19.4], h: 12, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_05: {at: [21.0, 23.4], h: 11, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_06: {at: [8.6, 24.1], h: 14, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_07: {at: [4.6, 19.0], h: 13, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_08: {at: [2.2, 13.0], h: 12, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_09: {at: [4.6, 7.0], h: 11, r: 0.7, crown: 3.2, ja: 森の木}
+  tree_10: {at: [8.6, 1.9], h: 14, r: 0.7, crown: 3.2, ja: 森の木}
+
+people:
+  arlecchino:
+    ja: アルレッキーノ
+    eye: 1.9
+    h: 1.9
+    en: 'Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted
+      coat, olive-green arms, big black boots)'
+  hundred-knight:
+    ja: 百騎兵
+    eye: 0.8
+    h: 0.9
+    en: 'the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+      gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)'
+  scarecocco:
+    ja: スケアコッコ
+    eye: 0.45
+    h: 0.6
+    en: 'Scarecocco (a rooster-like magical beast about 60 cm tall: dark indigo plumage with faint pale-blue rune-like markings on the wings and chest, a slightly large head with a jagged dark comb, sharp bird
+      claws, sleepy but unsettling half-closed eyes, long drooping tail feathers whose tips fade into a faint pale-blue glow)'

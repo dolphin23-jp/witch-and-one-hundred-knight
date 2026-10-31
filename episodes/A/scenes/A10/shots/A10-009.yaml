@@ -1,0 +1,35 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-009
+scene: A10
+tc: 67.1
+sec: 8.3
+kind: M
+shot: 全身・アルレッキーノ・百騎兵
+acting: 空へ、次に百騎兵へお辞儀して、南の小道へ去っていく
+dialogue:
+- L297「かしこまりました。では、百騎兵様。あとは、お願いいたします。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 17.0
+  - 8.0
+  - 1.5
+  look:
+  - 15.0
+  - 10.6
+  lens: 30
+  move: 大樹の側（北東）から、去っていく背中を追って振る
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 背筋を伸ばしたアルレッキーノと百騎兵
+  end: 去っていく背中と、見送る百騎兵
+timing:
+  lead: 0.4

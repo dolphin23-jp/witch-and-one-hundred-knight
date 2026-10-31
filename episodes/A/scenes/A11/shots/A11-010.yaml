@@ -1,0 +1,34 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-010
+scene: A11
+tc: 67.6
+sec: 4.0
+kind: M
+shot: 大引き・セント・ドルチェの広場・百騎兵・ビスコ
+acting: 屋根の上から広場へ下りていく。レンガの道を百騎兵が走ってくる。広場の端の花壇に、うなだれたビスコ
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 120.5
+  - 38.0
+  - 12.0
+  look:
+  - 120.0
+  - 18.0
+  lens: 24
+  move: 南の高い所から、屋根を越えて広場へ下りる（クレーン）
+background: witch-house
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 紫の屋根の町を高い所から
+  end: 広場の全景
+timing:
+  lead: 0.3

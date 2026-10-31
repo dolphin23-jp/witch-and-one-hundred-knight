@@ -1,0 +1,33 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-003
+scene: A10
+tc: 13.0
+sec: 8.7
+kind: M
+shot: 全身（横顔）・アルレッキーノ・百騎兵
+acting: アルレッキーノが歩み出て、指を一本立てて説明する。百騎兵は見上げる
+dialogue:
+- L290「ワタクシが調査したところによると“尾の先がだるいニワトリ”とは、そもそも狩人達の隠語でございました。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 17.4
+  - 9.0
+  - 1.5
+  look: arlecchino
+  lens: 35
+  move: 東から横顔の二人。歩くアルレッキーノに合わせて並走
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 向き合う二人
+  end: 指を立てるアルレッキーノと見上げる百騎兵
+timing:
+  lead: 0.4

@@ -239,6 +239,7 @@ SHAPE = {
     "luckiny": {"r": 0.14, "hr": 0.12, "arm": 0.04},
     "tito": {"r": 0.15, "hr": 0.125, "arm": 0.045},
     "water-merchant": {"r": 0.24, "hr": 0.14, "arm": 0.06},
+    "scarecocco": {"r": 0.17, "hr": 0.11, "arm": 0.035},   # ニワトリの魔獣（高さ約60cm）。丸い胴の小さな人形で表す
 }
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
 
@@ -498,8 +499,11 @@ def build_extra(name, pr, x, y, lit):
         return True
     if name.startswith("house"):
         w, d, h = pr.get("w", 6), pr.get("d", 5), pr.get("h", 3)
-        box(mat_of("wood"), f"ENV_{name}", x, y, w, d, h, 0.0, rot)
-        roof_on(mat_of("roof"), f"ENV_{name}_roof", x, y, w + 0.6, d + 0.6, h, pr.get("roof", 1.8), rot)
+        # 壁と屋根の色（wall・roof_color、0〜255）。なければ木の壁と赤い瓦（セント・ドルチェは白い漆喰と紫の屋根、A11）
+        wm = make_mat(f"{name}_wall", tuple(v / 255 for v in pr["wall"])) if pr.get("wall") else mat_of("wood")
+        rm = make_mat(f"{name}_rooftop", tuple(v / 255 for v in pr["roof_color"])) if pr.get("roof_color") else mat_of("roof")
+        box(wm, f"ENV_{name}", x, y, w, d, h, 0.0, rot)
+        roof_on(rm, f"ENV_{name}_roof", x, y, w + 0.6, d + 0.6, h, pr.get("roof", 1.8), rot)
         n = pr.get("windows", 0)
         if n:   # 窓明かり: 南と北の壁に、ランプの強さに合わせて光る窓（夕方は弱く、夜は強く）
             win = make_mat(f"{name}_win", (1.0, 0.7, 0.35), emit=1.5 * lamps)
@@ -551,7 +555,8 @@ def build_site(lay, lighting=None):
     """場所（world/*-layout.yaml）を、平らな色分けと簡単な立体で作る。lighting は layout の lighting の名前（夕方・夜など）。"""
     MATS.clear()   # カットごとに場面を作り直すので、前のカットの材質は使えない
     g = lay.get("ground") or {}
-    gcol = tuple(v / 255 for v in g.get("color", [41, 158, 82]))
+    lit0 = (lay.get("lighting") or {}).get(lighting) or {}
+    gcol = tuple(v / 255 for v in (lit0.get("ground") or g.get("color", [41, 158, 82])))   # 光に ground があれば地面の色も変える（layout_extra で足した場所）
     swamp = make_mat("swamp", gcol)
     poly_mesh("ENV_swamp_far", [(-600, -600), (600, -600), (600, 600), (-600, 600)], -0.03, swamp)
     kinds = {"翠の沼": swamp}
@@ -642,8 +647,15 @@ def build_site(lay, lighting=None):
         if name.startswith("lamp"):
             prim("cyl", pole, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=0.05, depth=pr["h"])
             prim("sphere", lamp, f"ENV_{name}_light", loc=bl((x, y), pr["h"] + 0.1), radius=0.14)
-        elif name.startswith("tree"):
-            prim("cone", trunk, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius1=0.45, radius2=0.12, depth=pr["h"])
+        elif name.startswith("tree"):   # r: 幹の太さ（根元の半径）、crown: 葉の茂みの半径（森、A10）
+            r0 = pr.get("r", 0.45)
+            prim("cone", trunk, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius1=r0, radius2=r0 * (0.6 if r0 > 1.0 else 0.27), depth=pr["h"])
+            if pr.get("crown"):
+                leaf = make_mat(f"{name}_leaf", tuple(v / 255 for v in pr.get("leaf", [45, 85, 40])))
+                prim("sphere", leaf, f"ENV_{name}_crown", loc=bl((x, y), pr["h"]), radius=1.0, scale=(pr["crown"], pr["crown"], pr["crown"] * 0.5))
+        elif name.startswith("bush"):   # 茂み: 平たい緑の半球（h は高さ）
+            bush = make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [55, 105, 45])))
+            prim("sphere", bush, f"ENV_{name}", loc=bl((x, y), 0.0), radius=1.0, scale=(pr.get("r", 0.7), pr.get("r", 0.7), pr.get("h", 0.6)))
         elif name.startswith("mushrooms"):
             for k, (dx, dy) in enumerate(((0, 0), (0.3, 0.1), (-0.25, 0.2), (0.1, -0.3))):
                 prim("sphere", red, f"ENV_{name}_{k}", loc=bl((x + dx, y + dy), 0.12), radius=0.16, scale=(1, 1, 0.7))
@@ -748,7 +760,7 @@ def setup_render(scene, w, h, samples, denoise=False):
     scene.cycles.samples = samples
     # 下絵なので光の跳ね返りを減らして速くする
     for k, v in (("max_bounces", 3), ("diffuse_bounces", 2), ("glossy_bounces", 0), ("transmission_bounces", 0),
-                 ("volume_bounces", 0), ("transparent_max_bounces", 2)):
+                 ("volume_bounces", 0), ("transparent_max_bounces", 8)):
         try:
             setattr(scene.cycles, k, v)
         except Exception:
@@ -944,6 +956,8 @@ def pose_fx(fx, objs, t, pos, place):
     if kind == "light":   # 光: 時刻とともに強くなる（shape rise）
         u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
         objs[0].location = bl(p, z0)
+        if fx.get("fade") and t > t1:
+            u = max(0.0, 1.0 - (t - t1) / fx["fade"])
         objs[0].data.energy = fx.get("energy", 300) * u
         return
     if fx.get("kind") == "ring":   # 波紋: 輪が順に広がる
@@ -1068,6 +1082,13 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         if who not in plan.shown:   # 画に映さない人物は描かない（静止画と同じ）
             for o in [figs[who][0]] + list(figs[who][0].children_recursive):
                 o.hide_render = True
+    for who in (c_.get("ghost") or []):   # 幻影（A11 のメタリカ）: 半分透ける、青白く光る人形
+        if who in figs:
+            gm = beam_mat(f"{who}_ghost", (0.7, 0.85, 1.0), strength=1.0, alpha=0.45)
+            for o in figs[who][0].children_recursive:
+                if o.type == "MESH":
+                    o.data.materials.clear()
+                    o.data.materials.append(gm)
     creatures = {n: build_creature(n, tr) for n, tr in plan.creatures.items()}
     fxs = [(fx, build_fx(fx, i)) for i, fx in enumerate(plan.c.get("fx") or [])]
     bpy.ops.object.camera_add()

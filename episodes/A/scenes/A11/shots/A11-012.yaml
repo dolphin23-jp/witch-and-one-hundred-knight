@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-012
+scene: A11
+tc: 77.1
+sec: 5.1
+kind: M
+shot: 全身・ビスコ・百騎兵
+acting: ビスコがしゃがんで百騎兵の目の高さになり、困った顔で打ち明ける
+dialogue:
+- L313「私一人じゃどうにもならず困っていたところなんだ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 117.6
+  - 17.4
+  - 0.9
+  look:
+  - 118.85
+  - 16.1
+  lens: 35
+  move: 南西から二人を横に並べる
+background: witch-house
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 向き合う二人
+  end: しゃがんだビスコと百騎兵
+timing:
+  lead: 0.3

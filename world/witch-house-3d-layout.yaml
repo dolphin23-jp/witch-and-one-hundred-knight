@@ -71,6 +71,39 @@ lighting:
       - 255
       - 190
       - 130
+  noon:   # A11 の前半（スケアコッコを持って帰った昼）
+    sun_from: 200
+    sun_elev: 45
+    sun_energy: 2.2
+    sun_color:
+    - 255
+    - 240
+    - 215
+    sky:
+    - 190
+    - 200
+    - 210
+    sky_strength: 0.6
+    lamps: 0.4
+    fill:
+      at:
+      - 4.0
+      - 3.5
+      z: 3.8
+      energy: 450
+      color:
+      - 245
+      - 240
+      - 230
+  bedroom:   # 寝室の朝（A09。東の窓から朝日、天井のランプ、寝室の中の補助光）
+    sun_from: 100
+    sun_elev: 18
+    sun_energy: 3.2
+    sun_color: [255, 225, 190]
+    sky: [170, 190, 220]
+    sky_strength: 0.6
+    lamps: 1.0
+    fill: {at: [15.0, 2.5], z: 3.0, energy: 380, color: [255, 225, 195]}
   morning:
     sun_from: 100
     sun_elev: 18
@@ -106,6 +139,12 @@ views:
     panel: 居間 正面
     en: 'the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
       vines on dark wood paneling, a small round window'
+  bedroom:
+    ja: メタリカの寝室
+    panel: 寝室
+    en: 'the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light, a writing desk piled with old books and
+      potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling, a red patterned rug, books and scrolls
+      on the floor'
 props:
   room_living:
     x:
@@ -292,6 +331,34 @@ props:
     z: 1.6
     energy: 15
     ja: 本棚の端の燭台
+  # --- メタリカの寝室（A09。2026-10-31、Claude の案）。実際は上の階だが、下絵では居間の東に別に置く（x 12〜18、y 0〜5）---
+  # 見た目は world/witch-house-bedroom/plates.yaml の 01（扉から見て奥にベッド、左の壁に楕円の窓、右の壁に机と本棚）。
+  # 扉は北の壁の東寄り（x 17.0）。扉から南を見ると、左（東の壁）に窓、奥（南の壁）にベッド、右（西の壁）に机と本棚。
+  room_bedroom:
+    x: [12.0, 18.0]
+    y: [0.0, 5.0]
+    h: 3.4
+    roof: 1.4
+    ja: メタリカの寝室
+    openings:
+    - {side: n, c: 17.0, w: 1.0, h: 2.2, ja: 寝室の扉}
+    - {side: e, c: 3.4, w: 0.7, h: 1.2, sill: 1.0, ja: 楕円の窓}
+  bed_bedroom: {at: [15.0, 3.85], w: 2.0, d: 2.2, h: 0.55, ja: 赤い天蓋のベッド（上の人物は z 0.55）}
+  pillar_bedpost_1: {at: [14.05, 2.8], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_2: {at: [15.95, 2.8], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_3: {at: [14.05, 4.9], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_4: {at: [15.95, 4.9], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  table_night_w: {at: [13.6, 4.7], w: 0.5, d: 0.4, h: 0.6, ja: ベッド脇の小机（燭台）}
+  table_night_e: {at: [16.4, 4.7], w: 0.5, d: 0.4, h: 0.6, ja: ベッド脇の小机}
+  shelf_bedroom_books: {at: [12.25, 3.6], w: 0.45, d: 1.6, h: 3.0, ja: 天井までの本棚（西の壁）}
+  table_desk: {at: [12.4, 1.7], w: 0.7, d: 1.8, h: 0.78, ja: 本と薬瓶の机（西の壁）}
+  stool_desk: {at: [13.05, 1.75], ja: 机の椅子}
+  shelf_drawers: {at: [17.7, 2.3], w: 0.55, d: 1.0, h: 0.85, ja: 窓の下手の引き出し}
+  crate_trunk: {at: [12.45, 0.45], w: 0.8, d: 0.6, h: 0.6, ja: 古い長持（人形の棚の下）}
+  crate_bookstack_1: {at: [13.45, 0.55], w: 0.45, d: 0.35, h: 0.3, ja: 床に積んだ本}
+  crate_bookstack_2: {at: [17.55, 4.45], w: 0.5, d: 0.4, h: 0.45, ja: 床に積んだ本と巻物}
+  lantern_bed: {at: [15.0, 2.2], z: 2.8, energy: 45, ja: 天井の真鍮のランプ}
+  lantern_desk: {at: [12.45, 2.35], z: 1.0, energy: 12, ja: 机の上のランプ}
 people:
   metallica:
     ja: メタリカ

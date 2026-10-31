@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-003
+scene: A11
+tc: 12.8
+sec: 8.6
+kind: M
+shot: 全身・アルレッキーノ・百騎兵
+acting: 我に返ってお辞儀し、両手を差し出す。百騎兵がトーチカを差し出して歩み寄る
+dialogue:
+- L305「と、リカ様からのご通達でございます。“スケアコッコ”はお持ちでしょうか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.9
+  - 5.9
+  - 1.2
+  look:
+  - 6.0
+  - 5.1
+  lens: 32
+  move: 南西から二人を横に並べる
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 指さすアルレッキーノと百騎兵
+  end: 両手を差し出すアルレッキーノと、トーチカを差し出す百騎兵
+timing:
+  lead: 0.3

@@ -1,0 +1,33 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-005
+scene: A11
+tc: 29.9
+sec: 5.1
+kind: M
+shot: 全身（肩ごし）・アルレッキーノ・百騎兵
+acting: 百騎兵の前へ戻り、胸に手を当てて小さくお辞儀
+dialogue:
+- L307「それでは百騎兵様。伝言の続きを申し上げます。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.5
+  - 5.8
+  - 0.75
+  look: arlecchino
+  lens: 35
+  move: 百騎兵の肩ごし（低い）から
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: テーブルのアルレッキーノ
+  end: 百騎兵の前のアルレッキーノ
+timing:
+  lead: 0.3
