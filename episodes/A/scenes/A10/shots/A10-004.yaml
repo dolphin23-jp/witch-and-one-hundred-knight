@@ -1,0 +1,36 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-004
+scene: A10
+tc: 21.7
+sec: 12.1
+kind: M
+shot: 全身・茂みのスケアコッコ（手前）・アルレッキーノ・百騎兵
+acting: 森を示して向きを変えながら話す。手前の茂みからスケアコッコがひょっこり顔を出して二人を眺め、また走り去る
+dialogue:
+- L291「実際は“スケアコッコ”というレアな魔獣のことらしく、どうやらこの森にいるらしいという所までは突き止めたのですが……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 21.8
+  - 12.9
+  - 0.55
+  look:
+  - 14.85
+  - 10.1
+  lens: 35
+  move: 東の茂みの後ろの低い所から。手前に茂みとスケアコッコ、奥に二人。ゆっくり寄る
+background: marika-forest
+image: null
+refs:
+- arlecchino
+- hundred-knight
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: 手前に茂み、奥で説明するアルレッキーノと百騎兵
+  end: 気づかない二人
+timing:
+  lead: 0.4

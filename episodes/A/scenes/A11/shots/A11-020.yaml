@@ -1,0 +1,36 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-020
+scene: A11
+tc: 125.0
+sec: 7.6
+kind: M
+shot: 引き・メタリカの幻影（背中）・ビスコ・百騎兵
+acting: すまなそうにうつむき、尻尾を垂らして南の道へ帰っていく
+dialogue:
+- L322「……あまり役に立てなくて、すまない。それじゃあ、とりあえず帰るとするよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 118.0
+  - 8.6
+  - 2.2
+  look:
+  - 118.0
+  - 14.0
+  lens: 28
+  move: 北（幻影の背中ごし）から、南の道へ帰るビスコを
+background: witch-house
+image: null
+refs:
+- metallica
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うなずいたビスコと幻影
+  end: 遠ざかるビスコと、見送る幻影と百騎兵
+timing:
+  lead: 0.3

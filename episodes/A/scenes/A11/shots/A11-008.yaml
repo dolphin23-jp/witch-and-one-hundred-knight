@@ -1,0 +1,33 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-008
+scene: A11
+tc: 53.3
+sec: 9.4
+kind: M
+shot: 全身・アルレッキーノ・百騎兵
+acting: メタリカの口まねで両手を振り上げ「キヒヒ！」、自分で身震いしてから、百騎兵に顔を近づけて念を押す
+dialogue:
+- L310「キヒヒ！邪魔をしたら、あつあつの鍋に放り込んでやる！……とのことです。リカ様のお部屋には近づかれませんよう。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.9
+  - 6.45
+  - 1.3
+  look: arlecchino
+  lens: 26
+  move: 南の低い所から、歩くアルレッキーノを追う
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 階段の上を見上げるアルレッキーノ
+  end: 百騎兵に顔を近づけるアルレッキーノ
+timing:
+  lead: 0.3

@@ -1,0 +1,33 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-002
+scene: A11
+tc: 8.9
+sec: 3.9
+kind: M
+shot: 全身（煽り）・アルレッキーノ（口まね）
+acting: メタリカの口まねで、腰に手を当てて胸を張り、百騎兵をびしっと指さす
+dialogue:
+- L304「“百騎兵！その前にスケアコッコを出せ！”」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.5
+  - 6.4
+  - 0.5
+  look: arlecchino
+  lens: 24
+  move: 玄関の内側の低い所から見上げる煽り
+background: witch-house
+image: null
+refs:
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノ
+  end: 指さすアルレッキーノ
+timing:
+  lead: 0.3

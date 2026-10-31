@@ -1,0 +1,35 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-008
+scene: A09
+tc: 51.1
+sec: 9.0
+kind: A
+shot: 全身・百騎兵（手前）・メタリカ（階段）
+acting: 手で追い払い、メタリカは階段を上っていく。残された百騎兵は首をかしげ、こっそり後を追って階段へ
+dialogue:
+- L281「さあ、わかったらさっさと行くんだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.3
+  - 4.4
+  - 0.8
+  look:
+  - 2.6
+  - 3.6
+  lens: 28
+  move: 部屋の東、百騎兵の目の高さ（0.8m）から。手前の百騎兵が奥の階段へ歩いていく
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: テーブルのメタリカと百騎兵
+  end: 階段を上るメタリカと、階段の下の百騎兵
+timing:
+  lead: 0.4

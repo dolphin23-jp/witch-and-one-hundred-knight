@@ -1,0 +1,34 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-009
+scene: A09
+tc: 60.1
+sec: 8.1
+kind: M
+shot: 引き・寝室・メタリカ
+acting: 足をぶらぶらさせながら、分厚い本を熱心に読む
+dialogue:
+- L282「……何々。師匠として必要なものは何よりも人徳、だと？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.95
+  - 0.45
+  - 1.6
+  look:
+  - 16.3
+  - 3.9
+  lens: 20
+  move: 扉の内側から、ベッドへゆっくり寄る（参考画の向き）
+background: witch-house
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 朝の寝室。ベッドにうつ伏せで本を読むメタリカ
+  end: 本を読むメタリカ
+timing:
+  lead: 1.5

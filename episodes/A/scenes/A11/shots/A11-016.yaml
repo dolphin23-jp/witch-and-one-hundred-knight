@@ -1,0 +1,35 @@
+# A11 伝言とセント・ドルチェ。blocking.yaml（Claude の案 2026-10-31、Living Spec「A11 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。017〜023 のメタリカは幻影（半透明、少し浮く）
+id: A11-016
+scene: A11
+tc: 104.5
+sec: 5.6
+kind: M
+shot: 俯瞰・ビスコ・百騎兵
+acting: 花壇へとぼとぼ歩き、縁に腰を落とす
+dialogue:
+- L318「本当にすまない……。メタリカに何と言えばいいのか……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 114.6
+  - 9.3
+  - 4.2
+  look:
+  - 117.6
+  - 12.0
+  lens: 28
+  move: 北西の高い所から見下ろす（俯瞰）
+background: witch-house
+image: null
+refs:
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うつむくビスコ
+  end: 花壇の縁で肩を落とすビスコ
+timing:
+  lead: 0.6

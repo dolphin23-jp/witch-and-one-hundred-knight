@@ -1,0 +1,33 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-008
+scene: A12
+tc: 47.3
+sec: 3.6
+kind: M
+shot: 全身（煽り）・メタリカ
+acting: 立ち止まり、そっぽを向いたまま言う
+dialogue:
+- L334「お前達は少し休んでいろ。あとで私が運んでやる。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.7
+  - 6.4
+  - 0.45
+  look: metallica
+  lens: 20
+  move: 階段の下から見上げる広角の煽り
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 階段の途中のメタリカ
+  end: そっぽを向いて腕を組むメタリカ
+timing:
+  lead: 0.5

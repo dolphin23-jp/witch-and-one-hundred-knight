@@ -1,0 +1,33 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-010
+scene: A12
+tc: 55.9
+sec: 10.0
+kind: M
+shot: 全身・アルレッキーノ・ビスコ
+acting: アルレッキーノが歩み出て、胸に手を当てて丁寧にお辞儀し、指を一本立てて説明する
+dialogue:
+- L336「それは勘違いというものです、ビスコ様。リカ様はあくまで、ご自身の晴れ舞台を自慢したくてウキウキされているだけでございます。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.9
+  - 0.45
+  - 3.2
+  look: arlecchino
+  lens: 28
+  move: 北東の高い所から、やや見下ろしてゆっくり寄る
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 本棚の脇
+  end: 指を立てて説明するアルレッキーノ
+timing:
+  lead: 0.5

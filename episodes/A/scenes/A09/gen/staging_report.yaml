@@ -1,0 +1,1125 @@
+cuts:
+  A09-001:
+    cam:
+    - 7.3
+    - 6.0
+    - 1.1
+    lens: 28
+    bearing: 295
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.83
+        dist: 1.41
+        side: 左
+        body: 横顔（画面左向き）
+      - who: metallica
+        s: 0.31
+        dist: 7.86
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        profile, turned toward screen left; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, in three-quarter
+        view, turned toward screen left, small in the background. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls,
+        tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.82
+        dist: 1.23
+        side: 左
+        body: 背中
+      - who: metallica
+        s: -0.12
+        dist: 5.02
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, with
+        the back to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long
+        braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera. No other
+        people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp,
+        glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_look
+        face: 120
+        via:
+        - - 0.8
+          - 1.3
+        - - 0.85
+          - 5.45
+        - m_look
+        - m_look
+        - m_look
+        - m_look
+        t:
+        - 0.0
+        - 9.5
+      hundred-knight:
+        to: hk_door
+        face: 285
+        via:
+        - hk_door
+        - hk_door
+        t:
+        - 0.0
+        - 9.5
+    note: null
+  A09-002:
+    cam:
+    - 6.9
+    - 2.7
+    - 0.95
+    lens: 30
+    bearing: 243
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 5.52
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved
+        wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: metallica
+        s: 0.03
+        dist: 2.61
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind
+        at an angle, turned toward screen left. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves,
+        a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_sofa_lie
+        face: 270
+        via:
+        - m_look
+        - m_look
+        - - 3.0
+          - 2.75
+        - - 3.95
+          - 1.45
+        - m_sofa_sit
+        - m_sofa_sit
+        - m_sofa_lie
+        t:
+        - 0.0
+        - 8.0
+    note: null
+  A09-003:
+    cam:
+    - 1.9
+    - 2.6
+    - 0.85
+    lens: 30
+    bearing: 51
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: 0.08
+        dist: 3.08
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 天井までの本棚（北）
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved
+        wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: metallica
+        s: -0.0
+        dist: 2.8
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile,
+        turned toward screen right. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved
+        wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_up
+        face: 160
+        via:
+        - m_sofa_lie
+        - - 4.2
+          - 1.25
+        - m_up
+        - m_up
+        - m_up
+        t:
+        - 0.0
+        - 7.4
+    note: null
+  A09-004:
+    cam:
+    - 4.55
+    - 3.55
+    - 2.0
+    lens: 30
+    bearing: 353
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 2.11
+        side: 中央
+        body: 正面
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera.
+        No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging
+        brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 2.11
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile,
+        turned toward screen right. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved
+        wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_pace
+        face: 100
+        via:
+        - m_up
+        - - 3.3
+          - 1.35
+        - - 2.85
+          - 1.9
+        - - 2.85
+          - 4.3
+        - - 2.85
+          - 4.3
+        - m_pace
+        - m_pace
+        t:
+        - 0.0
+        - 7.5
+    note: null
+  A09-005:
+    cam:
+    - 6.3
+    - 6.6
+    - 0.75
+    lens: 35
+    bearing: 316
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.22
+        dist: 0.78
+        side: 中央
+        body: 背中
+      - who: metallica
+        s: 0.0
+        dist: 4.99
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the
+        back to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids
+        tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward
+        screen right. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase,
+        a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.26
+        dist: 0.71
+        side: 中央
+        body: 背中
+      - who: metallica
+        s: 0.0
+        dist: 4.92
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the
+        back to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids
+        tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera. No other people.
+        Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing
+        green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_pace
+        face: 135
+        via:
+        - m_pace
+        t:
+        - 0.0
+        - 4.1
+      hundred-knight:
+        to: hk_door
+        face: 315
+        via:
+        - hk_door
+        t:
+        - 0.0
+        - 4.1
+    note: null
+  A09-006:
+    cam:
+    - 2.85
+    - 0.55
+    - 1.45
+    lens: 28
+    bearing: 180
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 2.45
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - 玄関の横の燭台
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind
+        at an angle, turned toward screen left. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves,
+        a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 1.39
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen right. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved
+        wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_window
+        face: 350
+        via:
+        - m_pace
+        - m_pace
+        - m_window
+        - m_window
+        t:
+        - 0.0
+        - 7.3
+    note: null
+  A09-007:
+    cam:
+    - 4.9
+    - 2.4
+    - 3.7
+    lens: 22
+    bearing: 250
+    frame: 俯瞰
+    start:
+      people:
+      - who: metallica
+        s: 0.79
+        dist: 2.24
+        side: 右
+        body: 横顔（画面右向き）
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, at the far right of the frame, in profile,
+        turned toward screen right. No other people. High angle looking down. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall
+        bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -1.08
+        dist: 2.04
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: metallica
+        s: 0.0
+        dist: 2.18
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        three-quarter view, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange
+        hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame,
+        facing the camera. No other people. High angle looking down. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves,
+        a curved wooden staircase, a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to: m_table
+        face: 90
+        via:
+        - m_window
+        - m_table
+        - m_table
+        t:
+        - 0.0
+        - 7.3
+      hundred-knight:
+        to: hk_table
+        face: 336
+        via:
+        - hk_door
+        - hk_table
+        - hk_table
+        t:
+        - 0.0
+        - 7.3
+    note: null
+  A09-008:
+    cam:
+    - 6.3
+    - 4.4
+    - 0.8
+    lens: 28
+    bearing: 282
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.09
+        dist: 2.8
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: metallica
+        s: 0.49
+        dist: 3.46
+        side: 右
+        body: 正面
+      bg: 魔女邸の居間〔居間 正面〕
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, seen
+        from behind at an angle, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+        orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame,
+        facing the camera. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase,
+        a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.46
+        dist: 5.28
+        side: 左
+        body: 横顔（画面右向き）
+      - who: metallica
+        s: 0.46
+        dist: 5.68
+        side: 右
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two
+        long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, in profile, turned toward
+        screen right. No other people. Behind: the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase,
+        a hanging brass lamp, glowing green vines on dark wood paneling, a small round window.'
+    move:
+      metallica:
+        to:
+        - 0.8
+        - 2.2
+        face: 0
+        via:
+        - m_table
+        - m_table
+        - m_table
+        - - 2.9
+          - 3.6
+        - - 1.55
+          - 5.25
+        - - 0.85
+          - 5.6
+        - - 0.85
+          - 5.5
+        - - 0.8
+          - 3.2
+        t:
+        - 0.0
+        - 9.0
+      hundred-knight:
+        to:
+        - 0.9
+        - 5.45
+        face: 345
+        via:
+        - hk_table
+        - hk_table
+        - hk_table
+        - hk_table
+        - - 1.45
+          - 5.55
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A09-009:
+    cam:
+    - 16.95
+    - 0.45
+    - 1.6
+    lens: 20
+    bearing: 191
+    frame: 引き
+    start:
+      people:
+      - who: metallica
+        s: 0.43
+        dist: 3.46
+        side: 右
+        body: 斜め前（画面右向き）
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, in three-quarter
+        view, turned toward screen right. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in
+        morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped
+        beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: metallica
+        s: 0.16
+        dist: 2.96
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen right. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in
+        morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped
+        beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to: m_read
+        t:
+        - 0.0
+        - 8.1
+    note: null
+  A09-010:
+    cam:
+    - 12.8
+    - 4.55
+    - 0.7
+    lens: 20
+    bearing: 67
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.62
+        dist: 6.02
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: metallica
+        s: 0.0
+        dist: 2.4
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in
+        three-quarter view, turned toward screen right, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its
+        bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in
+        the center of the frame, in profile, turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets,
+        a tall oval window letting in morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on
+        dark wood paneling under a sloped beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.56
+        dist: 5.33
+        side: 左
+        body: 正面
+      - who: metallica
+        s: 0.0
+        dist: 2.28
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, facing
+        the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied
+        with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward
+        screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light, a writing
+        desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling, a red
+        patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to: m_bed
+        face: 320
+        via:
+        - m_read
+        - - 15.0
+          - 3.7
+        - - 15.0
+          - 3.7
+        - m_bed
+        - m_bed
+        t:
+        - 0.0
+        - 9.0
+      hundred-knight:
+        to: hk_peek
+        face: 215
+        via:
+        - - 17.0
+          - -0.9
+        - hk_peek
+        - hk_peek
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A09-011:
+    cam:
+    - 15.2
+    - 4.75
+    - 2.1
+    lens: 24
+    bearing: 5
+    frame: 俯瞰
+    start:
+      people:
+      - who: metallica
+        s: -0.4
+        dist: 0.98
+        side: 左
+        body: 背中
+      - who: hundred-knight
+        s: 0.39
+        dist: 4.7
+        side: 右
+        body: 正面
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 床に積んだ本
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
+        frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face
+        with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, facing the camera. No other people.
+        Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light, a writing desk piled with old books
+        and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling, a red patterned rug, books and
+        scrolls on the floor.'
+    end:
+      people:
+      - who: metallica
+        s: -0.22
+        dist: 1.1
+        side: 中央
+        body: 背中
+      - who: hundred-knight
+        s: -0.09
+        dist: 2.4
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
+        frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face
+        with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera. No other people.
+        Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light, a writing desk piled with old books
+        and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling, a red patterned rug, books and
+        scrolls on the floor.'
+    move:
+      metallica:
+        to: m_read
+        face: 0
+        via:
+        - - 15.0
+          - 3.7
+        - m_read
+        t:
+        - 0.0
+        - 7.8
+      hundred-knight:
+        to: hk_bed
+        face: 180
+        via:
+        - hk_peek
+        - - 16.85
+          - 0.4
+        - hk_bed
+        - hk_bed
+        t:
+        - 0.0
+        - 7.8
+    note: null
+  A09-012:
+    cam:
+    - 13.2
+    - 1.6
+    - 1.0
+    lens: 35
+    bearing: 122
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.39
+        dist: 1.94
+        side: 左
+        body: 横顔（画面右向き）
+      - who: metallica
+        s: 0.55
+        dist: 2.59
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two
+        long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, in three-quarter view,
+        turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning
+        light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed
+        ceiling, a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.35
+        dist: 1.88
+        side: 左
+        body: 横顔（画面右向き）
+      - who: metallica
+        s: 0.29
+        dist: 2.24
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two
+        long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, in three-quarter view,
+        turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning
+        light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed
+        ceiling, a red patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to:
+        - 15.0
+        - 3.1
+        via:
+        - m_read
+        - - 15.0
+          - 3.3
+        - - 15.0
+          - 3.2
+        - - 15.0
+          - 3.1
+        - - 15.0
+          - 3.1
+        - - 15.0
+          - 3.1
+        t:
+        - 0.0
+        - 3.0
+      hundred-knight:
+        to: hk_bed
+        via:
+        - hk_bed
+        - hk_bed
+        - hk_bed
+        t:
+        - 0.0
+        - 3.0
+    note: null
+  A09-013:
+    cam:
+    - 14.6
+    - 1.55
+    - 0.7
+    lens: 20
+    bearing: 166
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.33
+        dist: 0.84
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: metallica
+        s: 0.0
+        dist: 1.6
+        side: 中央
+        body: 正面
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, seen from
+        behind at an angle, turned toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange
+        hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame,
+        facing the camera. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light,
+        a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling,
+        a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 1.36
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.55
+        dist: 0.74
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, seen from
+        behind at an angle, turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window
+        letting in morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling
+        under a sloped beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to: m_floor
+        face: 275
+        via:
+        - - 15.0
+          - 3.1
+        - m_floor
+        - m_floor
+        t:
+        - 0.0
+        - 6.8
+      hundred-knight:
+        to: hk_bed
+        face: 95
+        via:
+        - hk_bed
+        - hk_bed
+        t:
+        - 0.0
+        - 6.8
+    note: null
+  A09-014:
+    cam:
+    - 12.9
+    - 0.7
+    - 2.2
+    lens: 26
+    bearing: 119
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: 0.03
+        dist: 3.32
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.18
+        dist: 2.66
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with
+        orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, seen from behind at an angle, turned
+        toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light,
+        a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling,
+        a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: metallica
+        s: -0.35
+        dist: 2.01
+        side: 左
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: 0.26
+        dist: 2.5
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
+        frame, in profile, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top,
+        black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in three-quarter view,
+        turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning
+        light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed
+        ceiling, a red patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to: m_round
+        face: 177
+        via:
+        - m_floor
+        - m_floor
+        - - 15.6
+          - 1.5
+        - - 15.35
+          - 1.2
+        - m_round
+        - m_round
+        t:
+        - 0.0
+        - 8.0
+      hundred-knight:
+        to: hk_bed
+        face: 357
+        via:
+        - hk_bed
+        - hk_bed
+        - hk_bed
+        t:
+        - 0.0
+        - 8.0
+    note: null
+  A09-015:
+    cam:
+    - 12.6
+    - 4.6
+    - 2.6
+    lens: 24
+    bearing: 45
+    frame: 引き
+    start:
+      people:
+      - who: metallica
+        s: -0.21
+        dist: 4.03
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.04
+        dist: 3.36
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      bg: メタリカの寝室〔寝室〕
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 床に積んだ本
+      - 天井の真鍮のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
+        frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, seen
+        from behind at an angle, turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval
+        window letting in morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling
+        under a sloped beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.17
+        dist: 7.18
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: metallica
+        s: 0.5
+        dist: 2.36
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, seen
+        from behind at an angle, turned toward screen left; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+        orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame,
+        in profile, turned toward screen left. No other people. Behind: the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting
+        in morning light, a writing desk piled with old books and potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a
+        sloped beamed ceiling, a red patterned rug, books and scrolls on the floor.'
+    move:
+      metallica:
+        to: m_read
+        face: 0
+        via:
+        - m_round
+        - m_round
+        - m_round
+        - - 14.4
+          - 1.9
+        - - 14.6
+          - 2.65
+        - - 14.9
+          - 3.3
+        - m_read
+        t:
+        - 0.0
+        - 7.5
+      hundred-knight:
+        to:
+        - 17.0
+        - -1.2
+        face: 0
+        via:
+        - hk_bed
+        - hk_bed
+        - - 16.7
+          - 0.75
+        - - 17.0
+          - -0.3
+        t:
+        - 0.0
+        - 7.5
+    note: null
+checks:
+  axis: []
+  jumps:
+  - cut: A09-009
+    who: metallica
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A09-010
+    who: hundred-knight
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  overlap: []
+  offscreen: []
+  hidden:
+  - cut: A09-006
+    which: start
+    who: hundred-knight
+  camera: []

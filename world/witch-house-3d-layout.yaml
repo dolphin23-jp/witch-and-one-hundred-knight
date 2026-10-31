@@ -1,0 +1,386 @@
+# 魔女邸の中の下絵用の設計（D-060・D-062、tools/previs.py と tools/staging.py が読む）。Claude の案 2026-10-31
+# 居間の位置関係は world/living-room-layout.yaml（A01 の P-04、原作の居間の画像に合わせたもの）と同じ。あちらは A01 の道具が使うので触らない
+# 階段は西の壁ぞいに、南の下（y 5.4）から北の上の踊り場（y 0.9、高さ 2.8m）へまっすぐ上がる箱の段で表す（原作は曲がった階段）
+# 階段の上の人物は z = 2.8 × (5.4 − y) / 4.5（m）で段の上に立つ
+id: witch-house
+size:
+  w: 8.0
+  d: 7.0
+compass: '北 0、東 90、南 180、西 270。座標は world/living-room-layout.yaml と同じ（x: 西0→東8、y: 北0→南7、m）'
+time: 場面ごと（lighting で選ぶ）
+ground:
+  color:
+  - 96
+  - 66
+  - 44
+  ja: 木の床
+sky:
+  color:
+  - 60
+  - 50
+  - 45
+sun:
+  from: 250
+  elev: 28
+lighting:
+  afternoon:
+    sun_from: 250
+    sun_elev: 28
+    sun_energy: 2.5
+    sun_color:
+    - 255
+    - 205
+    - 150
+    sky:
+    - 180
+    - 160
+    - 130
+    sky_strength: 0.5
+    lamps: 0.7
+    fill:
+      at:
+      - 4.0
+      - 3.5
+      z: 3.8
+      energy: 450
+      color:
+      - 255
+      - 225
+      - 190
+  night:
+    sun_from: 300
+    sun_elev: 30
+    sun_energy: 0.3
+    sun_color:
+    - 150
+    - 170
+    - 255
+    sky:
+    - 30
+    - 40
+    - 80
+    sky_strength: 0.4
+    lamps: 1.6
+    fill:
+      at:
+      - 4.0
+      - 3.5
+      z: 3.8
+      energy: 150
+      color:
+      - 255
+      - 190
+      - 130
+  noon:   # A11 の前半（スケアコッコを持って帰った昼）
+    sun_from: 200
+    sun_elev: 45
+    sun_energy: 2.2
+    sun_color:
+    - 255
+    - 240
+    - 215
+    sky:
+    - 190
+    - 200
+    - 210
+    sky_strength: 0.6
+    lamps: 0.4
+    fill:
+      at:
+      - 4.0
+      - 3.5
+      z: 3.8
+      energy: 450
+      color:
+      - 245
+      - 240
+      - 230
+  bedroom:   # 寝室の朝（A09。東の窓から朝日、天井のランプ、寝室の中の補助光）
+    sun_from: 100
+    sun_elev: 18
+    sun_energy: 3.2
+    sun_color: [255, 225, 190]
+    sky: [170, 190, 220]
+    sky_strength: 0.6
+    lamps: 1.0
+    fill: {at: [15.0, 2.5], z: 3.0, energy: 380, color: [255, 225, 195]}
+  morning:
+    sun_from: 100
+    sun_elev: 18
+    sun_energy: 3.0
+    sun_color:
+    - 255
+    - 225
+    - 190
+    sky:
+    - 170
+    - 190
+    - 220
+    sky_strength: 0.6
+    lamps: 0.3
+    fill:
+      at:
+      - 4.0
+      - 3.5
+      z: 3.8
+      energy: 400
+      color:
+      - 230
+      - 235
+      - 255
+horizon:
+- from: 0
+  to: 360
+  ja: 居間の壁
+  en: the wood-paneled walls of the witch's living room with glowing green vines, tall bookshelves and the curved wooden staircase
+views:
+  living:
+    ja: 魔女邸の居間
+    panel: 居間 正面
+    en: 'the witch''s living room: a round table with a red tablecloth, a red high-backed sofa with creepy stitched dolls, tall bookshelves, a curved wooden staircase, a hanging brass lamp, glowing green
+      vines on dark wood paneling, a small round window'
+  bedroom:
+    ja: メタリカの寝室
+    panel: 寝室
+    en: 'the witch''s attic bedroom: a large dark-wood four-poster bed with deep red drapes and rumpled red sheets, a tall oval window letting in morning light, a writing desk piled with old books and
+      potion jars, a tall bookshelf, a shelf of creepy stitched dolls, a hanging brass lamp, glowing green vines on dark wood paneling under a sloped beamed ceiling, a red patterned rug, books and scrolls
+      on the floor'
+props:
+  room_living:
+    x:
+    - 0.0
+    - 8.0
+    y:
+    - 0.0
+    - 7.0
+    h: 4.2
+    roof: 0.8
+    ja: 居間
+    openings:
+    - side: s
+      c: 6.9
+      w: 1.6
+      h: 2.5
+      ja: 玄関の両開きの扉
+    - side: n
+      c: 2.0
+      w: 0.8
+      h: 0.8
+      sill: 1.4
+      ja: 丸窓
+  shelf_stair_1:
+    at:
+    - 0.75
+    - 5.15
+    w: 1.2
+    d: 0.5
+    h: 0.31
+    ja: 階段の1段目（上面 0.31m）
+  shelf_stair_2:
+    at:
+    - 0.75
+    - 4.65
+    w: 1.2
+    d: 0.5
+    h: 0.62
+    ja: 階段の2段目（上面 0.62m）
+  shelf_stair_3:
+    at:
+    - 0.75
+    - 4.15
+    w: 1.2
+    d: 0.5
+    h: 0.93
+    ja: 階段の3段目（上面 0.93m）
+  shelf_stair_4:
+    at:
+    - 0.75
+    - 3.65
+    w: 1.2
+    d: 0.5
+    h: 1.24
+    ja: 階段の4段目（上面 1.24m）
+  shelf_stair_5:
+    at:
+    - 0.75
+    - 3.15
+    w: 1.2
+    d: 0.5
+    h: 1.56
+    ja: 階段の5段目（上面 1.56m）
+  shelf_stair_6:
+    at:
+    - 0.75
+    - 2.65
+    w: 1.2
+    d: 0.5
+    h: 1.87
+    ja: 階段の6段目（上面 1.87m）
+  shelf_stair_7:
+    at:
+    - 0.75
+    - 2.15
+    w: 1.2
+    d: 0.5
+    h: 2.18
+    ja: 階段の7段目（上面 2.18m）
+  shelf_stair_8:
+    at:
+    - 0.75
+    - 1.65
+    w: 1.2
+    d: 0.5
+    h: 2.49
+    ja: 階段の8段目（上面 2.49m）
+  shelf_stair_9:
+    at:
+    - 0.75
+    - 1.15
+    w: 1.2
+    d: 0.5
+    h: 2.8
+    ja: 階段の9段目（上面 2.8m）
+  shelf_landing:
+    at:
+    - 0.75
+    - 0.55
+    w: 1.4
+    d: 1.1
+    h: 2.8
+    ja: 階段の上の踊り場
+  bed_sofa:
+    at:
+    - 4.4
+    - 0.78
+    w: 2.8
+    d: 0.7
+    h: 0.42
+    ja: 赤いソファの座面（座る人物は z 0.42）
+  bed_sofaback:
+    at:
+    - 4.4
+    - 0.32
+    w: 2.8
+    d: 0.22
+    h: 1.15
+    ja: 赤いソファの高い背もたれ
+  table_round:
+    at:
+    - 4.2
+    - 2.4
+    w: 1.6
+    d: 1.6
+    h: 0.75
+    ja: 赤い布の丸テーブル（A12 では三品が載る）
+  shelf_books_1:
+    at:
+    - 7.72
+    - 1.4
+    w: 0.5
+    d: 2.6
+    h: 3.6
+    ja: 天井までの本棚（北）
+  shelf_books_2:
+    at:
+    - 7.72
+    - 4.1
+    w: 0.5
+    d: 2.6
+    h: 3.6
+    ja: 天井までの本棚（南）
+  shelf_potions:
+    at:
+    - 3.6
+    - 6.78
+    w: 3.6
+    d: 0.4
+    h: 1.8
+    ja: 薬瓶と燭台の棚
+  crate_books:
+    at:
+    - 2.3
+    - 3.4
+    w: 0.55
+    d: 0.45
+    h: 0.45
+    ja: 床に積んだ本の山
+  jar_1:
+    at:
+    - 1.0
+    - 6.3
+    r: 0.3
+    ja: 階段の下の壺
+  lantern_hang:
+    at:
+    - 4.2
+    - 2.4
+    z: 3.2
+    energy: 60
+    ja: テーブルの上の吊りランプ
+  lantern_door:
+    at:
+    - 6.0
+    - 6.8
+    z: 2.2
+    energy: 25
+    ja: 玄関の横の燭台
+  lantern_shelf:
+    at:
+    - 7.4
+    - 5.8
+    z: 1.6
+    energy: 15
+    ja: 本棚の端の燭台
+  # --- メタリカの寝室（A09。2026-10-31、Claude の案）。実際は上の階だが、下絵では居間の東に別に置く（x 12〜18、y 0〜5）---
+  # 見た目は world/witch-house-bedroom/plates.yaml の 01（扉から見て奥にベッド、左の壁に楕円の窓、右の壁に机と本棚）。
+  # 扉は北の壁の東寄り（x 17.0）。扉から南を見ると、左（東の壁）に窓、奥（南の壁）にベッド、右（西の壁）に机と本棚。
+  room_bedroom:
+    x: [12.0, 18.0]
+    y: [0.0, 5.0]
+    h: 3.4
+    roof: 1.4
+    ja: メタリカの寝室
+    openings:
+    - {side: n, c: 17.0, w: 1.0, h: 2.2, ja: 寝室の扉}
+    - {side: e, c: 3.4, w: 0.7, h: 1.2, sill: 1.0, ja: 楕円の窓}
+  bed_bedroom: {at: [15.0, 3.85], w: 2.0, d: 2.2, h: 0.55, ja: 赤い天蓋のベッド（上の人物は z 0.55）}
+  pillar_bedpost_1: {at: [14.05, 2.8], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_2: {at: [15.95, 2.8], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_3: {at: [14.05, 4.9], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  pillar_bedpost_4: {at: [15.95, 4.9], r: 0.06, h: 2.5, ja: 天蓋の柱}
+  table_night_w: {at: [13.6, 4.7], w: 0.5, d: 0.4, h: 0.6, ja: ベッド脇の小机（燭台）}
+  table_night_e: {at: [16.4, 4.7], w: 0.5, d: 0.4, h: 0.6, ja: ベッド脇の小机}
+  shelf_bedroom_books: {at: [12.25, 3.6], w: 0.45, d: 1.6, h: 3.0, ja: 天井までの本棚（西の壁）}
+  table_desk: {at: [12.4, 1.7], w: 0.7, d: 1.8, h: 0.78, ja: 本と薬瓶の机（西の壁）}
+  stool_desk: {at: [13.05, 1.75], ja: 机の椅子}
+  shelf_drawers: {at: [17.7, 2.3], w: 0.55, d: 1.0, h: 0.85, ja: 窓の下手の引き出し}
+  crate_trunk: {at: [12.45, 0.45], w: 0.8, d: 0.6, h: 0.6, ja: 古い長持（人形の棚の下）}
+  crate_bookstack_1: {at: [13.45, 0.55], w: 0.45, d: 0.35, h: 0.3, ja: 床に積んだ本}
+  crate_bookstack_2: {at: [17.55, 4.45], w: 0.5, d: 0.4, h: 0.45, ja: 床に積んだ本と巻物}
+  lantern_bed: {at: [15.0, 2.2], z: 2.8, energy: 45, ja: 天井の真鍮のランプ}
+  lantern_desk: {at: [12.45, 2.35], z: 1.0, energy: 12, ja: 机の上のランプ}
+people:
+  metallica:
+    ja: メタリカ
+    eye: 1.5
+    h: 1.6
+    en: 'Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green
+      rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)'
+  bisco:
+    ja: ビスコ
+    eye: 1.5
+    h: 1.55
+    en: Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored
+      boots)
+  arlecchino:
+    ja: アルレッキーノ
+    eye: 1.9
+    h: 1.9
+    en: 'Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted
+      coat, olive-green arms, big black boots)'
+  hundred-knight:
+    ja: 百騎兵
+    eye: 0.8
+    h: 0.9
+    en: 'the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+      gauntlets with black claws, beige shorts, brown shoes; it carries no sword here)'

@@ -1,0 +1,34 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-014
+scene: A12
+tc: 80.0
+sec: 4.9
+kind: M
+shot: 胸上（肩ごし）・ビスコ・メタリカ・百騎兵
+acting: ソファから身を乗り出して目を丸くする。百騎兵もメタリカを見上げる
+dialogue:
+- L340「えっ？お前が私たちに感謝しているのか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 0.35
+  - 4.3
+  - 2.3
+  look: bisco
+  lens: 40
+  move: メタリカの肩ごし（南西の階段の上）から、ビスコへ。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ソファのビスコ
+  end: 目を丸くしたビスコ
+timing:
+  lead: 0.5

@@ -29,9 +29,10 @@ FONT = next((f for f in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc",
                           "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc") if pathlib.Path(f).exists()), None)
 COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight": (160, 220, 255), "arlecchino": (220, 120, 220),
           "luckiny": (235, 60, 60), "tito": (210, 70, 150), "villager-a": (170, 120, 70), "villager-b": (90, 100, 180), "villager-c": (150, 40, 60),
-          "villager-d": (205, 175, 125), "water-merchant": (235, 125, 40), "sand-eater": (150, 150, 130)}
+          "villager-d": (205, 175, 125), "water-merchant": (235, 125, 40), "sand-eater": (150, 150, 130),
+          "scarecocco": (80, 80, 200)}
 SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
-         "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂"}
+         "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏"}
 POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}   # 立っていないときの背の高さの割合（寝ているときは高さ m）
 
 
@@ -97,11 +98,46 @@ def tilt_of(c, cam, look):
 
 # ---------- 場面 ----------
 
+def merge_layouts(lay, extras):
+    """blocking.yaml の layout_extra（[{file, offset: [dx, dy]}]）の配置を、座標をずらして lay に足す（A11: 居間とセント・ドルチェ）。
+    道具（props）と地面の区分（areas）は offset だけずらす。名前が重なる道具は後ろに _x<番号> を付ける（頭の名前で形を決めるので頭は変えない）。
+    人物・背景の文（views）・光（lighting）は、まだない名前だけ足す。horizon・ground・sky は最初の配置のまま（光の ground で変えられる）。"""
+    for i, ex in enumerate(extras or [], start=1):
+        sub = yaml.safe_load((ROOT / ex["file"]).read_text(encoding="utf-8"))
+        dx, dy = ex.get("offset", [0.0, 0.0])
+        sh = lambda q: [q[0] + dx, q[1] + dy]
+        props = lay.setdefault("props", {})
+        for name, pr in (sub.get("props") or {}).items():
+            pr = dict(pr)
+            if "at" in pr:
+                pr["at"] = sh(pr["at"])
+            if "from" in pr:
+                pr["from"], pr["to"] = sh(pr["from"]), sh(pr["to"])
+            if name.startswith("room") and "x" in pr:
+                pr["x"], pr["y"] = [v + dx for v in pr["x"]], [v + dy for v in pr["y"]]
+            props[name if name not in props else f"{name}_x{i}"] = pr
+        for a in sub.get("areas") or []:
+            a = dict(a)
+            if a["kind"] == "rect":
+                a["x"], a["y"] = [v + dx for v in a["x"]], [v + dy for v in a["y"]]
+            elif a["kind"] == "circle":
+                a["center"] = sh(a["center"])
+            else:
+                a["points"] = [sh(q) for q in a["points"]]
+            lay.setdefault("areas", []).append(a)
+        for key in ("people", "views", "lighting"):
+            for k, v in (sub.get(key) or {}).items():
+                lay.setdefault(key, {}).setdefault(k, v)
+        lay["size"] = {"w": max(lay["size"]["w"], dx + sub["size"]["w"]), "d": max(lay["size"]["d"], dy + sub["size"]["d"])}
+    return lay
+
+
 class Stage:
     def __init__(self, scene_dir):
         self.dir = ROOT / scene_dir
         self.bk = yaml.safe_load((self.dir / "blocking.yaml").read_text(encoding="utf-8"))
         self.lay = yaml.safe_load((ROOT / self.bk["layout"]).read_text(encoding="utf-8"))
+        merge_layouts(self.lay, self.bk.get("layout_extra"))
         self.W, self.D = self.lay["size"]["w"], self.lay["size"]["d"]
         self.order = list(self.bk["cuts"])
         for cut in self.order:   # 動きのキー（keys）から set・move・posture を作る（D-060）
@@ -568,23 +604,30 @@ def render(st, out_dir, sections):
     for n, sec in enumerate(sections, start=1):
         a, b = sec["cuts"]
         cuts = st.order[st.order.index(a):st.order.index(b) + 1]
-        W, H = int(st.W * k) + 260, int((ymax + 2.2) * k) + 190
+        # 区間ごとの図の範囲（scene.yaml の sections の map: {x: [x0, x1], y: [y0, y1]}）。同じ配置に別の部屋を並べたとき（A09 の寝室）に使う
+        mx0, mx1 = (sec.get("map") or {}).get("x", [0.0, st.W])
+        ymax = (sec.get("map") or {}).get("y", [0.0, st.bk.get("map_ymax", st.D)])[1]
+        mw = mx1 - mx0
+        W, H = int(mw * k) + 260, int((ymax + 2.2) * k) + 190
         im = Image.new("RGB", (W, H), (27, 29, 34))
         d = ImageDraw.Draw(im)
         d.text((W // 2, 26), f"{st.bk['scene']} {sec['name']}（{a[-3:]}〜{b[-3:]}、上から見た図）", font=fbig, fill="white", anchor="mm")
         d.text((W // 2, 62), "丸＝人物（線は体の向き）、薄い丸＝区間の初めの位置、矢印＝カットの中の移動、扇＝カメラ（番号はカット）", font=fs, fill=(190, 190, 190), anchor="mm")
         ox, oy = 130, 90 + int(1.9 * k)
-        P = lambda x, y: (ox + x * k, oy + y * k)
+        P = lambda x, y: (ox + (x - mx0) * k, oy + y * k)
         if st.lay.get("areas"):
             draw_areas(st, d, P, f)
-            d.text(P(st.W / 2, -0.5), "↑北", font=f, fill=(200, 200, 200), anchor="mm")
+            d.text(P(mx0 + mw / 2, -0.5), "↑北", font=f, fill=(200, 200, 200), anchor="mm")
+        elif sec.get("map"):   # 部屋の中: 床だけ
+            d.rectangle([*P(mx0, 0.0), *P(mx1, ymax)], fill=(70, 52, 38), outline=(120, 110, 80), width=2)
+            d.text(P(mx0 + mw / 2, -0.5), "↑北", font=f, fill=(200, 200, 200), anchor="mm")
         else:
             d.rectangle([*P(0, 0.4), *P(st.W, ymax)], fill=(52, 58, 40), outline=(120, 110, 80), width=2)
             d.rectangle([*P(0, -1.6), *P(st.W, 0.4)], fill=(40, 150, 70))
             d.text(P(st.W / 2, -0.8), "翠の沼（崖の下）　↑北", font=f, fill=(10, 40, 20), anchor="mm")
-        d.text(P(st.W / 2, ymax + 0.5), "↓南", font=f, fill=(170, 170, 170), anchor="mm")
+        d.text(P(mx0 + mw / 2, ymax + 0.5), "↓南", font=f, fill=(170, 170, 170), anchor="mm")
         for name, pr in st.lay.get("props", {}).items():
-            if "at" not in pr or pr["at"][1] > ymax:
+            if "at" not in pr or pr["at"][1] > ymax or not (mx0 - 0.5 <= pr["at"][0] <= mx1 + 0.5):
                 continue
             x, y = P(*pr["at"])
             d.ellipse([x - 9, y - 9, x + 9, y + 9], fill=(120, 90, 60))

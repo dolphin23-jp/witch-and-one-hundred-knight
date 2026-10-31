@@ -1,0 +1,34 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-016
+scene: A10
+tc: 116.1
+sec: 5.0
+kind: A
+shot: 全身（煽り）・石段・スケアコッコ・百騎兵
+acting: スケアコッコが羽ばたいて石段に飛び乗る。百騎兵が飛びかかるが、ひらりとかわされて石段に腹ばいで落ちる
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.3
+  - 11.5
+  - 0.5
+  look:
+  - 16.5
+  - 7.6
+  lens: 24
+  move: 南の低い所から煽り。奥に大樹の扉
+background: marika-forest
+image: null
+refs:
+- hundred-knight
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: 大樹の石段へ走る二人
+  end: 石段で腹ばいの百騎兵と、下で振り返るスケアコッコ
+timing:
+  lead: 0.3

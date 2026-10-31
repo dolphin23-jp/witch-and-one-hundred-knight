@@ -1,0 +1,35 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-015
+scene: A09
+tc: 102.8
+sec: 7.5
+kind: M
+shot: 引き・寝室・メタリカ・百騎兵
+acting: 手で追い払い、ベッドにどさりと戻って本を開く。百騎兵はとぼとぼと扉から出ていく
+dialogue:
+- L288「ほら、ワタシは忙しいんだ。行った、行った！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.6
+  - 4.6
+  - 2.6
+  look:
+  - 15.6
+  - 1.6
+  lens: 24
+  move: 寝室の奥（南西）の高い所から、扉の方へ（引き）
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 胸を張るメタリカと百騎兵
+  end: 本を読むメタリカと、閉まりかけの扉
+timing:
+  lead: 0.4

@@ -1,0 +1,32 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-010
+scene: A10
+tc: 75.4
+sec: 7.1
+kind: M
+shot: 全身・百騎兵
+acting: 一人残った百騎兵が、こちらへ向き直る
+dialogue:
+- L298「さて、百騎兵。“スケアコッコ”を代わりに探すのは当然、オマエの役目だ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.2
+  - 13.2
+  - 0.85
+  look: hundred-knight
+  lens: 35
+  move: 南西から百騎兵を正面で。ゆっくり寄る
+background: marika-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 見送る百騎兵
+  end: 正面を向いた百騎兵
+timing:
+  lead: 0.5

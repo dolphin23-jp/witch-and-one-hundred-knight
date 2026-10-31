@@ -1,0 +1,35 @@
+# A09 魔女邸・帰らない二人と師匠の心得（夜〜翌朝）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A09 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A09-014
+scene: A09
+tc: 94.8
+sec: 8.0
+kind: M
+shot: 全身（俯瞰）・メタリカ・百騎兵
+acting: 胸を張り、説教しながら百騎兵の北側を歩く
+dialogue:
+- L287「まったく、オマエには社会常識というものがないのか。もっと人徳のあるこのワタシを見習え！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.9
+  - 0.7
+  - 2.2
+  look:
+  - 15.2
+  - 2.0
+  lens: 26
+  move: 北西の高い所から、説教しながら歩くメタリカと百騎兵へゆっくり寄る
+background: witch-house
+image: null
+refs:
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 指さすメタリカ
+  end: 胸を張って百騎兵を見下ろすメタリカ
+timing:
+  lead: 0.4

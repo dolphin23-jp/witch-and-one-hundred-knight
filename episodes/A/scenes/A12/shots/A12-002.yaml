@@ -1,0 +1,32 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-002
+scene: A12
+tc: 3.5
+sec: 5.5
+kind: M
+shot: 全身・ビスコ
+acting: 疲れきったビスコが入ってきて、肩を落として頭を下げる
+dialogue:
+- L328「すまない、みんな……。迷惑をかけた……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.3
+  - 4.6
+  - 0.9
+  look: bisco
+  lens: 35
+  move: 玄関の内側の低い位置から、入ってくるビスコを正面で。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 玄関の扉が開く
+  end: 頭を下げたビスコ
+timing:
+  lead: 0.8

@@ -1,0 +1,32 @@
+# A10 マーリカの森・スケアコッコ（昼）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A10 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。メタリカは声だけ（画に出さない）
+id: A10-011
+scene: A10
+tc: 82.5
+sec: 5.8
+kind: M
+shot: 寄り（煽り）・百騎兵・トーチカ
+acting: 手を前に出すと、捕獲用のトーチカが碧く光って現れる
+dialogue:
+- L300「先日、オマエに授けた捕獲用戦術トーチカを使うんだ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 14.2
+  - 11.4
+  - 0.35
+  look: hundred-knight
+  lens: 35
+  move: 百騎兵の足もとの低い所から寄り
+background: marika-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 百騎兵
+  end: トーチカを持つ百騎兵
+timing:
+  lead: 0.4
