@@ -1,0 +1,80 @@
+# 夜会編 回1（A09〜A12）の新しい設定画（スケアコッコ）と、魔女邸の寝室の背景の参考画の生成計画（承認待ち）
+# ユーザー指示（2026-10-31）:「スケアコッコ、魔女邸寝室については設定画を用意しないのであなたで生成してもらう」
+# 原作に画像がないので、設定画は Claude が生成し、ユーザーが候補から選んだものを refs/<人物>_sheet_01 として登録する（砂漠編の村人と同じ方式）。
+# 寝室は D-058（用意画像と設定画を元に参考画を作ってよい。承認を取る）。選ばれた1枚から、必要な向きの参考画を別に作る（そのときもう一度承認を取る）。
+#
+# スケアコッコの外見は、原作テキストに次の手がかりしかない（Living Spec にも記述なし）。ユーザーが直してよい。
+#   - 通称「尾の先がだるいニワトリ」（狩人たちの隠語）。実際は「スケアコッコ」というレアな魔獣。マーリカの森にいて、探しても探しても見つからない。
+#   - 獲物は「殺さない程度に十分に痛めつけてから、トーチカで捕獲」する。→ 戦えて、逃げ回る、すばしこい魔獣。
+#   - 夜会では「樽の中でスズの音草が鳴り、くしゃみをしたネコをニワトリが目撃したら開始」。後の場面ではビスコが捕まえて、手を離すまで鳴かない
+#     （「冬のニワトリが三回鳴くまで」夜会は終わらない）。→ ビスコが両腕で抱えられる大きさ（高さ約60cm、推定）の、鳴くニワトリ。
+#   → 3案を作って選んでもらう: A 森に溶ける自然な魔獣、B 案山子（かかし）風、C 魔獣らしい怪しい姿。
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k}
+credits_per_image: 1
+status: 生成済み（ユーザー承認 2026-10-31「OK」、5クレジット、残高 516→511）。スケアコッコ A/B/C と寝室 01/02 からユーザーが選ぶ
+total_images: 5
+
+common:
+  creature: >-
+    Character design sheet of a NEW creature, drawn in exactly the same 2D anime art style, line art, cel shading and
+    color treatment as the two reference sheets (images 1 and 2); the references only show the drawing style and the sheet
+    layout, do not copy their subjects. Layout like the references, on a plain white background: full-body front view,
+    side view and back view standing in a row, plus two head close-ups (front and three-quarter) on the right.
+    Neutral standing pose. No text, no labels, no captions, no manga symbols, no color palette swatches.
+    The creature: Scarecocco, a rare elusive forest beast that looks like a rooster. About 60 cm tall, small enough for a
+    girl to hold in her arms. A proud puffed-out chest and a small comb, because it crows at dawn. Its long tail feathers
+    droop limply at the tips (the hunters call it "the chicken with the lazy tail tip"). Sleepy, bored, half-closed eyes.
+  bedroom: >-
+    Background art only: no characters, no creatures, no text. A 2D anime background painting in the same style, colors and
+    materials as the reference images (dark wood paneling, glowing green vines creeping along the walls, red fabrics,
+    brass hanging lamps, stacked old books, a few creepy stitched dolls); they only show the look of the materials and the
+    mood of the mansion, do not copy their viewpoints or layout.
+
+creatures:
+  - who: scarecocco_a
+    ja: スケアコッコ A（森に溶ける自然な魔獣）
+    count: 1
+    aspect_ratio: "16:9"
+    refs: [refs/sand-eater_sheet_01.png, refs/tito_sheet_01.png]
+    prompt: >-
+      {creature} Design A: plump body, plumage in mossy greens, olive and warm browns that blends into the forest, a small
+      red comb and wattle, cream-colored chest feathers, sturdy yellow-gray legs with small claws. The long tail has
+      drooping, wilted-leaf-like tips.
+    out: characters/scarecocco/design/scarecocco_A_design_gpt-image-2.5_01.png
+  - who: scarecocco_b
+    ja: スケアコッコ B（案山子風）
+    count: 1
+    aspect_ratio: "16:9"
+    refs: [refs/sand-eater_sheet_01.png, refs/tito_sheet_01.png]
+    prompt: >-
+      {creature} Design B: a scarecrow-like look. Straw-yellow and faded patchwork feathers with stitched seams between
+      the patches, round button-like eyes, a frayed rope tied around its neck, tail tips that droop like limp straw. A
+      small red comb. Still clearly a living beast, not a doll.
+    out: characters/scarecocco/design/scarecocco_B_design_gpt-image-2.5_01.png
+  - who: scarecocco_c
+    ja: スケアコッコ C（魔獣らしい怪しい姿）
+    count: 1
+    aspect_ratio: "16:9"
+    refs: [refs/sand-eater_sheet_01.png, refs/tito_sheet_01.png]
+    prompt: >-
+      {creature} Design C: a more monstrous magical beast. Dark indigo plumage with faint pale-blue rune-like markings on
+      the wings and chest, a slightly larger head, sharp bird claws, a jagged dark comb. Its eyes are sleepy but
+      unsettling, and the drooping tail tips fade into a faint pale-blue glow.
+    out: characters/scarecocco/design/scarecocco_C_design_gpt-image-2.5_01.png
+
+backgrounds:
+  - who: witch-house-bedroom
+    ja: 魔女邸・メタリカの寝室（参考画。選ばれた1枚から必要な向きを後で作る）
+    count: 2
+    aspect_ratio: "16:9"
+    refs: [refs/witch-house-living_sheet_01.png, world/living-room-plate-B-door_gpt-image-2.5_01.png]
+    prompt: >-
+      {bedroom} The place: the bedroom of a swamp witch on the upper floor of her old wooden mansion, about 6 m wide and
+      5 m deep with a high ceiling. A large dark-wood bed with deep red drapes against the far wall, its sheets rumpled.
+      A small round window on the left wall letting in pale morning light. A writing desk piled with old books and potion
+      jars against the right wall, a tall bookshelf beside it, and a short shelf with a few stitched dolls. A brass lamp
+      hanging from the ceiling. Glowing green vines along the dark paneled walls. Books and clutter on the floor. The
+      heavy arched wooden door is on the near wall, behind the viewer. Viewpoint: eye height, standing just inside the
+      door, looking toward the bed and the window. Cozy, gothic and a little messy.
+    out: world/witch-house-bedroom/witch-house-bedroom_gpt-image-2.5_0{n}.png

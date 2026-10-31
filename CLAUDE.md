@@ -24,6 +24,7 @@
    - 動画生成（Seedance）では、生成される音声を使わない（`generate_audio=false`。出てきても捨てる）。口パクの参照（audio reference）にだけ、切り出した原作の台詞を渡してよい（ユーザー判断、D-055）。声は原作の音源だけを使う。
    - 受け取った音源は `audio/original/` に置き、どのファイルのどこがどの台詞かを `audio/original/index.yaml` に書く。GitHub のリポジトリは公開のままでよい（ユーザー判断、D-056）。
    - プレイ録画などの長い音源から台詞を切り出すときは `tools/extract_lines.py` を使う（Demucs で声と BGM を分け、Whisper の時刻で脚本と突き合わせる）。元の長い音源はリポジトリに入れず、切り出した台詞と一覧（`lines.md`）を `audio/<シーン>/original/` に置く。自信のない台詞と途切れの疑いには印を付け、ユーザーに聞いてもらう。
+   - 分離した声に効果音が漏れていると、音量で決めた台詞の終わりが何秒も長くなり（A09 では 50秒になった台詞もある）、続く台詞の境目も推定でずれる。切り出しの後に `python tools/refine_cuts.py … --auto` で、印が◎でない台詞と長さが不自然な台詞の範囲を、脚本の文を手がかりに短い範囲だけ書き起こし直して見直す。提案は人が見てから `script.yaml` の `cut` に写し、切り出しをやり直す（Whisper の結果は `tmp/` に保存されるので数十秒）。パートまるごとの書き起こし（`audio/original/transcripts/`）は場面を探す目安で、時刻が大きくずれることがある（パート18 では約53秒ずれた箇所があった）。台詞の位置は、この見直しの結果の方が正確。
    - プレイ録画をパートごとに声と BGM・効果音に分けたものは、Drive の「魔女と百騎兵 原作音源/声とBGMの分離/パートN/」に置く（`tools/separate.py`。記録は `audio/original/separated.yaml`、書き起こしは `audio/original/transcripts/`）。
 6. **残酷表現:** 生成サービスの制限にかかったカットは、ショットファイルの `fallback`（様式化の代替案）で作る（D-005）。制限を回避するための言い換えはしない。
 7. **カメラ（D-058）:** カメラを効果的に動かす（走る・歩く人物は追いかける、感情の山は寄る、場面の始めと終わりは引きやクレーン）。動かさないカットも、向き・高さ・レンズをシーンごとに選び、同じ向きや止めを続けない。動きは Blender の下絵に入れて動画生成に渡す。`tools/staging.py` の「カメラの単調さ」の警告を見て直す。
@@ -67,7 +68,8 @@
 | `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
 | `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、書き出した動画の一覧 `drive.yaml`。Drive に置けない書き出しは `animatic/exports/`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
 | `pipeline/` | 役割ごとの実装の設定 |
-| `tools/` | 記録、台詞の切り出し、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QCのスクリプト |
+| `tools/` | 記録、台詞の切り出し（`extract_lines.py`）と範囲の見直し（`refine_cuts.py`）、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QC、Drive への退避と復元（`archive.py`）のスクリプト |
+| `archive/` | 採用した大きい生成物の Drive への一時退避の一覧 `drive_manifest.yaml`（D-065） |
 | `docs/` | 作業ログ、Living Spec への反映待ちの提案 |
 | `setup/` | クラウド環境のセットアップスクリプト（claude.ai の環境設定に貼る） |
 
@@ -91,6 +93,16 @@
 - `voice.yaml`（台詞の置き場所）がないシーンは、`python tools/voice_yaml.py <シーンのフォルダ>` でショットファイルの tc と台詞から作る（A01b はこれで作った）。台詞の秒を直したら作り直す。
 - BGM は原作音源から声を分けた残り（Demucs の声以外）をそのまま使い、シーンより短ければループする。`voice.yaml` の `bgm` に書く。
 - 漫符は `overlays/` の素材を `episodes/<話>/scenes/<シーン>/overlays.yaml` で置く（D-027）。
+
+## 容量と退避（D-065）
+
+リポジトリが大きくなった（追跡ファイルで約3.3GB）ため、2026-10-31 にユーザーが決めた。
+
+- **不採用の生成物は削除してよい。** 採用は、ショットファイルの `image` と `video`。それ以外で、生成記録に出力として載っているものが不採用。ただし、採用した画・動画を作るのに入力として使ったもの（開始・終わりの静止画、人物セル、略図）は不採用に数えない。削除したものの一覧（パス・サイズ・sha256・最後のQC）は `docs/storage/removed_unadopted_2026-10-31.tsv`。生成の記録（`logs/generations.jsonl`）は消さない。
+- **採用した大きい生成物（1MB以上の静止画・動画・人物セル）は、Drive の「魔女と百騎兵 原作音源/一時退避（生成物）/」に一時退避する。** ユーザーが後で別の場所へ移す。一覧は `archive/drive_manifest.yaml`（パス・サイズ・sha256・Drive のファイルID）。作業ツリーからは外してある。
+  - 戻す: `python tools/archive.py restore --scene A04`（場面ごと）。戻したファイルは、誤ってコミットしないよう `.git/info/exclude` に自動で登録される。Animatic の組み立て（`render.sh`）、`tools/composite.py`、`tools/scene_export.py` は退避した画像が要るので、先に戻す。
+  - 新しく退避する: `plan LIST.txt` → `upload`（`--shard K/N` で並列）→ `verify` → `purge`。
+- Git の履歴には退避前のファイルが残る。GitHub 上の容量を実際に減らすには履歴の書き換え（`git filter-repo` と force push）が別に要る。公開リポジトリの main の履歴を変えるので、実行の直前にもう一度ユーザーに確認する。時期は、PR #11 を main に統合した後、無制限の日の前（ユーザー判断 2026-10-31「おすすめで」）。
 
 ## コミット
 
