@@ -102,7 +102,8 @@
 - **採用した大きい生成物（1MB以上の静止画・動画・人物セル）は、Drive の「魔女と百騎兵 原作音源/一時退避（生成物）/」に一時退避する。** ユーザーが後で別の場所へ移す。一覧は `archive/drive_manifest.yaml`（パス・サイズ・sha256・Drive のファイルID）。作業ツリーからは外してある。
   - 戻す: `python tools/archive.py restore --scene A04`（場面ごと）。戻したファイルは、誤ってコミットしないよう `.git/info/exclude` に自動で登録される。Animatic の組み立て（`render.sh`）、`tools/composite.py`、`tools/scene_export.py` は退避した画像が要るので、先に戻す。
   - 新しく退避する: `plan LIST.txt` → `upload`（`--shard K/N` で並列）→ `verify` → `purge`。
-- Git の履歴には退避前のファイルが残る。GitHub 上の容量を実際に減らすには履歴の書き換え（`git filter-repo` と force push）が別に要る。公開リポジトリの main の履歴を変えるので、実行の直前にもう一度ユーザーに確認する。時期は、PR #11 を main に統合した後、無制限の日の前（ユーザー判断 2026-10-31「おすすめで」）。
+- **履歴の書き換えは済み（2026-10-31、ユーザー判断「今やる」）。** 削除・退避した 520 経路を `git filter-repo` で main と作業ブランチの全履歴から消して強制プッシュした（main の履歴 3.0GB → 約1GB、最新のファイル構成とコミット数は不変）。それより前のコミット番号（`docs/log.md` に書いた a84e7de など）は、今の履歴にはない。GitHub には古いブランチ11本と PR の参照に古い履歴が残る（クラウドのセッションは main だけを取るので影響しない）。
+- 新しく削除・退避したものを履歴から消すときも同じ手順: 全履歴を取り込む（クラウドのセッションは浅いクローンのことがある。`git fetch --unshallow`）→ `git clone --mirror --no-local` の複製で `git filter-repo --invert-paths --paths-from-file` → コミット数・最新の tree・題名の並びが同じで、消した経路が0件かを確かめる → `--force-with-lease` で押す。強制プッシュは自動の許可モードでは止められるので、ユーザーに「Accept edits」に切り替えてもらい、確認の画面で許可を得る。
 
 ## コミット
 
