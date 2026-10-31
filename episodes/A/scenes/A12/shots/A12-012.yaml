@@ -1,0 +1,34 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-012
+scene: A12
+tc: 69.9
+sec: 4.0
+kind: M
+shot: 全身・アルレッキーノ
+acting: メタリカの方を向いたまま、そろそろと横歩きで後ずさり、本棚の奥へ逃げる
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+    follow: arlecchino
+    offset:
+    - -1.4
+    - 2.6
+    z: 1.4
+  look: arlecchino
+  lens: 28
+  move: 南から、本棚ぞいに去るアルレッキーノを追う（トラッキング）
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 固まったアルレッキーノ
+  end: 本棚の奥へ消えるアルレッキーノ
+timing:
+  lead: 0.3

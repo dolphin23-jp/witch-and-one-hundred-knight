@@ -1,0 +1,32 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-009
+scene: A12
+tc: 50.9
+sec: 5.0
+kind: M
+shot: 胸上・ビスコ
+acting: きょとんと顔を上げてメタリカを見る。尻尾が小さく揺れる
+dialogue:
+- L335「なんだよ。お前にしちゃ優しいな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.1
+  - 2.75
+  - 0.95
+  look: bisco
+  lens: 50
+  move: ビスコの目の高さ（ソファの前の低い所）から正面の寄り。止め
+background: witch-house
+image: null
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: ソファにのけぞるビスコ
+  end: メタリカを見るビスコ
+timing:
+  lead: 0.5

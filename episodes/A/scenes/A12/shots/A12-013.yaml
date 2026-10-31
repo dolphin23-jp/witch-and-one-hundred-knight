@@ -1,0 +1,32 @@
+# A12 魔女邸・感謝（午後）。blocking.yaml（Claude の案 2026-10-31、Living Spec「A12 動きの設計（案）」、ユーザー了承）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A12-013
+scene: A12
+tc: 73.9
+sec: 6.1
+kind: M
+shot: 膝上（横顔）・メタリカ
+acting: 手すりに寄りかかり、ぷいと横を向いてつぶやく（頬の赤みは合成）
+dialogue:
+- L339「ちっ、あの出来損ないめ。ワタシだって、感謝くらいするんだ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.45
+  - 2.85
+  - 2.0
+  look: metallica
+  lens: 50
+  move: 北東から横顔で。動かさずに止める
+background: witch-house
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: にらんだ後のメタリカ
+  end: 横を向いたメタリカ
+timing:
+  lead: 0.5
