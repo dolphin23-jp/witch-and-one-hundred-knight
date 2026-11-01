@@ -1,0 +1,154 @@
+# 7章の新しい設定画・背景の参考画・小物の生成計画（承認待ち）
+# ユーザー指示（2026-11-01 15:59）: ミトン・外道化したミトン・ハインツ・ヒルダ姫・アロマニジェルの設定画を用意し、「残りは背景含めてあなたの方で生成して欲しい」
+# 1案だけ作る（CLAUDE.md「守ること」1）。原作に画像がないので Claude が生成し、そのまま登録する（ユーザーが見て直しを言えば作り直す）。
+#
+# 原作テキスト（Mj100、Living Spec「7章」タブ）の手がかり:
+#   - 護衛の兵士: ハインツの護衛。「大型の蟲が出没するという目撃情報もございます」。外道ミトンの前で悲鳴。アマタイア王国の兵。
+#   - チンクエの村の子供3人: 強がりな少年、ひねくれぼうず、臆病な男の子。ミトンをいじめ、ルッキーニィに「獣人だ、臭い仲間」と言い、百騎兵の目に怯えて逃げる。
+#   - 墓守: 綿蛍の谷の墓地（雪）。老人。「ここに旅人が来るのは何年ぶりかの」。隣に住んでいた魔女の昔話をする。
+#   - 回想のブリダンゴ虫: 雪の日、寒さで弱っていた「おおきなブリダンゴ虫」。少年のハインツに手袋（ミトン）をもらい、どんぐりを返す。立たない虫の姿（推定: ミトン本人の昔の姿）。
+#   - チンクエ: 紅嵐街道沿いの森のゴミ山。ミトンがゴミを漁って食べている。
+#   - チンクエの村と馬車の道: ハインツの豪華な馬車が通る。子供たちの場面。
+#   - 見晴らしの良い丘: ハインツとヒルダの逢瀬（「この時期は綿蛍が飛んで美しいですよ」）。のちにミトンの埋葬。
+#   - 沼地のピラー: 7-08。「ここにはピラーがあるようだぞ」。アロマニ・ジェル（スライム型の魔獣）がいる沼地。魔女の沼とは別の場所。
+#   - 小物: 魔女会報（魔女にしか届かない便り）、ずっしりの実（ミトンを満腹にする重い実）、手紙とペン（ミトンが王子に書く）、手袋（ミトン）、どんぐり、ダウジング・ペンデュラム（メタリカ）、豪華な馬車。
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k, aspect_ratio: "16:9"}
+credits_per_image: 1
+status: 承認待ち
+total_images: 11
+
+common:
+  character: >-
+    Character design sheet of a NEW character, drawn in exactly the same 2D anime art style, line art, cel shading and
+    color treatment as the reference sheets; do not copy the reference characters' faces, hair or outfits. On a plain white
+    background: full-body front view, side view and back view standing in a row, plus two head close-ups (front and
+    three-quarter) on the right. Neutral standing pose. No text, no labels, no captions, no manga symbols, no color
+    palette swatches.
+  background: >-
+    Background art only: no characters, no creatures, no text. A 2D anime environment design sheet: five panels of the
+    same place from different viewpoints, separated by thin white borders, in the same painting style and colors as the
+    reference images; the references only show the painting style, do not copy their places or viewpoints.
+
+items:
+  - who: royal-guard
+    ja: 護衛の兵士
+    refs: [refs/heinz_sheet_01.jpg, refs/hilda_sheet_01.jpg]
+    prompt: >-
+      {character} This character: a royal guard soldier escorting a young nobleman, a sturdy man of about 35, loyal and
+      worried. Full plate-and-mail armor in silver with a royal-blue tabard trimmed in gold (the same kingdom colors as the
+      references), an open-faced helmet with a short blue plume, a spear in one hand and a sword at the belt, a short blue
+      cape. Short brown hair and a trimmed beard.
+    out: characters/royal-guard/design/royal-guard_design_gpt-image-2.5_01.png
+  - who: cinque-kids
+    ja: チンクエの村の子供3人（並び）
+    refs: [refs/heinz_sheet_01.jpg, refs/apprentice-witches_sheet_01.png]
+    prompt: >-
+      Character lineup sheet of three NEW characters, drawn in exactly the same 2D anime art style, line art and cel
+      shading as the reference sheets; do not copy the reference characters. On a plain white background: top row front
+      views of all three, bottom row back views of all three, same order, full body, plus a small head close-up of each.
+      No text, no labels, no captions, no manga symbols. Three poor village boys about 8 to 10 years old in patched,
+      earth-toned country clothes and worn shoes: (1) a cocky, tough-acting leader boy with spiky red-brown hair, a bandage
+      on his nose, rolled-up sleeves and a stick in his hand; (2) a sly, twisted boy with a crooked grin, messy black hair
+      and a too-big cap, hands in pockets; (3) a timid, cowardly boy, the smallest, with round eyes, a bowl haircut, and a
+      scarf, hiding behind the others.
+    out: characters/cinque-kids/design/cinque-kids_design_gpt-image-2.5_01.png
+  - who: grave-keeper
+    ja: 墓守
+    refs: [refs/water-merchant_sheet_01.png, refs/heinz_sheet_01.jpg]
+    prompt: >-
+      {character} This character: an old grave keeper of a snowy valley cemetery, a thin, slightly hunched man of about
+      75, quiet and kindly, with a long white beard, bushy eyebrows and tired gentle eyes. A worn dark-brown hooded wool
+      coat over layers of clothes, a knitted scarf, fingerless gloves, old boots dusted with snow, a shovel in one hand and a
+      small lantern hanging from his belt.
+    out: characters/grave-keeper/design/grave-keeper_design_gpt-image-2.5_01.png
+  - who: mitten-past
+    ja: 回想のブリダンゴ虫（昔のミトン）
+    refs: [refs/mitten_sheet_01.jpg]
+    prompt: >-
+      Character design sheet in exactly the same 2D anime art style, colors and sheet layout as the reference, on a plain
+      white background. No text, no labels, no manga symbols. The creature is the same insect species as the reference
+      character, but as she was long ago, before she could stand or speak: an ordinary large bug crawling on all six legs,
+      about the size of a small dog, with the same blue segmented body, golden belly plates, star-shaped feet, transparent
+      blue wings folded on her back, magenta antennae and red compound eyes, but no human face and no hair (just a simple
+      round bug head). Views: front, side, back and top, plus one view of her curled up weak in the snow, and one view of her
+      wearing a small red knitted mitten given to her.
+    out: characters/mitten-past/design/mitten-past_design_gpt-image-2.5_01.png
+  - who: cinque-dump
+    ja: チンクエのゴミ山と森（背景）
+    refs: [refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      {background} The place: "Cinque", a dumping ground in a forest beside a red-leaved highway. Big heaps of junk thrown
+      away by travelers and villagers: broken barrels, crates, cart wheels, old pots, rags, bones and food scraps, half
+      sunk into moss among tall trees with deep red autumn leaves; a red-leaved road glimpsed through the trees. Daytime,
+      dappled light, a bit smelly-looking with faint flies. Panels: a wide view of the junk heaps in the clearing, a low view
+      at the foot of a heap, a view from the top of a heap toward the forest, the forest path leading to the road, and the
+      edge of the clearing with tall red trees.
+    out: world/cinque-dump/cinque-dump_gpt-image-2.5_01.png
+  - who: cinque-village
+    ja: チンクエの村と馬車の道（背景）
+    refs: [refs/st-dolce_bg_01.jpg]
+    prompt: >-
+      {background} The place: a small poor farming village at the edge of a forest with red autumn leaves, and the forest
+      road beside it where a nobleman's carriage passes. Simple wooden and stone cottages with thatched roofs, a well,
+      fences, haystacks and a muddy lane where children play; the road is a wide dirt carriage road with wheel ruts lined
+      by red-leaved trees. Daytime. Panels: the village lane, the small square with the well, the village edge facing the
+      forest, the carriage road through the trees, and a bend of the road with a wide clearing where a carriage could stop.
+    out: world/cinque-village/cinque-village_gpt-image-2.5_01.png
+  - who: wata-firefly-cemetery
+    ja: 綿蛍の谷の墓地（雪、背景）
+    refs: [refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      {background} The place: a lonely cemetery in a snowy valley, "the Valley of Cotton Fireflies". Old leaning
+      gravestones and wooden grave markers half buried in snow, a small stone chapel and the grave keeper's hut with a lit
+      window, bare trees, gentle snowfall, soft pale fluffy glowing motes like cotton drifting in the air. Quiet, cold and
+      melancholic, grey-blue evening light. Panels: a wide view of the valley cemetery, a row of gravestones close up, the
+      grave keeper's hut, the path into the valley, and a low view of a single grave in the snow.
+    out: world/wata-firefly-cemetery/wata-firefly-cemetery_gpt-image-2.5_01.png
+  - who: overlook-hill
+    ja: 見晴らしの良い丘（背景）
+    refs: [refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      {background} The place: a hill with a beautiful view near a forest of red autumn leaves, where a nobleman meets a
+      princess in secret, and later a small grave is dug. A grassy hilltop with a single old tree and a wooden bench,
+      overlooking a wide valley with forests, a winding road and a distant castle; small fluffy glowing motes like cotton
+      ("cotton fireflies") drift in the air. Evening golden light. Panels: a wide view of the hilltop with the tree, the
+      view from the hilltop over the valley, the bench under the tree, the soft ground at the foot of the tree (a good place
+      for a small grave), and the path climbing the hill from the forest.
+    out: world/overlook-hill/overlook-hill_gpt-image-2.5_01.png
+  - who: marsh-pillar
+    ja: 沼地のピラー（背景）
+    refs: [refs/witch-house-exterior_sheet_01.png, refs/pillar-of-temperance_sheet_01.jpg]
+    prompt: >-
+      {background} The place: a small natural marsh deep in a forest of red autumn leaves, far from the swamp witch's own
+      swamp, where a dormant magic pillar stands (the closed green pillar from image 2, drawn as a dormant tall jade-green
+      crystal column). Murky green-brown water, reeds, mud banks, rotten logs, mist, bubbles and patches of slime, red
+      trees around. Panels: a wide view of the marsh with the pillar on a mud island, the pillar close up, the mud bank where
+      a slime monster could crawl out, a low view across the water, and the forest edge of the marsh.
+    out: world/marsh-pillar/marsh-pillar_gpt-image-2.5_01.png
+  - who: ch07-props
+    ja: 7章の小物（魔女会報・ずっしりの実・手紙とペン・手袋・どんぐり・ダウジング・ペンデュラム）
+    refs: [refs/yakai-props_sheet_01.png]
+    prompt: >-
+      Prop design sheet, drawn in exactly the same 2D anime art style, line art, cel shading and color treatment as the
+      reference image; the reference only shows the style. On a plain white background, props arranged in a grid, each
+      from two or three angles. No text, no letters, no readable writing (use squiggle lines instead of words), no labels,
+      no captions, no manga symbols. (1) A witches' newsletter: a rolled and sealed magical bulletin of dark purple paper
+      with gold edges and a moon-and-broom crest seal, also shown unrolled with squiggle lines and small pictures. (2) A
+      heavy fruit: a big round dense fruit like a dark-orange gourd with a thick stem, clearly heavy. (3) A letter set: a
+      cute pale-pink letter paper and envelope with a flower pattern, and a feather quill pen with a small ink bottle; also a
+      finished letter folded with clumsy squiggle writing. (4) A small red knitted mitten (child size), worn and faded. (5)
+      An acorn with its cap. (6) A swamp witch's dowsing pendulum: a pointed jade-green crystal on a gold chain with a
+      purple ring, shown hanging and swinging.
+    out: characters/ch07-props/design/ch07-props_design_gpt-image-2.5_01.png
+  - who: heinz-carriage
+    ja: ハインツの豪華な馬車
+    refs: [refs/heinz_sheet_01.jpg, refs/yakai-props_sheet_01.png]
+    prompt: >-
+      Prop design sheet, drawn in exactly the same 2D anime art style, line art and cel shading as the references; do not
+      draw any people. On a plain white background. No text, no labels, no manga symbols. The prop: the luxurious carriage
+      of the pope's son: an elegant closed coach painted royal blue with gold trim and ornate gold carvings, a religious
+      sunburst emblem on the door, glass windows with white curtains, large spoked wheels with gold rims, a lantern at each
+      corner, a coachman's seat in front, pulled by two white horses in blue and gold harness. Views: side view, front
+      three-quarter view, back view, and close-ups of the door emblem and a wheel.
+    out: characters/heinz-carriage/design/heinz-carriage_design_gpt-image-2.5_01.png
