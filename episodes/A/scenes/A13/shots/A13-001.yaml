@@ -1,0 +1,35 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-001
+scene: A13
+tc: 0.0
+sec: 9.5
+kind: A
+shot: 引き（高い所から）・砂漠の縁・歩いてくる百騎兵と、しゃがむルッキーニィ
+acting: 砂丘の裾を回って百騎兵が歩いてくる。ルッキーニィに気づいて止まる
+dialogue:
+- L344（通信）「あん？あいつじゃないか。何をしているんだ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 76.0
+  - 46.5
+  - 9.0
+  look:
+  - 74.5
+  - 38.5
+  lens: 24
+  move: 南の高い所から、歩いてくる百騎兵へ下りながら寄る（クレーン）
+background: tettara-desert
+image: null
+refs:
+- hundred-knight
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 黄昏の前の砂漠の縁。崖の切れ目の外で、しゃがんで草の世話をするルッキーニィ
+  end: 立ち止まった百騎兵と、その先のルッキーニィ
+timing:
+  lead: 4.0

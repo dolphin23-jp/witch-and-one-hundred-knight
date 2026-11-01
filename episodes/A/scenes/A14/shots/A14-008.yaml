@@ -1,0 +1,33 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-008
+scene: A14
+tc: 61.0
+sec: 8.5
+kind: A
+shot: 全身（煽り）・トーチカを受け取る百騎兵
+acting: 頭の上に光が集まって、新しい戦術トーチカ（移動補助用）が現れ、百騎兵が両手で受け取る
+dialogue:
+- L397（通信）「よし、百騎兵！新たな戦術トーチカを授けよう！」
+- L398「移動補助用戦術トーチカだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 10.7
+  - 46.0
+  - 0.45
+  look: hundred-knight
+  lens: 30
+  move: 谷の縁（北）の低い所から、夕空を背にした百騎兵を煽る
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 風紋を見下ろす百騎兵
+  end: トーチカを掲げる百騎兵
+timing:
+  lead: 0.5

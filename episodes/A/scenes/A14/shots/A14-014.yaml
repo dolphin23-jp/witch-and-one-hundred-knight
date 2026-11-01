@@ -1,0 +1,32 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-014
+scene: A14
+tc: 106.0
+sec: 6.0
+kind: M
+shot: 寄り・からくり人形の顔
+acting: 骸骨の顔の卵形の人形が、からからと体を揺らす
+dialogue:
+- L415（通信）「まるで拷問器具じゃないか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 29.0
+  - 10.6
+  - 22.6
+  look: karakuri-doll
+  lens: 32
+  move: 人形の正面の低い所から、ゆっくり寄る
+background: az-brocken
+image: null
+refs:
+- karakuri-doll
+overlays: []
+fallback: null
+act:
+  start: からくり人形
+  end: 人形の顔の寄り
+timing:
+  lead: 1.8

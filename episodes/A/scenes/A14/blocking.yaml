@@ -1,0 +1,493 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（夜会編 回2、選別の 11・12）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-01）
+# Living Spec「A14 動きの設計（案）」（20カット・約2分30秒）。ユーザー指示「回2を始めて良い」（2026-11-01）
+# 場所は world/az-brocken-layout.yaml（アズ・ブロッケン山。x 東、y 南、m）。足場の上の人物はキーの z に足場の上面の高さを書く
+#   （行き止まり 0、足場1 5、足場2 10、足場3 15、足場4 19、ピラーの峰 22）。下の砂漠は z −60。
+#   003・004・007（ルッキーニィの星読み）は魔女邸の居間（world/witch-house-3d-layout.yaml を x +200、y +200 に置いた）。
+#   ルッキーニィは A13 の後、メタリカに魔女邸へ連れて来られた（原作ではどこにいるか語られない。選別表の案）。ビスコはソファで寝ていて、アルレッキーノは控えている。
+# 百騎兵は剣を持つ（A07 と同じ）。からくり人形は人物として描く（卵形の胴、骸骨の顔、笠）。
+# 光: 山は黄昏の前（late_mtn）、020 で日が沈みかける（sunset_mtn）。居間は夕方（house_dusk）
+# 漫符（001 の「？」）は合成（D-027）。下絵では描かない
+scene: A14
+layout: world/az-brocken-layout.yaml
+layout_extra:
+  - {file: world/witch-house-3d-layout.yaml, offset: [200.0, 200.0]}
+map_ymax: 66
+lighting: late_mtn
+
+places:
+  hk_run0:   [10.0, 63.0]   # 南から来る板の道の上
+  hk_edge:   [10.2, 48.2]   # 行き止まりの踊り場の北（谷の縁の手前）
+  hk_grass:  [10.3, 47.25]  # 草むらの手前
+  rune0:     [10.4, 46.4]   # 草むら＝古の風紋
+  j1:        [12.5, 40.0]
+  j2:        [20.0, 33.0]
+  j3:        [14.0, 25.0]
+  j4:        [21.0, 17.5]
+  p_land:    [26.2, 12.6]   # ピラーの峰に跳び移った所（南西の縁）
+  p_hk:      [28.4, 10.6]   # 百騎兵がピラーへ寄った所
+  bud:       [30.0, 6.5]    # 咲く前のピラー
+  doll_in:   [29.9, 8.6]    # からくり人形が落ちてくる所（ピラーの前）
+  hk_over:   [30.8, 8.3]    # 016 で人形を跳び越えた先
+  doll_roll: [26.9, 12.2]   # 016 で人形が転がった先
+  doll_hit:  [28.3, 13.4]   # 017 で弾き飛ばされた先
+  hk_bud:    [30.0, 7.9]    # 019 でピラーの前
+  # 魔女邸の居間（+200）
+  m_house:   [203.35, 202.55]  # テーブルの西（水晶玉と地図）
+  m_pat:     [202.55, 201.25]  # 007 ルッキーニィの頭をなでる所
+  lk_window: [202.0, 200.55]   # 丸窓の前
+  b_sofa:    [204.4, 200.8]    # ソファで寝ているビスコ（z 0.42）
+  a_house:   [205.7, 203.4]    # 控えているアルレッキーノ
+
+start:
+  hundred-knight: {at: hk_run0, face: 0}
+  karakuri-doll: {at: doll_in, face: 200}
+  metallica: {at: m_house, face: 90}
+  luckiny: {at: lk_window, face: 0}
+  bisco: {at: b_sofa, face: 270}
+  arlecchino: {at: a_house, face: 300}
+
+cuts:
+  A14-001:
+    frame: 引き（高い所から）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_run0, z: 0.0, face: 0, pose: run}
+        - {t: 4.2, at: hk_edge, z: 0.0, face: 0, pose: run, ease: out}
+        - {t: 4.6, at: hk_edge, z: 0.0, face: 0, pose: stand}
+        - {t: 6.2, at: hk_edge, z: 0.0, face: 330, pose: stand}
+        - {t: 7.4, at: hk_edge, z: 0.0, face: 30, pose: stand}
+        - {t: 10.0, at: hk_edge, z: 0.0, face: 0, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [12.5, 41.0, 8.0], look: [10.0, 54.0], look_h: 0.0, lens: 28, frame: 引き}
+      - {t: 10.0, cam: [12.0, 43.2, 4.0], look: hundred-knight, look_h: 0.4, lens: 32}
+    bg: azb_dead_end
+    act: {start: 夕方の山の板の道, do: 百騎兵が板の道を駆けてきて、丸い踊り場で止まる。その先は深い谷で道がない。左右を見回す, end: 谷の縁で立ち尽くす百騎兵}
+    camera: 谷の向こう（北）の高い所から、駆けてくる百騎兵へ下りながら寄る（クレーン）
+    kind: A
+  A14-002:
+    frame: 全身（後ろ姿）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_edge, z: 0.0, face: 0, pose: stand}
+        - {t: 1.0, at: hk_edge, z: 0.0, face: 5, pose: look_down}
+        - {t: 4.5, at: hk_edge, z: 0.0, face: 5, pose: look_down}
+        - {t: 5.2, at: hk_edge, z: 0.0, face: 15, pose: look_up}
+        - {t: 8.5, at: hk_edge, z: 0.0, face: 15, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [9.3, 50.6, 1.3], look: [11.0, 43.0], look_h: -6.0, lens: 28, frame: 全身（後ろ姿）}
+      - {t: 4.6, cam: [9.35, 50.5, 1.3], look: [11.2, 43.0], look_h: -5.0, lens: 28}
+      - {t: 8.5, cam: [9.4, 50.4, 1.4], look: j1, look_h: 5.5, lens: 30}
+    bg: azb_gorge
+    act: {start: 谷の縁の百騎兵, do: 谷底をのぞき込み、顔を上げて、谷の向こうの高い足場を見上げる, end: 足場を見上げる百騎兵の後ろ姿}
+    camera: 百騎兵の後ろの低い所から。谷底をのぞいてから、向こうの高い足場へ振り上げる（ティルト）
+    kind: M
+  A14-003:
+    frame: 引き（居間）
+    lighting: house_dusk
+    only: [metallica, luckiny, bisco, arlecchino]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_house, face: 90, pose: lean}
+        - {t: 2.2, at: m_house, face: 90, pose: lean}
+        - {t: 2.8, at: m_house, face: 310, pose: stand}
+        - {t: 9.5, at: m_house, face: 310, pose: cross}
+      luckiny:
+        - {t: 0.0, at: lk_window, face: 0, pose: look_up}
+        - {t: 1.2, at: lk_window, face: 140, pose: stand}
+        - {t: 1.6, at: lk_window, face: 140, pose: wave}
+        - {t: 4.4, at: [202.35, 200.95], face: 140, pose: walk}
+        - {t: 4.8, at: [202.35, 200.95], face: 140, pose: gesture}
+        - {t: 9.5, at: [202.35, 200.95], face: 140, pose: gesture}
+      bisco:
+        - {t: 0.0, at: b_sofa, z: 0.42, face: 270, pose: lie}
+        - {t: 9.5, at: b_sofa, z: 0.42, face: 270, pose: lie}
+      arlecchino:
+        - {t: 0.0, at: a_house, face: 300, pose: stand}
+        - {t: 9.5, at: a_house, face: 290, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [207.3, 206.0, 2.3], look: [203.0, 201.6], look_h: 1.0, lens: 26, frame: 引き}
+      - {t: 9.5, cam: [207.1, 205.8, 2.2], look: [202.9, 201.5], look_h: 1.0, lens: 28}
+    bg: living_dusk
+    act: {start: 夕方の魔女邸の居間。テーブルで水晶玉をのぞくメタリカ、丸窓から空を見ているルッキーニィ、ソファで寝ているビスコ、控えるアルレッキーノ, do: ルッキーニィが振り向いて手を挙げ、星読みで占わせてほしいと申し出る。メタリカが振り向く, end: 向き合うメタリカとルッキーニィ}
+    camera: 居間の南東の高い所から、部屋全体（ゆっくり寄る）
+    kind: M
+  A14-004:
+    frame: 全身（煽り）
+    lighting: house_dusk
+    only: [metallica, luckiny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [202.35, 200.95], face: 140, pose: gesture}
+        - {t: 0.8, at: lk_window, face: 0, pose: walk}
+        - {t: 1.2, at: lk_window, face: 0, pose: look_up}
+        - {t: 3.4, at: lk_window, face: 0, pose: arms_up}
+        - {t: 5.6, at: lk_window, face: 0, pose: arms_up}
+        - {t: 6.0, at: lk_window, face: 20, pose: point}
+        - {t: 9.5, at: lk_window, face: 20, pose: point}
+      metallica:
+        - {t: 0.0, at: m_house, face: 310, pose: cross}
+        - {t: 6.4, at: m_house, face: 310, pose: cross}
+        - {t: 7.0, at: m_house, face: 90, pose: lean}
+        - {t: 9.5, at: m_house, face: 90, pose: lean}
+    cam_keys:
+      - {t: 0.0, cam: [201.65, 202.4, 0.7], look: [202.05, 200.3], look_h: 1.7, lens: 26, frame: 全身（煽り）}
+      - {t: 9.5, cam: [201.7, 202.25, 0.7], look: [202.05, 200.3], look_h: 1.75, lens: 30}
+    bg: living_dusk
+    act: {start: 向き合う二人, do: ルッキーニィが丸窓の前で空を見上げ、両手を広げて星を読み、北を指さす。メタリカは「試してやる」とテーブルの水晶玉へ向き直る, end: 北を指すルッキーニィ（奥にメタリカ）}
+    camera: 丸窓の下の低い所から、窓の空を背にしたルッキーニィを煽る
+    kind: A
+  A14-005:
+    frame: 全身
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_edge, z: 0.0, face: 15, pose: look_up}
+        - {t: 1.2, at: hk_edge, z: 0.0, face: 330, pose: stand}
+        - {t: 2.0, at: hk_edge, z: 0.0, face: 15, pose: stand}
+        - {t: 3.6, at: hk_grass, z: 0.0, face: 10, pose: walk, ease: out}
+        - {t: 4.0, at: hk_grass, z: 0.0, face: 10, pose: crouch}
+        - {t: 8.0, at: hk_grass, z: 0.0, face: 10, pose: crouch}
+    cam_keys:
+      - {t: 0.0, cam: [6.6, 48.8, 0.8], look: hundred-knight, look_h: 0.5, lens: 32, frame: 全身}
+      - {t: 8.0, cam: [6.9, 48.3, 0.8], look: rune0, look_h: 0.3, lens: 36}
+    bg: azb_dead_end
+    act: {start: 足場を見上げる百騎兵, do: 指図にきょろきょろし、北の縁の草むらへ歩いて、しゃがんで草をかき分ける, end: 草むらにしゃがむ百騎兵}
+    camera: 踊り場の西の低い所から、草むらへ歩く百騎兵を追って振る（パン）
+    kind: M
+  A14-006:
+    frame: 寄り（地面すれすれ）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_grass, z: 0.0, face: 10, pose: crouch}
+        - {t: 0.7, at: hk_grass, z: 0.0, face: 10, pose: crouch}
+        - {t: 1.0, at: [10.2, 47.8], z: 0.35, face: 10, pose: jump}
+        - {t: 1.4, at: [10.15, 48.1], z: 0.0, face: 10, pose: stand}
+        - {t: 8.5, at: [10.15, 48.1], z: 0.0, face: 10, pose: look_down}
+    fx:
+      - {kind: light, t: [0.6, 1.6], at: rune0, z: 0.4, energy: 220, color: [140, 230, 255]}
+      - {kind: ring, t: [0.6, 8.5], at: rune0, z: 0.05, r: 1.1, n: 3, color: [140, 230, 255]}
+      - {kind: spark, t: [0.6, 1.4], at: rune0, z: 0.3, color: [170, 240, 255]}
+    cam_keys:
+      - {t: 0.0, cam: [11.7, 45.9, 0.25], look: rune0, look_h: 0.15, lens: 24, frame: 寄り（地面すれすれ）}
+      - {t: 8.5, cam: [11.75, 45.95, 0.45], look: [10.3, 47.2], look_h: 0.4, lens: 26}
+    bg: azb_dead_end
+    act: {start: 草むらにしゃがむ百騎兵, do: 草の下から古の風紋（渦巻きの光る輪）が浮かび上がり、百騎兵はびっくりして跳びのく, end: 光る風紋と、見下ろす百騎兵}
+    camera: 谷の縁の地面すれすれから、浮かび上がる風紋（奥に百騎兵）
+    kind: A
+  A14-007:
+    frame: 寄り（二人）
+    lighting: house_dusk
+    only: [metallica, luckiny]
+    keys:
+      metallica:
+        - {t: 0.0, at: m_house, face: 90, pose: lean}
+        - {t: 0.5, at: m_house, face: 320, pose: walk}
+        - {t: 1.8, at: m_pat, face: 330, pose: walk, ease: out}
+        - {t: 2.1, at: m_pat, face: 330, pose: stroke}
+        - {t: 7.0, at: m_pat, face: 330, pose: stroke}
+      luckiny:
+        - {t: 0.0, at: lk_window, face: 20, pose: point}
+        - {t: 1.0, at: lk_window, face: 150, pose: stand}
+        - {t: 2.4, at: lk_window, face: 150, pose: hop}
+        - {t: 5.0, at: lk_window, face: 150, pose: hop}
+        - {t: 5.4, at: lk_window, face: 150, pose: stand}
+        - {t: 7.0, at: lk_window, face: 150, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [203.7, 199.95, 1.45], look: [202.3, 200.9], look_h: 1.2, lens: 32, frame: 寄り（二人）}
+      - {t: 7.0, cam: [203.6, 200.0, 1.45], look: [202.3, 200.9], look_h: 1.2, lens: 36}
+    bg: living_dusk
+    act: {start: 北を指すルッキーニィ, do: メタリカがテーブルから寄ってきて「お手柄だ」とルッキーニィの頭をなでる。ルッキーニィはうれしくて跳ねる, end: 頭をなでるメタリカと、笑うルッキーニィ}
+    camera: 丸窓の脇（北東）から二人の寄り
+    kind: M
+  A14-008:
+    frame: 全身（煽り）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [10.15, 48.1], z: 0.0, face: 10, pose: look_down}
+        - {t: 0.6, at: [10.15, 48.1], z: 0.0, face: 0, pose: look_up}
+        - {t: 2.6, at: [10.15, 48.1], z: 0.0, face: 0, pose: arms_up}
+        - {t: 8.5, at: [10.15, 48.1], z: 0.0, face: 0, pose: arms_up}
+    fx:
+      - {kind: ring, t: [-3.0, 8.5], at: rune0, z: 0.05, r: 1.1, n: 3, color: [140, 230, 255]}
+      - {kind: light, t: [1.0, 2.6], at: hundred-knight, z: 1.6, energy: 260, color: [255, 220, 140], fade: 1.5}
+      - {kind: spark, t: [2.2, 3.0], at: hundred-knight, z: 1.3, color: [255, 230, 160]}
+    cam_keys:
+      - {t: 0.0, cam: [10.7, 46.0, 0.45], look: hundred-knight, look_h: 1.0, lens: 30, frame: 全身（煽り）}
+      - {t: 8.5, cam: [10.6, 46.1, 0.4], look: hundred-knight, look_h: 1.2, lens: 28}
+    bg: azb_sky
+    act: {start: 風紋を見下ろす百騎兵, do: 頭の上に光が集まって、新しい戦術トーチカ（移動補助用）が現れ、百騎兵が両手で受け取る, end: トーチカを掲げる百騎兵}
+    camera: 谷の縁（北）の低い所から、夕空を背にした百騎兵を煽る
+    kind: A
+  A14-009:
+    frame: 引き（横から追う）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [10.15, 48.1], z: 0.0, face: 0, pose: arms_up}
+        - {t: 0.5, at: rune0, z: 0.0, face: 15, pose: walk}
+        - {t: 0.9, at: rune0, z: 0.0, face: 15, pose: crouch}
+        - {t: 2.8, at: j1, z: 5.0, face: 15, pose: jump, arc: 4.0, ease: linear}
+        - {t: 3.1, at: j1, z: 5.0, face: 45, pose: crouch}
+        - {t: 4.2, at: j1, z: 5.0, face: 45, pose: crouch}
+        - {t: 6.0, at: j2, z: 10.0, face: 45, pose: jump, arc: 4.0, ease: linear}
+        - {t: 6.5, at: j2, z: 10.0, face: 315, pose: crouch}
+    fx:
+      - {kind: ring, t: [-3.0, 6.5], at: rune0, z: 0.05, r: 1.1, n: 3, color: [140, 230, 255]}
+      - {kind: light, t: [0.9, 1.3], at: rune0, z: 0.5, energy: 200, color: [140, 230, 255], fade: 0.6}
+      - {kind: light, t: [4.1, 4.5], at: j1, z: 5.5, energy: 200, color: [140, 230, 255], fade: 0.6}
+    cam_keys:
+      - {t: 0.0, cam: [1.5, 47.0, 3.0], look: hundred-knight, lens: 30, frame: 引き}
+      - {t: 3.0, cam: [3.0, 42.0, 6.5], look: hundred-knight, lens: 30, ease: linear}
+      - {t: 6.5, cam: [7.5, 37.5, 11.5], look: hundred-knight, lens: 30, ease: linear}
+    bg: azb_climb
+    act: {start: トーチカを掲げる百騎兵, do: 風紋に乗ってしゃがむと、光とともに谷の向こうの足場1へ大きく跳ぶ。着地してすぐ、足場2へもう一度跳ぶ, end: 足場2に着地した百騎兵}
+    camera: 西の横から、跳ぶ百騎兵に合わせて上へ追う（クレーン）
+    kind: A
+  A14-010:
+    frame: 全身（下から煽る）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: j2, z: 10.0, face: 315, pose: crouch}
+        - {t: 1.2, at: j2, z: 10.0, face: 315, pose: crouch}
+        - {t: 3.0, at: j3, z: 15.0, face: 315, pose: jump, arc: 3.5, ease: linear}
+        - {t: 3.3, at: j3, z: 15.0, face: 135, pose: crouch}
+        - {t: 4.6, at: j3, z: 15.0, face: 135, pose: crouch}
+        - {t: 6.4, at: j4, z: 19.0, face: 135, pose: jump, arc: 3.5, ease: linear}
+        - {t: 7.0, at: j4, z: 19.0, face: 30, pose: stand}
+    fx:
+      - {kind: light, t: [1.1, 1.5], at: j2, z: 10.5, energy: 200, color: [140, 230, 255], fade: 0.6}
+      - {kind: light, t: [4.5, 4.9], at: j3, z: 15.5, energy: 200, color: [140, 230, 255], fade: 0.6}
+    cam_keys:
+      - {t: 0.0, cam: [17.5, 29.0, 5.5], look: hundred-knight, lens: 22, frame: 全身（下から煽る）}
+      - {t: 7.0, cam: [17.4, 28.8, 5.5], look: hundred-knight, lens: 22}
+    bg: azb_sky
+    act: {start: 足場2の百騎兵, do: 足場3へ、さらに足場4へと風紋で跳び上がっていく, end: 足場4に立つ百騎兵（空を背に）}
+    camera: 足場のあいだの低い所から、空へ跳ぶ百騎兵を大きく煽る（振り上げて追う）
+    kind: A
+  A14-011:
+    frame: 大引き（空撮）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: j4, z: 19.0, face: 30, pose: stand}
+        - {t: 1.2, at: j4, z: 19.0, face: 35, pose: run}
+        - {t: 2.0, at: [21.9, 16.4], z: 19.0, face: 35, pose: crouch}
+        - {t: 5.0, at: p_land, z: 22.0, face: 40, pose: jump, arc: 5.0, ease: linear}
+        - {t: 5.3, at: p_land, z: 22.0, face: 40, pose: crouch}
+        - {t: 6.6, at: p_land, z: 22.0, face: 40, pose: crouch}
+        - {t: 7.2, at: p_land, z: 22.0, face: 40, pose: stand}
+        - {t: 8.5, at: p_land, z: 22.0, face: 40, pose: stand}
+    fx:
+      - {kind: light, t: [1.9, 2.3], at: j4, z: 19.5, energy: 200, color: [140, 230, 255], fade: 0.6}
+    cam_keys:
+      - {t: 0.0, cam: [6.0, 26.0, 32.0], look: [22.0, 15.0], look_h: 19.0, lens: 28, frame: 大引き}
+      - {t: 8.5, cam: [9.0, 24.0, 33.0], look: [27.0, 11.0], look_h: 21.0, lens: 28}
+    bg: azb_climb
+    act: {start: 足場4に立つ百騎兵, do: 助走して最後の大きな跳躍。谷を越えてピラーの峰の縁に着地する, end: 峰の縁に着地した百騎兵}
+    camera: 西の高い空から、尖塔と谷と峰を一望（ゆっくり右へ振る）
+    kind: A
+  A14-012:
+    frame: 全身（横から）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: p_land, z: 22.0, face: 40, pose: stand}
+        - {t: 1.0, at: p_land, z: 22.0, face: 40, pose: walk}
+        - {t: 5.5, at: p_hk, z: 22.0, face: 45, pose: walk, ease: out}
+        - {t: 5.9, at: p_hk, z: 22.0, face: 45, pose: stand}
+        - {t: 8.0, at: p_hk, z: 22.0, face: 45, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [33.6, 14.6, 23.4], look: [27.0, 11.8], look_h: 22.6, lens: 30, frame: 全身（横から）}
+      - {t: 8.0, cam: [33.9, 13.6, 23.4], look: [29.0, 9.6], look_h: 22.9, lens: 30}
+    bg: azb_pillar
+    act: {start: 峰の縁の百騎兵, do: 広場の中央の、咲く前のピラーへ歩いていく, end: ピラーの手前で止まる百騎兵}
+    camera: 南東から横に、ピラーへ歩く百騎兵を追って振る（奥にピラー）
+    kind: M
+  A14-013:
+    frame: 全身（低い）
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      karakuri-doll:
+        - {t: 0.0, at: doll_in, z: 30.0, face: 210, pose: stand}
+        - {t: 1.6, at: doll_in, z: 30.0, face: 210, pose: stand}
+        - {t: 2.2, at: doll_in, z: 22.0, face: 210, pose: stand, ease: in}
+        - {t: 2.5, at: doll_in, z: 22.5, face: 210, pose: stand}
+        - {t: 2.8, at: doll_in, z: 22.0, face: 210, pose: stand}
+        - {t: 4.0, at: doll_in, z: 22.0, face: 210, pose: shake}
+        - {t: 6.5, at: doll_in, z: 22.0, face: 215, pose: shake}
+      hundred-knight:
+        - {t: 0.0, at: p_hk, z: 22.0, face: 45, pose: stand}
+        - {t: 2.2, at: p_hk, z: 22.0, face: 45, pose: stand}
+        - {t: 2.5, at: [28.0, 11.1], z: 22.4, face: 45, pose: jump}
+        - {t: 2.9, at: [27.8, 11.3], z: 22.0, face: 45, pose: ready}
+        - {t: 6.5, at: [27.8, 11.3], z: 22.0, face: 45, pose: ready}
+    fx:
+      - {kind: plume, t: [2.2, 3.4], at: doll_in, z: 22.0, r: 1.4, h: 0.8, shape: fall, color: [170, 140, 100]}
+    shake: [{t: [2.2, 2.9], amp: 1.6}]
+    cam_keys:
+      - {t: 0.0, cam: [26.6, 13.2, 22.4], look: [29.9, 8.6], look_h: 23.6, lens: 26, frame: 全身（低い）}
+      - {t: 6.5, cam: [26.7, 13.1, 22.4], look: karakuri-doll, look_h: 23.0, lens: 28}
+    bg: azb_pillar
+    act: {start: ピラーの手前の百騎兵, do: 地響きとともに、守護者のからくり人形が空から落ちてきて、ピラーの前に立ちはだかる。「わっきゅぱっ」と体をゆする。百騎兵は跳びのいて剣を構える, end: 向き合う人形と百騎兵}
+    camera: 百騎兵の後ろの低い所から、落ちてくる人形を煽る＋揺れ
+    kind: A
+  A14-014:
+    frame: 寄り（人形）
+    only: [karakuri-doll]
+    keys:
+      karakuri-doll:
+        - {t: 0.0, at: doll_in, z: 22.0, face: 215, pose: shake}
+        - {t: 6.0, at: doll_in, z: 22.0, face: 215, pose: shake}
+    cam_keys:
+      - {t: 0.0, cam: [29.0, 10.6, 22.6], look: karakuri-doll, look_h: 23.5, lens: 32, frame: 寄り}
+      - {t: 6.0, cam: [29.15, 10.3, 22.6], look: karakuri-doll, look_h: 23.6, lens: 38}
+    bg: azb_pillar
+    act: {start: からくり人形, do: 骸骨の顔の卵形の人形が、からからと体を揺らす, end: 人形の顔の寄り}
+    camera: 人形の正面の低い所から、ゆっくり寄る
+    kind: M
+  A14-015:
+    frame: 全身（二人・横から）
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [27.8, 11.3], z: 22.0, face: 45, pose: ready}
+        - {t: 6.0, at: [27.8, 11.3], z: 22.0, face: 45, pose: ready}
+      karakuri-doll:
+        - {t: 0.0, at: doll_in, z: 22.0, face: 215, pose: shake}
+        - {t: 6.0, at: doll_in, z: 22.0, face: 220, pose: shake}
+    cam_keys:
+      - {t: 0.0, cam: [33.3, 11.6, 23.0], look: [28.9, 10.0], look_h: 22.8, lens: 30, frame: 全身}
+      - {t: 6.0, cam: [33.1, 11.4, 23.0], look: [28.9, 10.0], look_h: 22.8, lens: 32}
+    bg: azb_pillar
+    act: {start: 向き合う人形と百騎兵, do: にらみ合う。百騎兵は剣を構えたまま間合いをはかる, end: にらみ合う二人}
+    camera: 東の横から二人を並べる（ほとんど止め）
+    kind: M
+  A14-016:
+    frame: 全身（追う）
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      karakuri-doll:
+        - {t: 0.0, at: doll_in, z: 22.0, face: 220, pose: shake}
+        - {t: 0.5, at: doll_in, z: 22.0, face: 220, pose: spin}
+        - {t: 2.2, at: doll_roll, z: 22.0, face: 220, pose: spin, ease: in}
+        - {t: 2.6, at: doll_roll, z: 22.0, face: 40, pose: stand}
+        - {t: 5.5, at: doll_roll, z: 22.0, face: 40, pose: shake}
+      hundred-knight:
+        - {t: 0.0, at: [27.8, 11.3], z: 22.0, face: 45, pose: ready}
+        - {t: 1.0, at: [27.8, 11.3], z: 22.0, face: 45, pose: crouch}
+        - {t: 2.2, at: hk_over, z: 22.0, face: 45, pose: jump, arc: 2.2, ease: linear}
+        - {t: 2.5, at: hk_over, z: 22.0, face: 225, pose: ready}
+        - {t: 5.5, at: hk_over, z: 22.0, face: 225, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [33.6, 15.4, 24.0], look: [28.6, 10.2], look_h: 22.8, lens: 26, frame: 全身}
+      - {t: 5.5, cam: [33.9, 15.0, 24.2], look: [28.8, 10.2], look_h: 22.8, lens: 26}
+    bg: azb_pillar
+    act: {start: にらみ合う二人, do: 人形が猛烈に回転して転がってくる。百騎兵は高く跳んで人形を跳び越え、反対側に着地して振り向く, end: 入れ替わって向き合う二人}
+    camera: 南東のやや高い所から、転がる人形と跳ぶ百騎兵を（広角）
+    kind: A
+  A14-017:
+    frame: 全身（低い）
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      karakuri-doll:
+        - {t: 0.0, at: doll_roll, z: 22.0, face: 40, pose: shake}
+        - {t: 0.6, at: doll_roll, z: 22.0, face: 40, pose: spin}
+        - {t: 2.4, at: [29.7, 9.6], z: 22.0, face: 40, pose: spin, arc: 1.2, ease: linear}
+        - {t: 3.2, at: doll_hit, z: 22.0, face: 40, pose: spin, arc: 0.8, ease: out}
+        - {t: 3.6, at: doll_hit, z: 22.0, face: 40, pose: shake}
+        - {t: 5.5, at: doll_hit, z: 22.0, face: 40, pose: shake}
+      hundred-knight:
+        - {t: 0.0, at: hk_over, z: 22.0, face: 225, pose: ready}
+        - {t: 2.0, at: hk_over, z: 22.0, face: 225, pose: ready}
+        - {t: 2.3, at: [30.4, 8.7], z: 22.0, face: 225, pose: slash}
+        - {t: 3.4, at: [30.4, 8.7], z: 22.0, face: 225, pose: ready}
+        - {t: 5.5, at: [30.4, 8.7], z: 22.0, face: 220, pose: ready}
+    fx:
+      - {kind: spark, t: [2.35, 2.9], at: [29.9, 9.3], z: 22.8, color: [255, 230, 160]}
+    shake: [{t: [2.35, 2.8], amp: 1.2}]
+    cam_keys:
+      - {t: 0.0, cam: [32.6, 6.4, 22.6], look: karakuri-doll, look_h: 23.0, lens: 28, frame: 全身（低い）}
+      - {t: 5.5, cam: [32.5, 6.5, 22.6], look: karakuri-doll, look_h: 23.0, lens: 28}
+    bg: azb_pillar
+    act: {start: 入れ替わって向き合う二人, do: 人形が弾みながら跳びかかってくる。百騎兵が踏み込んで斬りつけ、火花とともに人形を弾き飛ばす, end: 弾き飛ばされてよろめく人形}
+    camera: 百騎兵の後ろ（北東）の低い所から、向かってくる人形を（人形を追って振る）
+    kind: A
+  A14-018:
+    frame: 全身（とどめ）
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [30.4, 8.7], z: 22.0, face: 220, pose: ready}
+        - {t: 0.8, at: [30.4, 8.7], z: 22.0, face: 215, pose: crouch}
+        - {t: 2.3, at: [28.6, 12.8], z: 22.0, face: 215, pose: jump, arc: 3.5, ease: linear}
+        - {t: 2.5, at: [28.6, 12.8], z: 22.0, face: 215, pose: slash}
+        - {t: 3.4, at: [28.6, 12.8], z: 22.0, face: 215, pose: ready}
+        - {t: 6.5, at: [28.6, 12.8], z: 22.0, face: 215, pose: stand}
+      karakuri-doll:
+        - {t: 0.0, at: doll_hit, z: 22.0, face: 40, pose: shake}
+        - {t: 2.4, at: doll_hit, z: 22.0, face: 40, pose: shake}
+        - {t: 2.9, at: [28.1, 13.9], z: 22.0, face: 30, pose: lie}
+        - {t: 6.5, at: [28.1, 13.9], z: 22.0, face: 30, pose: lie}
+    fx:
+      - {kind: spark, t: [2.35, 3.1], at: doll_hit, z: 23.0, color: [255, 230, 160]}
+      - {kind: plume, t: [2.5, 4.5], at: doll_hit, z: 22.0, r: 1.6, h: 1.2, shape: fall, color: [170, 140, 100]}
+    shake: [{t: [2.4, 3.1], amp: 2.0}]
+    cam_keys:
+      - {t: 0.0, cam: [23.2, 9.6, 22.5], look: [29.4, 11.0], look_h: 23.4, lens: 24, frame: 全身}
+      - {t: 2.3, cam: [23.3, 9.7, 22.5], look: [28.9, 12.4], look_h: 23.2, lens: 26}
+      - {t: 6.5, cam: [24.0, 10.2, 22.6], look: [28.4, 13.2], look_h: 22.6, lens: 30}
+    bg: azb_pillar
+    act: {start: よろめく人形, do: 百騎兵が高く跳び上がり、上から剣を振り下ろす。人形は割れて倒れ、砂ぼこりが舞う, end: 倒れた人形と、剣を下ろす百騎兵}
+    camera: 西の低い所から広角で。とどめの瞬間に揺れ、倒れた人形へ寄る
+    kind: A
+  A14-019:
+    frame: 全身（正面）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [28.6, 12.8], z: 22.0, face: 215, pose: stand}
+        - {t: 1.4, at: [28.6, 12.8], z: 22.0, face: 215, pose: stand}
+        - {t: 2.0, at: [28.6, 12.8], z: 22.0, face: 25, pose: stand}
+        - {t: 3.6, at: [28.6, 12.8], z: 22.0, face: 25, pose: run}
+        - {t: 6.0, at: hk_bud, z: 22.0, face: 15, pose: run, ease: out}
+        - {t: 6.4, at: hk_bud, z: 22.0, face: 0, pose: stand}
+        - {t: 7.0, at: hk_bud, z: 22.0, face: 0, pose: arms_up}
+        - {t: 8.0, at: hk_bud, z: 22.0, face: 0, pose: arms_up}
+    cam_keys:
+      - {t: 0.0, cam: [31.0, 4.4, 25.0], look: hundred-knight, lens: 28, frame: 全身}
+      - {t: 8.0, cam: [31.1, 4.3, 24.8], look: hundred-knight, lens: 32}
+    bg: azb_pillar
+    act: {start: 倒れた人形のそばの百騎兵, do: 「急げ！時間がない！」で振り向き、「早くピラーを咲かすんだ！」にピラーへ駆け寄って、両手を当てる, end: ピラーに手を当てる百騎兵}
+    camera: ピラーの裏（北）の高い所から、駆け寄ってくる百騎兵を正面で見下ろす
+    kind: M
+  A14-020:
+    frame: 引き（クレーン）
+    lighting: sunset_mtn
+    only: [hundred-knight, karakuri-doll]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_bud, z: 22.0, face: 0, pose: arms_up}
+        - {t: 1.6, at: hk_bud, z: 22.0, face: 0, pose: arms_up}
+        - {t: 2.6, at: [30.0, 10.2], z: 22.0, face: 0, pose: walk}
+        - {t: 3.0, at: [30.0, 10.2], z: 22.0, face: 0, pose: look_up}
+        - {t: 10.0, at: [30.0, 10.2], z: 22.0, face: 0, pose: look_up}
+      karakuri-doll:
+        - {t: 0.0, at: [28.1, 13.9], z: 22.0, face: 30, pose: lie}
+        - {t: 10.0, at: [28.1, 13.9], z: 22.0, face: 30, pose: lie}
+    fx:
+      - {kind: light, t: [0.4, 2.0], at: bud, z: 24.5, energy: 600, color: [150, 255, 170]}
+      - {kind: bloom, t: [1.0, 4.5], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+      - {kind: pool, t: [2.5, 8.0], at: bud, z: 22.0, r0: 0.8, r: 7.6}
+    cam_keys:
+      - {t: 0.0, cam: [32.6, 12.6, 23.0], look: bud, look_h: 24.0, lens: 28, frame: 引き}
+      - {t: 4.5, cam: [33.5, 13.5, 24.5], look: bud, look_h: 24.0, lens: 26}
+      - {t: 10.0, cam: [40.0, 20.0, 32.0], look: [22.0, 6.0], look_h: 22.0, lens: 24}
+    bg: azb_swamp
+    act: {start: ピラーに手を当てる百騎兵, do: ピラーが光って花のように開き、碧の沼が峰の上に広がる。西の地平線に沈みかけの夕日。「陽はまだ落ちていない！」, end: 沼に変わった峰と夕日}
+    camera: 南東の低い所から咲くピラーを煽り、上へ引いて峰と夕日を一望（クレーン）
+    kind: A

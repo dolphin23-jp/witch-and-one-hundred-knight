@@ -1,0 +1,36 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-015
+scene: A13
+tc: 162.6
+sec: 15.2
+kind: M
+shot: 全身（後ろ姿）・崖の切れ目の村と夕日（逆光）
+acting: 振り返って崖の切れ目の向こうの村を見やり、頭をかいて笑う。追放された訳を明るく話す。メタリカは黙って見ている
+dialogue:
+- L370「母さんには愛想つかされ、村からも追放されちゃいました……。えへへ。」
+- L371「まあ、村から追放されたのは不注意で、砂食みを村に近づけちゃったからなんですけど……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 75.6
+  - 40.0
+  - 0.6
+  look:
+  - 67.0
+  - 33.0
+  lens: 40
+  move: 二人の後ろ（東）の低い所から、崖の切れ目と夕日の方へ。逆光の影絵。ゆっくり寄る
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカを見るルッキーニィ
+  end: 村の方を見たままのルッキーニィ
+timing:
+  lead: 0.6

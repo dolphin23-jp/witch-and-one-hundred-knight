@@ -40,6 +40,8 @@ import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 NAMES = {"metallica": "メタリカ", "bisco": "ビスコ", "arlecchino": "アルレッキーノ", "luckiny": "ルッキーニィ", "tito": "ティト",
+         "karakuri-doll": "からくり人形", "purple-peel": "パープルピール", "lily": "リリー", "rabi": "ラヴィ", "usamaru": "ウサマール",
+         "teressa": "テレッサ", "berda": "ベルダ", "apprentice": "見習い魔女", "witches": "魔女たち", "witch-voice": "魔女の声",
          "villager-a": "怯えきった獣人", "villager-b": "蒼白な獣人", "villager-c": "冷淡な獣人", "villager-d": "恐慌状態の獣人"}
 
 HOP = 0.01          # 音量を測る間隔（秒）
@@ -85,7 +87,11 @@ def transcribe(vocals, dst, model_name):
         return json.loads(dst.read_text(encoding="utf-8"))
     from faster_whisper import WhisperModel
     m = WhisperModel(model_name, device="cpu", compute_type="int8")
-    segs, _ = m.transcribe(str(vocals), language="ja", word_timestamps=True, beam_size=5,
+    # 音声は ffmpeg で 16kHz・モノラルの数列にして渡す（faster-whisper が読み込みに使う PyAV は、版によって読めないことがある）
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(vocals), "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+                         capture_output=True, check=True).stdout
+    audio = np.frombuffer(raw, dtype=np.float32)
+    segs, _ = m.transcribe(audio, language="ja", word_timestamps=True, beam_size=5,
                            condition_on_previous_text=False)
     res = []
     for s in segs:

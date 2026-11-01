@@ -1,0 +1,101 @@
+# アズ・ブロッケン山の下絵用の配置（D-060・D-062、tools/previs.py と tools/staging.py が読む）。Claude の案（2026-11-01、A14〜A17 用）
+# 見た目の資料: 山の道は refs/az-brocken-path_bg_01（岩の尖塔のあいだを縫う木の板の道、渦巻きの模様の丸い板の踊り場、下に広がる砂漠）、
+#   山頂は refs/az-brocken-summit_bg_01（崖の上の丸い広場、渦巻きの丸い石の敷き、黄色い枯れ草、中央に黒い丸太を積んだ塔と白い面、木の柵）。
+#   背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）。構図はカメラから見た略図と下絵に従う。
+# 座標: x は西 → 東、y は北 → 南（m）。方位: 北 0・東 90・南 180・西 270。高さ z は m（上が +）。
+#   下の砂漠（地面）は z −60。足場（ledge）は岩の柱の上の丸い板で、上面の高さが h。人物は足場の上でキーの z に h を書く（ground_z には入れない）。
+# 場所（南から北へ登る。西に日が沈む）:
+#   行き止まり（ledge_end、z 0）: 南から来た板の道が、谷に突き当たって終わる丸い踊り場。北の縁に草むら（古の風紋が隠れている）。
+#   風紋で跳ぶ足場（ledge_j1〜j4、z 5〜19）: 谷の向こうに、ジグザグに高くなる小さな足場。それぞれに風紋（rune）。
+#   ピラーの峰（ledge_pillar、z 22、半径 8）: 丸い広場。中央に咲く前のピラー（bud）。守護者のからくり人形と戦う。A15 で沼に変わる。
+#   山頂の峰（ledge_summit、z 26、半径 11）: 東の隣の峰（谷をはさんで約 30m）。中央に木の像（effigy）、そばに樽（A16）。夜会の広場（A16・A17）。
+# 魔女邸の居間（A14 の 003・004・007、ルッキーニィの星読み）は layout_extra で world/witch-house-3d-layout.yaml を x +200、y +200 に置く。
+id: az-brocken
+size: {w: 90.0, d: 66.0}
+compass: 北 0、東 90、南 180、西 270（南から北へ登る。山頂の峰は東。日は西に沈む）
+time: 黄昏の前〜夜（lighting で選ぶ）
+ground: {color: [205, 160, 100], ja: 下の砂漠, z: -60.0}
+sky: {color: [225, 170, 125]}
+sun: {from: 262, elev: 12}
+light_en: "Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze."
+
+lighting:
+  late_mtn:   {sun_from: 262, sun_elev: 12, sun_energy: 3.2, sun_color: [255, 190, 130], sky: [220, 165, 120], sky_strength: 1.0, lamps: 0.3}   # 黄昏の前（A14）
+  sunset_mtn: {sun_from: 263, sun_elev: 3, sun_energy: 2.6, sun_color: [255, 140, 90], sky: [205, 125, 105], sky_strength: 0.9, lamps: 0.6}    # 日が沈む（A14 の終わり〜A15）
+  dusk_mtn:   {sun_from: 265, sun_elev: 0.5, sun_energy: 1.3, sun_color: [255, 120, 95], sky: [125, 92, 125], sky_strength: 0.8, lamps: 1.0}  # 黄昏（A16）
+  night_mtn:  {sun_from: 95, sun_elev: 30, sun_energy: 0.7, sun_color: [160, 180, 255], sky: [32, 40, 88], sky_strength: 0.8, lamps: 1.4}    # 夜（月明かり、A16 の終わり〜A17）
+  house_dusk: {sun_from: 265, sun_elev: 6, sun_energy: 1.6, sun_color: [255, 160, 110], sky: [150, 110, 100], sky_strength: 0.5, lamps: 1.1,
+               fill: {at: [204.0, 203.5], z: 3.8, energy: 380, color: [255, 210, 170]}}   # 魔女邸の居間の夕方（A14 の星読み）
+
+horizon:
+  - {from: 0, to: 360, ja: 岩の尖塔と砂漠, en: "jagged rock spires with wooden walkways, the vast desert far below stretching to the horizon"}
+
+props:
+  # --- 行き止まり（z 0） ---
+  plank_in:     {from: [10.0, 64.0], to: [10.0, 54.4], z: -0.15, h: 0.15, t: 1.6, ja: 南から来る板の道}
+  ledge_end:    {at: [10.0, 50.0], r: 4.5, h: 0.0, z0: -60.0, ja: 行き止まりの丸い踊り場}
+  bush_grass:   {at: [10.4, 46.4], r: 0.8, h: 0.55, color: [170, 150, 70], ja: 北の縁の草むら（古の風紋が隠れている）}
+  bush_end_1:   {at: [6.4, 51.5], r: 0.6, h: 0.4, color: [160, 140, 60], ja: 枯れ草}
+  # --- 風紋で跳ぶ足場（ジグザグに北へ高くなる） ---
+  ledge_j1:     {at: [12.5, 40.0], r: 2.2, h: 5.0, z0: -60.0, ja: 足場1}
+  rune_j1:      {at: [12.5, 40.0], z: 5.0, r: 0.8, ja: 足場1の風紋}
+  ledge_j2:     {at: [20.0, 33.0], r: 2.2, h: 10.0, z0: -60.0, ja: 足場2}
+  rune_j2:      {at: [20.0, 33.0], z: 10.0, r: 0.8, ja: 足場2の風紋}
+  ledge_j3:     {at: [14.0, 25.0], r: 2.4, h: 15.0, z0: -60.0, ja: 足場3}
+  rune_j3:      {at: [14.0, 25.0], z: 15.0, r: 0.8, ja: 足場3の風紋}
+  ledge_j4:     {at: [21.0, 17.5], r: 2.0, h: 19.0, z0: -60.0, ja: 足場4}
+  rune_j4:      {at: [21.0, 17.5], z: 19.0, r: 0.8, ja: 足場4の風紋}
+  # --- ピラーの峰（z 22） ---
+  ledge_pillar: {at: [30.0, 8.0], r: 8.0, h: 22.0, z0: -60.0, ja: ピラーの峰の丸い広場}
+  bud_pillar:   {at: [30.0, 6.5], z: 22.0, h: 2.6, ja: 咲く前のピラー・オブ・テンペランス}
+  bush_p1:      {at: [24.5, 4.0], r: 0.7, h: 0.45, z: 22.0, color: [170, 150, 70], ja: 枯れ草}
+  bush_p2:      {at: [35.5, 11.5], r: 0.8, h: 0.5, z: 22.0, color: [170, 150, 70], ja: 枯れ草}
+  # --- 山頂の峰（東の隣、z 26） ---
+  ledge_summit: {at: [62.0, 2.0], r: 11.0, h: 26.0, z0: -60.0, top: [160, 125, 85], ja: 山頂の丸い広場（夜会の場所）}
+  effigy_s:     {at: [62.0, -1.0], z: 26.0, h: 4.2, r: 1.3, ja: 中央の木の像（黒い丸太の塔と白い面）}
+  # --- まわりの岩の尖塔（景色。z0 は下の砂漠） ---
+  peak_sp1:     {at: [-2.0, 38.0], r: 7.0, h: 82.0, z0: -60.0, top: 0.12, color: [150, 112, 80], ja: 尖塔}
+  peak_sp2:     {at: [25.0, 46.0], r: 6.0, h: 70.0, z0: -60.0, top: 0.12, color: [140, 105, 78], ja: 尖塔}
+  peak_sp3:     {at: [3.0, 20.0], r: 8.0, h: 95.0, z0: -60.0, top: 0.1, color: [150, 112, 80], ja: 尖塔}
+  peak_sp4:     {at: [42.0, 26.0], r: 7.0, h: 80.0, z0: -60.0, top: 0.12, color: [140, 105, 78], ja: 尖塔}
+  peak_sp5:     {at: [46.0, -14.0], r: 9.0, h: 102.0, z0: -60.0, top: 0.1, color: [150, 112, 80], ja: 尖塔（二つの峰の間の北）}
+  peak_sp6:     {at: [80.0, 18.0], r: 8.0, h: 92.0, z0: -60.0, top: 0.1, color: [140, 105, 78], ja: 尖塔}
+  peak_sp7:     {at: [78.0, -24.0], r: 10.0, h: 112.0, z0: -60.0, top: 0.1, color: [150, 112, 80], ja: 尖塔}
+  peak_far1:    {at: [-260.0, -380.0], r: 140.0, h: 120.0, z0: -60.0, color: [175, 140, 120], ja: 遠くの山並み（北西）}
+  peak_far2:    {at: [320.0, -420.0], r: 160.0, h: 110.0, z0: -60.0, color: [170, 135, 125], ja: 遠くの山並み（北東）}
+  moon_m:       {at: [520.0, 10.0], z: 70.0, r: 22.0, color: [246, 244, 236], emit: 2.2, ja: 白夜月（東の空）}
+  sun_late:     {at: [-520.0, 25.0], z: 110.0, r: 20.0, color: [255, 215, 150], emit: 3.0, only_lit: [late_mtn], ja: 西の太陽（黄昏の前）}
+  sun_set:      {at: [-520.0, 25.0], z: 26.0, r: 22.0, color: [255, 150, 80], emit: 3.0, only_lit: [sunset_mtn], ja: 沈みかけの太陽}
+  # --- 魔女邸の居間の床（layout_extra の居間は地面を持たないので、ここで下に床を張る） ---
+  # （居間の部屋 room_living が床と壁と屋根を作る。下の砂漠は z −60 なので、窓の外は空）
+
+areas: []
+
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand)"}
+  metallica:      {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  luckiny:        {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff)"}
+  bisco:          {ja: ビスコ, eye: 1.45, h: 1.55, en: "Bisco (a dog-eared knight girl, as in her reference sheet)"}
+  arlecchino:     {ja: アルレッキーノ, eye: 1.75, h: 1.9, en: "Arlecchino (the tall puppet butler, as in his reference sheet)"}
+  karakuri-doll:  {ja: 守護者のからくり人形, eye: 1.5, h: 1.8, en: "the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet"}
+  purple-peel:    {ja: パープルピール（砂塵の魔女）, eye: 1.65, h: 1.75, en: "Purple Peel, the dust witch, as in her reference sheet"}
+  lily:           {ja: リリー（薄氷の魔女）, eye: 1.55, h: 1.65, en: "Lily (Liliane), the thin-ice witch, as in her reference sheet"}
+  rabi:           {ja: ラヴィ（焔の魔女）, eye: 1.4, h: 1.5, en: "Rabi (Rabil Lalla La), the flame witch, as in her reference sheet"}
+  usamaru:        {ja: ウサギ人形（ウサマール）, eye: 0.55, h: 0.65, en: "Usamaru, Rabi's floating rabbit doll, as in its reference sheet"}
+  teressa:        {ja: テレッサ（魔女見習い）, eye: 1.4, h: 1.5, en: "Teressa, the apprentice witch, as in her reference sheet"}
+  berda:          {ja: ベルダ（灰汁の魔女）, eye: 1.55, h: 1.65, en: "Berda, the lye witch, as in her reference sheet"}
+  apprentice-a:   {ja: 見習い魔女A, eye: 1.0, h: 1.1, en: "a little apprentice witch girl in a small pointed hat"}
+  apprentice-b:   {ja: 見習い魔女B, eye: 1.0, h: 1.1, en: "a little apprentice witch girl in a small pointed hat"}
+  apprentice-c:   {ja: 見習い魔女C, eye: 0.95, h: 1.05, en: "a little apprentice witch girl in a small pointed hat"}
+  apprentice-d:   {ja: 見習い魔女D, eye: 1.0, h: 1.1, en: "a little apprentice witch girl in a small pointed hat"}
+
+views:
+  azb_dead_end:  {ja: 山道の行き止まり, panel: 山道, en: "a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends at the edge of a deep gorge, jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light"}
+  azb_gorge:     {ja: 谷の向こうの足場, panel: 山道, en: "across a deep gorge, small round wooden landings on top of tall rock spires rising in a zigzag toward a higher peak, warm late-afternoon light, the desert far below"}
+  azb_climb:     {ja: 風紋の足場と尖塔, panel: 山道, en: "small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long shadows"}
+  azb_pillar:    {ja: ピラーの峰の広場, panel: 山頂, en: "a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange"}
+  azb_swamp:     {ja: 沼に変わったピラーの峰, panel: 山頂, en: "the round mountain-top plateau now flooded by a glowing teal-green poisonous swamp around a huge blooming pale-green flower pillar, misty fumes, the sunset sky"}
+  azb_summit:    {ja: 山頂の広場, panel: 山頂, en: "a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky"}
+  azb_summit_night: {ja: 夜の山頂の広場, panel: 山頂, en: "the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks in the center, golden dry grass silvered by moonlight"}
+  azb_sky:       {ja: 二つの峰のあいだの空, panel: 山道, en: "the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep shadow"}
+  living_dusk:   {ja: 魔女邸の居間（夕方）, panel: 居間 正面, en: "the witch's living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with the first stars"}

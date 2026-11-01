@@ -1,0 +1,36 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-021
+scene: A13
+tc: 231.3
+sec: 11.0
+kind: M
+shot: 全身・二人（南から）
+acting: メタリカが振り向いて「お前何て名前だっけ？」。ルッキーニィはずっこけかけ、慌ててお辞儀して名乗る
+dialogue:
+- L380「……ん？……そういえば、お前何て名前だっけ？」
+- L381「ラ、ラナ・ニア・ルッキーニィです！ルッキーニィと呼んでください！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 73.4
+  - 41.9
+  - 2.6
+  look:
+  - 72.0
+  - 39.1
+  lens: 35
+  move: 南東の高い所から二人を見下ろす（ほとんど止め）
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 月を見上げるルッキーニィ
+  end: 自分を示して名乗るルッキーニィ
+timing:
+  lead: 0.5

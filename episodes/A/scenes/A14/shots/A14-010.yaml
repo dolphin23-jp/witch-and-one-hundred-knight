@@ -1,0 +1,32 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-010
+scene: A14
+tc: 76.0
+sec: 7.0
+kind: A
+shot: 全身（下から煽る）・足場を跳び上がる百騎兵
+acting: 足場3へ、さらに足場4へと風紋で跳び上がっていく
+dialogue:
+- L403（通信）「キヒヒ！ピラーの気配がするぞ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 17.5
+  - 29.0
+  - 5.5
+  look: hundred-knight
+  lens: 22
+  move: 足場のあいだの低い所から、空へ跳ぶ百騎兵を大きく煽る（振り上げて追う）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 足場2の百騎兵
+  end: 足場4に立つ百騎兵（空を背に）
+timing:
+  lead: 1.0

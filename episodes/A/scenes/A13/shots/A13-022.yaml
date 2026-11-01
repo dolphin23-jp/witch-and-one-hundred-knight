@@ -1,0 +1,38 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-022
+scene: A13
+tc: 242.3
+sec: 18.5
+kind: A
+shot: 全身（低い）・三人・走り出す百騎兵
+acting: メタリカがルッキーニィに「ここで待て」、百騎兵に「先に山へ」と指図し、「キリキリ進め！！」。百騎兵は北東へ駆け出し、カメラの脇を走り抜ける
+dialogue:
+- L382「いいだろう！では、ルッキーニィはここでワタシが来るのを待て。」
+- L383「百騎兵、お前は先にこの砂漠から、アズ・ブロッケン山におもむき、ピラーを咲かせておけ。」
+- L384「もう、黄昏までさほど時間はないぞ！キリキリ進め！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 76.3
+  - 37.0
+  - 0.9
+  look:
+  - 72.7
+  - 39.4
+  lens: 30
+  move: 北東の低い所から三人。最後に走り抜ける百騎兵を追って振る
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 名乗ったルッキーニィ
+  end: 走り去る百騎兵と、見送る二人
+timing:
+  lead: 0.5

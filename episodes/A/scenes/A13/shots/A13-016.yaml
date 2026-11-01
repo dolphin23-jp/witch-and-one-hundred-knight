@@ -1,0 +1,32 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-016
+scene: A13
+tc: 177.8
+sec: 12.0
+kind: M
+shot: 寄り（顔）・ルッキーニィ（奥に白い月）
+acting: 「もう、思い残すことはありません」。笑顔のまま、最後に少しうつむく
+dialogue:
+- L372「村は次の砂食みを恐れて完全に外界とのつながりを絶つようです。……もう、思い残すことはありません。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 70.95
+  - 39.65
+  - 1.25
+  look: luckiny
+  lens: 55
+  move: 村の側（西）から、ルッキーニィの顔の寄り。奥は砂丘と、東の空に昇る白い月
+background: tettara-desert
+image: null
+refs:
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 村を見るルッキーニィの顔
+  end: うつむくルッキーニィ（奥の空に白い月）
+timing:
+  lead: 0.6

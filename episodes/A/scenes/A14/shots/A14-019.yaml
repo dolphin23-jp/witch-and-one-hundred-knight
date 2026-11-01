@@ -1,0 +1,33 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-019
+scene: A14
+tc: 135.7
+sec: 8.0
+kind: M
+shot: 全身（正面）・ピラーへ駆け寄る百騎兵
+acting: 「急げ！時間がない！」で振り向き、「早くピラーを咲かすんだ！」にピラーへ駆け寄って、両手を当てる
+dialogue:
+- L419（通信）「急げ百騎兵！時間がない！」
+- L420「よし！早くピラーを咲かすんだ！早くっ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.0
+  - 4.4
+  - 25.0
+  look: hundred-knight
+  lens: 28
+  move: ピラーの裏（北）の高い所から、駆け寄ってくる百騎兵を正面で見下ろす
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 倒れた人形のそばの百騎兵
+  end: ピラーに手を当てる百騎兵
+timing:
+  lead: 0.4

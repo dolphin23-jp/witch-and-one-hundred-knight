@@ -1,0 +1,35 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-023
+scene: A13
+tc: 260.8
+sec: 12.0
+kind: A
+shot: 引き（クレーン）・見送るルッキーニィ、遠くの山と月
+acting: 一人残ったルッキーニィが両手を握り「ボクが魔女様の弟子に……！」。小さくなっていく百騎兵の先に、地平線の山と白い月。日が沈みかける
+dialogue:
+- L385「ボクが魔女様の弟子に……！憧れの、魔女に……！」
+sound: null
+notes: 一人になってからのつぶやき
+camera:
+  pos:
+  - 71.1
+  - 40.2
+  - 1.2
+  look:
+  - 76.0
+  - 34.0
+  lens: 35
+  move: ルッキーニィの後ろ（南西）から、上へ引いていく（クレーン）
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 見送るルッキーニィの後ろ姿
+  end: 砂漠の縁の小さなルッキーニィ、遠くの山と月
+timing:
+  lead: 4.0

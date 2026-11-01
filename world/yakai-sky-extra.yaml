@@ -1,0 +1,21 @@
+# 夜会編 回2（A13〜A17）の空に足すもの（tools/staging.py の layout_extra で、場面の配置に重ねる）。Claude の案（2026-11-01）
+# 白夜月（満月。夕方に東から昇る）と、遠くのアズ・ブロッケン山（二つの峰。北東の地平線）。
+# 座標はテッタラ村の配置（world/beast-village-layout.yaml、x 東、y 南、m）に合わせた。月と山はとても遠くに置く（カメラの見える距離は 1000m まで）。
+# 月の高さ: 村の東の外れ（x 73、y 40）から見て、地平線から約 7°。山: 北東（方位 約 43°）、高さ 約 11°
+id: yakai-sky-extra
+size: {w: 130.0, d: 60.0}
+props:
+  moon_white: {at: [430.0, 38.0], z: 45.0, r: 16.0, color: [246, 244, 236], emit: 2.2, ja: 白夜月（満月）}
+  peak_azb:   {at: [420.0, -330.0], r: 95.0, h: 105.0, color: [150, 118, 120], ja: アズ・ブロッケン山（ピラーの峰）}
+  peak_azb2:  {at: [475.0, -300.0], r: 70.0, h: 90.0, color: [140, 110, 118], ja: アズ・ブロッケン山（山頂の峰）}
+lighting:
+  late:  {sun_from: 262, sun_elev: 13, sun_energy: 3.2, sun_color: [255, 190, 130], sky: [225, 170, 125], sky_strength: 1.0, lamps: 0.4}   # 黄昏の前（A13）
+  dusk2: {sun_from: 264, sun_elev: 4, sun_energy: 2.2, sun_color: [255, 150, 95], sky: [200, 130, 110], sky_strength: 0.9, lamps: 0.9}   # 日が沈むころ（A13 の終わり）
+views:   # 背景の文（静止画の段階で使う）。A13 テッタラの村の外の砂漠の縁
+  tettara_edge:        {ja: 村の外の砂漠の縁（黄昏の前）, panel: 村 一角, en: "the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden sunlight with long shadows"}
+  tettara_village_gap: {ja: 崖の切れ目と村（夕日の逆光）, panel: 村 全景, en: "looking west through a narrow gap in the red rock cliffs at the small hidden village of wooden houses with red tiled roofs, the low sun setting behind the cliffs, warm backlight, long shadows on the sand"}
+  tettara_dunes:       {ja: 東の砂丘（黄昏の前）, panel: 村 俯瞰, en: "rolling golden sand dunes stretching east under a warm late-afternoon sky, long shadows in the hollows"}
+  tettara_dunes_moon:  {ja: 東の砂丘と白い月, panel: 村 俯瞰, en: "rolling sand dunes stretching east under a fading orange-to-lilac sky, a large pale white full moon low above the horizon"}
+  tettara_sky:         {ja: 夕方の空, panel: 村 俯瞰, en: "a wide late-afternoon sky over the desert, warm orange near the horizon fading to soft lilac, a few thin clouds"}
+  tettara_mountain:    {ja: 北東の地平線の山, panel: 村 俯瞰, en: "the desert stretching to the north-east horizon, where a tall rocky mountain with two peaks rises far away in the haze, warm late-afternoon light"}
+  tettara_moon:        {ja: 東の空の白夜月, panel: 村 俯瞰, en: "a large pale white full moon rising low in the eastern sky above the desert dunes, the sky still bright with the warm colors of late afternoon"}
