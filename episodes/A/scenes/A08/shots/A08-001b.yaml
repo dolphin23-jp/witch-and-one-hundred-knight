@@ -1,0 +1,53 @@
+# A08 ピラーと弟子入り（前半、地下空洞）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# {'kind': 'M＝小さな動き、A＝見せ場。メタリカはここで初めて砂漠編の画に出る（沼から転移）'}
+id: A08-001b
+scene: A08
+tc: 4.4
+sec: 2.8
+kind: A
+shot: 全身・百騎兵・ピラー（横から）
+acting: 百騎兵が一瞬溜めて跳び、ピラーに斬りつける。火花とひびの光（新しいカット（2026-11-01 の見直し））
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 21.0
+  - 27.3
+  - 0.8
+  look:
+  - 24.2
+  - 22.4
+  lens: 26
+  move: 横（南西）の低い所から。斬りつける瞬間にぐっと寄って画面を傾ける
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 光るピラーの前で剣を構える百騎兵（横から）
+  end: 着地して構える百騎兵と、ひびの光が走るピラー
+timing:
+  lead: 0.3
+blocking:
+  start: 百（中央・横顔（画面左向き））
+  end: 百（中央・横顔（画面左向き））
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its sword ready in front of the tall glowing crystal Pillar, seen
+    from the side, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+    glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the
+    sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), landed after slashing the Pillar, cracks of light running up the crystal,
+    in the center of the frame, in profile, turned toward screen left. No other people. Where the sword struck, bright cracks of blue-white light run up the crystal Pillar. Behind: the huge underground
+    cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+    column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A08/gen/sketch/A08-001b_start.png
+  - episodes/A/scenes/A08/gen/sketch/A08-001b_end.png

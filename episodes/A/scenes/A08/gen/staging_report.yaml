@@ -1,38 +1,174 @@
 cuts:
   A08-001:
     cam:
-    - 28.3
-    - 27.25
+    - 35.6
+    - 37.8
     - 1.0
     lens: 24
-    bearing: 320
-    frame: 全身
+    bearing: 327
+    frame: 引き
     start:
-      people: []
+      people:
+      - who: hundred-knight
+        s: 0.04
+        dist: 3.5
+        side: 中央
+        body: 背中
       bg: 地下空洞の全景〔空洞 全景〕
       props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
       - 岩の柱（北西）
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      - 光る苔
       - 天井からの砂の滝
+      - 岩（A08 でルッキーニィが陰からのぞく）
       - ピラー（魔法の柱。A07 の終わりに光り始める）
-      staging: 'No people in frame. The tall crystal Pillar opens like a flower, its glowing petals spreading outward. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing in front of the fallen monster, seen from behind, turning
+        toward the glowing Pillar far away, in the center of the frame, with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
         in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight
         from the hole in the ceiling, glowing green moss on the rock walls.'
     end:
-      people: []
-      staging: 'No people in frame. A glossy dark purple swamp spreads across the sandy cavern floor from the base of the open Pillar. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
-        round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white,
-        a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls.'
+      people:
+      - who: hundred-knight
+        s: 0.03
+        dist: 7.76
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), running across the sand toward the tall glowing crystal Pillar, seen
+        from behind, in the center of the frame, with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from the hole
+        in the ceiling, glowing green moss on the rock walls.'
+    move:
+      hundred-knight:
+        to: strike
+        face: 315
+        via:
+        - - 33.8
+          - 34.8
+        - - 33.5
+          - 34.4
+        t:
+        - 0.0
+        - 4.4
+    note: null
+  A08-001b:
+    cam:
+    - 21.0
+    - 27.3
+    - 0.8
+    lens: 26
+    bearing: 33
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.25
+        dist: 5.79
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      - 天井からの砂の滝
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its sword ready in front of the tall glowing crystal Pillar,
+        seen from the side, on the right of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in
+        the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.12
+        dist: 5.82
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), landed after slashing the Pillar, cracks of light running up the crystal,
+        in the center of the frame, in profile, turned toward screen left. No other people. Where the sword struck, bright cracks of blue-white light run up the crystal Pillar. Behind: the huge underground
+        cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale
+        blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 24.6
+        - 22.6
+        via:
+        - strike
+        - strike
+        - - 24.6
+          - 22.6
+        - - 24.5
+          - 22.5
+        - - 24.6
+          - 22.6
+        t:
+        - 0.0
+        - 2.8
+    note: null
+  A08-001c:
+    cam:
+    - 31.0
+    - 29.2
+    - 0.6
+    lens: 26
+    bearing: 316
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 9.19
+        side: 中央
+        body: 背中
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（北西）
+      - 光る苔
+      - 天井からの砂の滝
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in front of the cracking crystal Pillar, in the center of the frame,
+        with the back to the camera, small in the background. No other people. The tall crystal Pillar opens like a flower, its glowing petals spreading outward and spraying glowing blue-green mana. Behind:
+        the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground
+        cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling,
+        deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.18
+        dist: 5.76
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing back, looking up at the opened Pillar, the teal swamp spreading
+        around, in the center of the frame, with the back to the camera. No other people. A glossy, faintly glowing blue-green (teal) swamp of mana spreads across the whole sandy cavern floor from the base
+        of the open Pillar. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
+        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
+        sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
         to: hk_a
         face: 305
         via:
-        - - 36.0
-          - 33.0
+        - - 24.6
+          - 22.6
+        - hop1
+        - hop1
+        - hop1
+        - hk_a
+        - hk_a
         - hk_a
         t:
         - 0.0
-        - 7.0
+        - 5.6
     note: null
   A08-002:
     cam:
@@ -55,10 +191,10 @@ cuts:
       - 天井からの砂の滝
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
-        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), rising up out of the purple swamp, appearing by magic,
-        in the center of the frame, facing the camera. No other people. The surface of the purple swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern: a sandy floor,
-        massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight
-        falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), rising up out of the blue-green swamp, appearing by
+        magic, in the center of the frame, facing the camera. No other people. The surface of the blue-green swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern: a sandy
+        floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of
+        moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: metallica
@@ -68,9 +204,9 @@ cuts:
         body: 正面
       staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
         in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing tall on the swamp with hands on her hips,
-        grinning, in the center of the frame, facing the camera. No other people. The surface of the purple swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern: a sandy
-        floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of
-        moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        grinning, in the center of the frame, facing the camera. No other people. The surface of the blue-green swamp bulges and ripples as someone rises out of it. Behind: the huge underground cavern:
+        a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+        column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       metallica:
         to: rise
@@ -126,9 +262,10 @@ cuts:
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind, spreading
         her arms wide over the swamp, delighted, on the left of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold
         crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), walking up beside
-        her, in the center of the frame, facing the camera. No other people. A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying in it. Behind: the huge underground
-        cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale
-        blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        her, in the center of the frame, facing the camera. No other people. A vast glossy blue-green (teal) poison swamp now covers the whole cavern floor, the fallen sand-eater lying in it. Behind: the
+        huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern
+        at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep
+        shadows.'
     end:
       people:
       - who: metallica
@@ -145,10 +282,10 @@ cuts:
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), seen from behind, hands on
         her hips, admiring the swamp, on the left of the frame, seen from behind at an angle, turned toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue
         helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword),
-        standing beside her, looking up at her, in the center of the frame, facing the camera. No other people. A vast glossy purple swamp now covers the whole cavern floor, the fallen sand-eater lying
-        in it. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge
-        underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from
-        the ceiling, deep shadows.'
+        standing beside her, looking up at her, in the center of the frame, facing the camera. No other people. A vast glossy blue-green (teal) poison swamp now covers the whole cavern floor, the fallen
+        sand-eater lying in it. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
+        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
+        sand falling from the ceiling, deep shadows.'
     move:
       metallica:
         to: rise
@@ -239,9 +376,9 @@ cuts:
       - 光る苔
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
         legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing behind the rock, staring in awe, seen from the side, in the center of the frame, in profile, turned
-        toward screen right. No other people. A faint purple miasma drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the
-        walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
-        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        toward screen right. No other people. A faint miasma haze drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+        glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto
+        the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: luckiny
@@ -251,9 +388,9 @@ cuts:
         body: 横顔（画面右向き）
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
         legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), grimacing and covering her mouth with one hand against the foul air, seen from the side, in the center of
-        the frame, in profile, turned toward screen right. No other people. A faint purple miasma drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock
-        pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling
-        from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        the frame, in profile, turned toward screen right. No other people. A faint miasma haze drifts through the air from the swamp. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
+        round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
+        hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       luckiny:
         to: peek

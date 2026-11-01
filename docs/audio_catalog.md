@@ -122,6 +122,8 @@
 | E39 | 小石が落ちる | CC0（oga 80-cc0-rpg-sfx） |
 | E40 | 魔法のきらめき | CC0（oga 80-cc0-rpg-sfx） |
 | E41 | 結晶が鳴る | CC0（oga 80-cc0-rpg-sfx） |
+| E42 | 沼がぼこぼこ泡立つ | 自作 |
+| E43 | 魔法がはじける | CC0（oga 80-cc0-rpg-sfx） |
 
 E23〜E41 は A07 の戦いのために足した（2026-11-01）。sound.yaml の `rate`（生き物の声を低く遅く）と `echo: cave`（地下の響き）で使い分ける。
 

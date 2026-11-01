@@ -1,0 +1,36 @@
+# A08 の BGM・効果音の置き場所（D-068、2026-11-01 の見直し）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。地下空洞なので効果音に響き（echo）
+scene: A08
+echo: {from: {cut: A08-001, t: 0.0}, kind: cave}
+bgm:
+  # 原作どおり（docs/audio_catalog.md）: M19 ピラー（パート18 0:00〜0:45）→ M15 短いつなぎ（0:45〜1:03）→ M02 テッタラ砂漠（1:03〜）
+  - {src: audio/bgm/catalog/M19.ogg, cut: A08-001, t: 0.0, until: {cut: A08-005, t: 0.0}, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M15.ogg, cut: A08-005, t: 0.0, until: {cut: A08-006, t: 0.0}, fade_in: 0.5, fade_out: 0.5, volume: 0.28}
+  - {src: audio/bgm/M02_loop.ogg, cut: A08-006, t: 0.0, until: {cut: A08-007, t: 3.0}, loop: true, fade_in: 0.5, fade_out: 0.8, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  - {src: audio/sfx/rumble_low.ogg, cut: A08-001, t: 0.0, until: {cut: A08-007, t: 3.0}, loop: true, fade_in: 0.5, fade_out: 1.0, volume: 0.07, echo: false}   # 空洞の空気
+  # 001b 斬りつける
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A08-001b, t: 0.7, volume: 0.45}
+  - {src: audio/sfx/sword_slash.ogg, cut: A08-001b, t: 1.1, volume: 0.7}
+  - {src: audio/sfx/sword_hit.ogg, cut: A08-001b, t: 1.15, volume: 0.6}
+  - {src: audio/sfx/crystal_chime.ogg, cut: A08-001b, t: 1.2, volume: 0.6}   # 結晶に当たる
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A08-001b, t: 1.5, volume: 0.45}  # ひびの光が走る
+  - {src: audio/sfx/thud_land.ogg, cut: A08-001b, t: 1.3, volume: 0.3}
+  # 001c ピラーが咲いて碧のマナが噴き出す
+  - {src: audio/sfx/rumble_rise.ogg, cut: A08-001c, t: 0.0, dur: 1.2, fade_out: 0.3, volume: 0.5}
+  - {src: audio/sfx/magic_burst.ogg, cut: A08-001c, t: 0.88, volume: 0.75}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A08-001c, t: 0.9, rate: 0.7, volume: 0.55}
+  - {src: audio/sfx/sand_burst.ogg, cut: A08-001c, t: 0.95, rate: 0.6, volume: 0.5}   # 噴き上がるマナ（低く）
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A08-001c, t: 1.3, rate: 0.8, volume: 0.45}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A08-001c, t: 0.6, volume: 0.35}   # 跳び退く
+  - {src: audio/sfx/thud_land.ogg, cut: A08-001c, t: 1.25, volume: 0.3}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A08-001c, t: 1.75, volume: 0.3}
+  - {src: audio/sfx/thud_land.ogg, cut: A08-001c, t: 2.45, volume: 0.3}
+  - {src: audio/sfx/swamp_bubble_loop.ogg, cut: A08-001c, t: 1.4, until: {cut: A08-007, t: 3.0}, loop: true, fade_in: 2.0, fade_out: 1.0, volume: 0.12}   # 碧の沼がぼこぼこ
+  # 002 メタリカが沼から転移して現れる
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A08-002, t: 0.1, volume: 0.5}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A08-002, t: 0.4, rate: 0.8, volume: 0.4}
+  - {src: audio/sfx/magic_burst.ogg, cut: A08-002, t: 2.6, rate: 0.9, volume: 0.35}
+  # 006 駆け寄ってひざまずく
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08-006, t: 4.0, volume: 0.3}

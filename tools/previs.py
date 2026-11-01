@@ -1105,8 +1105,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (math.radians(swing) * math.sin(2 * math.pi * f * t / 2 + (0 if sx > 0 else math.pi)), 0, 0)
     elif pose in ("crouch", "crouching"):
         k, rx = 0.65, -math.radians(20)
-    elif pose in ("kneel", "kneeling"):
-        k = 0.7
+    elif pose in ("kneel", "kneeling"):   # ひざまずく（低く、少し前へ。0.7 では立っているように見えた、A08-006 の見直し 2026-11-01）
+        k, rx = 0.58, -math.radians(10)
     elif pose in ("sit", "sitting"):
         k = 0.6
     elif pose == "bow":        # お辞儀: 上体を前へ倒す（人形は腰で曲がらないので、体ごと少し倒して低くする。35度では倒れて見えた）
