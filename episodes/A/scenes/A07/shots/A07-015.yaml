@@ -2,22 +2,22 @@
 # kind: M＝小さな動き、A＝見せ場
 id: A07-015
 scene: A07
-tc: 80.4
-sec: 3.0
+tc: 89.0
+sec: 2.6
 kind: A
-shot: 全身・百騎兵（宙）
-acting: 宙で身をひねり、剣を下へ向ける
+shot: 全身・百騎兵（天井）・砂食み
+acting: 宙で身をひねり、天井に逆さに着地する。下で砂食みが見上げる（一瞬の間）（2026-11-01 の見直し）
 dialogue: []
-sound: 台詞なし。パート17 の戦闘の BGM
+sound: 台詞なし。BGM は M20 地下空洞（原作の戦いの曲）。効果音は sound.yaml
 notes: null
 camera:
   pos:
-  - 36.6
-  - 30.8
-  - 10.4
+  - 28.4
+  - 29.6
+  - 9.5
   look: hundred-knight
-  lens: 32
-  move: 宙の百騎兵のまわりを回り込む
+  lens: 30
+  move: 西の中ほどの高さから、上がる百騎兵を追い、着地した後は下の砂食みまで入れて引く
 background: underground-cavern
 image: null
 refs:
@@ -26,24 +26,24 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 宙の百騎兵
-  end: 真下の砂食みの頭を狙う百騎兵
+  start: 宙を回りながら上がる百騎兵
+  end: 天井に逆さにしゃがむ百騎兵と、下の砂食み
 blocking:
-  start: 百（中央・背中）
-  end: 百（中央・斜め前（画面左向き））
+  start: 百（中央・横顔（画面右向き））
+  end: 百（中央・斜め後ろ（画面右向き））
   background: 地下空洞の俯瞰〔空洞 俯瞰〕
   panels:
   - 空洞 俯瞰
   staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), twisting in mid-air high above the monster, in the center of the frame,
-    with the back to the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling: a circle of moonlight on the
-    sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
-    green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), twisting in mid-air and landing upside down on the cavern ceiling, in the
+    center of the frame, in profile, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
+    a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+    onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in mid-air, pointing its sword straight down at the monster''s head below,
-    in the center of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above
-    near the ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
-    hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching upside down on the rock ceiling, the monster far below, in the
+    center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling: a
+    circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+    onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   sketch:
   - episodes/A/scenes/A07/gen/sketch/A07-015_start.png
   - episodes/A/scenes/A07/gen/sketch/A07-015_end.png

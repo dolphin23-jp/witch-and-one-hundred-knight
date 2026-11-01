@@ -549,6 +549,17 @@ items:
   - p16 0:19-0:54
   total_sec: 35
   heard: false
+- id: M37
+  name: 地下空洞に降りた所の短い曲
+  file: audio/bgm/catalog/M37.ogg
+  listen: Drive 原作音源/BGM/M37_地下空洞に降りた所の短い曲.mp3
+  scenes:
+  - A07
+  clip: パート17 22:58 から 21.5秒（1本もの。2026-11-01 に足した。前の分け方では短すぎて一覧に入らなかった）
+  plays:
+  - p17 22:58-23:19
+  total_sec: 21
+  heard: false
 scenes:
   A01:
   - from: '14:11'
@@ -686,6 +697,10 @@ scenes:
     to: '22:58'
     bgm: M07
     name: 獣人の村
+  - from: '22:58'
+    to: '23:19'
+    bgm: M37
+    name: 地下空洞に降りた所の短い曲
   - from: '23:19'
     to: '24:52'
     bgm: M20

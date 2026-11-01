@@ -59,13 +59,15 @@ def main():
             h = people.get(who, {}).get("h", 1.6)
             base = 0.7 if h >= 1.3 else 0.45
             acc, prev = 0.0, tr.at(0.0)[0]
+            prev_z = tr.at(0.0)[1]
             t = DT
             while t <= sec:
-                p, _, pose = tr.at(t)
+                p, z, pose = tr.at(t)
+                dz, prev_z = abs(z - prev_z), z
                 d = math.dist(p, prev)
                 prev = p
                 speed = d / DT
-                still = pose in ("jump", "lie", "sit", "kneel", "kneel_hold", "ride", "spin", "fall", "hop")
+                still = pose in ("jump", "lie", "sit", "kneel", "kneel_hold", "ride", "spin", "fall", "hop", "tumble", "flip", "dive") or dz / DT > 0.4   # 宙にいる間（上下に動いている間）は足音なし
                 if (pose in ("walk", "run") and speed > 0.15) or (not still and speed > 0.35):
                     acc += d
                     running = pose == "run" or speed > 2.6

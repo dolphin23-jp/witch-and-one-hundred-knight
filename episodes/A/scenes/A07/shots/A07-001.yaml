@@ -3,10 +3,14 @@
 id: A07-001
 scene: A07
 tc: 0.0
-sec: 5.0
+sec: 7.6
 kind: M
-shot: 寄り（井戸の中から見上げ）・百騎兵
-acting: 百騎兵が井戸の縁まで来てのぞき込む
+transition:
+  kind: wipe
+  dir: left
+  sec: 0.8
+shot: 全身→寄り（井戸の口の上から → 井戸の中から見上げ）・百騎兵
+acting: 百騎兵が夜の村を井戸まで歩いてくる。カメラが井戸の中へ沈み、縁からのぞき込む百騎兵を見上げる（2026-11-01 の見直し）
 dialogue:
 - L206「おい……その井戸……臭うぞ。」
 sound: null
@@ -14,13 +18,13 @@ notes: null
 camera:
   pos:
   - 30.0
-  - 30.1
-  - 26.5
+  - 29.45
+  - 31.7
   look:
   - 30.0
-  - 30.7
+  - 34.0
   lens: 24
-  move: 井戸の中から見上げる（井戸の縁と百騎兵の顔、その上に月）
+  move: 井戸の口の上から歩いてくる百騎兵 → カメラが井戸の中へ沈みながら見上げる（井戸の縁と百騎兵の顔、その上に月）
 background: underground-cavern
 image: null
 refs:
@@ -28,10 +32,10 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 井戸の中から見上げる。丸い井戸の口と月
+  start: 夜の村。井戸の口の上から、こちらへ歩いてくる百騎兵
   end: 井戸の縁から見下ろす百騎兵の顔と、その上の月
 timing:
-  lead: 0.3
+  lead: 2.6
 blocking:
   start: 百（中央・正面）
   end: 百（中央・正面）

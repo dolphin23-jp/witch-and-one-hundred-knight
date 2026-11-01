@@ -6,7 +6,7 @@
 置き場所の規則は tools/animatic.py の build()（ffmpeg の仮の組み立て）と同じ:
   - カットの頭はショットファイルの tc。台詞はカットの頭から順に置く
   - 声の前の間は timing.lead があればそれ、なければ min(0.3秒, カットの秒 − 声の合計)
-  - 1カットに台詞が複数あるときは 0.25秒あけて続ける
+  - 1カットに台詞が複数あるときは 0.25秒あけて続ける（timing.at: {L215: 11.6} で、その台詞をカットの頭から何秒に置くか決められる。前の台詞と重なるときは後ろへずらす）
   - 1本の台詞を2カットに分けた所（L49a・L49b）は、a のカットに1本の声として置く（b のカットまで続けて鳴る）
   - 声のない台詞（「……」、lines.csv の flags に「無言」）は置かない（Remotion の組み立ては声のファイルを読むため）
 BGM はシーンの original/<シーン>_bgm.ogg（原作音源から声を分けた残り、D-045・D-050）があれば使う。
@@ -59,7 +59,10 @@ def make(scene_dir):
         total_voice = sum(L for _, L in items) + GAP * (len(items) - 1)
         lead = (s.get("timing") or {}).get("lead", min(LEAD, max(0.0, float(s["sec"]) - total_voice)))
         cursor = float(s["tc"]) + lead
+        fixed = (s.get("timing") or {}).get("at") or {}   # 台詞ごとの置き場所（カットの頭からの秒）。登場の後に言わせるなど（A07-007）
         for lid, L in items:
+            if lid in fixed:
+                cursor = max(cursor, float(s["tc"]) + float(fixed[lid]))
             lines.append({"id": lid, "at": round(cursor, 2)})
             cursor += L + GAP
     last = shots[-1]

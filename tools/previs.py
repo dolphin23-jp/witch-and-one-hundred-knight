@@ -41,7 +41,7 @@ import motion  # noqa: E402  動きのキー（D-060）
 
 import bpy  # noqa: E402
 from bpy_extras.object_utils import world_to_camera_view  # noqa: E402
-from mathutils import Vector  # noqa: E402
+from mathutils import Matrix, Vector  # noqa: E402
 
 
 # ---------- 時間と動き ----------
@@ -175,6 +175,13 @@ class Plan:
         b1 = self.st.face_of(g1, who, pos)
         b = lerp_bearing(b0, b1, smooth(t / max(self.sec, 1e-6)))
         return max(-80.0, min(80.0, staging.ang_diff(b, body)))
+
+    def roll(self, t):
+        """画面の傾き（度）。cam_keys の roll を時刻で補間する（なければ 0）。"""
+        if not self.camtrack:
+            return 0.0
+        a, b, u = motion.segment(self.camtrack.k, t)
+        return lerp(float(a.get("roll", 0.0)), float(b.get("roll", 0.0)), u)
 
     # カメラ
     def _cam_t(self):
@@ -1074,7 +1081,7 @@ def pose_fx(fx, objs, t, pos, place):
         f = j / max(1, len(objs) - 1)
         ang = j * 2.4
         rr = r * (0.35 + 0.65 * f) * amt
-        o.location = bl((p[0] + math.cos(ang) * r * 0.3 * f, p[1] + math.sin(ang) * r * 0.3 * f), h * f * amt)
+        o.location = bl((p[0] + math.cos(ang) * r * 0.3 * f, p[1] + math.sin(ang) * r * 0.3 * f), z0 + h * f * amt)   # z: 噴き上げの根元の高さ（天井の砂ぼこり、A07-015）
         o.scale = (rr, rr, rr * 0.8)
 
 
@@ -1098,8 +1105,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (math.radians(swing) * math.sin(2 * math.pi * f * t / 2 + (0 if sx > 0 else math.pi)), 0, 0)
     elif pose in ("crouch", "crouching"):
         k, rx = 0.65, -math.radians(20)
-    elif pose in ("kneel", "kneeling"):
-        k = 0.7
+    elif pose in ("kneel", "kneeling"):   # ひざまずく（低く、少し前へ。0.7 では立っているように見えた、A08-006 の見直し 2026-11-01）
+        k, rx = 0.58, -math.radians(10)
     elif pose in ("sit", "sitting"):
         k = 0.6
     elif pose == "bow":        # お辞儀: 上体を前へ倒す（人形は腰で曲がらないので、体ごと少し倒して低くする。35度では倒れて見えた）
@@ -1145,11 +1152,25 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         k, rx = 0.55, math.radians(16)
     elif pose == "spin":    # 転がる・回る（からくり人形、A14）
         rz += 4 * math.pi * t
+    elif pose == "nod":     # うなずく（体ごと前へ深く倒す。A07-004 の溜め、2026-11-01）
+        k, rx = 0.95, -math.radians(24)
+    elif pose == "tumble":  # 宙で前へ回る（とんぼ返り。体を丸めて x 軸のまわりに回す、A07-014・015）
+        k, rx = 0.7, -2 * math.pi * 1.3 * t
+    elif pose == "flip":    # 天井に逆さにしゃがむ（足を天井に付け、体は下へ。位置の z は足の高さ、A07-015）
+        k, rx, rz = 0.65, math.pi + math.radians(20), rz + math.pi
+    elif pose == "dive":    # 頭から真下へ突っ込む（剣を先に。位置の z は足の高さ、A07-015b・016）
+        rx, rz = math.pi - math.radians(12), rz + math.pi
     if root.get("torch") and pose not in ("wave", "point", "arms_up", "lie"):   # 松明を頭の上に立てて持つ（前は横に掲げていて、棒が画面を斜めに横切った。A06 の見直し 2026-11-01）
         arms[1].rotation_euler = (math.radians(160), -math.radians(12), 0)
     if pose in ("hold", "kneel_hold"):
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(70), 0, 0)
+    elif pose == "dive":        # 両腕を頭の先へ（剣が先になる）
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(175), 0, sx * -math.radians(8))
+    elif pose in ("tumble", "flip"):   # 体を丸めて、腕を前に
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(60), 0, 0)
     elif pose == "ready":
         arms[1].rotation_euler = (math.radians(60), 0, 0)
     elif pose == "slash":       # 右腕を上から斜めに振り下ろす
@@ -1215,6 +1236,19 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 if o.type == "MESH":
                     o.data.materials.clear()
                     o.data.materials.append(gm)
+    # 隠す物（hide_props）と、床の下からせり上がって現れる物（reveal）。ピラーは守護者を倒すまで見えない（D-070、2026-11-01）
+    def prop_objs(name):
+        return [o for o in bpy.data.objects if o.name in (f"ENV_{name}", f"ENV_{name}_tip", f"LGT_{name}")]
+    for name in (c_.get("hide_props", st.bk.get("hide_props")) or []):   # カットに無ければシーンの頭の hide_props
+        for o in prop_objs(name):
+            o.hide_render = True
+    reveals = []
+    for rv in ([c_["reveal"]] if isinstance(c_.get("reveal"), dict) else (c_.get("reveal") or [])):
+        objs = prop_objs(rv["prop"])
+        pr = lay["props"][rv["prop"]]
+        sink = float(pr.get("h", 4.0)) + 1.2   # 床の下へ沈める深さ（先の円錐まで隠れる）
+        base = {o.name: (o.location.z, o.data.energy if o.type == "LIGHT" else None) for o in objs}
+        reveals.append((rv, objs, sink, base))
     creatures = {n: build_creature(n, tr) for n, tr in plan.creatures.items()}
     fxs = [(fx, build_fx(fx, i)) for i, fx in enumerate(plan.c.get("fx") or [])]
     broom = None
@@ -1260,9 +1294,24 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             pose_creature(parts, plan.creatures[name], t)
         for fx, objs in fxs:
             pose_fx(fx, objs, t, pos, st.place)
+        for rv, objs, sink, base in reveals:   # t の間に床の下からせり上がる（光も強くなる）
+            t0, t1 = rv["t"]
+            u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
+            u = u * u * (3 - 2 * u)
+            for o in objs:
+                z0, en = base[o.name]
+                o.location.z = z0 - sink * (1.0 - u)
+                if en is not None:
+                    o.data.energy = en * u
         (cx, cy, cz), yaw, pitch, lens = plan.camera(t, pos)
         cam.location = bl((cx, cy), cz)
-        cam.rotation_euler = (math.pi / 2 + pitch, 0, -math.radians(yaw))
+        roll = plan.roll(t)   # 画面を傾ける（ダッチアングル、cam_keys の roll 度。A07 の戦い）
+        if roll:
+            m = (Matrix.Rotation(-math.radians(yaw), 4, "Z") @ Matrix.Rotation(math.pi / 2 + pitch, 4, "X")
+                 @ Matrix.Rotation(math.radians(roll), 4, "Z"))
+            cam.rotation_euler = m.to_euler("XYZ")
+        else:
+            cam.rotation_euler = (math.pi / 2 + pitch, 0, -math.radians(yaw))
         cam.data.lens = lens
         bpy.context.view_layer.update()
         return pos

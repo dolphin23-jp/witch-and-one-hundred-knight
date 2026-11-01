@@ -3,21 +3,23 @@
 id: A08-001
 scene: A08
 tc: 0.0
-sec: 7.0
+sec: 4.4
 kind: A
-shot: 全身（煽り）・ピラー・紫の沼
-acting: ピラーが花のように開き、根元から紫の沼が床に広がっていく。百騎兵が歩いてきて見上げる（画の外）
+shot: 引き・百騎兵（背中）・光るピラー
+acting: 現れて光るピラーへ、百騎兵が向き直って駆けていく（2026-11-01 の見直し）
 dialogue: []
 sound: null
 notes: null
 camera:
   pos:
-  - 26.1
-  - 24.6
-  - 0.5
-  look: pillar
-  lens: 28
-  move: 低い所から、開くピラーを見上げてゆっくり回り込む（南東→南西）
+  - 35.6
+  - 37.8
+  - 1.0
+  look:
+  - 28.0
+  - 26.0
+  lens: 24
+  move: 百騎兵の背中越しに奥の光るピラー → 走り出した百騎兵を後ろから追う
 background: underground-cavern
 image: null
 refs:
@@ -26,22 +28,26 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 倒れた砂食みの奥で光るピラー
-  end: 開いたピラーと、床いっぱいに広がる紫の沼
+  start: 倒れた砂食みの前に立つ百騎兵の背中、奥で光るピラー
+  end: ピラーの前で止まる百騎兵
 timing:
   lead: 0.3
 blocking:
-  start: （人物なし）
-  end: （人物なし）
+  start: 百（中央・背中）
+  end: 百（中央・背中）
   background: 地下空洞の全景〔空洞 全景〕
   panels:
   - 空洞 全景
-  staging_en: 'No people in frame. The tall crystal Pillar opens like a flower, its glowing petals spreading outward. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
-    in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight
-    from the hole in the ceiling, glowing green moss on the rock walls.'
-  staging_en_end: 'No people in frame. A glossy, faintly glowing blue-green (teal) poison swamp spreads across the sandy cavern floor from the base of the open Pillar. Behind: the huge underground cavern:
-    a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal
-    Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling, glowing green moss on the rock walls.'
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing in front of the fallen monster, seen from behind, turning toward
+    the glowing Pillar far away, in the center of the frame, with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the
+    walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from
+    the hole in the ceiling, glowing green moss on the rock walls.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), running across the sand toward the tall glowing crystal Pillar, seen from
+    behind, in the center of the frame, with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
+    moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: the tall crystal Pillar glowing cold blue-white, a column of moonlight from the hole in the ceiling,
+    glowing green moss on the rock walls.'
   sketch:
   - episodes/A/scenes/A08/gen/sketch/A08-001_start.png
   - episodes/A/scenes/A08/gen/sketch/A08-001_end.png

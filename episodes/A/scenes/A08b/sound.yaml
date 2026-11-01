@@ -1,0 +1,25 @@
+# A08b の BGM・効果音の置き場所（D-068、2026-11-01 の見直し）。tools/previs_reel.py が通しの下絵に重ねる。
+# 音量は台詞を 1.0 とした大きさ。BGM 0.28、朝の風 0.12、布の音 0.25〜0.3
+scene: A08b
+bgm:
+  # 原作どおり（docs/audio_catalog.md）: M02 テッタラ砂漠を基本に、015〜016（「夜会」に目を輝かせる所、パート18 2:31〜2:56）と 036〜038（条件を出してルッキーニィが喜ぶ所）は M26 弟子入りの合間
+  - {src: audio/bgm/M02_loop.ogg, cut: A08b-008, t: 0.5, until: {cut: A08b-015, t: 0.0}, loop: true, fade_in: 1.5, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M26.ogg, cut: A08b-015, t: 0.0, until: {cut: A08b-017, t: 0.0}, fade_in: 0.6, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/M02_loop.ogg, cut: A08b-017, t: 0.0, until: {cut: A08b-036, t: 0.0}, from: 30.0, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M26.ogg, cut: A08b-036, t: 0.0, until: {cut: A08b-039, t: 0.0}, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/M02_loop.ogg, cut: A08b-039, t: 0.0, until: {cut: A08b-039, t: 9.2}, from: 60.0, loop: true, fade_in: 0.8, fade_out: 1.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A08b-008, t: 0.0, until: {cut: A08b-039, t: 9.2}, loop: true, fade_in: 1.5, fade_out: 1.5, volume: 0.12}   # 朝の風
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-011, t: 0.4, volume: 0.28}    # 腕を組む
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-011, t: 4.8, volume: 0.28}    # 胸を張る
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-012, t: 1.6, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-017, t: 1.8, volume: 0.28}    # 手を振る
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-017b, t: 0.3, volume: 0.3}    # 跳び上がる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-020b, t: 3.4, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-020b, t: 6.2, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-021, t: 0.6, volume: 0.3}     # ずいと顔を寄せる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-024, t: 0.3, volume: 0.28}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A08b-036, t: 2.0, volume: 0.25}
+  - {src: audio/sfx/thud_land.ogg, cut: A08b-038, t: 1.6, volume: 0.22}      # 跳んで喜ぶ
+  - {src: audio/sfx/thud_land.ogg, cut: A08b-038, t: 2.4, volume: 0.22}

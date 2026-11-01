@@ -2,11 +2,11 @@
 # kind: M＝小さな動き、A＝見せ場
 id: A07-007
 scene: A07
-tc: 41.2
-sec: 12.8
+tc: 46.2
+sec: 17.6
 kind: A
 shot: 全身→大引き・百騎兵・砂食み
-acting: 壁を破って砂食みが現れ、空洞いっぱいに鎌首をもたげる
+acting: 壁を破って砂食みが現れ、百騎兵のすぐ前で鎌首をもたげる。L214 は現れた後（2026-11-01 の見直し）
 dialogue:
 - L214「キヒヒッ！来た来た！ピラーの守護者になったばかりのデカブツが！」
 - L215「こいつ、食物連鎖の頂点にでもたったつもりか？」
@@ -14,12 +14,14 @@ sound: null
 notes: null
 camera:
   pos:
-  - 30.8
-  - 33.2
-  - 0.35
-  look: hundred-knight
+  - 31.4
+  - 33.6
+  - 0.3
+  look:
+  - 30.0
+  - 14.0
   lens: 24
-  move: 百騎兵の足元から、砂食みの頭までゆっくり上へ振る（ティルト）
+  move: 百騎兵のすぐ後ろの床すれすれから、壁が破れるのを見せ、鎌首をもたげる砂食みを見上げる（ティルト）。その後ゆっくり右へ回り込む
 background: underground-cavern
 image: null
 refs:
@@ -28,28 +30,26 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 百騎兵の足元から、北の壁
+  start: 百騎兵の足元の後ろから、北の壁
   end: 百騎兵を見下ろす巨大な砂食み
 timing:
-  lead: 0.3
+  lead: 4.8
 blocking:
-  start: 百（中央・背中）
-  end: 百（中央・背中）
+  start: 百（左・背中）
+  end: 百（左・斜め後ろ（画面右向き））
   background: 地下空洞の全景〔空洞 全景〕
   panels:
   - 空洞 全景
   staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing small on the sand, seen from low behind, in the center of the
-    frame, with the back to the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. The sand-eater bursts out of the far rock wall in an explosion of sand and rock.
-    Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground
-    cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep
-    shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing small on the sand, seen from low behind, on the left of the frame,
+    with the back to the camera. No other people. The sand-eater bursts out of the far rock wall in an explosion of sand and rock. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
+    round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
+    hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing small at the bottom of the frame, facing the monster, in the center
-    of the frame, with the back to the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. The huge sand-eater rears up above the Hundred Knight, filling the cavern.
-    Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground
-    cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep
-    shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing small at the bottom of the frame, looking up at the monster, on
+    the left of the frame, seen from behind at an angle, turned toward screen right. No other people. The huge sand-eater rears up right above the Hundred Knight, filling the cavern. Behind: the huge underground
+    cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+    column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   sketch:
   - episodes/A/scenes/A07/gen/sketch/A07-007_start.png
   - episodes/A/scenes/A07/gen/sketch/A07-007_end.png
