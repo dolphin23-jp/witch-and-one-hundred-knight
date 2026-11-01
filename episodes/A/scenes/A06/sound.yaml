@@ -1,13 +1,21 @@
 # A06 の BGM・効果音・ちょっとした声の置き場所（D-068、2026-11-01）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
-# BGM はゲームがこの場面で流していた曲を基本にした（audio/bgm/index.yaml）。003〜006 はゲームでは村の曲が続くが、ここでは扉を叩く音で曲を止め、松明の火と風だけにして張りつめさせる。
 scene: A06
 bgm:
-  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-002, t: 0.4}, from: 85.1, loop: true, fade_out: 0.4, volume: 0.18}
-  # 砂食みが出た所（噴き上げの音を含む1本もの）。18:28.8 からで、噴き上げが 007 の 0.2秒に来る
+  # 原作でその場面に流れていた曲をそのまま使う（ユーザー判断 2026-11-01。指定があった所だけ変える）。曲の並びは docs/audio_catalog.md の「場面ごとに、ゲームが流していた曲」
+  # M07 獣人の村: 000〜006（A05b から続く。ゲームでは L188 の 18:35 まで）
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-007, t: 0.3}, from: 87.6, loop: true, fade_out: 0.3, volume: 0.18}
+  # M28 砂食みの気配: 007〜008（18:24〜18:46 の1本もの。噴き上げの音が 007 の頭に来る）
   - {src: audio/bgm/p17-2_sand-eater_sting.ogg, cut: A06-007, t: 0.0, until: {cut: A06-009, t: 0.0}, from: 4.7, fade_out: 1.0, volume: 0.13}
-  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-011, t: 1.0}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.27}
-  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-011b, t: 0.0, until: {cut: A06-013, t: 1.0}, loop: true, fade_out: 1.0, volume: 0.16}
-  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 0.5, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 2.5, fade_out: 1.5, volume: 0.16}
+  # 同じ曲の静かな所: 009（ゲームの 19:01〜19:18 の静かな所）
+  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-010, t: 0.3}, loop: true, fade_in: 1.0, fade_out: 0.3, volume: 0.27}
+  # M04: 010〜012（ゲームでは L194「じゃあね、ラナ」の 19:18 から）
+  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-010, t: 0.0, until: {cut: A06-013, t: 0.5}, loop: true, fade_in: 0.5, fade_out: 0.5, volume: 0.16}
+  # M15 短いつなぎ: 013 の頭（ゲームの 20:14〜20:32、L199 のあたり）
+  - {src: audio/bgm/catalog/M15.ogg, cut: A06-013, t: 0.3, until: {cut: A06-013, t: 6.4}, fade_in: 0.8, fade_out: 1.0, volume: 0.16}
+  # M02: 013 の L200 から 015 の前半（ゲームの 20:32〜21:22）
+  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 6.0, until: {cut: A06-015, t: 7.6}, loop: true, fade_in: 1.0, fade_out: 1.2, volume: 0.16}
+  # M07 獣人の村: 015 の L203 から（ゲームの 21:22 から）
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-015, t: 7.0, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 1.2, fade_out: 1.5, volume: 0.18}
 sfx:
   # 足音は tools/footsteps.py が動きから自動で置く（footsteps.yaml）
   - {src: audio/sfx/wind_night_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-001, t: 0.3}, loop: true, fade_out: 0.3, volume: 0.11}
