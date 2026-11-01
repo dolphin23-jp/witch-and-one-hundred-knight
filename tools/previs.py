@@ -1289,6 +1289,9 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     out_dir.mkdir(parents=True, exist_ok=True)
     checks["warnings"] = warnings
     checks["frames"] = list(idx)
+    # 真っ黒なコマ（カメラが壁・岩・草むらなどの中に入った）。A14-007・008 で見落とした（2026-11-01）
+    from PIL import Image, ImageStat
+    checks["dark"] = [i for i in idx if ImageStat.Stat(Image.open(frames_dir / f"{i:04d}.png").convert("L").resize((64, 36))).mean[0] < 8]
     if preview or motion_step:
         return None, frames_dir, n, checks
     mp4 = out_dir / f"{cut}.mp4"
@@ -1376,6 +1379,9 @@ def main():
             if warn:
                 who = sorted({w for _, ws in warn for w in ws})
                 print(f"  警告: 画面の端から出る人物 {', '.join(who)}（フレーム {warn[0][0]}〜{warn[-1][0]}）。出入りを意図したカットでなければ、カメラか動きを直す")
+            dark = checks.pop("dark", [])
+            if dark:
+                print(f"  警告: 真っ黒なコマ {len(dark)}枚（フレーム {dark[0]}〜{dark[-1]}）。カメラが壁や物の中に入っていないか確かめる")
             for which, res in checks.items():
                 diff = max((abs(r["staging_s"] - r["blender_s"]) for r in res), default=0)
                 print(f"  {which}: 画面の左右（staging.py と Blender の差の最大 {diff:.2f}）",
