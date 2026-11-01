@@ -265,3 +265,5 @@
   - **登録（すべて案1）**: 人物・物は `refs/<対象>_sheet_01.png`（whisker-cat、apprentice-witches、metallica-broom、swamp-amulet、forest-servant、marika-mouse、guide-witch、metallica-giant、teressa-swamp）。背景は `world/witch-house-bathroom/plates.yaml`、`world/forest-garden/plates.yaml`、`world/hidden-forest/plates.yaml`。案2と比べる画像は D-065 で削除（削除一覧に12件追記、QC は fail）。
   - **決まり**: Claude が作る設定画は今後1案だけ（CLAUDE.md の「守ること」1 に追記）。
   - 次: 見習い魔女の一人ずつの三面図（4枚・4クレジット、承認待ち）。
+- 2026-11-01 14:17: ユーザーが6章後半〜の画像7枚を用意。説明のまま `refs/index.yaml` に登録: `forest-station_bg_01`（森の発着場）、`night-train_sheet_01`（夜行列車）、`otherspace_bg_01`（異空間(線路を塞ぐように作られた門)）、`blind-witch_sheet_01`（盲魔女キャラシート）、`walpurgis_bg_01`（魔女都ヴァルプルギス）、`council-room_bg_01`（ブロッケントゥルム議事塔最上階の議会室）、`council-room-ruined_bg_01`（メタリカ襲撃による破壊後、戦闘シーンの背景）。
+  - 気づいた点（登録は説明どおり）: 発着場は魔法陣の円盤から線路が四方へ出る形で、原作メモの「線路の途切れた円形の駅」「鐘」は画像では見当たらない（鐘は小物で足せる）。夜行列車は前が獅子（ライオネル13世）、左右に山羊2頭（ゴードーラ・ゴードール）、後ろに蛇（スネーカー）。魔女都の画像の塔の門に、原作の「話す顔」はない（合成か別の寄りで足す）。盲魔女は帽子のつばで目が隠れ、ホウキを杖にしている。
