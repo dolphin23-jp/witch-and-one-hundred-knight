@@ -1,17 +1,17 @@
 cuts:
   A14-001:
     cam:
-    - 12.5
-    - 41.0
-    - 8.0
-    lens: 28
-    bearing: 191
+    - 1.8
+    - 40.6
+    - 10.5
+    lens: 26
+    bearing: 149
     frame: 引き
     start:
       people:
       - who: hundred-knight
-        s: -0.12
-        dist: 22.08
+        s: 0.29
+        dist: 23.39
         side: 中央
         body: 正面
       bg: 山道の行き止まり〔山道〕
@@ -19,8 +19,45 @@ cuts:
       - 行き止まりの丸い踊り場
       - 北の縁の草むら（古の風紋が隠れている）
       - 枯れ草
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera. No other
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, on the right of the frame, facing the camera. No other
         people. High angle looking down. Behind: a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends at the edge of a deep gorge,
         jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the
         rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
@@ -28,14 +65,14 @@ cuts:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 5.31
+        dist: 7.52
         side: 中央
-        body: 正面
+        body: 斜め前（画面左向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera. No other
-        people. High angle looking down. Behind: a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends at the edge of a deep gorge,
-        jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the
-        rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in three-quarter view, turned
+        toward screen left. No other people. High angle looking down. Behind: a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends
+        at the edge of a deep gorge, jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light. Late afternoon on a high desert mountain: the low sun in the
+        west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       hundred-knight:
         to: hk_edge
@@ -50,17 +87,17 @@ cuts:
     note: null
   A14-002:
     cam:
-    - 9.3
-    - 50.6
-    - 1.3
-    lens: 28
-    bearing: 13
+    - 9.1
+    - 48.9
+    - 1.5
+    lens: 26
+    bearing: 8
     frame: 全身（後ろ姿）
     start:
       people:
       - who: hundred-knight
-        s: 0.22
-        dist: 2.54
+        s: 0.18
+        dist: 2.26
         side: 中央
         body: 背中
       bg: 谷の向こうの足場〔山道〕
@@ -80,17 +117,16 @@ cuts:
       - 枯れ草
       - 尖塔
       - 尖塔（二つの峰の間の北）
-      - 尖塔
       - 遠くの山並み（北東）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, on the right of the frame, with the back to the camera.
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back to the camera.
         No other people. Behind: across a deep gorge, small round wooden landings on top of tall rock spires rising in a zigzag toward a higher peak, warm late-afternoon light, the desert far below. Late
         afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: hundred-knight
-        s: 0.1
-        dist: 2.34
+        s: -0.18
+        dist: 2.05
         side: 中央
         body: 背中
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
@@ -129,16 +165,16 @@ cuts:
         dist: 7.6
         side: 中央
         body: 斜め後ろ（画面右向き）
-      - who: arlecchino
-        s: 0.33
-        dist: 2.98
-        side: 中央
-        body: 背中
       - who: bisco
         s: 0.39
         dist: 5.75
         side: 右
         body: 斜め後ろ（画面左向き）
+      - who: arlecchino
+        s: 0.9
+        dist: 3.56
+        side: 右
+        body: 横顔（画面左向き）
       bg: 魔女邸の居間（夕方）〔居間 正面〕
       props:
       - 行き止まりの丸い踊り場
@@ -187,10 +223,10 @@ cuts:
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
         the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
         trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, seen from behind at an angle, turned toward
-        screen right; Arlecchino (the tall puppet butler, as in his reference sheet), standing, on the right of the frame, with the back to the camera; Bisco (a dog-eared knight girl, as in her reference
-        sheet), standing, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the witch''s living room at dusk: a round table with a red tablecloth,
-        a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with the first stars. Late
-        afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        screen right; Bisco (a dog-eared knight girl, as in her reference sheet), standing, on the right of the frame, seen from behind at an angle, turned toward screen left; Arlecchino (the tall puppet
+        butler, as in his reference sheet), standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: the witch''s living room at dusk: a round table with
+        a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with
+        the first stars. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: metallica
@@ -203,24 +239,24 @@ cuts:
         dist: 6.79
         side: 中央
         body: 正面
-      - who: arlecchino
-        s: 0.39
-        dist: 2.7
-        side: 右
-        body: 斜め後ろ（画面左向き）
       - who: bisco
         s: 0.44
         dist: 5.46
         side: 右
         body: 斜め後ろ（画面左向き）
+      - who: arlecchino
+        s: 1.06
+        dist: 3.28
+        side: 右
+        body: 横顔（画面左向き）
       staging: 'In frame (exactly 4 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
         the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Arlecchino (the tall puppet butler, as in his reference
-        sheet), standing, on the right of the frame, seen from behind at an angle, turned toward screen left; Bisco (a dog-eared knight girl, as in her reference sheet), standing, on the right of the frame,
-        seen from behind at an angle, turned toward screen left. No other people. Behind: the witch''s living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves,
-        a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the
-        low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Bisco (a dog-eared knight girl, as in her reference
+        sheet), standing, on the right of the frame, seen from behind at an angle, turned toward screen left; Arlecchino (the tall puppet butler, as in his reference sheet), standing, at the far right of
+        the frame, in profile, turned toward screen left. No other people. Behind: the witch''s living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging
+        brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the low sun
+        in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       metallica:
         to: m_house
@@ -253,7 +289,6 @@ cuts:
         - 9.5
       arlecchino:
         to: a_house
-        face: 290
         t:
         - 0.0
         - 9.5
@@ -322,28 +357,39 @@ cuts:
     - 48.8
     - 0.8
     lens: 32
-    bearing: 81
+    bearing: 56
     frame: 全身
     start:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 3.65
+        dist: 3.74
         side: 中央
-        body: 横顔（画面左向き）
+        body: 斜め後ろ（画面左向き）
       bg: 山道の行き止まり〔山道〕
       props:
-      - 行き止まりの丸い踊り場
       - 北の縁の草むら（古の風紋が隠れている）
+      - 足場1
+      - 足場1の風紋
+      - 足場2
+      - 足場2の風紋
+      - ピラーの峰の丸い広場
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 山頂の丸い広場（夜会の場所）
+      - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
       - 尖塔
       - 尖塔
+      - 尖塔（二つの峰の間の北）
       - 尖塔
-      - 白夜月（東の空）
+      - 尖塔
+      - 遠くの山並み（北東）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile, turned toward
-        screen left. No other people. Behind: a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends at the edge of a deep gorge,
-        jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the
-        rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, seen from behind at an angle,
+        turned toward screen left. No other people. Behind: a round wooden landing with a spiral plank pattern at the end of a narrow plank walkway on a high rocky mountain: the path ends at the edge of
+        a deep gorge, jagged rock spires all around, dry golden grass, the vast desert far below in warm late-afternoon light. Late afternoon on a high desert mountain: the low sun in the west, warm golden
+        light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: hundred-knight
@@ -1472,6 +1518,9 @@ checks:
     who: hundred-knight
   - cut: A14-003
     which: end
+    who: karakuri-doll
+  - cut: A14-005
+    which: start
     who: karakuri-doll
   - cut: A14-010
     which: start

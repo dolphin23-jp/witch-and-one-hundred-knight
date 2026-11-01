@@ -14,19 +14,19 @@ id: az-brocken
 size: {w: 90.0, d: 66.0}
 compass: 北 0、東 90、南 180、西 270（南から北へ登る。山頂の峰は東。日は西に沈む）
 time: 黄昏の前〜夜（lighting で選ぶ）
-ground: {color: [205, 160, 100], ja: 下の砂漠, z: -60.0}
+ground: {color: [176, 122, 82], ja: 下の砂漠, z: -60.0}
 sky: {color: [225, 170, 125]}
 sun: {from: 262, elev: 12}
 light_en: "Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze."
 
 lighting:
-  late_mtn:   {sun_from: 262, sun_elev: 12, sun_energy: 3.2, sun_color: [255, 190, 130], sky: [220, 165, 120], sky_strength: 1.0, lamps: 0.3}   # 黄昏の前（A14）
+  late_mtn:   {sun_from: 262, sun_elev: 12, sun_energy: 3.2, sun_color: [255, 190, 130], sky: [236, 204, 160], sky_strength: 1.0, lamps: 0.3}   # 黄昏の前（A14）
   sunset_mtn: {sun_from: 263, sun_elev: 3, sun_energy: 2.6, sun_color: [255, 140, 90], sky: [205, 125, 105], sky_strength: 0.9, lamps: 0.6}    # 日が沈む（A14 の終わり〜A15）
   dusk_mtn:   {sun_from: 265, sun_elev: 0.5, sun_energy: 1.3, sun_color: [255, 120, 95], sky: [125, 92, 125], sky_strength: 0.8, lamps: 1.0}  # 黄昏（A16）
   late_dusk_mtn: {sun_from: 266, sun_elev: 1, sun_energy: 0.6, sun_color: [220, 120, 120], sky: [70, 58, 105], sky_strength: 0.8, lamps: 1.2}  # 日が沈む寸前の暗い空（A16 の終わり）
   night_mtn:  {sun_from: 95, sun_elev: 30, sun_energy: 0.7, sun_color: [160, 180, 255], sky: [32, 40, 88], sky_strength: 0.8, lamps: 1.4}    # 夜（月明かり、A16 の終わり〜A17）
-  house_dusk: {sun_from: 265, sun_elev: 6, sun_energy: 1.6, sun_color: [255, 160, 110], sky: [150, 110, 100], sky_strength: 0.5, lamps: 1.1,
-               fill: {at: [204.0, 203.5], z: 3.8, energy: 380, color: [255, 210, 170]}}   # 魔女邸の居間の夕方（A14 の星読み）
+  house_dusk: {sun_from: 265, sun_elev: 6, sun_energy: 1.6, sun_color: [255, 160, 110], sky: [215, 150, 125], sky_strength: 1.0, lamps: 1.4,
+               fill: {at: [204.0, 203.5], z: 3.8, energy: 900, color: [255, 210, 170]}}   # 魔女邸の居間の夕方（A14 の星読み）
 
 horizon:
   - {from: 0, to: 360, ja: 岩の尖塔と砂漠, en: "jagged rock spires with wooden walkways, the vast desert far below stretching to the horizon"}

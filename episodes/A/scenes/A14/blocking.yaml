@@ -15,7 +15,7 @@ map_ymax: 66
 lighting: late_mtn
 places:
   hk_run0: [10.0, 63.0]
-  hk_edge: [10.2, 48.2]
+  hk_edge: [9.7, 46.7]
   hk_grass: [10.3, 47.25]
   rune0: [10.4, 46.4]
   j1: [12.5, 40.0]
@@ -34,14 +34,14 @@ places:
   m_pat: [202.55, 201.25]
   lk_window: [202.0, 200.55]
   b_sofa: [204.4, 200.8]
-  a_house: [205.7, 203.4]
+  a_house: [206.4, 201.9]
 start:
   hundred-knight: {at: hk_run0, face: 0}
   karakuri-doll: {at: doll_in, face: 200}
   metallica: {at: m_house, face: 90}
   luckiny: {at: lk_window, face: 0}
   bisco: {at: b_sofa, face: 270}
-  arlecchino: {at: a_house, face: 300}
+  arlecchino: {at: a_house, face: 250}
 cuts:
   A14-001:
     frame: 引き（高い所から）
@@ -55,11 +55,11 @@ cuts:
       - {t: 7.4, at: hk_edge, z: 0.0, face: 30, pose: stand}
       - {t: 10.0, at: hk_edge, z: 0.0, face: 0, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [12.5, 41.0, 8.0], look: [10.0, 54.0], look_h: 0.0, lens: 28, frame: 引き}
-    - {t: 10.0, cam: [12.0, 43.2, 4.0], look: hundred-knight, look_h: 0.4, lens: 32}
+    - {t: 0.0, cam: [1.8, 40.6, 10.5], look: [10.0, 54.0], look_h: -1.0, lens: 26, frame: 引き}
+    - {t: 10.0, cam: [4.0, 41.8, 5.0], look: hundred-knight, look_h: 0.4, lens: 30}
     bg: azb_dead_end
     act: {start: 夕方の山の板の道, do: 百騎兵が板の道を駆けてきて、丸い踊り場で止まる。その先は深い谷で道がない。左右を見回す, end: 谷の縁で立ち尽くす百騎兵}
-    camera: 谷の向こう（北）の高い所から、駆けてくる百騎兵へ下りながら寄る（クレーン）
+    camera: 谷の向こう（北西）の高い所から、駆けてくる百騎兵へ下りながら寄る（クレーン）
     kind: A
   A14-002:
     frame: 全身（後ろ姿）
@@ -72,9 +72,9 @@ cuts:
       - {t: 5.2, at: hk_edge, z: 0.0, face: 15, pose: look_up}
       - {t: 8.5, at: hk_edge, z: 0.0, face: 15, pose: look_up}
     cam_keys:
-    - {t: 0.0, cam: [9.3, 50.6, 1.3], look: [11.0, 43.0], look_h: -6.0, lens: 28, frame: 全身（後ろ姿）}
-    - {t: 4.6, cam: [9.35, 50.5, 1.3], look: [11.2, 43.0], look_h: -5.0, lens: 28}
-    - {t: 8.5, cam: [9.4, 50.4, 1.4], look: j1, look_h: 5.5, lens: 30}
+    - {t: 0.0, cam: [9.1, 48.9, 1.5], look: [10.4, 40.0], look_h: -16.0, lens: 26, frame: 全身（後ろ姿）}
+    - {t: 4.6, cam: [9.15, 48.8, 1.5], look: [10.6, 40.0], look_h: -14.0, lens: 26}
+    - {t: 8.5, cam: [9.2, 48.7, 1.6], look: j1, look_h: 5.5, lens: 28}
     bg: azb_gorge
     act: {start: 谷の縁の百騎兵, do: 谷底をのぞき込み、顔を上げて、谷の向こうの高い足場を見上げる, end: 足場を見上げる百騎兵の後ろ姿}
     camera: 百騎兵の後ろの低い所から。谷底をのぞいてから、向こうの高い足場へ振り上げる（ティルト）
@@ -100,8 +100,8 @@ cuts:
       - {t: 0.0, at: b_sofa, z: 0.42, face: 270, pose: lie}
       - {t: 9.5, at: b_sofa, z: 0.42, face: 270, pose: lie}
       arlecchino:
-      - {t: 0.0, at: a_house, face: 300, pose: stand}
-      - {t: 9.5, at: a_house, face: 290, pose: stand}
+      - {t: 0.0, at: a_house, face: 250, pose: stand}
+      - {t: 9.5, at: a_house, face: 250, pose: stand}
     cam_keys:
     - {t: 0.0, cam: [207.3, 206.0, 2.3], look: [203.0, 201.6], look_h: 1.0, lens: 26, frame: 引き}
     - {t: 9.5, cam: [207.1, 205.8, 2.2], look: [202.9, 201.5], look_h: 1.0, lens: 28}

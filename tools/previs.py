@@ -338,7 +338,7 @@ def mat_of(key):
     cols = {"wood": (0.62, 0.42, 0.25), "roof": (0.78, 0.33, 0.2), "stonewall": (0.62, 0.6, 0.48), "fence": (0.38, 0.26, 0.16),
             "inwall": (0.5, 0.52, 0.42), "cloth": (0.75, 0.18, 0.15), "curtain": (0.82, 0.74, 0.6), "furn": (0.45, 0.3, 0.18),
             "bed": (0.7, 0.3, 0.2), "hearth": (0.45, 0.42, 0.38), "straw": (0.85, 0.72, 0.38),
-            "rockcliff": (0.5, 0.4, 0.3)}
+            "rockcliff": (0.46, 0.4, 0.36)}
     if key not in MATS:
         MATS[key] = make_mat(f"m_{key}", cols[key])
     return MATS[key]
