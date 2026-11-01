@@ -1,0 +1,34 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-017
+scene: A13
+tc: 189.8
+sec: 13.0
+kind: A
+shot: 全身（大きな煽り）・空を背にしたメタリカ
+acting: メタリカが胸を張って浮かび上がり、「一人前の魔女にしてやろう！！」。「大魔女だからな！」で両手を上げて高笑い
+dialogue:
+- L373「いいだろう！弟子にしたからには、オスだろうがメスだろうがお前を一人前の魔女にしてやろう！！」
+- L374「なにせ、ワタシは、大魔女だからな！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 72.9
+  - 41.6
+  - 0.25
+  look: metallica
+  lens: 24
+  move: 地面すれすれから、空を背にしたメタリカを大きく煽る
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: うつむくルッキーニィ
+  end: 空を背に両手を上げるメタリカ
+timing:
+  lead: 0.8

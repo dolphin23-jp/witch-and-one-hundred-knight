@@ -240,7 +240,20 @@ SHAPE = {
     "tito": {"r": 0.15, "hr": 0.125, "arm": 0.045},
     "water-merchant": {"r": 0.24, "hr": 0.14, "arm": 0.06},
     "scarecocco": {"r": 0.17, "hr": 0.11, "arm": 0.035},   # ニワトリの魔獣（高さ約60cm）。丸い胴の小さな人形で表す
+    # 夜会編 回2（A14〜A17）
+    "purple-peel": {"r": 0.17, "hr": 0.13, "arm": 0.055},
+    "lily": {"r": 0.14, "hr": 0.12, "arm": 0.04},
+    "rabi": {"r": 0.14, "hr": 0.12, "arm": 0.04},
+    "usamaru": {"r": 0.13, "hr": 0.14, "arm": 0.04},    # ウサギ人形（ラヴィのそばに浮かぶ）
+    "teressa": {"r": 0.14, "hr": 0.12, "arm": 0.04},
+    "berda": {"r": 0.15, "hr": 0.125, "arm": 0.045},
+    "apprentice-a": {"r": 0.12, "hr": 0.11, "arm": 0.035},
+    "apprentice-b": {"r": 0.12, "hr": 0.11, "arm": 0.035},
+    "apprentice-c": {"r": 0.12, "hr": 0.11, "arm": 0.035},
+    "apprentice-d": {"r": 0.12, "hr": 0.11, "arm": 0.035},
+    "karakuri-doll": {"r": 0.5, "hr": 0.3, "arm": 0.07},   # 守護者のからくり人形（卵形の胴に骸骨の顔と笠。設定画 karakuri-doll_sheet_01）
 }
+WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
 
 
@@ -324,7 +337,8 @@ MATS = {}
 def mat_of(key):
     cols = {"wood": (0.62, 0.42, 0.25), "roof": (0.78, 0.33, 0.2), "stonewall": (0.62, 0.6, 0.48), "fence": (0.38, 0.26, 0.16),
             "inwall": (0.5, 0.52, 0.42), "cloth": (0.75, 0.18, 0.15), "curtain": (0.82, 0.74, 0.6), "furn": (0.45, 0.3, 0.18),
-            "bed": (0.7, 0.3, 0.2), "hearth": (0.45, 0.42, 0.38), "straw": (0.85, 0.72, 0.38)}
+            "bed": (0.7, 0.3, 0.2), "hearth": (0.45, 0.42, 0.38), "straw": (0.85, 0.72, 0.38),
+            "rockcliff": (0.46, 0.4, 0.36)}
     if key not in MATS:
         MATS[key] = make_mat(f"m_{key}", cols[key])
     return MATS[key]
@@ -346,7 +360,7 @@ def build_span(name, pr):
     (x0, y0), (x1, y1) = pr["from"], pr["to"]
     L = math.dist((x0, y0), (x1, y1))
     rot = -math.degrees(math.atan2(-(y1 - y0), x1 - x0))   # 東西に長い箱を、from→to の向きに回す（box の rot は上から見て時計回り）
-    key = "fence" if name.startswith("fence") else ("wood" if name.startswith("beam") else "stonewall")
+    key = "fence" if name.startswith("fence") else ("wood" if name.startswith(("beam", "plank")) else "stonewall")
     t = pr.get("t", 0.08 if key == "fence" else 0.4)
     if key == "fence":   # 柵は横木2本と杭
         for k, zz in enumerate((0.45, 0.85)):
@@ -519,6 +533,56 @@ def build_extra(name, pr, x, y, lit):
         brass = make_mat(f"{name}_m", (0.85, 0.65, 0.25))
         prim("cone", brass, f"ENV_{name}", loc=bl((x, y), pr.get("z", 1.5)), rot=(0, math.pi / 2, 0), radius1=0.12, radius2=0.03, depth=0.6)
         return True
+    if name.startswith(("moon", "sun")):   # 空の月・沈む太陽（光る球。遠く高くに置く。白夜月、A13〜A17）
+        m = make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [245, 245, 255])), emit=pr.get("emit", 2.5))
+        prim("sphere", m, f"ENV_{name}", loc=bl((x, y), pr.get("z", 80.0)), radius=pr.get("r", 5.0))
+        return True
+    if name.startswith("peak"):   # 遠くの山（円錐。z0 は裾の高さ）
+        m = make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [120, 95, 80])))
+        hh, r = pr.get("h", 60.0), pr.get("r", 40.0)
+        prim("cone", m, f"ENV_{name}", loc=bl((x, y), pr.get("z0", 0.0) + hh / 2), radius1=r, radius2=r * pr.get("top", 0.08), depth=hh)
+        return True
+    if name.startswith("ledge"):   # 岩の柱の上の丸い足場（上面の高さ h、下は z0 まで。アズ・ブロッケン山、A14〜A17）。
+        # 人物の高さは motion.ground_z に入れない（足場の間を跳ぶときに高さが飛ぶため）。足場の上の人物はキーの z に上面の高さを書く
+        hh, z0, r = pr.get("h", 5.0), pr.get("z0", -40.0), pr.get("r", 3.0)
+        prim("cone", mat_of("rockcliff"), f"ENV_{name}", loc=bl((x, y), (hh + z0) / 2 - 0.08), radius1=r * pr.get("base", 1.35), radius2=r, depth=hh - z0)
+        top = make_mat(f"{name}_top", tuple(v / 255 for v in pr.get("top", [150, 112, 72])))
+        prim("cyl", top, f"ENV_{name}_top", loc=bl((x, y), hh - 0.04), radius=r, depth=0.08)
+        return True
+    if name.startswith("rune"):   # 古の風紋（地面の上の光る輪。A14）
+        bpy.ops.mesh.primitive_torus_add(major_radius=pr.get("r", 0.8), minor_radius=pr.get("w", 0.05), location=bl((x, y), pr.get("z", 0.0) + 0.03))
+        o = bpy.context.object
+        o.name = f"ENV_{name}"
+        o.data.materials.append(make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [140, 230, 255])), emit=pr.get("emit", 1.2)))
+        if pr.get("inner", True):   # 内側にもう一つ小さな輪（渦巻きの目安）
+            bpy.ops.mesh.primitive_torus_add(major_radius=pr.get("r", 0.8) * 0.5, minor_radius=pr.get("w", 0.05), location=bl((x, y), pr.get("z", 0.0) + 0.03))
+            o2 = bpy.context.object
+            o2.name = f"ENV_{name}_in"
+            o2.data.materials.append(o.data.materials[0])
+        return True
+    if name.startswith("barrel"):   # カシの樽（A16）
+        hh = pr.get("h", 0.9)
+        prim("cyl", mat_of("furn"), f"ENV_{name}", loc=bl((x, y), pr.get("z", 0.0) + hh / 2), radius=pr.get("r", 0.35), depth=hh)
+        return True
+    if name.startswith("effigy"):   # 山頂の広場の中央の木の像（積んだ黒い丸太の塔と白い面。背景画 az-brocken-summit_bg_01）
+        hh, r = pr.get("h", 4.0), pr.get("r", 1.2)
+        z0 = pr.get("z", 0.0)
+        dark = make_mat(f"{name}_m", (0.2, 0.15, 0.11))
+        prim("cone", dark, f"ENV_{name}", loc=bl((x, y), z0 + hh / 2), radius1=r, radius2=0.12, depth=hh)
+        mask = make_mat(f"{name}_mask", (0.92, 0.88, 0.8))
+        for k, (zz, a) in enumerate(((0.88, 180), (0.55, 140), (0.4, 230))):
+            rr = r * (1.0 - zz) + 0.12
+            prim("sphere", mask, f"ENV_{name}_mask{k}", loc=bl((x + rr * math.sin(math.radians(a)), y - rr * math.cos(math.radians(a))), z0 + hh * zz), radius=0.15, scale=(1, 0.5, 1))
+        return True
+    if name.startswith("bud"):   # 咲く前のピラー・オブ・テンペランス（黒い柱と緑のつぼみ。咲くのは fx の bloom）
+        hh = pr.get("h", 2.6)
+        z0 = pr.get("z", 0.0)
+        dark = make_mat(f"{name}_m", (0.08, 0.1, 0.08))
+        green = make_mat(f"{name}_g", (0.3, 0.9, 0.35), emit=pr.get("glow", 0.8))
+        prim("cyl", dark, f"ENV_{name}", loc=bl((x, y), z0 + hh * 0.35), radius=0.22, depth=hh * 0.7)
+        prim("sphere", green, f"ENV_{name}_bud", loc=bl((x, y), z0 + hh * 0.8), radius=0.35, scale=(1, 1, 1.4))
+        prim("cone", green, f"ENV_{name}_tip", loc=bl((x, y), z0 + hh), radius1=0.12, radius2=0.0, depth=0.4)
+        return True
     if name.startswith("pillar"):
         r = pr.get("r", 0.3)
         box(mat_of("stonewall"), f"ENV_{name}", x, y, 2 * r, 2 * r, pr.get("h", 2.5))
@@ -558,7 +622,8 @@ def build_site(lay, lighting=None):
     lit0 = (lay.get("lighting") or {}).get(lighting) or {}
     gcol = tuple(v / 255 for v in (lit0.get("ground") or g.get("color", [41, 158, 82])))   # 光に ground があれば地面の色も変える（layout_extra で足した場所）
     swamp = make_mat("swamp", gcol)
-    poly_mesh("ENV_swamp_far", [(-600, -600), (600, -600), (600, 600), (-600, 600)], -0.03, swamp)
+    # 地面の高さ（ground の z）。山の上の場面は足場を 0 に、下の砂漠を z に下げる（アズ・ブロッケン山、A14〜A17）
+    poly_mesh("ENV_swamp_far", [(-600, -600), (600, -600), (600, 600), (-600, 600)], g.get("z", 0.0) - 0.03, swamp)
     kinds = {"翠の沼": swamp}
     for i, a in enumerate(lay.get("areas", [])):
         col = tuple(min(1.0, v / 255 * 1.35) for v in a.get("color", [128, 128, 128]))   # 下絵で見分けやすいよう少し明るく
@@ -605,6 +670,8 @@ def build_site(lay, lighting=None):
             build_room(name, pr)
     for name, pr in (lay.get("props") or {}).items():
         if "at" not in pr or name == "door":
+            continue
+        if pr.get("only_lit") and lighting not in pr["only_lit"]:   # その光のときだけ描く（沈む前の太陽など）
             continue
         x, y = pr["at"]
         if name.startswith("dune"):   # 砂丘: 平たい半球（r は半径、h は高さ）
@@ -655,7 +722,7 @@ def build_site(lay, lighting=None):
                 prim("sphere", leaf, f"ENV_{name}_crown", loc=bl((x, y), pr["h"]), radius=1.0, scale=(pr["crown"], pr["crown"], pr["crown"] * 0.5))
         elif name.startswith("bush"):   # 茂み: 平たい緑の半球（h は高さ）
             bush = make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [55, 105, 45])))
-            prim("sphere", bush, f"ENV_{name}", loc=bl((x, y), 0.0), radius=1.0, scale=(pr.get("r", 0.7), pr.get("r", 0.7), pr.get("h", 0.6)))
+            prim("sphere", bush, f"ENV_{name}", loc=bl((x, y), pr.get("z", 0.0)), radius=1.0, scale=(pr.get("r", 0.7), pr.get("r", 0.7), pr.get("h", 0.6)))
         elif name.startswith("mushrooms"):
             for k, (dx, dy) in enumerate(((0, 0), (0.3, 0.1), (-0.25, 0.2), (0.1, -0.3))):
                 prim("sphere", red, f"ENV_{name}_{k}", loc=bl((x + dx, y + dy), 0.12), radius=0.16, scale=(1, 1, 0.7))
@@ -698,7 +765,10 @@ def build_person(who, h, torch=False, sword=False):
     m_body = make_mat(f"{who}_body", col)
     m_dark = make_mat(f"{who}_dark", tuple(c * 0.45 for c in col))
     m_face = make_mat(f"{who}_nose", (1.0, 0.93, 0.8))
-    prim("cyl", m_body, f"{who}_body", root, (0, 0, body_h / 2), radius=r, depth=body_h)
+    if who == "karakuri-doll":   # 卵形の胴（球を縦に伸ばす）
+        prim("sphere", m_body, f"{who}_body", root, (0, 0, body_h * 0.5), radius=1.0, scale=(r, r, body_h * 0.55))
+    else:
+        prim("cyl", m_body, f"{who}_body", root, (0, 0, body_h / 2), radius=r, depth=body_h)
     al = body_h * 0.6
     arms = {}
     for sx in (-1, 1):   # 腕は肩を軸に回せるように、肩の位置の空の親に付ける
@@ -721,6 +791,19 @@ def build_person(who, h, torch=False, sword=False):
         prim("cone", hat, "hat_cone", head, (0, -0.03, hr * 1.7 + 0.3), (math.radians(8), 0, 0), radius1=0.25, radius2=0.0, depth=0.6)
         for sx in (-1, 1):   # 長い三つ編み（背中側を見分けるため）
             prim("cyl", m_dark, f"braid{sx}", head, (sx * 0.1, -hr * 0.9, -0.45), radius=0.04, depth=1.1)
+    elif who in WITCHES:   # 夜会の魔女と見習い魔女のとんがり帽子（人物の色を濃くしたもの）
+        hat = make_mat(f"{who}_hat", tuple(c * 0.55 for c in col))
+        big = 1.0 if who.startswith("apprentice") else 1.15
+        prim("cyl", hat, f"{who}_brim", head, (0, 0, hr * 1.7), radius=0.3 * big, depth=0.02)
+        prim("cone", hat, f"{who}_cone", head, (0, 0, hr * 1.7 + 0.25 * big), radius1=0.18 * big, radius2=0.0, depth=0.5 * big)
+    elif who == "karakuri-doll":
+        cap = make_mat("doll_cap", (0.5, 0.3, 0.25))
+        skull = make_mat("doll_skull", (0.9, 0.85, 0.7))
+        prim("cyl", cap, "doll_cap", head, (0, -0.05, hr * 2.0), (math.radians(-12), 0, 0), radius=hr * 1.5, depth=0.08)
+        prim("sphere", skull, "doll_skull", head, (0, hr * 0.75, hr), radius=hr * 0.55, scale=(1, 0.6, 1.1))
+    elif who == "usamaru":   # ウサギの長い耳
+        for sx in (-1, 1):
+            prim("sphere", m_body, f"usa_ear{sx}", head, (sx * hr * 0.45, 0, hr * 2.4), radius=1.0, scale=(0.05, 0.03, 0.2))
     elif who == "hundred-knight":
         helmet = make_mat("hk_plume", (0.55, 0.85, 1.0), emit=0.6)
         prim("cone", helmet, "plume", head, (0, 0, hr * 2.0 + 0.1), radius1=0.07, radius2=0.0, depth=0.3)
@@ -882,6 +965,8 @@ def build_fx(fx, i):
 def pose_fx(fx, objs, t, pos, place):
     at = fx["at"]
     p = pos[at] if isinstance(at, str) and at in pos else place(at)
+    if fx.get("off"):   # 置き場所からのずれ [dx, dy]（人物が持つ物を、体の前に出すなど）
+        p = (p[0] + fx["off"][0], p[1] + fx["off"][1])
     amt = motion.fx_amount(fx, t)
     t0, t1 = fx["t"]
     kind = fx.get("kind", "plume")
@@ -1034,6 +1119,22 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (0, sx * -math.radians(120), 0)
     elif pose == "shake":   # 犬のように体を振る
         rz += math.radians(18) * math.sin(2 * math.pi * 6 * t)
+    elif pose == "dance":   # ワルギスのダンス（A16・A17）: 跳ねながら左右に体をひねり、腕を交互に振り上げる
+        z += abs(math.sin(2 * math.pi * 1.6 * t)) * 0.06 * hh
+        rz += math.radians(30) * math.sin(2 * math.pi * 0.8 * t)
+        rx = math.radians(6) * math.sin(2 * math.pi * 1.6 * t)
+    elif pose == "hop":     # 喜んで小さく跳ねる
+        z += abs(math.sin(2 * math.pi * 2.2 * t)) * 0.12 * hh
+    elif pose == "ride":    # ホウキに腰かける（A15）
+        k, rx = 0.62, -math.radians(8)
+    elif pose == "cough":   # むせる（前かがみで口を押さえ、小刻みに揺れる）
+        rx = -math.radians(26) + math.radians(5) * math.sin(2 * math.pi * 4 * t)
+    elif pose == "cry":     # ひざをついて泣く（顔を両手でおおう）
+        k, rx = 0.68, -math.radians(16) + math.radians(3) * math.sin(2 * math.pi * 1.5 * t)
+    elif pose == "fall":    # しりもち（後ろへ傾いて座る）
+        k, rx = 0.55, math.radians(16)
+    elif pose == "spin":    # 転がる・回る（からくり人形、A14）
+        rz += 4 * math.pi * t
     if root.get("torch") and pose not in ("wave", "point", "arms_up", "lie"):   # 松明を掲げる
         arms[1].rotation_euler = (math.radians(20), -math.radians(130), 0)
     if pose in ("hold", "kneel_hold"):
@@ -1058,6 +1159,21 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
             piv.rotation_euler = (math.radians(115), 0, sx * -math.radians(15))
     elif pose == "gesture":    # 片手を横に広げて部屋を示す
         arms[1].rotation_euler = (math.radians(30), -math.radians(70 + 20 * math.sin(2 * math.pi * 0.6 * t)), 0)
+    elif pose == "dance":
+        for sx, piv in arms.items():
+            ph = 0 if sx > 0 else math.pi
+            piv.rotation_euler = (math.radians(40), sx * -math.radians(95 + 55 * math.sin(2 * math.pi * 0.8 * t + ph)), 0)
+    elif pose in ("hop", "ride"):
+        for sx, piv in arms.items():
+            piv.rotation_euler = (0, sx * -math.radians(130), 0) if pose == "hop" else (math.radians(55), 0, sx * math.radians(20))
+    elif pose == "cough":
+        arms[1].rotation_euler = (math.radians(140), 0, math.radians(30))
+    elif pose == "cry":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (math.radians(150), 0, sx * math.radians(28))
+    elif pose == "fall":
+        for sx, piv in arms.items():
+            piv.rotation_euler = (-math.radians(35), 0, sx * -math.radians(20))
     if pose == "wave":
         arms[1].rotation_euler = (0, -math.radians(150 + 20 * math.sin(2 * math.pi * 2.0 * t)), 0)
     elif pose == "point":
@@ -1091,6 +1207,15 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                     o.data.materials.append(gm)
     creatures = {n: build_creature(n, tr) for n, tr in plan.creatures.items()}
     fxs = [(fx, build_fx(fx, i)) for i, fx in enumerate(plan.c.get("fx") or [])]
+    broom = None
+    if c_.get("broom"):   # ホウキ（A15）: broom の人物が ride のときだけ、体の下に描く（後ろへ長く伸ばし、ほかの人物が後ろに乗れる）
+        bm = make_mat("broom_stick", (0.45, 0.3, 0.15))
+        bb = make_mat("broom_brush", (0.85, 0.7, 0.35))
+        broom = bpy.data.objects.new("BROOM", None)
+        bpy.context.collection.objects.link(broom)
+        L = float(c_.get("broom_len", 3.2))
+        prim("cyl", bm, "broom_stick", broom, (0, 0.8 - L / 2, 0), (math.pi / 2, 0, 0), radius=0.035, depth=L)
+        prim("cone", bb, "broom_brush", broom, (0, 0.8 - L - 0.3, 0), (-math.pi / 2, 0, 0), radius1=0.22, radius2=0.04, depth=0.7)
     bpy.ops.object.camera_add()
     cam = bpy.context.object
     cam.name = "CAM"
@@ -1112,8 +1237,15 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         for who, (root, head, arms) in figs.items():
             b = plan.face(who, t, pos)
             x, y = pos[who]
-            apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, motion.ground_z(lay, x, y) + plan.height(who, t), t, lay)
+            zz = motion.ground_z(lay, x, y) + plan.height(who, t)
+            apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, zz, t, lay)
             head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
+            if broom is not None and who == c_["broom"]:
+                riding = plan.pose_name(who, t) == "ride"
+                for o in [broom] + list(broom.children_recursive):
+                    o.hide_render = not riding
+                broom.location = bl((x, y), zz + 0.32)
+                broom.rotation_euler = (0, 0, -math.radians(b))
         for name, parts in creatures.items():
             pose_creature(parts, plan.creatures[name], t)
         for fx, objs in fxs:
@@ -1157,6 +1289,9 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     out_dir.mkdir(parents=True, exist_ok=True)
     checks["warnings"] = warnings
     checks["frames"] = list(idx)
+    # 真っ黒なコマ（カメラが壁・岩・草むらなどの中に入った）。A14-007・008 で見落とした（2026-11-01）
+    from PIL import Image, ImageStat
+    checks["dark"] = [i for i in idx if ImageStat.Stat(Image.open(frames_dir / f"{i:04d}.png").convert("L").resize((64, 36))).mean[0] < 8]
     if preview or motion_step:
         return None, frames_dir, n, checks
     mp4 = out_dir / f"{cut}.mp4"
@@ -1244,6 +1379,9 @@ def main():
             if warn:
                 who = sorted({w for _, ws in warn for w in ws})
                 print(f"  警告: 画面の端から出る人物 {', '.join(who)}（フレーム {warn[0][0]}〜{warn[-1][0]}）。出入りを意図したカットでなければ、カメラか動きを直す")
+            dark = checks.pop("dark", [])
+            if dark:
+                print(f"  警告: 真っ黒なコマ {len(dark)}枚（フレーム {dark[0]}〜{dark[-1]}）。カメラが壁や物の中に入っていないか確かめる")
             for which, res in checks.items():
                 diff = max((abs(r["staging_s"] - r["blender_s"]) for r in res), default=0)
                 print(f"  {which}: 画面の左右（staging.py と Blender の差の最大 {diff:.2f}）",

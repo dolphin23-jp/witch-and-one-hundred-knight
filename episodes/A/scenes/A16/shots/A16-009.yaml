@@ -1,0 +1,32 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-009
+scene: A16
+tc: 81.2
+sec: 9.0
+kind: M
+shot: 寄り（煽り）・得意げに踊るメタリカ
+acting: 踊りながら、得意げに「正式な儀式の舞であったことが証明されたな」
+dialogue:
+- L465「……ふん。だがこれで、れっきとした魔女も踊る正式な儀式の舞であったことが証明されたな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 64.6
+  - 3.9
+  - 26.4
+  look: metallica
+  lens: 34
+  move: 南東の低い所から、空を背に踊るメタリカを煽る
+background: az-brocken
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 踊るメタリカ
+  end: 得意げに踊るメタリカ
+timing:
+  lead: 0.5

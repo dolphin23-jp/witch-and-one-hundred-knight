@@ -1,0 +1,32 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-005
+scene: A14
+tc: 37.5
+sec: 8.0
+kind: M
+shot: 全身・草むらへ歩く百騎兵（パン）
+acting: 指図にきょろきょろし、北の縁の草むらへ歩いて、しゃがんで草をかき分ける
+dialogue:
+- L392（通信）「おい、百騎兵！そこから、少し北にある草むらを調べてみろ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.6
+  - 48.8
+  - 0.8
+  look: hundred-knight
+  lens: 32
+  move: 踊り場の西の低い所から、草むらへ歩く百騎兵を追って振る（パン）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 足場を見上げる百騎兵
+  end: 草むらにしゃがむ百騎兵
+timing:
+  lead: 0.5

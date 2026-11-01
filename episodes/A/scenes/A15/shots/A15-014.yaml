@@ -1,0 +1,33 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-014
+scene: A15
+tc: 116.0
+sec: 9.0
+kind: M
+shot: 寄り・目を輝かせるルッキーニィ
+acting: ルッキーニィは目を輝かせて両手を握り「魔女の鑑ですね！」と跳ねる。ビスコはがっくりうつむく
+dialogue:
+- L444「なるほど！さすがは魔女様です！ワガママでイジワルで自由……魔女の鑑ですね！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 60.5
+  - 2.6
+  - 27.9
+  look: luckiny
+  lens: 40
+  move: 北東のやや高い所から、ビスコの肩ごしにルッキーニィの寄り
+background: az-brocken
+image: null
+refs:
+- luckiny
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 訴えるビスコ
+  end: 跳ねるルッキーニィと、うなだれるビスコ
+timing:
+  lead: 0.4

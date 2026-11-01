@@ -1,0 +1,35 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-009
+scene: A15
+tc: 62.0
+sec: 8.0
+kind: A
+shot: 引き・谷の上を飛ぶホウキ（並んで追う）
+acting: ホウキが谷の上を東へ飛ぶ。下は尖塔と、影に沈む砂漠。行く手に山頂の峰と木の像が近づく
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.5
+  - 1.0
+  - 27.0
+  look: metallica
+  lens: 28
+  move: 北の空から、並んで飛びながら追う（トラック）
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 飛び立ったホウキ
+  end: 山頂の峰へ下りていくホウキ
+timing:
+  lead: 0.3

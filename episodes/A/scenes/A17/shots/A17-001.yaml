@@ -1,0 +1,44 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-001
+scene: A17
+tc: 0.0
+sec: 7.0
+kind: A
+shot: 引き（後ろから煽る）・光とともに降りてくる夜会の魔女たち
+acting: 「フフフフ」と笑い声。北の夜空から、光とともに魔女たちが一人ずつ広場の縁へ降りてくる。一行が見上げる
+dialogue:
+- L481「フフフフ…………。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 61.3
+  - 9.8
+  - 26.8
+  look:
+  - 62.0
+  - -3.0
+  lens: 24
+  move: 一行の後ろ（南）の低い所から、降りてくる魔女たちを煽る（ティルトダウン）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+- purple-peel
+- lily
+- rabi
+- usamaru
+- berda
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 夜の山頂。うなだれかけた一行
+  end: 北の縁に並んだ魔女たちと、見上げる一行
+timing:
+  lead: 0.5

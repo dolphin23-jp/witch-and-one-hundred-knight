@@ -1,0 +1,34 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-001
+scene: A14
+tc: 0.0
+sec: 10.0
+kind: A
+shot: 引き（高い所から）・山の板の道の行き止まり
+acting: 百騎兵が板の道を駆けてきて、丸い踊り場で止まる。その先は深い谷で道がない。左右を見回す
+dialogue:
+- L386（通信）「行き止まり…………の、ようだな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.8
+  - 40.6
+  - 10.5
+  look:
+  - 10.0
+  - 54.0
+  lens: 26
+  move: 谷の向こう（北西）の高い所から、駆けてくる百騎兵へ下りながら寄る（クレーン）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 夕方の山の板の道
+  end: 谷の縁で立ち尽くす百騎兵
+timing:
+  lead: 5.0

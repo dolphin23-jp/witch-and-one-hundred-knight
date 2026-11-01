@@ -1,0 +1,37 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-003
+scene: A14
+tc: 18.5
+sec: 9.5
+kind: M
+shot: 引き・夕方の魔女邸の居間（四人）
+acting: ルッキーニィが振り向いて手を挙げ、星読みで占わせてほしいと申し出る。メタリカが振り向く
+dialogue:
+- L389「……ん？なんだルッキーニィ？お前が星読みで……占う、だと？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 207.3
+  - 206.0
+  - 2.3
+  look:
+  - 203.0
+  - 201.6
+  lens: 26
+  move: 居間の南東の高い所から、部屋全体（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 夕方の魔女邸の居間。テーブルで水晶玉をのぞくメタリカ、丸窓から空を見ているルッキーニィ、ソファで寝ているビスコ、控えるアルレッキーノ
+  end: 向き合うメタリカとルッキーニィ
+timing:
+  lead: 3.0

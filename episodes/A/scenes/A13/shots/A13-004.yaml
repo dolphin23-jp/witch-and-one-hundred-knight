@@ -1,0 +1,35 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-004
+scene: A13
+tc: 31.0
+sec: 8.6
+kind: M
+shot: 寄り・ルッキーニィの肩ごし・驚くメタリカ
+acting: ルッキーニィが「魔女様！」と指さす。メタリカは跳び上がって驚き、ずいと寄って顔をのぞき込む
+dialogue:
+- L348「あっ！魔女様！！」
+- L349「あん？お前、このワタシの幻影が見えるのか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 71.0
+  - 38.3
+  - 1.55
+  look: metallica
+  lens: 35
+  move: ルッキーニィの肩ごし（北西、右手前に角）から、驚くメタリカへ少し寄る
+background: tettara-desert
+image: null
+refs:
+- hundred-knight
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 腕を組む幻影のメタリカ
+  end: ルッキーニィに顔を寄せるメタリカ
+timing:
+  lead: 0.5

@@ -1,0 +1,38 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-008
+scene: A16
+tc: 72.7
+sec: 8.5
+kind: M
+shot: 全身・口をすべらせるアルレッキーノ
+acting: アルレッキーノが「お子様が踊るお遊戯とばかり」と口をすべらせ、メタリカは踊りの途中でつんのめってにらむ
+dialogue:
+- L464「ワタクシ、“ワルギスのダンス”は幼年の魔女見習いのお子様が踊る、お遊戯とばかり思っておりました。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 57.3
+  - 0.5
+  - 26.9
+  look:
+  - 60.6
+  - 3.4
+  lens: 26
+  move: 北西の低い所から、一行の前のアルレッキーノと、樽のまわりで踊るメタリカ
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 踊るメタリカ
+  end: にらんでまた踊り出すメタリカ
+timing:
+  lead: 0.5

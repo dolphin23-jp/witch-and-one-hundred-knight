@@ -1,0 +1,36 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-007
+scene: A13
+tc: 56.6
+sec: 11.5
+kind: A
+shot: 全身・草のまわりを回るメタリカ
+acting: メタリカが両手を上げて草へ飛んでいき、喜んで草のまわりを回る。「全てが揃ったぞ」で両手を上げる
+dialogue:
+- L354「おお！よくやったぞ！！羊飼い！」
+- L355「キヒヒ！これで指定の珍品３つ！全てが揃ったぞ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 75.6
+  - 43.0
+  - 1.7
+  look:
+  - 72.9
+  - 39.3
+  lens: 28
+  move: 南東から、草のまわりを回るメタリカに合わせて北へ回り込む（トラック）
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 草を示すルッキーニィ
+  end: 草の北で両手を上げるメタリカと、見上げるルッキーニィ
+timing:
+  lead: 0.5

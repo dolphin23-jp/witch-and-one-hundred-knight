@@ -1,0 +1,36 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-012
+scene: A17
+tc: 117.2
+sec: 12.3
+kind: M
+shot: 全身・顔を寄せるテレッサ（横から）
+acting: テレッサがメタリカの目の前まで歩み寄り、顔をのぞき込んで「お夜会ごっこでもしているのがお似合いですわ」
+dialogue:
+- L501「あなたなんかがヴァルプルギスの夜会に出席できるわけがないでしょう？」
+- L502「あなたには子供達と一緒に、お夜会ごっこでもしているのがお似合いですわ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 64.3
+  - 4.5
+  - 28.4
+  look:
+  - 62.4
+  - 0.65
+  lens: 30
+  move: 南南東のやや高い所から、向き合う二人を斜め横に。寄りながら南東へ回り込む（奥に木の像）
+background: az-brocken
+image: null
+refs:
+- teressa
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 指さすテレッサ
+  end: 顔を寄せるテレッサと、うつむくメタリカ
+timing:
+  lead: 0.3

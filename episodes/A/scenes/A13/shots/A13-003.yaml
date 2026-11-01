@@ -1,0 +1,36 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-003
+scene: A13
+tc: 22.0
+sec: 9.0
+kind: A
+shot: 全身・三人（南から）・下りてくるメタリカの幻影
+acting: 百騎兵の後ろにメタリカの幻影がふわりと下りてくる。腕を組み、肩をすくめる（見えないだろうと思っている）
+dialogue:
+- L347（幻影）「キヒヒ！ワタシならここにいるぞ。といっても、幻影じゃそいつにはみえんか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 73.4
+  - 44.2
+  - 1.2
+  look:
+  - 73.5
+  - 40.0
+  lens: 32
+  move: 南から三人を横に並べて（ゆっくり寄る）
+background: tettara-desert
+image: null
+refs:
+- hundred-knight
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 向き合うルッキーニィと百騎兵
+  end: 腕を組む幻影のメタリカ。ルッキーニィの目がそちらへ
+timing:
+  lead: 1.6

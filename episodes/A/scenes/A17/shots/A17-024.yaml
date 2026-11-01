@@ -1,0 +1,39 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-024
+scene: A17
+tc: 237.6
+sec: 14.5
+kind: M
+shot: 寄り（低い）・うつむくメタリカ
+acting: うつむいたまま「笑いものに……されたのか……？」「偉大なる、沼の魔女が……！」。後ろを見習い魔女たちが踊りながら横切る
+dialogue:
+- L523「魔女として認められるどころか、笑いものに……されたのか……？」
+- L524「このワタシが……！偉大なる、沼の魔女が……！魔女が……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 59.4
+  - 5.2
+  - 26.75
+  look:
+  - 60.8
+  - 2.1
+  lens: 34
+  move: 南の低い所から、うつむくメタリカの横顔の寄り（右の奥を踊りの輪が回る。ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- apprentice-a
+- apprentice-b
+- apprentice-c
+- apprentice-d
+overlays: []
+fallback: null
+act:
+  start: ひざをついたメタリカ
+  end: うつむくメタリカの寄り
+timing:
+  lead: 0.4

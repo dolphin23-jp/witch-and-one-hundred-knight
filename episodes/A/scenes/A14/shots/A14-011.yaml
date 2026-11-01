@@ -1,0 +1,34 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-011
+scene: A14
+tc: 83.0
+sec: 8.5
+kind: A
+shot: 大引き（空撮）・ピラーの峰への大跳躍
+acting: 助走して最後の大きな跳躍。谷を越えてピラーの峰の縁に着地する
+dialogue:
+- L407「どんな強力な魔獣が守護者になっていてもおかしくない。用心しろよ百騎兵。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.0
+  - 26.0
+  - 32.0
+  look:
+  - 22.0
+  - 15.0
+  lens: 28
+  move: 西の高い空から、尖塔と谷と峰を一望（ゆっくり右へ振る）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 足場4に立つ百騎兵
+  end: 峰の縁に着地した百騎兵
+timing:
+  lead: 0.6

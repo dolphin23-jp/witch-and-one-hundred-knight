@@ -1,0 +1,40 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-007
+scene: A17
+tc: 66.5
+sec: 20.3
+kind: M
+shot: 全身・ラヴィとウサギ人形
+acting: ウサギ人形がはねて「面白いダンスだったよね！」。ラヴィが両手を上げて大笑いし、メタリカを指さして「こんな間抜けなヤツ、見習い魔女にだっていないぜ」
+dialogue:
+- L492「ははっ！面白いダンスだったよね！！ねぇねぇ？ラビィちゃん！」
+- L493「アハハッ！でも、本当に面白いのはダンスじゃないだろ。」
+- L494「こんな間抜けなヤツ、見習い魔女にだっていないぜ。」
+- L495「こいつ、○＆＃％＆じゃねーの？アハハ！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 63.4
+  - 0.6
+  - 27.5
+  look:
+  - 65.0
+  - -4.2
+  lens: 32
+  move: 南（木の像の東の脇）から、ラヴィとウサギ人形（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- rabi
+- usamaru
+- berda
+overlays: []
+fallback: null
+act:
+  start: 北東の縁のラヴィとウサギ人形
+  end: 大笑いするラヴィ
+timing:
+  lead: 0.3

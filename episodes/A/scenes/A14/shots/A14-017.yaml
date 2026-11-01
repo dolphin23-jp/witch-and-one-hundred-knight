@@ -1,0 +1,32 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-017
+scene: A14
+tc: 123.7
+sec: 5.5
+kind: A
+shot: 全身（低い）・人形を斬って弾き飛ばす
+acting: 人形が弾みながら跳びかかってくる。百騎兵が踏み込んで斬りつけ、火花とともに人形を弾き飛ばす
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.6
+  - 6.4
+  - 22.6
+  look: karakuri-doll
+  lens: 28
+  move: 百騎兵の後ろ（北東）の低い所から、向かってくる人形を（人形を追って振る）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+- karakuri-doll
+overlays: []
+fallback: null
+act:
+  start: 入れ替わって向き合う二人
+  end: 弾き飛ばされてよろめく人形
+timing:
+  lead: 0.3

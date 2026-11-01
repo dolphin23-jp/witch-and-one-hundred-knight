@@ -1,0 +1,1301 @@
+# A17 偽の招待状・見習い魔女の夜会（夜会編 回2 の最後、選別の 16・17）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-01）
+# Living Spec「A17 動きの設計（案）」（28カット・約5分16秒）。ユーザー指示「回2を始めて良い」（2026-11-01）
+# 場所は world/az-brocken-layout.yaml の山頂の峰（z 26）。中央に木の像（[62, −1]）、その南に樽（[62, 2.2]）。夜（night_mtn、東の空に白夜月）。
+#   夜会の魔女たちは北の縁に光とともに降りてくる（パープルピール・リリーは北西、ラヴィとウサギ人形・ベルダは北東、テレッサは東）。少し浮いている（z 26.6）。
+#   話し手: 原作テキストの「浅黒い魔女」＝パープルピール、「知的な魔女」＝リリー（推定）、「おとなしそうな魔女」＝ベルダ。山頂の「テレッサ」の一部はウサギ人形とラヴィ（audio/A14/original/script.yaml）。
+#   見習い魔女たち（4人）は南東から歩いてきて、樽のまわりの輪（半径 1.05m）で踊る。メタリカは 018 で樽の西（m_back）へ下がり、022 からそこでひざをつく。
+# 漫符（002 のびっくり、008 の「？」、015 の怒りマーク、026〜028 の涙）は合成（D-027）。下絵では描かない
+scene: A17
+layout: world/az-brocken-layout.yaml
+map_ymax: 14
+lighting: night_mtn
+places:
+  barrel: [62.0, 2.2]
+  effigy: [62.0, -1.0]
+  m_stop: [61.25, 1.25]
+  m_back: [60.0, 2.5]
+  m_kneel: [60.0, 2.5]
+  a_cat: [62.68, 2.25]
+  a_up: [62.9, 3.4]
+  b_g: [59.8, 6.2]
+  l_g: [60.9, 6.6]
+  hk_g: [58.7, 5.5]
+  b_side: [59.35, 3.1]
+  pp: [58.2, -3.2]
+  li: [59.6, -4.6]
+  ra: [64.6, -4.4]
+  us: [65.3, -3.9]
+  be: [66.2, -2.4]
+  te: [65.6, -0.6]
+  te_near: [62.75, 0.25]
+  te_back: [65.4, -1.2]
+  ap_in_a: [68.6, 7.6]
+  ap_in_b: [69.3, 8.2]
+  ap_in_c: [68.0, 8.6]
+  ap_in_d: [69.8, 7.0]
+  ap_a: [65.0, 4.6]
+  ap_b: [65.8, 5.3]
+  ap_c: [64.6, 5.6]
+  ap_d: [66.1, 4.2]
+  moon: [520.0, 10.0]
+start:
+  metallica: {at: m_stop, face: 225}
+  arlecchino: {at: a_cat, face: 270}
+  bisco: {at: b_g, face: 40}
+  luckiny: {at: l_g, face: 60}
+  hundred-knight: {at: hk_g, face: 70}
+  purple-peel: {at: pp, face: 146}
+  lily: {at: li, face: 164}
+  rabi: {at: ra, face: 211}
+  usamaru: {at: us, face: 218}
+  berda: {at: be, face: 234}
+  teressa: {at: te, face: 247}
+  apprentice-a: {at: ap_in_a, face: 300}
+  apprentice-b: {at: ap_in_b, face: 300}
+  apprentice-c: {at: ap_in_c, face: 300}
+  apprentice-d: {at: ap_in_d, face: 300}
+cuts:
+  A17-001:
+    frame: 引き（後ろから煽る）
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight, purple-peel, lily, rabi, usamaru, berda, teressa]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_stop, z: 26.0, face: 225, pose: arms_up}
+      - {t: 1.0, at: m_stop, z: 26.0, face: 225, pose: stand}
+      - {t: 2.0, at: m_stop, z: 26.0, face: 340, pose: look_up}
+      - {t: 7.0, at: m_stop, z: 26.0, face: 340, pose: look_up}
+      arlecchino:
+      - {t: 0.0, at: a_cat, z: 26.0, face: 270, pose: crouch}
+      - {t: 0.8, at: a_cat, z: 26.0, face: 270, pose: crouch}
+      - {t: 1.4, at: a_up, z: 26.0, face: 330, pose: stand}
+      - {t: 7.0, at: a_up, z: 26.0, face: 330, pose: look_up}
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 40, pose: stand}
+      - {t: 1.6, at: b_g, z: 26.0, face: 350, pose: look_up}
+      - {t: 7.0, at: b_g, z: 26.0, face: 350, pose: look_up}
+      luckiny:
+      - {t: 0.0, at: l_g, z: 26.0, face: 60, pose: stand}
+      - {t: 1.4, at: l_g, z: 26.0, face: 355, pose: look_up}
+      - {t: 7.0, at: l_g, z: 26.0, face: 355, pose: look_up}
+      hundred-knight:
+      - {t: 0.0, at: hk_g, z: 26.0, face: 70, pose: stand}
+      - {t: 1.6, at: hk_g, z: 26.0, face: 20, pose: look_up}
+      - {t: 7.0, at: hk_g, z: 26.0, face: 20, pose: look_up}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 40.0, face: 146, pose: stand}
+      - {t: 0.6, at: pp, z: 40.0, face: 146, pose: stand}
+      - {t: 2.2, at: pp, z: 26.6, face: 146, pose: stand, ease: out}
+      - {t: 7.0, at: pp, z: 26.6, face: 146, pose: cover}
+      lily:
+      - {t: 0.0, at: li, z: 40.0, face: 164, pose: stand}
+      - {t: 1.2, at: li, z: 40.0, face: 164, pose: stand}
+      - {t: 2.8, at: li, z: 26.6, face: 164, pose: stand, ease: out}
+      - {t: 7.0, at: li, z: 26.6, face: 164, pose: cover}
+      rabi:
+      - {t: 0.0, at: ra, z: 40.0, face: 211, pose: stand}
+      - {t: 1.7999999999999998, at: ra, z: 40.0, face: 211, pose: stand}
+      - {t: 3.4, at: ra, z: 26.6, face: 211, pose: stand, ease: out}
+      - {t: 7.0, at: ra, z: 26.6, face: 211, pose: cover}
+      usamaru:
+      - {t: 0.0, at: us, z: 40.0, face: 218, pose: stand}
+      - {t: 2.4, at: us, z: 40.0, face: 218, pose: stand}
+      - {t: 4.0, at: us, z: 27.5, face: 218, pose: stand, ease: out}
+      - {t: 7.0, at: us, z: 27.5, face: 218, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 40.0, face: 234, pose: stand}
+      - {t: 3.0, at: be, z: 40.0, face: 234, pose: stand}
+      - {t: 4.6, at: be, z: 26.6, face: 234, pose: stand, ease: out}
+      - {t: 7.0, at: be, z: 26.6, face: 234, pose: cover}
+      teressa:
+      - {t: 0.0, at: te, z: 40.0, face: 247, pose: stand}
+      - {t: 3.6, at: te, z: 40.0, face: 247, pose: stand}
+      - {t: 5.2, at: te, z: 26.0, face: 247, pose: stand, ease: out}
+      - {t: 7.0, at: te, z: 26.0, face: 247, pose: cover}
+    fx:
+    - {kind: light, t: [0.6, 2.2], at: pp, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    - {kind: light, t: [1.2, 2.8000000000000003], at: li, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    - {kind: light, t: [1.7999999999999998, 3.4000000000000004], at: ra, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    - {kind: light, t: [2.4, 4.0], at: us, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    - {kind: light, t: [3.0, 4.6], at: be, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    - {kind: light, t: [3.6, 5.2], at: te, z: 28.5, energy: 380, color: [210, 160, 255], fade: 1.5}
+    cam_keys:
+    - {t: 0.0, cam: [61.3, 9.8, 26.8], look: [62.0, -3.0], look_h: 31.0, lens: 24, frame: 引き}
+    - {t: 7.0, cam: [61.3, 9.6, 26.8], look: [62.0, -3.0], look_h: 28.6, lens: 24}
+    bg: azb_summit_night
+    act: {start: 夜の山頂。うなだれかけた一行, do: 「フフフフ」と笑い声。北の夜空から、光とともに魔女たちが一人ずつ広場の縁へ降りてくる。一行が見上げる, end: 北の縁に並んだ魔女たちと、見上げる一行}
+    camera: 一行の後ろ（南）の低い所から、降りてくる魔女たちを煽る（ティルトダウン）
+    kind: A
+  A17-002:
+    frame: 全身（一行の正面）
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_stop, z: 26.0, face: 340, pose: look_up}
+      - {t: 3.0, at: m_stop, z: 26.0, face: 340, pose: look_up}
+      - {t: 3.3, at: m_stop, z: 26.0, face: 340, pose: arms_up}
+      - {t: 7.2, at: m_stop, z: 26.0, face: 340, pose: arms_up}
+      - {t: 7.6, at: m_stop, z: 26.0, face: 340, pose: proud}
+      - {t: 10.8, at: m_stop, z: 26.0, face: 340, pose: proud}
+      arlecchino:
+      - {t: 0.0, at: a_up, z: 26.0, face: 330, pose: look_up}
+      - {t: 10.8, at: a_up, z: 26.0, face: 330, pose: look_up}
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 350, pose: look_up}
+      - {t: 10.8, at: b_g, z: 26.0, face: 350, pose: look_up}
+      luckiny:
+      - {t: 0.0, at: l_g, z: 26.0, face: 355, pose: look_up}
+      - {t: 0.3, at: l_g, z: 26.0, face: 350, pose: point}
+      - {t: 3.0, at: l_g, z: 26.0, face: 350, pose: point}
+      - {t: 3.4, at: l_g, z: 26.0, face: 350, pose: stand}
+      - {t: 10.8, at: l_g, z: 26.0, face: 350, pose: stand}
+      hundred-knight:
+      - {t: 0.0, at: hk_g, z: 26.0, face: 20, pose: look_up}
+      - {t: 10.8, at: hk_g, z: 26.0, face: 20, pose: look_up}
+    cam_keys:
+    - {t: 0.0, cam: [60.3, -2.6, 28.6], look: [60.6, 4.2], look_h: 26.9, lens: 28, frame: 全身}
+    - {t: 10.8, cam: [60.4, -2.2, 28.5], look: [60.6, 4.2], look_h: 26.9, lens: 30}
+    bg: azb_summit_night
+    act: {start: 見上げる一行, do: ルッキーニィが指さして「何ですか、アレ！？」。メタリカは両手を上げて「ついに来たぞ！」と胸を張る。ビスコは見上げたまま「これが……夜会……！？」, end: 胸を張るメタリカ}
+    camera: 魔女たちの側（北）のやや高い所から、見上げる一行の正面
+    kind: M
+  A17-003:
+    frame: 全身（奥に魔女たち）
+    only: [metallica, arlecchino, purple-peel, lily, rabi, usamaru, berda, teressa]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_stop, z: 26.0, face: 340, pose: proud}
+      - {t: 0.6, at: m_stop, z: 26.0, face: 340, pose: stand}
+      - {t: 1.0, at: [61.08, 3.12], z: 26.0, face: 315, pose: dance, ease: linear}
+      - {t: 2.06, at: [60.92, 2.92], z: 26.0, face: 326, pose: dance, ease: linear}
+      - {t: 3.12, at: [60.8, 2.7], z: 26.0, face: 338, pose: dance, ease: linear}
+      - {t: 4.19, at: [60.72, 2.45], z: 26.0, face: 349, pose: dance, ease: linear}
+      - {t: 5.25, at: [60.7, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 6.31, at: [60.72, 1.95], z: 26.0, face: 11, pose: dance, ease: linear}
+      - {t: 7.38, at: [60.8, 1.7], z: 26.0, face: 22, pose: dance, ease: linear}
+      - {t: 8.44, at: [60.92, 1.48], z: 26.0, face: 34, pose: dance, ease: linear}
+      - {t: 9.5, at: [61.08, 1.28], z: 26.0, face: 45, pose: dance, ease: linear}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 146, pose: stand}
+      - {t: 9.5, at: pp, z: 26.6, face: 146, pose: stand}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 164, pose: stand}
+      - {t: 9.5, at: li, z: 26.6, face: 164, pose: stand}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 211, pose: stand}
+      - {t: 9.5, at: ra, z: 26.6, face: 211, pose: stand}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 218, pose: stand}
+      - {t: 9.5, at: us, z: 27.5, face: 218, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 234, pose: stand}
+      - {t: 9.5, at: be, z: 26.6, face: 234, pose: stand}
+      teressa:
+      - {t: 0.0, at: te, z: 26.0, face: 247, pose: stand}
+      - {t: 9.5, at: te, z: 26.0, face: 247, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [62.6, 8.0, 27.3], look: [61.6, 0.0], look_h: 27.4, lens: 30, frame: 全身}
+    - {t: 9.5, cam: [62.5, 7.6, 27.3], look: [61.6, 0.0], look_h: 27.4, lens: 32}
+    bg: azb_summit_night
+    act: {start: 胸を張るメタリカ, do: 「空間が安定するまで踊り続けなければ」と、得意げにまた踊り出す。奥の魔女たちが見ている, end: 踊るメタリカと奥の魔女たち}
+    camera: 南の低い所から、踊るメタリカ（手前に樽のアルレッキーノ、奥に北の縁の魔女たち）
+    kind: M
+  A17-004:
+    frame: 全身（魔女たちの肩ごし）
+    only: [metallica, bisco, purple-peel, lily, rabi, usamaru, berda, teressa]
+    keys:
+      metallica:
+      - {t: 0.0, at: [61.08, 1.28], z: 26.0, face: 45, pose: dance, ease: linear}
+      - {t: 0.96, at: [61.25, 1.14], z: 26.0, face: 55, pose: dance, ease: linear}
+      - {t: 1.91, at: [61.45, 1.02], z: 26.0, face: 65, pose: dance, ease: linear}
+      - {t: 2.87, at: [61.66, 0.94], z: 26.0, face: 75, pose: dance, ease: linear}
+      - {t: 3.82, at: [61.89, 0.9], z: 26.0, face: 85, pose: dance, ease: linear}
+      - {t: 4.78, at: [62.11, 0.9], z: 26.0, face: 95, pose: dance, ease: linear}
+      - {t: 5.73, at: [62.34, 0.94], z: 26.0, face: 105, pose: dance, ease: linear}
+      - {t: 6.69, at: [62.55, 1.02], z: 26.0, face: 115, pose: dance, ease: linear}
+      - {t: 7.64, at: [62.75, 1.14], z: 26.0, face: 125, pose: dance, ease: linear}
+      - {t: 8.6, at: [62.92, 1.28], z: 26.0, face: 135, pose: dance, ease: linear}
+      - {t: 9.0, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      - {t: 16.2, at: [62.0, 0.9], z: 26.0, face: 210, pose: dance}
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 350, pose: look_up}
+      - {t: 8.6, at: b_g, z: 26.0, face: 350, pose: look_up}
+      - {t: 9.0, at: b_g, z: 26.0, face: 10, pose: cover}
+      - {t: 16.2, at: b_g, z: 26.0, face: 10, pose: cover}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 146, pose: cover}
+      - {t: 16.2, at: pp, z: 26.6, face: 146, pose: cover}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 164, pose: cross}
+      - {t: 16.2, at: li, z: 26.6, face: 164, pose: cross}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 211, pose: arms_up}
+      - {t: 16.2, at: ra, z: 26.6, face: 211, pose: arms_up}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 218, pose: stand}
+      - {t: 16.2, at: us, z: 27.5, face: 218, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 234, pose: stand}
+      - {t: 16.2, at: be, z: 26.6, face: 234, pose: stand}
+      teressa:
+      - {t: 0.0, at: te, z: 26.0, face: 247, pose: cover}
+      - {t: 16.2, at: te, z: 26.0, face: 247, pose: cover}
+    cam_keys:
+    - {t: 0.0, cam: [69.8, 0.2, 33.5], look: [61.4, 2.6], look_h: 26.9, lens: 34, frame: 全身}
+    - {t: 16.2, cam: [69.3, 0.4, 33.0], look: [61.4, 2.6], look_h: 26.9, lens: 40}
+    bg: azb_summit_night
+    act: {start: 踊るメタリカ, do: 魔女たちがくすくす笑っている。メタリカは踊りながらきょろきょろして「なんで笑っているんだ」。ビスコは口を押さえて「かなり恥ずかしいぞ」, end: 笑う魔女たちと、踊るメタリカ}
+    camera: 東の縁の魔女（テレッサ）の頭上の高い所から、踊るメタリカと一行を見下ろす（ゆっくり寄る）
+    kind: M
+  A17-005:
+    frame: 寄り（低い）
+    only: [metallica]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 210, pose: dance}
+      - {t: 5.5, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+    cam_keys:
+    - {t: 0.0, cam: [60.1, 1.5, 26.6], look: metallica, look_h: 27.5, lens: 36, frame: 寄り}
+    - {t: 5.5, cam: [60.2, 1.45, 26.6], look: metallica, look_h: 27.5, lens: 40}
+    bg: azb_summit_night
+    act: {start: 踊るメタリカ, do: 踊りを止めずに「これは儀式に必要な踊りなんだぞ！」と言い返す, end: 踊るメタリカの寄り}
+    camera: 西の低い所からメタリカの寄り（奥に東の空）
+    kind: M
+  A17-006:
+    frame: 全身（煽り）
+    only: [metallica, purple-peel, lily]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      - {t: 17.5, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 146, pose: cross}
+      - {t: 0.2, at: pp, z: 26.6, face: 125, pose: cross}
+      - {t: 0.4, at: pp, z: 26.6, face: 125, pose: lean}
+      - {t: 3.6, at: pp, z: 26.6, face: 125, pose: lean}
+      - {t: 4.0, at: pp, z: 26.6, face: 125, pose: cross}
+      - {t: 12.0, at: pp, z: 26.6, face: 125, pose: cross}
+      - {t: 12.4, at: pp, z: 26.6, face: 125, pose: gesture}
+      - {t: 17.5, at: pp, z: 26.6, face: 125, pose: gesture}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 164, pose: cross}
+      - {t: 0.5, at: li, z: 26.6, face: 140, pose: cross}
+      - {t: 3.8, at: li, z: 26.6, face: 140, pose: cross}
+      - {t: 4.2, at: li, z: 26.6, face: 140, pose: point}
+      - {t: 11.6, at: li, z: 26.6, face: 140, pose: point}
+      - {t: 12.0, at: li, z: 26.6, face: 140, pose: cross}
+      - {t: 17.5, at: li, z: 26.6, face: 140, pose: cross}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 211, pose: stand}
+      - {t: 17.5, at: ra, z: 26.6, face: 211, pose: stand}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 218, pose: stand}
+      - {t: 17.5, at: us, z: 27.5, face: 218, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 234, pose: stand}
+      - {t: 17.5, at: be, z: 26.6, face: 234, pose: stand}
+      teressa:
+      - {t: 0.0, at: te, z: 26.0, face: 247, pose: stand}
+      - {t: 17.5, at: te, z: 26.0, face: 247, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [61.0, 2.8, 26.7], look: purple-peel, look_h: 28.0, lens: 30, frame: 全身（煽り）}
+    - {t: 3.6, cam: [61.0, 2.8, 26.7], look: [58.9, -3.9], look_h: 28.0, lens: 32}
+    - {t: 12.0, cam: [61.05, 2.85, 26.7], look: [58.6, -3.6], look_h: 28.0, lens: 32}
+    - {t: 17.5, cam: [61.05, 2.85, 26.7], look: purple-peel, look_h: 28.0, lens: 34}
+    bg: azb_summit_night
+    act: {start: 北西の縁の二人の魔女, do: パープルピールが身を乗り出して「こいつが噂の沼の魔女かい？」。リリーが指さして「小娘か。300年早いね」。パープルピールが手を広げて「古臭い魔女がまだいたとはね」, end: 見下ろす二人の魔女}
+    camera: 踊るメタリカの後ろの低い所から、北西の魔女たちを煽る（二人のあいだを振る）
+    kind: M
+  A17-007:
+    frame: 全身（二人）
+    only: [metallica, rabi, usamaru, berda]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      - {t: 20.3, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 125, pose: stand}
+      - {t: 0.5, at: pp, z: 26.6, face: 146, pose: stand}
+      - {t: 20.3, at: pp, z: 26.6, face: 146, pose: stand}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 140, pose: stand}
+      - {t: 0.5, at: li, z: 26.6, face: 164, pose: stand}
+      - {t: 20.3, at: li, z: 26.6, face: 164, pose: stand}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 215, pose: stand}
+      - {t: 4.8, at: ra, z: 26.6, face: 215, pose: arms_up}
+      - {t: 9.3, at: ra, z: 26.6, face: 215, pose: arms_up}
+      - {t: 9.6, at: ra, z: 26.6, face: 215, pose: point}
+      - {t: 14.8, at: ra, z: 26.6, face: 215, pose: point}
+      - {t: 15.1, at: ra, z: 26.6, face: 215, pose: arms_up}
+      - {t: 20.3, at: ra, z: 26.6, face: 215, pose: arms_up}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 225, pose: stand}
+      - {t: 0.3, at: us, z: 27.8, face: 225, pose: hop}
+      - {t: 4.6, at: us, z: 27.8, face: 225, pose: hop}
+      - {t: 5.0, at: us, z: 27.5, face: 225, pose: stand}
+      - {t: 20.3, at: us, z: 27.5, face: 225, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 234, pose: stand}
+      - {t: 20.3, at: be, z: 26.6, face: 234, pose: stand}
+      teressa:
+      - {t: 0.0, at: te, z: 26.0, face: 247, pose: stand}
+      - {t: 20.3, at: te, z: 26.0, face: 247, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [63.4, 0.6, 27.5], look: [65.0, -4.2], look_h: 27.9, lens: 32, frame: 全身}
+    - {t: 20.3, cam: [63.5, 0.0, 27.5], look: [65.0, -4.2], look_h: 27.9, lens: 38}
+    bg: azb_summit_night
+    act: {start: 北東の縁のラヴィとウサギ人形, do: ウサギ人形がはねて「面白いダンスだったよね！」。ラヴィが両手を上げて大笑いし、メタリカを指さして「こんな間抜けなヤツ、見習い魔女にだっていないぜ」, end: 大笑いするラヴィ}
+    camera: 南（木の像の東の脇）から、ラヴィとウサギ人形（ゆっくり寄る）
+    kind: M
+  A17-008:
+    frame: 全身（正面）
+    only: [metallica]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
+      - {t: 0.6, at: [62.0, 0.9], z: 26.0, face: 330, pose: stand}
+      - {t: 2.4, at: [62.0, 0.9], z: 26.0, face: 20, pose: stand}
+      - {t: 4.4, at: [62.0, 0.9], z: 26.0, face: 300, pose: stand}
+      - {t: 7.6, at: [62.0, 0.9], z: 26.0, face: 330, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [61.0, 4.8, 28.6], look: metallica, look_h: 27.2, lens: 34, frame: 全身}
+    - {t: 7.6, cam: [61.1, 4.5, 28.5], look: metallica, look_h: 27.2, lens: 40}
+    bg: azb_summit_night
+    act: {start: 踊るメタリカ, do: 踊りを止め、魔女たちを見回して「お前たち、何を言ってるんだ……？」, end: 立ち尽くすメタリカ}
+    camera: 南の高い所から、立ち尽くすメタリカへ寄る
+    kind: M
+  A17-009:
+    frame: 全身（テレッサ）
+    only: [metallica, teressa]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 330, pose: stand}
+      - {t: 1.5, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
+      - {t: 8.0, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
+      teressa:
+      - {t: 0.0, at: te, z: 26.0, face: 245, pose: stand}
+      - {t: 0.4, at: te, z: 26.0, face: 245, pose: walk}
+      - {t: 2.6, at: [64.4, 0.2], z: 26.0, face: 245, pose: walk}
+      - {t: 3.0, at: [64.4, 0.2], z: 26.0, face: 245, pose: cover}
+      - {t: 8.0, at: [64.4, 0.2], z: 26.0, face: 245, pose: gesture}
+    cam_keys:
+    - {t: 0.0, cam: [60.8, 2.0, 26.5], look: teressa, look_h: 27.1, lens: 34, frame: 全身}
+    - {t: 8.0, cam: [60.9, 1.95, 26.5], look: teressa, look_h: 27.1, lens: 38}
+    bg: azb_summit_night
+    act: {start: 立ち尽くすメタリカ, do: 東の縁からテレッサが歩み出て、口元を押さえて笑い「夜会の余興ですのよ、あなたは」, end: 手を広げるテレッサ}
+    camera: メタリカの肩ごし（西、低い）から、歩み出るテレッサを煽る
+    kind: M
+  A17-010:
+    frame: 全身（ベルダとテレッサ）
+    only: [teressa, berda, metallica]
+    keys:
+      teressa:
+      - {t: 0.0, at: [64.4, 0.2], z: 26.0, face: 245, pose: gesture}
+      - {t: 0.4, at: [64.4, 0.2], z: 26.0, face: 50, pose: stand}
+      - {t: 4.6, at: [64.4, 0.2], z: 26.0, face: 50, pose: bow}
+      - {t: 6.6, at: [64.4, 0.2], z: 26.0, face: 50, pose: bow}
+      - {t: 7.4, at: [64.4, 0.2], z: 26.0, face: 250, pose: point}
+      - {t: 11.8, at: [64.4, 0.2], z: 26.0, face: 250, pose: point}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 230, pose: stand}
+      - {t: 0.3, at: be, z: 26.6, face: 210, pose: gesture}
+      - {t: 4.4, at: be, z: 26.6, face: 210, pose: gesture}
+      - {t: 4.8, at: be, z: 26.6, face: 210, pose: stand}
+      - {t: 11.8, at: be, z: 26.6, face: 210, pose: stand}
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
+      - {t: 11.8, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [70.0, 1.5, 27.6], look: [65.2, -0.8], look_h: 27.2, lens: 28, frame: 全身}
+    - {t: 11.8, cam: [69.6, 1.3, 27.6], look: [65.1, -0.8], look_h: 27.2, lens: 31}
+    bg: azb_summit_night
+    act: {start: 手を広げるテレッサ, do: ベルダが「テレッサ！人をバカにするものじゃないわ」とたしなめる。テレッサはお辞儀して「はい、お師匠様」、振り向いてメタリカを指さし「騙されたことにまだ気がついてない」, end: メタリカを指さすテレッサ}
+    camera: 東の低い所から、ベルダとテレッサ（左の奥にメタリカと木の像）
+    kind: M
+  A17-011:
+    frame: 寄り（顔）
+    only: [metallica]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
+      - {t: 3.0, at: [62.0, 0.9], z: 26.0, face: 70, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [63.3, 1.6, 27.45], look: metallica, look_h: 27.4, lens: 50, frame: 寄り（顔）}
+    - {t: 3.0, cam: [63.25, 1.55, 27.45], look: metallica, look_h: 27.4, lens: 56}
+    bg: azb_summit_night
+    act: {start: メタリカの顔, do: 「え……？」, end: 呆然とするメタリカの顔}
+    camera: 正面（東）からメタリカの顔の寄り
+    kind: M
+  A17-012:
+    frame: 全身（二人・横から）
+    only: [teressa, metallica]
+    keys:
+      teressa:
+      - {t: 0.0, at: [64.4, 0.2], z: 26.0, face: 250, pose: point}
+      - {t: 0.4, at: [64.4, 0.2], z: 26.0, face: 250, pose: walk}
+      - {t: 3.0, at: te_near, z: 26.0, face: 235, pose: walk, ease: out}
+      - {t: 3.4, at: te_near, z: 26.0, face: 228, pose: lean}
+      - {t: 12.3, at: te_near, z: 26.0, face: 228, pose: lean}
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 70, pose: stand}
+      - {t: 4.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      - {t: 12.3, at: [62.0, 0.9], z: 26.0, face: 80, pose: look_down}
+    cam_keys:
+    - {t: 0.0, cam: [64.3, 4.5, 28.4], look: [62.4, 0.65], look_h: 27.4, lens: 30, frame: 全身}
+    - {t: 12.3, cam: [64.7, 3.3, 28.2], look: [62.3, 0.65], look_h: 27.4, lens: 33}
+    bg: azb_summit_night
+    act: {start: 指さすテレッサ, do: テレッサがメタリカの目の前まで歩み寄り、顔をのぞき込んで「お夜会ごっこでもしているのがお似合いですわ」, end: 顔を寄せるテレッサと、うつむくメタリカ}
+    camera: 南南東のやや高い所から、向き合う二人を斜め横に。寄りながら南東へ回り込む（奥に木の像）
+    kind: M
+  A17-013:
+    frame: 寄り（ドリーズーム）
+    only: [metallica, teressa]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: look_down}
+      - {t: 1.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      - {t: 9.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      teressa:
+      - {t: 0.0, at: te_near, z: 26.0, face: 228, pose: lean}
+      - {t: 9.0, at: te_near, z: 26.0, face: 228, pose: cover}
+    cam_keys:
+    - {t: 0.0, cam: [60.4, 0.0, 27.4], look: metallica, look_h: 27.4, lens: 28, frame: 寄り}
+    - {t: 9.0, cam: [58.0, -1.4, 27.4], look: metallica, look_h: 27.4, lens: 58}
+    bg: azb_summit_night
+    act: {start: うつむくメタリカ, do: 顔を上げて「ウソの手紙……いや、招待状……だった……のか！？」。背景が引き伸ばされるように（めまいのように）見える, end: 気づいて凍りつくメタリカ}
+    camera: 北西からメタリカ。カメラは下がりながらズームで寄る（ドリーズーム）
+    kind: A
+  A17-014:
+    frame: 引き
+    only: [metallica, purple-peel, lily, rabi, usamaru, berda, teressa]
+    keys:
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 210, pose: stand}
+      - {t: 0.4, at: be, z: 26.6, face: 240, pose: gesture}
+      - {t: 4.8, at: be, z: 26.6, face: 240, pose: gesture}
+      - {t: 5.2, at: be, z: 26.6, face: 30, pose: stand}
+      - {t: 15.0, at: be, z: 26.6, face: 30, pose: stand}
+      teressa:
+      - {t: 0.0, at: te_near, z: 26.0, face: 228, pose: cover}
+      - {t: 12.4, at: te_near, z: 26.0, face: 228, pose: cover}
+      - {t: 12.6, at: te_near, z: 26.0, face: 50, pose: walk}
+      - {t: 14.4, at: te_back, z: 26.0, face: 50, pose: walk, ease: out}
+      - {t: 15.0, at: te_back, z: 26.0, face: 50, pose: stand}
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      - {t: 15.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 146, pose: stand}
+      - {t: 15.0, at: pp, z: 26.6, face: 146, pose: stand}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 164, pose: stand}
+      - {t: 15.0, at: li, z: 26.6, face: 164, pose: stand}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 211, pose: stand}
+      - {t: 15.0, at: ra, z: 26.6, face: 211, pose: stand}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 218, pose: stand}
+      - {t: 15.0, at: us, z: 27.5, face: 218, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [63.2, 9.2, 30.0], look: [62.8, -1.6], look_h: 27.0, lens: 26, frame: 引き}
+    - {t: 15.0, cam: [63.3, 9.0, 30.0], look: [63.0, -1.8], look_h: 27.0, lens: 28}
+    bg: azb_summit_night
+    act: {start: 凍りつくメタリカ, do: ベルダが背を向けて「夜会が始まります。あなたを魔女に推薦するのですから」。テレッサは「はい！お師匠様！！」と駆け戻る, end: 北の縁に戻ったテレッサ}
+    camera: 南の高い所から、広場と北の縁の魔女たち
+    kind: M
+  A17-015:
+    frame: 寄り（振り返り）
+    only: [teressa]
+    keys:
+      teressa:
+      - {t: 0.0, at: te_back, z: 26.0, face: 50, pose: stand}
+      - {t: 0.6, at: te_back, z: 26.0, face: 245, pose: stand}
+      - {t: 3.5, at: te_back, z: 26.0, face: 245, pose: lean}
+    cam_keys:
+    - {t: 0.0, cam: [63.6, 0.6, 27.3], look: teressa, look_h: 27.25, lens: 45, frame: 寄り}
+    - {t: 3.5, cam: [63.7, 0.5, 27.3], look: teressa, look_h: 27.25, lens: 50}
+    bg: azb_summit_night
+    act: {start: 背を向けたテレッサ, do: 肩ごしに振り返って舌を出し「バーカ。」, end: 振り返ったテレッサ}
+    camera: メタリカの目の高さ（南西）から、振り返るテレッサの寄り
+    kind: M
+  A17-016:
+    frame: 引き（煽り）
+    only: [metallica, purple-peel, lily, rabi, usamaru, berda, teressa]
+    keys:
+      purple-peel:
+      - {t: 0.0, at: pp, z: 26.6, face: 146, pose: cover}
+      - {t: 0.6, at: pp, z: 26.6, face: 146, pose: cover}
+      - {t: 3.6, at: pp, z: 44.0, face: 146, pose: stand, ease: in}
+      - {t: 6.5, at: pp, z: 44.0, face: 146, pose: stand}
+      lily:
+      - {t: 0.0, at: li, z: 26.6, face: 164, pose: cover}
+      - {t: 0.85, at: li, z: 26.6, face: 164, pose: cover}
+      - {t: 3.85, at: li, z: 44.0, face: 164, pose: stand, ease: in}
+      - {t: 6.5, at: li, z: 44.0, face: 164, pose: stand}
+      rabi:
+      - {t: 0.0, at: ra, z: 26.6, face: 211, pose: arms_up}
+      - {t: 1.1, at: ra, z: 26.6, face: 211, pose: cover}
+      - {t: 4.1, at: ra, z: 44.0, face: 211, pose: stand, ease: in}
+      - {t: 6.5, at: ra, z: 44.0, face: 211, pose: stand}
+      usamaru:
+      - {t: 0.0, at: us, z: 27.5, face: 218, pose: cover}
+      - {t: 1.35, at: us, z: 27.5, face: 218, pose: cover}
+      - {t: 4.35, at: us, z: 44.0, face: 218, pose: stand, ease: in}
+      - {t: 6.5, at: us, z: 44.0, face: 218, pose: stand}
+      berda:
+      - {t: 0.0, at: be, z: 26.6, face: 30, pose: cover}
+      - {t: 0.5, at: be, z: 26.6, face: 234, pose: cover}
+      - {t: 1.6, at: be, z: 26.6, face: 234, pose: cover}
+      - {t: 4.6, at: be, z: 44.0, face: 234, pose: stand, ease: in}
+      - {t: 6.5, at: be, z: 44.0, face: 234, pose: stand}
+      teressa:
+      - {t: 0.0, at: te_back, z: 26.0, face: 239, pose: cover}
+      - {t: 1.85, at: te_back, z: 26.0, face: 239, pose: cover}
+      - {t: 4.85, at: te_back, z: 44.0, face: 239, pose: stand, ease: in}
+      - {t: 6.5, at: te_back, z: 44.0, face: 239, pose: stand}
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
+      - {t: 2.0, at: [62.0, 0.9], z: 26.0, face: 10, pose: look_up}
+      - {t: 6.5, at: [62.0, 0.9], z: 26.0, face: 10, pose: look_up}
+    fx:
+    - {kind: light, t: [0.8, 2.0], at: pp, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    - {kind: light, t: [1.05, 2.25], at: li, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    - {kind: light, t: [1.3, 2.5], at: ra, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    - {kind: light, t: [1.55, 2.75], at: us, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    - {kind: light, t: [1.8, 3.0], at: be, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    - {kind: light, t: [2.05, 3.25], at: te_back, z: 29.0, energy: 380, color: [210, 160, 255], fade: 2.0}
+    cam_keys:
+    - {t: 0.0, cam: [61.2, 4.2, 26.4], look: [62.5, -3.5], look_h: 28.5, lens: 22, frame: 引き（煽り）}
+    - {t: 6.5, cam: [61.2, 4.2, 26.4], look: [62.5, -3.5], look_h: 36.0, lens: 22}
+    bg: azb_summit_night
+    act: {start: 北の縁の魔女たち, do: 魔女たちが高笑いしながら光に包まれて夜空へ昇り、消える。メタリカが見上げる, end: 星空と、見上げるメタリカ}
+    camera: 広場の低い所から、昇っていく魔女たちを見上げて振り上げる（ティルトアップ）
+    kind: A
+  A17-017:
+    frame: 寄り（ビスコ）
+    only: [bisco]
+    keys:
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 350, pose: look_up}
+      - {t: 1.0, at: b_g, z: 26.0, face: 350, pose: cover}
+      - {t: 7.0, at: b_g, z: 26.0, face: 350, pose: cover}
+      - {t: 7.4, at: b_g, z: 26.0, face: 340, pose: look_up}
+      - {t: 14.2, at: b_g, z: 26.0, face: 340, pose: look_up}
+    cam_keys:
+    - {t: 0.0, cam: [59.0, 4.8, 27.2], look: bisco, look_h: 27.3, lens: 42, frame: 寄り}
+    - {t: 14.2, cam: [59.15, 5.1, 27.2], look: bisco, look_h: 27.3, lens: 52}
+    bg: azb_summit_night
+    act: {start: 見上げるビスコ, do: 胸を押さえる。（いる！夜会の魔女の中に！呪いをかけた者が！）。魔女たちが消えた空をにらむ, end: 空をにらむビスコの寄り}
+    camera: 北東からビスコの顔へゆっくり寄る（心の声）
+    kind: M
+  A17-018:
+    frame: 全身（一行の後ろから）
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 10, pose: look_up}
+      - {t: 3.0, at: [62.0, 0.9], z: 26.0, face: 120, pose: stand}
+      - {t: 5.0, at: m_back, z: 26.0, face: 120, pose: walk}
+      - {t: 5.4, at: m_back, z: 26.0, face: 120, pose: stand}
+      - {t: 13.8, at: m_back, z: 26.0, face: 120, pose: stand}
+      arlecchino:
+      - {t: 0.0, at: a_up, z: 26.0, face: 330, pose: look_up}
+      - {t: 3.4, at: a_up, z: 26.0, face: 120, pose: stand}
+      - {t: 13.8, at: a_up, z: 26.0, face: 120, pose: stand}
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 340, pose: look_up}
+      - {t: 3.4, at: b_g, z: 26.0, face: 110, pose: stand}
+      - {t: 13.8, at: b_g, z: 26.0, face: 110, pose: stand}
+      luckiny:
+      - {t: 0.0, at: l_g, z: 26.0, face: 350, pose: stand}
+      - {t: 3.4, at: l_g, z: 26.0, face: 110, pose: stand}
+      - {t: 13.8, at: l_g, z: 26.0, face: 110, pose: stand}
+      hundred-knight:
+      - {t: 0.0, at: hk_g, z: 26.0, face: 20, pose: look_up}
+      - {t: 3.4, at: hk_g, z: 26.0, face: 100, pose: stand}
+      - {t: 13.8, at: hk_g, z: 26.0, face: 100, pose: stand}
+      apprentice-a:
+      - {t: 0.0, at: ap_in_a, z: 26.0, face: 300, pose: walk}
+      - {t: 5.5, at: ap_a, z: 26.0, face: 300, pose: walk, ease: out}
+      - {t: 5.9, at: ap_a, z: 26.0, face: 290, pose: stand}
+      - {t: 6.6, at: ap_a, z: 26.0, face: 290, pose: point}
+      - {t: 13.8, at: ap_a, z: 26.0, face: 290, pose: point}
+      apprentice-b:
+      - {t: 0.0, at: ap_in_b, z: 26.0, face: 300, pose: walk}
+      - {t: 5.5, at: ap_b, z: 26.0, face: 300, pose: walk, ease: out}
+      - {t: 5.9, at: ap_b, z: 26.0, face: 290, pose: stand}
+      - {t: 13.8, at: ap_b, z: 26.0, face: 290, pose: stand}
+      apprentice-c:
+      - {t: 0.0, at: ap_in_c, z: 26.0, face: 300, pose: walk}
+      - {t: 5.5, at: ap_c, z: 26.0, face: 300, pose: walk, ease: out}
+      - {t: 5.9, at: ap_c, z: 26.0, face: 290, pose: stand}
+      - {t: 13.8, at: ap_c, z: 26.0, face: 290, pose: stand}
+      apprentice-d:
+      - {t: 0.0, at: ap_in_d, z: 26.0, face: 300, pose: walk}
+      - {t: 5.5, at: ap_d, z: 26.0, face: 300, pose: walk, ease: out}
+      - {t: 5.9, at: ap_d, z: 26.0, face: 290, pose: stand}
+      - {t: 13.8, at: ap_d, z: 26.0, face: 290, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [57.4, 10.6, 28.0], look: [62.6, 4.4], look_h: 26.9, lens: 26, frame: 全身}
+    - {t: 13.8, cam: [57.8, 10.2, 27.9], look: [62.8, 4.4], look_h: 26.9, lens: 28}
+    bg: azb_summit_night
+    act: {start: 立ち尽くす一行, do: 南東から小さな見習い魔女たちが歩いてきて「あれ……？誰かいる？」。メタリカは樽の西へ後ずさる。先頭の子が指さして「ここは見習い魔女の夜会の場所よ」, end: 指さす見習い魔女と、向き合う一行}
+    camera: 一行の後ろ（南南西）のやや高い所から、一行と、東から歩いてくる見習い魔女たち
+    kind: M
+  A17-019:
+    frame: 全身（横から）
+    only: [apprentice-a, apprentice-b, apprentice-c, apprentice-d, bisco, luckiny, hundred-knight, metallica, arlecchino]
+    keys:
+      apprentice-a:
+      - {t: 0.0, at: ap_a, z: 26.0, face: 290, pose: point}
+      - {t: 0.4, at: ap_a, z: 26.0, face: 290, pose: wave}
+      - {t: 1.4, at: ap_a, z: 26.0, face: 290, pose: point}
+      - {t: 5.0, at: ap_a, z: 26.0, face: 290, pose: point}
+      bisco:
+      - {t: 0.0, at: b_g, z: 26.0, face: 110, pose: stand}
+      - {t: 0.9, at: [59.7, 6.4], z: 26.35, face: 110, pose: jump}
+      - {t: 1.3, at: [59.6, 6.6], z: 26.0, face: 110, pose: stand}
+      - {t: 5.0, at: [59.6, 6.6], z: 26.0, face: 110, pose: stand}
+      apprentice-b:
+      - {t: 0.0, at: ap_b, z: 26.0, face: 290, pose: stand}
+      - {t: 5.0, at: ap_b, z: 26.0, face: 290, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [62.7, 11.6, 27.2], look: [62.4, 5.4], look_h: 26.7, lens: 24, frame: 全身}
+    - {t: 5.0, cam: [62.6, 11.3, 27.2], look: [62.3, 5.4], look_h: 26.7, lens: 25}
+    bg: azb_summit_night
+    act: {start: 指さす見習い魔女, do: 「えいっ！」と小さな魔法を放ち、ビスコの足もとで火花。ビスコが跳び上がって「見習い魔女の夜会だって……！？」, end: 驚くビスコと見習い魔女たち}
+    camera: 南の低い所から横に（左にビスコ、右に見習い魔女たち。奥に一行）
+    kind: M
+  A17-020:
+    frame: 全身（見習い魔女たち）
+    only: [apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      apprentice-a:
+      - {t: 0.0, at: ap_a, z: 26.0, face: 290, pose: stand}
+      - {t: 7.0, at: ap_a, z: 26.0, face: 290, pose: stand}
+      apprentice-b:
+      - {t: 0.0, at: ap_b, z: 26.0, face: 290, pose: stand}
+      - {t: 0.3, at: ap_b, z: 26.0, face: 280, pose: arms_up}
+      - {t: 3.0, at: ap_b, z: 26.0, face: 280, pose: hop}
+      - {t: 7.0, at: ap_b, z: 26.0, face: 280, pose: hop}
+      apprentice-c:
+      - {t: 0.0, at: ap_c, z: 26.0, face: 290, pose: stand}
+      - {t: 7.0, at: ap_c, z: 26.0, face: 290, pose: stand}
+      apprentice-d:
+      - {t: 0.0, at: ap_d, z: 26.0, face: 290, pose: stand}
+      - {t: 7.0, at: ap_d, z: 26.0, face: 290, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [62.6, 6.6, 26.7], look: [65.4, 5.0], look_h: 26.7, lens: 32, frame: 全身}
+    - {t: 7.0, cam: [62.7, 6.5, 26.7], look: [65.4, 5.0], look_h: 26.7, lens: 36}
+    bg: azb_summit_night
+    act: {start: 見習い魔女たち, do: 別の子が得意げに両手を上げて「偉い魔女様たちにわたしたちの踊りを見てもらうの。お夜会の出し物なの」と跳ねる, end: 跳ねる見習い魔女たち}
+    camera: 一行の側（西）の目の高さ（子どもの背）から
+    kind: M
+  A17-021:
+    frame: 寄り（顔）
+    only: [metallica]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 120, pose: stand}
+      - {t: 3.6, at: m_back, z: 26.0, face: 120, pose: look_down}
+    cam_keys:
+    - {t: 0.0, cam: [61.3, 3.4, 27.45], look: metallica, look_h: 27.4, lens: 48, frame: 寄り（顔）}
+    - {t: 3.6, cam: [61.25, 3.35, 27.45], look: metallica, look_h: 27.4, lens: 56}
+    bg: azb_summit_night
+    act: {start: 見習い魔女たちを見るメタリカ, do: はっと気づいて「魔女のために踊る……！」, end: 気づいたメタリカの顔}
+    camera: 南東からメタリカの顔の寄り
+    kind: M
+  A17-022:
+    frame: 俯瞰（クレーン）
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 120, pose: look_down}
+      - {t: 17.0, at: m_back, z: 26.0, face: 90, pose: stand}
+      arlecchino:
+      - {t: 0.0, at: a_up, z: 26.0, face: 120, pose: stand}
+      - {t: 17.0, at: a_up, z: 26.0, face: 200, pose: stand}
+      bisco:
+      - {t: 0.0, at: [59.6, 6.6], z: 26.0, face: 110, pose: stand}
+      - {t: 17.0, at: [59.6, 6.6], z: 26.0, face: 70, pose: stand}
+      luckiny:
+      - {t: 0.0, at: l_g, z: 26.0, face: 110, pose: stand}
+      - {t: 17.0, at: l_g, z: 26.0, face: 70, pose: look_up}
+      hundred-knight:
+      - {t: 0.0, at: hk_g, z: 26.0, face: 100, pose: stand}
+      - {t: 17.0, at: hk_g, z: 26.0, face: 80, pose: stand}
+      apprentice-a:
+      - {t: 0.0, at: ap_a, z: 26.0, face: 290, pose: stand}
+      - {t: 5.8, at: ap_a, z: 26.0, face: 290, pose: look_up}
+      - {t: 6.4, at: ap_a, z: 26.0, face: 290, pose: hop}
+      - {t: 7.6, at: [63.05, 2.2], z: 26.0, face: 180, pose: run, ease: linear}
+      - {t: 8.64, at: [62.99, 2.56], z: 26.0, face: 200, pose: dance, ease: linear}
+      - {t: 9.69, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance, ease: linear}
+      - {t: 10.73, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 11.78, at: [62.18, 3.23], z: 26.0, face: 260, pose: dance, ease: linear}
+      - {t: 12.82, at: [61.82, 3.23], z: 26.0, face: 280, pose: dance, ease: linear}
+      - {t: 13.87, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 14.91, at: [61.2, 2.87], z: 26.0, face: 320, pose: dance, ease: linear}
+      - {t: 15.96, at: [61.01, 2.56], z: 26.0, face: 340, pose: dance, ease: linear}
+      - {t: 17.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      apprentice-b:
+      - {t: 0.0, at: ap_b, z: 26.0, face: 290, pose: stand}
+      - {t: 5.8, at: ap_b, z: 26.0, face: 290, pose: look_up}
+      - {t: 6.4, at: ap_b, z: 26.0, face: 290, pose: hop}
+      - {t: 7.6, at: [62.0, 3.25], z: 26.0, face: 270, pose: run, ease: linear}
+      - {t: 8.64, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
+      - {t: 9.69, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
+      - {t: 10.73, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 11.78, at: [60.97, 2.38], z: 26.0, face: 350, pose: dance, ease: linear}
+      - {t: 12.82, at: [60.97, 2.02], z: 26.0, face: 10, pose: dance, ease: linear}
+      - {t: 13.87, at: [61.09, 1.68], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 14.91, at: [61.33, 1.4], z: 26.0, face: 50, pose: dance, ease: linear}
+      - {t: 15.96, at: [61.64, 1.21], z: 26.0, face: 70, pose: dance, ease: linear}
+      - {t: 17.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      apprentice-c:
+      - {t: 0.0, at: ap_c, z: 26.0, face: 290, pose: stand}
+      - {t: 5.8, at: ap_c, z: 26.0, face: 290, pose: look_up}
+      - {t: 6.4, at: ap_c, z: 26.0, face: 290, pose: hop}
+      - {t: 7.6, at: [60.95, 2.2], z: 26.0, face: 0, pose: run, ease: linear}
+      - {t: 8.64, at: [61.01, 1.84], z: 26.0, face: 20, pose: dance, ease: linear}
+      - {t: 9.69, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance, ease: linear}
+      - {t: 10.73, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 11.78, at: [61.82, 1.17], z: 26.0, face: 80, pose: dance, ease: linear}
+      - {t: 12.82, at: [62.18, 1.17], z: 26.0, face: 100, pose: dance, ease: linear}
+      - {t: 13.87, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 14.91, at: [62.8, 1.53], z: 26.0, face: 140, pose: dance, ease: linear}
+      - {t: 15.96, at: [62.99, 1.84], z: 26.0, face: 160, pose: dance, ease: linear}
+      - {t: 17.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      apprentice-d:
+      - {t: 0.0, at: ap_d, z: 26.0, face: 290, pose: stand}
+      - {t: 5.8, at: ap_d, z: 26.0, face: 290, pose: look_up}
+      - {t: 6.4, at: ap_d, z: 26.0, face: 290, pose: hop}
+      - {t: 7.6, at: [62.0, 1.15], z: 26.0, face: 90, pose: run, ease: linear}
+      - {t: 8.64, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
+      - {t: 9.69, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance, ease: linear}
+      - {t: 10.73, at: [62.91, 1.68], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 11.78, at: [63.03, 2.02], z: 26.0, face: 170, pose: dance, ease: linear}
+      - {t: 12.82, at: [63.03, 2.38], z: 26.0, face: 190, pose: dance, ease: linear}
+      - {t: 13.87, at: [62.91, 2.72], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 14.91, at: [62.67, 3.0], z: 26.0, face: 230, pose: dance, ease: linear}
+      - {t: 15.96, at: [62.36, 3.19], z: 26.0, face: 250, pose: dance, ease: linear}
+      - {t: 17.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+    cam_keys:
+    - {t: 0.0, cam: [62.4, 7.0, 33.5], look: barrel, look_h: 26.6, lens: 26, frame: 俯瞰}
+    - {t: 17.0, cam: [61.0, 9.6, 29.0], look: [61.4, 2.4], look_h: 26.8, lens: 28}
+    bg: azb_summit_night
+    act: {start: 立ち尽くす一行と見習い魔女たち, do: 夜空から魔女の声「ワルギスのダンスを踊っておくれな」。見習い魔女たちが「はーい！」と樽へ駆け寄り、輪になって、メタリカと同じ踊りを踊り始める。「夜会の開幕だ！」, end: 樽のまわりで踊る見習い魔女の輪と、立ち尽くすメタリカ}
+    camera: 広場の上空から、樽と踊りの輪を見下ろし、一行の方へ下りてくる（クレーン）
+    kind: A
+  A17-023:
+    frame: 全身（ゆっくり下りる）
+    only: [metallica, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: stand}
+      - {t: 1.2, at: m_back, z: 26.0, face: 90, pose: stand}
+      - {t: 2.6, at: m_back, z: 26.0, face: 90, pose: kneel}
+      - {t: 13.5, at: m_back, z: 26.0, face: 90, pose: kneel}
+      apprentice-a:
+      - {t: 0.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 0.96, at: [61.01, 1.85], z: 26.0, face: 19, pose: dance, ease: linear}
+      - {t: 1.93, at: [61.18, 1.55], z: 26.0, face: 39, pose: dance, ease: linear}
+      - {t: 2.89, at: [61.44, 1.31], z: 26.0, face: 58, pose: dance, ease: linear}
+      - {t: 3.86, at: [61.77, 1.18], z: 26.0, face: 77, pose: dance, ease: linear}
+      - {t: 4.82, at: [62.12, 1.16], z: 26.0, face: 96, pose: dance, ease: linear}
+      - {t: 5.79, at: [62.46, 1.25], z: 26.0, face: 116, pose: dance, ease: linear}
+      - {t: 6.75, at: [62.74, 1.46], z: 26.0, face: 135, pose: dance, ease: linear}
+      - {t: 7.71, at: [62.95, 1.74], z: 26.0, face: 154, pose: dance, ease: linear}
+      - {t: 8.68, at: [63.04, 2.08], z: 26.0, face: 174, pose: dance, ease: linear}
+      - {t: 9.64, at: [63.02, 2.43], z: 26.0, face: 193, pose: dance, ease: linear}
+      - {t: 10.61, at: [62.89, 2.76], z: 26.0, face: 212, pose: dance, ease: linear}
+      - {t: 11.57, at: [62.65, 3.02], z: 26.0, face: 231, pose: dance, ease: linear}
+      - {t: 12.54, at: [62.35, 3.19], z: 26.0, face: 251, pose: dance, ease: linear}
+      - {t: 13.5, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      apprentice-b:
+      - {t: 0.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 0.96, at: [62.35, 1.21], z: 26.0, face: 109, pose: dance, ease: linear}
+      - {t: 1.93, at: [62.65, 1.38], z: 26.0, face: 129, pose: dance, ease: linear}
+      - {t: 2.89, at: [62.89, 1.64], z: 26.0, face: 148, pose: dance, ease: linear}
+      - {t: 3.86, at: [63.02, 1.97], z: 26.0, face: 167, pose: dance, ease: linear}
+      - {t: 4.82, at: [63.04, 2.32], z: 26.0, face: 186, pose: dance, ease: linear}
+      - {t: 5.79, at: [62.95, 2.66], z: 26.0, face: 206, pose: dance, ease: linear}
+      - {t: 6.75, at: [62.74, 2.94], z: 26.0, face: 225, pose: dance, ease: linear}
+      - {t: 7.71, at: [62.46, 3.15], z: 26.0, face: 244, pose: dance, ease: linear}
+      - {t: 8.68, at: [62.12, 3.24], z: 26.0, face: 264, pose: dance, ease: linear}
+      - {t: 9.64, at: [61.77, 3.22], z: 26.0, face: 283, pose: dance, ease: linear}
+      - {t: 10.61, at: [61.44, 3.09], z: 26.0, face: 302, pose: dance, ease: linear}
+      - {t: 11.57, at: [61.18, 2.85], z: 26.0, face: 321, pose: dance, ease: linear}
+      - {t: 12.54, at: [61.01, 2.55], z: 26.0, face: 341, pose: dance, ease: linear}
+      - {t: 13.5, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      apprentice-c:
+      - {t: 0.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 0.96, at: [62.99, 2.55], z: 26.0, face: 199, pose: dance, ease: linear}
+      - {t: 1.93, at: [62.82, 2.85], z: 26.0, face: 219, pose: dance, ease: linear}
+      - {t: 2.89, at: [62.56, 3.09], z: 26.0, face: 238, pose: dance, ease: linear}
+      - {t: 3.86, at: [62.23, 3.22], z: 26.0, face: 257, pose: dance, ease: linear}
+      - {t: 4.82, at: [61.88, 3.24], z: 26.0, face: 276, pose: dance, ease: linear}
+      - {t: 5.79, at: [61.54, 3.15], z: 26.0, face: 296, pose: dance, ease: linear}
+      - {t: 6.75, at: [61.26, 2.94], z: 26.0, face: 315, pose: dance, ease: linear}
+      - {t: 7.71, at: [61.05, 2.66], z: 26.0, face: 334, pose: dance, ease: linear}
+      - {t: 8.68, at: [60.96, 2.32], z: 26.0, face: 354, pose: dance, ease: linear}
+      - {t: 9.64, at: [60.98, 1.97], z: 26.0, face: 13, pose: dance, ease: linear}
+      - {t: 10.61, at: [61.11, 1.64], z: 26.0, face: 32, pose: dance, ease: linear}
+      - {t: 11.57, at: [61.35, 1.38], z: 26.0, face: 51, pose: dance, ease: linear}
+      - {t: 12.54, at: [61.65, 1.21], z: 26.0, face: 71, pose: dance, ease: linear}
+      - {t: 13.5, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      apprentice-d:
+      - {t: 0.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 0.96, at: [61.65, 3.19], z: 26.0, face: 289, pose: dance, ease: linear}
+      - {t: 1.93, at: [61.35, 3.02], z: 26.0, face: 309, pose: dance, ease: linear}
+      - {t: 2.89, at: [61.11, 2.76], z: 26.0, face: 328, pose: dance, ease: linear}
+      - {t: 3.86, at: [60.98, 2.43], z: 26.0, face: 347, pose: dance, ease: linear}
+      - {t: 4.82, at: [60.96, 2.08], z: 26.0, face: 6, pose: dance, ease: linear}
+      - {t: 5.79, at: [61.05, 1.74], z: 26.0, face: 26, pose: dance, ease: linear}
+      - {t: 6.75, at: [61.26, 1.46], z: 26.0, face: 45, pose: dance, ease: linear}
+      - {t: 7.71, at: [61.54, 1.25], z: 26.0, face: 64, pose: dance, ease: linear}
+      - {t: 8.68, at: [61.88, 1.16], z: 26.0, face: 84, pose: dance, ease: linear}
+      - {t: 9.64, at: [62.23, 1.18], z: 26.0, face: 103, pose: dance, ease: linear}
+      - {t: 10.61, at: [62.56, 1.31], z: 26.0, face: 122, pose: dance, ease: linear}
+      - {t: 11.57, at: [62.82, 1.55], z: 26.0, face: 141, pose: dance, ease: linear}
+      - {t: 12.54, at: [62.99, 1.85], z: 26.0, face: 161, pose: dance, ease: linear}
+      - {t: 13.5, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+    cam_keys:
+    - {t: 0.0, cam: [57.6, 4.6, 28.6], look: metallica, look_h: 27.1, lens: 32, frame: 全身}
+    - {t: 13.5, cam: [58.0, 4.2, 27.3], look: metallica, look_h: 26.8, lens: 38}
+    bg: azb_summit_night
+    act: {start: 立ち尽くすメタリカ, do: 踊る見習い魔女たちを前に、ひざから崩れ落ちる。「ワタシが……騙された……？」, end: ひざをついたメタリカ（奥に踊りの輪）}
+    camera: 南西の高い所から、ゆっくり下りながら寄る（奥に踊りの輪）
+    kind: A
+  A17-024:
+    frame: 寄り（低い）
+    only: [metallica, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: kneel}
+      - {t: 6.0, at: m_back, z: 26.0, face: 90, pose: kneel}
+      - {t: 14.5, at: m_back, z: 26.0, face: 90, pose: kneel}
+      apprentice-a:
+      - {t: 0.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 1.04, at: [61.63, 3.18], z: 26.0, face: 291, pose: dance, ease: linear}
+      - {t: 2.07, at: [61.31, 2.99], z: 26.0, face: 311, pose: dance, ease: linear}
+      - {t: 3.11, at: [61.07, 2.69], z: 26.0, face: 332, pose: dance, ease: linear}
+      - {t: 4.14, at: [60.96, 2.33], z: 26.0, face: 353, pose: dance, ease: linear}
+      - {t: 5.18, at: [60.98, 1.95], z: 26.0, face: 14, pose: dance, ease: linear}
+      - {t: 6.21, at: [61.13, 1.61], z: 26.0, face: 34, pose: dance, ease: linear}
+      - {t: 7.25, at: [61.4, 1.34], z: 26.0, face: 55, pose: dance, ease: linear}
+      - {t: 8.29, at: [61.74, 1.18], z: 26.0, face: 76, pose: dance, ease: linear}
+      - {t: 9.32, at: [62.12, 1.16], z: 26.0, face: 96, pose: dance, ease: linear}
+      - {t: 10.36, at: [62.48, 1.27], z: 26.0, face: 117, pose: dance, ease: linear}
+      - {t: 11.39, at: [62.78, 1.5], z: 26.0, face: 138, pose: dance, ease: linear}
+      - {t: 12.43, at: [62.98, 1.82], z: 26.0, face: 159, pose: dance, ease: linear}
+      - {t: 13.46, at: [63.05, 2.19], z: 26.0, face: 179, pose: dance, ease: linear}
+      - {t: 14.5, at: [62.99, 2.56], z: 26.0, face: 200, pose: dance, ease: linear}
+      apprentice-b:
+      - {t: 0.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 1.04, at: [61.02, 1.83], z: 26.0, face: 21, pose: dance, ease: linear}
+      - {t: 2.07, at: [61.21, 1.51], z: 26.0, face: 41, pose: dance, ease: linear}
+      - {t: 3.11, at: [61.51, 1.27], z: 26.0, face: 62, pose: dance, ease: linear}
+      - {t: 4.14, at: [61.87, 1.16], z: 26.0, face: 83, pose: dance, ease: linear}
+      - {t: 5.18, at: [62.25, 1.18], z: 26.0, face: 104, pose: dance, ease: linear}
+      - {t: 6.21, at: [62.59, 1.33], z: 26.0, face: 124, pose: dance, ease: linear}
+      - {t: 7.25, at: [62.86, 1.6], z: 26.0, face: 145, pose: dance, ease: linear}
+      - {t: 8.29, at: [63.02, 1.94], z: 26.0, face: 166, pose: dance, ease: linear}
+      - {t: 9.32, at: [63.04, 2.32], z: 26.0, face: 186, pose: dance, ease: linear}
+      - {t: 10.36, at: [62.93, 2.68], z: 26.0, face: 207, pose: dance, ease: linear}
+      - {t: 11.39, at: [62.7, 2.98], z: 26.0, face: 228, pose: dance, ease: linear}
+      - {t: 12.43, at: [62.38, 3.18], z: 26.0, face: 249, pose: dance, ease: linear}
+      - {t: 13.46, at: [62.01, 3.25], z: 26.0, face: 269, pose: dance, ease: linear}
+      - {t: 14.5, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
+      apprentice-c:
+      - {t: 0.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 1.04, at: [62.37, 1.22], z: 26.0, face: 111, pose: dance, ease: linear}
+      - {t: 2.07, at: [62.69, 1.41], z: 26.0, face: 131, pose: dance, ease: linear}
+      - {t: 3.11, at: [62.93, 1.71], z: 26.0, face: 152, pose: dance, ease: linear}
+      - {t: 4.14, at: [63.04, 2.07], z: 26.0, face: 173, pose: dance, ease: linear}
+      - {t: 5.18, at: [63.02, 2.45], z: 26.0, face: 194, pose: dance, ease: linear}
+      - {t: 6.21, at: [62.87, 2.79], z: 26.0, face: 214, pose: dance, ease: linear}
+      - {t: 7.25, at: [62.6, 3.06], z: 26.0, face: 235, pose: dance, ease: linear}
+      - {t: 8.29, at: [62.26, 3.22], z: 26.0, face: 256, pose: dance, ease: linear}
+      - {t: 9.32, at: [61.88, 3.24], z: 26.0, face: 276, pose: dance, ease: linear}
+      - {t: 10.36, at: [61.52, 3.13], z: 26.0, face: 297, pose: dance, ease: linear}
+      - {t: 11.39, at: [61.22, 2.9], z: 26.0, face: 318, pose: dance, ease: linear}
+      - {t: 12.43, at: [61.02, 2.58], z: 26.0, face: 339, pose: dance, ease: linear}
+      - {t: 13.46, at: [60.95, 2.21], z: 26.0, face: 359, pose: dance, ease: linear}
+      - {t: 14.5, at: [61.01, 1.84], z: 26.0, face: 20, pose: dance, ease: linear}
+      apprentice-d:
+      - {t: 0.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 1.04, at: [62.98, 2.57], z: 26.0, face: 201, pose: dance, ease: linear}
+      - {t: 2.07, at: [62.79, 2.89], z: 26.0, face: 221, pose: dance, ease: linear}
+      - {t: 3.11, at: [62.49, 3.13], z: 26.0, face: 242, pose: dance, ease: linear}
+      - {t: 4.14, at: [62.13, 3.24], z: 26.0, face: 263, pose: dance, ease: linear}
+      - {t: 5.18, at: [61.75, 3.22], z: 26.0, face: 284, pose: dance, ease: linear}
+      - {t: 6.21, at: [61.41, 3.07], z: 26.0, face: 304, pose: dance, ease: linear}
+      - {t: 7.25, at: [61.14, 2.8], z: 26.0, face: 325, pose: dance, ease: linear}
+      - {t: 8.29, at: [60.98, 2.46], z: 26.0, face: 346, pose: dance, ease: linear}
+      - {t: 9.32, at: [60.96, 2.08], z: 26.0, face: 6, pose: dance, ease: linear}
+      - {t: 10.36, at: [61.07, 1.72], z: 26.0, face: 27, pose: dance, ease: linear}
+      - {t: 11.39, at: [61.3, 1.42], z: 26.0, face: 48, pose: dance, ease: linear}
+      - {t: 12.43, at: [61.62, 1.22], z: 26.0, face: 69, pose: dance, ease: linear}
+      - {t: 13.46, at: [61.99, 1.15], z: 26.0, face: 89, pose: dance, ease: linear}
+      - {t: 14.5, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
+    cam_keys:
+    - {t: 0.0, cam: [59.4, 5.2, 26.75], look: [60.8, 2.1], look_h: 26.8, lens: 34, frame: 寄り}
+    - {t: 14.5, cam: [59.5, 4.9, 26.7], look: [60.7, 2.2], look_h: 26.8, lens: 40}
+    bg: azb_summit_night
+    act: {start: ひざをついたメタリカ, do: うつむいたまま「笑いものに……されたのか……？」「偉大なる、沼の魔女が……！」。後ろを見習い魔女たちが踊りながら横切る, end: うつむくメタリカの寄り}
+    camera: 南の低い所から、うつむくメタリカの横顔の寄り（右の奥を踊りの輪が回る。ゆっくり寄る）
+    kind: M
+  A17-025:
+    frame: 全身（二人）
+    only: [metallica, bisco]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: kneel}
+      - {t: 6.5, at: m_back, z: 26.0, face: 90, pose: kneel}
+      bisco:
+      - {t: 0.0, at: [59.6, 6.6], z: 26.0, face: 70, pose: stand}
+      - {t: 0.6, at: [59.6, 6.6], z: 26.0, face: 350, pose: walk}
+      - {t: 3.0, at: b_side, z: 26.0, face: 20, pose: walk, ease: out}
+      - {t: 3.6, at: b_side, z: 26.0, face: 40, pose: kneel}
+      - {t: 6.5, at: b_side, z: 26.0, face: 40, pose: kneel}
+      apprentice-a:
+      - {t: 0.0, at: [62.99, 2.56], z: 26.0, face: 200, pose: dance, ease: linear}
+      - {t: 1.08, at: [62.78, 2.9], z: 26.0, face: 222, pose: dance, ease: linear}
+      - {t: 2.17, at: [62.47, 3.14], z: 26.0, face: 243, pose: dance, ease: linear}
+      - {t: 3.25, at: [62.09, 3.25], z: 26.0, face: 265, pose: dance, ease: linear}
+      - {t: 4.33, at: [61.7, 3.21], z: 26.0, face: 287, pose: dance, ease: linear}
+      - {t: 5.42, at: [61.35, 3.02], z: 26.0, face: 308, pose: dance, ease: linear}
+      - {t: 6.5, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      apprentice-b:
+      - {t: 0.0, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
+      - {t: 1.08, at: [61.3, 2.98], z: 26.0, face: 312, pose: dance, ease: linear}
+      - {t: 2.17, at: [61.06, 2.67], z: 26.0, face: 333, pose: dance, ease: linear}
+      - {t: 3.25, at: [60.95, 2.29], z: 26.0, face: 355, pose: dance, ease: linear}
+      - {t: 4.33, at: [60.99, 1.9], z: 26.0, face: 17, pose: dance, ease: linear}
+      - {t: 5.42, at: [61.18, 1.55], z: 26.0, face: 38, pose: dance, ease: linear}
+      - {t: 6.5, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      apprentice-c:
+      - {t: 0.0, at: [61.01, 1.84], z: 26.0, face: 20, pose: dance, ease: linear}
+      - {t: 1.08, at: [61.22, 1.5], z: 26.0, face: 42, pose: dance, ease: linear}
+      - {t: 2.17, at: [61.53, 1.26], z: 26.0, face: 63, pose: dance, ease: linear}
+      - {t: 3.25, at: [61.91, 1.15], z: 26.0, face: 85, pose: dance, ease: linear}
+      - {t: 4.33, at: [62.3, 1.19], z: 26.0, face: 107, pose: dance, ease: linear}
+      - {t: 5.42, at: [62.65, 1.38], z: 26.0, face: 128, pose: dance, ease: linear}
+      - {t: 6.5, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      apprentice-d:
+      - {t: 0.0, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
+      - {t: 1.08, at: [62.7, 1.42], z: 26.0, face: 132, pose: dance, ease: linear}
+      - {t: 2.17, at: [62.94, 1.73], z: 26.0, face: 153, pose: dance, ease: linear}
+      - {t: 3.25, at: [63.05, 2.11], z: 26.0, face: 175, pose: dance, ease: linear}
+      - {t: 4.33, at: [63.01, 2.5], z: 26.0, face: 197, pose: dance, ease: linear}
+      - {t: 5.42, at: [62.82, 2.85], z: 26.0, face: 218, pose: dance, ease: linear}
+      - {t: 6.5, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+    cam_keys:
+    - {t: 0.0, cam: [56.6, 1.8, 26.5], look: [59.7, 3.2], look_h: 26.8, lens: 32, frame: 全身}
+    - {t: 6.5, cam: [56.8, 1.9, 26.5], look: [59.7, 2.9], look_h: 26.7, lens: 36}
+    bg: azb_summit_night
+    act: {start: ひざをついたメタリカ, do: ビスコが歩み寄って隣にしゃがみ「メタリカ……。もういい……、帰ろう……」, end: 並んでしゃがむ二人}
+    camera: 西の低い所から二人（ゆっくり寄る）
+    kind: M
+  A17-026:
+    frame: 寄り（二人）
+    only: [metallica, bisco]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: kneel}
+      - {t: 0.4, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 21.0, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 21.6, at: m_back, z: 26.0, face: 90, pose: cry}
+      bisco:
+      - {t: 0.0, at: b_side, z: 26.0, face: 40, pose: kneel}
+      - {t: 21.0, at: b_side, z: 26.0, face: 40, pose: kneel}
+      - {t: 21.6, at: b_side, z: 26.0, face: 40, pose: kneel}
+      apprentice-a:
+      - {t: 0.0, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 1.5, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 3.0, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 4.5, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 6.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 7.5, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 9.0, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 10.5, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 12.0, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 13.5, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 15.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 16.5, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 18.0, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 19.5, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 21.0, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 21.6, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance}
+      apprentice-b:
+      - {t: 0.0, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 1.5, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 3.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 4.5, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 6.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 7.5, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 9.0, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 10.5, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 12.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 13.5, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 15.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 16.5, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 18.0, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 19.5, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 21.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 21.6, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance}
+      apprentice-c:
+      - {t: 0.0, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 1.5, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 3.0, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 4.5, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 6.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 7.5, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 9.0, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 10.5, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 12.0, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 13.5, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 15.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 16.5, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 18.0, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 19.5, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 21.0, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 21.6, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance}
+      apprentice-d:
+      - {t: 0.0, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 1.5, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 3.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 4.5, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 6.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 7.5, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 9.0, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 10.5, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 12.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 13.5, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 15.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 16.5, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 18.0, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 19.5, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 21.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 21.6, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance}
+    cam_keys:
+    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 26.7, lens: 34, frame: 寄り}
+    - {t: 21.0, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
+    - {t: 21.6, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
+    bg: azb_summit_night
+    act: {start: 並んでしゃがむ二人, do: メタリカは顔を両手でおおって泣き出し、「うるさい……」「くそっ……」「あんなヤツらに……」, end: 泣くメタリカの寄り}
+    camera: 南東の低い所（顔が帽子に隠れない高さ）から二人、泣くメタリカへゆっくり寄る
+    kind: A
+  A17-027:
+    frame: 全身（後ろから）
+    only: [metallica, bisco, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 18.5, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 20.2, at: m_back, z: 26.0, face: 90, pose: cry}
+      bisco:
+      - {t: 0.0, at: b_side, z: 26.0, face: 40, pose: kneel}
+      - {t: 4.0, at: b_side, z: 26.0, face: 70, pose: kneel}
+      - {t: 18.5, at: b_side, z: 26.0, face: 70, pose: kneel}
+      - {t: 20.2, at: b_side, z: 26.0, face: 70, pose: kneel}
+      apprentice-a:
+      - {t: 0.0, at: [61.09, 1.67], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 1.03, at: [61.33, 1.39], z: 26.0, face: 51, pose: dance, ease: linear}
+      - {t: 2.06, at: [61.66, 1.21], z: 26.0, face: 71, pose: dance, ease: linear}
+      - {t: 3.08, at: [62.03, 1.15], z: 26.0, face: 92, pose: dance, ease: linear}
+      - {t: 4.11, at: [62.4, 1.23], z: 26.0, face: 112, pose: dance, ease: linear}
+      - {t: 5.14, at: [62.71, 1.43], z: 26.0, face: 133, pose: dance, ease: linear}
+      - {t: 6.17, at: [62.94, 1.73], z: 26.0, face: 153, pose: dance, ease: linear}
+      - {t: 7.19, at: [63.04, 2.09], z: 26.0, face: 174, pose: dance, ease: linear}
+      - {t: 8.22, at: [63.02, 2.46], z: 26.0, face: 194, pose: dance, ease: linear}
+      - {t: 9.25, at: [62.86, 2.8], z: 26.0, face: 215, pose: dance, ease: linear}
+      - {t: 10.28, at: [62.59, 3.07], z: 26.0, face: 236, pose: dance, ease: linear}
+      - {t: 11.31, at: [62.25, 3.22], z: 26.0, face: 256, pose: dance, ease: linear}
+      - {t: 12.33, at: [61.88, 3.24], z: 26.0, face: 277, pose: dance, ease: linear}
+      - {t: 13.36, at: [61.52, 3.13], z: 26.0, face: 297, pose: dance, ease: linear}
+      - {t: 14.39, at: [61.22, 2.91], z: 26.0, face: 318, pose: dance, ease: linear}
+      - {t: 15.42, at: [61.02, 2.59], z: 26.0, face: 338, pose: dance, ease: linear}
+      - {t: 16.44, at: [60.95, 2.22], z: 26.0, face: 359, pose: dance, ease: linear}
+      - {t: 17.47, at: [61.01, 1.85], z: 26.0, face: 19, pose: dance, ease: linear}
+      - {t: 18.5, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance, ease: linear}
+      - {t: 20.2, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance}
+      apprentice-b:
+      - {t: 0.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 1.03, at: [62.81, 1.53], z: 26.0, face: 141, pose: dance, ease: linear}
+      - {t: 2.06, at: [62.99, 1.86], z: 26.0, face: 161, pose: dance, ease: linear}
+      - {t: 3.08, at: [63.05, 2.23], z: 26.0, face: 182, pose: dance, ease: linear}
+      - {t: 4.11, at: [62.97, 2.6], z: 26.0, face: 202, pose: dance, ease: linear}
+      - {t: 5.14, at: [62.77, 2.91], z: 26.0, face: 223, pose: dance, ease: linear}
+      - {t: 6.17, at: [62.47, 3.14], z: 26.0, face: 243, pose: dance, ease: linear}
+      - {t: 7.19, at: [62.11, 3.24], z: 26.0, face: 264, pose: dance, ease: linear}
+      - {t: 8.22, at: [61.74, 3.22], z: 26.0, face: 284, pose: dance, ease: linear}
+      - {t: 9.25, at: [61.4, 3.06], z: 26.0, face: 305, pose: dance, ease: linear}
+      - {t: 10.28, at: [61.13, 2.79], z: 26.0, face: 326, pose: dance, ease: linear}
+      - {t: 11.31, at: [60.98, 2.45], z: 26.0, face: 346, pose: dance, ease: linear}
+      - {t: 12.33, at: [60.96, 2.08], z: 26.0, face: 7, pose: dance, ease: linear}
+      - {t: 13.36, at: [61.07, 1.72], z: 26.0, face: 27, pose: dance, ease: linear}
+      - {t: 14.39, at: [61.29, 1.42], z: 26.0, face: 48, pose: dance, ease: linear}
+      - {t: 15.42, at: [61.61, 1.22], z: 26.0, face: 68, pose: dance, ease: linear}
+      - {t: 16.44, at: [61.98, 1.15], z: 26.0, face: 89, pose: dance, ease: linear}
+      - {t: 17.47, at: [62.35, 1.21], z: 26.0, face: 109, pose: dance, ease: linear}
+      - {t: 18.5, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance, ease: linear}
+      - {t: 20.2, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance}
+      apprentice-c:
+      - {t: 0.0, at: [62.91, 2.73], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 1.03, at: [62.67, 3.01], z: 26.0, face: 231, pose: dance, ease: linear}
+      - {t: 2.06, at: [62.34, 3.19], z: 26.0, face: 251, pose: dance, ease: linear}
+      - {t: 3.08, at: [61.97, 3.25], z: 26.0, face: 272, pose: dance, ease: linear}
+      - {t: 4.11, at: [61.6, 3.17], z: 26.0, face: 292, pose: dance, ease: linear}
+      - {t: 5.14, at: [61.29, 2.97], z: 26.0, face: 313, pose: dance, ease: linear}
+      - {t: 6.17, at: [61.06, 2.67], z: 26.0, face: 333, pose: dance, ease: linear}
+      - {t: 7.19, at: [60.96, 2.31], z: 26.0, face: 354, pose: dance, ease: linear}
+      - {t: 8.22, at: [60.98, 1.94], z: 26.0, face: 14, pose: dance, ease: linear}
+      - {t: 9.25, at: [61.14, 1.6], z: 26.0, face: 35, pose: dance, ease: linear}
+      - {t: 10.28, at: [61.41, 1.33], z: 26.0, face: 56, pose: dance, ease: linear}
+      - {t: 11.31, at: [61.75, 1.18], z: 26.0, face: 76, pose: dance, ease: linear}
+      - {t: 12.33, at: [62.12, 1.16], z: 26.0, face: 97, pose: dance, ease: linear}
+      - {t: 13.36, at: [62.48, 1.27], z: 26.0, face: 117, pose: dance, ease: linear}
+      - {t: 14.39, at: [62.78, 1.49], z: 26.0, face: 138, pose: dance, ease: linear}
+      - {t: 15.42, at: [62.98, 1.81], z: 26.0, face: 158, pose: dance, ease: linear}
+      - {t: 16.44, at: [63.05, 2.18], z: 26.0, face: 179, pose: dance, ease: linear}
+      - {t: 17.47, at: [62.99, 2.55], z: 26.0, face: 199, pose: dance, ease: linear}
+      - {t: 18.5, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance, ease: linear}
+      - {t: 20.2, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance}
+      apprentice-d:
+      - {t: 0.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 1.03, at: [61.19, 2.87], z: 26.0, face: 321, pose: dance, ease: linear}
+      - {t: 2.06, at: [61.01, 2.54], z: 26.0, face: 341, pose: dance, ease: linear}
+      - {t: 3.08, at: [60.95, 2.17], z: 26.0, face: 2, pose: dance, ease: linear}
+      - {t: 4.11, at: [61.03, 1.8], z: 26.0, face: 22, pose: dance, ease: linear}
+      - {t: 5.14, at: [61.23, 1.49], z: 26.0, face: 43, pose: dance, ease: linear}
+      - {t: 6.17, at: [61.53, 1.26], z: 26.0, face: 63, pose: dance, ease: linear}
+      - {t: 7.19, at: [61.89, 1.16], z: 26.0, face: 84, pose: dance, ease: linear}
+      - {t: 8.22, at: [62.26, 1.18], z: 26.0, face: 104, pose: dance, ease: linear}
+      - {t: 9.25, at: [62.6, 1.34], z: 26.0, face: 125, pose: dance, ease: linear}
+      - {t: 10.28, at: [62.87, 1.61], z: 26.0, face: 146, pose: dance, ease: linear}
+      - {t: 11.31, at: [63.02, 1.95], z: 26.0, face: 166, pose: dance, ease: linear}
+      - {t: 12.33, at: [63.04, 2.32], z: 26.0, face: 187, pose: dance, ease: linear}
+      - {t: 13.36, at: [62.93, 2.68], z: 26.0, face: 207, pose: dance, ease: linear}
+      - {t: 14.39, at: [62.71, 2.98], z: 26.0, face: 228, pose: dance, ease: linear}
+      - {t: 15.42, at: [62.39, 3.18], z: 26.0, face: 248, pose: dance, ease: linear}
+      - {t: 16.44, at: [62.02, 3.25], z: 26.0, face: 269, pose: dance, ease: linear}
+      - {t: 17.47, at: [61.65, 3.19], z: 26.0, face: 289, pose: dance, ease: linear}
+      - {t: 18.5, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
+      - {t: 20.2, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance}
+    cam_keys:
+    - {t: 0.0, cam: [56.4, 3.8, 28.4], look: [62.0, 2.2], look_h: 26.7, lens: 30, frame: 全身}
+    - {t: 18.5, cam: [56.7, 3.7, 28.3], look: [62.0, 2.2], look_h: 26.7, lens: 33}
+    - {t: 20.2, cam: [56.7, 3.7, 28.3], look: [62.0, 2.2], look_h: 26.7, lens: 33}
+    bg: azb_summit_night
+    act: {start: 泣くメタリカ, do: 後ろ姿の二人の向こうで、見習い魔女たちが楽しそうに踊り続ける。ビスコが「メタリカ、もう……」と寄り添い、メタリカはしゃくり上げる, end: 泣く二人の後ろ姿と、踊りの輪}
+    camera: 二人の後ろ（西）のやや高い所から、奥の踊りの輪を見る（ほとんど止め）
+    kind: M
+  A17-028:
+    frame: 大引き（クレーン）
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight, apprentice-a, apprentice-b, apprentice-c, apprentice-d]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 18.0, at: m_back, z: 26.0, face: 90, pose: cry}
+      arlecchino:
+      - {t: 0.0, at: a_up, z: 26.0, face: 200, pose: stand}
+      - {t: 18.0, at: a_up, z: 26.0, face: 240, pose: stand}
+      bisco:
+      - {t: 0.0, at: b_side, z: 26.0, face: 70, pose: kneel}
+      - {t: 18.0, at: b_side, z: 26.0, face: 70, pose: kneel}
+      luckiny:
+      - {t: 0.0, at: l_g, z: 26.0, face: 70, pose: look_down}
+      - {t: 18.0, at: l_g, z: 26.0, face: 300, pose: look_down}
+      hundred-knight:
+      - {t: 0.0, at: hk_g, z: 26.0, face: 80, pose: stand}
+      - {t: 18.0, at: hk_g, z: 26.0, face: 120, pose: stand}
+      apprentice-a:
+      - {t: 0.0, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance, ease: linear}
+      - {t: 1.0, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 2.0, at: [61.82, 1.17], z: 26.0, face: 80, pose: dance, ease: linear}
+      - {t: 3.0, at: [62.18, 1.17], z: 26.0, face: 100, pose: dance, ease: linear}
+      - {t: 4.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 5.0, at: [62.8, 1.53], z: 26.0, face: 140, pose: dance, ease: linear}
+      - {t: 6.0, at: [62.99, 1.84], z: 26.0, face: 160, pose: dance, ease: linear}
+      - {t: 7.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 8.0, at: [62.99, 2.56], z: 26.0, face: 200, pose: dance, ease: linear}
+      - {t: 9.0, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance, ease: linear}
+      - {t: 10.0, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 11.0, at: [62.18, 3.23], z: 26.0, face: 260, pose: dance, ease: linear}
+      - {t: 12.0, at: [61.82, 3.23], z: 26.0, face: 280, pose: dance, ease: linear}
+      - {t: 13.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 14.0, at: [61.2, 2.87], z: 26.0, face: 320, pose: dance, ease: linear}
+      - {t: 15.0, at: [61.01, 2.56], z: 26.0, face: 340, pose: dance, ease: linear}
+      - {t: 16.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 17.0, at: [61.01, 1.84], z: 26.0, face: 20, pose: dance, ease: linear}
+      - {t: 18.0, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance, ease: linear}
+      apprentice-b:
+      - {t: 0.0, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance, ease: linear}
+      - {t: 1.0, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 2.0, at: [63.03, 2.02], z: 26.0, face: 170, pose: dance, ease: linear}
+      - {t: 3.0, at: [63.03, 2.38], z: 26.0, face: 190, pose: dance, ease: linear}
+      - {t: 4.0, at: [62.91, 2.72], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 5.0, at: [62.67, 3.0], z: 26.0, face: 230, pose: dance, ease: linear}
+      - {t: 6.0, at: [62.36, 3.19], z: 26.0, face: 250, pose: dance, ease: linear}
+      - {t: 7.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 8.0, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
+      - {t: 9.0, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
+      - {t: 10.0, at: [61.09, 2.72], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 11.0, at: [60.97, 2.38], z: 26.0, face: 350, pose: dance, ease: linear}
+      - {t: 12.0, at: [60.97, 2.02], z: 26.0, face: 10, pose: dance, ease: linear}
+      - {t: 13.0, at: [61.09, 1.68], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 14.0, at: [61.33, 1.4], z: 26.0, face: 50, pose: dance, ease: linear}
+      - {t: 15.0, at: [61.64, 1.21], z: 26.0, face: 70, pose: dance, ease: linear}
+      - {t: 16.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 17.0, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
+      - {t: 18.0, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance, ease: linear}
+      apprentice-c:
+      - {t: 0.0, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance, ease: linear}
+      - {t: 1.0, at: [62.52, 3.11], z: 26.0, face: 240, pose: dance, ease: linear}
+      - {t: 2.0, at: [62.18, 3.23], z: 26.0, face: 260, pose: dance, ease: linear}
+      - {t: 3.0, at: [61.82, 3.23], z: 26.0, face: 280, pose: dance, ease: linear}
+      - {t: 4.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
+      - {t: 5.0, at: [61.2, 2.87], z: 26.0, face: 320, pose: dance, ease: linear}
+      - {t: 6.0, at: [61.01, 2.56], z: 26.0, face: 340, pose: dance, ease: linear}
+      - {t: 7.0, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
+      - {t: 8.0, at: [61.01, 1.84], z: 26.0, face: 20, pose: dance, ease: linear}
+      - {t: 9.0, at: [61.2, 1.53], z: 26.0, face: 40, pose: dance, ease: linear}
+      - {t: 10.0, at: [61.48, 1.29], z: 26.0, face: 60, pose: dance, ease: linear}
+      - {t: 11.0, at: [61.82, 1.17], z: 26.0, face: 80, pose: dance, ease: linear}
+      - {t: 12.0, at: [62.18, 1.17], z: 26.0, face: 100, pose: dance, ease: linear}
+      - {t: 13.0, at: [62.52, 1.29], z: 26.0, face: 120, pose: dance, ease: linear}
+      - {t: 14.0, at: [62.8, 1.53], z: 26.0, face: 140, pose: dance, ease: linear}
+      - {t: 15.0, at: [62.99, 1.84], z: 26.0, face: 160, pose: dance, ease: linear}
+      - {t: 16.0, at: [63.05, 2.2], z: 26.0, face: 180, pose: dance, ease: linear}
+      - {t: 17.0, at: [62.99, 2.56], z: 26.0, face: 200, pose: dance, ease: linear}
+      - {t: 18.0, at: [62.8, 2.87], z: 26.0, face: 220, pose: dance, ease: linear}
+      apprentice-d:
+      - {t: 0.0, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
+      - {t: 1.0, at: [61.09, 2.72], z: 26.0, face: 330, pose: dance, ease: linear}
+      - {t: 2.0, at: [60.97, 2.38], z: 26.0, face: 350, pose: dance, ease: linear}
+      - {t: 3.0, at: [60.97, 2.02], z: 26.0, face: 10, pose: dance, ease: linear}
+      - {t: 4.0, at: [61.09, 1.68], z: 26.0, face: 30, pose: dance, ease: linear}
+      - {t: 5.0, at: [61.33, 1.4], z: 26.0, face: 50, pose: dance, ease: linear}
+      - {t: 6.0, at: [61.64, 1.21], z: 26.0, face: 70, pose: dance, ease: linear}
+      - {t: 7.0, at: [62.0, 1.15], z: 26.0, face: 90, pose: dance, ease: linear}
+      - {t: 8.0, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
+      - {t: 9.0, at: [62.67, 1.4], z: 26.0, face: 130, pose: dance, ease: linear}
+      - {t: 10.0, at: [62.91, 1.67], z: 26.0, face: 150, pose: dance, ease: linear}
+      - {t: 11.0, at: [63.03, 2.02], z: 26.0, face: 170, pose: dance, ease: linear}
+      - {t: 12.0, at: [63.03, 2.38], z: 26.0, face: 190, pose: dance, ease: linear}
+      - {t: 13.0, at: [62.91, 2.72], z: 26.0, face: 210, pose: dance, ease: linear}
+      - {t: 14.0, at: [62.67, 3.0], z: 26.0, face: 230, pose: dance, ease: linear}
+      - {t: 15.0, at: [62.36, 3.19], z: 26.0, face: 250, pose: dance, ease: linear}
+      - {t: 16.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
+      - {t: 17.0, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
+      - {t: 18.0, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
+    cam_keys:
+    - {t: 0.0, cam: [59.9, 4.6, 27.4], look: metallica, look_h: 26.7, lens: 34, frame: 寄り}
+    - {t: 6.0, cam: [58.0, 7.0, 30.0], look: [60.5, 3.0], look_h: 26.5, lens: 30}
+    - {t: 18.0, cam: [44.0, 22.0, 52.0], look: [61.0, 2.0], look_h: 26.0, lens: 26}
+    bg: azb_summit_night
+    act: {start: 泣くメタリカ, do: 「くそ、くそっ……」。ビスコが「メタリカ……」。夜空から魔女たちの高笑いが響く。カメラは上へ高く引き、星空の下の小さな山頂と、踊りの輪と、うずくまる二人, end: 夜の山頂（夜会編 回2 の終わり）}
+    camera: メタリカの寄りから、上へ高く引いていく（クレーン）
+    kind: A

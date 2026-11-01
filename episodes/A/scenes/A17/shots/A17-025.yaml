@@ -1,0 +1,35 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-025
+scene: A17
+tc: 252.1
+sec: 6.5
+kind: M
+shot: 全身・寄り添うビスコ
+acting: ビスコが歩み寄って隣にしゃがみ「メタリカ……。もういい……、帰ろう……」
+dialogue:
+- L525「メタリカ……。もういい……、帰ろう……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.6
+  - 1.8
+  - 26.5
+  look:
+  - 59.7
+  - 3.2
+  lens: 32
+  move: 西の低い所から二人（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+overlays: []
+fallback: null
+act:
+  start: ひざをついたメタリカ
+  end: 並んでしゃがむ二人
+timing:
+  lead: 1.0

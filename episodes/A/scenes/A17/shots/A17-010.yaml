@@ -1,0 +1,37 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-010
+scene: A17
+tc: 102.4
+sec: 11.8
+kind: M
+shot: 全身・ベルダとテレッサ
+acting: ベルダが「テレッサ！人をバカにするものじゃないわ」とたしなめる。テレッサはお辞儀して「はい、お師匠様」、振り向いてメタリカを指さし「騙されたことにまだ気がついてない」
+dialogue:
+- L498「テレッサ！あまり、人をバカにするものじゃないわ。」
+- L499「は、はい、お師匠様。でもこいつ、騙されたことにまだ気がついてないようですから。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 70.0
+  - 1.5
+  - 27.6
+  look:
+  - 65.2
+  - -0.8
+  lens: 28
+  move: 東の低い所から、ベルダとテレッサ（左の奥にメタリカと木の像）
+background: az-brocken
+image: null
+refs:
+- teressa
+- berda
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 手を広げるテレッサ
+  end: メタリカを指さすテレッサ
+timing:
+  lead: 0.3

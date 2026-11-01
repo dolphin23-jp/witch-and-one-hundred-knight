@@ -1,0 +1,40 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-016
+scene: A17
+tc: 157.0
+sec: 6.5
+kind: A
+shot: 引き（煽り）・高笑いして夜空へ消える魔女たち
+acting: 魔女たちが高笑いしながら光に包まれて夜空へ昇り、消える。メタリカが見上げる
+dialogue:
+- L508「アハハハハハ……！オホホホホホ……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 61.2
+  - 4.2
+  - 26.4
+  look:
+  - 62.5
+  - -3.5
+  lens: 22
+  move: 広場の低い所から、昇っていく魔女たちを見上げて振り上げる（ティルトアップ）
+background: az-brocken
+image: null
+refs:
+- metallica
+- purple-peel
+- lily
+- rabi
+- usamaru
+- berda
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 北の縁の魔女たち
+  end: 星空と、見上げるメタリカ
+timing:
+  lead: 0.3

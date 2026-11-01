@@ -1,0 +1,36 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-012
+scene: A13
+tc: 120.2
+sec: 14.4
+kind: M
+shot: 全身・二人（南から、奥に砂丘）
+acting: 飛び跳ねて喜び、深くお辞儀。メタリカは両手を上げて笑い、「傀儡としてだがな！」と指さす
+dialogue:
+- L363「ほ、本当ですか！ありがとうございます！！！死ぬ気でがんばります！」
+- L364「キヒヒ、安心しろ。死んでも蘇らせてやるさ。傀儡としてだがな！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 72.6
+  - 43.6
+  - 2.4
+  look:
+  - 72.3
+  - 39.0
+  lens: 30
+  move: 南のやや高い所から二人（奥に砂丘）。ほとんど止め
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 顔を上げたルッキーニィ
+  end: 指さすメタリカと、きょとんとするルッキーニィ
+timing:
+  lead: 0.4

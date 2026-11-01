@@ -1,0 +1,37 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-019
+scene: A13
+tc: 210.8
+sec: 9.0
+kind: M
+shot: 全身（肩ごし）・北東の山を指さすメタリカ
+acting: 北東へ向き直って浮かび、地平線のアズ・ブロッケン山を指さす。ルッキーニィと百騎兵もそちらを見る
+dialogue:
+- L376「さあ、ゆっくりしている暇はないぞ。」
+- L377「夜会の開かれる場所、アズ・ブロッケン山の山頂へ向かう！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 71.6
+  - 41.6
+  - 2.0
+  look:
+  - 77.0
+  - 32.3
+  lens: 22
+  move: メタリカの後ろ（南西）の高い所から、肩ごしに北東の山へ
+background: tettara-desert
+image: null
+refs:
+- luckiny
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 両手を上げるメタリカ
+  end: 山を指さすメタリカの後ろ姿
+timing:
+  lead: 0.5

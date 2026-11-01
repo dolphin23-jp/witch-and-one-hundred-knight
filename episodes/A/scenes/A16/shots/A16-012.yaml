@@ -1,0 +1,32 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-012
+scene: A16
+tc: 107.2
+sec: 8.0
+kind: M
+shot: 寄り（手持ち）・焦るメタリカ
+acting: 焦って踊りが乱れ、「どうして、何も起こらんのだ！？」
+dialogue:
+- L477「く、くそっ！どうして……。どうして、何も起こらんのだ！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 60.0
+  - 0.4
+  - 27.3
+  look: metallica
+  lens: 40
+  move: 北西からメタリカの寄り（手持ちの揺れ）
+background: az-brocken
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 踊るメタリカ
+  end: 焦るメタリカの寄り
+timing:
+  lead: 0.5

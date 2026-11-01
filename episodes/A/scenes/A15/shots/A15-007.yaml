@@ -1,0 +1,32 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-007
+scene: A15
+tc: 49.5
+sec: 6.0
+kind: M
+shot: 寄り・護符を抱くルッキーニィ
+acting: 両手で護符を胸に抱き、「大切にします！」と深くお辞儀する
+dialogue:
+- L431「あ、ありがとうございます、魔女様！大切にします！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.05
+  - 7.4
+  - 23.3
+  look: luckiny
+  lens: 45
+  move: 斜め前（北西）からルッキーニィの顔へ寄る
+background: az-brocken
+image: null
+refs:
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 護符を見るルッキーニィ
+  end: お辞儀するルッキーニィ
+timing:
+  lead: 0.6

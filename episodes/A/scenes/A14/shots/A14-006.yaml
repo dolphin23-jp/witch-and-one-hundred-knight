@@ -1,0 +1,32 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-006
+scene: A14
+tc: 45.5
+sec: 8.5
+kind: A
+shot: 寄り（地面すれすれ）・浮かび上がる古の風紋
+acting: 草の下から古の風紋（渦巻きの光る輪）が浮かび上がり、百騎兵はびっくりして跳びのく
+dialogue:
+- L393「それは古の魔女がつかっていたと言われる風紋だな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 11.7
+  - 45.9
+  - 0.25
+  look: rune0
+  lens: 24
+  move: 谷の縁の地面すれすれから、浮かび上がる風紋（奥に百騎兵）
+background: az-brocken
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 草むらにしゃがむ百騎兵
+  end: 光る風紋と、見下ろす百騎兵
+timing:
+  lead: 2.6

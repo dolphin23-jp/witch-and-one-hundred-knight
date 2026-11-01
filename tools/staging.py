@@ -30,9 +30,15 @@ FONT = next((f for f in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc",
 COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight": (160, 220, 255), "arlecchino": (220, 120, 220),
           "luckiny": (235, 60, 60), "tito": (210, 70, 150), "villager-a": (170, 120, 70), "villager-b": (90, 100, 180), "villager-c": (150, 40, 60),
           "villager-d": (205, 175, 125), "water-merchant": (235, 125, 40), "sand-eater": (150, 150, 130),
-          "scarecocco": (80, 80, 200)}
+          "scarecocco": (80, 80, 200),
+          # 夜会編 回2（A14〜A17）: 夜会の魔女たち、見習い魔女、守護者のからくり人形
+          "purple-peel": (150, 60, 200), "lily": (120, 215, 235), "rabi": (255, 75, 30), "usamaru": (250, 225, 235),
+          "teressa": (235, 200, 80), "berda": (110, 135, 95), "apprentice-a": (250, 160, 200), "apprentice-b": (190, 160, 250),
+          "apprentice-c": (150, 225, 190), "apprentice-d": (250, 215, 140), "karakuri-doll": (190, 140, 85)}
 SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
-         "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏"}
+         "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏",
+         "purple-peel": "パ", "lily": "リ", "rabi": "ラ", "usamaru": "ウ", "teressa": "テレ", "berda": "ベ",
+         "apprentice-a": "見A", "apprentice-b": "見B", "apprentice-c": "見C", "apprentice-d": "見D", "karakuri-doll": "人形"}
 POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}   # 立っていないときの背の高さの割合（寝ているときは高さ m）
 
 

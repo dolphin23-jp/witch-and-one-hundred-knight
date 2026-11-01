@@ -1,0 +1,42 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-014
+scene: A17
+tc: 138.5
+sec: 15.0
+kind: M
+shot: 引き・去るベルダと駆け戻るテレッサ
+acting: ベルダが背を向けて「夜会が始まります。あなたを魔女に推薦するのですから」。テレッサは「はい！お師匠様！！」と駆け戻る
+dialogue:
+- L504「ほら、いきますよテレッサ。夜会が始まります。」
+- L505「今回の夜会で、あなたを魔女に推薦するのですから。他の魔女様方に粗相のないように。」
+- L506「はい！お師匠様！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 63.2
+  - 9.2
+  - 30.0
+  look:
+  - 62.8
+  - -1.6
+  lens: 26
+  move: 南の高い所から、広場と北の縁の魔女たち
+background: az-brocken
+image: null
+refs:
+- metallica
+- purple-peel
+- lily
+- rabi
+- usamaru
+- berda
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 凍りつくメタリカ
+  end: 北の縁に戻ったテレッサ
+timing:
+  lead: 0.4

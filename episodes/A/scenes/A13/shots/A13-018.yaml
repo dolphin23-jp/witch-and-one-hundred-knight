@@ -1,0 +1,32 @@
+# A13 テッタラ・弟子入りと白夜月（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A13 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A13-018
+scene: A13
+tc: 202.8
+sec: 8.0
+kind: M
+shot: 寄り（顔）・両手を握るルッキーニィ
+acting: 胸の前で両手を握りしめ、目を輝かせる
+dialogue:
+- L375「ボクが魔女様の弟子に……！憧れの、魔女に……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 71.4
+  - 38.6
+  - 1.05
+  look: luckiny
+  lens: 45
+  move: 斜め前（北西）からルッキーニィの顔へゆっくり寄る
+background: tettara-desert
+image: null
+refs:
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 見上げるルッキーニィ
+  end: 両手を握るルッキーニィ
+timing:
+  lead: 0.8

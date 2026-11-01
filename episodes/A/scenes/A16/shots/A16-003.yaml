@@ -1,0 +1,36 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-003
+scene: A16
+tc: 22.5
+sec: 11.2
+kind: M
+shot: 寄り・樽に三品を入れるメタリカ
+acting: 読み上げに合わせて、メタリカが樽の前にしゃがみ、スズの音草・ネコ・スケアコッコを樽に入れる
+dialogue:
+- L452「樽の中で、“スズの音草”が、スズの音を奏で、それを聞いてクシャミをしたネコを“尾の先がだるいニワトリ”が目撃したら開始……とのことです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 64.8
+  - 4.0
+  - 27.5
+  look:
+  - 61.0
+  - 3.2
+  lens: 30
+  move: 樽の東の低い所から、樽ごしにメタリカ
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 招待状を読むアルレッキーノ
+  end: 樽の前でしゃがむメタリカ（奥にアルレッキーノ）
+timing:
+  lead: 0.5

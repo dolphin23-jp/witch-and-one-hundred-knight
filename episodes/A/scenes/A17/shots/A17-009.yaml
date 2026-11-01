@@ -1,0 +1,33 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-009
+scene: A17
+tc: 94.4
+sec: 8.0
+kind: M
+shot: 全身・歩み出るテレッサ
+acting: 東の縁からテレッサが歩み出て、口元を押さえて笑い「夜会の余興ですのよ、あなたは」
+dialogue:
+- L497「フフ、まだわかりませんの？夜会の余興ですのよ、あなたは。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 60.8
+  - 2.0
+  - 26.5
+  look: teressa
+  lens: 34
+  move: メタリカの肩ごし（西、低い）から、歩み出るテレッサを煽る
+background: az-brocken
+image: null
+refs:
+- metallica
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 立ち尽くすメタリカ
+  end: 手を広げるテレッサ
+timing:
+  lead: 0.4

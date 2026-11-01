@@ -1,0 +1,37 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-013
+scene: A15
+tc: 102.0
+sec: 14.0
+kind: M
+shot: 全身・詰め寄るビスコ
+acting: ビスコが「弟子だと！？」と両手を上げ、ルッキーニィに詰め寄って、メタリカのひどさを身ぶりで並べる
+dialogue:
+- L440「で、弟子だと！？」
+- L441「お前、本気で弟子になるのか？こいつは本当に酷い奴だぞ？」
+- L442「あやしい薬の実験台にされたり、肉饅頭呼ばわりされたり、ペット扱いされたり……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.7
+  - 7.9
+  - 26.55
+  look:
+  - 59.1
+  - 4.5
+  lens: 30
+  move: 南西の低い所から、ルッキーニィに詰め寄るビスコを煽る（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- luckiny
+- bisco
+overlays: []
+fallback: null
+act:
+  start: お辞儀したルッキーニィ
+  end: 身ぶりで訴えるビスコ
+timing:
+  lead: 0.3

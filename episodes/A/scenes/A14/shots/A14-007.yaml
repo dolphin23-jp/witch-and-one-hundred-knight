@@ -1,0 +1,35 @@
+# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A14-007
+scene: A14
+tc: 54.0
+sec: 7.0
+kind: M
+shot: 寄り・ルッキーニィの頭をなでるメタリカ
+acting: メタリカがテーブルから寄ってきて「お手柄だ」とルッキーニィの頭をなでる。ルッキーニィはうれしくて跳ねる
+dialogue:
+- L396「お手柄だ、ルッキーニィ。お前の“星読み”とやらも捨てたもんじゃないようだな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 204.6
+  - 200.9
+  - 1.5
+  look:
+  - 202.3
+  - 200.9
+  lens: 28
+  move: ソファの上（東）から二人の寄り（奥に丸窓）
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 北を指すルッキーニィ
+  end: 頭をなでるメタリカと、笑うルッキーニィ
+timing:
+  lead: 0.6
