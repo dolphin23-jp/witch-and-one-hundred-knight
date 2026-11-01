@@ -80,15 +80,15 @@ cuts:
       - {t: 1.0, at: m_g, z: 26.0, face: 230, pose: stand}
       - {t: 13.5, at: m_g, z: 26.0, face: 230, pose: cross}
     cam_keys:
-    - {t: 0.0, cam: [62.8, 6.5, 27.3], look: arlecchino, look_h: 27.6, lens: 30, frame: 全身}
-    - {t: 13.5, cam: [63.2, 5.4, 27.4], look: arlecchino, look_h: 27.6, lens: 32}
+    - {t: 0.0, cam: [64.6, 7.6, 27.5], look: [60.2, 5.0], look_h: 27.2, lens: 30, frame: 全身}
+    - {t: 13.5, cam: [65.0, 6.2, 27.6], look: [60.2, 4.8], look_h: 27.3, lens: 32}
     bg: azb_summit
     act: {start: 一行, do: アルレッキーノが招待状を広げて、夜会の始め方を読み上げる。メタリカは腕を組んで聞く, end: 招待状を読むアルレッキーノ}
     camera: 樽の側（東南東）から、読むアルレッキーノと聞く一行（ゆっくり回り込む）
     kind: M
   A16-003:
     frame: 寄り（樽）
-    only: [metallica, arlecchino]
+    only: [metallica, arlecchino, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_g, z: 26.0, face: 50, pose: hold}
@@ -111,15 +111,15 @@ cuts:
       - {t: 9.6, at: [61.0, 2.6], z: 26.0, face: 100, pose: stand}
       - {t: 11.2, at: [61.0, 2.6], z: 26.0, face: 100, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [63.4, 3.6, 26.6], look: [61.6, 2.4], look_h: 26.6, lens: 30, frame: 寄り}
-    - {t: 11.2, cam: [63.3, 3.5, 26.6], look: [61.6, 2.4], look_h: 26.7, lens: 34}
+    - {t: 0.0, cam: [64.8, 4.0, 27.5], look: [61.0, 3.2], look_h: 27.2, lens: 30, frame: 寄り}
+    - {t: 11.2, cam: [64.5, 3.8, 27.4], look: [61.0, 3.0], look_h: 27.0, lens: 34}
     bg: azb_summit
     act: {start: 招待状を読むアルレッキーノ, do: 読み上げに合わせて、メタリカが樽の前にしゃがみ、スズの音草・ネコ・スケアコッコを樽に入れる, end: 樽の前でしゃがむメタリカ（奥にアルレッキーノ）}
     camera: 樽の東の低い所から、樽ごしにメタリカ
     kind: M
   A16-004:
     frame: 全身（二人）
-    only: [metallica, arlecchino, bisco]
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_g, z: 26.0, face: 50, pose: hold}
@@ -140,8 +140,8 @@ cuts:
       - {t: 0.3, at: [61.0, 2.6], z: 26.0, face: 250, pose: proud}
       - {t: 9.0, at: [61.0, 2.6], z: 26.0, face: 250, pose: proud}
     cam_keys:
-    - {t: 0.0, cam: [58.6, 0.6, 27.6], look: [60.2, 3.4], look_h: 26.8, lens: 30, frame: 全身}
-    - {t: 9.0, cam: [58.8, 0.8, 27.5], look: [60.2, 3.4], look_h: 26.8, lens: 33}
+    - {t: 0.0, cam: [57.4, -0.8, 28.2], look: [60.2, 3.6], look_h: 26.9, lens: 28, frame: 全身}
+    - {t: 9.0, cam: [57.7, -0.5, 28.1], look: [60.2, 3.6], look_h: 26.9, lens: 31}
     bg: azb_summit
     act: {start: 樽の前のメタリカ, do: 立ち上がって胸を張り「こんなところか？」。アルレッキーノが招待状の続きを読む, end: 胸を張るメタリカ}
     camera: 木の像の脇（北西）の高い所から二人
@@ -183,7 +183,7 @@ cuts:
     kind: M
   A16-006:
     frame: 全身（回り込む）
-    only: [metallica, bisco, luckiny]
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_g, z: 26.0, face: 70, pose: hold}
@@ -215,12 +215,12 @@ cuts:
       - {t: 10.96, at: [60.73, 2.49], z: 26.0, face: 347, pose: dance, ease: linear}
       - {t: 12.0, at: [60.78, 1.76], z: 26.0, face: 20, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [58.6, 8.4, 27.2], look: barrel, look_h: 26.9, lens: 28, frame: 全身}
-    - {t: 6.0, cam: [66.8, 6.4, 27.4], look: barrel, look_h: 26.9, lens: 28, ease: linear}
-    - {t: 12.0, cam: [67.2, -0.6, 27.0], look: barrel, look_h: 26.9, lens: 30, ease: linear}
+    - {t: 0.0, cam: [64.4, 8.4, 27.4], look: barrel, look_h: 26.9, lens: 28, frame: 全身}
+    - {t: 6.0, cam: [68.3, 4.6, 27.5], look: barrel, look_h: 26.9, lens: 28, ease: linear}
+    - {t: 12.0, cam: [67.6, -2.0, 27.2], look: barrel, look_h: 26.9, lens: 30, ease: linear}
     bg: azb_summit
     act: {start: 踊りの構えのメタリカ, do: 樽のまわりを回りながら、跳ねて腕を振る奇妙な踊り（ワルギスのダンス）, end: 踊り続けるメタリカと、奥の木の像}
-    camera: 樽を中心に、南西から東へぐるりと回り込む（オービット）
+    camera: 樽を中心に、南南東から東を回って北東へ回り込む（オービット。奥に見ている一行）
     kind: A
   A16-007:
     frame: 全身（一行）
@@ -262,7 +262,7 @@ cuts:
     kind: M
   A16-008:
     frame: 全身（二人）
-    only: [metallica, arlecchino]
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_g, z: 26.0, face: 70, pose: hold}
@@ -290,11 +290,11 @@ cuts:
       - {t: 7.65, at: [61.25, 3.26], z: 26.0, face: 305, pose: dance, ease: linear}
       - {t: 8.5, at: [61.0, 3.04], z: 26.0, face: 320, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [61.8, 7.4, 26.5], look: [61.6, 3.0], look_h: 27.0, lens: 28, frame: 全身}
-    - {t: 8.5, cam: [61.9, 7.3, 26.5], look: [62.0, 2.8], look_h: 27.0, lens: 30}
+    - {t: 0.0, cam: [57.3, 0.5, 26.9], look: [60.6, 3.4], look_h: 27.0, lens: 26, frame: 全身}
+    - {t: 8.5, cam: [57.5, 0.7, 26.9], look: [60.7, 3.3], look_h: 27.0, lens: 28}
     bg: azb_summit
     act: {start: 踊るメタリカ, do: アルレッキーノが「お子様が踊るお遊戯とばかり」と口をすべらせ、メタリカは踊りの途中でつんのめってにらむ, end: にらんでまた踊り出すメタリカ}
-    camera: 南の低い所から、手前のアルレッキーノと奥のメタリカ
+    camera: 北西の低い所から、一行の前のアルレッキーノと、樽のまわりで踊るメタリカ
     kind: M
   A16-009:
     frame: 寄り（煽り）
@@ -320,7 +320,7 @@ cuts:
     kind: M
   A16-010:
     frame: 全身（樽の脇）
-    only: [metallica, arlecchino, bisco]
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_g, z: 26.0, face: 70, pose: hold}
@@ -349,11 +349,11 @@ cuts:
       - {t: 7.0, at: [62.81, 1.19], z: 26.0, face: 129, pose: dance, ease: linear}
       - {t: 8.0, at: [63.0, 1.36], z: 26.0, face: 140, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [64.0, 0.4, 27.6], look: [61.4, 3.4], look_h: 26.6, lens: 30, frame: 全身}
-    - {t: 8.0, cam: [63.9, 0.5, 27.6], look: [61.4, 3.2], look_h: 26.6, lens: 34}
+    - {t: 0.0, cam: [65.8, 6.2, 28.0], look: [61.2, 3.6], look_h: 26.7, lens: 28, frame: 全身}
+    - {t: 8.0, cam: [65.6, 6.1, 27.9], look: [61.3, 3.6], look_h: 26.8, lens: 29}
     bg: azb_summit
     act: {start: 踊るメタリカ, do: アルレッキーノが樽の脇にしゃがんで中をのぞき（ネコにクシャミをさせようとしている）、ビスコが「何をやってるんだ？」とのぞき込む, end: 樽の脇のアルレッキーノと、踊るメタリカ}
-    camera: 木の像の東の高い所から、樽の脇の二人と踊るメタリカ
+    camera: 南東のやや高い所から、樽の脇のアルレッキーノと、のぞき込むビスコ、踊るメタリカ
     kind: M
   A16-011:
     frame: 大引き（時の経過）
@@ -420,7 +420,7 @@ cuts:
   A16-013:
     frame: 全身（二人）
     lighting: late_dusk_mtn
-    only: [metallica, bisco, arlecchino]
+    only: [metallica, arlecchino, bisco, luckiny, hundred-knight]
     keys:
       arlecchino:
       - {t: 0.0, at: a_cat, z: 26.0, face: 270, pose: crouch}
@@ -447,9 +447,9 @@ cuts:
       - {t: 4.0, at: [61.25, 1.25], z: 26.0, face: 225, pose: arms_up}
       - {t: 7.5, at: [61.25, 1.25], z: 26.0, face: 225, pose: arms_up}
     cam_keys:
-    - {t: 0.0, cam: [58.2, 3.0, 26.7], look: [60.6, 3.4], look_h: 27.0, lens: 30, frame: 全身}
-    - {t: 7.5, cam: [58.3, 2.9, 26.7], look: [60.6, 3.2], look_h: 27.1, lens: 32}
+    - {t: 0.0, cam: [55.5, 7.6, 30.0], look: [60.3, 3.6], look_h: 26.6, lens: 28, frame: 全身}
+    - {t: 7.5, cam: [56.2, 7.0, 29.6], look: [60.6, 3.0], look_h: 26.7, lens: 31}
     bg: azb_summit_night
     act: {start: 焦るメタリカ, do: ビスコが「何か忘れている条件とかないのか？」。メタリカが踊りを止めて両手を振り上げ「う、うるさいっ！」, end: 両手を振り上げたメタリカ}
-    camera: 西の低い所から、ビスコと止まったメタリカ
+    camera: 南西の高い所から、ビスコと、踊りを止めて叫ぶメタリカ（一行ごと。ゆっくり寄る）
     kind: M

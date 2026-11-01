@@ -122,8 +122,8 @@ cuts:
     - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
     - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
     cam_keys:
-    - {t: 0.0, cam: [30.4, 10.2, 23.5], look: [34.6, 9.9], look_h: 23.0, lens: 30, frame: 全身}
-    - {t: 12.0, cam: [30.7, 10.1, 23.5], look: [34.6, 9.9], look_h: 23.0, lens: 33}
+    - {t: 0.0, cam: [27.6, 13.4, 23.9], look: [34.4, 9.6], look_h: 23.2, lens: 30, frame: 全身}
+    - {t: 12.0, cam: [28.4, 12.9, 23.8], look: [34.4, 9.6], look_h: 23.2, lens: 32}
     bg: azb_swamp
     act: {start: 峰に降りた四人, do: アルレッキーノが沼を見てメタリカにお辞儀し「見事な沼ですね」。ルッキーニィは両手を上げて「スゴイです！」, end: はしゃぐルッキーニィ}
     camera: 咲いたピラーの側（西）から、沼ごしに四人（ゆっくり寄る）
@@ -202,8 +202,8 @@ cuts:
     - {kind: spark, t: [1.0, 1.8], at: metallica, z: 23.3, color: [200, 255, 220]}
     - {kind: light, t: [1.0, 2.0], at: metallica, z: 23.4, energy: 120, color: [200, 255, 220], fade: 2.0}
     cam_keys:
-    - {t: 0.0, cam: [36.2, 6.4, 24.4], look: metallica, lens: 32, frame: 寄り}
-    - {t: 8.5, cam: [36.1, 6.5, 24.4], look: metallica, lens: 36}
+    - {t: 0.0, cam: [36.9, 7.4, 24.3], look: [33.6, 9.3], look_h: 23.9, lens: 32, frame: 寄り}
+    - {t: 8.5, cam: [36.6, 7.3, 24.3], look: [33.8, 8.9], look_h: 23.9, lens: 34}
     bg: azb_swamp
     act: {start: 振り向いたメタリカ, do: 「護符を作っておいたんだ」と指を立て、光る護符を取り出して、ルッキーニィの前へ差し出す, end: 護符を差し出すメタリカ}
     camera: ルッキーニィの肩ごし（北東の高い所）から、護符を差し出すメタリカ
@@ -229,8 +229,8 @@ cuts:
     - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
     - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
     cam_keys:
-    - {t: 0.0, cam: [32.0, 9.5, 22.6], look: bisco, look_h: 23.1, lens: 32, frame: 全身（低い）}
-    - {t: 7.0, cam: [32.1, 9.45, 22.6], look: bisco, look_h: 23.2, lens: 34}
+    - {t: 0.0, cam: [32.0, 12.6, 22.8], look: [34.4, 8.6], look_h: 23.4, lens: 28, frame: 全身（低い）}
+    - {t: 7.0, cam: [32.3, 12.2, 22.8], look: [34.5, 8.6], look_h: 23.4, lens: 30}
     bg: azb_swamp
     act: {start: 護符を差し出すメタリカ, do: メタリカがビスコの方へ身を乗り出して「変な犬コロもいるが」とからかう。ビスコが両手を上げて「なんだと！」, end: 怒るビスコと、腕を組むメタリカ}
     camera: メタリカの後ろの低い所から、怒るビスコを煽る
@@ -422,8 +422,8 @@ cuts:
       - {t: 3.0, at: l_up, z: 26.0, face: 70, pose: stand}
       - {t: 14.0, at: l_up, z: 26.0, face: 70, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [60.6, 9.2, 28.8], look: [59.6, 4.2], look_h: 26.7, lens: 30, frame: 全身}
-    - {t: 14.0, cam: [60.8, 8.9, 28.7], look: [59.8, 4.2], look_h: 26.7, lens: 33}
+    - {t: 0.0, cam: [60.9, 10.4, 28.1], look: [59.6, 4.2], look_h: 27.0, lens: 30, frame: 全身}
+    - {t: 14.0, cam: [61.0, 9.9, 28.0], look: [59.8, 4.2], look_h: 27.0, lens: 33}
     bg: azb_summit
     act: {start: 怒るビスコ, do: ビスコが立ち上がってメタリカに寄り、ルッキーニィを指して「この子は誰なんだ」。メタリカはルッキーニィを手で示し「昨日出会って今日、弟子にした」, end: ルッキーニィを示すメタリカ}
     camera: 南の高い所から三人を見下ろす（ゆっくり寄る）
@@ -467,11 +467,11 @@ cuts:
       - {t: 0.0, at: l_up, z: 26.0, face: 80, pose: stand}
       - {t: 14.0, at: l_up, z: 26.0, face: 70, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [56.6, 2.9, 26.45], look: bisco, look_h: 27.2, lens: 32, frame: 全身}
-    - {t: 14.0, cam: [56.7, 3.0, 26.45], look: bisco, look_h: 27.2, lens: 36}
+    - {t: 0.0, cam: [56.7, 7.9, 26.55], look: [59.1, 4.5], look_h: 27.3, lens: 30, frame: 全身}
+    - {t: 14.0, cam: [57.0, 7.5, 26.55], look: [59.1, 4.5], look_h: 27.3, lens: 33}
     bg: azb_summit
     act: {start: お辞儀したルッキーニィ, do: ビスコが「弟子だと！？」と両手を上げ、ルッキーニィに詰め寄って、メタリカのひどさを身ぶりで並べる, end: 身ぶりで訴えるビスコ}
-    camera: ルッキーニィの肩ごし（北西、低い）からビスコを煽る
+    camera: 南西の低い所から、ルッキーニィに詰め寄るビスコを煽る（ゆっくり寄る）
     kind: M
   A15-014:
     frame: 寄り（ルッキーニィ）
@@ -501,17 +501,17 @@ cuts:
     keys:
       metallica:
       - {t: 0.0, at: m_s, z: 26.0, face: 245, pose: cross}
-      - {t: 0.4, at: [60.1, 4.0], z: 26.0, face: 240, pose: walk}
-      - {t: 1.2, at: [60.0, 4.2], z: 26.0, face: 235, pose: lean}
-      - {t: 6.2, at: [60.0, 4.2], z: 26.0, face: 235, pose: lean}
-      - {t: 6.6, at: [60.0, 4.2], z: 26.0, face: 235, pose: cross}
-      - {t: 8.5, at: [60.0, 4.2], z: 26.0, face: 235, pose: cross}
+      - {t: 0.4, at: [60.5, 4.0], z: 26.0, face: 250, pose: walk}
+      - {t: 1.2, at: [60.3, 4.5], z: 26.0, face: 258, pose: lean}
+      - {t: 6.2, at: [60.3, 4.5], z: 26.0, face: 258, pose: lean}
+      - {t: 6.6, at: [60.3, 4.5], z: 26.0, face: 258, pose: cross}
+      - {t: 8.5, at: [60.3, 4.5], z: 26.0, face: 258, pose: cross}
       bisco:
       - {t: 0.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
-      - {t: 1.2, at: [59.2, 4.7], z: 26.0, face: 60, pose: stand}
-      - {t: 6.4, at: [59.2, 4.7], z: 26.0, face: 60, pose: stand}
-      - {t: 6.8, at: [59.2, 4.7], z: 26.0, face: 60, pose: arms_up}
-      - {t: 8.5, at: [59.2, 4.7], z: 26.0, face: 60, pose: arms_up}
+      - {t: 1.2, at: [59.2, 4.7], z: 26.0, face: 78, pose: stand}
+      - {t: 6.4, at: [59.2, 4.7], z: 26.0, face: 78, pose: stand}
+      - {t: 6.8, at: [59.2, 4.7], z: 26.0, face: 78, pose: arms_up}
+      - {t: 8.5, at: [59.2, 4.7], z: 26.0, face: 78, pose: arms_up}
       luckiny:
       - {t: 0.0, at: l_up, z: 26.0, face: 70, pose: hop}
       - {t: 1.0, at: l_up, z: 26.0, face: 70, pose: stand}
@@ -523,8 +523,8 @@ cuts:
       - {t: 0.0, at: hk_s, z: 26.0, face: 80, pose: stand}
       - {t: 8.5, at: hk_s, z: 26.0, face: 120, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [56.0, 8.6, 27.5], look: [59.6, 4.0], look_h: 26.8, lens: 30, frame: 全身}
-    - {t: 8.5, cam: [55.0, 9.8, 29.0], look: [60.4, 2.0], look_h: 27.0, lens: 26}
+    - {t: 0.0, cam: [56.6, 9.0, 27.5], look: [59.4, 4.1], look_h: 26.8, lens: 30, frame: 全身}
+    - {t: 8.5, cam: [55.8, 10.2, 29.0], look: [60.4, 2.0], look_h: 27.0, lens: 26}
     bg: azb_summit
     act: {start: うなだれるビスコ, do: メタリカがビスコに顔を寄せて「弟子に慕われているワタシに嫉妬か？」。ビスコは両手を振り上げて言い返そうとする。カメラが引いて、奥に広場の木の像, end: 言い合う二人と見守る三人、木の像}
     camera: 南西からの全身から、高く引いて広場の木の像まで見せる
