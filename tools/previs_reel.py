@@ -23,6 +23,35 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONT = "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
 
 
+# 音のつり合い（D-068、2026-11-01 ユーザー「足音がまだ大きい。効果音のバランスをよく気にして」）。
+# 素材ごとの大きさの違いをならしてから volume を掛ける。volume 1.0 は「台詞と同じ大きさ」:
+#   単発の効果音（loop でない sfx）は、いちばん大きい所（peak）を台詞の山 REF_PEAK に合わせる
+#   BGM と、鳴り続ける効果音（loop の sfx）は、平均（mean）を台詞の平均 REF_MEAN に合わせる
+#   voice（原作の声）はそのまま
+# 目安: BGM 0.28（台詞より約 11dB 小さい）、環境音 0.15〜0.2、足音 0.15〜0.22、扉などの音 0.4〜0.6
+REF_PEAK, REF_MEAN = -15.0, -28.5
+_LEVELS = {}
+
+
+def levels(path):
+    if path not in _LEVELS:
+        out = subprocess.run(["ffmpeg", "-i", str(path), "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+        mean = float(out.split("mean_volume:")[1].split("dB")[0])
+        peak = float(out.split("max_volume:")[1].split("dB")[0])
+        _LEVELS[path] = (mean, peak)
+    return _LEVELS[path]
+
+
+def norm_gain(kind, it, path):
+    """素材の大きさをならす係数（dB）。"""
+    if kind == "voice":
+        return 0.0
+    mean, peak = levels(path)
+    if kind == "bgm" or it.get("loop"):
+        return REF_MEAN - mean
+    return REF_PEAK - peak
+
+
 def sound_items(scene_dir, shots):
     """sound.yaml の項目を、シーンの頭からの秒に直して返す。
 
@@ -109,51 +138,111 @@ def join_with_transitions(work, shots, parts):
     return out
 
 
-def comm_window(work, scene_dir, shots, video, total):
-    """通信で話す人物（メタリカ）の話し始めに、画面の右上に小窓（顔の枠）を出す（D-069）。
-    scene.yaml の comm: {who: metallica, image: characters/metallica/views/metallica_face_front.png, sec: 2.5}。
+def comm_starts(scene_dir, shots):
+    """通信で話す人物（scene.yaml の comm.who）の話し始めの秒の並び。
     話し始め = その人物の台詞のうち、すぐ前の台詞が別の人物か、同じ人物の前の台詞から 8秒以上あいたもの。"""
     sy = yaml.safe_load((scene_dir / "scene.yaml").read_text(encoding="utf-8"))
     comm = sy.get("comm")
     vyp = scene_dir / "voice.yaml"
     if not comm or not vyp.exists():
-        return video
+        return None, []
     scene = shots[0]["scene"]
     who_of = {}
-    for sp in (ROOT / "audio" / scene / "original" / "script.yaml",):
-        if sp.exists():
-            for l in (yaml.safe_load(sp.read_text(encoding="utf-8")) or {}).get("lines", []):
-                who_of[l["id"]] = l.get("who")
+    sp = ROOT / "audio" / scene / "original" / "script.yaml"
+    if sp.exists():
+        for l in (yaml.safe_load(sp.read_text(encoding="utf-8")) or {}).get("lines", []):
+            who_of[l["id"]] = l.get("who")
     lines = (yaml.safe_load(vyp.read_text(encoding="utf-8")) or {}).get("lines", [])
     src_dir = ROOT / "audio" / scene / "original"
     starts, prev_who, prev_end = [], None, -99.0
     for l in lines:
         wav = next(src_dir.glob(f"{l['id']}_*.wav"), None)
-        L = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(wav)], capture_output=True, text=True).stdout) if wav else 2.0
+        L = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(wav)],
+                                 capture_output=True, text=True).stdout) if wav else 2.0
         w = who_of.get(l["id"])
         if w == comm["who"] and (prev_who != w or l["at"] - prev_end > 8.0):
-            starts.append(float(l["at"]))
+            starts.append(max(0.0, float(l["at"]) - 0.35))   # ノイズの分だけ声より少し前から
         if w == comm["who"]:
             prev_end = l["at"] + L
         prev_who = w
-    if not starts:
-        return video
+    return comm, starts
+
+
+def comm_frames(work, comm, fps=24):
+    """小窓の動き（D-069、2026-11-01 ユーザー「無線のようにザザっとノイズが走って、ブラウン管テレビの電源がつくように出る」）。
+    0〜0.15秒: 枠の大きさの砂嵐 → 0.15〜0.40秒: 真ん中の白い横線が上下に開いて顔が出る（ノイズが残って消えていく）
+    → 表示（ときどき横に走るノイズの帯と、うすい走査線）→ 最後の 0.35秒: 上下に閉じて横線 → 点 → 消える。
+    PNG の連番（透明つき）を返す。"""
+    import random
     from PIL import Image, ImageDraw
+    rnd = random.Random(3)
     face = Image.open(ROOT / comm["image"]).convert("RGB")
     W = 220
     face = face.resize((W, int(face.height * W / face.width)))
     pad = 6
-    card = Image.new("RGBA", (W + 2 * pad, face.height + 2 * pad), (40, 20, 60, 235))
+    CW, CH = W + 2 * pad, face.height + 2 * pad
+    card = Image.new("RGBA", (CW, CH), (40, 20, 60, 235))
     card.paste(face, (pad, pad))
-    ImageDraw.Draw(card).rectangle([1, 1, card.width - 2, card.height - 2], outline=(230, 190, 90, 255), width=3)
-    png = work / "comm.png"
-    card.save(png)
+    sl = ImageDraw.Draw(card)
+    for y in range(pad, CH - pad, 3):   # うすい走査線
+        sl.line([(pad, y), (CW - pad, y)], fill=(0, 0, 0, 40))
+    ImageDraw.Draw(card).rectangle([1, 1, CW - 2, CH - 2], outline=(230, 190, 90, 255), width=3)
+
+    def noise(w, h, alpha=255):
+        im = Image.effect_noise((w, h), 90).convert("L").point(lambda v: min(255, int(v * 1.3)))
+        return Image.merge("RGBA", (im, im, im, Image.new("L", (w, h), alpha)))
+
     d = float(comm.get("sec", 2.5))
+    n = int(round(d * fps))
+    fdir = work / "comm"
+    fdir.mkdir(exist_ok=True)
+    for k in range(n):
+        t = k / fps
+        fr = Image.new("RGBA", (CW, CH), (0, 0, 0, 0))
+        if t < 0.15:                                   # 砂嵐
+            fr.paste(noise(CW, CH, 200), (0, 0))
+        elif t < 0.40:                                 # 横線から上下に開く
+            u = (t - 0.15) / 0.25
+            h = max(3, int(CH * u))
+            y0 = (CH - h) // 2
+            fr.paste(card.crop((0, y0, CW, y0 + h)), (0, y0))
+            nz = noise(CW, h, int(170 * (1 - u)))
+            fr.alpha_composite(nz, (0, y0))
+            ImageDraw.Draw(fr).rectangle([0, y0, CW - 1, y0 + 1], fill=(255, 255, 255, 230))
+            ImageDraw.Draw(fr).rectangle([0, y0 + h - 2, CW - 1, y0 + h - 1], fill=(255, 255, 255, 230))
+        elif t < d - 0.35:                             # 表示中。ときどき横に走るノイズの帯
+            fr.paste(card, (0, 0))
+            if rnd.random() < 0.18:
+                bh = rnd.randint(4, 14)
+                by = rnd.randint(pad, CH - pad - bh)
+                fr.alpha_composite(noise(CW - 2 * pad, bh, 150), (pad, by))
+        else:                                          # 上下に閉じて横線 → 点 → 消える
+            u = (t - (d - 0.35)) / 0.35
+            if u < 0.6:
+                h = max(3, int(CH * (1 - u / 0.6)))
+                y0 = (CH - h) // 2
+                fr.paste(card.crop((0, y0, CW, y0 + h)).resize((CW, h)), (0, y0))
+                ImageDraw.Draw(fr).rectangle([0, CH // 2 - 1, CW - 1, CH // 2 + 1], fill=(255, 255, 255, 220))
+            else:
+                v = (u - 0.6) / 0.4
+                w = max(2, int(CW * (1 - v)))
+                ImageDraw.Draw(fr).rectangle([(CW - w) // 2, CH // 2 - 1, (CW + w) // 2, CH // 2 + 1], fill=(255, 255, 255, int(230 * (1 - v))))
+        fr.save(fdir / f"{k:03d}.png")
+    return fdir
+
+
+def comm_window(work, scene_dir, shots, video, total):
+    """通信で話す人物（メタリカ）の話し始めに、画面の右上へ小窓を出す（D-069）。scene.yaml の
+    comm: {who: metallica, image: characters/metallica/views/metallica_face_front.png, sec: 2.5}。出方は comm_frames()。"""
+    comm, starts = comm_starts(scene_dir, shots)
+    if not starts:
+        return video
+    fdir = comm_frames(work, comm)
     ins, flt, last = ["-i", video], [], "[0:v]"
     for i, t0 in enumerate(starts, 1):
-        ins += ["-loop", "1", "-t", f"{d}", "-i", png]
-        flt.append(f"[{i}:v]format=rgba,fade=t=in:st=0:d=0.25:alpha=1,fade=t=out:st={d - 0.35}:d=0.35:alpha=1,setpts=PTS+{t0}/TB[c{i}]")
-        flt.append(f"{last}[c{i}]overlay=x=W-w-18:y=18:enable='between(t,{t0},{t0 + d})'[v{i}]")
+        ins += ["-framerate", "24", "-i", str(fdir / "%03d.png")]
+        flt.append(f"[{i}:v]format=rgba,setpts=PTS+{t0}/TB[c{i}]")
+        flt.append(f"{last}[c{i}]overlay=x=W-w-18:y=18:eof_action=pass[v{i}]")
         last = f"[v{i}]"
     out = work / "video_comm.mp4"
     run(*ins, "-filter_complex", ";".join(flt), "-map", last, "-t", f"{total}", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "22", out)
@@ -197,6 +286,11 @@ def main():
         ins += ["-i", wav]
         flt.append(f"[{sum(1 for x in ins if x == '-i')}]aresample=44100,aformat=channel_layouts=stereo,adelay={round(l['at'] * 1000)}|{round(l['at'] * 1000)}[a{k}]")
     snd = sound_items(scene_dir, shots)
+    comm, cstarts = comm_starts(scene_dir, shots)   # 通信の小窓のノイズの音（D-069）
+    for t0 in cstarts:
+        d = float(comm.get("sec", 2.5))
+        snd.append({"src": "audio/sfx/radio_static_on.ogg", "kind": "sfx", "at0": t0, "end0": t0 + 0.45, "volume": 0.3})
+        snd.append({"src": "audio/sfx/radio_static_off.ogg", "kind": "sfx", "at0": t0 + d - 0.3, "end0": t0 + d - 0.05, "volume": 0.2})
     for k, it in enumerate(snd):
         src = ROOT / it["src"]
         if not src.exists():
@@ -211,7 +305,8 @@ def main():
             chain.append(f"afade=t=in:d={it['fade_in']}")
         if it.get("fade_out") and it["end0"]:
             chain.append(f"afade=t=out:st={max(0.0, it['end0'] - it['at0'] - it['fade_out']):.3f}:d={it['fade_out']}")
-        chain.append(f"volume={it.get('volume', 1.0)}")
+        g = norm_gain(it["kind"], it, src)
+        chain.append(f"volume={it.get('volume', 1.0) * 10 ** (g / 20):.4f}")
         ms = round(it["at0"] * 1000)
         chain.append(f"adelay={ms}|{ms}")
         flt.append(f"[{idx}]" + ",".join(chain) + f"[s{k}]")

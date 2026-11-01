@@ -100,5 +100,7 @@
 | E18 | 足音・砂（左右3つずつ） | CC0（oga fantozzis-footsteps-grasssand-stone（Sand）） |
 | E19 | 足音・石の床（左右3つずつ） | CC0（oga fantozzis-footsteps-grasssand-stone（Stone）） |
 | E20 | 扉をドンドンドンと叩く | CC0（扉の閉まる音の頭と木の音を重ねて3回） |
+| E21 | 無線のノイズ（ザザッ、通信が入る） | 自作 |
+| E22 | 無線のノイズ（短く、通信が切れる） | 自作 |
 
 足音（E18・E19）は、`tools/footsteps.py` が下絵の人物の歩く・走る動きに合わせて1歩ずつ置きます（部屋の中は石の床、外は砂）。

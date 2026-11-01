@@ -129,3 +129,17 @@ items:
   license: CC0
   note: 2026-11-01 ユーザー「ドンドンドン、という感じ」（A06-002）。E02 より重く低い
   listen: Drive 原作音源/効果音/E20_扉をドンドンドンと叩く.mp3
+- id: E21
+  name: 無線のノイズ（ザザッ、通信が入る）
+  file: radio_static_on.ogg
+  src: 自作（帯域を絞った雑音を 25〜60ms ずつ途切れさせた。0.45秒）
+  license: 自作
+  note: メタリカの通信の小窓が出るとき（D-069、tools/previs_reel.py が自動で置く）
+  listen: Drive 原作音源/効果音/E21_無線のノイズ.mp3
+- id: E22
+  name: 無線のノイズ（短く、通信が切れる）
+  file: radio_static_off.ogg
+  src: 自作（0.25秒）
+  license: 自作
+  note: 小窓が消えるとき
+  listen: Drive 原作音源/効果音/E22_無線のノイズ・切れる.mp3
