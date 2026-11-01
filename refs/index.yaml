@@ -60,3 +60,15 @@ images:
   st-dolce_bg_01: {subjects: [st-dolce], kind: 背景, note: "セントドルチェ", primary: true}
   karakuri-doll_sheet_01: {subjects: [karakuri-doll], kind: 設定画, note: "からくり人形", primary: true}
   pillar-of-temperance_sheet_01: {subjects: [pillar], kind: 設定画, note: "ピラーオブテンペランスで画像左は閉じた状態（休眠）のピラー 、右は咲かせた後 — 5枚の半透明の緑の花弁が開き、黄金の中心・地面の緑のオーラとその他ディテールです。", primary: true}
+  # 2026-11-01: 原作に画像のない人物・物。ユーザー指示「ヒゲが13本ある猫、見習い魔女、ホウキ、護符、森の魔女のシモベ、白ネズミ、案内魔女、ニワトリ、巨大メタリカ、沼を浴びたテレッサ、
+  # バスルーム、庭園と隠し森についてはあなたが作ってください」で Claude が生成した2案（characters/<対象>/design/、計画 characters/gen/yakai2_designs_plan.yaml）から、
+  # ユーザーが選んだもの（「全て1で良い」）。GPT Image 2.5。ニワトリはスケアコッコと同じなので作らなかった。背景3つは world/<場所>/plates.yaml
+  whisker-cat_sheet_01: {subjects: [whisker-cat], kind: 設定画, note: "ヒゲが13本ある猫（錬金術で作り直した猫）。Claude が生成した案1をユーザーが選んだ（スケアコッコ・ティトの設定画を参照）。ヒゲが13本ちょうどかは数え切れない（数を見せるカットは合成で直す）", primary: true}
+  apprentice-witches_sheet_01: {subjects: [apprentice-witches], kind: 設定画, note: "見習い魔女（4人の並び。上の段に正面、下の段に背面。左からピンク・ミント・黄・ラベンダーのベレー）。Claude が生成した案1をユーザーが選んだ（テレッサ・ネザリアの設定画を参照）", primary: true}
+  metallica-broom_sheet_01: {subjects: [metallica-broom], kind: 設定画, note: "メタリカのホウキ（横・上・前・後ろと寄り）。Claude が生成した案1をユーザーが選んだ（メタリカの設定画・屋敷の外の画像を参照）", primary: true}
+  swamp-amulet_sheet_01: {subjects: [swamp-amulet], kind: 設定画, note: "護符（メタリカがルッキーニィに渡す沼の瘴気よけ）。Claude が生成した案1をユーザーが選んだ", primary: true}
+  forest-servant_sheet_01: {subjects: [forest-servant], kind: 設定画, note: "森の魔女のシモベ（アルレッキーノそっくりの魔法生物）。Claude が生成した案1をユーザーが選んだ（アルレッキーノの設定画・マーリカの森を参照）", primary: true}
+  marika-mouse_sheet_01: {subjects: [marika-mouse], kind: 設定画, note: "白ネズミ（ネズミにされたマーリカ、尻尾あり）。Claude が生成した案1をユーザーが選んだ（スケアコッコ・ネザリアの設定画を参照）", primary: true}
+  guide-witch_sheet_01: {subjects: [guide-witch], kind: 設定画, note: "魔女都の案内魔女。Claude が生成した案1をユーザーが選んだ（テレッサ・ネザリアの設定画を参照）", primary: true}
+  metallica-giant_sheet_01: {subjects: [metallica-giant], kind: 設定画, note: "巨大メタリカ（小瓶の液体で巨大化した姿、雷と瘴気）。Claude が生成した案1をユーザーが選んだ（メタリカ・ビスコの設定画を参照）。足元の影との比は約8倍で、大きさは下絵で決める", primary: true}
+  teressa-swamp_sheet_01: {subjects: [teressa-swamp], kind: 設定画, note: "毒沼を浴びたテレッサ（6-15、議会場）。Claude が生成した案1をユーザーが選んだ（テレッサの設定画を参照）", primary: true}
