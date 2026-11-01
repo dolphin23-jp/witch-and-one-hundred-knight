@@ -2,14 +2,13 @@
 # kind: M＝小さな動き、A＝見せ場。村人A〜D の見た目は設定画（refs/villager-*_sheet_01）
 id: A06-004
 scene: A06
-tc: 32.6
-sec: 8.0
+tc: 34.0
+sec: 3.6
 kind: M
 shot: 全身・村人たち（ティトの肩越し）
-acting: 村人A、村人Cが一歩ずつ詰め寄って責める
+acting: 村人Aが一歩出て叫ぶ（L183 は 004b へ移した）（2026-11-01 ユーザーの見直し 3回目）
 dialogue:
-- L182「すぐに村も襲われるかもしれないぞ！」
-- L183「あんたのところのラナちゃん！とんでもないものを連れてきてくれたね！」
+- L182（村人A）「すぐに村も襲われるかもしれないぞ！」
 sound: null
 notes: null
 camera:
@@ -19,7 +18,7 @@ camera:
   - 1.6
   look: villager-a
   lens: 35
-  move: ティトの肩越し。話す村人へ速く振る（ホイップパン）
+  move: ティトの肩越しに村人A。ゆっくり寄る
 background: beast-village
 image: null
 refs:
@@ -27,7 +26,6 @@ refs:
 - villager-a
 - villager-b
 - villager-c
-- villager-d
 overlays: []
 fallback: null
 act:

@@ -2,11 +2,11 @@
 # kind: M＝小さな動き、A＝見せ場。村人A〜D の見た目は設定画（refs/villager-*_sheet_01）
 id: A06-006
 scene: A06
-tc: 51.4
-sec: 8.3
+tc: 56.0
+sec: 10.7
 kind: M
 shot: 寄り・ルッキーニィ（ティトの肩越し）
-acting: 振り返ったティトが問い、扉口のルッキーニィがうつむく
+acting: 奥で縮こまっていたルッキーニィが扉口まで出てくる。振り返ったティトが不安そうに問い、ルッキーニィがうつむく（頭の出てくる所を足した）（2026-11-01 ユーザーの見直し 3回目）
 dialogue:
 - L186「ラ、ラナ？どうなっているの？母さんに説明しなさい。」
 - L187「そ……、それは……！」
@@ -23,15 +23,16 @@ camera:
 background: tito-house
 image: null
 refs:
+- hundred-knight
 - tito
 - luckiny
 overlays: []
 fallback: null
 act:
-  start: 振り返るティトの肩越しに、扉口に立つルッキーニィ
+  start: うつむくティトの肩越しに、開いた扉口
   end: うつむくルッキーニィ
 timing:
-  lead: 0.3
+  lead: 2.7
 blocking:
   start: ル（中央・正面）、テ（右・正面）
   end: ル（中央・正面）、テ（右・背中）

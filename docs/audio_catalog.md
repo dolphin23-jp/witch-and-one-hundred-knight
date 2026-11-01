@@ -97,5 +97,6 @@
 | E17 | 砂食みが砂の下を進む（原作） | 原作（個人鑑賞用）（原作 パート17_BGMと効果音 19:42.6-19:45.7（BGM が混ざる）） |
 | E18 | 足音・砂（左右3つずつ） | CC0（oga fantozzis-footsteps-grasssand-stone（Sand）） |
 | E19 | 足音・石の床（左右3つずつ） | CC0（oga fantozzis-footsteps-grasssand-stone（Stone）） |
+| E20 | 扉をドンドンドンと叩く | CC0（扉の閉まる音の頭と木の音を重ねて3回） |
 
 足音（E18・E19）は、`tools/footsteps.py` が下絵の人物の歩く・走る動きに合わせて1歩ずつ置きます（部屋の中は石の床、外は砂）。
