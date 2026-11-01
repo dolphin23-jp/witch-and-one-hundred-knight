@@ -1,0 +1,92 @@
+# 見習い魔女の一人ずつの設定画と、6章後半の追憶の園・小物の生成計画
+# ユーザー指示（2026-11-01 14:45）:「追憶の園、小物はあなたが作ってください。見習い魔女の三面図も作って良い」
+# 1案だけ作る（CLAUDE.md「守ること」1、2026-11-01「今後も2通り生成しないで良い」）。
+# 見習い魔女4枚は上の指示で承認済み（4クレジットと案内済み）。追憶の園と小物は承認の表を出してから作る。
+#
+# 原作テキスト（Mj100）の手がかり:
+#   - 追憶の園: 夜行列車が異空間で止められ、降りて探すと「盲いた魔女」がいる場所（6章の場面メモ: 異空間→盲いた魔女→追憶の園（翠ノ実））。
+#     魔女はビスコの手を握り、翠の実を手渡す（「そいつは砂糖漬けにして食うと美味いんだ」）。異空間の背景（refs/otherspace_bg_01）と地続きにする。
+#   - 翠の実: 「"朧なる神ニケ"、その血を浴びたリンゴが翌朝には翠萌ゆる光の実になった」。→ リンゴの形で翠色に淡く光る実。
+#   - 翠の実の砂糖漬け: ビスコの好物。後の章でメタリカが大量に土産にする。→ ガラス瓶の砂糖漬け。
+#   - 切符: 隠し森でネズミ（マーリカ）がいた場所に落ちていた「一切れの紙のようなもの」。2人まで乗れる。山羊の頭が食べて本物と確かめる。後に偽造が発覚。
+#   - 委任状: メタリカは沼の外に出られないので、百騎兵に持たせる（6章の場面メモ「駅（鐘、夜光列車、戦闘、委任状）」）。
+#   - 小瓶の緑の液体: メタリカが議会場で飲んで巨大化する。
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k, aspect_ratio: "16:9"}
+credits_per_image: 1
+status: 見習い魔女4枚は生成済み（4クレジット、残高 487→483、refs/apprentice-witch-{a,b,c,d}_sheet_01.png）。追憶の園と小物は承認待ち
+total_images: 6
+
+common:
+  apprentice: >-
+    Character design sheet of ONE character: the girl described below in image 1, exactly as designed there (same face, hair, hat, outfit,
+    wand, shoes and colors), drawn in the same 2D anime art style, line art and cel shading. Layout like image 2, on a plain
+    white background: full-body front view, side view and back view standing in a row, plus two head close-ups (front and
+    three-quarter) on the right. Neutral standing pose, a cheeky little smile. Draw only this one girl. No text, no labels,
+    no captions, no manga symbols, no color palette swatches.
+
+items:
+  - who: apprentice-witch-a
+    ja: 見習い魔女A（ピンク）
+    refs: [refs/apprentice-witches_sheet_01.png, refs/teressa_sheet_01.jpg]
+    prompt: >-
+      {apprentice} The girl: the first girl from the left (pink): long blonde drill curls, a big floppy pink pointed hat with
+      a large crimson bow, a frilly pink dress with small crimson bows, white frilled socks, dark buckle shoes, a heart-tipped
+      golden wand.
+    out: characters/apprentice-witch-a/design/apprentice-witch-a_design_gpt-image-2.5_01.png
+  - who: apprentice-witch-b
+    ja: 見習い魔女B（ミント）
+    refs: [refs/apprentice-witches_sheet_01.png, refs/teressa_sheet_01.jpg]
+    prompt: >-
+      {apprentice} The girl: the second girl from the left (mint green): mint-green hair in twin buns, a wide-brimmed mint
+      hat with a dark band and a white flower, a dark green cape over a cream blouse and dark green dress, a crystal-tipped
+      wand, dark buckle shoes.
+    out: characters/apprentice-witch-b/design/apprentice-witch-b_design_gpt-image-2.5_01.png
+  - who: apprentice-witch-c
+    ja: 見習い魔女C（黄）
+    refs: [refs/apprentice-witches_sheet_01.png, refs/teressa_sheet_01.jpg]
+    prompt: >-
+      {apprentice} The girl: the third girl from the left (lemon yellow): short orange-blonde bob, a tall crooked yellow
+      pointed hat with a dark band and a hanging star charm, a yellow and black dress with a petal-like skirt, a brown
+      satchel across the body, a star-tipped wand, dark buckle shoes.
+    out: characters/apprentice-witch-c/design/apprentice-witch-c_design_gpt-image-2.5_01.png
+  - who: apprentice-witch-d
+    ja: 見習い魔女D（ラベンダー）
+    refs: [refs/apprentice-witches_sheet_01.png, refs/teressa_sheet_01.jpg]
+    prompt: >-
+      {apprentice} The girl: the fourth girl from the left (lavender): long lavender hair in a single long braid, a lavender
+      beret-like witch hat with a flower ornament, a lavender coat-dress with oversized sleeves and a dark ribbon tie, a
+      crystal-tipped wand, dark buckle shoes.
+    out: characters/apprentice-witch-d/design/apprentice-witch-d_design_gpt-image-2.5_01.png
+
+pending_approval:
+  - who: memory-garden
+    ja: 追憶の園（背景）
+    refs: [refs/otherspace_bg_01.jpg]
+    prompt: >-
+      Background art only: no characters, no creatures, no text. A 2D anime environment design sheet: several panels of the
+      same place from different viewpoints, separated by thin white borders, in the same painting style, colors and glowing
+      materials as the reference image (a dark otherworldly dimension, a floor of flowing violet and blue light, an ancient
+      gnarled tree); do not copy its viewpoints. The place: the Garden of Remembrance, a quiet hidden garden inside that
+      dimension where an old blind witch waits. Old twisted fruit trees with dark bark grow from the glowing violet ground,
+      their branches hung with apple-shaped fruits that glow softly in jade green; fallen fruits shine in the grass; faint
+      wisps like a sweet scent drift through the air; a low ring of old stones and a crooked bench under the largest tree.
+      Calm, nostalgic, a little eerie. Panels: a wide view of the garden, the largest tree with the bench, a close view of a
+      branch with glowing jade fruits, a low view of the glowing ground with fallen fruits, and the view back toward the
+      railway track in the darkness.
+    out: world/memory-garden/memory-garden_gpt-image-2.5_01.png
+  - who: yakai-props
+    ja: 小物（小瓶の緑の液体・切符・委任状・翠ノ実と砂糖漬けの瓶）
+    refs: [refs/swamp-amulet_sheet_01.png]
+    prompt: >-
+      Prop design sheet, drawn in exactly the same 2D anime art style, line art, cel shading and color treatment as the
+      reference image; the reference only shows the style. On a plain white background, several props arranged in a grid,
+      each from two or three angles. No text, no letters, no readable writing (use squiggle lines instead of words), no
+      labels, no captions, no manga symbols. (1) A small corked glass vial of glowing jade-green potion, with a wax seal and a
+      twine tie: a swamp witch's potion. (2) A magic train ticket: a small old slip of thick cream paper with a torn edge, a
+      round punched hole, a gold foil emblem of a lion's head, and decorative borders. (3) A letter of proxy from a swamp
+      witch: a folded sheet of aged parchment with a dark purple wax seal stamped with a swirl sigil, also shown unfolded with
+      squiggle lines and a signature mark. (4) A jade fruit: an apple-shaped fruit that glows softly in jade green, with a
+      small dark stem and one leaf, also shown cut in half. (5) A glass jar of candied jade fruits: slices of the glowing
+      fruit in syrup, sugar crystals on top, a cloth cover tied with string.
+    out: characters/yakai-props/design/yakai-props_design_gpt-image-2.5_01.png
