@@ -62,7 +62,7 @@ cuts:
     camera: 谷の向こう（北西）の高い所から、駆けてくる百騎兵へ下りながら寄る（クレーン）
     kind: A
   A14-002:
-    frame: 全身（後ろ姿）
+    frame: 全身（横から）
     only: [hundred-knight]
     keys:
       hundred-knight:
@@ -72,12 +72,12 @@ cuts:
       - {t: 5.2, at: hk_edge, z: 0.0, face: 15, pose: look_up}
       - {t: 8.5, at: hk_edge, z: 0.0, face: 15, pose: look_up}
     cam_keys:
-    - {t: 0.0, cam: [9.1, 48.9, 1.5], look: [10.4, 40.0], look_h: -16.0, lens: 26, frame: 全身（後ろ姿）}
-    - {t: 4.6, cam: [9.15, 48.8, 1.5], look: [10.6, 40.0], look_h: -14.0, lens: 26}
-    - {t: 8.5, cam: [9.2, 48.7, 1.6], look: j1, look_h: 5.5, lens: 28}
+    - {t: 0.0, cam: [5.0, 46.2, 0.9], look: hundred-knight, look_h: 0.2, lens: 30, frame: 全身（横から）}
+    - {t: 4.6, cam: [5.1, 46.15, 0.9], look: [9.9, 45.8], look_h: -1.5, lens: 30}
+    - {t: 8.5, cam: [5.2, 46.1, 1.0], look: j1, look_h: 5.5, lens: 28}
     bg: azb_gorge
     act: {start: 谷の縁の百騎兵, do: 谷底をのぞき込み、顔を上げて、谷の向こうの高い足場を見上げる, end: 足場を見上げる百騎兵の後ろ姿}
-    camera: 百騎兵の後ろの低い所から。谷底をのぞいてから、向こうの高い足場へ振り上げる（ティルト）
+    camera: 谷の上の宙（西）の低い所から横に。谷底をのぞく百騎兵から、向こうの高い足場へ振り上げる（ティルト）
     kind: M
   A14-003:
     frame: 引き（居間）
@@ -327,11 +327,11 @@ cuts:
     shake:
     - {t: [2.2, 2.9], amp: 1.6}
     cam_keys:
-    - {t: 0.0, cam: [26.6, 13.2, 22.4], look: [29.9, 8.6], look_h: 23.6, lens: 26, frame: 全身（低い）}
-    - {t: 6.5, cam: [26.7, 13.1, 22.4], look: karakuri-doll, look_h: 23.0, lens: 28}
+    - {t: 0.0, cam: [25.4, 11.2, 22.4], look: [29.9, 8.6], look_h: 24.5, lens: 26, frame: 全身（低い）}
+    - {t: 6.5, cam: [25.5, 11.15, 22.4], look: karakuri-doll, look_h: 23.1, lens: 28}
     bg: azb_pillar
     act: {start: ピラーの手前の百騎兵, do: 地響きとともに、守護者のからくり人形が空から落ちてきて、ピラーの前に立ちはだかる。「わっきゅぱっ」と体をゆする。百騎兵は跳びのいて剣を構える, end: 向き合う人形と百騎兵}
-    camera: 百騎兵の後ろの低い所から、落ちてくる人形を煽る＋揺れ
+    camera: 百騎兵の斜め後ろ（西）の低い所から、落ちてくる人形を煽る＋揺れ
     kind: A
   A14-014:
     frame: 寄り（人形）
