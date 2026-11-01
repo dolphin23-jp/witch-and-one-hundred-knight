@@ -23,6 +23,10 @@ places:
   well:    [34.0, 30.0]
   hk_in:   [57.65, 27.6]   # 016〜019 家の中の百騎兵（扉を入ったところ）
   ti_back: [58.6, 22.2]   # 016 ティト 奥の部屋
+  ti_back0: [58.1, 21.4]  # 016 ティト 奥の部屋（ルッキーニィと入れ替わる前）
+  hk_door0: [58.1, 31.6]  # 016 扉の外（百騎兵が家に入る前）
+  lk_wave: [57.4, 24.6]   # 016 ルッキーニィ 扉から見える所で手招き
+  lk_hide: [59.3, 21.3]   # 016 ルッキーニィ 奥の部屋（駆け込んだ先）
   ti_cur:  [58.6, 23.6]   # 016 カーテンを抜けたところ
   ti_kn:   [57.65, 26.85]  # 016〜018 百騎兵の前でひざをつく
   ti_via:  [57.3, 25.4]   # 018 窓へ歩く途中（テーブルを避ける）
@@ -109,29 +113,46 @@ cuts:
 
   # ---------- ティトの家（016〜019、夜の家の中） ----------
   A05b-016:
+    # 2026-11-01 見直し: 頭の 3.2秒を足した（ユーザー判断「A と B の両方」「井戸→家も直す」）。
+    # 百騎兵が扉から家に入るところをカメラが後ろから追って中へ入り、先に帰っていたルッキーニィが手招きしてから奥の部屋へ駆け込む。
+    # 入れ替わりにティトが出てくる（以降は前の 016 を 3.2秒ずらしたもの）
     frame: 全身
     lighting: night
-    only: [tito, hundred-knight]
+    only: [tito, hundred-knight, luckiny]
     keys:
       hundred-knight:
-        - {t: 0.0, at: hk_in, face: 0, pose: stand}
-        - {t: 6.2, at: hk_in, face: 0, pose: stand}
+        - {t: 0.0, at: hk_door0, face: 0, pose: walk}
+        - {t: 2.4, at: hk_in, face: 0, pose: walk, ease: linear}
+        - {t: 2.7, at: hk_in, face: 0, pose: stand, ease: out}
+        - {t: 9.4, at: hk_in, face: 0, pose: stand}
+      luckiny:
+        - {t: 0.0, at: lk_wave, face: 185, pose: gesture}
+        - {t: 1.5, at: lk_wave, face: 185, pose: gesture}
+        - {t: 1.8, at: lk_wave, face: 0, pose: stand, ease: out}
+        - {t: 2.0, at: lk_wave, face: 0, pose: run}
+        - {t: 2.7, at: [58.6, 22.8], face: 0, pose: run, ease: linear}
+        - {t: 3.2, at: lk_hide, face: 30, pose: run, ease: out}
+        - {t: 9.4, at: lk_hide, face: 30, pose: stand}
       tito:
-        - {t: 0.0, at: ti_back, face: 180, pose: walk}
-        - {t: 0.6, at: ti_cur, pose: walk, ease: linear}
-        - {t: 2.2, at: [57.9, 26.6], pose: walk, ease: linear}
-        - {t: 2.6, at: ti_kn, face: 180, pose: kneel_hold, ease: out}
-        - {t: 6.2, at: ti_kn, face: 180, pose: kneel_hold}
+        - {t: 0.0, at: ti_back0, face: 180, pose: stand}
+        - {t: 3.2, at: ti_back0, face: 180, pose: walk}
+        - {t: 3.8, at: ti_cur, pose: walk, ease: linear}
+        - {t: 5.4, at: [57.9, 26.6], pose: walk, ease: linear}
+        - {t: 5.8, at: ti_kn, face: 180, pose: kneel_hold, ease: out}
+        - {t: 9.4, at: ti_kn, face: 180, pose: kneel_hold}
     cam_keys:
-      - {t: 0.0, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, frame: 全身}
-      - {t: 2.6, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
-      - {t: 6.2, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
+      - {t: 0.0, cam: [57.75, 35.2, 1.0], look: [58.2, 25.5], look_h: 0.9, lens: 35, frame: 全身}
+      - {t: 1.6, cam: [57.5, 31.2, 0.95], look: [57.6, 24.6], look_h: 1.0, lens: 32, ease: in}
+      - {t: 2.5, cam: [57.85, 29.0, 1.1], look: luckiny, look_h: 1.05, lens: 30, ease: linear}
+      - {t: 3.4, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, ease: out}
+      - {t: 5.8, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
+      - {t: 9.4, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
     bg: tito_room
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
-    act: {start: 家の中。扉を入ったところに立つ百騎兵の後ろから、奥のカーテンの出入口を見る, do: ティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 0.2秒から}
-    camera: 百騎兵の後ろからティトを追って振り、肩越しで止まる
-    pose: {tito: "hurrying out through the curtained doorway at the back", hundred-knight: "standing in the room, seen from behind"}
-    pose_end: {tito: "kneeling in front of the Hundred Knight, holding its gauntlet in both hands", hundred-knight: "standing, seen from behind over the shoulder"}
+    act: {start: 夜。ティトの家の扉の外から、扉へ歩いていく百騎兵の背中。開いた扉の向こうの明るい部屋で、先に帰っていたルッキーニィが手招きする, do: 百騎兵が扉から中へ入り、カメラも後ろから続いて入る。ルッキーニィはくるっと向きを変えて奥のカーテンへ駆け込む。入れ替わりにティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 3.4秒から}
+    camera: 扉の外から百騎兵の後ろを追って家の中へ入り、奥へ駆け込むルッキーニィを見送る → 出てきたティトを追って振り、肩越しで止まる
+    pose: {hundred-knight: "walking toward the open door of the house at night, seen from behind", luckiny: "inside the lit room near the curtained doorway at the back, beckoning with one hand", tito: "not visible yet"}
+    pose_end: {tito: "kneeling in front of the Hundred Knight, holding its gauntlet in both hands", hundred-knight: "standing, seen from behind over the shoulder", luckiny: "gone into the back room, not visible"}
     kind: M
   A05b-017:
     frame: 寄り

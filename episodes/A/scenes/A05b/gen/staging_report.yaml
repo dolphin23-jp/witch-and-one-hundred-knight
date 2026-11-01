@@ -193,36 +193,54 @@ cuts:
     note: null
   A05b-016:
     cam:
-    - 58.3
-    - 28.75
-    - 1.35
-    lens: 30
+    - 57.75
+    - 35.2
+    - 1.0
+    lens: 35
     bearing: 3
     frame: 全身
     start:
       people:
-      - who: hundred-knight
-        s: -1.05
-        dist: 1.12
-        side: 左
-        body: 背中
-      - who: tito
-        s: 0.0
-        dist: 6.56
+      - who: luckiny
+        s: -0.15
+        dist: 10.57
         side: 中央
         body: 正面
+      - who: tito
+        s: -0.04
+        dist: 13.8
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.1
+        dist: 3.61
+        side: 中央
+        body: 背中
       bg: ティトの家の中（奥）〔ティトの家 入口から〕
       props:
       - 北の崖（東）
+      - 東の崖
       - 出入口のカーテン
+      - 赤い布のテーブル
+      - 丸椅子
+      - 丸椅子
+      - 丸椅子
       - 寝台
       - 暖炉
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in the room, seen from behind, at the far
-        left of the frame, with the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta
-        cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), hurrying out through the curtained doorway at the back, in the
-        center of the frame, facing the camera, small in the background. No other people. Behind: inside Tito''s small house: a table with a red cloth and stools in the middle, shelves with pots and bread,
-        a small stone hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners.'
+      - 藁の木箱
+      - 大きな壺
+      - 扉の横のランプ
+      - テーブルの小さなランプ
+      - 窓辺のランプ
+      - 窓の外（外から見た窓明かりの目印）
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), inside the lit room near the curtained doorway at the back, beckoning with one hand, in
+        the center of the frame, facing the camera, small in the background; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold
+        spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), not visible yet, in the center of the
+        frame, facing the camera, small in the background; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on
+        top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), walking toward the open door of the house at night,
+        seen from behind, in the center of the frame, with the back to the camera. No other people. Behind: inside Tito''s small house: a table with a red cloth and stools in the middle, shelves with pots
+        and bread, a small stone hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners.'
     end:
       people:
       - who: hundred-knight
@@ -235,28 +253,52 @@ cuts:
         dist: 1.93
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+      - who: luckiny
+        s: 0.98
+        dist: 6.78
+        side: 右
+        body: 背中
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
         on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, seen from behind over the shoulder, on
         the left of the frame, with the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
         a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), kneeling in front of the Hundred Knight, holding its
-        gauntlet in both hands, in the center of the frame, facing the camera. No other people. Behind: inside Tito''s small house: a table with a red cloth and stools in the middle, shelves with pots and
-        bread, a small stone hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners.'
+        gauntlet in both hands, in the center of the frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with
+        white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), gone into the back room, not visible, at the far right of the frame, with
+        the back to the camera, small in the background. No other people. Behind: inside Tito''s small house: a table with a red cloth and stools in the middle, shelves with pots and bread, a small stone
+        hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners.'
     move:
       hundred-knight:
         to: hk_in
+        via:
+        - hk_in
+        - hk_in
         t:
         - 0.0
-        - 6.2
+        - 9.4
+      luckiny:
+        to: lk_hide
+        face: 30
+        via:
+        - lk_wave
+        - lk_wave
+        - lk_wave
+        - - 58.6
+          - 22.8
+        - lk_hide
+        t:
+        - 0.0
+        - 9.4
       tito:
         to: ti_kn
         via:
+        - ti_back0
         - ti_cur
         - - 57.9
           - 26.6
         - ti_kn
         t:
         - 0.0
-        - 6.2
+        - 9.4
     note: null
   A05b-017:
     cam:
@@ -478,19 +520,30 @@ checks:
     who: hundred-knight
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A05b-016
+    who: luckiny
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A05b-016
+    who: tito
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
   overlap: []
   offscreen: []
   hidden:
   - cut: A05b-013
     which: end
     who: tito
+  - cut: A05b-017
+    which: start
+    who: luckiny
+  - cut: A05b-017
+    which: end
+    who: luckiny
   - cut: A05b-020
     which: start
     who: hundred-knight
   - cut: A05b-020
     which: start
     who: tito
-  - cut: A05b-020
-    which: end
-    who: luckiny
   camera: []

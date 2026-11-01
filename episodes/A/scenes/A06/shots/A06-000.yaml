@@ -1,0 +1,41 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。000 は 2026-11-01 の下絵の見直しで足した台詞なしのカット（ユーザー判断「A と B の両方」「番号は A06-000」）
+id: A06-000
+scene: A06
+tc: 0.0
+sec: 4.4
+kind: A
+shot: 大引き→寄り・夜空と谷の村・ティトの家の窓明かり（人物なし）
+acting: 台詞なし。夜空から村へ下りて、ティトの家の窓明かりへ寄る（A05b-020 の逆の動き。A05b の終わりから家の中の 001 へつなぐ）
+dialogue: []
+sound: null
+notes: A05b-020 で外へ出て夜空へ上がって場面を閉じたあと、いきなり家の中から始まらないように足した
+camera:
+  pos:
+  - 50.0
+  - 4.0
+  - 17.0
+  look: window
+  lens: 24
+  move: 星空を見上げたところから下へ振りながら下り（クレーン）、村の上を通ってティトの家の北の窓明かりへ寄る
+background: beast-village
+image: null
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 満天の星空
+  end: ティトの家の窓明かりの寄り（このまま家の中の 001 へ）
+timing:
+  lead: 0.0
+blocking:
+  start: 人物なし
+  end: 人物なし
+  background: 星空の下の村〔村 俯瞰〕
+  panels:
+  - 村 俯瞰
+  staging_en: 'No people. Looking up at a deep blue night sky full of bright stars above the red cliffs of the valley. Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+  staging_en_end: 'No people. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky. Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-000_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-000_end.png

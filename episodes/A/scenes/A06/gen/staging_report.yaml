@@ -1,4 +1,46 @@
 cuts:
+  A06-000:
+    cam:
+    - 50.0
+    - 4.0
+    - 17.0
+    lens: 24
+    bearing: 167
+    frame: 大引き
+    start:
+      people: []
+      bg: 星空の下の村〔村 俯瞰〕
+      props:
+      - 南東の崖
+      - 南の崖
+      - 家
+      - 家
+      - 家の前のランプ
+      - 出入口のカーテン
+      - 壺とパンの棚
+      - 赤い布のテーブル
+      - 丸椅子
+      - 丸椅子
+      - 丸椅子
+      - 寝台
+      - 暖炉
+      - 藁の木箱
+      - 大きな壺
+      - 扉の横のランプ
+      - テーブルの小さなランプ
+      - 窓辺のランプ
+      - 窓の外（外から見た窓明かりの目印）
+      - 壁に掛けた角笛（A06-008 でティトが取る）
+      staging: 'No people in frame. High angle looking down. Looking up at a deep blue night sky full of bright stars above the red cliffs of the valley. Behind: the small village in the sandy valley at
+        night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue sky full of stars,
+        cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+    end:
+      people: []
+      staging: 'No people in frame. High angle looking down. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry
+        sky. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars.
+        Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+    move: null
+    note: null
   A06-001:
     cam:
     - 57.0
@@ -1076,6 +1118,21 @@ checks:
     who: tito
     kind: 向き
   hidden:
+  - cut: A06-000
+    which: end
+    who: tito
+  - cut: A06-000
+    which: end
+    who: villager-a
+  - cut: A06-000
+    which: end
+    who: villager-b
+  - cut: A06-000
+    which: end
+    who: villager-c
+  - cut: A06-000
+    which: end
+    who: villager-d
   - cut: A06-003
     which: start
     who: hundred-knight

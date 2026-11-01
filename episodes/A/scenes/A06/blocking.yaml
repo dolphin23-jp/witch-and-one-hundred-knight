@@ -26,6 +26,7 @@ places:
   lk_mid:   [56.05, 27.15] # 008 丸椅子の間
   plume:    [65.5, 33.0]   # 007 砂食みが出る所（村の東の外れ）
   hk_door:  [58.6, 30.2]   # 013・014 扉の前の百騎兵
+  window:   [54.6, 23.0]   # 000 北の壁の窓（外から寄る）
 
 start:
   hundred-knight: {at: hk6, face: 330}
@@ -37,6 +38,25 @@ start:
   villager-d:     {at: vd, face: 30}
 
 cuts:
+  # ---------- 夜の村（000、外。2026-11-01 の見直しで足した） ----------
+  A06-000:
+    # A05b-020（窓明かりから星空の下の村へ上がる）の逆。夜空から村へ下りて、ティトの家の北の窓明かりへ寄る。台詞なし
+    # ユーザー判断（2026-11-01）「A と B の両方」「番号は A06-000」
+    frame: 大引き
+    only: []
+    cam_keys:
+      - {t: 0.0, cam: [50.0, 4.0, 17.0], look: [56.0, 30.0], look_h: 24.0, lens: 24, frame: 大引き}
+      - {t: 1.2, cam: [51.5, 8.0, 13.0], look: [55.0, 26.0], look_h: 6.0, lens: 24, ease: in}
+      - {t: 3.4, cam: [54.2, 17.5, 3.0], look: window, look_h: 1.4, lens: 30, ease: linear}
+      - {t: 4.4, cam: [54.6, 20.3, 1.65], look: window, look_h: 1.55, lens: 35, frame: 寄り, ease: out}
+    bg: village_night
+    light_en: "Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns."
+    extra_en: "Looking up at a deep blue night sky full of bright stars above the red cliffs of the valley."
+    extra_en_end: "Close on the small lit window of Tito's house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky."
+    act: {start: 満天の星空, do: カメラが星空から下りてきて谷の村を見下ろし、そのままティトの家の窓明かりへ寄っていく, end: ティトの家の窓明かりの寄り（このまま家の中の 001 へ）, sync: 台詞なし}
+    camera: 星空を見上げたところから下へ振りながら下り（クレーン）、村の上を通ってティトの家の北の窓明かりへ寄る。A05b-020 の逆の動き
+    kind: A
+
   # ---------- 名乗り（001〜002、家の中） ----------
   A06-001:
     frame: 全身
