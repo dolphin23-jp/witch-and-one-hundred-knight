@@ -113,7 +113,7 @@ cuts:
       people:
       - who: luckiny
         s: 0.0
-        dist: 11.73
+        dist: 10.95
         side: 中央
         body: 背中
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
@@ -129,13 +129,25 @@ cuts:
           - 39.8
         - - 23.2
           - 39.0
-        - - 23.6
-          - 38.7
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
+        - - 23.5
+          - 38.8
         - - 23.9
           - 38.6
         t:
         - 0.0
-        - 4.8
+        - 12.2
       hundred-knight:
         to: hk_c1
         face: 95
@@ -143,9 +155,10 @@ cuts:
         - - 22.4
           - 39.8
         - hk_c1
+        - hk_c1
         t:
         - 0.0
-        - 4.8
+        - 12.2
     note: null
   A05b-015:
     cam:
@@ -221,6 +234,7 @@ cuts:
       - 北の崖（東）
       - 東の崖
       - 出入口のカーテン
+      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
       - 赤い布のテーブル
       - 丸椅子
       - 丸椅子
@@ -231,7 +245,7 @@ cuts:
       - 大きな壺
       - 扉の横のランプ
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
         green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), inside the lit room near the curtained doorway at the back, beckoning with one hand, in
@@ -377,12 +391,13 @@ cuts:
       - 家
       - 出入口のカーテン
       - 壺とパンの棚
+      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
       - 赤い布のテーブル
       - 丸椅子
       - 丸椅子
       - 寝台
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
         on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing near the door, watching her, on the left
@@ -443,7 +458,8 @@ cuts:
       props:
       - 北の崖
       - 家
-      - 窓辺のランプ
+      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
         and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing at the window, looking up at the starry sky, in the center
         of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star
@@ -455,17 +471,95 @@ cuts:
         the window.'
     move:
       tito:
-        to: ti_win
-        face: 150
+        to: ti_back
         via:
         - ti_win
         - ti_win
         - ti_win
+        - ti_win
+        - ti_win
+        - ti_win
+        - - 54.75
+          - 24.55
+        - - 57.5
+          - 24.55
+        - ti_cur
+        - ti_back
         t:
         - 0.0
-        - 6.2
+        - 12.2
     note: null
   A05b-020:
+    cam:
+    - 54.45
+    - 23.95
+    - 0.9
+    lens: 30
+    bearing: 139
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 4.85
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: ティトの家の中（窓側）〔ティトの家 窓側〕
+      props:
+      - 南東の崖
+      - 赤い布のテーブル
+      - 丸椅子
+      - 丸椅子
+      - 丸椅子
+      - 暖炉
+      - 藁の木箱
+      - 大きな壺
+      - テーブルの小さなランプ
+      - 南東の砂丘
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing alone in the room, turning its head toward the window,
+        in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled
+        star charts and a brass astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the
+        window.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.11
+        dist: 1.13
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing at the shelf by the window, looking up at the star charts
+        and the astrolabe, seen from behind over the shoulder, in the center of the frame, with the back to the camera. No other people. On the shelf by the small window: rolled star charts and a brass
+        astrolabe; through the window, a deep blue night sky full of stars. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star charts and a brass
+        astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window.'
+    move:
+      hundred-knight:
+        to:
+        - 54.35
+        - 24.15
+        face: 340
+        via:
+        - hk_in
+        - - 57.6
+          - 27.0
+        - - 57.5
+          - 24.6
+        - - 54.6
+          - 24.55
+        - - 54.35
+          - 24.15
+        - - 54.35
+          - 24.15
+        - - 54.35
+          - 24.15
+        - - 54.35
+          - 24.15
+        t:
+        - 0.0
+        - 10.0
+    note: null
+  A05b-021:
     cam:
     - 53.4
     - 20.6
@@ -479,6 +573,7 @@ cuts:
       props:
       - 南東の崖
       - 壺とパンの棚
+      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
       - 赤い布のテーブル
       - 丸椅子
       - 丸椅子
@@ -489,7 +584,7 @@ cuts:
       - 大きな壺
       - 扉の横のランプ
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       staging: 'No people in frame. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky. Behind: the small village
         in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep
@@ -540,10 +635,7 @@ checks:
   - cut: A05b-017
     which: end
     who: luckiny
-  - cut: A05b-020
+  - cut: A05b-021
     which: start
     who: hundred-knight
-  - cut: A05b-020
-    which: start
-    who: tito
   camera: []

@@ -1,47 +1,44 @@
-# A05b 村とティトの家（A05 の 013〜020）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
+# A05b 村とティトの家（A05 の 013〜021。020 は 2026-11-01 の見直しで足した）。blocking.yaml（Claude の案 2026-10-30、D-060 の動きのキー）から作成。秒は原作の声の実測に芝居の間を足した目安
 # kind: M＝小さな動き、A＝見せ場
 id: A05b-020
 scene: A05b
-tc: 46.1
+tc: 59.5
 sec: 10.0
-kind: A
-shot: 寄り→大引き・ティトの家の窓・村
-acting: 外。ティトの家の窓明かりから、カメラが大きく上がって星空の下の村全体へ
+kind: M
+shot: 全身→肩越し・百騎兵（ひとり）・窓辺の星図と天球儀の棚
+acting: ひとり残った百騎兵が、メタリカの「星読みか」で窓辺の棚に気づいて歩いていき、巻いた星図と天球儀を見上げる。メタリカが星読みを説明する（2026-11-01 の見直しで足したカット。L170 を戻した）
 dialogue:
 - L168「あん？こいつら、もしかして“星読み”か。」
-- L173「……だが、その“星読み”自身が道に迷って行き倒れているんじゃ、話にならん！」
+- L170「星読みと言うのは星の位置や動きを見て方角や吉凶を知る、占い師だ。」
 sound: null
 notes: null
 camera:
   pos:
-  - 53.4
-  - 20.6
-  - 1.7
-  look: window
-  lens: 35
-  move: 窓から離れて大きく上がり（クレーン）、星空の下の村全体へ（見せ場）
-background: beast-village
+  - 54.45
+  - 23.95
+  - 0.9
+  look: hundred-knight
+  lens: 30
+  move: 窓辺の星図の棚の前から、部屋の百騎兵を低く → 歩いてくる百騎兵とすれ違うように回り込み、肩越しに星図の棚と窓へ
+background: tito-house
 image: null
-refs: []
+refs:
+- hundred-knight
 overlays: []
 fallback: null
 act:
-  start: 外。ティトの家の窓明かりの寄り
-  end: 星空の下の村全体
+  start: ひとり残った百騎兵
+  end: 百騎兵の肩越しに、星図と天球儀の棚と、窓の外の星
 timing:
   lead: 0.3
 blocking:
-  start: （人物なし）
-  end: （人物なし）
-  background: 星空の下の村〔村 俯瞰〕
+  start: 百（中央・正面）
+  end: 百（左・背中）
+  background: ティトの家の中（窓側）〔ティトの家 窓側〕
   panels:
-  - 村 俯瞰
-  staging_en: 'No people in frame. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky. Behind: the small village
-    in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue
-    sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
-  staging_en_end: 'No people in frame. High above the whole small village in the valley at night: dark houses with red tiled roofs, a few warm lit windows, red cliffs all around under a sky full of stars.
-    Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night
-    in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.'
+  - ティトの家 窓側
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing alone in the room, turning its head toward the window, in the center of the frame, seen from a low angle. No other people. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star charts and a brass astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing at the shelf by the window, looking up at the star charts and the astrolabe, on the left of the frame, seen from behind over the shoulder. No other people. Behind: on the shelf by the small window: rolled star charts and a brass astrolabe; through the window, a deep blue night sky full of stars. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window.'
   sketch:
   - episodes/A/scenes/A05b/gen/sketch/A05b-020_start.png
   - episodes/A/scenes/A05b/gen/sketch/A05b-020_end.png

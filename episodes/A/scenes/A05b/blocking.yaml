@@ -64,27 +64,37 @@ cuts:
     pose_end: {luckiny: "walking out of the gap toward the village, small in the frame", hundred-knight: "walking behind her, small in the frame"}
     kind: A
   A05b-014:
+    # 2026-11-01 見直し: L156「先に戻って、準備しておきますね。」を戻した（ユーザー判断、D-067）。4.8秒 → 12.2秒
     frame: 全身
     only: [luckiny, hundred-knight]
     keys:
       luckiny:
         - {t: 0.0, at: lk_c0, face: 225, pose: walk}
         - {t: 1.0, at: [22.2, 39.8], face: 225, pose: bow, ease: linear}
-        - {t: 2.4, at: [23.2, 39.0], face: 225, pose: bow, ease: linear}
-        - {t: 2.9, at: [23.6, 38.7], face: 225, pose: stand, ease: out}
-        - {t: 3.2, at: [23.9, 38.6], face: 100, pose: run}
-        - {t: 4.8, at: lk_run, pose: run, ease: linear}
+        - {t: 3.4, at: [23.2, 39.0], face: 225, pose: bow, ease: linear}
+        - {t: 4.0, at: [23.5, 38.8], face: 225, pose: stand, ease: out}
+        - {t: 5.0, at: [23.5, 38.8], face: 225, pose: stand}
+        - {t: 5.4, at: [23.5, 38.8], face: 215, pose: gesture}
+        - {t: 7.6, at: [23.5, 38.8], face: 215, pose: gesture}
+        - {t: 8.0, at: [23.5, 38.8], face: 225, pose: stand}
+        - {t: 9.0, at: [23.5, 38.8], face: 225, pose: bow}
+        - {t: 9.9, at: [23.5, 38.8], face: 225, pose: stand}
+        - {t: 10.3, at: [23.9, 38.6], face: 100, pose: run}
+        - {t: 12.2, at: lk_run, pose: run, ease: linear}
       hundred-knight:
         - {t: 0.0, at: hk_c0, pose: walk}
         - {t: 3.0, at: [22.4, 39.8], pose: walk, ease: linear}
         - {t: 3.4, at: hk_c1, face: 60, pose: stand, ease: out}
-        - {t: 4.8, at: hk_c1, face: 95, pose: stand}
+        - {t: 10.3, at: hk_c1, face: 60, pose: stand}
+        - {t: 12.2, at: hk_c1, face: 95, pose: stand}
     cam_keys:
       - {t: 0.0, cam: {follow: hundred-knight, offset: [-2.6, -2.9], z: 1.2}, look: hundred-knight, look_h: 0.9, lens: 30, frame: 全身}
       - {t: 3.0, cam: {follow: hundred-knight, offset: [-2.6, -2.9], z: 1.2}, look: luckiny, look_h: 1.0, lens: 30, ease: linear}
-      - {t: 4.8, cam: [20.0, 36.7, 1.2], look: luckiny, look_h: 0.9, lens: 45, ease: out}
-    act: {start: 門を入った村の道。百騎兵の前を、ルッキーニィが後ろ向きに歩く, do: ルッキーニィが頭を下げて「家に来てください」と誘い、くるっと向きを変えて東のはずれの家の方へ駆けていく, end: 小さくなるルッキーニィの背中と、見送る百騎兵, sync: L155「助けて頂いたお礼にご馳走しますので、家に来てください。」は 0.2秒から}
-    camera: 二人の斜め前（北西）を一緒に進む → 止まって、走り去るルッキーニィを追って振る
+      - {t: 4.0, cam: [20.0, 36.7, 1.2], look: luckiny, look_h: 1.0, lens: 32, ease: out}
+      - {t: 10.2, cam: [20.7, 37.2, 1.1], look: luckiny, look_h: 1.0, lens: 40, ease: inout}
+      - {t: 12.2, cam: [20.7, 37.2, 1.1], look: luckiny, look_h: 0.9, lens: 45, ease: out}
+    act: {start: 門を入った村の道。百騎兵の前を、ルッキーニィが後ろ向きに歩く, do: ルッキーニィが頭を下げて「家に来てください」と誘い、立ち止まって東のはずれを手で示し「先に戻って、準備しておきますね」とお辞儀をして、くるっと向きを変えて駆けていく, end: 小さくなるルッキーニィの背中と、見送る百騎兵, sync: L155「助けて頂いたお礼にご馳走しますので、家に来てください。」は 0.2秒から、L156「家は、村のはずれにありますので。先に戻って、準備しておきますね。」は 4.8秒から}
+    camera: 二人の斜め前（北西）を一緒に進む → 止まって、話すルッキーニィへゆっくり寄る → 走り去るルッキーニィを追って振る
     pose: {luckiny: "walking backward in front of the Hundred Knight, bowing politely", hundred-knight: "walking toward her"}
     pose_end: {luckiny: "running off toward a house at the far edge of the village, seen from behind", hundred-knight: "standing, watching her go"}
     kind: M
@@ -204,6 +214,7 @@ cuts:
     pose_end: {tito: "standing at the small window, her back half turned", hundred-knight: "standing near the door"}
     kind: M
   A05b-019:
+    # 2026-11-01 見直し: L167「あっ、ちょっと待ってくださいね。ラナを呼びますから。」を戻した（D-067）。ティトが奥の部屋へ呼びに行き、A06-001 でルッキーニィが出てくる前ふり。6.2秒 → 12.2秒
     frame: 寄り
     lighting: night
     only: [tito]
@@ -213,36 +224,77 @@ cuts:
         - {t: 0.6, at: ti_win, face: 0, pose: look_up}
         - {t: 2.2, at: ti_win, face: 0, pose: look_up}
         - {t: 3.0, at: ti_win, face: 150, pose: stand}
-        - {t: 6.2, at: ti_win, face: 150, pose: stand}
+        - {t: 6.0, at: ti_win, face: 150, pose: stand}
+        - {t: 6.3, at: ti_win, face: 150, pose: cover}
+        - {t: 7.0, at: ti_win, face: 120, pose: stand}
+        - {t: 7.4, at: [54.75, 24.55], face: 100, pose: walk}
+        - {t: 8.6, at: [57.5, 24.55], pose: walk, ease: linear}
+        - {t: 9.2, at: ti_cur, face: 30, pose: walk, ease: linear}
+        - {t: 9.9, at: ti_back, face: 0, pose: walk, ease: linear}
+        - {t: 12.2, at: ti_back, face: 0, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.35, lens: 35, frame: 寄り}
-      - {t: 3.4, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.35, lens: 35}
-      - {t: 5.4, cam: [54.9, 23.6, 1.2], look: [54.6, 21.0], look_h: 3.0, lens: 28, ease: inout}
-      - {t: 6.2, cam: [54.9, 23.6, 1.2], look: [54.6, 21.0], look_h: 3.0, lens: 28}
+      - {t: 6.6, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.3, lens: 35}
+      - {t: 7.6, cam: [54.4, 26.3, 1.4], look: tito, look_h: 1.2, lens: 30, ease: inout}
+      - {t: 9.6, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30, ease: inout}
+      - {t: 10.4, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30}
+      - {t: 12.2, cam: [54.9, 23.6, 1.2], look: [54.6, 21.0], look_h: 3.0, lens: 28, ease: inout}
     bg: tito_window
     light_en: "Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window."
     extra_en_end: "Through the small window, a deep blue night sky full of bright stars."
-    act: {start: 窓辺のティトの肩越し。窓の外の星空を見上げる, do: 振り返って、申し訳なさそうに笑う。カメラが肩越しから窓の外の星空へ上へ振る, end: 窓の外の満天の星, sync: L165「それに、何かお手伝いしようにも私たちは“星を読む”ことしかできないもので……。」は 0.2秒から}
-    camera: 肩越しから、窓の外の星空へ上へ振る（ティルト）
+    act: {start: 窓辺のティトの肩越し。窓の外の星空を見上げる, do: 振り返って、申し訳なさそうに笑う。「あっ」と口に手を当て、寝台をよけて奥のカーテンへ急ぎ、ルッキーニィを呼びに入っていく。カメラはそれを追ってから、窓の外の星空へ上へ振る, end: 窓の外の満天の星, sync: L165「それに、何かお手伝いしようにも私たちは“星を読む”ことしかできないもので……。」は 0.2秒から、L167「あっ、ちょっと待ってくださいね。ラナを呼びますから。」は 6.2秒から}
+    camera: 肩越し → 奥へ向かうティトを追って振る → 窓の外の星空へ上へ振る（ティルト）
     pose: {tito: "standing at the window, looking up at the starry sky"}
-    pose_end: {tito: "turned back toward the room with an apologetic smile, below the window"}
+    pose_end: {tito: "gone through the curtained doorway at the back, not visible"}
+    kind: M
+  # ---------- 星読み（020 家の中、021 夜の外） ----------
+  A05b-020:
+    # 2026-11-01 見直しで足したカット（ユーザー判断「L170 星読みの説明を戻す」、D-067）。ひとり残った百騎兵が窓辺の星図と天球儀の棚を見る。台詞は L168・L170（メタリカの声だけ）。前の 020 は 021 へ
+    frame: 全身
+    lighting: night
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 0, pose: stand}
+        - {t: 0.9, at: hk_in, face: 300, pose: stand}
+        - {t: 1.3, at: [57.6, 27.0], face: 330, pose: walk}
+        - {t: 2.4, at: [57.5, 24.6], pose: walk, ease: linear}
+        - {t: 4.4, at: [54.6, 24.55], pose: walk, ease: linear}
+        - {t: 5.0, at: [54.35, 24.15], face: 320, pose: stand, ease: out}
+        - {t: 5.6, at: [54.35, 24.15], face: 320, pose: look_up}
+        - {t: 8.2, at: [54.35, 24.15], face: 320, pose: look_up}
+        - {t: 8.8, at: [54.35, 24.15], face: 340, pose: look_up}
+        - {t: 10.0, at: [54.35, 24.15], face: 340, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [54.45, 23.95, 0.9], look: hundred-knight, look_h: 0.7, lens: 30, frame: 全身}
+      - {t: 1.4, cam: [54.45, 23.95, 0.9], look: hundred-knight, look_h: 0.7, lens: 30}
+      - {t: 3.0, cam: [55.35, 25.4, 1.0], look: hundred-knight, look_h: 0.7, lens: 28, ease: inout}
+      - {t: 4.9, cam: [55.35, 25.4, 1.0], look: [53.9, 23.45], look_h: 0.9, lens: 28, ease: inout}
+      - {t: 10.0, cam: [55.15, 24.95, 1.05], look: [53.7, 23.3], look_h: 1.05, lens: 30, frame: 肩越し, ease: inout}
+    bg: tito_window
+    light_en: "Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window."
+    extra_en_end: "On the shelf by the small window: rolled star charts and a brass astrolabe; through the window, a deep blue night sky full of stars."
+    act: {start: ひとり残った百騎兵, do: メタリカの「あん？こいつら、もしかして“星読み”か」で、窓辺の棚に気づいて歩いていき、巻いた星図と真鍮の天球儀を見上げる。メタリカが星読みを説明する, end: 百騎兵の肩越しに、星図と天球儀の棚と、窓の外の星, sync: L168「あん？こいつら、もしかして“星読み”か。」は 0.3秒から、L170「星読みと言うのは星の位置や動きを見て方角や吉凶を知る、占い師だ。」は 3.3秒から}
+    camera: 窓辺の星図の棚の前から、部屋の百騎兵を低く → 歩いてくる百騎兵とすれ違うように回り込み、肩越しに星図の棚と窓へ
+    pose: {hundred-knight: "standing alone in the room, turning its head toward the window"}
+    pose_end: {hundred-knight: "standing at the shelf by the window, looking up at the star charts and the astrolabe, seen from behind over the shoulder"}
     kind: M
 
-  # ---------- 星読み（020、夜の外） ----------
-  A05b-020:
+  A05b-021:
+    # 2026-11-01 見直し: 前の 020。L168 を新しい 020 へ移し、L173 と L174「高い能力を持つ“星読み”は…さっきのあいつは、それとは真逆だな。」（戻した）を入れて 10.0秒 → 15.6秒。最後は星空へ上へ振って、A06-000（星空から窓明かりへ下りる）につなぐ
     frame: 寄り
     lighting: night
     only: []
     cam_keys:
       - {t: 0.0, cam: [53.4, 20.6, 1.7], look: window, look_h: 1.55, lens: 35, frame: 寄り}
-      - {t: 1.2, cam: [53.4, 20.6, 1.7], look: window, look_h: 1.55, lens: 35}
-      - {t: 4.0, cam: [54.2, 18.8, 6.0], look: [52.0, 27.0], look_h: 0.5, lens: 28, ease: in}
-      - {t: 9.0, cam: [62.0, 14.0, 15.0], look: [36.0, 34.0], look_h: 0.0, lens: 24, frame: 大引き, ease: out}
-      - {t: 10.0, cam: [62.0, 14.0, 15.0], look: [36.0, 34.0], look_h: 0.0, lens: 24}
+      - {t: 1.6, cam: [53.4, 20.6, 1.7], look: window, look_h: 1.55, lens: 35}
+      - {t: 5.6, cam: [54.2, 18.8, 6.0], look: [52.0, 27.0], look_h: 0.5, lens: 28, ease: in}
+      - {t: 11.6, cam: [62.0, 14.0, 15.0], look: [36.0, 34.0], look_h: 0.0, lens: 24, frame: 大引き, ease: out}
+      - {t: 15.6, cam: [62.5, 13.6, 15.5], look: [40.0, 34.0], look_h: 22.0, lens: 24, ease: inout}
     bg: village_night
     light_en: "Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns."
     extra_en: "Close on the small lit window of Tito's house from outside: warm lamplight in the window, a wooden wall and red tiled roof edge, the starry sky."
     extra_en_end: "High above the whole small village in the valley at night: dark houses with red tiled roofs, a few warm lit windows, red cliffs all around under a sky full of stars."
-    act: {start: 外。ティトの家の窓明かりの寄り, do: メタリカの声のなか、カメラが窓から離れて大きく上がる（クレーン）, end: 星空の下の村全体, sync: L168「あん？こいつら、もしかして“星読み”か。」は 0.3秒から、L173「……だが、その“星読み”自身が道に迷って行き倒れているんじゃ、話にならん！」は 3.6秒から}
-    camera: 窓から離れて大きく上がり（クレーン）、家の北を回って、手前にティトの家、奥に星空の下の村全体（見せ場）
+    act: {start: 外。ティトの家の窓明かりの寄り, do: メタリカの声のなか、カメラが窓から離れて大きく上がる（クレーン）, end: 星空の下の村全体, sync: L173「……だが、その“星読み”自身が道に迷って行き倒れているんじゃ、話にならん！」は 0.3秒から、L174「高い能力を持つ“星読み”は…さっきのあいつは、それとは真逆だな。」は 6.7秒から}
+    camera: 窓から離れて大きく上がり（クレーン）、家の北を回って、手前にティトの家、奥に星空の下の村全体（見せ場）→ 最後に星空へ上へ振る
     kind: A

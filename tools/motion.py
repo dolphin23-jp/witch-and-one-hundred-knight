@@ -319,6 +319,7 @@ class CreatureTrack:
         self.len = float(spec.get("len", 8.0))
         self.r = float(spec.get("r", 0.7))
         self.segs = int(spec.get("segs", 16))
+        self.mound = spec.get("mound", "")   # soft: 砂の下のうねりを、広く低い半透明の盛り上がりにする（A06-012、2026-11-01）
         ks = sorted_keys(spec["keys"])
         self.k = [{**k, "at": tuple(place(k["at"])), "z": float(k.get("z", 0.0))} for k in ks]
         self.t0, self.t1 = self.k[0]["t"], self.k[-1]["t"]

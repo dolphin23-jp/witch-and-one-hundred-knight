@@ -373,8 +373,9 @@ def build_span(name, pr):
     box(mat_of(key), f"ENV_{name}", (x0 + x1) / 2, (y0 + y1) / 2, L, t, pr.get("h", 1.5), pr.get("z", 0.0), rot)
 
 
-def build_room(name, pr):
-    """中に入れる部屋: x・y の範囲の4つの壁（openings で扉・窓・出入口を開ける）、床、屋根。walls で作る壁を選べる。"""
+def build_room(name, pr, door_closed=False):
+    """中に入れる部屋: x・y の範囲の4つの壁（openings で扉・窓・出入口を開ける）、床、屋根。walls で作る壁を選べる。
+    door_closed（カットの door_closed: true）のときは、ja が「扉」の開口に閉じた扉の板を入れる（A06 の見直し、2026-11-01）。"""
     (xa, xb), (ya, yb) = pr["x"], pr["y"]
     H, T = pr.get("h", 3.0), 0.18
     sides = pr.get("walls") or ["n", "s", "e", "w"]
@@ -396,6 +397,12 @@ def build_room(name, pr):
             if top < H:
                 pieces.append((lo, hi, top, H))
             cuts_.append(hi)
+            if door_closed and o.get("ja") == "扉":   # 閉じた扉の板（濃い木の色）
+                dm = make_mat("door_leaf", (0.42, 0.24, 0.12))
+                if horiz:
+                    box(dm, f"ENV_{name}_{side}_door", o["c"], fixed, o["w"] - 0.04, 0.08, o["h"], 0.0)
+                else:
+                    box(dm, f"ENV_{name}_{side}_door", fixed, o["c"], 0.08, o["w"] - 0.04, o["h"], 0.0)
         pieces.append((cuts_[-1], a1, 0.0, H))
         for k, (u0, u1, z0, z1) in enumerate(pieces):
             if u1 - u0 < 0.01:
@@ -615,7 +622,7 @@ def build_extra(name, pr, x, y, lit):
     return False
 
 
-def build_site(lay, lighting=None):
+def build_site(lay, lighting=None, door_closed=False):
     """場所（world/*-layout.yaml）を、平らな色分けと簡単な立体で作る。lighting は layout の lighting の名前（夕方・夜など）。"""
     MATS.clear()   # カットごとに場面を作り直すので、前のカットの材質は使えない
     g = lay.get("ground") or {}
@@ -667,7 +674,7 @@ def build_site(lay, lighting=None):
         if "from" in pr:
             build_span(name, pr)
         elif name.startswith("room"):
-            build_room(name, pr)
+            build_room(name, pr, door_closed)
     for name, pr in (lay.get("props") or {}).items():
         if "at" not in pr or name == "door":
             continue
@@ -878,6 +885,8 @@ def build_creature(name, track):
     m_head = make_mat(f"{name}_head", tuple(c * 0.75 for c in col))
     m_shadow = make_mat(f"{name}_shadow", (0.5, 0.38, 0.22))
     m_mound = make_mat(f"{name}_mound", tuple(min(1.0, c * 1.12) for c in SAND))
+    if getattr(track, "mound", "") == "soft":   # 広く低い半透明の盛り上がり（節が管のように並んで見えないように）
+        m_mound = beam_mat(f"{name}_mound_soft", tuple(min(1.0, c * 1.2) for c in SAND), strength=0.05, alpha=0.55)
     segs, shadows, mounds = [], [], []
     for i in range(track.segs):
         segs.append(prim("sphere", m_head if i == 0 else m_body, f"{name}_seg{i}", None, (0, 0, -50), radius=1.0))
@@ -888,6 +897,7 @@ def build_creature(name, track):
 
 def pose_creature(parts, track, t):
     segs, shadows, mounds = parts
+    soft = getattr(track, "mound", "") == "soft"
     for (p, r), so, sh, mo in zip(track.body(t), segs, shadows, mounds):
         x, y, z = p
         so.location = bl((x, y), z)
@@ -897,7 +907,7 @@ def pose_creature(parts, track, t):
             sh.location = bl((x, y), 0.02)
             sh.scale = (r * (1.1 + 0.3 * k), r * (1.1 + 0.3 * k), 1.0)
             mo.location = bl((x, y), 0.0)   # 盛り上がり: 地面から 0.2〜0.6m（浅いほど高い）
-            mo.scale = (r * 1.5, r * 1.5, 0.2 + 0.4 * k)
+            mo.scale = (r * 2.6, r * 2.6, 0.12 + 0.22 * k) if soft else (r * 1.5, r * 1.5, 0.2 + 0.4 * k)
         else:
             sh.location = mo.location = (0, 0, -50)
 
@@ -1135,8 +1145,8 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
         k, rx = 0.55, math.radians(16)
     elif pose == "spin":    # 転がる・回る（からくり人形、A14）
         rz += 4 * math.pi * t
-    if root.get("torch") and pose not in ("wave", "point", "arms_up", "lie"):   # 松明を掲げる
-        arms[1].rotation_euler = (math.radians(20), -math.radians(130), 0)
+    if root.get("torch") and pose not in ("wave", "point", "arms_up", "lie"):   # 松明を頭の上に立てて持つ（前は横に掲げていて、棒が画面を斜めに横切った。A06 の見直し 2026-11-01）
+        arms[1].rotation_euler = (math.radians(160), -math.radians(12), 0)
     if pose in ("hold", "kneel_hold"):
         for sx, piv in arms.items():
             piv.rotation_euler = (math.radians(70), 0, 0)
@@ -1190,7 +1200,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
     c_ = st.bk["cuts"][cut]
-    build_site(lay, c_.get("lighting") or st.bk.get("lighting"))
+    build_site(lay, c_.get("lighting") or st.bk.get("lighting"), bool(c_.get("door_closed")))
     plan = Plan(st, cut, sec)
     figs = {}
     for who in plan.people:
