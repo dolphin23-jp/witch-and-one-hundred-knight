@@ -27,7 +27,7 @@ places:
   us: [65.3, -3.9]
   be: [66.2, -2.4]
   te: [65.6, -0.6]
-  te_near: [62.55, 0.4]
+  te_near: [62.75, 0.25]
   te_back: [65.4, -1.2]
   ap_in_a: [68.6, 7.6]
   ap_in_b: [69.3, 8.2]
@@ -442,10 +442,10 @@ cuts:
       - {t: 12.3, at: [62.0, 0.9], z: 26.0, face: 80, pose: look_down}
     cam_keys:
     - {t: 0.0, cam: [64.3, 4.5, 28.4], look: [62.4, 0.65], look_h: 27.4, lens: 30, frame: 全身}
-    - {t: 12.3, cam: [63.9, 4.0, 28.3], look: [62.3, 0.65], look_h: 27.4, lens: 35}
+    - {t: 12.3, cam: [64.7, 3.3, 28.2], look: [62.3, 0.65], look_h: 27.4, lens: 33}
     bg: azb_summit_night
     act: {start: 指さすテレッサ, do: テレッサがメタリカの目の前まで歩み寄り、顔をのぞき込んで「お夜会ごっこでもしているのがお似合いですわ」, end: 顔を寄せるテレッサと、うつむくメタリカ}
-    camera: 南南東のやや高い所から、向き合う二人を斜め横に（ゆっくり寄る。奥に木の像）
+    camera: 南南東のやや高い所から、向き合う二人を斜め横に。寄りながら南東へ回り込む（奥に木の像）
     kind: M
   A17-013:
     frame: 寄り（ドリーズーム）
@@ -497,11 +497,11 @@ cuts:
       - {t: 0.0, at: us, z: 27.5, face: 218, pose: stand}
       - {t: 15.0, at: us, z: 27.5, face: 218, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [56.6, 5.4, 27.8], look: [63.4, -1.0], look_h: 27.0, lens: 26, frame: 引き}
-    - {t: 15.0, cam: [56.8, 5.2, 27.8], look: [63.6, -1.2], look_h: 27.0, lens: 28}
+    - {t: 0.0, cam: [63.2, 9.2, 30.0], look: [62.8, -1.6], look_h: 27.0, lens: 26, frame: 引き}
+    - {t: 15.0, cam: [63.3, 9.0, 30.0], look: [63.0, -1.8], look_h: 27.0, lens: 28}
     bg: azb_summit_night
     act: {start: 凍りつくメタリカ, do: ベルダが背を向けて「夜会が始まります。あなたを魔女に推薦するのですから」。テレッサは「はい！お師匠様！！」と駆け戻る, end: 北の縁に戻ったテレッサ}
-    camera: 南西の高い所から、広場と魔女たち
+    camera: 南の高い所から、広場と北の縁の魔女たち
     kind: M
   A17-015:
     frame: 寄り（振り返り）
@@ -874,7 +874,7 @@ cuts:
       metallica:
       - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: kneel}
       - {t: 6.0, at: m_back, z: 26.0, face: 90, pose: kneel}
-      - {t: 14.5, at: m_back, z: 26.0, face: 90, pose: look_down}
+      - {t: 14.5, at: m_back, z: 26.0, face: 90, pose: kneel}
       apprentice-a:
       - {t: 0.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
       - {t: 1.04, at: [61.63, 3.18], z: 26.0, face: 291, pose: dance, ease: linear}
