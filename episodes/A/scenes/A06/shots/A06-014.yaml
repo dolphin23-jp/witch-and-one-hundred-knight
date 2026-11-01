@@ -2,54 +2,45 @@
 # kind: M＝小さな動き、A＝見せ場。村人A〜D の見た目は設定画（refs/villager-*_sheet_01）
 id: A06-014
 scene: A06
-tc: 99.8
-sec: 6.8
+tc: 111.4
+sec: 17.2
 kind: M
-shot: 全身・ティト（手前に百騎兵）
-acting: 砂まみれのティトが戻ってきて、息を切らして笑う
+shot: 全身→肩越し・百騎兵（ひとり）・夜の村と遠くの井戸
+acting: 百騎兵が「もっきゅう？」と顔を上げ（原作の声）、メタリカが「勘だよ」と答える。「もう少しこの村を調べてみろ」で、百騎兵が村の中ほどへ数歩歩き、遠くの井戸の方を見る（2026-11-01 の見直しで足したカット。L201・L202 を戻した）
 dialogue:
-- L204「私は大丈夫です。こう見えても逃げ足は早いんですから。さあ早く。」
-sound: null
+- L201「勘だよ。勘。この辺りにマナの動く気配を感じるからな。」
+- L202「ピラーのこともある。もう少しこの村を調べてみろ。何かあるのかもしれん。」
+sound: 百騎兵の声「もっきゅう？」（audio/original/vocalizations/hundred-knight_mokkyu_p17-2042.wav）は 0.3秒から。sound.yaml
 notes: null
 camera:
   pos:
-  - 58.9
-  - 30.4
-  - 1.35
-  look: tito
-  lens: 45
-  move: 戻ってくるティトを正面から、止め
+  - 60.3
+  - 30.9
+  - 0.75
+  look:
+  - 72.0
+  - 29.0
+  lens: 40
+  move: 砂漠の側から低く百騎兵の正面 → 歩き出す百騎兵の後ろへ回り込み、肩越しに村の中ほどの井戸の方へ
 background: beast-village
 image: null
 refs:
-- tito
 - hundred-knight
 overlays: []
 fallback: null
 act:
-  start: 夜の村の東から、砂まみれのティトが歩いて戻ってくる
-  end: 笑うティト
+  start: 扉の前の百騎兵を、砂漠の側から低く
+  end: 百騎兵の肩越しに、夜の村と遠くの井戸
 timing:
-  lead: 0.3
+  lead: 1.4
 blocking:
-  start: 百（中央・背中）、テ（中央・正面）
-  end: 百（中央・背中）、テ（中央・正面）
+  start: 百（中央・背中）
+  end: 百（中央・背中）
   background: 星空の下の村〔村 俯瞰〕
   panels:
   - 村 俯瞰
-  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in the foreground at the edge of the frame,
-    in the center of the frame, with the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
-    a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), walking back covered in sand and out of breath, holding the
-    brass horn, in the center of the frame, facing the camera, small in the background. No other people. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs,
-    a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue starry sky, cool moonlight, warm lamplight from Tito''s doorway falling
-    on her.'
-  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-    plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in the foreground at the edge of the frame,
-    on the left of the frame, with the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a
-    magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing, covered in sand and out of breath, smiling, in the
-    center of the frame, facing the camera. No other people. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs
-    all around under a deep blue sky full of stars. Night in the village: a deep blue starry sky, cool moonlight, warm lamplight from Tito''s doorway falling on her.'
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in front of Tito''s house at night, tilting its head up curiously, in the center of the frame, facing the camera, seen from a low angle. No other people. Behind: the dark quiet village at night under a starry sky, warm lamplight from the doorway.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing in the village street, gazing toward the old well far away, on the right of the frame, seen from behind over the shoulder. No other people. Behind: the dark quiet village at night, with the old stone well in the middle far away, under a starry sky.'
   sketch:
   - episodes/A/scenes/A06/gen/sketch/A06-014_start.png
   - episodes/A/scenes/A06/gen/sketch/A06-014_end.png

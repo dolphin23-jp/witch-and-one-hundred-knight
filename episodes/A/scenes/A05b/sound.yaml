@@ -1,0 +1,17 @@
+# A05b の BGM・効果音・ちょっとした声の置き場所（D-067、2026-11-01）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量の目安（2026-11-01）: 台詞の声の平均 −27dB に対して、BGM は −35dB 前後、環境音は −33dB 前後。秒はカットの頭から（cut + t）。カットの秒を変えても置き場所がずれない。
+scene: A05b
+bgm:
+  # 村の曲（ゲームでもこの場面で流れる曲）。A06 の頭へそのまま続く（A06 の sound.yaml は from: 85.1 から）
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A05b-013, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 2.0, volume: 0.3}
+sfx:
+  - {src: audio/sfx/wind_gust.ogg, cut: A05b-013, t: 0.0, volume: 0.21, fade_out: 1.5, dur: 4.5}
+  - {src: audio/sfx/walk_sand_one.ogg, cut: A05b-014, t: 0.0, dur: 3.4, volume: 0.45}
+  - {src: audio/sfx/run_sand_one.ogg, cut: A05b-014, t: 10.3, dur: 1.9, volume: 0.5, fade_out: 0.8}
+  - {src: audio/sfx/walk_sand_one.ogg, cut: A05b-015, t: 0.0, dur: 1.5, volume: 0.4}
+  - {src: audio/sfx/walk_sand_one.ogg, cut: A05b-016, t: 0.0, dur: 2.5, volume: 0.45}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 2.9, volume: 0.6}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 3.6, volume: 0.6}
+  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A05b-016, t: 2.0, until: {cut: A05b-021, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.3, volume: 0.22}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-019, t: 9.6, volume: 0.6}
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A05b-021, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 1.0, volume: 0.15}
