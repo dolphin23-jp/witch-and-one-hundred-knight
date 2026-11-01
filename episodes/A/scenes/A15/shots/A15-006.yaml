@@ -1,0 +1,34 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-006
+scene: A15
+tc: 42.5
+sec: 7.0
+kind: M
+shot: 全身（低い）・からかうメタリカと怒るビスコ
+acting: メタリカがビスコの方へ身を乗り出して「変な犬コロもいるが」とからかう。ビスコが両手を上げて「なんだと！」
+dialogue:
+- L429「なぜか護符がいらん変な犬コロもいるが、普通ならもつまい。」
+- L430「な、なんだと！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.0
+  - 9.5
+  - 22.6
+  look: bisco
+  lens: 32
+  move: メタリカの後ろの低い所から、怒るビスコを煽る
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 護符を差し出すメタリカ
+  end: 怒るビスコと、腕を組むメタリカ
+timing:
+  lead: 0.4

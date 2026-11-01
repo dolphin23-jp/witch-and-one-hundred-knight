@@ -1,0 +1,36 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-001
+scene: A15
+tc: 0.0
+sec: 7.5
+kind: A
+shot: 引き（逆光）・夕日の中を飛んでくるホウキ
+acting: 西の夕日の方から、メタリカのホウキに四人がしがみついて飛んでくる。峰の上で止まって降りる
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.4
+  - 13.2
+  - 22.9
+  look: metallica
+  lens: 26
+  move: 峰の東の低い所から、夕日の逆光の中を飛んでくるホウキを追う
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+- hundred-knight
+- karakuri-doll
+overlays: []
+fallback: null
+act:
+  start: 咲いたピラーと碧の沼。夕日の空
+  end: 峰に降りた五人
+timing:
+  lead: 0.3

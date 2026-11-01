@@ -1,0 +1,531 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（夜会編 回2、選別の 13・14）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-01）
+# Living Spec「A15 動きの設計（案）」（15カット・約2分17秒）。ユーザー指示「回2を始めて良い」（2026-11-01）
+# 場所は world/az-brocken-layout.yaml。前半（001〜008）はピラーの峰（z 22。A14 の続きで、咲いたピラーのまわりが碧の沼）、
+#   009 は二つの峰のあいだの空、後半（010〜015）は東の山頂の峰（z 26。中央に木の像）。人物はキーの z に足場の高さを書く。
+# ホウキ（broom）: メタリカが先頭に乗り、後ろにルッキーニィ・ビスコ・アルレッキーノ・百騎兵が 0.75m おきに乗る（キーは計算で作った）。
+# 光: 日が沈む（sunset_mtn）。沈みかけの太陽が西の地平線に
+# 漫符（003 の汗、006 の怒りマーク、010 の星）は合成（D-027）。下絵では描かない
+scene: A15
+layout: world/az-brocken-layout.yaml
+map_ymax: 20
+lighting: sunset_mtn
+places:
+  bud: [30.0, 6.5]
+  m_l: [33.4, 9.6]
+  l_l: [34.2, 8.2]
+  b_l: [35.6, 9.4]
+  a_l: [34.6, 11.2]
+  hk_l: [31.8, 11.4]
+  b_cough: [34.85, 8.65]
+  m_give: [33.75, 8.75]
+  doll: [28.1, 13.9]
+  effigy: [62.0, -1.0]
+  m_s: [60.6, 3.4]
+  l_s: [58.3, 4.7]
+  b_s: [59.1, 5.5]
+  a_s: [57.6, 2.9]
+  hk_s: [58.7, 2.3]
+  b_up: [59.6, 4.9]
+  l_up: [58.6, 4.3]
+start:
+  metallica: {at: [10.0, 20.0], face: 65}
+  luckiny: {at: [9.32, 20.31], face: 65}
+  bisco: {at: [8.64, 20.62], face: 65}
+  arlecchino: {at: [7.95, 20.94], face: 65}
+  hundred-knight: {at: [7.27, 21.25], face: 65}
+  karakuri-doll: {at: doll, face: 30}
+cuts:
+  A15-001:
+    frame: 引き（逆光）
+    only: [metallica, luckiny, bisco, arlecchino, hundred-knight, karakuri-doll]
+    broom: metallica
+    broom_len: 4.0
+    keys:
+      metallica:
+      - {t: 0.0, at: [10.0, 20.0], z: 34.0, face: 65, pose: ride}
+      - {t: 3.0, at: [22.0, 14.5], z: 29.0, face: 68, pose: ride}
+      - {t: 5.0, at: [31.5, 10.6], z: 24.0, face: 65, pose: ride}
+      - {t: 6.0, at: [33.6, 9.6], z: 22.6, face: 70, pose: ride}
+      - {t: 6.4, at: [33.6, 9.6], z: 22.0, face: 70, pose: ride}
+      - {t: 7.5, at: m_l, z: 22.0, face: 250, pose: proud}
+      luckiny:
+      - {t: 0.0, at: [9.32, 20.31], z: 34.0, face: 65, pose: ride}
+      - {t: 3.0, at: [21.31, 14.78], z: 29.0, face: 68, pose: ride}
+      - {t: 5.0, at: [30.82, 10.92], z: 24.0, face: 65, pose: ride}
+      - {t: 6.0, at: [32.9, 9.86], z: 22.6, face: 70, pose: ride}
+      - {t: 6.4, at: [32.9, 9.86], z: 22.0, face: 70, pose: ride}
+      - {t: 7.0, at: l_l, z: 22.0, face: 230, pose: walk}
+      - {t: 7.5, at: l_l, z: 22.0, face: 230, pose: look_up}
+      bisco:
+      - {t: 0.0, at: [8.64, 20.62], z: 34.0, face: 65, pose: ride}
+      - {t: 3.0, at: [20.61, 15.07], z: 29.0, face: 68, pose: ride}
+      - {t: 5.0, at: [30.15, 11.24], z: 24.0, face: 65, pose: ride}
+      - {t: 6.0, at: [32.19, 10.11], z: 22.6, face: 70, pose: ride}
+      - {t: 6.4, at: [32.19, 10.11], z: 22.0, face: 70, pose: ride}
+      - {t: 7.2, at: b_l, z: 22.0, face: 250, pose: walk}
+      - {t: 7.5, at: b_l, z: 22.0, face: 250, pose: stand}
+      arlecchino:
+      - {t: 0.0, at: [7.95, 20.94], z: 34.0, face: 65, pose: ride}
+      - {t: 3.0, at: [19.92, 15.35], z: 29.0, face: 68, pose: ride}
+      - {t: 5.0, at: [29.47, 11.57], z: 24.0, face: 65, pose: ride}
+      - {t: 6.0, at: [31.49, 10.37], z: 22.6, face: 70, pose: ride}
+      - {t: 6.4, at: [31.49, 10.37], z: 22.0, face: 70, pose: ride}
+      - {t: 7.2, at: a_l, z: 22.0, face: 260, pose: walk}
+      - {t: 7.5, at: a_l, z: 22.0, face: 260, pose: stand}
+      hundred-knight:
+      - {t: 0.0, at: [7.27, 21.25], z: 34.0, face: 65, pose: ride}
+      - {t: 3.0, at: [19.22, 15.64], z: 29.0, face: 68, pose: ride}
+      - {t: 5.0, at: [28.79, 11.89], z: 24.0, face: 65, pose: ride}
+      - {t: 6.0, at: [30.78, 10.63], z: 22.6, face: 70, pose: ride}
+      - {t: 6.4, at: [30.78, 10.63], z: 22.0, face: 70, pose: ride}
+      - {t: 7.0, at: hk_l, z: 22.0, face: 80, pose: walk}
+      - {t: 7.5, at: hk_l, z: 22.0, face: 80, pose: stand}
+      karakuri-doll:
+      - {t: 0.0, at: doll, z: 22.0, face: 30, pose: lie}
+      - {t: 7.5, at: doll, z: 22.0, face: 30, pose: lie}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [37.4, 13.2, 22.9], look: metallica, lens: 26, frame: 引き}
+    - {t: 7.5, cam: [37.6, 13.0, 22.9], look: [33.5, 9.9], look_h: 23.0, lens: 28}
+    bg: azb_swamp
+    act: {start: 咲いたピラーと碧の沼。夕日の空, do: 西の夕日の方から、メタリカのホウキに四人がしがみついて飛んでくる。峰の上で止まって降りる, end: 峰に降りた五人}
+    camera: 峰の東の低い所から、夕日の逆光の中を飛んでくるホウキを追う
+    kind: A
+  A15-002:
+    frame: 全身（沼ごし）
+    only: [metallica, luckiny, bisco, arlecchino]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_l, z: 22.0, face: 250, pose: proud}
+      - {t: 12.0, at: m_l, z: 22.0, face: 250, pose: proud}
+      arlecchino:
+      - {t: 0.0, at: a_l, z: 22.0, face: 260, pose: stand}
+      - {t: 0.6, at: a_l, z: 22.0, face: 300, pose: bow}
+      - {t: 3.0, at: a_l, z: 22.0, face: 300, pose: bow}
+      - {t: 3.4, at: a_l, z: 22.0, face: 300, pose: gesture}
+      - {t: 6.4, at: a_l, z: 22.0, face: 300, pose: gesture}
+      - {t: 6.8, at: a_l, z: 22.0, face: 300, pose: stand}
+      - {t: 12.0, at: a_l, z: 22.0, face: 300, pose: stand}
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 230, pose: look_up}
+      - {t: 6.6, at: l_l, z: 22.0, face: 240, pose: arms_up}
+      - {t: 9.4, at: l_l, z: 22.0, face: 300, pose: arms_up}
+      - {t: 12.0, at: l_l, z: 22.0, face: 300, pose: hop}
+      bisco:
+      - {t: 0.0, at: b_l, z: 22.0, face: 250, pose: stand}
+      - {t: 12.0, at: b_l, z: 22.0, face: 250, pose: stand}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [30.4, 10.2, 23.5], look: [34.6, 9.9], look_h: 23.0, lens: 30, frame: 全身}
+    - {t: 12.0, cam: [30.7, 10.1, 23.5], look: [34.6, 9.9], look_h: 23.0, lens: 33}
+    bg: azb_swamp
+    act: {start: 峰に降りた四人, do: アルレッキーノが沼を見てメタリカにお辞儀し「見事な沼ですね」。ルッキーニィは両手を上げて「スゴイです！」, end: はしゃぐルッキーニィ}
+    camera: 咲いたピラーの側（西）から、沼ごしに四人（ゆっくり寄る）
+    kind: M
+  A15-003:
+    frame: 全身（二人）
+    only: [luckiny, bisco]
+    keys:
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 300, pose: hop}
+      - {t: 0.4, at: l_l, z: 22.0, face: 220, pose: cough}
+      - {t: 8.5, at: l_l, z: 22.0, face: 220, pose: cough}
+      bisco:
+      - {t: 0.0, at: b_l, z: 22.0, face: 250, pose: stand}
+      - {t: 4.0, at: b_l, z: 22.0, face: 250, pose: stand}
+      - {t: 5.2, at: b_cough, z: 22.0, face: 240, pose: walk}
+      - {t: 5.6, at: b_cough, z: 22.0, face: 235, pose: lean}
+      - {t: 8.5, at: b_cough, z: 22.0, face: 235, pose: lean}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [35.4, 5.6, 22.55], look: [34.6, 8.6], look_h: 23.0, lens: 32, frame: 全身}
+    - {t: 8.5, cam: [35.3, 5.8, 22.55], look: [34.6, 8.6], look_h: 23.0, lens: 36}
+    bg: azb_swamp
+    act: {start: はしゃぐルッキーニィ, do: 沼の瘴気にむせて体を折り、咳き込む。ビスコが慌てて寄り、のぞき込む, end: 咳き込むルッキーニィと、のぞき込むビスコ}
+    camera: 北の地面に近い所から二人の寄り
+    kind: M
+  A15-004:
+    frame: 全身（アルレッキーノ）
+    only: [metallica, luckiny, arlecchino]
+    keys:
+      arlecchino:
+      - {t: 0.0, at: a_l, z: 22.0, face: 300, pose: stand}
+      - {t: 0.5, at: a_l, z: 22.0, face: 330, pose: gesture}
+      - {t: 6.0, at: a_l, z: 22.0, face: 330, pose: gesture}
+      metallica:
+      - {t: 0.0, at: m_l, z: 22.0, face: 250, pose: proud}
+      - {t: 2.5, at: m_l, z: 22.0, face: 140, pose: stand}
+      - {t: 6.0, at: m_l, z: 22.0, face: 140, pose: stand}
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 220, pose: cough}
+      - {t: 6.0, at: l_l, z: 22.0, face: 220, pose: cough}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [31.4, 12.3, 23.7], look: arlecchino, lens: 34, frame: 全身}
+    - {t: 6.0, cam: [31.5, 12.2, 23.7], look: arlecchino, lens: 38}
+    bg: azb_swamp
+    act: {start: 咳き込むルッキーニィ, do: アルレッキーノがメタリカに「瘴気がございます」と手で示す。メタリカが振り向く, end: アルレッキーノとメタリカ（奥にむせるルッキーニィ）}
+    camera: 南西のやや高い所からアルレッキーノの寄り
+    kind: M
+  A15-005:
+    frame: 寄り（肩ごし）
+    only: [metallica, luckiny]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_l, z: 22.0, face: 140, pose: stand}
+      - {t: 0.6, at: m_l, z: 22.0, face: 60, pose: point}
+      - {t: 3.4, at: m_l, z: 22.0, face: 60, pose: point}
+      - {t: 4.4, at: m_give, z: 22.0, face: 60, pose: walk}
+      - {t: 4.8, at: m_give, z: 22.0, face: 60, pose: hold}
+      - {t: 8.5, at: m_give, z: 22.0, face: 60, pose: hold}
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 220, pose: cough}
+      - {t: 4.0, at: l_l, z: 22.0, face: 220, pose: cough}
+      - {t: 4.6, at: l_l, z: 22.0, face: 245, pose: stand}
+      - {t: 8.5, at: l_l, z: 22.0, face: 245, pose: stand}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    - {kind: spark, t: [1.0, 1.8], at: metallica, z: 23.3, color: [200, 255, 220]}
+    - {kind: light, t: [1.0, 2.0], at: metallica, z: 23.4, energy: 120, color: [200, 255, 220], fade: 2.0}
+    cam_keys:
+    - {t: 0.0, cam: [36.2, 6.4, 24.4], look: metallica, lens: 32, frame: 寄り}
+    - {t: 8.5, cam: [36.1, 6.5, 24.4], look: metallica, lens: 36}
+    bg: azb_swamp
+    act: {start: 振り向いたメタリカ, do: 「護符を作っておいたんだ」と指を立て、光る護符を取り出して、ルッキーニィの前へ差し出す, end: 護符を差し出すメタリカ}
+    camera: ルッキーニィの肩ごし（北東の高い所）から、護符を差し出すメタリカ
+    kind: M
+  A15-006:
+    frame: 全身（低い）
+    only: [metallica, bisco]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_give, z: 22.0, face: 60, pose: hold}
+      - {t: 0.6, at: m_give, z: 22.0, face: 100, pose: lean}
+      - {t: 4.6, at: m_give, z: 22.0, face: 100, pose: lean}
+      - {t: 5.0, at: m_give, z: 22.0, face: 100, pose: cross}
+      - {t: 7.0, at: m_give, z: 22.0, face: 100, pose: cross}
+      bisco:
+      - {t: 0.0, at: b_cough, z: 22.0, face: 235, pose: lean}
+      - {t: 1.0, at: b_cough, z: 22.0, face: 280, pose: stand}
+      - {t: 4.6, at: b_cough, z: 22.0, face: 280, pose: stand}
+      - {t: 4.9, at: b_cough, z: 22.0, face: 280, pose: arms_up}
+      - {t: 7.0, at: b_cough, z: 22.0, face: 280, pose: arms_up}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [32.0, 9.5, 22.6], look: bisco, look_h: 23.1, lens: 32, frame: 全身（低い）}
+    - {t: 7.0, cam: [32.1, 9.45, 22.6], look: bisco, look_h: 23.2, lens: 34}
+    bg: azb_swamp
+    act: {start: 護符を差し出すメタリカ, do: メタリカがビスコの方へ身を乗り出して「変な犬コロもいるが」とからかう。ビスコが両手を上げて「なんだと！」, end: 怒るビスコと、腕を組むメタリカ}
+    camera: メタリカの後ろの低い所から、怒るビスコを煽る
+    kind: M
+  A15-007:
+    frame: 寄り（顔）
+    only: [luckiny]
+    keys:
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 245, pose: stand}
+      - {t: 0.5, at: l_l, z: 22.0, face: 245, pose: hold}
+      - {t: 3.6, at: l_l, z: 22.0, face: 245, pose: hold}
+      - {t: 4.0, at: l_l, z: 22.0, face: 245, pose: bow}
+      - {t: 6.0, at: l_l, z: 22.0, face: 245, pose: bow}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [33.05, 7.4, 23.3], look: luckiny, look_h: 23.15, lens: 45, frame: 寄り}
+    - {t: 6.0, cam: [33.1, 7.45, 23.3], look: luckiny, look_h: 23.1, lens: 52}
+    bg: azb_swamp
+    act: {start: 護符を見るルッキーニィ, do: 両手で護符を胸に抱き、「大切にします！」と深くお辞儀する, end: お辞儀するルッキーニィ}
+    camera: 斜め前（北西）からルッキーニィの顔へ寄る
+    kind: M
+  A15-008:
+    frame: 引き（低い）
+    only: [metallica, luckiny, bisco, arlecchino, hundred-knight]
+    broom: metallica
+    broom_len: 4.0
+    keys:
+      metallica:
+      - {t: 0.0, at: m_give, z: 22.0, face: 100, pose: cross}
+      - {t: 0.4, at: m_give, z: 22.0, face: 80, pose: walk}
+      - {t: 1.2, at: [33.6, 9.4], z: 22.0, face: 80, pose: stand}
+      - {t: 1.6, at: [33.6, 9.4], z: 22.0, face: 80, pose: ride}
+      - {t: 3.6, at: [33.6, 9.4], z: 22.0, face: 80, pose: ride}
+      - {t: 6.5, at: [38.5, 8.6], z: 25.5, face: 80, pose: ride}
+      luckiny:
+      - {t: 0.0, at: l_l, z: 22.0, face: 245, pose: bow}
+      - {t: 0.4, at: l_l, z: 22.0, face: 250, pose: walk}
+      - {t: 1.2, at: [32.86, 9.53], z: 22.0, face: 80, pose: stand}
+      - {t: 1.6, at: [32.86, 9.53], z: 22.0, face: 80, pose: ride}
+      - {t: 3.6, at: [32.86, 9.53], z: 22.0, face: 80, pose: ride}
+      - {t: 6.5, at: [37.76, 8.73], z: 25.5, face: 80, pose: ride}
+      bisco:
+      - {t: 0.0, at: b_cough, z: 22.0, face: 280, pose: arms_up}
+      - {t: 0.4, at: b_cough, z: 22.0, face: 260, pose: walk}
+      - {t: 1.2, at: [32.12, 9.66], z: 22.0, face: 80, pose: stand}
+      - {t: 1.6, at: [32.12, 9.66], z: 22.0, face: 80, pose: ride}
+      - {t: 3.6, at: [32.12, 9.66], z: 22.0, face: 80, pose: ride}
+      - {t: 6.5, at: [37.02, 8.86], z: 25.5, face: 80, pose: ride}
+      arlecchino:
+      - {t: 0.0, at: a_l, z: 22.0, face: 330, pose: stand}
+      - {t: 0.4, at: a_l, z: 22.0, face: 300, pose: walk}
+      - {t: 1.2, at: [31.38, 9.79], z: 22.0, face: 80, pose: stand}
+      - {t: 1.6, at: [31.38, 9.79], z: 22.0, face: 80, pose: ride}
+      - {t: 3.6, at: [31.38, 9.79], z: 22.0, face: 80, pose: ride}
+      - {t: 6.5, at: [36.28, 8.99], z: 25.5, face: 80, pose: ride}
+      hundred-knight:
+      - {t: 0.0, at: hk_l, z: 22.0, face: 80, pose: stand}
+      - {t: 0.4, at: hk_l, z: 22.0, face: 250, pose: walk}
+      - {t: 1.2, at: [30.65, 9.92], z: 22.0, face: 80, pose: stand}
+      - {t: 1.6, at: [30.65, 9.92], z: 22.0, face: 80, pose: ride}
+      - {t: 3.6, at: [30.65, 9.92], z: 22.0, face: 80, pose: ride}
+      - {t: 6.5, at: [35.55, 9.12], z: 25.5, face: 80, pose: ride}
+    fx:
+    - {kind: bloom, t: [-1.0, 0.0], at: bud, z: 24.0, n: 5, r: 0.5, len: 2.6, w: 1.0, open: 65, color: [140, 240, 150]}
+    - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
+    - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
+    cam_keys:
+    - {t: 0.0, cam: [38.0, 14.6, 22.8], look: [34.2, 9.4], look_h: 23.0, lens: 26, frame: 引き}
+    - {t: 3.6, cam: [38.0, 14.6, 22.8], look: [34.0, 9.4], look_h: 23.0, lens: 26}
+    - {t: 6.5, cam: [38.2, 14.4, 22.9], look: metallica, lens: 26}
+    bg: azb_swamp
+    act: {start: 峰の五人, do: メタリカがホウキにまたがり「さあ、つかまれ！」。四人が後ろに乗ってしがみつき、ホウキが東の空へ舞い上がる, end: 飛び立つホウキ}
+    camera: 南東の低い所から、飛び立つホウキを見上げる
+    kind: A
+  A15-009:
+    frame: 引き（並んで飛ぶ）
+    only: [metallica, luckiny, bisco, arlecchino, hundred-knight]
+    broom: metallica
+    broom_len: 4.0
+    keys:
+      metallica:
+      - {t: 0.0, at: [38.5, 8.6], z: 25.5, face: 80, pose: ride}
+      - {t: 3.0, at: [46.0, 6.2], z: 30.0, face: 72, pose: ride}
+      - {t: 5.5, at: [54.0, 3.6], z: 30.5, face: 85, pose: ride}
+      - {t: 8.0, at: [57.4, 3.3], z: 28.2, face: 85, pose: ride}
+      luckiny:
+      - {t: 0.0, at: [37.76, 8.73], z: 25.5, face: 80, pose: ride}
+      - {t: 3.0, at: [45.29, 6.43], z: 30.0, face: 72, pose: ride}
+      - {t: 5.5, at: [53.25, 3.67], z: 30.5, face: 85, pose: ride}
+      - {t: 8.0, at: [56.65, 3.37], z: 28.2, face: 85, pose: ride}
+      bisco:
+      - {t: 0.0, at: [37.02, 8.86], z: 25.5, face: 80, pose: ride}
+      - {t: 3.0, at: [44.57, 6.66], z: 30.0, face: 72, pose: ride}
+      - {t: 5.5, at: [52.51, 3.73], z: 30.5, face: 85, pose: ride}
+      - {t: 8.0, at: [55.91, 3.43], z: 28.2, face: 85, pose: ride}
+      arlecchino:
+      - {t: 0.0, at: [36.28, 8.99], z: 25.5, face: 80, pose: ride}
+      - {t: 3.0, at: [43.86, 6.9], z: 30.0, face: 72, pose: ride}
+      - {t: 5.5, at: [51.76, 3.8], z: 30.5, face: 85, pose: ride}
+      - {t: 8.0, at: [55.16, 3.5], z: 28.2, face: 85, pose: ride}
+      hundred-knight:
+      - {t: 0.0, at: [35.55, 9.12], z: 25.5, face: 80, pose: ride}
+      - {t: 3.0, at: [43.15, 7.13], z: 30.0, face: 72, pose: ride}
+      - {t: 5.5, at: [51.01, 3.86], z: 30.5, face: 85, pose: ride}
+      - {t: 8.0, at: [54.41, 3.56], z: 28.2, face: 85, pose: ride}
+    cam_keys:
+    - {t: 0.0, cam: [38.5, 1.0, 27.0], look: metallica, lens: 28, frame: 引き}
+    - {t: 4.0, cam: [46.5, -2.0, 30.0], look: metallica, lens: 28, ease: linear}
+    - {t: 8.0, cam: [55.5, -4.5, 30.0], look: metallica, lens: 30, ease: linear}
+    bg: azb_sky
+    act: {start: 飛び立ったホウキ, do: ホウキが谷の上を東へ飛ぶ。下は尖塔と、影に沈む砂漠。行く手に山頂の峰と木の像が近づく, end: 山頂の峰へ下りていくホウキ}
+    camera: 北の空から、並んで飛びながら追う（トラック）
+    kind: A
+  A15-010:
+    frame: 全身（不時着）
+    only: [metallica, luckiny, bisco, arlecchino, hundred-knight]
+    broom: metallica
+    broom_len: 4.0
+    shake:
+    - {t: [1.1, 1.6], amp: 1.4}
+    keys:
+      metallica:
+      - {t: 0.0, at: [57.4, 3.3], z: 28.2, face: 85, pose: ride}
+      - {t: 1.2, at: [59.8, 3.5], z: 26.0, face: 85, pose: ride}
+      - {t: 1.6, at: m_s, z: 26.0, face: 250, pose: stand}
+      - {t: 2.2, at: m_s, z: 26.0, face: 250, pose: proud}
+      - {t: 9.5, at: m_s, z: 26.0, face: 250, pose: proud}
+      - {t: 10.0, at: m_s, z: 26.0, face: 250, pose: proud}
+      luckiny:
+      - {t: 0.0, at: [56.65, 3.37], z: 28.2, face: 85, pose: ride}
+      - {t: 1.2, at: [59.05, 3.57], z: 26.0, face: 85, pose: ride}
+      - {t: 1.7, at: l_s, z: 26.0, face: 60, pose: sit}
+      - {t: 9.5, at: l_s, z: 26.0, face: 60, pose: sit}
+      - {t: 10.0, at: l_s, z: 26.0, face: 60, pose: sit}
+      bisco:
+      - {t: 0.0, at: [55.91, 3.43], z: 28.2, face: 85, pose: ride}
+      - {t: 1.2, at: [58.31, 3.63], z: 26.0, face: 85, pose: ride}
+      - {t: 1.8, at: b_s, z: 26.0, face: 30, pose: fall}
+      - {t: 4.2, at: b_s, z: 26.0, face: 30, pose: fall}
+      - {t: 4.8, at: b_s, z: 26.0, face: 60, pose: stand}
+      - {t: 5.4, at: b_s, z: 26.0, face: 70, pose: arms_up}
+      - {t: 9.5, at: b_s, z: 26.0, face: 70, pose: arms_up}
+      - {t: 10.0, at: b_s, z: 26.0, face: 70, pose: arms_up}
+      arlecchino:
+      - {t: 0.0, at: [55.16, 3.5], z: 28.2, face: 85, pose: ride}
+      - {t: 1.2, at: [57.56, 3.7], z: 26.0, face: 85, pose: ride}
+      - {t: 1.8, at: a_s, z: 26.0, face: 80, pose: stand}
+      - {t: 9.5, at: a_s, z: 26.0, face: 80, pose: stand}
+      - {t: 10.0, at: a_s, z: 26.0, face: 80, pose: stand}
+      hundred-knight:
+      - {t: 0.0, at: [54.41, 3.56], z: 28.2, face: 85, pose: ride}
+      - {t: 1.2, at: [56.81, 3.76], z: 26.0, face: 85, pose: ride}
+      - {t: 1.5, at: hk_s, z: 26.0, face: 80, pose: stand}
+      - {t: 9.5, at: hk_s, z: 26.0, face: 80, pose: stand}
+      - {t: 10.0, at: hk_s, z: 26.0, face: 80, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [64.8, 5.8, 26.7], look: metallica, lens: 28, frame: 全身}
+    - {t: 1.6, cam: [64.8, 5.8, 26.7], look: [59.4, 4.0], look_h: 26.6, lens: 28}
+    - {t: 9.5, cam: [64.6, 5.9, 26.7], look: [59.4, 4.2], look_h: 26.6, lens: 30}
+    - {t: 10.0, cam: [64.6, 5.9, 26.7], look: [59.4, 4.2], look_h: 26.6, lens: 30}
+    bg: azb_summit
+    act: {start: 下りてくるホウキ, do: ホウキが山頂の広場に勢いよく着いて、乗っていた者が転げ落ちる。ビスコはしりもちをついて「痛たたた」、立ち上がって両手を振り上げて抗議する, end: 怒るビスコと、胸を張るメタリカ}
+    camera: 広場の東の低い所から、転げ落ちる一行
+    kind: A
+  A15-011:
+    frame: 全身（二人）
+    only: [metallica, bisco, luckiny]
+    keys:
+      bisco:
+      - {t: 0.0, at: b_s, z: 26.0, face: 70, pose: arms_up}
+      - {t: 0.6, at: b_s, z: 26.0, face: 70, pose: stand}
+      - {t: 1.6, at: b_up, z: 26.0, face: 75, pose: walk}
+      - {t: 2.0, at: b_up, z: 26.0, face: 75, pose: stand}
+      - {t: 3.6, at: b_up, z: 26.0, face: 250, pose: gesture}
+      - {t: 6.8, at: b_up, z: 26.0, face: 70, pose: stand}
+      - {t: 14.0, at: b_up, z: 26.0, face: 70, pose: stand}
+      metallica:
+      - {t: 0.0, at: m_s, z: 26.0, face: 250, pose: proud}
+      - {t: 7.4, at: m_s, z: 26.0, face: 250, pose: stand}
+      - {t: 8.0, at: m_s, z: 26.0, face: 245, pose: gesture}
+      - {t: 14.0, at: m_s, z: 26.0, face: 245, pose: cross}
+      luckiny:
+      - {t: 0.0, at: l_s, z: 26.0, face: 60, pose: sit}
+      - {t: 2.0, at: l_s, z: 26.0, face: 60, pose: sit}
+      - {t: 3.0, at: l_up, z: 26.0, face: 70, pose: stand}
+      - {t: 14.0, at: l_up, z: 26.0, face: 70, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [60.6, 9.2, 28.8], look: [59.6, 4.2], look_h: 26.7, lens: 30, frame: 全身}
+    - {t: 14.0, cam: [60.8, 8.9, 28.7], look: [59.8, 4.2], look_h: 26.7, lens: 33}
+    bg: azb_summit
+    act: {start: 怒るビスコ, do: ビスコが立ち上がってメタリカに寄り、ルッキーニィを指して「この子は誰なんだ」。メタリカはルッキーニィを手で示し「昨日出会って今日、弟子にした」, end: ルッキーニィを示すメタリカ}
+    camera: 南の高い所から三人を見下ろす（ゆっくり寄る）
+    kind: M
+  A15-012:
+    frame: 全身（ルッキーニィ）
+    only: [luckiny, bisco]
+    keys:
+      luckiny:
+      - {t: 0.0, at: l_up, z: 26.0, face: 70, pose: stand}
+      - {t: 0.4, at: l_up, z: 26.0, face: 80, pose: bow}
+      - {t: 2.6, at: l_up, z: 26.0, face: 80, pose: bow}
+      - {t: 3.0, at: l_up, z: 26.0, face: 80, pose: stand}
+      - {t: 5.0, at: l_up, z: 26.0, face: 80, pose: bow}
+      - {t: 7.0, at: l_up, z: 26.0, face: 80, pose: bow}
+      - {t: 8.0, at: l_up, z: 26.0, face: 80, pose: stand}
+      bisco:
+      - {t: 0.0, at: b_up, z: 26.0, face: 70, pose: stand}
+      - {t: 0.6, at: b_up, z: 26.0, face: 250, pose: stand}
+      - {t: 8.0, at: b_up, z: 26.0, face: 250, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [61.2, 5.3, 27.1], look: luckiny, look_h: 27.0, lens: 35, frame: 全身}
+    - {t: 8.0, cam: [61.1, 5.25, 27.1], look: luckiny, look_h: 27.0, lens: 38}
+    bg: azb_summit
+    act: {start: 弟子と紹介されたルッキーニィ, do: 緊張して深々とお辞儀し、名乗る。もう一度お辞儀, end: お辞儀するルッキーニィ}
+    camera: ビスコの肩ごし（東）からルッキーニィ
+    kind: M
+  A15-013:
+    frame: 全身（ビスコ）
+    only: [luckiny, bisco]
+    keys:
+      bisco:
+      - {t: 0.0, at: b_up, z: 26.0, face: 250, pose: stand}
+      - {t: 0.3, at: b_up, z: 26.0, face: 250, pose: arms_up}
+      - {t: 2.1, at: b_up, z: 26.0, face: 250, pose: arms_up}
+      - {t: 3.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: lean}
+      - {t: 7.6, at: [59.2, 4.7], z: 26.0, face: 250, pose: lean}
+      - {t: 8.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: gesture}
+      - {t: 14.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: gesture}
+      luckiny:
+      - {t: 0.0, at: l_up, z: 26.0, face: 80, pose: stand}
+      - {t: 14.0, at: l_up, z: 26.0, face: 70, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [56.6, 2.9, 26.45], look: bisco, look_h: 27.2, lens: 32, frame: 全身}
+    - {t: 14.0, cam: [56.7, 3.0, 26.45], look: bisco, look_h: 27.2, lens: 36}
+    bg: azb_summit
+    act: {start: お辞儀したルッキーニィ, do: ビスコが「弟子だと！？」と両手を上げ、ルッキーニィに詰め寄って、メタリカのひどさを身ぶりで並べる, end: 身ぶりで訴えるビスコ}
+    camera: ルッキーニィの肩ごし（北西、低い）からビスコを煽る
+    kind: M
+  A15-014:
+    frame: 寄り（ルッキーニィ）
+    only: [luckiny, bisco]
+    keys:
+      luckiny:
+      - {t: 0.0, at: l_up, z: 26.0, face: 70, pose: stand}
+      - {t: 0.4, at: l_up, z: 26.0, face: 70, pose: hold}
+      - {t: 4.0, at: l_up, z: 26.0, face: 70, pose: hold}
+      - {t: 4.4, at: l_up, z: 26.0, face: 70, pose: hop}
+      - {t: 9.0, at: l_up, z: 26.0, face: 70, pose: hop}
+      bisco:
+      - {t: 0.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: gesture}
+      - {t: 1.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: stand}
+      - {t: 6.5, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
+      - {t: 9.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
+    cam_keys:
+    - {t: 0.0, cam: [60.5, 2.6, 27.9], look: luckiny, look_h: 27.0, lens: 40, frame: 寄り}
+    - {t: 9.0, cam: [60.4, 2.75, 27.85], look: luckiny, look_h: 27.0, lens: 46}
+    bg: azb_summit
+    act: {start: 訴えるビスコ, do: ルッキーニィは目を輝かせて両手を握り「魔女の鑑ですね！」と跳ねる。ビスコはがっくりうつむく, end: 跳ねるルッキーニィと、うなだれるビスコ}
+    camera: 北東のやや高い所から、ビスコの肩ごしにルッキーニィの寄り
+    kind: M
+  A15-015:
+    frame: 全身（三人・引き）
+    only: [metallica, luckiny, bisco, arlecchino, hundred-knight]
+    keys:
+      metallica:
+      - {t: 0.0, at: m_s, z: 26.0, face: 245, pose: cross}
+      - {t: 0.4, at: [60.1, 4.0], z: 26.0, face: 240, pose: walk}
+      - {t: 1.2, at: [60.0, 4.2], z: 26.0, face: 235, pose: lean}
+      - {t: 6.2, at: [60.0, 4.2], z: 26.0, face: 235, pose: lean}
+      - {t: 6.6, at: [60.0, 4.2], z: 26.0, face: 235, pose: cross}
+      - {t: 8.5, at: [60.0, 4.2], z: 26.0, face: 235, pose: cross}
+      bisco:
+      - {t: 0.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
+      - {t: 1.2, at: [59.2, 4.7], z: 26.0, face: 60, pose: stand}
+      - {t: 6.4, at: [59.2, 4.7], z: 26.0, face: 60, pose: stand}
+      - {t: 6.8, at: [59.2, 4.7], z: 26.0, face: 60, pose: arms_up}
+      - {t: 8.5, at: [59.2, 4.7], z: 26.0, face: 60, pose: arms_up}
+      luckiny:
+      - {t: 0.0, at: l_up, z: 26.0, face: 70, pose: hop}
+      - {t: 1.0, at: l_up, z: 26.0, face: 70, pose: stand}
+      - {t: 8.5, at: l_up, z: 26.0, face: 70, pose: stand}
+      arlecchino:
+      - {t: 0.0, at: a_s, z: 26.0, face: 80, pose: stand}
+      - {t: 8.5, at: a_s, z: 26.0, face: 80, pose: stand}
+      hundred-knight:
+      - {t: 0.0, at: hk_s, z: 26.0, face: 80, pose: stand}
+      - {t: 8.5, at: hk_s, z: 26.0, face: 120, pose: stand}
+    cam_keys:
+    - {t: 0.0, cam: [56.0, 8.6, 27.5], look: [59.6, 4.0], look_h: 26.8, lens: 30, frame: 全身}
+    - {t: 8.5, cam: [55.0, 9.8, 29.0], look: [60.4, 2.0], look_h: 27.0, lens: 26}
+    bg: azb_summit
+    act: {start: うなだれるビスコ, do: メタリカがビスコに顔を寄せて「弟子に慕われているワタシに嫉妬か？」。ビスコは両手を振り上げて言い返そうとする。カメラが引いて、奥に広場の木の像, end: 言い合う二人と見守る三人、木の像}
+    camera: 南西からの全身から、高く引いて広場の木の像まで見せる
+    kind: M

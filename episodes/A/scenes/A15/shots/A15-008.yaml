@@ -1,0 +1,38 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-008
+scene: A15
+tc: 55.5
+sec: 6.5
+kind: A
+shot: 引き（低い）・飛び立つホウキ
+acting: メタリカがホウキにまたがり「さあ、つかまれ！」。四人が後ろに乗ってしがみつき、ホウキが東の空へ舞い上がる
+dialogue:
+- L432「さあ、つかまれ！隣の峰へ飛ぶぞ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.0
+  - 14.6
+  - 22.8
+  look:
+  - 34.2
+  - 9.4
+  lens: 26
+  move: 南東の低い所から、飛び立つホウキを見上げる
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 峰の五人
+  end: 飛び立つホウキ
+timing:
+  lead: 0.3

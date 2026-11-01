@@ -1,0 +1,37 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-019
+scene: A17
+tc: 191.5
+sec: 5.0
+kind: M
+shot: 全身・「えいっ！」
+acting: 「えいっ！」と小さな魔法を放ち、ビスコの足もとで火花。ビスコが跳び上がって「見習い魔女の夜会だって……！？」
+dialogue:
+- L514「えいっ！」
+- L515「見習い魔女の夜会だって……！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 62.6
+  - 9.4
+  - 26.9
+  look:
+  - 62.4
+  - 5.6
+  lens: 26
+  move: 南の低い所から横に（左にビスコ、右に見習い魔女たち）
+background: az-brocken
+image: null
+refs:
+- apprentice-a
+- apprentice-b
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 指さす見習い魔女
+  end: 驚くビスコと見習い魔女たち
+timing:
+  lead: 0.4

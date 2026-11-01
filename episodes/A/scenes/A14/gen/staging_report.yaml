@@ -158,6 +158,7 @@ cuts:
       - 枯れ草
       - 山頂の丸い広場（夜会の場所）
       - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
       - 尖塔
       - 尖塔
       - 尖塔
@@ -259,64 +260,39 @@ cuts:
     note: null
   A14-004:
     cam:
-    - 202.95
-    - 201.7
-    - 0.75
+    - 201.65
+    - 202.4
+    - 0.7
     lens: 26
-    bearing: 326
+    bearing: 11
     frame: 全身（煽り）
     start:
       people:
       - who: luckiny
-        s: -0.11
-        dist: 0.96
-        side: 中央
-        body: 正面
+        s: 0.39
+        dist: 1.56
+        side: 右
+        body: 斜め前（画面右向き）
       bg: 魔女邸の居間（夕方）〔居間 正面〕
       props:
-      - 行き止まりの丸い踊り場
-      - 北の縁の草むら（古の風紋が隠れている）
-      - 枯れ草
-      - 足場1
-      - 足場1の風紋
-      - 足場2
-      - 足場2の風紋
-      - 足場3
-      - 足場3の風紋
-      - 足場4
-      - 足場4の風紋
-      - ピラーの峰の丸い広場
-      - 咲く前のピラー・オブ・テンペランス
-      - 枯れ草
-      - 枯れ草
-      - 山頂の丸い広場（夜会の場所）
-      - 中央の木の像（黒い丸太の塔と白い面）
-      - 尖塔
-      - 尖塔
-      - 尖塔
-      - 尖塔
-      - 尖塔（二つの峰の間の北）
-      - 尖塔
-      - 尖塔
-      - 遠くの山並み（北西）
-      - 階段の上の踊り場
+      - 遠くの山並み（北東）
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera. No other people. Behind: the witch''s living room
-        at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an
-        orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert
-        below in a soft haze.'
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the right of the frame, in three-quarter view, turned toward screen right. No other people.
+        Behind: the witch''s living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling,
+        the small round window showing an orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
+        long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: luckiny
-        s: -0.2
-        dist: 1.37
+        s: -0.0
+        dist: 1.73
         side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 背中
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, seen from behind at an angle, turned toward screen right. No other
-        people. Behind: the witch''s living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling,
-        the small round window showing an orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
-        long shadows, the vast desert below in a soft haze.'
+        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, with the back to the camera. No other people. Behind: the witch''s
+        living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window
+        showing an orange-to-violet sky with the first stars. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the
+        vast desert below in a soft haze.'
     move:
       luckiny:
         to: lk_window
@@ -767,6 +743,7 @@ cuts:
       - 枯れ草
       - 山頂の丸い広場（夜会の場所）
       - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
       - 尖塔（二つの峰の間の北）
       - 尖塔
       - 尖塔
@@ -1235,6 +1212,7 @@ cuts:
       - 枯れ草
       - 山頂の丸い広場（夜会の場所）
       - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
       - 尖塔
       - 尖塔
       - 白夜月（東の空）
@@ -1395,9 +1373,10 @@ cuts:
         - hk_bud
         - hk_bud
         - hk_bud
+        - hk_bud
         t:
         - 0.0
-        - 8.0
+        - 9.6
     note: null
   A14-020:
     cam:
@@ -1460,16 +1439,21 @@ cuts:
           - 10.2
         - - 30.0
           - 10.2
+        - - 30.0
+          - 10.2
         t:
         - 0.0
-        - 10.0
+        - 11.0
       karakuri-doll:
         to:
         - 28.1
         - 13.9
+        via:
+        - - 28.1
+          - 13.9
         t:
         - 0.0
-        - 10.0
+        - 11.0
     note: null
 checks:
   axis: []

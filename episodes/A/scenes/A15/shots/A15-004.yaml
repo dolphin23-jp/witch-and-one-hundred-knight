@@ -1,0 +1,34 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-004
+scene: A15
+tc: 28.0
+sec: 6.0
+kind: M
+shot: 全身・瘴気を告げるアルレッキーノ
+acting: アルレッキーノがメタリカに「瘴気がございます」と手で示す。メタリカが振り向く
+dialogue:
+- L426「沼には瘴気がございます。ルッキーニィ様は長くもたないのでは？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.4
+  - 12.3
+  - 23.7
+  look: arlecchino
+  lens: 34
+  move: 南西のやや高い所からアルレッキーノの寄り
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 咳き込むルッキーニィ
+  end: アルレッキーノとメタリカ（奥にむせるルッキーニィ）
+timing:
+  lead: 0.5

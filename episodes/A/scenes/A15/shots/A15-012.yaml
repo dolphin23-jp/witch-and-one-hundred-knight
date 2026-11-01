@@ -1,0 +1,33 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-012
+scene: A15
+tc: 94.0
+sec: 8.0
+kind: M
+shot: 全身・名乗るルッキーニィ
+acting: 緊張して深々とお辞儀し、名乗る。もう一度お辞儀
+dialogue:
+- L439「は、はじめまして！ラナ・ニア・ルッキーニィと申します。よ、よろしくお願いします。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 61.2
+  - 5.3
+  - 27.1
+  look: luckiny
+  lens: 35
+  move: ビスコの肩ごし（東）からルッキーニィ
+background: az-brocken
+image: null
+refs:
+- luckiny
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 弟子と紹介されたルッキーニィ
+  end: お辞儀するルッキーニィ
+timing:
+  lead: 0.4

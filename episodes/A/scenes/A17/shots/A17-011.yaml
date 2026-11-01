@@ -1,0 +1,32 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-011
+scene: A17
+tc: 114.2
+sec: 3.0
+kind: M
+shot: 寄り（顔）・「え……？」
+acting: 「え……？」
+dialogue:
+- L500「え……？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 63.3
+  - 1.6
+  - 27.45
+  look: metallica
+  lens: 50
+  move: 正面（東）からメタリカの顔の寄り
+background: az-brocken
+image: null
+refs:
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカの顔
+  end: 呆然とするメタリカの顔
+timing:
+  lead: 0.6

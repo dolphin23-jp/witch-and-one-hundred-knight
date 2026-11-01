@@ -1,0 +1,39 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-001
+scene: A16
+tc: 0.0
+sec: 9.0
+kind: A
+shot: 大引き（高い所から）・黄昏の山頂の広場
+acting: アルレッキーノが東の空を示して「そろそろ月が出ますぞ」。メタリカが振り向いて「メタリカだ」と指さす
+dialogue:
+- L448「そろそろ月が出ますぞ。リカ様、ご準備を。」
+- L449「メタリカだ。……準備って何だ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 51.5
+  - 12.5
+  - 35.0
+  look:
+  - 61.5
+  - 1.5
+  lens: 26
+  move: 南西の高い空から、広場の一行へ下りていく（クレーン）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 黄昏の山頂の広場。中央の木の像の前に一行。東の空に白夜月
+  end: 広場の一行
+timing:
+  lead: 0.6

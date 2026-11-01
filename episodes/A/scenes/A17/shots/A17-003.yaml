@@ -1,0 +1,38 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-003
+scene: A17
+tc: 17.8
+sec: 9.5
+kind: M
+shot: 全身・また踊り出すメタリカ（奥に魔女たち）
+acting: 「空間が安定するまで踊り続けなければ」と、得意げにまた踊り出す。奥の魔女たちが見ている
+dialogue:
+- L485「踊りか……。空間が安定するまで踊り続けなければならないんだな」
+sound: null
+notes: null
+camera:
+  pos:
+  - 64.6
+  - 5.6
+  - 27.1
+  look: metallica
+  lens: 30
+  move: 南東から、踊るメタリカ（奥に北の縁の魔女たち）
+background: az-brocken
+image: null
+refs:
+- metallica
+- purple-peel
+- lily
+- rabi
+- usamaru
+- berda
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 胸を張るメタリカ
+  end: 踊るメタリカと奥の魔女たち
+timing:
+  lead: 0.5

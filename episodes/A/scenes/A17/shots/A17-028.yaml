@@ -1,0 +1,42 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-028
+scene: A17
+tc: 300.4
+sec: 18.0
+kind: A
+shot: 大引き（クレーン）・夜の山頂
+acting: 「くそ、くそっ……」。ビスコが「メタリカ……」。夜空から魔女たちの高笑いが響く。カメラは上へ高く引き、星空の下の小さな山頂と、踊りの輪と、うずくまる二人
+dialogue:
+- L531「くぞ、くぞっ……。……えぐっ……。」
+- L532「メタリカ……。」
+- L533「アハハハハハハ……！！！アハハハハハハ……！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 59.9
+  - 4.6
+  - 27.4
+  look: metallica
+  lens: 34
+  move: メタリカの寄りから、上へ高く引いていく（クレーン）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+- apprentice-a
+- apprentice-b
+- apprentice-c
+- apprentice-d
+overlays: []
+fallback: null
+act:
+  start: 泣くメタリカ
+  end: 夜の山頂（夜会編 回2 の終わり）
+timing:
+  lead: 0.3

@@ -1,0 +1,38 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-011
+scene: A16
+tc: 98.2
+sec: 9.0
+kind: M
+shot: 大引き・暗くなる空と踊り続けるメタリカ
+acting: 時が過ぎて空が暗くなる。メタリカは踊り続け、アルレッキーノは樽の脇。ルッキーニィが西の空を見て「もう日が沈んでしまいそうです」
+dialogue:
+- L473「も、もう日が沈んでしまいそうです……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 72.0
+  - 12.5
+  - 31.0
+  look:
+  - 61.5
+  - 2.5
+  lens: 24
+  move: 南東の高い空から広場全体（ほとんど止め）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 暗くなっていく空
+  end: 暗い空の下の広場
+timing:
+  lead: 5.0

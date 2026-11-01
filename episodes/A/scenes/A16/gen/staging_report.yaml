@@ -1,0 +1,1438 @@
+cuts:
+  A16-001:
+    cam:
+    - 51.5
+    - 12.5
+    - 35.0
+    lens: 26
+    bearing: 42
+    frame: 大引き
+    start:
+      people:
+      - who: arlecchino
+        s: 0.01
+        dist: 35.0
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: metallica
+        s: 0.03
+        dist: 35.0
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: 0.03
+        dist: 35.0
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.08
+        dist: 35.0
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: luckiny
+        s: 0.12
+        dist: 35.0
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      - 遠くの山並み（北東）
+      staging: 'In frame (exactly 5 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in profile, turned toward screen right;
+        Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green
+        rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind at an angle, turned toward screen
+        right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
+        blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, seen from behind at an angle, turned toward screen right;
+        Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk:
+        two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a
+        wooden staff), standing, in the center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: a round plateau on the mountain summit
+        paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the
+        center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: arlecchino
+        s: 0.0
+        dist: 29.8
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: metallica
+        s: 0.02
+        dist: 29.8
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.02
+        dist: 29.8
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.09
+        dist: 29.8
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: luckiny
+        s: 0.14
+        dist: 29.8
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly 5 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, seen from behind at an angle, turned
+        toward screen right; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long
+        braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera; the Hundred
+        Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets
+        with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, seen from behind at an angle, turned toward screen right; Bisco (a dog-eared knight
+        girl, as in her reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short
+        light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the
+        center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones
+        carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late
+        afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        face: 100
+        via:
+        - a_g
+        - a_g
+        - a_g
+        - a_g
+        t:
+        - 0.0
+        - 9.0
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 9.0
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 9.0
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 9.0
+      metallica:
+        to: m_g
+        face: 240
+        via:
+        - m_g
+        - m_g
+        - m_g
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A16-002:
+    cam:
+    - 62.8
+    - 6.5
+    - 27.3
+    lens: 30
+    bearing: 301
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: -0.08
+        dist: 27.3
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: -0.08
+        dist: 27.3
+        side: 中央
+        body: 正面
+      - who: luckiny
+        s: -0.06
+        dist: 27.3
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.0
+        dist: 27.3
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.08
+        dist: 27.3
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 尖塔（二つの峰の間の北）
+      - 遠くの山並み（北西）
+      staging: 'In frame (exactly 5 people, from left to right): Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera, small in the background; Luckiny (a small goat-like beastfolk:
+        two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a
+        wooden staff), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing,
+        in the center of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its
+        bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in
+        the center of the frame, in profile, turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered
+        stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky.
+        Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: bisco
+        s: -0.11
+        dist: 27.4
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: luckiny
+        s: -0.11
+        dist: 27.4
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: hundred-knight
+        s: -0.08
+        dist: 27.4
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.0
+        dist: 27.4
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: metallica
+        s: 0.07
+        dist: 27.4
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in three-quarter view, turned toward screen
+        left, small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with
+        dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; the
+        Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera, small in the background; Arlecchino (the tall puppet butler,
+        as in his reference sheet), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Metallica (the orange-haired witch: huge dark purple
+        witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple
+        pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other people. High angle looking down.
+        Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled
+        black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
+        long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        face: 50
+        via:
+        - a_g
+        t:
+        - 0.0
+        - 13.5
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 13.5
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 13.5
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 13.5
+      metallica:
+        to: m_g
+        face: 230
+        via:
+        - m_g
+        t:
+        - 0.0
+        - 13.5
+    note: null
+  A16-003:
+    cam:
+    - 63.4
+    - 3.6
+    - 26.6
+    lens: 30
+    bearing: 304
+    frame: 寄り
+    start:
+      people:
+      - who: arlecchino
+        s: -0.18
+        dist: 26.6
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: -0.1
+        dist: 26.6
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔（二つの峰の間の北）
+      - 遠くの山並み（北西）
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green
+        rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind at an angle, turned toward screen
+        left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry
+        grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun
+        in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: arlecchino
+        s: -0.21
+        dist: 26.6
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: -0.04
+        dist: 26.6
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, on the left of the frame, facing the camera, small in the background;
+        Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green
+        rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera, small in the background. No
+        other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the
+        cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light
+        on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        t:
+        - 0.0
+        - 11.2
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 11.2
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 11.2
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 11.2
+      metallica:
+        to:
+        - 61.0
+        - 2.6
+        face: 100
+        via:
+        - m_g
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        t:
+        - 0.0
+        - 11.2
+    note: null
+  A16-004:
+    cam:
+    - 58.6
+    - 0.6
+    - 27.6
+    lens: 30
+    bearing: 150
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: -0.07
+        dist: 27.6
+        side: 中央
+        body: 背中
+      - who: arlecchino
+        s: 0.08
+        dist: 27.6
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.1
+        dist: 27.6
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 尖塔
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, with the back to the camera, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in three-quarter view, turned
+        toward screen left, small in the background; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward screen
+        left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry
+        grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun
+        in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: metallica
+        s: -0.07
+        dist: 27.5
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.08
+        dist: 27.5
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.11
+        dist: 27.5
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left, small in the background; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward
+        screen left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden
+        dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low
+        sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        face: 60
+        via:
+        - a_g
+        - a_g
+        t:
+        - 0.0
+        - 9.0
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 9.0
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 9.0
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 9.0
+      metallica:
+        to:
+        - 61.0
+        - 2.6
+        face: 250
+        via:
+        - - 61.0
+          - 2.6
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A16-005:
+    cam:
+    - 59.6
+    - 1.2
+    - 26.5
+    lens: 38
+    bearing: 135
+    frame: 寄り
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 26.5
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.2
+        dist: 26.5
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral
+        circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high
+        desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 26.5
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.22
+        dist: 26.5
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, on the right of the frame, in three-quarter
+        view, turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral
+        circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high
+        desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        via:
+        - a_g
+        - a_g
+        - a_g
+        t:
+        - 0.0
+        - 11.0
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 11.0
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 11.0
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 11.0
+      metallica:
+        to:
+        - 61.0
+        - 2.6
+        via:
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        - - 61.0
+          - 2.6
+        t:
+        - 0.0
+        - 11.0
+    note: null
+  A16-006:
+    cam:
+    - 58.6
+    - 8.4
+    - 27.2
+    lens: 28
+    bearing: 29
+    frame: 全身
+    start:
+      people:
+      - who: metallica
+        s: -0.04
+        dist: 27.2
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: -0.0
+        dist: 27.2
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: luckiny
+        s: 0.07
+        dist: 27.2
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      - 遠くの山並み（北東）
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen left, small in the background; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in profile,
+        turned toward screen right, small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green
+        furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, in profile, turned toward screen right, small in the background.
+        No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at
+        the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light
+        on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.21
+        dist: 27.0
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.15
+        dist: 27.0
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.06
+        dist: 27.0
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, facing the camera, small in the background; Bisco (a
+        dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat
+        with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with
+        gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. High angle looking
+        down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of
+        piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
+        long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        t:
+        - 0.0
+        - 12.0
+      bisco:
+        to: b_g
+        face: 60
+        via:
+        - b_g
+        t:
+        - 0.0
+        - 12.0
+      luckiny:
+        to: l_g
+        face: 60
+        via:
+        - l_g
+        t:
+        - 0.0
+        - 12.0
+      hundred-knight:
+        to: hk_g
+        face: 70
+        via:
+        - hk_g
+        t:
+        - 0.0
+        - 12.0
+      metallica:
+        to:
+        - 60.78
+        - 1.76
+        face: 20
+        via:
+        - - 60.78
+          - 1.76
+        - - 61.21
+          - 1.17
+        - - 61.9
+          - 0.9
+        - - 62.61
+          - 1.05
+        - - 63.14
+          - 1.57
+        - - 63.3
+          - 2.28
+        - - 63.05
+          - 2.97
+        - - 62.46
+          - 3.41
+        - - 61.73
+          - 3.47
+        - - 61.09
+          - 3.13
+        - - 60.73
+          - 2.49
+        t:
+        - 0.0
+        - 12.0
+    note: null
+  A16-007:
+    cam:
+    - 64.0
+    - 4.2
+    - 28.4
+    lens: 30
+    bearing: 252
+    frame: 全身
+    start:
+      people:
+      - who: luckiny
+        s: -0.08
+        dist: 28.4
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.04
+        dist: 28.4
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.02
+        dist: 28.4
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.07
+        dist: 28.4
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.19
+        dist: 28.4
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 行き止まりの丸い踊り場
+      - 北の縁の草むら（古の風紋が隠れている）
+      - 枯れ草
+      - 足場1
+      - 足場1の風紋
+      - 足場2
+      - 足場2の風紋
+      - 足場3
+      - 足場3の風紋
+      - 足場4
+      - 足場4の風紋
+      - ピラーの峰の丸い広場
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 枯れ草
+      - 尖塔
+      - 尖塔
+      - 尖塔
+      - 尖塔
+      - 西の太陽（黄昏の前）
+      - 沈みかけの太陽
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera, small in the background; Bisco
+        (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, about waist-high to an adult: big
+        round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes,
+        a sword in his right hand), standing, in the center of the frame, facing the camera, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center
+        of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in profile, turned toward screen right, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved
+        with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon
+        on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.09
+        dist: 28.3
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.04
+        dist: 28.3
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.02
+        dist: 28.3
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.08
+        dist: 28.3
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.12
+        dist: 28.3
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera, small in the background; Bisco
+        (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, about waist-high to an adult: big
+        round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes,
+        a sword in his right hand), standing, in the center of the frame, facing the camera, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center
+        of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered
+        stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky.
+        Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        via:
+        - a_g
+        - a_g
+        t:
+        - 0.0
+        - 7.0
+      bisco:
+        to: b_g
+        via:
+        - b_g
+        t:
+        - 0.0
+        - 7.0
+      luckiny:
+        to: l_g
+        face: 50
+        via:
+        - l_g
+        - l_g
+        t:
+        - 0.0
+        - 7.0
+      hundred-knight:
+        to: hk_g
+        face: 100
+        via:
+        - hk_g
+        t:
+        - 0.0
+        - 7.0
+      metallica:
+        to:
+        - 63.22
+        - 2.64
+        face: 200
+        via:
+        - - 61.09
+          - 1.27
+        - - 61.59
+          - 0.97
+        - - 62.16
+          - 0.91
+        - - 62.71
+          - 1.11
+        - - 63.11
+          - 1.52
+        - - 63.29
+          - 2.07
+        t:
+        - 0.0
+        - 7.0
+    note: null
+  A16-008:
+    cam:
+    - 61.8
+    - 7.4
+    - 26.5
+    lens: 28
+    bearing: 357
+    frame: 全身
+    start:
+      people:
+      - who: arlecchino
+        s: -0.14
+        dist: 26.5
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: metallica
+        s: 0.1
+        dist: 26.5
+        side: 中央
+        body: 正面
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in profile, turned toward screen right,
+        small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long
+        braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera, small
+        in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an
+        old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the
+        west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: arlecchino
+        s: -0.17
+        dist: 26.5
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: metallica
+        s: -0.06
+        dist: 26.5
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, in three-quarter view, turned toward
+        screen right, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, with the back
+        to the camera, small in the background. No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of
+        golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain:
+        the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_g
+        face: 80
+        via:
+        - a_g
+        t:
+        - 0.0
+        - 8.5
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 8.5
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 8.5
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 8.5
+      metallica:
+        to:
+        - 61.0
+        - 3.04
+        face: 320
+        via:
+        - - 62.96
+          - 3.08
+        - - 62.55
+          - 3.38
+        - - 62.06
+          - 3.5
+        - - 61.56
+          - 3.42
+        - - 63.3
+          - 2.25
+        - - 63.3
+          - 2.25
+        - - 63.3
+          - 2.25
+        - - 61.56
+          - 3.42
+        - - 61.25
+          - 3.26
+        t:
+        - 0.0
+        - 8.5
+    note: null
+  A16-009:
+    cam:
+    - 64.6
+    - 3.9
+    - 26.4
+    lens: 34
+    bearing: 283
+    frame: 寄り
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 26.4
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 山頂の黄昏の空〔山頂〕
+      props:
+      - ピラーの峰の丸い広場
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 山頂の丸い広場（夜会の場所）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 西の太陽（黄昏の前）
+      - 沈みかけの太陽
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind
+        at an angle, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the violet-orange dusk sky above the mountain summit, the first faint stars, a
+        pale full moon low in the east. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in
+        a soft haze.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 26.4
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile,
+        turned toward screen right, small in the background. No other people. High angle looking down. Behind: the violet-orange dusk sky above the mountain summit, the first faint stars, a pale full moon
+        low in the east. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      metallica:
+        to:
+        - 61.16
+        - 1.2
+        face: 50
+        via:
+        - - 60.87
+          - 2.85
+        - - 60.78
+          - 2.64
+        - - 60.72
+          - 2.43
+        - - 60.7
+          - 2.2
+        - - 60.72
+          - 1.97
+        - - 60.78
+          - 1.76
+        - - 60.87
+          - 1.55
+        - - 61.0
+          - 1.36
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A16-010:
+    cam:
+    - 64.0
+    - 0.4
+    - 27.6
+    lens: 30
+    bearing: 221
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: -0.04
+        dist: 27.6
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.06
+        dist: 27.6
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: 0.1
+        dist: 27.6
+        side: 中央
+        body: 正面
+      bg: 山頂の広場〔山頂〕
+      props:
+      - 行き止まりの丸い踊り場
+      - 北の縁の草むら（古の風紋が隠れている）
+      - 枯れ草
+      - 足場1
+      - 足場1の風紋
+      - 足場2
+      - 足場2の風紋
+      - 足場3
+      - 足場3の風紋
+      - 足場4
+      - 足場4の風紋
+      - 枯れ草
+      - 山頂の丸い広場（夜会の場所）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      - 尖塔
+      - 尖塔
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple
+        witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple
+        pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: a round
+        plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with
+        white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the
+        vast desert below in a soft haze.'
+    end:
+      people:
+      - who: bisco
+        s: -0.06
+        dist: 27.6
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: -0.02
+        dist: 27.6
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: metallica
+        s: 0.01
+        dist: 27.6
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background; Metallica
+        (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black
+        top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile, turned toward screen left, small in the background.
+        No other people. High angle looking down. Behind: a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at
+        the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky. Late afternoon on a high desert mountain: the low sun in the west, warm golden light
+        on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_cat
+        face: 270
+        via:
+        - a_g
+        - a_cat
+        - a_cat
+        t:
+        - 0.0
+        - 8.0
+      bisco:
+        to: b_g
+        face: 40
+        via:
+        - b_g
+        t:
+        - 0.0
+        - 8.0
+      luckiny:
+        to: l_g
+        t:
+        - 0.0
+        - 8.0
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 8.0
+      metallica:
+        to:
+        - 63.0
+        - 1.36
+        face: 140
+        via:
+        - - 61.37
+          - 1.06
+        - - 61.61
+          - 0.96
+        - - 61.86
+          - 0.91
+        - - 62.11
+          - 0.9
+        - - 62.36
+          - 0.95
+        - - 62.6
+          - 1.05
+        - - 62.81
+          - 1.19
+        t:
+        - 0.0
+        - 8.0
+    note: null
+  A16-011:
+    cam:
+    - 72.0
+    - 12.5
+    - 31.0
+    lens: 24
+    bearing: 314
+    frame: 大引き
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.18
+        dist: 31.0
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.17
+        dist: 31.0
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: luckiny
+        s: -0.15
+        dist: 31.0
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.04
+        dist: 31.0
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: metallica
+        s: 0.08
+        dist: 31.0
+        side: 中央
+        body: 正面
+      bg: 夜の山頂の広場〔山頂〕
+      props:
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 山頂の丸い広場（夜会の場所）
+      - 中央の木の像（黒い丸太の塔と白い面）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔（二つの峰の間の北）
+      - 遠くの山並み（北西）
+      staging: 'In frame (exactly 5 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the
+        camera; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in profile, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged
+        horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing,
+        in the center of the frame, in three-quarter view, turned toward screen right; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, seen from behind
+        at an angle, turned toward screen left; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair
+        ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing
+        the camera. No other people. High angle looking down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks
+        in the center, golden dry grass silvered by moonlight. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
+        the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.17
+        dist: 32.5
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.16
+        dist: 32.5
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: luckiny
+        s: -0.14
+        dist: 32.5
+        side: 中央
+        body: 背中
+      - who: metallica
+        s: 0.01
+        dist: 32.5
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 0.04
+        dist: 32.5
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the
+        camera; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in profile, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged
+        horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing,
+        in the center of the frame, with the back to the camera; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in profile, turned toward screen left; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, seen from behind at an angle, turned toward
+        screen left. No other people. High angle looking down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks
+        in the center, golden dry grass silvered by moonlight. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
+        the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_cat
+        t:
+        - 0.0
+        - 9.0
+      bisco:
+        to: b_g
+        t:
+        - 0.0
+        - 9.0
+      luckiny:
+        to: l_g
+        face: 270
+        via:
+        - l_g
+        t:
+        - 0.0
+        - 9.0
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 9.0
+      metallica:
+        to:
+        - 62.84
+        - 3.2
+        face: 230
+        via:
+        - - 63.13
+          - 1.55
+        - - 63.22
+          - 1.76
+        - - 63.28
+          - 1.97
+        - - 63.3
+          - 2.2
+        - - 63.28
+          - 2.43
+        - - 63.22
+          - 2.64
+        - - 63.13
+          - 2.85
+        - - 63.0
+          - 3.04
+        t:
+        - 0.0
+        - 9.0
+    note: null
+  A16-012:
+    cam:
+    - 60.0
+    - 0.4
+    - 27.3
+    lens: 40
+    bearing: 135
+    frame: 寄り
+    start:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 27.3
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 夜の山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile,
+        turned toward screen right, small in the background. No other people. High angle looking down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the
+        dark tower of piled logs with white masks in the center, golden dry grass silvered by moonlight. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock
+        spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: metallica
+        s: 0.0
+        dist: 27.3
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending
+        in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera,
+        small in the background. No other people. High angle looking down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with
+        white masks in the center, golden dry grass silvered by moonlight. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long
+        shadows, the vast desert below in a soft haze.'
+    move:
+      metallica:
+        to:
+        - 61.0
+        - 3.04
+        face: 320
+        via:
+        - - 62.67
+          - 3.31
+        - - 62.49
+          - 3.41
+        - - 62.29
+          - 3.47
+        - - 62.09
+          - 3.5
+        - - 61.89
+          - 3.5
+        - - 61.69
+          - 3.46
+        - - 61.49
+          - 3.4
+        - - 61.31
+          - 3.3
+        - - 61.15
+          - 3.18
+        t:
+        - 0.0
+        - 8.0
+    note: null
+  A16-013:
+    cam:
+    - 58.2
+    - 3.0
+    - 26.7
+    lens: 30
+    bearing: 99
+    frame: 全身
+    start:
+      people:
+      - who: arlecchino
+        s: -0.09
+        dist: 26.7
+        side: 中央
+        body: 正面
+      - who: metallica
+        s: -0.03
+        dist: 26.7
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.18
+        dist: 26.7
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 夜の山頂の広場〔山頂〕
+      props:
+      - 山頂の丸い広場（夜会の場所）
+      - カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）
+      - 尖塔
+      - 白夜月（東の空）
+      staging: 'In frame (exactly 3 people, from left to right): Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green
+        rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward screen left,
+        small in the background; Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background.
+        No other people. High angle looking down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks in the center,
+        golden dry grass silvered by moonlight. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert
+        below in a soft haze.'
+    end:
+      people:
+      - who: metallica
+        s: -0.13
+        dist: 26.7
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: -0.08
+        dist: 26.7
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.2
+        dist: 26.7
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, facing the camera, small in the background; Arlecchino (the tall puppet butler, as in his reference sheet), standing, in the center of the frame, facing the camera, small in the background;
+        Bisco (a dog-eared knight girl, as in her reference sheet), standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other people. High angle looking
+        down. Behind: the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks in the center, golden dry grass silvered by moonlight.
+        Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      arlecchino:
+        to: a_cat
+        t:
+        - 0.0
+        - 7.5
+      bisco:
+        to: b_g
+        face: 50
+        via:
+        - b_g
+        - b_g
+        - b_g
+        t:
+        - 0.0
+        - 7.5
+      luckiny:
+        to: l_g
+        face: 60
+        via:
+        - l_g
+        t:
+        - 0.0
+        - 7.5
+      hundred-knight:
+        to: hk_g
+        t:
+        - 0.0
+        - 7.5
+      metallica:
+        to:
+        - 61.25
+        - 1.25
+        face: 225
+        via:
+        - - 60.87
+          - 2.85
+        - - 60.78
+          - 2.64
+        - - 60.72
+          - 2.43
+        - - 60.7
+          - 2.2
+        - - 61.25
+          - 1.25
+        t:
+        - 0.0
+        - 7.5
+    note: null
+checks:
+  axis: []
+  jumps: []
+  overlap: []
+  offscreen: []
+  hidden: []
+  camera: []

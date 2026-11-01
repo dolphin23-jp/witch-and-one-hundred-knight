@@ -20,18 +20,24 @@
 #   L418 の後に「百騎兵。」。L419「急げ百騎兵！時間がない！」は Revival のみ（戦いの後）。
 # 原作テキストの伏せ字（L495「○＆＃％＆」）は、音声でも消してある（「こいつ、……じゃねーの？」）。
 # 原作テキストで2回続けて書かれた泣きの台詞: 「うぅ……うるさ…………い。」は音声でも2回なので1本（L526）にまとめた。「っ……く、くそっ……。」は1本（L527）。
+# cut（2026-11-01）: 分離した声に戦いの効果音や笑い声が漏れていて、音量だけでは範囲が長くなった台詞を、書き起こしの語の時刻・声の音量・
+#   tools/refine_cuts.py（L420〜L422・L433）から手で決めた。refine_cuts.py は下絵の描画と CPU を取り合って遅かったので、全部には使っていない。
+#   確信が持てず、ユーザーに聞いてほしい台詞:
+#     L420・L421（守護者との戦いの後。効果音が多く、書き起こしは「おやすみなさい」などの幻聴になった。声の音量から 07:16・07:26 の声と推定）、
+#     L422（「これは見事な沼ですね」。07:58〜08:02 にも声があり、どちらが頭か不明。今は 08:07〜08:12）、L424（ルッキーニィの咳。音量から）、
+#     L433（ビスコの「痛たたた」）、L481（魔女たちの「フフフフ」）、L485（話し手の推定）、L530（泣き声。音量から）、L533（魔女たちの高笑い）
 scene: A14
 source: {part: 19, start: "00:55", vocals: "声とBGMの分離/パート19/パート19_声.mp3"}
 lines:
   # === A14 アズ・ブロッケン山・風紋とピラーの守護者 ===
   # --- 11 山の行き止まり・古の風紋 ---
-  - {id: L386, who: metallica, text: "行き止まり…………の、ようだな。", note: （アズ・ブロッケン山を探索中、行き止まりの岩場。百騎兵が疑問符を浮かべる＝漫符は合成）}
+  - {id: L386, who: metallica, text: "行き止まり…………の、ようだな。", note: （アズ・ブロッケン山を探索中、行き止まりの岩場。百騎兵が疑問符を浮かべる＝漫符は合成）, cut: ["01:01.70", "01:05.10"]}
   - {id: L387, who: metallica, text: "このままでは、日没までに山頂に行く事ができんぞ！"}
   - {id: L388, who: metallica, text: "くそっ！ワタシがいければ何とかなるがピラーの気配も感じられん…………", use: false}
-  - {id: L389, who: metallica, text: "……ん？なんだルッキーニィ？お前が星読みで……占う、だと？", note: （ルッキーニィはメタリカのそばにいる。どこにいるかは原作で語られない）}
+  - {id: L389, who: metallica, text: "……ん？なんだルッキーニィ？お前が星読みで……占う、だと？", note: （ルッキーニィはメタリカのそばにいる。どこにいるかは原作で語られない）, cut: ["01:21.11", "01:26.15"]}
   - {id: L390, who: metallica, text: "ふん、ワタシが困る程の事態が、お前にどうにかできるものか！", use: false}
-  - {id: L391, who: metallica, text: "…………なんだと？いいだろう、試してやる。"}
-  - {id: L392, who: metallica, text: "おい、百騎兵！そこから、少し北にある草むらを調べてみろ。"}
+  - {id: L391, who: metallica, text: "…………なんだと？いいだろう、試してやる。", cut: ["01:37.30", "01:42.00"]}
+  - {id: L392, who: metallica, text: "おい、百騎兵！そこから、少し北にある草むらを調べてみろ。", cut: ["01:43.10", "01:47.90"]}
   - {id: L393, who: metallica, text: "それは古の魔女がつかっていたと言われる風紋だな。", note: （百騎兵が草むらを調べると、古の風紋が浮かび上がる）}
   - {id: L394, who: metallica, text: "なんでも、魔力の低いものが移動手段の補助にしていたらしい。", use: false}
   - {id: L395, who: metallica, text: "キヒヒ、そいつを使えば道がひらけそうじゃないか。", use: false}
@@ -50,23 +56,23 @@ lines:
   - {id: L407, who: metallica, text: "どんな強力な魔獣が守護者になっていてもおかしくない。用心しろよ百騎兵。"}
   - {id: L408, who: metallica, text: "キヒヒ！ワタシの進む道を妨げるものは、魔獣だろうと、魔女だろうと何人たりとも容赦せん。", use: false}
   - {id: L409, who: metallica, text: "相手を選ぶなよ、百騎兵。邪魔者は消すまでだ！"}
-  - {id: L410, who: karakuri-doll, text: "わっきゅぱっ", revival: true, note: （守護者のからくり人形が現れる）}
+  - {id: L410, who: karakuri-doll, text: "わっきゅぱっ", revival: true, note: （守護者のからくり人形が現れる）, cut: ["04:47.80", "04:49.50"]}
   - {id: L411, who: metallica, text: "ん？なんだそれは？", revival: true, use: false}
-  - {id: L412, who: karakuri-doll, text: "わっきゅぱっ", revival: true, use: false}
+  - {id: L412, who: karakuri-doll, text: "わっきゅぱっ", revival: true, use: false, cut: ["04:57.50", "04:59.80"]}
   - {id: L413, who: metallica, text: "そういうことか。どうやらそいつがピラーの守護者のようだな。", revival: true, use: false}
   - {id: L414, who: metallica, text: "こんなからくり人形が守護者とは、よほど人材不足だったと見える。", revival: true, use: false}
   - {id: L415, who: metallica, text: "まるで拷問器具じゃないか。", revival: true}
   - {id: L416, who: metallica, text: "さすがに、こんな険しい山の山頂につく生物はいなかったということか。", revival: true, use: false}
   - {id: L417, who: metallica, text: "だが、夜会の前の準備運動代わりにはちょうどいいだろう。", revival: true, use: false}
   - {id: L418, who: metallica, text: "からくり人形なんかに遅れをとるなよ、百騎兵。", revival: true}
-  - {id: L419, who: metallica, text: "急げ百騎兵！時間がない！", revival: true, note: （戦いのあと。Revival のみ）}
-  - {id: L420, who: metallica, text: "よし！早くピラーを咲かすんだ！早くっ！", note: （魔獣を倒し、ピラーの前に到達する）}
-  - {id: L421, who: metallica, text: "キヒヒ！やったぞ！陽はまだ落ちていない！", note: （百騎兵がピラーを咲かせる）}
+  - {id: L419, who: metallica, text: "急げ百騎兵！時間がない！", revival: true, note: （戦いのあと。Revival のみ）, cut: ["05:46.10", "05:49.00"]}
+  - {id: L420, who: metallica, text: "よし！早くピラーを咲かすんだ！早くっ！", note: （魔獣を倒し、ピラーの前に到達する）, cut: ["07:15.90", "07:20.80"]}
+  - {id: L421, who: metallica, text: "キヒヒ！やったぞ！陽はまだ落ちていない！", note: （百騎兵がピラーを咲かせる）, cut: ["07:25.80", "07:32.40"]}
   # === A15 ホウキで隣の峰へ・弟子の紹介 ===
   # --- 13 ホウキで到着・護符 ---
-  - {id: L422, who: arlecchino, text: "これは見事な沼ですね。おめでとうございます、リカ様。", note: （メタリカが、アルレッキーノ達をホウキに乗せてやってきた）}
+  - {id: L422, who: arlecchino, text: "これは見事な沼ですね。おめでとうございます、リカ様。", note: （メタリカが、アルレッキーノ達をホウキに乗せてやってきた）, cut: ["08:07.40", "08:12.10"]}
   - {id: L423, who: luckiny, text: "スゴイです、魔女様！こんな沼を作ってしまうなんて！"}
-  - {id: L424, who: luckiny, text: "う、おぇ。グホッグホッ！！"}
+  - {id: L424, who: luckiny, text: "う、おぇ。グホッグホッ！！", cut: ["08:21.00", "08:26.30"]}
   - {id: L425, who: bisco, text: "お、おい、大丈夫か？"}
   - {id: L426, who: arlecchino, text: "沼には瘴気がございます。ルッキーニィ様は長くもたないのでは？"}
   - {id: L427, who: metallica, text: "ああ、そうだ。護符を作っておいたんだ。", note: （A09 の「護符を作らねば」、A11 の「怪しげな……いえ、素晴らしい魔法の道具」の回収）}
@@ -76,7 +82,7 @@ lines:
   - {id: L431, who: luckiny, text: "あ、ありがとうございます、魔女様！大切にします！"}
   - {id: L432, who: metallica, text: "さあ、つかまれ！隣の峰へ飛ぶぞ！", note: （メタリカは一行をホウキに乗せると隣の峰に向かって飛んだ）}
   # --- 14 山頂・弟子の紹介 ---
-  - {id: L433, who: bisco, text: "い、痛たたた……。", note: （隣の峰＝山頂に到着する）}
+  - {id: L433, who: bisco, text: "い、痛たたた……。", note: （隣の峰＝山頂に到着する）, cut: ["09:26.30", "09:28.90"]}
   - {id: L434, who: bisco, text: "おい、メタリカ！お前、私達の扱いがひどいぞ！"}
   - {id: L435, who: metallica, text: "キヒヒ！！やはり、この山からは強い力を感じる。", use: false}
   - {id: L436, who: metallica, text: "さあ、ヴァルプルギスの夜会の準備は整った！", use: false}
@@ -93,22 +99,22 @@ lines:
   - {id: L447, who: bisco, text: "なっ、なにを言っている！意味がわからないぞ。私はこいつを心配してだな……。", use: false}
   # === A16 ワルギスのダンス ===
   # --- 15 招待状の儀式・ワルギスのダンス ---
-  - {id: L448, who: arlecchino, text: "そろそろ月が出ますぞ。リカ様、ご準備を。"}
+  - {id: L448, who: arlecchino, text: "そろそろ月が出ますぞ。リカ様、ご準備を。", cut: ["11:31.20", "11:35.30"]}
   - {id: L449, who: metallica, text: "メタリカだ。……準備って何だ？"}
   - {id: L450, who: arlecchino, text: "招待状によりますれば……。"}
   - {id: L451, who: arlecchino, text: "夜会の開始は、アズ・ブロッケン山の頂上にて、黄昏の白夜月が出た時、持参の品を、カシの樽に入れて広場中央に捧げ……。"}
   - {id: L452, who: arlecchino, text: "樽の中で、“スズの音草”が、スズの音を奏で、それを聞いてクシャミをしたネコを“尾の先がだるいニワトリ”が目撃したら開始……とのことです。"}
-  - {id: L453, who: metallica, text: "ふむ、こんなところか？", note: （樽に三品を入れて広場の中央に置く）}
+  - {id: L453, who: metallica, text: "ふむ、こんなところか？", note: （樽に三品を入れて広場の中央に置く）, cut: ["12:14.30", "12:16.00"]}
   - {id: L454, who: arlecchino, text: "その間、魔女は“ワルギスのダンス”を踊り続けなければならない……とございますね。"}
   - {id: L455, who: metallica, text: "あん？踊りだと……？"}
   - {id: L456, who: arlecchino, text: "こちらに、書いておりますれば、はい。"}
-  - {id: L457, who: metallica, text: "チッ……。仕方ない……。", note: （メタリカが奇妙な踊りを始める）}
+  - {id: L457, who: metallica, text: "チッ……。仕方ない……。", note: （メタリカが奇妙な踊りを始める）, cut: ["12:39.20", "12:42.90"]}
   - {id: L458, who: bisco, text: "アハハハ！なんだ、その踊りは！", use: false}
   - {id: L459, who: metallica, text: "う、うるさい！あっちむいてろ！犬コロが！", use: false}
   - {id: L460, who: arlecchino, text: "あれは、伝統ある魔女の踊り“ワルギスのダンス”にございます。", use: false}
   - {id: L461, who: luckiny, text: "か、感激です！“ワルギスのダンス”をこの目で見られるなんて……！", use: false}
   - {id: L462, who: bisco, text: "アハハハ！いや、うまいじゃないかメタリカ！", use: false}
-  - {id: L463, who: metallica, text: "ちっ……！", use: false}
+  - {id: L463, who: metallica, text: "ちっ……！", use: false, cut: ["13:36.80", "13:37.90"]}
   - {id: L464, who: arlecchino, text: "ワタクシ、“ワルギスのダンス”は幼年の魔女見習いのお子様が踊る、お遊戯とばかり思っておりました。", note: （A17 の見習い魔女の夜会の伏線）}
   - {id: L465, who: metallica, text: "……ふん。だがこれで、れっきとした魔女も踊る正式な儀式の舞であったことが証明されたな。"}
   - {id: L466, who: bisco, text: "おい、何をやってるんだ？"}
@@ -121,15 +127,15 @@ lines:
   - {id: L473, who: luckiny, text: "も、もう日が沈んでしまいそうです……。", note: （空が暗くなり、月が沈みかける）}
   - {id: L474, who: bisco, text: "おい、メタリカ。何かやり方が間違ってるんじゃないのか？", use: false}
   - {id: L475, who: arlecchino, text: "しかし、この招待状に書かれている通りでございます。はい。", use: false}
-  - {id: L476, who: metallica, text: "くっ……。", use: false}
+  - {id: L476, who: metallica, text: "くっ……。", use: false, cut: ["15:14.90", "15:16.00"]}
   - {id: L477, who: metallica, text: "く、くそっ！どうして……。どうして、何も起こらんのだ！？"}
   - {id: L478, who: bisco, text: "メタリカ！やっぱり何か見落としているのかもしれないぞ！", use: false}
   - {id: L479, who: bisco, text: "何か、忘れている条件とかないのか？"}
   - {id: L480, who: metallica, text: "う、うるさいっ！"}
   # === A17 偽の招待状・見習い魔女の夜会 ===
   # --- 16 夜会の魔女たち・偽の招待状 ---
-  - {id: L481, who: witches, text: "フフフフ…………。", note: （姿を現した魔女たちが広場に転移してくる）}
-  - {id: L482, who: luckiny, text: "何ですか、アレ！？"}
+  - {id: L481, who: witches, text: "フフフフ…………。", note: （姿を現した魔女たちが広場に転移してくる）, cut: ["15:45.10", "15:50.30"]}
+  - {id: L482, who: luckiny, text: "何ですか、アレ！？", cut: ["16:05.90", "16:08.40"]}
   - {id: L483, who: metallica, text: "お、おお……！ついに……！ついに来たぞ……！！"}
   - {id: L484, who: bisco, text: "こ、これが……、ヴァルプルギスの夜会……！？"}
   - {id: L485, who: metallica, text: "踊りか……。空間が安定するまで踊り続けなければならないんだな", revival: true, note: （Revival のみ。踊りを続けるメタリカ。話し手は推定（ビスコかもしれない）。前後を確かめる）}
@@ -157,12 +163,12 @@ lines:
   - {id: L507, who: teressa, text: "バーカ。"}
   - {id: L508, who: witches, text: "アハハハハハ……！オホホホホホ……！", note: （魔女たちが高笑いしながら消え去る）}
   # --- 17 見習い魔女の夜会・涙 ---
-  - {id: L509, who: bisco, text: "（！？……なんだこの感じ……！）", note: （心の声）}
+  - {id: L509, who: bisco, text: "（！？……なんだこの感じ……！）", note: （心の声）, cut: ["20:37.50", "20:39.60"]}
   - {id: L510, who: bisco, text: "（いる！夜会の魔女の中に！呪いをかけた者が！）"}
   - {id: L511, who: bisco, text: "（……呪いが反応している！？だが、誰なんだ？くそっ！）"}
-  - {id: L512, who: apprentice, text: "あれ……？誰かいる？", note: （見習い魔女たちが歩いてくる）}
+  - {id: L512, who: apprentice, text: "あれ……？誰かいる？", note: （見習い魔女たちが歩いてくる）, cut: ["20:59.00", "21:01.90"]}
   - {id: L513, who: apprentice, text: "お姉ちゃん達！ここは、見習い魔女の夜会の場所よ。邪魔者はよそに行って下さる？"}
-  - {id: L514, who: apprentice, text: "えいっ！", note: （見習い魔女が魔法を放つ）}
+  - {id: L514, who: apprentice, text: "えいっ！", note: （見習い魔女が魔法を放つ）, cut: ["21:18.90", "21:19.90"]}
   - {id: L515, who: bisco, text: "見習い魔女の夜会だって……！？"}
   - {id: L516, who: apprentice, text: "うん！偉い魔女様たちにわたしたちの踊りを見てもらうの。お夜会の出し物なの。"}
   - {id: L517, who: metallica, text: "魔女のために踊る……！"}
@@ -173,13 +179,13 @@ lines:
   - {id: L522, who: metallica, text: "ヴァルプルギスの夜会への招待状は嘘だったというのか……？"}
   - {id: L523, who: metallica, text: "魔女として認められるどころか、笑いものに……されたのか……？"}
   - {id: L524, who: metallica, text: "このワタシが……！偉大なる、沼の魔女が……！魔女が……。"}
-  - {id: L525, who: bisco, text: "メタリカ……。もういい……、帰ろう……。"}
-  - {id: L526, who: metallica, text: "うぅ……うるさ…………い。うぅ……うるさ…………い。"}
-  - {id: L527, who: metallica, text: "っ……く、くそっ……。"}
-  - {id: L528, who: metallica, text: "ワタシが……あんな……あんなヤツらに……っ……。"}
+  - {id: L525, who: bisco, text: "メタリカ……。もういい……、帰ろう……。", cut: ["22:42.40", "22:46.60"]}
+  - {id: L526, who: metallica, text: "うぅ……うるさ…………い。うぅ……うるさ…………い。", cut: ["22:50.80", "22:57.20"]}
+  - {id: L527, who: metallica, text: "っ……く、くそっ……。", cut: ["22:59.70", "23:04.00"]}
+  - {id: L528, who: metallica, text: "ワタシが……あんな……あんなヤツらに……っ……。", cut: ["23:04.30", "23:13.00"]}
   - {id: L529, who: bisco, text: "メタリカもう……。"}
-  - {id: L530, who: metallica, text: "……っ、ぐすっ……。……うぇっ……。ぐすっ……。"}
+  - {id: L530, who: metallica, text: "……っ、ぐすっ……。……うぇっ……。ぐすっ……。", cut: ["23:19.30", "23:33.00"]}
   - {id: L531, who: metallica, text: "くぞ、くぞっ……。……えぐっ……。"}
-  - {id: L532, who: bisco, text: "メタリカ……。"}
-  - {id: L533, who: witches, text: "アハハハハハハ……！！！アハハハハハハ……！！"}
+  - {id: L532, who: bisco, text: "メタリカ……。", cut: ["23:52.90", "23:54.40"]}
+  - {id: L533, who: witches, text: "アハハハハハハ……！！！アハハハハハハ……！！", cut: ["23:57.80", "24:03.60"]}
 # 次の場面（パート20、魔女邸に閉じこもるメタリカ〜）は、夜会編の次の編の選別で決める。

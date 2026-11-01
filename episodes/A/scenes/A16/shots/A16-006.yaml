@@ -1,0 +1,33 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-006
+scene: A16
+tc: 53.7
+sec: 12.0
+kind: A
+shot: 全身（回り込む）・ワルギスのダンス
+acting: 樽のまわりを回りながら、跳ねて腕を振る奇妙な踊り（ワルギスのダンス）
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 58.6
+  - 8.4
+  - 27.2
+  look: barrel
+  lens: 28
+  move: 樽を中心に、南西から東へぐるりと回り込む（オービット）
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 踊りの構えのメタリカ
+  end: 踊り続けるメタリカと、奥の木の像
+timing:
+  lead: 0.3

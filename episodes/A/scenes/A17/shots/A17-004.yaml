@@ -1,0 +1,42 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-004
+scene: A17
+tc: 27.3
+sec: 16.2
+kind: M
+shot: 全身・魔女たちの肩ごし・笑われるメタリカ
+acting: 魔女たちがくすくす笑っている。メタリカは踊りながらきょろきょろして「なんで笑っているんだ」。ビスコは口を押さえて「かなり恥ずかしいぞ」
+dialogue:
+- L486「……なんだ？なんで笑っているんだ。……何を笑っているんだ」
+- L487「その踊りじゃないのか。私たちはもう見飽きたが、かなり恥ずかしいぞ」
+sound: null
+notes: null
+camera:
+  pos:
+  - 63.6
+  - -5.6
+  - 28.2
+  look:
+  - 61.2
+  - 2.4
+  lens: 30
+  move: 北の縁の魔女たちの肩ごし（高い所）から、踊るメタリカと一行（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+- purple-peel
+- lily
+- rabi
+- usamaru
+- berda
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 踊るメタリカ
+  end: 笑う魔女たちと、踊るメタリカ
+timing:
+  lead: 0.3

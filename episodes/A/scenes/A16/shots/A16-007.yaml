@@ -1,0 +1,37 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-007
+scene: A16
+tc: 65.7
+sec: 7.0
+kind: M
+shot: 全身・見ている一行（笑いをこらえるビスコ）
+acting: 見ている一行。ビスコは口を押さえて笑いをこらえ、ルッキーニィは両手を握って跳ね、アルレッキーノはうなずく。手前を踊るメタリカが横切る
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 64.0
+  - 4.2
+  - 28.4
+  look:
+  - 59.9
+  - 5.5
+  lens: 30
+  move: 樽の東の高い所から、踊るメタリカごしに一行（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 踊るメタリカ
+  end: 笑いをこらえるビスコ
+timing:
+  lead: 0.3

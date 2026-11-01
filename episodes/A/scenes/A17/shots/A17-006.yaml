@@ -1,0 +1,36 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-006
+scene: A17
+tc: 49.0
+sec: 17.5
+kind: M
+shot: 全身（煽り）・パープルピールとリリー
+acting: パープルピールが身を乗り出して「こいつが噂の沼の魔女かい？」。リリーが指さして「小娘か。300年早いね」。パープルピールが手を広げて「古臭い魔女がまだいたとはね」
+dialogue:
+- L489「ククク……。こいつが、噂の沼の魔女とやらかい？」
+- L490「どんな魔女かと思ったら……小娘か。夜会に出ようなんて、300年早いね。」
+- L491「しかし、まあ、こんな古臭い魔女がまだいたとはね。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 61.0
+  - 2.8
+  - 26.7
+  look: purple-peel
+  lens: 30
+  move: 踊るメタリカの後ろの低い所から、北西の魔女たちを煽る（二人のあいだを振る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- purple-peel
+- lily
+overlays: []
+fallback: null
+act:
+  start: 北西の縁の二人の魔女
+  end: 見下ろす二人の魔女
+timing:
+  lead: 0.4

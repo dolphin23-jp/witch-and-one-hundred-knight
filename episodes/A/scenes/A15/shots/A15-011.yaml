@@ -1,0 +1,37 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-011
+scene: A15
+tc: 80.0
+sec: 14.0
+kind: M
+shot: 全身・三人（ルッキーニィを紹介）
+acting: ビスコが立ち上がってメタリカに寄り、ルッキーニィを指して「この子は誰なんだ」。メタリカはルッキーニィを手で示し「昨日出会って今日、弟子にした」
+dialogue:
+- L437「それで、メタリカ。今更だが、この子は誰なんだ……お前の知り合いなのか？」
+- L438「そういえば紹介してなかったな。知り合いも何も、昨日出会って今日、弟子にした。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 60.6
+  - 9.2
+  - 28.8
+  look:
+  - 59.6
+  - 4.2
+  lens: 30
+  move: 南の高い所から三人を見下ろす（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 怒るビスコ
+  end: ルッキーニィを示すメタリカ
+timing:
+  lead: 0.5

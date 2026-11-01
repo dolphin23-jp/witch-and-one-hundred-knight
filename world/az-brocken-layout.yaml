@@ -23,6 +23,7 @@ lighting:
   late_mtn:   {sun_from: 262, sun_elev: 12, sun_energy: 3.2, sun_color: [255, 190, 130], sky: [220, 165, 120], sky_strength: 1.0, lamps: 0.3}   # 黄昏の前（A14）
   sunset_mtn: {sun_from: 263, sun_elev: 3, sun_energy: 2.6, sun_color: [255, 140, 90], sky: [205, 125, 105], sky_strength: 0.9, lamps: 0.6}    # 日が沈む（A14 の終わり〜A15）
   dusk_mtn:   {sun_from: 265, sun_elev: 0.5, sun_energy: 1.3, sun_color: [255, 120, 95], sky: [125, 92, 125], sky_strength: 0.8, lamps: 1.0}  # 黄昏（A16）
+  late_dusk_mtn: {sun_from: 266, sun_elev: 1, sun_energy: 0.6, sun_color: [220, 120, 120], sky: [70, 58, 105], sky_strength: 0.8, lamps: 1.2}  # 日が沈む寸前の暗い空（A16 の終わり）
   night_mtn:  {sun_from: 95, sun_elev: 30, sun_energy: 0.7, sun_color: [160, 180, 255], sky: [32, 40, 88], sky_strength: 0.8, lamps: 1.4}    # 夜（月明かり、A16 の終わり〜A17）
   house_dusk: {sun_from: 265, sun_elev: 6, sun_energy: 1.6, sun_color: [255, 160, 110], sky: [150, 110, 100], sky_strength: 0.5, lamps: 1.1,
                fill: {at: [204.0, 203.5], z: 3.8, energy: 380, color: [255, 210, 170]}}   # 魔女邸の居間の夕方（A14 の星読み）
@@ -53,6 +54,7 @@ props:
   # --- 山頂の峰（東の隣、z 26） ---
   ledge_summit: {at: [62.0, 2.0], r: 11.0, h: 26.0, z0: -60.0, top: [160, 125, 85], ja: 山頂の丸い広場（夜会の場所）}
   effigy_s:     {at: [62.0, -1.0], z: 26.0, h: 4.2, r: 1.3, ja: 中央の木の像（黒い丸太の塔と白い面）}
+  barrel_s:     {at: [62.0, 2.2], z: 26.0, h: 0.9, r: 0.38, only_lit: [dusk_mtn, late_dusk_mtn, night_mtn], ja: カシの樽（A16 でメタリカが三品を入れて置く。A15 の日没にはない）}
   # --- まわりの岩の尖塔（景色。z0 は下の砂漠） ---
   peak_sp1:     {at: [-2.0, 38.0], r: 7.0, h: 82.0, z0: -60.0, top: 0.12, color: [150, 112, 80], ja: 尖塔}
   peak_sp2:     {at: [25.0, 46.0], r: 6.0, h: 70.0, z0: -60.0, top: 0.12, color: [140, 105, 78], ja: 尖塔}
@@ -97,5 +99,6 @@ views:
   azb_swamp:     {ja: 沼に変わったピラーの峰, panel: 山頂, en: "the round mountain-top plateau now flooded by a glowing teal-green poisonous swamp around a huge blooming pale-green flower pillar, misty fumes, the sunset sky"}
   azb_summit:    {ja: 山頂の広場, panel: 山頂, en: "a round plateau on the mountain summit paved with weathered stones carved with spiral circles, tufts of golden dry grass, an old wooden fence at the cliff edge, a tall dark tower of piled black logs with white heart-shaped masks in the center, the dusk sky"}
   azb_summit_night: {ja: 夜の山頂の広場, panel: 山頂, en: "the round summit plateau at night under a deep blue starry sky and a bright full moon, the dark tower of piled logs with white masks in the center, golden dry grass silvered by moonlight"}
+  azb_dusk_sky:  {ja: 山頂の黄昏の空, panel: 山頂, en: "the violet-orange dusk sky above the mountain summit, the first faint stars, a pale full moon low in the east"}
   azb_sky:       {ja: 二つの峰のあいだの空, panel: 山道, en: "the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep shadow"}
   living_dusk:   {ja: 魔女邸の居間（夕方）, panel: 居間 正面, en: "the witch's living room at dusk: a round table with a red tablecloth, a red high-backed sofa, tall bookshelves, a hanging brass lamp just lit, glowing green vines on dark wood paneling, the small round window showing an orange-to-violet sky with the first stars"}

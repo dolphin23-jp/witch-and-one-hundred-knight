@@ -1,0 +1,32 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-015
+scene: A17
+tc: 153.5
+sec: 3.5
+kind: M
+shot: 寄り・振り返って「バーカ。」
+acting: 肩ごしに振り返って舌を出し「バーカ。」
+dialogue:
+- L507「バーカ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 63.6
+  - 0.6
+  - 27.3
+  look: teressa
+  lens: 45
+  move: メタリカの目の高さ（南西）から、振り返るテレッサの寄り
+background: az-brocken
+image: null
+refs:
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 背を向けたテレッサ
+  end: 振り返ったテレッサ
+timing:
+  lead: 0.8

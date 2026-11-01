@@ -1,0 +1,38 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-002
+scene: A15
+tc: 7.5
+sec: 12.0
+kind: M
+shot: 全身（沼ごし）・峰に降りた四人
+acting: アルレッキーノが沼を見てメタリカにお辞儀し「見事な沼ですね」。ルッキーニィは両手を上げて「スゴイです！」
+dialogue:
+- L422「これは見事な沼ですね。おめでとうございます、リカ様。」
+- L423「スゴイです、魔女様！こんな沼を作ってしまうなんて！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.4
+  - 10.2
+  - 23.5
+  look:
+  - 34.6
+  - 9.9
+  lens: 30
+  move: 咲いたピラーの側（西）から、沼ごしに四人（ゆっくり寄る）
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 峰に降りた四人
+  end: はしゃぐルッキーニィ
+timing:
+  lead: 0.5

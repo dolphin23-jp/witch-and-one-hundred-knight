@@ -10,51 +10,48 @@
 scene: A13
 layout: world/beast-village-layout.yaml
 layout_extra:
-  - {file: world/yakai-sky-extra.yaml, offset: [0.0, 0.0]}
+- {file: world/yakai-sky-extra.yaml, offset: [0.0, 0.0]}
 map_ymax: 60
 lighting: late
-
 places:
-  grass:     [72.4, 39.2]   # ルッキーニィが咲かせたスズの音草（村の外の砂地）
-  lk_tend:   [71.75, 39.55] # 草の世話をする（しゃがむ）
-  lk_stand:  [72.1, 39.85]  # 立って百騎兵と話す
-  lk_side:   [71.7, 39.7]   # 草の南西
-  lk_close:  [72.0, 39.35]  # 草の西（メタリカに寄った所）
-  hk_from:   [80.5, 37.9]   # 百騎兵が砂丘の南の裾を回って来る
-  hk_near:   [75.0, 39.45]
-  hk_stop:   [73.9, 39.7]   # 百騎兵が止まる所
-  hk_far:    [79.5, 34.8]   # 022 で北東へ走り出した先（砂丘の上）
-  hk_gone:   [96.0, 22.0]   # 023 遠くの砂丘
-  m_ph:      [74.5, 40.5]   # メタリカの幻影が現れる所（百騎兵の南東）
-  m_near:    [73.6, 40.2]   # 004 ルッキーニィに寄る
-  m_grass:   [72.65, 38.6]  # 草の北（007〜012）
-  m_west:    [71.25, 39.6]  # 013 でルッキーニィのまわりを回った先（西、村の側）
-  m_point:   [71.9, 38.9]   # 019〜022 山と月を指す所
-  gap:       [67.0, 31.0]   # 村の崖の切れ目
-  mountain:  [420.0, -330.0]
-  moon:      [430.0, 38.0]
-
+  grass: [72.4, 39.2]
+  lk_tend: [71.75, 39.55]
+  lk_stand: [72.1, 39.85]
+  lk_side: [71.7, 39.7]
+  lk_close: [72.0, 39.35]
+  hk_from: [80.5, 37.9]
+  hk_near: [75.0, 39.45]
+  hk_stop: [73.9, 39.7]
+  hk_far: [79.5, 34.8]
+  hk_gone: [96.0, 22.0]
+  m_ph: [74.5, 40.5]
+  m_near: [73.6, 40.2]
+  m_grass: [72.65, 38.6]
+  m_west: [71.25, 39.6]
+  m_point: [71.9, 38.9]
+  gap: [67.0, 31.0]
+  mountain: [420.0, -330.0]
+  moon: [430.0, 38.0]
 start:
   luckiny: {at: lk_tend, face: 60}
   hundred-knight: {at: hk_from, face: 265}
   metallica: {at: m_ph, face: 300}
-
 cuts:
   A13-001:
     frame: 引き（高い所から）
     only: [hundred-knight, luckiny]
     keys:
       hundred-knight:
-        - {t: 0.0, at: hk_from, face: 262, pose: walk}
-        - {t: 7.0, at: hk_near, face: 268, pose: walk}
-        - {t: 7.6, at: hk_near, face: 280, pose: stand}
-        - {t: 9.5, at: hk_near, face: 280, pose: stand}
+      - {t: 0.0, at: hk_from, face: 262, pose: walk}
+      - {t: 7.0, at: hk_near, face: 268, pose: walk}
+      - {t: 7.6, at: hk_near, face: 280, pose: stand}
+      - {t: 9.5, at: hk_near, face: 280, pose: stand}
       luckiny:
-        - {t: 0.0, at: lk_tend, face: 60, pose: crouch}
-        - {t: 9.5, at: lk_tend, face: 60, pose: crouch}
+      - {t: 0.0, at: lk_tend, face: 60, pose: crouch}
+      - {t: 9.5, at: lk_tend, face: 60, pose: crouch}
     cam_keys:
-      - {t: 0.0, cam: [76.0, 46.5, 9.0], look: [74.5, 38.5], look_h: 0.5, lens: 24, frame: 引き}
-      - {t: 9.5, cam: [76.8, 44.2, 2.0], look: hundred-knight, look_h: 0.7, lens: 30}
+    - {t: 0.0, cam: [76.0, 46.5, 9.0], look: [74.5, 38.5], look_h: 0.5, lens: 24, frame: 引き}
+    - {t: 9.5, cam: [76.8, 44.2, 2.0], look: hundred-knight, look_h: 0.7, lens: 30}
     bg: tettara_edge
     act: {start: 黄昏の前の砂漠の縁。崖の切れ目の外で、しゃがんで草の世話をするルッキーニィ, do: 砂丘の裾を回って百騎兵が歩いてくる。ルッキーニィに気づいて止まる, end: 立ち止まった百騎兵と、その先のルッキーニィ}
     camera: 南の高い所から、歩いてくる百騎兵へ下りながら寄る（クレーン）
@@ -64,24 +61,24 @@ cuts:
     only: [hundred-knight, luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_tend, face: 60, pose: crouch}
-        - {t: 0.8, at: lk_tend, face: 95, pose: crouch}
-        - {t: 1.4, at: lk_tend, face: 95, pose: stand}
-        - {t: 4.4, at: lk_tend, face: 95, pose: stand}
-        - {t: 5.0, at: lk_tend, face: 20, pose: stand}
-        - {t: 5.8, at: lk_tend, face: 150, pose: stand}
-        - {t: 7.0, at: lk_stand, face: 98, pose: walk}
-        - {t: 7.4, at: lk_stand, face: 98, pose: stand}
-        - {t: 12.5, at: lk_stand, face: 98, pose: stand}
+      - {t: 0.0, at: lk_tend, face: 60, pose: crouch}
+      - {t: 0.8, at: lk_tend, face: 95, pose: crouch}
+      - {t: 1.4, at: lk_tend, face: 95, pose: stand}
+      - {t: 4.4, at: lk_tend, face: 95, pose: stand}
+      - {t: 5.0, at: lk_tend, face: 20, pose: stand}
+      - {t: 5.8, at: lk_tend, face: 150, pose: stand}
+      - {t: 7.0, at: lk_stand, face: 98, pose: walk}
+      - {t: 7.4, at: lk_stand, face: 98, pose: stand}
+      - {t: 12.5, at: lk_stand, face: 98, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: hk_near, face: 280, pose: stand}
-        - {t: 0.5, at: hk_near, face: 280, pose: walk}
-        - {t: 2.0, at: hk_stop, face: 282, pose: walk, ease: out}
-        - {t: 2.3, at: hk_stop, face: 282, pose: stand}
-        - {t: 12.5, at: hk_stop, face: 282, pose: stand}
+      - {t: 0.0, at: hk_near, face: 280, pose: stand}
+      - {t: 0.5, at: hk_near, face: 280, pose: walk}
+      - {t: 2.0, at: hk_stop, face: 282, pose: walk, ease: out}
+      - {t: 2.3, at: hk_stop, face: 282, pose: stand}
+      - {t: 12.5, at: hk_stop, face: 282, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [75.9, 41.1, 0.8], look: luckiny, look_h: 1.0, lens: 35, frame: 全身}
-      - {t: 12.5, cam: [75.7, 41.0, 0.8], look: luckiny, look_h: 1.05, lens: 40}
+    - {t: 0.0, cam: [75.9, 41.1, 0.8], look: luckiny, look_h: 1.0, lens: 35, frame: 全身}
+    - {t: 12.5, cam: [75.7, 41.0, 0.8], look: luckiny, look_h: 1.05, lens: 40}
     bg: tettara_edge
     act: {start: しゃがんだルッキーニィ, do: 振り向いて立ち上がり、百騎兵の後ろにメタリカを探してきょろきょろし、一歩寄る, end: 百騎兵の前に立つルッキーニィ}
     camera: 百騎兵の斜め後ろ（南東、低い）から、右手前に兜なめでルッキーニィへ（夕日の逆光の側）
@@ -92,24 +89,24 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_ph, z: 1.6, face: 300, pose: cross}
-        - {t: 1.2, at: m_ph, z: 0.3, face: 300, pose: cross, ease: out}
-        - {t: 5.6, at: m_ph, z: 0.3, face: 290, pose: cross}
-        - {t: 6.0, at: m_ph, z: 0.3, face: 290, pose: gesture}
-        - {t: 8.2, at: m_ph, z: 0.3, face: 290, pose: gesture}
-        - {t: 8.6, at: m_ph, z: 0.3, face: 290, pose: cross}
-        - {t: 9.0, at: m_ph, z: 0.3, face: 290, pose: cross}
+      - {t: 0.0, at: m_ph, z: 1.6, face: 300, pose: cross}
+      - {t: 1.2, at: m_ph, z: 0.3, face: 300, pose: cross, ease: out}
+      - {t: 5.6, at: m_ph, z: 0.3, face: 290, pose: cross}
+      - {t: 6.0, at: m_ph, z: 0.3, face: 290, pose: gesture}
+      - {t: 8.2, at: m_ph, z: 0.3, face: 290, pose: gesture}
+      - {t: 8.6, at: m_ph, z: 0.3, face: 290, pose: cross}
+      - {t: 9.0, at: m_ph, z: 0.3, face: 290, pose: cross}
       luckiny:
-        - {t: 0.0, at: lk_stand, face: 98, pose: stand}
-        - {t: 8.3, at: lk_stand, face: 98, pose: stand}
-        - {t: 8.8, at: lk_stand, face: 108, pose: stand}
-        - {t: 9.0, at: lk_stand, face: 108, pose: stand}
+      - {t: 0.0, at: lk_stand, face: 98, pose: stand}
+      - {t: 8.3, at: lk_stand, face: 98, pose: stand}
+      - {t: 8.8, at: lk_stand, face: 108, pose: stand}
+      - {t: 9.0, at: lk_stand, face: 108, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: hk_stop, face: 282, pose: stand}
-        - {t: 9.0, at: hk_stop, face: 282, pose: stand}
+      - {t: 0.0, at: hk_stop, face: 282, pose: stand}
+      - {t: 9.0, at: hk_stop, face: 282, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [73.4, 44.2, 1.2], look: [73.5, 40.0], look_h: 1.1, lens: 32, frame: 全身}
-      - {t: 9.0, cam: [73.6, 43.7, 1.15], look: [73.5, 40.0], look_h: 1.05, lens: 35}
+    - {t: 0.0, cam: [73.4, 44.2, 1.2], look: [73.5, 40.0], look_h: 1.1, lens: 32, frame: 全身}
+    - {t: 9.0, cam: [73.6, 43.7, 1.15], look: [73.5, 40.0], look_h: 1.05, lens: 35}
     bg: tettara_edge
     act: {start: 向き合うルッキーニィと百騎兵, do: 百騎兵の後ろにメタリカの幻影がふわりと下りてくる。腕を組み、肩をすくめる（見えないだろうと思っている）, end: 腕を組む幻影のメタリカ。ルッキーニィの目がそちらへ}
     camera: 南から三人を横に並べて（ゆっくり寄る）
@@ -120,25 +117,26 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_stand, face: 108, pose: stand}
-        - {t: 0.3, at: lk_stand, face: 108, pose: point}
-        - {t: 2.2, at: lk_stand, face: 108, pose: point}
-        - {t: 2.6, at: lk_stand, face: 105, pose: stand}
-        - {t: 8.0, at: lk_stand, face: 100, pose: stand}
+      - {t: 0.0, at: lk_stand, face: 108, pose: stand}
+      - {t: 0.3, at: lk_stand, face: 108, pose: point}
+      - {t: 2.2, at: lk_stand, face: 108, pose: point}
+      - {t: 2.6, at: lk_stand, face: 105, pose: stand}
+      - {t: 8.0, at: lk_stand, face: 100, pose: stand}
       metallica:
-        - {t: 0.0, at: m_ph, z: 0.3, face: 290, pose: cross}
-        - {t: 0.5, at: m_ph, z: 0.75, face: 290, pose: arms_up}
-        - {t: 1.2, at: m_ph, z: 0.3, face: 290, pose: stand}
-        - {t: 2.4, at: m_ph, z: 0.3, face: 288, pose: stand}
-        - {t: 3.8, at: m_near, z: 0.3, face: 285, pose: lean}
-        - {t: 8.0, at: m_near, z: 0.3, face: 285, pose: lean}
+      - {t: 0.0, at: m_ph, z: 0.3, face: 290, pose: cross}
+      - {t: 0.5, at: m_ph, z: 0.75, face: 290, pose: arms_up}
+      - {t: 1.2, at: m_ph, z: 0.3, face: 290, pose: stand}
+      - {t: 2.4, at: m_ph, z: 0.3, face: 288, pose: stand}
+      - {t: 3.8, at: m_near, z: 0.3, face: 285, pose: lean}
+      - {t: 8.0, at: m_near, z: 0.3, face: 285, pose: lean}
       hundred-knight:
-        - {t: 0.0, at: hk_stop, face: 282, pose: stand}
-        - {t: 8.0, at: hk_stop, face: 282, pose: stand}
+      - {t: 0.0, at: hk_stop, face: 282, pose: stand}
+      - {t: 8.0, at: hk_stop, face: 282, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [71.0, 38.3, 1.55], look: metallica, look_h: 1.75, lens: 35, frame: 寄り}
-      - {t: 8.0, cam: [71.2, 38.45, 1.55], look: metallica, look_h: 1.75, lens: 40}
-    shake: [{t: [0.4, 0.9], amp: 0.8}]
+    - {t: 0.0, cam: [71.0, 38.3, 1.55], look: metallica, look_h: 1.75, lens: 35, frame: 寄り}
+    - {t: 8.0, cam: [71.2, 38.45, 1.55], look: metallica, look_h: 1.75, lens: 40}
+    shake:
+    - {t: [0.4, 0.9], amp: 0.8}
     bg: tettara_edge
     act: {start: 腕を組む幻影のメタリカ, do: ルッキーニィが「魔女様！」と指さす。メタリカは跳び上がって驚き、ずいと寄って顔をのぞき込む, end: ルッキーニィに顔を寄せるメタリカ}
     camera: ルッキーニィの肩ごし（北西、右手前に角）から、驚くメタリカへ少し寄る
@@ -149,19 +147,19 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_stand, face: 100, pose: stand}
-        - {t: 0.4, at: lk_stand, face: 100, pose: hop}
-        - {t: 3.8, at: lk_stand, face: 100, pose: hop}
-        - {t: 4.1, at: lk_stand, face: 100, pose: stand}
-        - {t: 9.5, at: lk_stand, face: 100, pose: stand}
+      - {t: 0.0, at: lk_stand, face: 100, pose: stand}
+      - {t: 0.4, at: lk_stand, face: 100, pose: hop}
+      - {t: 3.8, at: lk_stand, face: 100, pose: hop}
+      - {t: 4.1, at: lk_stand, face: 100, pose: stand}
+      - {t: 9.5, at: lk_stand, face: 100, pose: stand}
       metallica:
-        - {t: 0.0, at: m_near, z: 0.3, face: 285, pose: lean}
-        - {t: 4.0, at: m_near, z: 0.3, face: 285, pose: stand}
-        - {t: 4.8, at: m_near, z: 0.3, face: 160, pose: cross}
-        - {t: 9.5, at: m_near, z: 0.3, face: 165, pose: cross}
+      - {t: 0.0, at: m_near, z: 0.3, face: 285, pose: lean}
+      - {t: 4.0, at: m_near, z: 0.3, face: 285, pose: stand}
+      - {t: 4.8, at: m_near, z: 0.3, face: 160, pose: cross}
+      - {t: 9.5, at: m_near, z: 0.3, face: 165, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [74.5, 42.3, 1.6], look: metallica, look_h: 1.5, lens: 48, frame: 寄り}
-      - {t: 9.5, cam: [74.4, 42.05, 1.6], look: metallica, look_h: 1.5, lens: 52}
+    - {t: 0.0, cam: [74.5, 42.3, 1.6], look: metallica, look_h: 1.5, lens: 48, frame: 寄り}
+    - {t: 9.5, cam: [74.4, 42.05, 1.6], look: metallica, look_h: 1.5, lens: 52}
     bg: tettara_edge
     act: {start: 顔を寄せるメタリカと、うれしそうなルッキーニィ, do: ルッキーニィはぴょんぴょん跳ねてうなずく。メタリカは体を起こし、こちらへ向き直って腕を組み、首をひねる, end: 腕を組んで考えるメタリカ（奥にルッキーニィ）}
     camera: メタリカの正面（南東）の寄り。奥にルッキーニィ
@@ -171,19 +169,19 @@ cuts:
     only: [luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_stand, face: 100, pose: stand}
-        - {t: 0.3, at: lk_stand, face: 330, pose: run}
-        - {t: 1.3, at: [71.85, 39.25], face: 95, pose: run, ease: out}
-        - {t: 1.5, at: [71.85, 39.25], face: 95, pose: kneel}
-        - {t: 2.4, at: [71.85, 39.25], face: 95, pose: kneel}
-        - {t: 2.8, at: [71.85, 39.25], face: 95, pose: gesture}
-        - {t: 7.5, at: [71.85, 39.25], face: 95, pose: gesture}
+      - {t: 0.0, at: lk_stand, face: 100, pose: stand}
+      - {t: 0.3, at: lk_stand, face: 330, pose: run}
+      - {t: 1.3, at: [71.85, 39.25], face: 95, pose: run, ease: out}
+      - {t: 1.5, at: [71.85, 39.25], face: 95, pose: kneel}
+      - {t: 2.4, at: [71.85, 39.25], face: 95, pose: kneel}
+      - {t: 2.8, at: [71.85, 39.25], face: 95, pose: gesture}
+      - {t: 7.5, at: [71.85, 39.25], face: 95, pose: gesture}
     fx:
-      - {kind: sprout, t: [-6.0, 7.5], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
-      - {kind: ring, t: [3.0, 7.5], at: grass, z: 0.35, r: 0.9, n: 3, color: [210, 235, 255]}
+    - {kind: sprout, t: [-6.0, 7.5], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
+    - {kind: ring, t: [3.0, 7.5], at: grass, z: 0.35, r: 0.9, n: 3, color: [210, 235, 255]}
     cam_keys:
-      - {t: 0.0, cam: [74.6, 39.0, 0.35], look: [72.0, 39.4], look_h: 0.75, lens: 30, frame: 全身（低い）}
-      - {t: 7.5, cam: [74.3, 39.05, 0.35], look: [71.9, 39.3], look_h: 0.8, lens: 34}
+    - {t: 0.0, cam: [74.6, 39.0, 0.35], look: [72.0, 39.4], look_h: 0.75, lens: 30, frame: 全身（低い）}
+    - {t: 7.5, cam: [74.3, 39.05, 0.35], look: [71.9, 39.3], look_h: 0.8, lens: 34}
     bg: tettara_edge
     act: {start: 立っているルッキーニィ, do: 草の所へ駆け戻ってしゃがみ、「お持ちしました」と両手で示す。スズの音草が鈴のように鳴る（波紋）, end: 草を示すルッキーニィ}
     camera: 草の脇の地面すれすれから、手前に草、奥にルッキーニィ（逆光）
@@ -194,26 +192,26 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_near, z: 0.3, face: 165, pose: cross}
-        - {t: 0.4, at: m_near, z: 0.3, face: 300, pose: arms_up}
-        - {t: 1.6, at: [73.05, 39.0], z: 0.3, face: 300, pose: arms_up}
-        - {t: 4.4, at: [73.05, 39.0], z: 0.3, face: 300, pose: arms_up}
-        - {t: 6.6, at: [72.7, 38.5], z: 0.3, face: 250, pose: walk}
-        - {t: 8.6, at: m_grass, z: 0.3, face: 200, pose: walk, ease: out}
-        - {t: 9.0, at: m_grass, z: 0.3, face: 200, pose: arms_up}
-        - {t: 11.5, at: m_grass, z: 0.3, face: 200, pose: arms_up}
+      - {t: 0.0, at: m_near, z: 0.3, face: 165, pose: cross}
+      - {t: 0.4, at: m_near, z: 0.3, face: 300, pose: arms_up}
+      - {t: 1.6, at: [73.05, 39.0], z: 0.3, face: 300, pose: arms_up}
+      - {t: 4.4, at: [73.05, 39.0], z: 0.3, face: 300, pose: arms_up}
+      - {t: 6.6, at: [72.7, 38.5], z: 0.3, face: 250, pose: walk}
+      - {t: 8.6, at: m_grass, z: 0.3, face: 200, pose: walk, ease: out}
+      - {t: 9.0, at: m_grass, z: 0.3, face: 200, pose: arms_up}
+      - {t: 11.5, at: m_grass, z: 0.3, face: 200, pose: arms_up}
       luckiny:
-        - {t: 0.0, at: [71.85, 39.25], face: 95, pose: gesture}
-        - {t: 1.0, at: [71.85, 39.25], face: 95, pose: stand}
-        - {t: 2.2, at: lk_side, face: 60, pose: walk}
-        - {t: 2.6, at: lk_side, face: 40, pose: stand}
-        - {t: 11.5, at: lk_side, face: 35, pose: stand}
+      - {t: 0.0, at: [71.85, 39.25], face: 95, pose: gesture}
+      - {t: 1.0, at: [71.85, 39.25], face: 95, pose: stand}
+      - {t: 2.2, at: lk_side, face: 60, pose: walk}
+      - {t: 2.6, at: lk_side, face: 40, pose: stand}
+      - {t: 11.5, at: lk_side, face: 35, pose: stand}
     fx:
-      - {kind: sprout, t: [-6.0, 11.5], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
-      - {kind: ring, t: [0.0, 5.0], at: grass, z: 0.35, r: 0.9, n: 3, color: [210, 235, 255]}
+    - {kind: sprout, t: [-6.0, 11.5], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
+    - {kind: ring, t: [0.0, 5.0], at: grass, z: 0.35, r: 0.9, n: 3, color: [210, 235, 255]}
     cam_keys:
-      - {t: 0.0, cam: [75.6, 43.0, 1.7], look: [72.9, 39.3], look_h: 1.35, lens: 28, frame: 全身}
-      - {t: 11.5, cam: [76.6, 39.4, 1.9], look: [72.5, 38.9], look_h: 1.35, lens: 30, ease: linear}
+    - {t: 0.0, cam: [75.6, 43.0, 1.7], look: [72.9, 39.3], look_h: 1.35, lens: 28, frame: 全身}
+    - {t: 11.5, cam: [76.6, 39.4, 1.9], look: [72.5, 38.9], look_h: 1.35, lens: 30, ease: linear}
     bg: tettara_edge
     act: {start: 草を示すルッキーニィ, do: メタリカが両手を上げて草へ飛んでいき、喜んで草のまわりを回る。「全てが揃ったぞ」で両手を上げる, end: 草の北で両手を上げるメタリカと、見上げるルッキーニィ}
     camera: 南東から、草のまわりを回るメタリカに合わせて北へ回り込む（トラック）
@@ -224,21 +222,21 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.3, face: 200, pose: arms_up}
-        - {t: 0.6, at: m_grass, z: 0.3, face: 205, pose: lean}
-        - {t: 3.8, at: m_grass, z: 0.3, face: 205, pose: lean}
-        - {t: 4.4, at: m_grass, z: 0.3, face: 225, pose: stand}
-        - {t: 13.8, at: m_grass, z: 0.3, face: 225, pose: stand}
+      - {t: 0.0, at: m_grass, z: 0.3, face: 200, pose: arms_up}
+      - {t: 0.6, at: m_grass, z: 0.3, face: 205, pose: lean}
+      - {t: 3.8, at: m_grass, z: 0.3, face: 205, pose: lean}
+      - {t: 4.4, at: m_grass, z: 0.3, face: 225, pose: stand}
+      - {t: 13.8, at: m_grass, z: 0.3, face: 225, pose: stand}
       luckiny:
-        - {t: 0.0, at: lk_side, face: 35, pose: stand}
-        - {t: 7.6, at: lk_side, face: 35, pose: stand}
-        - {t: 8.0, at: lk_side, face: 35, pose: proud}
-        - {t: 13.8, at: lk_side, face: 35, pose: proud}
+      - {t: 0.0, at: lk_side, face: 35, pose: stand}
+      - {t: 7.6, at: lk_side, face: 35, pose: stand}
+      - {t: 8.0, at: lk_side, face: 35, pose: proud}
+      - {t: 13.8, at: lk_side, face: 35, pose: proud}
     fx:
-      - {kind: sprout, t: [-6.0, 13.8], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
+    - {kind: sprout, t: [-6.0, 13.8], at: grass, n: 9, h: 0.45, color: [120, 210, 140]}
     cam_keys:
-      - {t: 0.0, cam: [75.4, 42.0, 1.5], look: [72.2, 39.15], look_h: 1.1, lens: 30, frame: 全身}
-      - {t: 13.8, cam: [75.0, 41.6, 1.5], look: [72.2, 39.15], look_h: 1.1, lens: 34}
+    - {t: 0.0, cam: [75.4, 42.0, 1.5], look: [72.2, 39.15], look_h: 1.1, lens: 30, frame: 全身}
+    - {t: 13.8, cam: [75.0, 41.6, 1.5], look: [72.2, 39.15], look_h: 1.1, lens: 34}
     bg: tettara_village_gap
     act: {start: 両手を上げるメタリカ, do: 草をのぞき込んで「よく咲いたな」、ルッキーニィの方へ向き直る。ルッキーニィは胸を張る, end: 胸を張るルッキーニィと、見下ろすメタリカ}
     camera: 南東から、北西の崖の切れ目と夕日を背にした二人へゆっくり寄る
@@ -249,25 +247,25 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_side, face: 35, pose: proud}
-        - {t: 0.5, at: lk_side, face: 40, pose: point}
-        - {t: 8.4, at: lk_side, face: 40, pose: point}
-        - {t: 8.8, at: lk_side, face: 40, pose: stand}
-        - {t: 14.2, at: lk_side, face: 40, pose: stand}
+      - {t: 0.0, at: lk_side, face: 35, pose: proud}
+      - {t: 0.5, at: lk_side, face: 40, pose: point}
+      - {t: 8.4, at: lk_side, face: 40, pose: point}
+      - {t: 8.8, at: lk_side, face: 40, pose: stand}
+      - {t: 14.2, at: lk_side, face: 40, pose: stand}
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.3, face: 225, pose: stand}
-        - {t: 8.9, at: m_grass, z: 0.3, face: 225, pose: cross}
-        - {t: 11.4, at: m_grass, z: 0.3, face: 225, pose: cross}
-        - {t: 11.8, at: m_grass, z: 0.3, face: 222, pose: point}
-        - {t: 14.2, at: m_grass, z: 0.3, face: 222, pose: point}
+      - {t: 0.0, at: m_grass, z: 0.3, face: 225, pose: stand}
+      - {t: 8.9, at: m_grass, z: 0.3, face: 225, pose: cross}
+      - {t: 11.4, at: m_grass, z: 0.3, face: 225, pose: cross}
+      - {t: 11.8, at: m_grass, z: 0.3, face: 222, pose: point}
+      - {t: 14.2, at: m_grass, z: 0.3, face: 222, pose: point}
     cam_keys:
-      - {t: 0.0, cam: [73.9, 41.5, 1.35], look: luckiny, look_h: 1.15, lens: 40, frame: 寄り}
-      - {t: 8.5, cam: [73.75, 41.35, 1.35], look: luckiny, look_h: 1.15, lens: 50}
-      - {t: 9.6, cam: [73.75, 41.35, 1.4], look: metallica, look_h: 1.75, lens: 42}
-      - {t: 14.2, cam: [73.8, 41.4, 1.4], look: metallica, look_h: 1.75, lens: 42}
+    - {t: 0.0, cam: [70.6, 38.0, 1.4], look: luckiny, look_h: 1.15, lens: 38, frame: 寄り}
+    - {t: 8.5, cam: [70.7, 38.1, 1.4], look: luckiny, look_h: 1.15, lens: 46}
+    - {t: 9.6, cam: [70.7, 38.1, 1.45], look: metallica, look_h: 1.75, lens: 40}
+    - {t: 14.2, cam: [70.75, 38.15, 1.45], look: metallica, look_h: 1.75, lens: 40}
     bg: tettara_edge
     act: {start: 胸を張るルッキーニィ, do: 指を立てて魔女ドクトリンをそらんじる。メタリカは腕を組んで感心し、「見込みがあるぞ」と指さす, end: ルッキーニィを指さすメタリカ}
-    camera: ルッキーニィの斜め前から寄り、メタリカへ振る（パン）
+    camera: 北西（村の側）から、ルッキーニィの斜め前の寄り。メタリカへ振る（パン）
     kind: M
   A13-010:
     frame: 全身（俯瞰）
@@ -275,18 +273,18 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_side, face: 40, pose: stand}
-        - {t: 1.0, at: lk_side, face: 40, pose: look_down}
-        - {t: 4.0, at: lk_close, face: 30, pose: walk}
-        - {t: 4.4, at: lk_close, face: 30, pose: look_down}
-        - {t: 8.5, at: lk_close, face: 30, pose: look_down}
+      - {t: 0.0, at: lk_side, face: 40, pose: stand}
+      - {t: 1.0, at: lk_side, face: 40, pose: look_down}
+      - {t: 4.0, at: lk_close, face: 30, pose: walk}
+      - {t: 4.4, at: lk_close, face: 30, pose: look_down}
+      - {t: 8.5, at: lk_close, face: 30, pose: look_down}
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.3, face: 222, pose: point}
-        - {t: 1.0, at: m_grass, z: 0.3, face: 220, pose: cross}
-        - {t: 8.5, at: m_grass, z: 0.3, face: 215, pose: cross}
+      - {t: 0.0, at: m_grass, z: 0.3, face: 222, pose: point}
+      - {t: 1.0, at: m_grass, z: 0.3, face: 220, pose: cross}
+      - {t: 8.5, at: m_grass, z: 0.3, face: 215, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [74.0, 36.7, 3.4], look: luckiny, look_h: 0.8, lens: 32, frame: 全身（俯瞰）}
-      - {t: 8.5, cam: [73.9, 36.8, 3.35], look: luckiny, look_h: 0.8, lens: 36}
+    - {t: 0.0, cam: [74.0, 36.7, 3.4], look: luckiny, look_h: 0.8, lens: 32, frame: 全身（俯瞰）}
+    - {t: 8.5, cam: [73.9, 36.8, 3.35], look: luckiny, look_h: 0.8, lens: 36}
     bg: tettara_edge
     act: {start: 指さすメタリカ, do: ルッキーニィがもじもじとうつむき、一歩寄って弟子入りの話を切り出す, end: うつむいて待つルッキーニィ}
     camera: メタリカの肩ごし、高い所からルッキーニィを見下ろす
@@ -297,24 +295,24 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.3, face: 215, pose: cross}
-        - {t: 0.8, at: m_grass, z: 0.45, face: 35, pose: cross}
-        - {t: 5.4, at: m_grass, z: 0.45, face: 40, pose: cross}
-        - {t: 6.0, at: m_grass, z: 0.45, face: 40, pose: proud}
-        - {t: 8.6, at: m_grass, z: 0.45, face: 40, pose: proud}
-        - {t: 9.3, at: m_grass, z: 0.5, face: 215, pose: stand}
-        - {t: 9.7, at: m_grass, z: 0.5, face: 215, pose: point}
-        - {t: 15.6, at: m_grass, z: 0.5, face: 215, pose: point}
+      - {t: 0.0, at: m_grass, z: 0.3, face: 215, pose: cross}
+      - {t: 0.8, at: m_grass, z: 0.45, face: 35, pose: cross}
+      - {t: 5.4, at: m_grass, z: 0.45, face: 40, pose: cross}
+      - {t: 6.0, at: m_grass, z: 0.45, face: 40, pose: proud}
+      - {t: 8.6, at: m_grass, z: 0.45, face: 40, pose: proud}
+      - {t: 9.3, at: m_grass, z: 0.5, face: 215, pose: stand}
+      - {t: 9.7, at: m_grass, z: 0.5, face: 215, pose: point}
+      - {t: 15.6, at: m_grass, z: 0.5, face: 215, pose: point}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 30, pose: look_down}
-        - {t: 9.5, at: lk_close, face: 30, pose: look_down}
-        - {t: 10.2, at: lk_close, face: 30, pose: look_up}
-        - {t: 15.6, at: lk_close, face: 30, pose: look_up}
+      - {t: 0.0, at: lk_close, face: 30, pose: look_down}
+      - {t: 9.5, at: lk_close, face: 30, pose: look_down}
+      - {t: 10.2, at: lk_close, face: 30, pose: look_up}
+      - {t: 15.6, at: lk_close, face: 30, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [74.6, 36.6, 0.6], look: metallica, look_h: 1.7, lens: 28, frame: 全身（煽り）}
-      - {t: 8.6, cam: [74.55, 36.65, 0.6], look: metallica, look_h: 1.7, lens: 30}
-      - {t: 9.4, cam: [70.5, 37.2, 0.9], look: [72.3, 39.0], look_h: 1.4, lens: 30, ease: out}
-      - {t: 15.6, cam: [70.6, 37.3, 0.9], look: [72.3, 39.0], look_h: 1.4, lens: 34}
+    - {t: 0.0, cam: [74.6, 36.6, 0.6], look: metallica, look_h: 1.7, lens: 28, frame: 全身（煽り）}
+    - {t: 8.6, cam: [74.55, 36.65, 0.6], look: metallica, look_h: 1.7, lens: 30}
+    - {t: 9.4, cam: [70.5, 37.2, 0.9], look: [72.3, 39.0], look_h: 1.4, lens: 30, ease: out}
+    - {t: 15.6, cam: [70.6, 37.3, 0.9], look: [72.3, 39.0], look_h: 1.4, lens: 34}
     bg: tettara_edge
     act: {start: うつむくルッキーニィと、腕を組むメタリカ, do: メタリカはそっぽを向いて「弟子はとらない主義だが」ともったいぶり、くるりと振り向いて「一番弟子にしてやる！」と指さす, end: ルッキーニィを指さすメタリカ、顔を上げるルッキーニィ}
     camera: 北東の低い所からメタリカを煽り、振り向きに合わせて北西へ回り込む（さっと振る）
@@ -325,24 +323,24 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 30, pose: look_up}
-        - {t: 0.4, at: lk_close, face: 30, pose: hop}
-        - {t: 3.8, at: lk_close, face: 30, pose: hop}
-        - {t: 4.2, at: lk_close, face: 30, pose: bow}
-        - {t: 5.8, at: lk_close, face: 30, pose: bow}
-        - {t: 6.2, at: lk_close, face: 30, pose: stand}
-        - {t: 14.4, at: lk_close, face: 30, pose: stand}
+      - {t: 0.0, at: lk_close, face: 30, pose: look_up}
+      - {t: 0.4, at: lk_close, face: 30, pose: hop}
+      - {t: 3.8, at: lk_close, face: 30, pose: hop}
+      - {t: 4.2, at: lk_close, face: 30, pose: bow}
+      - {t: 5.8, at: lk_close, face: 30, pose: bow}
+      - {t: 6.2, at: lk_close, face: 30, pose: stand}
+      - {t: 14.4, at: lk_close, face: 30, pose: stand}
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.5, face: 215, pose: point}
-        - {t: 1.0, at: m_grass, z: 0.3, face: 215, pose: cross}
-        - {t: 6.8, at: m_grass, z: 0.3, face: 215, pose: cross}
-        - {t: 7.2, at: m_grass, z: 0.3, face: 215, pose: arms_up}
-        - {t: 10.6, at: m_grass, z: 0.3, face: 215, pose: arms_up}
-        - {t: 11.0, at: m_grass, z: 0.3, face: 215, pose: point}
-        - {t: 14.4, at: m_grass, z: 0.3, face: 215, pose: point}
+      - {t: 0.0, at: m_grass, z: 0.5, face: 215, pose: point}
+      - {t: 1.0, at: m_grass, z: 0.3, face: 215, pose: cross}
+      - {t: 6.8, at: m_grass, z: 0.3, face: 215, pose: cross}
+      - {t: 7.2, at: m_grass, z: 0.3, face: 215, pose: arms_up}
+      - {t: 10.6, at: m_grass, z: 0.3, face: 215, pose: arms_up}
+      - {t: 11.0, at: m_grass, z: 0.3, face: 215, pose: point}
+      - {t: 14.4, at: m_grass, z: 0.3, face: 215, pose: point}
     cam_keys:
-      - {t: 0.0, cam: [72.6, 43.6, 2.4], look: [72.3, 39.0], look_h: 0.8, lens: 30, frame: 全身}
-      - {t: 14.4, cam: [72.9, 43.4, 2.3], look: [72.3, 39.0], look_h: 0.8, lens: 30}
+    - {t: 0.0, cam: [72.6, 43.6, 2.4], look: [72.3, 39.0], look_h: 0.8, lens: 30, frame: 全身}
+    - {t: 14.4, cam: [72.9, 43.4, 2.3], look: [72.3, 39.0], look_h: 0.8, lens: 30}
     bg: tettara_dunes
     act: {start: 顔を上げたルッキーニィ, do: 飛び跳ねて喜び、深くお辞儀。メタリカは両手を上げて笑い、「傀儡としてだがな！」と指さす, end: 指さすメタリカと、きょとんとするルッキーニィ}
     camera: 南のやや高い所から二人（奥に砂丘）。ほとんど止め
@@ -353,22 +351,22 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_grass, z: 0.3, face: 215, pose: point}
-        - {t: 0.5, at: m_grass, z: 0.3, face: 120, pose: walk}
-        - {t: 4.0, at: [73.2, 39.5], z: 0.3, face: 230, pose: gesture}
-        - {t: 7.6, at: [72.9, 40.2], z: 0.3, face: 250, pose: gesture}
-        - {t: 8.4, at: [72.75, 40.3], z: 0.3, face: 290, pose: point}
-        - {t: 12.0, at: [72.0, 40.35], z: 0.3, face: 330, pose: point}
-        - {t: 13.2, at: [71.6, 40.1], z: 0.3, face: 330, pose: walk}
-        - {t: 15.6, at: m_west, z: 0.3, face: 70, pose: stand}
-        - {t: 16.6, at: m_west, z: 0.3, face: 70, pose: arms_up}
-        - {t: 19.0, at: m_west, z: 0.3, face: 75, pose: arms_up}
+      - {t: 0.0, at: m_grass, z: 0.3, face: 215, pose: point}
+      - {t: 0.5, at: m_grass, z: 0.3, face: 120, pose: walk}
+      - {t: 4.0, at: [73.2, 39.5], z: 0.3, face: 230, pose: gesture}
+      - {t: 7.6, at: [72.9, 40.2], z: 0.3, face: 250, pose: gesture}
+      - {t: 8.4, at: [72.75, 40.3], z: 0.3, face: 290, pose: point}
+      - {t: 12.0, at: [72.0, 40.35], z: 0.3, face: 330, pose: point}
+      - {t: 13.2, at: [71.6, 40.1], z: 0.3, face: 330, pose: walk}
+      - {t: 15.6, at: m_west, z: 0.3, face: 70, pose: stand}
+      - {t: 16.6, at: m_west, z: 0.3, face: 70, pose: arms_up}
+      - {t: 19.0, at: m_west, z: 0.3, face: 75, pose: arms_up}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 30, pose: stand}
-        - {t: 19.0, at: lk_close, face: "@metallica", pose: stand}
+      - {t: 0.0, at: lk_close, face: 30, pose: stand}
+      - {t: 19.0, at: lk_close, face: '@metallica', pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [74.9, 41.6, 1.35], look: [72.1, 39.5], look_h: 1.0, lens: 30, frame: 全身}
-      - {t: 19.0, cam: [74.9, 37.4, 1.5], look: [72.0, 39.6], look_h: 1.0, lens: 30, ease: linear}
+    - {t: 0.0, cam: [74.9, 41.6, 1.35], look: [72.1, 39.5], look_h: 1.0, lens: 30, frame: 全身}
+    - {t: 19.0, cam: [74.9, 37.4, 1.5], look: [72.0, 39.6], look_h: 1.0, lens: 30, ease: linear}
     bg: tettara_edge
     act: {start: ルッキーニィの前のメタリカ, do: 「修行は厳しいぞ」と、ルッキーニィのまわりを回りながら条件を並べる。ルッキーニィは目で追う。「別れをいっておきな」で指さし、「キヒヒ！」で両手を上げる, end: 村の側（西）で両手を上げるメタリカ}
     camera: 東から、回るメタリカの反対側を北へゆっくり横移動（トラック）
@@ -379,20 +377,20 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 250, pose: stand}
-        - {t: 0.5, at: lk_close, face: 250, pose: gesture}
-        - {t: 6.0, at: lk_close, face: 250, pose: gesture}
-        - {t: 6.4, at: lk_close, face: 250, pose: stand}
-        - {t: 9.0, at: lk_close, face: 250, pose: stand}
+      - {t: 0.0, at: lk_close, face: 250, pose: stand}
+      - {t: 0.5, at: lk_close, face: 250, pose: gesture}
+      - {t: 6.0, at: lk_close, face: 250, pose: gesture}
+      - {t: 6.4, at: lk_close, face: 250, pose: stand}
+      - {t: 9.0, at: lk_close, face: 250, pose: stand}
       metallica:
-        - {t: 0.0, at: m_west, z: 0.3, face: 75, pose: arms_up}
-        - {t: 0.8, at: m_west, z: 0.3, face: 75, pose: stand}
-        - {t: 6.6, at: m_west, z: 0.3, face: 75, pose: stand}
-        - {t: 7.2, at: m_west, z: 0.3, face: 72, pose: lean}
-        - {t: 9.0, at: m_west, z: 0.3, face: 72, pose: lean}
+      - {t: 0.0, at: m_west, z: 0.3, face: 75, pose: arms_up}
+      - {t: 0.8, at: m_west, z: 0.3, face: 75, pose: stand}
+      - {t: 6.6, at: m_west, z: 0.3, face: 75, pose: stand}
+      - {t: 7.2, at: m_west, z: 0.3, face: 72, pose: lean}
+      - {t: 9.0, at: m_west, z: 0.3, face: 72, pose: lean}
     cam_keys:
-      - {t: 0.0, cam: [72.5, 37.5, 1.7], look: luckiny, look_h: 1.1, lens: 45, frame: 寄り}
-      - {t: 9.0, cam: [72.45, 37.65, 1.7], look: luckiny, look_h: 1.1, lens: 50}
+    - {t: 0.0, cam: [72.5, 37.5, 1.7], look: luckiny, look_h: 1.1, lens: 45, frame: 寄り}
+    - {t: 9.0, cam: [72.45, 37.65, 1.7], look: luckiny, look_h: 1.1, lens: 50}
     bg: tettara_edge
     act: {start: メタリカの方を向くルッキーニィ, do: にっこり笑って「もう別れはすませてきました」。メタリカは「……ほう？」と身を乗り出す, end: 身を乗り出すメタリカ}
     camera: 北のやや高い所からルッキーニィの寄り（右にメタリカ、奥に南の崖）
@@ -403,18 +401,18 @@ cuts:
     ghost: [metallica]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 250, pose: stand}
-        - {t: 0.8, at: lk_close, face: 288, pose: stand}
-        - {t: 5.0, at: lk_close, face: 288, pose: gesture}
-        - {t: 7.4, at: lk_close, face: 288, pose: stand}
-        - {t: 15.2, at: lk_close, face: 288, pose: stand}
+      - {t: 0.0, at: lk_close, face: 250, pose: stand}
+      - {t: 0.8, at: lk_close, face: 288, pose: stand}
+      - {t: 5.0, at: lk_close, face: 288, pose: gesture}
+      - {t: 7.4, at: lk_close, face: 288, pose: stand}
+      - {t: 15.2, at: lk_close, face: 288, pose: stand}
       metallica:
-        - {t: 0.0, at: m_west, z: 0.3, face: 72, pose: lean}
-        - {t: 1.0, at: m_west, z: 0.3, face: 75, pose: stand}
-        - {t: 15.2, at: m_west, z: 0.3, face: 78, pose: stand}
+      - {t: 0.0, at: m_west, z: 0.3, face: 72, pose: lean}
+      - {t: 1.0, at: m_west, z: 0.3, face: 75, pose: stand}
+      - {t: 15.2, at: m_west, z: 0.3, face: 78, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [75.6, 40.0, 0.6], look: [67.0, 33.0], look_h: 2.2, lens: 40, frame: 全身（後ろ姿）}
-      - {t: 15.2, cam: [74.7, 39.85, 0.6], look: [67.0, 33.0], look_h: 2.2, lens: 45}
+    - {t: 0.0, cam: [75.6, 40.1, 0.6], look: [67.0, 37.4], look_h: 1.6, lens: 38, frame: 全身（後ろ姿）}
+    - {t: 15.2, cam: [74.8, 39.95, 0.6], look: [67.0, 37.4], look_h: 1.6, lens: 44}
     bg: tettara_village_gap
     act: {start: メタリカを見るルッキーニィ, do: 振り返って崖の切れ目の向こうの村を見やり、頭をかいて笑う。追放された訳を明るく話す。メタリカは黙って見ている, end: 村の方を見たままのルッキーニィ}
     camera: 二人の後ろ（東）の低い所から、崖の切れ目と夕日の方へ。逆光の影絵。ゆっくり寄る
@@ -424,13 +422,13 @@ cuts:
     only: [luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 288, pose: stand}
-        - {t: 7.6, at: lk_close, face: 288, pose: stand}
-        - {t: 8.4, at: lk_close, face: 288, pose: look_down}
-        - {t: 12.0, at: lk_close, face: 288, pose: look_down}
+      - {t: 0.0, at: lk_close, face: 288, pose: stand}
+      - {t: 7.6, at: lk_close, face: 288, pose: stand}
+      - {t: 8.4, at: lk_close, face: 288, pose: look_down}
+      - {t: 12.0, at: lk_close, face: 288, pose: look_down}
     cam_keys:
-      - {t: 0.0, cam: [70.95, 39.65, 1.25], look: luckiny, look_h: 1.2, lens: 55, frame: 寄り（顔）}
-      - {t: 12.0, cam: [71.05, 39.62, 1.25], look: luckiny, look_h: 1.18, lens: 60}
+    - {t: 0.0, cam: [70.95, 39.65, 1.25], look: luckiny, look_h: 1.32, lens: 45, frame: 寄り（顔）}
+    - {t: 12.0, cam: [71.05, 39.62, 1.25], look: luckiny, look_h: 1.3, lens: 50}
     bg: tettara_dunes_moon
     act: {start: 村を見るルッキーニィの顔, do: 「もう、思い残すことはありません」。笑顔のまま、最後に少しうつむく, end: うつむくルッキーニィ（奥の空に白い月）}
     camera: 村の側（西）から、ルッキーニィの顔の寄り。奥は砂丘と、東の空に昇る白い月
@@ -441,19 +439,19 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_west, z: 0.3, face: 78, pose: stand}
-        - {t: 0.6, at: m_west, z: 0.3, face: 75, pose: proud}
-        - {t: 3.0, at: m_west, z: 0.7, face: 75, pose: proud}
-        - {t: 8.0, at: m_west, z: 0.7, face: 75, pose: proud}
-        - {t: 8.4, at: m_west, z: 0.7, face: 75, pose: arms_up}
-        - {t: 13.0, at: m_west, z: 0.7, face: 75, pose: arms_up}
+      - {t: 0.0, at: m_west, z: 0.3, face: 78, pose: stand}
+      - {t: 0.6, at: m_west, z: 0.3, face: 75, pose: proud}
+      - {t: 3.0, at: m_west, z: 0.7, face: 75, pose: proud}
+      - {t: 8.0, at: m_west, z: 0.7, face: 75, pose: proud}
+      - {t: 8.4, at: m_west, z: 0.7, face: 75, pose: arms_up}
+      - {t: 13.0, at: m_west, z: 0.7, face: 75, pose: arms_up}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 288, pose: look_down}
-        - {t: 1.0, at: lk_close, face: 255, pose: look_up}
-        - {t: 13.0, at: lk_close, face: 255, pose: look_up}
+      - {t: 0.0, at: lk_close, face: 288, pose: look_down}
+      - {t: 1.0, at: lk_close, face: 255, pose: look_up}
+      - {t: 13.0, at: lk_close, face: 255, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [72.9, 41.6, 0.25], look: metallica, look_h: 2.0, lens: 24, frame: 全身（煽り）}
-      - {t: 13.0, cam: [72.8, 41.5, 0.25], look: metallica, look_h: 2.3, lens: 24}
+    - {t: 0.0, cam: [72.9, 41.6, 0.25], look: metallica, look_h: 2.0, lens: 24, frame: 全身（煽り）}
+    - {t: 13.0, cam: [72.8, 41.5, 0.25], look: metallica, look_h: 2.3, lens: 24}
     bg: tettara_sky
     act: {start: うつむくルッキーニィ, do: メタリカが胸を張って浮かび上がり、「一人前の魔女にしてやろう！！」。「大魔女だからな！」で両手を上げて高笑い, end: 空を背に両手を上げるメタリカ}
     camera: 地面すれすれから、空を背にしたメタリカを大きく煽る
@@ -463,12 +461,12 @@ cuts:
     only: [luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 255, pose: look_up}
-        - {t: 0.6, at: lk_close, face: 255, pose: hold}
-        - {t: 8.0, at: lk_close, face: 255, pose: hold}
+      - {t: 0.0, at: lk_close, face: 255, pose: look_up}
+      - {t: 0.6, at: lk_close, face: 255, pose: hold}
+      - {t: 8.0, at: lk_close, face: 255, pose: hold}
     cam_keys:
-      - {t: 0.0, cam: [71.4, 38.6, 1.05], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り（顔）}
-      - {t: 8.0, cam: [71.5, 38.72, 1.05], look: luckiny, look_h: 1.15, lens: 55}
+    - {t: 0.0, cam: [71.4, 38.6, 1.05], look: luckiny, look_h: 1.15, lens: 45, frame: 寄り（顔）}
+    - {t: 8.0, cam: [71.5, 38.72, 1.05], look: luckiny, look_h: 1.15, lens: 55}
     bg: tettara_edge
     act: {start: 見上げるルッキーニィ, do: 胸の前で両手を握りしめ、目を輝かせる, end: 両手を握るルッキーニィ}
     camera: 斜め前（北西）からルッキーニィの顔へゆっくり寄る
@@ -479,22 +477,22 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_west, z: 0.7, face: 75, pose: arms_up}
-        - {t: 0.6, at: m_west, z: 0.5, face: 45, pose: walk}
-        - {t: 2.4, at: m_point, z: 0.5, face: 43, pose: walk, ease: out}
-        - {t: 3.9, at: m_point, z: 0.5, face: 43, pose: point}
-        - {t: 9.0, at: m_point, z: 0.5, face: 43, pose: point}
+      - {t: 0.0, at: m_west, z: 0.7, face: 75, pose: arms_up}
+      - {t: 0.6, at: m_west, z: 0.5, face: 45, pose: walk}
+      - {t: 2.4, at: m_point, z: 0.5, face: 43, pose: walk, ease: out}
+      - {t: 3.9, at: m_point, z: 0.5, face: 43, pose: point}
+      - {t: 9.0, at: m_point, z: 0.5, face: 43, pose: point}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 255, pose: hold}
-        - {t: 1.0, at: lk_close, face: 50, pose: stand}
-        - {t: 9.0, at: lk_close, face: 45, pose: stand}
+      - {t: 0.0, at: lk_close, face: 255, pose: hold}
+      - {t: 1.0, at: lk_close, face: 50, pose: stand}
+      - {t: 9.0, at: lk_close, face: 45, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: hk_stop, face: 282, pose: stand}
-        - {t: 4.0, at: hk_stop, face: 40, pose: stand}
-        - {t: 9.0, at: hk_stop, face: 40, pose: stand}
+      - {t: 0.0, at: hk_stop, face: 282, pose: stand}
+      - {t: 4.0, at: hk_stop, face: 40, pose: stand}
+      - {t: 9.0, at: hk_stop, face: 40, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [71.2, 40.6, 3.1], look: [79.0, 32.0], look_h: 1.5, lens: 32, frame: 全身（肩ごし）}
-      - {t: 9.0, cam: [71.3, 40.55, 3.2], look: mountain, look_h: 18.0, lens: 32}
+    - {t: 0.0, cam: [71.2, 40.6, 3.1], look: [79.0, 32.0], look_h: 1.5, lens: 32, frame: 全身（肩ごし）}
+    - {t: 9.0, cam: [71.3, 40.55, 3.2], look: mountain, look_h: 18.0, lens: 32}
     bg: tettara_mountain
     act: {start: 両手を上げるメタリカ, do: 北東へ向き直って浮かび、地平線のアズ・ブロッケン山を指さす。ルッキーニィと百騎兵もそちらを見る, end: 山を指さすメタリカの後ろ姿}
     camera: メタリカの後ろ（南西）の高い所から、肩ごしに北東の山へ
@@ -505,24 +503,24 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_point, z: 0.5, face: 43, pose: point}
-        - {t: 0.6, at: m_point, z: 0.5, face: 92, pose: point}
-        - {t: 6.0, at: m_point, z: 0.5, face: 92, pose: point}
-        - {t: 6.4, at: m_point, z: 0.5, face: 92, pose: arms_up}
-        - {t: 11.5, at: m_point, z: 0.5, face: 92, pose: arms_up}
+      - {t: 0.0, at: m_point, z: 0.5, face: 43, pose: point}
+      - {t: 0.6, at: m_point, z: 0.5, face: 92, pose: point}
+      - {t: 6.0, at: m_point, z: 0.5, face: 92, pose: point}
+      - {t: 6.4, at: m_point, z: 0.5, face: 92, pose: arms_up}
+      - {t: 11.5, at: m_point, z: 0.5, face: 92, pose: arms_up}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 45, pose: stand}
-        - {t: 1.2, at: lk_close, face: 90, pose: look_up}
-        - {t: 11.5, at: lk_close, face: 90, pose: look_up}
+      - {t: 0.0, at: lk_close, face: 45, pose: stand}
+      - {t: 1.2, at: lk_close, face: 90, pose: look_up}
+      - {t: 11.5, at: lk_close, face: 90, pose: look_up}
       hundred-knight:
-        - {t: 0.0, at: hk_stop, face: 40, pose: stand}
-        - {t: 1.4, at: hk_stop, face: 92, pose: look_up}
-        - {t: 11.5, at: hk_stop, face: 92, pose: look_up}
+      - {t: 0.0, at: hk_stop, face: 40, pose: stand}
+      - {t: 1.4, at: hk_stop, face: 92, pose: look_up}
+      - {t: 11.5, at: hk_stop, face: 92, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [69.2, 40.0, 1.0], look: metallica, look_h: 1.7, lens: 28, frame: 引き}
-      - {t: 1.2, cam: [69.2, 40.0, 1.0], look: metallica, look_h: 1.7, lens: 28}
-      - {t: 5.2, cam: [69.0, 40.2, 3.4], look: moon, look_h: 40.0, lens: 26}
-      - {t: 11.5, cam: [69.0, 40.2, 3.5], look: moon, look_h: 40.0, lens: 30}
+    - {t: 0.0, cam: [69.2, 40.0, 1.0], look: metallica, look_h: 1.7, lens: 28, frame: 引き}
+    - {t: 1.2, cam: [69.2, 40.0, 1.0], look: metallica, look_h: 1.7, lens: 28}
+    - {t: 5.2, cam: [69.0, 40.2, 3.4], look: moon, look_h: 40.0, lens: 26}
+    - {t: 11.5, cam: [69.0, 40.2, 3.5], look: moon, look_h: 40.0, lens: 30}
     bg: tettara_moon
     act: {start: 山を指さすメタリカ, do: 東の空へ向き直り「みろよ！満月の白夜月だ！」と指さす。みんなが見上げる先に、夕方の空の白い満月。「相応しい日じゃないか！」で両手を上げる, end: 白い満月と、見上げる三人の後ろ姿}
     camera: 西の低い所からメタリカ、上へ上がりながら東の空の月へ（クレーン）
@@ -533,25 +531,26 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_point, z: 0.5, face: 92, pose: arms_up}
-        - {t: 0.6, at: m_point, z: 0.4, face: 175, pose: stand}
-        - {t: 11.0, at: m_point, z: 0.4, face: 175, pose: cross}
+      - {t: 0.0, at: m_point, z: 0.5, face: 92, pose: arms_up}
+      - {t: 0.6, at: m_point, z: 0.4, face: 175, pose: stand}
+      - {t: 11.0, at: m_point, z: 0.4, face: 175, pose: cross}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 90, pose: look_up}
-        - {t: 4.6, at: lk_close, face: 90, pose: look_up}
-        - {t: 5.0, at: lk_close, z: 0.3, face: 340, pose: jump}
-        - {t: 5.5, at: lk_close, z: 0.0, face: 340, pose: stand}
-        - {t: 6.0, at: lk_close, face: 340, pose: bow}
-        - {t: 8.0, at: lk_close, face: 340, pose: bow}
-        - {t: 8.4, at: lk_close, face: 340, pose: gesture}
-        - {t: 11.0, at: lk_close, face: 340, pose: gesture}
+      - {t: 0.0, at: lk_close, face: 90, pose: look_up}
+      - {t: 4.6, at: lk_close, face: 90, pose: look_up}
+      - {t: 5.0, at: lk_close, z: 0.3, face: 340, pose: jump}
+      - {t: 5.5, at: lk_close, z: 0.0, face: 340, pose: stand}
+      - {t: 6.0, at: lk_close, face: 340, pose: bow}
+      - {t: 8.0, at: lk_close, face: 340, pose: bow}
+      - {t: 8.4, at: lk_close, face: 340, pose: gesture}
+      - {t: 11.0, at: lk_close, face: 340, pose: gesture}
     cam_keys:
-      - {t: 0.0, cam: [73.4, 41.9, 2.6], look: [72.0, 39.1], look_h: 0.9, lens: 35, frame: 全身}
-      - {t: 11.0, cam: [73.35, 41.8, 2.6], look: [72.0, 39.1], look_h: 0.9, lens: 36}
-    shake: [{t: [4.9, 5.4], amp: 0.6}]
+    - {t: 0.0, cam: [74.7, 38.0, 2.5], look: [71.95, 39.1], look_h: 1.2, lens: 32, frame: 全身}
+    - {t: 11.0, cam: [74.6, 38.05, 2.5], look: [71.95, 39.1], look_h: 1.2, lens: 34}
+    shake:
+    - {t: [4.9, 5.4], amp: 0.6}
     bg: tettara_edge
     act: {start: 月を見上げるルッキーニィ, do: メタリカが振り向いて「お前何て名前だっけ？」。ルッキーニィはずっこけかけ、慌ててお辞儀して名乗る, end: 自分を示して名乗るルッキーニィ}
-    camera: 南東の高い所から二人を見下ろす（ほとんど止め）
+    camera: 東北東の高い所から二人を横に見下ろす（ほとんど止め）
     kind: M
   A13-022:
     frame: 全身（低い）
@@ -559,28 +558,28 @@ cuts:
     ghost: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_point, z: 0.4, face: 175, pose: cross}
-        - {t: 0.5, at: m_point, z: 0.4, face: 200, pose: point}
-        - {t: 5.6, at: m_point, z: 0.4, face: 200, pose: point}
-        - {t: 6.2, at: m_point, z: 0.4, face: 95, pose: point}
-        - {t: 13.0, at: m_point, z: 0.4, face: 60, pose: point}
-        - {t: 13.4, at: m_point, z: 0.5, face: 60, pose: arms_up}
-        - {t: 18.5, at: m_point, z: 0.5, face: 60, pose: arms_up}
+      - {t: 0.0, at: m_point, z: 0.4, face: 175, pose: cross}
+      - {t: 0.5, at: m_point, z: 0.4, face: 200, pose: point}
+      - {t: 5.6, at: m_point, z: 0.4, face: 200, pose: point}
+      - {t: 6.2, at: m_point, z: 0.4, face: 95, pose: point}
+      - {t: 13.0, at: m_point, z: 0.4, face: 60, pose: point}
+      - {t: 13.4, at: m_point, z: 0.5, face: 60, pose: arms_up}
+      - {t: 18.5, at: m_point, z: 0.5, face: 60, pose: arms_up}
       luckiny:
-        - {t: 0.0, at: lk_close, face: 340, pose: gesture}
-        - {t: 1.0, at: lk_close, face: 20, pose: stand}
-        - {t: 15.8, at: lk_close, face: 60, pose: stand}
-        - {t: 18.5, at: lk_close, face: 55, pose: stand}
+      - {t: 0.0, at: lk_close, face: 340, pose: gesture}
+      - {t: 1.0, at: lk_close, face: 20, pose: stand}
+      - {t: 15.8, at: lk_close, face: 60, pose: stand}
+      - {t: 18.5, at: lk_close, face: 55, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: hk_stop, face: 92, pose: look_up}
-        - {t: 6.6, at: hk_stop, face: 290, pose: stand}
-        - {t: 15.6, at: hk_stop, face: 290, pose: stand}
-        - {t: 16.0, at: hk_stop, face: 45, pose: run}
-        - {t: 18.5, at: hk_far, face: 52, pose: run, ease: in}
+      - {t: 0.0, at: hk_stop, face: 92, pose: look_up}
+      - {t: 6.6, at: hk_stop, face: 290, pose: stand}
+      - {t: 15.6, at: hk_stop, face: 290, pose: stand}
+      - {t: 16.0, at: hk_stop, face: 45, pose: run}
+      - {t: 18.5, at: hk_far, face: 52, pose: run, ease: in}
     cam_keys:
-      - {t: 0.0, cam: [76.3, 37.0, 0.9], look: [72.7, 39.4], look_h: 1.2, lens: 30, frame: 全身（低い）}
-      - {t: 15.6, cam: [76.3, 37.0, 0.9], look: [72.9, 39.4], look_h: 1.2, lens: 30}
-      - {t: 18.5, cam: [76.4, 36.8, 1.0], look: hundred-knight, look_h: 0.6, lens: 30}
+    - {t: 0.0, cam: [76.3, 37.0, 0.9], look: [72.7, 39.4], look_h: 1.2, lens: 30, frame: 全身（低い）}
+    - {t: 15.6, cam: [76.3, 37.0, 0.9], look: [72.9, 39.4], look_h: 1.2, lens: 30}
+    - {t: 18.5, cam: [76.4, 36.8, 1.0], look: hundred-knight, look_h: 0.6, lens: 30}
     bg: tettara_village_gap
     act: {start: 名乗ったルッキーニィ, do: メタリカがルッキーニィに「ここで待て」、百騎兵に「先に山へ」と指図し、「キリキリ進め！！」。百騎兵は北東へ駆け出し、カメラの脇を走り抜ける, end: 走り去る百騎兵と、見送る二人}
     camera: 北東の低い所から三人。最後に走り抜ける百騎兵を追って振る
@@ -591,16 +590,16 @@ cuts:
     only: [luckiny, hundred-knight]
     keys:
       luckiny:
-        - {t: 0.0, at: lk_close, face: 55, pose: stand}
-        - {t: 3.6, at: lk_close, face: 55, pose: hold}
-        - {t: 12.0, at: lk_close, face: 55, pose: hold}
+      - {t: 0.0, at: lk_close, face: 55, pose: stand}
+      - {t: 3.6, at: lk_close, face: 55, pose: hold}
+      - {t: 12.0, at: lk_close, face: 55, pose: hold}
       hundred-knight:
-        - {t: 0.0, at: hk_far, face: 52, pose: run}
-        - {t: 12.0, at: hk_gone, face: 52, pose: run, ease: linear}
+      - {t: 0.0, at: hk_far, face: 52, pose: run}
+      - {t: 12.0, at: hk_gone, face: 52, pose: run, ease: linear}
     cam_keys:
-      - {t: 0.0, cam: [71.15, 40.5, 1.6], look: [76.0, 34.0], look_h: 1.0, lens: 30, frame: 引き}
-      - {t: 3.0, cam: [71.15, 40.5, 1.8], look: [77.0, 33.5], look_h: 1.2, lens: 30}
-      - {t: 12.0, cam: [71.3, 40.6, 7.5], look: [82.0, 31.0], look_h: 2.0, lens: 24}
+    - {t: 0.0, cam: [71.15, 40.5, 1.6], look: [76.0, 34.0], look_h: 1.0, lens: 30, frame: 引き}
+    - {t: 3.0, cam: [71.15, 40.5, 1.8], look: [77.0, 33.5], look_h: 1.2, lens: 30}
+    - {t: 12.0, cam: [71.3, 40.6, 7.5], look: [82.0, 31.0], look_h: 2.0, lens: 24}
     bg: tettara_dunes_moon
     act: {start: 見送るルッキーニィの後ろ姿, do: 一人残ったルッキーニィが両手を握り「ボクが魔女様の弟子に……！」。小さくなっていく百騎兵の先に、地平線の山と白い月。日が沈みかける, end: 砂漠の縁の小さなルッキーニィ、遠くの山と月}
     camera: ルッキーニィの後ろ（南西）から、上へ引いていく（クレーン）

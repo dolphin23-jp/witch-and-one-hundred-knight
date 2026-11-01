@@ -1,0 +1,37 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-013
+scene: A16
+tc: 115.2
+sec: 7.5
+kind: M
+shot: 全身・「うるさいっ！」
+acting: ビスコが「何か忘れている条件とかないのか？」。メタリカが踊りを止めて両手を振り上げ「う、うるさいっ！」
+dialogue:
+- L479「何か、忘れている条件とかないのか？」
+- L480「う、うるさいっ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 58.2
+  - 3.0
+  - 26.7
+  look:
+  - 60.6
+  - 3.4
+  lens: 30
+  move: 西の低い所から、ビスコと止まったメタリカ
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 焦るメタリカ
+  end: 両手を振り上げたメタリカ
+timing:
+  lead: 0.4

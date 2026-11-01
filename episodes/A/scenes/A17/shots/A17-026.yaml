@@ -1,0 +1,37 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-026
+scene: A17
+tc: 258.6
+sec: 21.6
+kind: A
+shot: 寄り・泣くメタリカ
+acting: メタリカは顔を両手でおおって泣き出し、「うるさい……」「くそっ……」「あんなヤツらに……」
+dialogue:
+- L526「うぅ……うるさ…………い。うぅ……うるさ…………い。」
+- L527「っ……く、くそっ……。」
+- L528「ワタシが……あんな……あんなヤツらに……っ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 61.4
+  - 4.4
+  - 26.9
+  look:
+  - 59.7
+  - 2.9
+  lens: 36
+  move: 南東から二人、泣くメタリカへゆっくり寄る
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 並んでしゃがむ二人
+  end: 泣くメタリカの寄り
+timing:
+  lead: 0.3

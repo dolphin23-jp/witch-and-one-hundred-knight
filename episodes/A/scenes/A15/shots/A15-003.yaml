@@ -1,0 +1,36 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-003
+scene: A15
+tc: 19.5
+sec: 8.5
+kind: M
+shot: 全身・むせるルッキーニィとビスコ
+acting: 沼の瘴気にむせて体を折り、咳き込む。ビスコが慌てて寄り、のぞき込む
+dialogue:
+- L424「う、おぇ。グホッグホッ！！」
+- L425「お、おい、大丈夫か？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.4
+  - 5.6
+  - 22.55
+  look:
+  - 34.6
+  - 8.6
+  lens: 32
+  move: 北の地面に近い所から二人の寄り
+background: az-brocken
+image: null
+refs:
+- luckiny
+- bisco
+overlays: []
+fallback: null
+act:
+  start: はしゃぐルッキーニィ
+  end: 咳き込むルッキーニィと、のぞき込むビスコ
+timing:
+  lead: 0.3

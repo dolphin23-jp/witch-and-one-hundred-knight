@@ -1,0 +1,38 @@
+# A15 ホウキで隣の峰へ・弟子の紹介（日没）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A15 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A15-015
+scene: A15
+tc: 125.0
+sec: 8.5
+kind: M
+shot: 全身→引き・からかうメタリカと山頂の木の像
+acting: メタリカがビスコに顔を寄せて「弟子に慕われているワタシに嫉妬か？」。ビスコは両手を振り上げて言い返そうとする。カメラが引いて、奥に広場の木の像
+dialogue:
+- L446「キヒヒ、なんだ、犬コロ？弟子に慕われているワタシに嫉妬か？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.0
+  - 8.6
+  - 27.5
+  look:
+  - 59.6
+  - 4.0
+  lens: 30
+  move: 南西からの全身から、高く引いて広場の木の像まで見せる
+background: az-brocken
+image: null
+refs:
+- metallica
+- luckiny
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うなだれるビスコ
+  end: 言い合う二人と見守る三人、木の像
+timing:
+  lead: 0.5

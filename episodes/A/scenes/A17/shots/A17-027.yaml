@@ -1,0 +1,40 @@
+# A17 偽の招待状・見習い魔女の夜会（夜）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A17 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A17-027
+scene: A17
+tc: 280.2
+sec: 20.2
+kind: M
+shot: 全身（後ろから）・泣く二人と踊りの輪
+acting: 後ろ姿の二人の向こうで、見習い魔女たちが楽しそうに踊り続ける。ビスコが「メタリカ、もう……」と寄り添い、メタリカはしゃくり上げる
+dialogue:
+- L529「メタリカもう……。」
+- L530「……っ、ぐすっ……。……うぇっ……。ぐすっ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.4
+  - 3.8
+  - 28.4
+  look:
+  - 62.0
+  - 2.2
+  lens: 30
+  move: 二人の後ろ（西）のやや高い所から、奥の踊りの輪を見る（ほとんど止め）
+background: az-brocken
+image: null
+refs:
+- metallica
+- bisco
+- apprentice-a
+- apprentice-b
+- apprentice-c
+- apprentice-d
+overlays: []
+fallback: null
+act:
+  start: 泣くメタリカ
+  end: 泣く二人の後ろ姿と、踊りの輪
+timing:
+  lead: 0.3

@@ -1,0 +1,37 @@
+# A16 ワルギスのダンス（黄昏）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A16 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場
+id: A16-002
+scene: A16
+tc: 9.0
+sec: 13.5
+kind: M
+shot: 全身・招待状を読むアルレッキーノ
+acting: アルレッキーノが招待状を広げて、夜会の始め方を読み上げる。メタリカは腕を組んで聞く
+dialogue:
+- L450「招待状によりますれば……。」
+- L451「夜会の開始は、アズ・ブロッケン山の頂上にて、黄昏の白夜月が出た時、持参の品を、カシの樽に入れて広場中央に捧げ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 62.8
+  - 6.5
+  - 27.3
+  look: arlecchino
+  lens: 30
+  move: 樽の側（東南東）から、読むアルレッキーノと聞く一行（ゆっくり回り込む）
+background: az-brocken
+image: null
+refs:
+- metallica
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 一行
+  end: 招待状を読むアルレッキーノ
+timing:
+  lead: 0.5
