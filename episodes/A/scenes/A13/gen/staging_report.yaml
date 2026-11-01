@@ -737,54 +737,60 @@ cuts:
     note: null
   A13-010:
     cam:
-    - 74.0
-    - 36.7
-    - 3.4
-    lens: 32
-    bearing: 217
+    - 74.2
+    - 37.95
+    - 2.3
+    lens: 30
+    bearing: 235
     frame: 全身（俯瞰）
     start:
       people:
-      - who: metallica
-        s: -0.06
-        dist: 2.33
-        side: 中央
-        body: 背中
       - who: luckiny
         s: 0.0
-        dist: 3.78
+        dist: 3.05
         side: 中央
         body: 正面
+      - who: metallica
+        s: 0.36
+        dist: 1.64
+        side: 右
+        body: 背中
       bg: 村の外の砂漠の縁（黄昏の前）〔村 一角〕
       props:
+      - 入口の岩（西）
+      - 入口の岩（東）
       - 南東の崖
       - 南の崖
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
-        the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera. No other people. High angle looking down. Behind:
-        the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low
-        golden sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the
-        walls, the first lamps lit.'
+      - 南の崖（西）
+      - 門の柱
+      - 門の柱
+      - 門のランプ
+      - 家
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Metallica (the orange-haired witch:
+        huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
+        baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, with the back to the camera. No other people. Behind: the sandy desert edge just outside
+        the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden sunlight with long shadows.
+        Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
-      - who: metallica
-        s: -0.07
-        dist: 2.19
-        side: 中央
-        body: 背中
       - who: luckiny
         s: 0.0
-        dist: 3.18
+        dist: 2.5
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
-        the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera. No other people. High angle looking down. Behind:
-        the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low
-        golden sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the
-        walls, the first lamps lit.'
+      - who: metallica
+        s: 0.34
+        dist: 1.54
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Metallica (the orange-haired witch:
+        huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
+        baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the
+        sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden
+        sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls,
+        the first lamps lit.'
     move:
       luckiny:
         to: lk_close
@@ -841,22 +847,22 @@ cuts:
     end:
       people:
       - who: metallica
-        s: -0.42
-        dist: 2.37
-        side: 左
+        s: -0.28
+        dist: 3.47
+        side: 中央
         body: 横顔（画面右向き）
       - who: luckiny
-        s: 0.36
-        dist: 2.44
-        side: 右
-        body: 斜め前（画面左向き）
+        s: 0.24
+        dist: 3.48
+        side: 中央
+        body: 横顔（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
         frame, in profile, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry
-        goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people.
-        Behind: the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side,
-        low golden sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on
-        the walls, the first lamps lit.'
+        goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind:
+        the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low
+        golden sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the
+        walls, the first lamps lit.'
     move:
       metallica:
         to: m_grass
