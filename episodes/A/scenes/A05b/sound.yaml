@@ -1,14 +1,14 @@
 # A05b の BGM・効果音・ちょっとした声の置き場所（D-068、2026-11-01）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
-# 音量の目安（2026-11-01）: 台詞の声の平均 −27dB に対して、BGM は −39dB 前後（2026-11-01 ユーザー「少し BGM が大きい」でさらに下げた）、環境音は −37dB 前後（2026-11-01 ユーザー「効果音も大きすぎる」で 0.6倍）。秒はカットの頭から（cut + t）。カットの秒を変えても置き場所がずれない。
+# 音量（volume）は台詞を 1.0 とした大きさ（tools/previs_reel.py が素材の大きさをならしてから掛ける、D-068）。BGM 0.28、環境音 0.15〜0.2、足音 0.15〜0.22、扉などの音 0.4〜0.6
 scene: A05b
 bgm:
   # M07 獣人の村（原作でこの場面に流れていた曲、ユーザー判断 2026-11-01）。A06 の頭へそのまま続く（A06 の sound.yaml は from: 87.6 から＝A05b の長さ）
-  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A05b-013, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 2.0, volume: 0.18}
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A05b-013, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 2.0, volume: 0.28}
 sfx:
   # 足音は tools/footsteps.py が動きから自動で置く（footsteps.yaml）
-  - {src: audio/sfx/wind_gust.ogg, cut: A05b-013, t: 0.0, volume: 0.13, fade_out: 1.5, dur: 4.5}
-  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 2.9, volume: 0.36}
-  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 5.1, volume: 0.36}
-  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A05b-016, t: 2.0, until: {cut: A05b-021, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.3, volume: 0.13}
-  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-019, t: 9.6, volume: 0.36}
-  - {src: audio/sfx/wind_night_loop.ogg, cut: A05b-021, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 1.0, volume: 0.09}
+  - {src: audio/sfx/wind_gust.ogg, cut: A05b-013, t: 0.0, volume: 0.3, fade_out: 1.5, dur: 4.5}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 2.9, volume: 0.3}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-016, t: 5.1, volume: 0.3}
+  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A05b-016, t: 2.0, until: {cut: A05b-021, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.3, volume: 0.15}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A05b-019, t: 9.6, volume: 0.3}
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A05b-021, t: 0.0, until: {cut: A05b-021, t: 15.6}, loop: true, fade_in: 1.0, volume: 0.16}

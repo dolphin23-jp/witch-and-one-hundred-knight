@@ -6,7 +6,7 @@
 - 人物が walk か run で動いている間（ほかの姿勢でも秒速 0.35m 以上で移動していれば。跳ぶ・座るなどは除く）、歩いた距離が歩幅に達するごとに1歩。歩幅は人物の背で変える
   （大人 0.7m、百騎兵など小さい人物 0.45m、走ると約 1.6倍）。
 - 床の材質: 部屋（layout の room_*）の中は石の床（stone）、外は砂（sand）。左右の足と3種の音を順に使う。
-- 音量: 歩く 0.3・走る 0.42 を基準に（2026-11-01 ユーザー「効果音も大きすぎる」で 0.6倍）、カメラからの距離で下げる（2.5m で 1.0、遠いほど小さく。0.08 未満は置かない）。
+- 音量: 歩く 0.16・走る 0.22（台詞を 1.0 とした大きさ。previs_reel.py が素材の山を台詞の山に合わせてから掛ける。2026-11-01 ユーザー「足音がまだ大きい」）、カメラからの距離で下げる（2.5m で 1.0、遠いほど小さく。0.035 未満は置かない）。
   only に入っていない人物（画に映らない人物）は置かない。
 - 出力の footsteps.yaml は tools/previs_reel.py が sound.yaml と一緒に重ねる。手で直すときは sound.yaml の方に書く
   （footsteps.yaml は作り直すと上書きされる）。カットの footsteps: false でそのカットの足音を止められる。
@@ -81,10 +81,10 @@ def main():
                                 dist = math.dist(cp[:2], p)
                             except Exception:
                                 pass
-                        vol = (0.42 if running else 0.3) * min(1.0, 2.5 / max(0.5, dist))
+                        vol = (0.22 if running else 0.16) * min(1.0, 2.5 / max(0.5, dist))
                         if h < 1.3:
                             vol *= 0.75
-                        if vol >= 0.08:
+                        if vol >= 0.035:
                             mat = "stone" if inside_room(st.lay, *p) else "sand"
                             k_sample += 1
                             side = "l" if k_sample % 2 else "r"
