@@ -270,3 +270,4 @@
 - 2026-11-01 14:45: ユーザーが `veraie_sheet_01`（「若いヴェライエのシートです(今回は登場しないが)」）を用意 → 登録。ユーザー指示「追憶の園、小物はあなたが作ってください。見習い魔女の三面図も作って良い」。
   - **見習い魔女の一人ずつの設定画（4クレジット、残高 487→483）**: 計画 `characters/gen/yakai3_designs_plan.yaml`。参照は `apprentice-witches_sheet_01`（並び）と `teressa_sheet_01`（配置の手本）。4枚とも並びの設定画と同じ姿で一次QC pass。`refs/apprentice-witch-{a,b,c,d}_sheet_01.png` に登録（1案だけの決まりどおり、そのまま採用。並べた確認画像 `characters/gen/apprentice-witches-abcd_preview.jpg`）。
   - 追憶の園（背景1枚）と小物（1枚に5点）の指示文を同じ計画に書いた。承認待ち。
+  - **追憶の園と小物（2クレジット、残高 483→481、承認「OK」14:55）**: 小物は `refs/yakai-props_sheet_01.png`（小瓶・切符・委任状・翠ノ実・砂糖漬けの瓶）、追憶の園は `world/memory-garden/plates.yaml`（5枚、最後の1枚に線路と異空間の門が入り、異空間とつながる）。一次QC pass。これで設定画リストの第2便（5〜6章）は全部そろった。
