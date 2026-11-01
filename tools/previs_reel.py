@@ -7,6 +7,7 @@
   （短ければ最後のコマで止め、長ければ切る）。左上にカットIDと秒を書く。
 - 声は voice.yaml の置き場所に原作の台詞（audio/<シーン>/original/<台詞ID>_*.wav）を置く。
 - シーンのフォルダに sound.yaml があれば、BGM・効果音・ちょっとした声を重ねる（D-067、2026-11-01）。書き方は sound_items() のコメント。
+  footsteps.yaml（tools/footsteps.py が動きから書く足音）も重ねる。
   voice.yaml の bgm（原作の時刻のままの分離音）は使わない。
 - 854x480・24fps・H.264（スマホで見やすい大きさ）。
 """
@@ -34,12 +35,11 @@ def sound_items(scene_dir, shots):
         fade_in / fade_out     秒
         volume: 0.5            音量（1.0 がそのまま）
     """
-    sy = scene_dir / "sound.yaml"
-    if not sy.exists():
+    docs = [yaml.safe_load(f.read_text(encoding="utf-8")) or {} for f in (scene_dir / "sound.yaml", scene_dir / "footsteps.yaml") if f.exists()]
+    if not docs:
         return []
     tc = {s["id"]: float(s["tc"]) for s in shots}
     total = sum(float(s["sec"]) for s in shots)
-    doc = yaml.safe_load(sy.read_text(encoding="utf-8")) or {}
 
     def when(v):
         if isinstance(v, (int, float)):
@@ -47,7 +47,7 @@ def sound_items(scene_dir, shots):
         return tc[v["cut"]] + float(v.get("t", 0.0))
 
     out = []
-    for kind in ("bgm", "sfx", "voice"):
+    for doc, kind in ((d, k) for d in docs for k in ("bgm", "sfx", "voice")):
         for it in doc.get(kind) or []:
             at = float(it["at"]) if "at" in it else when(it)
             end = when(it["until"]) if "until" in it else (at + float(it["dur"]) if "dur" in it else None)

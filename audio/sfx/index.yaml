@@ -1,21 +1,124 @@
 # 効果音の一覧（D-067）。ありふれた音は自由に使える素材（CC0）から、原作らしさが要る音は原作の「BGMと効果音」から切り出す。
+# id と name は場面で指定するときの呼び名（name はユーザーが付け直してよい）。walk/run のまとめの足音（E12・E13・E14）は、今は tools/footsteps.py の1歩ずつの足音に置き換えた。
 # すべてモノラル 48kHz の Opus。シーンでの置き場所は episodes/<話>/scenes/<シーン>/sound.yaml。heard: ユーザーが聞いて確かめたら true。
 oga: https://opengameart.org/content/   # 下の page はこのあとに続く
 items:
-  - {file: knock_soft.ogg, ja: 扉を軽く叩く（コンコンコン）, src: "oga 80-cc0-rpg-sfx（wood_01・wood_02 を3つ並べた）", license: CC0}
-  - {file: door_bang.ogg, ja: 扉をどんどん叩く, src: "oga 80-cc0-rpg-sfx（wood_04・wood_05 を4つ並べた）", license: CC0}
-  - {file: door_open.ogg, ja: 木の扉を開ける, src: "oga door-open-door-close-set（qubodup-DoorOpen01）", license: CC0}
-  - {file: door_close.ogg, ja: 木の扉を閉める, src: "oga door-open-door-close-set（qubodup-DoorClose01）", license: CC0}
-  - {file: fire_crackle_loop.ogg, ja: 火のはぜる音（暖炉・松明、約10秒、ループ可）, src: "oga fire-crackling（fire-1.wav を4回つないだ）", license: CC0}
-  - {file: wind_night_loop.ogg, ja: 夜の風（44秒）, src: "oga mild-wind-background-noise", license: CC0}
-  - {file: wind_gust.ogg, ja: 風が吹き抜ける, src: "oga wind（Wind.ogg）", license: CC0}
-  - {file: rumble_low.ogg, ja: 低い地鳴り（22秒）, src: "oga low-rumbling", license: CC0}
-  - {file: ground_shake.ogg, ja: 地面が揺れる, src: "oga earthquake-and-open-sesame（shake.flac）", license: CC0}
-  - {file: cloth_swish.ogg, ja: 布がこすれる（カーテン・マント）, src: "oga footsteps-leather-cloth-armor（step_cloth1・3）", license: CC0}
-  - {file: metal_clank.ogg, ja: 金物が当たる（角笛を壁から取る）, src: "oga 80-cc0-rpg-sfx（metal_01）", license: CC0}
-  - {file: run_sand_one.ogg, ja: 1人が砂の上を走る（4秒）, src: "oga fantozzis-footsteps-grasssand-stone（Sand を並べた）", license: CC0}
-  - {file: run_sand_crowd.ogg, ja: 大勢が砂の上を走って逃げる（4.5秒）, src: "oga fantozzis-footsteps-grasssand-stone（Sand を4人分ずらして重ねた）", license: CC0}
-  - {file: walk_sand_one.ogg, ja: 1人が砂の上を歩く（4秒）, src: "oga fantozzis-footsteps-grasssand-stone", license: CC0}
-  - {file: orig_horn_p17-1945.ogg, ja: ティトの角笛（原作）, src: "原作 パート17_BGMと効果音 19:45.6-19:47.7（130Hz 前後の伸びる音。BGM が少し混ざる）", license: 原作（個人鑑賞用）, heard: false}
-  - {file: orig_sand-eater_burst_p17-1829.ogg, ja: 砂食みが砂を噴き上げて出る（原作）, src: "原作 パート17_BGMと効果音 18:28.9-18:33.5（BGM が混ざる）", license: 原作（個人鑑賞用）, heard: false}
-  - {file: orig_sand-eater_rumble_p17-1943.ogg, ja: 砂食みが砂の下を進む低い音（原作）, src: "原作 パート17_BGMと効果音 19:42.6-19:45.7（BGM が混ざる）", license: 原作（個人鑑賞用）, heard: false}
+- id: E01
+  name: 扉を軽く叩く
+  file: knock_soft.ogg
+  src: oga 80-cc0-rpg-sfx（wood_01・wood_02 を3つ並べた）
+  license: CC0
+  listen: Drive 原作音源/効果音/E01_扉を軽く叩く.mp3
+- id: E02
+  name: 扉をどんどん叩く
+  file: door_bang.ogg
+  src: oga 80-cc0-rpg-sfx（wood_04・wood_05 を4つ並べた）
+  license: CC0
+  listen: Drive 原作音源/効果音/E02_扉をどんどん叩く.mp3
+- id: E03
+  name: 木の扉を開ける
+  file: door_open.ogg
+  src: oga door-open-door-close-set（qubodup-DoorOpen01）
+  license: CC0
+  listen: Drive 原作音源/効果音/E03_木の扉を開ける.mp3
+- id: E04
+  name: 木の扉を閉める
+  file: door_close.ogg
+  src: oga door-open-door-close-set（qubodup-DoorClose01）
+  license: CC0
+  listen: Drive 原作音源/効果音/E04_木の扉を閉める.mp3
+- id: E05
+  name: 布がこすれる
+  file: cloth_swish.ogg
+  src: oga footsteps-leather-cloth-armor（step_cloth1・3）
+  license: CC0
+  listen: Drive 原作音源/効果音/E05_布がこすれる.mp3
+- id: E06
+  name: 金物が当たる
+  file: metal_clank.ogg
+  src: oga 80-cc0-rpg-sfx（metal_01）
+  license: CC0
+  listen: Drive 原作音源/効果音/E06_金物が当たる.mp3
+- id: E07
+  name: 火のはぜる音
+  file: fire_crackle_loop.ogg
+  src: oga fire-crackling（fire-1.wav を4回つないだ）
+  license: CC0
+  listen: Drive 原作音源/効果音/E07_火のはぜる音.mp3
+- id: E08
+  name: 夜の風
+  file: wind_night_loop.ogg
+  src: oga mild-wind-background-noise
+  license: CC0
+  listen: Drive 原作音源/効果音/E08_夜の風.mp3
+- id: E09
+  name: 風が吹き抜ける
+  file: wind_gust.ogg
+  src: oga wind（Wind.ogg）
+  license: CC0
+  listen: Drive 原作音源/効果音/E09_風が吹き抜ける.mp3
+- id: E10
+  name: 低い地鳴り
+  file: rumble_low.ogg
+  src: oga low-rumbling
+  license: CC0
+  listen: Drive 原作音源/効果音/E10_低い地鳴り.mp3
+- id: E11
+  name: 地面が揺れる
+  file: ground_shake.ogg
+  src: oga earthquake-and-open-sesame（shake.flac）
+  license: CC0
+  listen: Drive 原作音源/効果音/E11_地面が揺れる.mp3
+- id: E12
+  name: 砂の上を歩く（まとめ）
+  file: walk_sand_one.ogg
+  src: oga fantozzis-footsteps-grasssand-stone
+  license: CC0
+  listen: Drive 原作音源/効果音/E12_砂の上を歩く（まとめ）.mp3
+- id: E13
+  name: 砂の上を走る（まとめ）
+  file: run_sand_one.ogg
+  src: oga fantozzis-footsteps-grasssand-stone（Sand を並べた）
+  license: CC0
+  listen: Drive 原作音源/効果音/E13_砂の上を走る（まとめ）.mp3
+- id: E14
+  name: 大勢が走って逃げる
+  file: run_sand_crowd.ogg
+  src: oga fantozzis-footsteps-grasssand-stone（Sand を4人分ずらして重ねた）
+  license: CC0
+  listen: Drive 原作音源/効果音/E14_大勢が走って逃げる.mp3
+- id: E15
+  name: ティトの角笛（原作）
+  file: orig_horn_p17-1945.ogg
+  src: 原作 パート17_BGMと効果音 19:45.6-19:47.7（130Hz 前後の伸びる音。BGM が少し混ざる）
+  license: 原作（個人鑑賞用）
+  heard: false
+  listen: Drive 原作音源/効果音/E15_ティトの角笛（原作）.mp3
+- id: E16
+  name: 砂食みの噴き上げ（原作）
+  file: orig_sand-eater_burst_p17-1829.ogg
+  src: 原作 パート17_BGMと効果音 18:28.9-18:33.5（BGM が混ざる）
+  license: 原作（個人鑑賞用）
+  heard: false
+  listen: Drive 原作音源/効果音/E16_砂食みの噴き上げ（原作）.mp3
+- id: E17
+  name: 砂食みが砂の下を進む（原作）
+  file: orig_sand-eater_rumble_p17-1943.ogg
+  src: 原作 パート17_BGMと効果音 19:42.6-19:45.7（BGM が混ざる）
+  license: 原作（個人鑑賞用）
+  heard: false
+  listen: Drive 原作音源/効果音/E17_砂食みが砂の下を進む（原作）.mp3
+- id: E18
+  name: 足音・砂（左右3つずつ）
+  file: steps/sand_l1〜3・sand_r1〜3.ogg
+  src: oga fantozzis-footsteps-grasssand-stone（Sand）
+  license: CC0
+  note: tools/footsteps.py が動きに合わせて1歩ずつ置く
+  listen: Drive 原作音源/効果音/E18_足音・砂.mp3
+- id: E19
+  name: 足音・石の床（左右3つずつ）
+  file: steps/stone_l1〜3・stone_r1〜3.ogg
+  src: oga fantozzis-footsteps-grasssand-stone（Stone）
+  license: CC0
+  note: 部屋の中（layout の room_*）で使う
+  listen: Drive 原作音源/効果音/E19_足音・石の床.mp3
