@@ -83,7 +83,7 @@ parts:
   segments: 186
 - part: 20
   src: 魔女と百騎兵Revival パート20.mp3
-  sec: null
+  sec: 1518.11   # 分離した声の mp3 の長さ（2026-11-01 に測定。元の mp3 の長さは未確認）
   made: '2026-10-31'
   note: ユーザーが用意（2026-10-31）。書き起こしの見出しは Whisper large-v3-turbo。元の長さと分離の道具は未確認。書き起こしは 00:04〜25:12（メタリカが部屋に閉じこもる場面〜夜光列車の駅へ向かうところ）
   bitrate: null
@@ -100,3 +100,23 @@ parts:
       id: 1oIB1HQK3uwCPlM670BNHrMcZMk8RtK-7
   transcript: audio/original/transcripts/part20.txt
   segments: 231
+- part: 21
+  src: 魔女と百騎兵Revival パート21.mp3
+  sec: 1550.14
+  made: '2026-11-01'
+  demucs: htdemucs_ft
+  whisper: large-v3-turbo
+  bitrate: 192k
+  drive: 声とBGMの分離/パート21/
+  files:
+    voice:
+      name: パート21_声.mp3
+      id: 1dlaNucvJVJf_A1rOYNq9yI46_vOF6zkc
+    bgm:
+      name: パート21_BGMと効果音.mp3
+      id: 1I719ukMLn7KLWWkwrFV1kQfqkxqoLYhc
+    transcript:
+      name: パート21_書き起こし.txt
+      id: 1f0Wem3jtUYoWBbDkCpIQHQ_U1KXPdsZO
+  transcript: audio/original/transcripts/part21.txt
+  segments: 249

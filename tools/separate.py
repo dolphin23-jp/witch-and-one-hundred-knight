@@ -146,7 +146,7 @@ def readme(record):
              "台詞として使うときは、脚本と突き合わせて1本ずつ切り出す（tools/extract_lines.py、リポジトリの audio/<シーン>/original/）。",
              "", "パートの一覧", ""]
     for p in sorted(record.get("parts", []), key=lambda p: p["part"]):
-        lines.append(f"  パート{p['part']}  {fmt_tc(p['sec'])}  （{p['made']}）")
+        lines.append(f"  パート{p['part']}  {fmt_tc(p['sec']) if p.get('sec') else '長さ不明'}  （{p['made']}）")
     return "\n".join(lines) + "\n"
 
 
