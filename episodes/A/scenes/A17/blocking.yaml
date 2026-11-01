@@ -27,7 +27,7 @@ places:
   us: [65.3, -3.9]
   be: [66.2, -2.4]
   te: [65.6, -0.6]
-  te_near: [62.65, 0.9]
+  te_near: [62.55, 0.4]
   te_back: [65.4, -1.2]
   ap_in_a: [68.6, 7.6]
   ap_in_b: [69.3, 8.2]
@@ -152,15 +152,15 @@ cuts:
       - {t: 0.0, at: hk_g, z: 26.0, face: 20, pose: look_up}
       - {t: 10.8, at: hk_g, z: 26.0, face: 20, pose: look_up}
     cam_keys:
-    - {t: 0.0, cam: [57.8, 0.4, 27.7], look: [60.6, 4.6], look_h: 26.9, lens: 28, frame: 全身}
-    - {t: 10.8, cam: [58.0, 0.6, 27.7], look: [60.6, 4.6], look_h: 26.9, lens: 31}
+    - {t: 0.0, cam: [60.3, -2.6, 28.6], look: [60.6, 4.2], look_h: 26.9, lens: 28, frame: 全身}
+    - {t: 10.8, cam: [60.4, -2.2, 28.5], look: [60.6, 4.2], look_h: 26.9, lens: 30}
     bg: azb_summit_night
     act: {start: 見上げる一行, do: ルッキーニィが指さして「何ですか、アレ！？」。メタリカは両手を上げて「ついに来たぞ！」と胸を張る。ビスコは見上げたまま「これが……夜会……！？」, end: 胸を張るメタリカ}
-    camera: 魔女たちの側（北西）のやや高い所から、一行の正面
+    camera: 魔女たちの側（北）のやや高い所から、見上げる一行の正面
     kind: M
   A17-003:
     frame: 全身（奥に魔女たち）
-    only: [metallica, purple-peel, lily, rabi, usamaru, berda, teressa]
+    only: [metallica, arlecchino, purple-peel, lily, rabi, usamaru, berda, teressa]
     keys:
       metallica:
       - {t: 0.0, at: m_stop, z: 26.0, face: 340, pose: proud}
@@ -193,11 +193,11 @@ cuts:
       - {t: 0.0, at: te, z: 26.0, face: 247, pose: stand}
       - {t: 9.5, at: te, z: 26.0, face: 247, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [64.6, 5.6, 27.1], look: metallica, lens: 30, frame: 全身}
-    - {t: 9.5, cam: [64.4, 5.4, 27.1], look: metallica, lens: 33}
+    - {t: 0.0, cam: [62.6, 8.0, 27.3], look: [61.6, 0.0], look_h: 27.4, lens: 30, frame: 全身}
+    - {t: 9.5, cam: [62.5, 7.6, 27.3], look: [61.6, 0.0], look_h: 27.4, lens: 32}
     bg: azb_summit_night
     act: {start: 胸を張るメタリカ, do: 「空間が安定するまで踊り続けなければ」と、得意げにまた踊り出す。奥の魔女たちが見ている, end: 踊るメタリカと奥の魔女たち}
-    camera: 南東から、踊るメタリカ（奥に北の縁の魔女たち）
+    camera: 南の低い所から、踊るメタリカ（手前に樽のアルレッキーノ、奥に北の縁の魔女たち）
     kind: M
   A17-004:
     frame: 全身（魔女たちの肩ごし）
@@ -240,11 +240,11 @@ cuts:
       - {t: 0.0, at: te, z: 26.0, face: 247, pose: cover}
       - {t: 16.2, at: te, z: 26.0, face: 247, pose: cover}
     cam_keys:
-    - {t: 0.0, cam: [63.6, -5.6, 28.2], look: [61.2, 2.4], look_h: 26.9, lens: 30, frame: 全身}
-    - {t: 16.2, cam: [63.2, -4.9, 28.0], look: [61.4, 2.4], look_h: 26.9, lens: 35}
+    - {t: 0.0, cam: [68.4, -5.6, 29.3], look: [61.4, 2.6], look_h: 26.9, lens: 30, frame: 全身}
+    - {t: 16.2, cam: [67.9, -5.0, 29.1], look: [61.5, 2.4], look_h: 26.9, lens: 34}
     bg: azb_summit_night
     act: {start: 踊るメタリカ, do: 魔女たちがくすくす笑っている。メタリカは踊りながらきょろきょろして「なんで笑っているんだ」。ビスコは口を押さえて「かなり恥ずかしいぞ」, end: 笑う魔女たちと、踊るメタリカ}
-    camera: 北の縁の魔女たちの肩ごし（高い所）から、踊るメタリカと一行（ゆっくり寄る）
+    camera: 北東の縁の魔女たち（ベルダ・テレッサ）の肩ごし（高い所）から、踊るメタリカと一行（ゆっくり寄る）
     kind: M
   A17-005:
     frame: 寄り（低い）
@@ -341,11 +341,11 @@ cuts:
       - {t: 0.0, at: te, z: 26.0, face: 247, pose: stand}
       - {t: 20.3, at: te, z: 26.0, face: 247, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [67.6, 0.4, 27.1], look: [64.9, -4.0], look_h: 27.7, lens: 34, frame: 全身}
-    - {t: 20.3, cam: [67.3, 0.2, 27.1], look: [64.9, -4.0], look_h: 27.7, lens: 40}
+    - {t: 0.0, cam: [63.4, 0.6, 27.5], look: [65.0, -4.2], look_h: 27.9, lens: 32, frame: 全身}
+    - {t: 20.3, cam: [63.5, 0.0, 27.5], look: [65.0, -4.2], look_h: 27.9, lens: 38}
     bg: azb_summit_night
     act: {start: 北東の縁のラヴィとウサギ人形, do: ウサギ人形がはねて「面白いダンスだったよね！」。ラヴィが両手を上げて大笑いし、メタリカを指さして「こんな間抜けなヤツ、見習い魔女にだっていないぜ」, end: 大笑いするラヴィ}
-    camera: 南東から、ラヴィとウサギ人形（ゆっくり寄る）
+    camera: 南（木の像の東の脇）から、ラヴィとウサギ人形（ゆっくり寄る）
     kind: M
   A17-008:
     frame: 全身（正面）
@@ -406,11 +406,11 @@ cuts:
       - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
       - {t: 11.8, at: [62.0, 0.9], z: 26.0, face: 65, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [68.4, 3.0, 27.4], look: [65.2, -1.0], look_h: 27.2, lens: 30, frame: 全身}
-    - {t: 11.8, cam: [68.2, 2.8, 27.4], look: [64.9, -0.4], look_h: 27.2, lens: 33}
+    - {t: 0.0, cam: [70.0, 1.5, 27.6], look: [65.2, -0.8], look_h: 27.2, lens: 28, frame: 全身}
+    - {t: 11.8, cam: [69.6, 1.3, 27.6], look: [65.1, -0.8], look_h: 27.2, lens: 31}
     bg: azb_summit_night
     act: {start: 手を広げるテレッサ, do: ベルダが「テレッサ！人をバカにするものじゃないわ」とたしなめる。テレッサはお辞儀して「はい、お師匠様」、振り向いてメタリカを指さし「騙されたことにまだ気がついてない」, end: メタリカを指さすテレッサ}
-    camera: 南東のやや高い所から、ベルダとテレッサ（手前の左にメタリカ）
+    camera: 東の低い所から、ベルダとテレッサ（左の奥にメタリカと木の像）
     kind: M
   A17-011:
     frame: 寄り（顔）
@@ -433,19 +433,19 @@ cuts:
       teressa:
       - {t: 0.0, at: [64.4, 0.2], z: 26.0, face: 250, pose: point}
       - {t: 0.4, at: [64.4, 0.2], z: 26.0, face: 250, pose: walk}
-      - {t: 3.0, at: te_near, z: 26.0, face: 255, pose: walk, ease: out}
-      - {t: 3.4, at: te_near, z: 26.0, face: 260, pose: lean}
-      - {t: 12.3, at: te_near, z: 26.0, face: 260, pose: lean}
+      - {t: 3.0, at: te_near, z: 26.0, face: 235, pose: walk, ease: out}
+      - {t: 3.4, at: te_near, z: 26.0, face: 228, pose: lean}
+      - {t: 12.3, at: te_near, z: 26.0, face: 228, pose: lean}
       metallica:
       - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 70, pose: stand}
       - {t: 4.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
       - {t: 12.3, at: [62.0, 0.9], z: 26.0, face: 80, pose: look_down}
     cam_keys:
-    - {t: 0.0, cam: [62.6, 5.8, 28.2], look: [63.0, 0.7], look_h: 27.2, lens: 32, frame: 全身}
-    - {t: 12.3, cam: [62.4, 5.3, 28.1], look: [62.4, 0.9], look_h: 27.2, lens: 38}
+    - {t: 0.0, cam: [64.3, 4.5, 28.4], look: [62.4, 0.65], look_h: 27.4, lens: 30, frame: 全身}
+    - {t: 12.3, cam: [63.9, 4.0, 28.3], look: [62.3, 0.65], look_h: 27.4, lens: 35}
     bg: azb_summit_night
     act: {start: 指さすテレッサ, do: テレッサがメタリカの目の前まで歩み寄り、顔をのぞき込んで「お夜会ごっこでもしているのがお似合いですわ」, end: 顔を寄せるテレッサと、うつむくメタリカ}
-    camera: 南のやや高い所から二人を横に（ゆっくり寄る）
+    camera: 南南東のやや高い所から、向き合う二人を斜め横に（ゆっくり寄る。奥に木の像）
     kind: M
   A17-013:
     frame: 寄り（ドリーズーム）
@@ -456,8 +456,8 @@ cuts:
       - {t: 1.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
       - {t: 9.0, at: [62.0, 0.9], z: 26.0, face: 80, pose: stand}
       teressa:
-      - {t: 0.0, at: te_near, z: 26.0, face: 260, pose: lean}
-      - {t: 9.0, at: te_near, z: 26.0, face: 260, pose: cover}
+      - {t: 0.0, at: te_near, z: 26.0, face: 228, pose: lean}
+      - {t: 9.0, at: te_near, z: 26.0, face: 228, pose: cover}
     cam_keys:
     - {t: 0.0, cam: [60.4, 0.0, 27.4], look: metallica, look_h: 27.4, lens: 28, frame: 寄り}
     - {t: 9.0, cam: [58.0, -1.4, 27.4], look: metallica, look_h: 27.4, lens: 58}
@@ -476,8 +476,8 @@ cuts:
       - {t: 5.2, at: be, z: 26.6, face: 30, pose: stand}
       - {t: 15.0, at: be, z: 26.6, face: 30, pose: stand}
       teressa:
-      - {t: 0.0, at: te_near, z: 26.0, face: 260, pose: cover}
-      - {t: 12.4, at: te_near, z: 26.0, face: 260, pose: cover}
+      - {t: 0.0, at: te_near, z: 26.0, face: 228, pose: cover}
+      - {t: 12.4, at: te_near, z: 26.0, face: 228, pose: cover}
       - {t: 12.6, at: te_near, z: 26.0, face: 50, pose: walk}
       - {t: 14.4, at: te_back, z: 26.0, face: 50, pose: walk, ease: out}
       - {t: 15.0, at: te_back, z: 26.0, face: 50, pose: stand}
@@ -636,15 +636,15 @@ cuts:
       - {t: 5.9, at: ap_d, z: 26.0, face: 290, pose: stand}
       - {t: 13.8, at: ap_d, z: 26.0, face: 290, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [57.9, 3.8, 26.7], look: [66.0, 6.0], look_h: 26.8, lens: 30, frame: 全身}
-    - {t: 13.8, cam: [58.1, 3.9, 26.7], look: [65.4, 5.2], look_h: 26.8, lens: 34}
+    - {t: 0.0, cam: [57.4, 10.6, 28.0], look: [62.6, 4.4], look_h: 26.9, lens: 26, frame: 全身}
+    - {t: 13.8, cam: [57.8, 10.2, 27.9], look: [62.8, 4.4], look_h: 26.9, lens: 28}
     bg: azb_summit_night
     act: {start: 立ち尽くす一行, do: 南東から小さな見習い魔女たちが歩いてきて「あれ……？誰かいる？」。メタリカは樽の西へ後ずさる。先頭の子が指さして「ここは見習い魔女の夜会の場所よ」, end: 指さす見習い魔女と、向き合う一行}
-    camera: 一行の後ろ（西）の低い所から、歩いてくる見習い魔女たち
+    camera: 一行の後ろ（南南西）のやや高い所から、一行と、東から歩いてくる見習い魔女たち
     kind: M
   A17-019:
     frame: 全身（横から）
-    only: [apprentice-a, apprentice-b, bisco]
+    only: [apprentice-a, apprentice-b, apprentice-c, apprentice-d, bisco, luckiny, hundred-knight, metallica, arlecchino]
     keys:
       apprentice-a:
       - {t: 0.0, at: ap_a, z: 26.0, face: 290, pose: point}
@@ -660,11 +660,11 @@ cuts:
       - {t: 0.0, at: ap_b, z: 26.0, face: 290, pose: stand}
       - {t: 5.0, at: ap_b, z: 26.0, face: 290, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [62.6, 9.4, 26.9], look: [62.4, 5.6], look_h: 26.6, lens: 26, frame: 全身}
-    - {t: 5.0, cam: [62.5, 9.3, 26.9], look: [62.2, 5.8], look_h: 26.6, lens: 26}
+    - {t: 0.0, cam: [62.7, 11.6, 27.2], look: [62.4, 5.4], look_h: 26.7, lens: 24, frame: 全身}
+    - {t: 5.0, cam: [62.6, 11.3, 27.2], look: [62.3, 5.4], look_h: 26.7, lens: 25}
     bg: azb_summit_night
     act: {start: 指さす見習い魔女, do: 「えいっ！」と小さな魔法を放ち、ビスコの足もとで火花。ビスコが跳び上がって「見習い魔女の夜会だって……！？」, end: 驚くビスコと見習い魔女たち}
-    camera: 南の低い所から横に（左にビスコ、右に見習い魔女たち）
+    camera: 南の低い所から横に（左にビスコ、右に見習い魔女たち。奥に一行）
     kind: M
   A17-020:
     frame: 全身（見習い魔女たち）
@@ -782,7 +782,7 @@ cuts:
       - {t: 17.0, at: [62.0, 3.25], z: 26.0, face: 270, pose: dance, ease: linear}
     cam_keys:
     - {t: 0.0, cam: [62.4, 7.0, 33.5], look: barrel, look_h: 26.6, lens: 26, frame: 俯瞰}
-    - {t: 17.0, cam: [60.4, 8.4, 29.2], look: [61.4, 2.4], look_h: 26.8, lens: 28}
+    - {t: 17.0, cam: [61.0, 9.6, 29.0], look: [61.4, 2.4], look_h: 26.8, lens: 28}
     bg: azb_summit_night
     act: {start: 立ち尽くす一行と見習い魔女たち, do: 夜空から魔女の声「ワルギスのダンスを踊っておくれな」。見習い魔女たちが「はーい！」と樽へ駆け寄り、輪になって、メタリカと同じ踊りを踊り始める。「夜会の開幕だ！」, end: 樽のまわりで踊る見習い魔女の輪と、立ち尽くすメタリカ}
     camera: 広場の上空から、樽と踊りの輪を見下ろし、一行の方へ下りてくる（クレーン）
@@ -940,11 +940,11 @@ cuts:
       - {t: 13.46, at: [61.99, 1.15], z: 26.0, face: 89, pose: dance, ease: linear}
       - {t: 14.5, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [58.85, 3.65, 26.55], look: metallica, look_h: 26.9, lens: 40, frame: 寄り}
-    - {t: 14.5, cam: [58.95, 3.55, 26.55], look: metallica, look_h: 26.9, lens: 46}
+    - {t: 0.0, cam: [59.4, 5.2, 26.75], look: [60.8, 2.1], look_h: 26.8, lens: 34, frame: 寄り}
+    - {t: 14.5, cam: [59.5, 4.9, 26.7], look: [60.7, 2.2], look_h: 26.8, lens: 40}
     bg: azb_summit_night
     act: {start: ひざをついたメタリカ, do: うつむいたまま「笑いものに……されたのか……？」「偉大なる、沼の魔女が……！」。後ろを見習い魔女たちが踊りながら横切る, end: うつむくメタリカの寄り}
-    camera: 南西の低い所から、うつむくメタリカの寄り（奥を踊りの輪が回る）
+    camera: 南の低い所から、うつむくメタリカの横顔の寄り（右の奥を踊りの輪が回る。ゆっくり寄る）
     kind: M
   A17-025:
     frame: 全身（二人）
@@ -1080,12 +1080,12 @@ cuts:
       - {t: 21.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
       - {t: 21.6, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance}
     cam_keys:
-    - {t: 0.0, cam: [61.4, 4.4, 26.9], look: [59.7, 2.9], look_h: 26.6, lens: 36, frame: 寄り}
-    - {t: 21.0, cam: [61.0, 4.0, 26.9], look: metallica, look_h: 26.7, lens: 48}
-    - {t: 21.6, cam: [61.0, 4.0, 26.9], look: metallica, look_h: 26.7, lens: 48}
+    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 26.7, lens: 34, frame: 寄り}
+    - {t: 21.0, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
+    - {t: 21.6, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
     bg: azb_summit_night
     act: {start: 並んでしゃがむ二人, do: メタリカは顔を両手でおおって泣き出し、「うるさい……」「くそっ……」「あんなヤツらに……」, end: 泣くメタリカの寄り}
-    camera: 南東から二人、泣くメタリカへゆっくり寄る
+    camera: 南東の低い所（顔が帽子に隠れない高さ）から二人、泣くメタリカへゆっくり寄る
     kind: A
   A17-027:
     frame: 全身（後ろから）
