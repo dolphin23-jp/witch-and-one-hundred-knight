@@ -2,13 +2,14 @@
 # BGM はゲームがこの場面で流していた曲を基本にした（audio/bgm/index.yaml）。003〜006 はゲームでは村の曲が続くが、ここでは扉を叩く音で曲を止め、松明の火と風だけにして張りつめさせる。
 scene: A06
 bgm:
-  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-002, t: 0.4}, from: 85.1, loop: true, fade_out: 0.4, volume: 0.3}
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-002, t: 0.4}, from: 85.1, loop: true, fade_out: 0.4, volume: 0.18}
   # 砂食みが出た所（噴き上げの音を含む1本もの）。18:28.8 からで、噴き上げが 007 の 0.2秒に来る
-  - {src: audio/bgm/p17-2_sand-eater_sting.ogg, cut: A06-007, t: 0.0, until: {cut: A06-009, t: 0.0}, from: 4.8, fade_out: 1.0, volume: 0.22}
-  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-011, t: 1.0}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.45}
-  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 1.0}, loop: true, fade_out: 1.0, volume: 0.27}
-  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 0.5, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 2.5, fade_out: 1.5, volume: 0.27}
+  - {src: audio/bgm/p17-2_sand-eater_sting.ogg, cut: A06-007, t: 0.0, until: {cut: A06-009, t: 0.0}, from: 4.8, fade_out: 1.0, volume: 0.13}
+  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-011, t: 1.0}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.27}
+  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 1.0}, loop: true, fade_out: 1.0, volume: 0.16}
+  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 0.5, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 2.5, fade_out: 1.5, volume: 0.16}
 sfx:
+  # 足音は tools/footsteps.py が動きから自動で置く（footsteps.yaml）
   - {src: audio/sfx/wind_night_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-001, t: 0.3}, loop: true, fade_out: 0.3, volume: 0.18}
   - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-001, t: 0.0, until: {cut: A06-003, t: 0.0}, loop: true, volume: 0.2}
   - {src: audio/sfx/cloth_swish.ogg, cut: A06-001, t: 0.6, volume: 0.6}
@@ -20,20 +21,15 @@ sfx:
   - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 0.0}, loop: true, volume: 0.4}
   - {src: audio/sfx/wind_night_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 1.0}, from: 10.0, loop: true, volume: 0.18}
   - {src: audio/sfx/ground_shake.ogg, cut: A06-007, t: 0.0, volume: 0.3}
-  - {src: audio/sfx/run_sand_crowd.ogg, cut: A06-007, t: 1.8, volume: 0.35, fade_out: 1.0, until: {cut: A06-008, t: 0.0}}
   - {src: audio/sfx/metal_clank.ogg, cut: A06-008, t: 1.5, volume: 0.7}
-  - {src: audio/sfx/walk_sand_one.ogg, cut: A06-010, t: 0.6, dur: 3.6, volume: 0.4, fade_out: 1.5}
   - {src: audio/sfx/door_close.ogg, cut: A06-010, t: 4.0, volume: 0.8}
   # 角笛（原作から）と、砂の下を進む砂食み
   - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-012, t: 0.0, volume: 0.45}
   - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A06-012, t: 1.2, volume: 0.3}
   - {src: audio/sfx/rumble_low.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 0.5}, fade_out: 0.5, volume: 0.2}
-  - {src: audio/sfx/run_sand_one.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 0.0}, loop: true, volume: 0.18}
   - {src: audio/sfx/wind_night_loop.ogg, cut: A06-013, t: 0.0, until: {cut: A06-015, t: 21.0}, from: 20.0, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.13}
-  - {src: audio/sfx/walk_sand_one.ogg, cut: A06-014, t: 11.0, dur: 2.5, volume: 0.45}
   # 遠くで最後の角笛が鳴りやみ、稜線のティトが駆け戻る
   - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-015, t: 0.0, volume: 0.25, fade_out: 1.0, dur: 2.0}
-  - {src: audio/sfx/run_sand_one.ogg, cut: A06-015, t: 2.1, until: {cut: A06-015, t: 9.3}, loop: true, fade_in: 4.0, fade_out: 0.4, volume: 0.5}
 voice:
   - {src: audio/A06/original/L189_villager-d.wav, cut: A06-007, t: 1.9, volume: 0.6}
   - {src: audio/original/vocalizations/hundred-knight_mokkyu_p17-2042.wav, cut: A06-014, t: 0.3, volume: 1.0}
