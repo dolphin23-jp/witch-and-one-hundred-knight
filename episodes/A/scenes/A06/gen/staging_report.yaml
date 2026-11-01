@@ -29,7 +29,7 @@ cuts:
       - 大きな壺
       - 扉の横のランプ
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       - 壁に掛けた角笛（A06-008 でティトが取る）
       staging: 'No people in frame. High angle looking down. Looking up at a deep blue night sky full of bright stars above the red cliffs of the valley. Behind: the small village in the sandy valley at
@@ -206,8 +206,8 @@ cuts:
         side: 左
         body: 背中
       - who: tito
-        s: 0.1
-        dist: 5.8
+        s: 0.04
+        dist: 4.69
         side: 中央
         body: 正面
       - who: villager-b
@@ -233,7 +233,7 @@ cuts:
       - 大きな壺
       - 扉の横のランプ
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       - 壁に掛けた角笛（A06-008 でティトが取る）
       staging: 'In frame (exactly 4 people, from left to right): a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, standing with a torch, glaring, at the far left
@@ -266,13 +266,13 @@ cuts:
         - 57.8
         - 29.45
         via:
-        - door_out
-        - door_out
+        - - 57.8
+          - 29.75
         - - 57.8
           - 29.45
         t:
         - 0.0
-        - 9.2
+        - 10.6
       villager-b:
         to:
         - 59.1
@@ -284,7 +284,7 @@ cuts:
           - 31.9
         t:
         - 0.0
-        - 9.2
+        - 10.6
     note: null
   A06-004:
     cam:
@@ -301,11 +301,6 @@ cuts:
         dist: 3.22
         side: 中央
         body: 正面
-      - who: villager-d
-        s: 0.07
-        dist: 4.7
-        side: 中央
-        body: 正面
       - who: tito
         s: 1.0
         dist: 0.5
@@ -318,28 +313,21 @@ cuts:
       - 南の崖（西）
       - 家
       - 家
-      staging: 'In frame (exactly 3 people, from left to right): a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, stepping forward with a torch, shouting, in the
-        center of the frame, facing the camera; an elderly beastfolk villager man, as in his reference sheet, holding a burning torch, standing with a torch at the back, in the center of the frame, facing
-        the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice,
-        long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), seen from behind over the shoulder, at the far right of the frame, seen from behind at an angle, turned
-        toward screen left. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light
-        from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+      staging: 'In frame (exactly 2 people, from left to right): a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, stepping forward with a torch, shouting, in the
+        center of the frame, facing the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+        and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), seen from behind over the shoulder, at the far right of the frame, seen
+        from behind at an angle, turned toward screen left. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate,
+        red tiled roof, warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
     end:
       people:
-      - who: villager-b
-        s: -0.73
-        dist: 2.66
-        side: 左
-        body: 正面
-      - who: villager-c
+      - who: villager-a
         s: 0.0
-        dist: 2.3
+        dist: 2.5
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): a young beastfolk villager man, as in his reference sheet, holding a burning torch, standing with a torch, at the far left of the frame,
-        facing the camera; an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, stepping forward with a torch, pointing an accusing finger, in the center of the frame,
-        facing the camera. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light
-        from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
+      staging: 'In frame (exactly one person): a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, standing with a torch, in the center of the frame, facing the camera.
+        No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light from inside. Night
+        outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
     move:
       villager-a:
         to:
@@ -352,18 +340,108 @@ cuts:
           - 31.2
         t:
         - 0.0
-        - 8.0
-      villager-c:
+        - 3.6
+    note: null
+  A06-004b:
+    cam:
+    - 58.05
+    - 27.3
+    - 1.05
+    lens: 28
+    bearing: 188
+    frame: 肩越し
+    start:
+      people:
+      - who: villager-b
+        s: -0.6
+        dist: 4.4
+        side: 左
+        body: 正面
+      - who: villager-c
+        s: -0.21
+        dist: 5.55
+        side: 中央
+        body: 正面
+      - who: tito
+        s: -0.04
+        dist: 2.16
+        side: 中央
+        body: 背中
+      - who: villager-a
+        s: 0.26
+        dist: 4.04
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.48
+        dist: 1.22
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      bg: ティトの家の扉の前〔村 家〕
+      props:
+      - 南の崖
+      staging: 'In frame (exactly 5 people, from left to right): a young beastfolk villager man, as in his reference sheet, holding a burning torch, standing, on the left of the frame, facing the camera;
+        an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, standing, on the left of the frame, facing the camera; Tito (a gentle goat-like beastfolk woman: two curved
+        ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with
+        dark hooves, a green fluffy tail), standing in front of the door in profile, tense, biting her lip, in the center of the frame, with the back to the camera; a middle-aged beastfolk villager man,
+        as in his reference sheet, holding a burning torch, standing, on the right of the frame, facing the camera; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet
+        with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
+        peeking out from the open doorway behind her, on the right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the front of Tito''s small wooden house
+        at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof, warm light from inside. Night inside the house: warm lamplight on the backs of the two watching
+        from the doorway; outside, the flickering orange torchlight of the villagers around Tito.'
+    end:
+      people:
+      - who: villager-b
+        s: -0.77
+        dist: 4.15
+        side: 左
+        body: 正面
+      - who: villager-c
+        s: -0.27
+        dist: 5.3
+        side: 中央
+        body: 正面
+      - who: tito
+        s: -0.07
+        dist: 1.91
+        side: 中央
+        body: 背中
+      - who: villager-a
+        s: 0.34
+        dist: 3.78
+        side: 右
+        body: 正面
+      - who: hundred-knight
+        s: 0.73
+        dist: 0.96
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): a young beastfolk villager man, as in his reference sheet, holding a burning torch, standing, at the far left of the frame, facing the camera;
+        an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, standing, on the left of the frame, facing the camera; Tito (a gentle goat-like beastfolk woman: two curved
+        ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with
+        dark hooves, a green fluffy tail), standing in profile, tense, in the center of the frame, with the back to the camera; a middle-aged beastfolk villager man, as in his reference sheet, holding a
+        burning torch, standing, on the right of the frame, facing the camera; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale
+        blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), peeking out from the doorway, at
+        the far right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings,
+        stone foundation, barrels and a crate, red tiled roof, warm light from inside. Night inside the house: warm lamplight on the backs of the two watching from the doorway; outside, the flickering orange
+        torchlight of the villagers around Tito.'
+    move:
+      tito:
         to:
-        - 58.2
-        - 31.5
-        via:
-        - vc
-        - - 58.2
-          - 31.5
+        - 57.8
+        - 29.45
         t:
         - 0.0
-        - 8.0
+        - 7.6
+      luckiny:
+        to: lk_cower
+        face: 170
+        via:
+        - lk_cower
+        - lk_cower
+        t:
+        - 0.0
+        - 7.6
     note: null
   A06-005:
     cam:
@@ -375,11 +453,6 @@ cuts:
     frame: 全身
     start:
       people:
-      - who: villager-c
-        s: -0.79
-        dist: 1.65
-        side: 左
-        body: 斜め後ろ（画面右向き）
       - who: tito
         s: 0.0
         dist: 3.63
@@ -401,15 +474,13 @@ cuts:
       - 藁の木箱
       - 扉の横のランプ
       - テーブルの小さなランプ
-      - 窓辺のランプ
+      - 窓辺のランプ（星図の棚の上。2026-11-01 に高さ 0.9 → 1.15）
       - 窓の外（外から見た窓明かりの目印）
       - 壁に掛けた角笛（A06-008 でティトが取る）
-      staging: 'In frame (exactly 2 people, from left to right): an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, pointing an accusing finger at her, at the far left
-        of the frame, seen from behind at an angle, turned toward screen right; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a
-        gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, facing
-        the angry villagers, in the center of the frame, facing the camera. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation,
-        barrels and a crate, red tiled roof, warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open
-        doorway.'
+      staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+        and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, facing the angry villagers, in the center
+        of the frame, facing the camera. No other people. Behind: the front of Tito''s small wooden house at night: a wooden door with iron fittings, stone foundation, barrels and a crate, red tiled roof,
+        warm light from inside. Night outside the house: a deep blue starry sky, the flickering orange light of the villagers'' torches, warm lamplight from the open doorway.'
     end:
       people:
       - who: tito
@@ -451,70 +522,77 @@ cuts:
         to:
         - 58.2
         - 31.5
+        via:
+        - - 58.2
+          - 31.5
         t:
         - 0.0
         - 10.8
     note: null
   A06-006:
     cam:
-    - 59.1
-    - 31.0
+    - 56.9
+    - 31.1
     - 1.4
-    lens: 50
-    bearing: 325
-    frame: 寄り
+    lens: 44
+    bearing: 13
+    frame: 全身
     start:
       people:
-      - who: tito
-        s: -0.27
-        dist: 2.01
-        side: 中央
-        body: 斜め前（画面左向き）
       - who: luckiny
-        s: 0.34
-        dist: 2.8
+        s: -0.42
+        dist: 3.01
+        side: 左
+        body: 正面
+      - who: hundred-knight
+        s: -0.03
+        dist: 2.72
+        side: 中央
+        body: 正面
+      - who: tito
+        s: 0.66
+        dist: 1.81
         side: 右
         body: 正面
       bg: ティトの家の中（扉側）〔ティトの家 扉側〕
       props:
-      - 北の崖
-      - 北の崖（東）
-      - 家
-      - 壺とパンの棚
-      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
-      - 赤い布のテーブル
-      - 丸椅子
-      - 丸椅子
+      - 出入口のカーテン
       - 丸椅子
       - 寝台
-      - テーブルの小さなランプ
-      - 窓辺のランプ
-      - 窓の外（外から見た窓明かりの目印）
-      staging: 'In frame (exactly 2 people, from left to right): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
-        a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), turning back toward the doorway, seen from behind over
-        the shoulder, on the left of the frame, in three-quarter view, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and
-        short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing in the doorway, on the right of the frame,
-        facing the camera. No other people. Behind: inside Tito''s small house: rough stone-brick walls, a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth, round wooden
-        stools, a straw crate, a clay jar, an arched wooden door. Night at the open front door: warm lamplight from inside the house falling on the doorway, the flickering orange light of torches from outside.'
+      - 暖炉
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing in the doorway, on the left of the frame, facing the camera; the Hundred Knight
+        (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets
+        with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns,
+        short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves,
+        a green fluffy tail), turning back toward the doorway, seen from behind over the shoulder, at the far right of the frame, facing the camera. No other people. Behind: inside Tito''s small house:
+        rough stone-brick walls, a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth, round wooden stools, a straw crate, a clay jar, an arched wooden door. Night at the open
+        front door: warm lamplight from inside the house falling on the doorway, the flickering orange light of torches from outside.'
     end:
       people:
-      - who: tito
-        s: -0.42
-        dist: 1.86
-        side: 左
-        body: 斜め後ろ（画面右向き）
       - who: luckiny
-        s: 0.32
-        dist: 2.65
+        s: -0.31
+        dist: 1.97
         side: 中央
-        body: 斜め前（画面左向き）
-      staging: 'In frame (exactly 2 people, from left to right): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
-        a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), seen from behind over the shoulder, on the left of the
-        frame, seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white
-        fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing in the doorway, looking down, on the right of the frame, in three-quarter
-        view, turned toward screen left. No other people. Behind: inside Tito''s small house: rough stone-brick walls, a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth,
-        round wooden stools, a straw crate, a clay jar, an arched wooden door. Night at the open front door: warm lamplight from inside the house falling on the doorway, the flickering orange light of torches
-        from outside.'
+        body: 正面
+      - who: hundred-knight
+        s: -0.2
+        dist: 2.55
+        side: 中央
+        body: 正面
+      - who: tito
+        s: 0.71
+        dist: 1.68
+        side: 右
+        body: 背中
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing in the doorway, looking down, on the left of the frame, facing the camera; the
+        Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged
+        horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves,
+        a green fluffy tail), seen from behind over the shoulder, at the far right of the frame, with the back to the camera. No other people. Behind: inside Tito''s small house: rough stone-brick walls,
+        a dark flagstone floor, shelves with clay pots and bread, a table with a red cloth, round wooden stools, a straw crate, a clay jar, an arched wooden door. Night at the open front door: warm lamplight
+        from inside the house falling on the doorway, the flickering orange light of torches from outside.'
     move:
       tito:
         to:
@@ -524,142 +602,131 @@ cuts:
         via:
         - - 57.8
           - 29.45
+        - - 57.8
+          - 29.45
         t:
         - 0.0
-        - 8.3
+        - 10.7
       luckiny:
         to:
-        - 57.8
-        - 28.5
+        - 57.3
+        - 29.0
         face: 220
         via:
-        - - 57.8
-          - 28.5
-        - - 57.8
-          - 28.5
+        - lk_cower
+        - lk_cower
+        - - 57.3
+          - 29.0
+        - - 57.3
+          - 29.0
+        - - 57.3
+          - 29.0
         t:
         - 0.0
-        - 8.3
+        - 10.7
+      hundred-knight:
+        to: hk_peek
+        face: '@luckiny'
+        t:
+        - 0.0
+        - 2.0
     note: null
   A06-007:
     cam:
-    - 53.0
-    - 40.5
-    - 9.5
-    lens: 24
-    bearing: 40
-    frame: 大引き
+    - 52.0
+    - 33.6
+    - 1.9
+    lens: 32
+    bearing: 78
+    frame: 引き
     start:
       people:
-      - who: villager-d
-        s: -0.55
-        dist: 7.37
-        side: 左
-        body: 背中
-      - who: villager-a
-        s: -0.42
-        dist: 9.58
-        side: 左
-        body: 背中
       - who: tito
-        s: -0.39
-        dist: 11.56
+        s: -0.77
+        dist: 6.55
         side: 左
-        body: 背中
-      - who: villager-c
-        s: -0.23
-        dist: 10.24
-        side: 中央
         body: 斜め後ろ（画面左向き）
-      - who: villager-b
-        s: -0.1
-        dist: 10.51
+      - who: villager-a
+        s: -0.45
+        dist: 5.2
+        side: 左
+        body: 斜め後ろ（画面左向き）
+      - who: villager-c
+        s: -0.2
+        dist: 6.5
         side: 中央
         body: 横顔（画面左向き）
+      - who: villager-b
+        s: -0.04
+        dist: 7.3
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: villager-d
+        s: 0.25
+        dist: 21.84
+        side: 中央
+        body: 正面
       bg: 星空の下の村〔村 俯瞰〕
       props:
-      - 東の崖
-      - 出入口のカーテン
-      - 赤い布のテーブル
-      - 丸椅子
-      - 丸椅子
-      - 丸椅子
-      - 寝台
-      - 暖炉
       - 藁の木箱
       - 大きな壺
-      - 扉の横のランプ
-      - テーブルの小さなランプ
-      - 窓の外（外から見た窓明かりの目印）
       - 東の砂丘
       - 東の大きな砂丘
-      staging: 'In frame (exactly 5 people, from left to right): an elderly beastfolk villager man, as in his reference sheet, holding a burning torch, throwing up his arms and screaming, on the left of
-        the frame, with the back to the camera; a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, turning toward the burst of sand, on the left of the frame, with
-        the back to the camera; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with
-        a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, turning toward the eastern edge of the village, on the
-        left of the frame, with the back to the camera; an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, turning toward the burst of sand, on the left of the frame,
-        seen from behind at an angle, turned toward screen left; a young beastfolk villager man, as in his reference sheet, holding a burning torch, turning toward the burst of sand, in the center of the
-        frame, in profile, turned toward screen left. No other people. High angle looking down. At the eastern edge of the village a huge fountain of sand bursts up into the night sky. Behind: the small
-        village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village:
-        a deep blue starry sky, cool moonlight, the orange light of torches.'
+      - 南東の砂丘
+      - 遠くの砂丘
+      staging: 'In frame (exactly 5 people, from left to right): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
+        a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, turning toward the eastern
+        edge of the village, at the far left of the frame, seen from behind at an angle, turned toward screen left; a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch,
+        turning toward the burst of sand, on the left of the frame, seen from behind at an angle, turned toward screen left; an elderly beastfolk villager woman, as in her reference sheet, holding a burning
+        torch, turning toward the burst of sand, in the center of the frame, in profile, turned toward screen left; a young beastfolk villager man, as in his reference sheet, holding a burning torch, turning
+        toward the burst of sand, in the center of the frame, in profile, turned toward screen left; an elderly beastfolk villager man, as in his reference sheet, holding a burning torch, throwing up his
+        arms and screaming, on the right of the frame, facing the camera. No other people. At the eastern edge of the village a huge fountain of sand bursts up into the night sky. Behind: the small village
+        in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep
+        blue starry sky, cool moonlight, the orange light of torches.'
     end:
       people:
-      - who: tito
-        s: -0.32
-        dist: 19.0
-        side: 中央
-        body: 背中
-      - who: villager-a
-        s: -0.02
-        dist: 7.6
-        side: 中央
-        body: 正面
-      - who: villager-c
-        s: 0.03
-        dist: 10.2
-        side: 中央
-        body: 正面
       - who: villager-b
-        s: 0.21
-        dist: 8.8
-        side: 中央
-        body: 斜め前（画面右向き）
+        s: -0.93
+        dist: 3.06
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: villager-c
+        s: -0.69
+        dist: 5.13
+        side: 左
+        body: 斜め前（画面左向き）
       - who: villager-d
-        s: 0.39
-        dist: 6.0
-        side: 右
-        body: 斜め前（画面右向き）
-      staging: 'In frame (exactly 5 people, from left to right): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch,
-        a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, on the left of the frame,
-        with the back to the camera; a middle-aged beastfolk villager man, as in his reference sheet, holding a burning torch, running away with a torch, in the center of the frame, facing the camera; an
-        elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, running away with a torch, in the center of the frame, facing the camera; a young beastfolk villager man, as
-        in his reference sheet, holding a burning torch, running away with a torch, on the right of the frame, in three-quarter view, turned toward screen right; an elderly beastfolk villager man, as in
-        his reference sheet, holding a burning torch, running away with a torch, on the right of the frame, in three-quarter view, turned toward screen right. No other people. High angle looking down. The
-        villagers run away in panic through the dark village, their torches swinging; a cloud of sand hangs at the edge of the village. Behind: the small village in the sandy valley at night: dark wooden
-        houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue starry sky, cool moonlight, the orange
-        light of torches.'
+        s: -0.38
+        dist: 3.23
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: tito
+        s: -0.02
+        dist: 14.17
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly 4 people, from left to right): a young beastfolk villager man, as in his reference sheet, holding a burning torch, running away with a torch, at the far left of the frame,
+        in three-quarter view, turned toward screen left; an elderly beastfolk villager woman, as in her reference sheet, holding a burning torch, running away with a torch, at the far left of the frame,
+        in three-quarter view, turned toward screen left; an elderly beastfolk villager man, as in his reference sheet, holding a burning torch, running away with a torch, on the left of the frame, in three-quarter
+        view, turned toward screen left; Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and
+        dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing in front of the door, in the center of the frame, seen from behind
+        at an angle, turned toward screen right. No other people. The villagers run away in panic through the dark village, their torches swinging; a cloud of sand hangs at the edge of the village. Behind:
+        the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep blue sky full of stars. Night in
+        the village: a deep blue starry sky, cool moonlight, the orange light of torches.'
     move:
       tito:
         to:
         - 57.8
         - 29.45
-        face: 100
-        t:
-        - 0.0
-        - 1.0
-      villager-d:
-        to:
-        - 44.8
-        - 34.9
-        face: 250
+        face: 95
         via:
-        - vd
-        - vd
-        - - 54.8
-          - 33.0
+        - - 57.8
+          - 29.45
+        - - 57.8
+          - 29.45
         t:
         - 0.0
-        - 6.2
+        - 10.0
       villager-a:
         to:
         - 46.4
@@ -668,43 +735,75 @@ cuts:
         via:
         - - 56.8
           - 31.2
-        - - 56.0
-          - 31.6
+        - - 56.8
+          - 31.2
+        - - 56.8
+          - 31.2
+        - - 56.2
+          - 31.5
         t:
         - 0.0
-        - 6.2
+        - 10.0
       villager-b:
         to:
-        - 47.6
+        - 47.8
         - 34.6
-        face: 240
+        face: 245
         via:
         - - 59.1
           - 31.9
-        - - 57.0
-          - 32.4
+        - - 59.1
+          - 31.9
+        - - 59.1
+          - 31.9
+        - - 58.2
+          - 32.6
         t:
         - 0.0
-        - 6.2
+        - 10.0
       villager-c:
         to:
-        - 49.0
-        - 33.6
-        face: 255
+        - 49.2
+        - 33.0
+        face: 260
         via:
         - - 58.2
           - 31.5
-        - - 57.8
-          - 31.4
+        - - 58.2
+          - 31.5
+        - - 58.2
+          - 31.5
+        - - 57.6
+          - 31.6
         t:
         - 0.0
-        - 6.2
+        - 10.0
+      villager-d:
+        to:
+        - 48.6
+        - 35.4
+        face: 260
+        via:
+        - vd_far
+        - - 61.6
+          - 32.7
+        - - 61.4
+          - 32.7
+        - - 61.4
+          - 32.7
+        - - 60.6
+          - 33.2
+        - - 58.4
+          - 33.6
+        t:
+        - 0.0
+        - 10.0
     note: null
   A06-008:
     cam:
     - 58.0
     - 27.95
-    - 1.45
+    - 0.95
     lens: 32
     bearing: 276
     frame: 全身
@@ -961,53 +1060,112 @@ cuts:
           - 28.15
         t:
         - 0.0
-        - 4.0
+        - 4.8
     note: null
-  A06-012:
+  A06-011b:
     cam:
-    - 68.0
-    - 43.5
-    - 16.0
-    lens: 24
-    bearing: 18
-    frame: 大引き
+    - 54.8
+    - 34.0
+    - 1.3
+    lens: 30
+    bearing: 63
+    frame: 全身
     start:
       people:
       - who: tito
         s: 0.0
-        dist: 12.65
+        dist: 3.58
         side: 中央
-        body: 横顔（画面右向き）
+        body: 斜め後ろ（画面右向き）
       bg: 夜の砂漠〔村 俯瞰〕
       props:
       - 東の崖
+      - 藁の木箱
+      - 大きな壺
       - 東の砂丘
       - 東の大きな砂丘
+      - 遠くの砂丘
+      staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+        and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running out of the village with the long brass horn in her hand, in
+        the center of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under
+        a deep blue starry sky, the dark cliffs of the valley behind. Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes, the dark cliffs of the valley behind.'
+    end:
+      people:
+      - who: tito
+        s: 0.41
+        dist: 7.68
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
+        and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), standing at the foot of a moonlit dune, catching her breath, gripping
+        the brass horn, looking back toward the dark desert, on the right of the frame, seen from behind at an angle, turned toward screen left, small in the background. No other people. Behind: the desert
+        at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind. Night in the desert: a deep blue sky full of stars, cool
+        moonlight on the dunes, the dark cliffs of the valley behind.'
+    move:
+      tito:
+        to: ti_lure
+        face: 20
+        via:
+        - - 68.0
+          - 34.6
+        - - 84.4
+          - 40.0
+        - ti_lure
+        - ti_lure
+        t:
+        - 0.0
+        - 7.0
+    note: null
+  A06-012:
+    cam:
+    - 80.0
+    - 33.0
+    - 11.0
+    lens: 26
+    bearing: 111
+    frame: 大引き
+    start:
+      people:
+      - who: tito
+        s: 0.77
+        dist: 8.87
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 夜の砂漠〔村 俯瞰〕
+      props:
+      - 南東の砂丘
+      - 遠くの砂丘
       staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
         and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running across the moonlit dunes while blowing the long brass horn,
-        in the center of the frame, in profile, turned toward screen right. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under the surface,
-        sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind. Night
-        in the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
+        at the far right of the frame, in profile, turned toward screen left. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under the
+        surface, sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind.
+        Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
     end:
       people:
       - who: tito
         s: 0.0
-        dist: 8.06
+        dist: 9.55
         side: 中央
-        body: 横顔（画面右向き）
+        body: 斜め後ろ（画面右向き）
       staging: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape
         and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running over a dune while blowing the horn, small in the frame, in the
-        center of the frame, in profile, turned toward screen right. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under the surface,
-        sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley behind. Night
-        in the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
+        center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind her, a long bulge in the sand follows her: the sand-eater moving under
+        the surface, sand rippling along its path. Behind: the desert at night seen from high above: endless dunes with swirling sand patterns under a deep blue starry sky, the dark cliffs of the valley
+        behind. Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes.'
     move:
       tito:
         to:
-        - 90.0
-        - 38.5
+        - 85.0
+        - 55.0
+        face: 185
+        via:
+        - ti_lure
+        - ti_lure
+        - - 86.3
+          - 41.6
         t:
         - 0.0
-        - 7.6
+        - 8.4
     note: null
   A06-013:
     cam:
@@ -1084,7 +1242,6 @@ cuts:
       - 家
       - 家の前のランプ
       - 壺とパンの棚
-      - 巻いた星図と真鍮の天球儀の棚（参考画「ティトの家 窓側」。A05b-020 で百騎兵が見る、2026-11-01）
       - 丸椅子
       - 丸椅子
       - 扉の横のランプ
@@ -1221,7 +1378,15 @@ checks:
     who: tito
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている
-  - cut: A06-006
+  - cut: A06-004b
+    who: hundred-knight
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A06-007
+    who: hundred-knight
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A06-007
     who: luckiny
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている
@@ -1231,7 +1396,7 @@ checks:
     note: 前のカットの終わりか、このカットの始めに映っている
   - cut: A06-008
     who: luckiny
-    kind: 位置
+    kind: 向き
     note: 前のカットの終わりか、このカットの始めに映っている
   - cut: A06-009
     who: luckiny
@@ -1249,9 +1414,13 @@ checks:
     who: luckiny
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている
-  - cut: A06-012
+  - cut: A06-011b
     who: tito
     kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A06-012
+    who: tito
+    kind: 向き
     note: 前のカットの終わりか、このカットの始めに映っている
   - cut: A06-013
     who: hundred-knight
@@ -1262,7 +1431,10 @@ checks:
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている
   overlap: []
-  offscreen: []
+  offscreen:
+  - cut: A06-004b
+    who: luckiny
+    kind: 位置
   hidden:
   - cut: A06-000
     which: end
@@ -1276,9 +1448,6 @@ checks:
   - cut: A06-000
     which: end
     who: villager-c
-  - cut: A06-000
-    which: end
-    who: villager-d
   - cut: A06-002
     which: start
     who: villager-a
@@ -1288,9 +1457,6 @@ checks:
   - cut: A06-002
     which: start
     who: villager-c
-  - cut: A06-002
-    which: start
-    who: villager-d
   - cut: A06-003
     which: start
     who: hundred-knight
@@ -1308,13 +1474,10 @@ checks:
     who: villager-b
   - cut: A06-005
     which: end
-    who: luckiny
-  - cut: A06-007
-    which: start
     who: hundred-knight
   - cut: A06-007
     which: start
-    who: luckiny
+    who: hundred-knight
   - cut: A06-007
     which: end
     who: hundred-knight
@@ -1330,24 +1493,15 @@ checks:
   - cut: A06-009
     which: end
     who: hundred-knight
-  - cut: A06-013
+  - cut: A06-011b
     which: start
-    who: tito
-  - cut: A06-013
-    which: end
-    who: tito
+    who: hundred-knight
   - cut: A06-014
     which: end
     who: villager-a
   - cut: A06-014
     which: end
-    who: villager-b
-  - cut: A06-014
-    which: end
     who: villager-c
-  - cut: A06-014
-    which: end
-    who: villager-d
   - cut: A06-015
     which: end
     who: luckiny

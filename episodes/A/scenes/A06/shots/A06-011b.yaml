@@ -1,0 +1,42 @@
+# A06 ティト（夜のティトの家と村、東の砂漠）。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安
+# kind: M＝小さな動き、A＝見せ場。村人A〜D の見た目は設定画（refs/villager-*_sheet_01）
+id: A06-011b
+scene: A06
+tc: 101.8
+sec: 7.0
+transition: {kind: wipe, dir: right, sec: 0.7}   # D-069。家の中 → 外を走るティト（011b、2026-11-01 から）。ティトが東（画面の右）へ走るので左から右へ
+kind: M
+shot: 全身→引き・ティト（走る）・村の東の崖の切れ目・南東の砂漠
+acting: 角笛を持ったティトが家の前から東へ走り、崖の切れ目を抜け、砂食みの出た北東を避けて南東の人のいない砂丘のすそまで走る。立ち止まって振り返る（新しいカット、台詞なし）（2026-11-01 ユーザーの見直し 3回目）
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos: follow tito offset [-3.2, 1.6] z 1.3
+  look:
+  - 57.75
+  - 28.2
+  lens: 30
+  move: 走るティトの斜め後ろを追い、崖の切れ目を抜けたら先回りして止め、砂丘のすそで立ち止まるティトを収める
+background: beast-village
+image: null
+refs:
+- tito
+overlays: []
+fallback: null
+act:
+  start: 家の前から、角笛を持ったティトが東へ走り出す
+  end: 砂丘のすそで息を整え、角笛を握るティト
+timing:
+  lead: 0.0
+blocking:
+  start: ル（中央・背中）
+  end: ル（中央・背中）
+  background: ティトの家の中（扉側）〔ティトの家 扉側〕
+  panels:
+  - ティトの家 扉側
+  staging_en: 'In frame (exactly one person): Tito (a gentle goat-like beastfolk woman: two curved ridged horns, short brown hair, a light grey hood and capelet with a gold spiral brooch, a magenta cape and dress with a pink bodice, long dark navy fingerless gloves, green furry goat legs with dark hooves, a green fluffy tail), running out of the village at night with a long brass horn in her hand, seen from behind at an angle. Behind: the dark gap in the red cliffs and the moonlit desert beyond, a deep blue sky full of stars.'
+  staging_en_end: 'In frame (exactly one person): Tito (same as above), standing at the foot of a moonlit dune, catching her breath, gripping the brass horn, looking back toward the dark desert, small in the frame. Behind: endless moonlit dunes under a deep blue sky full of stars.'
+  sketch:
+  - episodes/A/scenes/A06/gen/sketch/A06-011b_start.png
+  - episodes/A/scenes/A06/gen/sketch/A06-011b_end.png

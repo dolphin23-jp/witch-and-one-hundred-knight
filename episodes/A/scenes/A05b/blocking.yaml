@@ -64,7 +64,7 @@ cuts:
     pose_end: {luckiny: "walking out of the gap toward the village, small in the frame", hundred-knight: "walking behind her, small in the frame"}
     kind: A
   A05b-014:
-    # 2026-11-01 見直し: L156「先に戻って、準備しておきますね。」を戻した（ユーザー判断、D-067）。4.8秒 → 12.2秒
+    # 2026-11-01 見直し: L156「先に戻って、準備しておきますね。」を戻した（ユーザー判断、D-068）。4.8秒 → 12.2秒
     frame: 全身
     only: [luckiny, hundred-knight]
     keys:
@@ -108,10 +108,12 @@ cuts:
         - {t: 1.5, at: hk_w1, face: 90, pose: stand, ease: out}
         - {t: 2.2, at: hk_w1, face: 195, pose: stand}
         - {t: 7.4, at: hk_w1, face: 195, pose: stand}
+        - {t: 8.4, at: hk_w1, face: 195, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [36.6, 32.2, 0.75], look: [33.8, 27.8], look_h: 0.6, lens: 32, frame: 引き}
       - {t: 2.8, cam: [36.6, 32.2, 0.75], look: [34.3, 28.3], look_h: 0.6, lens: 32}
       - {t: 7.4, cam: [34.85, 30.85, 1.6], look: well, look_h: 0.4, lens: 55, frame: 寄り, ease: inout}
+      - {t: 8.4, cam: [34.85, 30.85, 1.6], look: well, look_h: 0.4, lens: 55}
     bg: well
     extra_en: "In the foreground stands an old round stone well with a dark open mouth."
     extra_en_end: "Close on the dark mouth of the old stone well; deep at the bottom there is a faint green glow."
@@ -134,7 +136,7 @@ cuts:
         - {t: 0.0, at: hk_door0, face: 0, pose: walk}
         - {t: 2.4, at: hk_in, face: 0, pose: walk, ease: linear}
         - {t: 2.7, at: hk_in, face: 0, pose: stand, ease: out}
-        - {t: 9.4, at: hk_in, face: 0, pose: stand}
+        - {t: 10.9, at: hk_in, face: 0, pose: stand}
       luckiny:
         - {t: 0.0, at: lk_wave, face: 185, pose: gesture}
         - {t: 1.5, at: lk_wave, face: 185, pose: gesture}
@@ -142,24 +144,24 @@ cuts:
         - {t: 2.0, at: lk_wave, face: 0, pose: run}
         - {t: 2.7, at: [58.6, 22.8], face: 0, pose: run, ease: linear}
         - {t: 3.2, at: lk_hide, face: 30, pose: run, ease: out}
-        - {t: 9.4, at: lk_hide, face: 30, pose: stand}
+        - {t: 10.9, at: lk_hide, face: 30, pose: stand}
       tito:
         - {t: 0.0, at: ti_back0, face: 180, pose: stand}
-        - {t: 3.2, at: ti_back0, face: 180, pose: walk}
-        - {t: 3.8, at: ti_cur, pose: walk, ease: linear}
-        - {t: 5.4, at: [57.9, 26.6], pose: walk, ease: linear}
-        - {t: 5.8, at: ti_kn, face: 180, pose: kneel_hold, ease: out}
-        - {t: 9.4, at: ti_kn, face: 180, pose: kneel_hold}
+        - {t: 4.7, at: ti_back0, face: 180, pose: walk}
+        - {t: 5.3, at: ti_cur, pose: walk, ease: linear}
+        - {t: 6.9, at: [57.9, 26.6], pose: walk, ease: linear}
+        - {t: 7.3, at: ti_kn, face: 180, pose: kneel_hold, ease: out}
+        - {t: 10.9, at: ti_kn, face: 180, pose: kneel_hold}
     cam_keys:
       - {t: 0.0, cam: [57.75, 35.2, 1.0], look: [58.2, 25.5], look_h: 0.9, lens: 35, frame: 全身}
       - {t: 1.6, cam: [57.5, 31.2, 0.95], look: [57.6, 24.6], look_h: 1.0, lens: 32, ease: in}
       - {t: 2.5, cam: [57.85, 29.0, 1.1], look: luckiny, look_h: 1.05, lens: 30, ease: linear}
-      - {t: 3.4, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, ease: out}
-      - {t: 5.8, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
-      - {t: 9.4, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
+      - {t: 4.9, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, ease: out}
+      - {t: 7.3, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
+      - {t: 10.9, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
     bg: tito_room
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
-    act: {start: 夜。ティトの家の扉の外から、扉へ歩いていく百騎兵の背中。開いた扉の向こうの明るい部屋で、先に帰っていたルッキーニィが手招きする, do: 百騎兵が扉から中へ入り、カメラも後ろから続いて入る。ルッキーニィはくるっと向きを変えて奥のカーテンへ駆け込む。入れ替わりにティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 3.4秒から}
+    act: {start: 夜。ティトの家の扉の外から、扉へ歩いていく百騎兵の背中。開いた扉の向こうの明るい部屋で、先に帰っていたルッキーニィが手招きする, do: 百騎兵が扉から中へ入り、カメラも後ろから続いて入る。ルッキーニィはくるっと向きを変えて奥のカーテンへ駆け込む。入れ替わりにティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 4.9秒から（ルッキーニィが奥へ消えてから 1.5秒の溜め、2026-11-01）}
     camera: 扉の外から百騎兵の後ろを追って家の中へ入り、奥へ駆け込むルッキーニィを見送る → 出てきたティトを追って振り、肩越しで止まる
     pose: {hundred-knight: "walking toward the open door of the house at night, seen from behind", luckiny: "inside the lit room near the curtained doorway at the back, beckoning with one hand", tito: "not visible yet"}
     pose_end: {tito: "kneeling in front of the Hundred Knight, holding its gauntlet in both hands", hundred-knight: "standing, seen from behind over the shoulder", luckiny: "gone into the back room, not visible"}
@@ -174,10 +176,10 @@ cuts:
       tito:
         - {t: 0.0, at: ti_kn, face: 180, pose: kneel_hold}
         - {t: 1.6, at: ti_kn, face: 180, pose: kneel}
-        - {t: 5.0, at: ti_kn, face: 180, pose: kneel}
+        - {t: 6.5, at: ti_kn, face: 180, pose: kneel}
     cam_keys:
       - {t: 0.0, cam: [57.25, 28.1, 0.95], look: tito, look_h: 0.95, lens: 50, frame: 寄り}
-      - {t: 5.0, cam: [57.35, 27.85, 0.95], look: tito, look_h: 0.95, lens: 60, ease: linear}
+      - {t: 6.5, cam: [57.35, 27.85, 0.95], look: tito, look_h: 0.95, lens: 60, ease: linear}
     bg: tito_door
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
     act: {start: 切り返し。ひざをついたティトの寄り, do: 手を離し、心配そうに笑う, end: ティトの顔, sync: L163「魔女になると言って、３日前に出ていったきりで、心配してたんです。」は 0.15秒から}
@@ -197,15 +199,15 @@ cuts:
         - {t: 0.0, at: ti_kn, face: 180, pose: kneel}
         - {t: 0.8, at: ti_kn, face: 180, pose: stand, ease: out}
         - {t: 1.4, at: [57.6, 26.6], face: 300, pose: gesture}
-        - {t: 3.4, at: ti_via, pose: gesture, ease: linear}
-        - {t: 6.8, at: [54.15, 24.0], pose: walk, ease: linear}
-        - {t: 7.4, at: ti_win, face: 0, pose: stand, ease: out}
-        - {t: 8.8, at: ti_win, face: 0, pose: stand}
+        - {t: 4.9, at: ti_via, pose: gesture, ease: linear}
+        - {t: 8.3, at: [54.15, 24.0], pose: walk, ease: linear}
+        - {t: 8.9, at: ti_win, face: 0, pose: stand, ease: out}
+        - {t: 10.3, at: ti_win, face: 0, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [58.6, 28.5, 1.35], look: tito, look_h: 0.9, lens: 28, frame: 全身}
       - {t: 1.4, cam: [58.6, 28.5, 1.35], look: tito, look_h: 1.0, lens: 28}
-      - {t: 7.0, cam: [55.2, 28.4, 1.35], look: tito, look_h: 1.0, lens: 30, ease: inout}
-      - {t: 8.8, cam: [55.2, 28.4, 1.35], look: tito, look_h: 1.0, lens: 30}
+      - {t: 8.5, cam: [55.2, 28.4, 1.35], look: tito, look_h: 1.0, lens: 30, ease: inout}
+      - {t: 10.3, cam: [55.2, 28.4, 1.35], look: tito, look_h: 1.0, lens: 30}
     bg: tito_room
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
     act: {start: ひざをついたティトが立ち上がる, do: 何もない家の中を片手で示しながら、テーブルをよけて窓の方へ歩く, end: 窓辺で立ち止まる, sync: L164「何か、お礼をさせて頂きたいのですが、今は、砂羊の出荷が全て終わった時期でして村には何もないのです……。」は 0.2秒から}
@@ -214,7 +216,7 @@ cuts:
     pose_end: {tito: "standing at the small window, her back half turned", hundred-knight: "standing near the door"}
     kind: M
   A05b-019:
-    # 2026-11-01 見直し: L167「あっ、ちょっと待ってくださいね。ラナを呼びますから。」を戻した（D-067）。ティトが奥の部屋へ呼びに行き、A06-001 でルッキーニィが出てくる前ふり。6.2秒 → 12.2秒
+    # 2026-11-01 見直し: L167「あっ、ちょっと待ってくださいね。ラナを呼びますから。」を戻した（D-068）。ティトが奥の部屋へ呼びに行き、A06-001 でルッキーニィが出てくる前ふり。6.2秒 → 12.2秒
     frame: 寄り
     lighting: night
     only: [tito]
@@ -224,21 +226,21 @@ cuts:
         - {t: 0.6, at: ti_win, face: 0, pose: look_up}
         - {t: 2.2, at: ti_win, face: 0, pose: look_up}
         - {t: 3.0, at: ti_win, face: 150, pose: stand}
-        - {t: 6.0, at: ti_win, face: 150, pose: stand}
-        - {t: 6.3, at: ti_win, face: 150, pose: cover}
-        - {t: 7.0, at: ti_win, face: 120, pose: stand}
-        - {t: 7.4, at: [54.75, 24.55], face: 100, pose: walk}
-        - {t: 8.6, at: [57.5, 24.55], pose: walk, ease: linear}
-        - {t: 9.2, at: ti_cur, face: 30, pose: walk, ease: linear}
-        - {t: 9.9, at: ti_back, face: 0, pose: walk, ease: linear}
-        - {t: 12.2, at: ti_back, face: 0, pose: stand}
+        - {t: 7.5, at: ti_win, face: 150, pose: stand}
+        - {t: 7.8, at: ti_win, face: 150, pose: cover}
+        - {t: 8.5, at: ti_win, face: 120, pose: stand}
+        - {t: 8.9, at: [54.75, 24.55], face: 100, pose: walk}
+        - {t: 10.1, at: [57.5, 24.55], pose: walk, ease: linear}
+        - {t: 10.7, at: ti_cur, face: 30, pose: walk, ease: linear}
+        - {t: 11.4, at: ti_back, face: 0, pose: walk, ease: linear}
+        - {t: 13.7, at: ti_back, face: 0, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.35, lens: 35, frame: 寄り}
-      - {t: 6.6, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.3, lens: 35}
-      - {t: 7.6, cam: [54.4, 26.3, 1.4], look: tito, look_h: 1.2, lens: 30, ease: inout}
-      - {t: 9.6, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30, ease: inout}
-      - {t: 10.4, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30}
-      - {t: 12.2, cam: [54.9, 23.6, 1.2], look: [54.6, 21.0], look_h: 3.0, lens: 28, ease: inout}
+      - {t: 8.1, cam: [55.1, 25.0, 1.45], look: tito, look_h: 1.3, lens: 35}
+      - {t: 9.1, cam: [54.4, 26.3, 1.4], look: tito, look_h: 1.2, lens: 30, ease: inout}
+      - {t: 11.1, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30, ease: inout}
+      - {t: 11.9, cam: [54.5, 26.1, 1.4], look: [58.6, 23.2], look_h: 1.1, lens: 30}
+      - {t: 13.7, cam: [54.9, 23.6, 1.2], look: [54.6, 21.0], look_h: 3.0, lens: 28, ease: inout}
     bg: tito_window
     light_en: "Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window."
     extra_en_end: "Through the small window, a deep blue night sky full of bright stars."
@@ -249,7 +251,7 @@ cuts:
     kind: M
   # ---------- 星読み（020 家の中、021 夜の外） ----------
   A05b-020:
-    # 2026-11-01 見直しで足したカット（ユーザー判断「L170 星読みの説明を戻す」、D-067）。ひとり残った百騎兵が窓辺の星図と天球儀の棚を見る。台詞は L168・L170（メタリカの声だけ）。前の 020 は 021 へ
+    # 2026-11-01 見直しで足したカット（ユーザー判断「L170 星読みの説明を戻す」、D-068）。ひとり残った百騎兵が窓辺の星図と天球儀の棚を見る。台詞は L168・L170（メタリカの声だけ）。前の 020 は 021 へ
     frame: 全身
     lighting: night
     only: [hundred-knight]

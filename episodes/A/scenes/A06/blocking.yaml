@@ -26,7 +26,12 @@ places:
   vd:       [55.4, 32.9]   # 村人D
   ti_horn:  [53.6, 27.7]   # 008 角笛の前
   lk_mid:   [56.05, 27.15] # 008 丸椅子の間
-  plume:    [65.5, 33.0]   # 007 砂食みが出る所（村の東の外れ）
+  plume:    [65.5, 33.0]   # （前の 007 の砂食みが出る所。2026-11-01 から使わない）
+  plume_far: [97.0, 32.0]  # 007 砂食みが出る所（崖の切れ目の外、家から約35m。ユーザー「遠くで出る」2026-11-01）
+  hk_peek:  [57.5, 28.45]  # 004b・006 扉口の内側からのぞく百騎兵
+  lk_cower: [57.1, 28.05]  # 004b ルッキーニィ 百騎兵の後ろで縮こまる
+  vd_far:   [74.0, 32.0]   # 007 村人D が走ってくる所（東の崖の切れ目）
+  ti_lure:  [86.6, 40.6]   # 011b・012 ティトが砂食みをおびき寄せる所（人のいない南東の砂丘のすそ）
   hk_door:  [58.6, 30.2]   # 013・014 扉の前の百騎兵
   window:   [54.6, 23.0]   # 000 北の壁の窓（外から寄る）
 
@@ -37,7 +42,7 @@ start:
   villager-a:     {at: va, face: 20}
   villager-b:     {at: vb, face: 0}
   villager-c:     {at: vc, face: 340}
-  villager-d:     {at: vd, face: 30}
+  villager-d:     {at: vd_far, face: 270}   # 2026-11-01: D は 007 で走ってくる（003〜006 にはいない）
 
 cuts:
   # ---------- 夜の村（000、外。2026-11-01 の見直しで足した） ----------
@@ -133,40 +138,37 @@ cuts:
   # ---------- 村人の非難（003〜006、扉の外） ----------
   A06-003:
     frame: 引き
-    only: [tito, villager-a, villager-b, villager-c, villager-d]
+    only: [tito, villager-a, villager-b, villager-c]
     keys:
       tito:
-        - {t: 0.0, at: door_in, face: 180, pose: walk}
-        - {t: 0.8, at: door_out, face: 180, pose: stand, ease: out}
-        - {t: 1.4, at: door_out, face: 180, pose: stand}
-        - {t: 1.9, at: [57.8, 29.45], face: 180, pose: stand, ease: out}
-        - {t: 9.2, at: [57.8, 29.45], face: 180, pose: stand}
+        - {t: 0.0, at: [57.8, 29.75], face: 180, pose: stand}
+        - {t: 1.5, at: [57.8, 29.75], face: 180, pose: stand}
+        - {t: 2.0, at: [57.8, 29.45], face: 180, pose: stand, ease: out}
+        - {t: 10.6, at: [57.8, 29.45], face: 180, pose: stand}
       villager-a:
         - {t: 0.0, at: va, face: 20, pose: stand}
       villager-b:
         - {t: 0.0, at: vb, face: 0, pose: stand}
-        - {t: 3.6, at: vb, face: 0, pose: stand}
-        - {t: 4.2, at: [59.1, 31.9], face: 330, pose: walk, ease: out}
-        - {t: 9.2, at: [59.1, 31.9], face: 330, pose: stand}
+        - {t: 4.9, at: vb, face: 0, pose: stand}
+        - {t: 5.5, at: [59.1, 31.9], face: 330, pose: walk, ease: out}
+        - {t: 10.6, at: [59.1, 31.9], face: 330, pose: stand}
       villager-c:
         - {t: 0.0, at: vc, face: 340, pose: stand}
-      villager-d:
-        - {t: 0.0, at: vd, face: 30, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 1.6, lens: 22, frame: 引き}
-      - {t: 3.4, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 1.6, lens: 22}
-      - {t: 3.8, cam: [58.95, 34.3, 0.35], look: villager-b, look_h: 1.6, lens: 32, ease: inout}
-      - {t: 9.2, cam: [58.95, 34.3, 0.4], look: villager-b, look_h: 1.6, lens: 35}
+      - {t: 4.6, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 1.6, lens: 22}
+      - {t: 5.0, cam: [58.95, 34.3, 0.35], look: villager-b, look_h: 1.6, lens: 32, ease: inout}
+      - {t: 10.6, cam: [58.95, 34.3, 0.4], look: villager-b, look_h: 1.6, lens: 35}
     bg: door_out
     light_en: "Night outside the house: a deep blue starry sky, the flickering orange light of the villagers' torches, warm lamplight from the open doorway."
-    act: {start: 外。扉の前に松明を持った村人4人。扉を開けて出てきたティトが扉を背に立ちふさがる, do: 「え、ええっ！？」で後ずさる。カメラが話し出した村人Bへ速く振る, end: 一歩詰め寄る村人B, sync: L180（ティト）は 0.3秒から、L181（村人B）「近くで砂食みを見たヤツがいるんだ！…」は 3.8秒から}
+    act: {start: 外。開いた扉の前で、松明を持った村人3人に囲まれたティト（2026-11-01 ユーザーの見直し 3回目）, do: 村人たちがにらむ間（1.5秒）。「え、ええっ！？」で後ずさる。カメラが話し出した村人Bへ速く振る, end: 一歩詰め寄る村人B, sync: L180（ティト）は 1.5秒から、L181（村人B）「近くで砂食みを見たヤツがいるんだ！…」は L180 の 0.25秒あと}
     camera: 村人たちの足元から煽り。松明の火。話す村人Bへ速く振る
     pose: {tito: "stepping out of the doorway and blocking it with her back to the door, startled", villager-a: "standing with a torch, glaring", villager-b: "standing with a torch, shouting", villager-c: "standing with a torch, angry", villager-d: "standing with a torch at the back"}
     pose_end: {tito: "standing in front of the door, flustered", villager-a: "standing with a torch", villager-b: "stepping forward with a torch, shouting", villager-c: "standing with a torch", villager-d: "standing with a torch at the back"}
     kind: M
   A06-004:
     frame: 全身
-    only: [tito, villager-a, villager-b, villager-c, villager-d]
+    only: [tito, villager-a, villager-b, villager-c]
     keys:
       tito:
         - {t: 0.0, at: [57.8, 29.45], face: 180, pose: stand}
@@ -174,27 +176,52 @@ cuts:
         - {t: 0.0, at: va, face: 20, pose: stand}
         - {t: 0.3, at: va, face: 20, pose: stand}
         - {t: 0.9, at: [56.8, 31.2], face: 25, pose: walk, ease: out}
-        - {t: 8.0, at: [56.8, 31.2], face: 25, pose: stand}
+        - {t: 3.6, at: [56.8, 31.2], face: 25, pose: stand}
       villager-b:
         - {t: 0.0, at: [59.1, 31.9], face: 330, pose: stand}
       villager-c:
         - {t: 0.0, at: vc, face: 355, pose: stand}
-        - {t: 2.9, at: vc, face: 355, pose: stand}
-        - {t: 3.5, at: [58.2, 31.5], face: 355, pose: walk, ease: out}
-        - {t: 8.0, at: [58.2, 31.5], face: 355, pose: point}
-      villager-d:
-        - {t: 0.0, at: vd, face: 30, pose: stand}
     cam_keys:
       - {t: 0.0, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 1.5, lens: 35, frame: 全身}
-      - {t: 2.6, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 1.5, lens: 35}
-      - {t: 2.9, cam: [58.3, 29.2, 1.6], look: villager-c, look_h: 1.45, lens: 35, ease: inout}
-      - {t: 8.0, cam: [58.3, 29.2, 1.6], look: villager-c, look_h: 1.45, lens: 38}
+      - {t: 3.6, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 1.5, lens: 40, ease: linear}
     bg: door_out
     light_en: "Night outside the house: a deep blue starry sky, the flickering orange light of the villagers' torches, warm lamplight from the open doorway."
-    act: {start: ティトの肩越しに、詰め寄る村人たち, do: 村人Aが一歩出て叫び、続いて村人Cが一歩出て指をさす, end: 指をさす村人C, sync: L182（村人A）は 0.3秒から、L183（村人C）「あんたのところのラナちゃん！…」は 2.9秒から}
-    camera: ティトの肩越し。話す村人へ速く振る（ホイップパン）
+    act: {start: ティトの肩越しに、詰め寄る村人たち, do: 村人Aが一歩出て叫ぶ, end: 叫ぶ村人A, sync: L182（村人A）「すぐに村も襲われるかもしれないぞ！」は 0.3秒から（L183 は次の 004b へ移した（2026-11-01 ユーザーの見直し 3回目））}
+    camera: ティトの肩越しに村人A。ゆっくり寄る
     pose: {tito: "seen from behind over the shoulder", villager-a: "stepping forward with a torch, shouting", villager-b: "standing with a torch", villager-c: "standing with a torch", villager-d: "standing with a torch at the back"}
     pose_end: {tito: "seen from behind over the shoulder", villager-a: "standing with a torch", villager-b: "standing with a torch", villager-c: "stepping forward with a torch, pointing an accusing finger", villager-d: "standing with a torch at the back"}
+    kind: M
+  A06-004b:
+    # 2026-11-01 ユーザー「『すぐに村も襲われるかも』→『あんたのところのラナちゃん』の間をもう少し溜めた方が良い（ティトの表情のシーン or 窓から見ている百騎兵のシーン）」。
+    # 両方を1枚に: 手前にティトのこわばった横顔、奥の開いた扉口から百騎兵がのぞき、その後ろでルッキーニィが縮こまる。2秒の溜めのあと、画面の外から L183
+    frame: 寄り
+    only: [tito, hundred-knight, luckiny, villager-a, villager-b, villager-c]
+    keys:
+      villager-a:
+        - {t: 0.0, at: [56.8, 31.2], face: 25, pose: stand}
+      villager-b:
+        - {t: 0.0, at: [59.1, 31.9], face: 330, pose: stand}
+      villager-c:
+        - {t: 0.0, at: vc, face: 355, pose: stand}
+      tito:
+        - {t: 0.0, at: [57.8, 29.45], face: 180, pose: stand}
+        - {t: 7.6, at: [57.8, 29.45], face: 180, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_peek, face: 175, pose: stand}
+      luckiny:
+        - {t: 0.0, at: lk_cower, face: 165, pose: crouch}
+        - {t: 4.2, at: lk_cower, face: 165, pose: crouch}
+        - {t: 4.6, at: lk_cower, face: 170, pose: cover}
+        - {t: 7.6, at: lk_cower, face: 170, pose: cover}
+    cam_keys:
+      - {t: 0.0, cam: [58.05, 27.3, 1.05], look: [57.6, 30.4], look_h: 1.2, lens: 28, frame: 肩越し}
+      - {t: 7.6, cam: [58.0, 27.55, 1.05], look: [57.6, 30.4], look_h: 1.25, lens: 34, ease: linear}
+    bg: door_out
+    light_en: "Night inside the house: warm lamplight on the backs of the two watching from the doorway; outside, the flickering orange torchlight of the villagers around Tito."
+    act: {start: 家の中から。手前に、扉口から外をのぞく百騎兵と、その横で縮こまるルッキーニィ。扉の向こうに、村人に囲まれたティトの背中と松明, do: 2秒の静けさ（ティトが唇をかむ）。画面の外から村人Cの「あんたのところのラナちゃん！…」。名前が出たところでルッキーニィが口を押さえる, end: 扉口の二人の肩越しに、ティトの背中と村人たち, sync: L183（村人C、画面の外）は 2.0秒から}
+    camera: 家の中から、百騎兵の肩越しに扉の外へゆっくり押し込む（ユーザーの案「窓から見ている百騎兵」）
+    pose: {tito: "standing in front of the door in profile, tense, biting her lip", hundred-knight: "peeking out from the open doorway behind her", luckiny: "crouching behind the Hundred Knight in the doorway, scared"}
+    pose_end: {tito: "standing in profile, tense", hundred-knight: "peeking out from the doorway", luckiny: "crouching in the doorway, covering her mouth with one hand"}
     kind: M
   A06-005:
     frame: 全身
@@ -211,7 +238,8 @@ cuts:
         - {t: 3.6, at: [56.8, 31.2], face: 25, pose: arms_up}
         - {t: 4.0, at: [56.8, 31.2], face: 25, pose: stand}
       villager-c:
-        - {t: 0.0, at: [58.2, 31.5], face: 355, pose: point}
+        - {t: 0.0, at: vc, face: 355, pose: walk}
+        - {t: 0.5, at: [58.2, 31.5], face: 355, pose: point, ease: out}
         - {t: 10.8, at: [58.2, 31.5], face: 355, pose: point}
     cam_keys:
       - {t: 0.0, cam: [59.6, 32.6, 1.7], look: tito, look_h: 1.35, lens: 35, frame: 全身}
@@ -226,23 +254,31 @@ cuts:
     kind: M
   A06-006:
     frame: 寄り
-    only: [tito, luckiny]
+    only: [tito, luckiny, hundred-knight]
     keys:
       tito:
         - {t: 0.0, at: [57.8, 29.45], face: 185, pose: look_down}
-        - {t: 0.6, at: [57.8, 29.45], face: 0, pose: stand, ease: inout}
-        - {t: 8.3, at: [57.8, 29.45], face: 0, pose: stand}
+        - {t: 1.2, at: [57.8, 29.45], face: 185, pose: look_down}
+        - {t: 1.8, at: [57.8, 29.45], face: 0, pose: stand, ease: inout}
+        - {t: 10.7, at: [57.8, 29.45], face: 0, pose: stand}
       luckiny:
-        - {t: 0.0, at: [57.8, 28.5], face: 180, pose: stand}
-        - {t: 5.2, at: [57.8, 28.5], face: 180, pose: stand}
-        - {t: 5.7, at: [57.8, 28.5], face: 215, pose: look_down}
-        - {t: 8.3, at: [57.8, 28.5], face: 220, pose: look_down}
+        - {t: 0.0, at: lk_cower, face: 170, pose: crouch}
+        - {t: 0.5, at: lk_cower, face: 175, pose: stand}
+        - {t: 0.8, at: lk_cower, face: 180, pose: walk}
+        - {t: 2.0, at: [57.3, 29.0], face: 180, pose: stand, ease: out}
+        - {t: 7.6, at: [57.3, 29.0], face: 180, pose: stand}
+        - {t: 8.1, at: [57.3, 29.0], face: 215, pose: look_down}
+        - {t: 10.7, at: [57.3, 29.0], face: 220, pose: look_down}
+      hundred-knight:
+        - {t: 0.0, at: hk_peek, face: 175, pose: stand}
+        - {t: 2.0, at: hk_peek, face: "@luckiny", pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [59.1, 31.0, 1.4], look: [57.45, 28.6], look_h: 1.1, lens: 50, frame: 寄り}
-      - {t: 8.3, cam: [59.05, 30.85, 1.35], look: [57.5, 28.55], look_h: 1.0, lens: 55, ease: linear}
+      - {t: 0.0, cam: [56.9, 31.1, 1.4], look: [57.45, 28.8], look_h: 1.0, lens: 44, frame: 全身}
+      - {t: 2.4, cam: [56.9, 31.1, 1.4], look: [57.5, 29.05], look_h: 1.05, lens: 48, ease: inout}
+      - {t: 10.7, cam: [56.95, 30.95, 1.35], look: [57.5, 29.05], look_h: 0.95, lens: 54, ease: linear}
     bg: tito_door
     light_en: "Night at the open front door: warm lamplight from inside the house falling on the doorway, the flickering orange light of torches from outside."
-    act: {start: 振り返るティトの肩越しに、扉口に立つルッキーニィ, do: 「ラナ？どうなっているの？」とティトが問い、ルッキーニィがうつむく, end: うつむくルッキーニィ, sync: L186（ティト）は 0.3秒から、L187「そ……、それは……！」は 5.6秒から}
+    act: {start: うつむくティトの肩越しに、開いた扉口, do: 奥で縮こまっていたルッキーニィが立ち上がり、おずおずと扉口まで出てくる（2026-11-01 ユーザーの見直し 3回目）。気づいたティトが振り返り、不安そうに「ラナ？どうなっているの？」と問う。ルッキーニィが目をそらしてうつむく, end: うつむくルッキーニィ, sync: L186（ティト）は 2.7秒から、L187「そ……、それは……！」は L186 の 0.25秒あと}
     camera: ティトの肩越しにルッキーニィ。ピントをルッキーニィへ移す（下絵ではピント送りはしない）
     pose: {tito: "turning back toward the doorway, seen from behind over the shoulder", luckiny: "standing in the doorway"}
     pose_end: {tito: "seen from behind over the shoulder", luckiny: "standing in the doorway, looking down"}
@@ -253,52 +289,68 @@ cuts:
     frame: 大引き
     only: [tito, villager-a, villager-b, villager-c, villager-d]
     keys:
+      hundred-knight:
+        - {t: 0.0, at: hk6, face: 200, pose: stand}
+      luckiny:
+        - {t: 0.0, at: lk_mid, face: 180, pose: stand}
       tito:
         - {t: 0.0, at: [57.8, 29.45], face: 0, pose: stand}
-        - {t: 1.0, at: [57.8, 29.45], face: 100, pose: stand}
-      villager-d:
-        - {t: 0.0, at: vd, face: 30, pose: stand}
-        - {t: 0.4, at: vd, face: 95, pose: arms_up}
-        - {t: 1.4, at: vd, face: 95, pose: arms_up}
-        - {t: 1.8, at: [54.8, 33.0], face: 250, pose: run}
-        - {t: 6.2, at: [44.8, 34.9], pose: run, ease: linear}
+        - {t: 0.5, at: [57.8, 29.45], face: 0, pose: stand}
+        - {t: 1.1, at: [57.8, 29.45], face: 95, pose: stand}
+        - {t: 10.0, at: [57.8, 29.45], face: 95, pose: stand}
       villager-a:
         - {t: 0.0, at: [56.8, 31.2], face: 25, pose: stand}
-        - {t: 1.2, at: [56.8, 31.2], face: 100, pose: stand}
-        - {t: 1.8, at: [56.0, 31.6], face: 250, pose: run}
-        - {t: 6.2, at: [46.4, 33.3], pose: run, ease: linear}
+        - {t: 0.5, at: [56.8, 31.2], face: 25, pose: stand}
+        - {t: 1.0, at: [56.8, 31.2], face: 90, pose: stand}
+        - {t: 6.0, at: [56.8, 31.2], face: 90, pose: stand}
+        - {t: 6.4, at: [56.2, 31.5], face: 250, pose: run}
+        - {t: 10.0, at: [46.4, 33.3], pose: run, ease: linear}
       villager-b:
         - {t: 0.0, at: [59.1, 31.9], face: 330, pose: stand}
-        - {t: 1.3, at: [59.1, 31.9], face: 100, pose: stand}
-        - {t: 2.0, at: [57.0, 32.4], face: 240, pose: run}
-        - {t: 6.2, at: [47.6, 34.6], pose: run, ease: linear}
+        - {t: 0.6, at: [59.1, 31.9], face: 330, pose: stand}
+        - {t: 1.1, at: [59.1, 31.9], face: 95, pose: stand}
+        - {t: 6.1, at: [59.1, 31.9], face: 95, pose: stand}
+        - {t: 6.6, at: [58.2, 32.6], face: 245, pose: run}
+        - {t: 10.0, at: [47.8, 34.6], pose: run, ease: linear}
       villager-c:
-        - {t: 0.0, at: [58.2, 31.5], face: 355, pose: stand}
-        - {t: 1.1, at: [58.2, 31.5], face: 100, pose: stand}
-        - {t: 1.9, at: [57.8, 31.4], face: 255, pose: run}
-        - {t: 6.2, at: [49.0, 33.6], pose: run, ease: linear}
+        - {t: 0.0, at: [58.2, 31.5], face: 355, pose: point}
+        - {t: 0.5, at: [58.2, 31.5], face: 355, pose: stand}
+        - {t: 1.0, at: [58.2, 31.5], face: 90, pose: stand}
+        - {t: 6.2, at: [58.2, 31.5], face: 90, pose: stand}
+        - {t: 6.7, at: [57.6, 31.6], face: 260, pose: run}
+        - {t: 10.0, at: [49.2, 33.0], pose: run, ease: linear}
+      villager-d:
+        - {t: 0.0, at: vd_far, face: 270, pose: run}
+        - {t: 1.2, at: vd_far, face: 270, pose: run}
+        - {t: 4.4, at: [61.6, 32.7], face: 270, pose: run, ease: linear}
+        - {t: 4.8, at: [61.4, 32.7], face: 270, pose: arms_up, ease: out}
+        - {t: 6.0, at: [61.4, 32.7], face: 270, pose: arms_up}
+        - {t: 6.4, at: [60.6, 33.2], face: 260, pose: run}
+        - {t: 7.2, at: [58.4, 33.6], pose: run, ease: linear}
+        - {t: 10.0, at: [48.6, 35.4], pose: run, ease: linear}
     creatures:
       sand-eater:
         len: 8.0
         r: 0.75
         keys:
-          - {t: 0.0, at: [67.0, 33.5], z: -3.0}
-          - {t: 0.8, at: [66.0, 33.2], z: 3.5, ease: out}
-          - {t: 2.0, at: [64.6, 32.8], z: 4.5, ease: inout}
-          - {t: 3.4, at: [63.6, 32.6], z: -2.0, ease: in}
-          - {t: 6.2, at: [63.0, 32.5], z: -3.5}
+          - {t: 0.0, at: [98.0, 32.4], z: -3.0}
+          - {t: 0.9, at: [97.4, 32.2], z: 4.0, ease: out}
+          - {t: 2.2, at: [96.2, 32.0], z: 5.0, ease: inout}
+          - {t: 3.6, at: [95.2, 31.8], z: -2.0, ease: in}
+          - {t: 10.0, at: [94.8, 31.8], z: -3.5}
     fx:
-      - {kind: plume, t: [0.2, 4.5], at: plume, r: 3.0, h: 9.0}
+      - {kind: plume, t: [0.2, 5.0], at: plume_far, r: 3.5, h: 10.0}
     cam_keys:
-      - {t: 0.0, cam: [53.0, 40.5, 9.5], look: [60.5, 31.5], look_h: 1.0, lens: 24, frame: 大引き}
-      - {t: 2.0, cam: [53.0, 40.5, 9.5], look: [60.5, 31.5], look_h: 1.8, lens: 24}
-      - {t: 6.2, cam: [38.8, 33.4, 5.0], look: [50.5, 33.4], look_h: 1.2, lens: 28, ease: inout}
+      - {t: 0.0, cam: [52.0, 33.6, 1.9], look: [64.0, 31.0], look_h: 1.5, lens: 32, frame: 引き}
+      - {t: 1.6, cam: [52.0, 33.6, 1.9], look: [66.0, 30.5], look_h: 1.8, lens: 32, ease: inout}
+      - {t: 5.6, cam: [52.4, 33.5, 2.1], look: [60.5, 32.0], look_h: 1.3, lens: 30, ease: inout}
+      - {t: 10.0, cam: [46.5, 38.0, 7.5], look: [54.0, 32.5], look_h: 0.5, lens: 26, frame: 大引き, ease: inout}
     bg: village_night
     light_en: "Night in the village: a deep blue starry sky, cool moonlight, the orange light of torches."
     extra_en: "At the eastern edge of the village a huge fountain of sand bursts up into the night sky."
     extra_en_end: "The villagers run away in panic through the dark village, their torches swinging; a cloud of sand hangs at the edge of the village."
-    act: {start: 高い所から、扉の前のティトと村人たち。村の東の外れで砂が噴き上がる, do: 村人Dが叫び、村人たちが悲鳴を上げて松明を振り回しながら西へ逃げ散る。砂食みの頭が一瞬のぞいて潜る, end: こちらへ逃げてくる松明と、奥で崩れ落ちる砂柱, sync: L188（村人D）「す、砂食みだ！…逃げろーーーーっ！！」は 0.3秒から。L189 村人たちの悲鳴は 2.0秒から（sound.yaml、声に重ねる）}
-    camera: 高い位置からの引き → 逃げる村人の前へ回り込みながら下りる（見せ場）。家の屋根に入らない道筋
+    act: {start: 扉の前のティトと村人3人を、西の低い所から。奥に崖の切れ目と夜の砂漠（2026-11-01 ユーザーの見直し 3回目）, do: 遠くでドンと地鳴り。崖の切れ目のはるか向こうで砂が噴き上がり、皆がはっと東を向く。崖の切れ目から村人Dが走ってきて、両手を上げて「砂食みだ！砂食みが出たぞ！逃げろー！」。村人たちが悲鳴を上げて西へ逃げ散る。ティトだけが東を見つめて残る, end: 逃げていく松明と、ひとり残ったティト, sync: L188（村人D）は 2.6秒から。L189 村人たちの悲鳴は 6.4秒から（sound.yaml）}
+    camera: 西の低い所から、村人たちの向こうに遠い砂柱 → 走ってくる村人D → 逃げ散る村人を、後ろへ上がりながら見下ろす（見せ場）
     pose: {tito: "standing in front of the door, turning toward the eastern edge of the village", villager-a: "turning toward the burst of sand", villager-b: "turning toward the burst of sand", villager-c: "turning toward the burst of sand", villager-d: "throwing up his arms and screaming"}
     pose_end: {tito: "standing in front of the door", villager-a: "running away with a torch", villager-b: "running away with a torch", villager-c: "running away with a torch", villager-d: "running away with a torch"}
     kind: A
@@ -321,8 +373,8 @@ cuts:
         - {t: 0.0, at: lk_mid, face: 250, pose: stand}
         - {t: 8.3, at: lk_mid, face: "@tito", pose: stand}
     cam_keys:
-      - {t: 0.0, cam: {follow: tito, offset: [1.8, 0.2], z: 1.45}, look: tito, look_h: 1.2, lens: 32, frame: 全身}
-      - {t: 8.3, cam: {follow: tito, offset: [1.4, 0.15], z: 1.45}, look: tito, look_h: 1.2, lens: 35}
+      - {t: 0.0, cam: {follow: tito, offset: [1.8, 0.2], z: 0.95}, look: tito, look_h: 1.25, lens: 32, frame: 全身}
+      - {t: 8.3, cam: {follow: tito, offset: [1.4, 0.15], z: 0.95}, look: tito, look_h: 1.25, lens: 35}
     bg: tito_door
     act: {start: 家の中。ティトが壁の角笛へ歩く, do: 角笛をつかんで振り返り、扉へ向かいながら「ラナは旅人さんと隠れてなさい！」, end: 扉の前で振り返るティト, sync: L190「砂食みが……！？こうしてはいられない……！」は 0.3秒から、L191「お母さん、行かなきゃならないわ。…」は 3.7秒から}
     camera: 角笛を取ったティトの前を、後ろに下がりながら追う
@@ -382,10 +434,10 @@ cuts:
         - {t: 0.0, at: [57.75, 28.15], face: 180, pose: stand}
         - {t: 0.8, at: [57.75, 28.15], face: 180, pose: kneel}
         - {t: 1.4, at: [57.75, 28.15], face: 180, pose: sit}
-        - {t: 4.0, at: [57.75, 28.15], face: 180, pose: sit}
+        - {t: 4.8, at: [57.75, 28.15], face: 180, pose: sit}
     cam_keys:
       - {t: 0.0, cam: [57.5, 27.5, 2.3], look: [57.75, 28.2], look_h: 0.0, lens: 28, frame: 引き}
-      - {t: 4.0, cam: [57.45, 27.4, 2.85], look: [57.75, 28.2], look_h: 0.0, lens: 22, ease: out}
+      - {t: 4.8, cam: [57.45, 27.4, 2.85], look: [57.75, 28.2], look_h: 0.0, lens: 22, ease: out}
     bg: tito_door
     act: {start: 閉まった扉の前のルッキーニィを、天井の高さから, do: 座り込む, end: 小さくなるルッキーニィ, sync: L195「待って……待って、母さん……。」は 0.4秒から}
     camera: 天井の高さからの俯瞰。ゆっくり上がる
@@ -393,31 +445,60 @@ cuts:
     pose_end: {luckiny: "sitting slumped on the floor in front of the closed door, seen from high above"}
     kind: M
 
+  A06-011b:
+    # 2026-11-01 ユーザー「012 ティトは砂食みに追いかけられるのではなく、人がいない方へ移動してから砂食みに『こっちよ』とおびき寄せる。セリフのない移動シーンを追加」
+    frame: 全身
+    only: [tito]
+    keys:
+      tito:
+        - {t: 0.0, at: [58.0, 32.4], face: 95, pose: run}
+        - {t: 2.4, at: [68.0, 34.6], pose: run, ease: linear}
+        - {t: 5.0, at: [84.4, 40.0], pose: run, ease: linear}
+        - {t: 5.6, at: ti_lure, pose: walk, ease: out}
+        - {t: 6.2, at: ti_lure, face: 20, pose: stand, ease: out}
+        - {t: 7.0, at: ti_lure, face: 20, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: {follow: tito, offset: [-3.2, 1.6], z: 1.3}, look: tito, look_h: 1.1, lens: 30, frame: 全身}
+      - {t: 2.6, cam: {follow: tito, offset: [-3.6, 2.2], z: 1.6}, look: tito, look_h: 1.1, lens: 30, ease: linear}
+      - {t: 4.6, cam: [79.0, 45.0, 2.2], look: tito, look_h: 1.0, lens: 32, ease: inout}
+      - {t: 7.0, cam: [80.2, 45.2, 2.0], look: [87.4, 37.0], look_h: 1.2, lens: 32, ease: inout}
+    bg: desert_night
+    light_en: "Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes, the dark cliffs of the valley behind."
+    act: {start: 家の前から、角笛を持ったティトが東へ走り出す, do: 村の東の崖の切れ目を抜け、砂食みの出た北東を避けて、南東の人のいない砂丘のすそまで走る。立ち止まって振り返り、北東の砂漠を見すえる, end: 砂丘のすそで息を整え、角笛を握るティト, sync: 台詞なし}
+    camera: 走るティトの斜め後ろを追い、崖の切れ目を抜けたら先回りして止め、砂丘のすそで立ち止まるティトを収める
+    pose: {tito: "running out of the village with the long brass horn in her hand"}
+    pose_end: {tito: "standing at the foot of a moonlit dune, catching her breath, gripping the brass horn, looking back toward the dark desert"}
+    kind: M
   # ---------- 砂漠へ（012〜014） ----------
   A06-012:
     frame: 大引き
     only: [tito]
     keys:
       tito:
-        - {t: 0.0, at: [72.0, 31.5], face: 90, pose: horn}
-        - {t: 7.6, at: [90.0, 38.5], pose: horn, ease: linear}
+        - {t: 0.0, at: ti_lure, face: 60, pose: stand}
+        - {t: 0.3, at: ti_lure, face: 60, pose: horn}
+        - {t: 3.8, at: ti_lure, face: 60, pose: horn}
+        - {t: 4.2, at: [86.3, 41.6], face: 185, pose: run}
+        - {t: 8.4, at: [85.0, 55.0], pose: run, ease: linear}
     creatures:
       sand-eater:
         len: 8.0
         r: 0.75
         mound: soft
         keys:
-          - {t: 0.0, at: [66.5, 30.0], z: -1.2}
-          - {t: 7.6, at: [85.6, 37.2], z: -1.2, ease: linear}
+          - {t: 0.0, at: [94.5, 32.0], z: -1.2}
+          - {t: 1.0, at: [94.2, 32.4], z: -1.2}
+          - {t: 4.2, at: [89.4, 38.4], z: -1.2, ease: in}
+          - {t: 8.4, at: [86.0, 50.6], z: -1.2, ease: linear}
     cam_keys:
-      - {t: 0.0, cam: {follow: tito, offset: [-4.0, 12.0], z: 16.0}, look: tito, look_h: 0.0, lens: 24, frame: 大引き}
-      - {t: 3.0, cam: {follow: tito, offset: [-2.0, 10.0], z: 9.0}, look: tito, look_h: 0.4, lens: 26, ease: in}
-      - {t: 7.6, cam: {follow: tito, offset: [1.0, 8.0], z: 3.6}, look: tito, look_h: 0.5, lens: 26, frame: 全身, ease: out}
+      - {t: 0.0, cam: [80.0, 33.0, 11.0], look: [90.5, 37.0], look_h: 0.0, lens: 26, frame: 大引き}
+      - {t: 3.8, cam: [80.5, 34.5, 9.5], look: [89.0, 39.0], look_h: 0.3, lens: 26, ease: inout}
+      - {t: 8.4, cam: {follow: tito, offset: [-6.5, -7.0], z: 6.0}, look: tito, look_h: 0.5, lens: 28, frame: 全身, ease: inout}
     bg: desert_night
     light_en: "Night in the desert: a deep blue sky full of stars, cool moonlight on the dunes."
     extra_en: "Behind her, a long bulge in the sand follows her: the sand-eater moving under the surface, sand rippling along its path."
-    act: {start: 夜の砂漠を高い空から。村の東の切れ目から、ティトが角笛を吹きながら走り出る, do: 砂の下の大きなうねりがティトの後を追う, end: 砂丘を越えていくティトとうねり, sync: L196「さあこっちよ、砂食み！！砂漠にお帰りなさい！」は 0.3秒から、L197「さあ、いらっしゃい！！あなたの餌はここよ！」は 4.4秒から}
-    camera: 高い空から、走るティトとうねりを追いながら、ティトの斜め後ろの低い所まで下りる（見せ場）
+    act: {start: 夜の砂漠を高い所から。南東の砂丘のすそに立つティトと、東の砂の下で動かないうねり, do: ティトが角笛を吹いて「さあこっちよ、砂食み！」。うねりがゆっくり向きを変えてティトの方へ進み出す。引きつけたところで、ティトは村から離れる南の砂漠へ走り、うねりが後を追う（2026-11-01 ユーザーの見直し 3回目）, end: 砂丘を越えていくティトとうねり, sync: L196 は 0.3秒から、L197「さあ、いらっしゃい！！あなたの餌はここよ！」は L196 の 0.25秒あと}
+    camera: 高い所から、ティトとうねりの両方を収め、うねりが向きを変えるのを見せる → 走り出したティトを斜め上から追う（見せ場）
     pose: {tito: "running across the moonlit dunes while blowing the long brass horn"}
     pose_end: {tito: "running over a dune while blowing the horn, small in the frame"}
     kind: A
@@ -441,7 +522,7 @@ cuts:
     pose_end: {hundred-knight: "standing, seen from behind, gazing at the dark desert"}
     kind: M
   A06-014:
-    # 2026-11-01 見直しで足したカット（ユーザー判断「L201・L202 を戻す」、D-067）。百騎兵の「もっきゅう？」（原作の声、audio/original/vocalizations.yaml）に、
+    # 2026-11-01 見直しで足したカット（ユーザー判断「L201・L202 を戻す」、D-068）。百騎兵の「もっきゅう？」（原作の声、audio/original/vocalizations.yaml）に、
     # メタリカが「勘だよ。勘。」と答え、「もう少しこの村を調べてみろ」で百騎兵が村の中ほど（井戸）の方を見る。A07 の「その井戸……臭うぞ」への橋渡し
     frame: 全身
     only: [hundred-knight]
@@ -471,7 +552,7 @@ cuts:
     pose_end: {hundred-knight: "standing in the village street, seen from behind over the shoulder, gazing toward the old well far away"}
     kind: M
   A06-015:
-    # 2026-11-01 見直し: 前の 014。頭に、砂丘の稜線で息を切らすティトの影（台詞なし）を足し、L203・L205 を戻した（D-067）。6.8秒 → 21.0秒
+    # 2026-11-01 見直し: 前の 014。頭に、砂丘の稜線で息を切らすティトの影（台詞なし）を足し、L203・L205 を戻した（D-068）。6.8秒 → 21.0秒
     # 014 で村の中ほどへ歩いた百騎兵が、戻ってくるティトに振り返る
     frame: 全身
     only: [tito, hundred-knight]

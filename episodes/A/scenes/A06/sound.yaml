@@ -1,35 +1,42 @@
-# A06 の BGM・効果音・ちょっとした声の置き場所（D-067、2026-11-01）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
-# BGM はゲームがこの場面で流していた曲を基本にした（audio/bgm/index.yaml）。003〜006 はゲームでは村の曲が続くが、ここでは扉を叩く音で曲を止め、松明の火と風だけにして張りつめさせる。
+# A06 の BGM・効果音・ちょっとした声の置き場所（D-068、2026-11-01）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
 scene: A06
 bgm:
-  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-002, t: 0.4}, from: 85.1, loop: true, fade_out: 0.4, volume: 0.18}
-  # 砂食みが出た所（噴き上げの音を含む1本もの）。18:28.8 からで、噴き上げが 007 の 0.2秒に来る
-  - {src: audio/bgm/p17-2_sand-eater_sting.ogg, cut: A06-007, t: 0.0, until: {cut: A06-009, t: 0.0}, from: 4.8, fade_out: 1.0, volume: 0.13}
-  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-011, t: 1.0}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.27}
-  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 1.0}, loop: true, fade_out: 1.0, volume: 0.16}
-  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 0.5, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 2.5, fade_out: 1.5, volume: 0.16}
+  # 原作でその場面に流れていた曲をそのまま使う（ユーザー判断 2026-11-01。指定があった所だけ変える）。曲の並びは docs/audio_catalog.md の「場面ごとに、ゲームが流していた曲」
+  # M07 獣人の村: 000〜006（A05b から続く。ゲームでは L188 の 18:35 まで）
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-007, t: 0.3}, from: 87.6, loop: true, fade_out: 0.3, volume: 0.18}
+  # M28 砂食みの気配: 007〜008（18:24〜18:46 の1本もの。噴き上げの音が 007 の頭に来る）
+  - {src: audio/bgm/p17-2_sand-eater_sting.ogg, cut: A06-007, t: 0.0, until: {cut: A06-009, t: 0.0}, from: 4.7, fade_out: 1.0, volume: 0.13}
+  # 同じ曲の静かな所: 009（ゲームの 19:01〜19:18 の静かな所）
+  - {src: audio/bgm/p17-3_quiet_loop.ogg, cut: A06-009, t: 0.0, until: {cut: A06-010, t: 0.3}, loop: true, fade_in: 1.0, fade_out: 0.3, volume: 0.27}
+  # M04: 010〜012（ゲームでは L194「じゃあね、ラナ」の 19:18 から）
+  - {src: audio/bgm/p17-4_lure_loop.ogg, cut: A06-010, t: 0.0, until: {cut: A06-013, t: 0.5}, loop: true, fade_in: 0.5, fade_out: 0.5, volume: 0.16}
+  # M15 短いつなぎ: 013 の頭（ゲームの 20:14〜20:32、L199 のあたり）
+  - {src: audio/bgm/catalog/M15.ogg, cut: A06-013, t: 0.3, until: {cut: A06-013, t: 6.4}, fade_in: 0.8, fade_out: 1.0, volume: 0.16}
+  # M02: 013 の L200 から 015 の前半（ゲームの 20:32〜21:22）
+  - {src: audio/bgm/p17-5_after_loop.ogg, cut: A06-013, t: 6.0, until: {cut: A06-015, t: 7.6}, loop: true, fade_in: 1.0, fade_out: 1.2, volume: 0.16}
+  # M07 獣人の村: 015 の L203 から（ゲームの 21:22 から）
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A06-015, t: 7.0, until: {cut: A06-015, t: 21.0}, loop: true, fade_in: 1.2, fade_out: 1.5, volume: 0.18}
 sfx:
   # 足音は tools/footsteps.py が動きから自動で置く（footsteps.yaml）
-  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-001, t: 0.3}, loop: true, fade_out: 0.3, volume: 0.18}
-  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-001, t: 0.0, until: {cut: A06-003, t: 0.0}, loop: true, volume: 0.2}
-  - {src: audio/sfx/cloth_swish.ogg, cut: A06-001, t: 0.6, volume: 0.6}
-  - {src: audio/sfx/cloth_swish.ogg, cut: A06-001, t: 2.3, volume: 0.5}
-  - {src: audio/sfx/door_bang.ogg, cut: A06-002, t: 0.0, volume: 0.9}
-  - {src: audio/sfx/door_bang.ogg, cut: A06-002, t: 3.2, volume: 0.8}
-  - {src: audio/sfx/door_open.ogg, cut: A06-003, t: 0.0, volume: 0.8}
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-000, t: 0.0, until: {cut: A06-001, t: 0.3}, loop: true, fade_out: 0.3, volume: 0.11}
+  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-001, t: 0.0, until: {cut: A06-003, t: 0.0}, loop: true, volume: 0.12}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A06-001, t: 0.6, volume: 0.36}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A06-001, t: 2.3, volume: 0.3}
+  - {src: audio/sfx/door_pound.ogg, cut: A06-002, t: 0.0, volume: 0.54}
+  - {src: audio/sfx/door_pound.ogg, cut: A06-002, t: 3.1, volume: 0.48}
   # 松明の火と夜の風（003〜006）
-  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 0.0}, loop: true, volume: 0.4}
-  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 1.0}, from: 10.0, loop: true, volume: 0.18}
-  - {src: audio/sfx/ground_shake.ogg, cut: A06-007, t: 0.0, volume: 0.3}
-  - {src: audio/sfx/metal_clank.ogg, cut: A06-008, t: 1.5, volume: 0.7}
-  - {src: audio/sfx/door_close.ogg, cut: A06-010, t: 4.0, volume: 0.8}
+  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 6.4}, loop: true, volume: 0.24}
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-003, t: 0.0, until: {cut: A06-007, t: 1.0}, from: 10.0, loop: true, volume: 0.11}
+  - {src: audio/sfx/orig_sand-eater_burst_p17-1829.ogg, cut: A06-007, t: 0.1, volume: 0.12}   # 遠くの地鳴り（2026-11-01 ユーザー「遠くで音がして」）
+  - {src: audio/sfx/metal_clank.ogg, cut: A06-008, t: 1.5, volume: 0.42}
+  - {src: audio/sfx/door_close.ogg, cut: A06-010, t: 4.0, volume: 0.48}
   # 角笛（原作から）と、砂の下を進む砂食み
-  - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-012, t: 0.0, volume: 0.45}
-  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A06-012, t: 1.2, volume: 0.3}
-  - {src: audio/sfx/rumble_low.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 0.5}, fade_out: 0.5, volume: 0.2}
-  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-013, t: 0.0, until: {cut: A06-015, t: 21.0}, from: 20.0, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.13}
+  - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-012, t: 0.3, volume: 0.27}
+  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A06-012, t: 1.6, volume: 0.18}
+  - {src: audio/sfx/rumble_low.ogg, cut: A06-012, t: 0.0, until: {cut: A06-013, t: 0.5}, fade_out: 0.5, volume: 0.12}
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A06-013, t: 0.0, until: {cut: A06-015, t: 21.0}, from: 20.0, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.08}
   # 遠くで最後の角笛が鳴りやみ、稜線のティトが駆け戻る
-  - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-015, t: 0.0, volume: 0.25, fade_out: 1.0, dur: 2.0}
+  - {src: audio/sfx/orig_horn_p17-1945.ogg, cut: A06-015, t: 0.0, volume: 0.15, fade_out: 1.0, dur: 2.0}
 voice:
-  - {src: audio/A06/original/L189_villager-d.wav, cut: A06-007, t: 1.9, volume: 0.6}
+  - {src: audio/A06/original/L189_villager-d.wav, cut: A06-007, t: 6.4, volume: 0.6}
   - {src: audio/original/vocalizations/hundred-knight_mokkyu_p17-2042.wav, cut: A06-014, t: 0.3, volume: 1.0}

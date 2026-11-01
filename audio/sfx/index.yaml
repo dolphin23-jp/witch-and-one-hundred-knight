@@ -1,4 +1,4 @@
-# 効果音の一覧（D-067）。ありふれた音は自由に使える素材（CC0）から、原作らしさが要る音は原作の「BGMと効果音」から切り出す。
+# 効果音の一覧（D-068）。ありふれた音は自由に使える素材（CC0）から、原作らしさが要る音は原作の「BGMと効果音」から切り出す。
 # id と name は場面で指定するときの呼び名（name はユーザーが付け直してよい）。walk/run のまとめの足音（E12・E13・E14）は、今は tools/footsteps.py の1歩ずつの足音に置き換えた。
 # すべてモノラル 48kHz の Opus。シーンでの置き場所は episodes/<話>/scenes/<シーン>/sound.yaml。heard: ユーザーが聞いて確かめたら true。
 oga: https://opengameart.org/content/   # 下の page はこのあとに続く
@@ -122,3 +122,10 @@ items:
   license: CC0
   note: 部屋の中（layout の room_*）で使う
   listen: Drive 原作音源/効果音/E19_足音・石の床.mp3
+- id: E20
+  name: 扉をドンドンドンと叩く
+  file: door_pound.ogg
+  src: oga door-open-door-close-set（qubodup-DoorClose03 の頭）と 80-cc0-rpg-sfx（wood_04 を低くした）を重ね、0.42秒おきに3回
+  license: CC0
+  note: 2026-11-01 ユーザー「ドンドンドン、という感じ」（A06-002）。E02 より重く低い
+  listen: Drive 原作音源/効果音/E20_扉をドンドンドンと叩く.mp3
