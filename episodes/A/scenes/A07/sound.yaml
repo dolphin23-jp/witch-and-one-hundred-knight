@@ -1,0 +1,79 @@
+# A07 の BGM・効果音の置き場所（D-068、2026-11-01 の見直し）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量（volume）は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.2、足音は自動、効果音 0.3〜0.9
+# 戦い（009〜017）は台詞がないので効果音が主役。素材は audio/sfx/index.yaml（E23〜E41 を A07 のために足した。CC0 と自作）
+# rate: 生き物の声を低く遅くして大きく聞かせる。井戸に落ちた所（004 の 3.5秒）から後は、効果音に地下の響きを付ける（echo）
+scene: A07
+echo: {from: {cut: A07-004, t: 3.5}, kind: cave}
+bgm:
+  # 原作どおり（docs/audio_catalog.md）。M07 獣人の村: 001〜004（A06-015 から続く。ゲームの 22:10〜22:58）。跳んだ所で切る
+  - {src: audio/bgm/p17-1_village_loop.ogg, cut: A07-001, t: 0.0, until: {cut: A07-004, t: 3.4}, from: 14.0, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # M37 地下空洞に降りた所の短い曲: 005〜007 の壁が破れる所まで（ゲームの 22:58〜23:19）
+  - {src: audio/bgm/catalog/M37.ogg, cut: A07-005, t: 0.0, until: {cut: A07-007, t: 1.3}, fade_in: 0.3, fade_out: 0.4, volume: 0.28}
+  # M20 地下空洞（戦いの曲）: 007 の壁が破れる所から（ゲームの 23:19〜24:52）。013b の溜めで一瞬止め、014 の突き上げで戻す（Claude の案）
+  - {src: audio/bgm/M20_loop.ogg, cut: A07-007, t: 1.3, until: {cut: A07-013b, t: 0.9}, loop: true, fade_in: 0.3, fade_out: 0.6, volume: 0.28}
+  - {src: audio/bgm/M20_loop.ogg, cut: A07-014, t: 0.0, until: {cut: A07-018, t: 7.0}, from: 40.0, loop: true, fade_out: 1.5, volume: 0.28}
+sfx:
+  # 足音は tools/footsteps.py が動きから自動で置く（footsteps.yaml）
+  # 夜の村（001〜004）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A07-001, t: 0.0, until: {cut: A07-004, t: 3.4}, from: 30.0, loop: true, fade_in: 0.8, fade_out: 0.6, volume: 0.14}
+  - {src: audio/sfx/monster_roar2.ogg, cut: A07-003, t: 6.0, rate: 0.5, volume: 0.22, echo: cave}   # 井戸の底で目が開く（遠いうなり）
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-004, t: 2.9, volume: 0.22}   # しゃがむ（鎧）
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-004, t: 3.3, volume: 0.5}    # 井戸へ落ちる
+  # 地下空洞（005〜008）
+  - {src: audio/sfx/rumble_low.ogg, cut: A07-005, t: 0.0, until: {cut: A07-018, t: 7.0}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.07, echo: false}   # 空洞の低い空気の音
+  - {src: audio/sfx/thud_land.ogg, cut: A07-005, t: 0.33, volume: 0.6}
+  - {src: audio/sfx/sand_pour_loop.ogg, cut: A07-006, t: 0.0, until: {cut: A07-007, t: 1.3}, loop: true, fade_in: 0.4, volume: 0.3}
+  - {src: audio/sfx/rocks_small.ogg, cut: A07-006, t: 1.6, volume: 0.25}
+  - {src: audio/sfx/orig_sand-eater_burst_p17-1829.ogg, cut: A07-007, t: 1.3, volume: 0.7}   # 壁が破れる（原作の音）
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-007, t: 1.3, dur: 2.2, fade_out: 0.6, volume: 0.4}
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-007, t: 1.6, volume: 0.5}
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-007, t: 2.5, volume: 0.32}
+  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A07-007, t: 3.0, volume: 0.4}   # 床を滑ってくる
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-007, t: 4.4, rate: 0.6, volume: 0.4}   # 鎌首をもたげる咆哮（L214 の頭に少し重なる）
+  - {src: audio/sfx/sword_ready.ogg, cut: A07-008, t: 1.0, volume: 0.45}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-008, t: 1.0, volume: 0.28}   # 頭の炎が燃え上がる
+  # 戦い（009〜017、台詞なし）
+  - {src: audio/sfx/monster_roar2.ogg, cut: A07-009, t: 0.2, rate: 0.6, volume: 0.6}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-009, t: 1.0, volume: 0.5}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-010, t: 0.15, volume: 0.5}   # 跳ぶ
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-010, t: 0.33, volume: 0.85}   # 頭が叩きつけられる
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-010, t: 0.35, volume: 0.5}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-010, t: 1.2, volume: 0.4}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011, t: 0.05, volume: 0.35}   # 踏み込む
+  - {src: audio/sfx/sword_slash.ogg, cut: A07-011, t: 0.33, volume: 0.8}
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-011, t: 0.36, volume: 0.7}     # 殻に当たる火花
+  - {src: audio/sfx/monster_hurt.ogg, cut: A07-011, t: 0.5, rate: 0.6, volume: 0.6}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-011, t: 1.35, volume: 0.3}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-012, t: 0.2, rate: 0.7, volume: 0.45}
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-012, t: 1.2, volume: 0.7}     # 潜る
+  - {src: audio/sfx/rumble_rise.ogg, cut: A07-013, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.5}   # 砂の下を近づく。013b の溜めでぷつりと止める
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-013b, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.35}
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-014, t: 0.0, volume: 0.85}     # 突き上げ
+  - {src: audio/sfx/orig_sand-eater_burst_p17-1829.ogg, cut: A07-014, t: 0.05, volume: 0.6}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-014, t: 0.3, rate: 0.55, volume: 0.6}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-014, t: 0.3, volume: 0.45}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-015, t: 0.2, volume: 0.35}   # 宙で回る
+  - {src: audio/sfx/thud_land.ogg, cut: A07-015, t: 0.78, volume: 0.35}    # 天井に着地
+  - {src: audio/sfx/rocks_small.ogg, cut: A07-015, t: 0.85, volume: 0.35}
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-015b, t: 1.0, volume: 0.2}   # 剣を握り直す
+  - {src: audio/sfx/thud_land.ogg, cut: A07-015b, t: 1.3, volume: 0.4}     # 天井を蹴る
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-015b, t: 1.35, volume: 0.6}
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-016, t: 0.35, volume: 0.8}     # 目に突き立てる
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-016, t: 0.35, rate: 0.8, volume: 0.9}   # スローの間、低く長く
+  - {src: audio/sfx/monster_die.ogg, cut: A07-016, t: 0.5, rate: 0.55, volume: 0.7}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-016, t: 1.7, volume: 0.3}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-016, t: 2.0, volume: 0.3}
+  - {src: audio/sfx/sword_swing.ogg, cut: A07-017, t: 0.5, volume: 0.4}    # 剣を抜く
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-017, t: 0.7, volume: 0.35}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-017, t: 0.8, rate: 0.5, volume: 0.6}   # 暴れる
+  - {src: audio/sfx/thud_land.ogg, cut: A07-017, t: 1.6, volume: 0.6}      # ヒーロー着地
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-017, t: 2.85, volume: 0.8}  # 倒れる
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-017, t: 2.85, dur: 2.2, fade_out: 0.8, volume: 0.45}
+  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A07-017, t: 3.0, volume: 0.4}   # 床をのたうつ
+  - {src: audio/sfx/rocks_small.ogg, cut: A07-017, t: 3.4, volume: 0.3}
+  - {src: audio/sfx/sword_ready.ogg, cut: A07-017, t: 3.4, volume: 0.3}   # 立ち上がる
+  # ピラーが現れる（018）
+  - {src: audio/sfx/sand_pour_loop.ogg, cut: A07-018, t: 0.0, until: {cut: A07-018, t: 3.0}, loop: true, fade_out: 1.0, volume: 0.2}
+  - {src: audio/sfx/rumble_rise.ogg, cut: A07-018, t: 1.6, volume: 0.55}
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A07-018, t: 3.6, volume: 0.5}
+  - {src: audio/sfx/crystal_chime.ogg, cut: A07-018, t: 5.0, volume: 0.45}

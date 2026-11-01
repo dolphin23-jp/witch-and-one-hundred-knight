@@ -4,19 +4,26 @@
 #   井戸は (30, 30) の真上（筒は z 14〜30、内側の半径 0.65）。空洞は中心 (30, 30)、天井 14m。北の壁の横穴 (30, 13) から砂食みが出る。ピラーは床の北西寄り (23.5, 21.5)
 # 人物の keys の z は床からの高さ（地上の百騎兵は z 30）。カメラの cam は [x, y, 高さ]
 # 姿勢に ready（剣を構える）・slash（斬る）を足した。効果に eyes（闇で光る目）・spark（火花）・light（だんだん強くなる光）を足した
-# 016 の「一瞬のスロー」は Animatic で入れる（slow）
+# 016 の「一瞬のスロー」は、下絵ではキーの動きそのものを遅くして入れた（2026-11-01 の見直し）
+# 2026-11-01 の見直し（ユーザー）: ピラーは守護者（砂食み）を倒すまで隠れていて見えない（D-070）。005〜017 は hide_props で隠し、018 で床からせり上がって現れる（reveal）。
+#   戦い（009〜017）を組み直した: 跳び上がって襲いかかる → 跳んでかわす → 側面を斬る → 潜る → 足元から突き上げ、宙へ → 天井を蹴って空中の砂食みの目に突き立てる → 着地・崩れ落ちる。寄りの 013b・015b を足した
+#   姿勢 nod（うなずく）・tumble（宙返り）・flip（天井に逆さ）・dive（頭から突っ込む）、カメラの roll（画面の傾き）を足した
 # 砂食みは体が頭の通った道をたどる。008 から先は after: <前のカット> で前のカットの続きの形から始める（2026-10-31 の見直し）
 scene: A07
 layout: world/underground-cavern-layout.yaml
 map_ymax: 60
 lighting: cave
+hide_props: [crystal_1]   # ピラーは守護者を倒すまで見えない（D-070）。018 だけ hide_props: [] と reveal
 
 places:
   rim:      [30.0, 30.75]  # 井戸の縁の上（石の縁の上 z 30.8）
   well:     [30.0, 30.0]
   land:     [30.0, 30.0]   # 空洞の床（光の円の中）
-  dodge:    [32.0, 30.6]   # 010 横へ飛んでかわした先（011 で胴に届く近さ）
-  hk_end:   [36.0, 33.0]   # 017・018 百騎兵
+  dodge:    [32.4, 31.0]   # 010 跳んでかわした先
+  slash:    [31.2, 31.4]   # 011 踏み込んで斬る所（横を通る胴に届く）
+  hk_back:  [32.3, 31.0]   # 011 斬って跳び退いた所（012〜014 この真下から突き上げ）
+  ceil:     [32.0, 30.7]   # 015 天井に逆さに着地（天井の高さ 13.9）
+  hk_end:   [33.8, 34.8]   # 017・018 着地した百騎兵
   tunnel:   [30.0, 13.0]
   pillar:   [23.5, 21.5]
 
@@ -30,18 +37,22 @@ cuts:
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: [30.0, 33.0], z: 30.0, face: 0, pose: walk}
-        - {t: 1.0, at: [30.0, 31.15], z: 30.0, face: 0, pose: stand, ease: out}
-        - {t: 1.6, at: rim, z: 30.8, face: 0, pose: stand}
-        - {t: 2.2, at: rim, z: 30.8, face: 0, pose: look_down}
-        - {t: 5.0, at: rim, z: 30.8, face: 0, pose: look_down}
-    cam_keys:
-      - {t: 0.0, cam: [30.0, 29.95, 26.5], look: [30.0, 30.45], look_h: 31.8, lens: 24, frame: 寄り}
-      - {t: 5.0, cam: [30.0, 29.95, 27.2], look: [30.0, 30.45], look_h: 31.6, lens: 28, ease: linear}
+        - {t: 0.0, at: [30.0, 34.4], z: 30.0, face: 0, pose: walk}
+        - {t: 2.6, at: [30.0, 31.15], z: 30.0, face: 0, pose: walk, ease: linear}
+        - {t: 3.0, at: [30.0, 31.15], z: 30.0, face: 0, pose: stand, ease: out}
+        - {t: 3.5, at: rim, z: 30.8, face: 0, pose: stand}
+        - {t: 4.0, at: rim, z: 30.8, face: 0, pose: look_down}
+        - {t: 7.6, at: rim, z: 30.8, face: 0, pose: look_down}
+    cam_keys:   # 井戸の口の上から、歩いてくる百騎兵 → カメラが井戸の中へ沈み、見上げる形へ（2026-11-01 の見直し）
+      - {t: 0.0, cam: [30.0, 29.45, 31.7], look: [30.0, 34.0], look_h: 30.5, lens: 24, frame: 全身}
+      - {t: 2.4, cam: [30.0, 29.45, 31.6], look: hundred-knight, lens: 24}
+      - {t: 3.6, cam: [30.0, 29.6, 29.0], look: [30.0, 30.6], look_h: 31.4, lens: 22, ease: inout}
+      - {t: 5.0, cam: [30.0, 29.95, 27.2], look: [30.0, 30.45], look_h: 31.7, lens: 24, frame: 寄り, ease: out}
+      - {t: 7.6, cam: [30.0, 29.95, 27.0], look: [30.0, 30.45], look_h: 31.6, lens: 26, ease: linear}
     bg: well_up
     light_en: "Night: looking up from inside the deep stone well, the round rim far above against a deep blue starry sky with a bright moon."
-    act: {start: 井戸の中から見上げる。丸い井戸の口と月, do: 百騎兵が井戸の縁まで来て、のぞき込む（顔が逆光で出てくる）, end: 井戸の縁から見下ろす百騎兵の顔と、その上の月, sync: L206「おい……その井戸……臭うぞ。」は 0.3秒から}
-    camera: 井戸の中から見上げる（井戸の縁と百騎兵の顔、その上に月）
+    act: {start: 夜の村。井戸の口の上から、こちらへ歩いてくる百騎兵, do: 百騎兵が井戸の縁まで来る。カメラがそのまま井戸の中へ沈み、見上げる形になる。縁に上った百騎兵がのぞき込む（月を背に）, end: 井戸の縁から見下ろす百騎兵の顔と、その上の月, sync: L206「おい……その井戸……臭うぞ。」は 2.6秒から（2026-11-01 の見直しで、地上を歩いてくる所を足した）}
+    camera: 井戸の口の上から歩いてくる百騎兵 → カメラが井戸の中へ沈みながら見上げる（井戸の縁と百騎兵の顔、その上に月）
     pose: {hundred-knight: "walking up to the rim of the well above, then leaning over and peering down into it"}
     pose_end: {hundred-knight: "leaning over the rim far above, peering down, silhouetted against the moonlit sky"}
     kind: M
@@ -83,21 +94,26 @@ cuts:
     frame: 全身
     only: [hundred-knight]
     keys:
-      hundred-knight:
-        - {t: 0.0, at: rim, z: 30.8, face: 0, pose: stand}
-        - {t: 0.5, at: rim, z: 30.8, face: 0, pose: crouch}
-        - {t: 0.9, at: [30.0, 30.3], z: 31.6, face: 0, pose: jump, ease: out}
-        - {t: 1.2, at: well, z: 29.5, pose: jump, ease: in}
-        - {t: 3.0, at: well, z: 16.0, pose: jump, ease: in}
+      hundred-knight:   # 「飛び込め！」を聞いて顔を上げ、うなずき、しゃがんで跳ぶ（溜め、2026-11-01 の見直し）
+        - {t: 0.0, at: rim, z: 30.8, face: 0, pose: look_down}
+        - {t: 0.5, at: rim, z: 30.8, face: 0, pose: look_up}
+        - {t: 1.9, at: rim, z: 30.8, face: 0, pose: look_up}
+        - {t: 2.1, at: rim, z: 30.8, face: 0, pose: nod}
+        - {t: 2.5, at: rim, z: 30.8, face: 0, pose: stand}
+        - {t: 2.9, at: rim, z: 30.8, face: 0, pose: crouch}
+        - {t: 3.3, at: [30.0, 30.3], z: 31.6, face: 0, pose: jump, ease: out}
+        - {t: 3.6, at: well, z: 29.5, pose: jump, ease: in}
+        - {t: 5.4, at: well, z: 16.0, pose: jump, ease: in}
     cam_keys:
-      - {t: 0.0, cam: [30.5, 32.9, 31.2], look: hundred-knight, lens: 28, frame: 全身}
-      - {t: 0.9, cam: [30.2, 31.6, 32.2], look: well, look_h: 30.0, lens: 28, ease: inout}
-      - {t: 1.2, cam: [30.0, 30.15, 31.3], look: hundred-knight, lens: 24, ease: in}
-      - {t: 3.0, cam: [30.0, 30.12, 18.5], look: well, look_h: 10.0, lens: 24, ease: in}
+      - {t: 0.0, cam: [30.0, 28.1, 31.35], look: hundred-knight, lens: 26, frame: 全身}
+      - {t: 2.8, cam: [30.0, 28.3, 31.3], look: hundred-knight, lens: 30, ease: linear}
+      - {t: 3.2, cam: [31.6, 31.9, 33.6], look: well, look_h: 30.0, lens: 24, ease: inout}
+      - {t: 3.6, cam: [30.0, 30.15, 32.4], look: well, look_h: 28.0, lens: 24, ease: in}
+      - {t: 5.4, cam: [30.0, 30.12, 18.5], look: well, look_h: 10.0, lens: 24, ease: in}
     bg: well_shaft
     light_en: "Night: moonlight on the old stone well, the deep shaft below fading into darkness."
-    act: {start: 井戸の縁に立つ百騎兵, do: 「飛び込め！」でしゃがんで跳び、井戸へ飛び込む。カメラが上から一緒に落ちる, end: 井戸の筒を落ちていく百騎兵を真上から, sync: L211「飛び込め！百騎兵！」は 0.3秒から}
-    camera: 井戸の上から、落ちていく百騎兵を一緒に落ちながら追う
+    act: {start: 井戸の縁でのぞき込む百騎兵（正面）, do: 「飛び込め！」で顔を上げ、こくりとうなずき、しゃがんで跳び、井戸へ飛び込む。カメラが上から一緒に落ちる, end: 井戸の筒を落ちていく百騎兵を真上から, sync: L211「飛び込め！百騎兵！」は 0.3秒から。うなずきは 2.1秒、跳ぶのは 3.3秒（溜め、2026-11-01 の見直し）}
+    camera: 井戸の向こう側から正面の百騎兵（うなずきに合わせてゆっくり寄る）→ 跳んだ所で井戸の上へ回り、落ちていく百騎兵を一緒に落ちながら追う
     pose: {hundred-knight: "standing at the rim of the well, about to jump in"}
     pose_end: {hundred-knight: "falling down the dark well shaft, seen from directly above"}
     kind: A
@@ -113,7 +129,7 @@ cuts:
         - {t: 1.2, at: land, z: 0.0, face: 0, pose: stand, ease: out}
         - {t: 8.0, at: land, z: 0.0, face: 330, pose: stand}
     fx:
-      - {kind: plume, t: [0.3, 1.2], at: land, r: 0.7, h: 0.5, shape: fall}
+      - {kind: plume, t: [0.3, 1.0], at: land, r: 0.4, h: 0.25, shape: fall}
     cam_keys:
       - {t: 0.0, cam: [31.9, 32.6, 1.0], look: land, look_h: 1.2, lens: 28, frame: 全身}
       - {t: 1.0, cam: [31.9, 32.6, 1.0], look: land, look_h: 0.7, lens: 28}
@@ -126,21 +142,23 @@ cuts:
     kind: A
   A07-006:
     frame: 引き
-    only: [hundred-knight]
+    only: []
+    hidden_ok: [hundred-knight]   # 画の外（光の円の中に立っている）
     keys:
       hundred-knight:
         - {t: 0.0, at: land, face: 330, pose: stand}
         - {t: 1.0, at: land, face: 0, pose: stand}
         - {t: 3.6, at: land, face: 0, pose: stand}
     fx:
-      - {kind: plume, t: [0.0, 6.0], at: [30.0, 13.8], r: 1.0, h: 4.0, shape: fall}
-    cam_keys:
-      - {t: 0.0, cam: [30.45, 31.1, 1.0], look: tunnel, look_h: 2.6, lens: 35, frame: 引き}
-      - {t: 3.6, cam: [30.4, 31.0, 1.0], look: tunnel, look_h: 2.6, lens: 42, ease: linear}
+      - {kind: plume, t: [0.0, 6.0], at: [28.6, 14.0], r: 0.3, h: 3.2, shape: fall}
+      - {kind: plume, t: [0.4, 6.0], at: [31.5, 14.0], r: 0.25, h: 2.6, shape: fall}
+    cam_keys:   # 北の壁の横穴を横から（百騎兵の肩越しが 005〜008 で続いたので向きを変えた、2026-11-01 の見直し）
+      - {t: 0.0, cam: [35.8, 21.0, 1.2], look: [30.0, 13.6], look_h: 3.0, lens: 30, frame: 引き}
+      - {t: 3.6, cam: [35.5, 20.6, 1.2], look: [30.0, 13.6], look_h: 3.0, lens: 36, ease: linear}
     bg: cave_wide
     extra_en: "On the far rock wall of the cavern, sand starts trickling and pouring down around a huge dark tunnel."
-    act: {start: 百騎兵の肩越しに、空洞の北の壁, do: 壁の横穴のまわりの砂がさらさらと流れ落ちる, end: 流れ落ちる砂, sync: L213「そして……あいつの気配もな！」は 0.3秒から}
-    camera: 百騎兵の肩越しに、壁の奥へピントを移す（下絵ではピント送りはしない）
+    act: {start: 北の壁の大きな横穴, do: 横穴のまわりの砂がさらさらと流れ落ち、奥で何かが動く気配, end: 流れ落ちる砂, sync: L213「そして……あいつの気配もな！」は 0.3秒から}
+    camera: 北の壁の横穴を斜め横から。砂が流れ落ちる穴の口へゆっくり寄る（百騎兵は映さない）
     pose: {hundred-knight: "standing, seen from behind over the shoulder, facing the far wall"}
     pose_end: {hundred-knight: "standing, seen from behind over the shoulder"}
     kind: M
@@ -150,63 +168,71 @@ cuts:
     keys:
       hundred-knight:
         - {t: 0.0, at: land, face: 0, pose: stand}
-        - {t: 12.8, at: land, face: 0, pose: stand}
+        - {t: 6.0, at: land, face: 0, pose: stand}
+        - {t: 6.6, at: land, face: 0, pose: look_up}
+        - {t: 17.6, at: land, face: 0, pose: look_up}
     creatures:
-      sand-eater:   # 壁を破って出て、床を滑ってきてから、百騎兵の前で鎌首をもたげる（体の前半が縦に立つ）
-        len: 8.0
-        r: 0.75
+      sand-eater:   # 壁を破って出て、床を滑ってきてから、百騎兵のすぐ前で鎌首をもたげる（前より近く・高く、2026-11-01 の見直し）
+        len: 11.0
+        r: 1.1
         keys:
           - {t: 0.0, at: [30.0, 8.0], z: 3.5}
           - {t: 1.6, at: [30.0, 12.5], z: 3.6, ease: in}
-          - {t: 3.2, at: [30.0, 17.5], z: 1.0, ease: out}
-          - {t: 4.6, at: [30.1, 21.6], z: 0.9, ease: linear}
-          - {t: 7.0, at: [30.2, 22.4], z: 6.0, ease: out}
-          - {t: 9.6, at: [29.8, 22.7], z: 6.6, ease: inout}
-          - {t: 12.8, at: [30.3, 22.6], z: 6.8, ease: inout}
+          - {t: 3.0, at: [30.0, 17.5], z: 1.0, ease: out}
+          - {t: 4.4, at: [30.1, 23.5], z: 0.9, ease: linear}
+          - {t: 6.6, at: [30.2, 25.0], z: 7.0, ease: out}
+          - {t: 9.6, at: [30.0, 25.1], z: 7.3, ease: inout}
+          - {t: 13.0, at: [30.3, 25.1], z: 7.2, ease: inout}
+          - {t: 17.6, at: [30.1, 25.2], z: 7.4, ease: inout}
     fx:
-      - {kind: plume, t: [1.4, 4.6], at: [30.0, 13.6], r: 3.5, h: 7.0}
+      - {kind: plume, t: [1.3, 4.8], at: [30.0, 13.8], r: 3.0, h: 7.0}
+      - {kind: plume, t: [2.0, 6.5], at: [30.0, 14.6], r: 3.0, h: 5.0, shape: fall}
     shake:
-      - {t: [1.4, 3.2], amp: 0.8}
-    cam_keys:
-      - {t: 0.0, cam: [30.8, 33.2, 0.35], look: hundred-knight, look_h: 0.25, lens: 24, frame: 全身}
-      - {t: 3.0, cam: [30.8, 33.2, 0.35], look: hundred-knight, look_h: 0.25, lens: 24}
-      - {t: 8.0, cam: [30.8, 33.2, 0.35], look: [30.2, 22.5], look_h: 3.6, lens: 20, frame: 大引き, ease: inout}
-      - {t: 12.8, cam: [30.8, 33.4, 0.35], look: [30.2, 22.6], look_h: 3.7, lens: 20}
+      - {t: [1.3, 3.2], amp: 1.4}
+      - {t: [5.8, 7.0], amp: 0.5}
+    cam_keys:   # 百騎兵のすぐ後ろの床すれすれ。鎌首をもたげるのに合わせて見上げる（2026-11-01 の見直し）
+      - {t: 0.0, cam: [31.4, 33.6, 0.3], look: [30.0, 14.0], look_h: 3.0, lens: 24, frame: 引き}
+      - {t: 3.0, cam: [31.4, 33.6, 0.3], look: [30.0, 15.0], look_h: 2.8, lens: 24}
+      - {t: 6.8, cam: [31.4, 33.6, 0.3], look: [30.2, 25.0], look_h: 4.4, lens: 18, frame: 大引き, ease: inout}
+      - {t: 12.0, cam: [32.2, 33.4, 0.3], look: [30.1, 25.1], look_h: 4.4, lens: 18, ease: inout}
+      - {t: 17.6, cam: [32.8, 33.0, 0.35], look: [30.1, 25.2], look_h: 4.3, lens: 18, ease: inout}
     bg: cave_wide
     extra_en: "The sand-eater bursts out of the far rock wall in an explosion of sand and rock."
-    extra_en_end: "The huge sand-eater rears up above the Hundred Knight, filling the cavern."
-    act: {start: 百騎兵の足元から、北の壁, do: 壁を破って砂食みが現れ、床を滑って近づき、百騎兵の前で鎌首をもたげる, end: 百騎兵を見下ろす巨大な砂食み, sync: L214「キヒヒッ！来た来た！…デカブツが！」は 0.3秒から、L215「こいつ、食物連鎖の頂点にでもたったつもりか？」は 7.2秒から}
-    camera: 百騎兵の足元から、砂食みの頭までゆっくり上へ振る（ティルト）。振りながら少し広角へ
+    extra_en_end: "The huge sand-eater rears up right above the Hundred Knight, filling the cavern."
+    act: {start: 百騎兵の足元の後ろから、北の壁, do: 壁が砂と岩をまき散らして破れ、砂食みが現れる。床を滑って近づき、百騎兵のすぐ前で鎌首をもたげる。カメラはそれを見上げ、ゆっくり回り込む, end: 百騎兵を見下ろす巨大な砂食み, sync: L214「キヒヒッ！来た来た！…デカブツが！」は 4.8秒から（現れた後、2026-11-01 の見直し）、L215「こいつ、食物連鎖の頂点にでもたったつもりか？」はその後}
+    camera: 百騎兵のすぐ後ろの床すれすれから、壁が破れるのを見せ、鎌首をもたげる砂食みを見上げる（ティルト）。その後ゆっくり右へ回り込む
     pose: {hundred-knight: "standing small on the sand, seen from low behind"}
-    pose_end: {hundred-knight: "standing small at the bottom of the frame, facing the monster"}
+    pose_end: {hundred-knight: "standing small at the bottom of the frame, looking up at the monster"}
     kind: A
   A07-008:
     frame: 全身
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: land, face: 0, pose: stand}
+        - {t: 0.0, at: land, face: 0, pose: look_up}
         - {t: 1.0, at: land, face: 0, pose: ready}
         - {t: 7.6, at: land, face: 0, pose: ready}
     creatures:
       sand-eater:
         after: A07-007
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [30.3, 22.6], z: 6.8}
-          - {t: 3.8, at: [29.9, 22.8], z: 6.4, ease: inout}
-          - {t: 7.6, at: [30.3, 22.7], z: 6.7, ease: inout}
-    cam_keys:
-      - {t: 0.0, cam: [30.9, 34.0, 0.5], look: [30.2, 22.8], look_h: 4.2, lens: 24, frame: 大引き}
-      - {t: 1.4, cam: [30.5, 31.6, 0.9], look: [30.2, 22.8], look_h: 3.4, lens: 20, frame: 全身, ease: out}
-      - {t: 7.6, cam: [30.5, 31.5, 0.9], look: [30.2, 22.8], look_h: 3.4, lens: 20}
+          - {t: 0.0, at: [30.1, 25.2], z: 7.4}
+          - {t: 3.8, at: [29.95, 25.3], z: 7.2, ease: inout}
+          - {t: 7.6, at: [30.2, 25.25], z: 7.4, ease: inout}
+    fx:
+      - {kind: light, t: [1.0, 1.8], at: hundred-knight, z: 1.3, energy: 60, color: [150, 210, 255]}   # 頭の炎が燃え上がる
+    cam_keys:   # 百騎兵の右斜め後ろ（剣の側）から、全身（剣と頭の炎）と奥の砂食み。構えに合わせて寄る（2026-11-01 の見直し）
+      - {t: 0.0, cam: [31.4, 32.8, 0.5], look: [30.0, 27.0], look_h: 2.1, lens: 16, frame: 全身}
+      - {t: 1.4, cam: [31.2, 32.5, 0.5], look: [30.0, 27.0], look_h: 1.9, lens: 16, ease: out}
+      - {t: 7.6, cam: [31.15, 32.4, 0.52], look: [30.0, 27.0], look_h: 1.9, lens: 17, ease: linear}
     bg: cave_wide
     extra_en: "The pale blue flame on the Hundred Knight's head flares up high."
-    act: {start: 百騎兵の後ろから、砂食みを見上げる煽り, do: 百騎兵が剣を構え、頭の炎が大きく燃え上がる。カメラが一気に寄る, end: 剣を構えた百騎兵の背中と、見下ろす砂食み, sync: L216「さあ、百騎兵！…絶対的搾取の恐怖をな！」は 0.3秒から}
-    camera: 百騎兵の後ろから、砂食みを見上げる煽り。一気に寄る（兜の高さまで上がる）
-    pose: {hundred-knight: "raising its big sword, seen from behind and below"}
-    pose_end: {hundred-knight: "holding its big sword ready, its head flame blazing, seen from behind and below"}
+    act: {start: 百騎兵の右斜め後ろから、全身と奥の砂食み（煽り）, do: 百騎兵が剣を構え、頭の炎が大きく燃え上がる。カメラが一気に寄る, end: 剣を構えた百騎兵の全身と、見下ろす砂食み, sync: L216「さあ、百騎兵！…絶対的搾取の恐怖をな！」は 0.3秒から}
+    camera: 百騎兵の右斜め後ろ（剣の側）の低い所から、全身と奥の砂食みを入れた煽り。構えに合わせて一気に寄る
+    pose: {hundred-knight: "raising its big sword, seen from behind on the right and below"}
+    pose_end: {hundred-knight: "holding its big sword ready, its head flame blazing, seen from behind on the right and below"}
     kind: A
 
   # ---------- 戦い（009〜018、台詞なし） ----------
@@ -216,109 +242,129 @@ cuts:
     keys:
       hundred-knight:
         - {t: 0.0, at: land, face: 0, pose: ready}
+        - {t: 1.8, at: land, face: 0, pose: ready}
+        - {t: 2.2, at: land, face: 0, pose: crouch}
+        - {t: 2.6, at: land, face: 0, pose: crouch}
     creatures:
-      sand-eater:
+      sand-eater:   # 体を引いて溜め、天井近くまで跳び上がって、頭から百騎兵へ襲いかかる
         after: A07-008
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [30.3, 22.7], z: 6.7}
-          - {t: 0.6, at: [30.2, 22.0], z: 7.4, ease: out}
-          - {t: 2.2, at: [30.0, 26.8], z: 1.8, ease: in}
-          - {t: 3.0, at: [30.0, 28.0], z: 1.2, ease: linear}
-    cam_keys:
-      - {t: 0.0, cam: [22.0, 27.0, 0.8], look: [30.1, 26.0], look_h: 3.3, lens: 24, frame: 全身}
-      - {t: 0.6, cam: [22.0, 27.0, 0.8], look: [30.1, 25.6], look_h: 3.6, lens: 24}
-      - {t: 2.2, cam: [22.3, 27.2, 0.8], look: [30.0, 27.4], look_h: 1.6, lens: 24, ease: in}
-      - {t: 3.0, cam: [22.5, 27.3, 0.8], look: [30.0, 28.6], look_h: 1.1, lens: 24}
+          - {t: 0.0, at: [30.2, 25.25], z: 7.4}
+          - {t: 0.6, at: [30.1, 24.0], z: 8.2, ease: out}
+          - {t: 1.4, at: [30.1, 26.6], z: 11.0, ease: out}
+          - {t: 2.6, at: [30.0, 29.0], z: 3.2, ease: in}
+    cam_keys:   # 西の床すれすれから、跳び上がる頭を追って見上げ、落ちてくる頭を追って百騎兵まで下りる（画面を傾けていく）
+      - {t: 0.0, cam: [24.2, 29.4, 0.7], look: [30.2, 25.3], look_h: 5.6, lens: 20, frame: 全身}
+      - {t: 0.6, cam: [24.2, 29.4, 0.7], look: [30.1, 24.4], look_h: 6.6, lens: 20}
+      - {t: 1.4, cam: [24.2, 29.4, 0.7], look: [30.1, 26.6], look_h: 9.0, lens: 20, roll: -8}
+      - {t: 2.2, cam: [24.4, 29.6, 0.7], look: [30.0, 28.0], look_h: 4.6, lens: 22, roll: -10}
+      - {t: 2.6, cam: [24.6, 29.8, 0.7], look: [30.0, 29.6], look_h: 1.6, lens: 22, roll: -10, ease: out}
     bg: cave_wide
-    act: {start: 真横（西）の低い所から、百騎兵と砂食み, do: 砂食みが体を引いてから、口を開けて真っすぐ突進してくる, end: 迫る砂食みの頭, sync: （台詞なし）}
-    camera: 真横（西）の低い所から、高く引いた頭が振り下ろされるのを追って下へ振る（ここまで北向きが続くので横から）
-    pose: {hundred-knight: "holding its sword ready as the monster lunges"}
-    pose_end: {hundred-knight: "about to leap aside, the monster's open mouth right in front of it"}
+    act: {start: 真横の低い所から、構える百騎兵と鎌首の砂食み, do: 砂食みが体を引いて溜め、天井近くまで跳び上がり、弧を描いて頭から百騎兵へ襲いかかる。百騎兵がしゃがむ, end: 百騎兵へ落ちてくる砂食みの頭, sync: （台詞なし）}
+    camera: 西の床すれすれから、跳び上がる頭を追って見上げ、落ちてくる頭を追って百騎兵まで下りる（画面を傾けていく）
+    pose: {hundred-knight: "holding its sword ready as the monster leaps high"}
+    pose_end: {hundred-knight: "crouching, about to jump, the monster diving at it from above"}
     kind: A
   A07-010:
     frame: 全身
     only: [hundred-knight]
     keys:
-      hundred-knight:
+      hundred-knight:   # 真上へ跳んでかわし、叩きつけられた頭の横へ着地
         - {t: 0.0, at: land, face: 0, pose: crouch}
-        - {t: 0.2, at: land, face: 90, pose: crouch}
-        - {t: 0.7, at: [31.2, 30.4], z: 1.4, face: 90, pose: jump, ease: out}
-        - {t: 1.2, at: dodge, z: 0.0, face: 270, pose: crouch, ease: in}
-        - {t: 2.6, at: dodge, face: 270, pose: ready}
+        - {t: 0.2, at: land, z: 0.3, face: 30, pose: jump}
+        - {t: 0.7, at: [31.4, 30.4], z: 2.4, face: 60, pose: jump, ease: out}
+        - {t: 1.2, at: dodge, z: 0.0, face: 90, pose: crouch, ease: in}
+        - {t: 1.6, at: dodge, face: 300, pose: crouch}
+        - {t: 2.4, at: dodge, face: 270, pose: ready}
     creatures:
-      sand-eater:
+      sand-eater:   # 百騎兵のいた所に頭を叩きつけ、そのまま床を滑っていく
         after: A07-009
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [30.0, 28.0], z: 1.2}
-          - {t: 1.6, at: [30.0, 33.6], z: 0.7, ease: linear}
-          - {t: 2.6, at: [29.8, 35.0], z: 0.6, ease: out}
-    cam_keys:
-      - {t: 0.0, cam: [36.0, 26.0, 1.4], look: hundred-knight, lens: 28, frame: 全身}
-      - {t: 2.6, cam: [36.6, 27.0, 1.3], look: hundred-knight, lens: 28, ease: inout}
+          - {t: 0.0, at: [30.0, 29.0], z: 3.2}
+          - {t: 0.35, at: [30.0, 30.0], z: 0.5, ease: in}
+          - {t: 1.0, at: [30.0, 32.2], z: 0.6, ease: linear}
+          - {t: 2.4, at: [29.9, 35.6], z: 0.6, ease: linear}
+    fx:
+      - {kind: plume, t: [0.3, 1.6], at: [29.9, 30.0], r: 1.5, h: 2.4}
+    shake:
+      - {t: [0.3, 0.9], amp: 1.3}
+    cam_keys:   # 南東の床すれすれから、跳ぶ百騎兵を追う（跳び上がりで画面を傾ける）
+      - {t: 0.0, cam: [35.4, 33.4, 2.0], look: hundred-knight, lens: 22, frame: 全身}
+      - {t: 0.7, cam: [35.2, 33.2, 2.4], look: hundred-knight, lens: 22, roll: 8, ease: out}
+      - {t: 1.2, cam: [35.0, 33.0, 1.8], look: hundred-knight, lens: 26, roll: 3}
+      - {t: 2.4, cam: [34.8, 32.6, 1.5], look: hundred-knight, lens: 28, roll: 0, ease: inout}
     bg: cave_wide
-    act: {start: 突進してくる頭の前で百騎兵がしゃがむ, do: 横へ大きく飛んでかわし、その横を砂食みの頭と胴が通り過ぎる, end: 着地して振り返る百騎兵, sync: （台詞なし）}
-    camera: 横から、飛ぶ百騎兵を追う
-    pose: {hundred-knight: "crouching as the monster charges"}
-    pose_end: {hundred-knight: "landed to the side, turning back with its sword ready"}
+    act: {start: しゃがむ百騎兵へ落ちてくる頭, do: 百騎兵が真上へ跳んでかわし、その下に頭が叩きつけられて砂が噴き上がる。百騎兵は頭の横へ着地し、床を滑っていく胴へ向き直る, end: 着地して構える百騎兵と、横を滑っていく胴, sync: （台詞なし）}
+    camera: 南東の跳ぶ高さから、跳ぶ百騎兵を追う（跳び上がる所で画面を傾ける。007〜011 の床すれすれが続くので高さを変えた）
+    pose: {hundred-knight: "leaping straight up as the monster's head slams into the sand below"}
+    pose_end: {hundred-knight: "landed beside the monster, turning to its passing body with its sword ready"}
     kind: A
   A07-011:
     frame: 寄り
     only: [hundred-knight]
     keys:
-      hundred-knight:
+      hundred-knight:   # 踏み込んで横を通る胴を斬り、跳び退く
         - {t: 0.0, at: dodge, face: 270, pose: ready}
-        - {t: 0.4, at: dodge, face: 260, pose: slash}
-        - {t: 1.1, at: [31.3, 30.7], face: 250, pose: slash}
-        - {t: 1.4, at: [31.3, 30.7], face: 250, pose: ready}
-        - {t: 3.0, at: [31.3, 30.7], face: 250, pose: ready}
+        - {t: 0.3, at: slash, face: 255, pose: slash, ease: in}
+        - {t: 0.75, at: slash, face: 255, pose: slash}
+        - {t: 1.0, at: slash, face: 255, pose: ready}
+        - {t: 1.4, at: hk_back, face: 255, pose: crouch, ease: out}
+        - {t: 2.4, at: hk_back, face: 250, pose: ready}
     creatures:
       sand-eater:
         after: A07-010
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [29.8, 35.0], z: 0.6}
-          - {t: 3.0, at: [29.2, 36.8], z: 0.5, ease: linear}
+          - {t: 0.0, at: [29.9, 35.6], z: 0.6}
+          - {t: 2.4, at: [29.4, 38.8], z: 0.6, ease: linear}
     fx:
-      - {kind: spark, t: [0.5, 1.1], at: [30.7, 30.7], z: 0.8}
-    cam_keys:
-      - {t: 0.0, cam: [34.4, 32.2, 0.8], look: hundred-knight, lens: 32, frame: 寄り}
-      - {t: 3.0, cam: [34.0, 28.8, 0.9], look: hundred-knight, lens: 32, ease: inout}
+      - {kind: spark, t: [0.35, 0.95], at: [30.5, 31.9], z: 0.55}
+      - {kind: light, t: [0.35, 0.4], at: [30.5, 31.9], z: 0.7, energy: 220, fade: 0.4, color: [255, 220, 150]}
+    cam_keys:   # 北の低い所から（剣の側、右に滑っていく胴）。斬る瞬間にぐっと寄って画面を傾ける
+      - {t: 0.0, cam: [31.2, 28.4, 0.45], look: hundred-knight, lens: 32, frame: 寄り}
+      - {t: 0.3, cam: [31.1, 28.7, 0.45], look: [31.0, 31.5], look_h: 0.6, lens: 40, roll: -6, ease: in}
+      - {t: 0.75, cam: [31.0, 28.9, 0.45], look: [31.0, 31.5], look_h: 0.6, lens: 55, roll: -12, ease: out}
+      - {t: 1.4, cam: [31.3, 28.6, 0.5], look: hundred-knight, lens: 32, roll: 0, ease: inout}
+      - {t: 2.4, cam: [31.4, 28.5, 0.55], look: hundred-knight, lens: 30}
     bg: cave_wide
     extra_en: "Bright sparks fly where the sword strikes the monster's armored side."
-    act: {start: 着地した百騎兵の寄り, do: 横を通る砂食みの胴を、踏み込んで斜めに斬る。火花が散る, end: 振り抜いた剣, sync: （台詞なし）}
-    camera: 低い所から、斬る百騎兵のまわりを回り込む
+    act: {start: 着地した百騎兵の寄り, do: 踏み込んで、横を滑っていく胴を斜めに斬る。火花が散り、砂食みが悲鳴を上げる。百騎兵は跳び退く, end: 跳び退いて構える百騎兵, sync: （台詞なし）}
+    camera: 北の低い所から（剣の側。右に滑っていく胴）。斬る瞬間にぐっと寄って（レンズを伸ばす）画面を傾け、跳び退くと戻す
     pose: {hundred-knight: "stepping in and slashing diagonally at the monster's passing body"}
-    pose_end: {hundred-knight: "having swung its sword through, sparks in the air"}
+    pose_end: {hundred-knight: "having leapt back, holding its sword ready"}
     kind: A
   A07-012:
     frame: 引き
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: [31.3, 30.7], face: 250, pose: ready}
-        - {t: 1.2, at: [31.3, 30.7], face: 215, pose: ready}
+        - {t: 0.0, at: hk_back, face: 250, pose: ready}
+        - {t: 1.2, at: hk_back, face: 215, pose: ready}
+        - {t: 3.0, at: hk_back, face: 215, pose: ready}
     creatures:
       sand-eater:
         after: A07-011
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [29.2, 36.8], z: 0.5}
-          - {t: 0.8, at: [28.4, 38.6], z: 2.2, ease: out}
-          - {t: 2.2, at: [27.6, 41.5], z: -3.5, ease: in}
-          - {t: 3.4, at: [27.4, 42.5], z: -4.5}
+          - {t: 0.0, at: [29.4, 38.8], z: 0.6}
+          - {t: 0.8, at: [28.9, 40.4], z: 2.6, ease: out}
+          - {t: 2.0, at: [28.3, 42.6], z: -3.0, ease: in}
+          - {t: 3.0, at: [28.0, 43.4], z: -5.0}
     fx:
-      - {kind: plume, t: [1.2, 3.4], at: [27.8, 41.0], r: 3.0, h: 5.0}
+      - {kind: plume, t: [1.2, 3.0], at: [28.4, 42.0], r: 2.0, h: 3.8}
+    shake:
+      - {t: [1.3, 2.0], amp: 0.6}
     cam_keys:
-      - {t: 0.0, cam: [35.0, 28.6, 1.6], look: [29.0, 38.5], look_h: 1.2, lens: 24, frame: 引き}
-      - {t: 3.4, cam: [35.2, 28.4, 1.4], look: [28.2, 40.5], look_h: 0.8, lens: 24, ease: inout}
+      - {t: 0.0, cam: [35.0, 28.4, 1.6], look: [29.0, 39.0], look_h: 1.2, lens: 24, frame: 引き}
+      - {t: 3.0, cam: [35.2, 28.2, 1.4], look: [28.4, 41.0], look_h: 0.8, lens: 26, ease: inout}
     bg: cave_wide
-    act: {start: 百騎兵の後ろからの引き, do: 斬られた砂食みが身をよじり、砂の床へ頭から潜る, end: 砂煙, sync: （台詞なし）}
+    act: {start: 百騎兵の後ろからの引き, do: 斬られた砂食みが身をよじって頭をもたげ、砂の床へ頭から潜る, end: 砂煙, sync: （台詞なし）}
     camera: 百騎兵の後ろ（北東）からの引き。潜る動きを追って振る
     pose: {hundred-knight: "standing with its sword ready in the foreground"}
     pose_end: {hundred-knight: "standing with its sword ready"}
@@ -328,19 +374,20 @@ cuts:
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: [31.3, 30.7], face: 220, pose: ready}
-        - {t: 4.0, at: [31.3, 30.7], face: 230, pose: ready}
+        - {t: 0.0, at: hk_back, face: 215, pose: ready}
+        - {t: 3.0, at: hk_back, face: 205, pose: ready}
     creatures:
       sand-eater:
         after: A07-012
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
+        mound: soft
         keys:
-          - {t: 0.0, at: [26.0, 41.0], z: -1.2}
-          - {t: 4.0, at: [31.0, 31.8], z: -1.0, ease: linear}
+          - {t: 0.0, at: [27.4, 41.6], z: -1.4}
+          - {t: 3.0, at: [32.2, 31.8], z: -1.0, ease: linear}
     cam_keys:
-      - {t: 0.0, cam: [34.0, 28.6, 0.45], look: [27.5, 39.0], look_h: 0.3, lens: 28, frame: 全身}
-      - {t: 4.0, cam: [33.6, 29.0, 0.45], look: [30.2, 33.6], look_h: 0.3, lens: 32, ease: linear}
+      - {t: 0.0, cam: [35.6, 27.6, 0.45], look: [31.0, 39.5], look_h: 0.3, lens: 24, frame: 全身}
+      - {t: 3.0, cam: [35.2, 28.0, 0.45], look: [32.2, 33.6], look_h: 0.3, lens: 28, ease: linear}
     bg: cave_wide
     extra_en: "A long bulge in the sand races toward the Hundred Knight as the monster swims under the floor."
     act: {start: 百騎兵の後ろの低い所から, do: 砂の床の下を、大きなうねりが百騎兵へ近づいてくる, end: 百騎兵の足元まで来たうねり, sync: （台詞なし）}
@@ -348,159 +395,251 @@ cuts:
     pose: {hundred-knight: "bracing with its sword ready, seen from low behind"}
     pose_end: {hundred-knight: "bracing, the bulge in the sand right at its feet"}
     kind: A
+  A07-013b:
+    frame: 寄り
+    only: [hundred-knight]
+    keys:
+      hundred-knight:   # 足元が揺れ、うねりが真下へ消える。足元を見て、身構える（溜め）
+        - {t: 0.0, at: hk_back, face: 205, pose: ready}
+        - {t: 0.5, at: hk_back, face: 205, pose: look_down}
+        - {t: 1.1, at: hk_back, face: 205, pose: look_down}
+        - {t: 1.4, at: hk_back, face: 205, pose: crouch}
+        - {t: 1.8, at: hk_back, face: 205, pose: crouch}
+    creatures:
+      sand-eater:
+        after: A07-013
+        len: 11.0
+        r: 1.1
+        mound: soft
+        keys:
+          - {t: 0.0, at: [32.2, 31.8], z: -1.0}
+          - {t: 1.8, at: [32.3, 31.1], z: -1.8, ease: in}
+    fx:
+      - {kind: ring, t: [0.2, 1.8], at: hk_back, r: 1.4, n: 3}
+    shake:
+      - {t: [0.0, 1.8], amp: 0.5}
+    cam_keys:   # 正面の低い寄り。足元の揺れと、身構える顔
+      - {t: 0.0, cam: [31.3, 32.9, 0.55], look: hundred-knight, look_h: 0.5, lens: 30, frame: 寄り}
+      - {t: 1.8, cam: [31.45, 32.6, 0.5], look: hundred-knight, look_h: 0.42, lens: 36, ease: in}
+    bg: cave_wide
+    act: {start: 構える百騎兵の正面の寄り, do: 足元の砂が揺れ、うねりが足の真下へ消える。百騎兵が足元を見て、身構える, end: 身構える百騎兵（静けさの一瞬）, sync: （台詞なし。新しいカット、2026-11-01 の見直し）}
+    camera: 正面の低い寄り。ゆっくり押し込む
+    pose: {hundred-knight: "holding its sword ready, the sand trembling at its feet"}
+    pose_end: {hundred-knight: "crouching, bracing, looking down at the sand under its feet"}
+    kind: A
   A07-014:
     frame: 引き
     only: [hundred-knight]
     keys:
-      hundred-knight:
-        - {t: 0.0, at: [31.3, 30.7], face: 230, pose: ready}
-        - {t: 0.3, at: [31.3, 30.7], z: 0.2, face: 230, pose: jump}
-        - {t: 1.0, at: [31.5, 30.6], z: 6.5, face: 260, pose: jump, ease: out}
-        - {t: 2.8, at: [31.6, 30.6], z: 9.0, face: 300, pose: jump, ease: out}
+      hundred-knight:   # 足元から突き上げられ、回りながら天井近くまで跳ね上げられる
+        - {t: 0.0, at: hk_back, face: 205, pose: crouch}
+        - {t: 0.12, at: hk_back, z: 0.3, face: 205, pose: jump}
+        - {t: 0.3, at: hk_back, z: 2.5, face: 205, pose: tumble, ease: out}
+        - {t: 0.9, at: [32.2, 30.9], z: 7.2, face: 205, pose: tumble}
+        - {t: 2.4, at: [32.1, 30.8], z: 11.2, face: 205, pose: tumble, ease: out}
     creatures:
       sand-eater:
-        after: A07-013
-        len: 8.0
-        r: 0.75
+        after: A07-013b
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [31.0, 31.8], z: -1.0}
-          - {t: 1.2, at: [31.3, 30.8], z: 5.0, ease: out}
-          - {t: 2.8, at: [31.1, 31.0], z: 6.0, ease: inout}
+          - {t: 0.0, at: [32.3, 31.1], z: -1.8}
+          - {t: 0.25, at: [32.3, 31.1], z: 0.8, ease: out}
+          - {t: 0.9, at: [32.4, 31.2], z: 5.2, ease: out}
+          - {t: 2.4, at: [32.6, 31.6], z: 6.4, ease: out}
     fx:
-      - {kind: plume, t: [0.2, 2.8], at: [31.3, 30.9], r: 2.5, h: 7.0}
+      - {kind: plume, t: [0.05, 1.8], at: [32.3, 31.1], r: 1.6, h: 5.0}
     shake:
-      - {t: [0.2, 1.2], amp: 1.0}
-    cam_keys:
-      - {t: 0.0, cam: [35.2, 36.6, 0.6], look: [31.3, 30.7], look_h: 1.5, lens: 24, frame: 引き}
-      - {t: 2.8, cam: [35.4, 36.9, 0.6], look: [31.5, 30.7], look_h: 8.0, lens: 24, ease: out}
+      - {t: [0.05, 1.0], amp: 1.5}
+    cam_keys:   # 南東の床すれすれの広角から、跳ね上げられる百騎兵を追って見上げる（画面を傾ける）
+      - {t: 0.0, cam: [36.6, 36.4, 0.5], look: [32.3, 31.0], look_h: 1.2, lens: 20, frame: 引き}
+      - {t: 0.9, cam: [36.6, 36.4, 0.5], look: hundred-knight, look_h: null, lens: 18, roll: 10, ease: out}   # look_h: null で人物の高さを追う（書かないと前のキーの値が残る）
+      - {t: 2.4, cam: [36.8, 36.6, 0.6], look: hundred-knight, look_h: null, lens: 24, roll: 14, ease: out}
     bg: cave_wide
-    act: {start: 低い引き, do: 足元の砂から砂食みが突き上げ、百騎兵が宙へ高く跳ね上げられる, end: 宙の百騎兵と、下で口を開ける砂食み, sync: （台詞なし）}
-    camera: 低い引きから、跳ね上がる百騎兵を追って上へ振る
-    pose: {hundred-knight: "being thrown high into the air by the monster bursting up from below"}
-    pose_end: {hundred-knight: "high in the air above the monster"}
+    act: {start: 低い広角, do: 足元の砂から砂食みが突き上げ、百騎兵が回りながら天井近くまで跳ね上げられる, end: 宙の百騎兵と、下で突き立つ砂食み, sync: （台詞なし）}
+    camera: 南東の床すれすれの広角から、跳ね上がる百騎兵を追って上へ振る（画面を傾ける）
+    pose: {hundred-knight: "being thrown high into the air by the monster bursting up from below, tumbling"}
+    pose_end: {hundred-knight: "tumbling high in the air near the cavern ceiling"}
     kind: A
   A07-015:
     frame: 全身
     only: [hundred-knight]
     keys:
-      hundred-knight:
-        - {t: 0.0, at: [31.6, 30.6], z: 9.0, face: 300, pose: jump}
-        - {t: 1.5, at: [31.6, 30.6], z: 9.6, face: 120, pose: jump, ease: out}
-        - {t: 3.0, at: [31.6, 30.6], z: 9.2, face: 300, pose: stand, ease: in}
+      hundred-knight:   # 宙で回って向きを変え、天井に逆さに着地する。少し止め（間）
+        - {t: 0.0, at: [32.1, 30.8], z: 11.2, face: 205, pose: tumble}
+        - {t: 0.6, at: ceil, z: 13.2, face: 205, pose: tumble, ease: out}
+        - {t: 0.8, at: ceil, z: 13.88, face: 160, pose: flip, ease: out}
+        - {t: 2.6, at: ceil, z: 13.88, face: 160, pose: flip}
+    creatures:
+      sand-eater:   # 下で頭を振り、宙の百騎兵を見上げる
+        after: A07-014
+        len: 11.0
+        r: 1.1
+        keys:
+          - {t: 0.0, at: [32.6, 31.6], z: 6.4}
+          - {t: 1.2, at: [32.9, 32.2], z: 6.0, ease: inout}
+          - {t: 2.6, at: [32.7, 31.9], z: 6.3, ease: inout}
+    fx:
+    cam_keys:   # 西の中ほどの高さから、天井へ上がる百騎兵 → 下の砂食みまで入れて見下ろす
+      - {t: 0.0, cam: [28.4, 29.6, 9.5], look: hundred-knight, look_h: 11.6, lens: 30, frame: 全身}
+      - {t: 0.8, cam: [28.2, 29.5, 10.6], look: ceil, look_h: 13.3, lens: 32, ease: out}
+      - {t: 1.4, cam: [28.0, 29.4, 10.6], look: ceil, look_h: 13.2, lens: 30}
+      - {t: 2.6, cam: [26.4, 28.9, 10.0], look: [32.2, 31.0], look_h: 10.6, lens: 14, ease: inout}
+    bg: cave_top
+    act: {start: 宙を回りながら上がる百騎兵, do: 宙で身をひねり、天井に逆さに着地する。下で砂食みが見上げる（一瞬の間）, end: 天井に逆さにしゃがむ百騎兵と、下の砂食み, sync: （台詞なし）}
+    camera: 西の中ほどの高さから、上がる百騎兵を追い、着地した後は下の砂食みまで入れて引く
+    pose: {hundred-knight: "twisting in mid-air and landing upside down on the cavern ceiling"}
+    pose_end: {hundred-knight: "crouching upside down on the rock ceiling, the monster far below"}
+    kind: A
+  A07-015b:
+    frame: 寄り
+    only: [hundred-knight]
+    keys:
+      hundred-knight:   # 天井で身を縮め、蹴って真下の砂食みへ頭から突っ込む
+        - {t: 0.0, at: ceil, z: 13.88, face: 160, pose: flip}
+        - {t: 1.0, at: ceil, z: 13.88, face: 160, pose: flip}
+        - {t: 1.25, at: ceil, z: 13.75, face: 160, pose: flip}
+        - {t: 1.4, at: [32.05, 30.8], z: 13.3, face: 160, pose: dive, ease: in}
+        - {t: 2.2, at: [32.4, 31.5], z: 10.6, face: 160, pose: dive, ease: in}
     creatures:
       sand-eater:
-        after: A07-014
-        len: 8.0
-        r: 0.75
+        after: A07-015
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [31.1, 31.0], z: 6.0}
-          - {t: 3.0, at: [31.3, 30.9], z: 6.2, ease: inout}   # 頭は下げない（体は頭の通った道をたどるので、下げると体が頭の上に残る）
-    cam_keys:
-      - {t: 0.0, cam: [34.7, 30.9, 10.4], look: hundred-knight, lens: 32, frame: 全身}
-      - {t: 1.5, cam: [31.9, 33.7, 10.0], look: hundred-knight, lens: 32, ease: linear}
-      - {t: 3.0, cam: [28.7, 30.7, 10.6], look: hundred-knight, lens: 32, ease: linear}
+          - {t: 0.0, at: [32.7, 31.9], z: 6.3}
+          - {t: 2.2, at: [32.6, 31.9], z: 6.6, ease: inout}
+    cam_keys:   # 逆さの百騎兵の寄り（画面を逆さにして、百騎兵がまっすぐに見える）→ 蹴る所で上から見下ろす形へ振る
+      - {t: 0.0, cam: [33.6, 32.1, 12.6], look: ceil, look_h: 13.3, lens: 32, roll: 170, frame: 寄り}
+      - {t: 1.1, cam: [33.45, 31.95, 12.65], look: ceil, look_h: 13.3, lens: 40, roll: 180, ease: linear}
+      - {t: 1.45, cam: [31.4, 30.0, 13.4], look: [32.6, 31.9], look_h: 6.4, lens: 24, roll: 0, ease: inout}
+      - {t: 2.2, cam: [31.5, 30.1, 13.2], look: [32.6, 31.9], look_h: 6.4, lens: 24}
     bg: cave_top
-    act: {start: 宙の百騎兵, do: 宙で身をひねり、剣を真下へ向ける, end: 真下の砂食みの頭を狙う百騎兵, sync: （台詞なし）}
-    camera: 宙の百騎兵のまわりを回り込む
-    pose: {hundred-knight: "twisting in mid-air high above the monster"}
-    pose_end: {hundred-knight: "in mid-air, pointing its sword straight down at the monster's head below"}
+    act: {start: 天井に逆さにしゃがむ百騎兵の寄り（画は逆さにして、百騎兵がまっすぐ）, do: 頭の炎が揺れ、身を縮めて天井を蹴る。カメラが振れて、頭から真下の砂食みへ突っ込む百騎兵を上から見下ろす, end: 真下の砂食みへ突っ込んでいく百騎兵（背中）, sync: （台詞なし。新しいカット、2026-11-01 の見直し）}
+    camera: 逆さの百騎兵の寄り（画面を逆さに）→ 蹴る瞬間に上から見下ろす形へ速く振る
+    pose: {hundred-knight: "crouching upside down on the rock ceiling, close up, about to kick off"}
+    pose_end: {hundred-knight: "diving head first straight down at the monster, its sword thrust ahead, seen from above and behind"}
     kind: A
   A07-016:
     frame: 寄り
     only: [hundred-knight]
-    slow: {t: [0.9, 2.3], rate: 0.35}
     keys:
-      hundred-knight:
-        - {t: 0.0, at: [31.6, 30.6], z: 9.2, face: 300, pose: stand}
-        - {t: 1.0, at: [31.3, 30.9], z: 7.11, face: 300, pose: stand, ease: in}   # 頭のてっぺん（頭の高さ＋0.86）
-        - {t: 3.6, at: [31.1, 30.95], z: 7.16, face: 300, pose: crouch, ease: out}
+      hundred-knight:   # 頭から突っ込み、剣を目に突き立てる（0.35〜1.6秒はスロー）。回って頭の上にしゃがむ
+        - {t: 0.0, at: [32.4, 31.5], z: 10.6, face: 160, pose: dive}
+        - {t: 0.35, at: [32.55, 31.8], z: 9.3, face: 160, pose: dive, ease: in}
+        - {t: 1.6, at: [32.58, 31.85], z: 8.95, face: 160, pose: dive, ease: linear}
+        - {t: 2.0, at: [32.6, 31.9], z: 7.87, face: 160, pose: crouch, ease: out}
+        - {t: 2.4, at: [32.5, 32.3], z: 8.27, face: 160, pose: crouch, ease: out}
+        - {t: 3.8, at: [32.4, 32.6], z: 8.07, face: 160, pose: crouch, ease: inout}
     creatures:
-      sand-eater:
-        after: A07-015
-        len: 8.0
-        r: 0.75
+      sand-eater:   # 突き立てられて固まり、痛みにのけぞる
+        after: A07-015b
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [31.3, 30.9], z: 6.2}
-          - {t: 1.0, at: [31.3, 30.9], z: 6.25}
-          - {t: 3.6, at: [31.1, 30.95], z: 6.3, ease: out}
+          - {t: 0.0, at: [32.6, 31.9], z: 6.6}
+          - {t: 0.35, at: [32.6, 31.9], z: 6.6}
+          - {t: 1.6, at: [32.6, 31.95], z: 6.5}
+          - {t: 2.0, at: [32.6, 31.9], z: 6.6}
+          - {t: 2.4, at: [32.5, 32.3], z: 7.0, ease: out}
+          - {t: 3.8, at: [32.4, 32.6], z: 6.8, ease: inout}
     fx:
-      - {kind: spark, t: [1.0, 1.7], at: [31.3, 30.95], z: 6.9}
+      - {kind: spark, t: [0.35, 1.6], at: [32.6, 31.0], z: 7.7}   # 頭の北の面（カメラの側）
+      - {kind: light, t: [0.35, 0.4], at: [32.6, 30.6], z: 8.0, energy: 3000, fade: 1.2, color: [255, 235, 200]}
     shake:
-      - {t: [1.0, 1.7], amp: 0.9}
-    cam_keys:
-      - {t: 0.0, cam: [28.2, 32.2, 6.6], look: hundred-knight, lens: 32, frame: 寄り}   # 西から、砂食みの目の高さ（015 の回り込みの続き）
-      - {t: 3.6, cam: [28.4, 32.1, 6.7], look: hundred-knight, lens: 38, ease: linear}
+      - {t: [0.35, 1.0], amp: 1.6}
+      - {t: [2.0, 2.6], amp: 0.6}
+    cam_keys:   # 北の低い所から見上げる。突き立てる瞬間にぐっと寄って傾け（スローの間ゆっくり押す）、のけぞる所で引く
+      - {t: 0.0, cam: [32.2, 27.4, 3.8], look: [32.5, 31.7], look_h: 9.0, lens: 28, frame: 寄り}
+      - {t: 0.35, cam: [32.3, 27.8, 4.2], look: [32.6, 31.9], look_h: 7.6, lens: 50, roll: -10, ease: in}
+      - {t: 1.6, cam: [32.35, 28.0, 4.4], look: [32.6, 31.9], look_h: 7.6, lens: 58, roll: -14, ease: linear}
+      - {t: 2.2, cam: [31.6, 27.6, 7.0], look: [32.5, 32.3], look_h: 7.8, lens: 30, roll: 0, ease: out}
+      - {t: 3.8, cam: [31.4, 27.4, 7.2], look: [32.4, 32.6], look_h: 7.7, lens: 30}
     bg: cave_wide
     extra_en_end: "The Hundred Knight drives its sword deep into the monster's huge eye; sparks and sand burst out."
-    act: {start: 砂食みの目の高さから、落ちてくる百騎兵を見上げる, do: 落ちながら砂食みの目に剣を突き立てる（「串刺し」の回収。突き立てる瞬間は一瞬のスロー）, end: 砂食みの頭の上で剣を突き立てた百騎兵, sync: （台詞なし）}
-    camera: 砂食みの頭の少し上の高さから、落ちてくる百騎兵を見上げ、頭の上で剣を突き立てるのを見せる。突き立てる瞬間は一瞬のスロー（Animatic で入れる）
-    pose: {hundred-knight: "falling from above with its sword pointed straight down"}
-    pose_end: {hundred-knight: "on top of the monster's head, its sword driven deep into the monster's eye"}
+    act: {start: 横の低い所から見上げる。上から突っ込んでくる百騎兵, do: 砂食みの目に剣を突き立てる（「串刺し」の回収。突き立てる瞬間から一瞬のスロー、光と火花と揺れ）。百騎兵は回って頭の上にしゃがみ、砂食みが痛みにのけぞる, end: のけぞる砂食みの頭の上の百騎兵, sync: （台詞なし）}
+    camera: 北の低い所から見上げる。突き立てる瞬間にぐっと寄って画面を傾け、スローの間ゆっくり押し込み、のけぞる所で引く
+    pose: {hundred-knight: "diving head first from above with its sword thrust ahead"}
+    pose_end: {hundred-knight: "crouching on top of the monster's head, its sword driven deep into the monster's eye"}
     kind: A
   A07-017:
-    frame: 大引き
+    frame: 引き
     only: [hundred-knight]
     keys:
-      hundred-knight:
-        - {t: 0.0, at: [31.1, 30.95], z: 7.16, face: 300, pose: crouch}
-        - {t: 0.6, at: [31.1, 30.95], z: 7.36, face: 120, pose: crouch}
-        - {t: 1.1, at: [33.8, 32.2], z: 3.8, face: 120, pose: jump, ease: out}
-        - {t: 1.7, at: hk_end, z: 0.0, face: 300, pose: crouch, ease: in}
-        - {t: 2.6, at: hk_end, face: 300, pose: stand}
-        - {t: 5.0, at: hk_end, face: 300, pose: stand}
+      hundred-knight:   # 剣を抜いて頭を蹴り、宙返りして正面へ着地（ヒーロー着地）。立ち上がる
+        - {t: 0.0, at: [32.4, 32.6], z: 8.07, face: 160, pose: crouch}
+        - {t: 0.6, at: [32.4, 32.6], z: 8.07, face: 160, pose: crouch}
+        - {t: 1.0, at: [32.9, 33.4], z: 8.8, face: 170, pose: tumble, ease: out}
+        - {t: 1.6, at: hk_end, z: 0.0, face: 170, pose: tumble, ease: in}
+        - {t: 1.65, at: hk_end, z: 0.0, face: 170, pose: crouch}
+        - {t: 2.8, at: hk_end, face: 170, pose: crouch}
+        - {t: 3.4, at: hk_end, face: 170, pose: stand, ease: out}
+        - {t: 5.2, at: hk_end, face: 170, pose: stand}
     creatures:
-      sand-eater:   # 暴れて身をよじり、北東へのたうって床に崩れ落ちる（体の後ろ半分が床に伸びる）
+      sand-eater:   # 暴れて身をよじり、北東へ倒れて床をのたうち、崩れ落ちる（体が全部床に伸びるまで滑る）
         after: A07-016
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [31.1, 30.95], z: 6.3}
-          - {t: 0.6, at: [31.0, 30.6], z: 6.5}
-          - {t: 1.4, at: [30.0, 28.8], z: 6.6, ease: out}
-          - {t: 2.4, at: [34.5, 27.5], z: 2.4, ease: inout}
-          - {t: 2.8, at: [36.2, 27.0], z: 0.9, ease: in}
-          - {t: 3.4, at: [36.5, 26.0], z: 0.7, ease: out}
-          - {t: 4.0, at: [36.0, 24.3], z: 0.6, ease: linear}
-          - {t: 4.5, at: [34.0, 23.3], z: 0.5, ease: linear}
-          - {t: 5.0, at: [31.6, 22.8], z: 0.5, ease: out}
+          - {t: 0.0, at: [32.4, 32.6], z: 6.8}
+          - {t: 0.6, at: [32.4, 32.6], z: 6.8}
+          - {t: 1.2, at: [33.2, 31.4], z: 7.6, ease: out}
+          - {t: 1.9, at: [35.0, 29.6], z: 6.4, ease: inout}
+          - {t: 2.6, at: [37.2, 27.6], z: 2.0, ease: in}
+          - {t: 2.9, at: [38.0, 26.6], z: 0.7, ease: in}
+          - {t: 3.6, at: [38.9, 24.6], z: 0.6, ease: out}
+          - {t: 4.4, at: [38.4, 22.4], z: 0.5, ease: linear}
+          - {t: 5.2, at: [35.6, 19.8], z: 0.5, ease: out}
     fx:
-      - {kind: plume, t: [2.8, 5.0], at: [35.5, 25.0], r: 4.0, h: 3.0, shape: fall}
+      - {kind: plume, t: [1.6, 2.2], at: hk_end, r: 0.45, h: 0.2, shape: fall}
+      - {kind: plume, t: [2.8, 5.2], at: [38.0, 26.4], r: 2.4, h: 2.0, shape: fall}
     shake:
-      - {t: [2.8, 3.6], amp: 0.8}
-    cam_keys:
-      - {t: 0.0, cam: [22.0, 38.0, 1.8], look: [33.0, 27.5], look_h: 3.0, lens: 24, frame: 大引き}   # 南西から（018 の南東からと向きを変える）
-      - {t: 5.0, cam: [21.5, 38.5, 1.6], look: [33.5, 26.5], look_h: 2.0, lens: 24, ease: linear}
+      - {t: [1.6, 1.8], amp: 0.4}
+      - {t: [2.8, 3.5], amp: 1.0}
+    cam_keys:   # 正面の床すれすれ。宙返りする百騎兵を追って下り、着地した百騎兵の奥で砂食みが崩れ落ちる
+      - {t: 0.0, cam: [34.2, 38.8, 0.4], look: [32.6, 32.6], look_h: 7.6, lens: 20, frame: 引き}
+      - {t: 1.6, cam: [34.2, 38.8, 0.4], look: [33.9, 34.6], look_h: 1.0, lens: 22, ease: inout}
+      - {t: 2.8, cam: [34.2, 38.8, 0.4], look: [34.0, 34.0], look_h: 1.2, lens: 22}
+      - {t: 5.2, cam: [34.1, 38.0, 0.45], look: [34.6, 31.0], look_h: 1.6, lens: 24, ease: inout}
     bg: cave_wide
-    act: {start: 低い大引き, do: 目を刺された砂食みが暴れて身をよじり、百騎兵は頭から飛び降りる。砂食みが崩れ落ち、砂煙が上がる, end: 倒れた砂食みと、着地した百騎兵, sync: （台詞なし）}
-    camera: 南西の低い大引きで、暴れて崩れ落ちる全身を見せる
-    pose: {hundred-knight: "on the monster's thrashing head, about to jump off"}
-    pose_end: {hundred-knight: "landed on the sand, standing beside the fallen monster"}
+    act: {start: 頭の上の百騎兵を、正面の床すれすれから見上げる, do: 百騎兵が剣を抜いて頭を蹴り、宙返りして手前へ着地（片ひざのヒーロー着地）。その奥で砂食みが暴れて倒れ、床をのたうって崩れ落ちる。砂煙の中で百騎兵が立ち上がる, end: 立つ百騎兵と、奥で倒れた砂食み, sync: （台詞なし）}
+    camera: 正面の床すれすれから見上げ、宙返りを追って下りる。着地の後、奥で崩れ落ちる砂食みを入れたまま少し寄る
+    pose: {hundred-knight: "on the monster's head, about to jump off"}
+    pose_end: {hundred-knight: "standing after a hero landing, the fallen monster collapsing in the dust behind it"}
     kind: A
   A07-018:
     frame: 引き
     only: [hundred-knight]
+    hide_props: []
+    reveal: {prop: crystal_1, t: [2.0, 5.0]}   # 守護者を倒したので、ピラーが床からせり上がって現れる（D-070）
     keys:
       hundred-knight:
-        - {t: 0.0, at: hk_end, face: 300, pose: stand}
-        - {t: 5.6, at: hk_end, face: 300, pose: stand}
+        - {t: 0.0, at: hk_end, face: 170, pose: stand}
+        - {t: 1.8, at: hk_end, face: 170, pose: stand}
+        - {t: 2.6, at: hk_end, face: 300, pose: stand}
+        - {t: 7.0, at: hk_end, face: 300, pose: stand}
     creatures:
       sand-eater:
         after: A07-017
-        len: 8.0
-        r: 0.75
+        len: 11.0
+        r: 1.1
         keys:
-          - {t: 0.0, at: [31.6, 22.8], z: 0.5}
-          - {t: 5.6, at: [31.6, 22.8], z: 0.4}
+          - {t: 0.0, at: [35.6, 19.8], z: 0.5}
+          - {t: 7.0, at: [35.6, 19.8], z: 0.4}
     fx:
-      - {kind: plume, t: [0.0, 3.0], at: [35.0, 24.5], r: 4.5, h: 2.5, shape: fall}
-      - {kind: light, t: [1.5, 5.6], at: pillar, z: 3.0, energy: 1500, color: [150, 220, 255]}
-    cam_keys:
-      - {t: 0.0, cam: [41.5, 38.5, 1.3], look: [30.0, 24.0], look_h: 2.2, lens: 24, frame: 引き}
-      - {t: 5.6, cam: [41.5, 38.5, 1.3], look: [30.0, 24.0], look_h: 2.2, lens: 24}
+      - {kind: plume, t: [0.0, 3.0], at: [38.0, 25.0], r: 2.4, h: 1.8, shape: fall}
+      - {kind: plume, t: [2.0, 5.2], at: pillar, r: 2.0, h: 1.5}
+      - {kind: light, t: [2.0, 6.0], at: pillar, z: 3.0, energy: 1500, color: [150, 220, 255]}
+    shake:
+      - {t: [2.0, 4.6], amp: 0.4}
+    cam_keys:   # 南東の低い引き（手前の岩をよけた）。ピラーへゆっくり寄る
+      - {t: 0.0, cam: [33.0, 42.5, 1.6], look: [30.5, 24.0], look_h: 2.2, lens: 24, frame: 引き}
+      - {t: 2.0, cam: [33.0, 42.5, 1.6], look: [30.5, 24.0], look_h: 2.2, lens: 24}
+      - {t: 7.0, cam: [32.6, 41.6, 1.7], look: [28.5, 23.5], look_h: 2.8, lens: 28, ease: inout}
     bg: cave_wide
-    extra_en_end: "Behind them, the tall crystal Pillar begins to glow with a cold blue-white light."
-    act: {start: 砂埃が漂う空洞, do: 砂埃が晴れていく。立つ百騎兵、倒れた砂食み、その奥でピラーが光り始める, end: 光るピラー（A08 へ）, sync: （台詞なし）}
-    camera: 引きの止め
+    extra_en_end: "Beyond them, a tall crystal Pillar has risen out of the sandy floor, glowing with a cold blue-white light."
+    act: {start: 砂埃が漂う空洞。立つ百騎兵と倒れた砂食み, do: 砂埃が晴れていく。床が揺れ、奥の床から光る結晶の柱（ピラー）がせり上がって現れる。百騎兵が振り向く, end: 現れて光るピラー（A08 へ）, sync: （台詞なし）}
+    camera: 南東の低い引き（手前の岩をよけた）。ピラーが現れるのに合わせてゆっくり寄る
     pose: {hundred-knight: "standing still in the settling dust, seen from behind at an angle"}
-    pose_end: {hundred-knight: "standing still, seen from behind at an angle, the fallen monster and the glowing Pillar beyond"}
+    pose_end: {hundred-knight: "standing still, turned toward the glowing Pillar that has just risen beyond"}
     kind: A

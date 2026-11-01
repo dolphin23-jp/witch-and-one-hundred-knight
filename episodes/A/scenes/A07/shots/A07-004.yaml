@@ -2,23 +2,23 @@
 # kind: M＝小さな動き、A＝見せ場
 id: A07-004
 scene: A07
-tc: 26.6
-sec: 3.0
+tc: 29.2
+sec: 5.4
 kind: A
 shot: 全身・百騎兵
-acting: 百騎兵が井戸へ飛び込み、カメラも一緒に落ちる
+acting: 「飛び込め！」で顔を上げてうなずき、しゃがんで跳び、井戸へ飛び込む。カメラも一緒に落ちる（うなずきの溜め（2026-11-01 の見直し））
 dialogue:
 - L211「飛び込め！百騎兵！」
 sound: null
 notes: null
 camera:
   pos:
-  - 30.5
-  - 32.9
-  - 31.2
+  - 30.0
+  - 28.1
+  - 31.35
   look: hundred-knight
-  lens: 28
-  move: 井戸の上から、落ちていく百騎兵を一緒に落ちながら追う
+  lens: 26
+  move: 井戸の向こう側から正面の百騎兵（うなずきに合わせてゆっくり寄る）→ 跳んだ所で井戸の上へ回り、落ちていく百騎兵を一緒に落ちながら追う
 background: underground-cavern
 image: null
 refs:
@@ -26,20 +26,20 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 井戸の縁に立つ百騎兵
+  start: 井戸の縁でのぞき込む百騎兵（正面）
   end: 井戸の筒を落ちていく百騎兵を真上から
 timing:
   lead: 0.3
 blocking:
-  start: 百（中央・背中）
+  start: 百（中央・正面）
   end: 百（中央・背中）
   background: 井戸の中〔井戸の中〕
   panels:
   - 井戸の中
   staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
     face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing at the rim of the well, about to jump in, in the center of the
-    frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone blocks, darkness below with a faint green
-    glow at the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness.'
+    frame, facing the camera, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone blocks, darkness below with a faint green glow at
+    the bottom. Night: moonlight on the old stone well, the deep shaft below fading into darkness.'
   staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
     face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), falling down the dark well shaft, seen from directly above, in the center
     of the frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: inside a deep old stone well shaft, rough stone blocks, darkness below with a faint

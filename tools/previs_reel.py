@@ -64,6 +64,9 @@ def sound_items(scene_dir, shots):
         loop: true             短い音を繰り返す（BGM のループ、火・風など）
         fade_in / fade_out     秒
         volume: 0.5            音量（1.0 がそのまま）
+        rate: 0.7              音の高さと速さ（0.7 で低く遅く。生き物の声を大きく聞かせる）
+        echo: cave             響き（cave: 地下空洞の残響）。false で切る
+      echo: {from: {cut: A07-005, t: 0.0}, kind: cave}   シーンの頭に書くと、その時刻より後の効果音（足音も）に響きを付ける（A07、2026-11-01）
     """
     docs = [yaml.safe_load(f.read_text(encoding="utf-8")) or {} for f in (scene_dir / "sound.yaml", scene_dir / "footsteps.yaml") if f.exists()]
     if not docs:
@@ -76,10 +79,14 @@ def sound_items(scene_dir, shots):
             return float(v)
         return tc[v["cut"]] + float(v.get("t", 0.0))
 
+    echo = docs[0].get("echo") if (scene_dir / "sound.yaml").exists() else None
+    echo_t = when(echo["from"]) if echo else None
     out = []
     for doc, kind in ((d, k) for d in docs for k in ("bgm", "sfx", "voice")):
         for it in doc.get(kind) or []:
             at = float(it["at"]) if "at" in it else when(it)
+            if echo and kind != "bgm" and "echo" not in it and at >= echo_t:
+                it = {**it, "echo": echo.get("kind", "cave")}
             end = when(it["until"]) if "until" in it else (at + float(it["dur"]) if "dur" in it else None)
             if end is None and it.get("loop"):   # 繰り返す音は、止める所が無ければシーンの終わりまで
                 end = total
@@ -140,7 +147,8 @@ def join_with_transitions(work, shots, parts):
 
 def comm_starts(scene_dir, shots):
     """通信で話す人物（scene.yaml の comm.who）の話し始めの秒の並び。
-    話し始め = その人物の台詞のうち、すぐ前の台詞が別の人物か、同じ人物の前の台詞から 8秒以上あいたもの。"""
+    話し始め = その人物の台詞のうち、すぐ前の台詞が別の人物か、同じ人物の前の台詞から 8秒以上あいたもの。
+    comm.cuts（カットIDの並び）があれば、そのカットの中の最初の台詞だけ（ずっと話し続ける場面で、場所が変わった所にも出す）。"""
     sy = yaml.safe_load((scene_dir / "scene.yaml").read_text(encoding="utf-8"))
     comm = sy.get("comm")
     vyp = scene_dir / "voice.yaml"
@@ -154,6 +162,15 @@ def comm_starts(scene_dir, shots):
             who_of[l["id"]] = l.get("who")
     lines = (yaml.safe_load(vyp.read_text(encoding="utf-8")) or {}).get("lines", [])
     src_dir = ROOT / "audio" / scene / "original"
+    if comm.get("cuts"):   # 出すカットを決めてあるとき（A07、2026-11-01）: そのカットの中の、その人物の最初の台詞の少し前
+        spans = {s["id"]: (float(s["tc"]), float(s["tc"]) + float(s["sec"])) for s in shots}
+        starts = []
+        for cut in comm["cuts"]:
+            a, b = spans[cut]
+            first = next((l for l in lines if a <= float(l["at"]) < b and who_of.get(l["id"]) == comm["who"]), None)
+            if first:
+                starts.append(max(0.0, float(first["at"]) - 0.35))
+        return comm, starts
     starts, prev_who, prev_end = [], None, -99.0
     for l in lines:
         wav = next(src_dir.glob(f"{l['id']}_*.wav"), None)
@@ -299,8 +316,13 @@ def main():
             ins += ["-stream_loop", "-1"]
         ins += ["-i", src]
         idx = sum(1 for x in ins if x == "-i")
-        chain = [f"atrim=start={float(it.get('from', 0.0))}" + (f":duration={it['end0'] - it['at0']:.3f}" if it["end0"] else ""), "asetpts=PTS-STARTPTS",
+        rate = float(it.get("rate", 1.0))
+        chain = [f"atrim=start={float(it.get('from', 0.0))}" + (f":duration={(it['end0'] - it['at0']) * rate:.3f}" if it["end0"] else ""), "asetpts=PTS-STARTPTS",
                  "aresample=44100", "aformat=channel_layouts=stereo"]
+        if rate != 1.0:   # 低く遅く（長さも 1/rate 倍になる）
+            chain += [f"asetrate={round(44100 * rate)}", "aresample=44100"]
+        if it.get("echo") in ("cave", True):   # 地下空洞の響き（短い反射を重ねる）
+            chain.append("aecho=0.85:0.7:70|150|260|410:0.32|0.22|0.14|0.08")
         if it.get("fade_in"):
             chain.append(f"afade=t=in:d={it['fade_in']}")
         if it.get("fade_out") and it["end0"]:
