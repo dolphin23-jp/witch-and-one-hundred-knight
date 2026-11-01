@@ -1131,32 +1131,30 @@ cuts:
     note: null
   A13-015:
     cam:
-    - 75.6
-    - 40.1
+    - 74.7
+    - 42.4
     - 0.6
-    lens: 38
-    bearing: 287
+    lens: 30
+    bearing: 304
     frame: 全身（後ろ姿）
     start:
       people:
       - who: metallica
-        s: -0.41
-        dist: 4.3
-        side: 左
-        body: 正面
-      - who: luckiny
-        s: -0.21
-        dist: 3.66
+        s: 0.15
+        dist: 4.43
         side: 中央
-        body: 斜め後ろ（画面左向き）
+        body: 斜め前（画面右向き）
+      - who: luckiny
+        s: 0.43
+        dist: 3.95
+        side: 右
+        body: 横顔（画面左向き）
       bg: 崖の切れ目と村（夕日の逆光）〔村 全景〕
       props:
       - 西の崖
       - 北西の崖
       - 北の崖
-      - 門の柱
-      - 門の柱
-      - 門のランプ
+      - 北の崖（東）
       - 石の井戸（底にかすかな緑）
       - 家
       - 家
@@ -1165,6 +1163,7 @@ cuts:
       - 壺
       - 家の前のランプ
       - 家の前のランプ
+      - 出入口のカーテン
       - 壺とパンの棚
       - 赤い布のテーブル
       - 丸椅子
@@ -1180,29 +1179,31 @@ cuts:
       - 窓の外（外から見た窓明かりの目印）
       - 壁に掛けた角笛（A06-008 でティトが取る）
       staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
-        frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark
-        hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: looking
-        west through a narrow gap in the red rock cliffs at the small hidden village of wooden houses with red tiled roofs, the low sun setting behind the cliffs, warm backlight, long shadows on the sand.
-        Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
+        trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the right of the frame, in profile, turned toward screen left. No other
+        people. Behind: looking west through a narrow gap in the red rock cliffs at the small hidden village of wooden houses with red tiled roofs, the low sun setting behind the cliffs, warm backlight,
+        long shadows on the sand. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the
+        first lamps lit.'
     end:
       people:
       - who: metallica
-        s: -0.54
-        dist: 3.48
-        side: 左
-        body: 正面
-      - who: luckiny
-        s: -0.26
-        dist: 2.85
+        s: 0.2
+        dist: 3.71
         side: 中央
-        body: 背中
+        body: 斜め前（画面右向き）
+      - who: luckiny
+        s: 0.6
+        dist: 3.22
+        side: 右
+        body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
-        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the
-        frame, facing the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark
-        hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, with the back to the camera. No other people. Behind: looking west through a narrow
-        gap in the red rock cliffs at the small hidden village of wooden houses with red tiled roofs, the low sun setting behind the cliffs, warm backlight, long shadows on the sand. Dusk in the desert
-        valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of
+        the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
+        trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the right of the frame, seen from behind at an angle, turned toward
+        screen left. No other people. Behind: looking west through a narrow gap in the red rock cliffs at the small hidden village of wooden houses with red tiled roofs, the low sun setting behind the cliffs,
+        warm backlight, long shadows on the sand. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light
+        on the walls, the first lamps lit.'
     move:
       luckiny:
         to: lk_close
@@ -1225,25 +1226,22 @@ cuts:
     note: null
   A13-016:
     cam:
-    - 70.95
-    - 39.65
+    - 70.05
+    - 39.9
     - 1.25
-    lens: 45
+    lens: 70
     bearing: 74
     frame: 寄り（顔）
     start:
       people:
       - who: luckiny
         s: 0.0
-        dist: 1.09
+        dist: 2.03
         side: 中央
         body: 斜め前（画面左向き）
       bg: 東の砂丘と白い月〔村 俯瞰〕
       props:
-      - 東の砂丘
-      - 東の大きな砂丘
       - 遠くの砂丘
-      - 白夜月（満月）
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
         legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people.
         Behind: rolling sand dunes stretching east under a fading orange-to-lilac sky, a large pale white full moon low above the horizon. Dusk in the desert valley: the sun setting in the west behind the
@@ -1252,7 +1250,7 @@ cuts:
       people:
       - who: luckiny
         s: 0.0
-        dist: 0.99
+        dist: 1.92
         side: 中央
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
@@ -1404,22 +1402,27 @@ cuts:
     note: null
   A13-019:
     cam:
-    - 71.2
-    - 40.6
-    - 3.1
-    lens: 32
-    bearing: 42
+    - 71.6
+    - 41.6
+    - 2.0
+    lens: 22
+    bearing: 30
     frame: 全身（肩ごし）
     start:
       people:
+      - who: metallica
+        s: -1.03
+        dist: 1.55
+        side: 左
+        body: 横顔（画面右向き）
       - who: luckiny
-        s: -0.3
-        dist: 1.46
-        side: 中央
+        s: -0.45
+        dist: 2.15
+        side: 左
         body: 斜め前（画面左向き）
       - who: hundred-knight
-        s: 1.0
-        dist: 2.48
+        s: 0.45
+        dist: 2.8
         side: 右
         body: 斜め前（画面左向き）
       bg: 北東の地平線の山〔村 俯瞰〕
@@ -1428,37 +1431,39 @@ cuts:
       - 東の大きな砂丘
       - アズ・ブロッケン山（ピラーの峰）
       - アズ・ブロッケン山（山頂の峰）
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+      staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+        long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, at the far left
+        of the frame, in profile, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
         green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, in three-quarter view, turned toward screen left; the
         Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. High
-        angle looking down. Behind: the desert stretching to the north-east horizon, where a tall rocky mountain with two peaks rises far away in the haze, warm late-afternoon light. Dusk in the desert
-        valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        the desert stretching to the north-east horizon, where a tall rocky mountain with two peaks rises far away in the haze, warm late-afternoon light. Dusk in the desert valley: the sun setting in the
+        west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
       - who: metallica
-        s: -0.76
-        dist: 1.61
+        s: -0.61
+        dist: 2.37
         side: 左
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       - who: luckiny
-        s: -0.41
-        dist: 1.35
+        s: -0.51
+        dist: 2.03
         side: 左
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       - who: hundred-knight
-        s: 0.97
-        dist: 2.4
+        s: 0.52
+        dist: 2.69
         side: 右
-        body: 斜め後ろ（画面左向き）
+        body: 背中
       staging: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
         long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, at the far left
-        of the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry
-        goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, with the back to the camera; the Hundred Knight (small, about waist-high
-        to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
-        shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No other people. High angle looking down. Behind:
-        the desert stretching to the north-east horizon, where a tall rocky mountain with two peaks rises far away in the haze, warm late-afternoon light. Dusk in the desert valley: the sun setting in the
-        west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+        of the frame, seen from behind at an angle, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with
+        white fur trim, green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, seen from behind at an angle, turned
+        toward screen right; the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange
+        eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, with the back to the camera. No other people.
+        Behind: the desert stretching to the north-east horizon, where a tall rocky mountain with two peaks rises far away in the haze, warm late-afternoon light. Dusk in the desert valley: the sun setting
+        in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     move:
       metallica:
         to: m_point
@@ -1584,22 +1589,27 @@ cuts:
     note: null
   A13-021:
     cam:
-    - 74.7
-    - 38.0
-    - 2.5
-    lens: 32
-    bearing: 248
+    - 76.4
+    - 37.4
+    - 2.6
+    lens: 30
+    bearing: 249
     frame: 全身
     start:
       people:
+      - who: hundred-knight
+        s: -0.66
+        dist: 3.16
+        side: 左
+        body: 斜め前（画面左向き）
       - who: luckiny
-        s: -0.15
-        dist: 3.01
+        s: -0.09
+        dist: 4.81
         side: 中央
         body: 正面
       - who: metallica
-        s: 0.12
-        dist: 2.93
+        s: 0.07
+        dist: 4.74
         side: 中央
         body: 正面
       bg: 村の外の砂漠の縁（黄昏の前）〔村 一角〕
@@ -1613,36 +1623,46 @@ cuts:
       - 門の柱
       - 門の柱
       - 門のランプ
+      - 石の井戸（底にかすかな緑）
       - 家
       - 家
       - 家
       - 壺
       - 家の前のランプ
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Metallica (the orange-haired witch:
-        huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
-        baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera. No other people. Behind: the sandy desert edge just outside the
-        hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden sunlight with long shadows. Dusk
-        in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in three-quarter
+        view, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs
+        with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, facing the camera; Metallica (the orange-haired witch: huge dark purple
+        witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple
+        pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera. No other people. Behind: the sandy desert edge just outside the hidden village in
+        the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden sunlight with long shadows. Dusk in the desert valley:
+        the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     end:
       people:
+      - who: hundred-knight
+        s: -0.76
+        dist: 2.93
+        side: 左
+        body: 斜め前（画面左向き）
       - who: luckiny
-        s: -0.16
-        dist: 2.9
+        s: -0.1
+        dist: 4.58
         side: 中央
         body: 横顔（画面右向き）
       - who: metallica
-        s: 0.14
-        dist: 2.82
+        s: 0.08
+        dist: 4.52
         side: 中央
         body: 横顔（画面左向き）
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, in profile, turned toward screen right; Metallica
-        (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black
-        top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile, turned toward screen left. No other people. Behind:
-        the sandy desert edge just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low
-        golden sunlight with long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the
-        walls, the first lamps lit.'
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far left of the frame, in three-quarter
+        view, turned toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs
+        with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, in the center of the frame, in profile, turned toward screen right; Metallica (the orange-haired witch:
+        huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
+        baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in profile, turned toward screen left. No other people. Behind: the sandy desert edge
+        just outside the hidden village in the late afternoon: dry cracked sand with a few tufts of grass, the tall red rock cliffs of the valley with a narrow gap on one side, low golden sunlight with
+        long shadows. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps
+        lit.'
     move:
       metallica:
         to: m_point
@@ -1790,21 +1810,21 @@ cuts:
     end:
       people:
       - who: luckiny
-        s: -0.46
-        dist: 1.36
+        s: -0.88
+        dist: 1.2
         side: 左
         body: 背中
       - who: hundred-knight
-        s: 0.11
-        dist: 30.81
+        s: -0.22
+        dist: 30.49
         side: 中央
         body: 背中
       staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, on the left of the frame, with the back to the camera; the Hundred Knight (small,
-        about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black
-        claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, with the back to the camera. No other people. Behind: rolling sand dunes stretching east under
-        a fading orange-to-lilac sky, a large pale white full moon low above the horizon. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to purple
-        overhead, long soft shadows, warm light on the walls, the first lamps lit.'
+        green furry goat legs with dark hooves, a green fluffy tail, a long brass horn-trumpet on a wooden staff), standing, at the far left of the frame, with the back to the camera; the Hundred Knight
+        (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets
+        with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, with the back to the camera. No other people. Behind: rolling sand dunes stretching east
+        under a fading orange-to-lilac sky, a large pale white full moon low above the horizon. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading to
+        purple overhead, long soft shadows, warm light on the walls, the first lamps lit.'
     move:
       luckiny:
         to: lk_close
@@ -1864,12 +1884,6 @@ checks:
   - cut: A13-013
     which: end
     who: hundred-knight
-  - cut: A13-015
-    which: start
-    who: hundred-knight
-  - cut: A13-015
-    which: end
-    who: hundred-knight
   - cut: A13-016
     which: start
     who: hundred-knight
@@ -1878,7 +1892,7 @@ checks:
     who: metallica
   - cut: A13-016
     which: end
-    who: hundred-knight
+    who: metallica
   - cut: A13-023
     which: start
     who: metallica

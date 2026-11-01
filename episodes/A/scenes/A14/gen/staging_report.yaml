@@ -124,9 +124,16 @@ cuts:
         screen left. No other people. Behind: across a deep gorge, small round wooden landings on top of tall rock spires rising in a zigzag toward a higher peak, warm late-afternoon light, the desert far
         below. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
-      people: []
-      staging: 'No people in frame. Behind: across a deep gorge, small round wooden landings on top of tall rock spires rising in a zigzag toward a higher peak, warm late-afternoon light, the desert far
-        below. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+      people:
+      - who: hundred-knight
+        s: 0.18
+        dist: 2.35
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back to the camera.
+        No other people. Behind: across a deep gorge, small round wooden landings on top of tall rock spires rising in a zigzag toward a higher peak, warm late-afternoon light, the desert far below. Late
+        afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       hundred-knight:
         to: hk_edge
@@ -1505,6 +1512,9 @@ checks:
   overlap: []
   offscreen: []
   hidden:
+  - cut: A14-002
+    which: end
+    who: karakuri-doll
   - cut: A14-003
     which: start
     who: hundred-knight
