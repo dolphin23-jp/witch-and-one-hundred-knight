@@ -382,10 +382,10 @@ cuts:
         - {t: 0.0, at: [57.75, 28.15], face: 180, pose: stand}
         - {t: 0.8, at: [57.75, 28.15], face: 180, pose: kneel}
         - {t: 1.4, at: [57.75, 28.15], face: 180, pose: sit}
-        - {t: 4.0, at: [57.75, 28.15], face: 180, pose: sit}
+        - {t: 4.8, at: [57.75, 28.15], face: 180, pose: sit}
     cam_keys:
       - {t: 0.0, cam: [57.5, 27.5, 2.3], look: [57.75, 28.2], look_h: 0.0, lens: 28, frame: 引き}
-      - {t: 4.0, cam: [57.45, 27.4, 2.85], look: [57.75, 28.2], look_h: 0.0, lens: 22, ease: out}
+      - {t: 4.8, cam: [57.45, 27.4, 2.85], look: [57.75, 28.2], look_h: 0.0, lens: 22, ease: out}
     bg: tito_door
     act: {start: 閉まった扉の前のルッキーニィを、天井の高さから, do: 座り込む, end: 小さくなるルッキーニィ, sync: L195「待って……待って、母さん……。」は 0.4秒から}
     camera: 天井の高さからの俯瞰。ゆっくり上がる
@@ -441,7 +441,7 @@ cuts:
     pose_end: {hundred-knight: "standing, seen from behind, gazing at the dark desert"}
     kind: M
   A06-014:
-    # 2026-11-01 見直しで足したカット（ユーザー判断「L201・L202 を戻す」、D-067）。百騎兵の「もっきゅう？」（原作の声、audio/original/vocalizations.yaml）に、
+    # 2026-11-01 見直しで足したカット（ユーザー判断「L201・L202 を戻す」、D-068）。百騎兵の「もっきゅう？」（原作の声、audio/original/vocalizations.yaml）に、
     # メタリカが「勘だよ。勘。」と答え、「もう少しこの村を調べてみろ」で百騎兵が村の中ほど（井戸）の方を見る。A07 の「その井戸……臭うぞ」への橋渡し
     frame: 全身
     only: [hundred-knight]
@@ -471,7 +471,7 @@ cuts:
     pose_end: {hundred-knight: "standing in the village street, seen from behind over the shoulder, gazing toward the old well far away"}
     kind: M
   A06-015:
-    # 2026-11-01 見直し: 前の 014。頭に、砂丘の稜線で息を切らすティトの影（台詞なし）を足し、L203・L205 を戻した（D-067）。6.8秒 → 21.0秒
+    # 2026-11-01 見直し: 前の 014。頭に、砂丘の稜線で息を切らすティトの影（台詞なし）を足し、L203・L205 を戻した（D-068）。6.8秒 → 21.0秒
     # 014 で村の中ほどへ歩いた百騎兵が、戻ってくるティトに振り返る
     frame: 全身
     only: [tito, hundred-knight]

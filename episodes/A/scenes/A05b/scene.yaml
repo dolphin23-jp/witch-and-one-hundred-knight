@@ -12,6 +12,9 @@ site: world/beast-village-layout.yaml
 audio: audio/A05/original/   # L154〜L173（audio/A05b/original は A05 への別名）
 time: 夕方（013〜015）、夜（016〜020）
 
+# メタリカは通信で声だけ（D-066）。話し始めに画面の右上へ小窓を出す（D-069、tools/previs_reel.py）
+comm: {who: metallica, image: characters/metallica/views/metallica_face_front.png, sec: 2.5}
+
 sections:
 - {name: 村に着く, cuts: [A05b-013, A05b-015], note: 赤い岩の隙間を抜けて谷の村へ。ルッキーニィは先に家へ。井戸の奥にピラーの気配}
 - {name: ティトの家, cuts: [A05b-016, A05b-019], note: 夜。百騎兵が家に入り、ルッキーニィは奥へ。ティトが礼を言い、村には何もない、星を読むことしかできないと話す}

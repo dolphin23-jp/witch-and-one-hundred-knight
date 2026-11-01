@@ -11,6 +11,9 @@ site: world/beast-village-layout.yaml
 audio: audio/A06/original/   # L176〜L204
 time: 夜
 
+# メタリカは通信で声だけ（D-066）。話し始めに画面の右上へ小窓を出す（D-069、tools/previs_reel.py）
+comm: {who: metallica, image: characters/metallica/views/metallica_face_front.png, sec: 2.5}
+
 sections:
 - {name: 夜の村, cuts: [A06-000, A06-000], note: 夜空から村へ下りて、ティトの家の窓明かりへ寄る（台詞なし、2026-11-01 の見直しで足した）}
 - {name: 名乗り, cuts: [A06-001, A06-002], note: ルッキーニィが名乗る。扉を叩く音}
