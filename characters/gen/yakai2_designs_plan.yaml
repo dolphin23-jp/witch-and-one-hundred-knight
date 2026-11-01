@@ -1,0 +1,191 @@
+# 5章の残り（A11〜A17）と6章後半（A18〜A32）の新しい設定画・背景の参考画の生成計画
+# ユーザー指示（2026-11-01 13:04）:「ヒゲが13本ある猫、見習い魔女、ホウキ、護符、森の魔女のシモベ、白ネズミ、案内魔女、ニワトリ、
+#   巨大メタリカ、沼を浴びたテレッサ、バスルーム、庭園と隠し森についてはあなたが作ってください」
+# 原作に画像がないので Claude が生成し、ユーザーが候補から選んだものを refs/<対象>_sheet_01（背景は <場所>_bg_01）として登録する
+# （砂漠編の村人・スケアコッコと同じ方式）。背景は D-058。
+#
+# 原作テキスト（Mj100）と録画の書き起こし（part19・20）の手がかり:
+#   - ネコ: 招待状の3品の一つ「ヒゲが13本あるネコ」。実在したがすでに死んでおり、メタリカが錬金術で作り出す。樽の鈴の音草の音でクシャミをする。
+#   - 見習い魔女: 「幼年の魔女見習いのお子様」「小さな子供達」。夜会の出し物としてワルギスのダンスを踊る。A17 で4人と決めた。
+#   - 護符: 沼に耐性のないルッキーニィのために、メタリカが瘴気から守る護符を用意（ビスコはいらない）。
+#   - シモベ: 「アルレッキーノそっくりの魔法生物」「森の魔女の僕」。庭園の手入れ係。マーリカ不在で魔力が足らず植物がうまく育たない。
+#   - 白ネズミ: ネズミにされたマーリカ。ネザリアと一緒にいる。10章で尻尾が切られる（尻尾なしは後で差分）。
+#   - ニワトリ: 夜明けに3回鳴く「ニワトリ」は、招待状の「尾の先がだるいニワトリ」＝スケアコッコ（ビスコが捕まえて手を離すまで鳴かない）。
+#     スケアコッコの設定画（refs/scarecocco_sheet_01.png）があるので、この計画では作らない。
+#   - 巨大メタリカ: 6-15 で毒沼とともに議会場へ乱入し、小瓶の緑の液体を飲んで巨大化する（実体として作る）。
+#   - テレッサ: 列車が吐き出した毒沼の泥水を頭から浴び、「何も見えませんわ」と叫んで事切れる。
+#   - バスルーム: 録画 part20「お弟子ちゃんの風呂って沼の水を使う」。赤いカーテン、大きな浴槽（6章の場面メモ）。
+#   - 庭園: 森の魔女の庭園。円形の石の台座。植物がうまく育たない。マーリカの森の背景（refs/marika-forest_bg_01）に石の輪がある。
+#   - 隠し森: 「ほとんど人の手が入っていない森」「強い魔獣がたくさん」。森の庭園のさらに奥。途中に線路と駅（駅はこの計画に含めない）。
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k, aspect_ratio: "16:9"}
+credits_per_image: 1
+status: 生成済み（ユーザー承認 2026-11-01 13:10「OK」、24クレジット、残高 511→487。送信時に 429 が5件出たが課金なし、出し直して全24枚）。ユーザーが候補から選ぶ
+total_images: 24
+
+common:
+  sheet_rules: >-
+    Layout like the references, on a plain white background. No text, no labels, no captions, no manga symbols, no color
+    palette swatches.
+  creature: >-
+    Character design sheet of a NEW creature, drawn in exactly the same 2D anime art style, line art, cel shading and
+    color treatment as the two reference sheets (images 1 and 2); the references only show the drawing style and the sheet
+    layout, do not copy their subjects. Full-body front view, side view and back view in a row, plus two head close-ups
+    (front and three-quarter) on the right.
+  character: >-
+    Character design sheet of a NEW character, drawn in exactly the same 2D anime art style, line art, cel shading and
+    color treatment as the two reference sheets (images 1 and 2); do not copy the reference characters' faces, hair,
+    outfits or colors. Full-body front view, side view and back view standing in a row, plus two head close-ups (front and
+    three-quarter) on the right. Neutral standing pose.
+  prop: >-
+    Prop design sheet, drawn in exactly the same 2D anime art style, line art, cel shading and color treatment as the
+    reference images; the references only show the style and the swamp witch's colors and materials (deep purple, crimson,
+    gold rings, dark wood, glowing jade-green swamp magic), do not draw the characters.
+  background: >-
+    Background art only: no characters, no creatures, no text. A 2D anime environment design sheet: several panels of the
+    same place from different viewpoints, separated by thin white borders, in the same painting style, colors and
+    materials as the reference images; the references only show the look of the materials and the mood, do not copy their
+    viewpoints or layout.
+
+items:
+  - who: whisker-cat
+    ja: ヒゲが13本あるネコ
+    count: 2
+    refs: [refs/scarecocco_sheet_01.png, refs/tito_sheet_01.png]
+    prompt: >-
+      {creature} {sheet_rules} The creature: a small cat recreated by a swamp witch's alchemy, a homunculus copy of a
+      famous cat that died long ago. Ordinary house-cat size and proportions, slender, a slightly uncanny artificial look:
+      faint stitch-like seams or alchemical markings on the fur, eyes with a faint glow. Exactly thirteen long whiskers in
+      total, clearly countable in the head close-ups: seven on the left cheek and six on the right. Twitchy pink nose,
+      because it will sneeze. Fur color: smoky gray with a cream chest.
+    out: characters/whisker-cat/design/whisker-cat_design_gpt-image-2.5_0{n}.png
+  - who: apprentice-witches
+    ja: 見習い魔女たち（4人の並び。選ばれた案から一人ずつの三面図を後で作る）
+    count: 2
+    refs: [refs/teressa_sheet_01.jpg, refs/nezaria_sheet_01.jpg]
+    prompt: >-
+      Character lineup sheet of four NEW characters, drawn in exactly the same 2D anime art style, line art, cel shading and
+      color treatment as the two reference sheets (images 1 and 2); do not copy the reference characters' faces, hair,
+      outfits or colors. {sheet_rules} Four little apprentice witches, small children about 7 to 9 years old, standing in a
+      row, full body: top row front views of all four, bottom row back views of all four, same order. Cute, cheeky,
+      a little bossy. Each has a clearly different silhouette and color so they can be told apart even as shadows while
+      dancing: (1) a tall floppy pointed hat in pink with a big bow, puffy dress; (2) a short wide-brimmed hat in mint green,
+      twin buns, cape; (3) a crooked tall hat in lemon yellow with a star charm, bobbed hair; (4) a round beret-like witch
+      hat in lavender, long braid, oversized sleeves. All carry tiny wands and wear little buckle shoes.
+    out: characters/apprentice-witches/design/apprentice-witches_design_gpt-image-2.5_0{n}.png
+  - who: metallica-broom
+    ja: メタリカのホウキ
+    count: 2
+    refs: [refs/metallica_sheet_01.png, refs/witch-house-exterior_sheet_01.png]
+    prompt: >-
+      {prop} {sheet_rules} The prop: the flying broom of a swamp witch. A long, sturdy broom about 3 m long so that several
+      passengers can sit astride behind the witch: a gnarled dark wood shaft with gold ring bands and crimson cloth
+      wrappings, a thick bristle head of dark twigs bound with purple cord, a small lantern or charm hanging near the front,
+      faint jade-green swamp glow at the bristles. Views: full side view, top view, front view, back view, and close-ups of
+      the grip, the bands and the bristle binding.
+    out: characters/metallica-broom/design/metallica-broom_design_gpt-image-2.5_0{n}.png
+  - who: swamp-amulet
+    ja: 護符（沼の瘴気よけ）
+    count: 2
+    refs: [refs/metallica_sheet_01.png, refs/witch-house-exterior_sheet_01.png]
+    prompt: >-
+      {prop} {sheet_rules} The prop: a small protective amulet made by a swamp witch to guard a person from the poisonous
+      miasma of her swamp. Palm-sized, hung on a cord to wear around the neck: a dark wooden or bone disc with a gold ring
+      rim, an inlaid jade-green stone with a swirling sigil, small crimson tassel. Views: front, back, side, worn on a
+      cord (cord only, no person), and a close-up of the sigil, plus one view of it glowing softly.
+    out: characters/swamp-amulet/design/swamp-amulet_design_gpt-image-2.5_0{n}.png
+  - who: forest-servant
+    ja: 森の魔女のシモベ（アルレッキーノそっくりの魔法生物）
+    count: 2
+    refs: [refs/arlecchino_sheet_01.png, refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      Character design sheet in exactly the same 2D anime art style and sheet layout as image 1. {sheet_rules} The
+      character is a magical construct of exactly the same build, body shape, head shape and proportions as the character
+      in image 1 (a near-identical twin of the same model), but in the service of a forest witch instead of a swamp witch:
+      recolor it in forest colors taken from image 2 (moss green and bark brown coat, leaf-green muffler, warm lantern-gold
+      buttons), with small leaves and vines tucked into the muffler and a little gardening pruner hanging at the belt. Keep
+      the white mask-like face with the jagged mouth and red eyes, and the two horn-like knobs. Full-body front, side and
+      back views, plus head close-ups. Polite gardener's pose.
+    out: characters/forest-servant/design/forest-servant_design_gpt-image-2.5_0{n}.png
+  - who: marika-mouse
+    ja: マーリカの白ネズミ（尻尾あり）
+    count: 2
+    refs: [refs/scarecocco_sheet_01.png, refs/nezaria_sheet_01.jpg]
+    prompt: >-
+      {creature} {sheet_rules} The creature: a small pure-white mouse, the transformed form of a proud forest witch. Real
+      mouse size, small enough to sit on the brim of a witch's hat (as in image 2). Soft white fur, pink ears, nose and paws,
+      a long thin pink tail, bright intelligent green eyes with a slightly haughty, stubborn look. Also one small view of the
+      mouse sitting upright on a hat brim, the hat drawn only as a simple shape for scale.
+    out: characters/marika-mouse/design/marika-mouse_design_gpt-image-2.5_0{n}.png
+  - who: guide-witch
+    ja: 魔女都の案内魔女
+    count: 2
+    refs: [refs/teressa_sheet_01.jpg, refs/nezaria_sheet_01.jpg]
+    prompt: >-
+      {character} {sheet_rules} This character: a guide witch of the hidden witch capital, an adult woman of about 25,
+      calm and graceful, with elegant, polite manners. A uniform-like outfit worn by the capital's attendants: a tailored
+      midnight-blue long coat with silver buttons and a high collar, a neat pointed witch hat with a silver band and a small
+      crest, white gloves, a lantern on a short staff for guiding visitors. Hair in a tidy low chignon, gentle closed-mouth
+      smile.
+    out: characters/guide-witch/design/guide-witch_design_gpt-image-2.5_0{n}.png
+  - who: metallica-giant
+    ja: 巨大メタリカ（大きさの比較つき）
+    count: 2
+    refs: [refs/metallica_sheet_01.png, refs/bisco_sheet_01.png]
+    prompt: >-
+      Size reference sheet in exactly the same 2D anime art style as the references, on a plain white background. No text,
+      no labels, no manga symbols. The character in image 1, exactly as designed (same face, hair, hat, clothes and
+      colors), grown into a giant about 15 m tall after drinking a magic potion: full-body front view and three-quarter view,
+      wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand.
+      At her feet, for scale, a small gray silhouette of a normal-sized girl (about 1.5 m, based on image 2) and a gray
+      silhouette of a doorway 3 m tall. One head close-up of the giant from a low angle, looking down.
+    out: characters/metallica-giant/design/metallica-giant_design_gpt-image-2.5_0{n}.png
+  - who: teressa-swamp
+    ja: 毒沼を浴びたテレッサ
+    count: 2
+    refs: [refs/teressa_sheet_01.jpg]
+    prompt: >-
+      Character design sheet of the character in image 1, exactly as designed (same face, hair, clothes and colors), in the
+      same 2D anime art style and layout. {sheet_rules} State variant: she has just been drenched from head to toe by a
+      flood of thick poisonous swamp sludge. Her blonde twin tails are soaked and matted flat, thick jade-green and black
+      sludge drips from her hair, face, cape and clothes and pools at her feet, wisps of sickly green miasma rise from her.
+      Her eyes are clouded and blinded by the slime, mouth open in terror, hands groping in the air. Full-body front, side
+      and back views, plus two head close-ups.
+    out: characters/teressa-swamp/design/teressa-swamp_design_gpt-image-2.5_0{n}.png
+
+backgrounds:
+  - who: witch-house-bathroom
+    ja: 魔女邸のバスルーム
+    count: 2
+    refs: [refs/witch-house-living_sheet_01.png, refs/witch-house-exterior_sheet_01.png]
+    prompt: >-
+      {background} The place: the bathroom of a swamp witch's old wooden mansion. Heavy deep red curtains drawn around a
+      large, deep claw-footed bathtub of dark copper and wood, big enough for several people, filled with the witch's own
+      swamp water: glowing jade-green, steaming, faint bubbles. Dark wood paneling, glowing green vines on the walls, brass
+      lamps, stacked towels, jars of bath salts and potions on shelves, a small round window. Panels: wide main view from
+      the doorway, the tub from the side, a high view looking down into the tub, the curtains and shelves, a close-up of the
+      water surface.
+    out: world/witch-house-bathroom/witch-house-bathroom_gpt-image-2.5_0{n}.png
+  - who: forest-garden
+    ja: 森の魔女の庭園
+    count: 2
+    refs: [refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      {background} The place: the garden of a forest witch deep in her forest, the same forest as the reference (giant
+      old trees, moss, lanterns on wooden posts, drifting green fireflies). An open garden clearing laid out around a large
+      circular stone platform made of rings of fitted stones, with terraced flower beds and trellises around it. Its mistress
+      is gone, so the magic is weak: many plants are wilted, drooping or bare, flower beds half empty, though still neatly
+      tended. Panels: a wide view of the whole clearing, the circular stone platform at eye level, a high view looking down
+      on the rings of stones, the wilted flower beds with gardening tools, and the path leading deeper into the forest.
+    out: world/forest-garden/forest-garden_gpt-image-2.5_0{n}.png
+  - who: hidden-forest
+    ja: ヘッカヘンネの隠し森
+    count: 2
+    refs: [refs/marika-forest_bg_01.jpg]
+    prompt: >-
+      {background} The place: a hidden, untouched wild forest beyond the forest witch's garden, almost never entered by
+      people and full of dangerous beasts. Same kind of forest and colors as the reference but wilder and darker: no
+      lanterns or paths, enormous tangled trees, thick roots, hanging moss, giant ferns and glowing mushrooms, dim green
+      light through the canopy, mist on the ground. Panels: a wide view of the dense forest, a narrow animal trail between
+      roots, a deep dark thicket, an open sunlit clearing with tree stumps and wildflowers, and a low view of the forest floor.
+    out: world/hidden-forest/hidden-forest_gpt-image-2.5_0{n}.png
