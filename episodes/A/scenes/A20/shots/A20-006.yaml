@@ -1,0 +1,29 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-006
+scene: A20
+tc: 65.2
+sec: 3.2
+kind: M
+shot: 全身→引き・百騎兵
+acting: 百騎兵が目の前を右から左へ駆け抜け、明るい方へ抜けていく（台詞なし）
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 18.45
+  - 60.3
+  - 2.1
+  look: hundred-knight
+  lens: 26
+  move: 獣道の西の脇の少し高い所から、目の前を駆け抜ける百騎兵を振り向くように追う（流し撮り）
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 獣道
+  end: 木々の間の先に開けた所

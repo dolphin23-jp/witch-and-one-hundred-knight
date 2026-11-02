@@ -1,0 +1,42 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-005
+scene: A22
+tc: 84.4
+sec: 16.3
+kind: M
+shot: 全身（ソファ）・ビスコ・マーニィ・百騎兵
+acting: ビスコがため息をついてソファへ戻って座り込む。マーニィがソファの前へ漂ってきて、ビスコに背を向けて腕を組み「素直に受け取るとも思えなかったけどね」
+dialogue:
+- L678「はぁ……やっぱりそうだよな。」
+- L679「いまさらあの魔女達がいる夜会にはいけないよな……。」
+- L680「どちらにしても、森の魔女ちゃんがくれた切符をリカちゃんが素直に受け取るとも思えなかったけどね。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.3
+  - 3.6
+  - 0.9
+  look:
+  - 4.7
+  - 1.2
+  lens: 26
+  move: テーブルの南の低い所から、北のソファを
+background: witch-house
+image: null
+refs:
+- bisco
+- marny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うなだれたみんな
+  end: ソファのビスコと、背を向けて腕を組むマーニィ
+timing:
+  lead: 0.3
+  at:
+    L678: 0.3
+    L679: 3.42
+    L680: 8.74

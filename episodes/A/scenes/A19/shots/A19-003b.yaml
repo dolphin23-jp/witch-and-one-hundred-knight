@@ -1,0 +1,37 @@
+# A19 魔女邸・余命（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A19 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A19-003b
+scene: A19
+tc: 47.7
+sec: 7.4
+kind: M
+shot: 胸上（ビスコ・窓の脇から）・ビスコ・アルレッキーノ
+acting: 丸窓の前に来て外の光を見上げ「会えるといいな、森の魔女殿に……」。少し目を伏せる
+dialogue:
+- L630「そうか……。会えるといいな、森の魔女殿に……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.6
+  - 0.35
+  - 1.5
+  look:
+  - 2.6
+  - 1.3
+  lens: 24
+  move: 丸窓の脇（西）から、窓の光を受けるビスコの顔を斜め前から。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 歩いてくるビスコ
+  end: 窓の光の中のビスコの顔
+timing:
+  lead: 1.0
+  at:
+    L630: 1.0

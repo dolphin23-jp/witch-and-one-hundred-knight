@@ -1,0 +1,40 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-022
+scene: A18
+tc: 267.8
+sec: 7.6
+kind: M
+shot: 胸上（ルッキーニィ）・ルッキーニィ・ビスコ・マーニィ
+acting: マーニィを指さして「血まみれですよ！？」。立ち上がって、平然としているみんなをきょろきょろ見回す（汗は合成）
+dialogue:
+- L591「ええっ！？ち、血まみれですよ！？」
+- L592「な、何で皆さん、平然としていらっしゃるんですか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.75
+  - 0.75
+  - 0.95
+  look:
+  - 2.6
+  - 1.0
+  lens: 30
+  move: ソファの西の端の上（東）の低い所から、跳ね起きるルッキーニィを。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- luckiny
+- bisco
+- marny
+overlays: []
+fallback: null
+act:
+  start: しりもちのルッキーニィ
+  end: 口を押さえるルッキーニィ
+timing:
+  lead: 0.2
+  at:
+    L591: 0.2
+    L592: 3.14

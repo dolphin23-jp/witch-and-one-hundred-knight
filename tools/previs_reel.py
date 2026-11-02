@@ -286,8 +286,15 @@ def main():
         sec = float(s["sec"])
         out = work / f"{s['id']}.mp4"
         label = f"{s['id']}  {sec:g}秒"
+        title = ""
+        if s.get("title"):   # 題字（章の題など、ショットファイルの title: {text, at, sec}。本番は合成で入れる。A18、2026-11-02）
+            ti = s["title"]
+            a, b = float(ti.get("at", 0.5)), float(ti.get("at", 0.5)) + float(ti.get("sec", 3.5))
+            for k, row in enumerate(str(ti["text"]).split("\n")):
+                title += (f",drawtext=text='{row}'{font}:fontsize={34 if k else 26}:fontcolor=white:borderw=3:bordercolor=black@0.8"
+                          f":x=(w-text_w)/2:y=h*0.40+{k * 52}:alpha='if(lt(t,{a}),0,if(lt(t,{a + 0.6}),(t-{a})/0.6,if(lt(t,{b - 0.6}),1,if(lt(t,{b}),({b}-t)/0.6,0))))'")
         run("-i", src, "-vf", f"fps=24,scale=854:480,tpad=stop_mode=clone:stop_duration={sec},trim=duration={sec},setpts=PTS-STARTPTS,"
-            f"drawtext=text='{label}'{font}:fontsize=20:fontcolor=white:box=1:boxcolor=black@0.5:x=10:y=10",
+            f"drawtext=text='{label}'{font}:fontsize=20:fontcolor=white:box=1:boxcolor=black@0.5:x=10:y=10" + title,
             "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "22", out)
         parts.append(out)
     total = sum(float(s["sec"]) for s in shots)

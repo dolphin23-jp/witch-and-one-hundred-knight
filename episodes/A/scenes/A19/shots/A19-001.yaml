@@ -1,0 +1,38 @@
+# A19 魔女邸・余命（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A19 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A19-001
+scene: A19
+tc: 0.0
+sec: 6.5
+kind: M
+transition:
+  kind: fade
+  sec: 0.8
+shot: 寄り（扉と食事）・人物なし
+acting: 閉じた扉の前の食事は手つかずのまま。居間からビスコの声が聞こえてくる
+dialogue:
+- L623「おい、メタリカのやつ、全然部屋から出てくる気配がないぞ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.0
+  - -2.9
+  - 1.5
+  look:
+  - 17.0
+  - -0.8
+  lens: 30
+  move: 廊下を横へ滑り、扉の前の食事へ寄る
+background: witch-house
+image: null
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 午後の2階の廊下
+  end: 冷めた食事
+timing:
+  lead: 1.2
+  at:
+    L623: 1.2

@@ -1,0 +1,39 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-007
+scene: A18
+tc: 78.3
+sec: 7.5
+kind: M
+shot: 胸上（二人）・ビスコ・ルッキーニィ
+acting: ルッキーニィが右から来て手を振る。ビスコがびくっと振り向き、頭に手をやる
+dialogue:
+- L545「あの……？ビスコさん？」
+- L546「え、ああ！すまない……考え事をしていた。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.9
+  - 2.55
+  - 1.35
+  look:
+  - 2.55
+  - 0.85
+  lens: 30
+  move: 南西（階段の脇）から、窓の前の二人を横に。少し寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 窓の前のビスコの背中
+  end: 気まずそうなビスコ
+timing:
+  lead: 0.2
+  at:
+    L545: 0.2
+    L546: 3.21

@@ -1,0 +1,34 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-001
+scene: A18
+tc: 0.0
+sec: 9.5
+kind: M
+transition:
+  kind: fade
+  sec: 0.8
+shot: 引き→寄り（廊下・扉の下）・アルレッキーノ
+acting: アルレッキーノが来て扉を2度叩き、返事がないのでお辞儀をして戻っていく。カメラが床へ下りると、扉の下のすき間から緑の光がかすかに明滅する
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.7
+  - -3.05
+  - 1.35
+  look:
+  - 16.9
+  - -1.0
+  lens: 24
+  move: 廊下の西寄りから扉を斜めに。アルレッキーノが去った後、扉の下のすき間へ低く寄る
+background: witch-house
+image: null
+refs:
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 朝の2階の廊下。閉じた扉の前に食事のお盆
+  end: 冷めた食事と、扉の下の緑の光

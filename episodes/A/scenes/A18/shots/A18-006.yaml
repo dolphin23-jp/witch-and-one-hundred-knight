@@ -1,0 +1,37 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-006
+scene: A18
+tc: 66.6
+sec: 11.7
+kind: M
+shot: 全身→胸上（横顔）・ビスコ・ルッキーニィ・百騎兵・アルレッキーノ
+acting: ビスコが黙ってソファの前を通り、丸窓の前へ歩いて外の光を見る。心の声。うつむき、また窓を見上げる。百騎兵とルッキーニィが目で追う
+dialogue:
+- L543「（あのとき、確かに呪いをかけた魔女がいると感じた。でも、なぜ……いったい誰だったんだ……？）」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.6
+  - 1.1
+  - 1.55
+  look: bisco
+  lens: 28
+  move: 東（本棚の側）から、ソファの前を窓へ歩くビスコの背中を追い、ソファの上を前へ出て窓の前の横顔へ寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- hundred-knight
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 目をそらしたビスコ
+  end: 丸窓の光の中のビスコの横顔
+timing:
+  lead: 0.6
+  at:
+    L543: 0.6

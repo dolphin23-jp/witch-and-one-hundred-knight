@@ -1,0 +1,17 @@
+# A19 の BGM・効果音の置き場所（D-068、2026-11-02）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A19
+bgm:
+  # 原作どおり（パート20）: 頭の 12:07〜12:25 は曲なし → M34（12:25〜13:07、L626 の少し前から）→ M24（13:07〜、L632 の少し前から）
+  - {src: audio/bgm/catalog/M34.ogg, cut: A19-002, t: 11.9, until: {cut: A19-004, t: 6.8}, loop: true, fade_in: 1.2, fade_out: 1.0, volume: 0.28}
+  - {src: audio/bgm/catalog/M24.ogg, cut: A19-004, t: 6.6, until: {cut: A19-006, t: 20.6}, loop: true, fade_in: 1.0, fade_out: 1.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  # 001 午後の廊下（静か）。曲のない所なので、ほんの小さく風
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A19-001, t: 0.0, until: {cut: A19-002, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.5, volume: 0.05}
+  # 002 アルレッキーノのお辞儀、ビスコが両手を振って慌てる、腕を組む
+  - {src: audio/sfx/cloth_swish.ogg, cut: A19-002, t: 9.6, volume: 0.22}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A19-002, t: 12.7, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A19-002, t: 17.6, volume: 0.22}
+  # 005 閉じた扉（光は漏らさない。音もなし。静けさ）
+  - {src: audio/sfx/rumble_low.ogg, cut: A19-005, t: 0.0, until: {cut: A19-006, t: 0.0}, loop: true, fade_in: 1.5, fade_out: 0.5, volume: 0.05}

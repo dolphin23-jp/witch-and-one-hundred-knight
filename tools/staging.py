@@ -34,11 +34,15 @@ COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight"
           # 夜会編 回2（A14〜A17）: 夜会の魔女たち、見習い魔女、守護者のからくり人形
           "purple-peel": (150, 60, 200), "lily": (120, 215, 235), "rabi": (255, 75, 30), "usamaru": (250, 225, 235),
           "teressa": (235, 200, 80), "berda": (110, 135, 95), "apprentice-a": (250, 160, 200), "apprentice-b": (190, 160, 250),
-          "apprentice-c": (150, 225, 190), "apprentice-d": (250, 215, 140), "karakuri-doll": (190, 140, 85)}
+          "apprentice-c": (150, 225, 190), "apprentice-d": (250, 215, 140), "karakuri-doll": (190, 140, 85),
+          # 6章後半 回1（A18〜A22）: マーニィ、森の魔女のシモベ、マーリカのネズミ、ネズミをさらう鳥、隠し森の魔獣
+          "marny": (110, 235, 90), "forest-servant": (125, 28, 32), "marika-mouse": (245, 245, 245), "bird": (95, 70, 50),
+          "forest-beast": (70, 60, 90)}
 SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
          "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏",
          "purple-peel": "パ", "lily": "リ", "rabi": "ラ", "usamaru": "ウ", "teressa": "テレ", "berda": "ベ",
-         "apprentice-a": "見A", "apprentice-b": "見B", "apprentice-c": "見C", "apprentice-d": "見D", "karakuri-doll": "人形"}
+         "apprentice-a": "見A", "apprentice-b": "見B", "apprentice-c": "見C", "apprentice-d": "見D", "karakuri-doll": "人形",
+         "marny": "マ", "forest-servant": "シ", "marika-mouse": "鼠", "bird": "鳥", "forest-beast": "獣"}
 POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}   # 立っていないときの背の高さの割合（寝ているときは高さ m）
 
 

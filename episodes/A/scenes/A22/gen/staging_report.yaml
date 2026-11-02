@@ -1,0 +1,1802 @@
+cuts:
+  A22-001:
+    cam:
+    - 4.6
+    - 6.6
+    - 2.6
+    lens: 24
+    bearing: 3
+    frame: 全身
+    start:
+      people:
+      - who: luckiny
+        s: -0.6
+        dist: 3.48
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: 0.03
+        dist: 5.81
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.78
+        dist: 3.92
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 3 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the
+        camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf,
+        black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled
+        walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.76
+        dist: 3.07
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.18
+        dist: 4.23
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: hundred-knight
+        s: 0.81
+        dist: 2.37
+        side: 右
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 0.93
+        dist: 3.53
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 4 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with two gold
+        hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
+        in three-quarter view, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on
+        top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, in profile,
+        turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the
+        head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      hundred-knight:
+        to:
+        - 6.1
+        - 3.9
+        face: 300
+        via:
+        - - 6.5
+          - 5.4
+        - - 6.1
+          - 3.9
+        - - 6.1
+          - 3.9
+        t:
+        - 0.0
+        - 19.2
+      bisco:
+        to: b_meet
+        face: 250
+        via:
+        - b_sofa
+        - - 5.0
+          - 1.25
+        - - 5.0
+          - 1.25
+        - b_meet
+        - b_meet
+        - b_meet
+        - b_meet
+        - b_meet
+        - b_meet
+        t:
+        - 0.0
+        - 19.2
+      arlecchino:
+        to: a_shelf
+        face: 255
+        via:
+        - a_shelf
+        - a_shelf
+        - a_shelf
+        t:
+        - 0.0
+        - 19.2
+      luckiny:
+        to: l_w
+        face: 120
+        via:
+        - l_w
+        - l_w
+        - l_w
+        t:
+        - 0.0
+        - 19.2
+    note: null
+  A22-002:
+    cam:
+    - 4.3
+    - 4.3
+    - 1.4
+    lens: 30
+    bearing: 38
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: -0.36
+        dist: 2.49
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: arlecchino
+        s: 0.74
+        dist: 2.9
+        side: 右
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 天井までの本棚（北）
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の本棚
+      - 廊下の小机（花瓶）
+      - 廊下の燭台（西）
+      - 廊下の燭台（扉の脇）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen left; Arlecchino (a bulky servant as tall as a man:
+        white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black
+        boots), standing, at the far right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the
+        curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.08
+        dist: 1.63
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.87
+        dist: 1.33
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword
+        here), standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall
+        bookshelves and the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 5.95
+        - 3.1
+        face: 310
+        via:
+        - - 5.95
+          - 3.1
+        - - 5.95
+          - 3.1
+        t:
+        - 0.0
+        - 11.8
+      hundred-knight:
+        to: hk_mid
+        face: 315
+        via:
+        - - 6.1
+          - 3.9
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        t:
+        - 0.0
+        - 11.8
+      bisco:
+        to: b_meet
+        face: 200
+        via:
+        - b_meet
+        - b_meet
+        t:
+        - 0.0
+        - 11.8
+      arlecchino:
+        to: a_shelf
+        t:
+        - 0.0
+        - 11.8
+      luckiny:
+        to:
+        - 3.3
+        - 1.45
+        face: 75
+        via:
+        - l_w
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        t:
+        - 0.0
+        - 11.8
+    note: null
+  A22-002b:
+    cam:
+    - 6.4
+    - 5.1
+    - 1.45
+    lens: 28
+    bearing: 342
+    frame: 胸上
+    start:
+      people:
+      - who: luckiny
+        s: -0.63
+        dist: 4.43
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.01
+        dist: 3.26
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: marny
+        s: 0.15
+        dist: 2.04
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: hundred-knight
+        s: 0.16
+        dist: 2.59
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: arlecchino
+        s: 1.09
+        dist: 1.97
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with two gold
+        hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
+        in three-quarter view, turned toward screen left; Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae
+        with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small,
+        about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with
+        black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, seen from behind at an angle, turned toward screen left; Arlecchino (a bulky servant as tall
+        as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms,
+        big black boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing
+        green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.72
+        dist: 4.22
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: -0.25
+        dist: 2.99
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: 0.04
+        dist: 3.04
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.23
+        dist: 2.37
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: arlecchino
+        s: 0.64
+        dist: 2.58
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the
+        left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword
+        here), standing, on the right of the frame, seen from behind at an angle, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over
+        one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame,
+        in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 4.95
+        - 2.2
+        face: 70
+        via:
+        - - 4.95
+          - 2.2
+        t:
+        - 0.0
+        - 15.3
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 250
+        via:
+        - a_shelf
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        t:
+        - 0.0
+        - 15.3
+      bisco:
+        to: b_meet
+        face: 140
+        via:
+        - b_meet
+        - b_meet
+        t:
+        - 0.0
+        - 15.3
+      hundred-knight:
+        to: hk_mid
+        t:
+        - 0.0
+        - 15.3
+      luckiny:
+        to:
+        - 3.3
+        - 1.45
+        face: 80
+        t:
+        - 0.0
+        - 15.3
+    note: null
+  A22-003:
+    cam:
+    - 1.9
+    - 4.4
+    - 1.3
+    lens: 22
+    bearing: 57
+    frame: 引き
+    start:
+      people:
+      - who: luckiny
+        s: -0.76
+        dist: 2.78
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: marny
+        s: -0.06
+        dist: 3.76
+        side: 中央
+        body: 背中
+      - who: bisco
+        s: -0.03
+        dist: 4.24
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: arlecchino
+        s: 0.13
+        dist: 5.0
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.17
+        dist: 4.32
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の本棚
+      - 廊下の小机（花瓶）
+      - 廊下の燭台（西）
+      - 廊下の燭台（扉の脇）
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, at the far left of the frame, seen from behind at an angle, turned toward screen right; Marny (a tiny pale-green fairy about
+        the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in
+        the center of the frame, with the back to the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+        belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in profile, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped
+        head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing,
+        in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top,
+        black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, in profile, turned
+        toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.78
+        dist: 0.99
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: -0.03
+        dist: 4.17
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.15
+        dist: 4.93
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.19
+        dist: 4.25
+        side: 中央
+        body: 正面
+      - who: marny
+        s: 0.34
+        dist: 3.1
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, at the far left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the
+        camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf,
+        black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword
+        here), standing, in the center of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar,
+        two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the
+        witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      luckiny:
+        to: l_stair
+        face: 120
+        via:
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.3
+          - 1.45
+        - - 3.2
+          - 1.75
+        - - 2.6
+          - 3.3
+        - - 1.75
+          - 4.75
+        - - 1.0
+          - 5.55
+        - - 0.78
+          - 5.2
+        - - 0.75
+          - 1.1
+        - - 0.55
+          - 0.5
+        - - 0.55
+          - 0.5
+        - - 0.75
+          - 1.1
+        - - 0.8
+          - 5.0
+        - - 1.2
+          - 5.45
+        - l_stair
+        t:
+        - 0.0
+        - 29.2
+      bisco:
+        to: b_meet
+        face: 240
+        via:
+        - b_meet
+        - b_meet
+        - b_meet
+        t:
+        - 0.0
+        - 29.2
+      marny:
+        to:
+        - 5.0
+        - 3.35
+        face: 245
+        via:
+        - - 5.0
+          - 3.35
+        - - 5.0
+          - 3.35
+        t:
+        - 0.0
+        - 29.2
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 245
+        via:
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        t:
+        - 0.0
+        - 29.2
+      hundred-knight:
+        to: hk_mid
+        face: 250
+        via:
+        - hk_mid
+        t:
+        - 0.0
+        - 29.2
+    note: null
+  A22-004:
+    cam:
+    - 4.1
+    - 4.7
+    - 0.95
+    lens: 30
+    bearing: 318
+    frame: 胸上
+    start:
+      people:
+      - who: luckiny
+        s: -0.23
+        dist: 2.14
+        side: 中央
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 床に積んだ本の山
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green
+        vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.14
+        dist: 2.02
+        side: 中央
+        body: 正面
+      - who: marny
+        s: 0.5
+        dist: 1.83
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, in the center of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll: huge bright green
+        butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the right of the frame, in profile, turned
+        toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      luckiny:
+        to: l_stair
+        face: 110
+        via:
+        - l_stair
+        t:
+        - 0.0
+        - 8.9
+      marny:
+        to:
+        - 3.0
+        - 3.0
+        face: 240
+        via:
+        - - 3.0
+          - 3.0
+        t:
+        - 0.0
+        - 8.9
+    note: null
+  A22-005:
+    cam:
+    - 4.3
+    - 3.6
+    - 0.9
+    lens: 26
+    bearing: 9
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: 0.67
+        dist: 1.76
+        side: 右
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, at the far right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing
+        green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: marny
+        s: -0.36
+        dist: 1.77
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.06
+        dist: 2.77
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two
+        antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the left of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair
+        with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center
+        of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      bisco:
+        to: b_sofa2
+        face: 180
+        via:
+        - b_meet
+        - - 4.6
+          - 1.3
+        - - 4.6
+          - 1.3
+        - b_sofa2
+        t:
+        - 0.0
+        - 16.3
+      marny:
+        to:
+        - 4.0
+        - 1.75
+        face: 205
+        via:
+        - - 3.0
+          - 3.0
+        - - 4.0
+          - 1.75
+        t:
+        - 0.0
+        - 16.3
+      hundred-knight:
+        to: hk_mid
+        face: 300
+        via:
+        - hk_mid
+        t:
+        - 0.0
+        - 16.3
+    note: null
+  A22-006:
+    cam:
+    - 3.0
+    - 1.25
+    - 1.45
+    lens: 30
+    bearing: 193
+    frame: 胸上
+    start:
+      people:
+      - who: luckiny
+        s: 0.05
+        dist: 2.12
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
+        legs with dark hooves, a green fluffy tail), standing, in the center of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room
+        with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: arlecchino
+        s: -0.41
+        dist: 3.39
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.05
+        dist: 3.07
+        side: 中央
+        body: 正面
+      - who: marny
+        s: 0.0
+        dist: 1.05
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 3 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in three-quarter view, turned toward screen right;
+        the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, in the center of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll:
+        huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame,
+        facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      luckiny:
+        to: l_sw
+        face: 50
+        via:
+        - l_stair
+        - l_sw
+        - l_sw
+        t:
+        - 0.0
+        - 14.9
+      marny:
+        to:
+        - 4.0
+        - 1.75
+        face: 290
+        via:
+        - - 4.0
+          - 1.75
+        - - 4.0
+          - 1.75
+        t:
+        - 0.0
+        - 14.9
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 250
+        t:
+        - 0.0
+        - 14.9
+      hundred-knight:
+        to: hk_mid
+        face: 290
+        t:
+        - 0.0
+        - 14.9
+      bisco:
+        to: b_sofa2
+        face: 200
+        t:
+        - 0.0
+        - 14.9
+    note: null
+  A22-006b:
+    cam:
+    - 4.9
+    - 3.4
+    - 1.25
+    lens: 30
+    bearing: 342
+    frame: 胸上
+    start:
+      people:
+      - who: marny
+        s: -0.32
+        dist: 1.84
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: bisco
+        s: 0.32
+        dist: 2.57
+        side: 中央
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 2 people, from left to right): Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two
+        antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the left of the frame, seen from behind at an angle, turned toward screen left; Bisco (short black bob
+        hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the
+        right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: marny
+        s: 0.0
+        dist: 1.68
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.72
+        dist: 2.39
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two
+        antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, facing the
+        camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 4.1
+        - 1.85
+        face: 160
+        via:
+        - - 4.0
+          - 1.75
+        - - 4.0
+          - 1.75
+        - - 4.0
+          - 1.75
+        - - 4.0
+          - 1.75
+        - - 4.1
+          - 1.85
+        t:
+        - 0.0
+        - 16.8
+      bisco:
+        to: b_sofa2
+        face: 190
+        t:
+        - 0.0
+        - 16.8
+    note: null
+  A22-007:
+    cam:
+    - 2.9
+    - 1.45
+    - 0.75
+    lens: 26
+    bearing: 78
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: -0.23
+        dist: 1.8
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: arlecchino
+        s: 0.62
+        dist: 3.28
+        side: 右
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.85
+        dist: 1.09
+        side: 右
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: 0.92
+        dist: 2.66
+        side: 右
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 天井までの本棚（北）
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の本棚
+      - 廊下の小机（花瓶）
+      - 廊下の燭台（西）
+      - 廊下の燭台（扉の脇）
+      - 薬瓶とタオルの棚
+      staging: 'In frame (exactly 4 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; Arlecchino (a bulky servant as tall as a
+        man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big
+        black boots), standing, at the far right of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings
+        with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, at the far right of the frame, seen from behind at an angle,
+        turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with
+        orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, facing the camera. No other people.
+        Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 1.61
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.33
+        dist: 1.92
+        side: 右
+        body: 正面
+      - who: arlecchino
+        s: 0.55
+        dist: 3.3
+        side: 右
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.87
+        dist: 2.71
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 4 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the
+        right of the frame, facing the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, in three-quarter view, turned toward screen right; the Hundred
+        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, at the far right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the
+        witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      bisco:
+        to: b_up
+        face: 205
+        via:
+        - b_sofa2
+        - b_up
+        - b_up
+        - b_up
+        t:
+        - 0.0
+        - 10.3
+      marny:
+        to:
+        - 4.95
+        - 1.6
+        face: 290
+        via:
+        - - 4.95
+          - 1.6
+        t:
+        - 0.0
+        - 10.3
+    note: null
+  A22-007b:
+    cam:
+    - 4.33
+    - 3.35
+    - 1.35
+    lens: 30
+    bearing: 15
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: -0.23
+        dist: 2.1
+        side: 中央
+        body: 正面
+      - who: marny
+        s: 0.13
+        dist: 1.85
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll: huge bright green
+        butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame, in profile, turned
+        toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.51
+        dist: 2.21
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.14
+        dist: 2.04
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the
+        center of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved
+        wooden staircase.'
+    move:
+      marny:
+        to:
+        - 3.9
+        - 1.95
+        face: 270
+        via:
+        - - 5.15
+          - 1.4
+        - - 5.15
+          - 1.4
+        - - 5.05
+          - 1.4
+        - - 5.05
+          - 1.4
+        - - 5.05
+          - 1.4
+        - - 3.9
+          - 1.95
+        t:
+        - 0.0
+        - 22.9
+      bisco:
+        to: b_west
+        face: 90
+        via:
+        - b_up
+        - b_up
+        - b_up
+        - b_up
+        - - 3.55
+          - 1.45
+        - b_west
+        - b_west
+        - b_west
+        t:
+        - 0.0
+        - 22.9
+      luckiny:
+        to: l_sw
+        face: 25
+        via:
+        - l_sw
+        - l_sw
+        t:
+        - 0.0
+        - 22.9
+    note: null
+  A22-008:
+    cam:
+    - 3.6
+    - 3.1
+    - 1.05
+    lens: 24
+    bearing: 350
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: -0.5
+        dist: 1.3
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.6
+        dist: 1.08
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the
+        right of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden
+        staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.51
+        dist: 1.19
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.95
+        dist: 0.96
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, at the
+        far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and
+        the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 3.9
+        - 1.95
+        via:
+        - - 3.9
+          - 1.95
+        - - 3.9
+          - 1.95
+        t:
+        - 0.0
+        - 23.9
+      bisco:
+        to: b_west
+        face: 110
+        via:
+        - b_west
+        - b_west
+        - b_west
+        - b_west
+        t:
+        - 0.0
+        - 23.9
+    note: null
+  A22-009:
+    cam:
+    - 3.75
+    - 3.5
+    - 1.35
+    lens: 30
+    bearing: 337
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: -0.15
+        dist: 1.8
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.91
+        dist: 1.37
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right; Marny (a tiny pale-green fairy about the
+        size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, at the
+        far right of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved
+        wooden staircase.'
+    end:
+      people:
+      - who: marny
+        s: -0.14
+        dist: 2.32
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.07
+        dist: 1.81
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two
+        antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 2.4
+        - 1.6
+        face: 125
+        via:
+        - - 3.3
+          - 1.35
+        - - 2.6
+          - 1.3
+        - - 2.4
+          - 1.6
+        - - 2.4
+          - 1.6
+        - - 2.4
+          - 1.6
+        - - 2.4
+          - 1.6
+        t:
+        - 0.0
+        - 24.7
+      bisco:
+        to: b_west
+        face: 220
+        via:
+        - b_west
+        - b_west
+        - b_west
+        - b_west
+        t:
+        - 0.0
+        - 24.7
+    note: null
+  A22-010:
+    cam:
+    - 6.4
+    - 5.6
+    - 2.5
+    lens: 24
+    bearing: 324
+    frame: 引き
+    start:
+      people:
+      - who: luckiny
+        s: -0.45
+        dist: 4.42
+        side: 左
+        body: 横顔（画面右向き）
+      - who: marny
+        s: -0.21
+        dist: 5.59
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: -0.17
+        dist: 5.05
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: hundred-knight
+        s: 0.64
+        dist: 2.79
+        side: 右
+        body: 斜め後ろ（画面左向き）
+      - who: arlecchino
+        s: 0.97
+        dist: 2.79
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, in profile, turned toward screen right; Marny (a tiny pale-green fairy about the size of a doll:
+        huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the left of the frame,
+        facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail,
+        silver armored boots), standing, in the center of the frame, in profile, turned toward screen left; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with
+        a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing,
+        at the far right of the frame, seen from behind at an angle, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and
+        a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.45
+        dist: 4.34
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: -0.17
+        dist: 5.0
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: marny
+        s: 0.14
+        dist: 3.34
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: hundred-knight
+        s: 0.73
+        dist: 2.81
+        side: 右
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 1.06
+        dist: 2.83
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen right; Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips,
+        white fluffy cuffs; she flies and floats in the air), standing, in the center of the frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small, about waist-high to
+        Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
+        brown shoes; it carries no sword here), standing, at the far right of the frame, in profile, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red
+        eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far
+        right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the
+        curved wooden staircase.'
+    move:
+      luckiny:
+        to: l_sw
+        face: 50
+        via:
+        - l_sw
+        - l_sw
+        t:
+        - 0.0
+        - 16.6
+      marny:
+        to:
+        - 4.6
+        - 2.75
+        face: 270
+        via:
+        - - 2.4
+          - 1.6
+        - - 4.6
+          - 2.75
+        - - 4.6
+          - 2.75
+        - - 4.6
+          - 2.75
+        t:
+        - 0.0
+        - 16.6
+      bisco:
+        to: b_west
+        face: 100
+        via:
+        - b_west
+        - b_west
+        - b_west
+        t:
+        - 0.0
+        - 16.6
+      hundred-knight:
+        to: hk_mid
+        face: 270
+        via:
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        t:
+        - 0.0
+        - 16.6
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 250
+        t:
+        - 0.0
+        - 16.6
+    note: null
+  A22-010b:
+    cam:
+    - 1.75
+    - 3.7
+    - 1.3
+    lens: 26
+    bearing: 56
+    frame: 胸上
+    start:
+      people:
+      - who: bisco
+        s: -0.62
+        dist: 1.96
+        side: 左
+        body: 横顔（画面右向き）
+      - who: luckiny
+        s: -0.23
+        dist: 1.15
+        side: 中央
+        body: 背中
+      - who: arlecchino
+        s: 0.41
+        dist: 4.72
+        side: 右
+        body: 正面
+      - who: marny
+        s: 0.41
+        dist: 2.89
+        side: 右
+        body: 正面
+      - who: hundred-knight
+        s: 0.48
+        dist: 4.04
+        side: 右
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の本棚
+      - 廊下の小机（花瓶）
+      - 廊下の燭台（西）
+      - 廊下の燭台（扉の脇）
+      staging: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in profile, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged
+        horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, with the back
+        to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink
+        scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll: huge bright
+        green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the right of the frame, facing the
+        camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
+        blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the right of the frame, facing the camera. No other people. Behind: the wood-paneled
+        walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.82
+        dist: 1.78
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: luckiny
+        s: -0.33
+        dist: 1.0
+        side: 左
+        body: 横顔（画面右向き）
+      - who: arlecchino
+        s: 0.39
+        dist: 4.64
+        side: 右
+        body: 正面
+      - who: hundred-knight
+        s: 0.48
+        dist: 3.96
+        side: 右
+        body: 正面
+      - who: marny
+        s: 0.73
+        dist: 1.15
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk:
+        two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame,
+        in profile, turned toward screen right; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the right of the frame, facing the camera; the Hundred Knight (small, about waist-high
+        to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
+        shorts, brown shoes; it carries no sword here), standing, on the right of the frame, facing the camera; Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings
+        with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, at the far right of the frame, in three-quarter view, turned
+        toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      luckiny:
+        to: l_sw
+        face: 138
+        via:
+        - l_sw
+        - l_sw
+        - l_sw
+        - l_sw
+        - l_sw
+        - l_sw
+        t:
+        - 0.0
+        - 15.8
+      marny:
+        to:
+        - 3.1
+        - 3.45
+        face: 325
+        via:
+        - - 3.1
+          - 3.45
+        - - 3.1
+          - 3.45
+        - - 3.1
+          - 3.45
+        - - 3.1
+          - 3.45
+        t:
+        - 0.0
+        - 15.8
+      bisco:
+        to: b_west
+        face: 160
+        via:
+        - b_west
+        t:
+        - 0.0
+        - 15.8
+    note: null
+  A22-011:
+    cam:
+    - 6.0
+    - 4.2
+    - 0.9
+    lens: 28
+    bearing: 7
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.34
+        dist: 1.62
+        side: 左
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 0.11
+        dist: 2.08
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 天井までの本棚（北）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in profile,
+        turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the
+        head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.49
+        dist: 1.46
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: arlecchino
+        s: 0.09
+        dist: 1.93
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here), standing, on the left of the frame, in three-quarter
+        view, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes
+        on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people.
+        Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      bisco:
+        to: b_west
+        face: 85
+        via:
+        - b_west
+        - b_west
+        t:
+        - 0.0
+        - 14.0
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 255
+        via:
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        t:
+        - 0.0
+        - 14.0
+      hundred-knight:
+        to: hk_mid
+        face: 240
+        via:
+        - hk_mid
+        t:
+        - 0.0
+        - 14.0
+    note: null
+  A22-011b:
+    cam:
+    - 6.6
+    - 6.4
+    - 1.5
+    lens: 24
+    bearing: 330
+    frame: 引き
+    start:
+      people:
+      - who: marny
+        s: -0.49
+        dist: 4.29
+        side: 左
+        body: 背中
+      - who: luckiny
+        s: -0.47
+        dist: 5.02
+        side: 左
+        body: 正面
+      - who: bisco
+        s: -0.23
+        dist: 5.74
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.45
+        dist: 3.72
+        side: 右
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 0.68
+        dist: 3.79
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly 5 people, from left to right): Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two
+        antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing, on the left of the frame, with the back to the camera; Luckiny (a small goat-like beastfolk: two tall ridged
+        horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the
+        camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver
+        armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet
+        with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes; it carries no sword here),
+        standing, on the right of the frame, in profile, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched
+        tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, in profile, turned toward
+        screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: luckiny
+        s: -0.55
+        dist: 4.77
+        side: 左
+        body: 正面
+      - who: bisco
+        s: -0.37
+        dist: 4.98
+        side: 左
+        body: 正面
+      - who: marny
+        s: 0.46
+        dist: 4.02
+        side: 右
+        body: 正面
+      - who: arlecchino
+        s: 0.82
+        dist: 3.51
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 4 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder
+        and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, facing the camera; Marny (a tiny pale-green
+        fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air), standing,
+        on the right of the frame, facing the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like
+        pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, at the far right of the frame, facing the camera. No other people. Behind: the wood-paneled
+        walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      marny:
+        to:
+        - 5.55
+        - 2.05
+        face: 160
+        via:
+        - - 4.4
+          - 3.4
+        - - 4.4
+          - 3.4
+        - - 5.55
+          - 2.05
+        - - 5.55
+          - 2.05
+        - - 5.55
+          - 2.05
+        t:
+        - 0.0
+        - 24.0
+      hundred-knight:
+        to:
+        - 6.9
+        - 8.2
+        face: 180
+        via:
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - hk_mid
+        - - 6.55
+          - 5.1
+        - - 6.9
+          - 6.75
+        t:
+        - 0.0
+        - 22.2
+      bisco:
+        to:
+        - 2.95
+        - 2.45
+        face: 135
+        via:
+        - b_west
+        - b_west
+        - b_west
+        - - 2.95
+          - 2.45
+        - - 2.95
+          - 2.45
+        t:
+        - 0.0
+        - 24.0
+      arlecchino:
+        to:
+        - 6.4
+        - 2.15
+        face: 185
+        via:
+        - - 6.4
+          - 2.15
+        - - 6.4
+          - 2.15
+        t:
+        - 0.0
+        - 24.0
+      luckiny:
+        to: l_sw
+        face: 125
+        via:
+        - l_sw
+        - l_sw
+        t:
+        - 0.0
+        - 24.0
+    note: null
+checks:
+  axis: []
+  jumps: []
+  overlap: []
+  offscreen:
+  - cut: A22-001
+    who: hundred-knight
+    kind: 位置
+  - cut: A22-002
+    who: marny
+    kind: 位置
+  hidden: []
+  camera: []

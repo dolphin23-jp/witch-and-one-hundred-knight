@@ -1,0 +1,43 @@
+# A19 魔女邸・余命（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A19 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A19-006
+scene: A19
+tc: 79.3
+sec: 20.6
+kind: M
+shot: 引き（上から見下ろす）・ビスコ・アルレッキーノ
+acting: ビスコがアルレッキーノの方へ歩み寄って「病か？」。アルレッキーノはうつむいて答え、ビスコは「わからない、だと……？」と上の階（カメラ）を見上げる
+dialogue:
+- L635「そ、そうなのか……？理由は何なんだ？病か？」
+- L636「それは存じ上げておりませぬ。リカ様がそう予知されているとしか……。」
+- L637「詳しいことはリカ様ご自身もおわかりになっていないご様子で。」
+- L638「わからない、だと……？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 0.95
+  - 0.5
+  - 3.6
+  look:
+  - 4.3
+  - 2.5
+  lens: 22
+  move: 階段の上（メタリカの部屋の側）から見下ろす。見上げるビスコへゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 振り向いたビスコ
+  end: 上を見上げるビスコ（上から）
+timing:
+  lead: 0.3
+  at:
+    L635: 0.3
+    L636: 3.12
+    L637: 9.65
+    L638: 16.37

@@ -1,0 +1,41 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-001
+scene: A20
+tc: 0.0
+sec: 11.2
+kind: M
+transition:
+  kind: wipe
+  dir: left
+  sec: 0.8
+shot: 引き（クレーン下げ）・百騎兵・シモベ
+acting: 百騎兵が小道から庭園に入ってくる。円形の石の台座のそばで、枯れかけた花壇を手入れしていたシモベが振り向き、お辞儀をして「いらっしゃいませ、お客様」
+dialogue:
+- L639「いらっしゃいませ、お客様。どういったご用件でしょうか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 17.5
+  - 104.0
+  - 7.5
+  look:
+  - 21.0
+  - 97.0
+  lens: 22
+  move: 木の上から庭園へ下りる（クレーン下げ）
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- forest-servant
+overlays: []
+fallback: null
+act:
+  start: 森の木々の上から、薄暗い森の庭園へ
+  end: 百騎兵とシモベ
+timing:
+  lead: 4.2
+  at:
+    L639: 4.2

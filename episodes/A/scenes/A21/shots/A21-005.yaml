@@ -1,0 +1,41 @@
+# A21 魔女邸・バスルーム（夕方近く）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A21 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A21-005
+scene: A21
+tc: 65.8
+sec: 18.5
+kind: M
+shot: 胸上（浴槽ごし）・マーニィ・百騎兵
+acting: 振り向いて「逃げ出したくなるほど風呂が嫌いなのかしら」。光る浴槽の上へ漂って水面を見下ろし「リカちゃんの風呂って沼の水を使うから…むしろ危ないか」（泡がはじける音）
+dialogue:
+- L619「逃げ出したくなるほど風呂が嫌いなのかしら……？」
+- L620「あ、そっか。リカちゃんの風呂って沼の水を使うから、お弟子ちゃんじゃむしろ危ないか。」
+- L621「そりゃ入れないわね。忘れてたわ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.6
+  - 10.45
+  - 0.85
+  look:
+  - 15.6
+  - 7.45
+  lens: 30
+  move: 浴槽の南の低い所から、手前に光る水面、その上に漂ってくるマーニィの顔。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- marny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 扉の方を見るマーニィ
+  end: 浴槽の上のマーニィ
+timing:
+  lead: 0.6
+  at:
+    L619: 0.6
+    L620: 6.7
+    L621: 14.43

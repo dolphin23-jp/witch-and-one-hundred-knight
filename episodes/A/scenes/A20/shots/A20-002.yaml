@@ -1,0 +1,43 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-002
+scene: A20
+tc: 11.2
+sec: 24.5
+kind: M
+shot: 肩なめ（百騎兵越しにシモベ）・百騎兵・シモベ
+acting: シモベが百騎兵のすぐ前まで歩いてきて、枯れかけた花壇を手で示し、胸に手を当てて使命を語る。お辞儀をして、東の森へ去っていく
+dialogue:
+- L640「マーリカ様なら、残念ながらここにはいらっしゃいません。」
+- L641「おかげで、魔力が足らず、植物がうまく育ちません。」
+- L642「ですが、ワタクシ達は、森の魔女マーリカ様の育んだ命をお守りするのが使命。」
+- L643「手入れを怠るわけにはまいりませんので、これにて失礼いたします。はい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 19.5
+  - 102.4
+  - 1.3
+  look:
+  - 22.4
+  - 99.4
+  lens: 34
+  move: 百騎兵の後ろの低い所から。去るシモベを追って振る
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- forest-servant
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の背中越しに、花壇のシモベ
+  end: 森の奥へ去るシモベ
+timing:
+  lead: 0.3
+  at:
+    L640: 0.3
+    L641: 5.23
+    L642: 9.69
+    L643: 16.99

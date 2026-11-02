@@ -1,0 +1,42 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-003
+scene: A20
+tc: 35.7
+sec: 20.3
+kind: M
+shot: 全身→引き（後ろから追う）・百騎兵
+acting: 魔女邸のマーニィから通信（「アルレッキーノちゃんがこっちにもいるわよ」）。百騎兵は北へ向き直り、台座を渡って奥の暗い森へ歩き出す
+dialogue:
+- L644「これは、ちょっとした驚きだわね。」
+- L645「アルレッキーノちゃんがこっちにもいるわよ。」
+- L646「ふーん、なるほどね。」
+- L647「さあ、ここに森の魔女ちゃんはいないみたいだから予定通り、奥へ進みましょう。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 22.6
+  - 99.4
+  - 0.75
+  look:
+  - 20.0
+  - 100.9
+  lens: 30
+  move: 百騎兵の前（北東）の低い所から、通信を聞く顔を。歩き出すと振って見送り、後ろへ下がりながら高く上がる（クレーン）
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: シモベが去った森
+  end: 台座を渡る百騎兵と、奥の暗い森
+timing:
+  lead: 0.4
+  at:
+    L644: 0.4
+    L645: 4.26
+    L646: 9.27
+    L647: 12.19

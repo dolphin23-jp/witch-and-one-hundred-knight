@@ -1,0 +1,41 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-007
+scene: A22
+tc: 132.4
+sec: 10.3
+kind: M
+shot: 胸上（煽り）・ビスコ・マーニィ・アルレッキーノ・百騎兵
+acting: 「……それなんだがちょっといいか？」とビスコが立ち上がり、切符を掲げて「私達が夜会に乗り込む、というわけにはいかないだろうか？」
+dialogue:
+- L688「……それなんだがちょっといいか？」
+- L689「切符があるなら私達が夜会に乗り込む、というわけにはいかないだろうか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.9
+  - 1.45
+  - 0.75
+  look:
+  - 4.55
+  - 1.1
+  lens: 26
+  move: ソファとテーブルの間のすき間の西の端の低い所から、立ち上がるビスコを煽る（前はテーブルの天板より低く、テーブルの側面でビスコが隠れていた）
+background: witch-house
+image: null
+refs:
+- bisco
+- marny
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ソファのビスコ
+  end: 切符を掲げるビスコ
+timing:
+  lead: 0.3
+  at:
+    L688: 0.3
+    L689: 3.19

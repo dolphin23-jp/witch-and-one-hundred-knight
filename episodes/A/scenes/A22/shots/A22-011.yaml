@@ -1,0 +1,40 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-011
+scene: A22
+tc: 246.6
+sec: 14.0
+kind: M
+shot: 全身（アルレッキーノ・煽り）・アルレッキーノ・ビスコ・百騎兵
+acting: ビスコ（画面の外）が切符を掲げて「どうやって使うんだ？」。アルレッキーノが手を広げ、頭に手をやって「駅があるとか……ないとか……」。手前の百騎兵が見上げる
+dialogue:
+- L711「ところで、この切符はどうやって使うんだ？」
+- L712「ワタクシが聞き及んだ限りでは、夜会行きの“夜光列車”が出る駅があるとか……ないとか……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.0
+  - 4.2
+  - 0.9
+  look:
+  - 6.25
+  - 2.2
+  lens: 28
+  move: 玄関の側（南）の低い所から、百騎兵の横にアルレッキーノを煽る。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 一同
+  end: 頭に手をやるアルレッキーノ
+timing:
+  lead: 0.3
+  at:
+    L711: 0.3
+    L712: 4.02

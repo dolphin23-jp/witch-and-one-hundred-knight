@@ -1,0 +1,42 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-013
+scene: A18
+tc: 163.0
+sec: 16.5
+kind: M
+shot: 全身→胸上（アルレッキーノ）・アルレッキーノ・ビスコ・ルッキーニィ
+acting: 腕を組んで考え、テーブルの方へ歩み出る。ビスコが身を乗り出して聞き、アルレッキーノはビスコに向き直り、手を広げて「マーリカ様にございます」と頭を下げる
+dialogue:
+- L563「フム……。やむを得ません。」
+- L564「あのお方のチカラをお借りすることにいたしましょう。」
+- L565「あのお方？誰だ、そいつは？」
+- L566「偉大なる森の魔女……マーリカ様にございます。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.3
+  - 1.62
+  - 0.8
+  look: arlecchino
+  lens: 22
+  move: ビスコの前（テーブルの西）の低い所から、歩み出るアルレッキーノを煽る。名を明かす所で顔へ寄る
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 上を見上げていたアルレッキーノ
+  end: 頭を下げたアルレッキーノの寄り
+timing:
+  lead: 0.3
+  at:
+    L563: 0.3
+    L564: 3.67
+    L565: 7.9
+    L566: 11.78

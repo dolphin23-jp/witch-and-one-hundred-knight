@@ -1,0 +1,41 @@
+# A19 魔女邸・余命（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A19 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A19-004
+scene: A19
+tc: 55.1
+sec: 16.2
+kind: M
+shot: 肩なめ（ビスコ越しにアルレッキーノ・煽り）・ビスコ・アルレッキーノ
+acting: 「リカ様にはお時間がございませんし」。ビスコが振り向き、アルレッキーノがうつむいてから顔を上げる
+dialogue:
+- L631「そうでございますね。リカ様にはお時間がございませんし。」
+- L632「ん？それは、どういう……。」
+- L633「ビスコ様にはまだ申し上げておりませんでしたか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.5
+  - 0.78
+  - 1.45
+  look:
+  - 5.26
+  - 2.15
+  lens: 32
+  move: 丸窓の脇、ビスコの左肩の後ろから、テーブルの脇のアルレッキーノへ。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 窓を見るビスコの背中越しに、テーブルの脇のアルレッキーノ
+  end: アルレッキーノの赤い目
+timing:
+  lead: 0.4
+  at:
+    L631: 0.4
+    L632: 7.25
+    L633: 12.49

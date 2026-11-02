@@ -1,0 +1,41 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-002
+scene: A18
+tc: 9.5
+sec: 12.8
+kind: M
+shot: 引き（東の高い所から見下ろす）・アルレッキーノ・ビスコ・ルッキーニィ・百騎兵
+acting: 階段を下りてくるアルレッキーノにビスコが声をかけ、アルレッキーノは下りきって軽く頭を下げて報告する
+dialogue:
+- L534「どうだった、アルレッキーノ。あいつは、まだ出てこないのか？」
+- L535「はい。お食事をお持ちしたのですが、返事は御座いませんでした。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 7.3
+  - 4.2
+  - 3.2
+  look:
+  - 2.5
+  - 2.0
+  lens: 22
+  move: 東の本棚の上の高さから居間を見下ろし、階段を下りるアルレッキーノを追ってゆっくり下がる（クレーン下げ）
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 朝の居間を階段の上から。ソファのビスコ、テーブルの脇のルッキーニィ、百騎兵
+  end: 階段の下のアルレッキーノと、ソファのビスコ
+timing:
+  lead: 1.6
+  at:
+    L534: 1.6
+    L535: 7.44

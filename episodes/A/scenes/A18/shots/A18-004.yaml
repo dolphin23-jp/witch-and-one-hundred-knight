@@ -1,0 +1,43 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-004
+scene: A18
+tc: 32.7
+sec: 15.8
+kind: M
+shot: 引き（上から見下ろす）・アルレッキーノ・ビスコ・ルッキーニィ・百騎兵
+acting: アルレッキーノが言い直して頭を下げる。ビスコが立ち上がり「そっとしておいてやろう」と上の階を見上げ、ルッキーニィと百騎兵も見上げる
+dialogue:
+- L538「リカ様は、此度、柄にも無く……いえ、いつになく、張り切っておられましたゆえ……。」
+- L539「それが、あんなことになったんだ……。少し、そっとしておいてやろう。」
+- L540「……魔女様。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 0.95
+  - 0.5
+  - 3.6
+  look:
+  - 3.5
+  - 2.75
+  lens: 24
+  move: 階段の上（メタリカの部屋の側）から見下ろす。見上げる顔へゆっくり寄る
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 居間の三人とアルレッキーノ
+  end: 上の階（カメラ）を見上げるみんな
+timing:
+  lead: 0.3
+  at:
+    L538: 0.3
+    L539: 6.56
+    L540: 13.82

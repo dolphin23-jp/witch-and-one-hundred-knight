@@ -1,0 +1,313 @@
+# A20 森の庭園とヘッカヘンネの隠し森（6章後半 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-02）
+# Living Spec「A20 動きの設計（案）」。準備（案）の表の A21。百騎兵が森から戻る所（「お帰りなさい」）にバスルームを置く入れ替えの提案で、A20 にした。
+# 場所は world/hekkahenne-forest-layout.yaml（x: 西0→東40、y: 北0→南110、m）。南の庭園 (20, 95) から北へ一本道:
+#   庭園の円形の台座（半径 4.5、高さ 0.35）→ 隠し森の獣道（y 52〜87）→ 円形の駅 (20, 45)（ホームは半径 6、高さ 0.6。線路は東へ伸びて途切れる。鐘は (16.4, 41.8)）
+#   → 北の獣道（y 22〜37）→ 開けた場所 (20, 14)（切り株と花、上は空が開いている）。台座・ホームの上の人物はキーの z に高さを書く。
+# 光: 庭園 garden、隠し森 deep、駅 station、開けた場所 clearing（カットの lighting）。
+# マーニィは魔女邸から通信で話す（声だけ。小窓は scene.yaml の comm）。シモベの形は仮（アルレッキーノと同じ型、森の色。資料待ち）。
+# 隠し森の魔獣の形も仮（生き物の節の体。暗い紫）。鳥も仮（茶色の節の体）。紙切れは fx の paper。
+scene: A20
+layout: world/hekkahenne-forest-layout.yaml
+map_ymax: 110
+lighting: garden
+places:
+  dais: [20.0, 95.0]
+  hk_in: [20.0, 109.0]       # 庭園へ入る小道の南
+  hk_dais: [20.0, 100.9]     # 台座の南の縁の前
+  sv_bed: [24.6, 97.4]       # シモベが手入れする枯れかけた花壇（bush_bed0 の西）
+  sv_out: [33.5, 98.5]       # シモベが去る東の森
+  gap_n: [20.0, 86.0]        # 庭園の北の出口（隠し森へ）
+  st_in: [20.0, 53.2]        # 駅の広場に出る所
+  station: [20.0, 45.0]
+  bell: [16.4, 41.8]
+  rail_end: [37.5, 45.0]
+  cl_in: [20.0, 24.0]        # 開けた場所に入る所
+  stump_w: [17.0, 13.5]      # 切り株（ネズミが乗る）
+  hk_mouse: [18.0, 15.4]     # 百騎兵がネズミの前にしゃがむ所
+start:
+  hundred-knight: {at: hk_in, face: 0}
+  forest-servant: {at: sv_bed, face: 110}
+  marika-mouse: {at: stump_w, face: 200}
+
+cuts:
+  A20-001:
+    frame: 引き（クレーン下げ）
+    only: [hundred-knight, forest-servant]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.0, 109.0], face: 0, pose: walk}
+        - {t: 4.0, at: hk_dais, face: 0, pose: walk, ease: out}
+        - {t: 4.4, at: hk_dais, face: 40, pose: stand}
+        - {t: 11.2, at: hk_dais, face: 52, pose: stand}
+      forest-servant:
+        - {t: 0.0, at: sv_bed, face: 110, pose: stroke}
+        - {t: 3.8, at: sv_bed, face: 110, pose: stroke}
+        - {t: 4.6, at: sv_bed, face: 230, pose: stand}
+        - {t: 5.2, at: sv_bed, face: 232, pose: bow}
+        - {t: 6.6, at: sv_bed, face: 232, pose: stand}
+        - {t: 11.2, at: sv_bed, face: 232, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [17.5, 104.0, 7.5], look: [21.0, 97.0], look_h: 0.5, lens: 22, frame: 引き}
+      - {t: 4.5, cam: [17.8, 104.5, 1.6], look: [21.5, 98.5], look_h: 1.0, lens: 26}
+      - {t: 11.2, cam: [18.2, 104.0, 1.3], look: [22.0, 99.0], look_h: 1.1, lens: 30}
+    act: {start: 森の木々の上から、薄暗い森の庭園へ, do: 百騎兵が小道から庭園に入ってくる。円形の石の台座のそばで、枯れかけた花壇を手入れしていたシモベが振り向き、お辞儀をして「いらっしゃいませ、お客様」, end: 百騎兵とシモベ}
+    camera: 木の上から庭園へ下りる（クレーン下げ）
+    kind: M
+  A20-002:
+    frame: 肩なめ（百騎兵越しにシモベ）
+    only: [hundred-knight, forest-servant]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_dais, face: 52, pose: stand}
+        - {t: 18.0, at: hk_dais, face: 60, pose: stand}
+        - {t: 24.5, at: hk_dais, face: 85, pose: stand}
+      forest-servant:
+        - {t: 0.0, at: sv_bed, face: 232, pose: stand}
+        - {t: 0.4, at: sv_bed, face: 232, pose: walk}
+        - {t: 2.8, at: [22.0, 99.6], face: 237, pose: walk, ease: out}
+        - {t: 3.1, at: [22.0, 99.6], face: 237, pose: stand}
+        - {t: 5.3, at: [22.0, 99.6], face: 125, pose: gesture}
+        - {t: 9.4, at: [22.0, 99.6], face: 237, pose: stand}
+        - {t: 10.0, at: [22.0, 99.6], face: 237, pose: proud}
+        - {t: 16.6, at: [22.0, 99.6], face: 237, pose: stand}
+        - {t: 17.2, at: [22.0, 99.6], face: 237, pose: bow}
+        - {t: 18.6, at: [22.0, 99.6], face: 237, pose: stand}
+        - {t: 21.4, at: [22.0, 99.6], face: 230, pose: stand}
+        - {t: 21.9, at: [22.0, 99.6], face: 75, pose: walk}
+        - {t: 24.5, at: [25.4, 98.9], face: 80, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [19.5, 102.4, 1.3], look: [22.4, 99.4], look_h: 0.8, lens: 34, frame: 肩なめ}
+      - {t: 3.0, cam: [19.5, 102.4, 1.3], look: [21.6, 99.9], look_h: 0.8, lens: 36}
+      - {t: 21.6, cam: [19.5, 102.4, 1.3], look: [21.6, 99.9], look_h: 0.8, lens: 36}
+      - {t: 24.5, cam: [19.6, 102.3, 1.3], look: [24.4, 99.2], look_h: 0.8, lens: 32}
+    act: {start: 百騎兵の背中越しに、花壇のシモベ, do: シモベが百騎兵のすぐ前まで歩いてきて、枯れかけた花壇を手で示し、胸に手を当てて使命を語る。お辞儀をして、東の森へ去っていく, end: 森の奥へ去るシモベ}
+    camera: 百騎兵の後ろの低い所から。去るシモベを追って振る
+    kind: M
+  A20-003:
+    frame: 全身→引き（後ろから追う）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_dais, face: 85, pose: stand}
+        - {t: 9.0, at: hk_dais, face: 80, pose: stand}
+        - {t: 10.6, at: hk_dais, face: 0, pose: stand}
+        - {t: 12.4, at: hk_dais, face: 0, pose: stand}
+        - {t: 13.2, at: [20.0, 99.7], face: 0, pose: walk}
+        - {t: 13.5, at: [20.0, 99.3], z: 0.35, face: 0, pose: walk}
+        - {t: 20.3, at: [20.0, 91.8], z: 0.35, face: 0, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [22.6, 99.4, 0.75], look: [20.0, 100.9], look_h: 0.7, lens: 30, frame: 全身}
+      - {t: 11.0, cam: [22.55, 99.45, 0.75], look: [20.0, 100.9], look_h: 0.72, lens: 33}
+      - {t: 13.2, cam: [22.5, 99.6, 0.95], look: [20.0, 98.5], look_h: 0.8, lens: 28}
+      - {t: 20.3, cam: [21.8, 101.4, 3.0], look: [20.0, 88.5], look_h: 0.8, lens: 24}
+    act: {start: シモベが去った森, do: 魔女邸のマーニィから通信（「アルレッキーノちゃんがこっちにもいるわよ」）。百騎兵は北へ向き直り、台座を渡って奥の暗い森へ歩き出す, end: 台座を渡る百騎兵と、奥の暗い森}
+    camera: 百騎兵の前（北東）の低い所から、通信を聞く顔を。歩き出すと振って見送り、後ろへ下がりながら高く上がる（クレーン）
+    kind: M
+  A20-004:
+    frame: 全身（前から追う）
+    lighting: deep
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.0, 86.5], face: 0, pose: run}
+        - {t: 2.2, at: [19.8, 77.9], face: 0, pose: run, ease: linear}
+        - {t: 2.62, at: [19.7, 77.0], z: 0.85, face: 0, pose: jump, ease: out}
+        - {t: 3.05, at: [19.7, 76.1], z: 0.0, face: 0, pose: run, ease: in}
+        - {t: 5.0, at: [20.1, 68.6], face: 0, pose: run, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: {follow: hundred-knight, offset: [0.45, -2.8], z: 0.45}, look: hundred-knight, look_h: 0.6, lens: 24, frame: 全身}
+      - {t: 2.6, cam: {follow: hundred-knight, offset: [0.55, -2.2], z: 0.5}, look: hundred-knight, look_h: 0.9, lens: 22, roll: -6}
+      - {t: 5.0, cam: {follow: hundred-knight, offset: [0.5, -3.0], z: 0.5}, look: hundred-knight, look_h: 0.6, lens: 24}
+    act: {start: 薄暗い隠し森の獣道, do: 百騎兵が駆けてくる。道をふさぐ太い根を跳び越える（台詞なし）, end: 駆け続ける百騎兵}
+    camera: 前を後ろ向きに下がりながら、駆けてくる百騎兵を低く追う。跳び越える所で少し傾ける
+    kind: A
+  A20-005:
+    frame: 全身→寄り
+    lighting: deep
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.1, 70.2], face: 0, pose: run}
+        - {t: 0.75, at: [20.1, 68.9], face: 0, pose: run, ease: out}
+        - {t: 0.95, at: [20.1, 68.75], face: 280, pose: ready}
+        - {t: 1.35, at: [20.0, 68.75], face: 270, pose: ready}
+        - {t: 1.5, at: [19.8, 68.7], face: 265, pose: slash}
+        - {t: 1.85, at: [19.8, 68.7], face: 265, pose: slash}
+        - {t: 2.3, at: [19.85, 68.7], face: 265, pose: ready}
+        - {t: 2.9, at: [19.9, 68.6], face: 0, pose: stand}
+        - {t: 3.2, at: [20.0, 68.3], face: 0, pose: run}
+        - {t: 4.2, at: [20.1, 66.0], face: 0, pose: run, ease: linear}
+    creatures:
+      forest-beast:
+        len: 2.2
+        r: 0.22
+        segs: 6
+        keys:
+          - {t: 0.0, at: [14.4, 68.0], z: 0.35}
+          - {t: 0.55, at: [16.4, 68.35], z: 0.45}
+          - {t: 1.2, at: [18.4, 68.65], z: 1.0}
+          - {t: 1.55, at: [19.15, 68.7], z: 0.75}
+          - {t: 1.9, at: [18.3, 68.4], z: 0.9}
+          - {t: 2.6, at: [16.6, 67.9], z: 0.25}
+          - {t: 3.2, at: [14.2, 67.4], z: 0.35}
+    fx:
+      - {kind: spark, at: [19.35, 68.7], z: 0.75, t: [1.5, 1.85]}
+    shake:
+      - {t: [1.5, 1.9], amp: 1.2}
+    cam_keys:
+      - {t: 0.0, cam: [20.5, 64.8, 0.6], look: [19.6, 68.9], look_h: 0.6, lens: 30, frame: 全身}
+      - {t: 1.3, cam: [20.45, 65.2, 0.6], look: [19.4, 68.8], look_h: 0.7, lens: 35}
+      - {t: 1.6, cam: [20.4, 65.6, 0.55], look: [19.3, 68.75], look_h: 0.75, lens: 45, roll: 8}
+      - {t: 2.6, cam: [20.45, 65.3, 0.6], look: [19.4, 68.8], look_h: 0.7, lens: 35, roll: 0}
+      - {t: 4.2, cam: [20.6, 64.4, 0.6], look: [20.0, 66.2], look_h: 0.6, lens: 28}
+    act: {start: 駆ける百騎兵, do: 茂みから魔獣が飛びかかる。百騎兵が踏みとどまって振り向きざまに斬り、魔獣は茂みへ逃げる。百騎兵はまた駆け出す（台詞なし）, end: 駆け去る百騎兵}
+    camera: 獣道の北の低い所から。斬る瞬間にぐっと寄って傾ける
+    kind: A
+  A20-006:
+    frame: 全身→引き
+    lighting: deep
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.1, 62.5], face: 0, pose: run}
+        - {t: 3.2, at: [20.2, 54.8], face: 355, pose: run, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [18.45, 60.3, 2.1], look: hundred-knight, look_h: 0.5, lens: 26, frame: 全身}
+      - {t: 2.4, cam: [18.45, 60.2, 2.1], look: hundred-knight, look_h: 0.5, lens: 26}
+      - {t: 3.2, cam: [18.5, 60.0, 2.1], look: [20.6, 52.0], look_h: 1.2, lens: 24}
+    act: {start: 獣道, do: 百騎兵が目の前を右から左へ駆け抜け、明るい方へ抜けていく（台詞なし）, end: 木々の間の先に開けた所}
+    camera: 獣道の西の脇の少し高い所から、目の前を駆け抜ける百騎兵を振り向くように追う（流し撮り）
+    kind: M
+  A20-007:
+    frame: 全身→引き（クレーン上げ）
+    lighting: station
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.0, 54.6], face: 0, pose: run}
+        - {t: 1.2, at: [20.0, 52.0], face: 0, pose: run, ease: out}
+        - {t: 1.5, at: [20.0, 52.0], face: 0, pose: stand}
+        - {t: 3.0, at: [20.0, 52.0], face: 320, pose: stand}
+        - {t: 4.6, at: [20.0, 52.0], face: 40, pose: stand}
+        - {t: 5.4, at: [20.0, 52.0], face: 60, pose: walk}
+        - {t: 8.0, at: [23.2, 50.6], face: 60, pose: walk, ease: out}
+        - {t: 8.4, at: [23.2, 50.6], face: 75, pose: stand}
+        - {t: 11.8, at: [23.2, 50.6], face: 75, pose: look_up}
+        - {t: 12.6, at: [23.2, 50.6], face: 285, pose: stand}
+        - {t: 13.0, at: [22.6, 50.9], face: 285, pose: run}
+        - {t: 15.5, at: [15.6, 51.6], face: 300, pose: run, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [20.6, 56.0, 1.4], look: [20.0, 45.0], look_h: 1.0, lens: 24, frame: 全身}
+      - {t: 4.6, cam: [21.4, 57.2, 6.0], look: [21.5, 45.0], look_h: 0.4, lens: 22}
+      - {t: 15.5, cam: [21.0, 57.0, 6.8], look: [21.0, 46.0], look_h: 0.0, lens: 22}
+    act: {start: 獣道から抜ける百騎兵, do: 森の中に開けた所。百騎兵が立ち止まって見回すと、円形の石のホームと、東へ伸びて森の中で途切れる線路（「こんなところに駅……？」）。線路の先を見てから、ホームの西を回って奥へ駆けていく, end: 森の中の円形の駅の全景}
+    camera: 百騎兵の後ろの低い所から、高く上がって駅の全景を見せる（クレーン上げ）
+    kind: A
+  A20-008:
+    frame: 全身→寄り（ネズミの高さ）
+    lighting: clearing
+    only: [hundred-knight, marika-mouse]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [20.0, 24.0], face: 345, pose: walk}
+        - {t: 2.6, at: [18.4, 16.6], face: 330, pose: walk}
+        - {t: 4.6, at: [17.45, 14.3], face: 337, pose: walk, ease: out}
+        - {t: 4.9, at: [17.45, 14.3], face: 330, pose: stand}
+        - {t: 6.2, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 11.5, at: [17.45, 14.3], face: 330, pose: crouch}
+      marika-mouse:
+        - {t: 0.0, at: stump_w, z: 0.6, face: 200, pose: stand}
+        - {t: 2.4, at: stump_w, z: 0.6, face: 160, pose: stand}
+        - {t: 2.7, at: stump_w, z: 0.72, face: 155, pose: hop}
+        - {t: 3.0, at: stump_w, z: 0.6, face: 155, pose: stand}
+        - {t: 3.3, at: stump_w, z: 0.72, face: 155, pose: hop}
+        - {t: 3.6, at: stump_w, z: 0.6, face: 155, pose: stand}
+        - {t: 11.5, at: stump_w, z: 0.6, face: 152, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [16.0, 14.0, 0.65], look: [17.12, 13.85], look_h: 0.62, lens: 28, frame: 全身}
+      - {t: 4.8, cam: [16.0, 14.0, 0.65], look: [17.12, 13.85], look_h: 0.62, lens: 28}
+      - {t: 11.5, cam: [16.1, 13.95, 0.66], look: [17.12, 13.85], look_h: 0.6, lens: 30}
+    act: {start: 切り株と花の開けた場所, do: 百騎兵が入ってくると、切り株の上の白いネズミが鳴いて跳ねる（「もしかして、それが森の魔女ちゃん……？」）。百騎兵がしゃがんでのぞき込む, end: ネズミと、のぞき込む百騎兵}
+    camera: 切り株の西、ネズミの高さの低い所から、鳴くネズミを横に。右から百騎兵が入ってきてしゃがむ。二人へゆっくり寄る
+    kind: M
+  A20-009:
+    frame: 全身（低い）→空・見せ場
+    lighting: clearing
+    only: [hundred-knight, marika-mouse]
+    keys:
+      marika-mouse:
+        - {t: 0.0, at: stump_w, z: 0.6, face: 152, pose: stand}
+        - {t: 0.3, at: stump_w, z: 0.74, face: 152, pose: hop}
+        - {t: 0.6, at: stump_w, z: 0.6, face: 140, pose: stand}
+        - {t: 0.9, at: stump_w, z: 0.74, face: 170, pose: hop}
+        - {t: 1.2, at: stump_w, z: 0.6, face: 152, pose: stand}
+        - {t: 2.9, at: stump_w, z: 0.6, face: 60, pose: stand}
+        - {t: 4.6, at: stump_w, z: 0.6, face: 60, pose: stand}
+        - {t: 5.4, at: [15.5, 15.0], z: 2.8, face: 300, pose: stand}
+        - {t: 7.5, at: [8.0, 20.0], z: 9.8, face: 300, pose: stand}
+        - {t: 9.9, at: [2.0, 24.0], z: 15.0, face: 300, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 3.0, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 3.4, at: [17.45, 14.3], face: 340, pose: look_up}
+        - {t: 4.5, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 4.75, at: [17.35, 14.05], z: 0.6, face: 320, pose: arms_up, ease: out}
+        - {t: 5.15, at: [17.25, 13.9], z: 1.15, face: 315, pose: arms_up, ease: out}
+        - {t: 5.6, at: [17.25, 13.85], z: 0.0, face: 315, pose: crouch, ease: in}
+        - {t: 6.0, at: [17.25, 13.85], face: 310, pose: stand}
+        - {t: 6.6, at: [17.25, 13.85], face: 305, pose: look_up}
+        - {t: 9.9, at: [17.25, 13.85], face: 300, pose: look_up}
+    creatures:
+      bird:
+        len: 0.9
+        r: 0.2
+        segs: 4
+        keys:
+          - {t: 0.0, at: [34.0, -2.0], z: 16.0}
+          - {t: 2.6, at: [25.0, 6.0], z: 9.0}
+          - {t: 4.0, at: [19.5, 11.5], z: 3.0}
+          - {t: 4.6, at: [17.0, 13.5], z: 0.85}
+          - {t: 5.4, at: [15.5, 15.0], z: 3.0}
+          - {t: 7.5, at: [8.0, 20.0], z: 10.0}
+          - {t: 9.9, at: [2.0, 24.0], z: 15.2}
+    cam_keys:
+      - {t: 0.0, cam: [20.4, 15.2, 0.6], look: [17.1, 13.6], look_h: 0.75, lens: 26, frame: 全身}
+      - {t: 2.9, cam: [20.4, 15.2, 0.6], look: [17.2, 13.6], look_h: 1.0, lens: 26}
+      - {t: 3.9, cam: [20.4, 15.2, 0.6], look: [19.6, 11.4], look_h: 3.1, lens: 22, roll: 0}
+      - {t: 4.7, cam: [20.3, 15.3, 0.6], look: [17.2, 13.8], look_h: 1.2, lens: 22, roll: -8}
+      - {t: 5.6, cam: [20.3, 15.3, 0.65], look: [15.3, 15.1], look_h: 3.2, lens: 22, roll: -3}
+      - {t: 7.5, cam: [20.25, 15.35, 0.68], look: [8.0, 20.0], look_h: 10.0, lens: 24, roll: 0}
+      - {t: 9.9, cam: [20.2, 15.4, 0.7], look: [2.0, 24.0], look_h: 15.2, lens: 26, roll: 0}
+    shake:
+      - {t: [4.55, 4.9], amp: 1.0}
+    act: {start: 切り株の上のネズミと、しゃがむ百騎兵, do: ネズミが跳ねて何か訴え、ふと空を見上げる。鳥が急降下してネズミをさらう。百騎兵が跳んで手を伸ばすが届かず、鳥は空へ飛び去る, end: 空を見上げる百騎兵}
+    camera: 東の低い所から。鳥が来る所で空へ振り、さらう瞬間に傾ける。飛び去る鳥を追う
+    kind: A
+  A20-010:
+    frame: 寄り（舞い落ちる紙切れ）→全身
+    lighting: clearing
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [17.25, 13.85], face: 300, pose: look_up}
+        - {t: 2.6, at: [17.25, 13.85], face: 330, pose: look_up}
+        - {t: 3.6, at: [17.25, 13.85], face: 40, pose: stand}
+        - {t: 4.0, at: [17.25, 13.85], face: 45, pose: walk}
+        - {t: 5.0, at: [17.65, 14.7], face: 45, pose: walk, ease: out}
+        - {t: 5.6, at: [17.65, 14.7], face: 40, pose: crouch}
+        - {t: 7.2, at: [17.65, 14.7], face: 40, pose: crouch}
+        - {t: 8.0, at: [17.65, 14.7], face: 40, pose: hold}
+        - {t: 12.6, at: [17.65, 14.7], face: 40, pose: hold}
+        - {t: 13.4, at: [17.65, 14.7], face: 170, pose: stand}
+        - {t: 15.3, at: [17.65, 14.7], face: 175, pose: stand}
+    fx:
+      - {kind: paper, at: [16.2, 14.2], z: 6.0, t: [0.2, 3.4], drift: [1.8, 0.85], sway: 0.4, swings: 3, gone: 7.2}
+    cam_keys:
+      - {t: 0.0, cam: [18.4, 16.6, 1.9], look: [16.4, 14.3], look_h: 5.6, lens: 30, frame: 寄り}
+      - {t: 1.8, cam: [18.4, 16.6, 1.5], look: [17.0, 14.6], look_h: 3.0, lens: 30}
+      - {t: 3.4, cam: [18.5, 16.5, 0.85], look: [18.0, 15.05], look_h: 0.1, lens: 34}
+      - {t: 7.2, cam: [18.6, 16.6, 0.8], look: [17.8, 14.9], look_h: 0.4, lens: 32}
+      - {t: 15.3, cam: [19.3, 17.4, 1.1], look: [17.7, 14.7], look_h: 0.6, lens: 28}
+    act: {start: 鳥が去った空, do: 紙切れがひらひらと舞い落ちてくる。百騎兵が見上げ、足元に落ちた紙切れを拾う（「それは……？」）。マーニィに戻ってくるよう言われ、紙切れを持って振り向く, end: 紙切れを持った百騎兵}
+    camera: 舞い落ちる紙切れを追って空から足元へ。拾う百騎兵へ寄り、最後に少し引く
+    kind: M

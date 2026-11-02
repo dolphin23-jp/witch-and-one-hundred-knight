@@ -1,0 +1,44 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-010b
+scene: A22
+tc: 230.8
+sec: 15.8
+kind: M
+shot: 胸上（ルッキーニィ）・ルッキーニィ・マーニィ・ビスコ・アルレッキーノ・百騎兵
+acting: 跳ねて「あと一人はどうするんです？」と目を輝かせる。マーニィは顔をのぞき込んで「すごく行きたそうな顔してるわよ。でも」とビスコを指さす。ルッキーニィはしょんぼり「そ、そうですよね……」
+dialogue:
+- L708「それで、あと一人はどうするんです？」
+- L709「すごく行きたそうな顔してるわよ。でも、今回はビスコちゃんが行った方がよさそうね。」
+- L710「そ、そうですよね……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.75
+  - 3.7
+  - 1.3
+  look:
+  - 3.0
+  - 2.85
+  lens: 26
+  move: 南西（階段の下の脇）から、ルッキーニィと、その前の南東に浮いてのぞき込むマーニィを（奥にビスコ）。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- luckiny
+- marny
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 手を挙げていたルッキーニィ
+  end: しょんぼりするルッキーニィ
+timing:
+  lead: 0.3
+  at:
+    L708: 0.3
+    L709: 4.24
+    L710: 12.51

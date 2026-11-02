@@ -1,0 +1,38 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-017
+scene: A18
+tc: 216.3
+sec: 7.5
+kind: M
+shot: 胸上（ビスコ）・ビスコ
+acting: 上の階を見上げ、心の声「あいつ、森の魔女を殺してなんかいなかったんじゃないか」。小さくほほえんで目を伏せる
+dialogue:
+- L574「（なんだ……あいつ、森の魔女を殺してなんかいなかったんじゃないか。）」
+- L575「（そうか……。）」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.35
+  - 1.85
+  - 1.2
+  look:
+  - 3.6
+  - 1.35
+  lens: 38
+  move: 西（階段の側）の少し低い所から、上の階を見上げるビスコの顔を斜め前から。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+overlays: []
+fallback: null
+act:
+  start: ビスコ
+  end: 目を伏せたビスコ
+timing:
+  lead: 0.4
+  at:
+    L574: 0.4
+    L575: 6.3

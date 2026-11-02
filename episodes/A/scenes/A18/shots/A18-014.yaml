@@ -1,0 +1,42 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-014
+scene: A18
+tc: 179.5
+sec: 8.4
+kind: M
+transition:
+  kind: fade
+  sec: 0.6
+title:
+  text: 第2幕 第6章\n魔女と魔女たちの夜会
+  at: 1.0
+  sec: 6.2
+shot: 寄り（扉）・章の題・人物なし
+acting: 扉の下のすき間から緑の光が明滅し、何かが煮える音。章の題「第6章 魔女と魔女たちの夜会」（題字は合成）
+dialogue:
+- L567「第2幕 第6章 魔女と魔女たちの夜会」
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.1
+  - -2.75
+  - 1.25
+  look:
+  - 17.0
+  - -0.5
+  lens: 28
+  move: 廊下から扉へゆっくり寄る
+background: witch-house
+image: null
+refs: []
+overlays: []
+fallback: null
+act:
+  start: 2階の廊下、閉じた扉と冷めた食事
+  end: 扉と光
+timing:
+  lead: 0.8
+  at:
+    L567: 0.8

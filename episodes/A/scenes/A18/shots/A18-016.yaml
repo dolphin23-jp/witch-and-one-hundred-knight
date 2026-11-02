@@ -1,0 +1,41 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-016
+scene: A18
+tc: 203.9
+sec: 12.4
+kind: M
+shot: 全身・アルレッキーノ・ビスコ・ルッキーニィ・百騎兵
+acting: 百騎兵の方を手で示し（百騎兵がうなずく）、玄関の方へ歩きながら隠し森のことを話し、頭を下げる
+dialogue:
+- L571「……。以前、百騎兵様がマーリカ様と対峙された庭園の奥に、“ヘッカヘンネの隠し森”がございます。」
+- L572「そこに行けば、何かわかるかもしれません。はい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.6
+  - 6.3
+  - 2.4
+  look:
+  - 3.8
+  - 3.0
+  lens: 24
+  move: 玄関の脇（南東）の高い所から、居間を北へ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノ
+  end: 頭を下げるアルレッキーノ
+timing:
+  lead: 0.3
+  at:
+    L571: 0.3
+    L572: 7.99
