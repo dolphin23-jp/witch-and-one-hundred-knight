@@ -1,0 +1,552 @@
+# A22 魔女邸・切符（6章後半 回1 の最後）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-02）
+# Living Spec「A22 動きの設計（案）」。準備（案）の表の A22（「締め上げて屈服」の往復は、「交渉」の受けなので残した。「身だしなみ」は削る）。
+# 場所: 居間（world/witch-house-3d-layout.yaml）。夕方（evening、world/witch-house-6b-extra.yaml で足した光）。
+#   百騎兵はバスルーム（A21）から、玄関の側（南）の廊下を通って居間に入る形にした（下絵では玄関から入る）。
+# 長い会話を向きを変えて撮るため、006・007・010・011 と 002 をそれぞれ2つに分けた（b）。
+# ルッキーニィが部屋へ駆けてすぐ戻るギャグ（003）は、階段の上が画面の外になるよう、東の低い所からの引きで撮る。
+# 「まるで、お伽の国のお姫様だわ」（009）はビスコが王女という伏線。ビスコの顔へ寄る。
+# 漫符（003 のルッキーニィの汗、010 のビスコの汗、008 のビスコのため息）は合成（D-027）。
+scene: A22
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+  - {file: world/witch-house-6b-extra.yaml, offset: [0.0, 0.0]}
+map_ymax: 11
+lighting: evening
+places:
+  table: [4.2, 2.4]
+  b_sofa: [5.0, 0.8]
+  b_meet: [5.4, 2.0]       # ビスコが百騎兵を迎えて切符を受け取る所（テーブルの北東）
+  b_sofa2: [4.6, 0.8]      # ため息をついて座り直す所
+  b_up: [4.6, 1.25]        # 立ち上がった所
+  b_west: [2.9, 1.9]       # 考えながら歩いて立つ所（テーブルの西）
+  a_shelf: [7.1, 2.8]      # アルレッキーノ。東の本棚の前
+  l_w: [3.2, 3.05]         # ルッキーニィ。テーブルの西
+  l_stair: [2.45, 3.3]     # 階段から戻って立つ所（003 の画面の左の手前）
+  l_sw: [2.6, 2.9]         # テーブルの南西
+  hk_mid: [5.85, 2.55]     # 百騎兵。切符を渡した所（テーブルの東）
+  door_in: [6.9, 6.7]
+start:
+  bisco: {at: b_sofa, face: 180}
+  arlecchino: {at: a_shelf, face: 250}
+  luckiny: {at: l_w, face: 70}
+  hundred-knight: {at: [6.9, 7.7], face: 0}
+  marny: {at: [6.9, 8.4], face: 0}
+
+cuts:
+  A22-001:
+    frame: 全身
+    only: [bisco, arlecchino, luckiny, hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [6.9, 7.6], face: 340, pose: walk}
+        - {t: 2.0, at: [6.5, 5.4], face: 340, pose: walk}
+        - {t: 3.6, at: [6.1, 3.9], face: 320, pose: walk, ease: out}
+        - {t: 3.9, at: [6.1, 3.9], face: 300, pose: stand}
+        - {t: 19.2, at: [6.1, 3.9], face: 300, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_sofa, z: 0.42, face: 180, pose: sit}
+        - {t: 1.0, at: b_sofa, z: 0.42, face: 150, pose: sit}
+        - {t: 1.8, at: [5.0, 1.25], face: 150, pose: stand, ease: inout}
+        - {t: 2.2, at: [5.0, 1.25], face: 150, pose: walk}
+        - {t: 3.4, at: b_meet, face: 160, pose: walk, ease: out}
+        - {t: 3.7, at: b_meet, face: 160, pose: stand}
+        - {t: 7.2, at: b_meet, face: 160, pose: stand}
+        - {t: 8.0, at: b_meet, face: 95, pose: stand}
+        - {t: 13.4, at: b_meet, face: 95, pose: stand}
+        - {t: 14.0, at: b_meet, face: 250, pose: stand}
+        - {t: 19.2, at: b_meet, face: 250, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: a_shelf, face: 250, pose: stand}
+        - {t: 7.0, at: a_shelf, face: 260, pose: stand}
+        - {t: 7.6, at: a_shelf, face: 260, pose: gesture}
+        - {t: 12.4, at: a_shelf, face: 255, pose: stand}
+        - {t: 19.2, at: a_shelf, face: 255, pose: stand}
+      luckiny:
+        - {t: 0.0, at: l_w, face: 70, pose: stand}
+        - {t: 2.0, at: l_w, face: 110, pose: stand}
+        - {t: 13.4, at: l_w, face: 110, pose: stand}
+        - {t: 14.2, at: l_w, face: 120, pose: look_down}
+        - {t: 19.2, at: l_w, face: 120, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [4.6, 6.6, 2.6], look: [4.8, 2.6], look_h: 0.9, lens: 24, frame: 全身}
+      - {t: 19.2, cam: [4.65, 6.2, 2.3], look: [4.85, 2.5], look_h: 0.95, lens: 26}
+    act: {start: 夕方の居間, do: 紙切れを持った百騎兵がカメラの右脇（玄関）から入ってくる。ビスコがソファから立ち上がって迎え「森の魔女殿にはお会いできたのか？」。アルレッキーノが本棚の前から「ネズミは鳥にさらわれたと」と答え、ルッキーニィはうなだれる, end: うなだれるルッキーニィ}
+    camera: 玄関の側（南）の高い所から居間を北へ広く。ゆっくり下りながら寄る
+    kind: M
+  A22-002:
+    frame: 全身（二人）→手元
+    only: [bisco, hundred-knight, marny, arlecchino]
+    keys:
+      marny:
+        - {t: 0.0, at: [6.6, 6.0], z: 1.05, face: 330, pose: stand}
+        - {t: 1.6, at: [5.95, 3.1], z: 1.15, face: 320, pose: arms_up, ease: inout}
+        - {t: 5.6, at: [5.95, 3.1], z: 1.15, face: 300, pose: gesture}
+        - {t: 11.8, at: [5.95, 3.1], z: 1.15, face: 310, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [6.1, 3.9], face: 300, pose: stand}
+        - {t: 2.0, at: [6.1, 3.9], face: 340, pose: walk}
+        - {t: 3.4, at: hk_mid, face: 320, pose: walk, ease: out}
+        - {t: 3.7, at: hk_mid, face: 320, pose: hold}
+        - {t: 5.6, at: hk_mid, face: 320, pose: hold}
+        - {t: 6.0, at: hk_mid, face: 320, pose: stand}
+        - {t: 11.8, at: hk_mid, face: 315, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_meet, face: 250, pose: stand}
+        - {t: 3.0, at: b_meet, face: 140, pose: stand}
+        - {t: 4.6, at: b_meet, face: 140, pose: hold}
+        - {t: 11.8, at: b_meet, face: 200, pose: hold}
+      arlecchino:
+        - {t: 0.0, at: a_shelf, face: 255, pose: stand}
+        - {t: 11.8, at: a_shelf, face: 255, pose: stand}
+      luckiny:
+        - {t: 0.0, at: l_w, face: 120, pose: look_down}
+        - {t: 4.0, at: l_w, face: 20, pose: walk}
+        - {t: 6.4, at: [3.3, 1.45], face: 10, pose: walk, ease: out}
+        - {t: 6.8, at: [3.3, 1.45], face: 75, pose: stand}
+        - {t: 11.8, at: [3.3, 1.45], face: 75, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.3, 4.3, 1.4], look: [5.7, 2.5], look_h: 1.05, lens: 30, frame: 全身}
+      - {t: 6.4, cam: [4.45, 4.05, 1.35], look: [5.55, 2.35], look_h: 1.2, lens: 34}
+      - {t: 11.8, cam: [4.75, 3.5, 1.3], look: [5.4, 2.15], look_h: 1.15, lens: 36}
+    act: {start: うなだれたみんな, do: 玄関の方からマーニィが飛んできて「紙切れをみせてよ」。百騎兵が紙切れをビスコに渡し、ビスコが広げて「切符じゃないのか？」。ルッキーニィもテーブルの北西へ寄ってくる（画面の外）, end: 切符を見るビスコの手元と顔}
+    camera: テーブルの南東から、向き合うビスコと百騎兵を横に。渡す所から、ビスコの手元へ寄る
+    kind: M
+  A22-002b:
+    frame: 胸上（輪になってのぞき込む）
+    only: [bisco, hundred-knight, marny, arlecchino, luckiny]
+    keys:
+      marny:
+        - {t: 0.0, at: [5.95, 3.1], z: 1.15, face: 310, pose: stand}
+        - {t: 0.6, at: [4.95, 2.2], z: 1.25, face: 70, pose: proud, ease: inout}
+        - {t: 15.3, at: [4.95, 2.2], z: 1.25, face: 70, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: a_shelf, face: 255, pose: stand}
+        - {t: 3.8, at: a_shelf, face: 250, pose: walk}
+        - {t: 5.4, at: [6.4, 2.15], face: 250, pose: walk, ease: out}
+        - {t: 5.7, at: [6.4, 2.15], face: 250, pose: lean}
+        - {t: 9.2, at: [6.4, 2.15], face: 250, pose: stand}
+        - {t: 15.3, at: [6.4, 2.15], face: 250, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_meet, face: 200, pose: hold}
+        - {t: 9.2, at: b_meet, face: 150, pose: hold}
+        - {t: 9.8, at: b_meet, face: 140, pose: arms_up}
+        - {t: 15.3, at: b_meet, face: 140, pose: arms_up}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 315, pose: stand}
+        - {t: 15.3, at: hk_mid, face: 315, pose: stand}
+      luckiny:
+        - {t: 0.0, at: [3.3, 1.45], face: 75, pose: stand}
+        - {t: 15.3, at: [3.3, 1.45], face: 80, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [7.25, 4.9, 1.4], look: [5.6, 2.2], look_h: 1.2, lens: 28, frame: 胸上}
+      - {t: 15.3, cam: [7.1, 4.7, 1.4], look: [5.55, 2.2], look_h: 1.25, lens: 31}
+    act: {start: 切符を見るビスコ, do: ビスコの左に浮いたマーニィが「やっぱりそうね」。アルレッキーノも寄ってきてのぞき込み「夜会行き列車の切符」。ビスコが顔を上げて「夜会へ行けるってことか？」と切符を掲げる。奥にルッキーニィ, end: 切符を掲げるビスコ}
+    camera: 南東の低い所から、輪になってのぞき込む顔を。ゆっくり寄る
+    kind: M
+  A22-003:
+    frame: 引き（低い）
+    only: [luckiny, bisco, hundred-knight, marny, arlecchino]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [3.3, 1.45], face: 80, pose: stand}
+        - {t: 0.4, at: [3.3, 1.45], face: 110, pose: stand}
+        - {t: 0.7, at: [3.3, 1.45], z: 0.2, face: 110, pose: hop}
+        - {t: 1.0, at: [3.3, 1.45], z: 0.0, face: 110, pose: stand}
+        - {t: 1.3, at: [3.3, 1.45], z: 0.2, face: 110, pose: hop}
+        - {t: 1.6, at: [3.3, 1.45], z: 0.0, face: 110, pose: arms_up}
+        - {t: 5.9, at: [3.3, 1.45], face: 115, pose: arms_up}
+        - {t: 6.4, at: [3.3, 1.45], face: 215, pose: stand}
+        - {t: 8.6, at: [3.3, 1.45], face: 215, pose: stand}
+        - {t: 9.0, at: [3.2, 1.75], face: 200, pose: run}
+        - {t: 9.7, at: [2.6, 3.3], face: 205, pose: run}
+        - {t: 10.2, at: [1.75, 4.75], face: 220, pose: run}
+        - {t: 10.5, at: [1.0, 5.55], face: 220, pose: run}
+        - {t: 10.7, at: [0.78, 5.2], z: 0.12, face: 0, pose: run}
+        - {t: 12.3, at: [0.75, 1.1], z: 2.68, face: 0, pose: run, ease: linear}
+        - {t: 12.8, at: [0.55, 0.5], z: 2.8, face: 330, pose: walk}
+        - {t: 22.0, at: [0.55, 0.5], z: 2.8, face: 330, pose: walk}
+        - {t: 22.4, at: [0.75, 1.1], z: 2.68, face: 180, pose: walk}
+        - {t: 26.6, at: [0.8, 5.0], z: 0.25, face: 180, pose: walk, ease: linear}
+        - {t: 27.2, at: [1.2, 5.45], z: 0.0, face: 120, pose: walk}
+        - {t: 28.6, at: l_stair, face: 80, pose: walk, ease: out}
+        - {t: 29.2, at: l_stair, face: 120, pose: look_down}
+      bisco:
+        - {t: 0.0, at: b_meet, face: 140, pose: arms_up}
+        - {t: 1.0, at: b_meet, face: 250, pose: hold}
+        - {t: 9.0, at: b_meet, face: 250, pose: hold}
+        - {t: 12.4, at: b_meet, face: 240, pose: cross}
+        - {t: 29.2, at: b_meet, face: 240, pose: cross}
+      marny:
+        - {t: 0.0, at: [4.95, 2.2], z: 1.25, face: 70, pose: stand}
+        - {t: 10.2, at: [5.0, 3.35], z: 1.2, face: 250, pose: stand, ease: inout}
+        - {t: 18.4, at: [5.0, 3.35], z: 1.2, face: 250, pose: proud}
+        - {t: 29.2, at: [5.0, 3.35], z: 1.2, face: 245, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 2.15], face: 250, pose: stand}
+        - {t: 22.2, at: [6.4, 2.15], face: 250, pose: stand}
+        - {t: 23.0, at: [6.4, 2.15], face: 250, pose: bow}
+        - {t: 24.6, at: [6.4, 2.15], face: 250, pose: stand}
+        - {t: 29.2, at: [6.4, 2.15], face: 245, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 315, pose: stand}
+        - {t: 9.4, at: hk_mid, face: 255, pose: stand}
+        - {t: 29.2, at: hk_mid, face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [1.9, 4.4, 1.3], look: [5.0, 2.4], look_h: 1.05, lens: 22, frame: 引き}
+      - {t: 29.2, cam: [1.95, 4.35, 1.3], look: [4.95, 2.4], look_h: 1.05, lens: 23}
+    act: {start: 切符を掲げるビスコ, do: テーブルの北西のルッキーニィが百騎兵の方へ跳ねて喜び、「早速魔女様にお伝えしましょう」とこちら（階段）を向いて、カメラの脇を駆け抜けて背後の階段へ。マーニィ「あらあら」、ビスコ「浮き沈みの激しいヤツだな」。少しして、ルッキーニィがとぼとぼとカメラの脇から画面の左の手前に戻ってくる（台詞なしのギャグ）, end: うなだれて戻ったルッキーニィ}
+    camera: 階段の下（南西）から東へ、テーブルの一同を据えて撮る（同じ画のまま）。ルッキーニィはカメラの脇を駆け抜けて背後の階段へ消え、またカメラの脇から画面の左の手前に戻る
+    kind: M
+  A22-004:
+    frame: 胸上（ルッキーニィ）
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_stair, face: 120, pose: look_down}
+        - {t: 3.6, at: l_stair, face: 115, pose: look_down}
+        - {t: 8.9, at: l_stair, face: 110, pose: look_down}
+      marny:
+        - {t: 0.0, at: [5.0, 3.35], z: 1.2, face: 245, pose: stand}
+        - {t: 1.2, at: [3.0, 3.0], z: 1.15, face: 240, pose: stand, ease: inout}
+        - {t: 8.9, at: [3.0, 3.0], z: 1.15, face: 240, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.1, 4.7, 0.95], look: [2.75, 3.2], look_h: 1.15, lens: 30, frame: 胸上}
+      - {t: 8.9, cam: [4.0, 4.6, 0.95], look: [2.6, 3.25], look_h: 1.18, lens: 36}
+    act: {start: 階段の下のルッキーニィ, do: マーニィが飛んできて「あら？早かったわね」。ルッキーニィはうなだれて「返事はありませんでした……」, end: うなだれるルッキーニィ}
+    camera: テーブルの南東の低い所から、うなだれるルッキーニィの顔を斜め前から。ゆっくり寄る
+    kind: M
+  A22-005:
+    frame: 全身（ソファ）
+    only: [bisco, marny, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_meet, face: 240, pose: cross}
+        - {t: 0.4, at: b_meet, face: 300, pose: walk}
+        - {t: 2.4, at: [4.6, 1.3], face: 300, pose: walk, ease: out}
+        - {t: 2.7, at: [4.6, 1.3], face: 180, pose: stand}
+        - {t: 3.4, at: b_sofa2, z: 0.42, face: 180, pose: sit, ease: in}
+        - {t: 16.3, at: b_sofa2, z: 0.42, face: 180, pose: sit}
+      marny:
+        - {t: 0.0, at: [3.0, 3.0], z: 1.15, face: 240, pose: stand}
+        - {t: 7.6, at: [3.0, 3.0], z: 1.15, face: 40, pose: stand}
+        - {t: 9.0, at: [4.0, 1.75], z: 1.0, face: 200, pose: cross, ease: inout}
+        - {t: 16.3, at: [4.0, 1.75], z: 1.0, face: 205, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 250, pose: stand}
+        - {t: 3.0, at: hk_mid, face: 300, pose: stand}
+        - {t: 16.3, at: hk_mid, face: 300, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.3, 3.6, 0.9], look: [4.7, 1.2], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 16.3, cam: [4.25, 3.55, 0.95], look: [4.45, 1.3], look_h: 1.05, lens: 28}
+    act: {start: うなだれたみんな, do: ビスコがため息をついてソファへ戻って座り込む。マーニィがソファの前へ漂ってきて、ビスコに背を向けて腕を組み「素直に受け取るとも思えなかったけどね」, end: ソファのビスコと、背を向けて腕を組むマーニィ}
+    camera: テーブルの南の低い所から、北のソファを
+    kind: M
+  A22-006:
+    frame: 胸上（ルッキーニィ）→寄り（マーニィ）
+    only: [luckiny, marny, bisco, arlecchino, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_stair, face: 110, pose: look_down}
+        - {t: 0.4, at: l_stair, face: 30, pose: walk}
+        - {t: 1.8, at: l_sw, face: 45, pose: walk, ease: out}
+        - {t: 2.1, at: l_sw, face: 50, pose: stand}
+        - {t: 14.9, at: l_sw, face: 50, pose: stand}
+      marny:
+        - {t: 0.0, at: [4.0, 1.75], z: 1.0, face: 205, pose: cross}
+        - {t: 6.8, at: [4.0, 1.75], z: 1.0, face: 230, pose: stand}
+        - {t: 7.6, at: [4.0, 1.75], z: 1.15, face: 290, pose: stand}
+        - {t: 14.9, at: [4.0, 1.75], z: 1.15, face: 290, pose: cross}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 2.15], face: 245, pose: stand}
+        - {t: 14.9, at: [6.4, 2.15], face: 250, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 300, pose: stand}
+        - {t: 14.9, at: hk_mid, face: 290, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_sofa2, z: 0.42, face: 180, pose: sit}
+        - {t: 14.9, at: b_sofa2, z: 0.42, face: 200, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [3.0, 1.25, 1.45], look: [2.6, 2.95], look_h: 1.1, lens: 30, frame: 胸上}
+      - {t: 7.0, cam: [3.0, 1.25, 1.45], look: [2.65, 2.9], look_h: 1.1, lens: 31}
+      - {t: 8.6, cam: [3.0, 1.27, 1.45], look: [4.0, 1.75], look_h: 1.3, lens: 32}
+      - {t: 14.9, cam: [3.05, 1.3, 1.5], look: [4.0, 1.75], look_h: 1.38, lens: 38}
+    act: {start: ソファのビスコとマーニィ, do: ルッキーニィがおずおずと一歩出て「魔女様は森の魔女様とどのようなご関係なんですか？」。マーニィは少し高く浮いて、階段の上の方を見ながら「恨みに恨んでいる」, end: 階段の上を見るマーニィの顔}
+    camera: ソファの西の端の前から、ルッキーニィの顔を。マーニィが答える所で東へ振って、階段の上を見るマーニィの顔へ寄る
+    kind: M
+  A22-006b:
+    frame: 胸上→寄り（マーニィ）
+    only: [marny, bisco]
+    keys:
+      marny:
+        - {t: 0.0, at: [4.0, 1.75], z: 1.15, face: 290, pose: cross}
+        - {t: 0.4, at: [4.0, 1.75], z: 1.15, face: 30, pose: stand}
+        - {t: 3.6, at: [4.0, 1.75], z: 1.15, face: 30, pose: stand}
+        - {t: 4.6, at: [4.0, 1.75], z: 1.15, face: 150, pose: look_down}
+        - {t: 11.6, at: [4.0, 1.75], z: 1.15, face: 150, pose: look_down}
+        - {t: 12.2, at: [4.1, 1.85], z: 1.3, face: 155, pose: arms_up, ease: out}
+        - {t: 16.8, at: [4.1, 1.85], z: 1.3, face: 160, pose: proud}
+      bisco:
+        - {t: 0.0, at: b_sofa2, z: 0.42, face: 200, pose: sit}
+        - {t: 16.8, at: b_sofa2, z: 0.42, face: 190, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [4.9, 3.4, 1.25], look: [4.25, 1.35], look_h: 1.15, lens: 30, frame: 胸上}
+      - {t: 3.8, cam: [4.85, 3.3, 1.25], look: [4.0, 1.75], look_h: 1.35, lens: 36}
+      - {t: 11.6, cam: [4.6, 2.9, 1.3], look: [4.0, 1.75], look_h: 1.38, lens: 50}
+      - {t: 12.6, cam: [4.7, 3.1, 1.35], look: [4.1, 1.85], look_h: 1.6, lens: 40}
+      - {t: 16.8, cam: [4.85, 3.35, 1.3], look: [4.1, 1.85], look_h: 1.45, lens: 34}
+    act: {start: マーニィ, do: ビスコの「逆恨みかなんかなんだろう？」にマーニィはビスコの方を向くが、こちらへ向き直って目を伏せ「それが、そうでもないんだけど……」（素の顔に寄る）。ぱっと明るく舞い上がって「さあ、どうやってリカちゃんをひっぱりだしましょっか」, end: 胸を張るマーニィ}
+    camera: テーブルの南から、マーニィの高さで（奥にソファのビスコ）。素の顔へテーブルの上をゆっくり寄り、明るくなる所で戻す
+    kind: M
+  A22-007:
+    frame: 胸上（煽り）
+    only: [bisco, marny]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_sofa2, z: 0.42, face: 190, pose: sit}
+        - {t: 0.6, at: b_sofa2, z: 0.42, face: 190, pose: sit}
+        - {t: 1.6, at: b_up, face: 200, pose: stand, ease: inout}
+        - {t: 4.0, at: b_up, face: 205, pose: stand}
+        - {t: 4.6, at: b_up, face: 205, pose: hold}
+        - {t: 10.3, at: b_up, face: 205, pose: hold}
+      marny:
+        - {t: 0.0, at: [4.1, 1.85], z: 1.3, face: 160, pose: proud}
+        - {t: 1.6, at: [4.95, 1.6], z: 1.2, face: 290, pose: stand}
+        - {t: 10.3, at: [4.95, 1.6], z: 1.2, face: 290, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [3.2, 2.5, 0.6], look: [4.55, 1.2], look_h: 1.2, lens: 24, frame: 胸上}
+      - {t: 1.8, cam: [3.2, 2.5, 0.6], look: [4.6, 1.25], look_h: 1.3, lens: 25}
+      - {t: 10.3, cam: [3.25, 2.45, 0.62], look: [4.6, 1.3], look_h: 1.45, lens: 28}
+    act: {start: ソファのビスコ, do: 「……それなんだがちょっといいか？」とビスコが立ち上がり、切符を掲げて「私達が夜会に乗り込む、というわけにはいかないだろうか？」, end: 切符を掲げるビスコ}
+    camera: テーブルの西の低い所から、立ち上がるビスコを煽る
+    kind: M
+  A22-007b:
+    frame: 全身（二人）
+    only: [bisco, marny, luckiny]
+    keys:
+      marny:
+        - {t: 0.0, at: [4.95, 1.6], z: 1.2, face: 290, pose: stand}
+        - {t: 0.8, at: [5.15, 1.4], z: 1.15, face: 285, pose: stand, ease: inout}
+        - {t: 6.2, at: [5.15, 1.4], z: 1.15, face: 285, pose: stand}
+        - {t: 6.8, at: [5.05, 1.4], z: 1.15, face: 285, pose: slash}
+        - {t: 9.4, at: [5.05, 1.4], z: 1.15, face: 285, pose: stand}
+        - {t: 14.6, at: [5.05, 1.4], z: 1.15, face: 270, pose: stand}
+        - {t: 17.6, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand, ease: inout}
+        - {t: 22.9, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_up, face: 205, pose: hold}
+        - {t: 1.0, at: b_up, face: 105, pose: stand}
+        - {t: 9.7, at: b_up, face: 105, pose: arms_up}
+        - {t: 13.6, at: b_up, face: 105, pose: stand}
+        - {t: 14.6, at: b_up, face: 255, pose: walk}
+        - {t: 16.2, at: [3.55, 1.45], face: 260, pose: walk}
+        - {t: 17.6, at: b_west, face: 240, pose: walk, ease: out}
+        - {t: 18.0, at: b_west, face: 240, pose: stand}
+        - {t: 19.4, at: b_west, face: 90, pose: gesture}
+        - {t: 22.9, at: b_west, face: 90, pose: gesture}
+      luckiny:
+        - {t: 0.0, at: l_sw, face: 50, pose: stand}
+        - {t: 14.6, at: l_sw, face: 60, pose: stand}
+        - {t: 18.0, at: l_sw, face: 20, pose: stand}
+        - {t: 22.9, at: l_sw, face: 25, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.33, 3.35, 1.35], look: [4.87, 1.35], look_h: 1.25, lens: 30, frame: 全身}
+      - {t: 14.2, cam: [4.3, 3.4, 1.4], look: [4.8, 1.4], look_h: 1.25, lens: 30}
+      - {t: 17.6, cam: [4.15, 3.7, 1.65], look: [3.75, 1.85], look_h: 1.2, lens: 25}
+      - {t: 22.9, cam: [3.95, 4.0, 1.85], look: [3.7, 1.95], look_h: 1.2, lens: 26}
+    act: {start: 切符を掲げたビスコ, do: 右（東）に浮いたマーニィが「殴りこみでもするのかしら？」と拳を突き出す。ビスコは両手を振って「メタリカじゃあるまいし」。考えながらテーブルの北をまわって西へ歩き、追ってきたマーニィに向き直って「メタリカを認めさせればいいわけだろ」, end: マーニィに向き直るビスコ}
+    camera: テーブルの南から、向き合う二人を横に（テーブル越し）。歩くビスコを追って西へ振りながら、引いて高く上がる
+    kind: M
+  A22-008:
+    frame: 胸上（二人・低い）
+    only: [bisco, marny]
+    keys:
+      marny:
+        - {t: 0.0, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand}
+        - {t: 0.5, at: [3.9, 1.95], z: 1.15, face: 270, pose: slash}
+        - {t: 6.4, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand}
+        - {t: 23.9, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_west, face: 90, pose: gesture}
+        - {t: 7.2, at: b_west, face: 100, pose: cover}
+        - {t: 11.0, at: b_west, face: 95, pose: gesture}
+        - {t: 17.2, at: b_west, face: 105, pose: stand}
+        - {t: 18.0, at: b_west, face: 110, pose: proud}
+        - {t: 23.9, at: b_west, face: 110, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [3.6, 3.1, 1.05], look: [3.4, 1.93], look_h: 1.25, lens: 24, frame: 胸上}
+      - {t: 7.2, cam: [3.58, 3.05, 1.05], look: [3.35, 1.93], look_h: 1.28, lens: 26}
+      - {t: 23.9, cam: [3.5, 3.0, 1.05], look: [3.3, 1.93], look_h: 1.3, lens: 28}
+    act: {start: 向き合うビスコとマーニィ, do: マーニィが拳を握って「締め上げて屈服させるってことでいいの？」。ビスコは額に手を当ててため息（合成）、「交渉とかはできないかなと」。胸を張って「正式に夜会に呼んでもらえるようになるはずだ」, end: 胸を張るビスコ}
+    camera: テーブルの南の端の上の低い所から、向き合う二人を下から横に。ビスコの方へゆっくり寄る
+    kind: M
+  A22-009:
+    frame: 胸上→寄り（ビスコ）
+    only: [bisco, marny]
+    keys:
+      marny:
+        - {t: 0.0, at: [3.9, 1.95], z: 1.15, face: 270, pose: stand}
+        - {t: 1.2, at: [3.3, 1.35], z: 1.2, face: 220, pose: stand, ease: inout}
+        - {t: 2.6, at: [2.6, 1.3], z: 1.25, face: 150, pose: stand, ease: inout}
+        - {t: 4.2, at: [2.4, 1.6], z: 1.2, face: 120, pose: gesture, ease: inout}
+        - {t: 6.4, at: [2.4, 1.6], z: 1.2, face: 120, pose: stand}
+        - {t: 17.6, at: [2.4, 1.6], z: 1.2, face: 125, pose: stand}
+        - {t: 18.4, at: [2.4, 1.6], z: 1.2, face: 125, pose: gesture}
+        - {t: 24.7, at: [2.4, 1.6], z: 1.2, face: 125, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_west, face: 110, pose: proud}
+        - {t: 3.2, at: b_west, face: 150, pose: stand}
+        - {t: 4.6, at: b_west, face: 190, pose: look_down}
+        - {t: 10.2, at: b_west, face: 190, pose: look_down}
+        - {t: 10.8, at: b_west, face: 215, pose: stand}
+        - {t: 24.7, at: b_west, face: 220, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [3.75, 3.5, 1.35], look: [3.05, 1.85], look_h: 1.3, lens: 30, frame: 胸上}
+      - {t: 4.2, cam: [3.7, 3.45, 1.35], look: [2.85, 1.8], look_h: 1.3, lens: 32}
+      - {t: 9.0, cam: [3.45, 3.0, 1.38], look: b_west, look_h: 1.38, lens: 48}
+      - {t: 17.6, cam: [3.42, 2.95, 1.38], look: b_west, look_h: 1.38, lens: 48}
+      - {t: 24.7, cam: [3.75, 3.5, 1.4], look: [2.75, 1.8], look_h: 1.3, lens: 30}
+    act: {start: 胸を張るビスコ, do: マーニィがビスコのまわりをくるりと回って（北から西へ）「まるで、お伽の国のお姫様だわ」。ビスコは目を伏せる（伏線の寄り）。「やってみればもしかしたら……」と顔を上げ、マーニィは肩をすくめて「それもそうね」, end: 顔を上げたビスコと、マーニィ}
+    camera: テーブルの南東から。「お姫様」で目を伏せるビスコの顔へ寄り、最後に引く
+    kind: M
+  A22-010:
+    frame: 引き
+    only: [luckiny, marny, bisco, hundred-knight, arlecchino]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_sw, face: 25, pose: stand}
+        - {t: 0.4, at: l_sw, face: 30, pose: arms_up}
+        - {t: 8.6, at: l_sw, face: 30, pose: stand}
+        - {t: 16.6, at: l_sw, face: 50, pose: stand}
+      marny:
+        - {t: 0.0, at: [2.4, 1.6], z: 1.2, face: 125, pose: stand}
+        - {t: 8.6, at: [2.4, 1.6], z: 1.2, face: 160, pose: stand}
+        - {t: 9.6, at: [4.6, 2.75], z: 1.25, face: 85, pose: stand, ease: inout}
+        - {t: 10.0, at: [4.6, 2.75], z: 1.25, face: 85, pose: point}
+        - {t: 13.2, at: [4.6, 2.75], z: 1.25, face: 85, pose: stand}
+        - {t: 16.6, at: [4.6, 2.75], z: 1.25, face: 270, pose: proud}
+      bisco:
+        - {t: 0.0, at: b_west, face: 220, pose: stand}
+        - {t: 1.0, at: b_west, face: 160, pose: stand}
+        - {t: 9.4, at: b_west, face: 100, pose: stand}
+        - {t: 13.4, at: b_west, face: 100, pose: cover}
+        - {t: 16.6, at: b_west, face: 100, pose: cover}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 290, pose: stand}
+        - {t: 10.6, at: hk_mid, face: 270, pose: stand}
+        - {t: 11.2, at: hk_mid, face: 270, pose: nod}
+        - {t: 12.0, at: hk_mid, face: 270, pose: stand}
+        - {t: 16.6, at: hk_mid, face: 270, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 2.15], face: 245, pose: stand}
+        - {t: 16.6, at: [6.4, 2.15], face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [6.4, 5.6, 2.5], look: [4.0, 2.3], look_h: 0.8, lens: 24, frame: 引き}
+      - {t: 16.6, cam: [6.2, 5.7, 2.4], look: [3.9, 2.3], look_h: 0.8, lens: 25}
+    act: {start: 顔を上げたビスコ, do: ルッキーニィが手を挙げて「誰が行くんですか？切符は二人まで」。マーニィが百騎兵の前へ飛んで指さし「そりゃあ、百騎兵ちゃんでしょ」（百騎兵がうなずく）。ビスコは額に手をやって「戦うことが前提なんだな」（汗は合成）, end: 居間の一同}
+    camera: 玄関の側（南東）の高い所から居間を広く
+    kind: M
+  A22-010b:
+    frame: 胸上（ルッキーニィ）
+    only: [luckiny, marny, bisco]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_sw, face: 50, pose: stand}
+        - {t: 0.4, at: l_sw, z: 0.18, face: 60, pose: hop}
+        - {t: 0.7, at: l_sw, z: 0.0, face: 60, pose: stand}
+        - {t: 1.0, at: l_sw, z: 0.18, face: 60, pose: hop}
+        - {t: 1.3, at: l_sw, z: 0.0, face: 60, pose: arms_up}
+        - {t: 11.6, at: l_sw, face: 60, pose: arms_up}
+        - {t: 12.4, at: l_sw, face: 60, pose: look_down}
+        - {t: 15.8, at: l_sw, face: 65, pose: look_down}
+      marny:
+        - {t: 0.0, at: [4.6, 2.75], z: 1.25, face: 270, pose: proud}
+        - {t: 0.8, at: [3.4, 2.9], z: 1.15, face: 260, pose: stand, ease: inout}
+        - {t: 8.4, at: [3.4, 2.9], z: 1.15, face: 255, pose: stand}
+        - {t: 9.0, at: [3.4, 2.9], z: 1.15, face: 300, pose: point}
+        - {t: 12.2, at: [3.4, 2.9], z: 1.15, face: 300, pose: stand}
+        - {t: 15.8, at: [3.4, 2.9], z: 1.15, face: 270, pose: stand}
+      bisco:
+        - {t: 0.0, at: b_west, face: 100, pose: cover}
+        - {t: 1.0, at: b_west, face: 160, pose: stand}
+        - {t: 15.8, at: b_west, face: 160, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [1.7, 2.1, 1.3], look: [2.8, 2.95], look_h: 1.25, lens: 30, frame: 胸上}
+      - {t: 15.8, cam: [1.75, 2.15, 1.27], look: [2.75, 2.95], look_h: 1.22, lens: 36}
+    act: {start: 手を挙げていたルッキーニィ, do: 跳ねて「あと一人はどうするんです？」と目を輝かせる。マーニィは顔をのぞき込んで「すごく行きたそうな顔してるわよ。でも」とビスコを指さす。ルッキーニィはしょんぼり「そ、そうですよね……」, end: しょんぼりするルッキーニィ}
+    camera: 階段の脇（西）から、ルッキーニィとのぞき込むマーニィを。ゆっくり寄る
+    kind: M
+  A22-011:
+    frame: 全身（アルレッキーノ・煽り）
+    only: [arlecchino, bisco, hundred-knight]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_west, face: 160, pose: stand}
+        - {t: 0.4, at: b_west, face: 90, pose: hold}
+        - {t: 4.0, at: b_west, face: 85, pose: stand}
+        - {t: 14.0, at: b_west, face: 85, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 2.15], face: 250, pose: stand}
+        - {t: 4.4, at: [6.4, 2.15], face: 255, pose: gesture}
+        - {t: 8.8, at: [6.4, 2.15], face: 255, pose: cover}
+        - {t: 11.8, at: [6.4, 2.15], face: 255, pose: stand}
+        - {t: 14.0, at: [6.4, 2.15], face: 255, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 270, pose: stand}
+        - {t: 6.0, at: hk_mid, face: 285, pose: stand}
+        - {t: 14.0, at: hk_mid, face: 240, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [6.0, 4.2, 0.9], look: [6.25, 2.2], look_h: 1.45, lens: 28, frame: 全身}
+      - {t: 14.0, cam: [6.05, 4.05, 0.9], look: [6.3, 2.2], look_h: 1.55, lens: 32}
+    act: {start: 一同, do: ビスコ（画面の外）が切符を掲げて「どうやって使うんだ？」。アルレッキーノが手を広げ、頭に手をやって「駅があるとか……ないとか……」。手前の百騎兵が見上げる, end: 頭に手をやるアルレッキーノ}
+    camera: 玄関の側（南）の低い所から、百騎兵の横にアルレッキーノを煽る。ゆっくり寄る
+    kind: M
+  A22-011b:
+    frame: 引き（玄関から）
+    only: [marny, bisco, hundred-knight, arlecchino, luckiny]
+    keys:
+      marny:
+        - {t: 0.0, at: [3.4, 2.9], z: 1.15, face: 270, pose: stand}
+        - {t: 0.4, at: [4.4, 3.4], z: 1.35, face: 60, pose: arms_up, ease: inout}
+        - {t: 3.0, at: [4.4, 3.4], z: 1.35, face: 60, pose: proud}
+        - {t: 6.8, at: [5.55, 2.05], z: 1.05, face: 165, pose: stand, ease: inout}
+        - {t: 7.4, at: [5.55, 2.05], z: 1.05, face: 165, pose: gesture}
+        - {t: 14.6, at: [5.55, 2.05], z: 1.05, face: 165, pose: stand}
+        - {t: 24.0, at: [5.55, 2.05], z: 1.05, face: 160, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_mid, face: 240, pose: stand}
+        - {t: 7.0, at: hk_mid, face: 330, pose: stand}
+        - {t: 12.4, at: hk_mid, face: 330, pose: nod}
+        - {t: 13.2, at: hk_mid, face: 330, pose: stand}
+        - {t: 15.0, at: hk_mid, face: 265, pose: stand}
+        - {t: 18.4, at: hk_mid, face: 265, pose: nod}
+        - {t: 19.2, at: hk_mid, face: 170, pose: stand}
+        - {t: 19.4, at: hk_mid, face: 165, pose: run}
+        - {t: 20.6, at: [6.55, 5.1], face: 165, pose: run}
+        - {t: 21.4, at: [6.9, 6.75], face: 175, pose: run}
+        - {t: 22.2, at: [6.9, 8.2], face: 180, pose: run, ease: linear}
+      bisco:
+        - {t: 0.0, at: b_west, face: 85, pose: stand}
+        - {t: 14.8, at: b_west, face: 80, pose: point}
+        - {t: 18.6, at: b_west, face: 80, pose: stand}
+        - {t: 19.4, at: b_west, face: 130, pose: walk}
+        - {t: 21.0, at: [2.95, 2.45], face: 140, pose: walk, ease: out}
+        - {t: 21.4, at: [2.95, 2.45], face: 135, pose: wave}
+        - {t: 24.0, at: [2.95, 2.45], face: 135, pose: wave}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 2.15], face: 255, pose: stand}
+        - {t: 20.6, at: [6.4, 2.15], face: 200, pose: stand}
+        - {t: 21.4, at: [6.4, 2.15], face: 185, pose: bow}
+        - {t: 24.0, at: [6.4, 2.15], face: 185, pose: bow}
+      luckiny:
+        - {t: 0.0, at: l_sw, face: 65, pose: look_down}
+        - {t: 3.0, at: l_sw, face: 75, pose: stand}
+        - {t: 20.8, at: l_sw, face: 120, pose: wave}
+        - {t: 24.0, at: l_sw, face: 125, pose: wave}
+    cam_keys:
+      - {t: 0.0, cam: [6.6, 6.4, 1.5], look: [4.5, 2.7], look_h: 1.1, lens: 24, frame: 引き}
+      - {t: 18.8, cam: [6.6, 6.35, 1.5], look: [4.6, 2.7], look_h: 1.1, lens: 25}
+      - {t: 21.6, cam: [6.55, 6.3, 1.6], look: [4.6, 2.75], look_h: 1.1, lens: 26}
+      - {t: 24.0, cam: [6.5, 6.15, 1.8], look: [4.5, 2.7], look_h: 1.05, lens: 27}
+    act: {start: 頭に手をやるアルレッキーノ, do: マーニィが舞い上がって「怪しげな駅は、既にみつけてあるわ！」。百騎兵の前へ降りて「ヘッカヘンネの隠し森にあった駅よ？」（百騎兵がうなずく）。ビスコ「お前は先に行っていてくれ」。百騎兵がこちら（玄関）へ駆けてきて、カメラの右脇を抜けて夕暮れの外へ。みんなが玄関の方へ手を振って見送る, end: 玄関の方（カメラ）へ手を振るみんな}
+    camera: 玄関の内側から、居間の一同を正面に。百騎兵がこちらへ駆けてきてカメラの脇を抜ける。見送る所で少し上がる
+    kind: M

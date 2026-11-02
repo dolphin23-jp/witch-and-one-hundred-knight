@@ -1,0 +1,173 @@
+# A19 魔女邸・余命（6章後半 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-02）
+# Living Spec「A19 動きの設計（案）」。準備（案）の表の A20「拠点・余命」（台詞はほぼ全部）。バスルームを後ろへ回す入れ替えの提案で A19 にした。
+# 場所: 居間は world/witch-house-3d-layout.yaml、2階の廊下は world/witch-house-6b-extra.yaml（layout_extra）。午後（afternoon・hall_afternoon）。
+# 「もう長くはない」は閉じた扉にゆっくり寄る（準備（案）のカメラの方針）。扉の下の光は漏らさない（伏線は A18 の2回だけ）。
+# 百騎兵とマーニィは森へ向かっている。ルッキーニィは邸の中を見て回っている（A21 のバスルーム）。
+scene: A19
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+  - {file: world/witch-house-6b-extra.yaml, offset: [0.0, 0.0]}
+map_ymax: 11
+lighting: afternoon
+places:
+  table: [4.2, 2.4]
+  a_shelf: [7.1, 4.1]      # アルレッキーノ。南の本棚の前（本の手入れ）
+  a_table: [5.6, 3.3]      # テーブルの南東
+  b_window: [2.35, 0.8]    # 丸窓の前
+  window: [2.0, 0.0]
+  m_door: [17.0, -0.4]
+start:
+  bisco: {at: [2.7, 3.7], face: 90}
+  arlecchino: {at: a_shelf, face: 90}
+
+cuts:
+  A19-001:
+    frame: 寄り（扉と食事）
+    lighting: hall_afternoon
+    door_closed: true
+    only: []
+    cam_keys:
+      - {t: 0.0, cam: [13.0, -2.9, 1.5], look: [17.0, -0.8], look_h: 0.8, lens: 30, frame: 寄り}
+      - {t: 6.5, cam: [14.6, -2.6, 1.2], look: [17.0, -0.8], look_h: 0.5, lens: 34}
+    act: {start: 午後の2階の廊下, do: 閉じた扉の前の食事は手つかずのまま。居間からビスコの声が聞こえてくる, end: 冷めた食事}
+    camera: 廊下を横へ滑り、扉の前の食事へ寄る
+    kind: M
+  A19-002:
+    frame: 全身（ビスコを追う）→二人
+    only: [bisco, arlecchino]
+    keys:
+      bisco:
+        - {t: 0.0, at: [2.7, 3.7], face: 90, pose: walk}
+        - {t: 3.8, at: [5.5, 3.9], face: 90, pose: walk, ease: out}
+        - {t: 4.3, at: [5.5, 3.9], face: 270, pose: stand}
+        - {t: 4.6, at: [5.5, 3.9], face: 270, pose: walk}
+        - {t: 7.6, at: [3.3, 3.9], face: 270, pose: walk, ease: out}
+        - {t: 8.0, at: [3.3, 3.9], face: 270, pose: stand}
+        - {t: 9.5, at: [3.3, 3.9], face: 85, pose: stand}
+        - {t: 12.7, at: [3.3, 3.9], face: 85, pose: arms_up}
+        - {t: 16.6, at: [3.3, 3.9], face: 85, pose: stand}
+        - {t: 17.6, at: [3.3, 3.9], face: 205, pose: cross}
+        - {t: 26.0, at: [3.3, 3.9], face: 210, pose: cross}
+      arlecchino:
+        - {t: 0.0, at: a_shelf, face: 90, pose: stand}
+        - {t: 4.6, at: a_shelf, face: 90, pose: stand}
+        - {t: 5.4, at: a_shelf, face: 260, pose: stand}
+        - {t: 5.7, at: a_shelf, face: 265, pose: walk}
+        - {t: 7.4, at: [6.4, 4.0], face: 265, pose: walk, ease: out}
+        - {t: 7.7, at: [6.4, 4.0], face: 265, pose: stand}
+        - {t: 9.6, at: [6.4, 4.0], face: 265, pose: bow}
+        - {t: 11.4, at: [6.4, 4.0], face: 265, pose: stand}
+        - {t: 26.0, at: [6.4, 4.0], face: 262, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.0, 6.4, 1.5], look: bisco, look_h: 1.15, lens: 26, frame: 全身}
+      - {t: 4.4, cam: [4.4, 6.4, 1.5], look: [5.4, 3.9], look_h: 1.15, lens: 26}
+      - {t: 9.0, cam: [4.6, 6.45, 1.55], look: [4.85, 4.0], look_h: 1.15, lens: 20}
+      - {t: 26.0, cam: [4.55, 6.4, 1.5], look: [4.8, 4.0], look_h: 1.15, lens: 20}
+    act: {start: 午後の居間, do: ビスコがテーブルの南を行ったり来たり。本棚の前のアルレッキーノが振り向き、数歩寄って「処刑する為にここにおられる」と頭を下げ、ビスコは両手を振って慌て、腕を組んでそっぽを向く, end: 腕を組んでそっぽを向くビスコ}
+    camera: 玄関の側（南）から、行ったり来たりするビスコを追って振り、寄ってくるアルレッキーノと二人を入れる
+    kind: M
+  A19-003:
+    frame: 膝上（二人）
+    only: [bisco, arlecchino]
+    keys:
+      bisco:
+        - {t: 0.0, at: [3.3, 3.9], face: 210, pose: cross}
+        - {t: 0.4, at: [3.3, 3.9], face: 75, pose: stand}
+        - {t: 13.0, at: [3.3, 3.9], face: 72, pose: stand}
+        - {t: 13.4, at: [3.3, 3.9], face: 345, pose: walk}
+        - {t: 15.2, at: [2.95, 2.1], face: 340, pose: walk}
+      arlecchino:
+        - {t: 0.0, at: [6.4, 4.0], face: 262, pose: stand}
+        - {t: 5.0, at: [6.4, 4.0], face: 250, pose: stand}
+        - {t: 5.4, at: [6.4, 4.0], face: 230, pose: walk}
+        - {t: 8.6, at: a_table, face: 260, pose: walk, ease: out}
+        - {t: 8.9, at: a_table, face: 255, pose: stand}
+        - {t: 13.6, at: a_table, face: 255, pose: stand}
+        - {t: 15.2, at: a_table, face: 300, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [4.45, 6.35, 1.0], look: [4.45, 3.6], look_h: 1.25, lens: 24, frame: 膝上}
+      - {t: 13.0, cam: [4.4, 6.2, 1.0], look: [4.45, 3.6], look_h: 1.3, lens: 25}
+      - {t: 15.2, cam: [4.35, 6.15, 1.05], look: [3.7, 2.8], look_h: 1.3, lens: 25}
+    act: {start: そっぽを向いたビスコ, do: 振り向いて百騎兵のことを尋ねる。アルレッキーノがテーブルの脇へ来て答える。ビスコは丸窓の方へ歩き出す, end: 丸窓へ歩くビスコ}
+    camera: 南の低い所から、向き合う二人を。歩き出すビスコを追って少し振る
+    kind: M
+  A19-003b:
+    frame: 胸上（ビスコ・窓の脇から）
+    only: [bisco, arlecchino]
+    keys:
+      bisco:
+        - {t: 0.0, at: [2.95, 2.1], face: 340, pose: walk}
+        - {t: 1.2, at: b_window, face: 340, pose: walk, ease: out}
+        - {t: 1.5, at: b_window, face: 336, pose: stand}
+        - {t: 6.4, at: b_window, face: 336, pose: stand}
+        - {t: 7.0, at: b_window, face: 332, pose: look_down}
+        - {t: 7.4, at: b_window, face: 332, pose: look_down}
+      arlecchino:
+        - {t: 0.0, at: a_table, face: 300, pose: stand}
+        - {t: 7.4, at: a_table, face: 308, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [1.6, 0.35, 1.5], look: [2.6, 1.3], look_h: 1.35, lens: 24, frame: 胸上}
+      - {t: 1.5, cam: [1.6, 0.35, 1.5], look: [2.35, 0.8], look_h: 1.4, lens: 24}
+      - {t: 7.4, cam: [1.62, 0.38, 1.48], look: [2.35, 0.8], look_h: 1.42, lens: 28}
+    act: {start: 歩いてくるビスコ, do: 丸窓の前に来て外の光を見上げ「会えるといいな、森の魔女殿に……」。少し目を伏せる, end: 窓の光の中のビスコの顔}
+    camera: 丸窓の脇（西）から、窓の光を受けるビスコの顔を斜め前から。ゆっくり寄る
+    kind: M
+  A19-004:
+    frame: 肩なめ（ビスコ越しにアルレッキーノ・煽り）
+    only: [bisco, arlecchino]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_window, face: 350, pose: stand}
+        - {t: 7.2, at: b_window, face: 350, pose: stand}
+        - {t: 7.8, at: b_window, face: 130, pose: stand}
+        - {t: 16.2, at: b_window, face: 130, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: a_table, face: 308, pose: stand}
+        - {t: 6.8, at: a_table, face: 308, pose: look_down}
+        - {t: 12.4, at: a_table, face: 308, pose: stand}
+        - {t: 16.2, at: a_table, face: 308, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [1.5, 0.78, 1.45], look: [5.26, 2.15], look_h: 1.45, lens: 32, frame: 肩なめ}
+      - {t: 16.2, cam: [1.6, 0.8, 1.4], look: [5.3, 2.3], look_h: 1.5, lens: 38}
+    act: {start: 窓を見るビスコの背中越しに、テーブルの脇のアルレッキーノ, do: 「リカ様にはお時間がございませんし」。ビスコが振り向き、アルレッキーノがうつむいてから顔を上げる, end: アルレッキーノの赤い目}
+    camera: 丸窓の脇、ビスコの左肩の後ろから、テーブルの脇のアルレッキーノへ。ゆっくり寄る
+    kind: M
+  A19-005:
+    frame: 寄り（扉）
+    lighting: hall_afternoon
+    door_closed: true
+    only: []
+    cam_keys:
+      - {t: 0.0, cam: [17.75, -3.0, 1.35], look: [17.0, -0.5], look_h: 1.1, lens: 30, frame: 寄り}
+      - {t: 8.0, cam: [17.5, -2.0, 1.1], look: [17.0, -0.45], look_h: 1.0, lens: 40}
+    act: {start: 閉じた扉, do: 「リカ様のお命は、もう長くはないのです」（声だけ）。閉じた扉へゆっくり寄る, end: 扉の寄り}
+    camera: 廊下の東の端から、閉じた扉へゆっくり寄る（光は漏らさない）
+    kind: M
+  A19-006:
+    frame: 引き（上から見下ろす）
+    only: [bisco, arlecchino]
+    keys:
+      bisco:
+        - {t: 0.0, at: b_window, face: 130, pose: stand}
+        - {t: 0.4, at: b_window, face: 120, pose: walk}
+        - {t: 2.4, at: [3.2, 1.35], face: 125, pose: walk, ease: out}
+        - {t: 2.7, at: [3.2, 1.35], face: 128, pose: stand}
+        - {t: 9.6, at: [3.2, 1.35], face: 128, pose: stand}
+        - {t: 10.2, at: [3.2, 1.35], face: 140, pose: look_down}
+        - {t: 16.2, at: [3.2, 1.35], face: 140, pose: look_down}
+        - {t: 16.8, at: [3.2, 1.35], face: 285, pose: look_up}
+        - {t: 20.6, at: [3.2, 1.35], face: 290, pose: look_up}
+      arlecchino:
+        - {t: 0.0, at: a_table, face: 308, pose: stand}
+        - {t: 3.0, at: a_table, face: 300, pose: stand}
+        - {t: 9.8, at: a_table, face: 300, pose: look_down}
+        - {t: 16.2, at: a_table, face: 300, pose: look_down}
+        - {t: 17.2, at: a_table, face: 290, pose: look_up}
+        - {t: 20.6, at: a_table, face: 290, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [0.95, 0.5, 3.6], look: [4.3, 2.5], look_h: 0.6, lens: 22, frame: 引き}
+      - {t: 15.8, cam: [1.05, 0.6, 3.5], look: [4.2, 2.5], look_h: 0.62, lens: 24}
+      - {t: 20.6, cam: [1.1, 0.65, 3.45], look: bisco, look_h: 1.2, lens: 36}
+    act: {start: 振り向いたビスコ, do: ビスコがアルレッキーノの方へ歩み寄って「病か？」。アルレッキーノはうつむいて答え、ビスコは「わからない、だと……？」と上の階（カメラ）を見上げる, end: 上を見上げるビスコ（上から）}
+    camera: 階段の上（メタリカの部屋の側）から見下ろす。見上げるビスコへゆっくり寄る
+    kind: M

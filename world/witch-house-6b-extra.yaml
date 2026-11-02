@@ -1,0 +1,105 @@
+# 魔女邸の下絵用の配置に足す部分（6章後半 回1、A18〜A22。2026-11-02、Claude の案）。blocking.yaml の layout_extra で offset [0, 0] のまま足す。
+# 元の world/witch-house-3d-layout.yaml（居間と寝室）は夜会編の場面が使うので触らない。
+#   - 2階の廊下とメタリカの部屋の扉（x 12〜18、y −3.4〜−0.4）。扉は廊下の南の壁 x 17.0。扉の前に冷めた食事のお盆。
+#     寝室の北の壁（y 0）と壁が重なると黒く描かれる（2026-11-02 に確かめた）ので、0.4m 離した。
+#     閉じこもるメタリカの部屋。カットの door_closed: true で扉を閉じる。扉の下から漏れる緑の光は fx の leak（A30 の毒沼の逆襲の伏線、2026-11-02 ユーザー判断「匂わせる」）。
+#   - バスルーム（x 12〜18、y 6〜11）。北の壁の西寄り x 13.0 に扉。赤いカーテンと大きな浴槽（沼の水が光る）。原作「赤いカーテンと大きな浴槽のあるバスルーム」。
+# 実際は2階と1階の別の所だが、下絵では居間の東に別に置く（寝室と同じ扱い）。開口の c は絶対座標（offset はずらさない）。
+id: witch-house-6b-extra
+size: {w: 18.0, d: 11.0}
+lighting:
+  hall_morning:   # 2階の廊下の朝（東の小窓から低い朝日、廊下の燭台）
+    sun_from: 100
+    sun_elev: 14
+    sun_energy: 2.6
+    sun_color: [255, 220, 180]
+    sky: [150, 165, 200]
+    sky_strength: 0.45
+    lamps: 0.8
+    fill: {at: [15.0, -1.9], z: 2.6, energy: 160, color: [255, 220, 190]}
+  hall_afternoon:   # 2階の廊下の午後（A19）
+    sun_from: 250
+    sun_elev: 25
+    sun_energy: 1.6
+    sun_color: [255, 205, 150]
+    sky: [170, 150, 125]
+    sky_strength: 0.45
+    lamps: 0.9
+    fill: {at: [15.0, -1.9], z: 2.6, energy: 150, color: [255, 215, 175]}
+  bath_day:   # バスルームの昼（東の窓から白い光、天井のランプ、浴槽の沼の光）
+    sun_from: 110
+    sun_elev: 35
+    sun_energy: 2.0
+    sun_color: [240, 240, 235]
+    sky: [170, 185, 200]
+    sky_strength: 0.5
+    lamps: 1.0
+    fill: {at: [15.0, 8.5], z: 2.8, energy: 260, color: [235, 240, 245]}
+  living_morning:   # 居間の朝（A18）。元の morning は窓から光が入らず暗かったので、補助光と吊りランプを強めた（2026-11-02）
+    sun_from: 100
+    sun_elev: 18
+    sun_energy: 3.0
+    sun_color: [255, 225, 190]
+    sky: [175, 195, 225]
+    sky_strength: 0.75
+    lamps: 0.8
+    fill: {at: [4.0, 3.5], z: 3.8, energy: 800, color: [235, 238, 255], radius: 4.0}
+  evening:   # 居間の夕方（A22。西の低い橙の光と吊りランプ）
+    sun_from: 265
+    sun_elev: 8
+    sun_energy: 2.2
+    sun_color: [255, 160, 90]
+    sky: [120, 90, 100]
+    sky_strength: 0.45
+    lamps: 1.3
+    fill: {at: [4.0, 3.5], z: 3.8, energy: 650, color: [255, 200, 150], radius: 4.0}
+props:
+  # --- 2階の廊下とメタリカの部屋の扉 ---
+  room_hall:
+    x: [12.0, 18.0]
+    y: [-3.4, -0.4]
+    h: 3.0
+    roof: 1.0
+    ja: 2階の廊下
+    openings:
+    - {side: s, c: 17.0, w: 1.0, h: 2.2, ja: 扉}            # メタリカの部屋の扉（door_closed で閉じる）
+    - {side: w, c: -1.9, w: 1.2, h: 2.3, ja: 階段の口}       # 西から階段で上がってくる
+    - {side: e, c: -1.9, w: 0.6, h: 0.8, sill: 1.2, ja: 東の小窓}
+  tray_meal: {at: [17.0, -0.82], w: 0.5, d: 0.34, ja: 冷めた食事のお盆（扉の前の床）}
+  shelf_hall: {at: [12.32, -1.9], w: 0.4, d: 1.6, h: 2.2, ja: 廊下の本棚}
+  table_hall: {at: [14.2, -3.08], w: 0.8, d: 0.4, h: 0.8, ja: 廊下の小机（花瓶）}
+  lantern_hall_w: {at: [13.0, -3.15], z: 2.1, energy: 14, ja: 廊下の燭台（西）}
+  lantern_hall_e: {at: [17.85, -1.4], z: 2.1, energy: 12, ja: 廊下の燭台（扉の脇）}
+  # --- バスルーム ---
+  room_bath:
+    x: [12.0, 18.0]
+    y: [6.0, 11.0]
+    h: 3.2
+    roof: 1.2
+    ja: バスルーム
+    openings:
+    - {side: n, c: 13.0, w: 1.0, h: 2.2, ja: バスルームの扉}
+    - {side: e, c: 8.0, w: 0.8, h: 1.0, sill: 1.3, ja: 東の窓}
+  tub_bath: {at: [15.6, 9.4], w: 2.6, d: 1.4, h: 0.7, color: [180, 130, 70], water: [40, 175, 120], glow: 0.7, ja: 大きな浴槽（沼の水）}
+  curtain_bath_back: {at: [15.6, 10.78], w: 3.6, h: 2.8, color: [165, 25, 35], ja: 浴槽の奥の赤いカーテン}
+  curtain_bath_w: {at: [13.95, 9.6], w: 1.7, h: 2.6, rot: 90, color: [165, 25, 35], ja: 浴槽の西の赤いカーテン（マーニィがこの陰から出てくる）}
+  curtain_bath_e: {at: [17.3, 9.6], w: 1.7, h: 2.6, rot: 90, color: [165, 25, 35], ja: 浴槽の東の赤いカーテン}
+  shelf_bath: {at: [17.72, 6.9], w: 0.45, d: 1.1, h: 1.5, ja: 薬瓶とタオルの棚}
+  stool_bath: {at: [12.9, 7.5], ja: 腰かけ}
+  lantern_bath: {at: [15.4, 8.2], z: 2.7, energy: 30, ja: 天井のランプ}
+people:
+  marny:
+    ja: マーニィ
+    eye: 0.4
+    h: 0.45
+    en: 'Marny (a tiny pale-green fairy about the size of a doll: huge bright green butterfly wings with yellow spots, a white fluffy collar, two antennae with yellow tips, white fluffy cuffs; she flies and floats in the air)'
+  luckiny: {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail)"}
+views:
+  hall:
+    ja: 2階の廊下・メタリカの部屋の扉
+    panel: null
+    en: 'the upstairs corridor of the witch''s house: dark wood paneling with glowing green vines, a closed heavy wooden door to the witch''s room with a tray of cold untouched food on the floor in front of it, a candle sconce, a small bookshelf'
+  bath:
+    ja: バスルーム
+    panel: null
+    en: 'the witch''s bathroom: a large old bathtub filled with glowing green swamp water, deep red curtains around it, dark wood paneling with glowing green vines, a shelf of potion bottles and towels, a hanging brass lamp'

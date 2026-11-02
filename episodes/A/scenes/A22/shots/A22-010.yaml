@@ -1,0 +1,44 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-010
+scene: A22
+tc: 214.2
+sec: 16.6
+kind: M
+shot: 引き・ルッキーニィ・マーニィ・ビスコ・百騎兵・アルレッキーノ
+acting: ルッキーニィが手を挙げて「誰が行くんですか？切符は二人まで」。マーニィが百騎兵の前へ飛んで指さし「そりゃあ、百騎兵ちゃんでしょ」（百騎兵がうなずく）。ビスコは額に手をやって「戦うことが前提なんだな」（汗は合成）
+dialogue:
+- L703「そ、それで、誰が行くんですか？切符は二人まで乗れるみたいですけど。」
+- L704「そりゃあ、百騎兵ちゃんでしょ。戦闘力的な意味でも。」
+- L705「戦うことが前提なんだな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.4
+  - 5.6
+  - 2.5
+  look:
+  - 4.0
+  - 2.3
+  lens: 24
+  move: 玄関の側（南東）の高い所から居間を広く
+background: witch-house
+image: null
+refs:
+- luckiny
+- marny
+- bisco
+- hundred-knight
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 顔を上げたビスコ
+  end: 居間の一同
+timing:
+  lead: 0.3
+  at:
+    L703: 0.3
+    L704: 8.87
+    L705: 13.4

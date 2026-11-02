@@ -1,0 +1,42 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-009
+scene: A18
+tc: 98.3
+sec: 19.7
+kind: M
+shot: 胸上（横から二人）・ビスコ・ルッキーニィ・百騎兵
+acting: ビスコがルッキーニィに向き直り、山頂で何かを感じたと言う。ルッキーニィが首をかしげ、一歩寄って身を乗り出し「まさか…魔女だったりしないですよね？」
+dialogue:
+- L550「ただ、アズ・ブロッケン山で魔女達の声を聞いた時、何かを感じたんだが……。」
+- L551「へぇ……何かを？」
+- L552「あの……まさか、ビスコさんは魔女だったりしないですよね？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.75
+  - 2.65
+  - 1.45
+  look:
+  - 3.15
+  - 1.45
+  lens: 30
+  move: 南西（階段の脇）から二人を横に並べる。ルッキーニィが疑う所でゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うつむくビスコと、窓の側のルッキーニィ
+  end: じっと顔をのぞき込むルッキーニィ
+timing:
+  lead: 0.3
+  at:
+    L550: 0.3
+    L551: 6.88
+    L552: 11.44

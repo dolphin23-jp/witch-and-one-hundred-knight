@@ -1,0 +1,219 @@
+# A21 魔女邸・バスルーム（6章後半 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-02）
+# Living Spec「A21 動きの設計（案）」。準備（案）の表の A19「バスルーム」（全部残す）。百騎兵が森から紙切れを持って戻った所に置く入れ替えの提案で A21 にした。
+# 場所は world/witch-house-6b-extra.yaml のバスルーム（layout_extra。x 12〜18、y 6〜11）。北の壁の西寄り (13.0, 6.0) に扉。
+#   浴槽は (15.6, 9.4)（x 14.3〜16.9、y 8.7〜10.1、高さ 0.7、沼の水が光る）。赤いカーテンは浴槽の奥（南の壁ぞい）と西（x 13.95）と東（x 17.3）。
+# 浴槽の光る水にルッキーニィが指を伸ばしかけ、西のカーテンの陰からマーニィが現れて止まる（台詞なしの芝居を足した。L620 の前ふり）。
+# ルッキーニィの性別は曖昧なまま（D-029）。L617「いえ！そういうことではなく……」は、顔をそむけて口ごもる芝居だけで、理由は見せない。
+# 百騎兵は紙切れ（切符）を持っている（下絵では描かない）。
+scene: A21
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+  - {file: world/witch-house-6b-extra.yaml, offset: [0.0, 0.0]}
+map_ymax: 11
+lighting: bath_day
+places:
+  tub: [15.6, 9.4]
+  bath_door: [13.0, 6.0]
+  l_tub: [15.4, 8.3]       # ルッキーニィ。浴槽の北の縁
+  l_back: [15.2, 7.7]      # 跳び退いた所
+  hk_in: [13.4, 7.0]       # 百騎兵。扉を入った所
+  m_curtain: [14.2, 9.0]   # マーニィが西のカーテンの陰から出る所
+start:
+  hundred-knight: {at: [13.0, 5.4], face: 180}
+  luckiny: {at: l_tub, face: 180}
+  marny: {at: [13.6, 9.9], face: 90}
+
+cuts:
+  A21-001:
+    frame: 全身（二人）
+    only: [hundred-knight, luckiny]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [13.0, 5.4], face: 180, pose: walk}
+        - {t: 1.6, at: hk_in, face: 160, pose: walk, ease: out}
+        - {t: 1.9, at: hk_in, face: 120, pose: stand}
+        - {t: 5.8, at: hk_in, face: 115, pose: stand}
+      luckiny:
+        - {t: 0.0, at: l_tub, face: 180, pose: lean}
+        - {t: 2.0, at: l_tub, face: 180, pose: lean}
+        - {t: 2.5, at: l_tub, face: 302, pose: stand}
+        - {t: 3.4, at: l_tub, face: 302, pose: wave}
+        - {t: 5.8, at: l_tub, face: 302, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [12.5, 8.2, 1.55], look: [14.4, 7.5], look_h: 1.0, lens: 24, frame: 全身}
+      - {t: 5.8, cam: [12.55, 8.1, 1.55], look: [14.3, 7.32], look_h: 1.0, lens: 26}
+    act: {start: 光る沼の水の浴槽と赤いカーテンのバスルーム。浴槽の縁からのぞき込むルッキーニィ, do: 百騎兵が画面の左の扉から入ってくる。ルッキーニィが振り向いて手を振り「お帰りなさい」, end: 手を振るルッキーニィと百騎兵}
+    camera: 西の壁ぎわから、浴槽の縁のルッキーニィと扉を一緒に。入ってくる百騎兵の方へ少し振る
+    kind: M
+  A21-002:
+    frame: 胸上（水面ごし）→寄り（指と水面）→引き
+    only: [luckiny, marny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_tub, face: 302, pose: stand}
+        - {t: 0.8, at: l_tub, face: 255, pose: stand}
+        - {t: 5.6, at: l_tub, face: 230, pose: stand}
+        - {t: 6.4, at: l_tub, face: 180, pose: lean}
+        - {t: 11.6, at: l_tub, face: 180, pose: lean}
+        - {t: 12.6, at: [15.4, 8.35], face: 182, pose: point}
+        - {t: 15.6, at: [15.4, 8.35], face: 182, pose: point}
+        - {t: 15.9, at: l_back, z: 0.15, face: 225, pose: hop, ease: out}
+        - {t: 16.3, at: l_back, z: 0.0, face: 220, pose: stand}
+        - {t: 23.7, at: l_back, face: 220, pose: stand}
+      marny:
+        - {t: 0.0, at: [13.6, 9.9], z: 1.3, face: 90, pose: stand}
+        - {t: 15.6, at: [13.6, 9.9], z: 1.3, face: 60, pose: stand}
+        - {t: 16.2, at: m_curtain, z: 1.35, face: 45, pose: arms_up, ease: out}
+        - {t: 17.4, at: m_curtain, z: 1.35, face: 40, pose: stand}
+        - {t: 23.7, at: m_curtain, z: 1.35, face: 40, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 115, pose: stand}
+        - {t: 16.0, at: hk_in, face: 125, pose: stand}
+        - {t: 23.7, at: hk_in, face: 125, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [16.6, 10.0, 1.3], look: [15.35, 8.3], look_h: 1.15, lens: 30, frame: 胸上}
+      - {t: 6.0, cam: [16.55, 9.95, 1.2], look: [15.4, 8.4], look_h: 1.0, lens: 32}
+      - {t: 12.4, cam: [16.05, 9.4, 0.95], look: [15.4, 8.45], look_h: 1.0, lens: 28}
+      - {t: 15.6, cam: [16.05, 9.38, 0.95], look: [15.38, 8.45], look_h: 1.0, lens: 28}
+      - {t: 17.0, cam: [16.6, 10.1, 1.5], look: [14.7, 8.3], look_h: 1.2, lens: 24}
+      - {t: 23.7, cam: [16.65, 10.15, 1.5], look: [14.7, 8.25], look_h: 1.2, lens: 25}
+    act: {start: 振り向いたルッキーニィ, do: 部屋を見回しながら「早くここに慣れたくて」。浴槽をのぞき込み、珍しそうに光る水面へそっと指を伸ばす。その瞬間、西のカーテンの陰からマーニィが顔を出し「お風呂に入るの？」。ルッキーニィは跳び退く, end: 跳び退いたルッキーニィと、得意げなマーニィ}
+    camera: 浴槽の南東（東のカーテンの前）から、光る水面ごしにルッキーニィの顔を。伸びる指と水面へ低く寄り、マーニィが出た所で引く
+    kind: M
+  A21-003:
+    frame: 胸上（二人・横から）
+    only: [luckiny, marny, hundred-knight]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_back, face: 220, pose: stand}
+        - {t: 0.4, at: l_back, face: 222, pose: wave}
+        - {t: 3.6, at: l_back, face: 225, pose: stand}
+        - {t: 7.6, at: l_back, face: 240, pose: stand}
+        - {t: 10.6, at: l_back, face: 250, pose: stand}
+        - {t: 13.6, at: l_back, face: 252, pose: stand}
+      marny:
+        - {t: 0.0, at: m_curtain, z: 1.35, face: 40, pose: proud}
+        - {t: 7.0, at: m_curtain, z: 1.35, face: 40, pose: stand}
+        - {t: 7.6, at: [14.5, 8.3], z: 1.45, face: 60, pose: arms_up, ease: inout}
+        - {t: 10.6, at: [14.6, 7.9], z: 1.5, face: 75, pose: stand, ease: inout}
+        - {t: 13.6, at: [14.6, 7.9], z: 1.5, face: 75, pose: gesture}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 125, pose: stand}
+        - {t: 13.6, at: hk_in, face: 115, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [15.1, 9.6, 2.0], look: [14.75, 8.1], look_h: 1.35, lens: 28, frame: 胸上}
+      - {t: 6.8, cam: [15.05, 9.5, 1.95], look: [14.75, 8.05], look_h: 1.45, lens: 28}
+      - {t: 13.6, cam: [15.0, 9.4, 1.95], look: [14.85, 7.85], look_h: 1.55, lens: 30}
+    act: {start: 跳び退いたルッキーニィ, do: 両手を振って「水に入るの苦手ですし」。マーニィはふわりと近づいて「何事も経験よ」, end: ルッキーニィの前のマーニィ}
+    camera: 浴槽の上の高い所（南）から、向き合う二人を横に。近づくマーニィに合わせてゆっくり寄る
+    kind: M
+  A21-003b:
+    frame: 胸上（二人）→寄り（ルッキーニィ）
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: l_back, face: 252, pose: stand}
+        - {t: 1.5, at: l_back, face: 285, pose: stand}
+        - {t: 3.9, at: l_back, face: 292, pose: stand}
+        - {t: 4.2, at: [15.3, 7.6], face: 292, pose: wave}
+        - {t: 7.2, at: [15.3, 7.6], face: 292, pose: stand}
+        - {t: 9.0, at: [15.3, 7.6], face: 262, pose: stand}
+        - {t: 11.0, at: [15.3, 7.6], face: 200, pose: look_down}
+        - {t: 13.5, at: [15.3, 7.6], face: 200, pose: look_down}
+      marny:
+        - {t: 0.0, at: [14.6, 7.9], z: 1.5, face: 75, pose: gesture}
+        - {t: 1.5, at: [14.7, 7.35], z: 1.6, face: 112, pose: proud, ease: inout}
+        - {t: 4.0, at: [14.7, 7.35], z: 1.6, face: 112, pose: proud}
+        - {t: 7.6, at: [14.7, 7.35], z: 1.6, face: 112, pose: stand}
+        - {t: 9.6, at: [15.25, 7.05], z: 1.7, face: 180, pose: stand, ease: inout}
+        - {t: 11.0, at: [15.75, 7.35], z: 1.55, face: 241, pose: stand, ease: inout}
+        - {t: 13.5, at: [15.75, 7.35], z: 1.55, face: 241, pose: gesture}
+    cam_keys:
+      - {t: 0.0, cam: [14.6, 9.7, 1.25], look: [14.95, 7.6], look_h: 1.5, lens: 30, frame: 胸上}
+      - {t: 7.4, cam: [14.65, 9.6, 1.25], look: [15.0, 7.5], look_h: 1.55, lens: 32}
+      - {t: 13.5, cam: [14.75, 9.4, 1.25], look: [15.3, 7.5], look_h: 1.45, lens: 38}
+    act: {start: ルッキーニィの前のマーニィ, do: マーニィがルッキーニィの斜め上へ浮かんで「今度リカちゃんと一緒に入ったら？」。ルッキーニィはあわてて両手を振って「ダメですよ！」。マーニィはルッキーニィの頭の後ろをふわりと回って反対側へ出て（ルッキーニィは身をすくめる）「背中の流しっこって、そんなに変かしら？」。ルッキーニィは顔をそむけてうつむく, end: うつむくルッキーニィ}
+    camera: 浴槽の南西の上の低い所から二人を。マーニィが回るのを追い、そむけたルッキーニィの顔へゆっくり寄る
+    kind: M
+  A21-004:
+    frame: 胸上→全身（扉へ）
+    only: [luckiny, hundred-knight, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [15.3, 7.6], face: 200, pose: look_down}
+        - {t: 0.6, at: [15.3, 7.6], face: 225, pose: look_down}
+        - {t: 4.3, at: [15.3, 7.6], face: 280, pose: stand}
+        - {t: 5.0, at: [15.3, 7.6], face: 280, pose: bow}
+        - {t: 6.0, at: [15.3, 7.6], face: 295, pose: stand}
+        - {t: 6.2, at: [15.0, 7.4], face: 300, pose: run}
+        - {t: 7.2, at: [13.7, 6.5], face: 320, pose: run}
+        - {t: 7.8, at: [13.05, 6.0], face: 350, pose: run}
+        - {t: 9.2, at: [12.95, 3.6], face: 0, pose: run, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 125, pose: stand}
+        - {t: 7.0, at: hk_in, face: 60, pose: stand}
+        - {t: 9.2, at: hk_in, face: 340, pose: stand}
+      marny:
+        - {t: 0.0, at: [15.75, 7.35], z: 1.55, face: 241, pose: gesture}
+        - {t: 6.4, at: [15.75, 7.35], z: 1.55, face: 265, pose: stand}
+        - {t: 9.2, at: [15.75, 7.35], z: 1.55, face: 300, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [13.7, 7.9, 1.0], look: [15.3, 7.55], look_h: 1.25, lens: 30, frame: 胸上}
+      - {t: 5.8, cam: [13.7, 7.9, 1.0], look: [15.2, 7.5], look_h: 1.2, lens: 30}
+      - {t: 7.6, cam: [13.75, 7.95, 1.05], look: [14.0, 6.4], look_h: 1.0, lens: 26}
+      - {t: 9.2, cam: [13.75, 7.95, 1.05], look: [13.2, 6.2], look_h: 1.0, lens: 24}
+    act: {start: うつむくルッキーニィ, do: マーニィから顔をそむけて（カメラの方へ）「そういうことではなく……」と口ごもり、扉の方へぺこりと頭を下げて「失礼します！」とカメラの脇を駆け抜け、扉から出ていく, end: 扉の前の百騎兵}
+    camera: 西（西のカーテンの手前）の低い所から、顔をそむけるルッキーニィを。駆け出すのを追って扉の方へ大きく振る
+    kind: M
+  A21-005:
+    frame: 胸上（浴槽ごし）
+    only: [marny, hundred-knight]
+    hidden_ok: [luckiny]
+    keys:
+      marny:
+        - {t: 0.0, at: [15.75, 7.35], z: 1.55, face: 300, pose: stand}
+        - {t: 1.2, at: [15.75, 7.35], z: 1.55, face: 310, pose: stand}
+        - {t: 2.0, at: [15.7, 7.4], z: 1.55, face: 165, pose: stand}
+        - {t: 6.4, at: [15.55, 7.6], z: 1.5, face: 168, pose: stand}
+        - {t: 7.2, at: [15.3, 8.35], z: 1.3, face: 172, pose: stand, ease: inout}
+        - {t: 14.2, at: [15.3, 8.35], z: 1.3, face: 172, pose: gesture}
+        - {t: 18.5, at: [15.3, 8.35], z: 1.3, face: 172, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 340, pose: stand}
+        - {t: 7.0, at: hk_in, face: 110, pose: stand}
+        - {t: 18.5, at: hk_in, face: 110, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [15.6, 10.45, 0.85], look: [15.6, 7.45], look_h: 1.5, lens: 30, frame: 胸上}
+      - {t: 7.2, cam: [15.55, 10.4, 0.85], look: [15.3, 8.3], look_h: 1.35, lens: 34}
+      - {t: 18.5, cam: [15.5, 10.3, 0.85], look: [15.3, 8.35], look_h: 1.35, lens: 40}
+    act: {start: 扉の方を見るマーニィ, do: 振り向いて「逃げ出したくなるほど風呂が嫌いなのかしら」。光る浴槽の上へ漂って水面を見下ろし「リカちゃんの風呂って沼の水を使うから…むしろ危ないか」（泡がはじける音）, end: 浴槽の上のマーニィ}
+    camera: 浴槽の南の低い所から、手前に光る水面、その上に漂ってくるマーニィの顔。ゆっくり寄る
+    kind: M
+  A21-005b:
+    frame: 胸上（百騎兵越し）→引き
+    only: [marny, hundred-knight]
+    hidden_ok: [luckiny]
+    keys:
+      marny:
+        - {t: 0.0, at: [15.3, 8.35], z: 1.3, face: 170, pose: stand}
+        - {t: 0.6, at: [14.2, 7.5], z: 1.25, face: 300, pose: stand, ease: inout}
+        - {t: 3.0, at: [14.2, 7.5], z: 1.25, face: 300, pose: gesture}
+        - {t: 8.0, at: [14.2, 7.5], z: 1.25, face: 300, pose: stand}
+        - {t: 9.6, at: [13.4, 6.5], z: 1.3, face: 330, pose: stand}
+        - {t: 11.9, at: [12.85, 4.7], z: 1.3, face: 0, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_in, face: 110, pose: stand}
+        - {t: 0.8, at: hk_in, face: 120, pose: stand}
+        - {t: 5.6, at: hk_in, face: 120, pose: nod}
+        - {t: 6.4, at: hk_in, face: 120, pose: hold}
+        - {t: 8.4, at: hk_in, face: 120, pose: hold}
+        - {t: 8.8, at: hk_in, face: 350, pose: walk}
+        - {t: 10.4, at: [13.0, 5.9], face: 0, pose: walk}
+        - {t: 11.9, at: [13.0, 5.35], face: 0, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [12.55, 6.5, 1.75], look: [14.2, 7.6], look_h: 1.3, lens: 30, frame: 胸上}
+      - {t: 8.4, cam: [12.55, 6.5, 1.75], look: [14.0, 7.4], look_h: 1.25, lens: 30}
+      - {t: 11.9, cam: [12.4, 6.6, 1.85], look: [15.0, 8.8], look_h: 0.9, lens: 22}
+    act: {start: 浴槽の上のマーニィ, do: 百騎兵の前へ飛んで「やることをやらなくちゃね」。百騎兵はうなずいて紙切れを見せ、二人で扉から出ていく。残るのは光る浴槽, end: 誰もいないバスルームの光る浴槽}
+    camera: 扉の脇（北西の角）から、百騎兵の肩越しにマーニィの顔を。二人がカメラの脇を抜けて出ていくと、引いて光る浴槽を残す
+    kind: M

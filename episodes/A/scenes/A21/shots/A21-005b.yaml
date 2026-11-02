@@ -1,0 +1,37 @@
+# A21 魔女邸・バスルーム（夕方近く）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A21 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A21-005b
+scene: A21
+tc: 84.3
+sec: 11.9
+kind: M
+shot: 胸上（百騎兵越し）→引き・マーニィ・百騎兵
+acting: 百騎兵の前へ飛んで「やることをやらなくちゃね」。百騎兵はうなずいて紙切れを見せ、二人で扉から出ていく。残るのは光る浴槽
+dialogue:
+- L622「さて、しかし百騎兵ちゃんがお風呂で寛ぐのは、まだまだ先になりそうね。やることをやらなくちゃね。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.55
+  - 6.5
+  - 1.75
+  look:
+  - 14.2
+  - 7.6
+  lens: 30
+  move: 扉の脇（北西の角）から、百騎兵の肩越しにマーニィの顔を。二人がカメラの脇を抜けて出ていくと、引いて光る浴槽を残す
+background: witch-house
+image: null
+refs:
+- marny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 浴槽の上のマーニィ
+  end: 誰もいないバスルームの光る浴槽
+timing:
+  lead: 0.3
+  at:
+    L622: 0.3

@@ -1,0 +1,49 @@
+# A18 の BGM・効果音の置き場所（D-068、2026-11-02）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A18
+bgm:
+  # 原作どおり（パート20、docs/audio_catalog.md）: M21 場面の頭（0:00〜0:25）→ 間 → M14（0:40〜）と M05 が交互 → 章の題の前で消える → M01 魔女邸（4:36〜）
+  # 原作は台詞ごとに M14・M05・M18 が細かく入れ替わる。アニメではカットの切れ目で替える（009〜010 は疑いの場面なので M14、011〜014 は M05）
+  - {src: audio/bgm/catalog/M21.ogg, cut: A18-001, t: 0.0, until: {cut: A18-003, t: 3.0}, fade_in: 0.8, fade_out: 1.5, volume: 0.28}
+  - {src: audio/bgm/catalog/M14.ogg, cut: A18-004, t: 0.0, until: {cut: A18-007, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M05.ogg, cut: A18-007, t: 0.0, until: {cut: A18-009, t: 0.0}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M14.ogg, cut: A18-009, t: 0.0, until: {cut: A18-011, t: 0.0}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M05.ogg, cut: A18-011, t: 0.0, until: {cut: A18-014, t: 3.5}, loop: true, fade_in: 0.8, fade_out: 2.5, volume: 0.28}
+  - {src: audio/bgm/catalog/M01.ogg, cut: A18-015, t: 0.0, until: {cut: A18-026, t: 26.0}, loop: true, fade_in: 1.5, fade_out: 2.0, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  # 001 廊下: アルレッキーノが扉を2度叩く。扉の下の緑の光と、何かが煮える音（A30 の伏線。014 と2回だけ）
+  - {src: audio/sfx/knock_soft.ogg, cut: A18-001, t: 3.6, volume: 0.45}
+  - {src: audio/sfx/knock_soft.ogg, cut: A18-001, t: 4.1, volume: 0.45}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-001, t: 5.9, volume: 0.2}
+  - {src: audio/sfx/swamp_bubble_loop.ogg, cut: A18-001, t: 6.8, until: {cut: A18-002, t: 0.0}, loop: true, rate: 0.75, fade_in: 1.2, fade_out: 0.4, volume: 0.13}
+  # 007 ビスコがびくっと振り向く
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-007, t: 3.25, volume: 0.3}
+  # 010 怒るビスコ、跳び退いて頭を下げるルッキーニィ
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-010, t: 0.25, rate: 1.3, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-010, t: 0.6, volume: 0.3}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-010, t: 6.9, volume: 0.22}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-010, t: 8.8, volume: 0.22}
+  # 014 章の題: 閉じた扉の下の光と、煮える音（少し大きく）
+  - {src: audio/sfx/swamp_bubble_loop.ogg, cut: A18-014, t: 0.0, until: {cut: A18-015, t: 0.0}, loop: true, rate: 0.75, fade_in: 1.0, fade_out: 0.6, volume: 0.2}
+  - {src: audio/sfx/rumble_low.ogg, cut: A18-014, t: 0.5, until: {cut: A18-015, t: 0.0}, loop: true, fade_in: 2.0, fade_out: 0.6, volume: 0.06}
+  # 020 マーニィが丸窓を突き破って飛び込む（見せ場。0.45〜1.6秒はスロー）
+  - {src: audio/sfx/glass_shatter.ogg, cut: A18-020, t: 0.42, volume: 0.85}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-020, t: 0.7, volume: 0.25}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-020, t: 1.6, volume: 0.4}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-020, t: 2.5, rate: 0.9, volume: 0.3}
+  - {src: audio/sfx/thud_land.ogg, cut: A18-020, t: 3.2, rate: 1.4, volume: 0.35}
+  # 021 ルッキーニィのしりもち
+  - {src: audio/sfx/thud_land.ogg, cut: A18-021, t: 0.4, volume: 0.3}
+  # 022 跳ね起きる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A18-022, t: 0.2, volume: 0.25}
+  # 024 アルレッキーノの顔の前へ飛ぶ、ビスコの方へ飛ぶ、宙で跳ねる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-024, t: 0.35, rate: 1.4, volume: 0.25}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-024, t: 9.9, rate: 1.4, volume: 0.25}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-024, t: 12.6, rate: 1.6, volume: 0.2}
+  # 025 びくっと後ろへ下がる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-025, t: 5.7, rate: 1.5, volume: 0.2}
+  # 026 百騎兵のそばへ飛ぶ、玄関から出ていく
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A18-026, t: 0.5, rate: 1.4, volume: 0.22}
+  - {src: audio/sfx/door_open.ogg, cut: A18-026, t: 23.4, volume: 0.45}
+  - {src: audio/sfx/door_close.ogg, cut: A18-026, t: 25.4, volume: 0.4}

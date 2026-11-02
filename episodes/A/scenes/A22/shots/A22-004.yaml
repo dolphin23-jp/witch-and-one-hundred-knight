@@ -1,0 +1,39 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-004
+scene: A22
+tc: 75.5
+sec: 8.9
+kind: M
+shot: 胸上（ルッキーニィ）・ルッキーニィ・マーニィ
+acting: マーニィが飛んできて「あら？早かったわね」。ルッキーニィはうなだれて「返事はありませんでした……」
+dialogue:
+- L676「あら？早かったわね。どうだったのかしら？」
+- L677「部屋にはおられるようで返事はありませんでした……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.1
+  - 4.7
+  - 0.95
+  look:
+  - 2.75
+  - 3.2
+  lens: 30
+  move: テーブルの南東の低い所から、うなだれるルッキーニィの顔を斜め前から。ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- luckiny
+- marny
+overlays: []
+fallback: null
+act:
+  start: 階段の下のルッキーニィ
+  end: うなだれるルッキーニィ
+timing:
+  lead: 0.3
+  at:
+    L676: 0.3
+    L677: 3.87

@@ -1,0 +1,545 @@
+cuts:
+  A19-001:
+    cam:
+    - 13.0
+    - -2.9
+    - 1.5
+    lens: 30
+    bearing: 118
+    frame: 寄り
+    start:
+      people: []
+      bg: 居間の壁
+      props:
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の燭台（扉の脇）
+      staging: 'No people in frame. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people: []
+      staging: 'No people in frame. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move: null
+    note: null
+  A19-002:
+    cam:
+    - 4.0
+    - 6.4
+    - 1.5
+    lens: 26
+    bearing: 334
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 3.0
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 居間の壁
+      props:
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: the wood-paneled walls of the witch''s
+        living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.71
+        dist: 2.36
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: arlecchino
+        s: 0.69
+        dist: 2.58
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen left; Arlecchino (a bulky servant as tall as
+        a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big
+        black boots), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing
+        green vines, tall bookshelves and the curved wooden staircase.'
+    move:
+      bisco:
+        to:
+        - 3.3
+        - 3.9
+        face: 210
+        via:
+        - - 5.5
+          - 3.9
+        - - 5.5
+          - 3.9
+        - - 5.5
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        t:
+        - 0.0
+        - 26.0
+      arlecchino:
+        to:
+        - 6.4
+        - 4.0
+        face: 262
+        via:
+        - a_shelf
+        - a_shelf
+        - a_shelf
+        - - 6.4
+          - 4.0
+        - - 6.4
+          - 4.0
+        - - 6.4
+          - 4.0
+        - - 6.4
+          - 4.0
+        t:
+        - 0.0
+        - 26.0
+    note: null
+  A19-003:
+    cam:
+    - 4.45
+    - 6.35
+    - 1.0
+    lens: 24
+    bearing: 0
+    frame: 膝上
+    start:
+      people:
+      - who: bisco
+        s: -0.63
+        dist: 2.45
+        side: 左
+        body: 斜め前（画面左向き）
+      bg: 居間の壁
+      props:
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s
+        living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.2
+        dist: 4.24
+        side: 中央
+        body: 背中
+      - who: arlecchino
+        s: 0.96
+        dist: 2.56
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped
+        head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing,
+        at the far right of the frame, in profile, turned toward screen left. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the
+        curved wooden staircase.'
+    move:
+      bisco:
+        to:
+        - 2.95
+        - 2.1
+        face: 340
+        via:
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        - - 3.3
+          - 3.9
+        t:
+        - 0.0
+        - 15.2
+      arlecchino:
+        to: a_table
+        face: 300
+        via:
+        - - 6.4
+          - 4.0
+        - - 6.4
+          - 4.0
+        - a_table
+        - a_table
+        - a_table
+        t:
+        - 0.0
+        - 15.2
+    note: null
+  A19-003b:
+    cam:
+    - 1.6
+    - 0.35
+    - 1.5
+    lens: 24
+    bearing: 134
+    frame: 胸上
+    start:
+      people:
+      - who: arlecchino
+        s: -0.17
+        dist: 4.93
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.21
+        dist: 2.18
+        side: 中央
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 大きな浴槽（沼の水）
+      - 浴槽の奥の赤いカーテン
+      - 浴槽の西の赤いカーテン（マーニィがこの陰から出てくる）
+      - 浴槽の東の赤いカーテン
+      - 薬瓶とタオルの棚
+      - 腰かけ
+      - 天井のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two
+        copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, in the center of the frame, facing the camera; Bisco (short black bob hair
+        with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right
+        of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.0
+        dist: 0.84
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: arlecchino
+        s: 0.17
+        dist: 4.91
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left; Arlecchino (a bulky servant as tall as a
+        man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big
+        black boots), standing, in the center of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and
+        the curved wooden staircase.'
+    move:
+      bisco:
+        to: b_window
+        face: 332
+        via:
+        - b_window
+        - b_window
+        - b_window
+        - b_window
+        t:
+        - 0.0
+        - 7.4
+      arlecchino:
+        to: a_table
+        face: 308
+        t:
+        - 0.0
+        - 7.4
+    note: null
+  A19-004:
+    cam:
+    - 1.5
+    - 0.78
+    - 1.45
+    lens: 32
+    bearing: 110
+    frame: 肩なめ
+    start:
+      people:
+      - who: bisco
+        s: -0.6
+        dist: 0.81
+        side: 左
+        body: 横顔（画面左向き）
+      - who: arlecchino
+        s: 0.36
+        dist: 4.71
+        side: 右
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - テーブルの上の吊りランプ
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の燭台（扉の脇）
+      - 大きな浴槽（沼の水）
+      - 浴槽の奥の赤いカーテン
+      - 浴槽の西の赤いカーテン（マーニィがこの陰から出てくる）
+      - 浴槽の東の赤いカーテン
+      - 薬瓶とタオルの棚
+      - 腰かけ
+      - 天井のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen left; Arlecchino (a bulky servant as tall as a man: white egg-shaped
+        head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing,
+        on the right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: -0.86
+        dist: 0.7
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: arlecchino
+        s: 0.37
+        dist: 4.65
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, seen from behind at an angle, turned toward screen right; Arlecchino (a bulky servant as
+        tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green
+        arms, big black boots), standing, on the right of the frame, facing the camera. No other people. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves
+        and the curved wooden staircase.'
+    move:
+      bisco:
+        to: b_window
+        face: 130
+        via:
+        - b_window
+        - b_window
+        t:
+        - 0.0
+        - 16.2
+      arlecchino:
+        to: a_table
+        via:
+        - a_table
+        - a_table
+        t:
+        - 0.0
+        - 16.2
+    note: null
+  A19-005:
+    cam:
+    - 17.75
+    - -3.0
+    - 1.35
+    lens: 30
+    bearing: 197
+    frame: 寄り
+    start:
+      people: []
+      bg: 居間の壁
+      props:
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の燭台（扉の脇）
+      - 大きな浴槽（沼の水）
+      - 浴槽の奥の赤いカーテン
+      - 浴槽の西の赤いカーテン（マーニィがこの陰から出てくる）
+      - 浴槽の東の赤いカーテン
+      - 薬瓶とタオルの棚
+      - 腰かけ
+      - 天井のランプ
+      staging: 'No people in frame. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    end:
+      people: []
+      staging: 'No people in frame. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved wooden staircase.'
+    move: null
+    note: null
+  A19-006:
+    cam:
+    - 0.95
+    - 0.5
+    - 3.6
+    lens: 22
+    bearing: 121
+    frame: 引き
+    start:
+      people:
+      - who: bisco
+        s: -0.41
+        dist: 1.36
+        side: 左
+        body: 背中
+      - who: arlecchino
+        s: 0.0
+        dist: 5.43
+        side: 中央
+        body: 正面
+      bg: 居間の壁
+      props:
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      - 冷めた食事のお盆（扉の前の床）
+      - 廊下の燭台（扉の脇）
+      - 大きな浴槽（沼の水）
+      - 浴槽の奥の赤いカーテン
+      - 浴槽の西の赤いカーテン（マーニィがこの陰から出てくる）
+      - 浴槽の東の赤いカーテン
+      - 薬瓶とタオルの棚
+      - 腰かけ
+      - 天井のランプ
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped
+        head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing,
+        in the center of the frame, facing the camera. No other people. High angle looking down. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and
+        the curved wooden staircase.'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 2.21
+        side: 中央
+        body: 正面
+      - who: arlecchino
+        s: 0.43
+        dist: 5.11
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera; Arlecchino (a bulky servant as tall as a man: white egg-shaped head with
+        red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the
+        right of the frame, facing the camera. No other people. High angle looking down. Behind: the wood-paneled walls of the witch''s living room with glowing green vines, tall bookshelves and the curved
+        wooden staircase.'
+    move:
+      bisco:
+        to:
+        - 3.2
+        - 1.35
+        face: 290
+        via:
+        - b_window
+        - - 3.2
+          - 1.35
+        - - 3.2
+          - 1.35
+        - - 3.2
+          - 1.35
+        - - 3.2
+          - 1.35
+        - - 3.2
+          - 1.35
+        - - 3.2
+          - 1.35
+        t:
+        - 0.0
+        - 20.6
+      arlecchino:
+        to: a_table
+        face: 290
+        via:
+        - a_table
+        - a_table
+        - a_table
+        - a_table
+        t:
+        - 0.0
+        - 20.6
+    note: null
+checks:
+  axis: []
+  jumps: []
+  overlap: []
+  offscreen: []
+  hidden: []
+  camera: []

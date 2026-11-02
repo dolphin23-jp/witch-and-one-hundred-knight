@@ -1,0 +1,37 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-008
+scene: A18
+tc: 85.8
+sec: 12.5
+kind: M
+shot: 膝上（ビスコ）・ビスコ・ルッキーニィ
+acting: ビスコがルッキーニィの前を通って、ゆっくりテーブルの方へ歩きながら呪いのことを話す。「こんな姿に」で自分の手を見る。ルッキーニィは目で追う
+dialogue:
+- L547「何で呪いをかけられたのかは私自身、実際によくわかっていないんだ……。」
+- L549「ある朝、目が覚めたら突然こんな姿になっていたわけだしな……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.0
+  - 4.2
+  - 0.95
+  look: bisco
+  lens: 30
+  move: 南（玄関の側）の低い所から、こちらへ歩いてくるビスコを据えて振る。止まった所でゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 気まずそうなビスコ
+  end: うつむくビスコ
+timing:
+  lead: 0.3
+  at:
+    L547: 0.3
+    L549: 7.07

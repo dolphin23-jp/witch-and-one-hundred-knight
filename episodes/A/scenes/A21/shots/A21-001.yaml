@@ -1,0 +1,41 @@
+# A21 魔女邸・バスルーム（夕方近く）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A21 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A21-001
+scene: A21
+tc: 0.0
+sec: 5.8
+kind: M
+transition:
+  kind: wipe
+  dir: right
+  sec: 0.8
+shot: 全身（二人）・百騎兵・ルッキーニィ
+acting: 百騎兵が画面の左の扉から入ってくる。ルッキーニィが振り向いて手を振り「お帰りなさい」
+dialogue:
+- L608「あ、百騎兵さん。お帰りなさい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.5
+  - 8.2
+  - 1.55
+  look:
+  - 14.4
+  - 7.5
+  lens: 24
+  move: 西の壁ぎわから、浴槽の縁のルッキーニィと扉を一緒に。入ってくる百騎兵の方へ少し振る
+background: witch-house
+image: null
+refs:
+- hundred-knight
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 光る沼の水の浴槽と赤いカーテンのバスルーム。浴槽の縁からのぞき込むルッキーニィ
+  end: 手を振るルッキーニィと百騎兵
+timing:
+  lead: 2.2
+  at:
+    L608: 2.2

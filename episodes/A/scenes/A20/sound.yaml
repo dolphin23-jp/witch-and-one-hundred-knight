@@ -1,0 +1,41 @@
+# A20 の BGM・効果音の置き場所（D-068、2026-11-02）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+# 通信の小窓のノイズ（E21・E22）は previs_reel.py が scene.yaml の comm から自動で置く
+scene: A20
+bgm:
+  # 原作どおり（パート20）: M24 の続き（〜14:17）→ M13 マーリカの森（14:33〜15:43）→ M06 不穏な会話（15:43〜16:22、隠し森を進む所）→ 曲なし → M08（16:40〜18:38、駅に出た所から）
+  - {src: audio/bgm/catalog/M24.ogg, cut: A20-001, t: 0.0, until: {cut: A20-003, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 1.2, volume: 0.28}
+  - {src: audio/bgm/catalog/M13.ogg, cut: A20-003, t: 0.0, until: {cut: A20-004, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.4, volume: 0.28}
+  - {src: audio/bgm/catalog/M06.ogg, cut: A20-004, t: 0.0, until: {cut: A20-007, t: 1.5}, loop: true, fade_in: 0.3, fade_out: 1.5, volume: 0.3}
+  - {src: audio/bgm/catalog/M08.ogg, cut: A20-007, t: 5.0, until: {cut: A20-010, t: 15.3}, loop: true, fade_in: 1.5, fade_out: 1.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  # 森の空気（ずっと小さく）。隠し森の中は少し大きく
+  - {src: audio/sfx/forest_air_loop.ogg, cut: A20-001, t: 0.0, until: {cut: A20-004, t: 0.0}, loop: true, fade_in: 1.0, fade_out: 0.5, volume: 0.1}
+  - {src: audio/sfx/forest_air_loop.ogg, cut: A20-004, t: 0.0, until: {cut: A20-007, t: 0.0}, loop: true, rate: 0.85, fade_in: 0.3, fade_out: 0.8, volume: 0.15}
+  - {src: audio/sfx/forest_air_loop.ogg, cut: A20-007, t: 0.0, until: {cut: A20-010, t: 15.3}, loop: true, fade_in: 0.8, fade_out: 1.0, volume: 0.1}
+  # 002 シモベのお辞儀
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-002, t: 17.2, volume: 0.22}
+  # 004 根を跳び越える
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A20-004, t: 2.55, volume: 0.35}
+  - {src: audio/sfx/thud_land.ogg, cut: A20-004, t: 3.05, volume: 0.3}
+  # 005 魔獣が飛びかかり、振り向きざまに斬る
+  - {src: audio/sfx/monster_roar2.ogg, cut: A20-005, t: 0.45, rate: 1.25, volume: 0.45}
+  - {src: audio/sfx/sword_swing.ogg, cut: A20-005, t: 1.35, volume: 0.5}
+  - {src: audio/sfx/sword_slash.ogg, cut: A20-005, t: 1.5, volume: 0.65}
+  - {src: audio/sfx/monster_hurt.ogg, cut: A20-005, t: 1.6, rate: 1.2, volume: 0.45}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A20-005, t: 2.0, rate: 0.9, volume: 0.25}
+  # 006 目の前を駆け抜ける
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A20-006, t: 1.4, rate: 0.8, volume: 0.3}
+  # 009 鳥が急降下してネズミをさらう（見せ場）。百騎兵が跳んで手を伸ばす
+  - {src: audio/sfx/bird_screech.ogg, cut: A20-009, t: 2.7, volume: 0.45}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A20-009, t: 3.5, rate: 1.2, volume: 0.4}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-009, t: 4.55, rate: 0.7, volume: 0.4}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A20-009, t: 4.7, volume: 0.35}
+  - {src: audio/sfx/thud_land.ogg, cut: A20-009, t: 5.6, volume: 0.3}
+  - {src: audio/sfx/bird_screech.ogg, cut: A20-009, t: 6.8, rate: 1.05, volume: 0.25}
+  # 010 紙切れがひらひら舞い落ちる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-010, t: 0.6, rate: 1.7, volume: 0.15}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-010, t: 1.7, rate: 1.8, volume: 0.15}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-010, t: 2.8, rate: 1.6, volume: 0.15}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A20-010, t: 7.4, volume: 0.2}

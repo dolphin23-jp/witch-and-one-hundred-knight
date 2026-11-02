@@ -1,0 +1,39 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-003
+scene: A18
+tc: 22.3
+sec: 10.4
+kind: M
+shot: 膝上（二人）・アルレッキーノ・ルッキーニィ
+acting: アルレッキーノが上の階を手で示して「お部屋の前に」。ルッキーニィは口元に手を当てて心配し、階段の上を見上げる
+dialogue:
+- L536「お部屋の前に置いておきましたので、召し上がって頂けると良いのですが。」
+- L537「魔女様、大丈夫でしょうか……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.85
+  - 1.7
+  - 1.0
+  look:
+  - 2.7
+  - 3.5
+  lens: 26
+  move: 階段の脇（北西）の低い所から、向き合う二人を。ルッキーニィが階段の上を見上げると、カメラの方を見上げる顔になる
+background: witch-house
+image: null
+refs:
+- arlecchino
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノとルッキーニィ
+  end: 階段の上を見上げるルッキーニィ
+timing:
+  lead: 0.3
+  at:
+    L536: 0.3
+    L537: 5.54

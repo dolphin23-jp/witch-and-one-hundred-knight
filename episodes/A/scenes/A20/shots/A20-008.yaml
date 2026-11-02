@@ -1,0 +1,39 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-008
+scene: A20
+tc: 83.9
+sec: 11.5
+kind: M
+shot: 全身→寄り（ネズミの高さ）・百騎兵・ネズミ
+acting: 百騎兵が入ってくると、切り株の上の白いネズミが鳴いて跳ねる（「もしかして、それが森の魔女ちゃん……？」）。百騎兵がしゃがんでのぞき込む
+dialogue:
+- L655「チュー。チューチュ！」
+- L656「もしかして、それが森の魔女ちゃん……？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.6
+  - 14.6
+  - 0.6
+  look:
+  - 17.5
+  - 14.0
+  lens: 26
+  move: 切り株の西、ネズミの高さの低い所から、鳴くネズミを横に。右から百騎兵が入ってきてしゃがむ。二人へゆっくり寄る
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- marika-mouse
+overlays: []
+fallback: null
+act:
+  start: 切り株と花の開けた場所
+  end: ネズミと、のぞき込む百騎兵
+timing:
+  lead: 2.4
+  at:
+    L655: 2.4
+    L656: 5.14

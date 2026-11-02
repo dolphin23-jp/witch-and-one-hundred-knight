@@ -1,0 +1,40 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-025
+scene: A18
+tc: 311.0
+sec: 10.3
+kind: M
+shot: 胸上（二人）→寄り（マーニィ）・マーニィ・ビスコ・ルッキーニィ
+acting: ビスコが疑わしそうに顔を近づけ「実は沼にいたんじゃないのか？」。マーニィはびくっと後ろへ下がり、そっぽを向いて言い返す（汗は合成。沼の精という正体の伏線）
+dialogue:
+- L600「もしかして、お前……実は沼にいたんじゃないのか？」
+- L601「な、なにを根拠に！ちゃんと旅にでてたわよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.9
+  - 3.9
+  - 1.25
+  look:
+  - 3.9
+  - 1.75
+  lens: 30
+  move: テーブルの南から、テーブル越しに二人を。そっぽを向く（カメラの方を向く）マーニィへ寄る
+background: witch-house
+image: null
+refs:
+- marny
+- bisco
+- luckiny
+overlays: []
+fallback: null
+act:
+  start: 胸を張るマーニィ
+  end: そっぽを向くマーニィの寄り
+timing:
+  lead: 0.3
+  at:
+    L600: 0.3
+    L601: 5.63

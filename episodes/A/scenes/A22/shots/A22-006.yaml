@@ -1,0 +1,42 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-006
+scene: A22
+tc: 100.7
+sec: 14.9
+kind: M
+shot: 胸上（ルッキーニィ）→寄り（マーニィ）・ルッキーニィ・マーニィ・ビスコ・アルレッキーノ・百騎兵
+acting: ルッキーニィがおずおずと一歩出て「魔女様は森の魔女様とどのようなご関係なんですか？」。マーニィは少し高く浮いて、階段の上の方を見ながら「恨みに恨んでいる」
+dialogue:
+- L682「あ、あの……ちなみに魔女様は森の魔女様とどのようなご関係なんですか？」
+- L684「とにかく、リカちゃんは森の魔女ちゃんを恨みに恨んでいることは間違いないわね。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.0
+  - 1.25
+  - 1.45
+  look:
+  - 2.6
+  - 2.95
+  lens: 30
+  move: ソファの西の端の前から、ルッキーニィの顔を。マーニィが答える所で東へ振って、階段の上を見るマーニィの顔へ寄る
+background: witch-house
+image: null
+refs:
+- luckiny
+- marny
+- bisco
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ソファのビスコとマーニィ
+  end: 階段の上を見るマーニィの顔
+timing:
+  lead: 0.3
+  at:
+    L682: 0.3
+    L684: 7.46

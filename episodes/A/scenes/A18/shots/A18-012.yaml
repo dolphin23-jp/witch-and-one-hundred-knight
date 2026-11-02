@@ -1,0 +1,43 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-012
+scene: A18
+tc: 141.3
+sec: 21.7
+kind: M
+shot: 引き（低い）・ビスコ・ルッキーニィ・アルレッキーノ・百騎兵
+acting: ビスコがみんなの方へ向き直り、テーブルの北で拳を握って「簡単に諦めたくないんだ！」。ルッキーニィが「魔女様も部屋から出てきますよね」と階段の上を見上げ、みんなも見上げる
+dialogue:
+- L557「それより、どうにかして、ヴァルプルギスの夜会に行くことはできないのか？」
+- L558「メタリカの件もあるが……、呪いを解く重要な手掛かりになるかもしれない。簡単に諦めたくないんだ！」
+- L562「でも、夜会に行けるとなったら、魔女様も部屋から出てきますよね」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.4
+  - 6.0
+  - 2.4
+  look:
+  - 3.9
+  - 2.7
+  lens: 22
+  move: 玄関の側（南東）の高い所から居間を広く。ビスコが「諦めたくない」と言う所で寄り、みんなが階段の上を見上げる所で引いて上がる
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 窓を見上げていたビスコ
+  end: 階段の上を見上げる四人
+timing:
+  lead: 0.3
+  at:
+    L557: 0.3
+    L558: 5.88
+    L562: 13.96

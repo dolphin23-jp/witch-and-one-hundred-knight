@@ -1,0 +1,43 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-019
+scene: A18
+tc: 235.3
+sec: 16.3
+kind: M
+shot: 全身（百騎兵の高さ）→丸窓・ビスコ・百騎兵・ルッキーニィ・アルレッキーノ
+acting: ビスコが百騎兵の方へ歩み寄り「百騎兵の支援はどうするんだ」。百騎兵が見上げる。窓の外から声がして、みんなが丸窓を向く
+dialogue:
+- L584「ああ、そうだな。それはいいんだが、百騎兵の支援はどうするんだ。」
+- L585「メタリカに引きこもられちゃ、いろいろと、問題があるんじゃないのか？」
+- L586「ふふーん。その点については心配ご無用よ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.3
+  - 0.9
+  - 0.75
+  look:
+  - 4.6
+  - 1.6
+  lens: 24
+  move: 百騎兵の高さ（ソファの東の端）から、百騎兵の肩越しに歩み寄るビスコを。声がした所で丸窓へ振る
+background: witch-house
+image: null
+refs:
+- bisco
+- hundred-knight
+- luckiny
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノの話を聞くビスコ
+  end: 丸窓
+timing:
+  lead: 0.3
+  at:
+    L584: 0.3
+    L585: 6.28
+    L586: 11.19

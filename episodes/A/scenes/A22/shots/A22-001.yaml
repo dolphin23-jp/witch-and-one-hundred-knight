@@ -1,0 +1,47 @@
+# A22 魔女邸・切符（夕方）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A22 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A22-001
+scene: A22
+tc: 0.0
+sec: 19.2
+kind: M
+transition:
+  kind: wipe
+  dir: left
+  sec: 0.6
+shot: 全身・ビスコ・アルレッキーノ・ルッキーニィ・百騎兵
+acting: 紙切れを持った百騎兵がカメラの右脇（玄関）から入ってくる。ビスコがソファから立ち上がって迎え「森の魔女殿にはお会いできたのか？」。アルレッキーノが本棚の前から「ネズミは鳥にさらわれたと」と答え、ルッキーニィはうなだれる
+dialogue:
+- L662「おお！百騎兵、帰ってきたのか！森の魔女殿にはお会いできたのか？」
+- L663「マーニィ様が言われるにはマーリカ様と思われるネズミは鳥にさらわれたと……。」
+- L664「そ、そんな……！じゃあ、夜会にはもう……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.6
+  - 6.6
+  - 2.6
+  look:
+  - 4.8
+  - 2.6
+  lens: 24
+  move: 玄関の側（南）の高い所から居間を北へ広く。ゆっくり下りながら寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- arlecchino
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 夕方の居間
+  end: うなだれるルッキーニィ
+timing:
+  lead: 1.4
+  at:
+    L662: 1.4
+    L663: 7.26
+    L664: 13.44

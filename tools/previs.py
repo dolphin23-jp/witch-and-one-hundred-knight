@@ -259,6 +259,10 @@ SHAPE = {
     "apprentice-c": {"r": 0.12, "hr": 0.11, "arm": 0.035},
     "apprentice-d": {"r": 0.12, "hr": 0.11, "arm": 0.035},
     "karakuri-doll": {"r": 0.5, "hr": 0.3, "arm": 0.07},   # 守護者のからくり人形（卵形の胴に骸骨の顔と笠。設定画 karakuri-doll_sheet_01）
+    # 6章後半 回1（A18〜A22）
+    "marny": {"r": 0.05, "hr": 0.07, "arm": 0.018},          # 沼の妖精マーニィ（小さな体と大きな緑の蝶の羽。浮いている。設定画 marny_sheet_01）
+    "forest-servant": {"r": 0.27, "hr": 0.21, "arm": 0.09},  # 森の魔女のシモベ（アルレッキーノと同じ型と推定。森の色。資料待ち）
+    "marika-mouse": {"r": 0.04, "hr": 0.04, "arm": 0.01},    # マーリカのネズミ（白い小さなネズミ）
 }
 WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
@@ -367,6 +371,17 @@ def build_span(name, pr):
     (x0, y0), (x1, y1) = pr["from"], pr["to"]
     L = math.dist((x0, y0), (x1, y1))
     rot = -math.degrees(math.atan2(-(y1 - y0), x1 - x0))   # 東西に長い箱を、from→to の向きに回す（box の rot は上から見て時計回り）
+    if name.startswith("rail"):   # 線路: 2本のレールと枕木（ヘッカヘンネの隠し森の駅、A20〜A23）。gauge はレールの間隔
+        steel = make_mat(f"{name}_steel", (0.32, 0.3, 0.3), rough=0.4)
+        g = pr.get("gauge", 1.2)
+        nx, ny = -(y1 - y0) / L, (x1 - x0) / L   # from→to に直交する向き
+        for sg in (-1, 1):
+            box(steel, f"ENV_{name}_r{sg}", (x0 + x1) / 2 + nx * sg * g / 2, (y0 + y1) / 2 + ny * sg * g / 2, L, 0.08, 0.12, pr.get("z", 0.0) + 0.1, rot)
+        n = max(2, int(L / 0.9))
+        for k in range(n):
+            u = (k + 0.5) / n
+            box(mat_of("wood"), f"ENV_{name}_tie{k}", x0 + (x1 - x0) * u, y0 + (y1 - y0) * u, 0.25, g + 0.6, 0.1, pr.get("z", 0.0), rot + 90)
+        return
     key = "fence" if name.startswith("fence") else ("wood" if name.startswith(("beam", "plank")) else "stonewall")
     t = pr.get("t", 0.08 if key == "fence" else 0.4)
     if key == "fence":   # 柵は横木2本と杭
@@ -617,8 +632,40 @@ def build_extra(name, pr, x, y, lit):
     if name.startswith("stool"):
         prim("cyl", mat_of("furn"), f"ENV_{name}", loc=bl((x, y), 0.22), radius=0.18, depth=0.45)
         return True
-    if name.startswith("curtain"):
-        box(mat_of("curtain"), f"ENV_{name}", x, y, pr.get("w", 1.0), 0.04, pr.get("h", 1.9), 0.0, rot)
+    if name.startswith("curtain"):   # color（0〜255）があればその色（バスルームの赤いカーテン、A21）
+        cm = make_mat(f"{name}_m", tuple(v / 255 for v in pr["color"])) if pr.get("color") else mat_of("curtain")
+        box(cm, f"ENV_{name}", x, y, pr.get("w", 1.0), 0.04, pr.get("h", 1.9), pr.get("z", 0.0), rot)
+        return True
+    if name.startswith("tub"):   # 大きな浴槽（縁と、沼の水の光る水面。メタリカの風呂は沼の水、A21）
+        w, d, hh = pr.get("w", 2.2), pr.get("d", 1.2), pr.get("h", 0.7)
+        rim = make_mat(f"{name}_rim", tuple(v / 255 for v in pr.get("color", [190, 150, 90])), rough=0.4)
+        box(rim, f"ENV_{name}", x, y, w, d, hh, 0.0, rot)
+        water = make_mat(f"{name}_water", tuple(v / 255 for v in pr.get("water", [40, 170, 120])), rough=0.2, emit=pr.get("glow", 0.6))
+        box(water, f"ENV_{name}_water", x, y, w - 0.2, d - 0.2, 0.02, hh - 0.06, rot)
+        return True
+    if name.startswith("tray"):   # 床に置いたお盆と食器（閉じた扉の前の冷めた食事、A18）
+        box(mat_of("furn"), f"ENV_{name}", x, y, pr.get("w", 0.5), pr.get("d", 0.35), 0.04, pr.get("z", 0.0), rot)
+        dish = make_mat(f"{name}_dish", (0.92, 0.9, 0.85))
+        for k, (dx, dy, rr) in enumerate(((-0.12, 0.0, 0.08), (0.1, -0.05, 0.06), (0.1, 0.08, 0.05))):
+            prim("cyl", dish, f"ENV_{name}_dish{k}", loc=bl((x + dx, y + dy), pr.get("z", 0.0) + 0.06), radius=rr, depth=0.04)
+        return True
+    if name.startswith("dais"):   # 円形の石造りの台座（森の庭園、A20）・円形の駅のホーム
+        prim("cyl", make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [140, 136, 122]))), f"ENV_{name}",
+             loc=bl((x, y), pr.get("h", 0.3) / 2), radius=pr.get("r", 4.0), depth=pr.get("h", 0.3), vertices=48)
+        return True
+    if name.startswith("bell"):   # 鐘の柱（駅の鐘、A23 で鳴らす）
+        hh = pr.get("h", 2.4)
+        prim("cyl", make_mat(f"{name}_post", (0.25, 0.2, 0.16)), f"ENV_{name}", loc=bl((x, y), hh / 2), radius=0.06, depth=hh)
+        box(make_mat(f"{name}_arm", (0.25, 0.2, 0.16)), f"ENV_{name}_arm", x + 0.25, y, 0.6, 0.08, 0.08, hh - 0.1)
+        prim("cone", make_mat(f"{name}_brass", (0.85, 0.65, 0.25), rough=0.3), f"ENV_{name}_bell", loc=bl((x + 0.45, y), hh - 0.35),
+             radius1=0.18, radius2=0.06, depth=0.3)
+        return True
+    if name.startswith("flowers"):   # 花の群れ（森の開けた場所、A20）
+        cols = [(0.95, 0.85, 0.3), (0.9, 0.45, 0.6), (0.95, 0.95, 0.95)]
+        for k in range(int(pr.get("n", 7))):
+            a, rr = k * 2.4, pr.get("r", 0.6) * ((k * 37) % 10) / 10
+            fm = make_mat(f"{name}_f{k}", cols[k % 3])
+            prim("sphere", fm, f"ENV_{name}_{k}", loc=bl((x + math.cos(a) * rr, y + math.sin(a) * rr), 0.18), radius=0.07)
         return True
     for key, mk in (("table", "furn"), ("shelf", "furn"), ("bed", "bed"), ("crate", "straw")):
         if name.startswith(key):
@@ -797,7 +844,7 @@ def build_person(who, h, torch=False, sword=False):
     bpy.context.collection.objects.link(head)
     head.parent = root
     head.location = (0, 0, body_h)
-    prim("sphere", m_body, f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1, 1, 1.2 if who == "arlecchino" else 1))
+    prim("sphere", m_body, f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1, 1, 1.2 if who in ("arlecchino", "forest-servant") else 1))
     prim("cone", m_face, f"{who}_nose", head, (0, hr * 1.0, hr), (-math.pi / 2, 0, 0), radius1=hr * 0.3, radius2=0.0, depth=hr * 0.7)
     if who == "metallica":
         hat = make_mat("hat", (0.35, 0.2, 0.5))
@@ -823,7 +870,20 @@ def build_person(who, h, torch=False, sword=False):
         prim("cone", helmet, "plume", head, (0, 0, hr * 2.0 + 0.1), radius1=0.07, radius2=0.0, depth=0.3)
     elif who == "bisco":
         prim("sphere", m_dark, "tail", root, (0, -r - 0.08, body_h * 0.4), radius=0.1, scale=(0.7, 1.4, 0.9))
-    elif who == "arlecchino":
+    elif who == "marny":   # 大きな緑の蝶の羽（背中から左右に、少し後ろへ開く。黄色の斑紋は下絵では省く）と触角、白い襟
+        wing = beam_mat("marny_wing", (0.35, 0.95, 0.3), strength=0.5, alpha=0.8)
+        for sx in (-1, 1):
+            for k, (zz, sz) in enumerate(((0.08, 0.17), (-0.06, 0.12))):   # 上の羽と下の羽
+                w = prim("sphere", wing, f"marny_wing{sx}{k}", root, (sx * 0.16, -0.05, body_h * 0.7 + zz), radius=1.0, scale=(0.14, 0.01, sz))
+                w.rotation_euler = (0, sx * math.radians(18 if k == 0 else -12), sx * math.radians(-22))
+            prim("cyl", m_dark, f"marny_ant{sx}", head, (sx * hr * 0.4, 0.02, hr * 2.3), (0, sx * 0.3, 0), radius=0.006, depth=0.12)
+        collar = make_mat("marny_collar", (0.95, 0.98, 0.9))
+        prim("sphere", collar, "marny_collar", root, (0, 0, body_h * 0.95), radius=1.0, scale=(0.08, 0.08, 0.03))
+    elif who == "marika-mouse":   # 丸い耳と細い尻尾
+        for sx in (-1, 1):
+            prim("sphere", m_body, f"mouse_ear{sx}", head, (sx * hr * 0.8, 0, hr * 1.8), radius=hr * 0.55, scale=(1, 0.4, 1))
+        prim("cyl", m_dark, "mouse_tail", root, (0, -r - 0.06, 0.02), (math.radians(80), 0, 0), radius=0.006, depth=0.14)
+    elif who in ("arlecchino", "forest-servant"):
         horn = make_mat("horn", (0.72, 0.45, 0.2))
         for sx in (-1, 1):
             prim("cyl", horn, f"horn{sx}", head, (sx * hr * 0.55, 0, hr * 2.4 + 0.05), radius=0.03, depth=0.25)
@@ -969,6 +1029,21 @@ def build_fx(fx, i):
     if kind == "spark":   # 火花（明るい小さな光）
         em = make_mat(f"fx{i}_spark", (1.0, 0.9, 0.5), emit=8.0)
         return [prim("sphere", em, f"fx{i}_sp{j}", None, (0, 0, -50), radius=1.0) for j in range(5)]
+    if kind == "leak":   # 扉の下のすき間から漏れる光（床に平たい光る帯と、弱い点光源。A18 の閉じこもるメタリカの部屋）
+        em = make_mat(f"fx{i}_leak", tuple(v / 255 for v in fx.get("color", [90, 255, 140])), emit=0.001)
+        o = prim("cube", em, f"fx{i}_leak", None, (0, 0, -50), size=1.0)
+        bpy.ops.object.light_add(type="POINT", location=(0, 0, -50))
+        lt = bpy.context.object
+        lt.name = f"LGT_fx{i}"
+        lt.data.color = tuple(v / 255 for v in fx.get("color", [90, 255, 140]))
+        lt.data.shadow_soft_size = 0.3
+        return [o, lt]
+    if kind == "shards":  # 飛び散るガラスの破片（窓破り、A18）
+        gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.7)
+        return [prim("cube", gm, f"fx{i}_sh{j}", None, (0, 0, -50), size=1.0) for j in range(int(fx.get("n", 14)))]
+    if kind == "paper":   # ひらひら舞い落ちる紙切れ（切符、A20）
+        pm = make_mat(f"fx{i}_paper", (0.95, 0.92, 0.82))
+        return [prim("cube", pm, f"fx{i}_paper", None, (0, 0, -50), size=1.0)]
     if kind == "light":   # だんだん強くなる光（ピラーが光り始める）
         bpy.ops.object.light_add(type="POINT", location=(0, 0, -50))
         lt = bpy.context.object
@@ -1054,6 +1129,50 @@ def pose_fx(fx, objs, t, pos, place):
                 o.location = bl((x, y), z0)
                 o.scale = (1.0, 1.0, max(0.02, hh * g * (1 - 0.45 * w)))
                 o.rotation_euler = (math.radians(12 + 70 * w) * (1 if j % 2 else -1), 0, a)
+        return
+    if kind == "leak":    # 漏れる光: t の間、amount の形で明るくなり、pulse があればゆっくり明滅する
+        u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, fx.get("rise", 1.0)))
+        if t > t1:
+            u = max(0.0, 1.0 - (t - t1) / fx.get("fade", 0.5))
+        if fx.get("pulse"):
+            u *= 0.65 + 0.35 * math.sin(2 * math.pi * t / fx["pulse"])
+        o, lt = objs
+        w, d = fx.get("w", 0.9), fx.get("d", 0.35)
+        o.location = bl(p, z0 + 0.006)
+        o.scale = (w, d, 0.01)
+        o.rotation_euler = (0, 0, -math.radians(fx.get("rot", 0)))
+        o.data.materials[0].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = fx.get("emit", 4.0) * u
+        lt.location = bl(p, z0 + 0.08)
+        lt.data.energy = fx.get("energy", 25) * u
+        return
+    if kind == "shards":  # 破片: t0 に dir の向きへ扇形に飛び出し、落ちながら回る
+        n = len(objs)
+        for j, o in enumerate(objs):
+            if t < t0 or t > t1:
+                o.location = (0, 0, -50)
+                continue
+            tt = t - t0
+            a = math.radians(fx.get("dir", 180) + (j / max(1, n - 1) - 0.5) * fx.get("spread", 100))
+            v = fx.get("speed", 4.0) * (0.6 + 0.4 * ((j * 7) % 5) / 4)
+            vz = 1.2 + 1.5 * ((j * 3) % 4) / 3
+            zz = max(0.02, z0 + vz * tt - 4.9 * tt * tt)
+            o.location = bl((p[0] + math.sin(a) * v * tt, p[1] - math.cos(a) * v * tt), zz)
+            sz = fx.get("size", 0.12) * (0.5 + 0.5 * ((j * 5) % 3) / 2)
+            o.scale = (sz, sz * 0.7, 0.01)
+            o.rotation_euler = (tt * 7 + j, tt * 5, j * 0.7)
+        return
+    if kind == "paper":   # 紙: t の間に z0 から地面（end_z）まで、左右に揺れながら落ちる。その後は地面に残る（keep）
+        o = objs[0]
+        if t < t0 or (t > t1 and not fx.get("keep", True)) or (fx.get("gone") is not None and t >= fx["gone"]):   # gone: 拾われて消える秒
+            o.location = (0, 0, -50)
+            return
+        u = min(1.0, (t - t0) / max(1e-6, t1 - t0))
+        zz = z0 + (fx.get("end_z", 0.02) - z0) * u
+        sway = 0.0 if u >= 1.0 else math.sin(u * math.pi * fx.get("swings", 3)) * fx.get("sway", 0.35)
+        dx, dy = fx.get("drift", [0.0, 0.0])
+        o.location = bl((p[0] + dx * u + sway, p[1] + dy * u), zz)
+        o.scale = (0.12, 0.07, 0.004)
+        o.rotation_euler = (0.0 if u >= 1.0 else math.sin(u * 9) * 0.6, 0.0, u * 2.0)
         return
     if kind == "light":   # 光: 時刻とともに強くなる（shape rise）
         u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))

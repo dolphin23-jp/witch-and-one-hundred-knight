@@ -1,0 +1,41 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-018
+scene: A18
+tc: 223.8
+sec: 11.5
+kind: M
+shot: 肩なめ（アルレッキーノ越しにビスコ）・アルレッキーノ・ビスコ・ルッキーニィ・百騎兵
+acting: ビスコが「招待してくれるのか？」と問い、アルレッキーノが胸を張って「かつては夜会の議長」
+dialogue:
+- L576「とはいえ、森の魔女殿はメタリカを夜会に招待してくれるのか？」
+- L578「マーリカ様は、かつては夜会の議長を任されていた程の権威の持ち主。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.4
+  - 5.6
+  - 1.85
+  look:
+  - 3.75
+  - 1.5
+  lens: 30
+  move: アルレッキーノの右肩の後ろ（南東）から北へ。肩を画面の左の端に、テーブルの向こうのビスコを真ん中に
+background: witch-house
+image: null
+refs:
+- arlecchino
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノの背中越しに、テーブルの向こうのビスコ
+  end: 胸を張るアルレッキーノ
+timing:
+  lead: 0.3
+  at:
+    L576: 0.3
+    L578: 5.75

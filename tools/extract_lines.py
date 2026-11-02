@@ -42,7 +42,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 NAMES = {"metallica": "メタリカ", "bisco": "ビスコ", "arlecchino": "アルレッキーノ", "luckiny": "ルッキーニィ", "tito": "ティト",
          "karakuri-doll": "からくり人形", "purple-peel": "パープルピール", "lily": "リリー", "rabi": "ラヴィ", "usamaru": "ウサマール",
          "teressa": "テレッサ", "berda": "ベルダ", "apprentice": "見習い魔女", "witches": "魔女たち", "witch-voice": "魔女の声",
-         "villager-a": "怯えきった獣人", "villager-b": "蒼白な獣人", "villager-c": "冷淡な獣人", "villager-d": "恐慌状態の獣人"}
+         "villager-a": "怯えきった獣人", "villager-b": "蒼白な獣人", "villager-c": "冷淡な獣人", "villager-d": "恐慌状態の獣人",
+         "marny": "マーニィ", "forest-servant": "森の魔女のシモベ", "marika-mouse": "ネズミ（マーリカ）", "narrator": "ナレーション"}
 
 HOP = 0.01          # 音量を測る間隔（秒）
 PRE_PAD = 0.08      # 声の前に残す余白

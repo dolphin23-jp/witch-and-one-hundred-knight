@@ -1,0 +1,38 @@
+# A18 魔女邸・閉じこもるメタリカとマーニィ（翌朝）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A18 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A18-011
+scene: A18
+tc: 129.9
+sec: 11.4
+kind: M
+shot: 胸上（ビスコ）・ビスコ・ルッキーニィ・百騎兵
+acting: 頭に手をやって謝り、丸窓の光を見上げて「魔女の先生に憧れてた」と小さく笑う
+dialogue:
+- L555「あ、ああ……そうだよな。こちらこそすまない。」
+- L556「まあ、私も小さいころは魔女の先生に憧れてたんだけど。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.0
+  - 2.6
+  - 1.3
+  look: bisco
+  lens: 38
+  move: 南西（階段の脇）から、ビスコの顔を横に。窓を見上げる所でゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ばつの悪いビスコ
+  end: 窓を見上げるビスコの横顔
+timing:
+  lead: 0.3
+  at:
+    L555: 0.3
+    L556: 5.53

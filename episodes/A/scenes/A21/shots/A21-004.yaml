@@ -1,0 +1,40 @@
+# A21 魔女邸・バスルーム（夕方近く）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A21 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A21-004
+scene: A21
+tc: 56.6
+sec: 9.2
+kind: M
+shot: 胸上→全身（扉へ）・ルッキーニィ・百騎兵・マーニィ
+acting: マーニィから顔をそむけて（カメラの方へ）「そういうことではなく……」と口ごもり、扉の方へぺこりと頭を下げて「失礼します！」とカメラの脇を駆け抜け、扉から出ていく
+dialogue:
+- L617「い、いえ！そういうことではなく……。」
+- L618「す、すみません。ボクは失礼します！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.7
+  - 7.9
+  - 1.0
+  look:
+  - 15.3
+  - 7.55
+  lens: 30
+  move: 西（西のカーテンの手前）の低い所から、顔をそむけるルッキーニィを。駆け出すのを追って扉の方へ大きく振る
+background: witch-house
+image: null
+refs:
+- luckiny
+- hundred-knight
+- marny
+overlays: []
+fallback: null
+act:
+  start: うつむくルッキーニィ
+  end: 扉の前の百騎兵
+timing:
+  lead: 0.2
+  at:
+    L617: 0.2
+    L618: 4.35

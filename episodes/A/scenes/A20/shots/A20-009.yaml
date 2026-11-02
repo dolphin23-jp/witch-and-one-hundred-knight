@@ -1,0 +1,42 @@
+# A20 森の庭園とヘッカヘンネの隠し森（午後）。blocking.yaml（Claude の案 2026-11-02、Living Spec「A20 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A18/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A20-009
+scene: A20
+tc: 95.4
+sec: 9.9
+kind: A
+shot: 全身（低い）→空・見せ場・百騎兵・ネズミ
+acting: ネズミが跳ねて何か訴え、ふと空を見上げる。鳥が急降下してネズミをさらう。百騎兵が跳んで手を伸ばすが届かず、鳥は空へ飛び去る
+dialogue:
+- L657「チュー！チューチュチュー！」
+- L658「チュ？」
+- L659「チュ！？チュ、チュチュー！チューチュチュー！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 20.4
+  - 15.2
+  - 0.6
+  look:
+  - 17.1
+  - 13.6
+  lens: 26
+  move: 東の低い所から。鳥が来る所で空へ振り、さらう瞬間に傾ける。飛び去る鳥を追う
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- marika-mouse
+- bird
+overlays: []
+fallback: null
+act:
+  start: 切り株の上のネズミと、しゃがむ百騎兵
+  end: 空を見上げる百騎兵
+timing:
+  lead: 0.2
+  at:
+    L657: 0.2
+    L658: 2.88
+    L659: 3.86
