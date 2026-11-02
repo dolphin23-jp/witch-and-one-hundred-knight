@@ -1,0 +1,79 @@
+# A22 の BGM・効果音の置き場所（D-068、2026-11-02）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A22
+bgm:
+  # 原作どおり（パート20 の 18:38〜25:18）: 頭は無音（18:38〜18:59）→ M10 メタリカの話（18:59〜）→ M05 と M14 が交互、M18 の短いつなぎが2回
+  # 原作の切れ目を台詞の位置からこの場面の秒に直し、台詞の途中で替わらないよう少しずらした
+  - {src: audio/bgm/catalog/M10.ogg, cut: A22-001, t: 16.0, until: {cut: A22-002b, t: 7.4}, loop: true, fade_in: 1.5, fade_out: 1.2, volume: 0.28}
+  # 切符と分かってから（「夜会へ行けるってことか？」の前）
+  - {src: audio/bgm/catalog/M05.ogg, cut: A22-002b, t: 7.2, until: {cut: A22-004, t: 7.0}, loop: true, fade_in: 1.0, fade_out: 1.0, volume: 0.28}
+  # 「返事はありませんでした……」の後のため息
+  - {src: audio/bgm/catalog/M18.ogg, cut: A22-004, t: 6.8, until: {cut: A22-005, t: 12.6}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M14.ogg, cut: A22-005, t: 12.4, until: {cut: A22-006, t: 7.0}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「恨みに恨んでいる」から
+  - {src: audio/bgm/catalog/M05.ogg, cut: A22-006, t: 6.8, until: {cut: A22-007b, t: 6.6}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「メタリカじゃあるまいし」から
+  - {src: audio/bgm/catalog/M14.ogg, cut: A22-007b, t: 6.0, until: {cut: A22-008, t: 6.4}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「正式に夜会に呼んでもらえる」の前から
+  - {src: audio/bgm/catalog/M05.ogg, cut: A22-008, t: 6.2, until: {cut: A22-009, t: 8.0}, loop: true, fade_in: 0.8, fade_out: 1.0, volume: 0.28}
+  # 009 ビスコが目を伏せる伏線の寄り（「やってみればもしかしたら……」）
+  - {src: audio/bgm/catalog/M18.ogg, cut: A22-009, t: 7.8, until: {cut: A22-009, t: 16.8}, loop: true, fade_in: 1.0, fade_out: 1.0, volume: 0.28}
+  - {src: audio/bgm/catalog/M14.ogg, cut: A22-009, t: 16.4, until: {cut: A22-010, t: 7.4}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「そりゃあ、百騎兵ちゃんでしょ」から
+  - {src: audio/bgm/catalog/M05.ogg, cut: A22-010, t: 7.2, until: {cut: A22-010b, t: 5.6}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「すごく行きたそうな顔してるわよ。でも」から
+  - {src: audio/bgm/catalog/M14.ogg, cut: A22-010b, t: 5.4, until: {cut: A22-011b, t: 7.2}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  # 「ヘッカヘンネの隠し森にあった駅よ？」から、百騎兵を見送って終わり
+  - {src: audio/bgm/catalog/M05.ogg, cut: A22-011b, t: 7.0, until: {cut: A22-011b, t: 24.0}, loop: true, fade_in: 0.8, fade_out: 2.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml。マーニィは飛んでいるので無し）
+  # 001 百騎兵が玄関から戻る（扉は画面の外）。ビスコがソファから立ち上がる
+  - {src: audio/sfx/door_open.ogg, cut: A22-001, t: 0.0, volume: 0.3}
+  - {src: audio/sfx/door_close.ogg, cut: A22-001, t: 2.4, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-001, t: 1.8, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-001, t: 7.7, rate: 1.2, volume: 0.18}
+  # 002 マーニィが飛んでくる。紙切れを渡して広げる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-002, t: 0.1, rate: 1.4, volume: 0.22}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-002, t: 3.7, rate: 1.6, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-002, t: 4.7, rate: 1.8, volume: 0.25}
+  # 002b 切符を掲げる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-002b, t: 9.8, rate: 1.4, volume: 0.25}
+  # 003 ルッキーニィが跳ねて喜び、駆け出して階段を上がる。上で扉を叩く（遠く、返事はない）。とぼとぼ戻る
+  - {src: audio/sfx/thud_land.ogg, cut: A22-003, t: 1.0, rate: 1.6, volume: 0.15}
+  - {src: audio/sfx/thud_land.ogg, cut: A22-003, t: 1.6, rate: 1.6, volume: 0.15}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-003, t: 9.8, rate: 1.3, volume: 0.3}
+  - {src: audio/sfx/knock_soft.ogg, cut: A22-003, t: 15.4, volume: 0.12}
+  - {src: audio/sfx/knock_soft.ogg, cut: A22-003, t: 16.0, volume: 0.1}
+  # 004 マーニィが寄ってくる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-004, t: 0.1, rate: 1.5, volume: 0.18}
+  # 005 ビスコがソファに座り込む
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-005, t: 3.3, volume: 0.25}
+  - {src: audio/sfx/thud_land.ogg, cut: A22-005, t: 3.4, rate: 1.7, volume: 0.12}
+  # 006 マーニィが少し高く浮く
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-006, t: 7.0, rate: 1.6, volume: 0.12}
+  # 006b ぱっと明るく舞い上がる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-006b, t: 12.0, rate: 1.2, volume: 0.25}
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A22-006b, t: 12.2, volume: 0.15}
+  # 007 ビスコが立ち上がって切符を掲げる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-007, t: 1.5, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-007, t: 4.5, rate: 1.4, volume: 0.22}
+  # 007b マーニィが拳を突き出す、ビスコが両手を振る
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-007b, t: 6.7, rate: 1.6, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-007b, t: 9.7, rate: 1.3, volume: 0.22}
+  # 008 拳を握る、額に手を当てる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-008, t: 0.4, rate: 1.7, volume: 0.18}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-008, t: 7.1, volume: 0.18}
+  # 009 マーニィがビスコのまわりをくるりと回る
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-009, t: 1.1, rate: 0.9, volume: 0.18}
+  # 010 ルッキーニィが手を挙げる、マーニィが百騎兵の前へ飛んで指さす
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-010, t: 0.4, volume: 0.22}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-010, t: 8.8, rate: 1.4, volume: 0.22}
+  # 010b ルッキーニィが跳ねる
+  - {src: audio/sfx/thud_land.ogg, cut: A22-010b, t: 0.7, rate: 1.6, volume: 0.13}
+  - {src: audio/sfx/thud_land.ogg, cut: A22-010b, t: 1.3, rate: 1.6, volume: 0.13}
+  # 011 アルレッキーノが手を広げる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A22-011, t: 4.4, volume: 0.2}
+  # 011b マーニィが舞い上がって降りる。百騎兵が駆けていき、玄関の扉が開く（画面の外）
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-011b, t: 0.4, rate: 1.2, volume: 0.25}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A22-011b, t: 6.6, rate: 1.4, volume: 0.18}
+  - {src: audio/sfx/door_open.ogg, cut: A22-011b, t: 21.6, volume: 0.35}
