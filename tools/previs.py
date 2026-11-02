@@ -641,7 +641,7 @@ def build_extra(name, pr, x, y, lit):
         rim = make_mat(f"{name}_rim", tuple(v / 255 for v in pr.get("color", [190, 150, 90])), rough=0.4)
         box(rim, f"ENV_{name}", x, y, w, d, hh, 0.0, rot)
         water = make_mat(f"{name}_water", tuple(v / 255 for v in pr.get("water", [40, 170, 120])), rough=0.2, emit=pr.get("glow", 0.6))
-        box(water, f"ENV_{name}_water", x, y, w - 0.2, d - 0.2, 0.02, hh - 0.06, rot)
+        box(water, f"ENV_{name}_water", x, y, w - 0.2, d - 0.2, 0.012, hh + 0.002, rot)   # 縁の箱の上面に乗せる（中に置くと箱に隠れて見えなかった、2026-11-02）
         return True
     if name.startswith("tray"):   # 床に置いたお盆と食器（閉じた扉の前の冷めた食事、A18）
         box(mat_of("furn"), f"ENV_{name}", x, y, pr.get("w", 0.5), pr.get("d", 0.35), 0.04, pr.get("z", 0.0), rot)

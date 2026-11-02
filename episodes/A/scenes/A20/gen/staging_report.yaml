@@ -838,17 +838,17 @@ cuts:
     note: null
   A20-008:
     cam:
-    - 15.6
-    - 14.6
-    - 0.6
-    lens: 26
-    bearing: 72
+    - 16.0
+    - 14.0
+    - 0.65
+    lens: 28
+    bearing: 88
     frame: 全身
     start:
       people:
       - who: marika-mouse
-        s: -0.54
-        dist: 1.67
+        s: -0.7
+        dist: 1.02
         side: 左
         body: 斜め前（画面右向き）
       bg: 深い森
@@ -867,38 +867,40 @@ cuts:
       - 木
       - 木
       - 木
-      staging: 'In frame (exactly one person): a small white mouse, standing, on the left of the frame, in three-quarter view, turned toward screen right. No other people. Behind: a deep wild forest of
-        huge ancient gnarled trees, ferns and roots, dim green light.'
+      - 木
+      - 木
+      staging: 'In frame (exactly one person): a small white mouse, standing, at the far left of the frame, in three-quarter view, turned toward screen right. No other people. Behind: a deep wild forest
+        of huge ancient gnarled trees, ferns and roots, dim green light.'
     end:
       people:
       - who: marika-mouse
-        s: -0.85
-        dist: 1.39
+        s: -0.86
+        dist: 0.9
         side: 左
         body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.63
-        dist: 1.7
+        s: 0.45
+        dist: 1.35
         side: 右
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): a small white mouse, standing, at the far left of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high:
-        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far right
+        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right
         of the frame, in three-quarter view, turned toward screen left. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     move:
       hundred-knight:
         to:
-        - 17.6
-        - 14.75
+        - 17.45
+        - 14.3
         face: 330
         via:
         - - 18.4
           - 16.6
-        - - 17.6
-          - 14.75
-        - - 17.6
-          - 14.75
-        - - 17.6
-          - 14.75
+        - - 17.45
+          - 14.3
+        - - 17.45
+          - 14.3
+        - - 17.45
+          - 14.3
         t:
         - 0.0
         - 11.5
@@ -926,9 +928,9 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.43
-        dist: 2.72
-        side: 左
+        s: -0.23
+        dist: 3.05
+        side: 中央
         body: 斜め後ろ（画面右向き）
       - who: marika-mouse
         s: 0.02
@@ -981,26 +983,26 @@ cuts:
         - 9.9
       hundred-knight:
         to:
-        - 17.3
-        - 14.1
+        - 17.25
+        - 13.85
         face: 300
         via:
-        - - 17.6
-          - 14.75
-        - - 17.6
-          - 14.75
-        - - 17.6
-          - 14.75
-        - - 17.4
-          - 14.35
-        - - 17.3
-          - 14.15
-        - - 17.3
-          - 14.1
-        - - 17.3
-          - 14.1
-        - - 17.3
-          - 14.1
+        - - 17.45
+          - 14.3
+        - - 17.45
+          - 14.3
+        - - 17.45
+          - 14.3
+        - - 17.35
+          - 14.05
+        - - 17.25
+          - 13.9
+        - - 17.25
+          - 13.85
+        - - 17.25
+          - 13.85
+        - - 17.25
+          - 13.85
         t:
         - 0.0
         - 9.9
@@ -1016,8 +1018,8 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: 0.52
-        dist: 2.61
+        s: 0.55
+        dist: 2.83
         side: 右
         body: 斜め後ろ（画面左向き）
       bg: 深い森
@@ -1052,12 +1054,12 @@ cuts:
         - 14.7
         face: 175
         via:
-        - - 17.3
-          - 14.1
-        - - 17.3
-          - 14.1
-        - - 17.3
-          - 14.1
+        - - 17.25
+          - 13.85
+        - - 17.25
+          - 13.85
+        - - 17.25
+          - 13.85
         - - 17.65
           - 14.7
         - - 17.65

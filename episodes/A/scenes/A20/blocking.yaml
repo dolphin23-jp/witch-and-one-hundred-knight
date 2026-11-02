@@ -210,10 +210,10 @@ cuts:
       hundred-knight:
         - {t: 0.0, at: [20.0, 24.0], face: 345, pose: walk}
         - {t: 2.6, at: [18.4, 16.6], face: 330, pose: walk}
-        - {t: 4.6, at: [17.6, 14.75], face: 330, pose: walk, ease: out}
-        - {t: 4.9, at: [17.6, 14.75], face: 330, pose: stand}
-        - {t: 6.2, at: [17.6, 14.75], face: 330, pose: crouch}
-        - {t: 11.5, at: [17.6, 14.75], face: 330, pose: crouch}
+        - {t: 4.6, at: [17.45, 14.3], face: 337, pose: walk, ease: out}
+        - {t: 4.9, at: [17.45, 14.3], face: 330, pose: stand}
+        - {t: 6.2, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 11.5, at: [17.45, 14.3], face: 330, pose: crouch}
       marika-mouse:
         - {t: 0.0, at: stump_w, z: 0.6, face: 200, pose: stand}
         - {t: 2.4, at: stump_w, z: 0.6, face: 160, pose: stand}
@@ -223,9 +223,9 @@ cuts:
         - {t: 3.6, at: stump_w, z: 0.6, face: 155, pose: stand}
         - {t: 11.5, at: stump_w, z: 0.6, face: 152, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [15.6, 14.6, 0.6], look: [17.5, 14.0], look_h: 0.6, lens: 26, frame: 全身}
-      - {t: 4.8, cam: [15.65, 14.55, 0.6], look: [17.5, 14.05], look_h: 0.62, lens: 28}
-      - {t: 11.5, cam: [15.8, 14.5, 0.62], look: [17.35, 14.15], look_h: 0.6, lens: 30}
+      - {t: 0.0, cam: [16.0, 14.0, 0.65], look: [17.12, 13.85], look_h: 0.62, lens: 28, frame: 全身}
+      - {t: 4.8, cam: [16.0, 14.0, 0.65], look: [17.12, 13.85], look_h: 0.62, lens: 28}
+      - {t: 11.5, cam: [16.1, 13.95, 0.66], look: [17.12, 13.85], look_h: 0.6, lens: 30}
     act: {start: 切り株と花の開けた場所, do: 百騎兵が入ってくると、切り株の上の白いネズミが鳴いて跳ねる（「もしかして、それが森の魔女ちゃん……？」）。百騎兵がしゃがんでのぞき込む, end: ネズミと、のぞき込む百騎兵}
     camera: 切り株の西、ネズミの高さの低い所から、鳴くネズミを横に。右から百騎兵が入ってきてしゃがむ。二人へゆっくり寄る
     kind: M
@@ -246,16 +246,16 @@ cuts:
         - {t: 7.5, at: [8.0, 20.0], z: 9.8, face: 300, pose: stand}
         - {t: 9.9, at: [2.0, 24.0], z: 15.0, face: 300, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: [17.6, 14.75], face: 330, pose: crouch}
-        - {t: 3.0, at: [17.6, 14.75], face: 330, pose: crouch}
-        - {t: 3.4, at: [17.6, 14.75], face: 340, pose: look_up}
-        - {t: 4.5, at: [17.6, 14.75], face: 330, pose: crouch}
-        - {t: 4.75, at: [17.4, 14.35], z: 0.6, face: 320, pose: arms_up, ease: out}
-        - {t: 5.15, at: [17.3, 14.15], z: 1.15, face: 315, pose: arms_up, ease: out}
-        - {t: 5.6, at: [17.3, 14.1], z: 0.0, face: 315, pose: crouch, ease: in}
-        - {t: 6.0, at: [17.3, 14.1], face: 310, pose: stand}
-        - {t: 6.6, at: [17.3, 14.1], face: 305, pose: look_up}
-        - {t: 9.9, at: [17.3, 14.1], face: 300, pose: look_up}
+        - {t: 0.0, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 3.0, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 3.4, at: [17.45, 14.3], face: 340, pose: look_up}
+        - {t: 4.5, at: [17.45, 14.3], face: 330, pose: crouch}
+        - {t: 4.75, at: [17.35, 14.05], z: 0.6, face: 320, pose: arms_up, ease: out}
+        - {t: 5.15, at: [17.25, 13.9], z: 1.15, face: 315, pose: arms_up, ease: out}
+        - {t: 5.6, at: [17.25, 13.85], z: 0.0, face: 315, pose: crouch, ease: in}
+        - {t: 6.0, at: [17.25, 13.85], face: 310, pose: stand}
+        - {t: 6.6, at: [17.25, 13.85], face: 305, pose: look_up}
+        - {t: 9.9, at: [17.25, 13.85], face: 300, pose: look_up}
     creatures:
       bird:
         len: 0.9
@@ -288,10 +288,10 @@ cuts:
     only: [hundred-knight]
     keys:
       hundred-knight:
-        - {t: 0.0, at: [17.3, 14.1], face: 300, pose: look_up}
-        - {t: 2.6, at: [17.3, 14.1], face: 330, pose: look_up}
-        - {t: 3.6, at: [17.3, 14.1], face: 40, pose: stand}
-        - {t: 4.0, at: [17.3, 14.1], face: 45, pose: walk}
+        - {t: 0.0, at: [17.25, 13.85], face: 300, pose: look_up}
+        - {t: 2.6, at: [17.25, 13.85], face: 330, pose: look_up}
+        - {t: 3.6, at: [17.25, 13.85], face: 40, pose: stand}
+        - {t: 4.0, at: [17.25, 13.85], face: 45, pose: walk}
         - {t: 5.0, at: [17.65, 14.7], face: 45, pose: walk, ease: out}
         - {t: 5.6, at: [17.65, 14.7], face: 40, pose: crouch}
         - {t: 7.2, at: [17.65, 14.7], face: 40, pose: crouch}
