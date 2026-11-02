@@ -261,7 +261,7 @@ SHAPE = {
     "karakuri-doll": {"r": 0.5, "hr": 0.3, "arm": 0.07},   # 守護者のからくり人形（卵形の胴に骸骨の顔と笠。設定画 karakuri-doll_sheet_01）
     # 6章後半 回1（A18〜A22）
     "marny": {"r": 0.05, "hr": 0.07, "arm": 0.018},          # 沼の妖精マーニィ（小さな体と大きな緑の蝶の羽。浮いている。設定画 marny_sheet_01）
-    "forest-servant": {"r": 0.27, "hr": 0.21, "arm": 0.09},  # 森の魔女のシモベ（アルレッキーノと同じ型と推定。森の色。資料待ち）
+    "forest-servant": {"r": 0.23, "hr": 0.19, "arm": 0.085},  # 森の魔女のシモベ（設定画 forest-servant_sheet_01: ずんぐりした背 約1.25m、白い丸い頭、赤い上着、2本の銅の管の角）
     "marika-mouse": {"r": 0.04, "hr": 0.04, "arm": 0.01},    # マーリカのネズミ（白い小さなネズミ）
 }
 WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d")
@@ -844,8 +844,15 @@ def build_person(who, h, torch=False, sword=False):
     bpy.context.collection.objects.link(head)
     head.parent = root
     head.location = (0, 0, body_h)
-    prim("sphere", m_body, f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1, 1, 1.2 if who in ("arlecchino", "forest-servant") else 1))
-    prim("cone", m_face, f"{who}_nose", head, (0, hr * 1.0, hr), (-math.pi / 2, 0, 0), radius1=hr * 0.3, radius2=0.0, depth=hr * 0.7)
+    if who == "forest-servant":   # 白い丸い頭と、橙に光る四角い目（鼻の代わりに向きを示す）、ギザギザの口の白い帯
+        prim("sphere", make_mat("servant_head", (0.93, 0.93, 0.96), rough=0.3), f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1.05, 1, 1.05))
+        eye = make_mat("servant_eye", (1.0, 0.6, 0.15), emit=1.5)
+        for sx in (-1, 1):
+            prim("cube", eye, f"{who}_eye{sx}", head, (sx * hr * 0.38, hr * 0.97, hr * 1.15), size=2.0, scale=(hr * 0.17, 0.015, hr * 0.1))
+        prim("cube", make_mat("servant_mouth", (0.25, 0.25, 0.28)), f"{who}_mouth", head, (0, hr * 0.95, hr * 0.62), size=2.0, scale=(hr * 0.55, 0.012, 0.012))
+    else:
+        prim("sphere", m_body, f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1, 1, 1.2 if who == "arlecchino" else 1))
+        prim("cone", m_face, f"{who}_nose", head, (0, hr * 1.0, hr), (-math.pi / 2, 0, 0), radius1=hr * 0.3, radius2=0.0, depth=hr * 0.7)
     if who == "metallica":
         hat = make_mat("hat", (0.35, 0.2, 0.5))
         prim("cyl", hat, "hat_brim", head, (0, 0, hr * 1.7), radius=0.38, depth=0.025)
@@ -883,7 +890,22 @@ def build_person(who, h, torch=False, sword=False):
         for sx in (-1, 1):
             prim("sphere", m_body, f"mouse_ear{sx}", head, (sx * hr * 0.8, 0, hr * 1.8), radius=hr * 0.55, scale=(1, 0.4, 1))
         prim("cyl", m_dark, "mouse_tail", root, (0, -r - 0.06, 0.02), (math.radians(80), 0, 0), radius=0.006, depth=0.14)
-    elif who in ("arlecchino", "forest-servant"):
+    elif who == "forest-servant":   # 銅の管の角（外へ曲がり、先に笠。まわりに緑の光）、灰色の襟巻き、黒い長靴、濃い緑の腕
+        copper = make_mat("servant_copper", (0.72, 0.42, 0.22), rough=0.35)
+        glow = beam_mat("servant_glow", (0.55, 1.0, 0.3), strength=1.2, alpha=0.5)
+        for sx in (-1, 1):
+            prim("cyl", copper, f"servant_pipe{sx}", head, (sx * hr * 0.75, 0, hr * 2.05), (0, sx * 0.45, 0), radius=0.035, depth=0.2)
+            prim("cone", copper, f"servant_cap{sx}", head, (sx * hr * 1.0, 0, hr * 2.55), (0, sx * 0.25, 0), radius1=0.06, radius2=0.0, depth=0.07)
+            prim("sphere", glow, f"servant_glow{sx}", head, (sx * hr * 0.95, 0, hr * 2.35), radius=0.08)
+        prim("sphere", make_mat("servant_scarf", (0.55, 0.55, 0.57)), "servant_scarf", root, (0, 0.02, body_h * 0.95), radius=1.0, scale=(r * 1.1, r * 1.05, 0.07))
+        boot = make_mat("servant_boot", (0.1, 0.1, 0.11))
+        for sx in (-1, 1):
+            prim("cube", boot, f"servant_boot{sx}", root, (sx * r * 0.45, 0.04, 0.09), size=2.0, scale=(0.09, 0.14, 0.09))
+        green = make_mat("servant_arm", (0.27, 0.29, 0.22))
+        for sx in (-1, 1):
+            for ob in arms[sx].children:
+                ob.data.materials.clear(); ob.data.materials.append(green)
+    elif who == "arlecchino":
         horn = make_mat("horn", (0.72, 0.45, 0.2))
         for sx in (-1, 1):
             prim("cyl", horn, f"horn{sx}", head, (sx * hr * 0.55, 0, hr * 2.4 + 0.05), radius=0.03, depth=0.25)

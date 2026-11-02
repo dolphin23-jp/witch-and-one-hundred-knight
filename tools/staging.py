@@ -36,7 +36,7 @@ COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight"
           "teressa": (235, 200, 80), "berda": (110, 135, 95), "apprentice-a": (250, 160, 200), "apprentice-b": (190, 160, 250),
           "apprentice-c": (150, 225, 190), "apprentice-d": (250, 215, 140), "karakuri-doll": (190, 140, 85),
           # 6章後半 回1（A18〜A22）: マーニィ、森の魔女のシモベ、マーリカのネズミ、ネズミをさらう鳥、隠し森の魔獣
-          "marny": (110, 235, 90), "forest-servant": (90, 150, 80), "marika-mouse": (245, 245, 245), "bird": (95, 70, 50),
+          "marny": (110, 235, 90), "forest-servant": (125, 28, 32), "marika-mouse": (245, 245, 245), "bird": (95, 70, 50),
           "forest-beast": (70, 60, 90)}
 SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
          "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏",
