@@ -306,6 +306,110 @@ def blink_variant(cel, eyes):
     return res
 
 
+def load_rgba(p):
+    im = cv2.imread(str(ROOT / p), cv2.IMREAD_UNCHANGED)
+    if im is None:
+        sys.exit(f"画像がない: {p}")
+    if im.shape[2] == 3:
+        im = np.dstack([im, np.full(im.shape[:2], 255, np.uint8)])
+    return cv2.cvtColor(im, cv2.COLOR_BGRA2RGBA)
+
+
+def sheet_mouths(cel, ms):
+    """口のシート（同じ頭を格子に並べた絵）から、口のまわりだけを板の顔に移す。
+    ms: {src, grid:[cols,rows], cells:{名前: 番号}, sheet_pts: 1コマ目の[左目,右目,口], plate_pts: 板の[左目,右目,口], radius:[rx,ry]}"""
+    sh = load_rgba(ms["src"])
+    cols, rows = ms["grid"]
+    cw, chh = sh.shape[1] // cols, sh.shape[0] // rows
+    sp = np.float32(ms["sheet_pts"])
+    dp = np.float32(ms["plate_pts"])
+    g0 = cv2.cvtColor(sh[:chh, :cw, :3], cv2.COLOR_RGB2GRAY).astype(np.float32)
+    ex0, ey0 = int(sp[:2, 0].min()) - 40, int(sp[:2, 1].min()) - 40
+    ex1, ey1 = int(sp[:2, 0].max()) + 40, int(sp[:2, 1].max()) + 40
+    tmpl = g0[ey0:ey1, ex0:ex1]
+    rx, ry = ms.get("radius", [46, 34])
+    mcx, mcy = dp[2]
+    x0, y0 = int(mcx - rx * 2), int(mcy - ry * 2)
+    x1, y1 = int(mcx + rx * 2), int(mcy + ry * 2)
+    base = cel[y0:y1, x0:x1].astype(np.float32)
+    yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
+    ell = np.clip(1.6 - np.sqrt(((xx - mcx) / rx) ** 2 + ((yy - mcy) / ry) ** 2) * 1.2, 0, 1)[..., None]
+    ring = ((((xx - mcx) / rx) ** 2 + ((yy - mcy) / ry) ** 2) > 1.0) & ((((xx - mcx) / rx) ** 2 + ((yy - mcy) / ry) ** 2) < 1.8)
+    out = {}
+    for name, idx in ms["cells"].items():
+        c, r = idx % cols, idx // cols
+        g = cv2.cvtColor(sh[r * chh:(r + 1) * chh, c * cw:(c + 1) * cw, :3], cv2.COLOR_RGB2GRAY).astype(np.float32)
+        # 目のあたりの位置合わせ（コマごとの小さなずれ）
+        res = cv2.matchTemplate(g[max(0, ey0 - 30):ey1 + 30, max(0, ex0 - 30):ex1 + 30], tmpl, cv2.TM_CCOEFF_NORMED)
+        _, _, _, mx = cv2.minMaxLoc(res)
+        off = np.float32([c * cw + mx[0] - min(30, ex0), r * chh + mx[1] - min(30, ey0)])
+        M = cv2.getAffineTransform(sp + off, dp)
+        warped = cv2.warpAffine(sh, M, (cel.shape[1], cel.shape[0]), flags=cv2.INTER_CUBIC)[y0:y1, x0:x1].astype(np.float32)
+        # 肌の色を板に合わせる（口のまわりの明るい肌の平均の差）
+        okb = ring & (base[..., :3].mean(2) > 190)
+        okw = ring & (warped[..., :3].mean(2) > 190)
+        shift = (base[..., :3][okb].mean(0) - warped[..., :3][okw].mean(0)) if okb.any() and okw.any() else 0
+        reg = base.copy()
+        reg[..., :3] = base[..., :3] * (1 - ell) + (warped[..., :3] + shift) * ell
+        out[name] = (reg.clip(0, 255).astype(np.uint8), (x0, y0))
+        print(f"  口 {name}: コマ {idx}、ずれ {mx}")
+    return out
+
+
+def sprite_set(sp, plate_alpha):
+    """コマを並べたシート（透明な背景）を切り分け、板の人物の大きさと足元に合わせる。"""
+    sh = load_rgba(sp["sheet"])
+    a = sh[..., 3]
+    n, lab, st, _ = cv2.connectedComponentsWithStats((a > 200).astype(np.uint8))
+    comps = sorted([st[i] for i in range(1, n) if st[i][4] > sp.get("min_area", 5000)], key=lambda s: s[0])
+    frames = []
+    for x, y, w, h, _ in comps:
+        pad = 8
+        x0, y0 = max(0, x - pad), max(0, y - pad)
+        crop = sh[y0:y + h + pad, x0:x + w + pad].copy()
+        al = crop[..., 3].astype(np.float32) / 255
+        al = np.clip((al - 0.55) / 0.3, 0, 1)                    # まわりの光のにじみを切る
+        al = cv2.erode(al, np.ones((3, 3), np.uint8))
+        crop[..., 3] = (al * 255).astype(np.uint8)
+        frames.append(crop)
+    # 板の人物（replace_box の中）の高さと足元
+    bx0, by0, bx1, by1 = sp["replace_box"]
+    pa = plate_alpha[by0:by1, bx0:bx1] > 128
+    ys, xs = np.nonzero(pa)
+    ph = ys.max() - ys.min()
+    pbottom = by0 + ys.max()
+    feet = xs[ys > ys.max() - ph * 0.08]
+    pfx = bx0 + feet.mean()
+    ref = frames[sp.get("ref_frame", 0)]
+    rys = np.nonzero(ref[..., 3] > 128)[0]
+    scale = sp.get("scale") or ph / (rys.max() - rys.min())
+    out = []
+    for f in frames:
+        g = cv2.resize(f, (max(1, int(f.shape[1] * scale)), max(1, int(f.shape[0] * scale))),
+                       interpolation=cv2.INTER_AREA if scale < 1 else cv2.INTER_CUBIC)
+        ys, xs = np.nonzero(g[..., 3] > 128)
+        bottom = ys.max()
+        fx = xs[ys > bottom - (bottom - ys.min()) * 0.08].mean()
+        out.append((g, int(round(pfx - fx + sp.get("dx", 0))), int(round(pbottom - bottom + sp.get("dy", 0)))))
+    print(f"  {sp['id']}: {len(out)}コマ、倍率 {scale:.3f}、足元 ({pfx:.0f}, {pbottom})")
+    return out
+
+
+def over(cel, img, x, y):
+    """RGBA の絵を cel に重ねる（はみ出しは切る）。"""
+    h, w = img.shape[:2]
+    X0, Y0 = max(0, x), max(0, y)
+    X1, Y1 = min(cel.shape[1], x + w), min(cel.shape[0], y + h)
+    if X1 <= X0 or Y1 <= Y0:
+        return
+    src = img[Y0 - y:Y1 - y, X0 - x:X1 - x].astype(np.float32)
+    dst = cel[Y0:Y1, X0:X1].astype(np.float32)
+    a = src[..., 3:4] / 255
+    dst[..., :3] = dst[..., :3] * (1 - a) + src[..., :3] * a
+    dst[..., 3:4] = np.maximum(dst[..., 3:4], src[..., 3:4])
+    cel[Y0:Y1, X0:X1] = dst.astype(np.uint8)
+
+
 def paste(cel, patch, at):
     x, y = at
     h, w = patch.shape[:2]
@@ -397,10 +501,17 @@ class Plate:
                 m[y0:y1, x0:x1] = sel[y0:y1, x0:x1]
                 m *= (a.astype(np.float32) / 255) if an["type"] != "flame" else 1
                 self.masks[id(an)] = cv2.GaussianBlur(m, (0, 0), an.get("blur", 10))
+        for x0, y0, x1, y1 in pl.get("erase", []):      # シートの絵に差し替える人物を消す（背景は穴埋め済み）
+            self.cel[y0:y1, x0:x1, 3] = 0
+        self.sprites = []
+        for sp in pl.get("sprites", []):
+            self.sprites.append((sp, sprite_set(sp, a)))
         self.cels = {}
         self.mouth = None
         if pl.get("mouth"):
             self.mouth = mouth_variants(self.cel, pl["mouth"])
+        if pl.get("mouth_sheet"):
+            self.mouth = sheet_mouths(self.cel, pl["mouth_sheet"])
         self.blink = blink_variant(self.cel, pl["blink"]["eyes"]) if pl.get("blink") else None
 
     def cel_for(self, mouth, eyes_closed, base=None):
@@ -543,6 +654,10 @@ class Renderer:
         mouth = "closed"
         if who and lev > P.get("mouth_th", [0.12, 0.42])[0]:
             mouth = "open" if lev > P.get("mouth_th", [0.12, 0.42])[1] else "half"
+            ms = P.get("mouth_sheet")
+            if ms and mouth == "open":           # 開いた口は母音の形を順に変える（音節ごとに）
+                cyc = ms.get("open_cycle", ["a", "o", "a", "i"])
+                mouth = cyc[int(tq * ms.get("syllables", 4.5)) % len(cyc)]
         closed = any(b - 0.001 <= tq < b + P["blink"].get("len", 0.12) for b in P["blink"]["at"]) if P.get("blink") else False
         cel = pl.cel_for(mouth, closed)
         sw = self.swap.get(pname)
@@ -566,6 +681,17 @@ class Renderer:
             elif tq >= at:
                 u = tq - at
                 kick = -sw[0].get("overshoot", 10.0) * math.exp(-u / 0.14) * math.cos(2 * math.pi * u / 0.32)
+        if pl.sprites:                          # シートのコマを時刻に合わせて重ねる
+            cel = cel.copy()
+            for sp, frames in pl.sprites:
+                for seg in sp["timeline"]:
+                    if seg["from"] <= tq < seg["to"]:
+                        seq = seg["seq"]
+                        k = int((tq - seg["from"]) * seg.get("fps", 12) + 1e-6)
+                        k = k % len(seq) if seg.get("loop", True) else min(k, len(seq) - 1)
+                        g, x, y = frames[seq[k]]
+                        over(cel, g, x, y)
+                        break
         cmaps = self.char_maps(pl, P, cam, X, Y, tq, lev, kick)
         if smear and sw:
             # ぶれのコマ: A と B を重ね（不透明のまま）、動きの方向にぼかす
@@ -776,9 +902,9 @@ def compare(spec, ver):
     lab = "drawtext=fontfile={f}:text='{t}':x=16:y=12:fontsize=30:fontcolor=white:box=1:boxcolor=black@0.55:boxborderw=8"
     fc = (f"[0:v]scale=960:540,setsar=1,fps=24,tpad=stop_mode=clone:stop_duration={sec},trim=0:{sec},setpts=PTS-STARTPTS,"
           + lab.format(f=font, t="Seedance 2.0（今まで、480p）") + "[a];"
-          + f"[1:v]scale=960:540,setsar=1,trim=0:{sec},setpts=PTS-STARTPTS," + lab.format(f=font, t="コードで動かす（試作、0クレジット）") + "[b];"
+          + f"[1:v]scale=960:540,setsar=1,trim=0:{sec},setpts=PTS-STARTPTS," + lab.format(f=font, t=f"コードで動かす（試作 {ver}）") + "[b];"
           + "[a][b]vstack[v]")
-    out = od / f"{spec['cut']}_compare.mp4"
+    out = od / (f"{spec['cut']}_compare.mp4" if ver == "v01" else f"{spec['cut']}_compare_{ver}.mp4")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(sd), "-i", str(ours), "-filter_complex", fc, "-map", "[v]", "-map", "1:a",
                     "-c:v", "libx264", "-crf", "22", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", str(out)], check=True)
     print(f"比較: {out.relative_to(ROOT)}")
@@ -787,7 +913,7 @@ def compare(spec, ver):
 def check(spec, ver):
     od = ROOT / "cel" / spec["scene_id"]
     ours = od / f"{spec['cut']}_{ver}.mp4"
-    out = od / f"{spec['cut']}_check.jpg"
+    out = od / (f"{spec['cut']}_check.jpg" if ver == "v01" else f"{spec['cut']}_check_{ver}.jpg")
     n = int(spec["sec"] * 2)
     cols = 4
     rows = math.ceil(n / cols)

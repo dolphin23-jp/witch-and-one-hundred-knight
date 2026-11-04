@@ -7,7 +7,15 @@ plates:
     src: episodes/A/scenes/A02/stills/start/A02-002_start_gpt-image-2.5_01.png
     speaker: bisco
     char_parallax: 0.9
-    mouth: {center: [1366, 566], w: 36, h: 18, kind: line}
+    # v01 はコードで描いた口（mouth: {center: [1366, 566], w: 36, h: 18, kind: line}）。v02 から口のシート（S1）の口を移す
+    mouth_sheet:
+      src: characters/bisco/sheets/bisco_mouth_A02-002_gpt-image-2.5_01.png
+      grid: [4, 2]
+      cells: {half: 1, a: 2, o: 3, i: 4, u: 5}
+      sheet_pts: [[195, 418], [343, 405], [268, 523]]    # 1コマ目の 左目・右目・口
+      plate_pts: [[1265, 475], [1395, 438], [1362, 564]] # 開始の静止画の 左目・右目・口
+      radius: [52, 40]
+      open_cycle: [a, o, a, i]
     blink:     # 目を閉じた絵はコードで描く（目の中を肌の色で塗り、閉じたまぶたの線）
       at: [1.55, 3.3]
       len: 0.17
