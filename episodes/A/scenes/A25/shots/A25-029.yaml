@@ -1,0 +1,55 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-029
+scene: A25
+tc: 374.7
+sec: 8.4
+kind: M
+shot: 全身・実を渡すビスコ
+acting: ビスコがしゃがんで実を百騎兵に渡す（「とりあえず、この“翠ノ実”はお前に渡しておく。さあ、早いところ戻ろうか」）。二人で東へ戻る
+dialogue:
+- L846「とりあえず、この“翠ノ実”はお前に渡しておく。さあ、早いところ戻ろうか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 40.6
+  - 115.8
+  - 0.8
+  look:
+  - 44.0
+  - 113.8
+  lens: 28
+  move: 実の木の下の低い所から。戻る二人を追って振る
+background: rift-void
+image: null
+refs:
+- hundred-knight
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 向き合う二人（実の木の下から）
+  end: 東へ戻る二人
+timing:
+  lead: 0.3
+  at:
+    L846: 0.6
+blocking:
+  start: 百（中央・正面）、ビ（右・背中）
+  end: 百（中央・背中）、ビ（中央・背中）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver
+    shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, with the back to the camera. No other
+    people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below,
+    floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera, small in the background; Bisco (short black bob hair with
+    two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the
+    frame, with the back to the camera, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
+    violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-029_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-029_end.png

@@ -1,0 +1,61 @@
+# A23 隠し森の駅・夜光列車（夕暮れ）。blocking.yaml（Claude の案 2026-11-04、Living Spec「A23 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A23-033
+scene: A23
+tc: 319.1
+sec: 9.6
+kind: A
+shot: 引き（列車の側から）・ビスコを放り投げる
+acting: ライオネル「さあ、それじゃあそろそろ出発するぞい！ご乗車の方はお急ぎを！」。百騎兵がビスコを頭の上に持ち上げ、列車へ放り投げる。ビスコはくるくる回って弧を描き、ドームの窓へ飛び込む。アルレッキーノは口を押さえる。百騎兵も跳んで続く
+dialogue:
+- L766「さあ、それじゃあそろそろ出発するぞい！ご乗車の方はお急ぎを！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.8
+  - 48.2
+  - 2.8
+  look:
+  - 25.0
+  - 46.0
+  lens: 26
+  move: 列車のドームの南の高い所から、ホームの方へ（飛んでくるビスコを受ける向き）。飛ぶビスコを追って振る
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- bisco
+- arlecchino
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 列車の後ろ（ドームの横）から、ホームの三人
+  end: 列車に飛び込んだ二人。ホームにアルレッキーノ
+timing:
+  lead: 0.3
+blocking:
+  start: ビ（中央・正面）、百（中央・正面）、ア（中央・正面）、列（右・斜め後ろ（画面左向き））
+  end: ア（左・斜め前（画面右向き））、列（中央・斜め後ろ（画面左向き））、百（右・横顔（画面右向き））、ビ（右・横顔（画面右向き））
+  background: 深い森
+  panels: []
+  staging_en: 'In frame (exactly 4 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold
+    crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera; Arlecchino (a
+    bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat,
+    olive-green arms, big black boots), standing, in the center of the frame, facing the camera; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a
+    burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys,
+    standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No other people. High angle looking down. Behind: a deep wild forest of huge ancient gnarled trees,
+    ferns and roots, dim green light.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern,
+    two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots), standing, on the left of the frame, in three-quarter view, turned toward screen right;
+    the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green
+    snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, seen from behind at an angle, turned toward screen
+    left; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
+    its sword), standing, at the far right of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over
+    a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, in profile, turned toward screen right. No other people. High
+    angle looking down. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  sketch:
+  - episodes/A/scenes/A23/gen/sketch/A23-033_start.png
+  - episodes/A/scenes/A23/gen/sketch/A23-033_end.png

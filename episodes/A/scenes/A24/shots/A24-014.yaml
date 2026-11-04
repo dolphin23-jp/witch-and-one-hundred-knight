@@ -1,0 +1,53 @@
+# A24 異空間・閉じた門。blocking.yaml（Claude の案 2026-11-04、Living Spec「A24 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A24-014
+scene: A24
+tc: 126.5
+sec: 8.0
+kind: M
+shot: 2人（門の側から）・ビスコ・百騎兵
+acting: ビスコが百騎兵に向き直り「……行こう、百騎兵。ここで止まっている暇はない。なんとか門を開けよう」。百騎兵がうなずき、二人で門の方へ歩き出す
+dialogue:
+- L790「……行こう、百騎兵。ここで止まっている暇はない。なんとか門を開けよう。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 117.0
+  - 56.2
+  - 1.0
+  look:
+  - 110.0
+  - 54.6
+  lens: 30
+  move: 門の足元の南から二人を正面に
+background: rift-void
+image: null
+refs:
+- hundred-knight
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 足場の二人（門の側から）
+  end: 門へ向かう二人
+timing:
+  lead: 0.3
+blocking:
+  start: ビ（中央・正面）、百（中央・斜め後ろ（画面右向き））
+  end: 百（中央・斜め前（画面右向き））、ビ（中央・斜め前（画面右向き））
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+    helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind
+    at an angle, turned toward screen right, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+    a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Bisco (short
+    black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+    in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly
+    void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A24/gen/sketch/A24-014_start.png
+  - episodes/A/scenes/A24/gen/sketch/A24-014_end.png

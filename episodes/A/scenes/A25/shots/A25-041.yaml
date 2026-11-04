@@ -1,0 +1,57 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-041
+scene: A25
+tc: 527.8
+sec: 17.3
+kind: M
+shot: 寄り・手渡される翠ノ実
+acting: ビスコが魔女の手を握ると、手の中に翠ノ実（「これは……」）。魔女「ヒッヒッヒ、さあ、それを持っておきな。そいつは砂糖漬けにすると旨いんだ」。ビスコが頭を下げる（「ありがとうございます、魔女殿……。感謝を」）
+dialogue:
+- L870「これは……。」
+- L871「ヒッヒッヒ、さあ、それを持っておきな。そいつは砂糖漬けにすると旨いんだ。」
+- L872「ありがとうございます、魔女殿……。感謝を。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 76.4
+  - 101.2
+  - 1.0
+  look:
+  - 76.1
+  - 102.7
+  lens: 40
+  move: 手もとの横の低い所から寄り、ゆっくり引いて二人を入れる
+background: rift-void
+image: null
+refs:
+- blind-witch
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 握り合う二人の手
+  end: お辞儀するビスコ
+timing:
+  lead: 0.3
+  at:
+    L870: 1.6
+    L871: 2.62
+    L872: 12.08
+blocking:
+  start: ビ（左・横顔（画面右向き））、盲（右・斜め前（画面左向き））
+  end: ビ（左・横顔（画面右向き））、盲（右・斜め前（画面左向き））
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in profile, turned toward screen right; the blind old witch (appearance to be fixed by a reference
+    sheet), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black
+    stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+    brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the blind old witch (appearance to be fixed by a reference
+    sheet), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone.
+    A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-041_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-041_end.png

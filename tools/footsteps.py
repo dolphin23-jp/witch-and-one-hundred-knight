@@ -28,6 +28,7 @@ DT = 0.02
 
 
 FLYING = {"marny"}   # 6章後半: 沼の妖精マーニィはいつも浮いている（2026-11-02）
+NO_STEPS = {"night-train"}   # 足で歩かないもの（夜光列車は車輪。走る音は sound.yaml に書く、2026-11-04）
 
 def inside_room(lay, x, y):
     for name, pr in (lay.get("props") or {}).items():
@@ -59,7 +60,7 @@ def main():
         for who, tr in tracks.items():
             if only is not None and who not in only:
                 continue
-            if who in FLYING:   # いつも飛んでいる人物（羽で浮く妖精など）は足音なし
+            if who in FLYING or who in NO_STEPS:   # いつも飛んでいる人物（羽で浮く妖精など）と、足で歩かないものは足音なし
                 continue
             h = people.get(who, {}).get("h", 1.6)
             base = 0.7 if h >= 1.3 else 0.45

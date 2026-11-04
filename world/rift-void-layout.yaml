@@ -1,0 +1,105 @@
+# 異空間（夜光列車が走る世界の裏側）の下絵用の配置（6章後半 回2 の A24・A25。2026-11-04、Claude の案）
+# 原作: 列車は「異空間」を走る（線路なんかなくても大丈夫）。途中、流刑者が送り込まれるような場所で、閉じた大きな門の前に急停車する（A24）。
+#   門を閉めたのは「盲いた魔女」。百騎兵とビスコは手分けして魔女を捜し、魔女の居場所（異空間の奥）で会う。魔女のお使いで「追憶の園」の翠ノ実を取ってくる（A25）。
+#   車中は「列車の座席のような真っ暗な空間」。
+# 背景の資料はまだない（静止画の日までに、ユーザーが用意するか、Claude が参考画を作る。D-058）。形は仮置き。
+# 座標: x は西 → 東、y は北 → 南（m）。足元の「地面」はずっと下（z −80）の暗い虚空。人の立てる所は浮いた岩の足場（ledge、上面 h）と板の道。
+#   線路: 石の土手の上を東へまっすぐ（y 50、x −200〜118）。門は x 120（線路をふさぐ）。門の前の足場 (110, 50)。
+#   門の前から南へ板の道 → 中継の足場 (98, 84) → 魔女の居場所 (78, 104)（A25 の前半）→ 西へ板の道 → 追憶の園 (48, 112)（A25 の後半。翠ノ実の木）。
+#   門の前から北へも板の道（百騎兵とビスコが手分けする）→ 北の足場 (96, 20)。
+#   車中（A24 の前半）は別の所に置いた箱の部屋（x 200〜202.6、y 100〜107。座席が2列、琥珀色の窓明かり）。
+id: rift-void
+size: {w: 160.0, d: 130.0}
+compass: 北 0、東 90、南 180、西 270（列車は東へ走る。門は東）
+time: 時間のない暗い空間（紫の薄明かり）
+ground: {color: [18, 12, 30], ja: はるか下の虚空, z: -80.0}
+sky: {color: [28, 18, 48]}
+sun: {from: 200, elev: 60}
+light_en: "A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air."
+lighting:
+  void: {sun_from: 200, sun_elev: 60, sun_energy: 0.6, sun_color: [175, 145, 255], sky: [30, 20, 52], sky_strength: 0.7, lamps: 1.2,
+         fill: {at: [108.0, 50.0], z: 14.0, energy: 2600, color: [190, 150, 255], radius: 10.0}}   # 門の前（A24）
+  void_run: {sun_from: 200, sun_elev: 60, sun_energy: 0.5, sun_color: [175, 145, 255], sky: [24, 16, 44], sky_strength: 0.7, lamps: 1.2}   # 走る列車（A24・A26）
+  train_inside: {sun_from: 200, sun_elev: 60, sun_energy: 0.0, sun_color: [175, 145, 255], sky: [8, 6, 14], sky_strength: 0.2, lamps: 1.0,
+                 fill: {at: [201.3, 103.5], z: 2.0, energy: 90, color: [255, 170, 90], radius: 0.6}}   # 真っ暗な車中（窓の帯だけ琥珀色）
+  witch_den: {sun_from: 160, sun_elev: 55, sun_energy: 0.7, sun_color: [190, 160, 255], sky: [34, 22, 56], sky_strength: 0.7, lamps: 1.4,
+              fill: {at: [78.0, 104.0], z: 10.0, energy: 2000, color: [200, 160, 255], radius: 8.0}}   # 魔女の居場所（A25 前半）
+  memory_garden: {sun_from: 150, sun_elev: 50, sun_energy: 1.1, sun_color: [210, 255, 220], sky: [40, 62, 60], sky_strength: 0.8, lamps: 1.2,
+                  fill: {at: [48.0, 112.0], z: 10.0, energy: 2400, color: [190, 255, 210], radius: 9.0}}   # 追憶の園（A25 後半。かすかな緑の光）
+horizon:
+  - {from: 0, to: 360, ja: 暗い虚空と浮いた岩, en: "an endless dark violet void with floating rocks and distant spires of black stone"}
+areas: []
+props:
+  # --- 線路（石の土手の上を東へ） ---
+  causeway_rail: {from: [-200.0, 50.0], to: [101.0, 50.0], z: -0.6, h: 0.6, t: 3.2, ja: 線路の石の土手}
+  rail_void: {from: [-200.0, 50.0], to: [118.0, 50.0], gauge: 1.2, z: 0.0, ja: 異空間の線路}
+  # --- 閉じた門（線路をふさぐ。高さ約17m） ---
+  ledge_gate: {at: [110.0, 50.0], r: 10.0, h: 0.0, z0: -12.0, top: [74, 64, 86], ja: 門の前の足場}
+  column_gate_n: {at: [120.0, 42.4], r: 1.8, h: 18.0, ja: 門の柱（北）}
+  column_gate_s: {at: [120.0, 57.6], r: 1.8, h: 18.0, ja: 門の柱（南）}
+  gatedoor: {from: [120.0, 44.2], to: [120.0, 55.8], h: 14.0, t: 1.0, ja: 閉じた門の扉}
+  gatetop: {from: [120.0, 40.4], to: [120.0, 59.6], z: 14.0, h: 3.2, t: 2.4, ja: 門の上の横木}
+  crystal_gate_n: {at: [117.6, 41.0], r: 0.35, h: 2.4, glow: 1.2, ja: 門のそばの光る石（北）}
+  crystal_gate_s: {at: [117.6, 59.0], r: 0.35, h: 2.4, glow: 1.2, ja: 門のそばの光る石（南）}
+  # --- 手分けして捜す道（南は魔女の居場所へ、北は行き止まり） ---
+  plank_s: {from: [107.5, 59.6], to: [99.5, 81.4], z: -0.15, h: 0.15, t: 1.4, ja: 南へ下る板の道}
+  ledge_mid: {at: [98.0, 84.0], r: 3.0, h: 0.0, z0: -6.0, top: [74, 64, 86], ja: 中継の足場}
+  plank_s2: {from: [96.0, 86.2], to: [84.2, 99.4], z: -0.15, h: 0.15, t: 1.4, ja: 魔女の居場所への板の道}
+  plank_n: {from: [107.0, 40.6], to: [98.4, 22.6], z: -0.15, h: 0.15, t: 1.4, ja: 北へ上る板の道}
+  ledge_n: {at: [96.0, 20.0], r: 3.0, h: 0.0, z0: -7.0, top: [74, 64, 86], ja: 北の足場（行き止まり）}
+  # --- 魔女の居場所（A25 前半。浮いた円い足場に、古い椅子と灯り） ---
+  ledge_witch: {at: [78.0, 104.0], r: 8.0, h: 0.0, z0: -14.0, top: [82, 70, 92], ja: 魔女の居場所}
+  stool_witch: {at: [76.0, 102.0], h: 0.5, ja: 魔女の古い椅子}
+  lantern_witch_a: {at: [72.5, 99.5], z: 2.4, energy: 22, ja: 魔女の居場所の灯り}
+  pillar_witch_a: {at: [72.5, 99.5], r: 0.1, h: 2.3, ja: 灯りの柱}
+  lantern_witch_b: {at: [83.5, 99.5], z: 2.4, energy: 22, ja: 魔女の居場所の灯り}
+  pillar_witch_b: {at: [83.5, 99.5], r: 0.1, h: 2.3, ja: 灯りの柱}
+  crystal_witch: {at: [80.5, 108.5], r: 0.4, h: 3.0, glow: 0.8, ja: 光る石}
+  # --- 追憶の園（A25 後半。緑の木々と、翠ノ実の光） ---
+  plank_g: {from: [70.2, 106.2], to: [57.2, 110.0], z: -0.15, h: 0.15, t: 1.4, ja: 追憶の園への板の道}
+  ledge_garden: {at: [48.0, 112.0], r: 9.5, h: 0.0, z0: -12.0, top: [70, 104, 66], ja: 追憶の園}
+  tree_g0: {at: [44.0, 107.0], h: 5.5, r: 0.35, crown: 2.6, leaf: [60, 120, 70], ja: 追憶の園の木}
+  tree_g1: {at: [52.5, 116.5], h: 6.0, r: 0.4, crown: 2.8, leaf: [56, 112, 66], ja: 追憶の園の木}
+  tree_g2: {at: [41.5, 116.0], h: 4.8, r: 0.3, crown: 2.2, leaf: [64, 126, 72], ja: 追憶の園の木（翠ノ実が生る）}
+  moss_fruit0: {at: [41.5, 116.0], z: 3.6, energy: 10, ja: 翠ノ実の光}
+  moss_fruit1: {at: [44.6, 107.6], z: 4.2, energy: 8, ja: 翠ノ実の光}
+  bush_g0: {at: [50.0, 108.0], r: 1.0, h: 0.7, color: [70, 128, 72], ja: 茂み}
+  bush_g1: {at: [46.0, 119.5], r: 1.1, h: 0.8, color: [64, 118, 66], ja: 茂み}
+  bush_g2: {at: [54.5, 111.0], r: 0.8, h: 0.6, color: [72, 132, 74], ja: 茂み}
+  flowers_g0: {at: [48.0, 113.0], r: 1.2, ja: 白い花}
+  flowers_g1: {at: [43.5, 111.5], r: 0.9, ja: 白い花}
+  # --- 浮いた岩と、遠くの黒い尖塔 ---
+  ledge_f1: {at: [80.0, 30.0], r: 4.0, h: -3.0, z0: -14.0, ja: 浮いた岩}
+  ledge_f2: {at: [92.0, 70.0], r: 2.0, h: 2.0, z0: -5.0, ja: 浮いた岩}
+  ledge_f3: {at: [138.0, 34.0], r: 5.0, h: 4.0, z0: -10.0, ja: 浮いた岩}
+  ledge_f4: {at: [140.0, 70.0], r: 3.5, h: -1.0, z0: -9.0, ja: 浮いた岩}
+  ledge_f5: {at: [60.0, 72.0], r: 2.5, h: 5.0, z0: -2.0, ja: 浮いた岩}
+  ledge_f6: {at: [40.0, 28.0], r: 3.0, h: 1.0, z0: -8.0, ja: 浮いた岩}
+  ledge_f7: {at: [10.0, 70.0], r: 4.0, h: 3.0, z0: -9.0, ja: 浮いた岩}
+  ledge_f8: {at: [-20.0, 30.0], r: 3.0, h: -2.0, z0: -10.0, ja: 浮いた岩}
+  ledge_f9: {at: [25.0, 86.0], r: 3.5, h: -4.0, z0: -12.0, ja: 浮いた岩}
+  ledge_f10: {at: [-60.0, 34.0], r: 4.0, h: 2.0, z0: -10.0, ja: 浮いた岩}
+  ledge_f11: {at: [-100.0, 66.0], r: 5.0, h: -3.0, z0: -14.0, ja: 浮いた岩}
+  ledge_f12: {at: [-140.0, 32.0], r: 3.5, h: 4.0, z0: -6.0, ja: 浮いた岩}
+  ledge_f13: {at: [-30.0, 68.0], r: 3.0, h: 1.0, z0: -8.0, ja: 浮いた岩}
+  ledge_f14: {at: [-170.0, 70.0], r: 4.5, h: 0.0, z0: -12.0, ja: 浮いた岩}
+  peak_v1: {at: [220.0, -40.0], r: 30.0, h: 150.0, z0: -80.0, color: [36, 26, 54], ja: 遠くの黒い尖塔}
+  peak_v2: {at: [-80.0, 160.0], r: 25.0, h: 130.0, z0: -80.0, color: [34, 24, 50], ja: 遠くの黒い尖塔}
+  peak_v3: {at: [60.0, -110.0], r: 35.0, h: 120.0, z0: -80.0, color: [40, 28, 58], ja: 遠くの黒い尖塔}
+  # --- 車中（A24 前半。別の所に置いた箱の部屋。窓の帯だけ琥珀色に光る） ---
+  room_train: {x: [200.0, 202.6], y: [100.0, 107.0], h: 2.3, roof: 0.4, ja: 車中（座席のような真っ暗な空間）}
+  crate_seat_w: {at: [200.55, 103.5], w: 0.7, d: 5.6, h: 0.45, ja: 座席（西）}
+  crate_seat_e: {at: [202.05, 103.5], w: 0.7, d: 5.6, h: 0.45, ja: 座席（東）}
+  lantern_window_w: {at: [200.2, 102.0], z: 1.6, energy: 4, ja: 窓明かり（琥珀色）}
+  lantern_window_e: {at: [202.4, 105.0], z: 1.6, energy: 4, ja: 窓明かり（琥珀色）}
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword)"}
+  bisco: {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
+  night-train: {ja: 夜光列車, eye: 1.9, h: 4.3, en: "the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys"}
+  blind-witch: {ja: 盲いた魔女, eye: 1.35, h: 1.45, en: "the blind old witch (appearance to be fixed by a reference sheet)"}
+views:
+  void_run: {ja: 異空間を走る列車, panel: null, en: "a dark violet void: a railway on a long stone causeway floating in emptiness, floating rocks, distant black spires"}
+  void_gate: {ja: 異空間の閉じた門, panel: null, en: "a gigantic closed stone gate standing across the railway in a dark violet void, two massive pillars, glowing crystals at its feet, a floating rock platform in front"}
+  train_inside: {ja: 車中, panel: null, en: "the dark interior of a strange train carriage: two rows of seats, almost pitch black except for a thin band of amber light from the windows"}
+  witch_den: {ja: 魔女の居場所, panel: null, en: "a round floating rock platform deep in the void with an old chair, two old lanterns and a glowing crystal"}
+  memory_garden: {ja: 追憶の園, panel: null, en: "a small floating garden in the void with green trees, white flowers and softly glowing green fruits"}

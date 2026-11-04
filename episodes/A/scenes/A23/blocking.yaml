@@ -1,0 +1,880 @@
+# A23 駅・夜光列車（6章後半 回2 の最初）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-04）
+# Living Spec「A23 動きの設計（案）」。準備（案）の表の A23。
+# 場所は world/hekkahenne-forest-layout.yaml（x: 西0→東40、y: 北0→南110、m）。円形の駅 (20, 45)（ホームは半径 6、高さ 0.6。
+#   線路は東へ (25.6, 45)〜(37.5, 45) で途切れる。鐘は (16.4, 41.8)）。南の獣道から駅に入り（y 53）、北の獣道（y 22〜37）からアルレッキーノが来る。
+#   ホームの上の人物はキーの z に 0.6 を書く。
+# 光: 夕暮れ station_dusk（A22 の夕方の後。西の低い橙の光と紫の空、灯りを強めた）。
+# 夜光列車（night-train）は1体の人形（前が獅子の顔＝ライオネル、両側に山羊の頭＝ゴードーラ（南）・ゴードール（北）、後ろの上に蛇＝スネーカー）。
+#   列車の位置は車体の中ほど。西向き（face 270）で (30.6, 45) に止まると: 獅子の顔 (27.3, 45) 高さ 1.75、山羊 (29.5, 46.45)・(29.5, 43.55) 高さ 1.9、
+#   蛇の頭 (34.05, 45) 高さ 4.25、ドーム (33.2, 45)。戦いの後は (32.4, 45) に下がる（獅子 (29.1, 45)、山羊 (31.3, ±)、蛇 (35.85, 45)）。
+#   頭ごとには動かせないので、話す頭はカメラで示す。
+# 何もない空間の裂け目は fx の rift、獅子の炎は fx の breath。マーニィは魔女邸から通信で話す（小窓は scene.yaml の comm）。
+scene: A23
+layout: world/hekkahenne-forest-layout.yaml
+map_ymax: 110
+lighting: station_dusk
+places:
+  st_s: [20.0, 56.5]         # 南の獣道（駅の広場の手前）
+  bi_edge: [20.3, 51.7]      # ホームの南の縁の前（地面）
+  hk_bell: [17.3, 43.0]      # 鐘のそば（ホームの上）
+  hk_front: [25.3, 45.6]     # ホームの東の縁（列車の正面）
+  bi_front: [23.4, 46.4]
+  train_stop: [30.6, 45.0]
+  train_back: [32.4, 45.0]   # 戦いの後
+  rift_e: [38.6, 45.0]       # 線路の東の先の裂け目
+  ar_n: [21.6, 34.0]         # 北の獣道
+  ar_plat: [22.4, 41.4]      # アルレッキーノがホームに上がって立つ所
+start:
+  hundred-knight: {at: hk_bell, face: 160}
+  bisco: {at: st_s, face: 0}
+  night-train: {at: [43.5, 45.0], face: 270}
+  arlecchino: {at: ar_n, face: 170}
+
+cuts:
+  # ---------- 駅 ----------
+  A23-001:
+    frame: 引き（クレーン下げ）
+    only: [hundred-knight, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_bell, z: 0.6, face: 165, pose: stand}
+        - {t: 3.2, at: hk_bell, z: 0.6, face: 165, pose: stand}
+        - {t: 3.8, at: hk_bell, z: 0.6, face: 150, pose: stand}
+        - {t: 11.0, at: hk_bell, z: 0.6, face: 150, pose: stand}
+      bisco:
+        - {t: 0.0, at: [19.6, 58.8], face: 2, pose: run}
+        - {t: 3.6, at: bi_edge, face: 0, pose: run, ease: out}
+        - {t: 3.9, at: bi_edge, face: 0, pose: stand}
+        - {t: 4.3, at: bi_edge, face: 0, pose: bow}
+        - {t: 8.2, at: bi_edge, face: 0, pose: bow}
+        - {t: 8.8, at: bi_edge, face: 345, pose: stand}
+        - {t: 11.0, at: bi_edge, face: 340, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [24.5, 54.0, 9.0], look: [19.5, 46.0], look_h: 0.5, lens: 22, frame: 引き}
+      - {t: 4.0, cam: [23.2, 55.6, 1.6], look: [19.6, 49.0], look_h: 1.0, lens: 26}
+      - {t: 11.0, cam: [22.8, 55.2, 1.5], look: [19.3, 48.0], look_h: 1.0, lens: 28}
+    act: {start: 夕暮れの森の木々の上から、円形の駅へ, do: 鐘のそばで待つ百騎兵。南の獣道からビスコが駆け込んで、ホームの縁で膝に手をついて息を切らす（「さすがに早いな百騎兵……」）, end: ホームの百騎兵と、息を整えるビスコ}
+    camera: 木の上から駅へ下りる（クレーン下げ）。下りきってビスコの後ろの低い所
+    kind: A
+  A23-002:
+    frame: 全身（線路の先から）
+    only: [hundred-knight, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_bell, z: 0.6, face: 150, pose: stand}
+        - {t: 5.0, at: hk_bell, z: 0.6, face: 120, pose: stand}
+        - {t: 11.5, at: hk_bell, z: 0.6, face: 100, pose: stand}
+      bisco:
+        - {t: 0.0, at: bi_edge, face: 340, pose: stand}
+        - {t: 0.5, at: bi_edge, face: 0, pose: walk}
+        - {t: 1.2, at: [20.5, 50.3], z: 0.6, face: 10, pose: walk}
+        - {t: 1.5, at: [20.5, 50.3], z: 0.6, face: 20, pose: stand}
+        - {t: 3.0, at: [20.5, 50.3], z: 0.6, face: 320, pose: stand}
+        - {t: 4.6, at: [20.5, 50.3], z: 0.6, face: 60, pose: stand}
+        - {t: 5.0, at: [20.7, 50.1], z: 0.6, face: 55, pose: walk}
+        - {t: 8.4, at: [25.0, 46.0], z: 0.6, face: 60, pose: walk, ease: out}
+        - {t: 8.7, at: [25.0, 46.0], z: 0.6, face: 90, pose: stand}
+        - {t: 10.0, at: [25.0, 46.0], z: 0.6, face: 90, pose: look_down}
+        - {t: 11.5, at: [25.0, 46.0], z: 0.6, face: 95, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [37.0, 44.0, 1.0], look: [22.5, 47.0], look_h: 1.0, lens: 30, frame: 全身}
+      - {t: 5.0, cam: [36.6, 44.1, 1.0], look: [23.0, 46.6], look_h: 1.0, lens: 32}
+      - {t: 11.5, cam: [35.4, 44.3, 1.05], look: [24.6, 45.8], look_h: 1.0, lens: 38}
+    act: {start: 線路の途切れた先から、ホームを振り返る, do: ビスコがホームに上がり、見回して（「これが駅……か？」）、東の縁まで歩いて、手前で途切れた線路を見下ろす（「廃線じゃないのか……」）, end: ホームの縁で線路を見下ろすビスコ。奥に鐘のそばの百騎兵}
+    camera: 途切れた線路の先の低い所から、線路に沿って少し寄る（線路が手前で途切れているのを見せる）
+    kind: M
+  A23-003:
+    frame: 全身（鐘の横から）
+    only: [hundred-knight, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_bell, z: 0.6, face: 100, pose: stand}
+        - {t: 1.8, at: hk_bell, z: 0.6, face: 325, pose: stand}
+        - {t: 2.2, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+        - {t: 7.0, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+        - {t: 7.4, at: hk_bell, z: 0.6, face: 110, pose: stand}
+        - {t: 9.0, at: hk_bell, z: 0.6, face: 110, pose: stand}
+        - {t: 9.4, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+        - {t: 10.8, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+      bisco:
+        - {t: 0.0, at: [25.0, 46.0], z: 0.6, face: 95, pose: look_down}
+        - {t: 0.5, at: [25.0, 46.0], z: 0.6, face: 290, pose: stand}
+        - {t: 0.9, at: [24.8, 45.9], z: 0.6, face: 290, pose: walk}
+        - {t: 3.6, at: [19.9, 44.6], z: 0.6, face: 285, pose: walk, ease: out}
+        - {t: 3.9, at: [19.9, 44.6], z: 0.6, face: 300, pose: stand}
+        - {t: 4.4, at: [19.9, 44.6], z: 0.6, face: 300, pose: proud}
+        - {t: 9.8, at: [19.9, 44.6], z: 0.6, face: 300, pose: proud}
+        - {t: 10.3, at: [19.9, 44.6], z: 0.6, face: 295, pose: stand}
+        - {t: 10.8, at: [19.9, 44.6], z: 0.6, face: 295, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [15.1, 41.9, 1.3], look: [20.0, 44.4], look_h: 1.3, lens: 24, frame: 全身}
+      - {t: 4.0, cam: [15.15, 41.95, 1.3], look: [19.4, 44.1], look_h: 1.4, lens: 25}
+      - {t: 10.8, cam: [15.3, 42.0, 1.25], look: [18.9, 43.9], look_h: 1.5, lens: 27}
+    act: {start: 鐘の柱を手前に、ホームの縁から戻ってくるビスコ, do: 百騎兵が鐘を見上げている。ビスコが戻ってきて「なんだその鐘」、腰に手を当てて笑う（「それを鳴らしたら、列車が来たりしてな」）。百騎兵はビスコを見て、また鐘を見上げる, end: 鐘を見上げる百騎兵と、笑うビスコ}
+    camera: 鐘の西の横から、鐘の柱を画面の左に入れて。ゆっくり百騎兵に寄る
+    kind: M
+  A23-004:
+    frame: 寄り（見上げ）
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+        - {t: 0.6, at: hk_bell, z: 0.6, face: 325, pose: ready}
+        - {t: 1.2, at: hk_bell, z: 0.6, face: 325, pose: ready}
+        - {t: 1.55, at: [16.9, 42.4], z: 1.5, face: 325, pose: slash, arc: 0.3}
+        - {t: 2.1, at: hk_bell, z: 0.6, face: 325, pose: stand}
+        - {t: 3.6, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [18.7, 44.5, 0.95], look: [16.6, 42.0], look_h: 1.9, lens: 24, frame: 寄り}
+      - {t: 3.6, cam: [18.8, 44.6, 0.9], look: [16.5, 41.9], look_h: 2.3, lens: 22}
+    shake: [{t: [1.55, 2.6], amp: 0.8}]
+    fx:
+      - {kind: spark, t: [1.55, 2.2], at: [16.5, 41.95], z: 2.3}
+    act: {start: 鐘を見上げる百騎兵（下から）, do: 百騎兵が剣を構え、跳んで鐘を打つ。鐘の音が森に響く, end: 揺れる鐘と、見上げる百騎兵}
+    camera: 百騎兵の足元の低い所から鐘を煽る。打った瞬間に揺れ
+    kind: A
+  A23-005:
+    frame: 引き（線路の高さ・煽り）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:   # 裂け目が開ききるまでは地面の下に隠す（1.3秒で裂け目の陰に出す）
+        - {t: 0.0, at: [47.0, 45.0], z: -12.0, face: 270, pose: stand}
+        - {t: 1.25, at: [47.0, 45.0], z: -12.0, face: 270, pose: stand}
+        - {t: 1.3, at: [47.0, 45.0], z: 0.0, face: 270, pose: stand}
+        - {t: 6.8, at: train_stop, face: 270, pose: stand, ease: out}
+        - {t: 8.6, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_bell, z: 0.6, face: 325, pose: look_up}
+        - {t: 1.0, at: hk_bell, z: 0.6, face: 95, pose: stand}
+        - {t: 3.0, at: hk_bell, z: 0.6, face: 95, pose: ready}
+        - {t: 8.6, at: hk_bell, z: 0.6, face: 95, pose: ready}
+      bisco:
+        - {t: 0.0, at: [19.9, 44.6], z: 0.6, face: 295, pose: stand}
+        - {t: 0.9, at: [19.9, 44.6], z: 0.6, face: 95, pose: stand}
+        - {t: 2.4, at: [19.9, 44.6], z: 0.6, face: 95, pose: look_up}
+        - {t: 3.2, at: [19.3, 44.9], z: 0.6, face: 95, pose: fall}
+        - {t: 8.6, at: [19.3, 44.9], z: 0.6, face: 95, pose: fall}
+    cam_keys:
+      - {t: 0.0, cam: [27.6, 49.0, 0.4], look: [38.6, 45.0], look_h: 3.0, lens: 26, frame: 引き}
+      - {t: 2.0, cam: [27.6, 49.0, 0.4], look: [37.6, 45.0], look_h: 2.6}
+      - {t: 5.0, cam: [26.6, 49.8, 0.6], look: [30.0, 45.0], look_h: 1.8, lens: 22}
+      - {t: 6.8, cam: [25.4, 50.6, 0.8], look: [26.5, 45.0], look_h: 1.5, lens: 22}
+      - {t: 8.6, cam: [25.0, 50.8, 0.85], look: [24.0, 45.0], look_h: 1.3, lens: 22}
+    shake: [{t: [1.4, 6.8], amp: 0.5}]
+    fx:
+      - {kind: rift, t: [0.2, 7.4], at: rift_e, z: 0.0, w: 7.5, h: 8.0, face: 270, open: 1.0, close: 1.2}
+    act: {start: 線路の途切れた先の、何もない空間, do: 空間が縦に裂けて光り、夜光列車が滑り出てくる。線路の上を走って画面を右から左へ横切り、ホームの手前で止まる。ビスコは驚いてしりもち（「何も無い空間から……列車！？」）。裂け目は閉じる, end: ホームに横付けした夜光列車。奥に構える百騎兵と、しりもちのビスコ}
+    camera: 線路の南西の低い所（線路の高さ）から煽る。裂け目から出る列車を左へ追って振り、下がりながらホームの二人を入れる
+    kind: A
+  A23-006:
+    frame: 寄り（獅子の顔・煽り）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 6.2, at: train_stop, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [23.2, 43.4, 1.2], look: [27.3, 45.0], look_h: 2.0, lens: 26, frame: 寄り}
+      - {t: 6.2, cam: [23.6, 43.6, 1.15], look: [27.3, 45.0], look_h: 2.0, lens: 30}
+    shake: [{t: [0.3, 1.8], amp: 0.7}]
+    act: {start: 燃えるたてがみの獅子の顔（下から）, do: ライオネルが吠える（「がおおお〜ん！！ ヴァルプルギスの夜会行き夜光列車、ただいま到着ですぞい！」）, end: 獅子の顔}
+    camera: ホームの北東の縁の低い所から獅子の顔を煽る。ゆっくり寄る
+    kind: M
+  A23-007:
+    frame: 胸上（南の山羊）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 9.4, at: train_stop, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [26.4, 48.8, 1.9], look: [29.5, 46.45], look_h: 1.9, lens: 30, frame: 胸上}
+      - {t: 9.4, cam: [26.8, 48.6, 1.9], look: [29.5, 46.45], look_h: 1.95, lens: 34}
+    act: {start: 列車の南の山羊の頭（ゴードーラ）, do: ゴードーラ「“ヘッカヘンネの隠し森”なんて久しぶりだね。こんな場所にお呼びとはどんな物好きな魔女様かな？」, end: 南の山羊の頭}
+    camera: 列車の南西、山羊の頭の高さから。ゆっくり寄る
+    kind: M
+  A23-007b:
+    frame: 胸上（北の山羊）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 4.0, at: train_stop, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [27.2, 41.0, 2.6], look: [29.5, 43.55], look_h: 1.9, lens: 30, frame: 胸上}
+      - {t: 4.0, cam: [27.0, 41.2, 2.6], look: [29.3, 43.6], look_h: 1.8, lens: 30}
+    act: {start: 列車の北の山羊の頭（ゴードール。少し上から）, do: ゴードールがホームの方を見回して「あれ……？魔女様なんて、どこにもいないよ」, end: 北の山羊の頭}
+    camera: 列車の北西の少し高い所から山羊の頭を見下ろす。ホームの方へわずかに振る
+    kind: M
+  A23-008:
+    frame: 引き（列車の横・蛇へ）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 6.4, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [19.5, 43.8], z: 0.6, face: 95, pose: walk}
+        - {t: 2.6, at: [24.4, 44.4], z: 0.6, face: 95, pose: walk, ease: out}
+        - {t: 2.9, at: [24.4, 44.4], z: 0.6, face: 90, pose: stand}
+        - {t: 6.4, at: [24.4, 44.4], z: 0.6, face: 85, pose: look_up}
+      bisco:
+        - {t: 0.0, at: [19.4, 45.3], z: 0.6, face: 90, pose: walk}
+        - {t: 2.9, at: [22.9, 46.3], z: 0.6, face: 80, pose: walk, ease: out}
+        - {t: 3.2, at: [22.9, 46.3], z: 0.6, face: 80, pose: stand}
+        - {t: 6.4, at: [22.9, 46.3], z: 0.6, face: 75, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [30.2, 51.2, 1.6], look: [31.6, 45.0], look_h: 2.8, lens: 22, frame: 引き}
+      - {t: 6.4, cam: [30.8, 51.0, 1.7], look: [33.2, 45.0], look_h: 3.4, lens: 24}
+    act: {start: 列車の横の全体（獅子の顔から後ろの蛇まで）, do: 列車の後ろで蛇（スネーカー）が鎌首をもたげて怒鳴る（「いるのは妙なチビと犬人間だけじゃねーか！どーゆーこった！」）。画面の外で二人がホームの東の縁へ歩く, end: 鎌首をもたげた蛇}
+    camera: 列車の南の横から全体を入れ、後ろの蛇へゆっくり振り上げる
+    kind: M
+  A23-009:
+    frame: 肩なめ（百騎兵越しに獅子）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 5.9, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [24.4, 44.4], z: 0.6, face: 85, pose: stand}
+        - {t: 5.9, at: [24.4, 44.4], z: 0.6, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [22.9, 46.3], z: 0.6, face: 75, pose: stand}
+        - {t: 5.9, at: [22.9, 46.3], z: 0.6, face: 75, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [22.4, 43.4, 1.45], look: [27.3, 45.0], look_h: 1.8, lens: 36, frame: 肩なめ}
+      - {t: 5.9, cam: [22.6, 43.5, 1.4], look: [27.3, 45.0], look_h: 1.8, lens: 40}
+    act: {start: 百騎兵の肩越しに獅子の顔, do: ライオネルが百騎兵を見下ろす（「鐘を鳴らしたのはそこのおチビちゃんかいの？」）, end: 見上げる百騎兵と獅子の顔}
+    camera: 百騎兵の後ろの低い所から肩越しに獅子を煽る。ゆっくり寄る
+    kind: M
+  A23-010:
+    frame: 全身（横から）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 11.2, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [24.4, 44.4], z: 0.6, face: 90, pose: stand}
+        - {t: 3.8, at: [24.4, 44.4], z: 0.6, face: 120, pose: stand}
+        - {t: 4.2, at: [24.6, 44.6], z: 0.6, face: 125, pose: run}
+        - {t: 4.8, at: [25.7, 45.7], z: 0.6, face: 125, pose: run}
+        - {t: 5.3, at: [27.4, 46.8], z: 0.0, face: 110, pose: jump, arc: 0.5}
+        - {t: 5.6, at: [27.8, 46.9], z: 0.0, face: 80, pose: ready}
+        - {t: 6.0, at: [28.6, 46.8], z: 1.15, face: 75, pose: point, arc: 0.2}
+        - {t: 6.5, at: [28.2, 47.1], z: 0.0, face: 60, pose: stand}
+        - {t: 11.2, at: [28.2, 47.1], z: 0.0, face: 60, pose: look_up}
+      bisco:
+        - {t: 0.0, at: [22.9, 46.3], z: 0.6, face: 75, pose: stand}
+        - {t: 4.4, at: [22.9, 46.3], z: 0.6, face: 100, pose: stand}
+        - {t: 11.2, at: [22.9, 46.3], z: 0.6, face: 100, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [27.0, 50.8, 1.2], look: [27.4, 46.2], look_h: 1.4, lens: 28, frame: 全身}
+      - {t: 6.0, cam: [27.2, 50.7, 1.2], look: [28.4, 46.4], look_h: 1.5, lens: 30}
+      - {t: 11.2, cam: [27.4, 50.6, 1.2], look: [28.8, 46.3], look_h: 1.7, lens: 34}
+    act: {start: 南の山羊（ゴードーラ）と、ホームの縁の百騎兵, do: ゴードーラ「本当に切符は持ってるの？偽物なんじゃないの！？」。百騎兵がホームから飛び降りて駆け寄り、跳んで山羊の口に切符を押し込む。山羊が噛んで「切符は本物だ！」、北の山羊が「魔女様じゃないのに！？」, end: 山羊の頭を見上げる百騎兵}
+    camera: 列車の南の低い所から、横に。跳ぶ百騎兵を追って少し寄る
+    kind: M
+  A23-011:
+    frame: 寄り（蛇を煽る）
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 7.4, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [28.2, 47.1], z: 0.0, face: 60, pose: look_up}
+        - {t: 7.4, at: [28.2, 47.1], z: 0.0, face: 70, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [34.2, 50.6, 1.3], look: [34.05, 45.0], look_h: 4.1, lens: 26, frame: 寄り}
+      - {t: 7.4, cam: [34.0, 50.2, 1.3], look: [34.05, 45.0], look_h: 4.2, lens: 32}
+    act: {start: 列車の後ろの蛇（下から）, do: スネーカーが首を振って怒鳴る（「こんなワケのわからねーヤツら乗せるのかよ！乗せられねえよ！勘弁してくれよ！」）, end: 蛇の頭}
+    camera: 列車の後ろの南の低い所から蛇を煽る。ゆっくり寄る
+    kind: M
+  A23-012:
+    frame: 引き（俯瞰）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 8.9, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [28.2, 47.1], z: 0.0, face: 70, pose: look_up}
+        - {t: 0.5, at: [28.2, 47.1], z: 0.0, face: 290, pose: stand}
+        - {t: 0.7, at: [28.1, 47.05], z: 0.0, face: 290, pose: walk}
+        - {t: 2.2, at: [26.5, 46.3], z: 0.0, face: 290, pose: walk}
+        - {t: 2.8, at: [25.3, 45.6], z: 0.6, face: 290, pose: jump, arc: 0.5}
+        - {t: 3.1, at: hk_front, z: 0.6, face: 90, pose: stand}
+        - {t: 8.9, at: hk_front, z: 0.6, face: 90, pose: ready}
+      bisco:
+        - {t: 0.0, at: [22.9, 46.3], z: 0.6, face: 100, pose: stand}
+        - {t: 3.4, at: [22.9, 46.3], z: 0.6, face: 80, pose: cover}
+        - {t: 5.0, at: [22.3, 46.6], z: 0.6, face: 80, pose: cover}
+        - {t: 8.9, at: [22.3, 46.6], z: 0.6, face: 80, pose: cover}
+    cam_keys:
+      - {t: 0.0, cam: [15.5, 45.8, 6.4], look: [27.2, 45.4], look_h: 0.8, lens: 24, frame: 引き}
+      - {t: 8.9, cam: [16.6, 45.7, 5.6], look: [27.0, 45.4], look_h: 0.8, lens: 26}
+    act: {start: ホームの上から、横付けの列車の全体, do: 頭たちが口々に（「こいつら食っちまおうぜ」「食えんのかよ！」「丸呑みならいけるぜ！」）。百騎兵はホームへ跳び戻って構え、ビスコは口を押さえて後ずさる, end: 大きな列車と小さな二人}
+    camera: ホームの西の上から、ホームの柱の間に列車を見下ろす。ゆっくり下りて寄る
+    kind: M
+  A23-013:
+    frame: 2人（ホームの上）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 5.5, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_front, z: 0.6, face: 90, pose: ready}
+        - {t: 5.5, at: hk_front, z: 0.6, face: 90, pose: ready}
+      bisco:
+        - {t: 0.0, at: [22.3, 46.6], z: 0.6, face: 80, pose: cover}
+        - {t: 0.6, at: [22.4, 46.6], z: 0.6, face: 75, pose: walk}
+        - {t: 2.0, at: [24.1, 46.2], z: 0.6, face: 75, pose: walk, ease: out}
+        - {t: 2.3, at: [24.1, 46.2], z: 0.6, face: 70, pose: lean}
+        - {t: 5.5, at: [24.1, 46.2], z: 0.6, face: 70, pose: lean}
+    cam_keys:
+      - {t: 0.0, cam: [21.6, 42.6, 1.0], look: [24.2, 46.0], look_h: 0.9, lens: 30, frame: 2人}
+      - {t: 5.5, cam: [21.8, 42.8, 1.0], look: [24.5, 45.9], look_h: 0.9, lens: 34}
+    act: {start: ホームの縁で構える百騎兵、後ろのビスコ, do: ビスコが百騎兵に寄って小声で（「お、おい……百騎兵。ど、どうする……」）, end: 寄り添う二人。奥に列車}
+    camera: ホームの北西の低い所から二人を（奥に列車の山羊）
+    kind: M
+  A23-014:
+    frame: 寄り（百騎兵）
+    only: [hundred-knight, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: hk_front, z: 0.6, face: 90, pose: ready}
+        - {t: 10.6, at: hk_front, z: 0.6, face: 90, pose: ready}
+        - {t: 11.0, at: hk_front, z: 0.6, face: 90, pose: nod}
+        - {t: 11.6, at: hk_front, z: 0.6, face: 90, pose: stand}
+        - {t: 12.4, at: hk_front, z: 0.6, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [24.1, 46.2], z: 0.6, face: 70, pose: lean}
+        - {t: 12.4, at: [24.1, 46.2], z: 0.6, face: 70, pose: lean}
+    cam_keys:
+      - {t: 0.0, cam: [27.2, 44.2, 1.2], look: [25.0, 45.7], look_h: 1.1, lens: 30, frame: 寄り}
+      - {t: 12.4, cam: [26.8, 44.6, 1.15], look: [25.2, 45.6], look_h: 1.1, lens: 40}
+    act: {start: 列車の側から、構える百騎兵の顔, do: 通信の小窓にマーニィ（「百騎兵ちゃん、あなたが殺されることはないと思うけど、ビスコちゃんが心配ね。とりあえず、ビスコちゃんを避難させてあげて。わかった？」）。百騎兵がうなずく, end: うなずく百騎兵}
+    camera: 列車の前（ホームの外）から百騎兵の顔へゆっくり寄る
+    kind: M
+  A23-015:
+    frame: 全身（横・固定）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 10.4, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_front, z: 0.6, face: 90, pose: stand}
+        - {t: 3.9, at: hk_front, z: 0.6, face: 90, pose: stand}
+        - {t: 4.3, at: hk_front, z: 0.6, face: 245, pose: ready}
+        - {t: 4.7, at: [24.6, 46.0], z: 0.6, face: 245, pose: slash, arc: 0.5}
+        - {t: 5.1, at: [24.6, 46.0], z: 0.6, face: 245, pose: stand}
+        - {t: 7.0, at: [24.6, 46.0], z: 0.6, face: 245, pose: proud}
+        - {t: 10.4, at: [24.6, 46.0], z: 0.6, face: 245, pose: proud}
+      bisco:
+        - {t: 0.0, at: [24.1, 46.2], z: 0.6, face: 70, pose: lean}
+        - {t: 0.5, at: [24.1, 46.2], z: 0.6, face: 70, pose: stand}
+        - {t: 4.6, at: [24.1, 46.2], z: 0.6, face: 70, pose: stand}
+        - {t: 5.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie, ease: step}
+        - {t: 10.4, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [23.8, 50.8, 1.0], look: [24.4, 46.0], look_h: 0.8, lens: 28, frame: 全身}
+      - {t: 10.4, cam: [23.8, 50.8, 1.0], look: [24.3, 46.1], look_h: 0.7, lens: 28}
+    shake: [{t: [4.7, 5.2], amp: 0.9}]
+    act: {start: 寄り添う二人（横から）, do: ビスコ「マーニィから何か連絡があったのか？」。百騎兵がくるりと振り向き、跳んでビスコの頭をはたいて床に叩き伏せる（「ぐはぁ……！！な、なにを……」）。百騎兵は胸を張る, end: 伸びたビスコと、胸を張る百騎兵（ギャグ）}
+    camera: ホームの南の低い所から固定（ギャグなので動かさない）
+    kind: M
+  A23-016:
+    frame: 引き（斜め上から回り込む）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 16.3, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [24.6, 46.0], z: 0.6, face: 245, pose: proud}
+        - {t: 1.0, at: [24.6, 46.0], z: 0.6, face: 85, pose: stand}
+        - {t: 16.3, at: [24.6, 46.0], z: 0.6, face: 85, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+        - {t: 16.3, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [37.2, 39.0, 5.5], look: [29.0, 45.0], look_h: 1.8, lens: 26, frame: 引き}
+      - {t: 8.0, cam: [38.6, 44.6, 5.8], look: [29.0, 45.0], look_h: 1.8, lens: 26}
+      - {t: 16.3, cam: [36.6, 48.8, 5.5], look: [28.5, 45.2], look_h: 1.6, lens: 26}
+    act: {start: 列車の北東の上から, do: 頭たちが相談する（「こんなことは初めてなんじゃが……」「魔女様以外の奴を乗せて、列車の中で焼け死なれるのはゴメンだよ」「それに契約違反だよ。乗せていいのは魔女様だけだ」）。奥のホームに小さく百騎兵と伸びたビスコ, end: 列車の南東の上から}
+    camera: 列車の後ろの上を、北東から南東へ回り込む
+    kind: M
+  A23-017:
+    frame: 寄り（獅子を煽る）
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 11.6, at: train_stop, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [24.6, 46.0], z: 0.6, face: 85, pose: stand}
+        - {t: 9.8, at: [24.6, 46.0], z: 0.6, face: 85, pose: stand}
+        - {t: 10.2, at: [24.6, 46.0], z: 0.6, face: 85, pose: ready}
+        - {t: 11.8, at: [24.6, 46.0], z: 0.6, face: 85, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [22.9, 47.0, 0.95], look: [27.0, 45.2], look_h: 1.7, lens: 22, frame: 寄り}
+      - {t: 10.1, cam: [23.4, 46.8, 1.0], look: [27.2, 45.1], look_h: 1.8, lens: 26}
+      - {t: 11.8, cam: [23.5, 46.75, 1.0], look: [27.2, 45.1], look_h: 1.8, lens: 28}
+    shake: [{t: [10.2, 11.7], amp: 1.3}]
+    act: {start: 百騎兵の足元から獅子の顔, do: ライオネル「まあ、そういうことじゃ。残念じゃが、乗せるわけにはいかんのう。おとなしく帰ってもらうぞい！」。吠えて画面が揺れ、百騎兵が構える, end: 吠える獅子}
+    camera: 百騎兵の横の低い所から獅子を煽り、ゆっくり寄る。吠えで揺れ
+    kind: M
+  # ---------- 戦い（台詞なし、約30秒） ----------
+  A23-018:
+    frame: 引き（横から追う）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_stop, face: 270, pose: stand}
+        - {t: 0.4, at: train_stop, face: 270, pose: stand}
+        - {t: 2.0, at: [34.5, 45.0], face: 270, pose: stand}
+        - {t: 2.4, at: [34.5, 45.0], face: 270, pose: stand}
+        - {t: 3.4, at: [30.4, 45.0], face: 270, pose: stand}
+        - {t: 7.0, at: [30.4, 45.0], face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [24.6, 46.0], z: 0.6, face: 85, pose: ready}
+        - {t: 2.4, at: [24.6, 46.0], z: 0.6, face: 85, pose: ready}
+        - {t: 2.7, at: [24.8, 45.6], z: 0.6, face: 85, pose: crouch}
+        - {t: 3.6, at: [30.8, 45.0], z: 2.65, face: 90, pose: jump, arc: 1.6}
+        - {t: 3.9, at: [30.8, 45.0], z: 2.65, face: 90, pose: crouch}
+        - {t: 4.4, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
+        - {t: 7.0, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+        - {t: 7.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [26.0, 51.6, 1.6], look: [28.0, 45.0], look_h: 1.5, lens: 20, frame: 引き}
+      - {t: 3.4, cam: [26.6, 51.4, 1.8], look: [28.8, 45.0], look_h: 1.8, lens: 20}
+      - {t: 7.0, cam: [27.4, 51.2, 2.4], look: [30.2, 45.0], look_h: 2.4, lens: 22}
+    shake: [{t: [3.2, 4.2], amp: 1.6}]
+    act: {start: 構える百騎兵と列車（横から）, do: 列車が後ろへ下がって勢いをつけ、ホームへ突っ込んでくる。百騎兵は跳んで避け、そのまま列車の屋根に飛び乗る, end: 屋根の上で構える百騎兵}
+    camera: 南の低い所から横に。屋根へ跳ぶ百騎兵を追って上がる
+    kind: A
+  A23-019:
+    frame: 全身（屋根の高さ）
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [30.4, 45.0], face: 270, pose: stand}
+        - {t: 7.0, at: [30.4, 45.0], face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
+        - {t: 0.6, at: [30.9, 45.0], z: 2.65, face: 90, pose: run}
+        - {t: 1.8, at: [32.0, 45.0], z: 2.65, face: 90, pose: run}
+        - {t: 2.6, at: [33.2, 45.0], z: 3.9, face: 90, pose: slash, arc: 0.5}
+        - {t: 3.3, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready, arc: 0.4}
+        - {t: 4.6, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
+        - {t: 5.1, at: [32.6, 45.1], z: 3.4, face: 85, pose: slash, arc: 0.3}
+        - {t: 5.6, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
+        - {t: 7.0, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [27.8, 45.9, 3.6], look: [33.0, 45.0], look_h: 3.6, lens: 28, frame: 全身}
+      - {t: 7.0, cam: [28.8, 46.4, 3.5], look: [33.4, 45.0], look_h: 3.8, lens: 30}
+    shake: [{t: [2.6, 3.3], amp: 1.0}, {t: [5.1, 5.6], amp: 0.8}]
+    fx:
+      - {kind: spark, t: [2.6, 3.2], at: [33.75, 45.0], z: 4.2}
+      - {kind: spark, t: [5.1, 5.6], at: [33.4, 45.0], z: 3.9}
+    act: {start: 屋根の上の百騎兵（列車の前から）, do: 百騎兵が屋根を後ろへ駆け、襲いかかる蛇の頭に跳んで斬りつける（火花）。着地してもう一度打ち合う, end: 屋根の上で蛇と向き合う百騎兵}
+    camera: 獅子の頭の上、屋根の高さから後ろへ。蛇と打ち合う百騎兵
+    kind: A
+  A23-020:
+    frame: 引き（斜め上から）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [30.4, 45.0], face: 270, pose: stand}
+        - {t: 8.0, at: [30.4, 45.0], face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
+        - {t: 0.4, at: [32.1, 45.3], z: 2.65, face: 270, pose: ready}
+        - {t: 0.6, at: [31.9, 45.2], z: 2.65, face: 270, pose: run}
+        - {t: 1.5, at: [28.8, 45.0], z: 2.65, face: 270, pose: run}
+        - {t: 2.3, at: [25.0, 44.2], z: 0.6, face: 270, pose: jump, arc: 1.2}
+        - {t: 2.6, at: [25.0, 44.2], z: 0.6, face: 90, pose: ready}
+        - {t: 3.3, at: [25.0, 44.2], z: 0.6, face: 90, pose: ready}
+        - {t: 3.9, at: [23.0, 42.4], z: 0.6, face: 120, pose: jump, arc: 0.8}
+        - {t: 4.2, at: [23.0, 42.4], z: 0.6, face: 120, pose: crouch}
+        - {t: 5.6, at: [23.0, 42.4], z: 0.6, face: 120, pose: ready}
+        - {t: 8.0, at: [23.0, 42.4], z: 0.6, face: 120, pose: ready}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+        - {t: 8.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [19.2, 40.2, 2.6], look: [26.5, 45.0], look_h: 1.4, lens: 24, frame: 引き}
+      - {t: 3.0, cam: [19.3, 40.3, 2.6], look: [25.0, 44.8], look_h: 1.0, lens: 24}
+      - {t: 8.0, cam: [19.6, 40.5, 2.4], look: [24.2, 44.6], look_h: 0.9, lens: 26}
+    shake: [{t: [3.3, 5.3], amp: 0.9}]
+    fx:
+      - {kind: breath, t: [3.3, 5.3], at: [26.0, 45.0], z: 1.6, face: 270, length: 6.0, r: 1.0}
+    act: {start: 屋根の百騎兵（ホームの北西から）, do: 百騎兵が屋根を前へ駆けて獅子の頭を越え、ホームに跳び降りる。獅子が炎を吐き、百騎兵は北へ跳んで避ける。炎は伸びたビスコのすぐ脇をかすめる, end: 炎の向こうで構え直す百騎兵}
+    camera: ホームの北西の少し高い所から。跳び降りる百騎兵を追って振り下ろす
+    kind: A
+  A23-021:
+    frame: 全身（煽り）→ 引き
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [30.4, 45.0], face: 270, pose: stand}
+        - {t: 2.6, at: [30.4, 45.0], face: 270, pose: stand}
+        - {t: 4.4, at: train_back, face: 270, pose: stand, ease: out}
+        - {t: 8.0, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [23.0, 42.4], z: 0.6, face: 120, pose: ready}
+        - {t: 0.8, at: [23.2, 42.6], z: 0.6, face: 120, pose: run}
+        - {t: 1.9, at: [25.0, 44.4], z: 0.6, face: 100, pose: run}
+        - {t: 2.5, at: [26.0, 45.0], z: 1.5, face: 90, pose: slash, arc: 0.5}
+        - {t: 3.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: ready, arc: 0.3}
+        - {t: 5.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: ready}
+        - {t: 5.6, at: [25.4, 45.2], z: 0.6, face: 90, pose: proud}
+        - {t: 8.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: proud}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+        - {t: 8.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+    cam_keys:
+      - {t: 0.0, cam: [26.8, 48.8, 0.95], look: [24.8, 44.6], look_h: 1.2, lens: 24, frame: 全身}
+      - {t: 2.5, cam: [26.8, 48.7, 0.95], look: [26.2, 45.0], look_h: 1.6, lens: 24}
+      - {t: 4.4, cam: [26.6, 48.9, 1.0], look: [28.0, 45.0], look_h: 1.6, lens: 22}
+      - {t: 8.0, cam: [26.4, 49.2, 1.1], look: [28.6, 45.0], look_h: 1.6, lens: 22}
+    shake: [{t: [2.5, 3.8], amp: 2.0}]
+    fx:
+      - {kind: spark, t: [2.5, 3.2], at: [26.5, 45.0], z: 1.8}
+    act: {start: 構え直す百騎兵（ホームの南の低い所から）, do: 百騎兵が駆けて跳び、獅子の鼻づらに渾身の一太刀（火花、大きな揺れ）。列車が火花を散らして後ろへ滑って止まる。百騎兵は着地して胸を張る, end: 止まった列車と、ホームの縁で胸を張る百騎兵}
+    camera: ホームの南東の外の低い所から煽る。斬った瞬間に大きく揺れ、滑る列車を追って振る
+    kind: A
+  # ---------- 戦いの後 ----------
+  A23-022:
+    frame: 肩なめ（百騎兵越しに列車）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 6.8, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: proud}
+        - {t: 6.8, at: [25.4, 45.2], z: 0.6, face: 90, pose: proud}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 250, pose: lie}
+        - {t: 2.0, at: [23.6, 46.6], z: 0.6, face: 70, pose: fall}
+        - {t: 4.2, at: [23.6, 46.6], z: 0.6, face: 70, pose: fall}
+        - {t: 4.9, at: [23.6, 46.6], z: 0.6, face: 70, pose: stand}
+        - {t: 6.8, at: [23.6, 46.6], z: 0.6, face: 75, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [24.2, 44.3, 1.1], look: [29.2, 45.0], look_h: 1.8, lens: 26, frame: 肩なめ}
+      - {t: 6.8, cam: [24.0, 44.6, 1.1], look: [28.6, 45.4], look_h: 1.5, lens: 26}
+    act: {start: 百騎兵の肩越しに、止まった列車の顔, do: 頭たちが呆然（「こ、こいつは驚いた！」「ボクたちが……負けた？」）。後ろでビスコが起き上がる, end: 列車と、立ち上がったビスコ}
+    camera: 百騎兵の後ろの低い所から。ビスコが起きるのを入れて少し振る
+    kind: M
+  A23-023:
+    frame: 寄り（蛇）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 8.6, at: train_back, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [32.6, 48.8, 3.3], look: [35.85, 45.0], look_h: 4.1, lens: 26, frame: 寄り}
+      - {t: 8.6, cam: [33.2, 48.6, 3.4], look: [35.85, 45.0], look_h: 4.2, lens: 30}
+    act: {start: 蛇の頭（南の屋根の高さから）, do: スネーカー「ちっ！負けたからには仕方ねー。認めてやるよ。運んでやるからさっさと乗りな！」, end: 蛇の頭}
+    camera: 列車の南、屋根の高さから蛇の頭と目を合わせる。ゆっくり寄る
+    kind: M
+  A23-024:
+    frame: 寄り（獅子・横から）
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 10.9, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: stand}
+        - {t: 10.9, at: [25.4, 45.2], z: 0.6, face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [26.4, 47.4, 1.9], look: [29.1, 45.0], look_h: 1.8, lens: 30, frame: 寄り}
+      - {t: 10.9, cam: [26.8, 47.2, 1.85], look: [29.1, 45.0], look_h: 1.8, lens: 34}
+    act: {start: 獅子の顔（南西から）, do: ライオネルが蛇を叱る（「おい、蛇助！おヌシ、いい加減なことを言うでないわ。魔女様との契約、忘れたわけではあるまいな」）, end: 獅子の顔}
+    camera: ホームの外の南西、獅子の目の高さから横顔。ゆっくり寄る
+    kind: M
+  A23-025:
+    frame: 胸上（北の山羊）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 4.2, at: train_back, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [28.8, 40.6, 1.6], look: [31.3, 43.55], look_h: 1.9, lens: 32, frame: 胸上}
+      - {t: 4.2, cam: [28.9, 40.8, 1.6], look: [31.3, 43.55], look_h: 1.9, lens: 36}
+    act: {start: 北の山羊の頭（ゴードール）, do: ゴードール「せめて、魔女様の委任状でもあればね」, end: 北の山羊}
+    camera: 列車の北西から山羊の頭へ
+    kind: M
+  # ---------- アルレッキーノ ----------
+  A23-026:
+    frame: 引き（北の獣道へ）
+    only: [hundred-knight, bisco, arlecchino]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: ar_n, face: 170, pose: walk}
+        - {t: 3.4, at: [22.0, 38.6], z: 0.0, face: 170, pose: walk}
+        - {t: 3.9, at: [22.2, 39.6], z: 0.6, face: 170, pose: walk}
+        - {t: 5.0, at: ar_plat, z: 0.6, face: 160, pose: walk, ease: out}
+        - {t: 5.3, at: ar_plat, z: 0.6, face: 150, pose: stand}
+        - {t: 6.2, at: ar_plat, z: 0.6, face: 120, pose: gesture}
+        - {t: 11.0, at: ar_plat, z: 0.6, face: 120, pose: gesture}
+        - {t: 11.4, at: ar_plat, z: 0.6, face: 120, pose: bow}
+        - {t: 12.0, at: ar_plat, z: 0.6, face: 120, pose: bow}
+      hundred-knight:
+        - {t: 0.0, at: [25.4, 45.2], z: 0.6, face: 90, pose: stand}
+        - {t: 0.8, at: [25.4, 45.2], z: 0.6, face: 330, pose: stand}
+        - {t: 12.0, at: [25.4, 45.2], z: 0.6, face: 320, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 75, pose: stand}
+        - {t: 1.0, at: [23.6, 46.6], z: 0.6, face: 345, pose: stand}
+        - {t: 12.0, at: [23.6, 46.6], z: 0.6, face: 340, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [23.6, 49.6, 1.3], look: [22.0, 38.0], look_h: 1.3, lens: 26, frame: 引き}
+      - {t: 5.0, cam: [23.5, 49.2, 1.3], look: [22.4, 40.8], look_h: 1.3, lens: 28}
+      - {t: 12.0, cam: [23.3, 48.6, 1.3], look: [22.8, 42.0], look_h: 1.2, lens: 32}
+    act: {start: 振り向く百騎兵とビスコ、奥に北の獣道, do: 「お待ちください。夜光列車様」。北の獣道からアルレッキーノが歩いてきてホームに上がり、紙の束を示す（「こちら、リカ様……いえ、魔女様の委任状にございます」）, end: 委任状を示してお辞儀するアルレッキーノ}
+    camera: ホームの南の低い所から、二人越しに北の獣道。歩いてくるアルレッキーノに合わせて寄る
+    kind: M
+  A23-027:
+    frame: 腰上（アルレッキーノ）
+    only: [hundred-knight, bisco, arlecchino]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: ar_plat, z: 0.6, face: 120, pose: bow}
+        - {t: 0.6, at: ar_plat, z: 0.6, face: 125, pose: stand}
+        - {t: 6.4, at: ar_plat, z: 0.6, face: 125, pose: stand}
+        - {t: 6.8, at: ar_plat, z: 0.6, face: 125, pose: gesture}
+        - {t: 10.6, at: ar_plat, z: 0.6, face: 125, pose: gesture}
+        - {t: 11.5, at: ar_plat, z: 0.6, face: 125, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [25.4, 45.2], z: 0.6, face: 320, pose: stand}
+        - {t: 11.5, at: [25.4, 45.2], z: 0.6, face: 320, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 340, pose: stand}
+        - {t: 11.5, at: [23.6, 46.6], z: 0.6, face: 340, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [24.6, 44.9, 1.2], look: [22.4, 41.4], look_h: 1.6, lens: 32, frame: 腰上}
+      - {t: 11.5, cam: [24.4, 44.6, 1.25], look: [22.4, 41.4], look_h: 1.6, lens: 38}
+    act: {start: アルレッキーノ（百騎兵の側から）, do: 通信の小窓にマーニィ（「んあ？アルレッキーノちゃん、いつの間に、そんなところに」）。アルレッキーノが手を広げて（「たまたまこの近くまでフィールドワークに来ておりましたゆえ」）, end: アルレッキーノ}
+    camera: 百騎兵の横の低い所からアルレッキーノを煽る。ゆっくり寄る
+    kind: M
+  A23-028:
+    frame: 2人（横から）
+    only: [hundred-knight, bisco, arlecchino]
+    keys:
+      arlecchino:
+        - {t: 0.0, at: ar_plat, z: 0.6, face: 125, pose: stand}
+        - {t: 1.0, at: [22.6, 41.7], z: 0.6, face: 135, pose: walk}
+        - {t: 3.0, at: [24.1, 43.6], z: 0.6, face: 140, pose: walk, ease: out}
+        - {t: 3.3, at: [24.1, 43.6], z: 0.6, face: 140, pose: stand}
+        - {t: 8.4, at: [24.1, 43.6], z: 0.6, face: 140, pose: kneel_hold}
+        - {t: 12.5, at: [24.1, 43.6], z: 0.6, face: 140, pose: kneel_hold}
+        - {t: 13.2, at: [24.1, 43.6], z: 0.6, face: 140, pose: stand}
+        - {t: 14.8, at: [24.1, 43.6], z: 0.6, face: 140, pose: bow}
+        - {t: 16.3, at: [24.1, 43.6], z: 0.6, face: 140, pose: bow}
+      hundred-knight:
+        - {t: 0.0, at: [25.4, 45.2], z: 0.6, face: 320, pose: stand}
+        - {t: 8.6, at: [25.4, 45.2], z: 0.6, face: 320, pose: stand}
+        - {t: 9.0, at: [25.2, 45.0], z: 0.6, face: 320, pose: hold}
+        - {t: 12.4, at: [25.2, 45.0], z: 0.6, face: 320, pose: hold}
+        - {t: 12.8, at: [25.2, 45.0], z: 0.6, face: 320, pose: stand}
+        - {t: 16.3, at: [25.2, 45.0], z: 0.6, face: 320, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 340, pose: stand}
+        - {t: 4.0, at: [23.6, 46.6], z: 0.6, face: 10, pose: stand}
+        - {t: 16.3, at: [23.6, 46.6], z: 0.6, face: 10, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [19.6, 45.8, 2.3], look: [23.8, 44.0], look_h: 1.2, lens: 30, frame: 2人}
+      - {t: 16.3, cam: [20.2, 46.0, 2.1], look: [24.4, 44.4], look_h: 1.0, lens: 32}
+    act: {start: 歩み寄るアルレッキーノ（西から横に）, do: アルレッキーノ「リカ様は沼の外には出られませんので……このようなものを預かっておるのです」。かがんで百騎兵に委任状の束を差し出す（「こちら、ムダに枚数だけ……いえ、予備はたくさんございます」）。百騎兵が受け取る, end: 委任状を持つ百騎兵と、お辞儀するアルレッキーノ}
+    camera: ホームの西の少し高い所（アルレッキーノの目の高さ）から二人を横に。少しだけ流す
+    kind: M
+  A23-029:
+    frame: 全身（山羊を煽る）
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 16.2, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [25.2, 45.0], z: 0.6, face: 320, pose: stand}
+        - {t: 0.8, at: [25.2, 45.0], z: 0.6, face: 90, pose: stand}
+        - {t: 2.0, at: [25.2, 45.0], z: 0.6, face: 110, pose: stand}
+        - {t: 2.3, at: [25.4, 45.2], z: 0.6, face: 115, pose: run}
+        - {t: 2.8, at: [25.9, 45.6], z: 0.6, face: 115, pose: run}
+        - {t: 3.4, at: [27.6, 46.6], z: 0.0, face: 110, pose: jump, arc: 0.5}
+        - {t: 4.2, at: [30.0, 47.1], z: 0.0, face: 80, pose: run}
+        - {t: 4.6, at: [30.7, 46.8], z: 1.15, face: 75, pose: point, arc: 0.2}
+        - {t: 5.1, at: [30.2, 47.2], z: 0.0, face: 40, pose: stand}
+        - {t: 16.2, at: [30.2, 47.2], z: 0.0, face: 40, pose: look_up}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 10, pose: stand}
+        - {t: 3.0, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+        - {t: 16.2, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [28.4, 50.2, 1.0], look: [28.4, 46.4], look_h: 1.2, lens: 26, frame: 全身}
+      - {t: 5.0, cam: [28.5, 50.1, 1.0], look: [30.6, 46.6], look_h: 1.5, lens: 28}
+      - {t: 16.2, cam: [28.9, 49.7, 1.0], look: [31.0, 46.4], look_h: 1.8, lens: 34}
+    act: {start: 委任状を持つ百騎兵、奥に列車, do: ゴードーラ「ちょっと食べさせてもらうよ」。百騎兵が駆けて跳び、山羊の口に委任状を押し込む。山羊がもしゃもしゃ噛んで（「こりゃ非公式なものだね」）、北の山羊（「魔女の印は本物だけど正式な魔女のものじゃない」）, end: 山羊を見上げる百騎兵}
+    camera: 列車の南の低い所から。跳ぶ百騎兵を追い、山羊の頭へ寄る
+    kind: M
+  A23-030:
+    frame: 寄り（蛇・屋根の高さ）
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 10.3, at: train_back, face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [31.2, 42.6, 3.4], look: [35.85, 45.0], look_h: 4.3, lens: 28, frame: 寄り}
+      - {t: 10.3, cam: [31.6, 42.4, 3.5], look: [35.85, 45.0], look_h: 4.3, lens: 32}
+    act: {start: 蛇の頭（北西の屋根の高さから）, do: スネーカー「けっ。切符は本物、魔女の印も本物。オレたちゃ、負けた。乗せるしかねえだろ？しょうがねえだろ？」, end: 蛇の頭}
+    camera: 列車の北西、屋根の高さから蛇へ。ゆっくり寄る
+    kind: M
+  A23-031:
+    frame: 寄り（獅子・北西から）
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 11.7, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [30.2, 47.2], z: 0.0, face: 40, pose: look_up}
+        - {t: 11.7, at: [30.2, 47.2], z: 0.0, face: 20, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [26.6, 43.6, 1.2], look: [29.1, 45.0], look_h: 1.8, lens: 28, frame: 寄り}
+      - {t: 11.7, cam: [27.0, 43.9, 1.25], look: [29.1, 45.0], look_h: 1.8, lens: 34}
+    shake: [{t: [9.4, 10.8], amp: 0.6}]
+    act: {start: 獅子の顔（北西から）, do: ライオネル「ふむ、まあ魔女の印が本物なら契約違反にはならんじゃろ……。いいじゃろう、乗せてやろう！」, end: 獅子の顔}
+    camera: 列車の北西の低い所から獅子へ寄る
+    kind: M
+  A23-032:
+    frame: 引き（線路の先から）
+    only: [hundred-knight, bisco, arlecchino, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 18.3, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [30.2, 47.2], z: 0.0, face: 20, pose: look_up}
+        - {t: 0.6, at: [30.2, 47.2], z: 0.0, face: 290, pose: stand}
+        - {t: 0.8, at: [30.1, 47.15], z: 0.0, face: 290, pose: walk}
+        - {t: 3.4, at: [26.6, 46.6], z: 0.0, face: 290, pose: walk}
+        - {t: 4.0, at: [25.0, 46.2], z: 0.6, face: 290, pose: jump, arc: 0.4}
+        - {t: 4.4, at: [25.0, 46.2], z: 0.6, face: 90, pose: stand}
+        - {t: 18.3, at: [25.0, 46.2], z: 0.6, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+        - {t: 18.3, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [24.1, 43.6], z: 0.6, face: 140, pose: stand}
+        - {t: 18.3, at: [24.1, 43.6], z: 0.6, face: 100, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [40.5, 46.2, 1.0], look: [34.0, 45.0], look_h: 2.0, lens: 26, frame: 引き}
+      - {t: 12.6, cam: [39.6, 47.0, 1.8], look: [31.5, 45.0], look_h: 2.0, lens: 24}
+      - {t: 18.3, cam: [39.2, 47.4, 3.4], look: [29.0, 45.2], look_h: 1.6, lens: 22}
+    act: {start: 途切れた線路の先から、列車の後ろ, do: ゴードーラ「線路がないのが心配かい？……ボクたちは異空間を走る夜光列車。線路なんかなくても大丈夫さ」、ゴードール「あっという間に、遥か彼方！」。百騎兵はホームへ戻る, end: 線路の先から見た列車とホームの三人}
+    camera: 途切れた線路の先の低い所から（A23-002 の向き）。ゆっくり上がって列車とホームを見せる
+    kind: M
+  A23-033:
+    frame: 引き（列車の側から）
+    only: [hundred-knight, bisco, arlecchino, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 9.6, at: train_back, face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [25.0, 46.2], z: 0.6, face: 90, pose: stand}
+        - {t: 0.6, at: [25.0, 46.2], z: 0.6, face: 250, pose: walk}
+        - {t: 1.4, at: [24.0, 46.4], z: 0.6, face: 250, pose: walk}
+        - {t: 1.7, at: [24.0, 46.4], z: 0.6, face: 270, pose: arms_up}
+        - {t: 4.6, at: [24.0, 46.4], z: 0.6, face: 75, pose: arms_up}
+        - {t: 5.0, at: [24.2, 46.4], z: 0.6, face: 75, pose: slash}
+        - {t: 5.6, at: [24.2, 46.4], z: 0.6, face: 75, pose: stand}
+        - {t: 7.2, at: [24.2, 46.4], z: 0.6, face: 75, pose: crouch}
+        - {t: 8.6, at: [34.4, 45.4], z: 1.4, face: 80, pose: jump, arc: 2.6}
+        - {t: 8.8, at: [34.6, 45.0], z: 1.0, face: 80, pose: stand}
+        - {t: 9.6, at: [34.6, 45.0], z: 1.0, face: 80, pose: stand}
+      bisco:
+        - {t: 0.0, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+        - {t: 1.8, at: [23.6, 46.6], z: 0.6, face: 95, pose: stand}
+        - {t: 2.3, at: [24.0, 46.4], z: 1.45, face: 90, pose: lie}
+        - {t: 5.0, at: [24.0, 46.4], z: 1.45, face: 90, pose: lie}
+        - {t: 6.8, at: [34.6, 46.4], z: 2.6, face: 90, pose: tumble, arc: 3.2}
+        - {t: 7.0, at: [34.8, 45.2], z: 1.2, face: 90, pose: tumble}
+        - {t: 9.6, at: [34.8, 45.2], z: 1.2, face: 90, pose: tumble}
+      arlecchino:
+        - {t: 0.0, at: [24.1, 43.6], z: 0.6, face: 100, pose: stand}
+        - {t: 5.4, at: [24.1, 43.6], z: 0.6, face: 95, pose: stand}
+        - {t: 6.4, at: [24.1, 43.6], z: 0.6, face: 90, pose: cover}
+        - {t: 9.6, at: [24.1, 43.6], z: 0.6, face: 90, pose: cover}
+    cam_keys:
+      - {t: 0.0, cam: [36.0, 50.4, 3.6], look: [25.0, 46.0], look_h: 1.2, lens: 26, frame: 引き}
+      - {t: 5.0, cam: [36.0, 50.4, 3.6], look: [25.4, 46.0], look_h: 1.4, lens: 26}
+      - {t: 7.0, cam: [36.0, 50.4, 3.5], look: [31.0, 46.0], look_h: 2.0, lens: 24}
+      - {t: 9.6, cam: [35.8, 50.4, 3.4], look: [31.5, 46.0], look_h: 1.8, lens: 24}
+    act: {start: 列車の後ろ（ドームの横）から、ホームの三人, do: ライオネル「さあ、それじゃあそろそろ出発するぞい！ご乗車の方はお急ぎを！」。百騎兵がビスコを頭の上に持ち上げ、列車へ放り投げる。ビスコはくるくる回って弧を描き、ドームの窓へ飛び込む。アルレッキーノは口を押さえる。百騎兵も跳んで続く, end: 列車に飛び込んだ二人。ホームにアルレッキーノ}
+    camera: 列車のドームの南の高い所から、ホームの方へ（飛んでくるビスコを受ける向き）。飛ぶビスコを追って振る
+    kind: A
+  A23-034:
+    frame: 引き（下から煽る）
+    only: [arlecchino, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: train_back, face: 270, pose: stand}
+        - {t: 2.4, at: train_back, face: 270, pose: stand}
+        - {t: 3.8, at: [30.8, 45.0], z: 0.8, face: 270, pose: stand}
+        - {t: 6.6, at: [25.0, 45.6], z: 4.2, face: 272, pose: stand}
+        - {t: 9.0, at: [19.6, 44.2], z: 7.6, face: 320, pose: stand}
+        - {t: 10.9, at: [18.6, 39.6], z: 10.4, face: 15, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [24.1, 43.6], z: 0.6, face: 90, pose: cover}
+        - {t: 1.0, at: [24.1, 43.6], z: 0.6, face: 90, pose: stand}
+        - {t: 6.6, at: [24.1, 43.6], z: 0.6, face: 120, pose: look_up}
+        - {t: 10.9, at: [24.1, 43.6], z: 0.6, face: 300, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [22.4, 47.4, 0.9], look: [30.0, 45.0], look_h: 1.6, lens: 20, frame: 引き}
+      - {t: 3.8, cam: [22.4, 47.4, 0.9], look: [29.4, 45.0], look_h: 2.4, lens: 20}
+      - {t: 6.6, cam: [22.3, 47.5, 0.9], look: [25.0, 45.4], look_h: 5.6}
+      - {t: 10.9, cam: [22.2, 47.6, 0.9], look: [19.0, 40.5], look_h: 11.0, lens: 18}
+    shake: [{t: [0.4, 2.2], amp: 0.8}, {t: [2.6, 4.2], amp: 0.6}]
+    act: {start: ホームの低い所から、列車の顔とアルレッキーノ, do: ライオネルが吠える（「がおおお〜ん！！ ヴァルプルギスの夜会行き夜光列車、ただいま出発ですぞい！」）。列車が線路から浮き上がり、ホームの真上を前へ越えながら、回って空へ昇っていく（線路なんかなくても大丈夫）, end: 頭の上を越えて夕空へ昇る列車の腹}
+    camera: ホームの南の低い所から煽る。頭上を越える列車を追って真上まで見上げる
+    kind: A
+  A23-035:
+    frame: 引き（クレーン上げ）
+    only: [arlecchino, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [18.6, 39.6], z: 10.4, face: 15, pose: stand}
+        - {t: 2.6, at: [23.6, 36.2], z: 13.4, face: 85, pose: stand}
+        - {t: 6.0, at: [40.0, 37.0], z: 15.4, face: 90, pose: stand}
+        - {t: 10.0, at: [46.0, 37.0], z: 15.4, face: 90, pose: stand}
+      arlecchino:
+        - {t: 0.0, at: [24.1, 43.6], z: 0.6, face: 300, pose: look_up}
+        - {t: 0.8, at: [24.1, 43.6], z: 0.6, face: 20, pose: wave}
+        - {t: 6.6, at: [24.1, 43.6], z: 0.6, face: 60, pose: wave}
+        - {t: 7.2, at: [24.1, 43.6], z: 0.6, face: 60, pose: bow}
+        - {t: 8.6, at: [24.1, 43.6], z: 0.6, face: 60, pose: bow}
+        - {t: 9.2, at: [24.1, 43.6], z: 0.6, face: 60, pose: stand}
+        - {t: 10.0, at: [24.1, 43.6], z: 0.6, face: 60, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [21.6, 48.4, 1.4], look: [22.0, 38.5], look_h: 11.5, lens: 22, frame: 引き}
+      - {t: 2.6, cam: [21.2, 48.8, 2.0], look: [26.0, 37.5], look_h: 13.0, lens: 22}
+      - {t: 6.0, cam: [20.4, 49.6, 5.0], look: [34.0, 38.0], look_h: 13.0, lens: 22}
+      - {t: 10.0, cam: [18.6, 52.4, 17.0], look: [24.0, 42.0], look_h: 0.6, lens: 22}
+    fx:
+      - {kind: rift, t: [1.2, 7.4], at: [36.5, 37.0], z: 13.0, w: 5.0, h: 6.4, face: 270, open: 1.0, close: 1.2}
+    act: {start: 手を振るアルレッキーノの後ろ、夕空に列車, do: 東の空が裂けて光り、列車が森の上を走って裂け目の中へ消え、裂け目が閉じる。アルレッキーノは手を振ってお辞儀（「百騎兵様、ビスコ様。それでは、行ってらっしゃいませ。リカ様の件、よろしくお願いいたします」）, end: 夕暮れの森の中の円形の駅と、ひとり残ったアルレッキーノ（上から）}
+    camera: アルレッキーノの後ろの低い所から空の列車を追い、最後は高く上がって駅を見下ろす（クレーン上げ）
+    kind: A

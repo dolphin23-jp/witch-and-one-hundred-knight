@@ -263,8 +263,12 @@ SHAPE = {
     "marny": {"r": 0.05, "hr": 0.07, "arm": 0.018},          # 沼の妖精マーニィ（小さな体と大きな緑の蝶の羽。浮いている。設定画 marny_sheet_01）
     "forest-servant": {"r": 0.23, "hr": 0.19, "arm": 0.085},  # 森の魔女のシモベ（設定画 forest-servant_sheet_01: ずんぐりした背 約1.25m、白い丸い頭、赤い上着、2本の銅の管の角）
     "marika-mouse": {"r": 0.04, "hr": 0.04, "arm": 0.01},    # マーリカのネズミ（白い小さなネズミ）
+    # 6章後半 回2（A23〜A27）
+    "night-train": {"r": 1.3, "hr": 0.5, "arm": 0.0},         # 夜光列車（設定画 night-train_sheet_01: 獅子の顔の機関車。両側に山羊の頭、後ろに蛇。長さ約8m）
+    "blind-witch": {"r": 0.17, "hr": 0.13, "arm": 0.045},     # 盲いた魔女（目を閉じた老魔女。形は仮）
+    "guide-witch": {"r": 0.14, "hr": 0.12, "arm": 0.04},      # 魔女都の案内魔女（形は仮）
 }
-WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d")
+WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d", "blind-witch", "guide-witch")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
 
 
@@ -816,7 +820,59 @@ def build_site(lay, lighting=None, door_closed=False):
         sun.rotation_euler = (math.radians(65), 0, math.radians(-100))   # 東（+X）から西へ、高さ 25°
 
 
+def build_train(who, h):
+    """夜光列車（設定画 night-train_sheet_01）。前（+Y）が獅子の顔、両側に山羊の頭（ゴードーラ・ゴードール）、後ろの上に蛇（スネーカー）。
+    濃い紫がかった黒の車体、後ろのドームに琥珀色の窓、大きな車輪、煙突。長さ約8m・車体の高さ約2.6m（蛇の頭は約4.3m）。"""
+    root = bpy.data.objects.new(f"FIG_{who}", None)
+    bpy.context.collection.objects.link(root)
+    body = make_mat("train_body", (0.26, 0.2, 0.33), rough=0.5)   # 下絵で形が読めるよう、設定画より少し明るく
+    dark = make_mat("train_dark", (0.08, 0.06, 0.1), rough=0.6)
+    rim = make_mat("train_rim", (0.75, 0.48, 0.2), rough=0.35)
+    lion = make_mat("train_lion", (0.45, 0.28, 0.16))
+    mane = beam_mat("train_mane", (1.0, 0.55, 0.12), strength=2.5, alpha=0.75)
+    eye = make_mat("train_eye", (1.0, 0.75, 0.2), emit=4.0)
+    goat = make_mat("train_goat", (0.48, 0.3, 0.62))
+    horn = make_mat("train_horn", (0.55, 0.45, 0.32))
+    snake = make_mat("train_snake", (0.18, 0.45, 0.32))
+    window = make_mat("train_window", (1.0, 0.62, 0.2), emit=3.0)
+    prim("cube", body, "train_hull", root, (0, -0.4, 1.55), scale=(1.2, 3.4, 1.0), size=2.0)      # 車体（前後 -3.8〜3.0、高さ 0.55〜2.55）
+    prim("cyl", body, "train_boiler", root, (0, 0.6, 2.35), (math.pi / 2, 0, 0), radius=1.05, depth=4.6)   # 丸い屋根（ボイラー）
+    for k, yy in enumerate((1.6, 0.6)):                                              # 煙突2本
+        prim("cyl", dark, f"train_stack{k}", root, (0.0 if k == 0 else 0.35, yy, 3.55), radius=0.22, depth=0.7)
+    prim("sphere", body, "train_dome", root, (0, -2.6, 2.55), radius=1.15, scale=(1.0, 1.0, 0.85))   # 後ろのドーム
+    prim("cyl", window, "train_windows", root, (0, -2.6, 2.75), radius=1.17, depth=0.22)            # 琥珀色の窓の帯
+    prim("sphere", lion, "train_lion", root, (0, 3.3, 1.75), radius=0.95, scale=(1.0, 0.85, 1.05))  # 獅子の顔（前）
+    prim("cyl", mane, "train_mane", root, (0, 3.05, 1.8), (math.pi / 2, 0, 0), radius=1.45, depth=0.25)   # 燃えるたてがみ
+    for sx in (-1, 1):
+        prim("sphere", eye, f"train_eye{sx}", root, (sx * 0.33, 4.1, 2.0), radius=0.11)
+        prim("cone", dark, f"train_lion_horn{sx}", root, (sx * 0.75, 3.3, 2.75), (0, sx * 0.5, 0), radius1=0.18, radius2=0.0, depth=0.7)
+        g = prim("sphere", goat, f"train_goat{sx}", root, (sx * 1.45, 1.1, 1.9), radius=0.5, scale=(0.8, 1.15, 0.9))   # 山羊の頭（両側）
+        prim("cone", horn, f"train_goat_horn{sx}", root, (sx * 1.55, 0.95, 2.55), (math.radians(-25), sx * 0.35, 0), radius1=0.1, radius2=0.0, depth=0.6)
+        for k, yy in enumerate((2.0, 0.6, -0.8, -2.6)):                              # 車輪（後ろが大きい）
+            rr = 0.85 if k == 3 else 0.55
+            prim("cyl", dark, f"train_wheel{sx}{k}", root, (sx * 1.25, yy, rr), (0, math.pi / 2, 0), radius=rr, depth=0.18)
+            prim("cyl", rim, f"train_rim{sx}{k}", root, (sx * 1.3, yy, rr), (0, math.pi / 2, 0), radius=rr * 1.02, depth=0.06)
+    for k in range(5):                                                               # 蛇（後ろから立ち上がって前を向く）
+        u = k / 4
+        prim("sphere", snake, f"train_snake{k}", root, (0, -3.9 + 0.25 * u, 2.4 + 1.7 * u), radius=0.32 - 0.04 * u)
+    prim("sphere", snake, "train_snake_head", root, (0, -3.45, 4.25), radius=0.3, scale=(0.8, 1.4, 0.7))
+    head = bpy.data.objects.new(f"HEAD_{who}", None)
+    bpy.context.collection.objects.link(head)
+    head.parent = root
+    head.location = (0, 3.3, 1.75)
+    arms = {}
+    for sx in (-1, 1):   # 腕は無いが、姿勢を当てる処理のために空の肩を置く
+        piv = bpy.data.objects.new(f"SHOULDER_{who}{sx}", None)
+        bpy.context.collection.objects.link(piv)
+        piv.parent = root
+        arms[sx] = piv
+    root["arms"] = 1
+    return root, head, arms
+
+
 def build_person(who, h, torch=False, sword=False):
+    if who == "night-train":
+        return build_train(who, h)
     sh = SHAPE.get(who, SHAPE_DEFAULT)
     col = COLORS.get(who, (0.9, 0.9, 0.9))
     r, hr, arm = sh["r"], sh["hr"], sh["arm"]
@@ -1063,6 +1119,13 @@ def build_fx(fx, i):
     if kind == "shards":  # 飛び散るガラスの破片（窓破り、A18）
         gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.7)
         return [prim("cube", gm, f"fx{i}_sh{j}", None, (0, 0, -50), size=1.0) for j in range(int(fx.get("n", 14)))]
+    if kind == "rift":    # 何もない空間の裂け目（夜光列車が出入りする。縦長の光る楕円が開いて閉じる、A23）
+        rm = beam_mat(f"fx{i}_rift", col or (0.7, 0.45, 1.0), strength=3.0, alpha=0.85)
+        cm = make_mat(f"fx{i}_rift_core", (0.02, 0.0, 0.05), rough=1.0)
+        return [prim("sphere", rm, f"fx{i}_rift", None, (0, 0, -50), radius=1.0), prim("sphere", cm, f"fx{i}_rift_core", None, (0, 0, -50), radius=1.0)]
+    if kind == "breath":  # 火を吐く（獅子の口から前へ伸びる炎の円すい、A23 の戦い）
+        fm = beam_mat(f"fx{i}_breath", col or (1.0, 0.5, 0.1), strength=4.0, alpha=0.8)
+        return [prim("cone", fm, f"fx{i}_breath", None, (0, 0, -50), radius1=1.0, radius2=0.15, depth=1.0)]
     if kind == "paper":   # ひらひら舞い落ちる紙切れ（切符、A20）
         pm = make_mat(f"fx{i}_paper", (0.95, 0.92, 0.82))
         return [prim("cube", pm, f"fx{i}_paper", None, (0, 0, -50), size=1.0)]
@@ -1182,6 +1245,37 @@ def pose_fx(fx, objs, t, pos, place):
             sz = fx.get("size", 0.12) * (0.5 + 0.5 * ((j * 5) % 3) / 2)
             o.scale = (sz, sz * 0.7, 0.01)
             o.rotation_euler = (tt * 7 + j, tt * 5, j * 0.7)
+        return
+    if kind == "rift":    # 裂け目: t0 から open 秒で開き、t1 の close 秒前から閉じる。face（方位）の向きに面を向ける
+        on = t0 <= t <= t1
+        if not on:
+            for o in objs:
+                o.location = (0, 0, -50)
+            return
+        op, cl = fx.get("open", 0.8), fx.get("close", 0.8)
+        u = min(1.0, (t - t0) / op, max(0.0, (t1 - t) / cl))
+        u = u * u * (3 - 2 * u)
+        w, hh = fx.get("w", 3.0), fx.get("h", 4.5)
+        th = math.radians(fx.get("face", 90))
+        for k, o in enumerate(objs):
+            sc = 1.0 if k == 0 else 0.82
+            o.location = bl(p, z0 + hh / 2)
+            o.scale = (w / 2 * u * sc, 0.06 if k == 0 else 0.03, hh / 2 * (0.3 + 0.7 * u) * sc)
+            o.rotation_euler = (0, 0, -th)
+        return
+    if kind == "breath":  # 炎: t の間、face の向きへ length まで伸びて揺らぐ（at は口の位置、z は高さ）
+        o = objs[0]
+        if not (t0 <= t <= t1):
+            o.location = (0, 0, -50)
+            return
+        u = min(1.0, (t - t0) / 0.3, max(0.0, (t1 - t) / 0.3))
+        L = fx.get("length", 5.0) * u
+        th = math.radians(fx.get("face", 0))
+        dx, dy = math.sin(th), -math.cos(th)
+        o.location = bl((p[0] + dx * L / 2, p[1] + dy * L / 2), z0)
+        rr = fx.get("r", 1.0) * (0.8 + 0.2 * math.sin(t * 23))
+        o.scale = (rr, rr, max(0.01, L))
+        o.rotation_euler = (math.pi / 2, 0, -th + math.pi)
         return
     if kind == "paper":   # 紙: t の間に z0 から地面（end_z）まで、左右に揺れながら落ちる。その後は地面に残る（keep）
         o = objs[0]

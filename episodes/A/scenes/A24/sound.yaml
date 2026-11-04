@@ -1,0 +1,32 @@
+# A24 の BGM・効果音の置き場所（D-068、2026-11-04）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A24
+bgm:
+  # 原作どおり（パート21 の 11:43〜17:07 は M09「パート21の曲2」。A24 の台詞 L769〜L797 はすべてこの中）
+  - {src: audio/bgm/catalog/M09.ogg, cut: A24-001, t: 0.0, until: {cut: A24-017, t: 18.4}, loop: true, fade_in: 1.5, fade_out: 2.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  # 虚空の空気（ずっと小さく）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A24-001, t: 0.0, until: {cut: A24-017, t: 18.4}, loop: true, rate: 0.8, fade_in: 1.5, fade_out: 2.0, volume: 0.08}
+  # 走る列車（外は大きく、車中はこもって小さく）
+  - {src: audio/sfx/rumble_low.ogg, cut: A24-001, t: 0.0, until: {cut: A24-001, t: 5.5}, loop: true, fade_in: 0.3, fade_out: 0.3, volume: 0.35}
+  - {src: audio/sfx/rumble_low.ogg, cut: A24-002, t: 0.0, until: {cut: A24-002, t: 8.4}, loop: true, rate: 0.85, fade_in: 0.2, fade_out: 0.2, volume: 0.15}
+  - {src: audio/sfx/rumble_low.ogg, cut: A24-003, t: 0.0, until: {cut: A24-003, t: 13.0}, loop: true, fade_in: 0.2, fade_out: 0.2, volume: 0.3}
+  - {src: audio/sfx/rumble_low.ogg, cut: A24-004, t: 0.0, until: {cut: A24-007, t: 0.5}, loop: true, rate: 0.85, fade_in: 0.2, fade_out: 0.1, volume: 0.15}
+  # 002 ビスコが起き上がる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A24-002, t: 1.6, volume: 0.25}
+  # 007 急停車（車中）
+  - {src: audio/sfx/metal_clank.ogg, cut: A24-007, t: 0.4, rate: 0.7, volume: 0.5}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A24-007, t: 0.8, rate: 1.2, volume: 0.45}
+  - {src: audio/sfx/thud_land.ogg, cut: A24-007, t: 1.3, rate: 1.3, volume: 0.3}
+  # 008 急ブレーキ（外）
+  - {src: audio/sfx/rumble_low.ogg, cut: A24-008, t: 0.0, until: {cut: A24-008, t: 4.2}, loop: true, fade_in: 0.1, fade_out: 0.6, volume: 0.4}
+  - {src: audio/sfx/metal_clank.ogg, cut: A24-008, t: 1.6, rate: 0.6, volume: 0.45}
+  - {src: audio/sfx/metal_clank.ogg, cut: A24-008, t: 2.4, rate: 0.75, volume: 0.4}
+  - {src: audio/sfx/metal_clank.ogg, cut: A24-008, t: 3.2, rate: 0.9, volume: 0.35}
+  - {src: audio/sfx/thud_land.ogg, cut: A24-008, t: 4.0, rate: 0.6, volume: 0.4}
+  # 010 二人が降りる
+  - {src: audio/sfx/thud_land.ogg, cut: A24-010, t: 1.2, rate: 1.3, volume: 0.25}
+  - {src: audio/sfx/thud_land.ogg, cut: A24-010, t: 1.7, rate: 1.6, volume: 0.2}
+  # 017 二人が別れる（風）
+  - {src: audio/sfx/wind_gust.ogg, cut: A24-017, t: 12.5, rate: 0.8, volume: 0.25}

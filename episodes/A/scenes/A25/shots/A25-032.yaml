@@ -1,0 +1,55 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-032
+scene: A25
+tc: 415.2
+sec: 14.1
+kind: M
+shot: 肩なめ・指を鳴らす魔女
+acting: ビスコ「い、いかがですか？魔女殿。これで、門を開けていただけないでしょうか」。魔女「ヒ〜ヒッヒッヒ！いいだろう。開けてやろうじゃないか」と手を高く上げて指を鳴らす。どこかで地響き
+dialogue:
+- L853「い、いかがですか？魔女殿。これで、門を開けていただけないでしょうか。」
+- L854「ヒ〜ヒッヒッヒ！いいだろう。開けてやろうじゃないか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 73.2
+  - 104.6
+  - 1.3
+  look:
+  - 75.8
+  - 102.7
+  lens: 32
+  move: ビスコの後ろの低い所から肩越しに魔女。指を鳴らすと揺れ
+background: rift-void
+image: null
+refs:
+- blind-witch
+- bisco
+overlays: []
+fallback: null
+act:
+  start: ビスコの肩越しに魔女
+  end: 手を上げた魔女。足場が揺れる
+timing:
+  lead: 0.3
+  at:
+    L853: 0.3
+    L854: 6.5
+blocking:
+  start: ビ（中央・背中）、盲（中央・背中）
+  end: ビ（中央・背中）、盲（中央・正面）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; the blind old witch (appearance to be fixed by a reference sheet), standing,
+    in the center of the frame, with the back to the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
+    violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+    brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; the blind old witch (appearance to be fixed by a reference sheet),
+    standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
+    violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-032_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-032_end.png

@@ -1,0 +1,28 @@
+# A25 の BGM・効果音の置き場所（D-068、2026-11-04）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A25
+bgm:
+  # 原作どおり（パート21）: M27「パート21の曲6」（18:33〜19:36、魔女を捜して渡ってくる所）→ M01（19:36〜25:50。catalog では「魔女邸」の名前だが、盲いた魔女の居場所で流れる）
+  # 追憶の園（A25-026）から先はパート22。パート22 の BGM はまだ曲に分けていない（audio/bgm/catalog.yaml はパート16〜21）。分けたら入れる（いまは無音）
+  - {src: audio/bgm/catalog/M27.ogg, cut: A25-001, t: 0.0, until: {cut: A25-001, t: 6.4}, loop: true, fade_in: 1.0, fade_out: 1.0, volume: 0.28}
+  - {src: audio/bgm/catalog/M01.ogg, cut: A25-001, t: 6.0, until: {cut: A25-025, t: 10.0}, loop: true, fade_in: 1.2, fade_out: 2.0, volume: 0.26}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A25-001, t: 0.0, until: {cut: A25-047, t: 18.0}, loop: true, rate: 0.75, fade_in: 1.5, fade_out: 3.0, volume: 0.07}
+  # 026 実をもぐ
+  - {src: audio/sfx/cloth_swish.ogg, cut: A25-026, t: 1.4, rate: 1.3, volume: 0.25}
+  # 031 小躍り
+  - {src: audio/sfx/cloth_swish.ogg, cut: A25-031, t: 6.4, rate: 1.4, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A25-031, t: 8.6, rate: 1.6, volume: 0.22}
+  # 032 指を鳴らす→地響き
+  - {src: audio/sfx/knock_soft.ogg, cut: A25-032, t: 10.6, rate: 1.8, volume: 0.4}
+  - {src: audio/sfx/ground_shake.ogg, cut: A25-032, t: 11.0, volume: 0.45}
+  # 033 門が開く
+  - {src: audio/sfx/rumble_rise.ogg, cut: A25-033, t: 0.0, volume: 0.5}
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A25-033, t: 0.6, volume: 0.45}
+  # 034 吠える
+  - {src: audio/sfx/monster_roar.ogg, cut: A25-034, t: 0.3, rate: 0.8, volume: 0.4}
+  # 043 動き出す
+  - {src: audio/sfx/rumble_low.ogg, cut: A25-043, t: 5.0, until: {cut: A25-043, t: 10.0}, loop: true, fade_in: 1.0, fade_out: 0.8, volume: 0.35}
+  # 041 手の中の実
+  - {src: audio/sfx/crystal_chime.ogg, cut: A25-041, t: 1.6, volume: 0.3}

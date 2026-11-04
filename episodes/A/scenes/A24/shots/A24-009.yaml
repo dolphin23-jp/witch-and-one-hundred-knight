@@ -1,0 +1,53 @@
+# A24 異空間・閉じた門。blocking.yaml（Claude の案 2026-11-04、Living Spec「A24 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A24-009
+scene: A24
+tc: 73.3
+sec: 13.8
+kind: M
+shot: 俯瞰（門の上から）・獅子→蛇
+acting: ライオネル「もう少し、気がつくのが遅かったら、激突して潰れていたぞい」。カメラが後ろの蛇へ振れて、スネーカー「おいおい！こりゃどういうこった。門が閉まっているなんてありえるか？」
+dialogue:
+- L777「もう少し、気がつくのが遅かったら、激突して潰れていたぞい。」
+- L778「おいおい！こりゃどういうこった。門が閉まっているなんてありえるか？ありえねーだろ？なあ！なあ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 120.6
+  - 47.2
+  - 18.6
+  look:
+  - 114.0
+  - 50.0
+  lens: 26
+  move: 門の上（横木の上）から見下ろし、獅子から蛇へ振る
+background: rift-void
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 門の上から見下ろす、扉の目の前で止まった獅子の顔
+  end: 蛇の頭
+timing:
+  lead: 0.3
+  at:
+    L778: 6.2
+blocking:
+  start: 列（中央・正面）
+  end: 列（中央・正面）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing the
+    camera, small in the background. No other people. High angle looking down. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
+    violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing
+    the camera, small in the background. No other people. High angle looking down. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a
+    deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A24/gen/sketch/A24-009_start.png
+  - episodes/A/scenes/A24/gen/sketch/A24-009_end.png

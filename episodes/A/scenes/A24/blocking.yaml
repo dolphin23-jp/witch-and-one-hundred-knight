@@ -1,0 +1,393 @@
+# A24 異空間・閉じた門（6章後半 回2）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-04）
+# Living Spec「A24 動きの設計（案）」。準備（案）の表の A24（「何も殴ることはないじゃないか」、門で急停車、流刑者の場所、三日もたずに発狂、門を閉めるのは魔女だけ。
+#   切符を盗んだと疑うくだり L782〜L786 と、L789・L792・L793・L795・L796、列車の前に戻る場面 L804〜L808 は削る。拠点の L798〜L803 は確かめたいことに）。
+# 場所は world/rift-void-layout.yaml（x 西→東、y 北→南、m）。線路は石の土手の上を東へ（y 50）。閉じた門は x 120。門の前の浮いた足場 (110, 50)、半径 10、上面 z 0。
+#   車中は別の所に置いた箱の部屋（x 200〜202.6、y 100〜107。南が列車の前。座席は西 x 200.55・東 x 202.05、座面 z 0.45）。
+# 夜光列車は東向き（face 90）。止まる所 (111.5, 45→50): 獅子の顔 (114.8, 50) 高さ 1.75、山羊は北 (112.6, 48.55)＝ゴードーラ・南 (112.6, 51.45)＝ゴードール
+#   （A23 と同じく、列車の左がゴードーラ、右がゴードール）、蛇の頭 (108.05, 50) 高さ 4.25、ドーム (108.9, 50)。門の扉まで約 3.8m。
+# 光: 走る所 void_run、車中 train_inside、門の前 void。
+scene: A24
+layout: world/rift-void-layout.yaml
+map_ymax: 130
+lighting: void
+places:
+  gate_stop: [111.5, 50.0]
+  bi_floor: [201.3, 104.6]     # 車中の床（投げ込まれたビスコ）
+  bi_seat: [200.55, 104.2]     # 車中の西の座席
+  hk_seat: [202.05, 102.8]     # 車中の東の座席
+  bi_out: [110.6, 55.0]        # 門の前の足場（列車の南）
+  hk_out: [109.0, 54.4]
+  path_n: [107.0, 40.6]        # 北へ上る板の道の口
+  path_s: [107.5, 59.6]        # 南へ下る板の道の口
+start:
+  hundred-knight: {at: hk_seat, face: 270}
+  bisco: {at: bi_floor, face: 0}
+  night-train: {at: [-10.0, 50.0], face: 90}
+
+cuts:
+  # ---------- 走る列車と車中 ----------
+  A24-001:
+    frame: 引き（並走）
+    lighting: void_run
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [-10.0, 50.0], face: 90, pose: stand}
+        - {t: 5.5, at: [62.0, 50.0], face: 90, pose: stand, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [-2.0, 42.5, 2.6], look: [-9.0, 50.0], look_h: 2.0, lens: 24, frame: 引き}
+      - {t: 5.5, cam: [66.0, 43.5, 2.2], look: [61.0, 50.0], look_h: 1.8, lens: 26, ease: linear}
+    act: {start: 暗い紫の虚空、浮いた岩, do: 石の土手の上の線路を、夜光列車が東へ駆けていく（ドームの窓が琥珀色に光る）。カメラが並んで走る, end: 走る列車}
+    camera: 列車の北に並んで走る（少し前から斜めに）
+    kind: A
+  A24-002:
+    frame: 全身（車中）
+    lighting: train_inside
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_floor, face: 0, pose: lie}
+        - {t: 1.4, at: bi_floor, face: 0, pose: lie}
+        - {t: 2.2, at: [201.3, 104.4], face: 0, pose: fall}
+        - {t: 3.4, at: [201.3, 104.4], face: 0, pose: cover}
+        - {t: 5.2, at: [201.3, 104.4], face: 300, pose: fall}
+        - {t: 6.4, at: [201.3, 104.4], face: 60, pose: fall}
+        - {t: 8.4, at: [201.3, 104.4], face: 30, pose: fall}
+      hundred-knight:
+        - {t: 0.0, at: hk_seat, z: 0.45, face: 270, pose: sit}
+        - {t: 8.4, at: hk_seat, z: 0.45, face: 250, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [201.3, 100.6, 1.1], look: [201.4, 104.2], look_h: 0.4, lens: 22, frame: 全身}
+      - {t: 8.4, cam: [201.3, 100.7, 1.05], look: [201.4, 104.0], look_h: 0.6, lens: 26}
+    act: {start: 真っ暗な車中（琥珀色の窓明かりだけ）。床に伸びたビスコ, do: ビスコが起き上がって頭を押さえ（「う……いたた……！」）、見回す（「ここはどこだ？列車に乗れたのか……？」）。座席に百騎兵がちょこんと座っている, end: 床に座り込んだビスコと、座席の百騎兵}
+    camera: 車中の前（北）の壁ぎわの低い所から。ゆっくり寄る
+    kind: M
+  A24-003:
+    frame: 引き（並走・前から後ろへ）
+    lighting: void_run
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [-190.0, 50.0], face: 90, pose: stand}
+        - {t: 13.0, at: [-21.0, 50.0], face: 90, pose: stand, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [-181.0, 46.4, 2.2], look: [-186.7, 50.0], look_h: 1.8, lens: 26, frame: 引き}
+      - {t: 6.6, cam: [-97.0, 46.6, 2.4], look: [-101.5, 48.6], look_h: 2.0, lens: 28, ease: linear}
+      - {t: 13.0, cam: [-15.0, 46.4, 2.6], look: [-19.9, 48.6], look_h: 2.0, lens: 28, ease: linear}
+    act: {start: 並んで走る列車の獅子の顔, do: ライオネル「ただいま、ウーランデキム山脈の裏を通過したぞい！」。カメラが少し後ろへ下がって北の山羊（ゴードーラ）「どうだい？異空間は？といっても、キミには何もみえないか」, end: 走る列車の山羊の頭}
+    camera: 列車の北に並んで走る。獅子の顔から山羊の頭へ下がる
+    kind: M
+  A24-004:
+    frame: 全身（車中・後ろから）
+    lighting: train_inside
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 90, pose: sit}
+        - {t: 5.4, at: bi_seat, z: 0.45, face: 80, pose: sit}
+      hundred-knight:
+        - {t: 0.0, at: hk_seat, z: 0.45, face: 250, pose: sit}
+        - {t: 5.4, at: hk_seat, z: 0.45, face: 260, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [201.0, 106.6, 1.3], look: [201.4, 103.0], look_h: 0.6, lens: 24, frame: 全身}
+      - {t: 5.4, cam: [201.0, 106.5, 1.3], look: [201.4, 103.2], look_h: 0.6, lens: 26}
+    act: {start: 向かい合って座席に座る二人（車中の後ろから）, do: ビスコが窓の外をのぞいて「真っ暗でよくわからないが、順調のようだな……」, end: 座る二人}
+    camera: 車中の後ろ（南）の壁ぎわから
+    kind: M
+  A24-005:
+    frame: 胸上（ビスコ）
+    lighting: train_inside
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 80, pose: sit}
+        - {t: 0.6, at: bi_seat, z: 0.45, face: 80, pose: cover}
+        - {t: 4.4, at: bi_seat, z: 0.45, face: 80, pose: cover}
+        - {t: 5.0, at: bi_seat, z: 0.45, face: 110, pose: lean}
+        - {t: 12.0, at: bi_seat, z: 0.45, face: 110, pose: lean}
+        - {t: 12.6, at: bi_seat, z: 0.45, face: 100, pose: cross}
+        - {t: 17.9, at: bi_seat, z: 0.45, face: 100, pose: cross}
+      hundred-knight:
+        - {t: 0.0, at: hk_seat, z: 0.45, face: 260, pose: sit}
+        - {t: 17.9, at: hk_seat, z: 0.45, face: 290, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [201.8, 103.0, 1.05], look: [200.55, 104.2], look_h: 1.05, lens: 30, frame: 胸上}
+      - {t: 17.9, cam: [201.7, 103.2, 1.0], look: [200.55, 104.2], look_h: 1.05, lens: 36}
+    act: {start: 頭を押さえるビスコ（百騎兵の側から）, do: 「い、痛たたた……」。ビスコが身を乗り出して百騎兵をにらむ（「百騎兵……お前の私に対する扱いは抗議に値するぞ……。何も、殴ることはないじゃないか……」）。最後は腕を組んでふくれる, end: 腕を組むビスコ}
+    camera: 百騎兵の頭の横から、ビスコの顔へゆっくり寄る
+    kind: M
+  A24-006:
+    frame: 2人（上から）
+    lighting: train_inside
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 100, pose: cross}
+        - {t: 4.0, at: bi_seat, z: 0.45, face: 60, pose: cross}
+        - {t: 6.0, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+        - {t: 12.3, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+      hundred-knight:
+        - {t: 0.0, at: hk_seat, z: 0.45, face: 290, pose: sit}
+        - {t: 3.0, at: hk_seat, z: 0.45, face: 290, pose: nod}
+        - {t: 3.8, at: hk_seat, z: 0.45, face: 290, pose: sit}
+        - {t: 12.3, at: hk_seat, z: 0.45, face: 290, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [201.3, 100.6, 1.95], look: [201.3, 103.6], look_h: 0.6, lens: 24, frame: 2人}
+      - {t: 12.3, cam: [201.3, 100.8, 1.85], look: [201.3, 103.4], look_h: 0.6, lens: 26}
+    act: {start: 向かい合う二人（車中の前の高い所から）, do: ビスコ「まあ、善意でやってくれたのだろうが……」。百騎兵がこくりとうなずく。ビスコは目をそらして「善意だったと信じたいところだ……」, end: うつむくビスコと百騎兵}
+    camera: 車中の前（北）の高い所から見下ろす
+    kind: M
+  A24-007:
+    frame: 全身（車中・急停車）
+    lighting: train_inside
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+        - {t: 0.4, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+        - {t: 0.8, at: [201.0, 105.4], face: 180, pose: fall}
+        - {t: 3.0, at: [201.0, 105.4], face: 180, pose: fall}
+      hundred-knight:
+        - {t: 0.0, at: hk_seat, z: 0.45, face: 290, pose: sit}
+        - {t: 0.4, at: hk_seat, z: 0.45, face: 290, pose: sit}
+        - {t: 0.9, at: [201.9, 104.6], face: 180, pose: tumble, arc: 0.4}
+        - {t: 1.3, at: [201.9, 105.2], face: 180, pose: crouch}
+        - {t: 3.0, at: [201.9, 105.2], face: 180, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [201.3, 100.6, 1.4], look: [201.3, 104.0], look_h: 0.6, lens: 22, frame: 全身}
+      - {t: 3.0, cam: [201.3, 100.6, 1.4], look: [201.4, 104.8], look_h: 0.5, lens: 22}
+    shake: [{t: [0.4, 1.6], amp: 2.2}]
+    act: {start: 向かい合う二人, do: ガクン！と急停車。二人とも前（南）へ投げ出される（「な、なんだ！？」）, end: 床に倒れたビスコと、構える百騎兵}
+    camera: 車中の前の壁ぎわから（固定。急停車で大きく揺れる）
+    kind: A
+  # ---------- 閉じた門 ----------
+  A24-008:
+    frame: 引き（門の前・低い所）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [72.0, 50.0], face: 90, pose: stand}
+        - {t: 4.0, at: gate_stop, face: 90, pose: stand, ease: out}
+        - {t: 7.8, at: gate_stop, face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [116.5, 55.8, 0.8], look: [96.0, 50.0], look_h: 2.4, lens: 24, frame: 引き}
+      - {t: 4.0, cam: [116.6, 55.8, 0.8], look: [111.0, 50.0], look_h: 2.0, lens: 24}
+      - {t: 7.8, cam: [116.8, 55.6, 0.8], look: [115.0, 49.0], look_h: 3.4, lens: 22}
+    shake: [{t: [1.6, 4.4], amp: 0.9}]
+    fx:
+      - {kind: spark, t: [1.6, 2.3], at: [99.0, 51.3], z: 0.3}
+      - {kind: spark, t: [2.3, 3.0], at: [105.0, 51.3], z: 0.3}
+      - {kind: spark, t: [3.0, 3.6], at: [109.0, 51.3], z: 0.3}
+      - {kind: spark, t: [3.5, 4.1], at: [111.4, 51.3], z: 0.3}
+    act: {start: 門の足元から、虚空の線路, do: 列車が火花を散らして急ブレーキをかけ、そびえる門の扉の数メートル手前で止まる。ゴードール「門だ！門が閉まってる！」, end: 止まった列車の顔と、見上げるほどの閉じた門}
+    camera: 門の足元の南の低い所から、迫る列車を迎える。止まったら門を見上げる
+    kind: A
+  A24-009:
+    frame: 俯瞰（門の上から）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 13.8, at: gate_stop, face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [120.6, 47.2, 18.6], look: [114.0, 50.0], look_h: 1.4, lens: 26, frame: 俯瞰}
+      - {t: 5.6, cam: [120.6, 47.4, 18.4], look: [113.0, 50.0], look_h: 1.8, lens: 26}
+      - {t: 6.4, cam: [120.6, 47.6, 18.2], look: [109.0, 50.0], look_h: 3.4, lens: 26}
+      - {t: 13.8, cam: [120.6, 47.8, 18.0], look: [108.4, 50.0], look_h: 3.8, lens: 28}
+    act: {start: 門の上から見下ろす、扉の目の前で止まった獅子の顔, do: ライオネル「もう少し、気がつくのが遅かったら、激突して潰れていたぞい」。カメラが後ろの蛇へ振れて、スネーカー「おいおい！こりゃどういうこった。門が閉まっているなんてありえるか？」, end: 蛇の頭}
+    camera: 門の上（横木の上）から見下ろし、獅子から蛇へ振る
+    kind: M
+  A24-010:
+    frame: 全身（足場の上）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 6.0, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [109.0, 50.8], z: 1.0, face: 180, pose: stand}
+        - {t: 0.6, at: [109.0, 51.6], z: 1.2, face: 180, pose: walk}
+        - {t: 1.2, at: [109.2, 53.2], z: 0.0, face: 180, pose: jump, arc: 0.4}
+        - {t: 1.5, at: [109.2, 53.2], z: 0.0, face: 180, pose: stand}
+        - {t: 1.9, at: [109.4, 53.6], z: 0.0, face: 160, pose: walk}
+        - {t: 3.0, at: bi_out, face: 140, pose: walk, ease: out}
+        - {t: 3.3, at: bi_out, face: 120, pose: stand}
+        - {t: 4.2, at: bi_out, face: 200, pose: stand}
+        - {t: 5.2, at: bi_out, face: 250, pose: stand}
+        - {t: 6.0, at: bi_out, face: 90, pose: look_up}
+      hundred-knight:
+        - {t: 0.0, at: [108.6, 50.8], z: 1.0, face: 180, pose: stand}
+        - {t: 1.0, at: [108.6, 51.6], z: 1.2, face: 180, pose: stand}
+        - {t: 1.7, at: hk_out, z: 0.0, face: 180, pose: jump, arc: 0.6}
+        - {t: 2.0, at: hk_out, face: 150, pose: stand}
+        - {t: 6.0, at: hk_out, face: 100, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [104.4, 57.4, 1.4], look: [109.4, 52.6], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 6.0, cam: [104.6, 57.6, 1.3], look: [110.4, 53.6], look_h: 1.2, lens: 28}
+    act: {start: 止まった列車の南の横（ドームの下）, do: ドームの窓からビスコと百騎兵が降りてくる。ビスコが見回して「ここは……」と、そびえる門を見上げる, end: 門を見上げるビスコと百騎兵}
+    camera: 足場の南西の低い所から
+    kind: M
+  A24-011:
+    frame: 引き（クレーン上げ・虚空）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 14.6, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: bi_out, face: 90, pose: look_up}
+        - {t: 5.0, at: bi_out, face: 200, pose: stand}
+        - {t: 14.6, at: bi_out, face: 230, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_out, face: 100, pose: stand}
+        - {t: 14.6, at: hk_out, face: 200, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [101.0, 61.0, 1.6], look: [110.0, 52.0], look_h: 2.0, lens: 24, frame: 引き}
+      - {t: 7.0, cam: [98.0, 66.0, 6.5], look: [110.0, 51.0], look_h: 4.0, lens: 22}
+      - {t: 14.6, cam: [94.0, 72.0, 14.0], look: [112.0, 48.0], look_h: 3.0, lens: 22}
+    act: {start: 足場の二人と列車, do: ゴードール「ここは異空間さ……ここは異空間のなかでも流刑者が送り込まれるような場所。魔女様だってめったに立ち入らないよ」。カメラが上がって、虚空に浮く足場と岩、閉じた門、遠くの黒い尖塔を見せる, end: 虚空に浮く門の前の足場（上から）}
+    camera: 足場の南西の低い所から、下がりながら高く上がる（クレーン上げ）
+    kind: A
+  A24-012:
+    frame: 胸上（北の山羊）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 9.3, at: gate_stop, face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [110.0, 44.4, 2.1], look: [112.6, 48.55], look_h: 1.9, lens: 30, frame: 胸上}
+      - {t: 9.3, cam: [110.4, 44.6, 2.1], look: [112.6, 48.55], look_h: 1.9, lens: 34}
+    act: {start: 北の山羊（ゴードーラ）, do: ゴードーラ「そうだよ、普段なら立ち往生するような場所じゃないんだ。でも、こんなことできるのは、魔女様しかいないよ！」, end: 北の山羊}
+    camera: 列車の北西から山羊の頭へ。ゆっくり寄る
+    kind: M
+  A24-013:
+    frame: 肩なめ（ビスコ越しに蛇）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 9.5, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: bi_out, face: 230, pose: stand}
+        - {t: 0.5, at: bi_out, face: 320, pose: look_up}
+        - {t: 6.8, at: bi_out, face: 320, pose: look_up}
+        - {t: 7.2, at: bi_out, face: 75, pose: stand}
+        - {t: 9.5, at: bi_out, face: 75, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: hk_out, face: 200, pose: stand}
+        - {t: 0.6, at: hk_out, face: 330, pose: stand}
+        - {t: 9.5, at: hk_out, face: 330, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [111.6, 57.6, 1.2], look: [108.4, 50.0], look_h: 3.6, lens: 26, frame: 肩なめ}
+      - {t: 9.5, cam: [111.8, 57.8, 1.2], look: [110.0, 51.0], look_h: 2.6, lens: 26}
+    act: {start: ビスコの後ろから、見下ろす蛇, do: スネーカー「そうだ！お前たち、さっさと門を開けてこい！開けられるもんならな！開けられっこねーよ！」。ビスコは門へ向き直って「……門を開ければいいんだな？」, end: 門を見るビスコ}
+    camera: ビスコの後ろの低い所から蛇を煽る。最後はビスコに戻る
+    kind: M
+  A24-014:
+    frame: 2人（門の側から）
+    lighting: void
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: bi_out, face: 75, pose: stand}
+        - {t: 0.6, at: bi_out, face: 250, pose: stand}
+        - {t: 5.2, at: bi_out, face: 250, pose: stand}
+        - {t: 5.6, at: bi_out, face: 75, pose: stand}
+        - {t: 6.0, at: [111.0, 54.9], face: 75, pose: walk}
+        - {t: 8.0, at: [112.6, 54.4], face: 75, pose: walk, ease: out}
+      hundred-knight:
+        - {t: 0.0, at: hk_out, face: 330, pose: stand}
+        - {t: 1.0, at: hk_out, face: 70, pose: stand}
+        - {t: 3.4, at: hk_out, face: 70, pose: nod}
+        - {t: 4.2, at: hk_out, face: 70, pose: stand}
+        - {t: 6.2, at: [109.6, 54.3], face: 75, pose: walk}
+        - {t: 8.0, at: [111.2, 53.9], face: 75, pose: walk, ease: out}
+    cam_keys:
+      - {t: 0.0, cam: [117.0, 56.2, 1.0], look: [110.0, 54.6], look_h: 1.0, lens: 30, frame: 2人}
+      - {t: 8.0, cam: [116.9, 56.2, 1.0], look: [111.8, 54.2], look_h: 1.0, lens: 28}
+    act: {start: 足場の二人（門の側から）, do: ビスコが百騎兵に向き直り「……行こう、百騎兵。ここで止まっている暇はない。なんとか門を開けよう」。百騎兵がうなずき、二人で門の方へ歩き出す, end: 門へ向かう二人}
+    camera: 門の足元の南から二人を正面に
+    kind: M
+  A24-015:
+    frame: 肩なめ（ビスコ越しに獅子）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 12.4, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [112.6, 54.4], face: 75, pose: stand}
+        - {t: 0.6, at: [112.6, 54.4], face: 345, pose: stand}
+        - {t: 12.4, at: [112.6, 54.4], face: 345, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [111.2, 53.9], face: 75, pose: stand}
+        - {t: 0.8, at: [111.2, 53.9], face: 20, pose: stand}
+        - {t: 12.4, at: [111.2, 53.9], face: 20, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [113.4, 56.6, 1.5], look: [114.8, 50.0], look_h: 1.8, lens: 30, frame: 肩なめ}
+      - {t: 12.4, cam: [113.5, 56.4, 1.5], look: [114.8, 50.0], look_h: 1.8, lens: 36}
+    act: {start: ビスコの肩越しに獅子の顔, do: ライオネルが呼び止める（「お嬢さん。門を閉めることができるのは魔女様だけじゃ。そう遠くないところにいるはずだぞい」）, end: 獅子の顔}
+    camera: ビスコの後ろの低い所から肩越しに獅子。ゆっくり寄る
+    kind: M
+  A24-016:
+    frame: 引き（列車の前から）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 17.3, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [112.6, 54.4], face: 345, pose: stand}
+        - {t: 11.0, at: [112.6, 54.4], face: 345, pose: stand}
+        - {t: 11.6, at: [112.6, 54.4], face: 345, pose: cover}
+        - {t: 17.3, at: [112.6, 54.4], face: 345, pose: cover}
+      hundred-knight:
+        - {t: 0.0, at: [111.2, 53.9], face: 20, pose: stand}
+        - {t: 17.3, at: [111.2, 53.9], face: 20, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [117.6, 47.6, 2.4], look: [112.2, 51.6], look_h: 1.5, lens: 22, frame: 引き}
+      - {t: 17.3, cam: [117.4, 48.0, 2.3], look: [112.0, 51.8], look_h: 1.4, lens: 26}
+    act: {start: 門と列車の間（獅子の顔の前）から、列車と足場の二人, do: ゴードーラ「ま、とにかく頑張ってね……ここにはあまり長い時間いちゃダメだよ。魔女様ですらここの瘴気にあてられると三日ともたずに発狂しちゃうんだから」。ビスコが口を押さえる, end: 口を押さえるビスコ}
+    camera: 門と獅子の顔の間の少し高い所から。ゆっくり寄る
+    kind: M
+  A24-017:
+    frame: 引き（クレーン上げ）
+    lighting: void
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: gate_stop, face: 90, pose: stand}
+        - {t: 18.4, at: gate_stop, face: 90, pose: stand}
+      bisco:
+        - {t: 0.0, at: [112.6, 54.4], face: 345, pose: cover}
+        - {t: 0.8, at: [112.6, 54.4], face: 300, pose: stand}
+        - {t: 8.0, at: [112.6, 54.4], face: 250, pose: stand}
+        - {t: 11.4, at: [112.6, 54.4], face: 250, pose: wave}
+        - {t: 13.4, at: [112.6, 54.4], face: 250, pose: stand}
+        - {t: 13.8, at: [112.2, 53.8], face: 330, pose: walk}
+        - {t: 16.6, at: [108.6, 46.4], face: 330, pose: walk}
+        - {t: 18.4, at: [107.2, 41.2], face: 340, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [111.2, 53.9], face: 20, pose: stand}
+        - {t: 8.0, at: [111.2, 53.9], face: 70, pose: stand}
+        - {t: 12.8, at: [111.2, 53.9], face: 70, pose: nod}
+        - {t: 13.6, at: [111.2, 53.9], face: 230, pose: stand}
+        - {t: 14.0, at: [110.9, 54.3], face: 220, pose: walk}
+        - {t: 16.4, at: [108.6, 57.6], face: 210, pose: walk}
+        - {t: 18.4, at: [107.0, 61.4], face: 200, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [108.2, 57.6, 1.3], look: [112.2, 54.2], look_h: 1.2, lens: 28, frame: 引き}
+      - {t: 11.6, cam: [106.0, 60.4, 3.2], look: [111.6, 53.6], look_h: 1.0, lens: 26}
+      - {t: 18.4, cam: [99.0, 66.0, 16.0], look: [107.5, 50.0], look_h: 0.0, lens: 22}
+    act: {start: 足場の二人, do: ビスコ「瘴気か……仕方がない。長居は出来ないようだし、するつもりもない。手分けして魔女を捜そう。それじゃあ、気をつけてな、百騎兵」。手を振って北の板の道へ。百騎兵はうなずいて南の板の道へ。二人は虚空の中で別々の方へ, end: 虚空に伸びる2本の板の道と、離れていく小さな二人（上から）}
+    camera: 足場の南西の低い所から、二人が離れるのに合わせて高く上がる（クレーン上げ）
+    kind: A

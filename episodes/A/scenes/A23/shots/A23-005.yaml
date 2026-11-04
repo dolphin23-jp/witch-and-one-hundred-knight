@@ -1,0 +1,51 @@
+# A23 隠し森の駅・夜光列車（夕暮れ）。blocking.yaml（Claude の案 2026-11-04、Living Spec「A23 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A23-005
+scene: A23
+tc: 37.2
+sec: 8.6
+kind: A
+shot: 引き（線路の高さ・煽り）・夜光列車・ビスコ・百騎兵
+acting: 空間が縦に裂けて光り、夜光列車が滑り出てくる。線路の上を走って画面を右から左へ横切り、ホームの手前で止まる。ビスコは驚いてしりもち（「何も無い空間から……列車！？」）。裂け目は閉じる
+dialogue:
+- L723「な、なんだ！？何も無い空間から……列車！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.0
+  - 48.2
+  - 0.35
+  look:
+  - 38.6
+  - 45.0
+  lens: 24
+  move: 線路の南の低い所（線路の高さ）から煽る。裂け目から出る列車を左へ追って振る
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- bisco
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 線路の途切れた先の、何もない空間
+  end: ホームに横付けした夜光列車。奥に構える百騎兵と、しりもちのビスコ
+timing:
+  lead: 2.6
+blocking:
+  start: 列（中央・正面）
+  end: 百（左・斜め前（画面右向き））、ビ（左・斜め前（画面右向き））
+  background: 深い森
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, facing the
+    camera. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with
+    two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of
+    the frame, in three-quarter view, turned toward screen right. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  sketch:
+  - episodes/A/scenes/A23/gen/sketch/A23-005_start.png
+  - episodes/A/scenes/A23/gen/sketch/A23-005_end.png
