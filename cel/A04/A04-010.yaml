@@ -1,0 +1,47 @@
+# コードで動かす方式の試作（2026-11-04）。座標は静止画（2688x1520）の画素。秒はカットの頭から。
+# 北から二人（開始の静止画）→「水を」でルッキーニィの唇へ寄る（終わりの静止画の寄りへ渡す）。
+# L129（メタリカの声、通信）0.3秒〜、L130（ルッキーニィ「み、水を……。」）6.82秒〜。
+cut: A04-010
+scene: episodes/A/scenes/A04
+plates:
+  A:   # 引き: 百騎兵がのぞき込み、ルッキーニィが砂に倒れている
+    src: episodes/A/scenes/A04/stills/start/A04-010_start_gpt-image-2.5_01.png
+    char_parallax: 0.8
+    anim:
+      - {type: breathe, box: [780, 250, 1600, 1150], pivot_y: 1120, amp: 0.006, hz: 0.42}      # 百騎兵（肩で息）
+      - {type: sway, box: [780, 120, 1600, 1150], pivot: [1190, 1150], deg: 0.6, hz: 0.18}      # 百騎兵がのぞき込んで揺れる
+      - {type: breathe, box: [40, 700, 760, 1400], pivot_y: 1380, amp: 0.003, hz: 0.22}         # ルッキーニィ（浅い息）
+      - {type: flame, on_bg: true, box: [950, 0, 1720, 270], hue: [90, 115], smax: 65, vmin: 228, amp: 6, hz: 1.4, blur: 7}   # 頭の青い炎
+      - {type: glint, box: [880, 560, 1220, 760], hue: [5, 22], smin: 120, vmin: 150, amp: 0.25, hz: 0.9, tint: [1.0, 0.55, 0.15], blur: 4}  # 百騎兵の目の光
+    bg_fx:
+      - {type: haze, amp: 2.2, far: 0.5, wave: 7.0, hz: 6.0}
+      - {type: sun, at: [2000, 50], r: 260, amp: 0.10}
+  B:   # 寄り: ルッキーニィの乾いた唇と、のぞき込む百騎兵の兜
+    src: episodes/A/scenes/A04/stills/end/A04-010_end_gpt-image-2.5_01.png
+    speaker: luckiny
+    char_parallax: 0.9
+    anim:
+      - {type: jaw, box: [1150, 880, 1420, 1080], line_y: 896, amp: 7, close: 1.5, ramp: 12, dx: -0.15}   # 横顔の口パク（あごを下げる）
+      - {type: breathe, box: [0, 200, 1500, 1520], pivot_y: 1500, amp: 0.004, hz: 0.25}
+      - {type: sway, box: [1700, 0, 2688, 1520], pivot: [2300, 1600], deg: 0.35, hz: 0.2}
+      - {type: glint, box: [2000, 300, 2450, 760], hue: [5, 22], smin: 120, vmin: 150, amp: 0.25, hz: 0.9, tint: [1.0, 0.55, 0.15], blur: 5}
+    bg_fx:
+      - {type: haze, amp: 2.0, far: 0.5, wave: 8.0, hz: 6.0}
+      - {type: sun, at: [1010, 60], r: 220, amp: 0.10}
+show:
+  - {t: 0, plate: A}
+  - {t: 7.15, plate: B}
+camera:
+  A:   # ゆっくり押し込み、「水を」で唇へ一気に寄る
+    - {t: 0, cx: 1344, cy: 760, zoom: 1.0}
+    - {t: 6.75, cx: 900, cy: 850, zoom: 1.32, tx: -10, dz: 0.02, ease: linear}
+    - {t: 7.15, cx: 690, cy: 860, zoom: 2.6, tx: -16, dz: 0.05, ease: in}
+  B:   # 寄りの絵で受け、少しずつ唇へ
+    - {t: 7.15, cx: 1250, cy: 830, zoom: 1.18}
+    - {t: 7.6, cx: 1290, cy: 860, zoom: 1.24, ease: out}
+    - {t: 10.0, cx: 1300, cy: 880, zoom: 1.34}
+motion_blur:
+  - {from: 6.9, to: 7.5, samples: 5}
+screen_fx:
+  - {type: motes, n: 26, color: [236, 196, 120], size: [1.2, 2.6], speed: [40, 4], alpha: 0.5, region: [0, 500, 1920, 1080]}
+grade: {gain: [1.02, 1.0, 0.97], vignette: 0.3}
