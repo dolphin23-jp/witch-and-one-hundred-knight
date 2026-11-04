@@ -1,0 +1,83 @@
+# シートの試し（コードで動かす方式、2026-11-04）。承認待ち。
+# 1枚の画に、同じ人物の口・表情・走りのコマを並べて描かせ、コマの間で顔や衣装がそろうかを確かめる。
+# モデル: GPT Image 2.5（Higgsfield、gpt_image_2_5）、quality medium、2k。1枚1クレジット。
+# 添付の Image 1 は、採用した静止画から切り出した絵（角度・大きさ・絵柄の基準）。Image 2 は設定画（D-054）。
+model: gpt_image_2_5
+params: {quality: medium, resolution: 2k}
+total_credits: 6     # 失敗して作り直すときは、別に承認を取る
+items:
+  - id: S1
+    for: [A02-002]
+    what: ビスコの口と目の差分（A02-002 と同じ角度）
+    aspect_ratio: '16:9'
+    refs: [A02-002 開始の静止画から顔を切り出した絵, refs/bisco_sheet_01, characters/bisco/views/bisco_face_front.png]
+    prompt: >-
+      Character mouth and eye sheet. Image 1 is the base drawing: Bisco's head, three-quarter view turned toward screen left.
+      Draw the SAME head eight times in a 4x2 grid on a plain light grey background, head only from the collar to the top of
+      the hair, every copy identical to Image 1 in angle, size, hair, gold hair ornaments, lighting and line style. Only the
+      mouth and the eyes change. Top row, eyes as in Image 1: mouth closed; mouth slightly open; mouth wide open as when
+      saying "a"; mouth rounded as when saying "o". Bottom row: mouth as when saying "i" (wide, teeth showing); mouth as when
+      saying "u" (small, pursed); eyes half closed with mouth closed; eyes fully closed (blink) with mouth closed. Keep the
+      design identical to Image 2 (the official character sheet). Clean 2D TV anime line art and cel shading. No text, no
+      labels, no numbers, no manga symbols.
+  - id: S2
+    for: [A02-002]
+    what: ビスコの表情の差分（同じ角度）
+    aspect_ratio: '3:2'
+    refs: [A02-002 開始の静止画から顔を切り出した絵, refs/bisco_sheet_01]
+    prompt: >-
+      Character expression sheet. Image 1 is the base drawing: Bisco's head, three-quarter view turned toward screen left.
+      Draw the SAME head six times in a 3x2 grid on a plain light grey background, head only, identical to Image 1 in angle,
+      size, hair, hair ornaments, lighting and line style. Expressions: annoyed frown (as in Image 1); exasperated, rolling
+      her eyes up toward screen right with a small sigh; surprised with wide eyes and a small open mouth; a small proud smile;
+      embarrassed with a light blush, eyes looking away; worried with lowered brows. Keep the design identical to Image 2.
+      Clean 2D TV anime line art and cel shading. No text, no labels, no manga symbols (no sweat drops, no anger marks).
+  - id: S3
+    for: [A04, A05, A06]
+    what: ルッキーニィの口と目の差分（斜め前）
+    aspect_ratio: '16:9'
+    refs: [characters/luckiny/views/luckiny_face_front.png, refs/luckiny_sheet_01]
+    prompt: >-
+      Character mouth and eye sheet for Lucchini (Image 2 is the official character sheet; Image 1 shows her face). Draw the
+      SAME head eight times in a 4x2 grid on a plain light grey background, three-quarter view turned toward screen right,
+      head only from the collar to the tips of the horns, every copy identical in angle, size, hair, horns, red hood and line
+      style. Only the mouth and the eyes change. Top row: mouth closed; mouth slightly open; mouth wide open as when saying
+      "a"; mouth rounded as when saying "o". Bottom row: mouth as when saying "i"; mouth as when saying "u"; eyes half closed;
+      eyes fully closed (blink). Clean 2D TV anime line art and cel shading. No text, no labels, no manga symbols.
+  - id: S4
+    for: [A05-001]
+    what: ルッキーニィの走り（後ろ姿、6コマ）
+    aspect_ratio: '21:9'
+    background: transparent
+    refs: [A05-001 開始の静止画からルッキーニィを切り出した絵, refs/luckiny_sheet_01, characters/luckiny/views/luckiny_back.png]
+    prompt: >-
+      Animation run cycle sheet. Six frames of Lucchini running away from the viewer, seen from directly behind, in a single
+      row, equal spacing and equal size, all feet on one shared ground line. Frames: 1 right foot contact; 2 down; 3 passing;
+      4 left foot contact; 5 down; 6 passing. She carries the horn-topped staff on her back exactly as in Image 1; red hood,
+      horns, green fur coat and tail identical to Image 2. Arms swing naturally, body leans slightly forward. Same lighting as
+      Image 1 (low sun from the front right). Clean 2D TV anime line art and cel shading. Transparent background, no shadows
+      on the ground, no text, no numbers.
+  - id: S5
+    for: [A05-001]
+    what: 百騎兵の走り（後ろ姿、6コマ）
+    aspect_ratio: '21:9'
+    background: transparent
+    refs: [A05-001 開始の静止画から百騎兵を切り出した絵, refs/hundred-knight_sheet_01, characters/hundred-knight/views/hundred-knight_back.png]
+    prompt: >-
+      Animation run cycle sheet. Six frames of the Hundred Knight running away from the viewer, seen from directly behind
+      and slightly to the left, in a single row, equal spacing and equal size, all feet on one shared ground line. Frames:
+      1 right foot contact; 2 down; 3 passing; 4 left foot contact; 5 down; 6 passing. Short legs, big round helmet with the
+      pale blue flame on top, big blue-and-white gauntlets swinging, identical to Image 1 and Image 2. Same lighting as
+      Image 1. Clean 2D TV anime line art and cel shading. Transparent background, no ground shadows, no text, no numbers.
+  - id: S6
+    for: [A05-001]
+    what: ルッキーニィが振り返って手招き（原画4枚）
+    aspect_ratio: '21:9'
+    background: transparent
+    refs: [A05-001 開始の静止画からルッキーニィを切り出した絵, refs/luckiny_sheet_01]
+    prompt: >-
+      Animation key pose sheet, four frames in a single row, equal size, feet on one ground line. Lucchini on a sand ridge:
+      1 running away from the viewer, seen from behind (as in Image 1); 2 slowing and turning her head and shoulders back
+      toward the viewer; 3 turned toward the viewer, raising her right arm; 4 waving her right arm widely overhead, beckoning,
+      cheerful with her mouth open. Design identical to Image 2. Same lighting as Image 1. Clean 2D TV anime line art and cel
+      shading. Transparent background, no text, no numbers, no manga symbols.

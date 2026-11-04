@@ -1,0 +1,62 @@
+# コードで動かす方式の試作（2026-11-04）。座標は静止画（2688x1520）の画素。秒はカットの頭から。
+# 後ろから走る二人を追い（開始の静止画）、稜線でカメラが上がって砂丘が開ける（終わりの静止画へ渡す）。
+# L143（ルッキーニィ「こっちです！」）1.3秒〜。走る脚と振り返り・手招きは、この試作では描けない（走りのシートで足す）。
+cut: A05-001
+scene: episodes/A/scenes/A05
+plates:
+  A:   # 後ろから: 手前に百騎兵、先にルッキーニィ
+    src: episodes/A/scenes/A05/stills/start/A05-001_start_gpt-image-2.5_01.png
+    char_parallax: 0.0      # 二人はカメラと同じ速さで走るので、画面の中では止まり、背景だけが流れる
+    # v02: 元の二人を消し、走りのシート（S4・S5）と振り返って手招きの原画（S6）に差し替える
+    erase: [[1140, 400, 1500, 990], [190, 420, 900, 1480]]
+    sprites:
+      - id: luckiny-run
+        sheet: characters/luckiny/sheets/luckiny_run_back_gpt-image-2.5_01.png
+        replace_box: [1140, 400, 1500, 990]
+        timeline:
+          - {from: 0, to: 1.17, seq: [0, 1, 2, 3, 4, 5], fps: 12}
+      - id: luckiny-beckon      # 「こっちです！」（1.3秒〜）で振り返って大きく手招き
+        sheet: characters/luckiny/sheets/luckiny_beckon_A05-001_gpt-image-2.5_01.png
+        replace_box: [1140, 400, 1500, 990]
+        timeline:
+          - {from: 1.17, to: 1.34, seq: [1], loop: false}
+          - {from: 1.34, to: 1.5, seq: [2], loop: false}
+          - {from: 1.5, to: 3.0, seq: [3, 2], fps: 6}
+      - id: hundred-knight-run
+        sheet: characters/hundred-knight/sheets/hundred-knight_run_back_gpt-image-2.5_01.png
+        replace_box: [190, 420, 900, 1480]
+        timeline:
+          - {from: 0, to: 3.0, seq: [0, 1, 2, 3, 4, 5], fps: 12}
+    anim:
+      - {type: bob, box: [180, 380, 920, 1520], amp: 10, hz: 3.0, sway: 4, feather: 40}            # 百騎兵
+      - {type: bob, box: [1100, 300, 1560, 1000], amp: 6, hz: 2.6, phase: 1.2, sway: 2, feather: 30}  # ルッキーニィ
+      - {type: flame, on_bg: true, box: [330, 420, 780, 640], hue: [85, 115], smax: 70, vmin: 225, amp: 6, hz: 1.6, rise: 2, blur: 6}
+    bg_fx:
+      - {type: haze, amp: 2.0, far: 0.45, wave: 8.0, hz: 6.5}
+      - {type: sun, at: [2454, 315], r: 300, amp: 0.12}
+  B:   # 高い所から: 稜線の向こうに砂丘が開ける
+    src: episodes/A/scenes/A05/stills/end/A05-001_end_gpt-image-2.5_01.png
+    seg_box: [[950, 650, 1550, 1450]]
+    char_parallax: 0.6
+    anim:
+      - {type: bob, box: [1040, 760, 1470, 1420], amp: 6, hz: 2.8, sway: 2, feather: 25}
+    bg_fx:
+      - {type: haze, amp: 1.6, far: 0.4, wave: 9.0, hz: 6.0}
+      - {type: sun, at: [341, 79], r: 320, amp: 0.14}
+show:
+  - {t: 0, plate: A}
+  - {t: 2.42, plate: B}
+flash:   # カメラが上がって太陽を向き、白く飛んだところで高い所からの絵に渡す
+  - {t: 2.2, len: 0.45, amp: 0.9, shape: bump}
+camera:
+  A:   # 走る速さで前へ（奥ほど流れが小さい）、1.8秒から太陽の方へ上がる
+    - {t: 0, cx: 1344, cy: 760, zoom: 1.0, dz: 0.0, ty: 0, shake: 3}
+    - {t: 1.8, cx: 1344, cy: 760, zoom: 1.03, dz: 0.10, ty: 0, shake: 3, ease: linear}
+    - {t: 2.42, cx: 1900, cy: 470, zoom: 1.25, dz: 0.13, ty: 160, shake: 1, ease: in}
+  B:   # 上から見下ろしながら下がってきて、景色を開く
+    - {t: 2.42, cx: 1100, cy: 520, zoom: 1.28}
+    - {t: 4.0, cx: 1344, cy: 760, zoom: 1.0, ease: out}
+screen_fx:
+  - {type: motes, n: 30, color: [230, 190, 120], size: [1.5, 3.5], speed: [-60, 25], alpha: 0.55, region: [0, 650, 1920, 1080], to: 2.4}
+  - {type: motes, n: 18, color: [255, 240, 200], size: [1.2, 2.4], speed: [20, -6], alpha: 0.35, from: 2.0}
+grade: {gain: [1.03, 1.0, 0.96], vignette: 0.25}
