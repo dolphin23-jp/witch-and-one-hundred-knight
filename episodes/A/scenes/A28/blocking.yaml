@@ -453,7 +453,7 @@ cuts:
         pose: sit
       - {t: 0.3, pose: sit, face: 210}
       - t: 0.9
-        at: [54.11, 52.38]
+        at: [52.91, 52.81]
         pose: walk
       - t: 7.9
         at: [50.5, 56.4]
@@ -767,15 +767,15 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [48.7, 50.9, 0.88]
+      cam: [48.7, 50.9, 1.18]
       look: berda
-      look_h: 0.95
+      look_h: 1.08
       lens: 38
       frame: 胸上
     - t: 9.8
-      cam: [48.4, 51.0, 0.88]
+      cam: [48.4, 51.0, 1.18]
       look: berda
-      look_h: 0.95
+      look_h: 1.08
       lens: 44
     act: {start: 椅子に座ったまま、扇のように手を振るベルダ, do: ラビィをたしなめる（「相変わらず、下品なしゃべりね。ラビィ」「大公爵がこられたら、またこっぴどくお仕置きされますわよ」）, end: すまし顔のベルダ}
     camera: 円卓の上から、ベルダへ寄る
@@ -975,9 +975,9 @@ cuts:
       lens: 34
       frame: 肩なめ
     - t: 11.4
-      cam: [50.4, 56.6, 1.4]
+      cam: [50.09, 55.07, 1.5]
       look: berda
-      look_h: 0.95
+      look_h: 1.0
       lens: 40
     act: {start: ラビィの肩越しに、座ったベルダ, do: ラビィが歩み寄って挑発する（「それより、泣き虫ベルダ！…文句たれてんじゃねーよ！」「死にてぇなら別だけどな」）, end: にらむラビィ}
     camera: ラビィの後ろから、ベルダへ寄る
@@ -1015,7 +1015,7 @@ cuts:
         face: '@rabi'
         pose: sit
       - t: 0.8
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         pose: stand
         face: '@rabi'
       - {t: 5.65, face: '@purple-peel', pose: point}
@@ -1037,18 +1037,18 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [46.4, 54.6, 0.8]
+      cam: [49.18, 53.0, 0.8]
       look: berda
       look_h: 1.0
       lens: 32
       frame: 膝上
     - t: 11.0
-      cam: [46.9, 54.9, 1.25]
+      cam: [48.98, 52.98, 1.25]
       look: berda
       look_h: 1.35
-      lens: 34
+      lens: 36
     act: {start: ため息をつくベルダ, do: 立ち上がって叱りつけ（「はぁ……。少し黙りなさい、ラビィ・ラルラ・ラー！！」）、パープルピールに向き直る（「パープルピール！あなた弟子のしつけくらいなんとかしなさいな」）, end: パープルピールを指さすベルダ}
-    camera: ベルダの左の低い所から、立ち上がりに合わせて上がる
+    camera: ベルダの正面（円卓の脇）の低い所から、立ち上がりに合わせて上がる
     kind: M
   A28-016:
     frame: 胸上
@@ -1080,7 +1080,7 @@ cuts:
         z: 1.2
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1100,15 +1100,15 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [52.1, 48.5, 0.9]
+      cam: [52.1, 48.5, 1.18]
       look: purple-peel
-      look_h: 0.97
+      look_h: 1.08
       lens: 42
       frame: 胸上
     - t: 7.4
-      cam: [52.2, 48.7, 0.9]
+      cam: [52.2, 48.7, 1.18]
       look: purple-peel
-      look_h: 0.97
+      look_h: 1.08
       lens: 46
     act: {start: 椅子にもたれるパープルピール, do: 肩をすくめる（「なんだい？そいつだってもう一人前の魔女さ。自分のケツは自分でふけるよ」）, end: 腕を組むパープルピール}
     camera: パープルピールの右斜め前（北東の窓側の円卓の上）から
@@ -1148,7 +1148,7 @@ cuts:
         z: 1.6
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1210,7 +1210,7 @@ cuts:
         z: 1.6
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1230,15 +1230,15 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [51.7, 50.8, 0.9]
+      cam: [51.7, 50.8, 1.18]
       look: purple-peel
-      look_h: 0.98
+      look_h: 1.08
       lens: 50
       frame: 寄り
     - t: 1.0
-      cam: [52.3, 50.5, 0.92]
+      cam: [52.3, 50.5, 1.18]
       look: purple-peel
-      look_h: 0.98
+      look_h: 1.08
       lens: 60
       ease: out
     act: {start: パープルピールの顔の寄り, do: 身を起こしてラビィをにらむ（「……あん？」）。間, end: にらむ目}
@@ -1278,7 +1278,7 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1340,7 +1340,7 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1416,7 +1416,7 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
@@ -1425,7 +1425,7 @@ cuts:
         face: 140
         pose: sit
       - t: 0.3
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         pose: stand
         face: '@hundred-knight'
       - {t: 2.35, pose: hold}
@@ -1487,12 +1487,12 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       - {t: 0.6, pose: lean}
@@ -1566,7 +1566,7 @@ cuts:
         face: '@rabi'
         pose: sit
       - t: 0.4
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         pose: stand
         face: '@hundred-knight'
       - {t: 3.4, pose: cross}
@@ -1588,12 +1588,12 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1633,7 +1633,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: '@hundred-knight'
         pose: cross
       - {t: 9.22, pose: stand, face: 200}
@@ -1657,12 +1657,12 @@ cuts:
         z: 0.9
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1707,7 +1707,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -1740,12 +1740,12 @@ cuts:
         at: [51.5, 54.2]
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1785,7 +1785,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -1812,12 +1812,12 @@ cuts:
         face: 60
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1862,7 +1862,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       - {t: 0.3, face: 220}
@@ -1885,12 +1885,12 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1910,18 +1910,18 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [52.3, 46.0, 0.9]
+      cam: [51.5, 47.7, 1.0]
       look: lily
       look_h: 1.45
       lens: 34
       frame: 胸上
     - t: 11.3
-      cam: [52.6, 46.2, 0.95]
+      cam: [51.6, 47.75, 1.0]
       look: lily
       look_h: 1.45
-      lens: 38
+      lens: 40
     act: {start: 天球儀の光を背にしたリリー, do: 冷たく言い放つ（「しかし、あんな“ただの山”から本当に、ここに来られると思っていたんだからね。無知とはときに、驚愕に値するよ」）, end: 目を細めるリリー}
-    camera: リリーの斜め下から見上げる（窓の夜空を背に）
+    camera: リリーの斜め下（円卓の上）から見上げる（窓の夜空を背に）
     kind: M
   A28-028:
     frame: 膝上
@@ -1930,7 +1930,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -1951,14 +1951,14 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
       - {t: 0.3, pose: cover, face: 60}
       - {t: 5.89, pose: stand, face: 90}
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -1998,7 +1998,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2021,12 +2021,12 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: 90
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2066,7 +2066,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2088,12 +2088,12 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: 90
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2135,7 +2135,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2156,12 +2156,12 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: 90
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2203,7 +2203,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2224,12 +2224,12 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: 90
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2281,7 +2281,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2302,7 +2302,7 @@ cuts:
         z: 1.0
       berda:
       - t: 0.0
-        at: [45.89, 52.38]
+        at: [47.09, 52.81]
         face: 90
         pose: stand
       - {t: 0.3, face: '@bisco'}
@@ -2315,7 +2315,7 @@ cuts:
       - {t: 8.9, pose: stand}
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2356,7 +2356,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2384,7 +2384,7 @@ cuts:
       - {t: 5.96, pose: stand}
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:
@@ -2425,7 +2425,7 @@ cuts:
     keys:
       lily:
       - t: 0.0
-        at: [53.6, 47.6]
+        at: [52.93, 47.27]
         face: 200
         pose: cross
       purple-peel:
@@ -2451,7 +2451,7 @@ cuts:
         pose: stand
       rubens:
       - t: 0.0
-        at: [45.25, 50.0]
+        at: [46.07, 49.02]
         face: '@hundred-knight'
         pose: hold
       bisco:

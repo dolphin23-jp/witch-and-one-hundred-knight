@@ -13,12 +13,12 @@ sound: null
 notes: null
 camera:
   pos:
-  - 52.3
-  - 46.0
-  - 0.9
+  - 51.5
+  - 47.7
+  - 1.0
   look: lily
   lens: 34
-  move: リリーの斜め下から見上げる（窓の夜空を背に）
+  move: リリーの斜め下（円卓の上）から見上げる（窓の夜空を背に）
 background: council-room
 image: null
 refs:
@@ -39,18 +39,16 @@ act:
 timing:
   lead: 0.4
 blocking:
-  start: リ（中央・斜め後ろ（画面右向き））、パ（右・斜め後ろ（画面右向き））
-  end: リ（中央・斜め後ろ（画面右向き））、パ（右・斜め後ろ（画面右向き））
+  start: リ（中央・斜め前（画面右向き））
+  end: リ（中央・斜め前（画面右向き））
   background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
   panels: []
-  staging_en: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned
-    toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: dark
-    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
-    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
-  staging_en_end: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned
-    toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind:
-    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
-    from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right. No other
+    people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right.
+    No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
+    tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
   sketch:
   - episodes/A/scenes/A28/gen/sketch/A28-027_start.png
   - episodes/A/scenes/A28/gen/sketch/A28-027_end.png

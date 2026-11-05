@@ -35,8 +35,8 @@ cuts:
         side: 中央
         body: 斜め前（画面右向き）
       - who: rubens
-        s: 0.06
-        dist: 15.05
+        s: 0.16
+        dist: 14.52
         side: 中央
         body: 斜め前（画面左向き）
       - who: purple-peel
@@ -45,8 +45,8 @@ cuts:
         side: 右
         body: 斜め後ろ（画面左向き）
       - who: lily
-        s: 0.83
-        dist: 7.62
+        s: 0.78
+        dist: 8.35
         side: 右
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -211,7 +211,7 @@ cuts:
     cam:
     - 48.2
     - 50.4
-    - 0.92
+    - 1.18
     lens: 40
     bearing: 226
     frame: 胸上
@@ -263,22 +263,22 @@ cuts:
     note: null
   A29-003:
     cam:
-    - 50.9
-    - 54.8
-    - 0.95
+    - 51.8
+    - 54.6
+    - 1.0
     lens: 34
-    bearing: 355
+    bearing: 344
     frame: 全身
     start:
       people:
       - who: nezaria
-        s: 0.04
-        dist: 12.83
+        s: 0.02
+        dist: 12.86
         side: 中央
         body: 正面
       - who: lily
-        s: 0.9
-        dist: 6.49
+        s: 1.06
+        dist: 5.87
         side: 右
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -289,7 +289,7 @@ cuts:
       - 天球儀（透けた大きな球、金の輪、光る惑星）
       - 議長の椅子（北）
       - 椅子（空き。マーリカの席）
-      - 椅子（リリー）
+      - 椅子（空き）
       - 椅子（空き。ヴァレンティーヌの席）
       - 椅子（空き）
       - 円い壁（北〜北東が破れている）
@@ -301,14 +301,14 @@ cuts:
       staging: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
         and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
         (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference
-        sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched
-        windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
-        over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between
+        heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark
+        wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: nezaria
         s: 0.0
-        dist: 7.51
+        dist: 7.45
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
@@ -321,9 +321,10 @@ cuts:
         to: &id004
         - 50.0
         - 46.1
+        face: 180
         via:
-        - - 50.0
-          - 43.4
+        - - 48.9
+          - 45.4
         - *id004
         t:
         - 0.0
@@ -414,7 +415,7 @@ cuts:
     cam:
     - 51.6
     - 51.6
-    - 0.9
+    - 1.18
     lens: 42
     bearing: 55
     frame: 胸上
@@ -456,7 +457,7 @@ cuts:
     cam:
     - 51.5
     - 50.6
-    - 0.85
+    - 1.18
     lens: 42
     bearing: 126
     frame: 胸上
@@ -494,42 +495,37 @@ cuts:
     note: null
   A29-008:
     cam:
-    - 55.6
-    - 55.4
+    - 53.95
+    - 54.1
     - 1.6
     lens: 30
-    bearing: 331
+    bearing: 336
     frame: 肩なめ
     start:
       people:
-      - who: rubens
-        s: -1.01
-        dist: 9.33
-        side: 左
-        body: 正面
       - who: usamaru
-        s: -0.71
-        dist: 2.86
+        s: -0.94
+        dist: 0.88
         side: 左
         body: 斜め前（画面右向き）
-      - who: rabi
-        s: -0.11
-        dist: 4.09
-        side: 中央
-        body: 背中
       - who: nezaria
-        s: -0.06
-        dist: 10.85
+        s: -0.08
+        dist: 8.91
         side: 中央
+        body: 正面
+      - who: rabi
+        s: 0.25
+        dist: 2.2
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: lily
+        s: 0.55
+        dist: 5.78
+        side: 右
         body: 斜め前（画面左向き）
       - who: purple-peel
-        s: 0.34
-        dist: 5.55
-        side: 右
-        body: 横顔（画面左向き）
-      - who: lily
-        s: 0.36
-        dist: 7.5
+        s: 0.7
+        dist: 3.78
         side: 右
         body: 横顔（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -551,51 +547,48 @@ cuts:
       - 破れた壁の瓦礫（北）
       - 床の瓦礫
       - 倒れた椅子
-      - 傾いて残った椅子
-      staging: 'In frame (exactly 6 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
-        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
-        facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen
-        right; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her reference
-        sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills
-        and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, in three-quarter
-        view, turned toward screen left, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, in profile, turned toward screen left; Lily
-        (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood
-        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
-        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward
+        screen right; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight
+        lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting
+        on her hat brim, standing, in the center of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the right of the
+        frame, seen from behind at an angle, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned
+        toward screen left; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: dark wood panelled
+        round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+        planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: nezaria
-        s: -0.02
-        dist: 10.41
-        side: 中央
-        body: 斜め前（画面左向き）
       - who: rabi
-        s: 0.15
-        dist: 2.91
-        side: 中央
+        s: -0.52
+        dist: 1.39
+        side: 左
         body: 背中
-      - who: purple-peel
-        s: 0.47
-        dist: 5.06
-        side: 右
-        body: 横顔（画面左向き）
+      - who: nezaria
+        s: -0.03
+        dist: 8.7
+        side: 中央
+        body: 正面
       - who: lily
-        s: 0.49
-        dist: 7.01
+        s: 0.71
+        dist: 5.49
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: purple-peel
+        s: 0.92
+        dist: 3.5
         side: 右
         body: 横顔（画面左向き）
-      staging: 'In frame (exactly 4 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-        (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla
-        La), the flame witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on the right
-        of the frame, in profile, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, in profile, turned toward screen left, small
-        in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
-        top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 4 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, with the back to the camera; Nezaria,
+        the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
+        half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim,
+        standing, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter
+        view, turned toward screen left; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind:
+        dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+        from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       rabi:
         to: &id005
-        - 54.11
-        - 52.38
+        - 52.91
+        - 52.81
         face: '@nezaria'
         via:
         - *id005
@@ -626,8 +619,8 @@ cuts:
         side: 左
         body: 正面
       - who: rabi
-        s: 0.39
-        dist: 5.04
+        s: 0.66
+        dist: 3.81
         side: 右
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -637,9 +630,9 @@ cuts:
       - 倒れた椅子
       - 傾いて残った椅子
       staging: 'In frame (exactly 2 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera; Rabi (Rabil Lalla La), the
-        flame witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall arched
-        windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
-        over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        flame witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall
+        arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery
+        hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: purple-peel
@@ -693,7 +686,7 @@ cuts:
     cam:
     - 51.4
     - 48.6
-    - 1.0
+    - 1.18
     lens: 36
     bearing: 74
     frame: 胸上
@@ -725,88 +718,56 @@ cuts:
     note: null
   A29-011:
     cam:
-    - 56.0
-    - 45.0
-    - 1.4
-    lens: 32
-    bearing: 255
+    - 54.3
+    - 48.6
+    - 1.95
+    lens: 38
+    bearing: 300
     frame: 肩なめ
     start:
       people:
-      - who: teressa
-        s: -0.97
-        dist: 11.4
-        side: 左
-        body: 正面
-      - who: berda
-        s: -0.72
-        dist: 10.82
-        side: 左
-        body: 正面
-      - who: rubens
-        s: -0.39
-        dist: 10.84
-        side: 左
-        body: 正面
       - who: nezaria
-        s: 0.13
-        dist: 6.08
+        s: -0.0
+        dist: 4.97
         side: 中央
-        body: 横顔（画面左向き）
+        body: 斜め前（画面左向き）
+      - who: lily
+        s: 0.03
+        dist: 1.07
+        side: 中央
+        body: 斜め後ろ（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
-      - 円い壁（羽目板・柱・縦長の窓とカーテン）
-      - 円すいの天井（放射状の梁）
-      - 円卓（赤い布に金色の魔法陣）
-      - 天球儀（透けた大きな球、金の輪、光る惑星）
       - 議長の椅子（北）
       - 椅子（空き。マーリカの席）
-      - 椅子（ベルダ）
-      - 椅子（リューベンス）
-      - 椅子（空き。ヴァレンティーヌの席）
+      - 椅子（リリー）
       - 椅子（空き）
-      - 円い壁（北〜北東が破れている）
-      - 天井（真ん中と北側が抜けて空が見える）
-      - 床を覆う毒沼（碧。D-063）
       - 床の瓦礫
       - 倒れた椅子
-      - 倒れた椅子
-      - 床に落ちた天球儀の惑星（黄）
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 4 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background;
-        Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with
-        orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria,
-        the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
-        half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim,
-        standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars
-        between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
-        dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
+        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
+        (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, in three-quarter view, turned toward screen left; Lily (Liliane), the thin-ice witch, as in
+        her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall arched windows
+        full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over
+        a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: berda
-        s: -0.89
-        dist: 10.55
-        side: 左
-        body: 正面
-      - who: rubens
-        s: -0.51
-        dist: 10.73
-        side: 左
-        body: 正面
-      - who: nezaria
-        s: 0.11
-        dist: 6.23
+      - who: lily
+        s: -0.04
+        dist: 0.94
         side: 中央
         body: 横顔（画面左向き）
-      staging: 'In frame (exactly 3 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; Rubens,
-        the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange
-        lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria, the fog
-        witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed
-        eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in
-        the center of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
-        purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
-        panelled walls, tall windows full of stars between purple-red curtains.'
+      - who: nezaria
+        s: 0.0
+        dist: 4.84
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen left;
+        Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender
+        hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on
+        her hat brim, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars
+        between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+        dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       lily:
         to:
@@ -821,7 +782,7 @@ cuts:
     cam:
     - 48.3
     - 50.8
-    - 0.95
+    - 1.18
     lens: 46
     bearing: 236
     frame: 胸上
@@ -860,95 +821,41 @@ cuts:
     note: null
   A29-013:
     cam:
-    - 46.2
-    - 46.8
-    - 1.3
-    lens: 34
-    bearing: 182
+    - 47.0
+    - 51.07
+    - 1.18
+    lens: 36
+    bearing: 320
     frame: 膝上
     start:
       people:
-      - who: bisco
-        s: -0.64
-        dist: 10.49
-        side: 左
-        body: 正面
-      - who: hundred-knight
-        s: -0.63
-        dist: 13.47
-        side: 左
-        body: 正面
-      - who: berda
-        s: -0.21
-        dist: 5.13
-        side: 中央
-        body: 斜め前（画面左向き）
-      - who: teressa
-        s: -0.14
-        dist: 7.05
-        side: 中央
-        body: 斜め前（画面左向き）
       - who: rubens
         s: 0.0
-        dist: 3.2
+        dist: 1.4
         side: 中央
-        body: 横顔（画面左向き）
+        body: 斜め前（画面右向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
-      - 椅子（空き）
-      - 椅子（ベルダ）
       - 椅子（リューベンス）
-      - 椅子（空き。ヴァレンティーヌの席）
       - 倒れた椅子
-      - 傾いて残った椅子
-      - 床に落ちた天球儀の惑星（桃）
-      - 廊下の灯り
-      - 両開きの扉（開いている）
-      staging: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round
-        silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the
-        frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen left; Teressa,
-        the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame, in three-quarter view, turned toward screen
-        left, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark
-        green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, in profile, turned toward
-        screen left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of
-        a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - 床に落ちた天球儀の惑星（黄）
+      staging: 'In frame (exactly one person): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars,
+        a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, in three-quarter
+        view, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        curtains.'
     end:
       people:
-      - who: hundred-knight
-        s: -0.9
-        dist: 12.9
-        side: 左
-        body: 正面
-      - who: bisco
-        s: -0.89
-        dist: 10.04
-        side: 左
-        body: 正面
-      - who: berda
-        s: -0.32
-        dist: 4.99
-        side: 中央
-        body: 斜め前（画面左向き）
-      - who: teressa
-        s: -0.28
-        dist: 6.9
-        side: 中央
-        body: 斜め前（画面左向き）
       - who: rubens
-        s: -0.0
-        dist: 3.13
+        s: 0.0
+        dist: 1.31
         side: 中央
-        body: 横顔（画面左向き）
-      staging: 'In frame (exactly 5 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
-        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold
-        hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the
-        frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen left; Teressa,
-        the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the left of the frame, in three-quarter view, turned toward screen left,
-        small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green
-        puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, in profile, turned toward
-        screen left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of
-        a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars,
+        a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, in three-quarter
+        view, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        curtains.'
     move:
       rubens:
         to:
@@ -1359,32 +1266,26 @@ cuts:
         the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: teressa
-        s: -1.08
-        dist: 1.92
-        side: 左
-        body: 斜め前（画面右向き）
       - who: berda
         s: 0.0
-        dist: 3.15
+        dist: 1.89
         side: 中央
         body: 横顔（画面右向き）
       - who: rubens
-        s: 1.1
-        dist: 4.03
+        s: 0.89
+        dist: 4.21
         side: 右
         body: 横顔（画面右向き）
-      staging: 'In frame (exactly 3 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, in three-quarter view, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen
-        right; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress
-        with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far right of the frame, in profile, turned toward screen right. No
-        other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
-        tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 2 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen right; Rubens, the
+        pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing
+        and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far right of the frame, in profile, turned toward screen right. No other people. Behind:
+        dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+        from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       berda:
         to: &id006
-        - 45.89
-        - 52.38
+        - 47.09
+        - 52.81
         face: 20
         via:
         - *id006
@@ -1455,38 +1356,43 @@ cuts:
     - 49.4
     - 1.5
     lens: 30
-    bearing: 134
+    bearing: 128
     frame: 全身
     start:
       people:
+      - who: rubens
+        s: -0.89
+        dist: 2.96
+        side: 左
+        body: 斜め後ろ（画面左向き）
       - who: rabi
-        s: -0.98
-        dist: 9.39
+        s: -0.77
+        dist: 9.87
         side: 左
         body: 正面
       - who: usamaru
-        s: -0.69
-        dist: 10.28
+        s: -0.51
+        dist: 10.64
         side: 左
         body: 斜め後ろ（画面左向き）
       - who: berda
         s: 0.0
-        dist: 4.29
-        side: 中央
-        body: 斜め前（画面左向き）
-      - who: teressa
-        s: 0.18
-        dist: 5.77
+        dist: 5.48
         side: 中央
         body: 横顔（画面左向き）
+      - who: teressa
+        s: 0.34
+        dist: 5.69
+        side: 右
+        body: 横顔（画面左向き）
       - who: bisco
-        s: 0.19
-        dist: 10.3
-        side: 中央
+        s: 0.35
+        dist: 10.14
+        side: 右
         body: 正面
       - who: hundred-knight
-        s: 0.35
-        dist: 13.03
+        s: 0.52
+        dist: 12.72
         side: 右
         body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -1496,78 +1402,89 @@ cuts:
       - 椅子（空き。扉の側）
       - 椅子（空き）
       - 椅子（ベルダ）
+      - 椅子（リューベンス）
       - 倒れた椅子
       - 倒れた椅子
       - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（桃）
       - 廊下の灯り
       - 両開きの扉（開いている）
-      staging: 'In frame (exactly 6 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the
-        background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, seen from behind at an angle, turned toward screen left, small in the background;
-        Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left; Teressa, the apprentice witch, as in her reference sheet
-        (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame, in profile, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments,
-        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the
-        camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized
-        blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall
-        arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery
-        hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 7 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
+        seen from behind at an angle, turned toward screen left; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the
+        background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen left, small in the background;
+        Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen left; Teressa, the apprentice witch, as in her reference sheet (after A30-005:
+        teressa-swamp_sheet_01, drenched in the swamp), standing, on the right of the frame, in profile, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver
+        shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, facing the camera, small in the
+        background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets,
+        holding its sword), standing, on the right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars
+        between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+        dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
+      - who: purple-peel
+        s: -1.06
+        dist: 9.67
+        side: 左
+        body: 正面
       - who: rabi
-        s: -0.86
-        dist: 10.66
+        s: -0.7
+        dist: 11.06
         side: 左
         body: 正面
       - who: usamaru
-        s: -0.64
-        dist: 11.92
+        s: -0.5
+        dist: 12.24
         side: 左
         body: 横顔（画面左向き）
       - who: berda
         s: 0.0
-        dist: 3.7
+        dist: 4.63
         side: 中央
         body: 斜め後ろ（画面左向き）
       - who: rubens
-        s: 0.02
-        dist: 5.59
+        s: 0.15
+        dist: 5.57
         side: 中央
         body: 横顔（画面左向き）
       - who: bisco
-        s: 0.07
-        dist: 13.68
+        s: 0.2
+        dist: 13.6
         side: 中央
         body: 正面
       - who: hundred-knight
-        s: 0.11
-        dist: 16.76
+        s: 0.24
+        dist: 16.62
         side: 中央
         body: 正面
       - who: teressa
-        s: 0.27
-        dist: 9.21
-        side: 中央
+        s: 0.4
+        dist: 9.07
+        side: 右
         body: 斜め前（画面左向き）
-      staging: 'In frame (exactly 7 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the
-        background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, in profile, turned toward screen left, small in the background; Berda, the lye
-        witch, as in her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned toward screen left; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
-        long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
-        her back, holding a big green book, standing, in the center of the frame, in profile, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder
-        and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background;
-        the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
-        its sword), standing, in the center of the frame, facing the camera, small in the background; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched
-        in the swamp), standing, on the right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched
-        windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
-        over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 8 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background;
+        Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in
+        its reference sheet, standing, on the left of the frame, in profile, turned toward screen left, small in the background; Berda, the lye witch, as in her reference sheet, standing, in the center
+        of the frame, seen from behind at an angle, turned toward screen left; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange
+        frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center
+        of the frame, in profile, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+        belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, facing the
+        camera, small in the background; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the right of the frame, in
+        three-quarter view, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
+        Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall
+        windows full of stars between purple-red curtains.'
     move:
       berda:
         to: &id007
-        - 45.3
-        - 48.29
+        - 46.04
+        - 48.94
         face: 90
         via:
         - - 45.08
           - 50.87
+        - - 45.17
+          - 48.71
         - *id007
         t:
         - 0.0
@@ -1579,37 +1496,53 @@ cuts:
     - 49.0
     - 1.5
     lens: 36
-    bearing: 281
+    bearing: 271
     frame: 胸上
     start:
       people:
+      - who: rubens
+        s: -0.74
+        dist: 2.88
+        side: 左
+        body: 正面
       - who: berda
-        s: 0.0
-        dist: 3.77
+        s: -0.0
+        dist: 2.96
         side: 中央
         body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
+      - 椅子（リューベンス）
       - 椅子（空き。ヴァレンティーヌの席）
       - 床に落ちた天球儀の惑星（黄）
-      staging: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
-        walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
-        of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - 床に落ちた天球儀の惑星（桃）
+      staging: 'In frame (exactly 2 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
+        facing the camera; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched
+        windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
+        over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
+      - who: rubens
+        s: -1.02
+        dist: 2.66
+        side: 左
+        body: 正面
       - who: berda
-        s: 0.0
-        dist: 3.31
+        s: -0.0
+        dist: 2.58
         side: 中央
         body: 正面
-      staging: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
-        walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
-        of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 2 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
+        facing the camera; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched
+        windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
+        over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       berda:
         to:
-        - 45.3
-        - 48.29
+        - 46.04
+        - 48.94
         face: 110
         t:
         - 0.0
@@ -1617,62 +1550,42 @@ cuts:
     note: null
   A29-023:
     cam:
-    - 52.73
-    - 47.39
-    - 0.4
-    lens: 22
-    bearing: 135
+    - 51.54
+    - 48.51
+    - 0.95
+    lens: 24
+    bearing: 76
     frame: 膝上
     start:
       people:
       - who: lily
         s: 0.0
-        dist: 0.93
+        dist: 1.9
         side: 中央
-        body: 正面
-      - who: purple-peel
-        s: 0.45
-        dist: 2.68
-        side: 右
-        body: 正面
-      - who: rabi
-        s: 0.9
-        dist: 3.71
-        side: 右
-        body: 斜め前（画面右向き）
-      - who: usamaru
-        s: 1.05
-        dist: 4.63
-        side: 右
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 椅子（リリー）
-      - 椅子（パープルピール）
-      - 椅子（ラビィ）
-      - 倒れた椅子
-      staging: 'In frame (exactly 4 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera; Purple Peel, the
-        dust witch, as in her reference sheet, standing, on the right of the frame, facing the camera; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the
-        frame, in three-quarter view, turned toward screen right; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, in three-quarter view, turned
-        toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
-        purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
-        panelled walls, tall windows full of stars between purple-red curtains.'
+      - 破れた壁の瓦礫（北東）
+      - 傾いて残った椅子
+      staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other
+        people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
+        warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: lily
         s: 0.0
-        dist: 1.47
+        dist: 1.82
         side: 中央
         body: 正面
-      staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Low angle looking
-        up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber
-        at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
-        curtains.'
+      staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood
+        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
+        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       lily:
         to: &id008
-        - 54.11
-        - 47.62
+        - 52.91
+        - 47.19
         face: '@berda'
         via:
         - *id008
@@ -1696,8 +1609,8 @@ cuts:
         side: 左
         body: 横顔（画面右向き）
       - who: lily
-        s: -0.57
-        dist: 11.52
+        s: -0.59
+        dist: 10.3
         side: 左
         body: 正面
       - who: purple-peel
@@ -1716,8 +1629,8 @@ cuts:
         side: 中央
         body: 横顔（画面左向き）
       - who: berda
-        s: 0.39
-        dist: 4.95
+        s: 0.34
+        dist: 5.94
         side: 右
         body: 斜め後ろ（画面左向き）
       - who: rubens
@@ -1793,8 +1706,8 @@ cuts:
         side: 左
         body: 横顔（画面右向き）
       - who: lily
-        s: -0.65
-        dist: 10.99
+        s: -0.67
+        dist: 9.77
         side: 左
         body: 正面
       - who: purple-peel
@@ -1813,8 +1726,8 @@ cuts:
         side: 中央
         body: 横顔（画面左向き）
       - who: berda
-        s: 0.46
-        dist: 4.38
+        s: 0.4
+        dist: 5.37
         side: 右
         body: 背中
       - who: rubens
@@ -1855,8 +1768,8 @@ cuts:
     move:
       berda:
         to:
-        - 45.3
-        - 48.29
+        - 46.04
+        - 48.94
         face: 120
         t:
         - 0.0
@@ -1868,33 +1781,33 @@ cuts:
     - 58.8
     - 1.35
     lens: 30
-    bearing: 340
+    bearing: 335
     frame: 肩なめ
     start:
       people:
       - who: bisco
-        s: -0.61
-        dist: 1.73
+        s: -0.47
+        dist: 1.77
         side: 左
         body: 背中
       - who: teressa
-        s: -0.58
-        dist: 6.05
+        s: -0.44
+        dist: 6.2
         side: 左
         body: 横顔（画面右向き）
       - who: rubens
-        s: -0.19
-        dist: 9.82
+        s: -0.07
+        dist: 9.88
         side: 中央
         body: 横顔（画面右向き）
       - who: berda
-        s: -0.18
-        dist: 11.7
+        s: 0.0
+        dist: 10.86
         side: 中央
         body: 斜め前（画面右向き）
       - who: nezaria
-        s: 0.53
-        dist: 12.11
+        s: 0.68
+        dist: 11.78
         side: 右
         body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -1904,7 +1817,6 @@ cuts:
       - 円卓（赤い布に金色の魔法陣）
       - 天球儀（透けた大きな球、金の輪、光る惑星）
       - 議長の椅子（北）
-      - 椅子（空き。マーリカの席）
       - 椅子（空き。扉の側）
       - 椅子（空き）
       - 椅子（ベルダ）
@@ -1915,57 +1827,56 @@ cuts:
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 破れた壁の瓦礫（北）
-      - 床の瓦礫
       - 倒れた椅子
       - 倒れた椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
       staging: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; Teressa, the apprentice witch, as in her reference sheet (after
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; Teressa, the apprentice witch, as in her reference sheet (after
         A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the left of the frame, in profile, turned toward screen right, small in the background; Rubens, the pumpkin witch, as in her
         reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged
         arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, in profile, turned toward screen right, small in the background; Berda, the lye witch,
         as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference
         sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills
-        and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame, facing the camera,
-        small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber
-        at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far right of the frame, facing the
+        camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
         curtains.'
     end:
       people:
       - who: teressa
-        s: -0.7
-        dist: 5.67
+        s: -0.52
+        dist: 5.83
         side: 左
         body: 横顔（画面右向き）
       - who: bisco
-        s: -0.69
-        dist: 2.07
+        s: -0.5
+        dist: 2.13
         side: 左
         body: 背中
       - who: rubens
-        s: -0.24
-        dist: 9.45
+        s: -0.08
+        dist: 9.52
         side: 中央
         body: 横顔（画面右向き）
       - who: berda
-        s: -0.23
-        dist: 11.33
+        s: 0.0
+        dist: 10.51
         side: 中央
         body: 斜め前（画面右向き）
       - who: nezaria
-        s: 0.6
-        dist: 11.82
+        s: 0.79
+        dist: 11.45
         side: 右
         body: 正面
-      staging: 'In frame (exactly 5 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold
-        trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; Rubens, the pumpkin witch, as in her reference sheet
-        (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs,
-        a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile, turned toward screen right, small in the background; Berda, the lye witch, as in her reference
-        sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01):
-        a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion,
-        holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame, facing the camera, small in the background.
+      staging: 'In frame (exactly 5 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the
+        left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
+        long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
+        her back, holding a big green book, standing, in the center of the frame, in profile, turned toward screen right, small in the background; Berda, the lye witch, as in her reference sheet, standing,
+        in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very
+        large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding
+        a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far right of the frame, facing the camera, small in the background.
         No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
         tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
@@ -1980,46 +1891,32 @@ cuts:
     note: null
   A29-026:
     cam:
-    - 46.0
-    - 47.0
+    - 47.6
+    - 49.84
     - 1.3
     lens: 28
-    bearing: 208
+    bearing: 300
     frame: 膝上
     start:
       people:
-      - who: teressa
-        s: -1.0
-        dist: 5.78
-        side: 左
-        body: 斜め前（画面左向き）
-      - who: rubens
-        s: -0.91
-        dist: 2.59
-        side: 左
-        body: 斜め前（画面左向き）
       - who: berda
         s: 0.0
-        dist: 1.47
+        dist: 1.8
         side: 中央
-        body: 横顔（画面左向き）
+        body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
-      - 椅子（リューベンス）
+      - 椅子（空き。ヴァレンティーヌの席）
       - 倒れた椅子
       - 床に落ちた天球儀の惑星（黄）
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 3 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, in three-quarter view, turned toward screen left; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange
-        frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far
-        left of the frame, in three-quarter view, turned toward screen left; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen left.
-        No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
-        tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+        walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+        of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: lily
-        s: -0.96
-        dist: 6.1
+        s: -1.09
+        dist: 4.88
         side: 左
         body: 正面
       - who: purple-peel
@@ -2047,115 +1944,55 @@ cuts:
         dist: 7.62
         side: 右
         body: 正面
-      staging: 'In frame (exactly 6 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background;
-        Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference
-        sheet, standing, in the center of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, in the center of the frame, in
-        profile, turned toward screen left, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
-        with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far right of the frame, facing the camera, small in the background; Bisco (short black bob hair with two
-        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of
-        the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
-        the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
-        of stars between purple-red curtains.'
+      staging: 'In frame (exactly 6 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, facing the camera; Purple Peel, the
+        dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing,
+        in the center of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, in the center of the frame, in profile, turned
+        toward screen left, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes,
+        oversized blue-and-silver gauntlets, holding its sword), standing, at the far right of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, facing the
+        camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        curtains.'
     move:
       berda:
         to:
-        - 45.3
-        - 48.29
+        - 46.04
+        - 48.94
         t:
         - 0.0
         - 2.4
     note: null
   A29-027:
     cam:
-    - 56.2
-    - 48.0
-    - 1.3
-    lens: 36
-    bearing: 269
-    frame: 肩なめ
+    - 52.1
+    - 50.0
+    - 1.18
+    lens: 38
+    bearing: 90
+    frame: 胸上
     start:
       people:
-      - who: rubens
-        s: -0.35
-        dist: 10.14
-        side: 左
-        body: 斜め前（画面右向き）
-      - who: berda
-        s: -0.01
-        dist: 10.9
+      - who: purple-peel
+        s: 0.0
+        dist: 1.8
         side: 中央
         body: 斜め前（画面左向き）
-      - who: lily
-        s: 0.41
-        dist: 2.08
-        side: 右
-        body: 背中
-      - who: nezaria
-        s: 0.66
-        dist: 6.16
-        side: 右
-        body: 横顔（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
-      - 円い壁（羽目板・柱・縦長の窓とカーテン）
-      - 円すいの天井（放射状の梁）
-      - 円卓（赤い布に金色の魔法陣）
-      - 天球儀（透けた大きな球、金の輪、光る惑星）
-      - 議長の椅子（北）
-      - 椅子（空き。マーリカの席）
-      - 椅子（リリー）
-      - 椅子（ベルダ）
-      - 椅子（リューベンス）
-      - 椅子（空き。ヴァレンティーヌの席）
-      - 椅子（空き）
-      - 円い壁（北〜北東が破れている）
-      - 天井（真ん中と北側が抜けて空が見える）
-      - 床を覆う毒沼（碧。D-063）
-      - 床の瓦礫
-      - 倒れた椅子
-      - 倒れた椅子
-      - 床に落ちた天球儀の惑星（黄）
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 4 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
-        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in
-        three-quarter view, turned toward screen right, small in the background; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward
-        screen left, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, with the back to the camera; Nezaria, the fog witch and
-        chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes,
-        a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the
-        far right of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
-        purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
-        panelled walls, tall windows full of stars between purple-red curtains.'
+      - 椅子（パープルピール）
+      staging: 'In frame (exactly one person): Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people.
+        Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+        light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: rubens
-        s: -0.36
-        dist: 9.9
-        side: 左
-        body: 斜め前（画面右向き）
-      - who: berda
-        s: 0.02
-        dist: 10.7
+      - who: purple-peel
+        s: 0.0
+        dist: 1.7
         side: 中央
         body: 正面
-      - who: nezaria
-        s: 0.85
-        dist: 6.0
-        side: 右
-        body: 斜め前（画面左向き）
-      - who: lily
-        s: 0.92
-        dist: 1.89
-        side: 右
-        body: 背中
-      staging: 'In frame (exactly 4 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
-        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in
-        three-quarter view, turned toward screen right, small in the background; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background;
-        Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender
-        hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on
-        her hat brim, standing, at the far right of the frame, in three-quarter view, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right
-        of the frame, with the back to the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round
-        council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between
-        purple-red curtains.'
+      staging: 'In frame (exactly one person): Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled
+        round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+        planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       purple-peel:
         to:
@@ -2197,18 +2034,24 @@ cuts:
     end:
       people:
       - who: rabi
-        s: -0.0
-        dist: 3.32
+        s: 0.0
+        dist: 2.92
         side: 中央
-        body: 正面
-      staging: 'In frame (exactly one person): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood
-        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
-        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 斜め前（画面右向き）
+      - who: usamaru
+        s: 0.26
+        dist: 4.44
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward
+        screen right; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: dark wood panelled
+        round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+        planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       rabi:
         to: &id009
-        - 54.11
-        - 52.38
+        - 52.91
+        - 52.81
         via:
         - *id009
         t:
@@ -2226,22 +2069,24 @@ cuts:
     cam:
     - 52.4
     - 49.4
-    - 1.45
+    - 1.2
     lens: 40
-    bearing: 44
+    bearing: 13
     frame: 胸上
     start:
       people:
       - who: lily
         s: 0.0
-        dist: 2.47
+        dist: 2.27
         side: 中央
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
+      - 椅子（空き。マーリカの席）
       - 椅子（リリー）
+      - 破れた壁の瓦礫（北）
       - 破れた壁の瓦礫（北東）
-      - 傾いて残った椅子
+      - 床の瓦礫
       - 月（北東の空。破れた壁から見える）
       staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other
         people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
@@ -2250,17 +2095,17 @@ cuts:
       people:
       - who: lily
         s: 0.0
-        dist: 1.63
+        dist: 1.66
         side: 中央
-        body: 正面
-      staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood
-        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
-        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other
+        people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
+        warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       lily:
         to:
-        - 54.11
-        - 47.62
+        - 52.91
+        - 47.19
         face: 220
         t:
         - 0.0
@@ -2276,14 +2121,19 @@ cuts:
     frame: 肩なめ
     start:
       people:
+      - who: lily
+        s: -1.04
+        dist: 5.47
+        side: 左
+        body: 横顔（画面右向き）
       - who: purple-peel
         s: -0.77
         dist: 8.4
         side: 左
         body: 斜め前（画面右向き）
       - who: rabi
-        s: -0.58
-        dist: 10.78
+        s: -0.39
+        dist: 11.01
         side: 左
         body: 斜め前（画面右向き）
       - who: nezaria
@@ -2316,6 +2166,11 @@ cuts:
         dist: 7.12
         side: 右
         body: 正面
+      - who: berda
+        s: 0.87
+        dist: 6.06
+        side: 右
+        body: 横顔（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
@@ -2343,20 +2198,21 @@ cuts:
       - 傾いて残った椅子
       - 廊下の灯り
       - 両開きの扉（開いている）
-      staging: 'In frame (exactly 8 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen
-        right, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in
-        the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight
-        lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting
-        on her hat brim, standing, on the left of the frame, with the back to the camera; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile,
-        turned toward screen left, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange
-        eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments,
-        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter
-        view, turned toward screen right, small in the background; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the
-        right of the frame, in three-quarter view, turned toward screen left, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering
-        one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book,
-        standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
-        purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
-        panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 10 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned toward screen
+        right; Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen right, small in the background; Rabi (Rabil Lalla
+        La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman,
+        as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white
+        dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the left of
+        the frame, with the back to the camera; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left, small in the
+        background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets,
+        holding its sword), standing, in the center of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest
+        armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right,
+        small in the background; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the right of the frame, in three-quarter
+        view, turned toward screen left, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far right of the frame,
+        facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background.
+        No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
+        tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: lily
@@ -2394,14 +2250,14 @@ cuts:
         dist: 14.11
         side: 中央
         body: 斜め前（画面右向き）
+      - who: berda
+        s: 0.5
+        dist: 9.91
+        side: 右
+        body: 正面
       - who: teressa
         s: 0.56
         dist: 10.88
-        side: 右
-        body: 正面
-      - who: berda
-        s: 0.74
-        dist: 9.33
         side: 右
         body: 正面
       - who: rubens
@@ -2418,8 +2274,8 @@ cuts:
         Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword),
         standing, in the center of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy
         uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background;
-        Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the right of the frame, facing the camera, small in the background;
-        Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
+        Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, facing the camera, small in the background; Teressa, the apprentice witch, as in her reference sheet (after
+        A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the right of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
         long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
         her back, holding a big green book, standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched
         windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
@@ -2449,8 +2305,8 @@ cuts:
         - 0.8
       berda:
         to: &id010
-        - 45.89
-        - 52.38
+        - 47.09
+        - 52.81
         face: 20
         via:
         - *id010
@@ -2460,169 +2316,97 @@ cuts:
     note: null
   A29-031:
     cam:
-    - 46.6
-    - 54.4
+    - 48.0
+    - 54.12
     - 1.3
     lens: 50
-    bearing: 352
+    bearing: 280
     frame: 寄り
     start:
       people:
-      - who: berda
-        s: -0.54
-        dist: 2.1
-        side: 左
-        body: 斜め後ろ（画面右向き）
       - who: teressa
-        s: -0.0
-        dist: 0.55
+        s: 0.0
+        dist: 1.5
         side: 中央
-        body: 斜め後ろ（画面右向き）
-      - who: rubens
-        s: 0.09
-        dist: 4.43
-        side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 斜め前（画面右向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
-      - 椅子（ベルダ）
-      - 椅子（リューベンス）
-      - 椅子（空き。ヴァレンティーヌの席）
-      - 椅子（空き）
       - 倒れた椅子
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 3 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen right;
-        Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame, seen from behind at an angle, turned
-        toward screen right; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve
-        dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, seen from behind at an angle, turned toward
-        screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top
-        of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly one person): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame,
+        in three-quarter view, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
+        the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+        of stars between purple-red curtains.'
     end:
       people:
       - who: teressa
         s: 0.0
-        dist: 0.44
+        dist: 1.35
         side: 中央
-        body: 横顔（画面右向き）
-      - who: berda
-        s: 0.71
-        dist: 1.98
-        side: 右
-        body: 斜め後ろ（画面右向き）
-      staging: 'In frame (exactly 2 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the
-        center of the frame, in profile, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward
-        screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top
-        of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 正面
+      staging: 'In frame (exactly one person): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame,
+        facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
+        top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       teressa:
         to:
         - 46.52
         - 53.86
-        face: 60
+        face: 120
         t:
         - 0.0
         - 0.3
     note: null
   A29-032:
     cam:
-    - 52.6
-    - 45.4
+    - 48.93
+    - 50.19
     - 2.6
     lens: 30
-    bearing: 224
+    bearing: 215
     frame: 膝上
     start:
       people:
-      - who: bisco
-        s: -0.83
-        dist: 10.71
-        side: 左
-        body: 斜め前（画面右向き）
       - who: teressa
-        s: -0.24
-        dist: 10.31
+        s: -0.05
+        dist: 4.39
         side: 中央
-        body: 正面
-      - who: berda
-        s: 0.0
-        dist: 9.68
-        side: 中央
-        body: 正面
-      - who: rubens
-        s: 0.32
-        dist: 7.82
-        side: 中央
-        body: 正面
-      - who: nezaria
-        s: 1.0
-        dist: 2.31
-        side: 右
         body: 横顔（画面左向き）
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 円い壁（羽目板・柱・縦長の窓とカーテン）
-      - 円すいの天井（放射状の梁）
-      - 円卓（赤い布に金色の魔法陣）
-      - 天球儀（透けた大きな球、金の輪、光る惑星）
-      - 椅子（空き。マーリカの席）
-      - 椅子（空き。扉の側）
-      - 椅子（空き）
-      - 椅子（ベルダ）
-      - 椅子（リューベンス）
-      - 椅子（空き。ヴァレンティーヌの席）
-      - 円い壁（北〜北東が破れている）
-      - 天井（真ん中と北側が抜けて空が見える）
-      - 床を覆う毒沼（碧。D-063）
-      - 床の瓦礫
-      - 倒れた椅子
-      - 傾いて残った椅子
-      - 床に落ちた天球儀の惑星（黄）
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right, small in the background; Teressa, the
-        apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the left of the frame, facing the camera, small in the background; Berda,
-        the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
-        long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
-        her back, holding a big green book, standing, on the right of the frame, facing the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01):
-        a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion,
-        holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far right of the frame, in profile, turned toward screen
-        left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic
-        witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
-    end:
-      people:
-      - who: bisco
-        s: -0.96
-        dist: 10.43
-        side: 左
-        body: 斜め前（画面右向き）
-      - who: teressa
-        s: -0.28
-        dist: 10.03
-        side: 中央
-        body: 正面
       - who: berda
         s: -0.0
-        dist: 9.4
+        dist: 3.2
         side: 中央
         body: 正面
-      - who: rubens
-        s: 0.38
-        dist: 7.54
-        side: 右
+      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+      props:
+      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 倒れた椅子
+      - 傾いて残った椅子
+      staging: 'In frame (exactly 2 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the
+        center of the frame, in profile, turned toward screen left; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark
+        wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+        the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: teressa
+        s: -0.06
+        dist: 4.25
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: berda
+        s: 0.0
+        dist: 3.07
+        side: 中央
         body: 正面
-      staging: 'In frame (exactly 4 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right, small in the background; Teressa, the
-        apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the left of the frame, facing the camera, small in the background; Berda,
-        the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
-        long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
-        her back, holding a big green book, standing, on the right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows
-        full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over
-        a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 2 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the
+        center of the frame, in profile, turned toward screen left; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark
+        wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+        the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       berda:
         to:
-        - 45.89
-        - 52.38
+        - 47.09
+        - 52.81
         face: '@nezaria'
         t:
         - 0.0
@@ -2663,26 +2447,26 @@ cuts:
         tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: hundred-knight
-        s: -0.6
-        dist: 8.5
-        side: 左
-        body: 正面
       - who: bisco
         s: 0.0
-        dist: 2.05
+        dist: 2.07
         side: 中央
-        body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
-        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair
-        ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
-        facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
-        top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 斜め前（画面右向き）
+      - who: teressa
+        s: 1.02
+        dist: 3.92
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right; Teressa, the apprentice witch, as in her
+        reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind:
+        dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+        from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       bisco:
         to: &id011
-        - 49.69
-        - 53.59
+        - 49.05
+        - 53.32
         face: 355
         via:
         - *id011
@@ -2692,24 +2476,29 @@ cuts:
     note: null
   A29-034:
     cam:
-    - 49.6
-    - 54.6
+    - 49.2
+    - 55.0
     - 1.5
     lens: 40
-    bearing: 3
+    bearing: 5
     frame: 肩なめ
     start:
       people:
+      - who: bisco
+        s: -0.4
+        dist: 1.66
+        side: 左
+        body: 背中
       - who: nezaria
-        s: -0.0
-        dist: 8.51
+        s: 0.0
+        dist: 8.94
         side: 中央
         body: 正面
-      - who: bisco
-        s: 0.09
-        dist: 1.01
-        side: 中央
-        body: 背中
+      - who: lily
+        s: 1.08
+        dist: 7.3
+        side: 右
+        body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
@@ -2724,31 +2513,31 @@ cuts:
       - 床を覆う毒沼（碧。D-063）
       - 破れた壁の瓦礫（北）
       - 床の瓦礫
-      staging: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-        (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair
-        ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
-        with the back to the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber
-        at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
-        curtains.'
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her reference sheet
+        (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and
+        a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera,
+        small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind:
+        dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+        from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: bisco
-        s: -0.13
-        dist: 0.81
-        side: 中央
+        s: -0.7
+        dist: 1.46
+        side: 左
         body: 背中
       - who: nezaria
         s: 0.0
-        dist: 8.31
+        dist: 8.73
         side: 中央
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her reference sheet
-        (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and
-        a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera,
-        small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber
-        at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her reference
+        sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills
+        and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the
+        camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
         curtains.'
     move: {}
     note: null
@@ -2758,53 +2547,53 @@ cuts:
     - 60.8
     - 0.35
     lens: 28
-    bearing: 348
+    bearing: 344
     frame: 全身
     start:
       people:
       - who: teressa
-        s: -0.63
-        dist: 7.75
+        s: -0.5
+        dist: 7.96
         side: 左
-        body: 横顔（画面右向き）
+        body: 正面
       - who: berda
-        s: -0.58
-        dist: 9.33
-        side: 左
-        body: 横顔（画面右向き）
+        s: -0.31
+        dist: 8.81
+        side: 中央
+        body: 斜め後ろ（画面右向き）
       - who: rubens
-        s: -0.37
-        dist: 11.62
-        side: 左
+        s: -0.25
+        dist: 11.79
+        side: 中央
         body: 横顔（画面右向き）
       - who: bisco
-        s: -0.0
-        dist: 7.37
+        s: 0.0
+        dist: 7.78
         side: 中央
         body: 背中
       - who: nezaria
-        s: 0.2
-        dist: 14.63
+        s: 0.31
+        dist: 14.46
         side: 中央
         body: 正面
       - who: lily
-        s: 0.61
-        dist: 12.03
-        side: 右
-        body: 斜め前（画面左向き）
-      - who: purple-peel
         s: 0.75
-        dist: 10.02
+        dist: 11.65
         side: 右
         body: 斜め前（画面左向き）
       - who: rabi
-        s: 0.75
-        dist: 8.22
+        s: 0.89
+        dist: 7.9
         side: 右
         body: 横顔（画面左向き）
+      - who: purple-peel
+        s: 0.9
+        dist: 9.63
+        side: 右
+        body: 斜め前（画面左向き）
       - who: usamaru
-        s: 0.78
-        dist: 6.76
+        s: 0.93
+        dist: 6.49
         side: 右
         body: 斜め後ろ（画面右向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -2829,94 +2618,92 @@ cuts:
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 破れた壁の瓦礫（北）
-      - 破れた壁の瓦礫（北東）
       - 床の瓦礫
       - 倒れた椅子
       - 倒れた椅子
       - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 9 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, in profile, turned toward screen right, small in the background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, in profile, turned toward
-        screen right, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars,
-        a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile, turned
-        toward screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt,
-        a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her
-        reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with
-        black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame,
-        facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left,
-        small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background;
-        Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Usamaru, Rabi''s floating
-        rabbit doll, as in its reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Low angle looking
-        up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber
-        at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
-        curtains.'
-    end:
-      people:
-      - who: teressa
-        s: -0.76
-        dist: 7.45
-        side: 左
-        body: 横顔（画面右向き）
-      - who: berda
-        s: -0.69
-        dist: 9.02
-        side: 左
-        body: 横顔（画面右向き）
-      - who: rubens
-        s: -0.45
-        dist: 11.32
-        side: 左
-        body: 横顔（画面右向き）
-      - who: bisco
-        s: 0.0
-        dist: 7.13
-        side: 中央
-        body: 正面
-      - who: nezaria
-        s: 0.21
-        dist: 14.44
-        side: 中央
-        body: 正面
-      - who: lily
-        s: 0.69
-        dist: 11.9
-        side: 右
-        body: 斜め前（画面左向き）
-      - who: purple-peel
-        s: 0.86
-        dist: 9.89
-        side: 右
-        body: 斜め前（画面左向き）
-      - who: rabi
-        s: 0.87
-        dist: 8.07
-        side: 右
-        body: 横顔（画面左向き）
-      - who: usamaru
-        s: 0.92
-        dist: 6.6
-        side: 右
-        body: 斜め後ろ（画面右向き）
-      staging: 'In frame (exactly 9 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
-        far left of the frame, in profile, turned toward screen right, small in the background; Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned
-        toward screen right, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch
-        scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile,
-        turned toward screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
-        belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference
+      staging: 'In frame (exactly 9 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the
+        left of the frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen
+        right, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark
+        green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile, turned toward
+        screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference
         sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills
         and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame, facing the camera,
         small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background;
-        Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La),
-        the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Usamaru, Rabi''s floating rabbit doll, as in
+        Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Purple Peel, the dust
+        witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background; Usamaru, Rabi''s floating rabbit doll, as in
         its reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills
         the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of
         a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: teressa
+        s: -0.6
+        dist: 7.67
+        side: 左
+        body: 正面
+      - who: berda
+        s: -0.37
+        dist: 8.54
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: rubens
+        s: -0.31
+        dist: 11.51
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: -0.0
+        dist: 7.54
+        side: 中央
+        body: 正面
+      - who: nezaria
+        s: 0.35
+        dist: 14.26
+        side: 右
+        body: 正面
+      - who: lily
+        s: 0.86
+        dist: 11.51
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: purple-peel
+        s: 1.04
+        dist: 9.49
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: rabi
+        s: 1.04
+        dist: 7.74
+        side: 右
+        body: 横顔（画面左向き）
+      - who: usamaru
+        s: 1.1
+        dist: 6.31
+        side: 右
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly 9 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the
+        left of the frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen
+        right, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark
+        green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile, turned toward
+        screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01):
+        a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion,
+        holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame, facing the camera, small in the background;
+        Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background; Purple Peel, the
+        dust witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch,
+        as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet,
+        standing, at the far right of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part of
+        the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
+        warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       bisco:
         to:
-        - 49.69
-        - 53.59
+        - 49.05
+        - 53.32
         face: '@hundred-knight'
         t:
         - 0.0
@@ -2924,77 +2711,58 @@ cuts:
     note: null
   A29-036:
     cam:
-    - 48.4
-    - 54.8
+    - 48.6
+    - 51.9
     - 1.4
     lens: 45
-    bearing: 47
+    bearing: 162
     frame: 寄り
     start:
       people:
-      - who: lily
-        s: -0.46
-        dist: 8.25
-        side: 左
-        body: 正面
       - who: bisco
         s: -0.0
-        dist: 1.77
-        side: 中央
-        body: 斜め前（画面右向き）
-      - who: purple-peel
-        s: 0.09
-        dist: 7.3
-        side: 中央
-        body: 正面
-      - who: rabi
-        s: 0.59
-        dist: 5.58
-        side: 右
-        body: 斜め前（画面左向き）
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 椅子（リリー）
-      - 椅子（パープルピール）
-      - 椅子（ラビィ）
-      - 椅子（空き）
-      - 椅子（空き。扉の側）
-      - 破れた壁の瓦礫（北東）
-      - 傾いて残った椅子
-      - 月（北東の空。破れた壁から見える）
-      staging: 'In frame (exactly 4 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
-        Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored
-        boots), standing, in the center of the frame, in three-quarter view, turned toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing
-        the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen left. No
-        other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
-        tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
-    end:
-      people:
-      - who: lily
-        s: -0.02
-        dist: 8.6
-        side: 中央
-        body: 正面
-      - who: bisco
-        s: -0.0
-        dist: 1.94
+        dist: 1.49
         side: 中央
         body: 背中
-      - who: purple-peel
-        s: 0.65
-        dist: 7.28
+      - who: hundred-knight
+        s: 0.27
+        dist: 8.62
+        side: 中央
+        body: 正面
+      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+      props:
+      - 椅子（空き。扉の側）
+      - 廊下の灯り
+      - 両開きの扉（開いている）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, with the back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, facing the
+        camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        curtains.'
+    end:
+      people:
+      - who: bisco
+        s: 0.0
+        dist: 1.28
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: hundred-knight
+        s: 0.39
+        dist: 8.4
         side: 右
         body: 正面
-      staging: 'In frame (exactly 3 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background;
-        Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored
-        boots), standing, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, facing the camera, small
-        in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
-        top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, waist-high: big
+        round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of
+        the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
+        the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+        of stars between purple-red curtains.'
     move:
       bisco:
         to:
-        - 49.69
-        - 53.59
+        - 49.05
+        - 53.32
         face: 20
         t:
         - 0.0

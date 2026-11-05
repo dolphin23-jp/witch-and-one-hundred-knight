@@ -505,13 +505,13 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [55.0, 47.6, 3.4]
+      cam: [45.79, 52.05, 3.0]
       look: lily
       look_h: 0.8
       lens: 32
       frame: 膝上
     - t: 5.0
-      cam: [55.2, 47.8, 3.2]
+      cam: [45.9, 52.2, 2.9]
       look: lily
       look_h: 0.8
       lens: 36
@@ -1383,16 +1383,16 @@ cuts:
         at: [48.09, 46.29]
     cam_keys:
     - t: 0.0
-      cam: [52.6, 47.8, 1.5]
+      cam: [52.4, 46.6, 1.5]
       look: bisco
       look_h: 1.3
-      lens: 32
+      lens: 48
       frame: 膝上
     - t: 10.7
-      cam: [52.2, 47.6, 1.5]
+      cam: [52.2, 46.5, 1.5]
       look: bisco
       look_h: 1.3
-      lens: 36
+      lens: 54
     act: {start: ビスコが魔女たちに向き直る, do: （「そ、それは……。たしかにメタリカはヒドイことをした」）きっと顔を上げる（「しかし、あなた方もメタリカにヒドイことをしたじゃないか」）, end: 魔女たちを見回すビスコ}
     camera: 魔女たちの側（東）から、ビスコを正面に
     kind: M
@@ -1724,8 +1724,8 @@ cuts:
         at: [50.0, 48.6]
         face: 250
         pose: stand
-      - {t: 0.3, pose: stand, face: 240}
-      - {t: 2.0, face: 200, pose: cross}
+      - {t: 0.3, pose: stand, face: 290}
+      - {t: 2.0, face: 220, pose: cross}
       scarecocco:
       - t: 0.0
         at: [48.69, 47.51]
@@ -1734,13 +1734,13 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [47.0, 42.8, 11.8]
+      cam: [43.8, 48.6, 11.8]
       look: metallica-giant
       look_h: 11.9
       lens: 40
       frame: 寄り
     - t: 6.8
-      cam: [47.2, 43.2, 11.8]
+      cam: [44.2, 48.6, 11.8]
       look: metallica-giant
       look_h: 11.9
       lens: 46
@@ -1809,7 +1809,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -1819,18 +1819,18 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [45.6, 48.6, 1.2]
+      cam: [49.61, 45.91, 1.2]
       look: bisco
       look_h: 1.2
       lens: 34
       frame: 膝上
     - t: 5.9
-      cam: [45.8, 48.4, 1.2]
+      cam: [49.5, 46.05, 1.2]
       look: bisco
       look_h: 1.25
       lens: 38
     act: {start: ビスコがため息, do: （「ああもう！いいからもう少しおとなしくしててくれ！」）, end: 頭を抱えるビスコ}
-    camera: ビスコの横（西）から
+    camera: ビスコの斜め前（北東）から
     kind: M
   A32-021:
     frame: 胸上
@@ -1893,7 +1893,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -1979,7 +1979,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2066,7 +2066,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2151,7 +2151,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2240,7 +2240,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2336,7 +2336,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2421,7 +2421,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2506,7 +2506,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2597,7 +2597,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2641,7 +2641,7 @@ cuts:
         at: [43.62, 48.04]
         face: 300
         pose: proud
-      - {t: 0.3, pose: proud, face: 290}
+      - {t: 0.3, pose: proud, face: 100}
       - {t: 9.48, pose: hop}
       usamaru:
       - t: 0.0
@@ -2683,7 +2683,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2693,18 +2693,18 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [52.4, 54.4, 1.3]
+      cam: [45.89, 48.44, 1.3]
       look: rabi
       look_h: 1.2
       lens: 34
       frame: 膝上
     - t: 5.46
-      cam: [52.6, 54.6, 1.4]
+      cam: [45.8, 48.2, 1.4]
       look: usamaru
       look_h: 1.4
       lens: 36
     - t: 14.8
-      cam: [52.6, 54.2, 1.3]
+      cam: [45.85, 48.5, 1.3]
       look: rabi
       look_h: 1.2
       lens: 38
@@ -2731,7 +2731,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -2772,7 +2772,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2814,7 +2814,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -2855,7 +2855,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       scarecocco:
       - t: 0.0
@@ -2897,7 +2897,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -2938,7 +2938,7 @@ cuts:
       metallica-giant:
       - t: 0.0
         at: [50.0, 48.6]
-        face: 200
+        face: 220
         pose: cross
       - {t: 0.3, pose: lean, face: 260}
       - {t: 3.55, pose: point}
@@ -2982,7 +2982,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -3066,7 +3066,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -3150,7 +3150,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -3235,7 +3235,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0
@@ -3319,7 +3319,7 @@ cuts:
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
-        face: 290
+        face: 100
         pose: hop
       usamaru:
       - t: 0.0

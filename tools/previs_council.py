@@ -417,6 +417,29 @@ def decorate(P, who, root, head, arms, sh, body_h, col):
 
 # ---------- 効果 ----------
 
+@bpy.app.handlers.persistent
+def _fog_hide_around_camera(scene, *args):
+    """霧の塊（平たい球）の中にカメラが入ると、画面全体に一様な膜がかかって人物が見えなくなる。
+    描く直前（カメラの位置が決まった後）に、カメラを中に含む塊だけを隠す。寄りのカットでも、人物との間の霧だけが残る。"""
+    cam = scene.camera
+    if cam is None:
+        return
+    c = cam.matrix_world.translation
+    for o in scene.objects:
+        if not o.get("fog") or o.location.z < -40:
+            continue
+        sx, sy, sz = (max(1e-6, v) for v in o.scale)
+        d = ((c.x - o.location.x) / sx) ** 2 + ((c.y - o.location.y) / sy) ** 2 + ((c.z - o.location.z) / sz) ** 2
+        if d < 1.1 ** 2:
+            o.location.z = -50.0
+
+
+def _register_fog_handler():
+    hs = bpy.app.handlers.render_pre
+    if not any(getattr(h, "__name__", "") == "_fog_hide_around_camera" for h in hs):
+        hs.append(_fog_hide_around_camera)
+
+
 def _mix(m):
     return m.node_tree.nodes.get("Mix Shader")
 
@@ -492,7 +515,7 @@ def pose_fx(P, fx, objs, t, pos, place):
         return True
     if kind == "fog":
         rise, fade = fx.get("rise", 2.0), fx.get("fade", 2.0)
-        u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, rise))
+        u = 0.0 if t < t0 else (1.0 if rise <= 0.2 else min(1.0, (t - t0) / rise))   # rise が短い（前のカットから続く霧）は最初のコマから濃い
         if t > t1:
             u = max(0.0, 1.0 - (t - t1) / max(1e-6, fade))
         R, H = fx.get("r", 10.0), fx.get("h", 2.5)
@@ -505,9 +528,11 @@ def pose_fx(P, fx, objs, t, pos, place):
             o.location = P.bl((p[0] + math.cos(a) * rr, p[1] + math.sin(a) * rr), z0 + H * (0.2 + 0.6 * rnd(j, 53)))
             s = R * (0.35 + 0.3 * rnd(j, 54))
             o.scale = (s, s * (0.7 + 0.3 * rnd(j, 55)), H * 0.6)
+            o["fog"] = 1   # 描く直前に、カメラを中に含む霧の塊を隠す（_fog_hide_around_camera）
             mx = _mix(o.data.materials[0])
             if mx:
                 mx.inputs["Fac"].default_value = 1.0 - fx.get("alpha", 0.22) * u   # Fac は透ける割合
+        _register_fog_handler()
         return True
     if kind == "flash":
         o = objs[0]
