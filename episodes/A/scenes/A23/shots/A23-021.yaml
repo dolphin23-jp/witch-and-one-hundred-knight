@@ -1,0 +1,52 @@
+# A23 隠し森の駅・夜光列車（夕暮れ）。blocking.yaml（Claude の案 2026-11-04、Living Spec「A23 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A23-021
+scene: A23
+tc: 184.0
+sec: 8.0
+kind: A
+shot: 全身（煽り）→引き・戦い・鼻づらに一太刀
+acting: 百騎兵が駆けて跳び、獅子の鼻づらに渾身の一太刀（火花、大きな揺れ）。列車が火花を散らして後ろへ滑って止まる。百騎兵は着地して胸を張る
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 23.2
+  - 48.6
+  - 0.95
+  look:
+  - 25.4
+  - 44.6
+  lens: 24
+  move: ホームの南の低い所から煽る。斬った瞬間に大きく揺れ、滑る列車を追って振る
+background: hekkahenne-forest
+image: null
+refs:
+- hundred-knight
+- bisco
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 構え直す百騎兵（ホームの南の低い所から）
+  end: 止まった列車と、ホームの縁で胸を張る百騎兵
+timing:
+  lead: 0.3
+blocking:
+  start: ビ（左・斜め後ろ（画面左向き））、百（中央・正面）
+  end: 百（左・横顔（画面右向き））、列（右・斜め前（画面左向き））
+  background: 深い森
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, seen from behind at an angle, turned toward screen left; the Hundred Knight (small, waist-high: big
+    round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the
+    frame, facing the camera, small in the background. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, in profile, turned toward screen right; the Night Train (night-train_sheet_01): a dark
+    purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing
+    amber windows, big wheels with copper rims, two short chimneys, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind:
+    a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  sketch:
+  - episodes/A/scenes/A23/gen/sketch/A23-021_start.png
+  - episodes/A/scenes/A23/gen/sketch/A23-021_end.png

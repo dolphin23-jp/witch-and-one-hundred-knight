@@ -1,0 +1,57 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-001
+scene: A25
+tc: 0.0
+sec: 13.9
+kind: M
+transition:
+  kind: wipe
+  dir: right
+  sec: 0.6
+shot: 引き・盲いた魔女の背中越しに百騎兵
+acting: 百騎兵が板の道を渡ってくる。椅子の老婆が笑う（「ヒッヒッヒ、なんだかよくわからないのが来たもんだねぇ」）
+dialogue:
+- L809「ヒッヒッヒ、なんだかよくわからないのが来たもんだねぇ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 73.4
+  - 103.4
+  - 0.8
+  look:
+  - 84.0
+  - 99.4
+  lens: 24
+  move: 魔女の椅子の後ろの低い所から、渡ってくる百騎兵を迎える
+background: rift-void
+image: null
+refs:
+- hundred-knight
+- blind-witch
+overlays: []
+fallback: null
+act:
+  start: 虚空の奥の浮いた足場。古い椅子に座る老婆の背中（手前）と、奥の板の道
+  end: 老婆の前で立ち止まる百騎兵
+timing:
+  lead: 0.3
+  at:
+    L809: 6.3
+blocking:
+  start: 盲（中央・背中）、百（中央・正面）
+  end: 盲（中央・背中）、百（中央・正面）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, with the back to the camera; the
+    Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its
+    sword), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+    a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, with the back to the camera;
+    the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
+    its sword), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+    a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-001_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-001_end.png

@@ -1,0 +1,50 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-043
+scene: A25
+tc: 557.0
+sec: 10.9
+kind: A
+shot: 引き・動き出す列車
+acting: ライオネル「……。よしわかった！がおぉぉぉぉぉぉ〜ん！！出発進行だぞい！」。列車がゆっくり動き出し、光る門へ進む
+dialogue:
+- L874「……。よしわかった！がおぉぉぉぉぉぉ〜ん！！出発進行だぞい！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 102.0
+  - 58.0
+  - 2.2
+  look:
+  - 113.0
+  - 50.0
+  lens: 24
+  move: 足場の南西から。動き出す列車を追って振る
+background: rift-void
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 光る門の前の列車（南西から）
+  end: 門へ動き出す列車
+timing:
+  lead: 0.3
+blocking:
+  start: 列（中央・斜め後ろ（画面右向き））
+  end: 列（中央・背中）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, seen from
+    behind at an angle, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black
+    sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with
+    the back to the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars,
+    faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-043_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-043_end.png

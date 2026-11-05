@@ -1,0 +1,48 @@
+# A26 列車に飛び乗る・魔女都。blocking.yaml（Claude の案 2026-11-04、Living Spec「A26 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A26-009
+scene: A26
+tc: 83.4
+sec: 9.2
+kind: M
+shot: 胸上・案内魔女
+acting: 案内魔女「人が住まう世界とは別の、いうなれば世界の裏側のような場所でここには夜光列車でしかこれないの」
+dialogue:
+- L897「人が住まう世界とは別の、いうなれば世界の裏側のような場所でここには夜光列車でしかこれないの。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 97.4
+  - 168.6
+  - 1.9
+  look:
+  - 95.6
+  - 166.4
+  lens: 34
+  move: ビスコの横から案内魔女の顔へ。ゆっくり寄る
+background: witch-city
+image: null
+refs:
+- guide-witch
+overlays: []
+fallback: null
+act:
+  start: 案内魔女（ビスコの側から）
+  end: 案内魔女
+timing:
+  lead: 0.3
+blocking:
+  start: 案（中央・正面）
+  end: 案（中央・正面）
+  background: 魔女の都の家並み
+  panels: []
+  staging_en: 'In frame (exactly one person): the guide witch of the witch city (appearance to be fixed by a reference sheet), standing, in the center of the frame, facing the camera. No other people. Behind:
+    an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns
+    glittering like jewels, a towering spire at the end of the main avenue.'
+  staging_en_end: 'In frame (exactly one person): the guide witch of the witch city (appearance to be fixed by a reference sheet), standing, in the center of the frame, facing the camera. No other people.
+    Behind: an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns
+    glittering like jewels, a towering spire at the end of the main avenue.'
+  sketch:
+  - episodes/A/scenes/A26/gen/sketch/A26-009_start.png
+  - episodes/A/scenes/A26/gen/sketch/A26-009_end.png

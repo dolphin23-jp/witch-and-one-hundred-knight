@@ -1,0 +1,1271 @@
+cuts:
+  A24-001:
+    cam:
+    - -2.0
+    - 42.5
+    - 2.6
+    lens: 24
+    bearing: 223
+    frame: 引き
+    start:
+      people:
+      - who: night-train
+        s: 0.09
+        dist: 10.94
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 浮いた岩
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: -0.15
+        dist: 7.59
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to:
+        - 62.0
+        - 50.0
+        t:
+        - 0.0
+        - 5.5
+    note: null
+  A24-002:
+    cam:
+    - 201.3
+    - 100.6
+    - 1.1
+    lens: 22
+    bearing: 178
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.38
+        dist: 2.22
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: 0.03
+        dist: 4.0
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 座席（西）
+      - 座席（東）
+      - 窓明かり（琥珀色）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the
+        camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint
+        purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.47
+        dist: 2.12
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: 0.04
+        dist: 3.7
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      bisco:
+        to:
+        - 201.3
+        - 104.4
+        face: 30
+        via:
+        - bi_floor
+        - - 201.3
+          - 104.4
+        - - 201.3
+          - 104.4
+        - - 201.3
+          - 104.4
+        - - 201.3
+          - 104.4
+        t:
+        - 0.0
+        - 8.4
+      hundred-knight:
+        to: hk_seat
+        face: 250
+        t:
+        - 0.0
+        - 8.4
+    note: null
+  A24-003:
+    cam:
+    - -181.0
+    - 46.4
+    - 2.2
+    lens: 26
+    bearing: 238
+    frame: 引き
+    start:
+      people:
+      - who: night-train
+        s: 0.27
+        dist: 9.53
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props: []
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, facing
+        the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint
+        purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: -0.19
+        dist: 6.95
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to:
+        - -21.0
+        - 50.0
+        t:
+        - 0.0
+        - 13.0
+    note: null
+  A24-004:
+    cam:
+    - 201.0
+    - 106.6
+    - 1.3
+    lens: 24
+    bearing: 6
+    frame: 全身
+    start:
+      people:
+      - who: bisco
+        s: -0.41
+        dist: 2.34
+        side: 左
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: 0.21
+        dist: 3.89
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 遠くの黒い尖塔
+      - 座席（西）
+      - 座席（東）
+      - 窓明かり（琥珀色）
+      - 窓明かり（琥珀色）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: bisco
+        s: -0.47
+        dist: 2.23
+        side: 左
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: 0.23
+        dist: 3.8
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without
+        sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      bisco:
+        to: bi_seat
+        face: 80
+        t:
+        - 0.0
+        - 5.4
+      hundred-knight:
+        to: hk_seat
+        face: 260
+        t:
+        - 0.0
+        - 5.4
+    note: null
+  A24-005:
+    cam:
+    - 202.2
+    - 102.3
+    - 1.25
+    lens: 28
+    bearing: 220
+    frame: 胸上
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.67
+        dist: 0.48
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.02
+        dist: 2.52
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 座席（西）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, seen from behind at an angle, turned toward screen right; Bisco (short black bob hair
+        with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center
+        of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+        a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: bisco
+        s: 0.03
+        dist: 2.3
+        side: 中央
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+        black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating
+        rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still
+        air.'
+    move:
+      bisco:
+        to: bi_seat
+        face: 100
+        via:
+        - bi_seat
+        - bi_seat
+        - bi_seat
+        - bi_seat
+        - bi_seat
+        t:
+        - 0.0
+        - 17.9
+      hundred-knight:
+        to: hk_seat
+        face: 290
+        t:
+        - 0.0
+        - 17.9
+    note: null
+  A24-006:
+    cam:
+    - 201.3
+    - 100.6
+    - 1.95
+    lens: 24
+    bearing: 180
+    frame: 2人
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.45
+        dist: 2.2
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.28
+        dist: 3.6
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 座席（西）
+      - 座席（東）
+      - 窓明かり（琥珀色）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with two
+        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the
+        frame, in profile, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black
+        sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.54
+        dist: 2.0
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.32
+        dist: 3.4
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with two
+        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the
+        frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun
+        or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      bisco:
+        to: bi_seat
+        face: 40
+        via:
+        - bi_seat
+        - bi_seat
+        t:
+        - 0.0
+        - 12.3
+      hundred-knight:
+        to: hk_seat
+        via:
+        - hk_seat
+        - hk_seat
+        t:
+        - 0.0
+        - 12.3
+    note: null
+  A24-007:
+    cam:
+    - 201.3
+    - 100.6
+    - 1.4
+    lens: 22
+    bearing: 180
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.42
+        dist: 2.2
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.25
+        dist: 3.6
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 座席（西）
+      - 座席（東）
+      - 窓明かり（琥珀色）
+      - 窓明かり（琥珀色）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with two
+        gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the
+        frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun
+        or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.13
+        dist: 4.61
+        side: 中央
+        body: 背中
+      - who: bisco
+        s: 0.11
+        dist: 4.79
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, with the back
+        to the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars,
+        faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      bisco:
+        to:
+        - 201.0
+        - 105.4
+        face: 180
+        via:
+        - bi_seat
+        - - 201.0
+          - 105.4
+        t:
+        - 0.0
+        - 3.0
+      hundred-knight:
+        to:
+        - 201.9
+        - 105.2
+        face: 180
+        via:
+        - hk_seat
+        - - 201.9
+          - 104.6
+        - - 201.9
+          - 105.2
+        t:
+        - 0.0
+        - 3.0
+    note: null
+  A24-008:
+    cam:
+    - 116.5
+    - 55.8
+    - 0.8
+    lens: 24
+    bearing: 286
+    frame: 引き
+    start:
+      people:
+      - who: night-train
+        s: -0.2
+        dist: 44.4
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing
+        the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint
+        purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: -0.65
+        dist: 6.8
+        side: 左
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, at the far left of the frame, in
+        three-quarter view, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black
+        sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        via:
+        - gate_stop
+        t:
+        - 0.0
+        - 7.8
+    note: null
+  A24-009:
+    cam:
+    - 118.4
+    - 46.6
+    - 15.0
+    lens: 26
+    bearing: 234
+    frame: 俯瞰
+    start:
+      people:
+      - who: night-train
+        s: 0.13
+        dist: 15.0
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 中継の足場
+      - 魔女の居場所
+      - 魔女の古い椅子
+      - 魔女の居場所の灯り
+      - 灯りの柱
+      - 魔女の居場所の灯り
+      - 灯りの柱
+      - 光る石
+      - 追憶の園
+      - 追憶の園の木
+      - 追憶の園の木
+      - 追憶の園の木（翠ノ実が生る）
+      - 翠ノ実の光
+      - 翠ノ実の光
+      - 茂み
+      - 茂み
+      - 茂み
+      - 白い花
+      - 白い花
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing
+        the camera, small in the background. No other people. High angle looking down. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+        a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: -0.18
+        dist: 7.4
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing
+        the camera, small in the background. No other people. High angle looking down. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void:
+        a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 13.8
+    note: null
+  A24-010:
+    cam:
+    - 104.4
+    - 57.4
+    - 1.4
+    lens: 26
+    bearing: 46
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.35
+        dist: 7.6
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: -0.29
+        dist: 7.89
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: night-train
+        s: -0.06
+        dist: 10.25
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 門の柱（北）
+      - 門のそばの光る石（北）
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; Bisco (short
+        black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+        on the left of the frame, in three-quarter view, turned toward screen right, small in the background; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion
+        face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims,
+        two short chimneys, standing, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Behind: an endless dark violet void
+        with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above,
+        an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: -0.36
+        dist: 9.99
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: -0.04
+        dist: 5.44
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.31
+        dist: 6.42
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 3 people, from left to right): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front,
+        a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the left of
+        the frame, seen from behind at an angle, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and
+        a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind at an angle, turned toward screen
+        right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver
+        armored boots), standing, on the right of the frame, with the back to the camera, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires
+        of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 6.0
+      bisco:
+        to: bi_out
+        face: 90
+        via:
+        - - 109.0
+          - 51.6
+        - - 109.2
+          - 53.2
+        - - 109.2
+          - 53.2
+        - - 109.4
+          - 53.6
+        - bi_out
+        - bi_out
+        - bi_out
+        - bi_out
+        t:
+        - 0.0
+        - 6.0
+      hundred-knight:
+        to: hk_out
+        face: 100
+        via:
+        - - 108.6
+          - 51.6
+        - hk_out
+        - hk_out
+        t:
+        - 0.0
+        - 6.0
+    note: null
+  A24-011:
+    cam:
+    - 101.0
+    - 61.0
+    - 1.6
+    lens: 24
+    bearing: 45
+    frame: 引き
+    start:
+      people:
+      - who: night-train
+        s: -0.03
+        dist: 15.2
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: 0.13
+        dist: 10.32
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: bisco
+        s: 0.31
+        dist: 11.03
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 門の柱（北）
+      - 門の柱（南）
+      - 門のそばの光る石（北）
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 3 people, from left to right): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front,
+        a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center
+        of the frame, seen from behind at an angle, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume,
+        black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind at an angle, turned toward screen right; Bisco (short
+        black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+        on the right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A
+        dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: 0.03
+        dist: 28.1
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: 0.08
+        dist: 23.08
+        side: 中央
+        body: 正面
+      - who: bisco
+        s: 0.16
+        dist: 23.56
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 3 people, from left to right): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front,
+        a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center
+        of the frame, seen from behind at an angle, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume,
+        black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the
+        camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint
+        purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 14.6
+      bisco:
+        to: bi_out
+        face: 230
+        via:
+        - bi_out
+        t:
+        - 0.0
+        - 14.6
+      hundred-knight:
+        to: hk_out
+        face: 200
+        t:
+        - 0.0
+        - 14.6
+    note: null
+  A24-012:
+    cam:
+    - 110.0
+    - 44.4
+    - 2.1
+    lens: 30
+    bearing: 148
+    frame: 胸上
+    start:
+      people:
+      - who: night-train
+        s: 0.51
+        dist: 5.54
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の柱（南）
+      - 門のそばの光る石（南）
+      - 浮いた岩
+      - 座席（西）
+      - 座席（東）
+      - 窓明かり（琥珀色）
+      - 窓明かり（琥珀色）
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, in profile,
+        turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun
+        or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: night-train
+        s: 0.6
+        dist: 5.25
+        side: 右
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, in profile,
+        turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun
+        or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 9.3
+    note: null
+  A24-013:
+    cam:
+    - 111.6
+    - 57.6
+    - 1.2
+    lens: 26
+    bearing: 337
+    frame: 肩なめ
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.42
+        dist: 3.96
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.05
+        dist: 2.78
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: night-train
+        s: 0.59
+        dist: 7.04
+        side: 右
+        body: 横顔（画面右向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 北の足場（行き止まり）
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold
+        hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
+        in profile, turned toward screen left; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, in profile,
+        turned toward screen right, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
+        violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.66
+        dist: 4.0
+        side: 左
+        body: 背中
+      - who: bisco
+        s: -0.21
+        dist: 3.01
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: night-train
+        s: 0.32
+        dist: 7.62
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, with the back to the camera; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned
+        toward screen right; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns
+        on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, in profile, turned toward
+        screen right, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky
+        without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 9.5
+      bisco:
+        to: bi_out
+        face: 75
+        via:
+        - bi_out
+        - bi_out
+        - bi_out
+        t:
+        - 0.0
+        - 9.5
+      hundred-knight:
+        to: hk_out
+        face: 330
+        via:
+        - hk_out
+        t:
+        - 0.0
+        - 9.5
+    note: null
+  A24-014:
+    cam:
+    - 117.0
+    - 56.2
+    - 1.0
+    lens: 30
+    bearing: 283
+    frame: 2人
+    start:
+      people:
+      - who: bisco
+        s: -0.07
+        dist: 6.51
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: -0.01
+        dist: 8.2
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round
+        silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame,
+        seen from behind at an angle, turned toward screen right, small in the background. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark
+        otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.02
+        dist: 6.15
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: bisco
+        s: 0.04
+        dist: 4.66
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Bisco (short
+        black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+        in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark
+        otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      bisco:
+        to:
+        - 112.6
+        - 54.4
+        via:
+        - bi_out
+        - bi_out
+        - bi_out
+        - - 111.0
+          - 54.9
+        t:
+        - 0.0
+        - 8.0
+      hundred-knight:
+        to:
+        - 111.2
+        - 53.9
+        face: 75
+        via:
+        - hk_out
+        - hk_out
+        - hk_out
+        - - 109.6
+          - 54.3
+        t:
+        - 0.0
+        - 8.0
+    note: null
+  A24-015:
+    cam:
+    - 113.4
+    - 56.6
+    - 1.5
+    lens: 30
+    bearing: 12
+    frame: 肩なめ
+    start:
+      people:
+      - who: bisco
+        s: -1.04
+        dist: 1.99
+        side: 左
+        body: 横顔（画面右向き）
+      - who: night-train
+        s: -0.89
+        dist: 6.06
+        side: 左
+        body: 横顔（画面右向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の柱（北）
+      - 門のそばの光る石（北）
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in profile, turned toward screen right; the Night Train (night-train_sheet_01): a dark purple-black
+        steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows,
+        big wheels with copper rims, two short chimneys, standing, at the far left of the frame, in profile, turned toward screen right, small in the background. No other people. Behind: an endless dark
+        violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly
+        from above, an eerie still air.'
+    end:
+      people: []
+      staging: 'No people in frame. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint
+        purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 12.4
+      bisco:
+        to:
+        - 112.6
+        - 54.4
+        face: 345
+        via:
+        - - 112.6
+          - 54.4
+        t:
+        - 0.0
+        - 12.4
+      hundred-knight:
+        to:
+        - 111.2
+        - 53.9
+        face: 20
+        via:
+        - - 111.2
+          - 53.9
+        t:
+        - 0.0
+        - 12.4
+    note: null
+  A24-016:
+    cam:
+    - 117.6
+    - 47.6
+    - 2.4
+    lens: 22
+    bearing: 233
+    frame: 引き
+    start:
+      people:
+      - who: bisco
+        s: -0.38
+        dist: 8.07
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.17
+        dist: 8.89
+        side: 中央
+        body: 正面
+      - who: night-train
+        s: 0.33
+        dist: 6.33
+        side: 中央
+        body: 正面
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の前の足場
+      - 中継の足場
+      - 魔女の居場所
+      - 魔女の古い椅子
+      - 魔女の居場所の灯り
+      - 灯りの柱
+      - 魔女の居場所の灯り
+      - 灯りの柱
+      - 光る石
+      - 追憶の園
+      - 追憶の園の木
+      - 追憶の園の木
+      - 追憶の園の木（翠ノ実が生る）
+      - 翠ノ実の光
+      - 翠ノ実の光
+      - 茂み
+      - 茂み
+      - 茂み
+      - 白い花
+      - 白い花
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, waist-high: big
+        round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of
+        the frame, facing the camera; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved
+        horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, facing the camera.
+        No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow
+        from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: bisco
+        s: -0.47
+        dist: 7.61
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.21
+        dist: 8.47
+        side: 中央
+        body: 正面
+      - who: night-train
+        s: 0.43
+        dist: 5.98
+        side: 右
+        body: 正面
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, waist-high: big
+        round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the
+        frame, facing the camera; the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved
+        horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, facing the camera.
+        No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow
+        from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 17.3
+      bisco:
+        to:
+        - 112.6
+        - 54.4
+        via:
+        - - 112.6
+          - 54.4
+        - - 112.6
+          - 54.4
+        t:
+        - 0.0
+        - 17.3
+      hundred-knight:
+        to:
+        - 111.2
+        - 53.9
+        t:
+        - 0.0
+        - 17.3
+    note: null
+  A24-017:
+    cam:
+    - 108.2
+    - 57.6
+    - 1.3
+    lens: 28
+    bearing: 50
+    frame: 引き
+    start:
+      people:
+      - who: night-train
+        s: -0.76
+        dist: 7.44
+        side: 左
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: -0.29
+        dist: 4.68
+        side: 中央
+        body: 背中
+      - who: bisco
+        s: 0.12
+        dist: 5.43
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 暗い虚空と浮いた岩
+      props:
+      - 門の柱（北）
+      - 門のそばの光る石（北）
+      - 浮いた岩
+      - 遠くの黒い尖塔
+      staging: 'In frame (exactly 3 people, from left to right): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front,
+        a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, at the far left
+        of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera; Bisco (short black bob hair with two gold hair ornaments, blue
+        eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in profile, turned
+        toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars,
+        faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    end:
+      people:
+      - who: bisco
+        s: -0.21
+        dist: 25.75
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: night-train
+        s: 0.22
+        dist: 19.99
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      - who: hundred-knight
+        s: 0.77
+        dist: 7.82
+        side: 右
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, seen from behind at an angle, turned toward screen left; the Night Train (night-train_sheet_01):
+        a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with
+        glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the right of the frame, seen from behind at an angle, turned toward screen right; the Hundred Knight (small,
+        waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing,
+        at the far right of the frame, in three-quarter view, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark
+        otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    move:
+      night-train:
+        to: gate_stop
+        t:
+        - 0.0
+        - 18.4
+      bisco:
+        to:
+        - 107.2
+        - 41.2
+        face: 340
+        via:
+        - - 112.6
+          - 54.4
+        - - 112.6
+          - 54.4
+        - - 112.6
+          - 54.4
+        - - 112.6
+          - 54.4
+        - - 112.2
+          - 53.8
+        - - 108.6
+          - 46.4
+        t:
+        - 0.0
+        - 18.4
+      hundred-knight:
+        to:
+        - 107.0
+        - 61.4
+        face: 200
+        via:
+        - - 111.2
+          - 53.9
+        - - 111.2
+          - 53.9
+        - - 111.2
+          - 53.9
+        - - 110.9
+          - 54.3
+        - - 108.6
+          - 57.6
+        t:
+        - 0.0
+        - 18.4
+    note: null
+checks:
+  axis: []
+  jumps:
+  - cut: A24-003
+    who: night-train
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A24-004
+    who: bisco
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A24-008
+    who: night-train
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A24-010
+    who: bisco
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A24-010
+    who: hundred-knight
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  overlap:
+  - cut: A24-010
+    which: start
+    who:
+    - hundred-knight
+    - bisco
+    d: 0.4
+  offscreen: []
+  hidden:
+  - cut: A24-012
+    which: start
+    who: bisco
+  - cut: A24-014
+    which: end
+    who: night-train
+  camera: []

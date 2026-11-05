@@ -1,0 +1,44 @@
+# A23 隠し森の駅・夜光列車（夕暮れ）。blocking.yaml（Claude の案 2026-11-04、Living Spec「A23 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A23-030
+scene: A23
+tc: 278.6
+sec: 10.3
+kind: M
+shot: 寄り（蛇・屋根の高さ）
+acting: スネーカー「けっ。切符は本物、魔女の印も本物。オレたちゃ、負けた。乗せるしかねえだろ？しょうがねえだろ？」
+dialogue:
+- L762「けっ。切符は本物、魔女の印も本物。オレたちゃ、負けた。乗せるしかねえだろ？しょうがねえだろ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.2
+  - 42.6
+  - 3.4
+  look:
+  - 35.85
+  - 45.0
+  lens: 28
+  move: 列車の北西、屋根の高さから蛇へ。ゆっくり寄る
+background: hekkahenne-forest
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 蛇の頭（北西の屋根の高さから）
+  end: 蛇の頭
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 深い森
+  panels: []
+  staging_en: 'No people in frame. High angle looking down. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  staging_en_end: 'No people in frame. High angle looking down. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  sketch:
+  - episodes/A/scenes/A23/gen/sketch/A23-030_start.png
+  - episodes/A/scenes/A23/gen/sketch/A23-030_end.png

@@ -60,5 +60,46 @@ images:
   st-dolce_bg_01: {subjects: [st-dolce], kind: 背景, note: "セントドルチェ", primary: true}
   karakuri-doll_sheet_01: {subjects: [karakuri-doll], kind: 設定画, note: "からくり人形", primary: true}
   pillar-of-temperance_sheet_01: {subjects: [pillar], kind: 設定画, note: "ピラーオブテンペランスで画像左は閉じた状態（休眠）のピラー 、右は咲かせた後 — 5枚の半透明の緑の花弁が開き、黄金の中心・地面の緑のオーラとその他ディテールです。", primary: true}
-  night-train_sheet_01: {subjects: [night-train], kind: 設定画, note: "夜行列車", primary: true}
+  # 2026-11-01: 原作に画像のない人物・物。ユーザー指示「ヒゲが13本ある猫、見習い魔女、ホウキ、護符、森の魔女のシモベ、白ネズミ、案内魔女、ニワトリ、巨大メタリカ、沼を浴びたテレッサ、
+  # バスルーム、庭園と隠し森についてはあなたが作ってください」で Claude が生成した2案（characters/<対象>/design/、計画 characters/gen/yakai2_designs_plan.yaml）から、
+  # ユーザーが選んだもの（「全て1で良い」）。GPT Image 2.5。ニワトリはスケアコッコと同じなので作らなかった。背景3つは world/<場所>/plates.yaml
+  whisker-cat_sheet_01: {subjects: [whisker-cat], kind: 設定画, note: "ヒゲが13本ある猫（錬金術で作り直した猫）。Claude が生成した案1をユーザーが選んだ（スケアコッコ・ティトの設定画を参照）。ヒゲが13本ちょうどかは数え切れない（数を見せるカットは合成で直す）", primary: true}
+  apprentice-witches_sheet_01: {subjects: [apprentice-witches], kind: 設定画, note: "見習い魔女（4人の並び。上の段に正面、下の段に背面。左からピンク・ミント・黄・ラベンダーのベレー）。Claude が生成した案1をユーザーが選んだ（テレッサ・ネザリアの設定画を参照）", primary: true}
+  metallica-broom_sheet_01: {subjects: [metallica-broom], kind: 設定画, note: "メタリカのホウキ（横・上・前・後ろと寄り）。Claude が生成した案1をユーザーが選んだ（メタリカの設定画・屋敷の外の画像を参照）", primary: true}
+  swamp-amulet_sheet_01: {subjects: [swamp-amulet], kind: 設定画, note: "護符（メタリカがルッキーニィに渡す沼の瘴気よけ）。Claude が生成した案1をユーザーが選んだ", primary: true}
+  # forest-servant_sheet_01 は、ここで生成した案1（characters/forest-servant/design/）ではなく、2026-11-02 にユーザーが送り直したシモベの画像（下の行、.jpg）を使う
   forest-servant_sheet_01: {subjects: [forest-servant], kind: 設定画, note: "シモベ", primary: true}
+  marika-mouse_sheet_01: {subjects: [marika-mouse], kind: 設定画, note: "白ネズミ（ネズミにされたマーリカ、尻尾あり）。Claude が生成した案1をユーザーが選んだ（スケアコッコ・ネザリアの設定画を参照）", primary: true}
+  guide-witch_sheet_01: {subjects: [guide-witch], kind: 設定画, note: "魔女都の案内魔女。Claude が生成した案1をユーザーが選んだ（テレッサ・ネザリアの設定画を参照）", primary: true}
+  metallica-giant_sheet_01: {subjects: [metallica-giant], kind: 設定画, note: "巨大メタリカ（小瓶の液体で巨大化した姿、雷と瘴気）。Claude が生成した案1をユーザーが選んだ（メタリカ・ビスコの設定画を参照）。足元の影との比は約8倍で、大きさは下絵で決める", primary: true}
+  teressa-swamp_sheet_01: {subjects: [teressa-swamp], kind: 設定画, note: "毒沼を浴びたテレッサ（6-15、議会場）。Claude が生成した案1をユーザーが選んだ（テレッサの設定画を参照）", primary: true}
+  # 2026-11-01 14:17: ユーザーが用意した6章後半〜（夜会編・魔女都）の人物と背景。説明はユーザーの言葉のまま
+  forest-station_bg_01: {subjects: [forest-station, hidden-forest], kind: 背景, note: "森の発着場", primary: true}
+  night-train_sheet_01: {subjects: [night-train], kind: 設定画, note: "夜行列車", primary: true}
+  otherspace_bg_01: {subjects: [otherspace], kind: 背景, note: "異空間(線路を塞ぐように作られた門)", primary: true}
+  blind-witch_sheet_01: {subjects: [blind-witch, veraie], kind: 設定画, note: "盲魔女キャラシート（2026-11-01）／盲魔女の画像はこちら。ヴェライエと同一人物です（2026-11-05 に同じ絵をもう一度受け取った）", primary: true}
+  walpurgis_bg_01: {subjects: [walpurgis, brocken-tower], kind: 背景, note: "魔女都ヴァルプルギス", primary: true}
+  council-room_bg_01: {subjects: [council-room], kind: 背景, note: "ブロッケントゥルム議事塔最上階の議会室", primary: true}
+  council-room-ruined_bg_01: {subjects: [council-room], kind: 背景, note: "メタリカ襲撃による破壊後、戦闘シーンの背景", primary: true}
+  # 2026-11-01 14:45: ユーザーが用意。説明はユーザーの言葉のまま
+  veraie_sheet_01: {subjects: [veraie], kind: 設定画, note: "若いヴェライエのシートです(今回は登場しないが)", primary: true}
+  # 2026-11-01 14:45: ユーザー指示「見習い魔女の三面図も作って良い」で、apprentice-witches_sheet_01（4人の並び）から Claude が1人ずつ作ったもの（1案だけ、GPT Image 2.5）
+  apprentice-witch-a_sheet_01: {subjects: [apprentice-witch-a, apprentice-witches], kind: 設定画, note: "見習い魔女A（4人の並びの左から1人目、ピンク）。Claude が生成", primary: true}
+  apprentice-witch-b_sheet_01: {subjects: [apprentice-witch-b, apprentice-witches], kind: 設定画, note: "見習い魔女B（左から2人目、ミント）。Claude が生成", primary: true}
+  apprentice-witch-c_sheet_01: {subjects: [apprentice-witch-c, apprentice-witches], kind: 設定画, note: "見習い魔女C（左から3人目、黄）。Claude が生成", primary: true}
+  apprentice-witch-d_sheet_01: {subjects: [apprentice-witch-d, apprentice-witches], kind: 設定画, note: "見習い魔女D（左から4人目、ラベンダー）。Claude が生成", primary: true}
+  # 2026-11-01 14:55: ユーザー指示「追憶の園、小物はあなたが作ってください」→ 承認「OK」。Claude が1案だけ生成（GPT Image 2.5、護符の設定画を絵柄の見本に）
+  yakai-props_sheet_01: {subjects: [potion-vial, train-ticket, proxy-letter, jade-fruit, candied-jade-fruit], kind: 設定画, note: "6章後半の小物（上から 小瓶の緑の液体・切符、委任状、翠ノ実、翠ノ実の砂糖漬けの瓶）。Claude が生成", primary: true}
+  # 2026-11-01 15:59: ユーザーが用意した7章の人物。説明はユーザーの言葉のまま
+  mitten_sheet_01: {subjects: [mitten], kind: 設定画, note: "ミトン", primary: true}
+  mitten-gedo_sheet_01: {subjects: [mitten-gedo], kind: 設定画, note: "外道化したミトン", primary: true}
+  heinz_sheet_01: {subjects: [heinz], kind: 設定画, note: "ハインツ", primary: true}
+  hilda_sheet_01: {subjects: [hilda], kind: 設定画, note: "ヒルダ姫", primary: true}
+  aromani-gel_sheet_01: {subjects: [aromani-gel], kind: 設定画, note: "アロマニジェル(香水を売る商人ではなくスライム型のモンスター)", primary: true}
+  # 2026-11-01 16:15: ユーザー指示「残りは背景含めてあなたの方で生成して欲しい」→ 承認「OK」。Claude が1案だけ生成（GPT Image 2.5、計画 characters/gen/ch07_designs_plan.yaml）。背景5つは world/<場所>/plates.yaml
+  royal-guard_sheet_01: {subjects: [royal-guard], kind: 設定画, note: "護衛の兵士（ハインツの護衛）。Claude が生成", primary: true}
+  cinque-kids_sheet_01: {subjects: [cinque-kids], kind: 設定画, note: "チンクエの村の子供3人（ガキ大将・ひねくれた子・臆病な子）。Claude が生成。臆病な子は顔の寄りだけで全身がない", primary: true}
+  grave-keeper_sheet_01: {subjects: [grave-keeper], kind: 設定画, note: "綿蛍の谷の墓守。Claude が生成", primary: true}
+  mitten-past_sheet_01: {subjects: [mitten-past], kind: 設定画, note: "回想のブリダンゴ虫（昔のミトン、立たない虫の姿）。Claude が生成（ミトンの設定画を参照）", primary: true}
+  ch07-props_sheet_01: {subjects: [witch-bulletin, heavy-fruit, letter-set, mitten-glove, acorn, dowsing-pendulum], kind: 設定画, note: "7章の小物（魔女会報・ずっしりの実・手紙セット・手袋・どんぐり・ダウジング・ペンデュラム）。Claude が生成", primary: true}
+  heinz-carriage_sheet_01: {subjects: [heinz-carriage], kind: 設定画, note: "ハインツの豪華な馬車。Claude が生成", primary: true}

@@ -1,0 +1,50 @@
+# A26 列車に飛び乗る・魔女都。blocking.yaml（Claude の案 2026-11-04、Living Spec「A26 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A26-003
+scene: A26
+tc: 21.4
+sec: 6.8
+kind: A
+shot: 引き・光に消える列車
+acting: ライオネル「それじゃ、今度こそ出発するぞい！次は、ヴァルプルギスじゃ！がおぉぉぉぉぉ〜ん！！」。列車の後ろが光に飲み込まれ、門の光が白く膨らむ
+dialogue:
+- L884「それじゃ、今度こそ出発するぞい！次は、ヴァルプルギスじゃ！がおぉぉぉぉぉ〜ん！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 508.0
+  - 46.4
+  - 1.6
+  look:
+  - 520.0
+  - 50.0
+  lens: 22
+  move: 門の前の足場の北西の低い所から、門の光を見上げる
+background: witch-city
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 光る門
+  end: 白い光
+timing:
+  lead: 0.3
+blocking:
+  start: 列（中央・背中）
+  end: 列（中央・背中）
+  background: 魔女の都の家並み
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with the
+    back to the camera. No other people. Behind: an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a large
+    moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main avenue.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with
+    the back to the camera. No other people. Behind: an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a
+    large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main avenue.'
+  sketch:
+  - episodes/A/scenes/A26/gen/sketch/A26-003_start.png
+  - episodes/A/scenes/A26/gen/sketch/A26-003_end.png

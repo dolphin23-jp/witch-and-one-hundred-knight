@@ -1,0 +1,44 @@
+# A23 隠し森の駅・夜光列車（夕暮れ）。blocking.yaml（Claude の案 2026-11-04、Living Spec「A23 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A23-023
+scene: A23
+tc: 198.8
+sec: 8.6
+kind: M
+shot: 寄り（蛇）
+acting: スネーカー「ちっ！負けたからには仕方ねー。認めてやるよ。運んでやるからさっさと乗りな！」
+dialogue:
+- L748「ちっ！負けたからには仕方ねー。認めてやるよ。運んでやるからさっさと乗りな！さっさと乗れよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.6
+  - 48.8
+  - 3.3
+  look:
+  - 35.85
+  - 45.0
+  lens: 26
+  move: 列車の南、屋根の高さから蛇の頭と目を合わせる。ゆっくり寄る
+background: hekkahenne-forest
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 蛇の頭（南の屋根の高さから）
+  end: 蛇の頭
+timing:
+  lead: 0.3
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 深い森
+  panels: []
+  staging_en: 'No people in frame. High angle looking down. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  staging_en_end: 'No people in frame. High angle looking down. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+  sketch:
+  - episodes/A/scenes/A23/gen/sketch/A23-023_start.png
+  - episodes/A/scenes/A23/gen/sketch/A23-023_end.png

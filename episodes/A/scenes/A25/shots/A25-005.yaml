@@ -1,0 +1,55 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-005
+scene: A25
+tc: 50.0
+sec: 5.3
+kind: M
+shot: 肩なめ・魔女越しに駆けてくるビスコ
+acting: 魔女が鼻をひくつかせて顔を上げる（「おや？また怪しいのがやってくるねぇ」）。板の道の向こうから小さくビスコが駆けてくる
+dialogue:
+- L813「おや？また怪しいのがやってくるねぇ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 75.0
+  - 103.6
+  - 1.4
+  look:
+  - 86.0
+  - 96.6
+  lens: 30
+  move: 魔女の後ろから板の道の先へ。わずかに寄る
+background: rift-void
+image: null
+refs:
+- hundred-knight
+- blind-witch
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 魔女の肩越しに、虚空に伸びる板の道
+  end: 駆けてくるビスコ
+timing:
+  lead: 0.3
+blocking:
+  start: 盲（中央・背中）、ビ（中央・正面）、百（中央・正面）
+  end: 盲（中央・背中）、ビ（中央・正面）、百（中央・背中）
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 3 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, on the left of the frame, with the back to the camera; Bisco
+    (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+    in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black
+    face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating
+    rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 3 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, on the left of the frame, with the back to the camera; Bisco
+    (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+    in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black
+    face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera. No other people. Behind: an endless dark violet void
+    with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an
+    eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-005_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-005_end.png

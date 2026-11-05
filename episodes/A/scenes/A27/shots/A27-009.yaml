@@ -1,0 +1,54 @@
+# A27 道中のテレッサ・議事塔の門。blocking.yaml（Claude の案 2026-11-04、Living Spec「A27 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A27-009
+scene: A27
+tc: 91.5
+sec: 13.6
+kind: M
+shot: 煽り・しゃべる門の顔
+acting: 門の顔の目が光り、門がしゃべる（「ここは議事塔ブロッケントゥルム。ここには、魔女様方以外が立ち入ることはゆるされておりません。どうぞ、お引取りを」）。百騎兵が剣を構える
+dialogue:
+- L921「ここは議事塔ブロッケントゥルム。ここには、魔女様方以外が立ち入ることはゆるされておりません。」
+- L922「どうぞ、お引取りを。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 101.2
+  - 60.6
+  - 0.5
+  look:
+  - 100.0
+  - 52.4
+  lens: 22
+  move: 百騎兵の後ろの地面すれすれから門の顔を煽る。ゆっくり寄る
+background: witch-city
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 門を見上げる百騎兵の後ろ（下から）
+  end: 構える百騎兵と門の顔
+timing:
+  lead: 0.3
+  at:
+    L921: 0.6
+    L922: 10.28
+blocking:
+  start: 百（中央・背中）
+  end: 百（中央・背中）
+  background: 魔女の都の家並み
+  panels: []
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized
+    blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera. No other people. Behind: an endless glittering city of crooked towers and pointed roofs
+    under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main
+    avenue.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes,
+    oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera. No other people. Behind: an endless glittering city of crooked towers and pointed
+    roofs under a violet night sky. Night in a magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the
+    main avenue.'
+  sketch:
+  - episodes/A/scenes/A27/gen/sketch/A27-009_start.png
+  - episodes/A/scenes/A27/gen/sketch/A27-009_end.png

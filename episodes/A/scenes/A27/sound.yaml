@@ -1,0 +1,21 @@
+# A27 の BGM・効果音の置き場所（D-068、2026-11-04）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A27
+bgm:
+  # 原作どおり（パート22、2026-11-05 に曲を分けた。tools/bgm_split.py）: M39「魔女都ヴァルプルギス」（13:56〜16:20。テレッサがビスコを連れ去るまで）
+  #   → つなぎ（16:20〜16:37）→ M03「アズ・ブロッケン山の峰」（16:37〜17:31、百騎兵が1人で塔へ向かう所。下絵では削ったので使わない）
+  #   → M40「議事塔の門」（17:31〜18:28。L921 の約16秒前から、門の台詞まで）
+  - {src: audio/bgm/catalog/M39.ogg, cut: A27-001, t: 0.0, until: {cut: A27-008, t: 13.0}, loop: true, fade_in: 1.0, fade_out: 2.0, volume: 0.28}
+  - {src: audio/bgm/catalog/M40.ogg, cut: A27-009, t: 0.0, until: {cut: A27-010, t: 8.1}, loop: true, fade_in: 1.0, fade_out: 2.0, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A27-001, t: 0.0, until: {cut: A27-010, t: 8.0}, loop: true, rate: 0.9, fade_in: 1.0, fade_out: 2.0, volume: 0.08}
+  # 006 閃光
+  - {src: audio/sfx/magic_burst.ogg, cut: A27-006, t: 3.9, volume: 0.6}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A27-006, t: 4.5, volume: 0.3}
+  - {src: audio/sfx/thud_land.ogg, cut: A27-006, t: 5.0, rate: 1.4, volume: 0.25}
+  # 009 門の目が光る
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A27-009, t: 0.2, rate: 0.8, volume: 0.35}
+  # 010 門が開く
+  - {src: audio/sfx/rumble_rise.ogg, cut: A27-010, t: 3.0, volume: 0.45}
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A27-010, t: 3.4, volume: 0.4}

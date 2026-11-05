@@ -1,0 +1,55 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-020
+scene: A25
+tc: 252.4
+sec: 15.2
+kind: M
+shot: 2人・詰め寄る魔女
+acting: ビスコ「いえ、そういうつもりでは……。ただ、私たちには時間が……」。魔女が詰め寄ってまくしたてる（「こんな老いぼれ魔女の、小さな願いすらきけないってのかい！！なにが騎士だい！薄情な娘だよ！」）。ビスコは後ずさる
+dialogue:
+- L833「いえ、そういうつもりでは……。ただ、私たちには時間が……。」
+- L834「こんな老いぼれ魔女の、小さな願いすらきけないってのかい！！なにが騎士だい！薄情な娘だよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 77.6
+  - 105.8
+  - 0.9
+  look:
+  - 77.6
+  - 102.2
+  lens: 28
+  move: 足場の南の低い所から横に
+background: rift-void
+image: null
+refs:
+- blind-witch
+- bisco
+overlays: []
+fallback: null
+act:
+  start: 向き合う魔女とビスコ（横の低い所から）
+  end: 指を突きつける魔女と、たじろぐビスコ
+timing:
+  lead: 0.3
+  at:
+    L833: 0.3
+    L834: 3.4
+blocking:
+  start: 盲（左・横顔（画面右向き））、ビ（中央・横顔（画面左向き））
+  end: 盲（中央・横顔（画面右向き））、ビ（中央・横顔（画面左向き））
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, on the left of the frame, in profile, turned toward screen right;
+    Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
+    standing, in the center of the frame, in profile, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly
+    void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, on the left of the frame, in profile, turned toward screen
+    right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored
+    boots), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark
+    otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-020_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-020_end.png

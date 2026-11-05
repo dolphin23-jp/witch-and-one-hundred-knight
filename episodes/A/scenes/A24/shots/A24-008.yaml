@@ -1,0 +1,50 @@
+# A24 異空間・閉じた門。blocking.yaml（Claude の案 2026-11-04、Living Spec「A24 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A24-008
+scene: A24
+tc: 65.5
+sec: 7.8
+kind: A
+shot: 引き（門の前・低い所）・夜光列車
+acting: 列車が火花を散らして急ブレーキをかけ、そびえる門の扉の数メートル手前で止まる。ゴードール「門だ！門が閉まってる！」
+dialogue:
+- L776「門だ！門が閉まってる！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 116.5
+  - 55.8
+  - 0.8
+  look:
+  - 96.0
+  - 50.0
+  lens: 24
+  move: 門の足元の南の低い所から、迫る列車を迎える。止まったら門を見上げる
+background: rift-void
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 門の足元から、虚空の線路
+  end: 止まった列車の顔と、見上げるほどの閉じた門
+timing:
+  lead: 4.2
+blocking:
+  start: 列（中央・正面）
+  end: 列（左・斜め前（画面右向き））
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, facing the
+    camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple
+    glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, at the far left of the frame, in
+    three-quarter view, turned toward screen right. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black
+    sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A24/gen/sketch/A24-008_start.png
+  - episodes/A/scenes/A24/gen/sketch/A24-008_end.png

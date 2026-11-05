@@ -1,0 +1,265 @@
+# A27 道中のテレッサ・議事塔の門（6章後半 回2 の終わり）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-04）
+# Living Spec「A27 動きの設計（案）」。準備（案）の表の A27（テレッサが閃光でビスコを連れ去る。魔法生物の門「魔女様を確認しました。開門いたします」）。
+#   L917〜L920 は Revival の音声だけにある台詞（ユーザーに聞いてもらう）。
+# 場所は world/witch-city-layout.yaml。議事塔 (100, 40) の前の広場 (100, 70)。門は塔の南の面 (100, 52.2)（幅 8m、高さ 10m）。門の顔は fx の eyes（光る目）で表す。
+# テレッサは門の西の柱の陰から現れる。閃光は fx の light と spark。消えた二人は地面の下に隠す（z −20）。
+# 光: 塔の前 city_plaza。
+scene: A27
+layout: world/witch-city-layout.yaml
+map_ymax: 200
+lighting: city_plaza
+places:
+  plaza: [100.0, 70.0]
+  gate: [100.0, 52.2]
+  tower: [100.0, 40.0]
+start:
+  hundred-knight: {at: [99.4, 79.2], face: 0}
+  bisco: {at: [100.8, 78.0], face: 0}
+  teressa: {at: [95.2, 55.6], face: 150}
+
+cuts:
+  # ---------- テレッサ ----------
+  A27-001:
+    frame: 肩なめ（二人越しにテレッサ）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, teressa]
+    keys:
+      bisco:
+        - {t: 0.0, at: [100.8, 78.0], face: 0, pose: walk}
+        - {t: 1.6, at: [100.8, 75.0], face: 0, pose: walk, ease: out}
+        - {t: 1.9, at: [100.8, 75.0], face: 0, pose: stand}
+        - {t: 3.0, at: [100.8, 75.0], face: 355, pose: look_up}
+        - {t: 6.0, at: [100.8, 75.0], face: 355, pose: stand}
+        - {t: 12.3, at: [100.8, 75.0], face: 355, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [99.4, 79.2], face: 0, pose: walk}
+        - {t: 1.8, at: [99.4, 75.8], face: 0, pose: walk, ease: out}
+        - {t: 2.1, at: [99.4, 75.8], face: 0, pose: stand}
+        - {t: 4.0, at: [99.4, 75.8], face: 0, pose: ready}
+        - {t: 12.3, at: [99.4, 75.8], face: 0, pose: ready}
+      teressa:
+        - {t: 0.0, at: [95.2, 55.6], face: 150, pose: stand}
+        - {t: 0.8, at: [95.4, 56.0], face: 155, pose: walk}
+        - {t: 5.2, at: [99.8, 66.4], face: 170, pose: walk, ease: out}
+        - {t: 5.5, at: [99.8, 66.4], face: 180, pose: stand}
+        - {t: 6.0, at: [99.8, 66.4], face: 180, pose: cover}
+        - {t: 9.4, at: [99.8, 66.4], face: 180, pose: cover}
+        - {t: 9.8, at: [99.8, 66.4], face: 180, pose: proud}
+        - {t: 12.3, at: [99.8, 66.4], face: 180, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [103.6, 80.6, 1.0], look: [98.8, 62.0], look_h: 1.4, lens: 30, frame: 肩なめ}
+      - {t: 12.3, cam: [103.4, 80.2, 1.0], look: [99.8, 66.0], look_h: 1.3, lens: 34}
+    act: {start: 塔の門へ歩く二人の後ろ（奥に門）, do: 門の柱の陰からテレッサが現れ、口に手を当てて笑いながら歩いてくる（「フフフ、いました！いましたわ！なんて、ほうけた顔をしているのでしょう。これだから田舎者は嫌ですね」）。二人が立ち止まり、百騎兵が構える, end: 胸を張るテレッサ}
+    camera: 二人の後ろの低い所から、歩いてくるテレッサへ寄る
+    kind: M
+  A27-002:
+    frame: 肩なめ（テレッサ越しにビスコ）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, teressa]
+    keys:
+      teressa:
+        - {t: 0.0, at: [99.8, 66.4], face: 180, pose: proud}
+        - {t: 0.6, at: [99.8, 66.4], face: 180, pose: bow}
+        - {t: 3.4, at: [99.8, 66.4], face: 180, pose: stand}
+        - {t: 7.6, at: [99.8, 66.4], face: 180, pose: stand}
+      bisco:
+        - {t: 0.0, at: [100.8, 75.0], face: 355, pose: stand}
+        - {t: 4.4, at: [100.8, 75.0], face: 355, pose: ready}
+        - {t: 7.6, at: [100.8, 75.0], face: 355, pose: ready}
+      hundred-knight:
+        - {t: 0.0, at: [99.4, 75.8], face: 0, pose: ready}
+        - {t: 7.6, at: [99.4, 75.8], face: 0, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [99.6, 64.4, 1.5], look: [100.8, 75.0], look_h: 1.4, lens: 32, frame: 肩なめ}
+      - {t: 7.6, cam: [99.7, 64.6, 1.5], look: [100.8, 75.0], look_h: 1.45, lens: 36}
+    act: {start: テレッサの肩越しにビスコ, do: テレッサがスカートをつまんでお辞儀（「ようこそヴァルプルギスへ。お待ちしてましたわ」）。ビスコが身構える（「お、お前……！どうして……！？」）, end: 身構えるビスコ}
+    camera: テレッサの後ろから肩越しにビスコ。ゆっくり寄る
+    kind: M
+  A27-003:
+    frame: 2人（横から）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, teressa]
+    keys:
+      teressa:
+        - {t: 0.0, at: [99.8, 66.4], face: 180, pose: stand}
+        - {t: 0.6, at: [99.8, 66.4], face: 180, pose: gesture}
+        - {t: 3.6, at: [99.8, 66.4], face: 180, pose: stand}
+        - {t: 7.3, at: [99.8, 66.4], face: 180, pose: stand}
+      bisco:
+        - {t: 0.0, at: [100.8, 75.0], face: 355, pose: ready}
+        - {t: 7.3, at: [100.8, 75.0], face: 355, pose: ready}
+      hundred-knight:
+        - {t: 0.0, at: [99.4, 75.8], face: 0, pose: ready}
+        - {t: 7.3, at: [99.4, 75.8], face: 0, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [108.6, 70.6, 0.8], look: [100.2, 70.6], look_h: 1.1, lens: 28, frame: 2人}
+      - {t: 7.3, cam: [108.4, 70.6, 0.8], look: [100.2, 70.8], look_h: 1.1, lens: 30}
+    act: {start: 向き合うテレッサと二人（東から）, do: テレッサ「もちろん、あなたたちに夜会の案内をするためですわ」。ビスコ「何を、企んでいるんだ……？」, end: 向き合う三人}
+    camera: 広場の東の低い所から横に
+    kind: M
+  A27-004:
+    frame: 全身（回り込む）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, teressa]
+    keys:
+      teressa:
+        - {t: 0.0, at: [99.8, 66.4], face: 180, pose: stand}
+        - {t: 1.0, at: [99.8, 66.4], face: 120, pose: walk}
+        - {t: 5.0, at: [103.6, 70.4], face: 200, pose: walk}
+        - {t: 8.0, at: [103.4, 75.6], face: 250, pose: walk}
+        - {t: 8.4, at: [103.4, 75.6], face: 270, pose: lean}
+        - {t: 11.4, at: [103.4, 75.6], face: 270, pose: lean}
+        - {t: 11.8, at: [103.0, 74.8], face: 330, pose: walk}
+        - {t: 14.8, at: [100.6, 71.6], face: 330, pose: walk, ease: out}
+        - {t: 15.2, at: [100.6, 71.6], face: 180, pose: gesture}
+        - {t: 18.7, at: [100.6, 71.6], face: 180, pose: gesture}
+      bisco:
+        - {t: 0.0, at: [100.8, 75.0], face: 355, pose: ready}
+        - {t: 5.0, at: [100.8, 75.0], face: 60, pose: ready}
+        - {t: 9.0, at: [100.8, 75.0], face: 90, pose: stand}
+        - {t: 13.0, at: [100.8, 75.0], face: 20, pose: stand}
+        - {t: 18.7, at: [100.8, 75.0], face: 0, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [99.4, 75.8], face: 0, pose: ready}
+        - {t: 6.0, at: [99.4, 75.8], face: 60, pose: ready}
+        - {t: 13.0, at: [99.4, 75.8], face: 20, pose: ready}
+        - {t: 18.7, at: [99.4, 75.8], face: 0, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [92.4, 72.0, 1.0], look: [100.6, 71.6], look_h: 1.3, lens: 26, frame: 全身}
+      - {t: 9.0, cam: [93.0, 66.6, 1.1], look: [101.6, 73.2], look_h: 1.2, lens: 26}
+      - {t: 18.7, cam: [94.6, 64.4, 1.2], look: [100.6, 73.0], look_h: 1.2, lens: 28}
+    act: {start: テレッサと二人（西から）, do: テレッサが二人のまわりをゆっくり回り、ビスコの耳元にささやく（「企みなんて人聞きが悪いですわね。今宵は夜会の最終日。騒ぎを起こすなどもってのほか」）。前に戻って手を広げる（「さあ、歴史ある魔女の都での年に一度の宴を存分に楽しみましょう」）, end: 手を広げるテレッサ}
+    camera: 広場の西の低い所から、回るテレッサに合わせて北西へ回り込む（奥に塔の門）
+    kind: M
+  A27-005:
+    frame: 寄り（ビスコ）
+    lighting: city_plaza
+    only: [bisco, teressa]
+    keys:
+      bisco:
+        - {t: 0.0, at: [100.8, 75.0], face: 0, pose: stand}
+        - {t: 0.6, at: [100.8, 75.0], face: 0, pose: look_down}
+        - {t: 3.0, at: [100.8, 75.0], face: 0, pose: stand}
+        - {t: 4.0, at: [100.8, 75.0], face: 0, pose: proud}
+        - {t: 6.4, at: [100.8, 75.0], face: 0, pose: proud}
+      teressa:
+        - {t: 0.0, at: [100.6, 71.6], face: 180, pose: gesture}
+        - {t: 6.4, at: [100.6, 71.6], face: 180, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [101.6, 72.6, 1.9], look: [100.8, 75.0], look_h: 1.45, lens: 36, frame: 寄り}
+      - {t: 6.4, cam: [101.6, 72.7, 1.9], look: [100.8, 75.0], look_h: 1.45, lens: 40}
+    act: {start: ビスコの顔（テレッサの側の少し上から）, do: ビスコが目を伏せ、顔を上げる（「迷っていてもしかたない……か。覚悟を決めるか……！」）, end: 覚悟を決めたビスコ}
+    camera: テレッサの横の少し上から、ビスコの顔へ寄る
+    kind: M
+  A27-006:
+    frame: 引き（閃光）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, teressa]
+    keys:
+      teressa:
+        - {t: 0.0, at: [100.6, 71.6], face: 180, pose: stand}
+        - {t: 0.6, at: [100.6, 71.6], face: 180, pose: proud}
+        - {t: 3.4, at: [100.6, 71.6], face: 180, pose: arms_up}
+        - {t: 4.2, at: [100.6, 71.6], face: 180, pose: arms_up}
+        - {t: 4.3, at: [100.6, 71.6], z: -20.0, face: 180, pose: stand, ease: step}
+        - {t: 7.8, at: [100.6, 71.6], z: -20.0, face: 180, pose: stand}
+      bisco:
+        - {t: 0.0, at: [100.8, 75.0], face: 0, pose: proud}
+        - {t: 3.6, at: [100.8, 75.0], face: 0, pose: ready}
+        - {t: 4.2, at: [100.8, 75.0], face: 0, pose: ready}
+        - {t: 4.3, at: [100.8, 75.0], z: -20.0, face: 0, pose: stand, ease: step}
+        - {t: 7.8, at: [100.8, 75.0], z: -20.0, face: 0, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [99.4, 75.8], face: 0, pose: ready}
+        - {t: 4.0, at: [99.4, 75.8], face: 30, pose: ready}
+        - {t: 4.7, at: [100.6, 74.6], face: 30, pose: jump, arc: 0.8}
+        - {t: 5.0, at: [100.6, 74.6], face: 30, pose: crouch}
+        - {t: 6.4, at: [100.6, 74.6], face: 300, pose: stand}
+        - {t: 7.8, at: [100.6, 74.6], face: 120, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [108.0, 80.6, 4.0], look: [100.4, 72.4], look_h: 0.8, lens: 26, frame: 引き}
+      - {t: 7.8, cam: [107.6, 80.2, 3.8], look: [100.4, 73.0], look_h: 0.6, lens: 28}
+    shake: [{t: [4.0, 5.2], amp: 1.2}]
+    fx:
+      - {kind: light, t: [3.9, 4.4], at: [100.6, 73.0], z: 1.6, energy: 60000, fade: 1.4, color: [255, 250, 230]}
+      - {kind: spark, t: [4.0, 4.7], at: [100.6, 72.0], z: 1.4}
+      - {kind: spark, t: [4.1, 4.8], at: [100.8, 75.0], z: 1.2}
+    act: {start: 広場の三人（南東の上から）, do: テレッサ「そうそう。素直が一番ですわ」と手を高く上げる。閃光。ビスコ「やはり騙して……！」。光が消えると、テレッサもビスコもいない。跳びかかった百騎兵だけが残る, end: ひとり残った百騎兵}
+    camera: 広場の南東の少し高い所から（閃光で揺れる）
+    kind: A
+  A27-007:
+    frame: 引き（クレーン上げ・ひとり）
+    lighting: city_plaza
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [100.6, 74.6], face: 120, pose: stand}
+        - {t: 2.0, at: [100.6, 74.6], face: 240, pose: stand}
+        - {t: 5.0, at: [100.6, 74.6], face: 0, pose: look_up}
+        - {t: 9.0, at: [100.6, 74.6], face: 90, pose: stand}
+        - {t: 12.0, at: [100.6, 74.6], face: 200, pose: stand}
+        - {t: 15.0, at: [100.6, 74.6], face: 0, pose: ready}
+        - {t: 18.4, at: [100.6, 74.6], face: 0, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [104.2, 77.6, 0.8], look: [100.6, 74.4], look_h: 0.7, lens: 28, frame: 引き}
+      - {t: 18.4, cam: [110.0, 86.0, 11.0], look: [100.4, 68.0], look_h: 0.5, lens: 24}
+    act: {start: 広場にひとりの百騎兵, do: テレッサの声だけが響く（「使い魔の方は捕まえ損ないましたが……ここは魔女が支配する魔女の都。使い魔ごときが好きにできるものは何一つありませんわ」）。百騎兵が見回し、空を見上げ、塔へ向き直って構える, end: 広場の小さな百騎兵と塔（上から）}
+    camera: 百騎兵の近くの低い所から、ゆっくり高く上がる
+    kind: M
+  A27-008:
+    frame: 全身（百騎兵の後ろ・門へ）
+    lighting: city_plaza
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [100.6, 74.6], face: 0, pose: ready}
+        - {t: 3.2, at: [100.6, 74.6], face: 0, pose: ready}
+        - {t: 3.6, at: [100.5, 74.0], face: 358, pose: run}
+        - {t: 8.6, at: [100.0, 57.4], face: 358, pose: run, ease: out}
+        - {t: 8.9, at: [100.0, 57.4], face: 0, pose: stand}
+        - {t: 13.0, at: [100.0, 57.4], face: 0, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [100.8, 78.4, 0.6], look: [100.2, 60.0], look_h: 3.0, lens: 24, frame: 全身}
+      - {t: 13.0, cam: [100.6, 63.4, 0.6], look: [100.0, 52.4], look_h: 6.0, lens: 24}
+    act: {start: 百騎兵の後ろ、奥に塔の門, do: テレッサの声（「放っておいても問題ありませんわね。少しおとなしくしていてもらいますわ。夜会が終わるまで」）。百騎兵が塔の門へ駆けていく, end: 門を見上げる百騎兵}
+    camera: 百騎兵の後ろの低い所から、駆ける百騎兵を追って門へ進む
+    kind: M
+  # ---------- 議事塔の門 ----------
+  A27-009:
+    frame: 煽り（門の顔）
+    lighting: city_plaza
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [100.0, 57.4], face: 0, pose: look_up}
+        - {t: 9.6, at: [100.0, 57.4], face: 0, pose: look_up}
+        - {t: 10.0, at: [100.0, 57.4], face: 0, pose: ready}
+        - {t: 13.6, at: [100.0, 57.4], face: 0, pose: ready}
+    cam_keys:
+      - {t: 0.0, cam: [101.2, 60.6, 0.5], look: [100.0, 52.4], look_h: 6.6, lens: 22, frame: 煽り}
+      - {t: 13.6, cam: [101.0, 60.2, 0.5], look: [100.0, 52.4], look_h: 7.0, lens: 26}
+    fx:
+      - {kind: eyes, t: [0.2, 13.6], at: [100.0, 52.7], z: 7.0, gap: 2.2, r: 0.45, color: [255, 200, 120]}
+    act: {start: 門を見上げる百騎兵の後ろ（下から）, do: 門の顔の目が光り、門がしゃべる（「ここは議事塔ブロッケントゥルム。ここには、魔女様方以外が立ち入ることはゆるされておりません。どうぞ、お引取りを」）。百騎兵が剣を構える, end: 構える百騎兵と門の顔}
+    camera: 百騎兵の後ろの地面すれすれから門の顔を煽る。ゆっくり寄る
+    kind: M
+  A27-010:
+    frame: 引き（門が開く）
+    lighting: city_plaza
+    only: [hundred-knight]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [100.0, 57.4], face: 0, pose: ready}
+        - {t: 3.6, at: [100.0, 57.4], face: 0, pose: stand}
+        - {t: 4.4, at: [100.0, 57.2], face: 0, pose: walk}
+        - {t: 8.1, at: [100.0, 53.0], face: 0, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [109.6, 61.0, 2.0], look: [100.0, 53.6], look_h: 4.0, lens: 24, frame: 引き}
+      - {t: 8.1, cam: [109.4, 61.6, 2.4], look: [100.0, 53.4], look_h: 4.4, lens: 26}
+    shake: [{t: [3.0, 4.4], amp: 0.6}]
+    fx:
+      - {kind: eyes, t: [0.0, 4.0], at: [100.0, 52.7], z: 7.0, gap: 2.2, r: 0.45, color: [255, 200, 120]}
+      - {kind: rift, t: [3.2, 8.1], at: [100.0, 52.9], z: 0.0, w: 6.0, h: 9.0, face: 180, open: 1.2, close: 0.3}
+    act: {start: 門の前の百騎兵（南東から）, do: 門の目がもう一度光る（「魔女様を確認しました。開門いたします」）。門が光って開き、百騎兵がその中へ歩いて入る, end: 光の中へ入る百騎兵}
+    camera: 門の南東の少し高い所から
+    kind: A

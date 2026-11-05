@@ -1,0 +1,1073 @@
+# A25 盲いた魔女と追憶の園（6章後半 回2 の核）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-04）
+# Living Spec「A25 動きの設計（案）」。準備（案）の表の A25（「あたしゃ目が見えないがあんたのことはよく見えるよ」、名乗り、翠ノ実のお使い、
+#   追憶の園でビスコが鼻で先に見つける、開門、忠告「本当に大事なものは、いつだって、その手の中にあるんだ」、翠ノ実を手渡す、独白「今日だった。全部、見えていた」）。
+#   列車の催促の合いの手は半分に（L847〜L849・L856・L857 を削る）。L840「よいしょっと」は声が見つからないので置かない（芝居だけ）。
+# 場所は world/rift-void-layout.yaml。魔女の居場所は浮いた円い足場 (78, 104)（半径 8、上面 z 0。古い椅子 (76, 102)、灯り2つ、光る石）。
+#   門の前の足場から南の板の道を渡って北東から入る。西の板の道の先に追憶の園 (48, 112)（翠ノ実の木 (41.5, 116)）。
+# 盲いた魔女の形は仮（設定画待ち。顔の高さより下から撮り、独白だけ目元に寄る、準備（案）の演出）。
+# 列車の側（開門・催促・出発）は門の前（A24 と同じ。夜光列車は (111.5, 50) に東向き）。門が開くのは fx の rift（扉の前に光る楕円）で表す。
+# 光: 魔女の居場所 witch_den、追憶の園 memory_garden、門の前 void。
+scene: A25
+layout: world/rift-void-layout.yaml
+map_ymax: 130
+lighting: witch_den
+places:
+  w_stool: [76.0, 102.0]
+  w_stand: [76.5, 102.2]
+  plank_ne: [84.0, 99.6]
+  plank_w: [70.2, 106.2]
+  fruit_tree: [41.5, 116.0]
+  gate_stop: [111.5, 50.0]
+start:
+  hundred-knight: {at: [87.0, 96.3], face: 222}
+  bisco: {at: [91.6, 91.0], face: 222}
+  blind-witch: {at: [76.0, 102.0], face: 67}
+  night-train: {at: [111.5, 50.0], face: 90}
+
+cuts:
+  # ---------- 魔女の居場所 ----------
+  A25-001:
+    frame: 引き（魔女の背中越し）
+    lighting: witch_den
+    only: [hundred-knight, blind-witch]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [87.0, 96.3], face: 222, pose: walk}
+        - {t: 3.0, at: [84.0, 99.6], face: 222, pose: walk}
+        - {t: 6.0, at: [79.6, 100.9], face: 247, pose: walk, ease: out}
+        - {t: 6.3, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 13.9, at: [79.6, 100.9], face: 247, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 13.9, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [73.4, 103.4, 0.8], look: [84.0, 99.4], look_h: 0.8, lens: 24, frame: 引き}
+      - {t: 13.9, cam: [73.6, 103.3, 0.8], look: [80.6, 100.6], look_h: 0.8, lens: 26}
+    act: {start: 虚空の奥の浮いた足場。古い椅子に座る老婆の背中（手前）と、奥の板の道, do: 百騎兵が板の道を渡ってくる。椅子の老婆が笑う（「ヒッヒッヒ、なんだかよくわからないのが来たもんだねぇ」）, end: 老婆の前で立ち止まる百騎兵}
+    camera: 魔女の椅子の後ろの低い所から、渡ってくる百騎兵を迎える
+    kind: M
+  A25-002:
+    frame: 肩なめ（百騎兵越しに魔女・煽り）
+    only: [hundred-knight, blind-witch]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 14.3, at: [79.6, 100.9], face: 247, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 8.6, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 9.2, at: [76.5, 102.2], face: 67, pose: stand}
+        - {t: 9.8, at: [76.5, 102.2], face: 67, pose: proud}
+        - {t: 14.3, at: [76.5, 102.2], face: 67, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [81.2, 99.4, 0.95], look: [76.4, 102.2], look_h: 1.05, lens: 30, frame: 肩なめ}
+      - {t: 14.3, cam: [81.0, 99.5, 0.95], look: [76.5, 102.2], look_h: 1.1, lens: 34}
+    act: {start: 百騎兵の肩越しに、椅子の魔女（顔の高さより下から）, do: 魔女「おやおや、自分からやってきておいてお前は誰だっ！……って顔してるねぇ」。立ち上がって胸を張る（「あたしかい？あたしは魔女さ！」）, end: 胸を張る魔女}
+    camera: 百騎兵の後ろの低い所から魔女を煽る。ゆっくり寄る
+    kind: M
+  A25-003:
+    frame: 2人（横から）
+    only: [hundred-knight, blind-witch]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 2.2, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 2.6, at: [79.9, 100.8], face: 247, pose: stand}
+        - {t: 7.1, at: [79.9, 100.8], face: 247, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 67, pose: proud}
+        - {t: 0.6, at: [76.5, 102.2], face: 67, pose: walk}
+        - {t: 2.0, at: [78.3, 101.6], face: 67, pose: walk, ease: out}
+        - {t: 2.3, at: [78.3, 101.6], face: 67, pose: lean}
+        - {t: 7.1, at: [78.3, 101.6], face: 67, pose: lean}
+    cam_keys:
+      - {t: 0.0, cam: [78.4, 105.6, 1.0], look: [78.4, 101.4], look_h: 0.8, lens: 30, frame: 2人}
+      - {t: 7.1, cam: [78.6, 105.4, 1.0], look: [78.8, 101.3], look_h: 0.8, lens: 32}
+    act: {start: 向き合う魔女と百騎兵（横から）, do: 魔女がすたすた寄って顔を突き出す（「あたしゃ目が見えないがあんたのことはよく見えるよ。ヒヒッ！」）, end: 百騎兵に顔を寄せる魔女}
+    camera: 足場の南の低い所から横に
+    kind: M
+  A25-004:
+    frame: 引き（少し上から回り込む）
+    only: [hundred-knight, blind-witch]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [79.9, 100.8], face: 247, pose: stand}
+        - {t: 3.4, at: [79.9, 100.8], face: 10, pose: stand}
+        - {t: 5.4, at: [79.9, 100.8], face: 100, pose: stand}
+        - {t: 7.0, at: [79.9, 100.8], face: 150, pose: stand}
+        - {t: 12.0, at: [79.9, 100.8], face: 247, pose: stand}
+        - {t: 14.7, at: [79.9, 100.8], face: 247, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [78.3, 101.6], face: 67, pose: lean}
+        - {t: 1.0, at: [78.3, 101.6], face: 30, pose: stand}
+        - {t: 1.4, at: [78.5, 100.9], face: 10, pose: walk}
+        - {t: 3.4, at: [79.8, 99.5], face: 90, pose: walk}
+        - {t: 5.4, at: [81.4, 100.4], face: 180, pose: walk}
+        - {t: 6.6, at: [81.2, 101.7], face: 240, pose: walk}
+        - {t: 7.0, at: [81.2, 101.7], face: 300, pose: lean}
+        - {t: 9.0, at: [81.2, 101.7], face: 300, pose: lean}
+        - {t: 9.4, at: [81.2, 101.7], face: 260, pose: stand}
+        - {t: 10.0, at: [80.9, 101.8], face: 260, pose: walk}
+        - {t: 12.4, at: [76.5, 102.2], face: 260, pose: walk, ease: out}
+        - {t: 12.7, at: [76.5, 102.2], face: 67, pose: stand}
+        - {t: 14.7, at: [76.5, 102.2], face: 67, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [75.4, 97.4, 2.3], look: [79.6, 100.8], look_h: 0.6, lens: 26, frame: 引き}
+      - {t: 14.7, cam: [76.8, 96.8, 2.2], look: [79.0, 101.0], look_h: 0.6, lens: 26}
+    act: {start: 魔女と百騎兵（北西の少し上から）, do: 魔女が百騎兵のまわりをぐるりと回ってじろじろ見る（「あんた、ただの魔法生物じゃないね？何もんだい？まあ、どうでもいいけどねぇ。ヒッヒッヒ」）。百騎兵は目で追う, end: 椅子の前に戻る魔女}
+    camera: 足場の北西の少し高い所から、回る魔女に合わせてゆっくり回り込む
+    kind: M
+  A25-005:
+    frame: 肩なめ（魔女越しに板の道）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [91.6, 91.0], face: 222, pose: run}
+        - {t: 5.3, at: [88.0, 95.1], face: 222, pose: run}
+      hundred-knight:
+        - {t: 0.0, at: [79.9, 100.8], face: 247, pose: stand}
+        - {t: 1.0, at: [79.9, 100.8], face: 40, pose: stand}
+        - {t: 5.3, at: [79.9, 100.8], face: 40, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 67, pose: proud}
+        - {t: 0.4, at: [76.5, 102.2], face: 50, pose: stand}
+        - {t: 5.3, at: [76.5, 102.2], face: 50, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [75.0, 103.6, 1.4], look: [86.0, 96.6], look_h: 1.0, lens: 30, frame: 肩なめ}
+      - {t: 5.3, cam: [75.0, 103.6, 1.4], look: [86.6, 96.0], look_h: 1.0, lens: 34}
+    act: {start: 魔女の肩越しに、虚空に伸びる板の道, do: 魔女が鼻をひくつかせて顔を上げる（「おや？また怪しいのがやってくるねぇ」）。板の道の向こうから小さくビスコが駆けてくる, end: 駆けてくるビスコ}
+    camera: 魔女の後ろから板の道の先へ。わずかに寄る
+    kind: M
+  A25-006:
+    frame: 全身（駆け込む）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [88.0, 95.1], face: 222, pose: run}
+        - {t: 2.0, at: [84.0, 99.6], face: 222, pose: run}
+        - {t: 3.2, at: [80.0, 102.2], face: 250, pose: run, ease: out}
+        - {t: 3.5, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 3.8, at: [80.0, 102.2], face: 270, pose: bow}
+        - {t: 7.6, at: [80.0, 102.2], face: 270, pose: bow}
+        - {t: 8.2, at: [80.0, 102.2], face: 330, pose: stand}
+        - {t: 15.1, at: [80.0, 102.2], face: 300, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.9, 100.8], face: 40, pose: stand}
+        - {t: 3.4, at: [79.9, 100.8], face: 130, pose: stand}
+        - {t: 15.1, at: [79.6, 100.9], face: 130, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 50, pose: stand}
+        - {t: 3.5, at: [76.5, 102.2], face: 80, pose: stand}
+        - {t: 15.1, at: [76.5, 102.2], face: 85, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [81.6, 103.4, 1.2], look: [86.0, 97.6], look_h: 1.1, lens: 24, frame: 全身}
+      - {t: 3.2, cam: [81.4, 103.6, 1.2], look: [81.0, 101.5], look_h: 1.1, lens: 26}
+      - {t: 15.1, cam: [81.6, 103.8, 1.2], look: [79.8, 101.6], look_h: 1.0, lens: 28}
+    act: {start: 板の道の端, do: ビスコが駆け込んできて、膝に手をついて息を切らす（「はぁはぁ……。魔女をみつけたんだな。すまない、道には迷うし、魔獣は強いわで、役には立てなかったな」）, end: 百騎兵の横で息を整えるビスコ。奥に魔女}
+    camera: 足場の東の低い所から、駆け込むビスコを追って振る
+    kind: M
+  A25-007:
+    frame: 寄り（魔女・下から）
+    only: [blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 0.6, at: [76.5, 102.2], face: 90, pose: cross}
+        - {t: 10.0, at: [76.5, 102.2], face: 90, pose: cross}
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 300, pose: stand}
+        - {t: 2.0, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 10.0, at: [80.0, 102.2], face: 270, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [78.4, 101.4, 0.75], look: [76.5, 102.2], look_h: 1.2, lens: 32, frame: 寄り}
+      - {t: 10.0, cam: [78.3, 101.5, 0.75], look: [76.5, 102.2], look_h: 1.2, lens: 36}
+    act: {start: 腕を組む魔女（顔の高さより下から）, do: 魔女「おやおや、目の前の人間に挨拶も無しとは無礼な娘だねぇ」, end: 腕を組む魔女}
+    camera: 魔女の前の低い所から煽る（顔の高さより下）
+    kind: M
+  A25-008:
+    frame: 2人（横から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 1.0, at: [80.0, 102.2], face: 270, pose: bow}
+        - {t: 3.4, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 9.2, at: [80.0, 102.2], face: 300, pose: gesture}
+        - {t: 12.6, at: [80.0, 102.2], face: 300, pose: gesture}
+        - {t: 13.2, at: [80.0, 102.2], face: 270, pose: proud}
+        - {t: 15.6, at: [80.0, 102.2], face: 270, pose: proud}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 130, pose: stand}
+        - {t: 9.0, at: [79.6, 100.9], face: 200, pose: stand}
+        - {t: 15.6, at: [79.6, 100.9], face: 247, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 90, pose: cross}
+        - {t: 9.0, at: [76.5, 102.2], face: 90, pose: cross}
+        - {t: 9.4, at: [76.5, 102.2], face: 75, pose: stand}
+        - {t: 15.6, at: [76.5, 102.2], face: 75, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [78.0, 106.4, 1.3], look: [78.2, 101.9], look_h: 0.9, lens: 26, frame: 2人}
+      - {t: 15.6, cam: [78.2, 106.2, 1.3], look: [78.4, 101.8], look_h: 0.9, lens: 28}
+    act: {start: 魔女とビスコと百騎兵（横から）, do: ビスコがあわててお辞儀して名乗る（「私は、ビスコール＝ドートリッシュ。アマタイアの騎士です」）。百騎兵を手で示して「こちらは沼の魔女、メタリカの使い魔にして伝説の悪魔と呼ばれる、百騎兵」。胸を張る, end: 胸を張るビスコ}
+    camera: 足場の南の低い所から三人を横に
+    kind: M
+  A25-009:
+    frame: 肩なめ（ビスコ越しに魔女）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 75, pose: stand}
+        - {t: 0.4, at: [76.5, 102.2], face: 75, pose: cover}
+        - {t: 4.0, at: [76.5, 102.2], face: 75, pose: cover}
+        - {t: 4.6, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 7.2, at: [76.5, 102.2], face: 85, pose: point}
+        - {t: 12.0, at: [76.5, 102.2], face: 85, pose: point}
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 270, pose: proud}
+        - {t: 7.4, at: [80.0, 102.2], face: 270, pose: proud}
+        - {t: 7.8, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 12.0, at: [80.0, 102.2], face: 270, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 12.0, at: [79.6, 100.9], face: 247, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [81.2, 102.9, 0.75], look: [76.5, 102.2], look_h: 1.1, lens: 32, frame: 肩なめ}
+      - {t: 12.0, cam: [81.0, 102.8, 0.75], look: [76.5, 102.2], look_h: 1.1, lens: 36}
+    act: {start: ビスコの肩越しに魔女, do: 魔女が口を押さえて笑い、指を突きつける（「ヒッヒッヒ、百騎兵だって？あたしの目が見えないからって、いい加減なことを言うんじゃないよ！」）, end: 指を突きつける魔女}
+    camera: ビスコの後ろから肩越しに魔女。ゆっくり寄る
+    kind: M
+  A25-010:
+    frame: 胸上（ビスコ）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 0.4, at: [80.0, 102.2], face: 270, pose: proud}
+        - {t: 3.6, at: [80.0, 102.2], face: 250, pose: look_down}
+        - {t: 5.6, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 9.6, at: [80.0, 102.2], face: 270, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: point}
+        - {t: 1.0, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 9.6, at: [76.5, 102.2], face: 85, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [77.6, 102.6, 1.35], look: [80.0, 102.2], look_h: 1.35, lens: 34, frame: 胸上}
+      - {t: 9.6, cam: [77.7, 102.6, 1.35], look: [80.0, 102.2], look_h: 1.35, lens: 38}
+    act: {start: ビスコの顔（魔女の側から）, do: ビスコ「そんな！父と母の名にかけて真実です」。目をそらして「……たぶん」。向き直って「それより、魔女殿にお願いがあるのです……」, end: ビスコ}
+    camera: 魔女の横から、ビスコの顔へゆっくり寄る
+    kind: M
+  A25-011:
+    frame: 引き（北から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 0.8, at: [76.5, 102.2], face: 250, pose: stand}
+        - {t: 1.4, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 8.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 14.7, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 9.6, at: [80.0, 102.2], face: 270, pose: stand}
+        - {t: 10.0, at: [80.0, 102.2], face: 270, pose: look_up}
+        - {t: 14.7, at: [80.0, 102.2], face: 270, pose: look_up}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 14.7, at: [79.6, 100.9], face: 247, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [77.8, 96.6, 2.6], look: [78.2, 101.8], look_h: 0.9, lens: 26, frame: 引き}
+      - {t: 14.7, cam: [78.0, 96.9, 2.6], look: [78.2, 101.9], look_h: 0.9, lens: 28}
+    act: {start: 足場の三人（北から）, do: 魔女が椅子に座り直す（「みなまで言わずともわかっているよ。あんた達、門を開ける方法を探してるんだろ？」）。ビスコがはっとする（「……！？やはり……魔女殿が門を」）, end: 椅子の魔女と、はっとするビスコ}
+    camera: 足場の北の少し高い所から三人を
+    kind: M
+  A25-012:
+    frame: 全身（魔女の背中越し）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [80.0, 102.2], face: 270, pose: look_up}
+        - {t: 0.6, at: [80.0, 102.2], face: 265, pose: walk}
+        - {t: 2.6, at: [78.0, 102.4], face: 265, pose: walk, ease: out}
+        - {t: 2.9, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 6.4, at: [78.0, 102.4], face: 265, pose: kneel}
+        - {t: 12.3, at: [78.0, 102.4], face: 265, pose: kneel}
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 2.6, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 12.3, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 247, pose: stand}
+        - {t: 2.6, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 12.3, at: [79.6, 100.9], face: 230, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [74.2, 102.9, 0.9], look: [78.8, 102.1], look_h: 0.9, lens: 30, frame: 全身}
+      - {t: 12.3, cam: [74.3, 102.9, 0.85], look: [78.4, 102.3], look_h: 0.7, lens: 34}
+    act: {start: 椅子の魔女の背中越しに、詰め寄るビスコ, do: ビスコが一歩前に出て膝をつき、頼み込む（「私たちは、わけあってヴァルプルギスの夜会に向かわなければなりません。急ぎ先に進みたいのです。門を開けてはいただけないでしょうか？」）, end: 膝をつくビスコ}
+    camera: 魔女の椅子の後ろの低い所から。ゆっくり寄る
+    kind: M
+  A25-013:
+    frame: 俯瞰（上から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 0.4, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 4.4, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 4.8, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 18.6, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: kneel}
+        - {t: 15.8, at: [78.0, 102.4], face: 265, pose: kneel}
+        - {t: 16.4, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 18.6, at: [78.0, 102.4], face: 265, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 18.6, at: [79.6, 100.9], face: 230, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [71.0, 97.0, 6.0], look: [77.6, 102.2], look_h: 0.6, lens: 28, frame: 俯瞰}
+      - {t: 18.6, cam: [71.6, 97.4, 5.6], look: [77.6, 102.2], look_h: 0.6, lens: 30}
+    act: {start: 足場の上から（魔女と、膝をつくビスコ）, do: 魔女が身をよじって笑う（「イ〜ヒッヒッヒ！！たしかに、あの門を閉めたのはあたしさ。だけどね、開けることはできないよ」）。ビスコが立ち上がる（「な、何故です？」）, end: 立ち上がったビスコ}
+    camera: 足場の北西の高い所から見下ろす。わずかに下りる
+    kind: M
+  A25-014:
+    frame: 全身（回り込む）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 1.6, at: [76.0, 102.0], z: 0.45, face: 80, pose: sit}
+        - {t: 2.2, at: [76.5, 102.2], face: 80, pose: stand}
+        - {t: 2.6, at: [76.5, 102.2], face: 120, pose: walk}
+        - {t: 6.0, at: [78.4, 103.6], face: 40, pose: walk}
+        - {t: 6.4, at: [78.4, 103.6], face: 330, pose: lean}
+        - {t: 11.0, at: [78.4, 103.6], face: 330, pose: lean}
+        - {t: 11.4, at: [78.4, 103.6], face: 250, pose: walk}
+        - {t: 15.0, at: [76.5, 102.2], face: 280, pose: walk, ease: out}
+        - {t: 15.4, at: [76.5, 102.2], face: 80, pose: stand}
+        - {t: 16.0, at: [76.5, 102.2], face: 80, pose: cross}
+        - {t: 22.7, at: [76.5, 102.2], face: 80, pose: cross}
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 6.0, at: [78.0, 102.4], face: 170, pose: stand}
+        - {t: 11.0, at: [78.0, 102.4], face: 200, pose: stand}
+        - {t: 15.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 22.7, at: [78.0, 102.4], face: 265, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 22.7, at: [79.6, 100.9], face: 230, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [75.0, 99.4, 1.0], look: [77.6, 102.2], look_h: 1.0, lens: 28, frame: 全身}
+      - {t: 11.0, cam: [79.6, 99.0, 1.0], look: [77.8, 102.6], look_h: 1.0, lens: 28}
+      - {t: 22.7, cam: [80.8, 99.6, 1.0], look: [77.4, 102.4], look_h: 1.0, lens: 30}
+    act: {start: 椅子から立つ魔女, do: 魔女がビスコのまわりをゆっくり回り、背中から耳元にささやく（「ヒッヒッヒ、そんなことに理由なんてあるもんか。魔女ってのは意地悪をするのが仕事みたいなもんだからねぇ。諦めるんだね、ヒッヒッヒ！」）。元の所に戻って腕を組む, end: 腕を組む魔女とビスコ}
+    camera: 足場の北の低い所から、回る魔女に合わせて東へ回り込む
+    kind: M
+  A25-015:
+    frame: 寄り（魔女・下から）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 0.4, at: [78.0, 102.4], face: 265, pose: look_down}
+        - {t: 16.8, at: [78.0, 102.4], face: 265, pose: look_down}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 80, pose: cross}
+        - {t: 2.0, at: [76.5, 102.2], face: 80, pose: stand}
+        - {t: 12.6, at: [76.5, 102.2], face: 85, pose: point}
+        - {t: 16.8, at: [76.5, 102.2], face: 85, pose: point}
+    cam_keys:
+      - {t: 0.0, cam: [78.0, 101.5, 0.8], look: [76.5, 102.2], look_h: 1.2, lens: 34, frame: 寄り}
+      - {t: 16.8, cam: [77.9, 101.6, 0.8], look: [76.5, 102.2], look_h: 1.2, lens: 38}
+    act: {start: うつむくビスコ（手前）と魔女（下から）, do: ビスコ「そんな……！」。魔女「でも、わずかなチャンスをやるのもまた魔女の仕事さ。どうだい？やるかい？やらないのかい？」と指を突きつける, end: 指を突きつける魔女}
+    camera: ビスコの横の低い所から魔女を煽る（顔の高さより下）
+    kind: M
+  A25-016:
+    frame: 寄り（ビスコ）
+    only: [bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: look_down}
+        - {t: 6.6, at: [78.0, 102.4], face: 265, pose: look_down}
+        - {t: 7.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 11.6, at: [78.0, 102.4], face: 265, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [77.0, 103.2, 1.6], look: [78.0, 102.4], look_h: 1.35, lens: 40, frame: 寄り}
+      - {t: 11.6, cam: [77.1, 103.1, 1.6], look: [78.0, 102.4], look_h: 1.35, lens: 44}
+    act: {start: ビスコの顔（斜め前から）, do: 心の声「（くっ……。こんなことをしている場合ではないのに）」。顔を上げて「……そ、それで、私達に何をしろと言うのですか？」, end: 顔を上げたビスコ}
+    camera: 魔女の側の斜め前から、ビスコの顔へ寄る
+    kind: M
+  A25-017:
+    frame: 2人（北西から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: point}
+        - {t: 1.0, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 6.0, at: [76.5, 102.2], face: 85, pose: gesture}
+        - {t: 12.0, at: [76.5, 102.2], face: 85, pose: point}
+        - {t: 15.0, at: [76.5, 102.2], face: 85, pose: stand}
+        - {t: 18.6, at: [76.5, 102.2], face: 85, pose: proud}
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 18.6, at: [78.0, 102.4], face: 265, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 18.6, at: [79.6, 100.9], face: 230, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [74.6, 99.0, 2.4], look: [77.4, 102.2], look_h: 0.9, lens: 28, frame: 2人}
+      - {t: 18.6, cam: [75.6, 98.4, 2.4], look: [77.6, 102.2], look_h: 0.9, lens: 28}
+    act: {start: 魔女とビスコ（北西から）, do: 魔女が手を広げ、指を二本立てる（「ちょっとした“お使い”だよ。“翠ノ実”を二つばかりとってきておくれな。どうだい？たいしたことじゃないだろ？」）, end: 胸を張る魔女}
+    camera: 足場の北西から二人を。ゆっくり回り込む
+    kind: M
+  A25-018:
+    frame: 肩なめ（魔女越しにビスコ）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 3.0, at: [78.0, 102.4], face: 200, pose: gesture}
+        - {t: 6.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 8.3, at: [78.0, 102.4], face: 265, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: proud}
+        - {t: 8.3, at: [76.5, 102.2], face: 85, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [75.5, 102.9, 1.3], look: [78.0, 102.4], look_h: 1.3, lens: 34, frame: 肩なめ}
+      - {t: 8.3, cam: [75.6, 102.85, 1.3], look: [78.0, 102.4], look_h: 1.3, lens: 38}
+    act: {start: 魔女の肩越しにビスコ, do: ビスコ「“翠ノ実”？……しかし、ここから出られないのでは？」と、まわりの虚空を手で示す, end: ビスコ}
+    camera: 魔女の後ろから肩越しにビスコ
+    kind: M
+  A25-019:
+    frame: 引き（追憶の園の方へ）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: proud}
+        - {t: 1.0, at: [76.5, 102.2], face: 238, pose: stand}
+        - {t: 1.6, at: [76.5, 102.2], face: 238, pose: point}
+        - {t: 7.0, at: [76.5, 102.2], face: 238, pose: point}
+        - {t: 7.6, at: [76.5, 102.2], face: 85, pose: cross}
+        - {t: 11.2, at: [76.5, 102.2], face: 85, pose: cross}
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 1.6, at: [78.0, 102.4], face: 238, pose: stand}
+        - {t: 7.6, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 11.2, at: [78.0, 102.4], face: 265, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 1.8, at: [79.6, 100.9], face: 238, pose: stand}
+        - {t: 11.2, at: [79.6, 100.9], face: 238, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [80.6, 99.8, 2.8], look: [76.2, 102.6], look_h: 0.9, lens: 26, frame: 引き}
+      - {t: 2.0, cam: [80.6, 99.8, 2.8], look: [70.0, 106.4], look_h: 0.4, lens: 24}
+      - {t: 11.2, cam: [80.8, 99.6, 2.8], look: [64.0, 108.6], look_h: 0.3, lens: 22}
+    act: {start: 三人（北東から）, do: 魔女が西の虚空を指さす（「ヒッヒッヒ！なあに、“翠ノ実”くらいここにだってあるさ。バカにしてもらっちゃ困るね！」）。指の先、板の道の向こうに緑の光る小さな浮き島（追憶の園）, end: 虚空に浮く追憶の園}
+    camera: 足場の北東から、魔女の指さす西へ振る（追憶の園を見せる）
+    kind: M
+  A25-020:
+    frame: 2人（横・低い所）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 0.4, at: [78.0, 102.4], face: 265, pose: gesture}
+        - {t: 3.0, at: [78.0, 102.4], face: 265, pose: stand}
+        - {t: 5.0, at: [78.4, 102.4], face: 265, pose: walk}
+        - {t: 5.6, at: [78.4, 102.4], face: 265, pose: stand}
+        - {t: 15.2, at: [78.4, 102.4], face: 265, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.5, 102.2], face: 85, pose: cross}
+        - {t: 3.2, at: [76.5, 102.2], face: 85, pose: cross}
+        - {t: 3.6, at: [76.5, 102.2], face: 85, pose: walk}
+        - {t: 4.8, at: [77.3, 102.3], face: 85, pose: walk, ease: out}
+        - {t: 5.0, at: [77.3, 102.3], face: 85, pose: lean}
+        - {t: 11.0, at: [77.3, 102.3], face: 85, pose: lean}
+        - {t: 11.4, at: [77.3, 102.3], face: 85, pose: point}
+        - {t: 15.2, at: [77.3, 102.3], face: 85, pose: point}
+    cam_keys:
+      - {t: 0.0, cam: [77.6, 105.8, 0.9], look: [77.6, 102.2], look_h: 1.0, lens: 28, frame: 2人}
+      - {t: 15.2, cam: [77.7, 105.7, 0.9], look: [77.8, 102.3], look_h: 1.0, lens: 30}
+    shake: [{t: [4.8, 5.6], amp: 0.5}]
+    act: {start: 向き合う魔女とビスコ（横の低い所から）, do: ビスコ「いえ、そういうつもりでは……。ただ、私たちには時間が……」。魔女が詰め寄ってまくしたてる（「こんな老いぼれ魔女の、小さな願いすらきけないってのかい！！なにが騎士だい！薄情な娘だよ！」）。ビスコは後ずさる, end: 指を突きつける魔女と、たじろぐビスコ}
+    camera: 足場の南の低い所から横に
+    kind: M
+  A25-021:
+    frame: 寄り（ビスコ）
+    only: [bisco, blind-witch]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.4, 102.4], face: 265, pose: stand}
+        - {t: 0.4, at: [78.4, 102.4], face: 265, pose: look_down}
+        - {t: 4.3, at: [78.4, 102.4], face: 265, pose: look_down}
+      blind-witch:
+        - {t: 0.0, at: [77.3, 102.3], face: 85, pose: point}
+        - {t: 4.3, at: [77.3, 102.3], face: 85, pose: point}
+    cam_keys:
+      - {t: 0.0, cam: [79.6, 100.6, 1.8], look: [78.4, 102.4], look_h: 1.3, lens: 36, frame: 寄り}
+      - {t: 4.3, cam: [79.6, 100.7, 1.8], look: [78.4, 102.4], look_h: 1.3, lens: 40}
+    act: {start: うなだれるビスコ, do: ビスコ「う……。わ、わかりました」, end: うなだれるビスコ}
+    camera: 百騎兵の側から、ビスコの顔へ
+    kind: M
+  A25-022:
+    frame: 引き（クレーン上げ）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [77.3, 102.3], face: 85, pose: point}
+        - {t: 0.6, at: [77.3, 102.3], face: 85, pose: stand}
+        - {t: 6.0, at: [77.3, 102.3], face: 250, pose: stand}
+        - {t: 6.4, at: [77.0, 102.2], face: 250, pose: walk}
+        - {t: 8.6, at: [76.5, 102.2], face: 250, pose: walk, ease: out}
+        - {t: 9.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 13.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 13.4, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 20.5, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+      bisco:
+        - {t: 0.0, at: [78.4, 102.4], face: 265, pose: look_down}
+        - {t: 20.5, at: [78.4, 102.4], face: 265, pose: look_down}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 238, pose: stand}
+        - {t: 20.5, at: [79.6, 100.9], face: 238, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [80.6, 105.6, 1.2], look: [77.4, 102.4], look_h: 1.0, lens: 26, frame: 引き}
+      - {t: 20.5, cam: [82.4, 108.4, 5.0], look: [77.2, 102.6], look_h: 0.4, lens: 24}
+    act: {start: 足場の三人, do: 魔女が椅子に戻りながら（「ヒッヒッヒ、わかりゃいいのさ。ここには色々と仕掛けがあってね。自由に動けないのさ」）、座って腹を抱えて笑う（「まあ、仕掛けはあたしが作ったんだけどね！ヒ〜ッヒッヒ！！」）, end: 椅子で笑う魔女と、うなだれるビスコ（上から）}
+    camera: 足場の南東の低い所から、ゆっくり高く上がる
+    kind: M
+  A25-023:
+    frame: 寄り（魔女・下から）
+    only: [blind-witch]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 0.6, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 1.4, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 6.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 6.6, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 9.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 16.5, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+    cam_keys:
+      - {t: 0.0, cam: [74.4, 104.4, 0.8], look: [76.0, 102.0], look_h: 1.0, lens: 30, frame: 寄り}
+      - {t: 16.5, cam: [74.5, 104.3, 0.8], look: [76.0, 102.0], look_h: 1.0, lens: 34}
+    act: {start: 椅子の魔女（南西の下から）, do: 魔女が手で追い払う（「さあ、わかったらさっさとおゆき！！そうしたら門を開けてやろうさね。ヒ〜ッヒッヒ！！」）, end: 笑う魔女}
+    camera: 魔女の南西の低い所から煽る
+    kind: M
+  A25-024:
+    frame: 2人（東から）
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [78.4, 102.4], face: 265, pose: look_down}
+        - {t: 0.6, at: [78.4, 102.4], face: 40, pose: walk}
+        - {t: 2.4, at: [79.0, 101.6], face: 50, pose: walk, ease: out}
+        - {t: 2.7, at: [79.0, 101.6], face: 50, pose: stand}
+        - {t: 6.0, at: [79.0, 101.6], face: 50, pose: look_down}
+        - {t: 9.0, at: [79.0, 101.6], face: 50, pose: stand}
+        - {t: 14.0, at: [79.0, 101.6], face: 50, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 238, pose: stand}
+        - {t: 1.2, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 14.0, at: [79.6, 100.9], face: 230, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [82.6, 101.6, 1.8], look: [79.2, 101.4], look_h: 0.8, lens: 30, frame: 2人}
+      - {t: 14.0, cam: [82.4, 101.5, 1.8], look: [79.3, 101.3], look_h: 0.8, lens: 34}
+    act: {start: 百騎兵のそばへ来るビスコ（東から）, do: ビスコがため息まじりに（「……仕方がない。他に方法もなさそうだし、話も通じなさそうだ……。それじゃあ、また手分けして“翠ノ実”を探そうか」）, end: 向き合う二人}
+    camera: 足場の東の低い所から二人を
+    kind: M
+  A25-025:
+    frame: 全身（ビスコの後ろ姿）
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [79.0, 101.6], face: 50, pose: stand}
+        - {t: 0.4, at: [79.0, 101.6], face: 50, pose: proud}
+        - {t: 4.0, at: [79.0, 101.6], face: 50, pose: proud}
+        - {t: 4.6, at: [79.0, 101.6], face: 50, pose: nod}
+        - {t: 5.4, at: [79.0, 101.6], face: 250, pose: stand}
+        - {t: 5.8, at: [78.6, 101.8], face: 245, pose: walk}
+        - {t: 10.3, at: [72.4, 105.0], face: 240, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 6.2, at: [79.6, 100.9], face: 230, pose: stand}
+        - {t: 6.6, at: [80.0, 100.7], face: 60, pose: walk}
+        - {t: 10.3, at: [83.4, 99.8], face: 60, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [81.6, 100.4, 0.9], look: [78.6, 101.8], look_h: 0.9, lens: 28, frame: 全身}
+      - {t: 10.3, cam: [81.4, 100.6, 0.9], look: [74.0, 104.4], look_h: 0.8, lens: 26}
+    act: {start: 胸を張るビスコ, do: ビスコ「でも、今回は期待してくれ、百騎兵。フフン、私の嗅覚が役に立つときがきたようだな」。鼻をひくつかせて、西の板の道（追憶の園）へずんずん歩いていく。百騎兵は北東の板の道へ, end: 西へ去るビスコの後ろ姿}
+    camera: 百騎兵の横の低い所から、去るビスコを追って振る
+    kind: M
+  # ---------- 追憶の園 ----------
+  A25-026:
+    frame: 全身（光る実の木）
+    lighting: memory_garden
+    only: [bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [42.6, 115.2], face: 234, pose: arms_up}
+        - {t: 1.6, at: [42.6, 115.2], face: 234, pose: arms_up}
+        - {t: 2.0, at: [42.6, 115.2], face: 234, pose: stand}
+        - {t: 2.4, at: [42.6, 115.2], face: 110, pose: cover}
+        - {t: 8.4, at: [42.6, 115.2], face: 110, pose: cover}
+        - {t: 9.0, at: [42.6, 115.2], face: 110, pose: shake}
+        - {t: 10.2, at: [42.6, 115.2], face: 110, pose: stand}
+        - {t: 12.6, at: [42.6, 115.2], face: 110, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [44.8, 118.6, 0.5], look: [41.8, 115.4], look_h: 1.7, lens: 28, frame: 全身}
+      - {t: 12.6, cam: [44.9, 118.4, 0.5], look: [42.4, 115.2], look_h: 1.3, lens: 32}
+    act: {start: 追憶の園の、緑に光る実の木, do: ビスコが背伸びして翠ノ実をもぎ取り（「よいしょっと」）、鼻を寄せてうっとり（「それにしても、いい香りだ。これを砂糖漬けにしたらと思うと……。じゅる……」）。はっと首を振る（「あっ、いかんいかん」）, end: 実を持つビスコ}
+    camera: 追憶の園の木の南東の低い所から。ゆっくり寄る
+    kind: M
+  A25-027:
+    frame: 引き（園の西から）
+    only: [hundred-knight, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [49.6, 112.4], face: 260, pose: walk}
+        - {t: 3.6, at: [44.8, 113.4], face: 255, pose: walk, ease: out}
+        - {t: 3.9, at: [44.8, 113.4], face: 250, pose: stand}
+        - {t: 14.2, at: [44.8, 113.4], face: 250, pose: stand}
+      bisco:
+        - {t: 0.0, at: [42.6, 115.2], face: 110, pose: stand}
+        - {t: 0.6, at: [42.6, 115.2], face: 60, pose: stand}
+        - {t: 4.0, at: [42.6, 115.2], face: 60, pose: proud}
+        - {t: 14.2, at: [42.6, 115.2], face: 60, pose: proud}
+    cam_keys:
+      - {t: 0.0, cam: [39.0, 112.0, 1.5], look: [46.4, 113.0], look_h: 0.8, lens: 24, frame: 引き}
+      - {t: 14.2, cam: [39.2, 112.2, 1.4], look: [44.0, 114.0], look_h: 0.8, lens: 28}
+    act: {start: 追憶の園（西から）, do: 百騎兵が東から歩いてくる。ビスコ「おっ、百騎兵！」。胸を張って実を掲げる（「フフン、どうだ。私が先にみつけたぞ。今回は、この鼻のおかげでなんの障害も無く簡単にみつかったぞ」）, end: 胸を張るビスコと百騎兵}
+    camera: 園の西の低い所から
+    kind: M
+  A25-028:
+    frame: 2人（北から）
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [42.6, 115.2], face: 60, pose: proud}
+        - {t: 3.0, at: [42.6, 115.2], face: 60, pose: lean}
+        - {t: 6.2, at: [42.6, 115.2], face: 60, pose: stand}
+        - {t: 7.4, at: [42.6, 115.2], face: 60, pose: look_down}
+        - {t: 14.7, at: [42.6, 115.2], face: 60, pose: look_down}
+      hundred-knight:
+        - {t: 0.0, at: [44.8, 113.4], face: 250, pose: stand}
+        - {t: 14.7, at: [44.8, 113.4], face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [43.4, 109.8, 1.1], look: [43.6, 114.3], look_h: 0.8, lens: 30, frame: 2人}
+      - {t: 14.7, cam: [43.5, 110.0, 1.1], look: [43.6, 114.3], look_h: 0.8, lens: 32}
+    act: {start: 向き合う二人（北から）, do: ビスコ「どうだ、私だって少しは役に立てるんだ。私のことを見直してもいいんだぞ？」と身を乗り出す。百騎兵は無反応。間があって「……。お前とは、ちゃんと話が通じているのかときどき不安になるよ……」, end: 肩を落とすビスコ}
+    camera: 園の北の低い所から二人を横に
+    kind: M
+  A25-029:
+    frame: 全身（低い所）
+    only: [hundred-knight, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [42.6, 115.2], face: 60, pose: look_down}
+        - {t: 0.6, at: [42.6, 115.2], face: 60, pose: stand}
+        - {t: 1.0, at: [43.4, 114.6], face: 55, pose: walk}
+        - {t: 1.8, at: [43.8, 114.2], face: 55, pose: kneel_hold}
+        - {t: 4.2, at: [43.8, 114.2], face: 55, pose: kneel_hold}
+        - {t: 4.6, at: [43.8, 114.2], face: 80, pose: stand}
+        - {t: 5.4, at: [44.4, 114.0], face: 80, pose: walk}
+        - {t: 8.4, at: [46.4, 113.0], face: 75, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [44.8, 113.4], face: 250, pose: stand}
+        - {t: 2.0, at: [44.8, 113.4], face: 235, pose: hold}
+        - {t: 4.4, at: [44.8, 113.4], face: 235, pose: hold}
+        - {t: 5.0, at: [44.8, 113.4], face: 75, pose: stand}
+        - {t: 5.6, at: [45.2, 113.2], face: 75, pose: walk}
+        - {t: 8.4, at: [47.6, 112.4], face: 75, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [40.6, 115.8, 0.8], look: [44.0, 113.8], look_h: 0.7, lens: 28, frame: 全身}
+      - {t: 8.4, cam: [40.8, 115.6, 0.8], look: [46.0, 113.0], look_h: 0.8, lens: 26}
+    act: {start: 向き合う二人（実の木の下から）, do: ビスコがしゃがんで実を百騎兵に渡す（「とりあえず、この“翠ノ実”はお前に渡しておく。さあ、早いところ戻ろうか」）。二人で東へ戻る, end: 東へ戻る二人}
+    camera: 実の木の下の低い所から。戻る二人を追って振る
+    kind: M
+  # ---------- 開門と忠告 ----------
+  A25-030:
+    frame: 全身（東から）
+    lighting: witch_den
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [71.4, 105.6], face: 70, pose: walk}
+        - {t: 2.8, at: [74.4, 103.4], face: 65, pose: walk, ease: out}
+        - {t: 3.1, at: [74.4, 103.4], face: 65, pose: stand}
+        - {t: 16.1, at: [74.4, 103.4], face: 65, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [70.8, 106.4], face: 70, pose: walk}
+        - {t: 3.0, at: [74.9, 104.2], face: 60, pose: walk, ease: out}
+        - {t: 3.3, at: [74.9, 104.2], face: 60, pose: stand}
+        - {t: 16.1, at: [74.9, 104.2], face: 60, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [76.0, 102.0], z: 0.45, face: 67, pose: sit}
+        - {t: 1.6, at: [76.0, 102.0], z: 0.45, face: 240, pose: sit}
+        - {t: 2.2, at: [76.5, 102.2], face: 240, pose: stand}
+        - {t: 3.2, at: [75.6, 102.8], face: 240, pose: walk, ease: out}
+        - {t: 3.5, at: [75.6, 102.8], face: 240, pose: lean}
+        - {t: 8.6, at: [75.6, 102.8], face: 240, pose: lean}
+        - {t: 9.2, at: [75.6, 102.8], face: 240, pose: point}
+        - {t: 16.1, at: [75.6, 102.8], face: 240, pose: point}
+    cam_keys:
+      - {t: 0.0, cam: [80.6, 101.6, 1.2], look: [73.6, 104.6], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 16.1, cam: [80.4, 101.8, 1.2], look: [75.0, 103.4], look_h: 1.0, lens: 30}
+    act: {start: 戻ってくる二人（魔女の向こう）, do: 魔女が鼻をひくつかせて立ち上がり、二人に詰め寄る（「ふんふん！おお！こいつは良い香りだ！！ちゃんと見つけてきたようだね！」「さあ早く！とっとと“翠ノ実”をこっちによこしな！」）, end: 手を突き出す魔女}
+    camera: 足場の東の低い所から、魔女越しに戻る二人
+    kind: M
+  A25-031:
+    frame: 全身（横・低い所）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [74.9, 104.2], face: 60, pose: stand}
+        - {t: 0.4, at: [74.9, 104.2], face: 30, pose: hold}
+        - {t: 1.2, at: [74.9, 104.2], face: 30, pose: hold}
+        - {t: 1.6, at: [74.9, 104.2], face: 40, pose: stand}
+        - {t: 16.0, at: [74.9, 104.2], face: 40, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 240, pose: point}
+        - {t: 0.8, at: [75.6, 102.8], face: 220, pose: hold}
+        - {t: 2.0, at: [75.6, 102.8], face: 220, pose: cover}
+        - {t: 6.0, at: [75.6, 102.8], face: 220, pose: cover}
+        - {t: 6.4, at: [75.6, 102.8], face: 220, pose: hop}
+        - {t: 8.4, at: [75.6, 102.8], face: 220, pose: dance}
+        - {t: 12.6, at: [75.6, 102.8], face: 220, pose: dance}
+        - {t: 13.0, at: [75.6, 102.8], face: 60, pose: stand}
+        - {t: 16.0, at: [75.6, 102.8], face: 60, pose: stand}
+      bisco:
+        - {t: 0.0, at: [74.4, 103.4], face: 65, pose: stand}
+        - {t: 6.4, at: [74.4, 103.4], face: 65, pose: cover}
+        - {t: 16.0, at: [74.4, 103.4], face: 65, pose: cover}
+    cam_keys:
+      - {t: 0.0, cam: [76.0, 99.6, 0.9], look: [75.2, 103.4], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 16.0, cam: [76.2, 99.8, 0.9], look: [75.4, 103.2], look_h: 1.0, lens: 28}
+    act: {start: 翠ノ実を差し出す百騎兵, do: 魔女が実を受け取って鼻に押し当て、身をよじって小躍り（「ヒッヒッヒ！この香りだよ！！この甘酸っぱい感じ！ふひぃ〜〜！！た、たまんないねぇ……」）。ビスコは口を押さえて引く, end: うっとりする魔女}
+    camera: 足場の北の低い所から三人を
+    kind: A
+  A25-032:
+    frame: 肩なめ（ビスコ越しに魔女）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [74.4, 103.4], face: 65, pose: cover}
+        - {t: 0.4, at: [74.4, 103.4], face: 70, pose: stand}
+        - {t: 14.1, at: [74.4, 103.4], face: 70, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 60, pose: stand}
+        - {t: 6.0, at: [75.6, 102.8], face: 250, pose: stand}
+        - {t: 6.6, at: [75.6, 102.8], face: 250, pose: cover}
+        - {t: 10.4, at: [75.6, 102.8], face: 250, pose: arms_up}
+        - {t: 11.4, at: [75.6, 102.8], face: 250, pose: arms_up}
+        - {t: 11.8, at: [75.6, 102.8], face: 250, pose: stand}
+        - {t: 14.1, at: [75.6, 102.8], face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [73.2, 104.6, 1.3], look: [75.8, 102.7], look_h: 1.1, lens: 32, frame: 肩なめ}
+      - {t: 14.1, cam: [73.3, 104.5, 1.3], look: [75.8, 102.7], look_h: 1.2, lens: 34}
+    shake: [{t: [12.5, 14.1], amp: 0.8}]
+    act: {start: ビスコの肩越しに魔女, do: ビスコ「い、いかがですか？魔女殿。これで、門を開けていただけないでしょうか」。魔女「ヒ〜ヒッヒッヒ！いいだろう。開けてやろうじゃないか」と手を高く上げて指を鳴らす。どこかで地響き, end: 手を上げた魔女。足場が揺れる}
+    camera: ビスコの後ろの低い所から肩越しに魔女。指を鳴らすと揺れ
+    kind: M
+  A25-033:
+    frame: 引き（門が開く）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [111.5, 50.0], face: 90, pose: stand}
+        - {t: 5.5, at: [111.5, 50.0], face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [104.0, 57.4, 2.0], look: [117.0, 49.4], look_h: 6.0, lens: 22, frame: 引き}
+      - {t: 5.5, cam: [104.2, 57.2, 2.0], look: [116.0, 49.6], look_h: 4.0, lens: 22}
+    shake: [{t: [0.0, 2.0], amp: 1.2}]
+    fx:
+      - {kind: rift, t: [0.0, 5.5], at: [119.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 1.6, close: 0.3}
+    act: {start: 門の前の足場と列車（南西から）, do: 地響きとともに閉じた門の扉が光って開く。ゴードーラ「わーい！門が開いたぞー！」, end: 光る門の前の列車}
+    camera: 門の前の足場の南西から、門を見上げる
+    kind: A
+  A25-034:
+    frame: 寄り（獅子・門の光）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [111.5, 50.0], face: 90, pose: stand}
+        - {t: 10.3, at: [111.5, 50.0], face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [117.6, 52.4, 1.5], look: [114.8, 50.0], look_h: 1.8, lens: 28, frame: 寄り}
+      - {t: 10.3, cam: [117.5, 52.2, 1.5], look: [114.8, 50.0], look_h: 1.8, lens: 32}
+    shake: [{t: [0.3, 1.8], amp: 0.8}]
+    fx:
+      - {kind: rift, t: [0.0, 10.3], at: [119.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+    act: {start: 門の光を受ける獅子の顔, do: ライオネルが吠える（「がおぉぉぉぉぉ〜ん！！時間厳守だぞい。遅れたら置いていくだけだぞい」）, end: 獅子の顔}
+    camera: 門と獅子の顔の間の南から。ゆっくり寄る
+    kind: M
+  A25-035:
+    frame: 全身（走り出す）
+    lighting: witch_den
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [74.4, 103.4], face: 70, pose: stand}
+        - {t: 0.4, at: [74.4, 103.4], face: 70, pose: look_up}
+        - {t: 2.4, at: [74.4, 103.4], face: 60, pose: stand}
+        - {t: 3.0, at: [75.4, 102.9], face: 60, pose: run}
+        - {t: 5.3, at: [77.6, 101.8], face: 62, pose: run, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [74.9, 104.2], face: 40, pose: stand}
+        - {t: 3.2, at: [74.9, 104.2], face: 60, pose: stand}
+        - {t: 3.6, at: [75.6, 103.8], face: 60, pose: run}
+        - {t: 5.3, at: [77.6, 102.8], face: 62, pose: run, ease: linear}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 250, pose: stand}
+        - {t: 5.3, at: [75.6, 102.8], face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [78.4, 105.6, 1.2], look: [75.4, 103.2], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 5.3, cam: [78.6, 105.4, 1.2], look: [77.0, 102.4], look_h: 1.0, lens: 26}
+    act: {start: 足場の三人, do: 地響きの後、遠くで獅子の吠え声。ビスコ「なっ！なんだと！！急いで戻るぞ、百騎兵！」と駆け出す, end: 駆け出す二人}
+    camera: 足場の南の低い所から、駆け出す二人を追って振る
+    kind: M
+  A25-036:
+    frame: 引き（北から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [77.6, 101.8], face: 62, pose: run}
+        - {t: 1.4, at: [80.2, 101.0], face: 70, pose: run, ease: out}
+        - {t: 1.7, at: [80.2, 101.0], face: 70, pose: stand}
+        - {t: 4.0, at: [80.2, 101.0], face: 255, pose: stand}
+        - {t: 13.5, at: [80.2, 101.0], face: 255, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [77.6, 102.8], face: 62, pose: run}
+        - {t: 1.6, at: [80.6, 101.8], face: 70, pose: run, ease: out}
+        - {t: 1.9, at: [80.6, 101.8], face: 70, pose: stand}
+        - {t: 4.4, at: [80.6, 101.8], face: 250, pose: stand}
+        - {t: 13.5, at: [80.6, 101.8], face: 250, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 250, pose: stand}
+        - {t: 1.0, at: [75.6, 102.8], face: 70, pose: stand}
+        - {t: 3.0, at: [75.6, 102.8], face: 70, pose: gesture}
+        - {t: 9.0, at: [75.6, 102.8], face: 70, pose: gesture}
+        - {t: 13.5, at: [75.6, 102.8], face: 70, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [77.2, 96.8, 1.8], look: [78.4, 102.2], look_h: 0.8, lens: 26, frame: 引き}
+      - {t: 13.5, cam: [77.4, 97.0, 1.8], look: [78.0, 102.2], look_h: 0.8, lens: 28}
+    act: {start: 駆けていく二人（北から）, do: 魔女「……。ちょいとお待ちな！娘さんや。ちょいと待っておくれ……」。ビスコが立ち止まって振り返る（「……？魔女殿。急ぎますので……」）, end: 振り返るビスコ}
+    camera: 足場の北の少し高い所から
+    kind: M
+  A25-037:
+    frame: 2人（横・低い所）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [80.2, 101.0], face: 255, pose: stand}
+        - {t: 1.0, at: [80.0, 101.2], face: 255, pose: walk}
+        - {t: 4.0, at: [77.6, 102.4], face: 259, pose: walk, ease: out}
+        - {t: 4.3, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 16.6, at: [77.6, 102.4], face: 259, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [80.6, 101.8], face: 250, pose: stand}
+        - {t: 1.4, at: [80.4, 101.6], face: 250, pose: walk}
+        - {t: 3.4, at: [79.4, 101.2], face: 250, pose: walk, ease: out}
+        - {t: 3.7, at: [79.4, 101.2], face: 250, pose: stand}
+        - {t: 16.6, at: [79.4, 101.2], face: 250, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 70, pose: stand}
+        - {t: 5.0, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 11.6, at: [75.6, 102.8], face: 79, pose: gesture}
+        - {t: 16.6, at: [75.6, 102.8], face: 79, pose: gesture}
+    cam_keys:
+      - {t: 0.0, cam: [77.2, 106.0, 2.2], look: [77.4, 102.4], look_h: 1.0, lens: 28, frame: 2人}
+      - {t: 16.6, cam: [77.0, 105.8, 2.2], look: [76.8, 102.6], look_h: 1.0, lens: 32}
+    act: {start: 戻ってくるビスコ（横から）, do: 魔女「イ〜ヒッヒッヒ。ちょっとした立ち話じゃないかい。老い先短い老人の話は聞くもんだよ」。ビスコが魔女の前に戻る。魔女「なあに、ひとつ忠告さね」, end: 向き合う魔女とビスコ}
+    camera: 足場の南の低い所から横に。ゆっくり寄る
+    kind: M
+  A25-038:
+    frame: 肩なめ（魔女越しにビスコ・寄る）
+    only: [blind-witch, bisco]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 79, pose: gesture}
+        - {t: 0.6, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 16.2, at: [75.6, 102.8], face: 79, pose: stand}
+      bisco:
+        - {t: 0.0, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 16.2, at: [77.6, 102.4], face: 259, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [74.2, 104.2, 1.05], look: [77.6, 102.4], look_h: 1.25, lens: 30, frame: 肩なめ}
+      - {t: 16.2, cam: [74.8, 103.9, 1.05], look: [77.6, 102.4], look_h: 1.3, lens: 40}
+    act: {start: 魔女の肩越しにビスコ, do: 魔女が静かに（「本当に大事なものは、いつだって、その手の中にあるんだ。それを心に留めておけば色んなことが見えてくるはずだよ」）, end: ビスコの顔}
+    camera: 魔女の後ろの低い所から、ビスコの顔へゆっくり寄る（忠告）
+    kind: M
+  A25-039:
+    frame: 寄り（ビスコ）
+    only: [bisco, blind-witch]
+    keys:
+      bisco:
+        - {t: 0.0, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 2.6, at: [77.6, 102.4], face: 259, pose: look_down}
+        - {t: 8.6, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 14.6, at: [77.6, 102.4], face: 259, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 3.6, at: [75.6, 102.8], face: 79, pose: cover}
+        - {t: 8.0, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 14.6, at: [75.6, 102.8], face: 79, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [75.9, 102.0, 1.35], look: [77.6, 102.4], look_h: 1.35, lens: 36, frame: 寄り}
+      - {t: 14.6, cam: [75.95, 102.05, 1.35], look: [77.6, 102.4], look_h: 1.35, lens: 40}
+    act: {start: ビスコの顔（魔女の横から）, do: ビスコ「……それは、どういう」。魔女「そのまんまの意味さ。イ〜ヒッヒッヒ！ああ、それからもうひとつ」, end: ビスコ}
+    camera: 魔女の横から、ビスコの顔へ
+    kind: M
+  A25-040:
+    frame: 2人（北から）
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 10.6, at: [77.6, 102.4], face: 259, pose: stand}
+        - {t: 11.0, at: [77.1, 102.55], face: 259, pose: walk}
+        - {t: 12.6, at: [76.6, 102.7], face: 259, pose: walk, ease: out}
+        - {t: 12.9, at: [76.6, 102.7], face: 259, pose: stand}
+        - {t: 16.5, at: [76.6, 102.7], face: 259, pose: stand}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 8.0, at: [75.6, 102.8], face: 79, pose: hold}
+        - {t: 16.5, at: [75.6, 102.8], face: 79, pose: hold}
+      hundred-knight:
+        - {t: 0.0, at: [79.4, 101.2], face: 250, pose: stand}
+        - {t: 16.5, at: [79.4, 101.2], face: 250, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [76.8, 98.8, 1.9], look: [76.8, 102.6], look_h: 0.9, lens: 30, frame: 2人}
+      - {t: 16.5, cam: [76.6, 99.2, 1.9], look: [76.2, 102.7], look_h: 0.9, lens: 34}
+    act: {start: 向き合う魔女とビスコ（北から）, do: ビスコ「……まだあるのですか」。魔女「ヒッヒッヒ、そう言いなさんな。それに、これで最後さ。こっちにきて、ちょっとあたしの手をにぎっておくれな」と手を差し出す。ビスコが歩み寄る, end: 手を差し出す魔女と、歩み寄るビスコ}
+    camera: 足場の北の低い所から二人を。ゆっくり寄る
+    kind: M
+  A25-041:
+    frame: 寄り（手もと）
+    only: [blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [76.6, 102.7], face: 259, pose: stand}
+        - {t: 0.6, at: [76.6, 102.7], face: 259, pose: hold}
+        - {t: 12.0, at: [76.6, 102.7], face: 259, pose: hold}
+        - {t: 12.6, at: [76.6, 102.7], face: 259, pose: bow}
+        - {t: 17.3, at: [76.6, 102.7], face: 259, pose: bow}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 79, pose: hold}
+        - {t: 12.0, at: [75.6, 102.8], face: 79, pose: hold}
+        - {t: 12.6, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 17.3, at: [75.6, 102.8], face: 79, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [76.4, 101.2, 1.0], look: [76.1, 102.7], look_h: 0.95, lens: 40, frame: 寄り}
+      - {t: 6.0, cam: [76.4, 101.25, 1.05], look: [76.1, 102.7], look_h: 1.1, lens: 36}
+      - {t: 17.3, cam: [76.5, 101.0, 1.15], look: [76.2, 102.7], look_h: 1.2, lens: 30}
+    act: {start: 握り合う二人の手, do: ビスコが魔女の手を握ると、手の中に翠ノ実（「これは……」）。魔女「ヒッヒッヒ、さあ、それを持っておきな。そいつは砂糖漬けにすると旨いんだ」。ビスコが頭を下げる（「ありがとうございます、魔女殿……。感謝を」）, end: お辞儀するビスコ}
+    camera: 手もとの横の低い所から寄り、ゆっくり引いて二人を入れる
+    kind: M
+  A25-042:
+    frame: 寄り（蛇を煽る・門の光）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [111.5, 50.0], face: 90, pose: stand}
+        - {t: 11.9, at: [111.5, 50.0], face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [110.4, 55.0, 0.5], look: [108.2, 50.0], look_h: 4.0, lens: 26, frame: 寄り}
+      - {t: 11.9, cam: [110.6, 54.8, 0.5], look: [108.2, 50.0], look_h: 4.1, lens: 30}
+    fx:
+      - {kind: rift, t: [0.0, 11.9], at: [119.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+    act: {start: 門の光の前、列車の後ろの蛇, do: スネーカー「もう、これ以上待っても無駄だろ？あいつら、きっと魔女に食われたんだよ。帰ってこねぇよ、もういこうぜ！出発しようぜ！」, end: 蛇の頭}
+    camera: 足場の南の低い所から蛇を煽る
+    kind: M
+  A25-043:
+    frame: 引き（列車が門へ）
+    lighting: void
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [111.5, 50.0], face: 90, pose: stand}
+        - {t: 5.6, at: [111.5, 50.0], face: 90, pose: stand}
+        - {t: 10.9, at: [116.0, 50.0], face: 90, pose: stand, ease: in}
+    cam_keys:
+      - {t: 0.0, cam: [102.0, 58.0, 2.2], look: [113.0, 50.0], look_h: 2.4, lens: 24, frame: 引き}
+      - {t: 10.9, cam: [103.0, 57.4, 2.2], look: [116.0, 50.0], look_h: 3.0, lens: 24}
+    shake: [{t: [0.4, 2.4], amp: 0.7}]
+    fx:
+      - {kind: rift, t: [0.0, 10.9], at: [119.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+    act: {start: 光る門の前の列車（南西から）, do: ライオネル「……。よしわかった！がおぉぉぉぉぉぉ〜ん！！出発進行だぞい！」。列車がゆっくり動き出し、光る門へ進む, end: 門へ動き出す列車}
+    camera: 足場の南西から。動き出す列車を追って振る
+    kind: A
+  A25-044:
+    frame: 全身（駆け去る）
+    lighting: witch_den
+    only: [hundred-knight, blind-witch, bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [76.6, 102.7], face: 259, pose: bow}
+        - {t: 0.4, at: [76.6, 102.7], face: 60, pose: stand}
+        - {t: 2.6, at: [76.6, 102.7], face: 250, pose: stand}
+        - {t: 3.0, at: [76.6, 102.7], face: 250, pose: bow}
+        - {t: 3.8, at: [76.6, 102.7], face: 60, pose: stand}
+        - {t: 4.2, at: [77.2, 102.4], face: 62, pose: run}
+        - {t: 8.4, at: [84.4, 99.6], face: 60, pose: run, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [79.4, 101.2], face: 250, pose: stand}
+        - {t: 4.0, at: [79.4, 101.2], face: 60, pose: stand}
+        - {t: 4.4, at: [79.8, 101.0], face: 62, pose: run}
+        - {t: 8.4, at: [85.2, 98.6], face: 50, pose: run, ease: linear}
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 79, pose: stand}
+        - {t: 8.4, at: [75.6, 102.8], face: 70, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [84.6, 100.6, 2.0], look: [77.6, 102.2], look_h: 1.0, lens: 26, frame: 全身}
+      - {t: 8.4, cam: [84.6, 100.6, 2.0], look: [80.0, 101.4], look_h: 1.0, lens: 24}
+    act: {start: 板の道の端から、足場の三人, do: ビスコ「なっ！あいつら！魔女殿！それでは、私はこれで！」と頭を下げ、百騎兵と板の道へ駆け出す。二人がカメラの横を駆け抜ける, end: ひとり残る魔女}
+    camera: 板の道の端の低い所から。駆け抜ける二人を見送る
+    kind: M
+  # ---------- 魔女の独白 ----------
+  A25-045:
+    frame: 全身（魔女・横から寄る）
+    only: [blind-witch]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 70, pose: stand}
+        - {t: 6.0, at: [75.6, 102.8], face: 67, pose: stand}
+        - {t: 6.4, at: [75.6, 102.8], face: 67, pose: look_up}
+        - {t: 16.7, at: [75.6, 102.8], face: 67, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [79.6, 104.2, 0.6], look: [75.8, 102.6], look_h: 1.0, lens: 28, frame: 全身}
+      - {t: 16.7, cam: [78.6, 103.8, 0.6], look: [75.7, 102.7], look_h: 1.2, lens: 38}
+    act: {start: ひとり残った魔女（横の低い所から）, do: 魔女が板の道の方を向いたまま（「……。もう、いっちまったかい？見えないねえ、何も見えないさ」）, end: 空を仰ぐ魔女}
+    camera: 足場の南東の低い所から、魔女へゆっくり寄る
+    kind: M
+  A25-046:
+    frame: アップ（目元）
+    only: [blind-witch]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 67, pose: look_up}
+        - {t: 6.0, at: [75.6, 102.8], face: 67, pose: look_up}
+        - {t: 6.4, at: [75.6, 102.8], face: 67, pose: stand}
+        - {t: 18.7, at: [75.6, 102.8], face: 67, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [77.0, 102.5, 1.32], look: [75.8, 102.8], look_h: 1.32, lens: 45, frame: アップ}
+      - {t: 18.7, cam: [76.9, 102.55, 1.32], look: [75.8, 102.8], look_h: 1.32, lens: 60}
+    act: {start: 魔女の目元, do: 「何も見えない……、……いや、違う、すべて視える。懐かしい……」, end: 魔女の目元}
+    camera: 魔女の目元へ寄る（独白だけ目元に寄る）
+    kind: M
+  A25-047:
+    frame: アップ→引き（クレーン上げ）
+    only: [blind-witch]
+    keys:
+      blind-witch:
+        - {t: 0.0, at: [75.6, 102.8], face: 67, pose: stand}
+        - {t: 9.0, at: [75.6, 102.8], face: 67, pose: look_down}
+        - {t: 18.3, at: [75.6, 102.8], face: 67, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [76.95, 102.55, 1.33], look: [75.8, 102.8], look_h: 1.33, lens: 60, frame: アップ→引き}
+      - {t: 13.6, cam: [77.2, 102.5, 1.4], look: [75.8, 102.8], look_h: 1.3, lens: 50}
+      - {t: 18.3, cam: [88.0, 112.0, 14.0], look: [77.0, 103.0], look_h: 0.4, lens: 24}
+    act: {start: 魔女の目元, do: 「ああ……！今日だった。全部、見えていた。だから……私は……」。うつむく。カメラが引いて高く上がり、虚空に浮く足場の小さな魔女, end: 虚空にひとりの魔女（上から）}
+    camera: 目元のアップから、一気に引いて高く上がる（クレーン上げ）
+    kind: A

@@ -1,0 +1,50 @@
+# A25 盲いた魔女と追憶の園。blocking.yaml（Claude の案 2026-11-04、Living Spec「A25 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A25-045
+scene: A25
+tc: 576.3
+sec: 16.7
+kind: M
+shot: 全身→寄り・盲いた魔女の独白
+acting: 魔女が板の道の方を向いたまま（「……。もう、いっちまったかい？見えないねえ、何も見えないさ」）
+dialogue:
+- L876「……。もう、いっちまったかい？見えないねえ、何も見えないさ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 79.6
+  - 104.2
+  - 0.6
+  look:
+  - 75.8
+  - 102.6
+  lens: 28
+  move: 足場の南東の低い所から、魔女へゆっくり寄る
+background: rift-void
+image: null
+refs:
+- blind-witch
+overlays: []
+fallback: null
+act:
+  start: ひとり残った魔女（横の低い所から）
+  end: 空を仰ぐ魔女
+timing:
+  lead: 0.3
+  at:
+    L876: 0.6
+blocking:
+  start: 盲（中央・斜め前（画面右向き））
+  end: 盲（中央・斜め前（画面右向き））
+  background: 暗い虚空と浮いた岩
+  panels: []
+  staging_en: 'In frame (exactly one person): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, in three-quarter view, turned toward screen right.
+    No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow
+    from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en_end: 'In frame (exactly one person): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, in three-quarter view, turned toward screen right.
+    No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow
+    from below, floating rocks lit softly from above, an eerie still air.'
+  sketch:
+  - episodes/A/scenes/A25/gen/sketch/A25-045_start.png
+  - episodes/A/scenes/A25/gen/sketch/A25-045_end.png

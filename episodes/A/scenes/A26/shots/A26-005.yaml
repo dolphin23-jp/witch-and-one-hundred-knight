@@ -1,0 +1,52 @@
+# A26 列車に飛び乗る・魔女都。blocking.yaml（Claude の案 2026-11-04、Living Spec「A26 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A23/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A26-005
+scene: A26
+tc: 37.2
+sec: 11.0
+kind: A
+shot: 大俯瞰・魔女都の全景
+acting: 宝石のように灯る家並みと、大通りの先にそびえる議事塔。ビスコ「なんて美しい……！これが、魔女の都……。まるで宝石のようだ……！」
+dialogue:
+- L890「なんて美しい……！これが、魔女の都……。まるで宝石のようだ……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 101.5
+  - 236.0
+  - 42.0
+  look:
+  - 100.0
+  - 120.0
+  lens: 24
+  move: 列車の後ろの高い所から、都の全景を見下ろしながら一緒に下る
+background: witch-city
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 列車の後ろの上から、眼下に広がる都
+  end: 都へ降りていく列車と、その先の議事塔
+timing:
+  lead: 0.3
+  at:
+    L890: 0.6
+blocking:
+  start: 列（中央・背中）
+  end: 列（中央・背中）
+  background: 魔女の都の家並み
+  panels: []
+  staging_en: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
+    with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with the
+    back to the camera, small in the background. No other people. High angle looking down. Behind: an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a magical
+    witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main avenue.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with
+    the back to the camera, small in the background. No other people. High angle looking down. Behind: an endless glittering city of crooked towers and pointed roofs under a violet night sky. Night in a
+    magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main avenue.'
+  sketch:
+  - episodes/A/scenes/A26/gen/sketch/A26-005_start.png
+  - episodes/A/scenes/A26/gen/sketch/A26-005_end.png

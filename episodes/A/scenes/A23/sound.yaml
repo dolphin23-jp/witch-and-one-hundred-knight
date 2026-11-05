@@ -1,0 +1,73 @@
+# A23 の BGM・効果音の置き場所（D-068、2026-11-04）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A23
+bgm:
+  # 原作どおり（パート21 の 1:28〜11:20、audio/bgm/catalog.yaml の plays）:
+  #   M08（0:54〜5:11）→ M25（5:11〜6:15、「乗せるわけにはいかん」から戦いの前半）→ M03（6:15〜、戦いの後半と戦いの後）
+  #   → M19（10:06〜10:55、「線路がないのが心配かい？」から出発まで）→ M03（10:55〜、アルレッキーノの見送り）
+  # 戦いは原作の約86秒を30秒に縮めたので、M25 を戦いの終わりまで延ばし、M03 は戦いの後から。M19 は曲の分け方の誤りかもしれない（ユーザーに聞いてもらう）
+  - {src: audio/bgm/catalog/M08.ogg, cut: A23-001, t: 0.0, until: {cut: A23-017, t: 0.2}, loop: true, fade_in: 2.5, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M25.ogg, cut: A23-017, t: 0.0, until: {cut: A23-021, t: 7.0}, loop: true, fade_in: 0.6, fade_out: 1.5, volume: 0.3}
+  - {src: audio/bgm/catalog/M03.ogg, cut: A23-022, t: 0.3, until: {cut: A23-032, t: 0.2}, loop: true, fade_in: 1.5, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M19.ogg, cut: A23-032, t: 0.0, until: {cut: A23-035, t: 0.3}, loop: true, fade_in: 0.8, fade_out: 0.8, volume: 0.28}
+  - {src: audio/bgm/catalog/M03.ogg, cut: A23-035, t: 0.0, until: {cut: A23-035, t: 10.0}, loop: true, fade_in: 0.6, fade_out: 2.5, volume: 0.28}
+sfx:
+  # 足音は自動（footsteps.yaml。列車は無し）
+  # 森の夕暮れの空気（ずっと小さく）
+  - {src: audio/sfx/forest_air_loop.ogg, cut: A23-001, t: 0.0, until: {cut: A23-035, t: 10.0}, loop: true, rate: 0.9, fade_in: 2.0, fade_out: 2.0, volume: 0.08}
+  # 004 鐘を打つ（原作の鐘）
+  - {src: audio/sfx/sword_swing.ogg, cut: A23-004, t: 1.3, volume: 0.35}
+  - {src: audio/sfx/orig_bell_p21-0205.ogg, cut: A23-004, t: 1.55, volume: 0.7}
+  - {src: audio/sfx/orig_bell_p21-0205.ogg, cut: A23-005, t: 0.0, rate: 0.98, volume: 0.35}
+  # 005 裂け目が開き、列車が滑り込む（原作の到着音）
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A23-005, t: 0.2, volume: 0.5}
+  - {src: audio/sfx/orig_train_arrive_p21-0211.ogg, cut: A23-005, t: 1.2, volume: 0.6}
+  - {src: audio/sfx/rumble_low.ogg, cut: A23-005, t: 1.3, rate: 0.9, volume: 0.4}
+  - {src: audio/sfx/magic_burst.ogg, cut: A23-005, t: 6.4, rate: 0.7, volume: 0.25}
+  # 010 切符を山羊の口へ
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A23-010, t: 4.9, rate: 1.3, volume: 0.25}
+  - {src: audio/sfx/thud_land.ogg, cut: A23-010, t: 5.3, rate: 1.4, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A23-010, t: 6.0, rate: 1.6, volume: 0.3}
+  # 012 百騎兵がホームへ跳び戻る
+  - {src: audio/sfx/thud_land.ogg, cut: A23-012, t: 2.8, rate: 1.5, volume: 0.25}
+  # 015 ビスコを叩き伏せる
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A23-015, t: 4.3, rate: 1.5, volume: 0.3}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A23-015, t: 4.75, rate: 1.4, volume: 0.45}
+  # 017 獅子が吠える
+  - {src: audio/sfx/monster_roar.ogg, cut: A23-017, t: 10.2, rate: 0.8, volume: 0.55}
+  # 018 突進して百騎兵が屋根へ
+  - {src: audio/sfx/rumble_rise.ogg, cut: A23-018, t: 0.3, volume: 0.45}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A23-018, t: 2.6, volume: 0.35}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A23-018, t: 3.3, rate: 0.8, volume: 0.6}
+  - {src: audio/sfx/thud_land.ogg, cut: A23-018, t: 3.75, rate: 1.3, volume: 0.3}
+  # 019 屋根の上で蛇と
+  - {src: audio/sfx/sword_slash.ogg, cut: A23-019, t: 2.55, volume: 0.5}
+  - {src: audio/sfx/sword_hit.ogg, cut: A23-019, t: 2.65, volume: 0.5}
+  - {src: audio/sfx/monster_hurt.ogg, cut: A23-019, t: 2.8, rate: 1.3, volume: 0.35}
+  - {src: audio/sfx/sword_hit.ogg, cut: A23-019, t: 5.1, rate: 1.1, volume: 0.45}
+  # 020 炎
+  - {src: audio/sfx/whoosh_long.ogg, cut: A23-020, t: 1.6, rate: 1.2, volume: 0.3}
+  - {src: audio/sfx/thud_land.ogg, cut: A23-020, t: 2.3, rate: 1.3, volume: 0.3}
+  - {src: audio/sfx/monster_roar2.ogg, cut: A23-020, t: 3.0, rate: 0.85, volume: 0.45}
+  - {src: audio/sfx/fire_crackle_loop.ogg, cut: A23-020, t: 3.3, until: {cut: A23-020, t: 5.6}, loop: true, fade_in: 0.2, fade_out: 0.5, volume: 0.6}
+  # 021 鼻づらに一太刀、列車が滑る
+  - {src: audio/sfx/sword_swing.ogg, cut: A23-021, t: 2.2, volume: 0.4}
+  - {src: audio/sfx/sword_hit.ogg, cut: A23-021, t: 2.5, rate: 0.85, volume: 0.6}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A23-021, t: 2.55, volume: 0.6}
+  - {src: audio/sfx/metal_clank.ogg, cut: A23-021, t: 2.8, rate: 0.8, volume: 0.45}
+  - {src: audio/sfx/rumble_low.ogg, cut: A23-021, t: 2.6, rate: 1.1, volume: 0.45}
+  # 029 委任状を山羊の口へ
+  - {src: audio/sfx/thud_land.ogg, cut: A23-029, t: 3.4, rate: 1.4, volume: 0.25}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A23-029, t: 4.6, rate: 1.5, volume: 0.3}
+  # 033 ビスコを放り投げる
+  - {src: audio/sfx/cloth_swish.ogg, cut: A23-033, t: 1.8, volume: 0.3}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A23-033, t: 5.0, rate: 1.1, volume: 0.4}
+  - {src: audio/sfx/thud_land.ogg, cut: A23-033, t: 7.0, rate: 0.9, volume: 0.35}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A23-033, t: 7.4, volume: 0.3}
+  # 034 出発（吠えて浮き上がる）
+  - {src: audio/sfx/monster_roar.ogg, cut: A23-034, t: 0.3, rate: 0.75, volume: 0.45}
+  - {src: audio/sfx/rumble_rise.ogg, cut: A23-034, t: 2.4, volume: 0.5}
+  - {src: audio/sfx/wind_gust.ogg, cut: A23-034, t: 5.6, volume: 0.4}
+  # 035 空の裂け目
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A23-035, t: 1.2, volume: 0.45}
+  - {src: audio/sfx/magic_burst.ogg, cut: A23-035, t: 5.6, rate: 0.8, volume: 0.35}

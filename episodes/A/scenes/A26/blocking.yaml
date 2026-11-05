@@ -1,0 +1,366 @@
+# A26 列車に飛び乗る・魔女都（6章後半 回2）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-04）
+# Living Spec「A26 動きの設計（案）」。準備（案）の表の A26（走り出した列車にビスコが飛び乗る、「まるで宝石のようだ」の全景（見せ場）、
+#   案内魔女の「七日七晩…今晩が最後」「冬のニワトリが三回鳴くまで」（A32 の仕掛け）。車中の合いの手 L882・L885〜L888・L893 と L900・L906 は削る）。
+# 場所は world/witch-city-layout.yaml（x 西→東、y 北→南、m）。南の駅 (100, 170)（ホームは線路の西 (93, 168)、半径 5.4、高さ 0.6）から北へ大通りと線路、
+#   北の端に塔の前の広場 (100, 70)、議事塔 (100, 40)。頭の3カット（異空間の門の前）は layout_extra で world/rift-void-layout.yaml を x +400 に置いた（門は x 520）。
+# 夜光列車: 001〜003 は門を東へ抜ける。004 で都の夜空の裂け目から北へ飛び出し、006 で駅に北向きに止まる（ドームは (100, 168.6)）。013 で塔の前 (100, 92) に止まり、015 で夜空へ去る。
+# 案内魔女の形は仮（設定画待ち）。
+# 光: 異空間 void_gate、上空 city_sky、駅 city_night、塔の前 city_plaza。
+scene: A26
+layout: world/witch-city-layout.yaml
+layout_extra:
+- {file: world/rift-void-layout.yaml, offset: [400.0, 0.0]}
+map_ymax: 200
+lighting: city_night
+places:
+  station: [93.0, 168.0]
+  plaza: [100.0, 70.0]
+  tower: [100.0, 40.0]
+  gate_void: [520.0, 50.0]
+start:
+  hundred-knight: {at: [505.6, 64.6], face: 20}
+  bisco: {at: [503.6, 70.4], face: 20}
+  night-train: {at: [512.0, 50.0], face: 90}
+  guide-witch: {at: [95.6, 166.4], face: 150}
+
+cuts:
+  # ---------- 異空間の門（列車に飛び乗る） ----------
+  A26-001:
+    frame: 全身（門の前・走る）
+    lighting: void_gate
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [512.0, 50.0], face: 90, pose: stand}
+        - {t: 5.6, at: [517.5, 50.0], face: 90, pose: stand, ease: linear}
+      bisco:
+        - {t: 0.0, at: [503.6, 70.4], face: 20, pose: run}
+        - {t: 2.0, at: [507.5, 59.6], face: 20, pose: run, ease: linear}
+        - {t: 3.0, at: [510.4, 53.2], face: 30, pose: run, ease: linear}
+        - {t: 3.6, at: [512.9, 51.0], z: 2.6, face: 60, pose: jump, arc: 0.8}
+        - {t: 3.9, at: [513.2, 50.4], z: 1.4, face: 90, pose: crouch}
+        - {t: 5.6, at: [515.2, 50.4], z: 1.4, face: 90, pose: crouch, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [505.6, 64.6], face: 20, pose: run}
+        - {t: 1.6, at: [508.8, 56.6], face: 25, pose: run, ease: linear}
+        - {t: 2.4, at: [513.8, 50.0], z: 2.65, face: 60, pose: jump, arc: 1.0}
+        - {t: 2.7, at: [514.0, 50.0], z: 2.65, face: 90, pose: crouch}
+        - {t: 5.6, at: [516.9, 50.0], z: 2.65, face: 90, pose: ready, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [506.0, 56.4, 1.2], look: [509.0, 54.0], look_h: 1.4, lens: 24, frame: 全身}
+      - {t: 5.6, cam: [506.4, 55.4, 1.5], look: [514.0, 51.0], look_h: 1.8, lens: 24}
+    fx:
+      - {kind: rift, t: [0.0, 5.6], at: [519.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+    act: {start: 光る門へ動き出した列車と、板の道を駆けてくるビスコと百騎兵, do: ビスコ「待て！乗せてくれ！」。百騎兵が跳んで列車の屋根に飛び乗り、ビスコはドームの窓へ跳び込む, end: 屋根の百騎兵と、門へ進む列車}
+    camera: 門の前の足場の南西の低い所から、駆けて跳ぶ二人を追う
+    kind: A
+  A26-002:
+    frame: 引き（列車の後ろから）
+    lighting: void_gate
+    only: [hundred-knight, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [517.5, 50.0], face: 90, pose: stand}
+        - {t: 15.8, at: [523.0, 50.0], face: 90, pose: stand, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [516.9, 50.0], z: 2.65, face: 90, pose: ready}
+        - {t: 15.8, at: [522.4, 50.0], z: 2.65, face: 90, pose: ready, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [507.0, 53.6, 2.6], look: [512.6, 50.0], look_h: 3.6, lens: 26, frame: 引き}
+      - {t: 15.8, cam: [508.0, 53.4, 2.8], look: [517.0, 50.0], look_h: 3.6, lens: 26}
+    fx:
+      - {kind: rift, t: [0.0, 15.8], at: [519.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+    act: {start: 門の光へ入っていく列車の後ろ（蛇と、屋根の百騎兵）, do: ライオネル「おお！おぬしも生きておったのか！」。スネーカー「まったく、しぶといヤツだぜ。面倒くせぇ！本当に面倒くせぇさっさと飛び乗りやがれ！」。ゴードール「さっさと乗らないと、今度こそ置いていくよ」, end: 光の中へ入っていく列車}
+    camera: 列車の後ろの南西の少し高い所から、蛇の頭を入れて
+    kind: M
+  A26-003:
+    frame: 引き（門の光）
+    lighting: void_gate
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [523.0, 50.0], face: 90, pose: stand}
+        - {t: 6.8, at: [531.0, 50.0], face: 90, pose: stand, ease: in}
+    cam_keys:
+      - {t: 0.0, cam: [508.0, 46.4, 1.6], look: [520.0, 50.0], look_h: 5.0, lens: 22, frame: 引き}
+      - {t: 6.8, cam: [509.0, 46.6, 1.8], look: [520.0, 50.0], look_h: 6.0, lens: 24}
+    shake: [{t: [0.4, 2.0], amp: 0.8}]
+    fx:
+      - {kind: rift, t: [0.0, 6.8], at: [519.2, 50.0], z: 0.0, w: 10.0, h: 13.5, face: 270, open: 0.3, close: 0.3}
+      - {kind: light, t: [4.6, 6.8], at: [517.0, 50.0], z: 6.0, energy: 60000, color: [230, 210, 255]}
+    act: {start: 光る門, do: ライオネル「それじゃ、今度こそ出発するぞい！次は、ヴァルプルギスじゃ！がおぉぉぉぉぉ〜ん！！」。列車の後ろが光に飲み込まれ、門の光が白く膨らむ, end: 白い光}
+    camera: 門の前の足場の北西の低い所から、門の光を見上げる
+    kind: A
+  # ---------- 魔女都の上空 ----------
+  A26-004:
+    frame: 引き（空・並走）
+    lighting: city_sky
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 262.0], z: 48.0, face: 0, pose: stand}
+        - {t: 1.0, at: [100.0, 262.0], z: 48.0, face: 0, pose: stand}
+        - {t: 9.0, at: [100.0, 216.0], z: 32.0, face: 0, pose: stand, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [86.0, 250.0, 52.0], look: [100.0, 256.0], look_h: 46.0, lens: 24, frame: 引き}
+      - {t: 9.0, cam: [88.0, 212.0, 37.0], look: [100.0, 214.0], look_h: 32.0, lens: 24, ease: linear}
+    fx:
+      - {kind: rift, t: [0.0, 3.6], at: [100.0, 257.0], z: 44.0, w: 7.5, h: 8.0, face: 0, open: 0.8, close: 1.0}
+    act: {start: 都の上の夜空, do: 夜空が裂けて光り、夜光列車が飛び出して都の上を下っていく（ライオネル「さあ、出るぞい！夜会の会場……“魔女都ヴァルプルギス”じゃ！」）, end: 夜空を下る列車}
+    camera: 列車の西に並んで、空を下る（並走）
+    kind: A
+  A26-005:
+    frame: 大俯瞰（都の全景）
+    lighting: city_sky
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 216.0], z: 32.0, face: 0, pose: stand}
+        - {t: 11.0, at: [100.0, 186.0], z: 12.0, face: 0, pose: stand, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [101.5, 236.0, 42.0], look: [100.0, 120.0], look_h: 2.0, lens: 24, frame: 大俯瞰}
+      - {t: 11.0, cam: [101.5, 206.0, 28.0], look: [100.0, 90.0], look_h: 8.0, lens: 26, ease: linear}
+    act: {start: 列車の後ろの上から、眼下に広がる都, do: 宝石のように灯る家並みと、大通りの先にそびえる議事塔。ビスコ「なんて美しい……！これが、魔女の都……。まるで宝石のようだ……！」, end: 都へ降りていく列車と、その先の議事塔}
+    camera: 列車の後ろの高い所から、都の全景を見下ろしながら一緒に下る
+    kind: A
+  # ---------- 駅と案内魔女 ----------
+  A26-006:
+    frame: 引き（駅のホーム）
+    lighting: city_night
+    only: [hundred-knight, bisco, night-train, guide-witch]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 192.0], z: 6.0, face: 0, pose: stand}
+        - {t: 2.4, at: [100.0, 178.0], z: 0.0, face: 0, pose: stand, ease: linear}
+        - {t: 5.0, at: [100.0, 166.0], z: 0.0, face: 0, pose: stand, ease: out}
+        - {t: 18.4, at: [100.0, 166.0], z: 0.0, face: 0, pose: stand}
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 150, pose: stand}
+        - {t: 3.6, at: [95.6, 166.4], z: 0.6, face: 110, pose: wave}
+        - {t: 6.6, at: [95.6, 166.4], z: 0.6, face: 110, pose: bow}
+        - {t: 8.4, at: [95.6, 166.4], z: 0.6, face: 110, pose: stand}
+        - {t: 18.4, at: [95.6, 166.4], z: 0.6, face: 120, pose: gesture}
+      bisco:
+        - {t: 0.0, at: [100.0, 168.6], z: -20.0, face: 0, pose: stand}
+        - {t: 8.0, at: [100.0, 168.6], z: -20.0, face: 0, pose: stand}
+        - {t: 8.1, at: [100.0, 168.6], z: 1.2, face: 270, pose: stand}
+        - {t: 8.8, at: [97.6, 168.4], z: 0.6, face: 270, pose: jump, arc: 0.5}
+        - {t: 9.1, at: [97.6, 168.4], z: 0.6, face: 315, pose: stand}
+        - {t: 18.4, at: [97.6, 168.4], z: 0.6, face: 300, pose: look_up}
+      hundred-knight:
+        - {t: 0.0, at: [100.0, 169.4], z: -20.0, face: 0, pose: stand}
+        - {t: 8.6, at: [100.0, 169.4], z: -20.0, face: 0, pose: stand}
+        - {t: 8.7, at: [100.0, 169.4], z: 1.2, face: 270, pose: stand}
+        - {t: 9.4, at: [97.0, 169.6], z: 0.6, face: 270, pose: jump, arc: 0.5}
+        - {t: 9.7, at: [97.0, 169.6], z: 0.6, face: 300, pose: stand}
+        - {t: 18.4, at: [97.0, 169.6], z: 0.6, face: 300, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [90.4, 170.0, 1.3], look: [99.0, 176.0], look_h: 2.4, lens: 24, frame: 引き}
+      - {t: 5.0, cam: [90.4, 170.0, 1.3], look: [98.4, 167.4], look_h: 1.6, lens: 24}
+      - {t: 18.4, cam: [90.6, 169.8, 1.3], look: [97.0, 167.8], look_h: 1.4, lens: 28}
+    act: {start: 夜の都の駅のホーム, do: 空から降りた列車が線路に乗って滑り込み、ホームに止まる。案内魔女が手を振ってお辞儀（「ようこそ！魔女都ヴァルプルギスへ！」「ここは世界中の魔女が訪れる魔女の都。歓迎しますわ。魔女様方」）。ドームからビスコと百騎兵が降りる, end: ホームの案内魔女とビスコと百騎兵}
+    camera: ホームの西の低い所から、滑り込む列車を迎えて振る
+    kind: M
+  A26-007:
+    frame: 全身（ビスコ・北から）
+    lighting: city_night
+    only: [hundred-knight, bisco, guide-witch]
+    keys:
+      bisco:
+        - {t: 0.0, at: [97.6, 168.4], z: 0.6, face: 300, pose: look_up}
+        - {t: 2.0, at: [97.6, 168.4], z: 0.6, face: 200, pose: look_up}
+        - {t: 4.2, at: [97.6, 168.4], z: 0.6, face: 300, pose: stand}
+        - {t: 5.9, at: [97.6, 168.4], z: 0.6, face: 315, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [97.0, 169.6], z: 0.6, face: 300, pose: stand}
+        - {t: 5.9, at: [97.0, 169.6], z: 0.6, face: 330, pose: stand}
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 120, pose: gesture}
+        - {t: 5.9, at: [95.6, 166.4], z: 0.6, face: 135, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [97.6, 163.2, 0.6], look: [97.6, 168.4], look_h: 1.5, lens: 30, frame: 全身}
+      - {t: 5.9, cam: [97.6, 163.4, 0.6], look: [97.4, 168.6], look_h: 1.5, lens: 32}
+    act: {start: 見回すビスコ（北から。奥に南の家並み）, do: ビスコが都を見回す（「こんなところがあったのか……。ここはいったいどのあたりなんだ？」）, end: 案内魔女に向くビスコ}
+    camera: ホームの北の端の低い所から
+    kind: M
+  A26-008:
+    frame: 2人（案内魔女とビスコ）
+    lighting: city_night
+    only: [hundred-knight, bisco, guide-witch]
+    keys:
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 135, pose: stand}
+        - {t: 4.2, at: [95.6, 166.4], z: 0.6, face: 135, pose: gesture}
+        - {t: 10.9, at: [95.6, 166.4], z: 0.6, face: 135, pose: gesture}
+      bisco:
+        - {t: 0.0, at: [97.6, 168.4], z: 0.6, face: 315, pose: stand}
+        - {t: 10.9, at: [97.6, 168.4], z: 0.6, face: 315, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [97.0, 169.6], z: 0.6, face: 330, pose: stand}
+        - {t: 10.9, at: [97.0, 169.6], z: 0.6, face: 330, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [92.0, 163.8, 2.4], look: [96.6, 167.6], look_h: 1.2, lens: 28, frame: 2人}
+      - {t: 10.9, cam: [92.2, 163.6, 2.4], look: [96.6, 167.4], look_h: 1.2, lens: 30}
+    act: {start: 向き合う案内魔女とビスコ（北西から）, do: 案内魔女「あら、魔女都には初めていらっしゃるのね。ここは、深遠なるどこかと、現世の狭間……とでもいったらいいのかしら」, end: 手を広げる案内魔女}
+    camera: ホームの北西の少し高い所から二人を
+    kind: M
+  A26-009:
+    frame: 胸上（案内魔女）
+    lighting: city_night
+    only: [guide-witch]
+    keys:
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 135, pose: gesture}
+        - {t: 2.0, at: [95.6, 166.4], z: 0.6, face: 135, pose: stand}
+        - {t: 9.2, at: [95.6, 166.4], z: 0.6, face: 135, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [97.4, 168.6, 1.9], look: [95.6, 166.4], look_h: 1.35, lens: 34, frame: 胸上}
+      - {t: 9.2, cam: [97.3, 168.5, 1.9], look: [95.6, 166.4], look_h: 1.35, lens: 38}
+    act: {start: 案内魔女（ビスコの側から）, do: 案内魔女「人が住まう世界とは別の、いうなれば世界の裏側のような場所でここには夜光列車でしかこれないの」, end: 案内魔女}
+    camera: ビスコの横から案内魔女の顔へ。ゆっくり寄る
+    kind: M
+  A26-010:
+    frame: 2人→大通りの先の塔
+    lighting: city_night
+    only: [hundred-knight, bisco, guide-witch, night-train]
+    keys:
+      bisco:
+        - {t: 0.0, at: [97.6, 168.4], z: 0.6, face: 315, pose: stand}
+        - {t: 4.0, at: [97.6, 168.4], z: 0.6, face: 0, pose: look_up}
+        - {t: 13.3, at: [97.6, 168.4], z: 0.6, face: 0, pose: look_up}
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 135, pose: stand}
+        - {t: 3.6, at: [95.6, 166.4], z: 0.6, face: 10, pose: point}
+        - {t: 11.0, at: [95.6, 166.4], z: 0.6, face: 10, pose: point}
+        - {t: 13.3, at: [95.6, 166.4], z: 0.6, face: 60, pose: stand}
+      hundred-knight:
+        - {t: 0.0, at: [97.0, 169.6], z: 0.6, face: 330, pose: stand}
+        - {t: 4.4, at: [97.0, 169.6], z: 0.6, face: 0, pose: look_up}
+        - {t: 13.3, at: [97.0, 169.6], z: 0.6, face: 0, pose: look_up}
+      night-train:
+        - {t: 0.0, at: [100.0, 166.0], z: 0.0, face: 0, pose: stand}
+        - {t: 13.3, at: [100.0, 166.0], z: 0.0, face: 0, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [96.8, 171.0, 2.6], look: [96.6, 167.2], look_h: 1.3, lens: 30, frame: 2人→大通りの先の塔}
+      - {t: 3.6, cam: [96.8, 171.0, 2.6], look: [96.8, 166.0], look_h: 1.6, lens: 30}
+      - {t: 7.0, cam: [96.8, 171.2, 2.6], look: [99.6, 40.0], look_h: 40.0, lens: 30}
+      - {t: 13.3, cam: [96.8, 171.4, 2.6], look: [99.8, 40.0], look_h: 45.0, lens: 36}
+    act: {start: 案内魔女とビスコ（南から）, do: ビスコ「この都で夜会が開かれているのか……？」。案内魔女が大通りの先を指さす（「ほら、あそこに“塔”がみえるでしょう？あれが、議事塔ブロッケントゥルム。夜会の会場よ」）。カメラが大通りの先へ振り上がり、家並みの上にそびえる塔, end: 大通りの先にそびえる議事塔}
+    camera: ホームの南の少し高い所から、指の先の塔へ振り上げて寄る
+    kind: A
+  A26-011:
+    frame: 胸上（案内魔女・塔を背に）
+    lighting: city_night
+    only: [bisco, guide-witch]
+    keys:
+      guide-witch:
+        - {t: 0.0, at: [95.6, 166.4], z: 0.6, face: 60, pose: stand}
+        - {t: 1.0, at: [95.6, 166.4], z: 0.6, face: 150, pose: stand}
+        - {t: 6.0, at: [95.6, 166.4], z: 0.6, face: 150, pose: gesture}
+        - {t: 9.0, at: [95.6, 166.4], z: 0.6, face: 150, pose: stand}
+        - {t: 14.6, at: [95.6, 166.4], z: 0.6, face: 150, pose: bow}
+        - {t: 17.0, at: [95.6, 166.4], z: 0.6, face: 150, pose: bow}
+      bisco:
+        - {t: 0.0, at: [97.6, 168.4], z: 0.6, face: 0, pose: look_up}
+        - {t: 1.0, at: [97.6, 168.4], z: 0.6, face: 300, pose: stand}
+        - {t: 17.0, at: [97.6, 168.4], z: 0.6, face: 300, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [95.0, 171.6, 0.6], look: [95.6, 166.4], look_h: 1.4, lens: 30, frame: 胸上}
+      - {t: 17.0, cam: [95.1, 171.0, 0.6], look: [95.6, 166.4], look_h: 1.4, lens: 36}
+    act: {start: 案内魔女（南の下から。奥に大通りと塔）, do: 案内魔女「夜会の開催は毎年七日七晩続くのだけれど今回の夜会は、今晩が最後。明朝……夜明けに冬のニワトリが三回鳴くまでだから、宴を楽しんでくださいな」とお辞儀, end: お辞儀する案内魔女}
+    camera: ホームの南の低い所から、塔を背にした案内魔女へゆっくり寄る（A32 の仕掛けの台詞）
+    kind: M
+  A26-012:
+    frame: 寄り（ビスコ）
+    lighting: city_night
+    only: [bisco]
+    keys:
+      bisco:
+        - {t: 0.0, at: [97.6, 168.4], z: 0.6, face: 300, pose: stand}
+        - {t: 1.0, at: [97.6, 168.4], z: 0.6, face: 330, pose: look_down}
+        - {t: 5.6, at: [97.6, 168.4], z: 0.6, face: 330, pose: look_down}
+    cam_keys:
+      - {t: 0.0, cam: [96.2, 166.6, 2.2], look: [97.6, 168.4], look_h: 1.5, lens: 40, frame: 寄り}
+      - {t: 5.6, cam: [96.25, 166.65, 2.2], look: [97.6, 168.4], look_h: 1.5, lens: 46}
+    act: {start: ビスコの顔, do: ビスコがつぶやく（「冬のニワトリが三回鳴く、か……」）, end: 考え込むビスコ}
+    camera: 案内魔女の側の少し上から、ビスコの顔へ寄る
+    kind: M
+  # ---------- 議事塔の前 ----------
+  A26-013:
+    frame: 引き（塔を煽る）
+    lighting: city_plaza
+    only: [night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 124.0], z: 0.0, face: 0, pose: stand}
+        - {t: 4.2, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand, ease: out}
+        - {t: 11.4, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [106.4, 99.0, 0.9], look: [100.0, 106.0], look_h: 2.0, lens: 22, frame: 引き}
+      - {t: 4.2, cam: [106.4, 99.0, 0.9], look: [100.4, 90.0], look_h: 4.0, lens: 20}
+      - {t: 11.4, cam: [106.6, 99.4, 0.9], look: [100.0, 56.0], look_h: 30.0, lens: 20}
+    shake: [{t: [3.4, 4.4], amp: 0.5}]
+    act: {start: 大通りの端（塔の前の広場の手前）, do: 列車が大通りを滑ってきて広場の手前で止まる。ライオネル「ヴァルプルギスの夜会会場、議事塔ブロッケントゥルム前に到着だぞい。お忘れ物のないようにの」。カメラが塔を見上げる, end: 見上げるほどの議事塔}
+    camera: 大通りの端の東の低い所から、着く列車を迎え、塔へ振り上げる
+    kind: A
+  A26-014:
+    frame: 全身（ビスコ・塔を背に）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand}
+        - {t: 13.6, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand}
+      bisco:
+        - {t: 0.0, at: [100.0, 94.6], z: 1.2, face: 90, pose: stand}
+        - {t: 0.6, at: [101.8, 94.4], z: 0.0, face: 90, pose: jump, arc: 0.5}
+        - {t: 1.0, at: [101.8, 94.4], z: 0.0, face: 0, pose: stand}
+        - {t: 1.4, at: [101.8, 94.0], z: 0.0, face: 350, pose: walk}
+        - {t: 4.4, at: [101.2, 85.4], z: 0.0, face: 350, pose: walk, ease: out}
+        - {t: 4.7, at: [101.2, 85.4], z: 0.0, face: 0, pose: look_up}
+        - {t: 9.6, at: [101.2, 85.4], z: 0.0, face: 0, pose: look_up}
+        - {t: 10.2, at: [101.2, 85.4], z: 0.0, face: 160, pose: stand}
+        - {t: 13.6, at: [101.2, 85.4], z: 0.0, face: 160, pose: cover}
+      hundred-knight:
+        - {t: 0.0, at: [100.0, 95.2], z: 1.2, face: 90, pose: stand}
+        - {t: 1.0, at: [101.2, 95.6], z: 0.0, face: 90, pose: jump, arc: 0.5}
+        - {t: 1.4, at: [101.2, 95.6], z: 0.0, face: 0, pose: stand}
+        - {t: 1.8, at: [101.0, 95.2], z: 0.0, face: 350, pose: walk}
+        - {t: 4.8, at: [99.8, 86.4], z: 0.0, face: 350, pose: walk, ease: out}
+        - {t: 5.1, at: [99.8, 86.4], z: 0.0, face: 0, pose: look_up}
+        - {t: 13.6, at: [99.8, 86.4], z: 0.0, face: 0, pose: look_up}
+    cam_keys:
+      - {t: 0.0, cam: [102.2, 78.0, 2.0], look: [101.2, 90.0], look_h: 1.4, lens: 26, frame: 全身}
+      - {t: 13.6, cam: [102.0, 79.0, 2.0], look: [101.0, 86.0], look_h: 1.6, lens: 30}
+    act: {start: 広場から見た列車と大通り, do: ビスコと百騎兵がドームから降りて広場へ歩き、塔を見上げる。ビスコ「ここか……なんか緊張してきたぞ。自分から言い出したとはいえ、メタリカより先に夜会に来ることになるとはな……」と胸に手を当てる, end: 胸に手を当てるビスコ}
+    camera: 広場の中から南へ、歩いてくる二人を迎える。ゆっくり寄る
+    kind: M
+  A26-015:
+    frame: 引き（クレーン上げ）
+    lighting: city_plaza
+    only: [hundred-knight, bisco, night-train]
+    keys:
+      night-train:
+        - {t: 0.0, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand}
+        - {t: 3.4, at: [100.0, 92.0], z: 0.0, face: 0, pose: stand}
+        - {t: 6.0, at: [100.0, 104.0], z: 3.0, face: 0, pose: stand, ease: in}
+        - {t: 10.8, at: [100.0, 130.0], z: 16.0, face: 0, pose: stand}
+      bisco:
+        - {t: 0.0, at: [101.2, 85.4], z: 0.0, face: 160, pose: cover}
+        - {t: 2.0, at: [101.2, 85.4], z: 0.0, face: 160, pose: stand}
+        - {t: 6.4, at: [101.2, 85.4], z: 0.0, face: 200, pose: stand}
+        - {t: 7.0, at: [101.2, 85.4], z: 0.0, face: 0, pose: stand}
+        - {t: 7.4, at: [101.1, 84.8], z: 0.0, face: 0, pose: walk}
+        - {t: 10.8, at: [100.8, 78.0], z: 0.0, face: 0, pose: walk, ease: linear}
+      hundred-knight:
+        - {t: 0.0, at: [99.8, 86.4], z: 0.0, face: 0, pose: look_up}
+        - {t: 5.8, at: [99.8, 86.4], z: 0.0, face: 70, pose: nod}
+        - {t: 6.6, at: [99.8, 86.4], z: 0.0, face: 0, pose: stand}
+        - {t: 7.4, at: [99.7, 85.8], z: 0.0, face: 0, pose: walk}
+        - {t: 10.8, at: [99.4, 79.2], z: 0.0, face: 0, pose: walk, ease: linear}
+    cam_keys:
+      - {t: 0.0, cam: [104.0, 92.0, 2.0], look: [100.6, 82.0], look_h: 1.2, lens: 26, frame: 引き}
+      - {t: 10.8, cam: [106.0, 100.0, 14.0], look: [100.0, 66.0], look_h: 2.0, lens: 24}
+    act: {start: 塔の前の二人（後ろから）, do: ビスコ「……。まあ、いいか。百騎兵、用心していこう」。百騎兵がうなずき、二人で広場を塔の門へ歩き出す。後ろで列車が浮き上がって夜空へ去る, end: 広場を塔へ歩く小さな二人（上から）}
+    camera: 二人の後ろの少し高い所から、高く上がって塔と広場を見せる（クレーン上げ）
+    kind: A
