@@ -420,18 +420,18 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [55.0, 40.2, 1.5]
-      look: metallica-giant
-      look_h: 10.4
+      cam: [55.2, 39.2, 6.0]
+      look: [51.6, 46.8]
+      look_h: 11.6
       lens: 28
-      frame: 肩なめ
+      frame: 胸上
     - t: 7.8
-      cam: [55.2, 40.0, 1.5]
-      look: metallica-giant
-      look_h: 9.8
-      lens: 30
+      cam: [55.3, 39.0, 6.2]
+      look: [52.3, 45.8]
+      look_h: 11.3
+      lens: 32
     act: {start: 巨大メタリカが上機嫌でかがみ込む, do: （「キヒヒ。よくやったぞ、ビスコ！これでもう暫く楽しめる！」）, end: にやりとする巨大メタリカ}
-    camera: ビスコの肩越しに、かがみ込む巨大メタリカの顔
+    camera: ビスコの後ろの高い所から、かがみ込む巨大メタリカの顔
     kind: M
   A32-005:
     frame: 膝上
@@ -594,13 +594,13 @@ cuts:
         face: 220
     cam_keys:
     - t: 0.0
-      cam: [51.4, 46.0, 8.6]
+      cam: [53.02, 44.99, 8.0]
       look: bisco
       look_h: 0.8
       lens: 30
       frame: 全身
     - t: 7.5
-      cam: [51.6, 45.6, 8.2]
+      cam: [53.1, 44.8, 7.6]
       look: bisco
       look_h: 0.8
       lens: 34
@@ -779,18 +779,18 @@ cuts:
         ease: out
     cam_keys:
     - t: 0.0
-      cam: [52.2, 47.2, 1.1]
+      cam: [55.8, 40.2, 1.5]
       look: bisco
       look_h: 1.1
-      lens: 28
+      lens: 26
       frame: 全身
     - t: 7.1
-      cam: [49.6, 49.6, 1.1]
+      cam: [49.2, 45.0, 1.5]
       look: bisco
       look_h: 1.1
       lens: 30
     act: {start: ビスコがニワトリを抱えて議長のネザリアの前へ歩く, do: （「議長……。ネザリア殿だったか……。私の提案を聞いてくれないか」）, end: ネザリアの前に立つビスコ}
-    camera: ビスコを横から追う（南の低い所）
+    camera: ビスコの後ろから追う（左に巨大メタリカ）
     kind: M
   A32-009:
     frame: 寄り
@@ -1236,10 +1236,10 @@ cuts:
         z: 0.6
       - {t: 0.3, pose: walk, face: 310}
       - t: 7.4
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         pose: walk
         ease: out
-      - {t: 7.7, pose: point, face: 300}
+      - {t: 7.7, pose: point, face: '@bisco'}
       rabi:
       - t: 0.0
         at: [43.62, 48.04]
@@ -1295,13 +1295,13 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [49.8, 50.6, 1.3]
+      cam: [47.71, 51.19, 1.3]
       look: purple-peel
       look_h: 1.4
       lens: 30
       frame: 膝上
     - t: 8.4
-      cam: [49.6, 50.2, 1.3]
+      cam: [47.8, 51.0, 1.3]
       look: purple-peel
       look_h: 1.4
       lens: 34
@@ -1320,8 +1320,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1408,8 +1408,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1491,8 +1491,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1579,8 +1579,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1611,7 +1611,7 @@ cuts:
         pose: stand
       - {t: 0.3, pose: walk, face: 80}
       - t: 2.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         pose: walk
         ease: out
       - {t: 2.3, pose: look_up}
@@ -1645,7 +1645,7 @@ cuts:
       - t: 0.3
         at: [48.09, 46.11]
       - t: 2.0
-        at: [48.69, 47.51]
+        at: [47.89, 47.71]
         ease: out
     cam_keys:
     - t: 0.0
@@ -1674,8 +1674,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1701,7 +1701,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 80
         pose: look_up
       hundred-knight:
@@ -1728,7 +1728,7 @@ cuts:
       - {t: 2.0, face: 220, pose: cross}
       scarecocco:
       - t: 0.0
-        at: [48.69, 47.51]
+        at: [47.89, 47.71]
         face: 250
         pose: sit
         z: 0.9
@@ -1759,8 +1759,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1786,7 +1786,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 80
         pose: look_up
       - {t: 0.3, pose: cover, face: 70}
@@ -1813,7 +1813,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [48.69, 47.51]
+        at: [47.89, 47.71]
         face: 250
         pose: sit
         z: 0.9
@@ -1844,8 +1844,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1871,7 +1871,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 70
         pose: stand
       - {t: 0.3, face: '@nezaria', pose: stand}
@@ -1897,21 +1897,21 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [48.69, 47.51]
+        at: [47.89, 47.71]
         face: 250
         pose: sit
         z: 0.9
       - t: 0.3
-        at: [47.71, 47.69]
+        at: [46.91, 47.89]
     cam_keys:
     - t: 0.0
-      cam: [49.2, 48.0, 1.5]
+      cam: [47.57, 49.09, 1.5]
       look: nezaria
       look_h: 1.2
       lens: 36
       frame: 肩なめ
     - t: 6.6
-      cam: [49.35, 48.15, 1.5]
+      cam: [47.6, 48.95, 1.5]
       look: nezaria
       look_h: 1.2
       lens: 44
@@ -1930,8 +1930,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       rabi:
@@ -1957,7 +1957,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: '@nezaria'
         pose: stand
       - {t: 0.3, pose: arms_up}
@@ -1983,12 +1983,12 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.71, 47.69]
+        at: [46.91, 47.89]
         face: 250
         pose: sit
         z: 0.9
       - t: 0.5
-        at: [47.66, 47.7]
+        at: [46.86, 47.9]
         z: 1.6
     cam_keys:
     - t: 0.0
@@ -2017,8 +2017,8 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
-        face: 300
+        at: [49.4, 52.6]
+        face: '@bisco'
         pose: point
         z: 0.6
       - {t: 0.3, pose: stand, face: '@nezaria'}
@@ -2045,7 +2045,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: '@nezaria'
         pose: arms_up
       hundred-knight:
@@ -2070,19 +2070,19 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.66, 47.7]
+        at: [46.86, 47.9]
         face: 250
         pose: sit
         z: 1.6
     cam_keys:
     - t: 0.0
-      cam: [50.2, 53.0, 1.6]
+      cam: [47.53, 52.27, 1.6]
       look: purple-peel
       look_h: 1.55
       lens: 44
       frame: 胸上
     - t: 4.9
-      cam: [50.4, 53.2, 1.6]
+      cam: [47.7, 52.3, 1.6]
       look: purple-peel
       look_h: 1.55
       lens: 50
@@ -2101,7 +2101,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@nezaria'
         pose: stand
         z: 0.6
@@ -2128,7 +2128,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: '@nezaria'
         pose: arms_up
       hundred-knight:
@@ -2155,7 +2155,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.66, 47.7]
+        at: [46.86, 47.9]
         face: 250
         pose: sit
         z: 1.6
@@ -2187,7 +2187,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@nezaria'
         pose: stand
         z: 0.6
@@ -2214,7 +2214,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: '@nezaria'
         pose: arms_up
       - {t: 0.3, face: 60, pose: stand}
@@ -2244,12 +2244,12 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.66, 47.7]
+        at: [46.86, 47.9]
         face: 250
         pose: sit
         z: 1.6
       - t: 0.3
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         z: 0.9
     cam_keys:
     - t: 0.0
@@ -2288,7 +2288,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@nezaria'
         pose: stand
         z: 0.6
@@ -2315,7 +2315,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2340,7 +2340,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2371,7 +2371,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@nezaria'
         pose: stand
         z: 0.6
@@ -2400,7 +2400,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2425,7 +2425,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2456,7 +2456,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: 310
         pose: point
         z: 0.6
@@ -2485,7 +2485,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2510,7 +2510,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2548,7 +2548,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: 310
         pose: point
         z: 0.6
@@ -2576,7 +2576,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2601,7 +2601,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2632,7 +2632,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: stand
         z: 0.6
@@ -2662,7 +2662,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2687,7 +2687,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2723,7 +2723,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: stand
         z: 0.6
@@ -2751,7 +2751,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2776,19 +2776,19 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [49.4, 54.4, 0.7]
+      cam: [47.63, 52.91, 0.7]
       look: purple-peel
       look_h: 1.4
       lens: 32
       frame: 膝上
     - t: 6.8
-      cam: [49.2, 54.2, 0.7]
+      cam: [47.75, 53.05, 0.7]
       look: purple-peel
       look_h: 1.45
       lens: 36
@@ -2807,7 +2807,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -2834,7 +2834,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2859,7 +2859,7 @@ cuts:
         pose: cross
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2890,7 +2890,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -2917,7 +2917,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -2944,7 +2944,7 @@ cuts:
       - {t: 3.55, pose: point}
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -2975,7 +2975,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -3002,7 +3002,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -3028,19 +3028,19 @@ cuts:
         pose: point
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [48.6, 47.6, 0.6]
+      cam: [48.05, 46.3, 0.6]
       look: nezaria
       look_h: 1.4
       lens: 32
       frame: 膝上
     - t: 6.5
-      cam: [48.2, 47.2, 0.65]
+      cam: [47.45, 45.95, 0.65]
       look: nezaria
       look_h: 1.45
       lens: 38
@@ -3059,7 +3059,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -3086,7 +3086,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -3111,7 +3111,7 @@ cuts:
         pose: point
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -3143,7 +3143,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -3170,7 +3170,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -3197,7 +3197,7 @@ cuts:
       - {t: 2.4, pose: look_down, face: 230}
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -3228,7 +3228,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -3255,7 +3255,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -3280,7 +3280,7 @@ cuts:
         pose: look_down
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9
@@ -3312,7 +3312,7 @@ cuts:
         pose: fall
       purple-peel:
       - t: 0.0
-        at: [51.6, 51.6]
+        at: [49.4, 52.6]
         face: '@rabi'
         pose: point
         z: 0.6
@@ -3339,7 +3339,7 @@ cuts:
         pose: stand
       bisco:
       - t: 0.0
-        at: [48.2, 47.6]
+        at: [47.4, 47.8]
         face: 90
         pose: stand
       hundred-knight:
@@ -3365,7 +3365,7 @@ cuts:
         pose: look_down
       scarecocco:
       - t: 0.0
-        at: [47.77, 47.35]
+        at: [46.97, 47.55]
         face: 250
         pose: sit
         z: 0.9

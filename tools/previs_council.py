@@ -405,8 +405,10 @@ def decorate(P, who, root, head, arms, sh, body_h, col):
         mist = P.beam_mat("giant_mist", (0.3, 0.95, 0.65), strength=0.9, alpha=0.6)
         for j in range(7):
             a = j * 2 * math.pi / 7
-            P.prim("sphere", mist, f"giant_mist{j}", root, (math.cos(a) * r * 1.6, math.sin(a) * r * 1.6, 0.6 + 0.8 * rnd(j, 41)),
-                   radius=1.0, scale=(r * 0.9, r * 0.9, 0.9 + 0.8 * rnd(j, 42)))
+            o = P.prim("sphere", mist, f"giant_mist{j}", root, (math.cos(a) * r * 1.6, math.sin(a) * r * 1.6, 0.6 + 0.8 * rnd(j, 41)),
+                       radius=1.0, scale=(r * 0.9, r * 0.9, 0.9 + 0.8 * rnd(j, 42)))
+            o["fog_home"] = list(o.location)   # カメラが中に入ったコマだけ隠す（_fog_hide_around_camera）
+        _register_fog_handler()
     elif who == "teressa-swamp":   # 沼を浴びて垂れたとんがり帽子（碧に濡れた色）
         hat = P.make_mat("tswamp_hat", (0.18, 0.42, 0.34))
         P.prim("cyl", hat, "tswamp_brim", head, (0, 0, hr * 1.6), (math.radians(-18), 0, 0), radius=0.3, depth=0.02)
@@ -424,14 +426,19 @@ def _fog_hide_around_camera(scene, *args):
     cam = scene.camera
     if cam is None:
         return
+    from mathutils import Vector
     c = cam.matrix_world.translation
     for o in scene.objects:
-        if not o.get("fog") or o.location.z < -40:
+        home = o.get("fog_home")   # 動かない霞（巨大メタリカの足元の瘴気）: 前のコマで隠したものを戻してから調べる
+        if home is not None:
+            o.location = Vector(home)
+        if not (o.get("fog") or home is not None) or o.location.z < -40:
             continue
-        sx, sy, sz = (max(1e-6, v) for v in o.scale)
-        d = ((c.x - o.location.x) / sx) ** 2 + ((c.y - o.location.y) / sy) ** 2 + ((c.z - o.location.z) / sz) ** 2
+        w = (o.parent.matrix_world @ o.location) if o.parent else o.location
+        sx, sy, sz = (max(1e-6, v) for v in o.matrix_world.to_scale())
+        d = ((c.x - w.x) / sx) ** 2 + ((c.y - w.y) / sy) ** 2 + ((c.z - w.z) / sz) ** 2
         if d < 1.1 ** 2:
-            o.location.z = -50.0
+            o.location.z = -50.0 if o.parent is None else o.location.z - 500.0
 
 
 def _register_fog_handler():

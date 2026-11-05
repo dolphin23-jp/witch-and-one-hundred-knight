@@ -2,6 +2,7 @@
 # 原作: 魔女達の宴（ビスコが目覚める、ツギハギの魔女が本に息を吹きかけて百騎兵を倒す）→ 霧と議長（杖が話す）の登場、魔女の呼び出し、ベルダの議題
 #   → 地震、夜光列車が壁を破って毒沼を運び込み、逃げる → 会場が毒沼に沈み、メタリカが現れる → 小瓶を飲んで巨大化、パープルピール・リリアーヌとの戦い、雷撃
 #   → 霧と朝の光 → ビスコがニワトリを捕まえ、議長に採決を求める → 可決。
+# 壊れた後の倒れた椅子は、人物の立ち位置とカメラから離した壁ぎわに置く（下絵で人物やカメラと重なったため、2026-11-05）。
 # 背景の資料: ユーザーが用意した refs/council-room_bg_01.jpg（議会室）と refs/council-room-ruined_bg_01.jpg（メタリカ襲撃で壊れた後、戦闘の背景）。
 #   円い部屋。床は木、中央に紫の絨毯の輪（茶色の縁）と、赤い布に金色の魔法陣の円卓、背の高いゴシックの椅子（濃い赤）が円卓を囲む。
 #   天井から天球儀（星座の線が光る透けた大きな球、金の輪と光る惑星（黄・桃・白））が下がる。壁は濃い木の羽目板と柱、縦長の窓（夜空）に紫がかった赤のカーテン。両開きの扉。
@@ -61,11 +62,11 @@ props:
   crubble_n: {at: [50.5, 39.8], r: 3.2, n: 14, only_lit: [council_ruin, council_dawn], ja: 破れた壁の瓦礫（北）}
   crubble_ne: {at: [57.2, 41.6], r: 2.6, n: 11, only_lit: [council_ruin, council_dawn], ja: 破れた壁の瓦礫（北東）}
   crubble_c: {at: [52.0, 47.0], r: 2.2, n: 7, only_lit: [council_ruin, council_dawn], ja: 床の瓦礫}
-  cchair_fall_a: {at: [44.6, 53.2], face: 120, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
-  cchair_fall_b: {at: [56.4, 54.0], face: 250, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
-  cchair_fall_c: {at: [45.2, 45.4], face: 30, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
-  cchair_tilt_d: {at: [55.6, 47.2], face: 200, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
-  cchair_tilt_e: {at: [47.0, 56.6], face: 20, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
+  cchair_fall_a: {at: [58.9, 53.3], face: 200, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_fall_b: {at: [40.15, 48.26], face: 250, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_fall_c: {at: [41.34, 45.0], face: 30, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_tilt_d: {at: [59.96, 49.13], face: 200, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
+  cchair_tilt_e: {at: [59.85, 51.74], face: 20, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
   cplanet_a: {at: [43.8, 49.2], r: 0.55, color: [255, 200, 70], only_lit: [council_ruin, council_dawn], ja: 床に落ちた天球儀の惑星（黄）}
   cplanet_b: {at: [44.6, 50.4], r: 0.42, color: [235, 130, 150], only_lit: [council_ruin, council_dawn], ja: 床に落ちた天球儀の惑星（桃）}
   # ---------- いつも ----------
