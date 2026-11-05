@@ -1217,6 +1217,10 @@ def setup_render(scene, w, h, samples, denoise=False):
         scene.cycles.use_denoising = denoise
     except Exception:
         pass
+    try:   # 動かない背景（森・街の何百もの形）をコマごとに作り直さない（2026-11-05。1コマの時間を短くする）
+        scene.render.use_persistent_data = True
+    except Exception:
+        pass
     scene.render.resolution_x, scene.render.resolution_y = w, h
     scene.render.resolution_percentage = 100
     scene.view_settings.view_transform = "Standard"
