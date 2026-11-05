@@ -39,7 +39,7 @@ COLORS = {"metallica": (255, 150, 40), "bisco": (90, 150, 255), "hundred-knight"
           "marny": (110, 235, 90), "forest-servant": (125, 28, 32), "marika-mouse": (245, 245, 245), "bird": (95, 70, 50),
           "forest-beast": (70, 60, 90),
           # 6章後半 回2（A23〜A27）: 夜光列車、盲いた魔女、魔女都の案内魔女、議事塔の門
-          "night-train": (70, 50, 95), "blind-witch": (150, 130, 110), "guide-witch": (200, 120, 160)}
+          "night-train": (70, 50, 95), "blind-witch": (55, 45, 95), "guide-witch": (200, 120, 160)}
 SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchino": "ア", "luckiny": "ル", "tito": "テ", "villager-a": "村A",
          "villager-b": "村B", "villager-c": "村C", "villager-d": "村D", "water-merchant": "商", "sand-eater": "砂", "scarecocco": "鶏",
          "purple-peel": "パ", "lily": "リ", "rabi": "ラ", "usamaru": "ウ", "teressa": "テレ", "berda": "ベ",
