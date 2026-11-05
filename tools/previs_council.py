@@ -402,11 +402,11 @@ def decorate(P, who, root, head, arms, sh, body_h, col):
         braid = P.make_mat("giant_braid", tuple(c * 0.45 for c in col))
         for sx in (-1, 1):
             P.prim("cyl", braid, f"giant_braid{sx}", head, (sx * 0.1 * k, -hr * 0.9, -0.45 * k), radius=0.04 * k, depth=1.1 * k)
-        mist = P.beam_mat("giant_mist", (0.3, 0.95, 0.65), strength=0.9, alpha=0.6)
+        mist = P.beam_mat("giant_mist", (0.3, 0.95, 0.65), strength=0.9, alpha=0.86)   # 薄く（足元で話す人物が隠れないように）
         for j in range(7):
             a = j * 2 * math.pi / 7
-            o = P.prim("sphere", mist, f"giant_mist{j}", root, (math.cos(a) * r * 1.6, math.sin(a) * r * 1.6, 0.6 + 0.8 * rnd(j, 41)),
-                       radius=1.0, scale=(r * 0.9, r * 0.9, 0.9 + 0.8 * rnd(j, 42)))
+            o = P.prim("sphere", mist, f"giant_mist{j}", root, (math.cos(a) * r * 1.25, math.sin(a) * r * 1.25, 0.5 + 0.6 * rnd(j, 41)),
+                       radius=1.0, scale=(r * 0.65, r * 0.65, 0.7 + 0.6 * rnd(j, 42)))   # 足元に寄せる（中心から約 2.5m まで）
             o["fog_home"] = list(o.location)   # カメラが中に入ったコマだけ隠す（_fog_hide_around_camera）
         _register_fog_handler()
     elif who == "teressa-swamp":   # 沼を浴びて垂れたとんがり帽子（碧に濡れた色）
