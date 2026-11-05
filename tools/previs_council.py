@@ -17,8 +17,9 @@
 効果（fx の kind）:
   fog    霧。at、r（広がり）、h（厚さ）、alpha、t: [始め, 終わり]、rise（濃くなる秒）、fade（薄れる秒）
   bolt   雷撃。at（手の位置。人物名か場所）、z（手の高さ）、to（落ちる先の場所か人物の並び）、t、rate（明滅の速さ）
-  flash  画面いっぱいの光（白）や暗転（color: [0,0,0]）。at、t、peak（いちばん濃い秒）、alpha
+  flash  画面いっぱいの光（白）や暗転（color: [0,0,0]）。カメラに付けた小さな球の内側で、手前の物も覆う。t、peak（いちばん濃い秒）、alpha（at は使わない）
   surge  流れ込む沼の波。at（出どころ）、to（行き先）、t、r（太さ）、h（高さ）
+  mist   半透明の噴き上げ（沼の瘴気）。plume と同じ書き方（r、h、z、color）で、中の人物が透けて見える。alpha（濃さ、既定 0.45）
 """
 import math
 
@@ -442,10 +443,21 @@ def build_fx(P, fx, i):
         lt.data.shadow_soft_size = 1.0
         objs.append(lt)
         return objs
-    if kind == "flash":   # 画面いっぱいの光か暗転: 部屋ごと包む大きな球の内側（半透明の発光）
+    if kind == "flash":   # 画面いっぱいの光か暗転: カメラに付けた小さな球の内側（半透明の発光）。手前の物も覆う
         col = tuple(v / 255 for v in fx.get("color", [255, 255, 255]))
         m = P.beam_mat(f"fx{i}_flash", col, strength=fx.get("glow", 3.0) if sum(col) > 0 else 0.0, alpha=1.0)
-        return [P.prim("sphere", m, f"fx{i}_flash", None, (0, 0, -500), radius=fx.get("r", 80.0))]
+        o = P.prim("sphere", m, f"fx{i}_flash", None, (0, 0, -500), radius=0.3)
+        o.visible_shadow = False
+        o.visible_diffuse = False
+        o.visible_glossy = False
+        return [o]
+    if kind == "mist":    # 半透明の噴き上げ（沼の瘴気）
+        col = tuple(v / 255 for v in fx.get("color", [40, 190, 140]))
+        objs = []
+        for j in range(6):
+            m = P.beam_mat(f"fx{i}_mist{j}", col, strength=fx.get("glow", 0.9), alpha=1.0 - fx.get("alpha", 0.45))
+            objs.append(P.prim("sphere", m, f"fx{i}_mist{j}", None, (0, 0, -50), radius=1.0))
+        return objs
     if kind == "surge":   # 沼の波: 出どころから行き先へ、波の先が進む球の列
         m = P.make_mat(f"fx{i}_surge", tuple(v / 255 for v in fx.get("color", [32, 160, 120])), rough=0.25, emit=fx.get("glow", 0.5))
         return [P.prim("sphere", m, f"fx{i}_s{j}", None, (0, 0, -50), radius=1.0) for j in range(int(fx.get("n", 16)))]
@@ -454,12 +466,26 @@ def build_fx(P, fx, i):
 
 def pose_fx(P, fx, objs, t, pos, place):
     kind = fx.get("kind")
-    if kind not in ("fog", "bolt", "flash", "surge"):
+    if kind not in ("fog", "bolt", "flash", "surge", "mist"):
         return False
-    at = fx["at"]
+    at = fx.get("at", [0.0, 0.0])
     p = pos[at] if isinstance(at, str) and at in pos else place(at)
     t0, t1 = fx["t"]
     z0 = fx.get("z", 0.0)
+    if kind == "mist":    # plume と同じ形（球の柱が伸びて広がる）
+        import motion
+        amt = motion.fx_amount(fx, t)
+        r, h = fx.get("r", 2.0), fx.get("h", 4.0)
+        for j, o in enumerate(objs):
+            if amt <= 0.01:
+                o.location = (0, 0, -50)
+                continue
+            f = j / max(1, len(objs) - 1)
+            ang = j * 2.4
+            rr = r * (0.35 + 0.65 * f) * amt
+            o.location = P.bl((p[0] + math.cos(ang) * r * 0.3 * f, p[1] + math.sin(ang) * r * 0.3 * f), z0 + h * f * amt)
+            o.scale = (rr, rr, rr * 0.8)
+        return True
     if kind == "fog":
         rise, fade = fx.get("rise", 2.0), fx.get("fade", 2.0)
         u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, rise))
@@ -481,12 +507,15 @@ def pose_fx(P, fx, objs, t, pos, place):
         return True
     if kind == "flash":
         o = objs[0]
-        if not (t0 <= t <= t1):
+        cam = bpy.data.objects.get("CAM")
+        if cam is not None and o.parent is not cam:   # カメラに付ける（カメラと一緒に動く）
+            o.parent = cam
+        if not (t0 <= t <= t1) or cam is None:
             o.location = (0, 0, -500)
             return True
         pk = fx.get("peak", t0 + 0.1)
         u = (t - t0) / max(1e-6, pk - t0) if t < pk else 1.0 - (t - pk) / max(1e-6, t1 - pk)
-        o.location = P.bl(p, 0.0)
+        o.location = (0.0, 0.0, 0.0)
         mx = _mix(o.data.materials[0])
         if mx:
             mx.inputs["Fac"].default_value = 1.0 - max(0.0, min(1.0, u)) * fx.get("alpha", 0.95)

@@ -540,29 +540,49 @@ cuts:
     note: null
   A31-005:
     cam:
-    - 53.6
-    - 54.0
-    - 0.4
-    lens: 32
-    bearing: 326
+    - 55.8
+    - 60.6
+    - 0.6
+    lens: 34
+    bearing: 334
     frame: 胸上
     start:
       people:
-      - who: rubens
-        s: -0.8
-        dist: 10.98
+      - who: berda
+        s: -0.96
+        dist: 15.01
         side: 左
         body: 斜め前（画面右向き）
+      - who: rubens
+        s: -0.61
+        dist: 17.1
+        side: 左
+        body: 横顔（画面右向き）
       - who: nezaria
         s: -0.23
-        dist: 11.82
+        dist: 18.4
         side: 中央
         body: 横顔（画面右向き）
       - who: metallica-giant
         s: 0.0
-        dist: 6.49
+        dist: 13.33
         side: 中央
         body: 正面
+      - who: hundred-knight
+        s: 0.5
+        dist: 10.23
+        side: 右
+        body: 斜め前（画面右向き）
+      - who: lily
+        s: 0.95
+        dist: 11.8
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: rabi
+        s: 1.08
+        dist: 5.05
+        side: 右
+        body: 斜め後ろ（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
@@ -571,7 +591,13 @@ cuts:
       - 天球儀（透けた大きな球、金の輪、光る惑星）
       - 議長の椅子（北）
       - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
       - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（空き。扉の側）
+      - 椅子（空き）
+      - 椅子（ベルダ）
       - 椅子（リューベンス）
       - 椅子（空き。ヴァレンティーヌの席）
       - 椅子（空き）
@@ -581,41 +607,66 @@ cuts:
       - 破れた壁の瓦礫（北）
       - 床の瓦礫
       - 倒れた椅子
-      staging: 'In frame (exactly 3 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
-        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
-        in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with
-        a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with
-        a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; giant
-        Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around
-        her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls
-        with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of
-        a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - 傾いて残った椅子
+      - 床に落ちた天球儀の惑星（黄）
+      - 床に落ちた天球儀の惑星（桃）
+      staging: 'In frame (exactly 7 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen right,
+        small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green
+        puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame, in profile, turned toward
+        screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+        around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking
+        staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her
+        reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around
+        one raised hand, standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece
+        and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in three-quarter view, turned toward screen
+        right, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in
+        the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward screen left. No other people.
+        Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+        light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: rubens
-        s: -0.95
-        dist: 10.83
+      - who: berda
+        s: -1.08
+        dist: 14.96
         side: 左
         body: 斜め前（画面右向き）
+      - who: rubens
+        s: -0.69
+        dist: 17.09
+        side: 左
+        body: 横顔（画面右向き）
       - who: nezaria
-        s: -0.29
-        dist: 11.81
+        s: -0.26
+        dist: 18.45
         side: 中央
         body: 横顔（画面右向き）
       - who: metallica-giant
-        s: 0.0
-        dist: 6.55
+        s: -0.0
+        dist: 13.42
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 3 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
-        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
-        in three-quarter view, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with
-        a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with
-        a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; giant
-        Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around
-        her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls
-        with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of
-        a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - who: hundred-knight
+        s: 0.57
+        dist: 10.38
+        side: 右
+        body: 横顔（画面右向き）
+      - who: lily
+        s: 1.05
+        dist: 12.01
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 6 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen right,
+        small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green
+        puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame, in profile, turned toward
+        screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+        around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking
+        staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her
+        reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around
+        one raised hand, standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece
+        and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in profile, turned toward screen right, small
+        in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background.
+        No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
+        tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       metallica-giant:
         to:

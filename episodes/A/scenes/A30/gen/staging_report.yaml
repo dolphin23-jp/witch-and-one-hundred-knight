@@ -3564,27 +3564,47 @@ cuts:
     note: null
   A30-041:
     cam:
-    - 50.4
-    - 58.0
-    - 0.8
+    - 50.8
+    - 61.8
+    - 1.6
     lens: 40
-    bearing: 358
+    bearing: 357
     frame: 胸上
     start:
       people:
+      - who: bisco
+        s: -1.01
+        dist: 3.5
+        side: 左
+        body: 背中
+      - who: rubens
+        s: -0.99
+        dist: 14.62
+        side: 左
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: -0.59
+        dist: 7.33
+        side: 左
+        body: 背中
       - who: nezaria
-        s: -0.68
-        dist: 13.18
+        s: -0.52
+        dist: 17.07
         side: 左
         body: 横顔（画面右向き）
       - who: metallica-giant
         s: 0.0
-        dist: 9.41
+        dist: 13.22
         side: 中央
         body: 正面
       - who: purple-peel
-        s: 1.03
-        dist: 6.67
+        s: 0.65
+        dist: 10.44
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: lily
+        s: 0.81
+        dist: 12.55
         side: 右
         body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
@@ -3596,43 +3616,74 @@ cuts:
       - 議長の椅子（北）
       - 椅子（空き。マーリカの席）
       - 椅子（リリー）
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
       - 椅子（空き）
       - 椅子（空き。扉の側）
+      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 椅子（リューベンス）
       - 椅子（空き。ヴァレンティーヌの席）
       - 椅子（空き）
       - 円い壁（北〜北東が破れている）
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 破れた壁の瓦礫（北）
+      - 破れた壁の瓦礫（北東）
       - 床の瓦礫
       - 倒れた椅子
-      staging: 'In frame (exactly 3 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-        (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13
-        m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles
-        of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, at the far
-        right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between
-        heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark
-        wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - 傾いて残った椅子
+      staging: 'In frame (exactly 7 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01):
+        long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on
+        her back, holding a big green book, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back
+        to the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+        around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking
+        staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her
+        reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around
+        one raised hand, standing, in the center of the frame, facing the camera, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame,
+        in three-quarter view, turned toward screen left, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter
+        view, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night
+        inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows
+        full of stars between purple-red curtains.'
     end:
       people:
+      - who: hundred-knight
+        s: -0.7
+        dist: 6.9
+        side: 左
+        body: 背中
       - who: nezaria
-        s: -0.84
-        dist: 12.79
+        s: -0.62
+        dist: 16.61
         side: 左
         body: 横顔（画面右向き）
       - who: metallica-giant
         s: 0.0
-        dist: 9.01
+        dist: 12.81
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-        (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13
-        m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles
-        of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows
-        full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over
-        a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - who: purple-peel
+        s: 0.78
+        dist: 10.07
+        side: 右
+        body: 斜め前（画面左向き）
+      - who: lily
+        s: 0.96
+        dist: 12.2
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 5 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, with the back to the camera, small in the background; Nezaria, the fog witch and chairwoman,
+        as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white
+        dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left
+        of the frame, in profile, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and
+        clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera,
+        small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background;
+        Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people.
+        Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+        light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       metallica-giant:
         to:
