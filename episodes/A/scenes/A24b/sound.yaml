@@ -1,0 +1,13 @@
+# A24b の BGM・効果音の置き場所（D-068、2026-11-05）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
+scene: A24b
+bgm:
+  # 原作どおり（パート21）: 拠点の場面に切り替わる所（パート21 の 17:07 ごろ）から M06「不穏な会話」（17:07〜18:33）。A24 の M09 はその前で終わる
+  - {src: audio/bgm/catalog/M06.ogg, cut: A24b-001, t: 0.0, until: {cut: A24b-005, t: 9.8}, loop: true, fade_in: 1.5, fade_out: 2.5, volume: 0.26}
+sfx:
+  # 夜の屋敷の静けさ（外の風を小さく）
+  - {src: audio/sfx/wind_night_loop.ogg, cut: A24b-001, t: 0.0, until: {cut: A24b-005, t: 9.8}, loop: true, rate: 0.85, fade_in: 1.0, fade_out: 2.0, volume: 0.06}
+  # マーニィの羽ばたき（飛び移る所）
+  - {src: audio/sfx/cloth_swish.ogg, cut: A24b-002, t: 2.4, rate: 1.8, volume: 0.18}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A24b-004, t: 0.4, rate: 1.8, volume: 0.18}
+  - {src: audio/sfx/cloth_swish.ogg, cut: A24b-005, t: 4.4, rate: 1.8, volume: 0.18}

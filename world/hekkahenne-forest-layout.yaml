@@ -2,9 +2,12 @@
 # 原作: 「森の中の円形の石造りの台座」（森の庭園。以前、百騎兵がマーリカと対峙した所。シモベが手入れしている）→ 奥の「ヘッカヘンネの隠し森」
 #   （人の手の入っていない野生の森、魔獣が多い）→「線路が伸びる円形の駅」（線路は途中で途切れている。鐘がある。A23 で夜光列車が来る）
 #   →「切り株や花がある森の開けた場所」（マーリカのネズミが鳥にさらわれ、切符を落とす）。
-# 背景の資料はまだない（静止画の日までに、ユーザーが用意するか、Claude が参考画を作る。D-058）。形は仮置き。
+# 背景の資料: 隠し森は Claude の参考画 world/hidden-forest/、森の庭園は world/forest-garden/。駅（森の発着場）はユーザーが用意した refs/forest-station_bg_01.jpg:
+#   苔の草地に、石の縁の円い魔法陣（明るい石の地に赤い六芒星）が地面に描かれ、線路が円を横切って四方へ出る。まわりの草に橙に光る紋の円盤。
+#   線路の脇にレンガのホーム（片方の端が丸い）、丸い端に街灯（鐘を吊るす）、もう片方の端に緑の屋根の小屋。2026-11-05 に駅をこれに合わせた
+#   （前は高さ 0.6m の円い石のホーム。原作の「線路の途切れた駅」は、線路が森の中で途切れることで残した）。
 # 座標: x は西 0 → 東 40、y は北 0 → 南 110（m）。南の庭園から北へ一本道で進む。
-#   庭園 (20, 95)・隠し森の小道 y 60〜86・駅 (20, 45)・駅から北への小道 y 22〜36・開けた場所 (20, 14)
+#   庭園 (20, 95)・隠し森の小道 y 60〜86・駅（魔法陣の中心 (20, 45)、半径 7）・駅から北への小道 y 22〜36・開けた場所 (20, 14)
 id: hekkahenne-forest
 size: {w: 40.0, d: 110.0}
 compass: 北 0、東 90、南 180、西 270（庭園は南、奥の開けた場所は北）
@@ -24,7 +27,7 @@ areas:
   - {kind: circle, center: [20.0, 95.0], r: 9.5, ja: 庭園の芝, color: [86, 112, 58]}
   - {kind: rect, x: [18.6, 21.4], y: [100.0, 110.0], ja: 庭園へ入る小道, color: [104, 96, 70]}
   - {kind: rect, x: [18.8, 21.2], y: [52.0, 87.0], ja: 隠し森の獣道, color: [78, 74, 52]}
-  - {kind: circle, center: [20.0, 45.0], r: 9.0, ja: 駅のまわりの石畳, color: [104, 100, 90]}
+  - {kind: circle, center: [20.0, 45.0], r: 12.5, ja: 駅のまわりの苔の草地, color: [84, 100, 44]}
   - {kind: rect, x: [18.8, 21.2], y: [22.0, 37.0], ja: 駅から北への獣道, color: [78, 74, 52]}
   - {kind: circle, center: [20.0, 14.0], r: 8.0, ja: 開けた場所の草地, color: [96, 138, 62]}
 props:
@@ -51,22 +54,22 @@ props:
   lantern_garden_e: {at: [24.4, 91.0], z: 2.0, energy: 14, ja: 庭園の灯り（東）}
   pillar_garden_w: {at: [15.6, 91.0], r: 0.1, h: 1.9, ja: 灯りの柱}
   pillar_garden_e: {at: [24.4, 91.0], r: 0.1, h: 1.9, ja: 灯りの柱}
-  # --- 円形の駅（石の円いホーム、まわりの柱と灯り、東へ伸びて途中で途切れる線路、鐘） ---
-  dais_station: {at: [20.0, 45.0], r: 6.0, h: 0.6, color: [126, 120, 108], ja: 円形の駅のホーム}
-  rail_station: {from: [25.6, 45.0], to: [37.5, 45.0], gauge: 1.2, ja: 東へ伸びて途切れる線路}
-  bell_station: {at: [16.4, 41.8], h: 2.6, ja: 駅の鐘（A23 で百騎兵が鳴らす）}
-  pillar_st0: {at: [25.1, 47.1], r: 0.14, h: 3.4, ja: ホームの柱}
-  lantern_st0: {at: [25.1, 47.1], z: 3.5, energy: 18, ja: 柱の上の古い灯り}
-  pillar_st1: {at: [22.1, 50.1], r: 0.14, h: 3.4, ja: ホームの柱}
-  pillar_st2: {at: [17.9, 50.1], r: 0.14, h: 3.4, ja: ホームの柱}
-  lantern_st2: {at: [17.9, 50.1], z: 3.5, energy: 18, ja: 柱の上の古い灯り}
-  pillar_st3: {at: [14.9, 47.1], r: 0.14, h: 3.4, ja: ホームの柱}
-  pillar_st4: {at: [14.9, 42.9], r: 0.14, h: 3.4, ja: ホームの柱}
-  lantern_st4: {at: [14.9, 42.9], z: 3.5, energy: 18, ja: 柱の上の古い灯り}
-  pillar_st5: {at: [17.9, 39.9], r: 0.14, h: 3.4, ja: ホームの柱}
-  pillar_st6: {at: [22.1, 39.9], r: 0.14, h: 3.4, ja: ホームの柱}
-  lantern_st6: {at: [22.1, 39.9], z: 3.5, energy: 18, ja: 柱の上の古い灯り}
-  pillar_st7: {at: [25.1, 42.9], r: 0.14, h: 3.4, ja: ホームの柱}
+  # --- 森の発着場（forest-station_bg_01: 地面の魔法陣、円を横切って四方へ出る線路、レンガのホームと鐘を吊るした街灯と小屋、光る紋の円盤） ---
+  sigilcircle_station: {at: [20.0, 45.0], r: 7.0, ja: 地面に描いた円い魔法陣（石の縁、赤い六芒星）}
+  rail_station: {from: [1.5, 45.0], to: [37.5, 45.0], gauge: 1.2, ja: 魔法陣を東西に横切る線路（西は森の中で途切れる。東の端に夜光列車が現れる）}
+  rail_station_nw: {from: [15.05, 40.05], to: [5.5, 30.5], gauge: 1.2, ja: 魔法陣から北西へ出る線路（森の中で途切れる）}
+  rail_station_ne: {from: [24.95, 40.05], to: [34.5, 30.5], gauge: 1.2, ja: 魔法陣から北東へ出る線路（森の中で途切れる）}
+  brickplat_station: {at: [10.45, 38.28], w: 7.0, d: 2.6, h: 0.22, rot: 225, ja: レンガのホーム（北西の線路の南西の脇。丸い端は南東）}
+  belllamp_station: {at: [12.9, 40.75], h: 3.2, face: 135, energy: 26, ja: ホームの丸い端の街灯と吊るした鐘（A23 で百騎兵が鳴らす）}
+  shelter_station: {at: [8.6, 36.4], w: 2.0, d: 1.7, h: 2.4, rot: 225, ja: ホームの小屋（緑の屋根）}
+  sigil_s0: {at: [10.5, 51.0], r: 0.9, ja: 光る紋の円盤}
+  sigil_s1: {at: [13.0, 55.8], r: 0.8, ja: 光る紋の円盤}
+  sigil_s2: {at: [28.5, 52.5], r: 0.9, ja: 光る紋の円盤}
+  sigil_s3: {at: [31.0, 39.5], r: 0.8, ja: 光る紋の円盤}
+  sigil_s4: {at: [9.0, 48.2], r: 0.7, ja: 光る紋の円盤}
+  sigil_s5: {at: [26.5, 35.8], r: 0.8, ja: 光る紋の円盤}
+  sigil_s6: {at: [14.0, 33.0], r: 0.8, ja: 光る紋の円盤}
+  sigil_s7: {at: [33.5, 49.0], r: 0.7, ja: 光る紋の円盤}
   # --- 開けた場所（切り株と花。上は空が開いている。鳥がネズミをさらう） ---
   stumps_clear_w: {at: [17.0, 13.5], ja: 切り株}
   stumps_clear_e: {at: [24.0, 16.5], ja: 切り株}
@@ -75,7 +78,6 @@ props:
   flowers_c3: {at: [24.5, 10.8], r: 0.6, n: 7, ja: 花}
   flowers_c4: {at: [21.8, 18.6], r: 0.5, n: 6, ja: 花}
   # --- 木（隠し森は太く高く暗い。開けた所の上には茂みを置かない） ---
-  tree_000: {at: [25.9, 33.9], h: 11.4, r: 0.49, crown: 3.0, leaf: [46, 88, 44], ja: 木}
   tree_001: {at: [15.1, 28.7], h: 9.9, r: 0.78, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_002: {at: [12.3, 70.5], h: 15.7, r: 1.29, crown: 4.2, leaf: [32, 62, 40], ja: 木}
   tree_003: {at: [24.8, 28.0], h: 11.5, r: 0.74, crown: 3.6, leaf: [46, 88, 44], ja: 木}
@@ -101,7 +103,6 @@ props:
   tree_023: {at: [37.1, 100.5], h: 12.7, r: 0.71, crown: 3.0, leaf: [46, 88, 44], ja: 木}
   tree_024: {at: [25.0, 105.8], h: 8.3, r: 0.46, crown: 2.8, leaf: [46, 88, 44], ja: 木}
   tree_025: {at: [24.2, 71.2], h: 11.7, r: 1.02, crown: 3.9, leaf: [32, 62, 40], ja: 木}
-  tree_026: {at: [32.3, 31.3], h: 8.5, r: 0.75, crown: 3.5, leaf: [46, 88, 44], ja: 木}
   tree_027: {at: [1.4, 81.6], h: 14.8, r: 1.19, crown: 3.5, leaf: [32, 62, 40], ja: 木}
   tree_028: {at: [31.5, 27.4], h: 8.1, r: 0.81, crown: 3.2, leaf: [46, 88, 44], ja: 木}
   tree_029: {at: [31.8, 12.9], h: 8.3, r: 0.46, crown: 2.7, leaf: [46, 88, 44], ja: 木}
@@ -118,7 +119,6 @@ props:
   tree_040: {at: [1.6, 105.8], h: 10.2, r: 0.47, crown: 2.9, leaf: [46, 88, 44], ja: 木}
   tree_041: {at: [4.5, 11.0], h: 8.7, r: 0.73, crown: 2.5, leaf: [46, 88, 44], ja: 木}
   tree_042: {at: [31.2, 1.7], h: 9.8, r: 0.58, crown: 3.2, leaf: [46, 88, 44], ja: 木}
-  tree_043: {at: [12.1, 56.5], h: 14.0, r: 1.18, crown: 3.4, leaf: [32, 62, 40], ja: 木}
   tree_044: {at: [11.6, 83.2], h: 12.7, r: 1.02, crown: 4.0, leaf: [32, 62, 40], ja: 木}
   tree_045: {at: [32.9, 87.3], h: 17.0, r: 0.81, crown: 3.5, leaf: [32, 62, 40], ja: 木}
   tree_046: {at: [9.3, 10.1], h: 11.0, r: 0.69, crown: 3.1, leaf: [46, 88, 44], ja: 木}
@@ -128,8 +128,6 @@ props:
   tree_050: {at: [12.1, 2.2], h: 11.9, r: 0.51, crown: 3.3, leaf: [46, 88, 44], ja: 木}
   tree_051: {at: [2.1, 1.9], h: 10.4, r: 0.74, crown: 3.3, leaf: [46, 88, 44], ja: 木}
   tree_052: {at: [27.0, 68.8], h: 13.8, r: 0.91, crown: 3.5, leaf: [32, 62, 40], ja: 木}
-  tree_053: {at: [31.8, 41.0], h: 12.8, r: 0.70, crown: 3.1, leaf: [46, 88, 44], ja: 木}
-  tree_054: {at: [31.2, 35.0], h: 8.7, r: 0.73, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_055: {at: [3.0, 27.4], h: 9.1, r: 0.68, crown: 3.4, leaf: [46, 88, 44], ja: 木}
   tree_056: {at: [36.7, 61.7], h: 16.9, r: 1.12, crown: 3.9, leaf: [32, 62, 40], ja: 木}
   tree_057: {at: [35.0, 10.6], h: 11.6, r: 0.49, crown: 2.7, leaf: [46, 88, 44], ja: 木}
@@ -141,7 +139,6 @@ props:
   tree_063: {at: [10.7, 19.5], h: 10.0, r: 0.65, crown: 2.8, leaf: [46, 88, 44], ja: 木}
   tree_064: {at: [11.0, 24.6], h: 12.8, r: 0.46, crown: 3.0, leaf: [46, 88, 44], ja: 木}
   tree_065: {at: [5.2, 55.6], h: 16.0, r: 0.94, crown: 3.6, leaf: [32, 62, 40], ja: 木}
-  tree_066: {at: [7.4, 37.9], h: 8.7, r: 0.81, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_067: {at: [24.6, 56.2], h: 9.9, r: 0.79, crown: 2.8, leaf: [46, 88, 44], ja: 木}   # A23 で (30.6, 47.9) から動かした（線路の南の低いカメラの邪魔になるため）
   tree_068: {at: [33.3, 97.3], h: 11.9, r: 0.48, crown: 3.0, leaf: [46, 88, 44], ja: 木}
   tree_069: {at: [31.6, 93.6], h: 11.8, r: 0.83, crown: 3.1, leaf: [46, 88, 44], ja: 木}
@@ -153,17 +150,12 @@ props:
   tree_075: {at: [37.9, 106.2], h: 13.0, r: 0.46, crown: 3.4, leaf: [46, 88, 44], ja: 木}
   tree_076: {at: [4.8, 108.5], h: 9.0, r: 0.64, crown: 3.3, leaf: [46, 88, 44], ja: 木}
   tree_077: {at: [1.5, 77.9], h: 12.6, r: 1.07, crown: 3.0, leaf: [32, 62, 40], ja: 木}
-  tree_078: {at: [10.4, 51.2], h: 16.9, r: 1.01, crown: 4.1, leaf: [32, 62, 40], ja: 木}
   tree_079: {at: [2.0, 101.2], h: 11.6, r: 0.70, crown: 2.6, leaf: [46, 88, 44], ja: 木}
-  tree_080: {at: [27.9, 53.0], h: 11.8, r: 1.08, crown: 4.1, leaf: [32, 62, 40], ja: 木}
   tree_081: {at: [13.0, 67.2], h: 15.8, r: 0.63, crown: 3.1, leaf: [32, 62, 40], ja: 木}
   tree_082: {at: [34.0, 75.7], h: 11.7, r: 0.92, crown: 3.8, leaf: [32, 62, 40], ja: 木}
-  tree_083: {at: [29.3, 39.0], h: 11.5, r: 0.84, crown: 3.3, leaf: [46, 88, 44], ja: 木}
-  tree_084: {at: [10.4, 35.3], h: 8.2, r: 0.71, crown: 3.3, leaf: [46, 88, 44], ja: 木}
   tree_085: {at: [14.8, 59.3], h: 13.8, r: 1.16, crown: 3.5, leaf: [32, 62, 40], ja: 木}
   tree_086: {at: [27.4, 7.1], h: 10.5, r: 0.51, crown: 3.4, leaf: [46, 88, 44], ja: 木}
   tree_087: {at: [36.1, 5.3], h: 8.2, r: 0.82, crown: 2.8, leaf: [46, 88, 44], ja: 木}
-  tree_088: {at: [5.4, 44.0], h: 12.6, r: 0.80, crown: 3.1, leaf: [46, 88, 44], ja: 木}
   tree_089: {at: [34.6, 15.9], h: 12.8, r: 0.59, crown: 2.7, leaf: [46, 88, 44], ja: 木}
   tree_090: {at: [7.2, 49.5], h: 10.4, r: 0.57, crown: 3.5, leaf: [46, 88, 44], ja: 木}
   tree_091: {at: [14.3, 63.4], h: 15.4, r: 0.75, crown: 4.4, leaf: [32, 62, 40], ja: 木}
@@ -171,7 +163,6 @@ props:
   tree_093: {at: [6.6, 68.3], h: 12.3, r: 1.11, crown: 3.8, leaf: [32, 62, 40], ja: 木}
   tree_094: {at: [4.6, 90.4], h: 8.2, r: 0.81, crown: 2.7, leaf: [46, 88, 44], ja: 木}
   tree_095: {at: [33.7, 59.0], h: 14.5, r: 0.63, crown: 3.3, leaf: [32, 62, 40], ja: 木}
-  tree_096: {at: [9.5, 42.3], h: 8.5, r: 0.51, crown: 3.3, leaf: [46, 88, 44], ja: 木}
   tree_097: {at: [27.8, 84.2], h: 11.1, r: 1.02, crown: 3.7, leaf: [32, 62, 40], ja: 木}
   tree_098: {at: [5.8, 34.0], h: 9.8, r: 0.47, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_099: {at: [38.7, 1.5], h: 10.0, r: 0.83, crown: 2.7, leaf: [46, 88, 44], ja: 木}
@@ -213,7 +204,6 @@ props:
   tree_135: {at: [34.3, 91.6], h: 11.9, r: 0.60, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_136: {at: [37.9, 75.1], h: 15.0, r: 0.88, crown: 4.5, leaf: [32, 62, 40], ja: 木}
   tree_137: {at: [6.8, 75.5], h: 12.7, r: 1.16, crown: 3.5, leaf: [32, 62, 40], ja: 木}
-  tree_138: {at: [14.5, 35.0], h: 11.0, r: 0.78, crown: 2.7, leaf: [46, 88, 44], ja: 木}
   tree_139: {at: [21.0, 3.5], h: 9.1, r: 0.60, crown: 2.6, leaf: [46, 88, 44], ja: 木}
   tree_140: {at: [5.5, 20.4], h: 9.5, r: 0.78, crown: 2.5, leaf: [46, 88, 44], ja: 木}
   tree_141: {at: [26.7, 25.0], h: 11.6, r: 0.67, crown: 2.8, leaf: [46, 88, 44], ja: 木}
@@ -255,5 +245,5 @@ people:
 views:
   garden: {ja: 森の庭園の円形の台座, panel: null, en: "a garden deep in the forest: a round stone platform surrounded by withered flower beds and hedges, old lanterns on posts, huge trees around"}
   deep: {ja: ヘッカヘンネの隠し森, panel: null, en: "a wild untouched dark forest: huge ancient trees, thick roots across a narrow animal trail, ferns and dense undergrowth, dim green light"}
-  station: {ja: 森の中の円形の駅, panel: null, en: "an abandoned round stone station in the middle of the forest: a circular stone platform ringed by tall posts with old lamps, railway tracks running out of it that end abruptly in the trees, an old bell on a post"}
+  station: {ja: 森の発着場, panel: null, en: "a station in a mossy forest clearing: a large round magic circle inlaid flat in the ground (stone rim, pale stone with a red hexagram and runes), railway tracks crossing it and running out in four directions into the trees, small round stone discs with glowing orange runes in the grass, a brick platform with a rounded end beside a track, an old street lamp with a small bell hanging from it at the rounded end, a little wooden shelter with a green roof at the other end, huge old trees around"}
   clearing: {ja: 切り株と花の開けた場所, panel: null, en: "a small sunny clearing in the forest with old tree stumps and wildflowers, open sky above"}

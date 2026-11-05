@@ -396,7 +396,8 @@ def build_span(name, pr):
             u = k / (n - 1)
             box(mat_of(key), f"ENV_{name}_post{k}", x0 + (x1 - x0) * u, y0 + (y1 - y0) * u, 0.12, 0.12, pr.get("h", 1.0))
         return
-    box(mat_of(key), f"ENV_{name}", (x0 + x1) / 2, (y0 + y1) / 2, L, t, pr.get("h", 1.5), pr.get("z", 0.0), rot)
+    m = make_mat(f"{name}_m", tuple(v / 255 for v in pr["color"]), emit=pr.get("glow", 0.0)) if pr.get("color") else mat_of(key)   # 色と光（議事塔の金色の門、2026-11-05）
+    box(m, f"ENV_{name}", (x0 + x1) / 2, (y0 + y1) / 2, L, t, pr.get("h", 1.5), pr.get("z", 0.0), rot)
 
 
 def build_room(name, pr, door_closed=False):
@@ -513,7 +514,8 @@ def build_cave(name, pr, x, y):
         o.data.materials.append(beam_mat(f"{name}_m", (0.75, 0.85, 1.0), strength=0.25, alpha=0.95))
         return True
     if name.startswith("column"):
-        prim("cyl", rockc, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=pr.get("r", 2.0), depth=pr["h"])
+        cm = make_mat(f"{name}_m", tuple(v / 255 for v in pr["color"])) if pr.get("color") else rockc
+        prim("cyl", cm, f"ENV_{name}", loc=bl((x, y), pr["h"] / 2), radius=pr.get("r", 2.0), depth=pr["h"])
         return True
     if name.startswith("tunnel"):   # 横穴: 壁に貼った暗い円（向き face は穴が口を開ける方位）
         dark = make_mat(f"{name}_dark", (0.03, 0.02, 0.02))
@@ -538,10 +540,213 @@ def build_cave(name, pr, x, y):
     return False
 
 
+def swirl_mat(name, cols=None, strength=0.6, scale=0.22):
+    """光る渦の地面（異空間、ユーザーの背景 otherspace_bg_01。2026-11-05）。歪ませた波の模様を色の帯に通して光らせる。"""
+    m = bpy.data.materials.new(name)
+    m.use_nodes = True
+    nt = m.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    geo = nt.nodes.new("ShaderNodeNewGeometry")
+    mp = nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (scale, scale, scale)
+    wave = nt.nodes.new("ShaderNodeTexWave")
+    wave.inputs["Scale"].default_value = 1.0
+    wave.inputs["Distortion"].default_value = 18.0
+    wave.inputs["Detail"].default_value = 4.0
+    wave.inputs["Detail Scale"].default_value = 1.6
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    cols = cols or [(0.0, (4, 3, 18)), (0.55, (16, 10, 52)), (0.75, (48, 22, 118)), (0.87, (60, 70, 200)), (0.96, (120, 160, 250))]
+    els = ramp.color_ramp.elements
+    while len(els) > 1:
+        els.remove(els[-1])
+    els[0].position, els[0].color = cols[0][0], (*linear(tuple(v / 255 for v in cols[0][1])), 1.0)
+    for pos, rgb in cols[1:]:
+        e = els.new(pos)
+        e.color = (*linear(tuple(v / 255 for v in rgb)), 1.0)
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Strength"].default_value = strength
+    nt.links.new(geo.outputs["Position"], mp.inputs["Vector"])
+    nt.links.new(mp.outputs["Vector"], wave.inputs["Vector"])
+    nt.links.new(wave.outputs["Fac"], ramp.inputs["Fac"])
+    nt.links.new(ramp.outputs["Color"], em.inputs["Color"])
+    nt.links.new(em.outputs[0], out.inputs["Surface"])
+    return m
+
+
+def build_otherworld(name, pr, x, y, lamps):
+    """ユーザーの背景画像に合わせて足した形（2026-11-05）。作ったら True。
+    森の発着場（forest-station_bg_01）: sigilcircle 地面の魔法陣、sigil 光る紋の円盤、brickplat レンガのホーム、shelter 小屋、belllamp 鐘を吊るした街灯。
+    異空間（otherspace_bg_01）・追憶の園（memory-garden の参考画）: gothicgate 透けたゴシックの門、deadtree 大木、hole 暗い穴、fruittree 光る実の木、
+    bench ベンチ、stonering 石の輪、menhir 立石。魔女都（walpurgis_bg_01）: cathedral 尖塔の多い議事塔、spire 尖塔。"""
+    rot = pr.get("rot", 0)
+    z0 = pr.get("z", 0.0)
+    if name.startswith("sigilcircle"):   # 地面に描いた魔法陣（石の縁、明るい石の地、赤い六芒星と中心の六角形）
+        r = pr.get("r", 7.0)
+        prim("cyl", make_mat(f"{name}_rim", (0.45, 0.43, 0.4)), f"ENV_{name}", loc=bl((x, y), z0 + 0.025), radius=r, depth=0.05, vertices=64)
+        prim("cyl", make_mat(f"{name}_base", tuple(v / 255 for v in pr.get("color", [176, 150, 118]))), f"ENV_{name}_base",
+             loc=bl((x, y), z0 + 0.03), radius=r * 0.93, depth=0.05, vertices=64)
+        red = make_mat(f"{name}_red", tuple(v / 255 for v in pr.get("line", [150, 58, 40])))
+        rr = r * 0.88
+        for tri in (0, 1):
+            for k in range(3):
+                a0 = math.radians(90 + tri * 60 + k * 120)
+                a1 = math.radians(90 + tri * 60 + (k + 1) * 120)
+                p0 = (x + rr * math.cos(a0), y + rr * math.sin(a0))
+                p1 = (x + rr * math.cos(a1), y + rr * math.sin(a1))
+                L = math.dist(p0, p1)
+                ang = -math.degrees(math.atan2(-(p1[1] - p0[1]), p1[0] - p0[0]))
+                box(red, f"ENV_{name}_l{tri}{k}", (p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2, L, 0.32, 0.02, z0 + 0.055, ang)
+        prim("cyl", red, f"ENV_{name}_core", loc=bl((x, y), z0 + 0.065), radius=r * 0.18, depth=0.03, vertices=6)
+        return True
+    if name.startswith("sigil"):   # 草の上の光る紋の円盤（橙）
+        r = pr.get("r", 0.9)
+        prim("cyl", make_mat(f"{name}_ring", (0.3, 0.26, 0.22)), f"ENV_{name}", loc=bl((x, y), z0 + 0.03), radius=r, depth=0.06)
+        prim("cyl", make_mat(f"{name}_glow", tuple(v / 255 for v in pr.get("color", [255, 140, 40])), emit=pr.get("emit", 1.6)),
+             f"ENV_{name}_in", loc=bl((x, y), z0 + 0.05), radius=r * 0.72, depth=0.04)
+        return True
+    if name.startswith("brickplat"):   # レンガのホーム（片方の端が丸い）。w は長さ、d は幅、rot は長い向き（上から時計回り、0 で東西）
+        w, d, hh = pr.get("w", 7.0), pr.get("d", 2.6), pr.get("h", 0.25)
+        brick = make_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [128, 66, 50])))
+        box(brick, f"ENV_{name}", x, y, w, d, hh, z0, rot)
+        a = math.radians(rot)
+        ex, ey = x - math.cos(a) * w / 2, y - math.sin(a) * w / 2   # 丸い端（rot 0 のとき西の端。長い向きは layout で (cos rot, sin rot)）
+        prim("cyl", brick, f"ENV_{name}_end", loc=bl((ex, ey), z0 + hh / 2), radius=d / 2, depth=hh)
+        return True
+    if name.startswith("shelter"):   # 小さな小屋（木の柱4本と格子、緑の屋根）
+        w, d, hh = pr.get("w", 2.0), pr.get("d", 1.6), pr.get("h", 2.4)
+        wood = make_mat(f"{name}_wood", (0.36, 0.28, 0.24))
+        a = math.radians(rot)
+        for k, (sx, sy) in enumerate(((-1, -1), (1, -1), (1, 1), (-1, 1))):
+            dx, dy = sx * (w / 2 - 0.08), sy * (d / 2 - 0.08)
+            box(wood, f"ENV_{name}_p{k}", x + dx * math.cos(a) - dy * math.sin(a), y + dx * math.sin(a) + dy * math.cos(a), 0.12, 0.12, hh, z0)
+        box(make_mat(f"{name}_roof", (0.2, 0.32, 0.26)), f"ENV_{name}_roof", x, y, w + 0.4, d + 0.4, 0.18, z0 + hh, rot)
+        return True
+    if name.startswith("belllamp"):   # 鐘を吊るした街灯（ホームの丸い端。A23 で百騎兵が鳴らす鐘）
+        hh = pr.get("h", 3.2)
+        iron = make_mat(f"{name}_iron", (0.16, 0.15, 0.14))
+        prim("cyl", iron, f"ENV_{name}", loc=bl((x, y), z0 + hh / 2), radius=0.06, depth=hh)
+        head = make_mat(f"{name}_head", (1.0, 0.85, 0.45), emit=3.0 * lamps)
+        box(head, f"ENV_{name}_head", x, y, 0.26, 0.26, 0.36, z0 + hh)
+        point_light(f"LGT_{name}", x, y, z0 + hh + 0.18, pr.get("energy", 30) * lamps)
+        f = math.radians(pr.get("face", 90))   # 鐘を吊るす腕の向き（北 0・東 90）
+        bx, by = x + math.sin(f) * 0.45, y - math.cos(f) * 0.45
+        box(iron, f"ENV_{name}_arm", (x + bx) / 2, (y + by) / 2, 0.5, 0.06, 0.06, z0 + hh - 0.75, pr.get("face", 90) - 90)
+        prim("cone", make_mat(f"{name}_brass", (0.62, 0.42, 0.2), rough=0.35), f"ENV_{name}_bell", loc=bl((bx, by), z0 + hh - 1.05),
+             radius1=0.2, radius2=0.07, depth=0.36)
+        return True
+    if name.startswith("gothicgate"):   # 透けたゴシックの門（線路をふさぐ。両脇の尖塔、尖った頭、縦の格子、裾が外へ広がる）
+        w, hh = pr.get("w", 19.0), pr.get("h", 17.0)
+        glass = beam_mat(f"{name}_m", tuple(v / 255 for v in pr.get("color", [120, 150, 230])), strength=pr.get("glow", 0.35), alpha=pr.get("alpha", 0.55))
+        line = make_mat(f"{name}_line", (0.5, 0.6, 0.95), emit=pr.get("line_glow", 0.5))
+        f = pr.get("face", 270)   # 門の正面の向き（列車が来る方）
+        a = math.radians(f)
+        ux, uy = math.cos(a), math.sin(a)   # 門の幅の向き（正面に直交）
+        for sg in (-1, 1):   # 両脇の尖塔
+            sx, sy = x + ux * sg * w * 0.36, y + uy * sg * w * 0.36
+            prim("cone", glass, f"ENV_{name}_sp{sg}", loc=bl((sx, sy), z0 + hh * 0.62), radius1=0.9, radius2=0.05, depth=hh * 1.24, vertices=4)
+            box(glass, f"ENV_{name}_sk{sg}", x + ux * sg * w * 0.43, y + uy * sg * w * 0.43, w * 0.16, 0.3, hh * 0.45, z0, f)   # 裾
+        box(glass, f"ENV_{name}", x, y, w * 0.62, 0.35, hh * 0.78, z0, f)   # 扉の板（幅は門の幅の向き）
+        roof = prim("cone", glass, f"ENV_{name}_arch", loc=bl((x, y), z0 + hh * 0.78 + hh * 0.11), radius1=w * 0.31, radius2=0.0, depth=hh * 0.22, vertices=4)
+        roof.rotation_euler = (0, 0, -math.radians(f) + math.pi / 2)   # 四角錐を正面の向きに薄くして、正面から三角に見せる
+        roof.scale = (0.06, 1.0, 1.0)
+        n = int(pr.get("bars", 13))
+        for k in range(n):   # 縦の格子
+            u = (k + 0.5) / n - 0.5
+            box(line, f"ENV_{name}_bar{k}", x + ux * u * w * 0.6, y + uy * u * w * 0.6, 0.08, 0.08, hh * 0.76, z0 + 0.02, f)
+        point_light(f"LGT_{name}", x - math.sin(a) * 3, y + math.cos(a) * 3, z0 + hh * 0.4, pr.get("energy", 900), (0.55, 0.65, 1.0), 3.0)
+        return True
+    if name.startswith("deadtree"):   # 葉のない大木（太い幹、ねじれた枝、地面に広がる根）
+        r0, hh = pr.get("r", 1.6), pr.get("h", 9.0)
+        bark = make_mat(f"{name}_bark", tuple(v / 255 for v in pr.get("color", [62, 48, 46])))
+        prim("cone", bark, f"ENV_{name}", loc=bl((x, y), z0 + hh / 2), radius1=r0, radius2=r0 * 0.45, depth=hh)
+        for k in range(7):   # 枝
+            ang = k * 2 * math.pi / 7 + 0.4
+            L = hh * (0.55 + 0.1 * (k % 3))
+            br = prim("cone", bark, f"ENV_{name}_br{k}", loc=bl((x + math.cos(ang) * L * 0.32, y + math.sin(ang) * L * 0.32), z0 + hh * 0.85 + L * 0.25),
+                      radius1=r0 * 0.3, radius2=0.04, depth=L)
+            br.rotation_euler = (math.radians(55), 0, -ang + math.pi / 2)
+        for k in range(9):   # 根
+            ang = k * 2 * math.pi / 9
+            L = r0 * (3.0 + (k % 3))
+            rt = prim("cone", bark, f"ENV_{name}_rt{k}", loc=bl((x + math.cos(ang) * L * 0.45, y + math.sin(ang) * L * 0.45), z0 + 0.15),
+                      radius1=r0 * 0.35, radius2=0.03, depth=L)
+            rt.rotation_euler = (math.radians(86), 0, -ang + math.pi / 2)
+            rt.scale = (1.0, 0.5, 1.0)
+        return True
+    if name.startswith("hole"):   # 地面の暗い穴（大木のまわり）
+        prim("cyl", make_mat(f"{name}_m", (0.01, 0.01, 0.03)), f"ENV_{name}", loc=bl((x, y), z0 + 0.012), radius=pr.get("r", 1.5), depth=0.02)
+        return True
+    if name.startswith("fruittree"):   # 光る翠ノ実の生る木（濃い青緑の茂みと、光る緑の実）
+        r0, hh, cr = pr.get("r", 0.6), pr.get("h", 6.0), pr.get("crown", 3.6)
+        prim("cone", make_mat(f"{name}_bark", (0.3, 0.22, 0.24)), f"ENV_{name}", loc=bl((x, y), z0 + hh / 2), radius1=r0, radius2=r0 * 0.45, depth=hh)
+        prim("sphere", make_mat(f"{name}_leaf", tuple(v / 255 for v in pr.get("leaf", [26, 40, 70]))), f"ENV_{name}_crown",
+             loc=bl((x, y), z0 + hh), radius=1.0, scale=(cr, cr, cr * 0.55))
+        fruit = make_mat(f"{name}_fruit", (0.55, 1.0, 0.8), emit=pr.get("glow", 2.4))
+        n = int(pr.get("n", 12))
+        for k in range(n):
+            ang = k * 2.39996
+            rr = cr * (0.55 + 0.4 * ((k * 7) % 5) / 5)
+            prim("sphere", fruit, f"ENV_{name}_f{k}", loc=bl((x + math.cos(ang) * rr, y + math.sin(ang) * rr), z0 + hh - cr * 0.35 + (k % 3) * 0.3), radius=0.16)
+        point_light(f"LGT_{name}", x, y, z0 + hh - 0.6, pr.get("energy", 60), (0.55, 1.0, 0.75), cr * 0.6)
+        return True
+    if name.startswith("bench"):   # 木のベンチ
+        wood = make_mat(f"{name}_wood", (0.36, 0.26, 0.2))
+        box(wood, f"ENV_{name}", x, y, pr.get("w", 1.8), 0.5, 0.08, z0 + 0.42, rot)
+        box(wood, f"ENV_{name}_back", x, y, pr.get("w", 1.8), 0.08, 0.5, z0 + 0.5, rot)
+        for k, s in enumerate((-1, 1)):
+            a = math.radians(rot)
+            box(wood, f"ENV_{name}_leg{k}", x + s * 0.8 * math.cos(a), y + s * 0.8 * math.sin(a), 0.08, 0.45, 0.42, z0, rot)
+        return True
+    if name.startswith("stonering"):   # 木の根元を囲む低い石の輪
+        r = pr.get("r", 3.0)
+        stone = make_mat(f"{name}_m", (0.34, 0.32, 0.36))
+        n = int(pr.get("n", 10))
+        for k in range(n):
+            ang = 2 * math.pi * k / n
+            box(stone, f"ENV_{name}_{k}", x + r * math.cos(ang), y + r * math.sin(ang), 1.2, 0.7, 0.55, z0, math.degrees(ang) + 90)
+        return True
+    if name.startswith("menhir"):   # 立石
+        box(make_mat(f"{name}_m", (0.3, 0.28, 0.32)), f"ENV_{name}", x, y, 0.6, 0.45, pr.get("h", 1.6), z0, rot)
+        return True
+    if name.startswith("cathedral"):   # 議事塔（尖塔の多いゴシックの大聖堂。walpurgis_bg_01）。w・d・h は本体、spire は中央の尖塔の高さ
+        w, d, hh, sp = pr.get("w", 22.0), pr.get("d", 22.0), pr.get("h", 40.0), pr.get("spire", 45.0)
+        wall = make_mat(f"{name}_wall", tuple(v / 255 for v in pr.get("wall", [58, 54, 70])))
+        roofm = make_mat(f"{name}_roof", tuple(v / 255 for v in pr.get("roof_color", [36, 34, 50])))
+        win = make_mat(f"{name}_win", (1.0, 0.72, 0.32), emit=1.8 * lamps)
+        box(wall, f"ENV_{name}", x, y, w, d, hh, z0)
+        box(wall, f"ENV_{name}_core", x, y, w * 0.5, d * 0.5, hh * 0.3, z0 + hh)   # 中央の塔の胴
+        prim("cone", roofm, f"ENV_{name}_spire", loc=bl((x, y), z0 + hh * 1.3 + sp / 2), radius1=w * 0.3, radius2=0.0, depth=sp, vertices=8)
+        for k, (sx, sy) in enumerate(((-1, -1), (1, -1), (1, 1), (-1, 1))):   # 四隅の小塔と尖り屋根
+            cx, cy = x + sx * w / 2, y + sy * d / 2
+            prim("cyl", wall, f"ENV_{name}_t{k}", loc=bl((cx, cy), z0 + hh * 0.55), radius=w * 0.09, depth=hh * 1.1, vertices=8)
+            prim("cone", roofm, f"ENV_{name}_tr{k}", loc=bl((cx, cy), z0 + hh * 1.1 + sp * 0.2), radius1=w * 0.1, radius2=0.0, depth=sp * 0.4, vertices=8)
+        for row in range(int(pr.get("rows", 5))):   # 南の面の金色の窓
+            zz = z0 + 14.0 + row * (hh - 16.0) / max(1, pr.get("rows", 5) - 1)
+            for k in range(5):
+                u = (k + 0.5) / 5 - 0.5
+                box(win, f"ENV_{name}_w{row}{k}", x + u * w * 0.8, y + d / 2 + 0.02, 1.0, 0.06, 2.4, zz)
+        return True
+    if name.startswith("spire"):   # 家の上や街の尖塔（細い石の塔と尖り屋根、窓の灯り）
+        r, hh = pr.get("r", 1.6), pr.get("h", 18.0)
+        wall = make_mat(f"{name}_wall", tuple(v / 255 for v in pr.get("wall", [60, 56, 70])))
+        prim("cyl", wall, f"ENV_{name}", loc=bl((x, y), z0 + hh / 2), radius=r, depth=hh, vertices=8)
+        prim("cone", make_mat(f"{name}_roof", tuple(v / 255 for v in pr.get("roof_color", [36, 34, 50]))), f"ENV_{name}_roof",
+             loc=bl((x, y), z0 + hh + r * 2.2), radius1=r * 1.2, radius2=0.0, depth=r * 4.4, vertices=8)
+        win = make_mat(f"{name}_win", (1.0, 0.72, 0.32), emit=1.6 * lamps)
+        for k in range(int(pr.get("windows", 3))):
+            box(win, f"ENV_{name}_w{k}", x, y + r + 0.01, 0.5, 0.06, 1.2, z0 + hh * (0.3 + 0.2 * k))
+        return True
+    return False
+
+
 def build_extra(name, pr, x, y, lit):
     """家・柱・家具・ランプなど（村とティトの家、A05b）。作ったら True。"""
     rot = pr.get("rot", 0)
     lamps = lit.get("lamps", 1.0) if lit else 1.0
+    if build_otherworld(name, pr, x, y, lamps):
+        return True
     if build_cave(name, pr, x, y):
         return True
     if name.startswith("house"):
@@ -687,6 +892,10 @@ def build_site(lay, lighting=None, door_closed=False):
     lit0 = (lay.get("lighting") or {}).get(lighting) or {}
     gcol = tuple(v / 255 for v in (lit0.get("ground") or g.get("color", [41, 158, 82])))   # 光に ground があれば地面の色も変える（layout_extra で足した場所）
     swamp = make_mat("swamp", gcol)
+    glow = lit0.get("ground_glow", g.get("glow"))   # 光る渦の地面（異空間、otherspace_bg_01）。{strength, scale} か true
+    if glow:
+        gl = glow if isinstance(glow, dict) else {}
+        swamp = swirl_mat("swamp_glow", strength=gl.get("strength", 0.7), scale=gl.get("scale", 0.22))
     # 地面の高さ（ground の z）。山の上の場面は足場を 0 に、下の砂漠を z に下げる（アズ・ブロッケン山、A14〜A17）
     poly_mesh("ENV_swamp_far", [(-600, -600), (600, -600), (600, 600), (-600, 600)], g.get("z", 0.0) - 0.03, swamp)
     kinds = {"翠の沼": swamp}
@@ -1006,6 +1215,10 @@ def setup_render(scene, w, h, samples, denoise=False):
         pass
     try:
         scene.cycles.use_denoising = denoise
+    except Exception:
+        pass
+    try:   # 動かない背景（森・街の何百もの形）をコマごとに作り直さない（2026-11-05。1コマの時間を短くする）
+        scene.render.use_persistent_data = True
     except Exception:
         pass
     scene.render.resolution_x, scene.render.resolution_y = w, h
