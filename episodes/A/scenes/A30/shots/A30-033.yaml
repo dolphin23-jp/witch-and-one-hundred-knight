@@ -1,0 +1,59 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-033
+scene: A30
+tc: 298.5
+sec: 11.7
+kind: M
+shot: パープルピール・落とし前
+acting: （「派手にやってくれたじゃないの！ええ、沼の魔女ちゃんよぉ！」「この落とし前、アタシたちがあんたにつけさせてやるよ」）
+dialogue:
+- L1067「派手にやってくれたじゃないの！ええ、沼の魔女ちゃんよぉ！」
+- L1068「この落とし前、アタシたちがあんたにつけさせてやるよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 51.6
+  - 51.8
+  - 0.5
+  look: purple-peel
+  lens: 30
+  move: パープルピールの低い所から、あおって寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: パープルピールが一歩出る
+  end: 指を鳴らすパープルピール
+timing:
+  lead: 0.4
+blocking:
+  start: リ（左・斜め前（画面左向き））、パ（中央・正面）
+  end: リ（左・斜め前（画面左向き））、パ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward
+    screen left; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the
+    frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward
+    screen left; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the
+    frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-033_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-033_end.png

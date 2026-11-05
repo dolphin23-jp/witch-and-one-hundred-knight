@@ -1,0 +1,61 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-006
+scene: A32
+tc: 36.5
+sec: 7.5
+kind: M
+shot: ビスコ・議長に話がある
+acting: （「だから違う！！待てと言ってるんだ、メタリカ！私は議長に話がある！」）
+dialogue:
+- L1106「だから違う！！待てと言ってるんだ、メタリカ！私は議長に話がある！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 53.02
+  - 44.99
+  - 8.0
+  look: bisco
+  lens: 30
+  move: 巨大メタリカの胸の高さから見下ろす（ビスコが小さく見える）
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: ビスコが巨大メタリカを見上げて叫ぶ
+  end: ニワトリを抱えて見上げるビスコ
+timing:
+  lead: 0.4
+blocking:
+  start: 鶏（中央・正面）、ビ（中央・正面）
+  end: 鶏（中央・正面）、ビ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, in the center of the frame, facing the camera; Bisco
+    (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+    in the center of the frame, facing the camera. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
+    Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows
+    full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, in the center of the frame, facing the camera;
+    Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
+    standing, in the center of the frame, facing the camera. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-006_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-006_end.png

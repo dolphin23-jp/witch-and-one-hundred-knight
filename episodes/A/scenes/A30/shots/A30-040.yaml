@@ -1,0 +1,63 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-040
+scene: A30
+tc: 369.5
+sec: 5.5
+kind: M
+shot: ラビィとリューベンス・見上げる
+acting: ラビィ（「うほっ！すっげええ！！」）、リューベンス（「これほどとは……」）
+dialogue:
+- L1078「うほっ！　すっげええ！！」
+- L1079「これほどとは……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 52.4
+  - 51.2
+  - 9.4
+  look:
+  - 56.2
+  - 54.8
+  lens: 30
+  move: 巨大メタリカの肩の高さから見下ろす（巨大メタリカの目線）
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: ラビィとリューベンスが見上げる
+  end: 見上げる二人
+timing:
+  lead: 0.4
+blocking:
+  start: ラ（中央・正面）、ウ（中央・横顔（画面左向き））
+  end: ビ（中央・斜め前（画面右向き））、百（右・斜め前（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, in the center of the frame, facing the camera; Usamaru, Rabi''s
+    floating rabbit doll, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other people. High angle looking down. Behind:
+    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+    from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+    brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight
+    (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing,
+    at the far right of the frame, in three-quarter view, turned toward screen right. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars
+    between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+    dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-040_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-040_end.png

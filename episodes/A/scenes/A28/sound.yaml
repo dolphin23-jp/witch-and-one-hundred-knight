@@ -1,0 +1,32 @@
+# A28 の BGM・効果音の置き場所（D-068、2026-11-05）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は砂の音のまま）
+# BGM は原作どおり（パート22、tools/bgm_split.py の曲分け）: M40 の終わり（〜18:28）→ M31「夜会の前」（18:28〜18:51、ビスコが目覚める所）→ M12「見習い魔女の夜会」（18:51〜、魔女たちの宴）。M40 の終わりの17秒は、暗転からの頭なので使わない
+scene: A28
+bgm:
+- src: audio/bgm/catalog/M31.ogg
+  cut: A28-001
+  t: 0.0
+  until: {cut: A28-003, t: 5.4}
+  loop: true
+  fade_in: 1.5
+  fade_out: 1.5
+  volume: 0.26
+- src: audio/bgm/catalog/M12.ogg
+  cut: A28-004
+  t: 0.0
+  until: {cut: A28-035, t: 5.9}
+  loop: true
+  fade_in: 1.0
+  fade_out: 2.5
+  volume: 0.24
+sfx:
+- {src: audio/sfx/magic_shimmer.ogg, cut: A28-001, t: 0.4, rate: 0.8, volume: 0.18}
+- {src: audio/sfx/cloth_swish.ogg, cut: A28-002, t: 2.6, volume: 0.3}
+- {src: audio/sfx/cloth_swish.ogg, cut: A28-007, t: 0.4, volume: 0.25}
+- {src: audio/sfx/cloth_swish.ogg, cut: A28-015, t: 0.8, volume: 0.3}
+- {src: audio/sfx/magic_shimmer.ogg, cut: A28-022, t: 0.8, rate: 0.7, volume: 0.4}
+- {src: audio/sfx/whoosh_long.ogg, cut: A28-022, t: 1.2, rate: 0.8, volume: 0.2}
+- {src: audio/sfx/metal_clank.ogg, cut: A28-030, t: 6.6, rate: 0.8, volume: 0.4}
+- {src: audio/sfx/thud_land.ogg, cut: A28-030, t: 6.65, volume: 0.35}
+- {src: audio/sfx/cloth_swish.ogg, cut: A28-032, t: 9.87, volume: 0.3}
+- {src: audio/sfx/wind_gust.ogg, cut: A28-035, t: 1.4, rate: 0.8, volume: 0.18}

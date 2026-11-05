@@ -1,0 +1,2847 @@
+# A29 議長と議題。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-05）
+# Living Spec「A29 動きの設計（案）」。準備（案）の表の A29。台詞は audio/A28/original（L973〜L1022）。
+# 場所は world/council-room-layout.yaml。霧は fx の fog（屋内なのに急に立ち込める）。光は council_fog → 霧が晴れたら council_night。
+# ネザリアは議長の席（北）。話すのは右に立てて持つ杖（金色の頭）。帽子のつばに白ネズミ（マーリカ）。
+# このファイルは作業用の補助（Claude のスクリプト）で書いた。直すときはこのファイルを直してよい。
+scene: A29
+layout: world/council-room-layout.yaml
+map_ymax: 75
+lighting: council_fog
+places:
+  center: [50.0, 50.0]
+start:
+  lily:
+    at: &id001 [52.93, 47.27]
+    face: 200
+  purple-peel:
+    at: &id002 [53.9, 50.0]
+    face: 250
+  rabi:
+    at: &id003 [50.8, 54.6]
+    face: 330
+  usamaru:
+    at: &id004 [51.6, 53.6]
+    face: 60
+  berda:
+    at: &id005 [48.2, 56.3]
+    face: 132.5
+  rubens:
+    at: &id006 [46.07, 49.02]
+    face: 159.6
+  bisco:
+    at: &id007 [49.4, 57.4]
+    face: 312.5
+  teressa:
+    at: &id008 [51.7, 56.9]
+    face: 257.7
+  hundred-knight:
+    at: &id009 [50.3, 60.4]
+    face: 350
+  nezaria:
+    at: &id011 [49.2, 42.2]
+    face: 175
+cuts:
+  A29-001:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight]
+    hidden_ok: [nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: *id001
+        face: 200
+        pose: cross
+      - t: 1.0
+        pose: sit
+        at: [53.38, 48.05]
+        face: 240
+      purple-peel:
+      - t: 0.0
+        at: *id002
+        face: 250
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: *id003
+        face: 330
+        pose: shake
+      - {t: 0.6, pose: walk, face: 60}
+      - t: 4.8
+        at: [53.38, 51.95]
+        pose: sit
+        ease: out
+      - {t: 5.1, pose: sit, face: 300}
+      usamaru:
+      - t: 0.0
+        at: *id004
+        face: 60
+        pose: hop
+        z: 1.0
+      - t: 0.8
+        at: [52.6, 53.4]
+      - t: 5.1
+        at: [53.14, 53.49]
+      berda:
+      - t: 0.0
+        at: *id005
+        face: '@bisco'
+        pose: stand
+      - {t: 0.5, pose: walk, face: 300}
+      - t: 4.4
+        at: [46.62, 51.95]
+        pose: sit
+        ease: out
+      - {t: 4.8, pose: sit, face: 60}
+      rubens:
+      - t: 0.0
+        at: *id006
+        face: '@hundred-knight'
+        pose: hold
+      - t: 0.4
+        pose: sit
+        at: [46.1, 50.0]
+        face: 90
+      bisco:
+      - t: 0.0
+        at: *id007
+        face: '@berda'
+        pose: ready
+      - {t: 1.0, face: 10, pose: stand}
+      teressa:
+      - t: 0.0
+        at: *id008
+        face: '@bisco'
+        pose: proud
+      - {t: 0.8, pose: walk, face: 260}
+      - t: 4.8
+        at: [46.52, 53.86]
+        pose: walk
+        ease: out
+      - {t: 5.1, pose: stand, face: 40}
+      hundred-knight:
+      - t: 0.0
+        at: *id009
+        face: 350
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [59.6, 54.6, 4.6]
+      look: [50.0, 52.0]
+      look_h: 0.6
+      lens: 22
+      frame: 引き
+    - t: 5.4
+      cam: [59.4, 50.4, 4.2]
+      look: [50.0, 50.5]
+      look_h: 0.6
+      lens: 22
+    fx:
+    - kind: fog
+      at: &id010 [50.0, 50.0]
+      r: 11.5
+      h: 1.4
+      alpha: 0.096
+      rise: 0.1
+      t: [0.0, 5.4]
+    act: {start: にらみ合うビスコとベルダ。床を這う霧が濃くなる, do: 魔女たちがはっと居住まいを正す（「おっと、静かに！……議長だ」）。ベルダが席へ戻り、テレッサがその後ろへ, end: 霧に包まれた円卓}
+    camera: 東の高い所から、霧の円卓を見下ろしてゆっくり回る
+    kind: A
+  A29-002:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight]
+    hidden_ok: [nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 250
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 60
+        pose: sit
+      - {t: 1.3, face: 30}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 10
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [48.2, 50.4, 1.18]
+      look: berda
+      look_h: 1.08
+      lens: 40
+      frame: 胸上
+    - t: 7.3
+      cam: [48.4, 50.2, 1.18]
+      look: berda
+      look_h: 1.08
+      lens: 44
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.048
+      rise: 0.1
+      t: [0.0, 7.3]
+    act: {start: 席に着いたベルダ, do: 咳払いして皆を見回す（「おほん。皆様、ご静粛に！議長がこられましたわ」）, end: 北の空いた議長の席へ目をやるベルダ}
+    camera: ベルダの正面、頭の高さから（霧越し）
+    kind: M
+  A29-003:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 250
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 10
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: *id011
+        face: 175
+        pose: walk
+      - t: 2.6
+        at: [48.9, 45.4]
+        pose: walk
+        ease: linear
+      - t: 4.0
+        at: [50.0, 46.1]
+        pose: sit
+        ease: out
+      - {t: 4.3, pose: sit, face: 180}
+    cam_keys:
+    - t: 0.0
+      cam: [47.2, 54.6, 1.0]
+      look: [48.6, 43.5]
+      look_h: 1.3
+      lens: 40
+      frame: 全身
+    - t: 6.1
+      cam: [47.4, 53.8, 1.05]
+      look: nezaria
+      look_h: 1.1
+      lens: 46
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.108
+      rise: 0.1
+      t: [0.0, 6.1]
+    - kind: fog
+      t: [0.0, 6.1]
+      at: [48.9, 45.4]
+      r: 2.2
+      h: 2.2
+      alpha: 0.12
+      rise: 0.1
+      fade: 2.0
+      n: 6
+    act: {start: 北の霧の中に人影, do: 大きな帽子のネザリアが杖を手に霧から歩み出て、議長の席に座る。ビスコの声（「あれが、議長……？」）, end: 席に着くネザリア}
+    camera: 円卓の南西の低い所から、北の霧から歩み出て議長の席に着くネザリアを見る。わずかに寄る
+    kind: A
+  A29-004:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 250
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 10
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.9, 47.5, 1.3]
+      look: [49.69, 46.2]
+      look_h: 1.12
+      lens: 50
+      frame: 寄り
+    - t: 7.4
+      cam: [49.8, 47.7, 1.2]
+      look: [49.69, 46.2]
+      look_h: 1.12
+      lens: 55
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.048
+      rise: 0.1
+      t: [0.0, 7.4]
+    act: {start: ネザリアの右に立つ杖の、金色の大きな頭の寄り, do: 杖が話す（「今宵も集いし、麗しき魔女たる皆々様方、ご静粛に」）。ネザリアは眠たげな目のまま, end: 杖の頭}
+    camera: 杖の頭の高さで、ゆっくり回り込む
+    kind: A
+  A29-005:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 250
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 10
+        pose: stand
+      - {t: 0.3, face: '@nezaria'}
+      - {t: 0.9, pose: lean}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.0, 55.4, 0.42]
+      look: bisco
+      look_h: 1.3
+      lens: 40
+      frame: 胸上
+    - t: 4.3
+      cam: [50.8, 55.6, 0.45]
+      look: bisco
+      look_h: 1.35
+      lens: 44
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.042
+      rise: 0.1
+      t: [0.0, 4.3]
+    act: {start: ビスコの顔, do: 目を丸くして杖を見る（「なんだ、杖が喋っているのか？」）, end: 身を乗り出すビスコ}
+    camera: ビスコの斜め前の低い所から
+    kind: M
+  A29-006:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      - {t: 1.9, pose: sit}
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.6, 51.6, 1.18]
+      look: purple-peel
+      look_h: 1.08
+      lens: 42
+      frame: 胸上
+    - t: 5.7
+      cam: [51.8, 51.4, 1.18]
+      look: purple-peel
+      look_h: 1.08
+      lens: 46
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.036
+      rise: 0.1
+      t: [0.0, 5.7]
+    act: {start: 杖の声に合わせて、パープルピール, do: 腕を組んだまま顎を上げる（「南方のナハトより砂塵の魔女パープルピール様」）, end: ふんぞり返るパープルピール}
+    camera: パープルピールの左前（円卓の上）から
+    kind: M
+  A29-007:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.5, 50.6, 1.18]
+      look: rabi
+      look_h: 1.08
+      lens: 42
+      frame: 胸上
+    - t: 5.6
+      cam: [51.7, 50.7, 1.18]
+      look: rabi
+      look_h: 1.08
+      lens: 46
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.033
+      rise: 0.1
+      t: [0.0, 5.6]
+    act: {start: ラビィの顔, do: 名前を呼ばれて片眉を上げる（「同じく、ナハトより焔の魔女ラビリ・ラルラ・ラー様」）, end: むっとするラビィ}
+    camera: ラビィの正面、頭の高さから（円卓の上）
+    kind: M
+  A29-008:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      - t: 0.3
+        at: [52.91, 52.81]
+        pose: stand
+        face: '@nezaria'
+      - {t: 1.0, pose: point}
+      - {t: 5.7, pose: stand}
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 1.0
+      - t: 0.5
+        at: [53.41, 54.06]
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [53.95, 54.1, 1.6]
+      look: [50.6, 46.4]
+      look_h: 1.0
+      lens: 30
+      frame: 肩なめ
+    - t: 6.1
+      cam: [53.85, 53.9, 1.6]
+      look: [50.4, 46.6]
+      look_h: 1.0
+      lens: 34
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.03
+      rise: 0.1
+      t: [0.0, 6.1]
+    act: {start: ラビィが椅子を蹴って立つ, do: 議長の席を指さす（「おい！ネザリア！なんであたしが、二番目によばれんだよ！」）, end: 議長の席を指さすラビィ}
+    camera: ラビィの後ろから、肩越しに議長の席
+    kind: M
+  A29-009:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      - t: 0.3
+        at: [54.6, 50.6]
+        pose: stand
+        face: '@rabi'
+      - {t: 1.2, pose: point}
+      - {t: 3.9, pose: hold}
+      - t: 8.4
+        at: [53.9, 50.0]
+        pose: sit
+        face: 270
+      rabi:
+      - t: 0.0
+        at: [52.91, 52.81]
+        face: '@nezaria'
+        pose: stand
+      - t: 3.9
+        at: [53.38, 51.95]
+        pose: sit
+        face: 300
+      usamaru:
+      - t: 0.0
+        at: [53.41, 54.06]
+        face: 60
+        pose: hop
+        z: 1.2
+      - t: 4.2
+        at: [53.14, 53.49]
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 51.6, 0.95]
+      look: [54.2, 51.2]
+      look_h: 1.2
+      lens: 30
+      frame: 膝上
+    - t: 9.2
+      cam: [49.3, 51.5, 0.95]
+      look: [54.0, 51.4]
+      look_h: 1.0
+      lens: 32
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.027
+      rise: 0.1
+      t: [0.0, 9.2]
+    act: {start: パープルピールが立ち上がる, do: ラビィの頭を押さえつけて座らせる（「お前、ネザリア様に向かって！ったく、毎日言わせるんじゃないよ！いい加減、口を慎みな」）, end: 座らされてむくれるラビィ}
+    camera: 円卓の向こう（西）の低い所から、二人を正面に
+    kind: M
+  A29-010:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.4, 48.6, 1.18]
+      look: lily
+      look_h: 1.08
+      lens: 36
+      frame: 胸上
+    - t: 9.8
+      cam: [51.7, 48.6, 1.18]
+      look: lily
+      look_h: 1.08
+      lens: 44
+    fx:
+    - kind: fog
+      at: *id010
+      r: 11.5
+      h: 1.4
+      alpha: 0.024
+      rise: 0.1
+      t: [0.0, 9.8]
+      fade: 1.0
+    act: {start: 杖の声（「ご静粛に！」）, do: リリーの顔へ（「北と東の境目の氷原ツェーンライブより薄氷の魔女リリアーヌ様」）。リリーが顔をしかめる, end: 顔をしかめるリリー}
+    camera: リリーの左（北の窓側）から、円卓越しに寄る
+    kind: M
+  A29-011:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      - {t: 0.3, face: 270}
+      - {t: 2.0, face: 210}
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [54.3, 48.6, 1.95]
+      look: nezaria
+      look_h: 1.1
+      lens: 38
+      frame: 肩なめ
+    - t: 5.3
+      cam: [54.2, 48.5, 1.9]
+      look: nezaria
+      look_h: 1.1
+      lens: 44
+    act: {start: リリーが頬杖をつく, do: うんざりと（「いい加減、ボクのことはリリーって呼んでくれよ」）, end: そっぽを向くリリー}
+    camera: リリーの斜め後ろの高い所から、帽子越しに議長
+    kind: M
+    lighting: council_night
+  A29-012:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      - {t: 0.8, pose: sit}
+      - {t: 4.4, pose: sit}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.3, 50.8, 1.18]
+      look: berda
+      look_h: 1.08
+      lens: 46
+      frame: 胸上
+    - t: 5.0
+      cam: [48.2, 51.0, 1.18]
+      look: berda
+      look_h: 1.08
+      lens: 50
+    act: {start: ベルダ, do: 座ったまま優雅に会釈する（「アマタイア王国より灰汁の魔女ベルダ様」）, end: 会釈するベルダ}
+    camera: ベルダの正面の低い所（円卓の上）から
+    kind: M
+    lighting: council_night
+  A29-013:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      - {t: 3.96, pose: sit}
+      - {t: 6.2, pose: sit}
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 51.07, 1.18]
+      look: rubens
+      look_h: 1.05
+      lens: 36
+      frame: 膝上
+    - t: 6.6
+      cam: [46.95, 51.0, 1.18]
+      look: rubens
+      look_h: 1.05
+      lens: 40
+    act: {start: 本を抱えたリューベンス, do: 小さくうなずく（「チンクエより、南瓜の魔女リューベンス様」「はい」）, end: うなずいたリューベンス}
+    camera: リューベンスの斜め前（南の円卓の脇）から
+    kind: M
+    lighting: council_night
+  A29-014:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: stand
+      - {t: 0.8, pose: bow}
+      - {t: 3.2, pose: proud}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [47.81, 52.33, 0.7]
+      look: teressa
+      look_h: 1.25
+      lens: 30
+      frame: 膝上
+    - t: 6.3
+      cam: [47.69, 52.36, 0.7]
+      look: teressa
+      look_h: 1.25
+      lens: 34
+    act: {start: ベルダの後ろに立つテレッサ, do: 胸を張ってお辞儀する（「魔女の承認の儀のため召喚されし、ヤニの魔女テレッサ」）, end: 得意げなテレッサ}
+    camera: テレッサの正面の低い所から
+    kind: M
+    lighting: council_night
+  A29-015:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: '@nezaria'
+        pose: lean
+      - {t: 5.12, pose: point, face: 20}
+      - {t: 8.6, pose: stand}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.6, 57.6, 1.6]
+      look: bisco
+      look_h: 1.35
+      lens: 38
+      frame: 胸上
+    - t: 9.0
+      cam: [51.1, 57.6, 1.55]
+      look: bisco
+      look_h: 1.35
+      lens: 46
+    act: {start: 杖の声（「証人としてアマタイア王国からビスコール＝ドートリッシュ様」）, do: ビスコが自分を指さして驚く（「わ、私だって……？」）, end: 戸惑うビスコ}
+    camera: ビスコの右（東）から、寄る
+    kind: M
+    lighting: council_night
+  A29-016:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 20
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [50.6, 48.6, 3.4]
+      look: nezaria
+      look_h: 1.0
+      lens: 34
+      frame: 膝上
+    - t: 8.7
+      cam: [50.4, 48.4, 1.6]
+      look: nezaria
+      look_h: 1.0
+      lens: 38
+    act: {start: 議長の席のネザリア。霧が晴れていく, do: 杖が名乗る（「そして、最後になりますが、議長はこの私、霧の魔女ネザリアが務めさせていただきます」）。ネザリアはぼんやり座ったまま, end: ネザリアと杖}
+    camera: 円卓の真上から天球儀の脇を下りて、ネザリアを正面に
+    kind: M
+    lighting: council_night
+  A29-017:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 20
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.6, 51.6, 1.3]
+      look: [46.62, 48.05]
+      look_h: 1.0
+      lens: 32
+      frame: 膝上
+    - t: 4.0
+      cam: [49.6, 51.0, 1.4]
+      look: [51.95, 46.62]
+      look_h: 1.0
+      lens: 32
+    - t: 9.3
+      cam: [50.4, 47.8, 1.15]
+      look: [50.28, 46.28]
+      look_h: 0.95
+      lens: 55
+      frame: 寄り
+    act: {start: 空いたヴァレンティーヌの席, do: （「なお、本日も華の大公爵ヴァレンティーヌ様、森の魔女マーリカ様は、ご欠席となっております」）カメラが空いたマーリカの席へ流れ、ネザリアの帽子の白ネズミで止まる, end: 帽子の上の白ネズミ（マーリカ）}
+    camera: 空いた席から席へ流し、ネザリアの帽子のつばの白ネズミに寄る（伏線）
+    kind: A
+    lighting: council_night
+  A29-018:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 210
+        pose: sit
+      - {t: 4.65, face: '@nezaria'}
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: 270
+        pose: sit
+      - {t: 4.65, face: '@nezaria'}
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: 30
+        pose: sit
+      - {t: 4.65, face: '@nezaria'}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 90
+        pose: sit
+      - {t: 4.65, face: '@nezaria'}
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 20
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.6, 40.0, 4.8]
+      look: [50.0, 54.0]
+      look_h: 0.6
+      lens: 22
+      frame: 引き
+    - t: 14.4
+      cam: [51.4, 40.4, 4.4]
+      look: [50.0, 54.0]
+      look_h: 0.6
+      lens: 24
+    act: {start: 円卓の全景, do: （「さて、夜会も７日目の本日が最終日」「早速ではございますが、時間も押し迫ってまいりました。今回の夜会、最後の議題でございます」）魔女たちが議長の席に向き直る, end: 静まった円卓}
+    camera: 議長の席の後ろの高い所から、円卓と扉を見下ろす
+    kind: M
+    lighting: council_night
+  A29-019:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: '@nezaria'
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.62, 51.95]
+        face: '@nezaria'
+        pose: sit
+      - t: 0.4
+        at: [47.09, 52.81]
+        pose: stand
+        face: 60
+      - {t: 4.93, face: 20, pose: gesture}
+      - {t: 11.1, pose: stand}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 20
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.6, 53.6, 1.0]
+      look: berda
+      look_h: 1.0
+      lens: 34
+      frame: 膝上
+    - t: 11.6
+      cam: [48.7, 53.8, 1.45]
+      look: berda
+      look_h: 1.4
+      lens: 36
+    act: {start: ベルダが立ち上がる, do: 胸に手を当てて（「それでは、灰汁の魔女ベルダが提案いたします」）、円卓を見渡す（「議題は、沼の魔女を”自称”する、メタリカという娘に関してです」）, end: 皆を見渡すベルダ}
+    camera: ベルダの左（南の円卓の上）から、立ち上がりに合わせて上がる
+    kind: M
+    lighting: council_night
+  A29-020:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: '@nezaria'
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: 20
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 20
+        pose: stand
+      - {t: 0.3, face: 330}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 55.6, 1.5]
+      look: bisco
+      look_h: 1.4
+      lens: 45
+      frame: 寄り
+    - t: 0.8
+      cam: [49.1, 55.9, 1.5]
+      look: bisco
+      look_h: 1.4
+      lens: 55
+      ease: out
+    act: {start: ビスコの顔, do: 息をのむ（「なに……！？」）, end: 目を見開くビスコ}
+    camera: ビスコの顔へ素早く寄る
+    kind: M
+    lighting: council_night
+  A29-021:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: '@nezaria'
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: 20
+        pose: stand
+      - {t: 0.3, pose: walk, face: 330}
+      - t: 4.0
+        at: [45.08, 50.87]
+        pose: walk
+      - t: 9.0
+        at: [45.17, 48.71]
+        pose: walk
+      - t: 9.8
+        at: [46.04, 48.94]
+        pose: walk
+        ease: out
+      - {t: 10.0, pose: point, face: 90}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 330
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [42.8, 49.4, 1.5]
+      look: berda
+      look_h: 1.1
+      lens: 30
+      frame: 全身
+    - t: 10.2
+      cam: [43.6, 45.0, 1.5]
+      look: berda
+      look_h: 1.1
+      lens: 30
+    act: {start: ベルダが円卓の外を歩き出す, do: （「魔女として正式に修行もせず認められていない者が、魔女の術を公に使うことは重罪です」）, end: 歩きながら指を立てるベルダ}
+    camera: ベルダを追って、円卓の外を一緒に回る
+    kind: M
+    lighting: council_night
+  A29-022:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: '@nezaria'
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 90
+        pose: point
+      - {t: 0.3, pose: stand, face: 110}
+      - {t: 5.77, pose: lean}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 330
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 49.0, 1.5]
+      look: berda
+      look_h: 1.4
+      lens: 36
+      frame: 胸上
+    - t: 11.9
+      cam: [48.6, 48.6, 1.5]
+      look: berda
+      look_h: 1.4
+      lens: 46
+    act: {start: 空いたヴァレンティーヌの席の後ろで立ち止まるベルダ, do: 声を低くして（「その上、森の魔女マーリカをその忌まわしい手にかけた罪」「一刻も早くあの者に償わせるべきだと私は考えます」）, end: 円卓に手をつくベルダ}
+    camera: ベルダの正面（円卓の上）から、ゆっくり寄る
+    kind: M
+    lighting: council_night
+  A29-023:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: '@nezaria'
+        pose: sit
+      - t: 0.2
+        at: [52.91, 47.19]
+        pose: stand
+        face: '@berda'
+      - {t: 0.8, pose: ready}
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 110
+        pose: lean
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 330
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.54, 48.51, 0.95]
+      look: lily
+      look_h: 1.35
+      lens: 24
+      frame: 膝上
+    - t: 5.0
+      cam: [51.6, 48.45, 1.0]
+      look: lily
+      look_h: 1.5
+      lens: 26
+    act: {start: リリーが椅子を倒して立ち上がる, do: （「マ、マーリカ様を手に掛けただと！？」）, end: 拳を握るリリー}
+    camera: 円卓の上の低い所から、立ち上がるリリーを見上げる
+    kind: M
+    lighting: council_night
+  A29-024:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 110
+        pose: lean
+      - {t: 0.3, face: 120}
+      - {t: 1.9, pose: arms_up}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 330
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [42.2, 44.2, 2.6]
+      look: [51.0, 51.0]
+      look_h: 0.9
+      lens: 26
+      frame: 肩なめ
+    - t: 6.7
+      cam: [42.6, 44.6, 2.4]
+      look: [51.0, 51.0]
+      look_h: 0.9
+      lens: 28
+    act: {start: ベルダが両手を広げる, do: （「そこで、あの者から一切の”魔力”を剥奪することを提案いたします！」）, end: 両手を上げたベルダ}
+    camera: ベルダの後ろ（西の壁ぎわ）の高い所から、円卓越しに皆を入れる
+    kind: M
+    lighting: council_night
+  A29-025:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.4, 57.4]
+        face: 330
+        pose: stand
+      - {t: 0.3, face: 320, pose: walk}
+      - t: 1.4
+        at: [49.0, 56.8]
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [50.6, 58.8, 1.35]
+      look: berda
+      look_h: 1.3
+      lens: 30
+      frame: 肩なめ
+    - t: 3.1
+      cam: [50.4, 58.5, 1.35]
+      look: berda
+      look_h: 1.3
+      lens: 34
+    act: {start: ビスコ, do: （「……な、なんだって！？」）一歩踏み出す, end: 踏み出したビスコ}
+    camera: ビスコの斜め後ろから、肩越しにベルダ
+    kind: M
+    lighting: council_night
+  A29-026:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      - {t: 0.3, pose: look_up, face: 120}
+      - {t: 2.4, pose: arms_up}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [47.6, 49.84, 1.3]
+      look: berda
+      look_h: 1.4
+      lens: 28
+      frame: 膝上
+    - t: 8.2
+      cam: [46.6, 47.4, 6.4]
+      look: [50.0, 50.0]
+      look_h: 6.2
+      lens: 24
+      frame: 引き
+    act: {start: ベルダが天球儀を見上げる, do: （「奪った魔力で、都を照らすならばその灯火は、むこう百年、光り続けるでしょう！」）カメラが光る惑星の間を上がる, end: 天球儀の惑星の光}
+    camera: 円卓の脇からクレーンで天球儀の高さまで上がる
+    kind: A
+    lighting: council_night
+  A29-027:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@nezaria'
+        pose: sit
+      - {t: 0.3, face: '@berda'}
+      - {t: 3.4, pose: sit}
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [52.1, 50.0, 1.18]
+      look: purple-peel
+      look_h: 1.08
+      lens: 38
+      frame: 胸上
+    - t: 10.0
+      cam: [52.2, 49.9, 1.18]
+      look: purple-peel
+      look_h: 1.08
+      lens: 44
+    act: {start: パープルピール, do: 眉をひそめる（「あん？あの小娘がそれほどまでの魔力を持っているっていうのかい？にわかにゃ、信じられないね」）, end: 首をかしげるパープルピール}
+    camera: パープルピールの正面（円卓の上）から
+    kind: M
+    lighting: council_night
+  A29-028:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      - t: 0.2
+        at: [52.91, 52.81]
+        pose: jump
+        face: 300
+      - {t: 0.8, pose: arms_up}
+      - {t: 4.95, pose: proud}
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      - t: 0.5
+        at: [53.1, 54.42]
+        z: 1.4
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.2, 50.0, 1.9]
+      look: rabi
+      look_h: 1.2
+      lens: 34
+      frame: 膝上
+    - t: 13.1
+      cam: [51.6, 50.2, 1.8]
+      look: rabi
+      look_h: 1.3
+      lens: 38
+    act: {start: ラビィが椅子の上に跳び乗るように立つ, do: 手を挙げる（「はい、はーい！アタシにそいつの処刑をさせてくれよ！」）、得意げに（「つーか、本当にそれほどの魔力を持つヤツならアタシ以外じゃ勝てねーだろ！」）, end: 胸を張るラビィ}
+    camera: ラビィの左前（円卓の上の高い所）から
+    kind: M
+    lighting: council_night
+  A29-029:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: '@berda'
+        pose: ready
+      - {t: 0.3, pose: look_down, face: 230}
+      - {t: 6.15, pose: stand, face: 220}
+      - {t: 7.65, pose: ready}
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [52.91, 52.81]
+        face: 300
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [53.1, 54.42]
+        face: 60
+        pose: hop
+        z: 1.4
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [52.4, 49.4, 1.2]
+      look: lily
+      look_h: 1.45
+      lens: 40
+      frame: 胸上
+    - t: 11.9
+      cam: [52.95, 48.85, 1.25]
+      look: lily
+      look_h: 1.48
+      lens: 55
+      frame: 寄り
+    act: {start: うつむいて震えるリリー, do: （「マ、マーリカ様のような素晴らしい魔女を……」）顔を上げる（「許さない……。そいつに、その報いをうけさせるんだ！」）, end: 怒りに燃えるリリーの目}
+    camera: リリーの顔へゆっくり寄る（感情の山）
+    kind: A
+    lighting: council_night
+  A29-030:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [52.91, 47.19]
+        face: 220
+        pose: ready
+      - t: 1.0
+        at: [53.38, 48.05]
+        pose: sit
+        face: 240
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [52.91, 52.81]
+        face: 300
+        pose: proud
+      - t: 0.5
+        at: [53.38, 51.95]
+        pose: sit
+        face: 300
+      usamaru:
+      - t: 0.0
+        at: [53.1, 54.42]
+        face: 60
+        pose: hop
+        z: 1.4
+      - t: 0.8
+        at: [53.14, 53.49]
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [46.04, 48.94]
+        face: 120
+        pose: arms_up
+      - {t: 0.6, pose: walk, face: 160}
+      - t: 5.1
+        at: [47.09, 52.81]
+        pose: walk
+        ease: out
+      - {t: 5.4, pose: stand, face: 20}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.4, 42.4, 2.2]
+      look: [50.0, 52.0]
+      look_h: 0.8
+      lens: 28
+      frame: 肩なめ
+    - t: 5.9
+      cam: [48.8, 42.6, 2.1]
+      look: [50.0, 52.0]
+      look_h: 0.8
+      lens: 30
+    act: {start: 議長の席のネザリアと杖, do: （「皆様、ご静粛に。ご意見は後ほど伺います」）。皆が席へ戻る, end: ネザリア}
+    camera: ネザリアの後ろの窓ぎわから、肩越しに円卓
+    kind: M
+    lighting: council_night
+  A29-031:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: 20
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 40
+        pose: proud
+      - {t: 0.3, pose: cover, face: 120}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.0, 54.12, 1.3]
+      look: teressa
+      look_h: 1.3
+      lens: 50
+      frame: 寄り
+    - t: 5.7
+      cam: [47.85, 54.1, 1.3]
+      look: teressa
+      look_h: 1.3
+      lens: 56
+    act: {start: ベルダの後ろのテレッサ, do: 口元を隠してほくそ笑む（心の声「ウフフ……これで、沼の魔女も年貢の納め時ですわね」）, end: ほくそ笑むテレッサ}
+    camera: テレッサの顔の寄り（ビスコの側から）
+    kind: M
+    lighting: council_night
+  A29-032:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: 20
+        pose: stand
+      - {t: 0.3, face: '@nezaria'}
+      - {t: 4.04, pose: point}
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 120
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.93, 50.19, 2.6]
+      look: berda
+      look_h: 1.3
+      lens: 30
+      frame: 膝上
+    - t: 10.7
+      cam: [48.85, 50.3, 2.45]
+      look: berda
+      look_h: 1.3
+      lens: 34
+    act: {start: ベルダが議長に向き直る, do: （「さあ、霧の魔女ことネザリア議長！」）指をさす（「本議題の採決を！沼の魔女の魔力剥奪を求刑します！」）, end: 議長を指すベルダ}
+    camera: 円卓の上の高い所（議長の側）から、ベルダを見下ろす
+    kind: M
+    lighting: council_night
+  A29-033:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: '@nezaria'
+        pose: point
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.0, 56.8]
+        face: 320
+        pose: stand
+      - {t: 0.3, pose: walk, face: 355}
+      - t: 2.0
+        at: [49.05, 53.32]
+        pose: walk
+        ease: out
+      - {t: 2.3, pose: stand}
+      - {t: 4.01, pose: lean}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 120
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [50.2, 50.8, 1.45]
+      look: bisco
+      look_h: 1.3
+      lens: 30
+      frame: 膝上
+    - t: 9.8
+      cam: [50.2, 51.6, 1.4]
+      look: bisco
+      look_h: 1.25
+      lens: 40
+      frame: 胸上
+    act: {start: ビスコが円卓へ詰め寄る, do: （「おい！森の魔女殿はまだ生きてるんだぞ」）円卓を叩く（「これじゃあ、気に食わない相手を貶めるためのただの茶番じゃないか！」）, end: 円卓に両手をつくビスコ}
+    camera: ビスコの正面（円卓の上）から、詰め寄るビスコを受ける
+    kind: A
+    lighting: council_night
+  A29-034:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: '@nezaria'
+        pose: point
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.05, 53.32]
+        face: 355
+        pose: lean
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 120
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.2, 55.0, 1.5]
+      look: nezaria
+      look_h: 1.1
+      lens: 40
+      frame: 肩なめ
+    - t: 7.0
+      cam: [49.3, 54.8, 1.5]
+      look: nezaria
+      look_h: 1.1
+      lens: 50
+    act: {start: ネザリアは表情を変えない, do: 杖だけが続ける（「それでは、麗しき魔女の皆々様。この提案にご採決を！」）, end: 杖}
+    camera: ビスコの肩越し（円卓の南）から、奥のネザリアへ寄る
+    kind: M
+    lighting: council_night
+  A29-035:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: '@nezaria'
+        pose: point
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.05, 53.32]
+        face: 355
+        pose: lean
+      - {t: 0.4, face: '@hundred-knight', pose: stand}
+      - {t: 3.4, pose: look_down}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 120
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [51.2, 60.8, 0.35]
+      look: bisco
+      look_h: 1.0
+      lens: 28
+      frame: 全身
+    - t: 7.1
+      cam: [51.0, 60.6, 0.4]
+      look: bisco
+      look_h: 1.2
+      lens: 32
+    act: {start: 扉の前に倒れたままの百騎兵, do: ビスコが振り返る（「こ、このままではメタリカが……！百騎兵は倒れたままだし……」）, end: 百騎兵を見るビスコ}
+    camera: 床に倒れた百騎兵の頭の脇の低い所から、奥のビスコ
+    kind: M
+    lighting: council_night
+  A29-036:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    keys:
+      lily:
+      - t: 0.0
+        at: [53.38, 48.05]
+        face: 240
+        pose: sit
+      purple-peel:
+      - t: 0.0
+        at: [53.9, 50.0]
+        face: '@berda'
+        pose: sit
+      rabi:
+      - t: 0.0
+        at: [53.38, 51.95]
+        face: 300
+        pose: sit
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [47.09, 52.81]
+        face: '@nezaria'
+        pose: point
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: '@nezaria'
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.05, 53.32]
+        face: '@hundred-knight'
+        pose: look_down
+      - {t: 0.3, face: 340, pose: stand}
+      - {t: 4.1, pose: ready, face: 20}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 120
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [48.6, 51.9, 1.4]
+      look: bisco
+      look_h: 1.4
+      lens: 45
+      frame: 寄り
+    - t: 5.1
+      cam: [48.65, 52.1, 1.4]
+      look: bisco
+      look_h: 1.4
+      lens: 58
+    shake:
+    - t: [3.9, 5.1]
+      amp: 0.8
+    act: {start: 唇をかむビスコ, do: （「くそ！何か手は……！！」）。床がかすかに揺れ始め、天球儀がきしむ, end: 揺れに気づくビスコ}
+    camera: 円卓の上から、ビスコの顔へ寄る。最後に揺れ
+    kind: A
+    lighting: council_night

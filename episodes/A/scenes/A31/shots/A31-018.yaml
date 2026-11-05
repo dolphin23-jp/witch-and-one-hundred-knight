@@ -1,0 +1,62 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、Living Spec「A31 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A31-018
+scene: A31
+tc: 106.2
+sec: 3.9
+kind: A
+shot: 朝の光・時間
+acting: ネザリアが杖を下ろす。杖がつぶやく（「……時間。」）
+dialogue:
+- L1098「……時間。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 44.4
+  - 46.6
+  - 1.3
+  look:
+  - 52.6
+  - 40.0
+  lens: 24
+  move: ネザリアの横から、朝日の差す破れた壁へゆっくり振る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: 霧が晴れる。破れた壁から低い朝日が差し込み、議会室が金色に染まる
+  end: 朝日の中のネザリア
+timing:
+  lead: 2.0
+blocking:
+  start: ネ（中央・横顔（画面右向き））
+  end: ネ（中央・背中）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+    around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff),
+    a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows
+    full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a
+    round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+    around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff),
+    a tiny white mouse sitting on her hat brim, standing, in the center of the frame, with the back to the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of
+    stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+    dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-018_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-018_end.png

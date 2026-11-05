@@ -1,0 +1,61 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-028
+scene: A30
+tc: 249.2
+sec: 16.3
+kind: M
+shot: ビスコ・吹き出す
+acting: （「あいつ、部屋にこもって落ち込んでいたのかと思ったら……」「復讐の方法を考えていたのか……！なんてヤツだ……プッ……くく……」）口を押さえて吹き出す
+dialogue:
+- L1056「あいつ、部屋にこもって落ち込んでいたのかと思ったら……。」
+- L1057「復讐の方法を考えていたのか……！なんてヤツだ……プッ……くく……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.6
+  - 56.4
+  - 1.0
+  look: bisco
+  lens: 38
+  move: ビスコの左の低い所から、ゆっくり寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ビスコがあっけにとられる
+  end: 笑いをこらえるビスコ
+timing:
+  lead: 0.4
+blocking:
+  start: ビ（中央・斜め前（画面左向き））、百（中央・正面）
+  end: 百（中央・正面）、ビ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, waist-high: big round silver-and-blue
+    helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera.
+    No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch
+    tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes,
+    silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera. No other
+    people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-028_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-028_end.png

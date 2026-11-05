@@ -1,0 +1,66 @@
+# A29 議長と議題。blocking.yaml（Claude の案 2026-11-05、Living Spec「A29 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A29-008
+scene: A29
+tc: 41.8
+sec: 6.1
+kind: M
+shot: ラビィ・立ち上がって抗議
+acting: 議長の席を指さす（「おい！ネザリア！なんであたしが、二番目によばれんだよ！」）
+dialogue:
+- L980「おい！　ネザリア！なんであたしが、二番目によばれんだよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 53.95
+  - 54.1
+  - 1.6
+  look:
+  - 50.6
+  - 46.4
+  lens: 30
+  move: ラビィの後ろから、肩越しに議長の席
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+- nezaria
+overlays: []
+fallback: null
+act:
+  start: ラビィが椅子を蹴って立つ
+  end: 議長の席を指さすラビィ
+timing:
+  lead: 0.4
+blocking:
+  start: ウ（左・斜め前（画面右向き））、ネ（中央・正面）、ラ（中央・斜め後ろ（画面左向き））、リ（右・斜め前（画面左向き））、パ（右・横顔（画面左向き））
+  end: ラ（左・背中）、ネ（中央・正面）、リ（右・斜め前（画面左向き））、パ（右・横顔（画面左向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward
+    screen right; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight
+    lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting
+    on her hat brim, standing, in the center of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the right of the frame,
+    seen from behind at an angle, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen
+    left; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: dark wood panelled round walls
+    with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge
+    orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, with the back to the camera; Nezaria,
+    the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
+    half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing,
+    in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view,
+    turned toward screen left; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: dark wood
+    panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+    planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A29/gen/sketch/A29-008_start.png
+  - episodes/A/scenes/A29/gen/sketch/A29-008_end.png

@@ -1,0 +1,67 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-027
+scene: A30
+tc: 224.0
+sec: 25.2
+kind: A
+shot: メタリカの名乗り
+acting: （「なんだ、誰も答えられんのか？ならばワタシが直々に教えてやる！」）両手を広げて名乗る（「ワタシこそが、唯一にして無二の、本物の魔女！生まれついての大魔女！最強の魔女！メタリカ様だ！！」）。高笑い
+dialogue:
+- L1053「なんだ、誰も答えられんのか？ならばワタシが直々に教えてやる！」
+- L1054「ワタシこそが、唯一にして無二の、本物の魔女！生まれついての大魔女！　最強の魔女！メタリカ様だ！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 46.0
+  - 52.6
+  - 0.4
+  look: metallica
+  lens: 26
+  move: 床すれすれからメタリカのまわりを半周しながらクレーンで上がる（感情の山。破れた壁と月を背に）
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが沼のまん中に戻る
+  end: 破れた壁の夜空を背に、高笑いするメタリカ
+timing:
+  lead: 0.4
+blocking:
+  start: メ（中央・正面）、リ（中央・正面）、パ（右・正面）
+  end: ベ（左・正面）、リュ（左・横顔（画面右向き））、ネ（中央・横顔（画面右向き））、メ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 3 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long
+    orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame,
+    facing the camera; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, facing the camera, small in the background; Purple Peel, the dust witch, as in
+    her reference sheet, standing, at the far right of the frame, facing the camera, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; Rubens,
+    the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing
+    and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in profile, turned toward screen right, small in the background; Nezaria,
+    the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
+    half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing,
+    in the center of the frame, in profile, turned toward screen right, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored
+    flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing,
+    in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full
+    of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round
+    table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-027_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-027_end.png

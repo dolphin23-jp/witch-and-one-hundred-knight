@@ -47,6 +47,9 @@ SHORT = {"metallica": "メ", "bisco": "ビ", "hundred-knight": "百", "arlecchin
          "marny": "マ", "forest-servant": "シ", "marika-mouse": "鼠", "bird": "鳥", "forest-beast": "獣",
          "night-train": "列", "blind-witch": "盲", "guide-witch": "案"}
 POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}   # 立っていないときの背の高さの割合（寝ているときは高さ m）
+# 6章後半 回3（A28〜A32、議会室）: リューベンス、ネザリア、巨大メタリカ、沼を浴びたテレッサ（回2 の直しと並行して作ったので、辞書の外で足す。2026-11-05）
+COLORS.update({"rubens": (95, 150, 60), "nezaria": (200, 180, 240), "metallica-giant": (255, 120, 20), "teressa-swamp": (110, 175, 120)})
+SHORT.update({"rubens": "リュ", "nezaria": "ネ", "metallica-giant": "巨メ", "teressa-swamp": "テ沼"})
 
 
 def cam_at(c, which):

@@ -1,0 +1,32 @@
+# A32 の BGM・効果音の置き場所（D-068、2026-11-05）。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は砂の音のまま）
+# BGM: 原作どおり M39「魔女都ヴァルプルギス」（パート23 の 19:16〜25:38）。終わり（038）は暗転に合わせて消す
+scene: A32
+bgm:
+- src: audio/bgm/catalog/M39.ogg
+  cut: A32-001
+  t: 0.0
+  until: {cut: A32-038, t: 10.1}
+  loop: true
+  fade_out: 3.0
+  volume: 0.24
+sfx:
+- {src: audio/sfx/thunder_crack.ogg, cut: A32-001, t: 6.42, rate: 1.4, volume: 0.45}
+- {src: audio/sfx/thud_land.ogg, cut: A32-002, t: 3.3, volume: 0.4}
+- {src: audio/sfx/cloth_swish.ogg, cut: A32-002, t: 2.9, volume: 0.3}
+- {src: audio/sfx/orig_rooster_p23-1915.ogg, cut: A32-002, t: 3.25, rate: 1.4, dur: 0.5, fade_out: 0.2, volume: 0.35}
+- {src: audio/sfx/ground_shake.ogg, cut: A32-017, t: 1.4, volume: 0.55}
+- {src: audio/sfx/metal_clank.ogg, cut: A32-025, t: 5.85, volume: 0.7}
+- {src: audio/sfx/sword_hit.ogg, cut: A32-025, t: 5.9, rate: 0.8, volume: 0.45}
+- {src: audio/sfx/metal_clank.ogg, cut: A32-028, t: 6.99, rate: 1.2, volume: 0.6}
+- {src: audio/sfx/magic_shimmer.ogg, cut: A32-034, t: 0.4, rate: 0.8, volume: 0.35}
+- {src: audio/sfx/crystal_chime.ogg, cut: A32-035, t: 0.6, rate: 0.8, volume: 0.35}
+- src: audio/sfx/wind_night_loop.ogg
+  cut: A32-038
+  t: 3.1
+  until: {cut: A32-038, t: 10.1}
+  loop: true
+  fade_in: 1.5
+  fade_out: 1.5
+  rate: 1.1
+  volume: 0.14

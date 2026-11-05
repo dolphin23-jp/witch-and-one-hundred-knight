@@ -1,0 +1,48 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-005
+scene: A30
+tc: 24.3
+sec: 9.6
+kind: A
+shot: 塔の外・夜空を駆ける夜光列車
+acting: メタリカの声（「お前達には、礼をせねばならんからな。喜べ！ありったけの沼をプレゼントしてやる！」）。碧の毒沼をあふれさせながら、列車が議会室の北の壁へ一直線に突っ込む
+dialogue:
+- L1027「お前達には、礼をせねばならんからな。喜べ！　ありったけの沼をプレゼントしてやる！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 62.0
+  - 4.0
+  - 3.0
+  look:
+  - 55.0
+  - 12.0
+  lens: 24
+  move: 塔の北の空から、列車を追って壁へ（並走して前に回る）
+background: council-room
+image: null
+refs:
+- night-train
+overlays: []
+fallback: null
+act:
+  start: 塔の外の夜空。空間が裂けて夜光列車が現れる
+  end: 壁に激突する瞬間の白い閃光
+timing:
+  lead: 0.4
+blocking:
+  start: （人物なし）
+  end: 列（中央・背中）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'No people in frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a
+    gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat
+    head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, in the center of the frame, with
+    the back to the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
+    top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-005_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-005_end.png

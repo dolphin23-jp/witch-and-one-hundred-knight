@@ -1,0 +1,67 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-031
+scene: A30
+tc: 281.4
+sec: 11.4
+kind: M
+shot: リリーとパープルピール・並び立つ
+acting: （「ただ、悪いけどとどめは、ボクに譲ってもらうよ……」「マーリカ様の仇だ。あいつの手足を縛って、沼で窒息させてやる！」）
+dialogue:
+- L1062「ただ、悪いけどとどめは、ボクに譲ってもらうよ……。」
+- L1063「マーリカ様の仇だ。あいつの手足を縛って、沼で窒息させてやる！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 48.1
+  - 49.4
+  - 1.35
+  look:
+  - 54.4
+  - 50.2
+  lens: 32
+  move: メタリカの肩越しに、並び立つ二人を見る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: リリーがパープルピールの隣に並ぶ
+  end: 並んで構える二人
+timing:
+  lead: 0.4
+blocking:
+  start: リ（左・正面）、パ（右・正面）、ラ（右・正面）、メ（右・斜め後ろ（画面右向き））、ウ（右・横顔（画面左向き））
+  end: リ（左・正面）、パ（右・斜め前（画面右向き））、ラ（右・正面）、ウ（右・横顔（画面左向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
+    Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, facing the camera; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far
+    right of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, at the far right of
+    the frame, seen from behind at an angle, turned toward screen right; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, in profile, turned toward
+    screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+    chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+    curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
+    Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen right; Rabi (Rabil Lalla La), the flame witch, as in her reference
+    sheet, standing, at the far right of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame,
+    in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night
+    inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+    of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-031_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-031_end.png

@@ -1,0 +1,56 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-032
+scene: A30
+tc: 292.8
+sec: 5.7
+kind: M
+shot: 寄り・ベルダの含み笑い
+acting: 口元を隠して笑う（「これでは夜会が台無しね……。ふふふふ」）
+dialogue:
+- L1066「これでは夜会が台無しね……。ふふふふ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 43.4
+  - 51.6
+  - 1.2
+  look: berda
+  lens: 50
+  move: ベルダの顔の寄り（暗い壁ぎわ、下から）
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 壁ぎわの暗がりのベルダ
+  end: ベルダの目
+timing:
+  lead: 0.4
+blocking:
+  start: ベ（中央・正面）
+  end: ベ（中央・斜め前（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+    walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right. No other people.
+    Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+    light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-032_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-032_end.png

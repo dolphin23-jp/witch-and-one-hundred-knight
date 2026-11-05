@@ -1,0 +1,58 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-035
+scene: A28
+tc: 284.0
+sec: 5.9
+kind: M
+shot: ビスコ・お前に何がわかる
+acting: 顔を上げてベルダをにらむ（「な、なんだと？……お前に何がわかる……」）。足元に白い霧が流れ込んでくる
+dialogue:
+- L972「な、なんだと？……お前に何がわかる……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 49.6
+  - 56.3
+  - 1.05
+  look: bisco
+  lens: 46
+  move: ビスコのあおりの寄りから、足元に流れ込む霧に合わせて全身まで引く
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: うつむいたビスコ
+  end: 霧の中でにらみ合う二人
+timing:
+  lead: 0.4
+blocking:
+  start: 百（左・正面）、ビ（中央・斜め前（画面右向き））
+  end: 百（左・正面）、ビ（中央・斜め前（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes,
+    silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned
+    toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top
+    of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes,
+    silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned
+    toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top
+    of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-035_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-035_end.png

@@ -1,0 +1,60 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、Living Spec「A31 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A31-006
+scene: A31
+tc: 25.9
+sec: 7.8
+kind: A
+shot: リリー・これで終われるか
+acting: （「ふざけるなよ……！これで終われるかぁぁあああッ！！」）氷をまとって巨大メタリカへ駆け出す。パープルピールが顔をしかめて起き上がる（「ぐっ……！」）
+dialogue:
+- L1085「ふざけるなよ……！これで終われるかぁぁあああッ！！」
+- L1086「ぐっ……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 53.6
+  - 46.2
+  - 0.7
+  look: lily
+  lens: 30
+  move: リリーの正面の低い所から、駆けてくるリリーを受けて下がる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: リリーが沼の中から立ち上がる
+  end: 駆けるリリー
+timing:
+  lead: 0.4
+blocking:
+  start: リ（中央・斜め前（画面右向き））
+  end: リ（中央・斜め前（画面右向き））、パ（右・斜め前（画面右向き））、ウ（右・横顔（画面左向き））、ラ（右・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right. No other
+    people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward
+    screen right; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen right, small in the background; Usamaru, Rabi''s
+    floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in
+    her reference sheet, standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars
+    between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+    dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-006_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-006_end.png

@@ -1,0 +1,56 @@
+# A29 議長と議題。blocking.yaml（Claude の案 2026-11-05、Living Spec「A29 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A29-010
+scene: A29
+tc: 57.1
+sec: 9.8
+kind: M
+shot: 呼び出し・リリー
+acting: リリーの顔へ（「北と東の境目の氷原ツェーンライブより薄氷の魔女リリアーヌ様」）。リリーが顔をしかめる
+dialogue:
+- L986「ご静粛に！」
+- L987「北と東の境目の氷原ツェーンライブより薄氷の魔女リリアーヌ様。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 51.4
+  - 48.6
+  - 1.18
+  look: lily
+  lens: 36
+  move: リリーの左（北の窓側）から、円卓越しに寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+- nezaria
+overlays: []
+fallback: null
+act:
+  start: 杖の声（「ご静粛に！」）
+  end: 顔をしかめるリリー
+timing:
+  lead: 0.4
+blocking:
+  start: リ（中央・正面）
+  end: リ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled
+    round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood
+    panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+    planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A29/gen/sketch/A29-010_start.png
+  - episodes/A/scenes/A29/gen/sketch/A29-010_end.png
