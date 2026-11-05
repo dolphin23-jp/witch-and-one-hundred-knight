@@ -266,7 +266,7 @@ SHAPE = {
     # 6章後半 回2（A23〜A27）
     "night-train": {"r": 1.3, "hr": 0.5, "arm": 0.0},         # 夜光列車（設定画 night-train_sheet_01: 獅子の顔の機関車。両側に山羊の頭、後ろに蛇。長さ約8m）
     "blind-witch": {"r": 0.2, "hr": 0.13, "arm": 0.045},      # 盲いた魔女＝ヴェライエ（設定画 blind-witch_sheet_01: 腰の曲がった小柄な老婆、大きなつばの紺のとんがり帽子で目が隠れる、紺のローブ、ホウキの杖）
-    "guide-witch": {"r": 0.14, "hr": 0.12, "arm": 0.04},      # 魔女都の案内魔女（形は仮）
+    "guide-witch": {"r": 0.14, "hr": 0.12, "arm": 0.04},      # 魔女都の案内魔女（設定画 guide-witch_sheet_01: 紺の長いコートと短いケープ、銀の縁、銀髪のまとめ髪、紺のとんがり帽子、ランタンの杖）
 }
 WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d", "blind-witch", "guide-witch")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
