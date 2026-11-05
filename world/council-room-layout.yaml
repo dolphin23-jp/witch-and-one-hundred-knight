@@ -1,0 +1,101 @@
+# 議事塔ブロッケントゥルム最上階の議会室の下絵用の配置（6章後半 回3 の A28〜A32。2026-11-05、Claude の案）
+# 原作: 魔女達の宴（ビスコが目覚める、ツギハギの魔女が本に息を吹きかけて百騎兵を倒す）→ 霧と議長（杖が話す）の登場、魔女の呼び出し、ベルダの議題
+#   → 地震、夜光列車が壁を破って毒沼を運び込み、逃げる → 会場が毒沼に沈み、メタリカが現れる → 小瓶を飲んで巨大化、パープルピール・リリアーヌとの戦い、雷撃
+#   → 霧と朝の光 → ビスコがニワトリを捕まえ、議長に採決を求める → 可決。
+# 背景の資料: ユーザーが用意した refs/council-room_bg_01.jpg（議会室）と refs/council-room-ruined_bg_01.jpg（メタリカ襲撃で壊れた後、戦闘の背景）。
+#   円い部屋。床は木、中央に紫の絨毯の輪（茶色の縁）と、赤い布に金色の魔法陣の円卓、背の高いゴシックの椅子（濃い赤）が円卓を囲む。
+#   天井から天球儀（星座の線が光る透けた大きな球、金の輪と光る惑星（黄・桃・白））が下がる。壁は濃い木の羽目板と柱、縦長の窓（夜空）に紫がかった赤のカーテン。両開きの扉。
+#   壊れた後: 扉の向かいの壁と天井が大きく破れて夜空が見え、円卓はなく、椅子は倒れて散らばり、床はひび割れて瓦礫、天球儀の惑星が床に転がる。
+# 座標: x は西 0 → 東 100、y は北 0 → 南 100（m）。部屋の中心 (50, 50)、壁の内側の半径 12.5m、壁の高さ 9m、円すいの天井の頂上は 14m。
+#   扉は南 (50, 62.5)（幅 3m、高さ 4.4m）。円卓は半径 3m、椅子は中心から 3.9m に12脚（北から30度ごと）。
+#   壊れる壁は扉の向かいの北〜北東（方位 345〜55 度）。夜光列車はそこから突っ込んで沼を吐き、引き返して逃げる（A30）。
+#   部屋の外（塔の外）は空。地面（ground）を 60m 下に下げ、遠くの都の灯りの色にした。
+# 部屋の2つの状態は only_lit（その光のときだけ描く）で切り替える: 壊れる前＝council_night・council_fog、壊れた後＝council_ruin・council_dawn。
+# 形（cwall・cceil・ctable・cchair・correry・cdoor・crubble・cswamp・cplanet）は tools/previs_council.py。
+id: council-room
+size: {w: 100.0, d: 100.0}
+compass: 北 0、東 90、南 180、西 270（扉は南、議長の席は北）
+time: 夜 → 朝（A31 の終わりから）
+ground: {color: [26, 24, 44], z: -60.0, ja: 塔の下の都（遠く）}
+sky: {color: [10, 12, 32]}
+sun: {from: 30, elev: 40}
+light_en: "Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains."
+lighting:
+  council_night: {sun_from: 30, sun_elev: 40, sun_energy: 0.35, sun_color: [170, 180, 255], sky: [12, 14, 36], sky_strength: 0.6, lamps: 1.6, window: [40, 52, 120],
+                  fill: {at: [50.0, 50.0], z: 7.0, energy: 5500, color: [255, 205, 150], radius: 6.0}}   # 宴と議題（A28・A29、A30 の頭）
+  council_fog: {sun_from: 30, sun_elev: 40, sun_energy: 0.35, sun_color: [190, 195, 255], sky: [30, 32, 56], sky_strength: 0.8, lamps: 1.2, window: [70, 78, 130],
+                fill: {at: [50.0, 50.0], z: 7.0, energy: 6500, color: [225, 225, 250], radius: 8.0}}    # 霧が包む（議長の登場、A29）
+  council_ruin: {sun_from: 15, sun_elev: 38, sun_energy: 1.3, sun_color: [170, 180, 255], sky: [14, 16, 42], sky_strength: 0.8, lamps: 1.0, window: [40, 52, 120],
+                 fill: {at: [50.0, 50.0], z: 6.0, energy: 4500, color: [150, 255, 210], radius: 8.0}}    # 壊れた後の夜（沼の碧の照り返し。A30 の後半、A31）
+  council_dawn: {sun_from: 20, sun_elev: 12, sun_energy: 4.0, sun_color: [255, 196, 150], sky: [205, 160, 150], sky_strength: 0.85, lamps: 0.6, window: [190, 160, 165],
+                 fill: {at: [50.0, 50.0], z: 6.0, energy: 3500, color: [255, 235, 215], radius: 8.0}}    # 朝の光が破れた壁から差し込む（A31 の終わり、A32）
+horizon:
+  - {from: 0, to: 360, ja: 議会室の壁（縦長の窓と紫がかった赤のカーテン）, en: "dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains"}
+areas:
+  - {kind: circle, center: [50.0, 50.0], r: 12.6, ja: 議会室の床（木）, color: [118, 70, 40]}
+  - {kind: circle, center: [50.0, 50.0], r: 7.2, ja: 絨毯の縁, color: [70, 44, 30]}
+  - {kind: circle, center: [50.0, 50.0], r: 6.9, ja: 紫の絨毯, color: [72, 48, 118]}
+  - {kind: rect, x: [48.2, 51.8], y: [62.4, 71.0], ja: 扉の外の廊下, color: [90, 56, 34]}
+props:
+  # ---------- 壊れる前（council_night・council_fog） ----------
+  cwall_intact: {at: [50.0, 50.0], r: 12.5, h: 9.0, windows: 14, door: {at: 180, w: 3.0, h: 4.4}, only_lit: [council_night, council_fog], ja: 円い壁（羽目板・柱・縦長の窓とカーテン）}
+  cceil_intact: {at: [50.0, 50.0], r: 12.8, z: 9.0, rise: 5.0, only_lit: [council_night, council_fog], ja: 円すいの天井（放射状の梁）}
+  ctable: {at: [50.0, 50.0], r: 3.0, h: 0.8, only_lit: [council_night, council_fog], ja: 円卓（赤い布に金色の魔法陣）}
+  correry: {at: [50.0, 50.0], z: 6.2, r: 2.8, energy: 900, only_lit: [council_night, council_fog], ja: 天球儀（透けた大きな球、金の輪、光る惑星）}
+  cchair_000: {at: [50.0, 46.1], face: 180, tall: 1.25, only_lit: [council_night, council_fog], ja: 議長の椅子（北）}
+  cchair_030: {at: [51.95, 46.62], face: 210, only_lit: [council_night, council_fog], ja: 椅子（空き。マーリカの席）}
+  cchair_060: {at: [53.38, 48.05], face: 240, only_lit: [council_night, council_fog], ja: 椅子（リリー）}
+  cchair_090: {at: [53.9, 50.0], face: 270, only_lit: [council_night, council_fog], ja: 椅子（パープルピール）}
+  cchair_120: {at: [53.38, 51.95], face: 300, only_lit: [council_night, council_fog], ja: 椅子（ラビィ）}
+  cchair_150: {at: [51.95, 53.38], face: 330, only_lit: [council_night, council_fog], ja: 椅子（空き）}
+  cchair_180: {at: [50.0, 53.9], face: 0, only_lit: [council_night, council_fog], ja: 椅子（空き。扉の側）}
+  cchair_210: {at: [48.05, 53.38], face: 30, only_lit: [council_night, council_fog], ja: 椅子（空き）}
+  cchair_240: {at: [46.62, 51.95], face: 60, only_lit: [council_night, council_fog], ja: 椅子（ベルダ）}
+  cchair_270: {at: [46.1, 50.0], face: 90, only_lit: [council_night, council_fog], ja: 椅子（リューベンス）}
+  cchair_300: {at: [46.62, 48.05], face: 120, only_lit: [council_night, council_fog], ja: 椅子（空き。ヴァレンティーヌの席）}
+  cchair_330: {at: [48.05, 46.62], face: 150, only_lit: [council_night, council_fog], ja: 椅子（空き）}
+  # ---------- 壊れた後（council_ruin・council_dawn） ----------
+  cwall_ruin: {at: [50.0, 50.0], r: 12.5, h: 9.0, windows: 14, door: {at: 180, w: 3.0, h: 4.4}, gap: [[345, 55]], only_lit: [council_ruin, council_dawn], ja: 円い壁（北〜北東が破れている）}
+  cceil_ruin: {at: [50.0, 50.0], r: 12.8, z: 9.0, rise: 5.0, r_in: 7.5, gap: [[320, 80]], only_lit: [council_ruin, council_dawn], ja: 天井（真ん中と北側が抜けて空が見える）}
+  cswamp: {at: [50.0, 50.0], r: 12.4, only_lit: [council_ruin, council_dawn], ja: 床を覆う毒沼（碧。D-063）}
+  crubble_n: {at: [50.5, 39.8], r: 3.2, n: 14, only_lit: [council_ruin, council_dawn], ja: 破れた壁の瓦礫（北）}
+  crubble_ne: {at: [57.2, 41.6], r: 2.6, n: 11, only_lit: [council_ruin, council_dawn], ja: 破れた壁の瓦礫（北東）}
+  crubble_c: {at: [52.0, 47.0], r: 2.2, n: 7, only_lit: [council_ruin, council_dawn], ja: 床の瓦礫}
+  cchair_fall_a: {at: [44.6, 53.2], face: 120, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_fall_b: {at: [56.4, 54.0], face: 250, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_fall_c: {at: [45.2, 45.4], face: 30, fallen: true, only_lit: [council_ruin, council_dawn], ja: 倒れた椅子}
+  cchair_tilt_d: {at: [55.6, 47.2], face: 200, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
+  cchair_tilt_e: {at: [47.0, 56.6], face: 20, only_lit: [council_ruin, council_dawn], ja: 傾いて残った椅子}
+  cplanet_a: {at: [43.8, 49.2], r: 0.55, color: [255, 200, 70], only_lit: [council_ruin, council_dawn], ja: 床に落ちた天球儀の惑星（黄）}
+  cplanet_b: {at: [44.6, 50.4], r: 0.42, color: [235, 130, 150], only_lit: [council_ruin, council_dawn], ja: 床に落ちた天球儀の惑星（桃）}
+  # ---------- いつも ----------
+  wall_corr_w: {from: [48.0, 62.9], to: [48.0, 71.0], h: 5.0, t: 0.4, color: [62, 38, 26], ja: 廊下の壁（西）}
+  wall_corr_e: {from: [52.0, 62.9], to: [52.0, 71.0], h: 5.0, t: 0.4, color: [62, 38, 26], ja: 廊下の壁（東）}
+  wall_corr_end: {from: [48.0, 71.0], to: [52.0, 71.0], h: 5.0, t: 0.4, color: [52, 32, 22], ja: 廊下の突き当たり}
+  beam_corr_top: {from: [48.0, 67.0], to: [52.0, 67.0], z: 4.6, h: 0.4, t: 8.4, color: [40, 26, 18], ja: 廊下の天井}
+  lantern_corr: {at: [50.0, 68.5], z: 3.6, energy: 40, ja: 廊下の灯り}
+  cdoor: {at: [50.0, 62.5], bearing: 180, w: 3.0, h: 4.4, open: 70, ja: 両開きの扉（開いている）}
+  moon_council: {at: [180.0, -150.0], z: 120.0, r: 18.0, color: [246, 244, 236], emit: 2.0, only_lit: [council_night, council_fog, council_ruin], ja: 月（北東の空。破れた壁から見える）}
+people:
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword)"}
+  bisco: {ja: ビスコ, eye: 1.45, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
+  metallica: {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  metallica-giant: {ja: 巨大メタリカ, eye: 12.0, h: 13.0, en: "giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand"}
+  purple-peel: {ja: パープルピール（砂塵の魔女）, eye: 1.65, h: 1.75, en: "Purple Peel, the dust witch, as in her reference sheet"}
+  lily: {ja: リリー（薄氷の魔女）, eye: 1.55, h: 1.65, en: "Lily (Liliane), the thin-ice witch, as in her reference sheet"}
+  rabi: {ja: ラビィ（焔の魔女）, eye: 1.4, h: 1.5, en: "Rabi (Rabil Lalla La), the flame witch, as in her reference sheet"}
+  usamaru: {ja: ウサギ人形（ウサマール）, eye: 0.55, h: 0.65, en: "Usamaru, Rabi's floating rabbit doll, as in its reference sheet"}
+  teressa: {ja: テレッサ（魔女見習い）, eye: 1.4, h: 1.5, en: "Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp)"}
+  teressa-swamp: {ja: 毒沼を浴びたテレッサ, eye: 1.4, h: 1.5, en: "Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut"}
+  berda: {ja: ベルダ（灰汁の魔女）, eye: 1.55, h: 1.65, en: "Berda, the lye witch, as in her reference sheet"}
+  rubens: {ja: リューベンス（南瓜の魔女、ツギハギの魔女）, eye: 1.5, h: 1.6, en: "Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book"}
+  nezaria: {ja: ネザリア（霧の魔女、議長）, eye: 1.45, h: 1.55, en: "Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim"}
+  night-train: {ja: 夜光列車, eye: 1.9, h: 4.3, en: "the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys"}
+  scarecocco: {ja: 冬のニワトリ（スケアコッコ）, eye: 0.45, h: 0.6, en: "the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast"}
+  marika-mouse: {ja: マーリカのネズミ, eye: 0.08, h: 0.12, en: "a small white mouse (marika-mouse_sheet_01)"}
+views:
+  council_table: {ja: 円卓と天球儀, panel: null, en: "the round table covered with a red cloth embroidered with a glowing golden magic circle, tall gothic high-backed dark red chairs around it, a huge orrery of a translucent star globe with golden rings and glowing yellow, pink and white planets hanging above"}
+  council_wall: {ja: 議会室の壁, panel: null, en: "dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains, dark wooden pillars"}
+  council_door: {ja: 両開きの扉, panel: null, en: "tall dark wooden double doors with brass handles, opened into the round chamber"}
+  council_ruin: {ja: 壊れた議会室, panel: null, en: "the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery"}
+  council_dawn: {ja: 朝の光が差す壊れた議会室, panel: null, en: "the wrecked round council chamber at dawn: pale golden morning light pouring through the huge hole in the wall and roof, jade-green swamp water covering the cracked floor, toppled chairs and rubble"}

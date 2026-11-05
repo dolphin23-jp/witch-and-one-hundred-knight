@@ -38,6 +38,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import staging  # noqa: E402
 import motion  # noqa: E402  動きのキー（D-060）
+import previs_council  # noqa: E402  議会室（6章後半 回3、A28〜A32）の形・人形・効果（並行作業と重ならないよう別のファイル、2026-11-05）
 
 import bpy  # noqa: E402
 from bpy_extras.object_utils import world_to_camera_view  # noqa: E402
@@ -270,6 +271,7 @@ SHAPE = {
 }
 WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d", "blind-witch", "guide-witch")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
+SHAPE.update(previs_council.SHAPE)   # 回3 の人形（リューベンス・ネザリア・巨大メタリカ・沼を浴びたテレッサ）
 
 
 def linear(rgb):
@@ -745,6 +747,8 @@ def build_extra(name, pr, x, y, lit):
     """家・柱・家具・ランプなど（村とティトの家、A05b）。作ったら True。"""
     rot = pr.get("rot", 0)
     lamps = lit.get("lamps", 1.0) if lit else 1.0
+    if previs_council.build_extra(sys.modules[__name__], name, pr, x, y, lit):   # 議会室（A28〜A32）
+        return True
     if build_otherworld(name, pr, x, y, lamps):
         return True
     if build_cave(name, pr, x, y):
@@ -1178,6 +1182,7 @@ def build_person(who, h, torch=False, sword=False):
         horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
         for sx in (-1, 1):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
+    previs_council.decorate(sys.modules[__name__], who, root, head, arms, sh, body_h, col)   # 回3 の人形（A28〜A32）
     if sword:   # 剣: 右手の先から刃（百騎兵、A07）
         blade = make_mat(f"{who}_blade", (0.85, 0.88, 0.95))
         hilt = make_mat(f"{who}_hilt", (0.25, 0.2, 0.15))
@@ -1267,6 +1272,9 @@ def pose_creature(parts, track, t):
 
 
 def build_fx(fx, i):
+    ext = previs_council.build_fx(sys.modules[__name__], fx, i)   # 霧・雷撃・閃光・沼の波（A28〜A32）
+    if ext is not None:
+        return ext
     kind = fx.get("kind", "plume")
     col = tuple(v / 255 for v in fx["color"]) if fx.get("color") and kind not in ("light",) else None
     m = make_mat(f"fx{i}", col or tuple(min(1.0, c * 1.08) for c in SAND))
@@ -1349,6 +1357,8 @@ def build_fx(fx, i):
 
 
 def pose_fx(fx, objs, t, pos, place):
+    if previs_council.pose_fx(sys.modules[__name__], fx, objs, t, pos, place):
+        return
     at = fx["at"]
     p = pos[at] if isinstance(at, str) and at in pos else place(at)
     if fx.get("off"):   # 置き場所からのずれ [dx, dy]（人物が持つ物を、体の前に出すなど）

@@ -1,0 +1,53 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-016
+scene: A28
+tc: 122.7
+sec: 7.4
+kind: M
+shot: パープルピール・余裕
+acting: 肩をすくめる（「なんだい？そいつだってもう一人前の魔女さ。自分のケツは自分でふけるよ」）
+dialogue:
+- L947「なんだい？　そいつだってもう一人前の魔女さ。自分のケツは自分でふけるよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 52.1
+  - 48.5
+  - 1.4
+  look: purple-peel
+  lens: 42
+  move: パープルピールの右斜め前（北東の窓側の円卓の上）から
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 椅子にもたれるパープルピール
+  end: 腕を組むパープルピール
+timing:
+  lead: 0.4
+blocking:
+  start: パ（中央・斜め前（画面右向き））
+  end: パ（中央・斜め前（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right. No other people.
+    Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+    light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right. No other
+    people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm
+    golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-016_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-016_end.png

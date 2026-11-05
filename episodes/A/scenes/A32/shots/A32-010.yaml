@@ -1,0 +1,72 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-010
+scene: A32
+tc: 64.6
+sec: 11.5
+kind: M
+shot: 巨大メタリカ・出すぎたマネを
+acting: （「な、なんだと……！キサマ、出すぎたマネをするなよ……！」）胸を張る（「こんな連中に認めてもらわなくともわたしは生まれながらの大魔女だぞ！」）
+dialogue:
+- L1110「な、なんだと……！キサマ、出すぎたマネをするなよ……！」
+- L1111「こんな連中に認めてもらわなくともわたしは生まれながらの大魔女だぞ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 46.6
+  - 45.2
+  - 0.5
+  look: metallica-giant
+  lens: 22
+  move: ビスコの後ろの床から、巨大メタリカを見上げる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: 巨大メタリカが顔を真っ赤にして身を乗り出す
+  end: ふんぞり返る巨大メタリカ
+timing:
+  lead: 0.4
+blocking:
+  start: 百（中央・背中）、ビ（中央・正面）、巨メ（中央・斜め前（画面右向き））、鶏（中央・横顔（画面右向き））、ベ（右・正面）、リ（右・斜め前（画面左向き））
+  end: 百（中央・背中）、ビ（中央・正面）、巨メ（中央・正面）、鶏（中央・横顔（画面右向き））、ベ（右・正面）、リ（右・斜め前（画面左向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 6 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera, small in the background; Bisco (short black bob hair with two gold
+    hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame,
+    facing the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp
+    miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, in three-quarter view, turned toward screen right; the winter rooster (scarecocco_sheet_01),
+    a strange rooster-like magic beast, standing, in the center of the frame, in profile, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame,
+    facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left,
+    small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
+    purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled
+    walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera, small in the background; Bisco (short black bob hair with
+    two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the
+    frame, facing the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green
+    swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; the winter rooster (scarecocco_sheet_01), a strange rooster-like
+    magic beast, standing, in the center of the frame, in profile, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, facing the camera,
+    small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background.
+    No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night
+    inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+    of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-010_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-010_end.png

@@ -1,0 +1,62 @@
+# A31 の BGM・効果音の置き場所（D-068、2026-11-05）。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は砂の音のまま）
+# BGM: 原作どおり M42「毒沼の乱入」（戦い〜「踊れ」〜霧）→ 朝の光（018）で静かに → 冬のニワトリが鳴いた後（020 の終わり、パート23 の 19:16）から M39「魔女都ヴァルプルギス」（A32 へ続く）。
+# 雷は E50（自作）、ニワトリの声は E49（原作の声の分離音から。聞いて確かめる）
+scene: A31
+bgm:
+- src: audio/bgm/M42_loop.ogg
+  cut: A31-001
+  t: 0.0
+  until: {cut: A31-018, t: 1.2}
+  loop: true
+  from: 20.0
+  fade_out: 2.5
+  volume: 0.28
+- src: audio/bgm/catalog/M39.ogg
+  cut: A31-020
+  t: 4.8
+  until: {cut: A31-020, t: 6.0}
+  loop: true
+  fade_in: 1.0
+  volume: 0.24
+sfx:
+- {src: audio/sfx/sand_burst.ogg, cut: A31-001, t: 0.8, volume: 0.55}
+- {src: audio/sfx/wind_gust.ogg, cut: A31-001, t: 1.0, volume: 0.4}
+- {src: audio/sfx/whoosh_fast.ogg, cut: A31-001, t: 3.6, volume: 0.4}
+- {src: audio/sfx/crystal_chime.ogg, cut: A31-001, t: 3.2, rate: 1.2, volume: 0.45}
+- {src: audio/sfx/sword_slash.ogg, cut: A31-002, t: 1.3, volume: 0.65}
+- {src: audio/sfx/sword_hit.ogg, cut: A31-002, t: 1.55, volume: 0.6}
+- {src: audio/sfx/glass_shatter.ogg, cut: A31-002, t: 1.6, rate: 1.2, volume: 0.35}
+- {src: audio/sfx/thud_land.ogg, cut: A31-002, t: 2.5, volume: 0.35}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-003, t: 1.9, volume: 0.85}
+- {src: audio/sfx/impact_heavy.ogg, cut: A31-003, t: 2.1, volume: 0.45}
+- {src: audio/sfx/thud_land.ogg, cut: A31-003, t: 3.2, volume: 0.35}
+- {src: audio/sfx/sword_ready.ogg, cut: A31-004, t: 0.3, volume: 0.4}
+- {src: audio/sfx/crystal_chime.ogg, cut: A31-006, t: 1.4, rate: 0.9, volume: 0.4}
+- {src: audio/sfx/whoosh_fast.ogg, cut: A31-006, t: 5.31, volume: 0.35}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-007, t: 2.9, rate: 1.6, volume: 0.35}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-008, t: 0.5, volume: 0.7}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-008, t: 2.1, volume: 0.7}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-008, t: 3.8, volume: 0.7}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-008, t: 5.4, volume: 0.7}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-008, t: 7.2, volume: 0.7}
+- {src: audio/sfx/ground_shake.ogg, cut: A31-008, t: 0.5, volume: 0.4}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-009, t: 1.6, volume: 0.75}
+- {src: audio/sfx/ground_shake.ogg, cut: A31-011, t: 1.4, volume: 0.6}
+- {src: audio/sfx/ground_shake.ogg, cut: A31-011, t: 4.4, volume: 0.6}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-011, t: 1.6, volume: 0.6}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-011, t: 3.8, volume: 0.6}
+- {src: audio/sfx/thunder_crack.ogg, cut: A31-013, t: 2.4, rate: 1.5, volume: 0.4}
+- {src: audio/sfx/magic_shimmer.ogg, cut: A31-014, t: 0.6, rate: 0.6, volume: 0.5}
+- {src: audio/sfx/wind_gust.ogg, cut: A31-014, t: 0.8, rate: 0.7, volume: 0.5}
+- src: audio/sfx/wind_night_loop.ogg
+  cut: A31-015
+  t: 0.0
+  until: {cut: A31-017, t: 5.1}
+  loop: true
+  rate: 0.7
+  volume: 0.14
+  fade_out: 2.0
+- {src: audio/sfx/crystal_chime.ogg, cut: A31-018, t: 0.6, rate: 0.7, volume: 0.3}
+- {src: audio/sfx/orig_rooster_p23-1915.ogg, cut: A31-020, t: 0.8, volume: 0.8}
+- {src: audio/sfx/orig_rooster_p23-1915.ogg, cut: A31-020, t: 3.6, volume: 0.8}

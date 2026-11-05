@@ -1,0 +1,3583 @@
+# A30 毒沼の乱入（6章後半 回3 の核）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-05）
+# Living Spec「A30 動きの設計（案）」。準備（案）の表の A30。台詞は audio/A28/original（L1023〜L1080）。
+# 場所は world/council-room-layout.yaml。006 から壊れた後（光 council_ruin。only_lit で北〜北東の壁が破れ、天井が抜け、円卓は消え、椅子は倒れ、床は毒沼）。
+# 夜光列車は塔の外の空（北）から北の壁を破って入る。原作で画面が暗くなる所は、005 の終わりの白い閃光と 006 の頭の閃光で見せる。
+# テレッサは 006 で沼の波にのまれて倒れ、013 から沼を浴びた人形（teressa-swamp、設定画 teressa-swamp_sheet_01）。
+# 巨大メタリカ（metallica-giant、背 13m、設定画 metallica-giant_sheet_01）は 038 で床の下からせり上がる（z −14 → 0）。小さいメタリカは沼の噴き上げの中へ沈める。
+# このファイルは作業用の補助（Claude のスクリプト）で書いた。直すときはこのファイルを直してよい。
+scene: A30
+layout: world/council-room-layout.yaml
+map_ymax: 75
+lighting: council_night
+places:
+  center: [50.0, 50.0]
+start:
+  lily:
+    at: &id001 [53.38, 48.05]
+    face: 240
+  purple-peel:
+    at: &id002 [53.9, 50.0]
+    face: 253.5
+  rabi:
+    at: &id003 [53.38, 51.95]
+    face: 300
+  usamaru:
+    at: &id004 [53.14, 53.49]
+    face: 60
+  berda:
+    at: &id005 [45.89, 52.38]
+    face: 33.2
+  rubens:
+    at: &id006 [46.1, 50.0]
+    face: 45.0
+  bisco:
+    at: &id007 [49.69, 53.59]
+    face: 20
+  teressa:
+    at: &id008 [46.52, 53.86]
+    face: 60
+  hundred-knight:
+    at: &id009 [50.3, 60.4]
+    face: 350
+  nezaria:
+    at: &id010 [50.0, 46.1]
+    face: 180
+  night-train:
+    at: &id011 [56.0, 4.0]
+    face: 200
+  teressa-swamp:
+    at: &id012 [45.0, 55.2]
+    face: 60
+  metallica:
+    at: &id014 [50.4, 51.2]
+    face: 180
+  metallica-giant:
+    at: &id016 [50.0, 48.6]
+    face: 180
+cuts:
+  A30-001:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    hidden_ok: [night-train, metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: *id001
+        face: 240
+        pose: sit
+      - t: 0.4
+        pose: stand
+        at: [54.11, 47.62]
+        face: 20
+      purple-peel:
+      - t: 0.0
+        at: *id002
+        face: '@berda'
+        pose: sit
+      - t: 0.5
+        at: [54.75, 50.0]
+        pose: ready
+        face: 0
+      rabi:
+      - t: 0.0
+        at: *id003
+        face: 300
+        pose: sit
+      - t: 0.4
+        at: [54.11, 52.38]
+        pose: stand
+        face: 30
+      usamaru:
+      - t: 0.0
+        at: *id004
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: *id005
+        face: '@nezaria'
+        pose: point
+      - {t: 0.3, pose: ready, face: 40}
+      rubens:
+      - t: 0.0
+        at: *id006
+        face: '@nezaria'
+        pose: sit
+      - {t: 0.6, face: 30}
+      bisco:
+      - t: 0.0
+        at: *id007
+        face: 20
+        pose: ready
+      - {t: 0.3, pose: ready, face: 10}
+      teressa:
+      - t: 0.0
+        at: *id008
+        face: 60
+        pose: cover
+      - {t: 0.3, pose: cover, face: 20}
+      hundred-knight:
+      - t: 0.0
+        at: *id009
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: *id010
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [43.6, 57.4, 0.9]
+      look: [50.0, 49.0]
+      look_h: 3.0
+      lens: 22
+      frame: 引き
+    - t: 4.9
+      cam: [44.0, 57.0, 0.95]
+      look: [50.0, 49.0]
+      look_h: 3.2
+      lens: 22
+    shake:
+    - t: [0.0, 4.9]
+      amp: 1.2
+    fx:
+    - kind: plume
+      t: [0.6, 4.9]
+      at: [50.0, 50.0]
+      r: 3.0
+      h: 2.5
+      z: 8.0
+      color: [120, 100, 90]
+      shape: fall
+    act: {start: ぐらりと揺れる議会室。天球儀がきしみ、窓が鳴る, do: 魔女たちがあたりを見回す（ベルダ「じ、地震……？」）, end: 身構える魔女たち}
+    camera: 南西の低い所から見上げる引き。揺れ
+    kind: A
+  A30-002:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    hidden_ok: [night-train, metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.11, 47.62]
+        face: 20
+        pose: stand
+      purple-peel:
+      - t: 0.0
+        at: [54.75, 50.0]
+        face: 0
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [54.11, 52.38]
+        face: 30
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [45.89, 52.38]
+        face: 40
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 30
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.69, 53.59]
+        face: 10
+        pose: ready
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 20
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 53.0, 0.4]
+      look: [50.0, 49.0]
+      look_h: 12.0
+      lens: 18
+      frame: 引き
+    - t: 8.0
+      cam: [49.2, 53.2, 0.5]
+      look: [51.0, 38.6]
+      look_h: 5.0
+      lens: 22
+    shake:
+    - t: [0.0, 8.0]
+      amp: 0.8
+    fx:
+    - kind: plume
+      t: [0.0, 8.0]
+      at: [51.0, 42.0]
+      r: 2.0
+      h: 2.0
+      z: 7.0
+      color: [120, 100, 90]
+      shape: fall
+    act: {start: 揺れる天井と天球儀, do: どこからともなくメタリカの声（「キヒヒ……！何が伝統だ！何が歴史ある議事塔だ……！」）。天井から埃が落ちる, end: 北の窓}
+    camera: 円卓の脇の床すれすれから天井を見上げ、北の窓へ振り下ろす
+    kind: A
+  A30-003:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    hidden_ok: [night-train, metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.11, 47.62]
+        face: 20
+        pose: stand
+      purple-peel:
+      - t: 0.0
+        at: [54.75, 50.0]
+        face: 0
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [54.11, 52.38]
+        face: 30
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [45.89, 52.38]
+        face: 40
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 30
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.69, 53.59]
+        face: 10
+        pose: ready
+      - {t: 0.3, pose: look_up, face: 20}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 20
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+    cam_keys:
+    - t: 0.0
+      cam: [50.8, 52.4, 1.7]
+      look: bisco
+      look_h: 1.35
+      lens: 40
+      frame: 胸上
+    - t: 4.3
+      cam: [50.6, 52.6, 1.65]
+      look: bisco
+      look_h: 1.4
+      lens: 48
+    shake:
+    - t: [0.0, 4.3]
+      amp: 0.5
+    act: {start: ビスコがはっと顔を上げる, do: （「この声……！？まさか……！！」）, end: 希望の目のビスコ}
+    camera: ビスコの顔の高さ、斜め前から寄る
+    kind: M
+  A30-004:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria]
+    hidden_ok: [night-train, metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.11, 47.62]
+        face: 20
+        pose: stand
+      purple-peel:
+      - t: 0.0
+        at: [54.75, 50.0]
+        face: 0
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [54.11, 52.38]
+        face: 30
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [45.89, 52.38]
+        face: 40
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 30
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.69, 53.59]
+        face: 20
+        pose: look_up
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 20
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 180
+        pose: sit
+      - {t: 2.4, face: 160}
+    cam_keys:
+    - t: 0.0
+      cam: [48.4, 47.0, 0.8]
+      look: nezaria
+      look_h: 1.05
+      lens: 40
+      frame: 胸上
+    - t: 7.1
+      cam: [48.6, 47.2, 0.8]
+      look: nezaria
+      look_h: 1.05
+      lens: 44
+    shake:
+    - t: [0.0, 7.1]
+      amp: 0.4
+    act: {start: ネザリアは座ったまま, do: 杖がつぶやく（「ここに、ピラー・オブ・テンペランスはない。沼がないのにどうやって……」）, end: わずかに顔を上げるネザリア}
+    camera: ネザリアの左（西）の低い所から
+    kind: M
+  A30-005:
+    frame: 引き
+    only: [night-train]
+    hidden_ok: [lily, purple-peel, rabi, berda, rubens, usamaru, bisco, teressa, hundred-knight, nezaria, metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.11, 47.62]
+        face: 20
+        pose: stand
+      purple-peel:
+      - t: 0.0
+        at: [54.75, 50.0]
+        face: 0
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [54.11, 52.38]
+        face: 30
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      berda:
+      - t: 0.0
+        at: [45.89, 52.38]
+        face: 40
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 30
+        pose: sit
+      bisco:
+      - t: 0.0
+        at: [49.69, 53.59]
+        face: 20
+        pose: look_up
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 20
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 160
+        pose: sit
+      night-train:
+      - t: 0.0
+        at: *id011
+        face: 200
+        pose: stand
+        z: 0.0
+      - t: 9.6
+        at: [51.2, 37.0]
+        ease: in
+    cam_keys:
+    - t: 0.0
+      cam: [62.0, 4.0, 3.0]
+      look: [55.0, 12.0]
+      look_h: 2.0
+      lens: 24
+      frame: 引き
+    - t: 9.6
+      cam: [58.4, 28.0, 2.6]
+      look: [50.0, 40.0]
+      look_h: 3.0
+      lens: 22
+      ease: in
+    fx:
+    - kind: rift
+      t: [0.2, 3.0]
+      at: [55.6, 8.0]
+      w: 6.0
+      h: 6.0
+      z: -1.0
+      face: 20
+      color: [170, 120, 255]
+    - kind: surge
+      t: [1.4, 9.6]
+      at: [54.6, 10.0]
+      to: [51.2, 36.0]
+      r: 2.2
+      h: 1.6
+      z: 0.8
+      n: 22
+      color: [32, 160, 120]
+    - kind: flash
+      t: [9.25, 9.6]
+      peak: 9.55
+      at: [50.0, 40.0]
+      alpha: 1.0
+    act: {start: 塔の外の夜空。空間が裂けて夜光列車が現れる, do: メタリカの声（「お前達には、礼をせねばならんからな。喜べ！ありったけの沼をプレゼントしてやる！」）。碧の毒沼をあふれさせながら、列車が議会室の北の壁へ一直線に突っ込む, end: 壁に激突する瞬間の白い閃光}
+    camera: 塔の北の空から、列車を追って壁へ（並走して前に回る）
+    kind: A
+  A30-006:
+    frame: 引き
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight, nezaria, night-train]
+    hidden_ok: [metallica, metallica-giant, teressa-swamp]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.11, 47.62]
+        face: 20
+        pose: stand
+      - t: 0.5
+        at: [57.0, 47.4]
+        pose: run
+        face: 110
+      - {t: 2.0, pose: ready, face: 280}
+      purple-peel:
+      - t: 0.0
+        at: [54.75, 50.0]
+        face: 0
+        pose: ready
+      - t: 0.5
+        at: [57.4, 51.0]
+        pose: run
+        face: 100
+      - {t: 2.0, pose: ready, face: 300}
+      rabi:
+      - t: 0.0
+        at: [54.11, 52.38]
+        face: 30
+        pose: stand
+      - t: 0.6
+        at: [56.2, 54.8]
+        pose: run
+        face: 130
+      - {t: 2.2, pose: stand, face: 320}
+      usamaru:
+      - t: 0.0
+        at: [53.14, 53.49]
+        face: 60
+        pose: hop
+        z: 0.9
+      - t: 0.8
+        at: [56.8, 55.6]
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [45.89, 52.38]
+        face: 40
+        pose: ready
+      - t: 0.6
+        at: [44.4, 51.4]
+        pose: run
+        face: 250
+      - t: 2.2
+        at: [42.8, 50.6]
+        pose: ready
+        face: 60
+      rubens:
+      - t: 0.0
+        at: [46.1, 50.0]
+        face: 30
+        pose: sit
+      - t: 0.8
+        at: [43.4, 47.6]
+        pose: walk
+        face: 300
+      - {t: 2.6, pose: stand, face: 60}
+      bisco:
+      - t: 0.0
+        at: [49.69, 53.59]
+        face: 20
+        pose: look_up
+      - t: 0.4
+        at: [49.0, 58.4]
+        pose: crouch
+        face: 10
+      - {t: 3.0, pose: stand}
+      teressa:
+      - t: 0.0
+        at: [46.52, 53.86]
+        face: 20
+        pose: cover
+      - t: 1.4
+        at: [45.6, 54.4]
+        pose: run
+        face: 220
+      - t: 2.0
+        at: [45.5, 55.7]
+        pose: fall
+      - {t: 2.6, pose: lie, face: 60}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [50.0, 46.1]
+        face: 160
+        pose: sit
+      - t: 0.4
+        at: [45.8, 45.0]
+        pose: walk
+        face: 240
+      - {t: 2.4, pose: stand, face: 60}
+      night-train:
+      - t: 0.0
+        at: [51.2, 37.0]
+        face: 195
+        pose: stand
+        z: 0.0
+      - t: 1.6
+        at: [50.6, 46.0]
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 59.0, 1.1]
+      look: [51.0, 42.0]
+      look_h: 2.4
+      lens: 20
+      frame: 引き
+    - t: 12.5
+      cam: [48.4, 60.6, 1.0]
+      look: [50.8, 46.0]
+      look_h: 1.8
+      lens: 20
+    shake:
+    - t: [0.0, 2.0]
+      amp: 2.0
+    fx:
+    - kind: flash
+      t: [0.0, 0.7]
+      peak: 0.05
+      at: [50.0, 50.0]
+      alpha: 1.0
+    - kind: shards
+      t: [0.1, 2.5]
+      at: [51.6, 38.4]
+      z: 4.0
+      dir: 190
+      spread: 110
+      speed: 7.0
+      size: 0.5
+      n: 22
+      color: [80, 60, 50]
+    - kind: surge
+      t: [0.8, 4.5]
+      at: [50.8, 44.0]
+      to: [45.0, 56.0]
+      r: 2.0
+      h: 1.4
+      z: 0.3
+      n: 22
+      color: [32, 160, 120]
+    - kind: pool
+      t: [1.0, 5.0]
+      at: [50.0, 50.0]
+      r0: 2.0
+      r: 12.4
+      color: [32, 150, 118]
+      glow: 0.35
+    act: {start: 暗転から白い閃光。北の壁が破れ、瓦礫と一緒に夜光列車が飛び込む, do: 獅子が吠え（「がおおおお！！滅茶苦茶じゃぞい〜！！」）、口から碧の毒沼の泥水が波になって床へあふれる。魔女たちが逃げ、テレッサが波にのまれて倒れる, end: 沼に沈む議会室と、止まった列車}
+    camera: 扉の側の低い所から、突っ込んでくる列車を受けて少し下がる
+    kind: A
+    hide_props: [cswamp]
+  A30-007:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, night-train, teressa-swamp]
+    hidden_ok: [teressa, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      night-train:
+      - t: 0.0
+        at: [50.6, 46.0]
+        face: 195
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: *id012
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [53.0, 39.6, 1.4]
+      look: [50.4, 42.6]
+      look_h: 4.2
+      lens: 30
+      frame: 胸上
+    - t: 9.0
+      cam: [53.2, 40.0, 1.3]
+      look: [50.4, 42.6]
+      look_h: 4.3
+      lens: 34
+    act: {start: 列車の後ろから立ち上がる蛇（スネーカー）, do: 鼻をひくつかせて騒ぐ（「うげぇ！？臭え！！！なんちゅー臭いだよ！？これが沼か？俺の知っている沼じゃねえぞ！」）, end: 身をよじる蛇}
+    camera: 列車の後ろの低い所から、蛇の頭を見上げる
+    kind: M
+  A30-008:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, night-train, teressa-swamp]
+    hidden_ok: [teressa, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      night-train:
+      - t: 0.0
+        at: [50.6, 46.0]
+        face: 195
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [54.2, 47.2, 1.9]
+      look: [51.9, 46.5]
+      look_h: 1.9
+      lens: 36
+      frame: 胸上
+    - t: 7.8
+      cam: [54.0, 47.4, 1.9]
+      look: [51.9, 46.5]
+      look_h: 1.9
+      lens: 40
+    act: {start: 列車の南の山羊（ゴードーラ）, do: （「このボク達に、毒沼の泥水を運ばせるなんて！鼻がもげそうだよ！」）, end: 顔をしかめる山羊}
+    camera: 山羊の頭の正面から
+    kind: M
+  A30-009:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, night-train, teressa-swamp]
+    hidden_ok: [teressa, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      night-train:
+      - t: 0.0
+        at: [50.6, 46.0]
+        face: 195
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [46.8, 45.0, 1.5]
+      look: [49.2, 45.8]
+      look_h: 1.9
+      lens: 36
+      frame: 胸上
+    - t: 5.5
+      cam: [47.0, 45.2, 1.55]
+      look: [49.2, 45.8]
+      look_h: 1.9
+      lens: 40
+    act: {start: 反対側の山羊（ゴードール）, do: （「おえっ、どうしてボクたちが、こんなのの手伝いを！！！」）, end: えずく山羊}
+    camera: 反対側の山羊の正面から（窓の側）
+    kind: M
+  A30-010:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, night-train, teressa-swamp]
+    hidden_ok: [teressa, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      night-train:
+      - t: 0.0
+        at: [50.6, 46.0]
+        face: 195
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [56.2, 43.6, 3.6]
+      look: [50.6, 44.0]
+      look_h: 3.0
+      lens: 26
+      frame: 膝上
+    - t: 10.5
+      cam: [56.0, 44.2, 3.4]
+      look: [50.6, 44.2]
+      look_h: 3.0
+      lens: 28
+    act: {start: 蛇が獅子にまくしたてる, do: （「切符が偽造だって、気がつかなかったのはお前たちじゃねえか！危険物の持ち込みは断れってんだ！検閲はどうなってんだ！」）, end: 怒鳴る蛇}
+    camera: 列車の横の高い所から、蛇と獅子の両方を入れる
+    kind: M
+  A30-011:
+    frame: 引き
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, night-train, teressa-swamp]
+    hidden_ok: [teressa, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      night-train:
+      - t: 0.0
+        at: [50.6, 46.0]
+        face: 195
+        pose: stand
+      - t: 0.6
+        at: [50.6, 46.0]
+      - t: 2.6
+        at: [52.6, 30.0]
+        ease: in
+      - t: 4.0
+        at: [54.6, 18.0]
+        z: -2.0
+        ease: linear
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [50.8, 58.4, 2.6]
+      look: [50.6, 46.0]
+      look_h: 2.0
+      lens: 26
+      frame: 引き
+    - t: 4.6
+      cam: [50.8, 58.0, 3.6]
+      look: [52.6, 30.0]
+      look_h: 3.0
+      lens: 24
+    fx:
+    - kind: rift
+      t: [2.4, 4.6]
+      at: [54.4, 22.0]
+      w: 6.0
+      h: 6.0
+      z: -1.0
+      face: 20
+      color: [170, 120, 255]
+      open: 0.6
+      close: 0.8
+    act: {start: 獅子が「うぐぁっ！！」とうめく, do: 列車が後ずさりして破れた壁から空へ飛び出し、裂け目に消える, end: 破れた壁の向こうの夜空}
+    camera: 部屋の南の高い所から、破れた壁を見る。逃げる列車を追って少し上がる
+    kind: A
+  A30-012:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp]
+    hidden_ok: [teressa, night-train, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 60
+        pose: ready
+      - {t: 0.3, pose: stand, face: 200}
+      - {t: 2.3, face: 160}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [43.4, 53.8, 0.45]
+      look: berda
+      look_h: 1.3
+      lens: 32
+      frame: 膝上
+    - t: 3.3
+      cam: [43.3, 53.6, 0.5]
+      look: berda
+      look_h: 1.35
+      lens: 36
+    act: {start: 沼の中に立ち尽くすベルダ, do: （「……どういうことです！？」）, end: あたりを見回すベルダ}
+    camera: ベルダの正面の低い所（沼の面すれすれ）から
+    kind: M
+  A30-013:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp]
+    hidden_ok: [teressa, night-train, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 60
+        pose: lie
+      - {t: 1.0, pose: kneel, face: 40}
+      - {t: 3.4, pose: kneel_hold, face: 80}
+    cam_keys:
+    - t: 0.0
+      cam: [46.4, 56.4, 0.6]
+      look: teressa-swamp
+      look_h: 0.6
+      lens: 34
+      frame: 膝上
+    - t: 10.2
+      cam: [46.6, 56.2, 0.75]
+      look: teressa-swamp
+      look_h: 0.8
+      lens: 38
+    act: {start: 沼の中から身を起こすテレッサ（頭から沼を浴びている）, do: 手探りで（「えっ……え？そ、そんな……これ……！！見えない……何も見えませんわ……！！」）, end: 手を伸ばしてさまようテレッサ}
+    camera: テレッサの目の高さで、手探りする手の先から
+    kind: A
+  A30-014:
+    frame: 寄り
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp]
+    hidden_ok: [teressa, night-train, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: kneel_hold
+      - {t: 0.3, pose: cough}
+      - {t: 14.8, pose: cry}
+    cam_keys:
+    - t: 0.0
+      cam: [46.3, 54.2, 0.95]
+      look: teressa-swamp
+      look_h: 0.8
+      lens: 45
+      frame: 寄り
+    - t: 15.8
+      cam: [46.1, 54.4, 0.95]
+      look: teressa-swamp
+      look_h: 0.8
+      lens: 55
+    shake:
+    - t: [2.4, 15.8]
+      amp: 0.4
+    act: {start: テレッサの顔の寄り, do: 臭いに気づいて青ざめる（「ぬ、沼……？これ……この臭い……ぬ、沼！？毒沼ですの……！」「ひっ、ひぃぃぃ！！」）, end: 震えるテレッサ}
+    camera: テレッサの顔へ寄る。揺れ
+    kind: M
+  A30-015:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp]
+    hidden_ok: [teressa, night-train, metallica, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: stand
+      - {t: 0.4, face: '@usamaru', pose: stand}
+      - {t: 0.8, face: 280, pose: lean}
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+    cam_keys:
+    - t: 0.0
+      cam: [57.4, 56.4, 1.2]
+      look: &id013 [50.4, 51.2]
+      look_h: 0.4
+      lens: 30
+      frame: 肩なめ
+    - t: 3.9
+      cam: [57.2, 56.2, 1.15]
+      look: *id013
+      look_h: 0.5
+      lens: 34
+    fx:
+    - kind: plume
+      t: [0.0, 5.9]
+      at: *id013
+      r: 1.0
+      h: 0.6
+      color: [40, 190, 140]
+    act: {start: 部屋のまん中の沼がぼこぼこと泡立つ, do: ラビィが身を乗り出す（「こいつが、沼の！？」）, end: 泡立つ沼を見るラビィ}
+    camera: ラビィの後ろの低い所から、肩越しに泡立つ沼のまん中
+    kind: M
+  A30-016:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      metallica:
+      - t: 0.0
+        at: *id014
+        face: 180
+        pose: stand
+        z: -2.2
+      - {t: 1.8, z: 0.0, ease: out}
+      - {t: 2.4, pose: cross}
+    cam_keys:
+    - t: 0.0
+      cam: [50.6, 55.0, 0.3]
+      look: *id013
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 11.4
+      cam: [50.8, 54.6, 1.1]
+      look: metallica
+      look_h: 1.7
+      lens: 30
+    fx:
+    - kind: plume
+      t: [0.0, 3.4]
+      at: *id013
+      r: 1.6
+      h: 3.2
+      color: [40, 190, 140]
+    - kind: ring
+      t: [0.4, 3.0]
+      at: *id013
+      r: 3.0
+      n: 3
+      color: [60, 200, 160]
+    act: {start: 沼のまん中が盛り上がる, do: 碧の噴き上げの中からメタリカが立ち上がる（「キーッヒッヒッ！ワタシこそが、偉大にして最強の魔女！沼の魔女メタリカだ！！」）, end: 腕を組んで立つメタリカ}
+    camera: 沼の面すれすれから見上げ、立ち上がるメタリカに合わせてクレーンで上がる
+    kind: A
+  A30-017:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 180
+        pose: cross
+      - {t: 0.3, face: 300}
+      - {t: 3.4, pose: proud, face: 260}
+    cam_keys:
+    - t: 0.0
+      cam: [46.8, 47.6, 1.3]
+      look: metallica
+      look_h: 1.6
+      lens: 30
+      frame: 膝上
+    - t: 10.6
+      cam: [45.8, 51.0, 1.3]
+      look: metallica
+      look_h: 1.6
+      lens: 32
+    act: {start: 沼の上に立つメタリカと、それを囲む魔女たち, do: 胸を張る（「お前らがあまりにせがむもんだから、わざわざ手弁当で来てやったんだ。もっと喜べよ！！」）, end: 高笑いのメタリカ}
+    camera: メタリカのまわりを回り込む（北西から）
+    kind: M
+  A30-018:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 10
+        pose: stand
+      - {t: 0.2, face: '@metallica', pose: lean}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [49.4, 56.6, 0.95]
+      look: bisco
+      look_h: 1.35
+      lens: 40
+      frame: 胸上
+    - t: 3.2
+      cam: [49.3, 56.8, 1.0]
+      look: bisco
+      look_h: 1.4
+      lens: 46
+    act: {start: ビスコ, do: 顔を輝かせる（「メ、メタリカ！！！」）, end: 身を乗り出すビスコ}
+    camera: ビスコの正面の低い所から
+    kind: M
+  A30-019:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.4]
+        face: 280
+        pose: ready
+      - {t: 0.3, pose: cough, face: 250}
+      - t: 3.6
+        at: [57.6, 47.0]
+        pose: walk
+      - {t: 4.4, pose: cover}
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [59.0, 45.6, 2.2]
+      look: [51.0, 50.0]
+      look_h: 1.2
+      lens: 30
+      frame: 肩なめ
+    - t: 4.6
+      cam: [59.2, 45.2, 2.1]
+      look: [51.0, 50.0]
+      look_h: 1.2
+      lens: 33
+    act: {start: リリーが口を押さえる, do: （「くっ……なんという瘴気……！まずいぞ！」）, end: 後ずさるリリー}
+    camera: リリーの斜め後ろの高い所から、肩越しにメタリカ
+    kind: M
+  A30-020:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.8, 50.6]
+        face: 160
+        pose: stand
+      - t: 9.68
+        at: [42.4, 50.4]
+        pose: walk
+        face: 120
+      - {t: 10.68, pose: stand}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      - {t: 0.3, pose: crouch, face: 300}
+      - t: 8.68
+        at: [44.0, 53.8]
+        pose: crouch
+      - {t: 10.68, pose: kneel_hold}
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [41.6, 51.4, 1.8]
+      look: teressa-swamp
+      look_h: 0.4
+      lens: 30
+      frame: 肩なめ
+    - t: 18.0
+      cam: [41.4, 51.0, 1.8]
+      look: teressa-swamp
+      look_h: 0.4
+      lens: 34
+    act: {start: 沼の中を這うテレッサ, do: （「ひっ、ひぃ！！！い、嫌ですわ！死にたくありませんわーーー！！」）ベルダへ手を伸ばす（「ベ、ベルダ様……。た、助けて……たす……たす……」）。ベルダは一歩下がる, end: 見下ろすベルダ}
+    camera: ベルダの肩越しに、這い寄るテレッサを見下ろす
+    kind: A
+  A30-021:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: stand
+      - {t: 12.73, pose: cover}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: kneel_hold
+      - {t: 3.4, pose: crouch}
+      - {t: 11.38, pose: lie, face: 300}
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [44.8, 52.8, 0.35]
+      look: teressa-swamp
+      look_h: 0.4
+      lens: 34
+      frame: 膝上
+    - t: 12.73
+      cam: [44.9, 52.9, 0.35]
+      look: berda
+      look_h: 1.4
+      lens: 32
+    - t: 16.2
+      cam: [45.0, 53.0, 0.4]
+      look: berda
+      look_h: 1.45
+      lens: 36
+    act: {start: テレッサの手が力なく落ちる, do: （「し、死に……。い、いやです……ベルダ様……た、助けて……助けて……」）沼に倒れて動かなくなる。ベルダが見下ろす（「……なんということ……！」）, end: 倒れたテレッサ}
+    camera: テレッサの顔の高さの低い所から。最後にベルダを見上げる
+    kind: M
+  A30-022:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+      - {t: 0.3, pose: walk, face: 240}
+      - t: 8.38
+        at: [48.6, 50.6]
+        pose: walk
+        ease: out
+      - {t: 8.73, pose: arms_up}
+    cam_keys:
+    - t: 0.0
+      cam: [52.0, 41.4, 5.2]
+      look: metallica
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 14.6
+      cam: [50.4, 42.4, 4.8]
+      look: metallica
+      look_h: 0.8
+      lens: 28
+    act: {start: 沼の上を歩くメタリカ, do: （「キヒヒヒ！どいつもこいつもみっともなく取り乱しやがって！」「いい眺めじゃないか！キヒヒヒヒ！！！」）, end: 両手を広げるメタリカ}
+    camera: 破れた壁の上の高い所から見下ろし、歩くメタリカを追う
+    kind: M
+  A30-023:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [48.6, 50.6]
+        face: 240
+        pose: arms_up
+      - {t: 0.3, pose: point, face: 90}
+      - {t: 3.4, face: 220}
+      - {t: 8.1, pose: proud, face: 180}
+    cam_keys:
+    - t: 0.0
+      cam: [48.4, 53.6, 0.6]
+      look: metallica
+      look_h: 1.6
+      lens: 30
+      frame: 膝上
+    - t: 8.7
+      cam: [48.0, 53.4, 0.6]
+      look: metallica
+      look_h: 1.7
+      lens: 34
+    act: {start: メタリカが魔女たちを指さして回る, do: （「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」）, end: 得意顔のメタリカ}
+    camera: メタリカの正面（南）の低い所から、あおる
+    kind: M
+  A30-024:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      - {t: 0.3, pose: lean, face: 300}
+      - {t: 2.9, pose: hop}
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      - {t: 1.0, z: 1.5}
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [48.6, 50.6]
+        face: 180
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [54.6, 52.2, 2.2]
+      look: rabi
+      look_h: 1.0
+      lens: 34
+      frame: 膝上
+    - t: 7.0
+      cam: [54.8, 52.4, 2.1]
+      look: rabi
+      look_h: 1.0
+      lens: 38
+    act: {start: ラビィが目を輝かせる, do: （「な、なんだこいつ！メチャクチャやりやがって！！お、面白れええ！！」）跳びはねる, end: 跳びはねるラビィとウサギ人形}
+    camera: ラビィの正面の高い所から
+    kind: M
+  A30-025:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [48.6, 50.6]
+        face: 180
+        pose: proud
+      - {t: 0.3, pose: stand, face: 300}
+      - {t: 6.3, face: 260, pose: point}
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 49.0, 1.6]
+      look: metallica
+      look_h: 1.55
+      lens: 40
+      frame: 胸上
+    - t: 7.3
+      cam: [46.8, 51.8, 1.6]
+      look: metallica
+      look_h: 1.55
+      lens: 40
+    act: {start: メタリカの寄り, do: ぐるりと見回して挑発する（「さあ、三流魔女ども！どちらが本物の魔女か……いってみろよ！」）, end: にやりと笑うメタリカ}
+    camera: メタリカのまわりを回る
+    kind: M
+  A30-026:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      - {t: 0.3, pose: ready, face: 260}
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [48.6, 50.6]
+        face: 260
+        pose: point
+    cam_keys:
+    - t: 0.0
+      cam: [55.6, 52.6, 0.7]
+      look: purple-peel
+      look_h: 1.5
+      lens: 38
+      frame: 胸上
+    - t: 5.4
+      cam: [55.4, 52.8, 0.7]
+      look: purple-peel
+      look_h: 1.55
+      lens: 42
+    act: {start: パープルピール, do: 歯ぎしりする（「ちっ……ガキが調子にのりやがって！」）, end: 構えるパープルピール}
+    camera: パープルピールの斜め下から
+    kind: M
+  A30-027:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [48.6, 50.6]
+        face: 260
+        pose: point
+      - {t: 0.3, pose: walk, face: 140}
+      - t: 2.5
+        at: [49.6, 50.4]
+        pose: walk
+        ease: out
+      - {t: 2.8, pose: point, face: 200}
+      - {t: 7.8, pose: proud, face: 160}
+      - {t: 12.8, pose: arms_up, face: 170}
+      - {t: 23.2, pose: shake}
+    cam_keys:
+    - t: 0.0
+      cam: [46.0, 52.6, 0.4]
+      look: metallica
+      look_h: 1.4
+      lens: 26
+      frame: 全身
+    - t: 7.8
+      cam: [48.2, 54.6, 0.5]
+      look: metallica
+      look_h: 1.6
+      lens: 26
+    - t: 25.2
+      cam: [52.6, 55.4, 2.6]
+      look: metallica
+      look_h: 2.0
+      lens: 24
+      frame: 引き
+    fx:
+    - kind: plume
+      t: [10.8, 25.2]
+      at: [49.6, 50.4]
+      r: 2.2
+      h: 1.2
+      color: [40, 190, 140]
+    act: {start: メタリカが沼のまん中に戻る, do: （「なんだ、誰も答えられんのか？ならばワタシが直々に教えてやる！」）両手を広げて名乗る（「ワタシこそが、唯一にして無二の、本物の魔女！生まれついての大魔女！最強の魔女！メタリカ様だ！！」）。高笑い, end: 破れた壁の夜空を背に、高笑いするメタリカ}
+    camera: 床すれすれからメタリカのまわりを半周しながらクレーンで上がる（感情の山。破れた壁と月を背に）
+    kind: A
+  A30-028:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: '@metallica'
+        pose: lean
+      - {t: 0.3, pose: stand, face: 350}
+      - {t: 9.58, pose: cover}
+      - {t: 15.3, pose: shake}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 170
+        pose: shake
+    cam_keys:
+    - t: 0.0
+      cam: [47.6, 56.4, 1.0]
+      look: bisco
+      look_h: 1.35
+      lens: 38
+      frame: 胸上
+    - t: 16.3
+      cam: [48.0, 56.8, 1.05]
+      look: bisco
+      look_h: 1.35
+      lens: 46
+    act: {start: ビスコがあっけにとられる, do: （「あいつ、部屋にこもって落ち込んでいたのかと思ったら……」「復讐の方法を考えていたのか……！なんてヤツだ……プッ……くく……」）口を押さえて吹き出す, end: 笑いをこらえるビスコ}
+    camera: ビスコの左の低い所から、ゆっくり寄る
+    kind: M
+  A30-029:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      - t: 0.3
+        at: [57.0, 47.6]
+        pose: ready
+        face: 250
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 170
+        pose: shake
+    cam_keys:
+    - t: 0.0
+      cam: [55.4, 48.6, 1.45]
+      look: lily
+      look_h: 1.45
+      lens: 48
+      frame: 寄り
+    - t: 5.3
+      cam: [55.6, 48.4, 1.45]
+      look: lily
+      look_h: 1.45
+      lens: 55
+    act: {start: リリーの目, do: （「小娘が……！こいつが、マーリカ様を！」）杖を構える, end: 構えるリリー}
+    camera: リリーの顔の高さで、正面から寄る
+    kind: M
+  A30-030:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.6]
+        face: 250
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 260
+        pose: ready
+      - {t: 0.3, pose: walk, face: 250}
+      - t: 9.6
+        at: [53.8, 51.4]
+        pose: walk
+        ease: out
+      - {t: 9.9, pose: cross, face: 260}
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 170
+        pose: shake
+    cam_keys:
+    - t: 0.0
+      cam: [55.4, 57.0, 0.8]
+      look: purple-peel
+      look_h: 1.2
+      lens: 30
+      frame: 全身
+    - t: 10.6
+      cam: [53.4, 57.6, 0.8]
+      look: purple-peel
+      look_h: 1.2
+      lens: 30
+    act: {start: パープルピールが沼の中へ歩み出る, do: （「ふん……建物ぶっ壊して大暴れすりゃ強いってわけじゃないよ。魔女には魔女の戦い方があるってもんさ」）, end: メタリカの前に立つパープルピール}
+    camera: パープルピールを横から追う（南の低い所）
+    kind: M
+  A30-031:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.0, 47.6]
+        face: 250
+        pose: ready
+      - {t: 0.3, pose: walk, face: 220}
+      - t: 2.6
+        at: [54.6, 49.0]
+        pose: walk
+        ease: out
+      - {t: 2.9, pose: ready, face: 260}
+      purple-peel:
+      - t: 0.0
+        at: [53.8, 51.4]
+        face: 260
+        pose: cross
+      - {t: 3.98, pose: ready}
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 170
+        pose: shake
+      - {t: 0.3, face: '@purple-peel', pose: cross}
+    cam_keys:
+    - t: 0.0
+      cam: [48.0, 50.0, 1.7]
+      look: [54.4, 50.2]
+      look_h: 1.3
+      lens: 32
+      frame: 肩なめ
+    - t: 11.4
+      cam: [48.4, 49.8, 1.7]
+      look: [54.4, 50.2]
+      look_h: 1.3
+      lens: 36
+    act: {start: リリーがパープルピールの隣に並ぶ, do: （「ただ、悪いけどとどめは、ボクに譲ってもらうよ……」「マーリカ様の仇だ。あいつの手足を縛って、沼で窒息させてやる！」）, end: 並んで構える二人}
+    camera: メタリカの肩越しに、並び立つ二人を見る
+    kind: M
+  A30-032:
+    frame: 寄り
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.8, 51.4]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 120
+        pose: cover
+      - {t: 0.3, pose: cover, face: 70}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: '@purple-peel'
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [43.4, 51.6, 1.2]
+      look: berda
+      look_h: 1.45
+      lens: 50
+      frame: 寄り
+    - t: 5.7
+      cam: [43.5, 51.4, 1.2]
+      look: berda
+      look_h: 1.45
+      lens: 58
+    act: {start: 壁ぎわの暗がりのベルダ, do: 口元を隠して笑う（「これでは夜会が台無しね……。ふふふふ」）, end: ベルダの目}
+    camera: ベルダの顔の寄り（暗い壁ぎわ、下から）
+    kind: M
+  A30-033:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.8, 51.4]
+        face: 260
+        pose: ready
+      - t: 0.3
+        at: [53.2, 51.2]
+        pose: walk
+        face: 260
+      - {t: 1.2, pose: point}
+      - {t: 5.89, pose: ready}
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: '@purple-peel'
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [51.6, 51.8, 0.5]
+      look: purple-peel
+      look_h: 1.4
+      lens: 30
+      frame: 膝上
+    - t: 11.7
+      cam: [52.0, 51.8, 0.55]
+      look: purple-peel
+      look_h: 1.5
+      lens: 36
+    act: {start: パープルピールが一歩出る, do: （「派手にやってくれたじゃないの！ええ、沼の魔女ちゃんよぉ！」「この落とし前、アタシたちがあんたにつけさせてやるよ」）, end: 指を鳴らすパープルピール}
+    camera: パープルピールの低い所から、あおって寄る
+    kind: M
+  A30-034:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: '@purple-peel'
+        pose: cross
+      - {t: 0.3, pose: cross, face: 80}
+      - {t: 8.83, pose: point, face: 175}
+    cam_keys:
+    - t: 0.0
+      cam: [54.8, 50.4, 1.6]
+      look: metallica
+      look_h: 1.5
+      lens: 34
+      frame: 肩なめ
+    - t: 8.83
+      cam: [54.6, 50.8, 1.6]
+      look: metallica
+      look_h: 1.5
+      lens: 34
+    - t: 12.2
+      cam: [54.2, 51.6, 1.4]
+      look: &id015 [50.3, 60.4]
+      look_h: 0.3
+      lens: 30
+    act: {start: メタリカが鼻で笑う, do: （「キヒヒ！ウルサイぞ三下共がっ！！ワタシの相手がお前らなんかにつとまるかよ！」）倒れた百騎兵を指さす（「お前達の相手はこいつさ」）, end: 百騎兵を指すメタリカ}
+    camera: 二人の魔女の肩越しに、メタリカ。指さす向きへ振る
+    kind: M
+  A30-035:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      - {t: 2.2, pose: lie}
+      - {t: 2.6, pose: tumble, z: 0.8}
+      - t: 8.3
+        z: 2.2
+        pose: tumble
+        at: [50.2, 57.0]
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 175
+        pose: point
+      - {t: 0.3, pose: arms_up, face: 175}
+    cam_keys:
+    - t: 0.0
+      cam: [48.4, 61.8, 0.3]
+      look: hundred-knight
+      look_h: 0.2
+      lens: 28
+      frame: 全身
+    - t: 2.0
+      cam: [48.4, 61.8, 0.35]
+      look: hundred-knight
+      look_h: 0.4
+      lens: 28
+    - t: 8.6
+      cam: [48.6, 62.0, 0.6]
+      look: hundred-knight
+      look_h: 2.0
+      lens: 24
+    fx:
+    - kind: light
+      t: [1.4, 2.8]
+      at: *id015
+      z: 0.8
+      energy: 500
+      color: [140, 220, 255]
+      fade: 1.0
+    - kind: spark
+      t: [2.0, 3.0]
+      at: *id015
+      z: 0.6
+    act: {start: メタリカが片手を突き上げる, do: （「んん…………」「目覚めろっ！百騎兵！！！」）倒れていた百騎兵の頭の炎が燃え上がり、跳ね起きて宙を舞う, end: 宙で回る百騎兵}
+    camera: 倒れた百騎兵の脇の床すれすれから、跳ね起きるのを見上げる
+    kind: A
+  A30-036:
+    frame: 全身
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [50.2, 57.0]
+        face: 350
+        pose: tumble
+        z: 2.2
+      - t: 0.7
+        at: [49.2, 51.6]
+        z: 0.0
+        pose: crouch
+        face: 80
+        ease: in
+      - {t: 1.2, pose: ready}
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 175
+        pose: arms_up
+      - {t: 0.3, pose: stand, face: '@hundred-knight'}
+      - {t: 3.4, pose: cross, face: 80}
+    cam_keys:
+    - t: 0.0
+      cam: [54.4, 51.2, 0.5]
+      look: [49.4, 50.8]
+      look_h: 1.0
+      lens: 28
+      frame: 全身
+    - t: 16.7
+      cam: [53.6, 51.0, 0.6]
+      look: [49.4, 50.8]
+      look_h: 1.1
+      lens: 32
+    fx:
+    - kind: ring
+      t: [0.6, 2.0]
+      at: [49.2, 51.6]
+      r: 2.0
+      n: 2
+      color: [60, 200, 160]
+    act: {start: 百騎兵がメタリカの隣に着地して剣を構える, do: メタリカがにやりとする（「キヒヒ！！期せずして、ワタシとおマエの初めての共同作業になりそうだぞ！」）, end: 並んで構える二人}
+    camera: 二人の正面（東の低い所）から、ゆっくり寄る
+    kind: A
+  A30-037:
+    frame: 寄り
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [49.2, 51.6]
+        face: 80
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 80
+        pose: cross
+      - {t: 0.3, pose: stand, face: 160}
+      - {t: 0.9, pose: cover}
+      - {t: 5.2, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [50.4, 52.0, 1.2]
+      look: metallica
+      look_h: 1.5
+      lens: 50
+      frame: 寄り
+    - t: 5.7
+      cam: [50.2, 51.8, 1.25]
+      look: metallica
+      look_h: 1.5
+      lens: 60
+    act: {start: メタリカが懐から小瓶を出す, do: ドロッとした緑の液体を一気に飲み干す（「ごくごく……」）, end: 口をぬぐうメタリカ}
+    camera: メタリカの顔の高さで、斜め下から寄る
+    kind: A
+  A30-038:
+    frame: 大引き
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica, metallica-giant]
+    hidden_ok: [teressa, night-train]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [49.2, 51.6]
+        face: 80
+        pose: ready
+      - t: 1.4
+        at: [48.4, 54.6]
+        pose: run
+        face: 200
+      - {t: 2.8, pose: ready, face: 0}
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica:
+      - t: 0.0
+        at: [49.6, 50.4]
+        face: 160
+        pose: stand
+      - {t: 0.3, pose: arms_up}
+      - {t: 2.0, z: -2.4, ease: in}
+      metallica-giant:
+      - t: 0.0
+        at: *id016
+        face: 180
+        pose: stand
+        z: -14.0
+      - {t: 2.0, z: -14.0}
+      - {t: 7.8, z: 0.0, ease: out, pose: arms_up}
+    cam_keys:
+    - t: 0.0
+      cam: [49.2, 58.6, 0.4]
+      look: [49.6, 50.6]
+      look_h: 1.4
+      lens: 22
+      frame: 全身
+    - t: 5.78
+      cam: [49.0, 59.2, 0.6]
+      look: [50.0, 48.6]
+      look_h: 6.0
+      lens: 18
+    - t: 8.4
+      cam: [48.8, 60.0, 1.0]
+      look: [50.0, 48.6]
+      look_h: 11.0
+      lens: 16
+      frame: 大引き
+    shake:
+    - t: [1.4, 8.4]
+      amp: 1.0
+    fx:
+    - kind: plume
+      t: [1.0, 8.4]
+      at: [50.0, 49.4]
+      r: 5.0
+      h: 12.0
+      color: [40, 190, 140]
+    - kind: ring
+      t: [1.0, 8.4]
+      at: [50.0, 49.4]
+      r: 9.0
+      n: 4
+      color: [60, 200, 160]
+    act: {start: メタリカの足元から碧の瘴気が噴き上がる, do: （「キヒヒ！こいつらに沼のチカラの真骨頂を見せてやる」）噴き上げの中にメタリカが沈み、巨大なメタリカがせり上がって立つ。頭は破れた天井の上の夜空へ, end: 見上げる巨大メタリカ}
+    camera: 床すれすれから、せり上がる巨大メタリカに合わせてクレーンで上へ（あおる）
+    kind: A
+  A30-039:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 70
+        pose: cover
+      - {t: 0.3, pose: look_up, face: 75}
+      - {t: 4.95, pose: cover}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [48.4, 54.6]
+        face: 0
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 180
+        pose: arms_up
+    cam_keys:
+    - t: 0.0
+      cam: [44.8, 48.8, 0.6]
+      look: berda
+      look_h: 1.6
+      lens: 30
+      frame: 胸上
+    - t: 7.7
+      cam: [44.6, 48.9, 0.6]
+      look: berda
+      look_h: 1.7
+      lens: 34
+    act: {start: ベルダが見上げる, do: （「……ここまでの魔力が！想像以上だわ！」）目を細めて心の声（「でも、お陰で……」）, end: 薄く笑うベルダ}
+    camera: ベルダの足元（北東）から見上げる
+    kind: M
+  A30-040:
+    frame: 膝上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 300
+        pose: hop
+      - {t: 0.3, pose: look_up, face: 320}
+      - {t: 1.0, pose: hop}
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 75
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      - {t: 0.3, pose: look_up, face: 60}
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [48.4, 54.6]
+        face: 0
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 180
+        pose: arms_up
+    cam_keys:
+    - t: 0.0
+      cam: [51.2, 50.6, 9.0]
+      look: [52.0, 54.0]
+      look_h: 0.8
+      lens: 30
+      frame: 膝上
+    - t: 5.5
+      cam: [51.0, 50.4, 9.4]
+      look: [50.0, 52.0]
+      look_h: 0.8
+      lens: 26
+    act: {start: ラビィとリューベンスが見上げる, do: ラビィ（「うほっ！すっげええ！！」）、リューベンス（「これほどとは……」）, end: 見上げる二人}
+    camera: 巨大メタリカの肩の高さから見下ろす（巨大メタリカの目線）
+    kind: M
+  A30-041:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [54.6, 49.0]
+        face: 260
+        pose: ready
+      purple-peel:
+      - t: 0.0
+        at: [53.2, 51.2]
+        face: 260
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 320
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [42.4, 50.4]
+        face: 75
+        pose: cover
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: look_up
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 350
+        pose: shake
+      hundred-knight:
+      - t: 0.0
+        at: [48.4, 54.6]
+        face: 0
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 180
+        pose: arms_up
+      - {t: 0.3, pose: point, face: 180}
+    cam_keys:
+    - t: 0.0
+      cam: [50.4, 58.0, 0.8]
+      look: metallica-giant
+      look_h: 11.8
+      lens: 40
+      frame: 胸上
+    - t: 4.6
+      cam: [50.4, 57.6, 0.8]
+      look: metallica-giant
+      look_h: 11.8
+      lens: 48
+    fx:
+    - kind: bolt
+      t: [0.4, 4.6]
+      at: [53.8, 49.0]
+      z: 11.0
+      to:
+      - [55.0, 47.0]
+      - [52.6, 46.4]
+      z_to: 13.0
+      energy: 2000
+    act: {start: 巨大メタリカの顔（夜空と月を背に）, do: 片手に雷をまとわせて（「さあ！いくぞっ！！」）, end: 雷の手を振りかざす巨大メタリカ}
+    camera: 床から見上げるあおりの寄り（巨大メタリカの顔）
+    kind: A

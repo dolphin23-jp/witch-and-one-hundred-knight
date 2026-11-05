@@ -1,0 +1,64 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-007
+scene: A28
+tc: 45.0
+sec: 8.7
+kind: M
+shot: 追い・席を立って歩いてくるラビィ
+acting: ビスコの方へ歩きながらテレッサに言う（「そういや、こいつ沼の魔女の仲間なんだって？こんなところに連れてきてどうすんだよ」）。ウサギ人形がついてくる
+dialogue:
+- L931「そういや、こいつ沼の魔女の仲間なんだって？こんなところに連れてきてどうすんだよ」
+sound: null
+notes: null
+camera:
+  pos:
+  - 57.6
+  - 54.8
+  - 1.2
+  look: rabi
+  lens: 30
+  move: ラビィを横から追い、ビスコの前で止まる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+overlays: []
+fallback: null
+act:
+  start: 席を立つラビィ
+  end: ビスコの前に立つラビィ
+timing:
+  lead: 0.3
+blocking:
+  start: ベ（左・正面）、ウ（左・背中）、リュ（左・斜め前（画面左向き））、ラ（中央・背中）、パ（右・斜め後ろ（画面左向き））、リ（右・正面）
+  end: ビ（左・斜め前（画面右向き））、ラ（中央・横顔（画面左向き））、テレ（中央・背中）、ベ（中央・斜め前（画面右向き））、ウ（右・横顔（画面左向き））、リュ（右・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 6 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Usamaru,
+    Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, with the back to the camera; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long
+    straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back,
+    holding a big green book, standing, on the left of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet,
+    standing, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, seen from behind at an angle, turned toward
+    screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled
+    round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+    brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Rabi (Rabil Lalla La), the flame witch, as
+    in her reference sheet, standing, in the center of the frame, in profile, turned toward screen left; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01,
+    drenched in the swamp), standing, in the center of the frame, with the back to the camera; Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view,
+    turned toward screen right, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the right of the frame, in profile, turned toward screen left; Rubens,
+    the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing
+    and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the right of the frame, facing the camera, small in the background. No other people. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-007_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-007_end.png

@@ -1,0 +1,72 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、Living Spec「A31 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A31-013
+scene: A31
+tc: 80.3
+sec: 7.5
+kind: A
+shot: 巨大メタリカがネザリアをにらむ
+acting: 身をかがめてネザリアをにらみ下ろす（「キサマ……！踊れと言っただろ！潰されたいのか！！！」）。手に雷が集まる
+dialogue:
+- L1094「キサマ……！　踊れと言っただろ！潰されたいのか！！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 44.8
+  - 44.0
+  - 1.6
+  look: metallica-giant
+  lens: 26
+  move: ネザリアの肩越しに、見上げる巨大メタリカの顔
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: 巨大メタリカが振り向く
+  end: ネザリアに迫る雷の手
+timing:
+  lead: 0.4
+blocking:
+  start: 百（中央・背中）、巨メ（中央・斜め後ろ（画面右向き））、ネ（中央・背中）、ベ（右・背中）、ビ（右・正面）、リ（右・背中）
+  end: 百（中央・背中）、巨メ（中央・正面）、ネ（中央・背中）、ベ（右・背中）、ビ（右・正面）、リ（右・背中）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 6 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera, small in the background; giant Metallica, about 13 m tall, as
+    in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around
+    one raised hand, standing, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet
+    (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a
+    gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, with the back to the
+    camera; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background; Bisco (short black bob hair with two gold hair
+    ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, facing
+    the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background. No
+    other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
+    warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera, small in the background; giant Metallica, about 13 m tall,
+    as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning
+    around one raised hand, standing, in the center of the frame, facing the camera, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very
+    large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a
+    tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, with the back to the camera; Berda, the lye witch,
+    as in her reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver
+    shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far right of the frame, facing the camera, small in the
+    background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background. No other people. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-013_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-013_end.png

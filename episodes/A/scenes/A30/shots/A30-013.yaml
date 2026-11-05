@@ -1,0 +1,59 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-013
+scene: A30
+tc: 87.1
+sec: 10.2
+kind: A
+shot: 沼を浴びたテレッサ・見えない
+acting: 手探りで（「えっ……え？そ、そんな……これ……！！見えない……何も見えませんわ……！！」）
+dialogue:
+- L1035「えっ……え？そ、そんな……これ……！！見えない……何も見えませんわ……！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 46.4
+  - 56.4
+  - 0.6
+  look: teressa-swamp
+  lens: 34
+  move: テレッサの目の高さで、手探りする手の先から
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+overlays: []
+fallback: null
+act:
+  start: 沼の中から身を起こすテレッサ（頭から沼を浴びている）
+  end: 手を伸ばしてさまようテレッサ
+timing:
+  lead: 0.4
+blocking:
+  start: テ沼（中央・横顔（画面右向き））、ベ（右・正面）
+  end: テ沼（中央・斜め前（画面右向き））、ベ（右・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+    drooping witch hat, dripping hair and clothes, eyes shut, standing, in the center of the frame, in profile, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, on
+    the right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
+    Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows
+    full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+    drooping witch hat, dripping hair and clothes, eyes shut, standing, in the center of the frame, in three-quarter view, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing,
+    at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
+    Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows
+    full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-013_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-013_end.png

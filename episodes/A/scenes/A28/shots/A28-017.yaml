@@ -1,0 +1,58 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-017
+scene: A28
+tc: 130.1
+sec: 6.5
+kind: M
+shot: ウサギ人形・自慢
+acting: くるりと回って自慢する（「ははっ！なんせ、ラビィちゃんはここの誰よりも強い、天才魔女だもんね！」）
+dialogue:
+- L948「ははっ！なんせ、ラビィちゃんはここの誰よりも強い、天才魔女だもんね！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.8
+  - 56.0
+  - 0.6
+  look: usamaru
+  lens: 28
+  move: 下から見上げる（ウサギ人形が天球儀の光を背に）
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+overlays: []
+fallback: null
+act:
+  start: ラビィの頭の上に浮くウサギ人形
+  end: 胸を張るウサギ人形とラビィ
+timing:
+  lead: 0.4
+blocking:
+  start: パ（左・正面）、ウ（中央・斜め前（画面右向き））、テレ（右・正面）
+  end: ラ（左・斜め後ろ（画面左向き））、リ（中央・横顔（画面左向き））、ウ（中央・斜め前（画面右向き））、パ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 3 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background;
+    Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right; Teressa, the apprentice witch, as in her reference
+    sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the far right of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched
+    windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
+    over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, seen from behind at an angle,
+    turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the left of the frame, in profile, turned toward screen left, small in the background; Usamaru,
+    Rabi''s floating rabbit doll, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right; Purple Peel, the dust witch, as in her reference sheet,
+    standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-017_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-017_end.png

@@ -1,0 +1,62 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-034
+scene: A32
+tc: 257.8
+sec: 6.5
+kind: M
+shot: 議長・可決
+acting: （「賛成２、反対１。議案は可決されました」）
+dialogue:
+- L1142「賛成２、反対１。議案は可決されました。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 48.6
+  - 47.6
+  - 0.6
+  look: nezaria
+  lens: 32
+  move: ネザリアの正面の低い所から、ゆっくり寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: ネザリアが杖を立てる
+  end: 杖を立てたネザリア
+timing:
+  lead: 0.4
+blocking:
+  start: 鶏（左・斜め後ろ（画面左向き））、ネ（中央・正面）
+  end: ネ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, at the far left of the frame, seen from behind at
+    an angle, turned toward screen left; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around
+    it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a
+    tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between
+    heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
+    panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
+    around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff),
+    a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between
+    heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
+    panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-034_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-034_end.png

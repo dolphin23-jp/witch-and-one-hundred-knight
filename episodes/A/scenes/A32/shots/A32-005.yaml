@@ -1,0 +1,73 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-005
+scene: A32
+tc: 31.5
+sec: 5.0
+kind: M
+shot: リリー・殺されるのか
+acting: （「……っ！こ、殺されるのか……！！！」）
+dialogue:
+- L1105「……っ！こ、殺されるのか……！！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 55.0
+  - 47.6
+  - 3.4
+  look: lily
+  lens: 32
+  move: リリーを見下ろす高い所から
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: リリーが沼の中で後ずさる
+  end: おびえるリリー
+timing:
+  lead: 0.4
+blocking:
+  start: 百（左・斜め後ろ（画面左向き））、ベ（中央・正面）、リ（中央・正面）、パ（中央・正面）、リュ（中央・正面）、テ沼（右・斜め後ろ（画面右向き））、巨メ（右・斜め前（画面右向き））
+  end: 百（左・斜め後ろ（画面左向き））、ベ（中央・正面）、リ（中央・横顔（画面右向き））、パ（中央・正面）、リュ（中央・正面）、テ沼（右・斜め後ろ（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 7 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, seen from behind at an angle, turned toward screen left; Berda, the lye witch, as in her
+    reference sheet, standing, on the left of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame,
+    facing the camera, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background; Rubens, the pumpkin
+    witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills,
+    bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, facing the camera, small in the background; Teressa drenched from head to toe in
+    the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut, standing, on the right of the frame, seen
+    from behind at an angle, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes
+    as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far right of the frame, in three-quarter view, turned
+    toward screen right. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round
+    council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between
+    purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, seen from behind at an angle, turned toward screen left; Berda, the lye witch, as in
+    her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame,
+    in profile, turned toward screen right, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background;
+    Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange
+    lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, facing the camera, small in the background; Teressa drenched from
+    head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut, standing, on the right
+    of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows
+    full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a
+    round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-005_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-005_end.png

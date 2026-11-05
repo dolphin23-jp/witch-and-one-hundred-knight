@@ -1,0 +1,72 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-010
+scene: A30
+tc: 68.7
+sec: 10.5
+kind: M
+shot: スネーカー・偽造の切符
+acting: （「切符が偽造だって、気がつかなかったのはお前たちじゃねえか！危険物の持ち込みは断れってんだ！検閲はどうなってんだ！」）
+dialogue:
+- L1032「切符が偽造だって、気がつかなかったのはお前たちじゃねえか！　危険物の持ち込みは断れってんだ！　検閲はどうなってんだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.2
+  - 43.6
+  - 3.6
+  look:
+  - 50.6
+  - 44.0
+  lens: 26
+  move: 列車の横の高い所から、蛇と獅子の両方を入れる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- night-train
+- teressa-swamp
+overlays: []
+fallback: null
+act:
+  start: 蛇が獅子にまくしたてる
+  end: 怒鳴る蛇
+timing:
+  lead: 0.4
+blocking:
+  start: ベ（左・正面）、列（左・斜め後ろ（画面左向き））、リュ（左・正面）、ネ（中央・正面）
+  end: ベ（左・正面）、列（左・斜め後ろ（画面左向き））、リュ（左・正面）、ネ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 4 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; the Night
+    Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising
+    from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the left of the frame, seen from behind at an angle, turned toward screen left; Rubens,
+    the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing
+    and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria, the fog witch and
+    chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes,
+    a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center
+    of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; the
+    Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake
+    rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the left of the frame, seen from behind at an angle, turned toward screen left;
+    Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange
+    lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria, the fog witch
+    and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes,
+    a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center
+    of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-010_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-010_end.png

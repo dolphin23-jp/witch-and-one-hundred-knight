@@ -1,0 +1,68 @@
+# A29 議長と議題。blocking.yaml（Claude の案 2026-11-05、Living Spec「A29 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A29-011
+scene: A29
+tc: 66.9
+sec: 5.3
+kind: M
+shot: リリー・リリーって呼んでくれ
+acting: うんざりと（「いい加減、ボクのことはリリーって呼んでくれよ」）
+dialogue:
+- L988「いい加減、ボクのことはリリーって呼んでくれよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.0
+  - 45.0
+  - 1.4
+  look:
+  - 50.6
+  - 46.4
+  lens: 32
+  move: リリーの斜め後ろ（北東の壁ぎわ）から、肩越しに議長
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+- nezaria
+overlays: []
+fallback: null
+act:
+  start: リリーが頬杖をつく
+  end: そっぽを向くリリー
+timing:
+  lead: 0.4
+blocking:
+  start: テレ（左・正面）、ベ（左・正面）、リュ（左・正面）、ネ（中央・横顔（画面左向き））
+  end: ベ（左・正面）、リュ（左・正面）、ネ（中央・横顔（画面左向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 4 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
+    far left of the frame, facing the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background;
+    Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange
+    lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria, the fog witch
+    and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes,
+    a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center
+    of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 3 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; Rubens,
+    the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing
+    and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, facing the camera, small in the background; Nezaria, the fog witch and
+    chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes,
+    a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center
+    of the frame, in profile, turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+    curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A29/gen/sketch/A29-011_start.png
+  - episodes/A/scenes/A29/gen/sketch/A29-011_end.png

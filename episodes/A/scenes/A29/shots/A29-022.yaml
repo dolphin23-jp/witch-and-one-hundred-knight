@@ -1,0 +1,56 @@
+# A29 議長と議題。blocking.yaml（Claude の案 2026-11-05、Living Spec「A29 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A29-022
+scene: A29
+tc: 156.3
+sec: 11.9
+kind: M
+shot: ベルダ・マーリカをその手にかけた罪
+acting: 声を低くして（「その上、森の魔女マーリカをその忌まわしい手にかけた罪」「一刻も早くあの者に償わせるべきだと私は考えます」）
+dialogue:
+- L1003「その上、森の魔女マーリカをその忌まわしい手にかけた罪。」
+- L1004「一刻も早くあの者に償わせるべきだと私は考えます。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 49.0
+  - 49.0
+  - 1.5
+  look: berda
+  lens: 36
+  move: ベルダの正面（円卓の上）から、ゆっくり寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+- nezaria
+overlays: []
+fallback: null
+act:
+  start: 空いたヴァレンティーヌの席の後ろで立ち止まるベルダ
+  end: 円卓に手をつくベルダ
+timing:
+  lead: 0.4
+blocking:
+  start: ベ（中央・正面）
+  end: ベ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+    walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+    walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A29/gen/sketch/A29-022_start.png
+  - episodes/A/scenes/A29/gen/sketch/A29-022_end.png

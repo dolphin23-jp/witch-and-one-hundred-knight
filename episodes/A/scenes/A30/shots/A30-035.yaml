@@ -1,0 +1,73 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-035
+scene: A30
+tc: 322.4
+sec: 8.6
+kind: A
+shot: 目覚めろ百騎兵・跳ね起きる
+acting: （「んん…………」「目覚めろっ！百騎兵！！！」）倒れていた百騎兵の頭の炎が燃え上がり、跳ね起きて宙を舞う
+dialogue:
+- L1072「目覚めろっ！百騎兵！！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 48.4
+  - 61.8
+  - 0.3
+  look: hundred-knight
+  lens: 28
+  move: 倒れた百騎兵の脇の床すれすれから、跳ね起きるのを見上げる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが片手を突き上げる
+  end: 宙で回る百騎兵
+timing:
+  lead: 0.4
+blocking:
+  start: パ（左・斜め前（画面左向き））、リ（左・斜め前（画面左向き））、ラ（中央・横顔（画面左向き））、ウ（中央・背中）、百（中央・斜め後ろ（画面左向き））
+  end: リュ（左・横顔（画面右向き））、ネ（左・横顔（画面右向き））、メ（中央・正面）、ビ（中央・背中）、百（中央・背中）、パ（中央・斜め前（画面左向き））、リ（中央・斜め前（画面左向き））、ラ（右・横顔（画面左向き））、ウ（右・背中）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen
+    left, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen left, small in the background;
+    Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen left, small in the background; Usamaru, Rabi''s floating rabbit
+    doll, as in its reference sheet, standing, in the center of the frame, with the back to the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with
+    a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind at an angle,
+    turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy
+    purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled
+    walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 9 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled
+    headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the
+    frame, in profile, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender
+    underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed
+    gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; Metallica (the orange-haired
+    witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
+    baggy dark purple pants with gold concentric circles, curled-toe boots), standing, on the left of the frame, facing the camera, small in the background; Bisco (short black bob hair with two gold hair
+    ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the
+    back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+    gauntlets, holding its sword), standing, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter
+    view, turned toward screen left, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen
+    left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background;
+    Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background. No other people. Low angle looking up;
+    the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at
+    the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-035_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-035_end.png

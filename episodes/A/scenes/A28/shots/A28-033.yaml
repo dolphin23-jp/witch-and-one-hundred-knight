@@ -1,0 +1,63 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-033
+scene: A28
+tc: 264.1
+sec: 9.1
+kind: M
+shot: ベルダ・気づいて歩み寄る
+acting: （「あら？もしかしてあなた……」）ゆっくり歩み寄る（「あぁ、なるほど。あなたが噂の姫君ですか」）
+dialogue:
+- L968「あら？もしかしてあなた……。」
+- L969「あぁ、なるほど。あなたが噂の姫君ですか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 46.0
+  - 56.6
+  - 1.3
+  look: berda
+  lens: 32
+  move: ベルダを追って、円卓の南の縁を回り込む
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ベルダがビスコに目を留める
+  end: ビスコの前に立つベルダ
+timing:
+  lead: 0.4
+blocking:
+  start: リュ（中央・正面）、ベ（中央・横顔（画面右向き））
+  end: リ（左・正面）、ベ（左・横顔（画面右向き））、パ（左・正面）、ウ（中央・背中）、ラ（中央・横顔（画面左向き））、ビ（右・斜め前（画面左向き））、テレ（右・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+    stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, in the center of the frame, facing
+    the camera, small in the background; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen right. No other people. Behind: dark wood
+    panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+    planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 7 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the
+    background; Berda, the lye witch, as in her reference sheet, standing, on the left of the frame, in profile, turned toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing,
+    on the left of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, with the back to the camera,
+    small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in profile, turned toward screen left, small in the background; Bisco
+    (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
+    on the right of the frame, in three-quarter view, turned toward screen left; Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp),
+    standing, on the right of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
+    the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars
+    between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-033_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-033_end.png

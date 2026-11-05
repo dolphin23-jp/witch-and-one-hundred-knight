@@ -1,0 +1,61 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-025
+scene: A30
+tc: 211.3
+sec: 7.3
+kind: M
+shot: メタリカ・どちらが本物の魔女か
+acting: ぐるりと見回して挑発する（「さあ、三流魔女ども！どちらが本物の魔女か……いってみろよ！」）
+dialogue:
+- L1051「さあ、三流魔女ども！どちらが本物の魔女か……いってみろよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.0
+  - 49.0
+  - 1.6
+  look: metallica
+  lens: 40
+  move: メタリカのまわりを回る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカの寄り
+  end: にやりと笑うメタリカ
+timing:
+  lead: 0.4
+blocking:
+  start: ラ（左・正面）、ウ（左・斜め後ろ（画面左向き））、メ（中央・斜め後ろ（画面右向き））
+  end: メ（中央・正面）、リ（右・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 3 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
+    Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen left, small in the background; Metallica (the
+    orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top
+    with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, seen from behind at an angle, turned toward screen right. No other people.
+    Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+    light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very
+    long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the
+    frame, facing the camera; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, facing the camera, small in the background. No other people. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-025_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-025_end.png

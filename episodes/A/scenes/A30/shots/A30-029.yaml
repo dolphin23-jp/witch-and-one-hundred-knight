@@ -1,0 +1,56 @@
+# A30 毒沼の乱入。blocking.yaml（Claude の案 2026-11-05、Living Spec「A30 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A30-029
+scene: A30
+tc: 265.5
+sec: 5.3
+kind: M
+shot: リリー・こいつがマーリカ様を
+acting: （「小娘が……！こいつが、マーリカ様を！」）杖を構える
+dialogue:
+- L1058「小娘が……！こいつが、マーリカ様を！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 55.4
+  - 48.6
+  - 1.45
+  look: lily
+  lens: 48
+  move: リリーの顔の高さで、正面から寄る
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica
+overlays: []
+fallback: null
+act:
+  start: リリーの目
+  end: 構えるリリー
+timing:
+  lead: 0.4
+blocking:
+  start: リ（中央・正面）
+  end: リ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled
+    round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood
+    panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+    planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A30/gen/sketch/A30-029_start.png
+  - episodes/A/scenes/A30/gen/sketch/A30-029_end.png

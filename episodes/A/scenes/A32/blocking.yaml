@@ -1,0 +1,3401 @@
+# A32 採決（6章の終わり）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-05）
+# Living Spec「A32 動きの設計（案）」。準備（案）の表の A32。台詞は audio/A28/original（L1100〜L1145。ほぼ全部）。
+# 場所は world/council-room-layout.yaml の壊れた後、朝の光 council_dawn。
+# 冬のニワトリ（スケアコッコ）は 002 からビスコが抱える（体の前 0.5m、高さ 0.9m、姿勢 sit）。剣のつかで床を打つ所（025）は、ひざをつく姿勢と床の火花で表す（下絵の人形に剣はない）。
+# 巨大メタリカは可決の後（036）、帽子のつばで目元を隠す（D-016）。最後（038）は白ネズミの寄りから朝の空へ抜けて暗転。
+# このファイルは作業用の補助（Claude のスクリプト）で書いた。直すときはこのファイルを直してよい。
+scene: A32
+layout: world/council-room-layout.yaml
+map_ymax: 75
+lighting: council_dawn
+places:
+  center: [50.0, 50.0]
+start:
+  lily:
+    at: &id001 [47.46, 54.04]
+    face: 26.6
+  purple-peel:
+    at: &id002 [42.8, 56.6]
+    face: 35.3
+  rabi:
+    at: &id003 [43.62, 48.04]
+    face: 54.0
+  usamaru:
+    at: &id004 [43.01, 47.37]
+    face: 60
+  berda:
+    at: &id005 [48.24, 55.17]
+    face: 22.4
+  rubens:
+    at: &id006 [42.0, 57.2]
+    face: 36.1
+  bisco:
+    at: &id007 [49.0, 58.4]
+    face: 16.5
+  hundred-knight:
+    at: &id008 [53.8, 50.2]
+    face: 150
+  nezaria:
+    at: &id009 [45.8, 45.0]
+    face: 60
+  teressa-swamp:
+    at: &id010 [44.0, 53.8]
+    face: 300
+  metallica-giant:
+    at: &id011 [50.0, 48.6]
+    face: 250
+  scarecocco:
+    at: &id012 [54.4, 40.2]
+    face: 200
+cuts:
+  A32-001:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: *id001
+        face: '@scarecocco'
+        pose: stand
+      - {t: 7.42, pose: crouch}
+      purple-peel:
+      - t: 0.0
+        at: *id002
+        face: '@scarecocco'
+        pose: stand
+        z: 0.6
+      - {t: 7.62, pose: crouch}
+      rabi:
+      - t: 0.0
+        at: *id003
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: *id004
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: *id005
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: *id006
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: *id007
+        face: '@scarecocco'
+        pose: look_up
+      hundred-knight:
+      - t: 0.0
+        at: *id008
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: *id009
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: *id010
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: *id011
+        face: 250
+        pose: cross
+      - {t: 0.3, pose: point, face: 200}
+      - {t: 6.42, pose: arms_up}
+      scarecocco:
+      - t: 0.0
+        at: *id012
+        face: 200
+        pose: stand
+        z: 0.8
+    cam_keys:
+    - t: 0.0
+      cam: [46.4, 57.6, 0.5]
+      look: metallica-giant
+      look_h: 9.0
+      lens: 22
+      frame: 膝上
+    - t: 12.1
+      cam: [46.6, 57.2, 0.6]
+      look: metallica-giant
+      look_h: 12.0
+      lens: 24
+    shake:
+    - t: [6.42, 12.1]
+      amp: 0.8
+    fx:
+    - kind: bolt
+      t: [6.42, 12.1]
+      at: [48.0, 47.6]
+      z: 15.0
+      to:
+      - [52.0, 47.4]
+      - [48.4, 49.6]
+      z_to: 15.6
+      rate: 10
+      energy: 3000
+    act: {start: 朝日を背にした巨大メタリカ, do: （「ニワトリがあと1回鳴く前に！夜会が終わる前に……」）両手を掲げて雷を集める（「お前たち三流魔女どもを皆殺しにしてやるぞ！！！」）, end: 雷をまとう両手}
+    camera: 床から見上げるあおり。両手の雷に合わせて上へ
+    kind: A
+  A32-002:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: '@scarecocco'
+        pose: crouch
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [49.0, 58.4]
+        face: 15
+        pose: run
+      - t: 2.4
+        at: [53.4, 44.2]
+        pose: run
+      - t: 2.9
+        at: [54.0, 41.8]
+        pose: jump
+        z: 0.5
+      - t: 3.3
+        at: [54.2, 41.0]
+        pose: kneel
+        z: 0.0
+        face: 10
+      - {t: 3.47, pose: arms_up, face: 200}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: arms_up
+      scarecocco:
+      - t: 0.0
+        at: [54.4, 40.2]
+        face: 200
+        pose: stand
+        z: 0.8
+      - {t: 2.6, pose: jump}
+      - t: 3.3
+        at: [54.2, 40.5]
+        z: 0.9
+        pose: sit
+      - t: 3.47
+        at: [54.03, 41.47]
+        z: 1.6
+        face: 200
+    cam_keys:
+    - t: 0.0
+      cam: [56.6, 55.0, 1.0]
+      look: bisco
+      look_h: 0.9
+      lens: 26
+      frame: 全身
+    - t: 2.6
+      cam: [58.4, 46.0, 1.2]
+      look: bisco
+      look_h: 1.0
+      lens: 26
+      ease: linear
+    - t: 5.0
+      cam: [57.6, 42.6, 1.3]
+      look: bisco
+      look_h: 1.3
+      lens: 34
+    act: {start: ビスコが瓦礫の上のニワトリへ駆け出す, do: 跳びついて両手でつかみ取り、高く掲げる（「違う！待て、メタリカ！ニワトリは捕まえた！」）, end: ニワトリを掲げるビスコ}
+    camera: 駆けるビスコを横から追い、跳ぶ所で寄る
+    kind: A
+  A32-003:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: '@scarecocco'
+        pose: crouch
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 200
+        pose: arms_up
+      - {t: 0.3, pose: stand, face: 200}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: arms_up
+      scarecocco:
+      - t: 0.0
+        at: [54.03, 41.47]
+        face: 200
+        pose: sit
+        z: 1.6
+      - t: 0.3
+        at: [54.03, 41.47]
+        z: 0.9
+        pose: sit
+        face: 200
+    cam_keys:
+    - t: 0.0
+      cam: [52.4, 44.6, 0.7]
+      look: bisco
+      look_h: 1.2
+      lens: 32
+      frame: 膝上
+    - t: 6.6
+      cam: [52.6, 44.2, 0.75]
+      look: bisco
+      look_h: 1.3
+      lens: 36
+    act: {start: ニワトリを胸に抱えたビスコ, do: 皆を見回して（「これで、私が手を離すまでニワトリは鳴かない。夜会は終わらない！」）, end: ニワトリを抱えて立つビスコ}
+    camera: ビスコの正面の低い所から（朝日の逆光）
+    kind: M
+  A32-004:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: '@scarecocco'
+        pose: crouch
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 200
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: arms_up
+      - {t: 0.3, face: 40, pose: lean}
+      scarecocco:
+      - t: 0.0
+        at: [54.03, 41.47]
+        face: 200
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [55.0, 40.2, 1.5]
+      look: metallica-giant
+      look_h: 10.4
+      lens: 28
+      frame: 肩なめ
+    - t: 7.8
+      cam: [55.2, 40.0, 1.5]
+      look: metallica-giant
+      look_h: 9.8
+      lens: 30
+    act: {start: 巨大メタリカが上機嫌でかがみ込む, do: （「キヒヒ。よくやったぞ、ビスコ！これでもう暫く楽しめる！」）, end: にやりとする巨大メタリカ}
+    camera: ビスコの肩越しに、かがみ込む巨大メタリカの顔
+    kind: M
+  A32-005:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: '@scarecocco'
+        pose: crouch
+      - {t: 0.3, pose: crouch, face: 320}
+      - {t: 1.4, pose: fall}
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 200
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 40
+        pose: lean
+      scarecocco:
+      - t: 0.0
+        at: [54.03, 41.47]
+        face: 200
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [55.0, 47.6, 3.4]
+      look: lily
+      look_h: 0.8
+      lens: 32
+      frame: 膝上
+    - t: 5.0
+      cam: [55.2, 47.8, 3.2]
+      look: lily
+      look_h: 0.8
+      lens: 36
+    act: {start: リリーが沼の中で後ずさる, do: （「……っ！こ、殺されるのか……！！！」）, end: おびえるリリー}
+    camera: リリーを見下ろす高い所から
+    kind: M
+  A32-006:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 200
+        pose: stand
+      - {t: 0.3, pose: look_up, face: 220}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 40
+        pose: lean
+      scarecocco:
+      - t: 0.0
+        at: [54.03, 41.47]
+        face: 200
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [53.88, 41.38]
+        z: 0.9
+        pose: sit
+        face: 220
+    cam_keys:
+    - t: 0.0
+      cam: [51.4, 46.0, 8.6]
+      look: bisco
+      look_h: 0.8
+      lens: 30
+      frame: 全身
+    - t: 7.5
+      cam: [51.6, 45.6, 8.2]
+      look: bisco
+      look_h: 0.8
+      lens: 34
+    act: {start: ビスコが巨大メタリカを見上げて叫ぶ, do: （「だから違う！！待てと言ってるんだ、メタリカ！私は議長に話がある！」）, end: ニワトリを抱えて見上げるビスコ}
+    camera: 巨大メタリカの胸の高さから見下ろす（ビスコが小さく見える）
+    kind: M
+  A32-007:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 220
+        pose: look_up
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 40
+        pose: lean
+      - {t: 0.3, pose: stand, face: 60}
+      scarecocco:
+      - t: 0.0
+        at: [53.88, 41.38]
+        face: 220
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [57.6, 42.6, 11.8]
+      look: metallica-giant
+      look_h: 11.9
+      lens: 34
+      frame: 胸上
+    - t: 5.0
+      cam: [57.4, 43.0, 11.8]
+      look: metallica-giant
+      look_h: 11.9
+      lens: 38
+    act: {start: 巨大メタリカが首をかしげる, do: （「あん？議長に話だと……？」）, end: 眉をひそめる巨大メタリカ}
+    camera: 巨大メタリカの顔の横（破れた壁の外の高い所）から
+    kind: M
+  A32-008:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [54.2, 41.0]
+        face: 220
+        pose: look_up
+      - {t: 0.3, pose: walk, face: 250}
+      - t: 6.1
+        at: [47.6, 46.2]
+        pose: walk
+        ease: out
+      - {t: 6.4, pose: stand, face: '@nezaria'}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      - {t: 1.0, face: '@bisco'}
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 60
+        pose: stand
+      - {t: 1.0, face: 280}
+      scarecocco:
+      - t: 0.0
+        at: [53.88, 41.38]
+        face: 220
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [53.73, 41.17]
+        z: 0.9
+        pose: sit
+        face: 250
+      - t: 6.1
+        at: [47.17, 45.95]
+        z: 0.9
+        pose: sit
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [52.2, 47.2, 1.1]
+      look: bisco
+      look_h: 1.1
+      lens: 28
+      frame: 全身
+    - t: 7.1
+      cam: [49.6, 49.6, 1.1]
+      look: bisco
+      look_h: 1.1
+      lens: 30
+    act: {start: ビスコがニワトリを抱えて議長のネザリアの前へ歩く, do: （「議長……。ネザリア殿だったか……。私の提案を聞いてくれないか」）, end: ネザリアの前に立つビスコ}
+    camera: ビスコを横から追う（南の低い所）
+    kind: M
+  A32-009:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: stand
+      - {t: 3.4, pose: lean}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 280
+        pose: stand
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [45.2, 44.6, 1.5]
+      look: bisco
+      look_h: 1.35
+      lens: 34
+      frame: 肩なめ
+    - t: 8.5
+      cam: [45.8, 45.0, 1.5]
+      look: bisco
+      look_h: 1.4
+      lens: 55
+      frame: 寄り
+    act: {start: ビスコがまっすぐネザリアを見る, do: （「この夜会で、メタリカを……。メタリカを、正式な魔女として認めてほしいんだ！」）, end: 真剣なビスコの目}
+    camera: ネザリアの肩越しから、ビスコの顔へゆっくり寄る（感情の山）
+    kind: A
+  A32-010:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 280
+        pose: stand
+      - {t: 0.3, pose: lean, face: 300}
+      - {t: 5.38, pose: proud}
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [46.6, 45.2, 0.5]
+      look: metallica-giant
+      look_h: 9.6
+      lens: 22
+      frame: 膝上
+    - t: 11.5
+      cam: [46.4, 45.0, 0.5]
+      look: metallica-giant
+      look_h: 10.6
+      lens: 24
+    act: {start: 巨大メタリカが顔を真っ赤にして身を乗り出す, do: （「な、なんだと……！キサマ、出すぎたマネをするなよ……！」）胸を張る（「こんな連中に認めてもらわなくともわたしは生まれながらの大魔女だぞ！」）, end: ふんぞり返る巨大メタリカ}
+    camera: ビスコの後ろの床から、巨大メタリカを見上げる
+    kind: M
+  A32-011:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: lean
+      - {t: 0.3, face: 110, pose: look_up}
+      - {t: 4.2, face: '@nezaria', pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [48.07, 46.37]
+      - t: 4.2
+        at: [47.17, 45.95]
+    cam_keys:
+    - t: 0.0
+      cam: [46.8, 47.8, 0.9]
+      look: bisco
+      look_h: 1.35
+      lens: 36
+      frame: 胸上
+    - t: 4.7
+      cam: [46.9, 47.6, 0.95]
+      look: bisco
+      look_h: 1.4
+      lens: 40
+    act: {start: ビスコが振り向いて見上げる, do: （「お前は黙ってろ！私が議長と話してるんだ！」）, end: 見上げてにらむビスコ}
+    camera: ビスコの正面の低い所から（背景に巨大メタリカの脚）
+    kind: M
+  A32-012:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [43.6, 48.6, 1.4]
+      look: [46.8, 45.6]
+      look_h: 1.2
+      lens: 30
+      frame: 膝上
+    - t: 9.9
+      cam: [44.4, 49.6, 1.4]
+      look: [46.8, 45.6]
+      look_h: 1.2
+      lens: 32
+    act: {start: ビスコがネザリアに向き直る, do: （「見ての通り、メタリカは傍若無人なヤツだ……。だが、魔女としては申し分のない資質を持っているんじゃないのか？」）, end: 語りかけるビスコ}
+    camera: 二人を横から（南西の窓側）、ゆっくり回り込む
+    kind: M
+  A32-013:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: stand
+      - {t: 4.96, pose: bow}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [46.2, 45.6, 0.6]
+      look: bisco
+      look_h: 1.35
+      lens: 32
+      frame: 胸上
+    - t: 12.5
+      cam: [46.4, 45.8, 0.6]
+      look: bisco
+      look_h: 1.3
+      lens: 36
+    act: {start: ビスコが一歩踏み出す, do: （「だったら、正式に魔女として認めてやってもいいんじゃないか」「そして、できれば今後は魔女として、夜会にも招待してもらえないだろうか？」）, end: 頭を下げるビスコ}
+    camera: ネザリアの足元から見上げ、ビスコ
+    kind: M
+  A32-014:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [42.8, 56.6]
+        face: '@scarecocco'
+        pose: crouch
+        z: 0.6
+      - {t: 0.3, pose: walk, face: 310}
+      - t: 7.4
+        at: [51.6, 51.6]
+        pose: walk
+        ease: out
+      - {t: 7.7, pose: point, face: 300}
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@nezaria'
+        pose: bow
+      - {t: 0.6, face: '@purple-peel', pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [49.8, 50.6, 1.3]
+      look: purple-peel
+      look_h: 1.4
+      lens: 30
+      frame: 膝上
+    - t: 8.4
+      cam: [49.6, 50.2, 1.3]
+      look: purple-peel
+      look_h: 1.4
+      lens: 34
+    act: {start: パープルピールが詰め寄る, do: （「……な、なんだって……こんだけ暴れておいて、夜会に参加させろだって！？」）, end: 怒るパープルピール}
+    camera: パープルピールを正面に、歩み寄るのを受ける
+    kind: M
+  A32-015:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: '@purple-peel'
+        pose: stand
+      - {t: 0.3, pose: look_down, face: 100}
+      - {t: 5.61, pose: stand}
+      - {t: 7.11, face: 80}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [47.17, 45.95]
+        face: 250
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [48.09, 46.29]
+    cam_keys:
+    - t: 0.0
+      cam: [52.6, 47.8, 1.5]
+      look: bisco
+      look_h: 1.3
+      lens: 32
+      frame: 膝上
+    - t: 10.7
+      cam: [52.2, 47.6, 1.5]
+      look: bisco
+      look_h: 1.3
+      lens: 36
+    act: {start: ビスコが魔女たちに向き直る, do: （「そ、それは……。たしかにメタリカはヒドイことをした」）きっと顔を上げる（「しかし、あなた方もメタリカにヒドイことをしたじゃないか」）, end: 魔女たちを見回すビスコ}
+    camera: 魔女たちの側（東）から、ビスコを正面に
+    kind: M
+  A32-016:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: 80
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      scarecocco:
+      - t: 0.0
+        at: [48.09, 46.29]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [45.6, 46.0, 2.6]
+      look: [53.0, 51.0]
+      look_h: 1.0
+      lens: 30
+      frame: 肩なめ
+    - t: 7.0
+      cam: [45.8, 45.8, 2.4]
+      look: [53.0, 51.0]
+      look_h: 1.0
+      lens: 32
+    act: {start: ビスコ, do: （「だから、お互い……。これまでのことは不問にするということで、どうだ？」）, end: 皆を見るビスコ}
+    camera: ビスコの斜め後ろの高い所から、肩越しに魔女たち
+    kind: M
+  A32-017:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: 80
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 300
+        pose: proud
+      - {t: 0.3, pose: shake, face: 260}
+      - {t: 7.6, pose: point}
+      scarecocco:
+      - t: 0.0
+        at: [48.09, 46.29]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [52.4, 61.6, 0.35]
+      look: metallica-giant
+      look_h: 7.0
+      lens: 18
+      frame: 全身
+    - t: 8.6
+      cam: [52.0, 61.4, 0.4]
+      look: metallica-giant
+      look_h: 7.6
+      lens: 19
+    shake:
+    - t: [1.4, 3.0]
+      amp: 1.4
+    act: {start: 巨大メタリカが地団駄を踏む, do: （「ふ、不問だと！？わたしを愚弄したクズどもを許せるわけがないだろう！」）。床が揺れる, end: 怒る巨大メタリカ}
+    camera: 南の床すれすれから、巨大メタリカの全身を見上げる
+    kind: A
+  A32-018:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [47.6, 46.2]
+        face: 80
+        pose: stand
+      - {t: 0.3, pose: walk, face: 80}
+      - t: 2.0
+        at: [48.2, 47.6]
+        pose: walk
+        ease: out
+      - {t: 2.3, pose: look_up}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 260
+        pose: point
+      - {t: 0.6, face: 250, pose: stand}
+      scarecocco:
+      - t: 0.0
+        at: [48.09, 46.29]
+        face: 250
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [48.09, 46.11]
+      - t: 2.0
+        at: [48.69, 47.51]
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [45.4, 47.4, 0.5]
+      look: [49.0, 48.4]
+      look_h: 3.0
+      lens: 20
+      frame: 全身
+    - t: 8.8
+      cam: [45.8, 47.8, 0.5]
+      look: [49.4, 48.4]
+      look_h: 5.0
+      lens: 20
+    act: {start: ビスコが巨大メタリカの足元まで詰め寄る, do: （「だからって全員殺すのか！？そんなことをして何になるんだ！お前だって、そんなことで気が済むのか！」）, end: 見上げて叫ぶビスコ}
+    camera: ビスコの後ろの低い所から、見上げる巨大メタリカまで入れる（大きさの差）
+    kind: A
+  A32-019:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 80
+        pose: look_up
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 250
+        pose: stand
+      - {t: 0.3, pose: stand, face: 240}
+      - {t: 2.0, face: 200, pose: cross}
+      scarecocco:
+      - t: 0.0
+        at: [48.69, 47.51]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 42.8, 11.8]
+      look: metallica-giant
+      look_h: 11.9
+      lens: 40
+      frame: 寄り
+    - t: 6.8
+      cam: [47.2, 43.2, 11.8]
+      look: metallica-giant
+      look_h: 11.9
+      lens: 46
+    act: {start: 巨大メタリカの顔の寄り, do: 一瞬言葉に詰まる（間）。そっぽを向いて（「……っ。い、いや、わたしの気は存分に晴れるぞ！それで十分だ！」）, end: そっぽを向く巨大メタリカ}
+    camera: 巨大メタリカの顔の高さで、正面からわずかに寄る
+    kind: A
+  A32-020:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 80
+        pose: look_up
+      - {t: 0.3, pose: cover, face: 70}
+      - {t: 5.3, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [48.69, 47.51]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [45.6, 48.6, 1.2]
+      look: bisco
+      look_h: 1.2
+      lens: 34
+      frame: 膝上
+    - t: 5.9
+      cam: [45.8, 48.4, 1.2]
+      look: bisco
+      look_h: 1.25
+      lens: 38
+    act: {start: ビスコがため息, do: （「ああもう！いいからもう少しおとなしくしててくれ！」）, end: 頭を抱えるビスコ}
+    camera: ビスコの横（西）から
+    kind: M
+  A32-021:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 70
+        pose: stand
+      - {t: 0.3, face: '@nezaria', pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [48.69, 47.51]
+        face: 250
+        pose: sit
+        z: 0.9
+      - t: 0.3
+        at: [47.71, 47.69]
+    cam_keys:
+    - t: 0.0
+      cam: [49.0, 47.6, 1.5]
+      look: nezaria
+      look_h: 1.2
+      lens: 36
+      frame: 肩なめ
+    - t: 6.6
+      cam: [49.2, 47.8, 1.5]
+      look: nezaria
+      look_h: 1.2
+      lens: 44
+    act: {start: ビスコがネザリアへ振り向く, do: （「さあ、議長！メタリカが再び暴れだす前に採決を！」）。ネザリアは答えない（間）, end: 黙るネザリア}
+    camera: ビスコの肩越しにネザリア
+    kind: M
+  A32-022:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: '@nezaria'
+        pose: stand
+      - {t: 0.3, pose: arms_up}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.71, 47.69]
+        face: 250
+        pose: sit
+        z: 0.9
+      - t: 0.5
+        at: [47.66, 47.7]
+        z: 1.6
+    cam_keys:
+    - t: 0.0
+      cam: [46.8, 46.6, 0.8]
+      look: bisco
+      look_h: 1.3
+      lens: 30
+      frame: 膝上
+    - t: 5.8
+      cam: [46.6, 46.4, 0.8]
+      look: bisco
+      look_h: 1.35
+      lens: 34
+    act: {start: ビスコがニワトリを掲げる, do: （「早く！ニワトリが３回鳴くまで、閉会できないんだろ！」）, end: ニワトリを突き出すビスコ}
+    camera: ネザリアの横の低い所から、ニワトリ越しにビスコ
+    kind: M
+  A32-023:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 300
+        pose: point
+        z: 0.6
+      - {t: 0.3, pose: stand, face: '@nezaria'}
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: '@nezaria'
+        pose: arms_up
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.66, 47.7]
+        face: 250
+        pose: sit
+        z: 1.6
+    cam_keys:
+    - t: 0.0
+      cam: [50.2, 53.0, 1.6]
+      look: purple-peel
+      look_h: 1.55
+      lens: 44
+      frame: 胸上
+    - t: 4.9
+      cam: [50.4, 53.2, 1.6]
+      look: purple-peel
+      look_h: 1.55
+      lens: 50
+    act: {start: パープルピールがネザリアを見る, do: （「ま、まさか……！ネザリア、本気で……！」）, end: 青ざめるパープルピール}
+    camera: パープルピールの顔の高さ、斜め前から
+    kind: M
+  A32-024:
+    frame: 引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@nezaria'
+        pose: stand
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: '@nezaria'
+        pose: arms_up
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: '@bisco'
+        pose: stand
+      - {t: 0.6, pose: arms_up, face: 120}
+      - {t: 14.79, pose: stand}
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.66, 47.7]
+        face: 250
+        pose: sit
+        z: 1.6
+    cam_keys:
+    - t: 0.0
+      cam: [44.0, 43.4, 1.8]
+      look: nezaria
+      look_h: 1.6
+      lens: 30
+      frame: 膝上
+    - t: 15.7
+      cam: [42.6, 41.6, 5.6]
+      look: [51.0, 51.0]
+      look_h: 1.0
+      lens: 22
+      frame: 引き
+    act: {start: ネザリアがゆっくり杖を掲げる, do: （「その議案受け付けました。では、ここに採決をとりましょう」「”メタリカ”を魔女と認めることに賛成の者は、杖を打ち鳴らし、反対の者は、声をおあげください」）, end: 朝日の中の議場}
+    camera: ネザリアの後ろの高い所から、朝日の差す議場全体へ（クレーンで上がる）
+    kind: A
+  A32-025:
+    frame: 全身
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@nezaria'
+        pose: stand
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: '@nezaria'
+        pose: arms_up
+      - {t: 0.3, face: 60, pose: stand}
+      - {t: 1.4, face: 160}
+      - {t: 4.95, face: 90}
+      - {t: 5.75, pose: kneel}
+      - {t: 6.95, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.66, 47.7]
+        face: 250
+        pose: sit
+        z: 1.6
+      - t: 0.3
+        at: [47.77, 47.35]
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 49.8, 0.9]
+      look: bisco
+      look_h: 1.1
+      lens: 30
+      frame: 全身
+    - t: 5.75
+      cam: [47.4, 49.0, 0.35]
+      look: bisco
+      look_h: 0.4
+      lens: 40
+    - t: 8.8
+      cam: [47.4, 49.0, 0.45]
+      look: bisco
+      look_h: 0.9
+      lens: 36
+    fx:
+    - kind: spark
+      t: [5.85, 6.55]
+      at: [48.0, 48.0]
+      z: 0.05
+    act: {start: ビスコがあたりを見回す（「え！？杖！？ええと……！」）, do: ニワトリを小脇に抱えたまま剣を抜き、つかを床に突き立てて打ち鳴らす（「私は賛成だ！」）, end: 床に剣を突き立てたビスコ}
+    camera: ビスコの足元の低い所から、床を打つ剣のつかに寄る
+    kind: A
+  A32-026:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@nezaria'
+        pose: stand
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 46.8, 0.8]
+      look: nezaria
+      look_h: 1.3
+      lens: 42
+      frame: 胸上
+    - t: 2.7
+      cam: [47.2, 47.0, 0.8]
+      look: nezaria
+      look_h: 1.3
+      lens: 46
+    act: {start: ネザリアと杖, do: （「賛成、１……」）, end: 杖}
+    camera: ネザリアの正面の低い所から
+    kind: M
+  A32-027:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@nezaria'
+        pose: stand
+        z: 0.6
+      - {t: 0.3, pose: arms_up, face: 310}
+      - {t: 7.4, pose: point}
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [54.6, 54.0, 2.4]
+      look: [47.8, 47.8]
+      look_h: 1.0
+      lens: 30
+      frame: 肩なめ
+    - t: 8.0
+      cam: [54.4, 54.2, 2.2]
+      look: [47.8, 47.8]
+      look_h: 1.0
+      lens: 34
+    act: {start: パープルピールが叫ぶ, do: （「は、反対にきまっている！！これだけやったんだ、ただで済むと思うなよ！！」）, end: 拳を振り上げるパープルピール}
+    camera: パープルピールの後ろの高い所から、肩越しにビスコ
+    kind: M
+  A32-028:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 310
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: '@scarecocco'
+        pose: proud
+      - {t: 6.79, pose: point, face: 300}
+      - {t: 8.1, pose: proud}
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [44.8, 44.6, 1.6]
+      look: [51.0, 51.0]
+      look_h: 1.0
+      lens: 30
+      frame: 肩なめ
+    - t: 8.1
+      cam: [45.0, 44.8, 1.6]
+      look: rabi
+      look_h: 0.9
+      lens: 40
+      frame: 膝上
+    fx:
+    - kind: spark
+      t: [6.99, 7.69]
+      at: rabi
+      'off': [0.3, -0.3]
+      z: 0.05
+    act: {start: 杖の声（「反対、１……。賛成１、反対１です」）, do: 沈黙。そこへ、カン！と杖を打ち鳴らす音。ラビィが杖で床を打っている, end: 杖を床に突いたラビィ}
+    camera: ネザリアの肩越しから、音のした方（ラビィ）へ振る
+    kind: M
+  A32-029:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: 310
+        pose: point
+        z: 0.6
+      - {t: 0.3, face: '@rabi', pose: stand}
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 300
+        pose: proud
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [52.8, 49.8, 1.55]
+      look: purple-peel
+      look_h: 1.55
+      lens: 42
+      frame: 胸上
+    - t: 4.5
+      cam: [52.6, 49.6, 1.55]
+      look: purple-peel
+      look_h: 1.55
+      lens: 46
+    act: {start: パープルピールが振り向く, do: （「お、お前……！何を考えてるんだ！？」）, end: あぜんとするパープルピール}
+    camera: パープルピールの正面から
+    kind: M
+  A32-030:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: stand
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 300
+        pose: proud
+      - {t: 0.3, pose: proud, face: 290}
+      - {t: 9.48, pose: hop}
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.2
+      - {t: 5.46, z: 1.5}
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [52.4, 54.4, 1.3]
+      look: rabi
+      look_h: 1.2
+      lens: 34
+      frame: 膝上
+    - t: 5.46
+      cam: [52.6, 54.6, 1.4]
+      look: usamaru
+      look_h: 1.4
+      lens: 36
+    - t: 14.8
+      cam: [52.6, 54.2, 1.3]
+      look: rabi
+      look_h: 1.2
+      lens: 38
+    act: {start: ラビィが頭の後ろで手を組む, do: （「いや……、だって、こいつ面白れーじゃん」）ウサギ人形（「ははっ！ラビィちゃんは、メタリカと戦いたいだけなんだよね？」）ラビィが笑う（「へへっ、流石はウサマール先生！よくわかってんじゃん」）, end: にやりとするラビィ}
+    camera: ラビィとウサギ人形を正面に、二人の間を行き来する
+    kind: M
+  A32-031:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: stand
+        z: 0.6
+      - {t: 0.3, pose: point, face: '@rabi'}
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [49.4, 54.4, 0.7]
+      look: purple-peel
+      look_h: 1.4
+      lens: 32
+      frame: 膝上
+    - t: 6.8
+      cam: [49.2, 54.2, 0.7]
+      look: purple-peel
+      look_h: 1.45
+      lens: 36
+    act: {start: パープルピールが歯がみする, do: （「くっ……あんた……後で再教育だ！覚えてなよ！！」）, end: ラビィを指さすパープルピール}
+    camera: パープルピールの横の低い所から
+    kind: M
+  A32-032:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [43.4, 41.6, 3.0]
+      look: nezaria
+      look_h: 1.2
+      lens: 30
+      frame: 膝上
+    - t: 5.3
+      cam: [43.6, 41.8, 2.8]
+      look: nezaria
+      look_h: 1.2
+      lens: 34
+    act: {start: ネザリアと杖, do: （「賛成、２。反対、１……」）, end: ネザリア}
+    camera: ネザリアの背後の窓ぎわの高い所から（議場越し）
+    kind: M
+  A32-033:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 200
+        pose: cross
+      - {t: 0.3, pose: lean, face: 260}
+      - {t: 3.55, pose: point}
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 48.6, 1.6]
+      look: metallica-giant
+      look_h: 10.0
+      lens: 24
+      frame: 胸上
+    - t: 6.4
+      cam: [47.2, 48.8, 1.6]
+      look: metallica-giant
+      look_h: 8.6
+      lens: 24
+    act: {start: 巨大メタリカがあわてて身を乗り出す, do: （「おい！待て！ワタシは……」）ビスコへ手を伸ばす（「ビスコっ！！！」）, end: 伸ばした巨大な手}
+    camera: ビスコの頭上から見上げ、伸びてくる巨大な手
+    kind: A
+  A32-034:
+    frame: 膝上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      - {t: 0.3, pose: stand, face: 120}
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 260
+        pose: point
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [48.6, 47.6, 0.6]
+      look: nezaria
+      look_h: 1.4
+      lens: 32
+      frame: 膝上
+    - t: 6.5
+      cam: [48.2, 47.2, 0.65]
+      look: nezaria
+      look_h: 1.45
+      lens: 38
+    act: {start: ネザリアが杖を立てる, do: （「賛成２、反対１。議案は可決されました」）, end: 杖を立てたネザリア}
+    camera: ネザリアの正面の低い所から、ゆっくり寄る
+    kind: M
+  A32-035:
+    frame: 大引き
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 260
+        pose: point
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [50.4, 58.0, 1.2]
+      look: [50.0, 46.0]
+      look_h: 4.0
+      lens: 22
+      frame: 引き
+    - t: 7.7
+      cam: [50.8, 60.6, 7.4]
+      look: [50.0, 46.0]
+      look_h: 6.0
+      lens: 18
+      frame: 大引き
+    act: {start: 朝日の差す壊れた議場の全景, do: （「ヴァルプルギスに集いし魔女の下、メタリカを沼の魔女と認めます！」）, end: 朝日の中の議場と巨大メタリカ}
+    camera: 議場の南の床から、破れた壁と朝日へクレーンで上がって引く（場面の山）
+    kind: A
+  A32-036:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 260
+        pose: point
+      - {t: 1.4, pose: stand}
+      - {t: 2.4, pose: look_down, face: 230}
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [46.4, 44.6, 11.2]
+      look: metallica-giant
+      look_h: 12.0
+      lens: 42
+      frame: 寄り
+    - t: 5.6
+      cam: [46.8, 45.0, 11.3]
+      look: metallica-giant
+      look_h: 12.0
+      lens: 50
+    act: {start: 巨大メタリカの顔の寄り, do: 伸ばした手を止めたまま、帽子のつばを引き下げて目元を隠す（台詞なし。D-016、本音で静かになる）, end: つばの影の口元}
+    camera: 巨大メタリカの顔の高さで、斜め下からわずかに寄る
+    kind: A
+  A32-037:
+    frame: 胸上
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 230
+        pose: look_down
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [47.0, 46.4, 1.5]
+      look: nezaria
+      look_h: 1.45
+      lens: 45
+      frame: 胸上
+    - t: 5.6
+      cam: [46.6, 46.0, 1.65]
+      look: [45.62, 44.82]
+      look_h: 1.6
+      lens: 60
+      frame: 寄り
+    act: {start: ネザリアの顔（眠たげな目のまま）, do: 杖がつぶやく（「おめでとう……と言ってもいいのかしら」）, end: 帽子のつばの白ネズミへ}
+    camera: ネザリアの顔から、帽子のつばの白ネズミへ寄る
+    kind: M
+  A32-038:
+    frame: 寄り
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
+    hidden_ok: [teressa, night-train, metallica]
+    keys:
+      lily:
+      - t: 0.0
+        at: [47.46, 54.04]
+        face: 320
+        pose: fall
+      purple-peel:
+      - t: 0.0
+        at: [51.6, 51.6]
+        face: '@rabi'
+        pose: point
+        z: 0.6
+      rabi:
+      - t: 0.0
+        at: [43.62, 48.04]
+        face: 290
+        pose: hop
+      usamaru:
+      - t: 0.0
+        at: [43.01, 47.37]
+        face: 60
+        pose: hop
+        z: 1.5
+      berda:
+      - t: 0.0
+        at: [48.24, 55.17]
+        face: '@scarecocco'
+        pose: stand
+      rubens:
+      - t: 0.0
+        at: [42.0, 57.2]
+        face: '@scarecocco'
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [48.2, 47.6]
+        face: 90
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [53.8, 50.2]
+        face: 150
+        pose: ready
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 120
+        pose: stand
+      - {t: 0.3, pose: stand, face: 140}
+      teressa-swamp:
+      - t: 0.0
+        at: [44.0, 53.8]
+        face: 300
+        pose: lie
+      metallica-giant:
+      - t: 0.0
+        at: [50.0, 48.6]
+        face: 230
+        pose: look_down
+      scarecocco:
+      - t: 0.0
+        at: [47.77, 47.35]
+        face: 250
+        pose: sit
+        z: 0.9
+    cam_keys:
+    - t: 0.0
+      cam: [46.2, 45.7, 1.65]
+      look: [45.62, 44.82]
+      look_h: 1.6
+      lens: 60
+      frame: 寄り
+    - t: 3.7
+      cam: [46.6, 46.2, 2.6]
+      look: nezaria
+      look_h: 1.2
+      lens: 30
+    - t: 10.1
+      cam: [58.0, 24.0, 18.0]
+      look: [50.0, 50.0]
+      look_h: 2.0
+      lens: 22
+      frame: 大引き
+      ease: inout
+    fx:
+    - kind: flash
+      t: [8.5, 10.1]
+      peak: 10.1
+      at: [50.0, 40.0]
+      color: [0, 0, 0]
+      alpha: 1.0
+      r: 120
+    act: {start: 帽子のつばの白ネズミ（マーリカ）, do: ちょこんと立って鳴く（「チュー！チュチュー！」）。カメラが引いて、破れた壁から朝の空へ抜ける, end: 朝の空と、破れた議事塔の最上階。暗転（6章の終わり）}
+    camera: 白ネズミの寄りから、議場の上へ引き、破れた壁から外の空へクレーンで抜ける。最後に暗転
+    kind: A

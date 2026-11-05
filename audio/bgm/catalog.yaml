@@ -610,6 +610,34 @@ items:
   total_sec: 57
   heard: false
   note: 議事塔ブロッケントゥルムの門（魔法生物の門の台詞）
+- id: M41
+  name: 夜会の議会
+  file: audio/bgm/catalog/M41.ogg
+  loop: audio/bgm/M41_loop.ogg
+  listen: Drive 原作音源/BGM/M41_夜会の議会.mp3
+  scenes:
+  - A29
+  - A30
+  clip: パート23 1:44 から 45秒
+  plays:
+  - p23 0:00-6:19
+  total_sec: 379
+  heard: false
+  note: 議長の杖の「今宵も集いし…」から、魔女の呼び出し、ベルダの議題、地震とメタリカの声まで。2つの節（約29秒と約53秒）をくり返す、約82秒のループ（audio/bgm/M41_loop.ogg、パート23 の 1:44 から 82秒）。2026-11-05 にパート23 を曲に分けて見つけた（tools/bgm_split.py ではどの曲にも似ず、音の高さの似かたの区切りで分けた）
+- id: M42
+  name: 毒沼の乱入
+  file: audio/bgm/catalog/M42.ogg
+  loop: audio/bgm/M42_loop.ogg
+  listen: Drive 原作音源/BGM/M42_毒沼の乱入.mp3
+  scenes:
+  - A30
+  - A31
+  clip: パート23 7:00 から 45秒
+  plays:
+  - p23 6:19-19:02
+  total_sec: 763
+  heard: false
+  note: 「ありったけの沼をプレゼントしてやる！」の後、夜光列車の突入、沼から現れるメタリカ、巨大化、パープルピール・リリアーヌとの戦い（12:58〜16:46 は戦いの効果音で大きい）、「踊れ」、霧と朝まで1曲に聞こえる。ループは約63.5秒（audio/bgm/M42_loop.ogg、パート23 の 7:00 から）
 scenes:
   A01:
   - from: '14:11'
@@ -999,3 +1027,58 @@ scenes:
     to: '18:28'
     bgm: M40
     name: 議事塔の門
+  A28:
+  - part: 22
+    from: '18:11'
+    to: '18:28'
+    bgm: M40
+    name: 議事塔の門
+  - part: 22
+    from: '18:28'
+    to: '18:51'
+    bgm: M31
+    name: 夜会の前
+  - part: 22
+    from: '18:51'
+    to: '24:56'
+    bgm: M12
+    name: 見習い魔女の夜会
+  A29:
+  - part: 22
+    from: '24:56'
+    to: '25:36'
+    bgm: M12
+    name: 見習い魔女の夜会（終わりの18秒は M28 か、決められなかった）
+  - part: 23
+    from: 0:00
+    to: '5:49'
+    bgm: M41
+    name: 夜会の議会
+  A30:
+  - part: 23
+    from: '5:49'
+    to: '6:19'
+    bgm: M41
+    name: 夜会の議会（地震とメタリカの声）
+  - part: 23
+    from: '6:19'
+    to: '13:56'
+    bgm: M42
+    name: 毒沼の乱入
+  A31:
+  - part: 23
+    from: '13:56'
+    to: '19:02'
+    bgm: M42
+    name: 毒沼の乱入（戦い〜霧と朝）
+  - part: 23
+    from: '19:08'
+    to: '19:16'
+    bgm: null
+    name: 静か（ニワトリが鳴く）
+  A32:
+  - part: 23
+    from: '19:16'
+    to: '25:38'
+    bgm: M39
+    name: 魔女都ヴァルプルギス

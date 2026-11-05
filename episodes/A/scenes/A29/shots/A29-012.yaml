@@ -1,0 +1,55 @@
+# A29 議長と議題。blocking.yaml（Claude の案 2026-11-05、Living Spec「A29 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A29-012
+scene: A29
+tc: 72.2
+sec: 5.0
+kind: M
+shot: 呼び出し・ベルダ
+acting: 座ったまま優雅に会釈する（「アマタイア王国より灰汁の魔女ベルダ様」）
+dialogue:
+- L989「アマタイア王国より灰汁の魔女ベルダ様。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 48.3
+  - 50.8
+  - 0.95
+  look: berda
+  lens: 46
+  move: ベルダの正面の低い所（円卓の上）から
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+- nezaria
+overlays: []
+fallback: null
+act:
+  start: ベルダ
+  end: 会釈するベルダ
+timing:
+  lead: 0.4
+blocking:
+  start: ベ（中央・正面）
+  end: ベ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+    walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
+    walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A29/gen/sketch/A29-012_start.png
+  - episodes/A/scenes/A29/gen/sketch/A29-012_end.png

@@ -1,0 +1,71 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-016
+scene: A32
+tc: 122.3
+sec: 7.0
+kind: M
+shot: ビスコ・不問に
+acting: （「だから、お互い……。これまでのことは不問にするということで、どうだ？」）
+dialogue:
+- L1119「だから、お互い……。これまでのことは不問にするということで、どうだ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 45.6
+  - 46.0
+  - 2.6
+  look:
+  - 53.0
+  - 51.0
+  lens: 30
+  move: ビスコの斜め後ろの高い所から、肩越しに魔女たち
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: ビスコ
+  end: 皆を見るビスコ
+timing:
+  lead: 0.4
+blocking:
+  start: ビ（左・背中）、鶏（左・正面）、百（中央・斜め後ろ（画面右向き））、巨メ（中央・正面）、パ（中央・正面）
+  end: 鶏（左・斜め前（画面右向き））、ビ（左・背中）、百（中央・斜め後ろ（画面右向き））、巨メ（中央・正面）、パ（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
+    belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; the winter rooster (scarecocco_sheet_01), a strange rooster-like magic
+    beast, standing, at the far left of the frame, facing the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face
+    with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background; giant
+    Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her
+    feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame,
+    facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council
+    chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+    curtains.'
+  staging_en_end: 'In frame (exactly 5 people, from left to right): the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, at the far left of the frame, in three-quarter
+    view, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+    tail, silver armored boots), standing, at the far left of the frame, with the back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and
+    a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, seen from behind at an angle, turned toward screen
+    right, small in the background; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green
+    swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; Purple Peel, the dust witch, as in her reference sheet, standing,
+    on the right of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
+    Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows
+    full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-016_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-016_end.png

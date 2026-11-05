@@ -1,0 +1,56 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-027
+scene: A28
+tc: 200.7
+sec: 11.3
+kind: M
+shot: リリー・無知とは
+acting: 冷たく言い放つ（「しかし、あんな“ただの山”から本当に、ここに来られると思っていたんだからね。無知とはときに、驚愕に値するよ」）
+dialogue:
+- L959「しかし、あんな“ただの山”から本当に、ここに来られると思っていたんだからね。無知とはときに、驚愕に値するよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 52.3
+  - 46.0
+  - 0.9
+  look: lily
+  lens: 34
+  move: リリーの斜め下から、天球儀を背景に入れる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 天球儀の光を背にしたリリー
+  end: 目を細めるリリー
+timing:
+  lead: 0.4
+blocking:
+  start: リ（中央・斜め後ろ（画面右向き））、パ（右・斜め後ろ（画面右向き））
+  end: リ（中央・斜め後ろ（画面右向き））、パ（右・斜め後ろ（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned
+    toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, seen from behind at an angle, turned
+    toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind:
+    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+    from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-027_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-027_end.png

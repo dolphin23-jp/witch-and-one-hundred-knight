@@ -1,0 +1,76 @@
+# A32 採決。blocking.yaml（Claude の案 2026-11-05、Living Spec「A32 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A32-001
+scene: A32
+tc: 0.0
+sec: 12.1
+kind: A
+shot: 巨大メタリカ・皆殺しにしてやる
+acting: （「ニワトリがあと1回鳴く前に！夜会が終わる前に……」）両手を掲げて雷を集める（「お前たち三流魔女どもを皆殺しにしてやるぞ！！！」）
+dialogue:
+- L1100「ニワトリがあと1回鳴く前に！夜会が終わる前に……。」
+- L1101「お前たち三流魔女どもを皆殺しにしてやるぞ！！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 46.4
+  - 57.6
+  - 0.5
+  look: metallica-giant
+  lens: 22
+  move: 床から見上げるあおり。両手の雷に合わせて上へ
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+- scarecocco
+overlays: []
+fallback: null
+act:
+  start: 朝日を背にした巨大メタリカ
+  end: 雷をまとう両手
+timing:
+  lead: 0.4
+blocking:
+  start: ウ（左・横顔（画面右向き））、ラ（左・横顔（画面右向き））、ネ（左・斜め後ろ（画面右向き））、リ（中央・背中）、巨メ（中央・斜め前（画面左向き））、鶏（中央・正面）、ベ（右・背中）、百（右・横顔（画面右向き））
+  end: ネ（左・斜め後ろ（画面右向き））、リ（中央・背中）、巨メ（中央・正面）、鶏（中央・正面）、ベ（右・背中）、百（右・横顔（画面右向き））
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly 8 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far left of the frame, in profile, turned toward screen
+    right, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned toward screen right, small in the background;
+    Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair,
+    sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim,
+    standing, on the left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the
+    center of the frame, with the back to the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant
+    grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the
+    background; the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, in the center of the frame, facing the camera, small in the background; Berda, the lye witch, as in
+    her reference sheet, standing, on the right of the frame, with the back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue
+    flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in profile, turned toward screen right, small in the background.
+    No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night
+    inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+    of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
+    and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
+    (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Lily (Liliane),
+    the thin-ice witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01):
+    the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the
+    frame, facing the camera, small in the background; the winter rooster (scarecocco_sheet_01), a strange rooster-like magic beast, standing, in the center of the frame, facing the camera, small in the
+    background; Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, with the back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet
+    with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in profile, turned toward
+    screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars
+    between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+    dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A32/gen/sketch/A32-001_start.png
+  - episodes/A/scenes/A32/gen/sketch/A32-001_end.png

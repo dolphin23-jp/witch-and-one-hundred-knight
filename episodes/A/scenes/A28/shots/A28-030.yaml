@@ -1,0 +1,56 @@
+# A28 議会場・魔女たちの宴。blocking.yaml（Claude の案 2026-11-05、Living Spec「A28 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A28/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A28-030
+scene: A28
+tc: 230.3
+sec: 8.1
+kind: A
+shot: 倒れる百騎兵・奥にパープルピール
+acting: パープルピールが言う（「ああいう勝手に魔女を名乗る輩を処分するのも、魔女会のつとめじゃないのかい？」）。百騎兵が目を回して前へ倒れる
+dialogue:
+- L963「ああいう勝手に魔女を名乗る輩を処分するのも、魔女会のつとめじゃないのかい？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 50.2
+  - 57.4
+  - 0.35
+  look: hundred-knight
+  lens: 30
+  move: 床すれすれ、百騎兵の正面の低い所。倒れるのに合わせて少し下がる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- teressa
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 手前でふらつく百騎兵。奥の円卓にパープルピール
+  end: 床に倒れた百騎兵
+timing:
+  lead: 0.4
+blocking:
+  start: 百（中央・正面）
+  end: 百（中央・正面）
+  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  panels: []
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized
+    blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark
+    wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+    the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes,
+    oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind:
+    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+    from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A28/gen/sketch/A28-030_start.png
+  - episodes/A/scenes/A28/gen/sketch/A28-030_end.png
