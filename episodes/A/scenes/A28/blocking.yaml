@@ -697,24 +697,24 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [49.6, 54.6, 1.2]
-      look: [49.8, 57.1]
-      look_h: 0.9
-      lens: 30
-      frame: 膝上
+      cam: [51.7, 55.0, 1.25]
+      look: [49.5, 57.4]
+      look_h: 0.85
+      lens: 28
+      frame: 肩なめ
     - t: 4.35
-      cam: [49.5, 55.1, 1.05]
+      cam: [51.4, 55.2, 1.1]
       look: *id010
       look_h: 0.75
-      lens: 36
+      lens: 32
     - t: 11.4
-      cam: [49.4, 55.8, 0.95]
+      cam: [50.2, 55.5, 0.95]
       look: *id010
       look_h: 0.7
-      lens: 42
+      lens: 40
       frame: 胸上
     act: {start: ラビィが何かに気づく, do: 腹を抱えて笑い（「しかも、これ……アハハハハ！！！」）、ビスコを指さす（「かかりそこなってるじゃんか！…素人の仕事だな！」）。ビスコがはっとする（呪いの伏線）, end: 指さすラビィと、目を見開くビスコ}
-    camera: ビスコの正面から、指さすラビィ越しにビスコへ寄る（感情の山）
+    camera: ラビィの肩越しに、指さされるビスコへ寄る（感情の山）
     kind: A
   A28-011:
     frame: 胸上
@@ -767,13 +767,13 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [48.7, 50.9, 1.25]
+      cam: [48.7, 50.9, 0.88]
       look: berda
       look_h: 0.95
       lens: 38
       frame: 胸上
     - t: 9.8
-      cam: [48.4, 51.0, 1.2]
+      cam: [48.4, 51.0, 0.88]
       look: berda
       look_h: 0.95
       lens: 44
@@ -932,7 +932,7 @@ cuts:
         pose: stand
       - {t: 0.3, face: '@berda', pose: walk}
       - t: 2.2
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         pose: walk
         ease: out
       - {t: 2.5, pose: cross}
@@ -944,7 +944,8 @@ cuts:
         pose: hop
         z: 0.9
       - t: 0.6
-        at: [49.6, 55.6]
+        at: [49.7, 53.3]
+        z: 1.2
       berda:
       - t: 0.0
         at: [46.62, 51.95]
@@ -998,16 +999,16 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@berda'
         pose: lean
       - {t: 1.4, pose: stand}
       usamaru:
       - t: 0.0
-        at: [49.6, 55.6]
+        at: [49.7, 53.3]
         face: '@bisco'
         pose: hop
-        z: 0.9
+        z: 1.2
       berda:
       - t: 0.0
         at: [46.62, 51.95]
@@ -1068,15 +1069,15 @@ cuts:
       - {t: 1.9, pose: sit}
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@berda'
         pose: stand
       usamaru:
       - t: 0.0
-        at: [49.6, 55.6]
+        at: [49.7, 53.3]
         face: '@bisco'
         pose: hop
-        z: 0.9
+        z: 1.2
       berda:
       - t: 0.0
         at: [45.89, 52.38]
@@ -1099,15 +1100,15 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [52.1, 48.5, 1.4]
+      cam: [52.1, 48.5, 0.9]
       look: purple-peel
-      look_h: 0.95
+      look_h: 0.97
       lens: 42
       frame: 胸上
     - t: 7.4
-      cam: [52.2, 48.7, 1.35]
+      cam: [52.2, 48.7, 0.9]
       look: purple-peel
-      look_h: 0.95
+      look_h: 0.97
       lens: 46
     act: {start: 椅子にもたれるパープルピール, do: 肩をすくめる（「なんだい？そいつだってもう一人前の魔女さ。自分のケツは自分でふけるよ」）, end: 腕を組むパープルピール}
     camera: パープルピールの右斜め前（北東の窓側の円卓の上）から
@@ -1129,21 +1130,21 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@berda'
         pose: stand
       - {t: 1.0, pose: proud, face: 330}
       usamaru:
       - t: 0.0
-        at: [49.6, 55.6]
+        at: [49.7, 53.3]
         face: '@bisco'
         pose: hop
-        z: 0.9
+        z: 1.2
       - t: 0.3
-        at: [49.3, 55.0]
+        at: [49.4, 54.4]
         z: 1.4
       - t: 6.2
-        at: [49.3, 54.8]
+        at: [49.4, 54.2]
         z: 1.6
       berda:
       - t: 0.0
@@ -1167,13 +1168,13 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [47.8, 56.0, 0.6]
+      cam: [50.6, 56.8, 0.32]
       look: usamaru
       look_h: 1.3
       lens: 28
       frame: 膝上
     - t: 6.5
-      cam: [47.9, 56.3, 0.6]
+      cam: [50.5, 56.9, 0.32]
       look: usamaru
       look_h: 1.4
       lens: 30
@@ -1198,12 +1199,12 @@ cuts:
       - {t: 0.3, pose: sit, face: '@rabi'}
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: 330
         pose: proud
       usamaru:
       - t: 0.0
-        at: [49.3, 54.8]
+        at: [49.4, 54.2]
         face: '@bisco'
         pose: hop
         z: 1.6
@@ -1229,15 +1230,15 @@ cuts:
         pose: proud
     cam_keys:
     - t: 0.0
-      cam: [51.7, 50.8, 1.1]
+      cam: [51.7, 50.8, 0.9]
       look: purple-peel
-      look_h: 1.0
+      look_h: 0.98
       lens: 50
       frame: 寄り
     - t: 1.0
-      cam: [52.3, 50.5, 1.1]
+      cam: [52.3, 50.5, 0.92]
       look: purple-peel
-      look_h: 1.0
+      look_h: 0.98
       lens: 60
       ease: out
     act: {start: パープルピールの顔の寄り, do: 身を起こしてラビィをにらむ（「……あん？」）。間, end: にらむ目}
@@ -1261,14 +1262,14 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: 330
         pose: proud
       - {t: 0.2, pose: jump}
       - {t: 0.6, pose: stand, face: '@purple-peel'}
       usamaru:
       - t: 0.0
-        at: [49.3, 54.8]
+        at: [49.4, 54.2]
         face: '@bisco'
         pose: hop
         z: 1.6
@@ -1328,7 +1329,7 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       usamaru:
@@ -1404,7 +1405,7 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       usamaru:
@@ -1475,7 +1476,7 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       usamaru:
@@ -1532,23 +1533,25 @@ cuts:
       ease: inout
       frame: 全身
     fx:
-    - kind: plume
+    - kind: mist
       t: [0.9, 4.4]
-      at: [46.6, 51.0]
-      r: 0.6
-      h: 0.6
-      z: 1.1
+      at: [46.4, 50.7]
+      r: 0.35
+      h: 0.4
+      z: 1.2
       color: [170, 120, 230]
+      alpha: 0.35
     - kind: surge
       t: [1.2, 3.4]
-      at: [46.2, 50.6]
+      at: [46.4, 51.0]
       to: [50.2, 60.2]
-      r: 0.5
-      h: 0.4
-      z: 0.6
+      r: 0.4
+      h: 0.25
+      z: 0.3
       n: 14
       color: [170, 120, 230]
-      glow: 1.2
+      glow: 1.0
+      alpha: 0.4
     act: {start: 本を顔の前に掲げたリューベンス, do: そっと息を吹きかけると、紫の霞が床を這って百騎兵へ流れていく（台詞なし）, end: 霞に包まれ、ふらつく百騎兵}
     camera: リューベンスの横顔から、霞を追って百騎兵へ振る
     kind: A
@@ -1574,7 +1577,7 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       usamaru:
@@ -1610,13 +1613,13 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [50.9, 61.6, 0.55]
+      cam: [50.5, 61.0, 0.55]
       look: lily
       look_h: 1.2
       lens: 36
       frame: 肩なめ
     - t: 10.0
-      cam: [51.1, 61.4, 0.6]
+      cam: [50.6, 60.9, 0.6]
       look: lily
       look_h: 1.3
       lens: 42
@@ -1643,7 +1646,7 @@ cuts:
       - {t: 0.3, pose: sit, face: 200}
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       usamaru:
@@ -1679,21 +1682,21 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [49.6, 49.3, 1.4]
+      cam: [51.6, 52.0, 1.6]
       look: purple-peel
-      look_h: 1.0
-      lens: 36
+      look_h: 1.05
+      lens: 45
       frame: 胸上
     - t: 9.22
-      cam: [49.8, 49.1, 1.4]
-      look: [53.7, 48.8]
+      cam: [51.7, 51.9, 1.6]
+      look: [53.7, 49.0]
       look_h: 1.2
-      lens: 34
+      lens: 42
     - t: 12.9
-      cam: [49.9, 49.0, 1.4]
+      cam: [51.8, 51.8, 1.6]
       look: lily
       look_h: 1.4
-      lens: 38
+      lens: 48
     act: {start: パープルピールが鼻で笑う, do: （「これが百騎兵ねぇ……。眉唾もいいところじゃないかい？」、ラビィ「ふーん……」）リリーが肩をすくめる（「あまり強そうには見えないけどね」）, end: あざける二人}
     camera: 二人の正面（円卓の西の上）から、左右に振る
     kind: M
@@ -1714,7 +1717,7 @@ cuts:
         pose: sit
       rabi:
       - t: 0.0
-        at: [48.6, 54.6]
+        at: [48.9, 54.0]
         face: '@purple-peel'
         pose: stand
       - {t: 0.3, pose: walk, face: 120}
@@ -1722,7 +1725,7 @@ cuts:
         at: [50.8, 54.6]
         pose: walk
         ease: out
-      - {t: 2.9, pose: arms_up, face: 60}
+      - {t: 2.9, pose: arms_up, face: 158}
       - {t: 8.6, pose: hop}
       usamaru:
       - t: 0.0
@@ -1762,16 +1765,16 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [45.6, 58.8, 1.0]
-      look: rabi
-      look_h: 0.9
-      lens: 30
-      frame: 全身
-    - t: 10.1
-      cam: [47.2, 59.6, 1.0]
+      cam: [47.6, 58.6, 1.0]
       look: rabi
       look_h: 0.9
       lens: 32
+      frame: 全身
+    - t: 10.1
+      cam: [49.8, 59.2, 1.0]
+      look: rabi
+      look_h: 0.9
+      lens: 34
     act: {start: ラビィが前に出る, do: 拳を突き上げる（「それで、結局肝心の沼の魔女はどうなったんだ？…強いんならアタシと勝負させろよ！」）, end: 跳びはねるラビィ}
     camera: ラビィを追って横へ流す（扉の側から）
     kind: M
@@ -1795,8 +1798,9 @@ cuts:
       rabi:
       - t: 0.0
         at: [50.8, 54.6]
-        face: 60
+        face: 158
         pose: hop
+      - {t: 0.6, pose: stand, face: '@purple-peel'}
       usamaru:
       - t: 0.0
         at: [51.5, 54.2]
@@ -1833,21 +1837,21 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [50.4, 52.9, 1.2]
+      cam: [52.5, 54.6, 1.15]
       look: usamaru
       look_h: 1.0
       lens: 40
       frame: 膝上
     - t: 5.73
-      cam: [50.6, 52.6, 1.25]
+      cam: [52.7, 54.2, 1.3]
       look: purple-peel
-      look_h: 1.0
-      lens: 38
+      look_h: 1.05
+      lens: 50
     - t: 13.0
-      cam: [50.8, 52.4, 1.25]
+      cam: [52.8, 54.0, 1.3]
       look: purple-peel
-      look_h: 1.0
-      lens: 42
+      look_h: 1.05
+      lens: 55
     act: {start: ウサギ人形がラビィの肩口で笑う, do: （「ははっ！ラビィちゃんが勝負するまでもないよ。あのダンスみただろう？」）パープルピールが膝を叩いて笑う（「まったく、あれは傑作だったねえ。あたしゃ数年分笑っちまったよ！」）, end: 笑い転げるパープルピール}
     camera: ウサギ人形の寄りから、円卓越しにパープルピールへ振る
     kind: M
@@ -1871,8 +1875,8 @@ cuts:
       rabi:
       - t: 0.0
         at: [50.8, 54.6]
-        face: 60
-        pose: hop
+        face: '@purple-peel'
+        pose: stand
       usamaru:
       - t: 0.0
         at: [51.6, 53.6]
@@ -1917,7 +1921,7 @@ cuts:
       look_h: 1.45
       lens: 38
     act: {start: 天球儀の光を背にしたリリー, do: 冷たく言い放つ（「しかし、あんな“ただの山”から本当に、ここに来られると思っていたんだからね。無知とはときに、驚愕に値するよ」）, end: 目を細めるリリー}
-    camera: リリーの斜め下から、天球儀を背景に入れる
+    camera: リリーの斜め下から見上げる（窓の夜空を背に）
     kind: M
   A28-028:
     frame: 膝上
@@ -1937,8 +1941,8 @@ cuts:
       rabi:
       - t: 0.0
         at: [50.8, 54.6]
-        face: 60
-        pose: hop
+        face: '@purple-peel'
+        pose: stand
       usamaru:
       - t: 0.0
         at: [51.6, 53.6]
@@ -2005,8 +2009,8 @@ cuts:
       rabi:
       - t: 0.0
         at: [50.8, 54.6]
-        face: 60
-        pose: hop
+        face: '@purple-peel'
+        pose: stand
       - {t: 0.3, pose: proud, face: 330}
       - {t: 3.4, pose: shake}
       usamaru:
@@ -2042,13 +2046,13 @@ cuts:
         pose: shake
     cam_keys:
     - t: 0.0
-      cam: [51.6, 52.6, 1.0]
+      cam: [49.8, 52.9, 1.0]
       look: rabi
       look_h: 1.3
       lens: 40
       frame: 胸上
     - t: 7.8
-      cam: [51.5, 52.8, 1.0]
+      cam: [49.9, 53.1, 1.0]
       look: rabi
       look_h: 1.3
       lens: 44
@@ -2121,7 +2125,7 @@ cuts:
       look: hundred-knight
       look_h: 0.2
       lens: 30
-    act: {start: 手前でふらつく百騎兵。奥の円卓にパープルピール, do: パープルピールが言う（「ああいう勝手に魔女を名乗る輩を処分するのも、魔女会のつとめじゃないのかい？」）。百騎兵が目を回して前へ倒れる, end: 床に倒れた百騎兵}
+    act: {start: ふらつく百騎兵, do: パープルピールの声（「ああいう勝手に魔女を名乗る輩を処分するのも、魔女会のつとめじゃないのかい？」）。百騎兵が目を回して前へ倒れる, end: 床に倒れた百騎兵}
     camera: 床すれすれ、百騎兵の正面の低い所。倒れるのに合わせて少し下がる
     kind: A
   A28-031:
@@ -2401,16 +2405,16 @@ cuts:
         pose: lie
     cam_keys:
     - t: 0.0
-      cam: [47.3, 55.4, 1.55]
+      cam: [48.0, 54.9, 1.45]
       look: bisco
       look_h: 1.35
       lens: 38
       frame: 肩なめ
     - t: 10.8
-      cam: [47.6, 55.8, 1.5]
+      cam: [48.2, 55.3, 1.45]
       look: bisco
       look_h: 1.35
-      lens: 46
+      lens: 50
     act: {start: ベルダの肩越しにビスコ, do: ベルダが顔を寄せる（「沼の魔女とやらにたぶらかされてこのようなところまで来られるとは……」「国王陛下もさぞやお嘆きのことでありましょう」）, end: うつむいて震えるビスコ}
     camera: ベルダの後ろから、ビスコの顔へ寄る
     kind: M
@@ -2475,19 +2479,19 @@ cuts:
       lens: 46
       frame: 寄り
     - t: 5.9
-      cam: [50.0, 55.6, 1.15]
+      cam: [50.3, 55.2, 1.0]
       look: bisco
-      look_h: 1.35
-      lens: 36
-      frame: 胸上
+      look_h: 0.9
+      lens: 30
+      frame: 全身
     fx:
     - kind: fog
       t: [1.4, 5.9]
       at: [50.0, 50.0]
       r: 11.0
-      h: 1.0
-      alpha: 0.075
+      h: 1.2
+      alpha: 0.18
       rise: 2.5
     act: {start: うつむいたビスコ, do: 顔を上げてベルダをにらむ（「な、なんだと？……お前に何がわかる……」）。足元に白い霧が流れ込んでくる, end: 霧の中でにらみ合う二人}
-    camera: ビスコのあおりの寄りから、霧に合わせてわずかに引く
+    camera: ビスコのあおりの寄りから、足元に流れ込む霧に合わせて全身まで引く
     kind: M

@@ -18,7 +18,7 @@
   fog    霧。at、r（広がり）、h（厚さ）、alpha、t: [始め, 終わり]、rise（濃くなる秒）、fade（薄れる秒）
   bolt   雷撃。at（手の位置。人物名か場所）、z（手の高さ）、to（落ちる先の場所か人物の並び）、t、rate（明滅の速さ）
   flash  画面いっぱいの光（白）や暗転（color: [0,0,0]）。カメラに付けた小さな球の内側で、手前の物も覆う。t、peak（いちばん濃い秒）、alpha（at は使わない）
-  surge  流れ込む沼の波。at（出どころ）、to（行き先）、t、r（太さ）、h（高さ）
+  surge  流れ込む沼の波。at（出どころ）、to（行き先）、t、r（太さ）、h（高さ）、alpha（書くと半透明の霞）
   mist   半透明の噴き上げ（沼の瘴気）。plume と同じ書き方（r、h、z、color）で、中の人物が透けて見える。alpha（濃さ、既定 0.45）
 """
 import math
@@ -458,8 +458,12 @@ def build_fx(P, fx, i):
             m = P.beam_mat(f"fx{i}_mist{j}", col, strength=fx.get("glow", 0.9), alpha=1.0 - fx.get("alpha", 0.45))
             objs.append(P.prim("sphere", m, f"fx{i}_mist{j}", None, (0, 0, -50), radius=1.0))
         return objs
-    if kind == "surge":   # 沼の波: 出どころから行き先へ、波の先が進む球の列
-        m = P.make_mat(f"fx{i}_surge", tuple(v / 255 for v in fx.get("color", [32, 160, 120])), rough=0.25, emit=fx.get("glow", 0.5))
+    if kind == "surge":   # 沼の波: 出どころから行き先へ、波の先が進む球の列（alpha を書くと半透明の霞）
+        col = tuple(v / 255 for v in fx.get("color", [32, 160, 120]))
+        if fx.get("alpha"):
+            m = P.beam_mat(f"fx{i}_surge", col, strength=fx.get("glow", 0.8), alpha=1.0 - fx["alpha"])
+        else:
+            m = P.make_mat(f"fx{i}_surge", col, rough=0.25, emit=fx.get("glow", 0.5))
         return [P.prim("sphere", m, f"fx{i}_s{j}", None, (0, 0, -50), radius=1.0) for j in range(int(fx.get("n", 16)))]
     return None
 

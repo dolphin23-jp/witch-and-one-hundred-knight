@@ -200,15 +200,15 @@ cuts:
         pose: lie
     cam_keys:
     - t: 0.0
-      cam: [48.2, 50.4, 2.0]
+      cam: [48.2, 50.4, 0.92]
       look: berda
-      look_h: 0.95
+      look_h: 0.97
       lens: 40
       frame: 胸上
     - t: 7.3
-      cam: [48.4, 50.2, 1.9]
+      cam: [48.4, 50.2, 0.92]
       look: berda
-      look_h: 0.95
+      look_h: 0.97
       lens: 44
     fx:
     - kind: fog
@@ -219,7 +219,7 @@ cuts:
       rise: 0.1
       t: [0.0, 7.3]
     act: {start: 席に着いたベルダ, do: 咳払いして皆を見回す（「おほん。皆様、ご静粛に！議長がこられましたわ」）, end: 北の空いた議長の席へ目をやるベルダ}
-    camera: ベルダの正面の高い所から（霧越し）
+    camera: ベルダの正面、頭の高さから（霧越し）
     kind: M
   A29-003:
     frame: 全身
@@ -287,7 +287,7 @@ cuts:
       - {t: 4.3, pose: sit, face: 180}
     cam_keys:
     - t: 0.0
-      cam: [50.4, 54.6, 0.95]
+      cam: [50.9, 54.8, 0.95]
       look: [50.0, 45.0]
       look_h: 1.3
       lens: 34
@@ -533,15 +533,15 @@ cuts:
         pose: sit
     cam_keys:
     - t: 0.0
-      cam: [51.6, 51.6, 1.3]
+      cam: [51.6, 51.6, 0.9]
       look: purple-peel
-      look_h: 0.95
+      look_h: 0.97
       lens: 42
       frame: 胸上
     - t: 5.7
-      cam: [51.8, 51.4, 1.25]
+      cam: [51.8, 51.4, 0.9]
       look: purple-peel
-      look_h: 0.95
+      look_h: 0.97
       lens: 46
     fx:
     - kind: fog
@@ -611,13 +611,13 @@ cuts:
         pose: sit
     cam_keys:
     - t: 0.0
-      cam: [51.5, 50.6, 2.1]
+      cam: [51.5, 50.6, 0.85]
       look: rabi
       look_h: 0.9
       lens: 42
       frame: 胸上
     - t: 5.6
-      cam: [51.7, 50.7, 2.0]
+      cam: [51.7, 50.7, 0.85]
       look: rabi
       look_h: 0.9
       lens: 46
@@ -630,7 +630,7 @@ cuts:
       rise: 0.1
       t: [0.0, 5.6]
     act: {start: ラビィの顔, do: 名前を呼ばれて片眉を上げる（「同じく、ナハトより焔の魔女ラビリ・ラルラ・ラー様」）, end: むっとするラビィ}
-    camera: ラビィの正面の高い所から（円卓の上）
+    camera: ラビィの正面、頭の高さから（円卓の上）
     kind: M
   A29-008:
     frame: 膝上
@@ -1171,16 +1171,16 @@ cuts:
         pose: sit
     cam_keys:
     - t: 0.0
-      cam: [47.6, 51.6, 0.7]
+      cam: [47.81, 52.33, 0.7]
       look: teressa
-      look_h: 1.3
-      lens: 36
+      look_h: 1.25
+      lens: 30
       frame: 膝上
     - t: 6.3
-      cam: [47.8, 51.5, 0.7]
+      cam: [47.69, 52.36, 0.7]
       look: teressa
-      look_h: 1.3
-      lens: 40
+      look_h: 1.25
+      lens: 34
     act: {start: ベルダの後ろに立つテレッサ, do: 胸を張ってお辞儀する（「魔女の承認の儀のため召喚されし、ヤニの魔女テレッサ」）, end: 得意げなテレッサ}
     camera: テレッサの正面の低い所から
     kind: M
@@ -1846,18 +1846,18 @@ cuts:
         pose: sit
     cam_keys:
     - t: 0.0
-      cam: [52.0, 49.6, 0.45]
+      cam: [52.73, 47.39, 0.4]
       look: lily
-      look_h: 1.3
-      lens: 30
+      look_h: 1.35
+      lens: 22
       frame: 膝上
     - t: 5.0
-      cam: [52.1, 49.4, 0.5]
+      cam: [52.68, 47.3, 0.45]
       look: lily
-      look_h: 1.45
-      lens: 32
+      look_h: 1.5
+      lens: 24
     act: {start: リリーが椅子を倒して立ち上がる, do: （「マ、マーリカ様を手に掛けただと！？」）, end: 拳を握るリリー}
-    camera: リリーの足元の低い所から見上げる
+    camera: 椅子と椅子の間の床すれすれから、立ち上がるリリーを見上げる
     kind: M
     lighting: council_night
   A29-024:
