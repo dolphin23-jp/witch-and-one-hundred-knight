@@ -73,8 +73,6 @@ cuts:
       - 床の瓦礫
       - 倒れた椅子
       - 倒れた椅子
-      - 倒れた椅子
-      - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
       staging: 'In frame (exactly 8 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
@@ -230,7 +228,6 @@ cuts:
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 椅子（ベルダ）
-      - 倒れた椅子
       staging: 'In frame (exactly 2 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, at the
         far left of the frame, facing the camera; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
         walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
@@ -263,24 +260,29 @@ cuts:
     note: null
   A29-003:
     cam:
-    - 51.8
+    - 47.2
     - 54.6
     - 1.0
-    lens: 34
-    bearing: 344
+    lens: 40
+    bearing: 7
     frame: 全身
     start:
       people:
+      - who: rubens
+        s: -0.84
+        dist: 4.43
+        side: 左
+        body: 横顔（画面右向き）
+      - who: berda
+        s: -0.79
+        dist: 2.56
+        side: 左
+        body: 斜め後ろ（画面右向き）
       - who: nezaria
-        s: 0.02
-        dist: 12.86
+        s: 0.08
+        dist: 12.55
         side: 中央
         body: 正面
-      - who: lily
-        s: 1.06
-        dist: 5.87
-        side: 右
-        body: 斜め前（画面左向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
@@ -289,26 +291,27 @@ cuts:
       - 天球儀（透けた大きな球、金の輪、光る惑星）
       - 議長の椅子（北）
       - 椅子（空き。マーリカの席）
-      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 椅子（リューベンス）
       - 椅子（空き。ヴァレンティーヌの席）
       - 椅子（空き）
       - 円い壁（北〜北東が破れている）
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 破れた壁の瓦礫（北）
-      - 床の瓦礫
-      - 倒れた椅子
-      staging: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-        (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference
-        sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between
-        heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark
-        wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 3 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
+        in profile, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right; Nezaria,
+        the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
+        half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim,
+        standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
+        curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+        tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: nezaria
         s: 0.0
-        dist: 7.45
+        dist: 8.13
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring
@@ -629,6 +632,7 @@ cuts:
       - 椅子（ラビィ）
       - 倒れた椅子
       - 傾いて残った椅子
+      - 傾いて残った椅子
       staging: 'In frame (exactly 2 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera; Rabi (Rabil Lalla La), the
         flame witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled round walls with tall
         arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery
@@ -796,7 +800,6 @@ cuts:
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 椅子（ベルダ）
-      - 倒れた椅子
       staging: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
         walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
         of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
@@ -881,8 +884,7 @@ cuts:
         side: 中央
         body: 正面
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 傾いて残った椅子
+      props: []
       staging: 'In frame (exactly one person): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame,
         facing the camera. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the
         top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
@@ -921,8 +923,7 @@ cuts:
         side: 中央
         body: 横顔（画面右向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 傾いて残った椅子
+      props: []
       staging: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
         black-and-white tail, silver armored boots), standing, in the center of the frame, in profile, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched
         windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
@@ -1109,9 +1110,6 @@ cuts:
       - 床を覆う毒沼（碧。D-063）
       - 床の瓦礫
       - 倒れた椅子
-      - 倒れた椅子
-      - 倒れた椅子
-      - 傾いて残った椅子
       - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
@@ -1256,6 +1254,7 @@ cuts:
       - 椅子（空き）
       - 椅子（ベルダ）
       - 椅子（リューベンス）
+      - 倒れた椅子
       - 倒れた椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
@@ -1404,7 +1403,6 @@ cuts:
       - 椅子（ベルダ）
       - 椅子（リューベンス）
       - 倒れた椅子
-      - 倒れた椅子
       - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（桃）
       - 廊下の灯り
@@ -1514,6 +1512,8 @@ cuts:
       props:
       - 椅子（リューベンス）
       - 椅子（空き。ヴァレンティーヌの席）
+      - 倒れた椅子
+      - 倒れた椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
       staging: 'In frame (exactly 2 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
@@ -1567,6 +1567,7 @@ cuts:
       props:
       - 椅子（リリー）
       - 破れた壁の瓦礫（北東）
+      - 傾いて残った椅子
       - 傾いて残った椅子
       staging: 'In frame (exactly one person): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other
         people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower:
@@ -1675,7 +1676,6 @@ cuts:
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 床の瓦礫
-      - 倒れた椅子
       - 倒れた椅子
       - 傾いて残った椅子
       - 傾いて残った椅子
@@ -1908,6 +1908,7 @@ cuts:
       props:
       - 椅子（空き。ヴァレンティーヌの席）
       - 倒れた椅子
+      - 倒れた椅子
       - 床に落ちた天球儀の惑星（黄）
       staging: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round
         walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
@@ -1980,6 +1981,8 @@ cuts:
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
       props:
       - 椅子（パープルピール）
+      - 傾いて残った椅子
+      - 傾いて残った椅子
       staging: 'In frame (exactly one person): Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people.
         Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden
         light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
@@ -2193,9 +2196,6 @@ cuts:
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
       - 床の瓦礫
-      - 倒れた椅子
-      - 倒れた椅子
-      - 傾いて残った椅子
       - 廊下の灯り
       - 両開きの扉（開いている）
       staging: 'In frame (exactly 10 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned toward screen
@@ -2330,8 +2330,7 @@ cuts:
         side: 中央
         body: 斜め前（画面右向き）
       bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 倒れた椅子
+      props: []
       staging: 'In frame (exactly one person): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the center of the frame,
         in three-quarter view, turned toward screen right. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
         the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
@@ -2380,8 +2379,6 @@ cuts:
       props:
       - 椅子（空き）
       - 椅子（ベルダ）
-      - 倒れた椅子
-      - 傾いて残った椅子
       staging: 'In frame (exactly 2 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, in the
         center of the frame, in profile, turned toward screen left; Berda, the lye witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Behind: dark
         wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
@@ -2436,7 +2433,6 @@ cuts:
       props:
       - 椅子（空き。扉の側）
       - 椅子（空き）
-      - 傾いて残った椅子
       - 廊下の灯り
       - 両開きの扉（開いている）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
@@ -2621,7 +2617,6 @@ cuts:
       - 床の瓦礫
       - 倒れた椅子
       - 倒れた椅子
-      - 傾いて残った椅子
       - 床に落ちた天球儀の惑星（黄）
       - 床に落ちた天球儀の惑星（桃）
       staging: 'In frame (exactly 9 people, from left to right): Teressa, the apprentice witch, as in her reference sheet (after A30-005: teressa-swamp_sheet_01, drenched in the swamp), standing, on the

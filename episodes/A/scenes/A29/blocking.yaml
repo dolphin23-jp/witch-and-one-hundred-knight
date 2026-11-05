@@ -38,8 +38,8 @@ start:
     at: &id009 [50.3, 60.4]
     face: 350
   nezaria:
-    at: &id011 [48.4, 42.2]
-    face: 170
+    at: &id011 [49.2, 42.2]
+    face: 175
 cuts:
   A29-001:
     frame: 引き
@@ -274,7 +274,7 @@ cuts:
       nezaria:
       - t: 0.0
         at: *id011
-        face: 170
+        face: 175
         pose: walk
       - t: 2.6
         at: [48.9, 45.4]
@@ -287,16 +287,16 @@ cuts:
       - {t: 4.3, pose: sit, face: 180}
     cam_keys:
     - t: 0.0
-      cam: [51.8, 54.6, 1.0]
-      look: [48.8, 44.0]
+      cam: [47.2, 54.6, 1.0]
+      look: [48.6, 43.5]
       look_h: 1.3
-      lens: 34
+      lens: 40
       frame: 全身
     - t: 6.1
-      cam: [51.5, 53.4, 1.05]
+      cam: [47.4, 53.8, 1.05]
       look: nezaria
       look_h: 1.1
-      lens: 42
+      lens: 46
     fx:
     - kind: fog
       at: *id010
@@ -315,7 +315,7 @@ cuts:
       fade: 2.0
       n: 6
     act: {start: 北の霧の中に人影, do: 大きな帽子のネザリアが杖を手に霧から歩み出て、議長の席に座る。ビスコの声（「あれが、議長……？」）, end: 席に着くネザリア}
-    camera: 円卓の南の低い所から、天球儀の下を通して北の席を見る。ネザリアに合わせてわずかに寄る
+    camera: 円卓の南西の低い所から、北の霧から歩み出て議長の席に着くネザリアを見る。わずかに寄る
     kind: A
   A29-004:
     frame: 寄り
