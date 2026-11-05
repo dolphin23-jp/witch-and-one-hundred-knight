@@ -30,7 +30,7 @@
 6. **残酷表現:** 生成サービスの制限にかかったカットは、ショットファイルの `fallback`（様式化の代替案）で作る（D-005）。制限を回避するための言い換えはしない。
 7. **カメラ（D-058）:** カメラを効果的に動かす（走る・歩く人物は追いかける、感情の山は寄る、場面の始めと終わりは引きやクレーン）。動かさないカットも、向き・高さ・レンズをシーンごとに選び、同じ向きや止めを続けない。動きは Blender の下絵に入れて動画生成に渡す。`tools/staging.py` の「カメラの単調さ」の警告を見て直す。
 8. **動きを先に決める（D-060）:** A05 から、生成の前に「動きの設計」（カットごとに、だれが・いつ・どう動くか、カメラの動き、見せ場を秒単位で。Living Spec の場面のタブ）を作り、それを blocking.yaml のキー（`keys`・`cam_keys`・`creatures`・`fx`）に書いて、動きの入った下絵（`tools/previs.py`）と0.5秒ごとのコマの確認画像をユーザーに見せる。下絵が OK になってから静止画と動画を作る。終わりの静止画は着地点を固めたいカットだけ。台詞なしの動きの見せ場は足してよい。
-   - **制作は3段階（D-062、D-071 で改訂）:** まず 3D（動きの設計と動きの入った下絵）を、ほぼ全編にわたって先に完成させる（クレジット0。これが主な作業）。静止画は GPT Image 2.5 を Plus の毎月のクレジットの中で、場面ごとに承認を取って作る（無制限の日を待たない）。動画は生成せず、`tools/celanim.py` でコードで動かす（クレジット0）。生成の前の承認（場面ごとなど、まとめてよい）と記録は守る。
+   - **制作は3段階（D-062、D-072 で改訂）:** まず 3D（動きの設計と動きの入った下絵）を、ほぼ全編にわたって先に完成させる（クレジット0。これが主な作業）。静止画（GPT Image 2.5）と動画（Seedance）は、Higgsfield Plus の毎月のクレジットの中で、場面ごとに承認を取って作る（無制限の日を待たない。A01〜A22 の残りで約4,200クレジット、Plus の約4か月分。アップグレードは後で判断）。生成の前の承認（場面ごとなど、まとめてよい）と記録は守る。
 9. **使わないもの:** 非公式のMCP（生成サービスのWebアプリを直接操作するもの）、GUIの編集ソフトをAIに操作させる方式（D-035）。
 
 ## 参照画像を受け取ったとき
@@ -47,7 +47,7 @@
 ## 生成サービスへのつなぎ方
 
 - 画像・動画: Higgsfield（claude.ai のカスタムコネクタ `https://mcp.higgsfield.ai/mcp`）。セッションで Higgsfield のツールが見えない場合は、ユーザーにコネクタの接続を確認する。
-- **動画は生成しない（D-071）。** 静止画を部品に分けてコードで動かす: `$VENV/bin/python tools/celanim.py prep|render|check|compare cel/<場面>/<カット>.yaml`。人物の切り抜き（ISNet）・背景の穴埋め（LaMa）・奥行き（Depth Anything V2）は ONNX で CPU、モデルは環境変数 `CEL_MODELS` のフォルダ（セッションごとに Hugging Face から入れる。`tools/celanim.py` の先頭に一覧）。`$VENV` には previs と同じものに加えて `numpy opencv-python-headless onnxruntime scipy` を入れる。カットごとの指定は `cel/<場面>/<カット>.yaml`、書き出しは `cel/<場面>/<カット>_v01.mp4`（1080p・24fps、原作の声と BGM 付き）。口・表情・走り・身振りの原画は、同じ人物のコマを1枚に並べたシート（`characters/<人物>/sheets/`）で作る。下の Seedance の記述は、使う場合の決まりとして残す。
+- コードで動かす方式（D-071、`tools/celanim.py`。静止画を切り抜き・穴埋め・奥行きで部品に分けて動かす）は、試作（`cel/`）が使えるレベルに達せず D-072 で取り消した。道具と口・走りなどのシート（`characters/<人物>/sheets/`）は記録として残す。動画は下の Seedance で作る。
 - 動画は Seedance 2.0（Higgsfield 経由。fast・480p が標準。見せ場も fast（D-061。std は A05-006 の比較で見合わなかった）。2.5 は未試験。D-055。Wan 3.0 は予備）。標準の作り方は 「開始の静止画＋終わりの静止画＋設定画＋下絵（Blender）＋口パク参照（原作の台詞。mp3 に変えて渡す）」で、生成音声は使わない（`generate_audio=false`）。終わりの静止画は着地点を固めたいカットだけ（D-060。3人以上は人物を1人ずつ作り、`tools/composite.py --which end` で重ねて描き直す）。480p の fast は1秒1クレジット、std は1秒3クレジット（参照を付けても変わらない）。同時に動かせるのは6本まで（7本目は 429 で受け付けられず、課金もない）。配置・動き・カメラは Blender のプリビズで固定する: `$VENV/bin/python tools/previs.py <シーンのフォルダ> <カットID>…` が blocking.yaml から人形が動く下絵動画を `previs/<シーン>/` に作る（`$VENV` はセッションごとに `python3 -m venv` して `pip install bpy pyyaml pillow`、約20秒。EEVEE は GPU がなく使えない。Cycles の CPU で1フレーム約2秒）。下絵は Seedance に参照動画として渡す（854x480 以上。previs.py の既定は 854x480。768x432 だと生成が失敗した）。顔と衣装は写らないので、引き続き設定画と合格した静止画で固定する。画面の操作はしない（D-035）。
   - Higgsfield への受け渡し: `media_upload` で署名付き URL をもらい、`curl -X PUT -H "Content-Type: …" -H "If-None-Match: *"` で上げて `media_confirm`。音声は WAV が audio/mpeg 扱いになるので mp3（192k）にして上げる。送信がプリセットの推薦（「IN THE DARK」など）で止まったら、ジョブも課金も作られていないので、`declined_preset_id` を付けて同じ内容で出し直す。生成は `generate_video_batch`、完成は `jobs_wait` で待つ。
 - 声・BGM: 原作の音源（D-045）。Drive の「魔女と百騎兵 原作音源」フォルダから取り込み、長い音源は `python tools/extract_lines.py` で台詞に切り出す（Demucs・Whisper は重いので、セッションごとに作業用の venv に入れる）。`tools/gemini_tts.py` と `tools/lyria.py` は使わない（ベイクオフの記録として残す）。
@@ -68,7 +68,7 @@
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音。原作の音源は `audio/original/`（一覧は `index.yaml`）、長い音源から切り出した台詞は `audio/<シーン>/original/` |
 | `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
-| `cel/<場面>/` | コードで動かす方式（D-071、`tools/celanim.py`）のカットごとの指定（yaml）と書き出し、比較・確認の画像。作業ファイルは `cel/<場面>/build/`（Git の管理外） |
+| `cel/<場面>/` | コードで動かす方式の試作（D-071、D-072 で取り消し）の指定と書き出し。記録として残す |
 | `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、書き出した動画の一覧 `drive.yaml`。Drive に置けない書き出しは `animatic/exports/`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
 | `pipeline/` | 役割ごとの実装の設定 |
 | `tools/` | 記録、台詞の切り出し（`extract_lines.py`）と範囲の見直し（`refine_cuts.py`）、立ち位置の確認（`staging.py`）、下絵動画（`previs.py`）、組み立て、QC、Drive への退避と復元（`archive.py`）のスクリプト |
