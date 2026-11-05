@@ -3,9 +3,13 @@
 scene: A25
 bgm:
   # 原作どおり（パート21）: M27「パート21の曲6」（18:33〜19:36、魔女を捜して渡ってくる所）→ M01（19:36〜25:50。catalog では「魔女邸」の名前だが、盲いた魔女の居場所で流れる）
-  # 追憶の園（A25-026）から先はパート22。パート22 の BGM はまだ曲に分けていない（audio/bgm/catalog.yaml はパート16〜21）。分けたら入れる（いまは無音）
+  # 追憶の園（A25-026）から先はパート22（2026-11-05 に曲を分けた。tools/bgm_split.py）:
+  #   M27（0:00〜5:16、追憶の園で実を探す所から、門が開き、魔女の忠告まで）→ M22「夜会の終わり」（5:16〜7:58。L869「こっちにきて…」の途中から、
+  #   実を渡す・列車の出発・魔女の独白まで。ループは約109秒で、試聴用の45秒はその一部）
   - {src: audio/bgm/catalog/M27.ogg, cut: A25-001, t: 0.0, until: {cut: A25-001, t: 6.4}, loop: true, fade_in: 1.0, fade_out: 1.0, volume: 0.28}
   - {src: audio/bgm/catalog/M01.ogg, cut: A25-001, t: 6.0, until: {cut: A25-025, t: 10.0}, loop: true, fade_in: 1.2, fade_out: 2.0, volume: 0.26}
+  - {src: audio/bgm/catalog/M27.ogg, cut: A25-026, t: 0.0, until: {cut: A25-040, t: 11.6}, loop: true, fade_in: 1.5, fade_out: 1.5, volume: 0.28}
+  - {src: audio/bgm/catalog/M22.ogg, cut: A25-040, t: 11.0, until: {cut: A25-047, t: 18.3}, loop: true, fade_in: 1.5, fade_out: 3.0, volume: 0.28}
 sfx:
   # 足音は自動（footsteps.yaml）
   - {src: audio/sfx/wind_night_loop.ogg, cut: A25-001, t: 0.0, until: {cut: A25-047, t: 18.0}, loop: true, rate: 0.75, fade_in: 1.5, fade_out: 3.0, volume: 0.07}

@@ -1,8 +1,11 @@
 # A26 の BGM・効果音の置き場所（D-068、2026-11-04）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
 # 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.28、環境音 0.07〜0.15、効果音 0.3〜0.8
 scene: A26
-bgm: []
-  # A26 はパート22（08:16〜13:30）。パート22 の BGM はまだ曲に分けていない（audio/bgm/catalog.yaml はパート16〜21）。分けたら原作の並びで入れる（いまは無音）
+bgm:
+  # 原作どおり（パート22、2026-11-05 に曲を分けた。tools/bgm_split.py）: M38「夜光列車で魔女都へ」（7:58〜10:23。L879 の約19秒前から、魔女都が見えるまで）
+  #   → M39「魔女都ヴァルプルギス」（10:23〜。L890「なんて美しい」から。A27 のテレッサの所まで続く。ループは約88.5秒で、試聴用の45秒はその半分）
+  - {src: audio/bgm/catalog/M38.ogg, cut: A26-001, t: 0.0, until: {cut: A26-005, t: 1.0}, loop: true, fade_in: 1.0, fade_out: 1.2, volume: 0.28}
+  - {src: audio/bgm/catalog/M39.ogg, cut: A26-005, t: 0.2, until: {cut: A26-015, t: 10.8}, loop: true, fade_in: 1.5, fade_out: 2.5, volume: 0.28}
 sfx:
   # 足音は自動（footsteps.yaml）
   # 001〜003 異空間の門

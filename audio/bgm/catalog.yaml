@@ -1,6 +1,5 @@
 # BGM の一覧（名前つき）。docs/audio_catalog.md に読みやすい表がある
-note: BGM の一覧（2026-11-01、D-068）。サウンドトラックはないので、プレイ録画から声を分けた残り（パート16〜21）を解析して曲に分けた。クロマ（音の高さの並び）の似かたで同じ曲をまとめたので、違う曲が1つにまとまったり、同じ曲が2つに分かれたりしていることがある。name は仮の名前（ユーザーが付け直してよい）。file は試聴用の約45秒（効果音の少ない所から切り出し、音量をそろえた）。場面で使うときは、選んだ曲からループを作って
-  audio/bgm/ に置き、シーンの sound.yaml に書く。plays はその曲が流れていたパートと時刻。
+note: BGM の一覧（2026-11-01、D-068）。サウンドトラックはないので、プレイ録画から声を分けた残り（パート16〜21）を解析して曲に分けた。パート22 は 2026-11-05 に tools/bgm_split.py で既存の曲と照らし合わせ、新しい曲 M38〜M40 を足した（パート16〜21 の分離音とも照らし合わせ、初出を確かめた）。クロマ（音の高さの並び）の似かたで同じ曲をまとめたので、違う曲が1つにまとまったり、同じ曲が2つに分かれたりしていることがある。name は仮の名前（ユーザーが付け直してよい）。file は試聴用の約45秒（効果音の少ない所から切り出し、音量をそろえた）。場面で使うときは、選んだ曲からループを作って audio/bgm/ に置き、シーンの sound.yaml に書く。plays はその曲が流れていたパートと時刻。
 items:
 - id: M01
   name: 魔女邸
@@ -11,6 +10,7 @@ items:
   - A01b
   - A09
   - A16
+  - A25
   clip: パート20 5:23 から 45秒
   plays:
   - p16 12:42-13:39
@@ -68,6 +68,7 @@ items:
   scenes:
   - A15
   - A16
+  - A23
   clip: パート19 10:55 から 45秒
   plays:
   - p19 7:58-8:34
@@ -82,7 +83,8 @@ items:
   - p21 8:53-9:29
   - p21 9:29-10:06
   - p21 10:55-11:43
-  total_sec: 635
+  - p22 16:37-17:31
+  total_sec: 689
   heard: false
 - id: M04
   name: アズ・ブロッケン山の道
@@ -164,7 +166,8 @@ items:
   name: パート20〜21の曲1
   file: audio/bgm/catalog/M08.ogg
   listen: Drive 原作音源/BGM/M08_パート20〜21の曲1.mp3
-  scenes: []
+  scenes:
+  - A23
   clip: パート21 1:01 から 45秒
   plays:
   - p20 16:40-17:25
@@ -182,7 +185,8 @@ items:
   name: パート21の曲2
   file: audio/bgm/catalog/M09.ogg
   listen: Drive 原作音源/BGM/M09_パート21の曲2.mp3
-  scenes: []
+  scenes:
+  - A24
   clip: パート21 15:08 から 40秒
   plays:
   - p21 11:43-12:16
@@ -243,7 +247,8 @@ items:
   - p19 20:01-20:25
   - p19 21:41-22:12
   - p19 22:12-22:43
-  total_sec: 240
+  - p22 18:51-25:18
+  total_sec: 627
   heard: false
 - id: M13
   name: マーリカの森
@@ -342,6 +347,7 @@ items:
   listen: Drive 原作音源/BGM/M19_ピラー.mp3
   scenes:
   - A08
+  - A23
   clip: パート21 10:08 から 45秒
   plays:
   - p18 0:00-0:45
@@ -380,11 +386,14 @@ items:
   listen: Drive 原作音源/BGM/M22_夜会の終わり.mp3
   scenes:
   - A17
+  - A25
   clip: パート19 23:25 から 45秒
   plays:
   - p19 23:08-24:28
-  total_sec: 80
+  - p22 5:16-7:58
+  total_sec: 242
   heard: false
+  note: パート22 5:16〜7:58 にも流れる（盲いた魔女が実を渡す所から、列車の出発、魔女の独白まで）。ループは約109秒。試聴用の45秒はその一部
 - id: M23
   name: パート16前半の曲4
   file: audio/bgm/catalog/M23.ogg
@@ -412,7 +421,8 @@ items:
   name: パート21の曲5
   file: audio/bgm/catalog/M25.ogg
   listen: Drive 原作音源/BGM/M25_パート21の曲5.mp3
-  scenes: []
+  scenes:
+  - A23
   clip: パート21 5:20 から 45秒
   plays:
   - p21 5:11-6:15
@@ -436,12 +446,14 @@ items:
   name: パート21の曲6
   file: audio/bgm/catalog/M27.ogg
   listen: Drive 原作音源/BGM/M27_パート21の曲6.mp3
-  scenes: []
+  scenes:
+  - A25
   clip: パート21 18:33 から 43秒
   plays:
   - p21 18:33-19:16
   - p21 19:16-19:36
-  total_sec: 63
+  - p22 0:00-5:16
+  total_sec: 379
   heard: false
 - id: M28
   name: 砂食みの気配
@@ -491,7 +503,8 @@ items:
   plays:
   - p19 16:57-17:14
   - p19 21:01-21:41
-  total_sec: 57
+  - p22 18:28-18:51
+  total_sec: 80
   heard: false
 - id: M32
   name: パート16前半の曲5
@@ -560,6 +573,43 @@ items:
   - p17 22:58-23:19
   total_sec: 21
   heard: false
+- id: M38
+  name: 夜光列車で魔女都へ
+  file: audio/bgm/catalog/M38.ogg
+  listen: Drive 原作音源/BGM/M38_夜光列車で魔女都へ.mp3
+  scenes:
+  - A26
+  clip: パート22 9:15 から 45秒
+  plays:
+  - p22 7:58-10:23
+  total_sec: 145
+  heard: false
+  note: 列車に飛び乗ってから、魔女都が見えるまで。走る列車の効果音が強く、くり返しがはっきりしない（1本の曲か、聞いて確かめる）
+- id: M39
+  name: 魔女都ヴァルプルギス
+  file: audio/bgm/catalog/M39.ogg
+  listen: Drive 原作音源/BGM/M39_魔女都ヴァルプルギス.mp3
+  scenes:
+  - A26
+  - A27
+  clip: パート22 14:23 から 45秒
+  plays:
+  - p22 10:23-16:20
+  total_sec: 357
+  heard: false
+  note: 魔女都に着いてから、案内魔女、議事塔の前、テレッサがビスコを連れ去るまで。ループは約88.5秒（試聴用の45秒はその半分）
+- id: M40
+  name: 議事塔の門
+  file: audio/bgm/catalog/M40.ogg
+  listen: Drive 原作音源/BGM/M40_議事塔の門.mp3
+  scenes:
+  - A27
+  clip: パート22 17:31 から 45秒
+  plays:
+  - p22 17:31-18:28
+  total_sec: 57
+  heard: false
+  note: 議事塔ブロッケントゥルムの門（魔法生物の門の台詞）
 scenes:
   A01:
   - from: '14:11'
@@ -864,3 +914,88 @@ scenes:
     to: '23:57'
     bgm: M22
     name: 夜会の終わり
+  A23:
+  - part: 21
+    from: 0:54
+    to: '5:11'
+    bgm: M08
+    name: パート20〜21の曲1
+  - part: 21
+    from: '5:11'
+    to: '6:15'
+    bgm: M25
+    name: パート21の曲5
+  - part: 21
+    from: '6:15'
+    to: '10:06'
+    bgm: M03
+    name: アズ・ブロッケン山の峰
+  - part: 21
+    from: '10:06'
+    to: '10:55'
+    bgm: M19
+    name: ピラー
+  - part: 21
+    from: '10:55'
+    to: '11:20'
+    bgm: M03
+    name: アズ・ブロッケン山の峰
+  A24:
+  - part: 21
+    from: '11:43'
+    to: '17:07'
+    bgm: M09
+    name: パート21の曲2
+  A25:
+  - part: 21
+    from: '18:33'
+    to: '19:36'
+    bgm: M27
+    name: パート21の曲6
+  - part: 21
+    from: '19:36'
+    to: '25:50'
+    bgm: M01
+    name: 魔女邸
+  - part: 22
+    from: 0:00
+    to: '5:16'
+    bgm: M27
+    name: パート21の曲6
+  - part: 22
+    from: '5:16'
+    to: '7:58'
+    bgm: M22
+    name: 夜会の終わり
+  A26:
+  - part: 22
+    from: '7:58'
+    to: '10:23'
+    bgm: M38
+    name: 夜光列車で魔女都へ
+  - part: 22
+    from: '10:23'
+    to: '13:56'
+    bgm: M39
+    name: 魔女都ヴァルプルギス
+  A27:
+  - part: 22
+    from: '13:56'
+    to: '16:20'
+    bgm: M39
+    name: 魔女都ヴァルプルギス
+  - part: 22
+    from: '16:20'
+    to: '16:37'
+    bgm: null
+    name: つなぎ（曲を決められなかった）
+  - part: 22
+    from: '16:37'
+    to: '17:31'
+    bgm: M03
+    name: アズ・ブロッケン山の峰
+  - part: 22
+    from: '17:31'
+    to: '18:28'
+    bgm: M40
+    name: 議事塔の門
