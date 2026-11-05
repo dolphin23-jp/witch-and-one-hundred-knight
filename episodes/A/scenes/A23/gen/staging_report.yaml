@@ -293,14 +293,14 @@ cuts:
         side: 中央
         body: 正面
       - who: bisco
-        s: 0.04
-        dist: 5.28
-        side: 中央
+        s: 0.36
+        dist: 5.58
+        side: 右
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
         orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes,
-        silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera. No
-        other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+        silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, facing the camera. No other
+        people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     move:
       hundred-knight:
         to: hk_bell
@@ -317,24 +317,24 @@ cuts:
         - 10.8
       bisco:
         to:
-        - 19.9
-        - 44.6
+        - 19.6
+        - 45.8
         face: 295
         via:
         - - 25.0
           - 46.0
         - - 24.8
           - 45.9
-        - - 19.9
-          - 44.6
-        - - 19.9
-          - 44.6
-        - - 19.9
-          - 44.6
-        - - 19.9
-          - 44.6
-        - - 19.9
-          - 44.6
+        - - 19.6
+          - 45.8
+        - - 19.6
+          - 45.8
+        - - 19.6
+          - 45.8
+        - - 19.6
+          - 45.8
+        - - 19.6
+          - 45.8
         t:
         - 0.0
         - 10.8
@@ -440,19 +440,19 @@ cuts:
         the camera. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     end:
       people:
+      - who: bisco
+        s: -1.09
+        dist: 5.63
+        side: 左
+        body: 斜め前（画面右向き）
       - who: hundred-knight
         s: -0.85
         dist: 8.99
         side: 左
         body: 斜め前（画面右向き）
-      - who: bisco
-        s: -0.83
-        dist: 6.78
-        side: 左
-        body: 斜め前（画面右向き）
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
-        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, in three-quarter view, turned toward screen right; Bisco (short black bob hair with
-        two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left
+      staging: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
+        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, waist-high:
+        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left
         of the frame, in three-quarter view, turned toward screen right. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     move:
       night-train:
@@ -477,16 +477,16 @@ cuts:
         - 8.6
       bisco:
         to:
-        - 19.3
-        - 44.9
+        - 19.1
+        - 46.1
         face: 95
         via:
-        - - 19.9
-          - 44.6
-        - - 19.9
-          - 44.6
-        - - 19.3
-          - 44.9
+        - - 19.6
+          - 45.8
+        - - 19.6
+          - 45.8
+        - - 19.1
+          - 46.1
         t:
         - 0.0
         - 8.6
@@ -3555,9 +3555,6 @@ checks:
     kind: 位置
   - cut: A23-008
     who: hundred-knight
-    kind: 位置
-  - cut: A23-008
-    who: bisco
     kind: 位置
   hidden:
   - cut: A23-001

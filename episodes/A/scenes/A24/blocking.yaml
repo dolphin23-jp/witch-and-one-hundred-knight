@@ -101,19 +101,19 @@ cuts:
     keys:
       bisco:
         - {t: 0.0, at: bi_seat, z: 0.45, face: 80, pose: sit}
-        - {t: 0.6, at: bi_seat, z: 0.45, face: 80, pose: cover}
-        - {t: 4.4, at: bi_seat, z: 0.45, face: 80, pose: cover}
-        - {t: 5.0, at: bi_seat, z: 0.45, face: 110, pose: lean}
-        - {t: 12.0, at: bi_seat, z: 0.45, face: 110, pose: lean}
-        - {t: 12.6, at: bi_seat, z: 0.45, face: 100, pose: cross}
-        - {t: 17.9, at: bi_seat, z: 0.45, face: 100, pose: cross}
+        - {t: 0.6, at: bi_seat, z: 0.45, face: 80, pose: sit}
+        - {t: 4.4, at: bi_seat, z: 0.45, face: 80, pose: sit}
+        - {t: 5.0, at: bi_seat, z: 0.45, face: 110, pose: sit}
+        - {t: 12.0, at: bi_seat, z: 0.45, face: 110, pose: sit}
+        - {t: 12.6, at: bi_seat, z: 0.45, face: 100, pose: sit}
+        - {t: 17.9, at: bi_seat, z: 0.45, face: 100, pose: sit}
       hundred-knight:
         - {t: 0.0, at: hk_seat, z: 0.45, face: 260, pose: sit}
         - {t: 17.9, at: hk_seat, z: 0.45, face: 290, pose: sit}
     cam_keys:
-      - {t: 0.0, cam: [201.8, 103.0, 1.05], look: [200.55, 104.2], look_h: 1.05, lens: 30, frame: 胸上}
-      - {t: 17.9, cam: [201.7, 103.2, 1.0], look: [200.55, 104.2], look_h: 1.05, lens: 36}
-    act: {start: 頭を押さえるビスコ（百騎兵の側から）, do: 「い、痛たたた……」。ビスコが身を乗り出して百騎兵をにらむ（「百騎兵……お前の私に対する扱いは抗議に値するぞ……。何も、殴ることはないじゃないか……」）。最後は腕を組んでふくれる, end: 腕を組むビスコ}
+      - {t: 0.0, cam: [202.2, 102.3, 1.25], look: [200.6, 104.2], look_h: 1.35, lens: 28, frame: 胸上}
+      - {t: 17.9, cam: [202.1, 102.5, 1.2], look: [200.6, 104.2], look_h: 1.4, lens: 34}
+    act: {start: 座席のビスコ（百騎兵の側から）, do: 「い、痛たたた……」。ビスコが頭をさすりながら百騎兵をにらむ（「百騎兵……お前の私に対する扱いは抗議に値するぞ……。何も、殴ることはないじゃないか……」）。最後はぷいと横を向く, end: 横を向くビスコ}
     camera: 百騎兵の頭の横から、ビスコの顔へゆっくり寄る
     kind: M
   A24-006:
@@ -122,10 +122,10 @@ cuts:
     only: [hundred-knight, bisco]
     keys:
       bisco:
-        - {t: 0.0, at: bi_seat, z: 0.45, face: 100, pose: cross}
-        - {t: 4.0, at: bi_seat, z: 0.45, face: 60, pose: cross}
-        - {t: 6.0, at: bi_seat, z: 0.45, face: 40, pose: look_down}
-        - {t: 12.3, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 100, pose: sit}
+        - {t: 4.0, at: bi_seat, z: 0.45, face: 60, pose: sit}
+        - {t: 6.0, at: bi_seat, z: 0.45, face: 40, pose: sit}
+        - {t: 12.3, at: bi_seat, z: 0.45, face: 40, pose: sit}
       hundred-knight:
         - {t: 0.0, at: hk_seat, z: 0.45, face: 290, pose: sit}
         - {t: 3.0, at: hk_seat, z: 0.45, face: 290, pose: nod}
@@ -143,8 +143,8 @@ cuts:
     only: [hundred-knight, bisco]
     keys:
       bisco:
-        - {t: 0.0, at: bi_seat, z: 0.45, face: 40, pose: look_down}
-        - {t: 0.4, at: bi_seat, z: 0.45, face: 40, pose: look_down}
+        - {t: 0.0, at: bi_seat, z: 0.45, face: 40, pose: sit}
+        - {t: 0.4, at: bi_seat, z: 0.45, face: 40, pose: sit}
         - {t: 0.8, at: [201.0, 105.4], face: 180, pose: fall}
         - {t: 3.0, at: [201.0, 105.4], face: 180, pose: fall}
       hundred-knight:
