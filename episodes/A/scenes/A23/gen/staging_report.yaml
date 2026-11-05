@@ -933,27 +933,41 @@ cuts:
     note: null
   A23-011:
     cam:
-    - 34.2
-    - 50.6
-    - 1.3
+    - 38.6
+    - 46.8
+    - 3.0
     lens: 26
-    bearing: 358
+    bearing: 292
     frame: 寄り
     start:
       people:
-      - who: night-train
-        s: -0.87
-        dist: 5.69
+      - who: hundred-knight
+        s: -0.62
+        dist: 9.56
         side: 左
-        body: 斜め後ろ（画面左向き）
+        body: 正面
+      - who: night-train
+        s: -0.23
+        dist: 8.1
+        side: 中央
+        body: 背中
       bg: 深い森
       props:
-      - 切り株
-      - 切り株
+      - 円形の駅のホーム
+      - 駅の鐘（A23 で百騎兵が鳴らす）
+      - ホームの柱
+      - 柱の上の古い灯り
+      - ホームの柱
+      - ホームの柱
+      - 柱の上の古い灯り
+      - ホームの柱
+      - ホームの柱
+      - 柱の上の古い灯り
+      - ホームの柱
+      - ホームの柱
+      - 柱の上の古い灯り
+      - ホームの柱
       - 花
-      - 花
-      - 花
-      - 花
       - 木
       - 木
       - 木
@@ -990,13 +1004,28 @@ cuts:
       - 木
       - 木
       - 木
-      - 木
-      staging: 'In frame (exactly one person): the Night Train (night-train_sheet_01): a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head
-        with curved horns on each side, a green snake rising from the rear, a dome with glowing amber windows, big wheels with copper rims, two short chimneys, standing, at the far left of the frame, seen
-        from behind at an angle, turned toward screen left. No other people. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, facing the camera, small in the background; the Night Train (night-train_sheet_01):
+        a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with
+        glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the left of the frame, with the back to the camera, small in the background. No other people. Behind: a deep
+        wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     end:
-      people: []
-      staging: 'No people in frame. Behind: a deep wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
+      people:
+      - who: hundred-knight
+        s: -0.79
+        dist: 9.15
+        side: 左
+        body: 正面
+      - who: night-train
+        s: -0.29
+        dist: 7.67
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, facing the camera, small in the background; the Night Train (night-train_sheet_01):
+        a dark purple-black steam locomotive with a big lion face with a burning orange mane at the front, a purple goat head with curved horns on each side, a green snake rising from the rear, a dome with
+        glowing amber windows, big wheels with copper rims, two short chimneys, standing, on the left of the frame, with the back to the camera, small in the background. No other people. Behind: a deep
+        wild forest of huge ancient gnarled trees, ferns and roots, dim green light.'
     move:
       night-train:
         to: train_stop
@@ -3573,6 +3602,12 @@ checks:
     which: end
     who: arlecchino
   - cut: A23-010
+    which: start
+    who: arlecchino
+  - cut: A23-011
+    which: start
+    who: bisco
+  - cut: A23-011
     which: start
     who: arlecchino
   - cut: A23-015
