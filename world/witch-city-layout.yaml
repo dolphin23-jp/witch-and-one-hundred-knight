@@ -2,41 +2,42 @@
 # 原作: 夜光列車で異空間を抜けると、宝石のように輝く魔女の都（「深遠なるどこかと、現世の狭間」「世界の裏側のような場所」。夜光列車でしか来られない）。
 #   駅で案内魔女が迎え、通りの先にそびえる議事塔ブロッケントゥルム（夜会の会場）を指す。列車は塔の前の広場まで運ぶ。
 #   塔の門前でテレッサが待ち伏せ、閃光でビスコを連れ去る。門には顔があり、魔女以外を通さない（A27）。
-# 背景の資料はまだない（静止画の日までに、ユーザーが用意するか、Claude が参考画を作る。D-058）。形は仮置き。
+# 背景の資料: ユーザーが用意した refs/walpurgis_bg_01.jpg（魔女都ヴァルプルギス）。黒い石のゴシックの街並みに金色の窓が無数に灯り、中央に尖塔の多い大聖堂のような議事塔、
+#   そのまわりを同心円の街が囲む。塔の前は広い石畳の広場と、金色に光る大きな門。2026-11-05 に色と形をこれに合わせた（家の位置は前のまま）。
 # 座標: x は西 0 → 東 200、y は北 0 → 南 200（m）。南の駅 (100, 170) から北へ大通り（x 94〜106）と線路（x 100）、北の端に塔の前の広場 (100, 70)、
-#   議事塔 (100, 40)（22m 角、高さ 55m＋とがり屋根 30m）。塔の南の面に門（x 96〜104、y 52、高さ 10m）。
+#   議事塔 (100, 40)（22m 角の本体 高さ 40m、中央の尖塔の先は約 97m、四隅に小塔）。塔の南の面に門（x 96〜104、y 52、高さ 10m）。
 #   大通りの両側に家並み（窓が灯る）。街の外側にも家並み。月は北東の空。
 #   A26 の頭（異空間で列車に飛び乗る）は、blocking.yaml の layout_extra で world/rift-void-layout.yaml を x +400 に置く。光は void_gate（この配置に書いた）。
 id: witch-city
 size: {w: 200.0, d: 200.0}
 compass: 北 0、東 90、南 180、西 270（駅は南、議事塔は北）
 time: 夜（宝石のように灯る都）
-ground: {color: [70, 64, 92], ja: 都の石畳}
-sky: {color: [24, 26, 70]}
+ground: {color: [52, 48, 62], ja: 都の石畳}
+sky: {color: [12, 14, 40]}
 sun: {from: 120, elev: 35}
-light_en: "Night in a magical witch city: a deep blue-violet sky with a large moon, countless warm windows and lanterns glittering like jewels, a towering spire at the end of the main avenue."
+light_en: "Night in a gothic witch city: a dark navy night sky with heavy clouds, black stone buildings with steep pointed roofs and spires, countless warm golden windows and lanterns glittering like jewels, a great cathedral-like tower with many spires at the end of the main avenue."
 lighting:
-  city_night: {sun_from: 60, sun_elev: 35, sun_energy: 0.7, sun_color: [170, 180, 255], sky: [26, 28, 74], sky_strength: 0.8, lamps: 2.2,
-               fill: {at: [100.0, 150.0], z: 22.0, energy: 9000, color: [210, 190, 255], radius: 24.0}}   # 駅と大通り（A26）
-  city_plaza: {sun_from: 60, sun_elev: 35, sun_energy: 0.7, sun_color: [170, 180, 255], sky: [26, 28, 74], sky_strength: 0.8, lamps: 2.2,
-               fill: {at: [100.0, 70.0], z: 20.0, energy: 7000, color: [215, 195, 255], radius: 20.0}}   # 塔の前の広場（A26 の終わり、A27）
-  city_sky: {sun_from: 60, sun_elev: 35, sun_energy: 0.9, sun_color: [170, 180, 255], sky: [30, 32, 82], sky_strength: 0.9, lamps: 2.6,
-             fill: {at: [100.0, 120.0], z: 60.0, energy: 30000, color: [200, 190, 255], radius: 40.0}}   # 上空から見下ろす都（A26 の全景）
-  void_gate: {sun_from: 200, sun_elev: 60, sun_energy: 0.6, sun_color: [175, 145, 255], sky: [30, 20, 52], sky_strength: 0.7, lamps: 1.2, ground: [18, 12, 30],
+  city_night: {sun_from: 60, sun_elev: 35, sun_energy: 0.7, sun_color: [170, 180, 255], sky: [14, 16, 44], sky_strength: 0.8, lamps: 2.2,
+               fill: {at: [100.0, 150.0], z: 22.0, energy: 9000, color: [255, 205, 150], radius: 24.0}}   # 駅と大通り（A26）
+  city_plaza: {sun_from: 60, sun_elev: 35, sun_energy: 0.7, sun_color: [170, 180, 255], sky: [14, 16, 44], sky_strength: 0.8, lamps: 2.2,
+               fill: {at: [100.0, 70.0], z: 20.0, energy: 7000, color: [255, 205, 150], radius: 20.0}}   # 塔の前の広場（A26 の終わり、A27）
+  city_sky: {sun_from: 60, sun_elev: 35, sun_energy: 0.9, sun_color: [170, 180, 255], sky: [14, 16, 44], sky_strength: 0.9, lamps: 2.6,
+             fill: {at: [100.0, 120.0], z: 60.0, energy: 30000, color: [255, 205, 150], radius: 40.0}}   # 上空から見下ろす都（A26 の全景）
+  void_gate: {sun_from: 200, sun_elev: 60, sun_energy: 0.6, sun_color: [175, 145, 255], sky: [30, 20, 52], sky_strength: 0.7, lamps: 1.2, ground: [14, 10, 40], ground_glow: {strength: 0.6, scale: 0.22},
               fill: {at: [508.0, 50.0], z: 14.0, energy: 2600, color: [190, 150, 255], radius: 10.0}}   # A26 の頭（異空間の門の前。layout_extra で x +400）
 horizon:
   - {from: 0, to: 360, ja: 魔女の都の家並み, en: "an endless glittering city of crooked towers and pointed roofs under a violet night sky"}
 areas:
-  - {kind: rect, x: [94.0, 106.0], y: [84.0, 176.0], ja: 大通り, color: [96, 88, 120]}
-  - {kind: circle, center: [100.0, 70.0], r: 17.0, ja: 塔の前の広場, color: [110, 100, 136]}
+  - {kind: rect, x: [94.0, 106.0], y: [84.0, 176.0], ja: 大通り, color: [70, 64, 76]}
+  - {kind: circle, center: [100.0, 70.0], r: 17.0, ja: 塔の前の広場, color: [78, 72, 84]}
 props:
   # --- 議事塔ブロッケントゥルムと門 ---
-  house_tower: {at: [100.0, 40.0], w: 22.0, d: 22.0, h: 55.0, roof: 30.0, wall: [92, 82, 124], roof_color: [58, 48, 92], windows: 6, ja: 議事塔ブロッケントゥルム}
-  column_gate_w: {at: [94.6, 52.4], r: 1.3, h: 13.0, ja: 門の柱（西）}
-  column_gate_e: {at: [105.4, 52.4], r: 1.3, h: 13.0, ja: 門の柱（東）}
-  gatedoor_city: {from: [96.0, 52.2], to: [104.0, 52.2], h: 10.0, t: 0.8, ja: 議事塔の門（顔がある）}
-  gatetop_city: {from: [93.0, 52.2], to: [107.0, 52.2], z: 10.0, h: 3.0, t: 1.6, ja: 門の上の横木}
-  dais_plaza: {at: [100.0, 70.0], r: 15.0, h: 0.15, color: [128, 118, 150], ja: 塔の前の広場の円い敷石}
+  cathedral_tower: {at: [100.0, 40.0], w: 22.0, d: 22.0, h: 40.0, spire: 45.0, wall: [62, 58, 74], roof_color: [34, 32, 48], rows: 5, ja: 議事塔ブロッケントゥルム（尖塔の多い大聖堂のような塔、walpurgis_bg_01）}
+  column_gate_w: {at: [94.6, 52.4], r: 1.3, h: 13.0, color: [58, 54, 68], ja: 門の柱（西）}
+  column_gate_e: {at: [105.4, 52.4], r: 1.3, h: 13.0, color: [58, 54, 68], ja: 門の柱（東）}
+  gatedoor_city: {from: [96.0, 52.2], to: [104.0, 52.2], h: 10.0, t: 0.8, color: [196, 146, 70], glow: 0.5, ja: 議事塔の門（顔がある。金色に光る、walpurgis_bg_01）}
+  gatetop_city: {from: [93.0, 52.2], to: [107.0, 52.2], z: 10.0, h: 3.0, t: 1.6, color: [58, 54, 68], ja: 門の上の横木}
+  dais_plaza: {at: [100.0, 70.0], r: 15.0, h: 0.15, color: [88, 82, 94], ja: 塔の前の広場の円い敷石}
   rail_city: {from: [100.0, 178.0], to: [100.0, 86.0], gauge: 1.2, z: 0.0, ja: 大通りの線路}
   dais_station_city: {at: [93.0, 168.0], r: 5.4, h: 0.6, color: [130, 120, 150], ja: 駅のホーム（線路の西）}
   lantern_station_a: {at: [91.0, 164.0], z: 3.2, energy: 30, ja: 駅の灯り}
@@ -59,88 +60,97 @@ props:
   lamp_av5e: {at: [105.4, 150.0], h: 4.0, ja: 大通りの街灯}
   lamp_av6w: {at: [94.6, 162.0], h: 4.0, ja: 大通りの街灯}
   lamp_av6e: {at: [105.4, 162.0], h: 4.0, ja: 大通りの街灯}
-  house_av0: {at: [85.7, 91.1], w: 8.0, d: 7.4, h: 13.9, roof: 4.3, wall: [160, 150, 200], roof_color: [70, 50, 110], windows: 2, ja: 大通りの家}
-  house_av1: {at: [86.7, 102.2], w: 7.1, d: 8.1, h: 8.6, roof: 4.4, wall: [130, 110, 170], roof_color: [70, 50, 110], windows: 2, ja: 大通りの家}
-  house_av2: {at: [85.1, 114.7], w: 8.9, d: 8.5, h: 8.6, roof: 6.3, wall: [150, 120, 190], roof_color: [60, 70, 120], windows: 3, ja: 大通りの家}
-  house_av3: {at: [85.2, 125.1], w: 8.3, d: 8.4, h: 13.1, roof: 6.2, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 2, ja: 大通りの家}
-  house_av4: {at: [86.4, 135.9], w: 8.1, d: 8.4, h: 8.6, roof: 4.2, wall: [120, 140, 200], roof_color: [50, 60, 100], windows: 3, ja: 大通りの家}
-  house_av5: {at: [85.2, 146.6], w: 8.4, d: 9.3, h: 11.3, roof: 5.0, wall: [120, 140, 200], roof_color: [60, 70, 120], windows: 3, ja: 大通りの家}
-  house_av6: {at: [85.3, 157.7], w: 9.6, d: 8.8, h: 10.6, roof: 7.9, wall: [150, 120, 190], roof_color: [50, 60, 100], windows: 3, ja: 大通りの家}
-  house_av7: {at: [114.4, 92.2], w: 8.3, d: 9.4, h: 8.7, roof: 6.2, wall: [170, 130, 170], roof_color: [90, 50, 90], windows: 3, ja: 大通りの家}
-  house_av8: {at: [114.5, 102.6], w: 7.2, d: 7.2, h: 10.4, roof: 6.8, wall: [150, 120, 190], roof_color: [70, 50, 110], windows: 3, ja: 大通りの家}
-  house_av9: {at: [113.3, 113.2], w: 7.9, d: 8.0, h: 14.0, roof: 4.1, wall: [130, 110, 170], roof_color: [90, 50, 90], windows: 2, ja: 大通りの家}
-  house_av10: {at: [113.3, 124.8], w: 7.7, d: 7.7, h: 14.6, roof: 5.6, wall: [130, 110, 170], roof_color: [70, 50, 110], windows: 3, ja: 大通りの家}
-  house_av11: {at: [114.4, 135.8], w: 9.7, d: 9.0, h: 15.8, roof: 5.1, wall: [130, 110, 170], roof_color: [90, 50, 90], windows: 2, ja: 大通りの家}
-  house_av12: {at: [113.5, 146.0], w: 7.5, d: 7.4, h: 10.1, roof: 4.9, wall: [130, 110, 170], roof_color: [60, 70, 120], windows: 3, ja: 大通りの家}
-  house_av13: {at: [113.9, 158.7], w: 8.6, d: 8.5, h: 10.9, roof: 4.5, wall: [160, 150, 200], roof_color: [70, 50, 110], windows: 3, ja: 大通りの家}
-  house_pl14: {at: [78.0, 62.0], w: 9.6, d: 9.2, h: 14.8, roof: 6.6, wall: [120, 140, 200], roof_color: [70, 50, 110], windows: 3, ja: 広場のまわりの家}
-  house_pl15: {at: [122.0, 62.0], w: 11.9, d: 9.3, h: 11.1, roof: 7.4, wall: [150, 120, 190], roof_color: [70, 50, 110], windows: 3, ja: 広場のまわりの家}
-  house_pl16: {at: [76.0, 80.0], w: 10.3, d: 9.6, h: 19.5, roof: 7.5, wall: [150, 120, 190], roof_color: [60, 70, 120], windows: 3, ja: 広場のまわりの家}
-  house_pl17: {at: [124.0, 80.0], w: 10.5, d: 8.4, h: 12.5, roof: 6.4, wall: [170, 130, 170], roof_color: [50, 60, 100], windows: 3, ja: 広場のまわりの家}
-  house_pl18: {at: [80.0, 48.0], w: 8.5, d: 10.5, h: 19.9, roof: 6.9, wall: [130, 110, 170], roof_color: [90, 50, 90], windows: 3, ja: 広場のまわりの家}
-  house_pl19: {at: [120.0, 48.0], w: 8.3, d: 8.3, h: 13.4, roof: 6.1, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 3, ja: 広場のまわりの家}
-  house_out20: {at: [32.5, 21.5], w: 8.0, d: 11.8, h: 13.1, roof: 8.1, wall: [170, 130, 170], roof_color: [70, 50, 110], windows: 3, ja: 街の家並み}
-  house_out21: {at: [30.0, 52.8], w: 11.5, d: 8.8, h: 10.8, roof: 7.2, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out22: {at: [27.2, 82.7], w: 8.1, d: 9.6, h: 13.0, roof: 4.2, wall: [170, 130, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out23: {at: [32.8, 97.5], w: 8.7, d: 11.0, h: 19.3, roof: 6.1, wall: [150, 120, 190], roof_color: [60, 70, 120], windows: 2, ja: 街の家並み}
-  house_out24: {at: [29.9, 116.9], w: 8.0, d: 10.1, h: 22.3, roof: 9.0, wall: [110, 120, 170], roof_color: [70, 50, 110], windows: 3, ja: 街の家並み}
-  house_out25: {at: [29.6, 132.8], w: 8.9, d: 10.6, h: 10.4, roof: 9.3, wall: [150, 120, 190], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out26: {at: [27.9, 150.4], w: 11.7, d: 10.6, h: 9.9, roof: 4.8, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out27: {at: [32.8, 196.9], w: 8.8, d: 9.7, h: 9.2, roof: 4.1, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 2, ja: 街の家並み}
-  house_out28: {at: [47.6, 35.0], w: 11.4, d: 7.1, h: 10.6, roof: 7.0, wall: [160, 150, 200], roof_color: [50, 60, 100], windows: 1, ja: 街の家並み}
-  house_out29: {at: [46.1, 54.0], w: 10.7, d: 11.5, h: 18.3, roof: 8.9, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out30: {at: [47.7, 65.9], w: 9.6, d: 11.4, h: 20.2, roof: 7.7, wall: [120, 140, 200], roof_color: [50, 60, 100], windows: 3, ja: 街の家並み}
-  house_out31: {at: [47.7, 81.6], w: 9.8, d: 8.6, h: 15.8, roof: 7.3, wall: [160, 150, 200], roof_color: [70, 50, 110], windows: 1, ja: 街の家並み}
-  house_out32: {at: [48.4, 97.4], w: 7.2, d: 7.5, h: 14.7, roof: 4.2, wall: [170, 130, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out33: {at: [46.1, 118.3], w: 9.5, d: 11.0, h: 15.6, roof: 5.5, wall: [170, 130, 170], roof_color: [60, 70, 120], windows: 2, ja: 街の家並み}
-  house_out34: {at: [43.4, 133.0], w: 7.6, d: 9.2, h: 8.2, roof: 5.4, wall: [150, 120, 190], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out35: {at: [47.5, 145.6], w: 8.8, d: 8.3, h: 9.3, roof: 6.8, wall: [130, 110, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out36: {at: [44.9, 181.3], w: 9.2, d: 9.6, h: 12.8, roof: 5.2, wall: [150, 120, 190], roof_color: [90, 50, 90], windows: 3, ja: 街の家並み}
-  house_out37: {at: [48.8, 193.7], w: 10.5, d: 8.9, h: 15.8, roof: 5.8, wall: [120, 140, 200], roof_color: [70, 50, 110], windows: 1, ja: 街の家並み}
-  house_out38: {at: [61.5, 22.5], w: 7.2, d: 10.9, h: 11.6, roof: 4.8, wall: [170, 130, 170], roof_color: [50, 60, 100], windows: 1, ja: 街の家並み}
-  house_out39: {at: [63.8, 34.1], w: 9.6, d: 9.5, h: 12.6, roof: 5.7, wall: [150, 120, 190], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out40: {at: [64.2, 51.7], w: 11.0, d: 7.4, h: 21.6, roof: 4.4, wall: [170, 130, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out41: {at: [60.6, 66.1], w: 7.2, d: 10.5, h: 22.9, roof: 9.8, wall: [170, 130, 170], roof_color: [90, 50, 90], windows: 3, ja: 街の家並み}
-  house_out42: {at: [60.5, 97.1], w: 9.5, d: 7.9, h: 12.9, roof: 4.1, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out43: {at: [62.0, 118.0], w: 11.7, d: 7.5, h: 20.9, roof: 6.6, wall: [130, 110, 170], roof_color: [90, 50, 90], windows: 3, ja: 街の家並み}
-  house_out44: {at: [59.8, 134.9], w: 8.1, d: 8.0, h: 22.0, roof: 8.4, wall: [150, 120, 190], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out45: {at: [64.0, 150.2], w: 10.7, d: 8.3, h: 9.8, roof: 4.5, wall: [110, 120, 170], roof_color: [90, 50, 90], windows: 3, ja: 街の家並み}
-  house_out46: {at: [60.6, 166.8], w: 8.5, d: 9.3, h: 9.7, roof: 6.7, wall: [160, 150, 200], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out47: {at: [59.5, 178.7], w: 11.4, d: 8.1, h: 10.1, roof: 6.0, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out48: {at: [59.3, 193.1], w: 7.0, d: 8.3, h: 8.5, roof: 6.4, wall: [170, 130, 170], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out49: {at: [80.3, 19.3], w: 9.6, d: 10.8, h: 18.2, roof: 8.3, wall: [170, 130, 170], roof_color: [50, 60, 100], windows: 1, ja: 街の家並み}
-  house_out50: {at: [94.1, 19.6], w: 10.1, d: 7.7, h: 21.0, roof: 8.3, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out51: {at: [127.3, 22.7], w: 11.1, d: 7.1, h: 18.7, roof: 8.8, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out52: {at: [142.4, 20.8], w: 7.7, d: 8.8, h: 8.8, roof: 9.0, wall: [110, 120, 170], roof_color: [60, 70, 120], windows: 2, ja: 街の家並み}
-  house_out53: {at: [139.6, 36.2], w: 9.3, d: 7.4, h: 22.9, roof: 9.4, wall: [110, 120, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out54: {at: [144.1, 81.5], w: 10.8, d: 8.2, h: 18.0, roof: 6.8, wall: [110, 120, 170], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out55: {at: [143.5, 98.8], w: 10.2, d: 7.4, h: 9.5, roof: 5.5, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out56: {at: [141.9, 117.3], w: 9.4, d: 11.9, h: 8.7, roof: 5.3, wall: [170, 130, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out57: {at: [144.6, 129.1], w: 7.6, d: 11.5, h: 10.4, roof: 9.9, wall: [130, 110, 170], roof_color: [70, 50, 110], windows: 3, ja: 街の家並み}
-  house_out58: {at: [142.5, 161.9], w: 8.3, d: 8.0, h: 23.1, roof: 5.3, wall: [160, 150, 200], roof_color: [90, 50, 90], windows: 2, ja: 街の家並み}
-  house_out59: {at: [140.4, 182.4], w: 11.1, d: 9.5, h: 22.1, roof: 8.2, wall: [130, 110, 170], roof_color: [50, 60, 100], windows: 1, ja: 街の家並み}
-  house_out60: {at: [141.5, 195.3], w: 11.7, d: 10.4, h: 13.9, roof: 8.4, wall: [150, 120, 190], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out61: {at: [155.1, 21.4], w: 8.7, d: 9.0, h: 23.0, roof: 5.2, wall: [170, 130, 170], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out62: {at: [156.7, 33.3], w: 12.0, d: 9.9, h: 13.1, roof: 6.6, wall: [150, 120, 190], roof_color: [70, 50, 110], windows: 3, ja: 街の家並み}
-  house_out63: {at: [156.1, 51.2], w: 11.7, d: 8.2, h: 11.5, roof: 7.1, wall: [130, 110, 170], roof_color: [70, 50, 110], windows: 3, ja: 街の家並み}
-  house_out64: {at: [160.6, 67.5], w: 11.4, d: 9.8, h: 10.5, roof: 4.5, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 3, ja: 街の家並み}
-  house_out65: {at: [156.7, 98.5], w: 11.6, d: 9.8, h: 9.9, roof: 6.5, wall: [110, 120, 170], roof_color: [90, 50, 90], windows: 2, ja: 街の家並み}
-  house_out66: {at: [156.0, 114.2], w: 8.5, d: 9.8, h: 13.7, roof: 5.0, wall: [130, 110, 170], roof_color: [60, 70, 120], windows: 2, ja: 街の家並み}
-  house_out67: {at: [155.5, 162.4], w: 7.7, d: 8.0, h: 8.5, roof: 6.1, wall: [170, 130, 170], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out68: {at: [157.0, 177.4], w: 9.1, d: 9.1, h: 15.9, roof: 6.3, wall: [170, 130, 170], roof_color: [90, 50, 90], windows: 1, ja: 街の家並み}
-  house_out69: {at: [160.4, 195.3], w: 9.6, d: 11.0, h: 21.4, roof: 4.6, wall: [110, 120, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out70: {at: [174.5, 65.0], w: 7.2, d: 10.5, h: 22.2, roof: 6.8, wall: [130, 110, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out71: {at: [176.6, 85.3], w: 7.5, d: 7.8, h: 15.9, roof: 8.1, wall: [110, 120, 170], roof_color: [50, 60, 100], windows: 1, ja: 街の家並み}
-  house_out72: {at: [174.9, 98.8], w: 7.2, d: 10.9, h: 11.0, roof: 9.5, wall: [120, 140, 200], roof_color: [90, 50, 90], windows: 3, ja: 街の家並み}
-  house_out73: {at: [174.5, 115.3], w: 10.5, d: 7.6, h: 8.2, roof: 7.1, wall: [120, 140, 200], roof_color: [70, 50, 110], windows: 1, ja: 街の家並み}
-  house_out74: {at: [172.5, 132.2], w: 12.0, d: 8.4, h: 12.4, roof: 9.0, wall: [160, 150, 200], roof_color: [60, 70, 120], windows: 1, ja: 街の家並み}
-  house_out75: {at: [173.5, 162.5], w: 8.5, d: 7.1, h: 15.5, roof: 8.0, wall: [110, 120, 170], roof_color: [50, 60, 100], windows: 2, ja: 街の家並み}
-  house_out76: {at: [172.2, 181.8], w: 7.2, d: 8.7, h: 14.1, roof: 8.1, wall: [110, 120, 170], roof_color: [70, 50, 110], windows: 1, ja: 街の家並み}
-  house_out77: {at: [172.6, 198.3], w: 8.0, d: 10.8, h: 10.3, roof: 6.8, wall: [150, 120, 190], roof_color: [50, 60, 100], windows: 3, ja: 街の家並み}
-  house_spire78: {at: [40.0, 40.0], w: 8.0, d: 8.0, h: 38.0, roof: 16.0, wall: [100, 90, 140], roof_color: [60, 50, 100], windows: 4, ja: 遠くの塔}
-  house_spire79: {at: [160.0, 30.0], w: 8.0, d: 8.0, h: 44.0, roof: 16.0, wall: [100, 90, 140], roof_color: [60, 50, 100], windows: 4, ja: 遠くの塔}
-  house_spire80: {at: [150.0, 140.0], w: 8.0, d: 8.0, h: 34.0, roof: 16.0, wall: [100, 90, 140], roof_color: [60, 50, 100], windows: 4, ja: 遠くの塔}
-  house_spire81: {at: [45.0, 150.0], w: 8.0, d: 8.0, h: 40.0, roof: 16.0, wall: [100, 90, 140], roof_color: [60, 50, 100], windows: 4, ja: 遠くの塔}
+  house_av0: {at: [85.7, 91.1], w: 8.0, d: 7.4, h: 13.9, roof: 8.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 大通りの家}
+  house_av1: {at: [86.7, 102.2], w: 7.1, d: 8.1, h: 8.6, roof: 7.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 大通りの家}
+  house_av2: {at: [85.1, 114.7], w: 8.9, d: 8.5, h: 8.6, roof: 9.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av3: {at: [85.2, 125.1], w: 8.3, d: 8.4, h: 13.1, roof: 9.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 大通りの家}
+  house_av4: {at: [86.4, 135.9], w: 8.1, d: 8.4, h: 8.6, roof: 8.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av5: {at: [85.2, 146.6], w: 8.4, d: 9.3, h: 11.3, roof: 9.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av6: {at: [85.3, 157.7], w: 9.6, d: 8.8, h: 10.6, roof: 11.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av7: {at: [114.4, 92.2], w: 8.3, d: 9.4, h: 8.7, roof: 9.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av8: {at: [114.5, 102.6], w: 7.2, d: 7.2, h: 10.4, roof: 9.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av9: {at: [113.3, 113.2], w: 7.9, d: 8.0, h: 14.0, roof: 8.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 大通りの家}
+  house_av10: {at: [113.3, 124.8], w: 7.7, d: 7.7, h: 14.6, roof: 8.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av11: {at: [114.4, 135.8], w: 9.7, d: 9.0, h: 15.8, roof: 10.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 大通りの家}
+  house_av12: {at: [113.5, 146.0], w: 7.5, d: 7.4, h: 10.1, roof: 8.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_av13: {at: [113.9, 158.7], w: 8.6, d: 8.5, h: 10.9, roof: 9.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 大通りの家}
+  house_pl14: {at: [78.0, 62.0], w: 9.6, d: 9.2, h: 14.8, roof: 10.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_pl15: {at: [122.0, 62.0], w: 11.9, d: 9.3, h: 11.1, roof: 13.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_pl16: {at: [76.0, 80.0], w: 10.3, d: 9.6, h: 19.5, roof: 11.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_pl17: {at: [124.0, 80.0], w: 10.5, d: 8.4, h: 12.5, roof: 11.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_pl18: {at: [80.0, 48.0], w: 8.5, d: 10.5, h: 19.9, roof: 9.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_pl19: {at: [120.0, 48.0], w: 8.3, d: 8.3, h: 13.4, roof: 9.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 広場のまわりの家}
+  house_out20: {at: [32.5, 21.5], w: 8.0, d: 11.8, h: 13.1, roof: 11.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out21: {at: [30.0, 52.8], w: 11.5, d: 8.8, h: 10.8, roof: 12.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out22: {at: [27.2, 82.7], w: 8.1, d: 9.6, h: 13.0, roof: 8.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out23: {at: [32.8, 97.5], w: 8.7, d: 11.0, h: 19.3, roof: 9.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out24: {at: [29.9, 116.9], w: 8.0, d: 10.1, h: 22.3, roof: 12.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out25: {at: [29.6, 132.8], w: 8.9, d: 10.6, h: 10.4, roof: 13.0, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out26: {at: [27.9, 150.4], w: 11.7, d: 10.6, h: 9.9, roof: 12.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out27: {at: [32.8, 196.9], w: 8.8, d: 9.7, h: 9.2, roof: 9.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out28: {at: [47.6, 35.0], w: 11.4, d: 7.1, h: 10.6, roof: 12.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out29: {at: [46.1, 54.0], w: 10.7, d: 11.5, h: 18.3, roof: 12.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out30: {at: [47.7, 65.9], w: 9.6, d: 11.4, h: 20.2, roof: 10.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out31: {at: [47.7, 81.6], w: 9.8, d: 8.6, h: 15.8, roof: 10.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out32: {at: [48.4, 97.4], w: 7.2, d: 7.5, h: 14.7, roof: 7.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out33: {at: [46.1, 118.3], w: 9.5, d: 11.0, h: 15.6, roof: 10.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out34: {at: [43.4, 133.0], w: 7.6, d: 9.2, h: 8.2, roof: 8.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out35: {at: [47.5, 145.6], w: 8.8, d: 8.3, h: 9.3, roof: 9.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out36: {at: [44.9, 181.3], w: 9.2, d: 9.6, h: 12.8, roof: 10.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out37: {at: [48.8, 193.7], w: 10.5, d: 8.9, h: 15.8, roof: 11.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out38: {at: [61.5, 22.5], w: 7.2, d: 10.9, h: 11.6, roof: 7.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out39: {at: [63.8, 34.1], w: 9.6, d: 9.5, h: 12.6, roof: 10.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out40: {at: [64.2, 51.7], w: 11.0, d: 7.4, h: 21.6, roof: 12.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out41: {at: [60.6, 66.1], w: 7.2, d: 10.5, h: 22.9, roof: 13.7, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out42: {at: [60.5, 97.1], w: 9.5, d: 7.9, h: 12.9, roof: 10.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out43: {at: [62.0, 118.0], w: 11.7, d: 7.5, h: 20.9, roof: 12.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out44: {at: [59.8, 134.9], w: 8.1, d: 8.0, h: 22.0, roof: 11.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out45: {at: [64.0, 150.2], w: 10.7, d: 8.3, h: 9.8, roof: 11.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out46: {at: [60.6, 166.8], w: 8.5, d: 9.3, h: 9.7, roof: 9.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out47: {at: [59.5, 178.7], w: 11.4, d: 8.1, h: 10.1, roof: 12.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out48: {at: [59.3, 193.1], w: 7.0, d: 8.3, h: 8.5, roof: 9.0, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out49: {at: [80.3, 19.3], w: 9.6, d: 10.8, h: 18.2, roof: 11.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out50: {at: [94.1, 19.6], w: 10.1, d: 7.7, h: 21.0, roof: 11.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out51: {at: [127.3, 22.7], w: 11.1, d: 7.1, h: 18.7, roof: 12.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out52: {at: [142.4, 20.8], w: 7.7, d: 8.8, h: 8.8, roof: 12.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out53: {at: [139.6, 36.2], w: 9.3, d: 7.4, h: 22.9, roof: 13.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out54: {at: [144.1, 81.5], w: 10.8, d: 8.2, h: 18.0, roof: 11.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out55: {at: [143.5, 98.8], w: 10.2, d: 7.4, h: 9.5, roof: 11.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out56: {at: [141.9, 117.3], w: 9.4, d: 11.9, h: 8.7, roof: 10.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out57: {at: [144.6, 129.1], w: 7.6, d: 11.5, h: 10.4, roof: 13.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out58: {at: [142.5, 161.9], w: 8.3, d: 8.0, h: 23.1, roof: 9.1, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out59: {at: [140.4, 182.4], w: 11.1, d: 9.5, h: 22.1, roof: 12.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out60: {at: [141.5, 195.3], w: 11.7, d: 10.4, h: 13.9, roof: 12.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out61: {at: [155.1, 21.4], w: 8.7, d: 9.0, h: 23.0, roof: 9.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out62: {at: [156.7, 33.3], w: 12.0, d: 9.9, h: 13.1, roof: 13.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out63: {at: [156.1, 51.2], w: 11.7, d: 8.2, h: 11.5, roof: 12.9, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out64: {at: [160.6, 67.5], w: 11.4, d: 9.8, h: 10.5, roof: 12.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out65: {at: [156.7, 98.5], w: 11.6, d: 9.8, h: 9.9, roof: 12.8, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out66: {at: [156.0, 114.2], w: 8.5, d: 9.8, h: 13.7, roof: 9.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out67: {at: [155.5, 162.4], w: 7.7, d: 8.0, h: 8.5, roof: 8.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out68: {at: [157.0, 177.4], w: 9.1, d: 9.1, h: 15.9, roof: 10.0, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out69: {at: [160.4, 195.3], w: 9.6, d: 11.0, h: 21.4, roof: 10.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out70: {at: [174.5, 65.0], w: 7.2, d: 10.5, h: 22.2, roof: 9.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out71: {at: [176.6, 85.3], w: 7.5, d: 7.8, h: 15.9, roof: 11.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out72: {at: [174.9, 98.8], w: 7.2, d: 10.9, h: 11.0, roof: 13.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_out73: {at: [174.5, 115.3], w: 10.5, d: 7.6, h: 8.2, roof: 11.6, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out74: {at: [172.5, 132.2], w: 12.0, d: 8.4, h: 12.4, roof: 13.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out75: {at: [173.5, 162.5], w: 8.5, d: 7.1, h: 15.5, roof: 11.2, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 2, ja: 街の家並み}
+  house_out76: {at: [172.2, 181.8], w: 7.2, d: 8.7, h: 14.1, roof: 11.3, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 1, ja: 街の家並み}
+  house_out77: {at: [172.6, 198.3], w: 8.0, d: 10.8, h: 10.3, roof: 9.5, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 3, ja: 街の家並み}
+  house_spire78: {at: [40.0, 40.0], w: 8.0, d: 8.0, h: 38.0, roof: 22.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 4, ja: 遠くの塔}
+  house_spire79: {at: [160.0, 30.0], w: 8.0, d: 8.0, h: 44.0, roof: 22.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 4, ja: 遠くの塔}
+  house_spire80: {at: [150.0, 140.0], w: 8.0, d: 8.0, h: 34.0, roof: 22.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 4, ja: 遠くの塔}
+  house_spire81: {at: [45.0, 150.0], w: 8.0, d: 8.0, h: 40.0, roof: 22.4, wall: [64, 58, 72], roof_color: [38, 36, 54], windows: 4, ja: 遠くの塔}
+  # --- 街の尖塔（walpurgis_bg_01 の尖った塔。2026-11-05） ---
+  spire_c0: {at: [78.0, 60.0], r: 2.0, h: 26.0, windows: 3, ja: 尖塔}
+  spire_c1: {at: [122.0, 60.0], r: 2.0, h: 24.0, windows: 3, ja: 尖塔}
+  spire_c2: {at: [70.0, 110.0], r: 1.8, h: 22.0, windows: 3, ja: 尖塔}
+  spire_c3: {at: [130.0, 120.0], r: 1.8, h: 24.0, windows: 3, ja: 尖塔}
+  spire_c4: {at: [76.0, 150.0], r: 1.6, h: 20.0, windows: 2, ja: 尖塔}
+  spire_c5: {at: [124.0, 160.0], r: 1.6, h: 21.0, windows: 2, ja: 尖塔}
+  spire_c6: {at: [60.0, 20.0], r: 2.2, h: 30.0, windows: 3, ja: 尖塔}
+  spire_c7: {at: [140.0, 22.0], r: 2.2, h: 28.0, windows: 3, ja: 尖塔}
 people:
   hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, sword: true, en: "the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword)"}
   bisco: {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}
@@ -148,6 +158,6 @@ people:
   guide-witch: {ja: 魔女都の案内魔女, eye: 1.45, h: 1.55, en: "the guide witch of the witch city (guide-witch_sheet_01): a calm, graceful young woman of about 25, silver-gray hair in a low chignon, a dark navy pointed witch hat with a silver band and a silver crest, a tailored dark navy long coat with a short cape, silver trim and silver buttons, a high collar, white gloves, a white underskirt showing at the front, dark heeled boots, holding a tall staff topped with a lantern"}
   teressa: {ja: テレッサ（魔女見習い）, eye: 1.4, h: 1.5, en: "Teressa, the apprentice witch, as in her reference sheet (teressa_sheet_01)"}
 views:
-  city_sky: {ja: 上空から見た魔女都, panel: null, en: "a breathtaking night view of a magical city from the sky: countless glittering windows and lanterns like jewels, crooked towers and pointed roofs, a great spire in the center, a huge moon"}
-  city_station: {ja: 魔女都の駅, panel: null, en: "a small round stone station platform beside the railway at the end of a grand avenue lined with crooked glowing houses, a great spire far down the avenue"}
-  city_plaza: {ja: 議事塔の前の広場, panel: null, en: "a round paved plaza at the foot of a gigantic dark spire, a huge closed gate with a carved face at its base, glowing windows of the surrounding houses"}
+  city_sky: {ja: 上空から見た魔女都, panel: null, en: "a breathtaking night view of a gothic witch city from the sky: rings of black stone buildings with steep pointed roofs and spires around a great cathedral-like tower with many spires in the center, countless warm golden windows glittering like jewels, a dark navy sky with heavy clouds"}
+  city_station: {ja: 魔女都の駅, panel: null, en: "a small round stone station platform beside the railway at the end of a grand avenue lined with black stone gothic houses with glowing golden windows, a great cathedral-like tower with many spires far down the avenue"}
+  city_plaza: {ja: 議事塔の前の広場, panel: null, en: "a wide round stone plaza at the foot of a gigantic gothic cathedral-like tower with many spires, a huge arched gate glowing golden at its base with a carved face, golden windows of the black stone buildings around"}

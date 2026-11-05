@@ -1,0 +1,136 @@
+# A24b 拠点の幕間（夜の魔女邸・閉じこもるメタリカの扉の前）。6章後半 回2 の A24 と A25 の間。D-060、D-062「3D を全編先に」。Claude の案（2026-11-05）
+# 台詞 L798〜L803 は Revival の音声だけにある（原作音源パート21）。ユーザー「台詞、声の分け方はあなたに任せます」（2026-11-05）で、入れると Claude が決めた
+#   （メタリカが閉じこもったままであることを、A18 の閉じた扉と冷めた食事につないで見せる。A30 の伏線。扉の下の緑の光は A18 の2回だけなので、ここでは出さない）。
+# 場所は world/witch-house-3d-layout.yaml ＋ world/witch-house-6b-extra.yaml（2階の廊下 x 12〜18、y −3.4〜−0.4。扉は南の壁 (17.0, −0.4)、お盆は扉の前、東の壁に小窓）。
+# 光: 夜の廊下 hall_night（東の小窓の月明かりと燭台）。マーニィは浮いている（z 1.0〜1.6）。メタリカは画に出さない。
+scene: A24b
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+- {file: world/witch-house-6b-extra.yaml, offset: [0.0, 0.0]}
+map_ymax: 11
+lighting: hall_night
+places:
+  m_door: [17.0, -0.4]
+  tray: [17.0, -0.82]
+  l_window: [17.5, -1.95]
+  l_door: [17.25, -1.45]
+start:
+  luckiny: {at: [17.5, -1.95], face: 90}
+  marny: {at: [17.05, -2.55], face: 110}
+
+cuts:
+  # ---------- 拠点の幕間 ----------
+  A24b-001:
+    frame: 引き（廊下の奥へ）
+    door_closed: true
+    lighting: hall_night
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [17.5, -1.95], face: 90, pose: stand}
+        - {t: 1.2, at: [17.5, -1.95], face: 90, pose: look_up}
+        - {t: 6.9, at: [17.5, -1.95], face: 90, pose: look_up}
+      marny:
+        - {t: 0.0, at: [17.05, -2.55], z: 1.5, face: 110, pose: stand}
+        - {t: 3.0, at: [17.05, -2.55], z: 1.55, face: 100, pose: stand}
+        - {t: 6.9, at: [17.05, -2.55], z: 1.5, face: 100, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [12.9, -1.5, 1.15], look: [17.6, -1.9], look_h: 1.2, lens: 22, frame: 引き}
+      - {t: 6.9, cam: [13.4, -1.6, 1.15], look: [17.6, -1.9], look_h: 1.25, lens: 24}
+    act: {start: 夜の2階の廊下。燭台の灯りと、東の小窓の月明かり。扉の前に冷めた食事のお盆, do: ルッキーニィが小窓から夜空を見上げる（「百騎兵さんたち、もう夜会には着きましたかね……」）。そばにマーニィが浮いている, end: 窓辺のルッキーニィとマーニィ（手前右に閉じた扉とお盆）}
+    camera: 廊下の西の端（階段の口）から、奥の小窓へゆっくり寄る
+    kind: M
+  A24b-002:
+    frame: 2人（窓の横から）
+    door_closed: true
+    lighting: hall_night
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [17.5, -1.95], face: 90, pose: look_up}
+        - {t: 0.8, at: [17.5, -1.95], face: 30, pose: stand}
+        - {t: 8.0, at: [17.5, -1.95], face: 25, pose: look_down}
+        - {t: 15.3, at: [17.5, -1.95], face: 25, pose: look_down}
+      marny:
+        - {t: 0.0, at: [17.05, -2.55], z: 1.5, face: 100, pose: stand}
+        - {t: 0.6, at: [17.05, -2.55], z: 1.5, face: 210, pose: stand}
+        - {t: 3.0, at: [16.85, -2.35], z: 1.6, face: 200, pose: gesture}
+        - {t: 7.0, at: [16.9, -2.4], z: 1.55, face: 190, pose: stand}
+        - {t: 10.0, at: [17.05, -2.55], z: 1.5, face: 210, pose: arms_up}
+        - {t: 12.0, at: [17.05, -2.55], z: 1.5, face: 210, pose: stand}
+        - {t: 15.3, at: [17.05, -2.55], z: 1.5, face: 210, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [15.6, -2.95, 1.35], look: [17.3, -2.2], look_h: 1.35, lens: 30, frame: 2人}
+      - {t: 15.3, cam: [15.7, -2.9, 1.3], look: [17.3, -2.2], look_h: 1.3, lens: 34}
+    act: {start: 窓辺のルッキーニィと、宙に浮くマーニィ（北西から）, do: マーニィが首をかしげ、ひらひら飛びながら話す（「それはどうかしら。夜行列車に乗ってからは、百騎兵ちゃんの様子が見えないのよ。リカちゃんなら見えるのかもしれないけど、私じゃこれが限界」）。ルッキーニィがうつむく, end: うつむくルッキーニィ}
+    camera: 廊下の北の壁ぎわから二人を横に。ゆっくり寄る
+    kind: M
+  A24b-003:
+    frame: 肩なめ（ルッキーニィ越しに扉）
+    door_closed: true
+    lighting: hall_night
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [17.5, -1.95], face: 25, pose: look_down}
+        - {t: 0.6, at: [17.5, -1.95], face: 230, pose: stand}
+        - {t: 1.4, at: [17.25, -1.45], face: 215, pose: walk, ease: out}
+        - {t: 1.8, at: [17.25, -1.45], face: 210, pose: stand}
+        - {t: 6.8, at: [17.25, -1.45], face: 210, pose: stand}
+      marny:
+        - {t: 0.0, at: [17.05, -2.55], z: 1.5, face: 210, pose: stand}
+        - {t: 2.0, at: [17.05, -2.55], z: 1.5, face: 200, pose: stand}
+        - {t: 6.8, at: [17.05, -2.55], z: 1.5, face: 195, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [17.75, -2.75, 1.3], look: [17.0, -0.6], look_h: 0.9, lens: 26, frame: 肩なめ}
+      - {t: 6.8, cam: [17.7, -2.7, 1.25], look: [17.0, -0.6], look_h: 0.9, lens: 30}
+    act: {start: ルッキーニィの背中越しに、閉じた扉と冷めた食事, do: ルッキーニィが振り向き、扉の方へ一歩（「そうですか……。ところで、魔女様の様子はどうですか？」）, end: 扉を見つめるルッキーニィ}
+    camera: 窓の脇（北東の角）から、ルッキーニィの肩越しに扉。ゆっくり寄る
+    kind: M
+  A24b-004:
+    frame: 寄り（扉の前の床・煽り）
+    door_closed: true
+    lighting: hall_night
+    only: [luckiny, marny]
+    keys:
+      marny:
+        - {t: 0.0, at: [17.05, -2.55], z: 1.5, face: 195, pose: stand}
+        - {t: 1.2, at: [16.75, -0.95], z: 1.05, face: 180, pose: stand, ease: out}
+        - {t: 3.0, at: [16.75, -0.95], z: 1.0, face: 160, pose: gesture}
+        - {t: 6.0, at: [16.75, -0.95], z: 1.0, face: 20, pose: stand}
+        - {t: 9.5, at: [16.75, -0.95], z: 1.05, face: 20, pose: stand}
+      luckiny:
+        - {t: 0.0, at: [17.25, -1.45], face: 210, pose: stand}
+        - {t: 9.5, at: [17.25, -1.45], face: 210, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [15.9, -1.75, 0.35], look: [17.0, -0.6], look_h: 0.55, lens: 24, frame: 寄り}
+      - {t: 9.5, cam: [16.0, -1.7, 0.35], look: [17.0, -0.6], look_h: 0.7, lens: 26}
+    act: {start: 床の高さから、閉じた扉と手つかずの食事, do: マーニィがお盆の上へ降りてきて、扉と食事を指す（「相変わらずみたいね。アルレッキーノちゃんの食事にも、リカちゃん呼ばわりにも返答なし」）, end: 冷めた食事の上のマーニィと、奥のルッキーニィの足}
+    camera: 廊下の床すれすれから、閉じた扉とお盆を見上げる
+    kind: M
+  A24b-005:
+    frame: 寄り→引き（窓へ）
+    door_closed: true
+    lighting: hall_night
+    only: [luckiny, marny]
+    keys:
+      luckiny:
+        - {t: 0.0, at: [17.25, -1.45], face: 210, pose: look_down}
+        - {t: 3.0, at: [17.25, -1.45], face: 210, pose: stand}
+        - {t: 4.0, at: [17.25, -1.45], face: 60, pose: stand}
+        - {t: 5.0, at: [17.5, -1.95], face: 90, pose: walk, ease: out}
+        - {t: 5.3, at: [17.5, -1.95], face: 90, pose: look_up}
+        - {t: 9.8, at: [17.5, -1.95], face: 90, pose: look_up}
+      marny:
+        - {t: 0.0, at: [16.75, -0.95], z: 1.05, face: 20, pose: stand}
+        - {t: 3.4, at: [16.75, -0.95], z: 1.1, face: 20, pose: stand}
+        - {t: 5.4, at: [17.15, -2.35], z: 1.6, face: 80, pose: stand, ease: out}
+        - {t: 6.4, at: [17.15, -2.35], z: 1.6, face: 90, pose: proud}
+        - {t: 9.8, at: [17.15, -2.35], z: 1.6, face: 90, pose: stand}
+    cam_keys:
+      - {t: 0.0, cam: [16.3, -1.95, 1.2], look: [17.25, -1.45], look_h: 1.15, lens: 34, frame: 寄り→引き}
+      - {t: 3.6, cam: [16.2, -2.0, 1.2], look: [17.3, -1.6], look_h: 1.2, lens: 30}
+      - {t: 9.8, cam: [15.0, -2.05, 1.35], look: [18.0, -1.95], look_h: 1.45, lens: 24}
+    act: {start: うつむくルッキーニィの顔, do: ルッキーニィ「そこまで塞ぎ込んでるだなんて……」。マーニィが窓辺へ飛び、ルッキーニィも窓へ戻る（「とにかく今は、百騎兵ちゃんとビスコちゃんに任せるしかないわね」）。二人で夜空を見上げる, end: 月明かりの小窓と二人の後ろ姿}
+    camera: ルッキーニィの顔の寄りから、二人の後ろへ引いて窓の月明かり
+    kind: M

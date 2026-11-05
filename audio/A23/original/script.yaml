@@ -9,7 +9,8 @@
 #   A27 道中のテレッサ・議事塔の門: L908〜L923
 # use: false は選別で削った台詞（切り出しは位置合わせのためにすべて行い、シーンでは使わない）。前ふり・受けの台詞は残す側に倒した（docs/previs_checklist.md 2）。
 # revival: true は原作テキストになく、Revival の音声だけにある台詞（文字は書き起こしから起こした。聞いて確かめる）:
-#   L798〜L803 拠点のルッキーニィとマーニィ（パート21 16:38〜17:52。メタリカが閉じこもったままだと念を押す。A30 の伏線に使える。いまは use: false、動きの設計の「確かめたいこと」に書く）
+#   L798〜L803 拠点のルッキーニィとマーニィ（パート21 16:38〜17:52。メタリカが閉じこもったままだと念を押す。A30 の伏線）。2026-11-05、ユーザー「台詞、声の分け方はあなたに任せます」で
+#     Claude が入れると決め、幕間 A24b（夜の魔女邸の2階の廊下）にした
 #   L917〜L920 テレッサがビスコを連れ去った後（パート22 15:13〜15:58）
 # 話し手: lionel＝ライオネル13世（獅子の機関車）、godora・godol＝ゴードーラ・ゴードール（両側の山羊）、snaker＝スネーカー（最後尾の蛇）、
 #   blind-witch＝盲いた魔女（テキストでは「？？？」「年老いた魔女」とも）、guide-witch＝魔女都・案内魔女、gate＝魔法生物の門。
@@ -101,12 +102,12 @@ lines:
   - {id: L795, who: snaker, text: "ケッケッケ！まあ、お前らがおっ死んでくれればそれでも門は開くだろうがな！開くか？", use: false}
   - {id: L796, who: godora, text: "あとは、くれぐれも魔女様を怒らせたりしないようにね", use: false}
   - {id: L797, who: bisco, text: "瘴気か……仕方がない。長居は出来ないようだし、するつもりもない。手分けして魔女を捜そう。それじゃあ、気をつけてな、百騎兵。", cut: ["14:58.21", "15:11.24"]}
-  - {id: L798, who: luckiny, text: "百騎兵さんたち、もう夜会には着きましたかね……。", note: （拠点。Revival だけ）, revival: true, use: false}
-  - {id: L799, who: marny, text: "それはどうかしら。夜行列車に乗ってからは、百騎兵ちゃんの様子が見えないのよ。リカちゃんなら見えるのかもしれないけど、私じゃこれが限界ね。", revival: true, use: false}
-  - {id: L800, who: luckiny, text: "そうですか……。ところで、魔女様の様子はどうですか？", revival: true, use: false}
-  - {id: L801, who: marny, text: "相変わらずみたいね。アルレッキーノちゃんの食事にも、リカちゃん呼ばわりにも返答なし。", revival: true, use: false}
-  - {id: L802, who: luckiny, text: "そこまで塞ぎ込んでるだなんて……。", revival: true, use: false}
-  - {id: L803, who: marny, text: "とにかく今は、百騎兵ちゃんとビスコちゃんに任せるしかないわね。", revival: true, use: false}
+  - {id: L798, who: luckiny, text: "百騎兵さんたち、もう夜会には着きましたかね……。", note: （拠点。Revival だけ）, revival: true}
+  - {id: L799, who: marny, text: "それはどうかしら。夜行列車に乗ってからは、百騎兵ちゃんの様子が見えないのよ。リカちゃんなら見えるのかもしれないけど、私じゃこれが限界ね。", revival: true}
+  - {id: L800, who: luckiny, text: "そうですか……。ところで、魔女様の様子はどうですか？", revival: true}
+  - {id: L801, who: marny, text: "相変わらずみたいね。アルレッキーノちゃんの食事にも、リカちゃん呼ばわりにも返答なし。", revival: true}
+  - {id: L802, who: luckiny, text: "そこまで塞ぎ込んでるだなんて……。", revival: true}
+  - {id: L803, who: marny, text: "とにかく今は、百騎兵ちゃんとビスコちゃんに任せるしかないわね。", revival: true}
   - {id: L804, who: snaker, text: "おい、コラ、チビスケ！！まだ門が開いてねえだろうが！！開いてないよな？", note: （異空間の列車前。削る）, use: false}
   - {id: L805, who: godora, text: "残念だけど、この状態で戻ってこられても、運行することはできないんだよね。", use: false}
   - {id: L806, who: godol, text: "早いところ、魔女様を見つけて扉を開けてもらいなよ。", use: false}
