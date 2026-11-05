@@ -3268,56 +3268,63 @@ cuts:
     note: null
   A25-038:
     cam:
-    - 73.8
-    - 103.3
+    - 74.2
+    - 104.2
     - 1.05
     lens: 30
-    bearing: 77
+    bearing: 62
     frame: 肩なめ
     start:
       people:
       - who: blind-witch
-        s: -0.06
-        dist: 1.87
-        side: 中央
-        body: 背中
+        s: -0.51
+        dist: 1.89
+        side: 左
+        body: 斜め後ろ（画面右向き）
       - who: bisco
-        s: -0.0
-        dist: 3.91
+        s: 0.0
+        dist: 3.85
         side: 中央
         body: 正面
       bg: 暗い虚空と浮いた岩
       props:
+      - 門の前の足場
+      - 門の柱（北）
+      - 門の柱（南）
+      - 門のそばの光る石（北）
+      - 門のそばの光る石（南）
       - 中継の足場
       - 魔女の居場所
       - 魔女の古い椅子
       - 魔女の居場所の灯り
       - 灯りの柱
       - 浮いた岩
+      - 浮いた岩
+      - 遠くの黒い尖塔
       - 座席（西）
       - 座席（東）
       - 窓明かり（琥珀色）
       - 窓明かり（琥珀色）
-      staging: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, with the back to the camera; Bisco
-        (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
-        standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
-        violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+      staging: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, on the left of the frame, seen from behind at an angle, turned
+        toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+        tail, silver armored boots), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone.
+        A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
     end:
       people:
       - who: blind-witch
-        s: -0.15
-        dist: 1.04
-        side: 中央
-        body: 背中
+        s: -1.07
+        dist: 1.22
+        side: 左
+        body: 斜め後ろ（画面右向き）
       - who: bisco
         s: 0.0
-        dist: 3.08
+        dist: 3.18
         side: 中央
         body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, in the center of the frame, with the back to the camera; Bisco
-        (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots),
-        standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep
-        violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+      staging: 'In frame (exactly 2 people, from left to right): the blind old witch (appearance to be fixed by a reference sheet), standing, at the far left of the frame, seen from behind at an angle,
+        turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+        tail, silver armored boots), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone.
+        A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
     move:
       blind-witch:
         to:
@@ -4048,6 +4055,9 @@ checks:
   - cut: A25-038
     which: start
     who: hundred-knight
+  - cut: A25-038
+    which: start
+    who: night-train
   - cut: A25-038
     which: end
     who: hundred-knight
