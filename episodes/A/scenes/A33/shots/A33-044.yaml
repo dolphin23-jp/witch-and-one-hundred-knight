@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-044
+scene: A33
+tc: 344.5
+sec: 10.0
+kind: A
+shot: あおり・アルレッキーノ・魔女ドクトリン
+acting: （「魔女たる者は、どんな頼みごとも断るべからず。断るは安し、引き受けるは難し。」）
+dialogue:
+- L1216「魔女たる者は、どんな頼みごとも断るべからず。断るは安し、引き受けるは難し。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.45
+  - 1.35
+  - 0.8
+  look: arlecchino
+  lens: 20
+  move: テーブルとソファの間の低い所から見上げ、ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが胸に手を当てて唱える
+  end: 唱え終えたアルレッキーノ
+timing:
+  lead: 0.6

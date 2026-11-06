@@ -1,0 +1,39 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-033
+scene: A34
+tc: 294.0
+sec: 10.0
+kind: A
+shot: 寄り・ミトン・お腹いっぱいでち
+acting: （「これでもう王子様に嫌われないでちか？」）
+dialogue:
+- L1301「んあ！？お、お腹いっぱいでち！もう拾い食いはしないでち！」
+- L1302「これでもう王子様に嫌われないでちか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.64
+  - 50.98
+  - 0.85
+  look: mitten
+  lens: 32
+  move: ミトンの正面の低い所から
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- heavy-fruit
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンが実にかぶりつく。目を見開いて（「んあ！？お、お腹いっぱいでち！もう拾い食いはしないでち！」）跳ねる
+  end: 首をかしげるミトン
+timing:
+  lead: 1.6
+  at:
+    L1301: 1.6
+    L1302: 6.26

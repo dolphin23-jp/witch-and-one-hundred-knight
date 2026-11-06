@@ -1,0 +1,39 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-010
+scene: A36
+tc: 58.0
+sec: 12.1
+kind: M
+shot: ルッキーニィ・お風呂を使わせてもらうしかない
+acting: 腕を組んで考え（「し、仕方ない。魔女邸のお風呂を使わせてもらうしかない、ですね」）
+dialogue:
+- L1355「やっぱり、ちゃんと体を洗うしかないみたいですね……」
+- L1356「し、仕方ない。魔女邸のお風呂を使わせてもらうしかない、ですね」
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.52
+  - 57.28
+  - 1.1
+  look: luckiny
+  lens: 32
+  move: ルッキーニィの正面（東）から、少し寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+- perfume
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが立ち上がり、ため息（「やっぱり、ちゃんと体を洗うしかないみたいですね……」）
+  end: 決めたルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1355: 0.4
+    L1356: 5.02

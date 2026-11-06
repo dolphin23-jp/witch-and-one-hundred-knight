@@ -1,0 +1,36 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-013
+scene: A40
+tc: 102.4
+sec: 9.1
+kind: M
+shot: 馬車が去る・行っちゃった
+acting: ルッキーニィが柵から顔を出す（「行っちゃった……。何の用だったんだろう……？」）
+dialogue:
+- L1463「行っちゃった……。何の用だったんだろう……？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 48.4
+  - 53.4
+  - 2.2
+  look: heinz-carriage
+  lens: 30
+  move: 柵の陰の三人の後ろの高い所から、北へ去る馬車
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heinz-carriage
+- heinz
+overlays: []
+fallback: null
+act:
+  start: ハインツが窓のカーテンを閉め、馬車が北へ走り去る
+  end: 落ち葉の舞う街道
+timing:
+  lead: 4.4

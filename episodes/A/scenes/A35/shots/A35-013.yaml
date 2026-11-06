@@ -1,0 +1,34 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-013
+scene: A35
+tc: 84.2
+sec: 3.6
+kind: A
+shot: 引き・ジェルが崩れて沈む
+acting: 百騎兵が跳び降りると、ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる
+dialogue: []
+sound: ゲルが崩れる音
+notes: null
+camera:
+  pos:
+  - 40.6
+  - 25.6
+  - 3.0
+  look:
+  - 34.0
+  - 21.6
+  lens: 26
+  move: 東の高い所から、崩れるジェルと跳び降りる百騎兵（奥に沼のピラー）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: 剣を突き立てられたジェルが震え
+  end: 金色の溜まりの脇に立つ百騎兵
+timing:
+  lead: 0.4

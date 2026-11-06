@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-015
+scene: A34
+tc: 113.3
+sec: 11.8
+kind: M
+shot: 引き・ミトンがゴミの方へ
+acting: ミトンがしょんぼりと背を向け（「うぅ〜……。む、難しいことはわからないでち……。」）、ゴミの山の前にしゃがむ
+dialogue:
+- L1261「どうって……。キミは何か知らないんですか？王子様が喜びそうなこととか……」
+- L1262「うぅ〜……。む、難しいことはわからないでち……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.0
+  - 57.4
+  - 1.6
+  look:
+  - 33.6
+  - 50.6
+  lens: 26
+  move: 広場の南から、三人とゴミ山
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが立ち上がって聞き返す（「どうって……。キミは何か知らないんですか？王子様が喜びそうなこととか……」）
+  end: ゴミの前にしゃがむミトン
+timing:
+  lead: 0.4
+  at:
+    L1261: 0.4
+    L1262: 7.65

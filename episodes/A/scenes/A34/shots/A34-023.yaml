@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-023
+scene: A34
+tc: 183.0
+sec: 13.7
+kind: M
+shot: 二人・ちゃんとした食事
+acting: 胸をたたく（「まかせてください。ボクが側についていて、その癖が治るように手伝いますから。」）
+dialogue:
+- L1274「まずは無意識にゴミを食べるのをやめないといけませんね。ちゃんとした食事をとりましょう。」
+- L1275「まかせてください。ボクが側についていて、その癖が治るように手伝いますから。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.0
+  - 47.6
+  - 2.2
+  look:
+  - 33.3
+  - 51.0
+  lens: 24
+  move: 広場の北（ゴミの山の脇）の高い所から、向き合う二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが指を立てて説明する（「まずは無意識にゴミを食べるのをやめないといけませんね。ちゃんとした食事をとりましょう。」）
+  end: うなずくミトン
+timing:
+  lead: 0.4
+  at:
+    L1274: 0.4
+    L1275: 7.0

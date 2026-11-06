@@ -1,0 +1,35 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-004
+scene: A36
+tc: 17.5
+sec: 9.4
+kind: M
+shot: ルッキーニィが小瓶を掲げてミトンへ
+acting: 小瓶を掲げてミトンへ歩み寄る（「それじゃあ、ミトンさん。これをつけてみてください」）
+dialogue:
+- L1348「ふぅ……完成しました！それじゃあ、ミトンさん。これをつけてみてください」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.2
+  - 54.0
+  - 1.3
+  look: luckiny
+  lens: 28
+  move: ミトンの背中越しに（西から）、歩いてくるルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+- perfume
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが額をぬぐって立ち上がる（「ふぅ……完成しました！」）
+  end: 小瓶を差し出すルッキーニィ
+timing:
+  lead: 0.3

@@ -1,0 +1,40 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-011
+scene: A40
+tc: 78.0
+sec: 14.4
+kind: M
+shot: 寄り・ハインツの横顔・超有名人
+acting: （「教皇のご子息で見ての通りの美形。女性にモテモテなんですよ」）窓のハインツが遠くを見る
+dialogue:
+- L1460「知らないんですか？超有名人ですよ！ハインツ・フォン・フラウゼ！」
+- L1461「教皇のご子息で見ての通りの美形。女性にモテモテなんですよ」
+sound: null
+notes: null
+camera:
+  pos:
+  - 51.6
+  - 55.6
+  - 1.75
+  look: heinz
+  lens: 45
+  move: 馬車の脇（南西）から、窓のハインツの顔
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heinz-carriage
+- heinz
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが小声で百騎兵に（「知らないんですか？超有名人ですよ！ハインツ・フォン・フラウゼ！」）
+  end: 整ったハインツの横顔
+timing:
+  lead: 0.4
+  at:
+    L1460: 0.4
+    L1461: 7.91

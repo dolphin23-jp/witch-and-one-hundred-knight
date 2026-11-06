@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-037
+scene: A34
+tc: 328.2
+sec: 15.4
+kind: M
+shot: 二人・お風呂なんてここにはないでち
+acting: ミトンが胸を張る（「自慢じゃないでちが、お風呂なんてここにはないでち！」）
+dialogue:
+- L1307「はい……正直すごい臭いです……。お風呂には……入っているわけないですよね……。」
+- L1308「自慢じゃないでちが、お風呂なんてここにはないでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.2
+  - 48.2
+  - 2.4
+  look:
+  - 33.4
+  - 51.2
+  lens: 26
+  move: 広場の北東の高い所から、二人とゴミ山
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが申し訳なさそうに（「はい……正直すごい臭いです……。お風呂には……入っているわけないですよね……。」）
+  end: 胸を張るミトン
+timing:
+  lead: 0.4
+  at:
+    L1307: 0.4
+    L1308: 10.68

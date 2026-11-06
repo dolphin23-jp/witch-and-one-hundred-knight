@@ -1,0 +1,35 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-013
+scene: A33
+tc: 105.4
+sec: 5.0
+kind: M
+shot: 引き（高い）・ルッキーニィが玄関へ
+acting: （「ここにお客さんなんて珍しいですね……。」）扉に手をかける
+dialogue:
+- L1171「ここにお客さんなんて珍しいですね……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.7
+  - 5.1
+  - 3.0
+  look: luckiny
+  lens: 24
+  move: 西の階段の下の高い所から、玄関へ向かうルッキーニィを追って振る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが玄関へ歩く
+  end: 扉の前のルッキーニィ
+timing:
+  lead: 0.4

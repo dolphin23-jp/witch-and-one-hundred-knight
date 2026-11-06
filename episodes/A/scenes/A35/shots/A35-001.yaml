@@ -1,0 +1,35 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-001
+scene: A35
+tc: 0.0
+sec: 9.3
+kind: M
+shot: 小道・しゃがむアルレッキーノ
+acting: 気づいて立ち上がり、一礼する（「おや、百騎兵様。遠路はるばるこんなところまでご苦労でございます」）
+dialogue:
+- L1324「おや、百騎兵様。遠路はるばるこんなところまでご苦労でございます」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.2
+  - 29.0
+  - 0.8
+  look:
+  - 34.6
+  - 33.6
+  lens: 26
+  move: 小道の東の茂みの低い所から、歩いてくる百騎兵と手前のアルレッキーノ
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: 紅葉の森の小道を百騎兵が北へ歩く。道の脇で、アルレッキーノが草をのぞき込んでいる
+  end: 一礼したアルレッキーノ
+timing:
+  lead: 2.4

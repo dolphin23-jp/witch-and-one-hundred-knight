@@ -1,0 +1,43 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-032
+scene: A33
+tc: 238.2
+sec: 9.2
+kind: M
+shot: 二人・メタリカとミトン・王子様をオウエン
+acting: ミトンが胸の前で手を合わせる（「あたち……。王子様をオウエンしたいんでち！」）
+dialogue:
+- L1197「……。一応、内容だけでも聞こうか。」
+- L1198「あたち……。王子様をオウエンしたいんでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.6
+  - 5.9
+  - 1.6
+  look:
+  - 4.6
+  - 5.4
+  lens: 30
+  move: 西南の棚の端から、メタリカの肩越しにミトン
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが腕を組む（「……。一応、内容だけでも聞こうか。」）
+  end: 向き合う二人
+timing:
+  lead: 0.4
+  at:
+    L1197: 0.4
+    L1198: 3.92

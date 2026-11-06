@@ -1,0 +1,35 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-008
+scene: A36
+tc: 45.6
+sec: 7.4
+kind: A
+shot: ルッキーニィがよろける・まだヒドイ臭い
+acting: のけぞってよろけ、しりもちをつく（「うぐっ……くえっ！ダ、ダメです……。まだヒドイ臭いです！」）
+dialogue:
+- L1353「うぐっ……くえっ！ダ、ダメです……。まだヒドイ臭いです！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.8
+  - 54.0
+  - 0.35
+  look: luckiny
+  lens: 24
+  move: 地面すれすれから、のけぞるルッキーニィ（画面を傾ける）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+- perfume
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィの顔がゆがむ
+  end: しりもちをついたルッキーニィ
+timing:
+  lead: 0.2

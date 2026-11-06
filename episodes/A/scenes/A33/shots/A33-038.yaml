@@ -1,0 +1,43 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-038
+scene: A33
+tc: 293.8
+sec: 11.0
+kind: M
+shot: 二人・何をしても無駄
+acting: ミトンが地団駄を踏む（「どうして無駄なんでちか！？全然わからないでち！」）
+dialogue:
+- L1208「何をしても無駄だと言っているんだ。わかったら、さっさと帰れ。」
+- L1209「どうして無駄なんでちか！？全然わからないでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.5
+  - 6.0
+  - 2.2
+  look:
+  - 4.4
+  - 5.5
+  lens: 28
+  move: 西南の壺の脇から、背を向けるメタリカと奥のミトン
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが背を向ける（「何をしても無駄だと言っているんだ。わかったら、さっさと帰れ。」）
+  end: 背を向けたメタリカと、食い下がるミトン
+timing:
+  lead: 0.4
+  at:
+    L1208: 0.4
+    L1209: 5.79

@@ -1,0 +1,927 @@
+# A35 森の小道のアルレッキーノと、沼地のピラー・アロマニ・ジェル戦（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A35 動きの設計（案）」。準備（案）の表の 7-07（縮める）・7-08（残す。短い戦闘の見せ場）
+# 場所: world/cinque-forest-layout.yaml の北（森の小道と沼。中の島に沼地のピラー mpillar_marsh）。沼の昼（marsh）
+# メタリカは千里眼越しの声だけ。アロマニ・ジェルは world/ch7-people-extra.yaml の人物（2.4m）。戦い（010〜013）は台詞なし
+# ピラーが咲く（014）は A08 の咲き方（碧の閃光、花びら、波紋、広がる沼）に合わせた。咲いた後は BLOOMED の fx を置き続ける
+scene: A35
+layout: world/cinque-forest-layout.yaml
+layout_extra:
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 100
+lighting: marsh
+places:
+  pillar: &id003 [34.0, 13.0]
+  shore: [34.0, 24.2]
+  path: [34.0, 32.0]
+start:
+  hundred-knight:
+    at: &id001 [34.0, 38.6]
+    face: 0
+  arlecchino:
+    at: &id002 [35.3, 30.6]
+    face: 80
+  aromani-gel:
+    at: &id004 [33.8, 19.6]
+    face: 180
+cuts:
+  A35-001:
+    frame: 全身
+    only: [hundred-knight, arlecchino]
+    hidden_ok: [aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: *id001
+        face: 0
+        pose: walk
+      - t: 2.2
+        at: [34.1, 32.4]
+        pose: walk
+        face: 10
+        ease: out
+      - {t: 2.5, pose: stand, face: 30}
+      arlecchino:
+      - t: 0.0
+        at: *id002
+        face: 80
+        pose: crouch
+      - {t: 1.8, pose: stand, face: 230}
+      - {t: 3.8, pose: bow}
+      - {t: 8.42, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [38.2, 29.0, 0.8]
+      look: [34.6, 33.6]
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 9.3
+      cam: [38.1, 29.2, 0.85]
+      look: [34.8, 31.6]
+      look_h: 1.1
+      lens: 28
+      ease: inout
+    act: {start: 紅葉の森の小道を百騎兵が北へ歩く。道の脇で、アルレッキーノが草をのぞき込んでいる, do: 気づいて立ち上がり、一礼する（「おや、百騎兵様。遠路はるばるこんなところまでご苦労でございます」）, end: 一礼したアルレッキーノ}
+    camera: 小道の東の茂みの低い所から、歩いてくる百騎兵と手前のアルレッキーノ
+    kind: M
+  A35-002:
+    frame: 膝上
+    only: [hundred-knight, arlecchino]
+    hidden_ok: [aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.1, 32.4]
+        face: 30
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [35.3, 30.6]
+        face: 230
+        pose: stand
+      - {t: 0.3, pose: gesture, face: 230}
+      - {t: 5.48, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [34.5, 32.0, 0.85]
+      look: arlecchino
+      look_h: 1.22
+      lens: 28
+      frame: 膝上
+    - t: 7.4
+      cam: [34.55, 31.95, 0.85]
+      look: arlecchino
+      look_h: 1.22
+      lens: 32
+    act: {start: アルレッキーノが手袋の指で草の葉をつまんで見せる, do: （「ワタクシでございますか？　ワタクシは現在、定例のフィールドワークの真っ最中でございます」）, end: 得意げなアルレッキーノ}
+    camera: 百騎兵の目の高さから、見上げるアルレッキーノ
+    kind: M
+  A35-003:
+    frame: 全身
+    only: [hundred-knight, arlecchino]
+    hidden_ok: [aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.1, 32.4]
+        face: 30
+        pose: stand
+      - {t: 9.14, face: 75}
+      arlecchino:
+      - t: 0.0
+        at: [35.3, 30.6]
+        face: 230
+        pose: stand
+      - {t: 0.3, face: 60}
+      - {t: 1.6, face: 230}
+      - {t: 5.0, pose: bow}
+      - {t: 7.94, pose: walk, face: 75}
+      - t: 10.7
+        at: [41.6, 29.2]
+        pose: walk
+        face: 80
+    cam_keys:
+    - t: 0.0
+      cam: [31.4, 31.6, 2.2]
+      look: arlecchino
+      look_h: 0.95
+      lens: 30
+      frame: 全身
+    - t: 10.7
+      cam: [31.5, 31.5, 2.2]
+      look: [40.2, 29.6]
+      look_h: 1.2
+      lens: 30
+      ease: inout
+    act: {start: アルレッキーノがちらりと背後の森を振り返る, do: （「それでは、ワタクシはこれにて失礼します。さっきから、背後にいやな視線を感じておりますれば」）一礼して、東の森へ去る, end: 木々の間に消えるアルレッキーノ}
+    camera: 小道の西の高い所から、去るアルレッキーノを追って振る
+    kind: M
+  A35-004:
+    frame: 胸上
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.1, 32.4]
+        face: 75
+        pose: stand
+      - {t: 0.2, face: 80}
+      - {t: 3.13, pose: look_up}
+    cam_keys:
+    - t: 0.0
+      cam: [36.0, 32.1, 0.6]
+      look: hundred-knight
+      look_h: 0.71
+      lens: 32
+      frame: 胸上
+    - t: 4.3
+      cam: [35.9, 32.15, 0.6]
+      look: hundred-knight
+      look_h: 0.71
+      lens: 38
+    act: {start: アルレッキーノの去った森を、百騎兵が見つめる, do: メタリカの声（「……ここは、沼からかなり距離があるぞ！」）, end: 首をかしげる百騎兵}
+    camera: 百騎兵の正面の低い所から（背に東の森）
+    kind: M
+  A35-005:
+    frame: 大引き
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.1, 32.4]
+        face: 80
+        pose: run
+      - {t: 0.4, pose: run, face: 0}
+      - t: 4.0
+        at: [34.0, 25.4]
+        pose: run
+        face: 0
+    cam_keys:
+    - t: 0.0
+      cam: [36.8, 33.4, 5.4]
+      look: hundred-knight
+      look_h: 0.6
+      lens: 26
+      frame: 大引き
+    - t: 4.0
+      cam: [36.4, 27.4, 4.6]
+      look: *id003
+      look_h: 1.6
+      lens: 24
+      ease: inout
+    act: {start: 百騎兵が小道を北へ駆ける, do: 木々の向こうに、かすんだ沼が見えてくる, end: 沼の手前の百騎兵}
+    camera: 梢の高さから、小道を駆ける百騎兵を追い、沼へ向けて振る
+    kind: M
+  A35-006:
+    frame: 大引き
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 25.4]
+        face: 0
+        pose: walk
+      - t: 1.2
+        at: [34.0, 24.2]
+        pose: stand
+        face: 0
+        ease: out
+      - {t: 7.47, pose: look_up}
+    cam_keys:
+    - t: 0.0
+      cam: [34.6, 27.8, 1.3]
+      look: *id003
+      look_h: 1.8
+      lens: 26
+      frame: 大引き
+    - t: 17.4
+      cam: [34.5, 26.6, 1.25]
+      look: *id003
+      look_h: 2.0
+      lens: 32
+      ease: inout
+    act: {start: 沼の岸で百騎兵が立ち止まる。濁った碧の沼、中の島に黒い尖塔（咲く前のピラー）, do: メタリカの声（「……あん？この感じ……」「キヒヒ、百騎兵！どうやら、ここにはピラーがあるようだぞ！偶然か……それとも」）, end: ピラーを見る百騎兵}
+    camera: 百騎兵の背中越しに、沼と中の島のピラー（ゆっくり寄る）
+    kind: A
+  A35-007:
+    frame: 全身
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 24.2]
+        face: 0
+        pose: look_up
+      - {t: 0.6, pose: crouch}
+      - {t: 1.6, pose: ready, face: 0}
+      aromani-gel:
+      - t: 0.0
+        at: *id004
+        face: 180
+        pose: stand
+        z: -2.6
+      - t: 2.2
+        at: [33.8, 19.6]
+        z: 0.0
+        face: 180
+        ease: out
+      - t: 5.5
+        at: [33.8, 21.4]
+        z: 0.0
+        face: 180
+        pose: walk
+        ease: inout
+    cam_keys:
+    - t: 0.0
+      cam: [35.2, 24.8, 0.3]
+      look: &id005 [33.8, 19.6]
+      look_h: 0.2
+      lens: 22
+      frame: 全身
+    - t: 5.9
+      cam: [35.3, 25.0, 0.3]
+      look: aromani-gel
+      look_h: 1.2
+      lens: 22
+      ease: inout
+    shake:
+    - t: [0.4, 1.6]
+      amp: 0.4
+    fx:
+    - kind: ring
+      t: [0.2, 2.8]
+      at: *id005
+      r: 3.0
+      n: 3
+      color: [60, 110, 70]
+    - kind: plume
+      t: [0.3, 2.0]
+      at: *id005
+      r: 1.2
+      h: 2.6
+      color: [90, 130, 80]
+      shape: fall
+    act: {start: 沼の水面が盛り上がり、金色のゲルの魔獣が伸び上がる（角、紫の耳、赤い目、垂れる緑の手）, do: メタリカの声（「そして、オマエが探している”アロマニ・ジェル”ってのが守護者ってわけか」）岸へにじり上がる, end: 百騎兵の前にそびえるジェル}
+    camera: 岸の地面すれすれ（百騎兵の脇）から見上げ、伸び上がるジェルに合わせて上へ
+    kind: A
+  A35-008:
+    frame: 胸上
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 24.2]
+        face: 0
+        pose: ready
+      aromani-gel:
+      - t: 0.0
+        at: [33.8, 21.4]
+        face: 180
+        pose: walk
+      - {t: 0.3, pose: lean, face: 180}
+      - {t: 4.2, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [32.6, 19.9, 2.6]
+      look: hundred-knight
+      lens: 30
+      frame: 膝上
+      look_h: 0.58
+    - t: 7.7
+      cam: [32.65, 20.0, 2.55]
+      look: hundred-knight
+      lens: 34
+      look_h: 0.58
+    act: {start: 百騎兵が剣を構える, do: メタリカの声（「これは、さすがにちょっと、出来すぎてやしないか？」「キヒヒ、まあつまらん検証はいらん」）, end: 構えた百騎兵}
+    camera: ジェルの肩越しに、構える百騎兵
+    kind: M
+  A35-009:
+    frame: 寄り
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 24.2]
+        face: 0
+        pose: ready
+      - {t: 0.2, pose: ready, face: 0}
+      aromani-gel:
+      - t: 0.0
+        at: [33.8, 21.4]
+        face: 180
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [33.67, 22.98, 0.55]
+      look: hundred-knight
+      look_h: 0.71
+      lens: 32
+      frame: 胸上
+    - t: 8.3
+      cam: [33.67, 22.98, 0.55]
+      look: hundred-knight
+      look_h: 0.78
+      lens: 60
+      ease: in
+      frame: 寄り
+    act: {start: メタリカの声が弾む, do: （「ピラーがあるとなれば話は別だぞ！全力でこいつを叩き潰せ！そして、ピラーを咲かせるんだ！」）百騎兵の目が光る, end: 踏み込む直前の百騎兵}
+    camera: 百騎兵の正面の低い所から、目へ寄る
+    kind: A
+  A35-010:
+    frame: 全身
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 24.2]
+        face: 0
+        pose: ready
+      - {t: 0.1, pose: crouch, face: 0}
+      - {t: 0.3, z: 0.3, pose: jump, face: 60}
+      - t: 0.8
+        at: [35.4, 23.6]
+        z: 1.6
+        pose: jump
+        face: 70
+        ease: out
+      - t: 1.3
+        at: [36.4, 23.0]
+        z: 0.0
+        pose: crouch
+        face: 280
+        ease: in
+      - {t: 2.0, pose: ready, face: 285}
+      aromani-gel:
+      - t: 0.0
+        at: [33.8, 21.4]
+        face: 180
+        pose: lean
+      - t: 0.7
+        at: [33.9, 22.6]
+        pose: lean
+        face: 180
+        ease: in
+      - t: 2.2
+        at: [33.9, 22.6]
+        pose: stand
+        face: 110
+    cam_keys:
+    - t: 0.0
+      cam: [29.6, 24.0, 0.8]
+      look: [34.4, 22.8]
+      look_h: 0.9
+      lens: 24
+      frame: 全身
+    - t: 0.8
+      cam: [29.7, 24.0, 1.0]
+      look: hundred-knight
+      look_h: 2.05
+      lens: 24
+      roll: 7
+      ease: out
+    - t: 2.8
+      cam: [29.9, 24.1, 0.9]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 28
+      roll: 0
+      ease: inout
+    shake:
+    - t: [0.7, 1.2]
+      amp: 0.9
+    fx:
+    - kind: plume
+      t: [0.7, 2.0]
+      at: [34.0, 23.6]
+      r: 1.1
+      h: 1.6
+      color: &id006 [106, 196, 70]
+      shape: fall
+    act: {start: ジェルが体ごと倒れ込むように体当たりしてくる, do: 百騎兵が東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる, end: 着地して向き直る百騎兵}
+    camera: 西の低い所から、跳ぶ百騎兵を追う（跳び上がりで画面を傾ける）
+    kind: A
+  A35-011:
+    frame: 全身
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [36.4, 23.0]
+        face: 285
+        pose: ready
+      - {t: 0.4, pose: crouch}
+      - t: 1.3
+        at: [35.1, 21.9]
+        pose: run
+        face: 290
+        ease: in
+      - {t: 1.6, pose: slash, face: 280}
+      - {t: 2.0, pose: ready}
+      - t: 2.6
+        at: [36.2, 24.4]
+        pose: crouch
+        face: 300
+        ease: out
+      aromani-gel:
+      - t: 0.0
+        at: [33.9, 22.6]
+        face: 110
+        pose: lean
+      - {t: 1.2, pose: stand}
+      - {t: 1.7, pose: fall, face: 100}
+      - {t: 2.4, pose: stand, face: 120}
+    cam_keys:
+    - t: 0.0
+      cam: [38.6, 20.4, 2.2]
+      look: [35.0, 22.6]
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 1.2
+      cam: [38.4, 20.6, 2.1]
+      look: hundred-knight
+      look_h: 0.29
+      lens: 30
+    - t: 1.6
+      cam: [38.0, 20.9, 1.9]
+      look: &id007 [35.1, 21.9]
+      look_h: 0.7
+      lens: 38
+      roll: -6
+      ease: in
+    - t: 3.0
+      cam: [38.1, 21.0, 1.9]
+      look: hundred-knight
+      look_h: 0.29
+      lens: 32
+      roll: 0
+      ease: inout
+    fx:
+    - kind: plume
+      t: [0.4, 1.5]
+      at: [35.9, 23.0]
+      r: 0.5
+      h: 0.8
+      color: *id006
+      shape: fall
+    - kind: spark
+      t: [1.55, 2.0]
+      at: *id007
+      z: 0.8
+    - kind: plume
+      t: [1.6, 2.6]
+      at: *id007
+      r: 0.6
+      h: 1.2
+      color: *id006
+      shape: fall
+    act: {start: ジェルが緑のゲルを吐き出す, do: 百騎兵が身を低くしてくぐり抜け、踏み込んでジェルの脇腹を斬る。ゲルが飛び散る, end: 斬り抜けて跳び退く百騎兵}
+    camera: 北東の沼の岸の高い所から見下ろす（吐き出しが手前へ来る）。斬る瞬間に寄る
+    kind: A
+  A35-012:
+    frame: 全身
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [36.2, 24.4]
+        face: 300
+        pose: crouch
+      - t: 0.6
+        at: [34.6, 22.6]
+        pose: run
+        face: 300
+        ease: in
+      - {t: 0.75, z: 0.3, pose: jump}
+      - t: 1.3
+        at: [34.3, 22.8]
+        z: 4.4
+        pose: tumble
+        face: 300
+        ease: out
+      - t: 1.7
+        at: [34.1, 22.7]
+        z: 4.6
+        pose: dive
+        face: 300
+      - t: 2.0
+        at: [34.6, 23.23]
+        z: 2.4
+        pose: dive
+        face: 300
+        ease: in
+      - t: 3.4
+        at: [34.6, 23.23]
+        z: 2.35
+        pose: dive
+        face: 300
+      aromani-gel:
+      - t: 0.0
+        at: [33.9, 22.6]
+        face: 120
+        pose: arms_up
+      - t: 1.2
+        at: [34.2, 23.0]
+        pose: lean
+        face: 120
+      - {t: 2.0, pose: stand}
+      - {t: 3.4, pose: look_up}
+    cam_keys:
+    - t: 0.0
+      cam: [34.6, 27.2, 0.5]
+      look: [35.2, 23.2]
+      look_h: 1.2
+      lens: 22
+      frame: 全身
+    - t: 1.3
+      cam: [34.6, 27.0, 0.6]
+      look: hundred-knight
+      look_h: 4.85
+      lens: 22
+      roll: 9
+      ease: out
+    - t: 2.2
+      cam: [34.5, 26.6, 0.7]
+      look: aromani-gel
+      look_h: 1.2
+      lens: 26
+      roll: -4
+      ease: in
+    - t: 3.4
+      cam: [34.5, 26.4, 0.7]
+      look: aromani-gel
+      look_h: 1.2
+      lens: 28
+      roll: 0
+    shake:
+    - t: [2.0, 2.6]
+      amp: 1.2
+    fx:
+    - kind: spark
+      t: [1.95, 2.5]
+      at: &id008 [34.2, 23.0]
+      z: 2.5
+    - kind: light
+      t: [1.95, 2.0]
+      at: *id008
+      z: 2.6
+      energy: 300
+      fade: 0.5
+      color: [255, 230, 150]
+    act: {start: ジェルが緑の手を振り上げて迫る, do: 百騎兵が地面を蹴って高く跳び、宙で回って、ジェルの頭へ剣から突っ込む, end: ジェルの頭に剣を突き立てた百騎兵}
+    camera: 南の低い所から見上げ、跳ぶ百騎兵を追って上へ（頂点で画面を傾け、斬り下ろしで下へ）
+    kind: A
+  A35-013:
+    frame: 引き
+    only: [hundred-knight, aromani-gel]
+    hidden_ok: [arlecchino]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.6, 23.23]
+        face: 300
+        pose: dive
+        z: 2.35
+      - t: 0.6
+        at: [34.8, 23.3]
+        z: 1.6
+        pose: jump
+        face: 120
+      - t: 1.1
+        at: [35.4, 23.8]
+        z: 0.0
+        pose: crouch
+        face: 300
+        ease: in
+      - {t: 2.2, pose: stand, face: 300}
+      aromani-gel:
+      - t: 0.0
+        at: [34.2, 23.0]
+        face: 120
+        pose: look_up
+      - {t: 0.8, pose: fall}
+      - t: 2.6
+        at: [34.2, 23.0]
+        z: -2.6
+        pose: fall
+        ease: in
+    cam_keys:
+    - t: 0.0
+      cam: [40.6, 25.6, 3.0]
+      look: [34.0, 21.6]
+      look_h: 1.2
+      lens: 26
+      frame: 引き
+    - t: 3.6
+      cam: [40.4, 25.4, 2.8]
+      look: [34.0, 21.0]
+      look_h: 0.8
+      lens: 28
+    fx:
+    - kind: plume
+      t: [0.8, 3.0]
+      at: *id008
+      r: 1.6
+      h: 2.2
+      color: &id009 [230, 180, 60]
+      shape: fall
+    - kind: pool
+      t: [1.2, 3.4]
+      at: *id008
+      r0: 0.4
+      r: 1.4
+      color: *id009
+    act: {start: 剣を突き立てられたジェルが震え, do: 百騎兵が跳び降りると、ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる, end: 金色の溜まりの脇に立つ百騎兵}
+    camera: 東の高い所から、崩れるジェルと跳び降りる百騎兵（奥に沼のピラー）
+    kind: A
+  A35-014:
+    frame: 大引き
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 23.8]
+        face: 300
+        pose: stand
+      - {t: 1.0, pose: look_up, face: 355}
+    cam_keys:
+    - t: 0.0
+      cam: [35.2, 26.4, 1.0]
+      look: *id003
+      look_h: 2.6
+      lens: 26
+      frame: 大引き
+    - t: 6.0
+      cam: [36.0, 28.4, 5.6]
+      look: *id003
+      look_h: 2.2
+      lens: 22
+      ease: inout
+    fx:
+    - kind: light
+      t: [0.0, 1.4]
+      at: pillar
+      z: 3.0
+      energy: 900
+      color: [150, 255, 200]
+    - kind: light
+      t: [1.4, 1.45]
+      at: pillar
+      z: 2.0
+      energy: 4000
+      fade: 1.6
+      color: [80, 230, 200]
+    - kind: bloom
+      t: [1.4, 3.2]
+      at: pillar
+      z: 3.2
+      n: 6
+      r: 0.6
+      len: 1.6
+      w: 0.45
+      open: 60
+      color: [120, 240, 200]
+    - kind: ring
+      t: [1.5, 4.5]
+      at: pillar
+      r: 10.0
+      n: 3
+      color: [40, 170, 140]
+    - kind: pool
+      t: [1.6, 5.2]
+      at: pillar
+      r0: 7.5
+      r: 11.5
+    - kind: light
+      t: [3.2, 6.0]
+      at: pillar
+      z: 3.6
+      energy: 500
+      color: [150, 255, 200]
+    - kind: pool
+      t: [5.0, 0.0]
+      at: *id008
+      r0: 1.4
+      r: 1.4
+      color: *id009
+    act: {start: 中の島の黒い尖塔の緑のガラスが強く光る, do: 碧の閃光とともに頂きの花びらが開き、波紋が走って、沼の碧が岸を越えて広がる, end: 咲いたピラーと広がった碧の沼}
+    camera: 岸の百騎兵の後ろから、クレーンで上がりながら咲くピラーへ
+    kind: A
+  A35-015:
+    frame: 全身
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 23.8]
+        face: 355
+        pose: look_up
+      - {t: 0.3, pose: stand, face: 330}
+      - {t: 3.6, face: 30}
+    cam_keys:
+    - t: 0.0
+      cam: [32.0, 16.4, 0.6]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 28
+      frame: 全身
+    - t: 8.5
+      cam: [32.4, 16.8, 0.65]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 32
+    fx:
+    - kind: bloom
+      t: [7.5, 0.0]
+      at: pillar
+      z: 3.2
+      n: 6
+      r: 0.6
+      len: 1.6
+      w: 0.45
+      open: 60
+      color: &id010 [120, 240, 200]
+    - kind: pool
+      t: [7.5, 0.0]
+      at: pillar
+      r0: 11.5
+      r: 11.5
+    - kind: light
+      t: [7.5, 0.0]
+      at: pillar
+      z: 3.6
+      energy: 500
+      color: &id011 [150, 255, 200]
+    - kind: pool
+      t: [7.5, 0.0]
+      at: *id008
+      r0: 1.4
+      r: 1.4
+      color: *id009
+    - kind: mist
+      t: [0.0, 8.5]
+      at: [34.4, 14.6]
+      r: 1.2
+      h: 1.4
+      color: [60, 200, 160]
+      alpha: 0.8
+      glow: 0.4
+    act: {start: 咲いたピラーと碧の沼。甘い瘴気が漂う, do: メタリカの声がうっとりと（「ふむ、あいかわらず沼はすばらしい！鼻腔をくすぐるこの香り！たまらん！」）, end: 沼を見渡す百騎兵}
+    camera: 中の島の脇の水面の低い所から、岸の百騎兵（奥に森）
+    kind: M
+  A35-016:
+    frame: 膝上
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 23.8]
+        face: 30
+        pose: stand
+      - {t: 0.3, pose: walk, face: 280}
+      - t: 1.6
+        at: [34.6, 22.4]
+        pose: crouch
+        face: 270
+        ease: out
+      - {t: 6.69, pose: stand}
+      - {t: 7.29, pose: arms_up}
+    cam_keys:
+    - t: 0.0
+      cam: [32.4, 22.8, 0.5]
+      look: [34.2, 22.2]
+      look_h: 0.4
+      lens: 30
+      frame: 膝上
+    - t: 8.0
+      cam: [32.5, 22.9, 0.5]
+      look: hundred-knight
+      look_h: 0.58
+      lens: 32
+      ease: inout
+    fx:
+    - kind: bloom
+      t: [7.0, 0.0]
+      at: pillar
+      z: 3.2
+      n: 6
+      r: 0.6
+      len: 1.6
+      w: 0.45
+      open: 60
+      color: *id010
+    - kind: pool
+      t: [7.0, 0.0]
+      at: pillar
+      r0: 11.5
+      r: 11.5
+    - kind: light
+      t: [7.0, 0.0]
+      at: pillar
+      z: 3.6
+      energy: 500
+      color: *id011
+    - kind: pool
+      t: [7.0, 0.0]
+      at: *id008
+      r0: 1.4
+      r: 1.4
+      color: *id009
+    act: {start: メタリカの声（「なにを、ぼやっとしているんだ？オマエは、そいつからキモを抜き取って持ち帰るんじゃなかったのか？」）, do: 百騎兵が金色の溜まりに手を突っ込み、光るキモを抜き取って掲げる, end: キモを掲げる百騎兵}
+    camera: 金色の溜まりの脇の低い所から
+    kind: M
+  A35-017:
+    frame: 大引き
+    only: [hundred-knight]
+    hidden_ok: [arlecchino, aromani-gel]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.6, 22.4]
+        face: 270
+        pose: stand
+      - {t: 0.4, face: 180}
+      - {t: 9.18, pose: nod}
+      - {t: 9.68, pose: run, face: 180}
+      - t: 11.2
+        at: [34.0, 33.0]
+        pose: run
+        face: 180
+    cam_keys:
+    - t: 0.0
+      cam: [35.6, 15.2, 1.6]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 30
+      frame: 全身
+    - t: 11.2
+      cam: [35.8, 15.6, 6.8]
+      look: [34.0, 30.0]
+      look_h: 0.6
+      lens: 26
+      ease: inout
+      frame: 大引き
+    fx:
+    - kind: bloom
+      t: [10.2, 0.0]
+      at: pillar
+      z: 3.2
+      n: 6
+      r: 0.6
+      len: 1.6
+      w: 0.45
+      open: 60
+      color: *id010
+    - kind: pool
+      t: [10.2, 0.0]
+      at: pillar
+      r0: 11.5
+      r: 11.5
+    - kind: light
+      t: [10.2, 0.0]
+      at: pillar
+      z: 3.6
+      energy: 500
+      color: *id011
+    - kind: pool
+      t: [10.2, 0.0]
+      at: *id008
+      r0: 1.4
+      r: 1.4
+      color: *id009
+    act: {start: メタリカの声（「なかなかにいい場所だ。ワタシは少しここで昼寝でもしていくからオマエは好きにしな」）, do: （「あいつらが待っているんだろ？」）百騎兵がうなずき、小道を南へ駆け戻る, end: 咲いたピラーと、森へ消える百騎兵}
+    camera: 中の島のピラーの脇から、クレーンで上がりながら、駆けていく百騎兵を見送る
+    kind: M

@@ -1,0 +1,37 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-011
+scene: A37
+tc: 66.2
+sec: 4.6
+kind: A
+shot: 引き・ミトンを引っぱって逃げ出す
+acting: 湯から飛び出したミトンの腕を引いて、百騎兵と扉から駆け出す。メタリカが一人残って腕を組む
+dialogue:
+- L1376「すすすみません！！！今すぐ出ていきます！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.4
+  - 8.6
+  - 2.7
+  look:
+  - 14.4
+  - 7.6
+  lens: 18
+  move: 西の壁ぎわの高い所から、部屋じゅうを駆ける三人
+background: witch-house
+image: null
+refs:
+- mitten
+- luckiny
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが浴槽へ飛びつき（「すすすみません！！！今すぐ出ていきます！！」）
+  end: 腕を組むメタリカと湯気
+timing:
+  lead: 0.2

@@ -1,0 +1,38 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-051
+scene: A33
+tc: 412.0
+sec: 5.2
+kind: M
+shot: 見下ろし・メタリカ・見つけられたらだがな
+acting: （「あぁ。いいだろう。見つけられたらだがな。」）
+dialogue:
+- L1228「あぁ。いいだろう。見つけられたらだがな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 1.2
+  - 2.0
+  - 3.2
+  look:
+  - 3.3
+  - 2.4
+  lens: 24
+  move: 階段の8段目の上から、三人を見下ろす
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが腕を組む
+  end: 腕を組むメタリカと、見上げる二人
+timing:
+  lead: 0.4

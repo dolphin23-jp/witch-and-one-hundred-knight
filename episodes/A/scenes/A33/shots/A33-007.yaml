@@ -1,0 +1,42 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-007
+scene: A33
+tc: 48.7
+sec: 11.4
+kind: M
+shot: アルレッキーノとルッキーニィ・正式な魔女様だけ
+acting: （「魔女会報が届くのは正式な魔女様だけですから。はい。」）ルッキーニィが階段のメタリカへ跳ねて喜ぶ（「よかったですね、魔女様。ボクも嬉しいです！」）
+dialogue:
+- L1157「魔女会報が届くのは正式な魔女様だけですから。はい。」
+- L1159「よかったですね、魔女様。ボクも嬉しいです！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.6
+  - 5.9
+  - 1.6
+  look:
+  - 4.6
+  - 2.6
+  lens: 24
+  move: 南の手前から、アルレッキーノとルッキーニィの二人（間にテーブル）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが説明する
+  end: 階段を見上げるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1157: 0.4
+    L1159: 5.87

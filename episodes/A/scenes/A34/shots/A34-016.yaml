@@ -1,0 +1,42 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-016
+scene: A34
+tc: 125.1
+sec: 8.8
+kind: M
+shot: 寄り（低い）・またゴミを食べる
+acting: ミトンが振り向き、くわえたゴミを差し出す（「もぐもぐ……。おいちいでちよ。食べたいでちか？」）（「い、いりませんよ！」）
+dialogue:
+- L1263「なっ！？またゴミを食べて！」
+- L1264「もぐもぐ……。おいちいでちよ。食べたいでちか？」
+- L1265「い、いりませんよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.4
+  - 52.0
+  - 1.2
+  look:
+  - 32.6
+  - 50.1
+  lens: 36
+  move: ルッキーニィの肩越しに、ゴミの前にしゃがんだミトン
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが叫ぶ（「なっ！？またゴミを食べて！」）
+  end: ゴミを差し出すミトン
+timing:
+  lead: 0.4
+  at:
+    L1263: 0.4
+    L1264: 2.73
+    L1265: 6.38

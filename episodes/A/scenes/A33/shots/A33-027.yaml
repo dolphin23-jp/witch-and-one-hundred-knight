@@ -1,0 +1,37 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-027
+scene: A33
+tc: 193.7
+sec: 7.2
+kind: M
+shot: 膝上・アルレッキーノ・ブリダンゴ姫
+acting: （「このお姿から察するに、この辺りで有名な通称”ブリダンゴ姫”かと。」）
+dialogue:
+- L1188「このお姿から察するに、この辺りで有名な通称”ブリダンゴ姫”かと。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.4
+  - 4.6
+  - 1.7
+  look: arlecchino
+  lens: 36
+  move: 南から、テーブルの脇のアルレッキーノ（手前に倒れたビスコの頭）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが手で示す
+  end: ミトンを示すアルレッキーノ
+timing:
+  lead: 0.4

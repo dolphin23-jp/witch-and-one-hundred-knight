@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-010
+scene: A34
+tc: 71.5
+sec: 10.0
+kind: M
+shot: 横から・ミトンが詰め寄る
+acting: 臭いにのけぞるルッキーニィ（「い、いや……。そういうわけでもないんですけど……。」）
+dialogue:
+- L1252「本当でちか！依頼を受けてくれるんでちね！」
+- L1253「い、いや……。そういうわけでもないんですけど……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.4
+  - 48.4
+  - 2.0
+  look:
+  - 34.3
+  - 51.4
+  lens: 26
+  move: 北の木箱の側の少し高い所から、横に並ぶ二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンが跳ねて詰め寄る（「本当でちか！依頼を受けてくれるんでちね！」）
+  end: 近い二人
+timing:
+  lead: 0.2
+  at:
+    L1252: 0.2
+    L1253: 4.12

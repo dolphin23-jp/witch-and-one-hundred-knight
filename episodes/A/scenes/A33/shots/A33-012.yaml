@@ -1,0 +1,39 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-012
+scene: A33
+tc: 98.2
+sec: 7.2
+kind: M
+shot: 全身・ビスコが臭いに気づく
+acting: （「ん……？んんっ！！！」）立ち上がり、鼻を押さえて玄関の方へ（「な、なんだ、この臭い……？外からか？」）
+dialogue:
+- L1169「ん……？んんっ！！！」
+- L1170「な、なんだ、この臭い……？外からか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.0
+  - 5.6
+  - 1.3
+  look: bisco
+  lens: 28
+  move: 玄関の側から、こちらへ歩いてくるビスコを迎える
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ソファのビスコの鼻がひくつく
+  end: 玄関をにらむビスコ
+timing:
+  lead: 0.4
+  at:
+    L1169: 0.4
+    L1170: 2.32

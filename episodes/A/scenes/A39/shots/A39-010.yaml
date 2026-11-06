@@ -1,0 +1,41 @@
+# A39 消えない臭い。blocking.yaml（Claude の案 2026-11-06、Living Spec「A39 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A39-010
+scene: A39
+tc: 74.6
+sec: 9.2
+kind: M
+shot: メタリカとアルレッキーノ・ルッキーニィは
+acting: アルレッキーノが手を止めて（「先ほど、お食事を持って出かけられました」）
+dialogue:
+- L1431「ところで、ルッキーニィがいないが、どうしたんだ？出かけているのか？」
+- L1432「先ほど、お食事を持って出かけられました」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.5
+  - 6.4
+  - 2.3
+  look:
+  - 14.8
+  - 7.9
+  lens: 28
+  move: 扉の脇の高い所から、メタリカと浴槽の前のアルレッキーノ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- metallica
+- hundred-knight
+- bisco
+overlays: []
+fallback: null
+act:
+  start: メタリカが部屋を見回す（「ところで、ルッキーニィがいないが、どうしたんだ？出かけているのか？」）
+  end: 顔を上げるアルレッキーノ
+timing:
+  lead: 0.4
+  at:
+    L1431: 0.4
+    L1432: 5.2

@@ -1,0 +1,38 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-004
+scene: A40
+tc: 38.4
+sec: 7.4
+kind: M
+shot: ミトンと、陰で微笑むルッキーニィ
+acting: （「まぁ、いいでち。ラッキーでち」）車輪の陰で、ルッキーニィがほっと微笑む
+dialogue:
+- L1452「……？でも、どうして置いてあるんでち？」
+- L1453「まぁ、いいでち。ラッキーでち」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.4
+  - 47.6
+  - 1.0
+  look: mitten
+  lens: 30
+  move: ミトンの肩越しから、奥の車輪の陰（ルッキーニィ）へ振る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンが首をかしげる（「……？でも、どうして置いてあるんでち？」）
+  end: 車輪の陰のルッキーニィの横顔
+timing:
+  lead: 0.4
+  at:
+    L1452: 0.4
+    L1453: 4.14

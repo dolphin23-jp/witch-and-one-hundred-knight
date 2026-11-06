@@ -1,0 +1,45 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-031
+scene: A33
+tc: 224.5
+sec: 13.7
+kind: M
+shot: ルッキーニィとアルレッキーノ・誇り
+acting: アルレッキーノ（「一般的には違います。はい。しかしこの方は誇りをお持ちなのかと……」「ブリダンゴであることに。」）
+dialogue:
+- L1194「えぇ！？妖精よりブリダンゴのほうが上なんですか？」
+- L1195「一般的には違います。はい。しかしこの方は誇りをお持ちなのかと……」
+- L1196「ブリダンゴであることに。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.7
+  - 5.5
+  - 1.6
+  look:
+  - 5.0
+  - 3.0
+  lens: 30
+  move: 南西から、手前のルッキーニィと奥のアルレッキーノ（間に倒れたビスコ）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがアルレッキーノに振り向く（「えぇ！？妖精よりブリダンゴのほうが上なんですか？」）
+  end: うなずくアルレッキーノ
+timing:
+  lead: 0.4
+  at:
+    L1194: 0.4
+    L1195: 4.53
+    L1196: 10.96

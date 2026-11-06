@@ -1,0 +1,34 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-007
+scene: A34
+tc: 47.6
+sec: 4.5
+kind: M
+shot: ミトンが振り向いて立つ・まさか王子様
+acting: （「だ、誰でちか！？まさか、王子様！？」）胸の前で手を合わせる
+dialogue:
+- L1248「だ、誰でちか！？まさか、王子様！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.2
+  - 52.0
+  - 0.8
+  look: mitten
+  lens: 30
+  move: 広場の中ほどの低い所から、ミトン（奥にゴミの山）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンがびくりとして振り向き、立ち上がる
+  end: 期待して立つミトン
+timing:
+  lead: 0.3

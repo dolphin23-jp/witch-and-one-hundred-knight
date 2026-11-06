@@ -1,0 +1,37 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-008
+scene: A35
+tc: 59.0
+sec: 7.7
+kind: M
+shot: 胸上・構える百騎兵・出来すぎ
+acting: メタリカの声（「これは、さすがにちょっと、出来すぎてやしないか？」「キヒヒ、まあつまらん検証はいらん」）
+dialogue:
+- L1336「これは、さすがにちょっと、出来すぎてやしないか？」
+- L1337「キヒヒ、まあつまらん検証はいらん」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.6
+  - 19.9
+  - 2.6
+  look: hundred-knight
+  lens: 30
+  move: ジェルの肩越しに、構える百騎兵
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: 百騎兵が剣を構える
+  end: 構えた百騎兵
+timing:
+  lead: 0.4
+  at:
+    L1336: 0.4
+    L1337: 4.2

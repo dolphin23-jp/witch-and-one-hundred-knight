@@ -1,0 +1,41 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-005
+scene: A36
+tc: 26.9
+sec: 8.4
+kind: A
+shot: 二人・自分でやるでち
+acting: 小瓶を取り上げて、しげしげと見る（「こ、これでいい匂いになるんでちね！」）
+dialogue:
+- L1349「んぁ！やめるでち、わかったでち！自分でやるでち！」
+- L1350「こ、これでいい匂いになるんでちね！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.0
+  - 51.6
+  - 2.3
+  look:
+  - 35.6
+  - 54.9
+  lens: 28
+  move: 北の高い所から、横に並ぶ二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+- perfume
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが小瓶を向けると、ミトンが4本の腕をばたつかせる（「んぁ！やめるでち、わかったでち！自分でやるでち！」）
+  end: 小瓶を掲げるミトン
+timing:
+  lead: 0.4
+  at:
+    L1349: 0.4
+    L1350: 4.78

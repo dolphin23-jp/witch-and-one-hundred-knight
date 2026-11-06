@@ -1,0 +1,34 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-014
+scene: A40
+tc: 111.5
+sec: 6.7
+kind: A
+shot: 寄り・ミトン・王子様をみちゃったでち
+acting: （「あぁ……王子様をみちゃったでち……。でへへ」）
+dialogue:
+- L1464「あぁ……王子様をみちゃったでち……。でへへ」
+sound: null
+notes: null
+camera:
+  pos:
+  - 52.0
+  - 49.0
+  - 1.35
+  look: mitten
+  lens: 32
+  move: 柵の外（街道の側）の少し高い所から、柵ごしにミトン
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 柵の陰でミトンがうっとりと身をくねらせる
+  end: うっとりするミトン
+timing:
+  lead: 0.4

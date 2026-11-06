@@ -1,0 +1,32 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-004
+scene: A35
+tc: 27.4
+sec: 4.3
+kind: M
+shot: 寄り・百騎兵・沼から距離がある
+acting: メタリカの声（「……ここは、沼からかなり距離があるぞ！」）
+dialogue:
+- L1330「……ここは、沼からかなり距離があるぞ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.0
+  - 32.1
+  - 0.6
+  look: hundred-knight
+  lens: 32
+  move: 百騎兵の正面の低い所から（背に東の森）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノの去った森を、百騎兵が見つめる
+  end: 首をかしげる百騎兵
+timing:
+  lead: 0.6

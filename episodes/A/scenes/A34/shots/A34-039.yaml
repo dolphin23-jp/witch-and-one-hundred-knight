@@ -1,0 +1,38 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-039
+scene: A34
+tc: 352.9
+sec: 16.2
+kind: M
+shot: 膝上・ルッキーニィ・アロマニの香水
+acting: 指を立てる（「最強の香水と言われる”アロマニの香水”なら、ミトンさんの臭いにも勝てるはず……です！」）
+dialogue:
+- L1311「い、いえ！それでは、応急措置ですが香水にしましょう。臭いに負けない香りをつけるんです。」
+- L1312「最強の香水と言われる”アロマニの香水”なら、ミトンさんの臭いにも勝てるはず……です！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.9
+  - 51.6
+  - 0.8
+  look: luckiny
+  lens: 28
+  move: ミトンの脇の低い所から、ルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが手を振ってごまかし（「い、いえ！それでは、応急措置ですが香水にしましょう。臭いに負けない香りをつけるんです。」）
+  end: 指を立てるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1311: 0.4
+    L1312: 7.95

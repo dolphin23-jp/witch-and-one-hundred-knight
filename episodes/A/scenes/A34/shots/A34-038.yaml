@@ -1,0 +1,38 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-038
+scene: A34
+tc: 343.6
+sec: 9.3
+kind: M
+shot: 胸上・ルッキーニィのつぶやき・なんか、いったでちか
+acting: ミトンがじろりと見る（「なんか、いったでちか？」）
+dialogue:
+- L1309「それは、そうですよね……。だって、外ですしね……。」
+- L1310「なんか、いったでちか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.2
+  - 53.6
+  - 1.15
+  look: luckiny
+  lens: 35
+  move: ルッキーニィの横から（ミトンをなめて）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが目をそらしてつぶやく（「それは、そうですよね……。だって、外ですしね……。」）
+  end: あわてるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1309: 0.4
+    L1310: 6.7

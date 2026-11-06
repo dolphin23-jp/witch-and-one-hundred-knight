@@ -1,0 +1,36 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-041
+scene: A34
+tc: 375.8
+sec: 13.5
+kind: M
+shot: 森の小道を北へ・メタリカの声
+acting: メタリカの声（千里眼越し）（「おい、百騎兵。ワタシは、今回お前たちのしていることに口はださない。」「ただ、オマエにはピラーを咲かせる役目があるってことを忘れるなよ。」）
+dialogue:
+- L1319「おい、百騎兵。ワタシは、今回お前たちのしていることに口はださない。」
+- L1320「ただ、オマエにはピラーを咲かせる役目があるってことを忘れるなよ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.4
+  - 36.6
+  - 0.8
+  look: hundred-knight
+  lens: 28
+  move: 小道の先（北）の低い所から、歩いてくる百騎兵を迎えて後ろへ下がる
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 百騎兵がひとりで森の小道を北へ歩く。ゴミ山が後ろに遠ざかる
+  end: 小道を歩く百騎兵
+timing:
+  lead: 1.6
+  at:
+    L1319: 1.6
+    L1320: 7.83

@@ -1,0 +1,43 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-025
+scene: A33
+tc: 180.7
+sec: 7.0
+kind: M
+shot: ミトンの肩越し・降りてくるメタリカ
+acting: （「……あん？なんだこいつは？」）階段を降りながら（「デカいブリダンゴだな！」）
+dialogue:
+- L1184「……あん？なんだこいつは？」
+- L1185「デカいブリダンゴだな！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 7.4
+  - 6.6
+  - 1.5
+  look:
+  - 1.2
+  - 2.8
+  lens: 26
+  move: ミトンの背中越しに（玄関の脇から）、階段を降りるメタリカ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが虫に気づいて眉をひそめる
+  end: 階段の下のメタリカ
+timing:
+  lead: 0.4
+  at:
+    L1184: 0.4
+    L1185: 4.37

@@ -1,0 +1,38 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-018
+scene: A38
+tc: 132.8
+sec: 12.2
+kind: M
+shot: 膝上・ルッキーニィ・陰から応援すればいい
+acting: 顔を上げて言い放つ（「じゃあ、もう知りませんよ！勝手に、陰から応援すればいいじゃないですか」）
+dialogue:
+- L1408「そうですか……。よくわかりました……」
+- L1409「じゃあ、もう知りませんよ！勝手に、陰から応援すればいいじゃないですか」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.9
+  - 62.0
+  - 0.5
+  look: luckiny
+  lens: 28
+  move: ミトンの背中越しに（低い所から）、ルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが声を落として（「そうですか……。よくわかりました……」）
+  end: 言い放ったルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1408: 0.4
+    L1409: 5.84

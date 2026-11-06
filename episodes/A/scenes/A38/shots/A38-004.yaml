@@ -1,0 +1,40 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-004
+scene: A38
+tc: 33.4
+sec: 6.5
+kind: M
+shot: 二人・飛ぶのはダメでちか
+acting: ルッキーニィが跳び上がる（「と、飛べるの！？」）
+dialogue:
+- L1389「そうでちか……。飛ぶのはダメでちか？」
+- L1390「と、飛べるの！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.2
+  - 66.0
+  - 0.6
+  look:
+  - 35.3
+  - 63.6
+  lens: 26
+  move: 木の脇の低い所から、横に並ぶ二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンがしょんぼり（「そうでちか……。飛ぶのはダメでちか？」）
+  end: 目を丸くするルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1389: 0.4
+    L1390: 3.6

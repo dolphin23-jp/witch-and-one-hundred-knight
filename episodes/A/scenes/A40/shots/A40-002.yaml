@@ -1,0 +1,41 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-002
+scene: A40
+tc: 14.4
+sec: 14.5
+kind: M
+shot: 寄り・ミトンが目を覚ます・おなかへった
+acting: 体を起こして（「んぁ……。おなか……へったでち……」「あのお腹がいっぱいになる”実”がまた食べたいでち……」）
+dialogue:
+- L1447「ん……。んん……」
+- L1448「んぁ……。おなか……へったでち……」
+- L1449「あのお腹がいっぱいになる”実”がまた食べたいでち……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.4
+  - 50.9
+  - 0.4
+  look:
+  - 31.6
+  - 49.9
+  lens: 30
+  move: ミトンの前の地面の高さから
+background: cinque-forest
+image: null
+refs:
+- mitten
+- heavy-fruit
+overlays: []
+fallback: null
+act:
+  start: 住みかの前で丸くなって寝ていたミトンがもぞもぞ動く（「ん……。んん……」）
+  end: 座ってお腹を押さえるミトン
+timing:
+  lead: 0.8
+  at:
+    L1447: 0.8
+    L1448: 3.58
+    L1449: 8.88

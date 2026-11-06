@@ -1,0 +1,35 @@
+# A39 消えない臭い。blocking.yaml（Claude の案 2026-11-06、Living Spec「A39 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A39-005
+scene: A39
+tc: 37.4
+sec: 6.7
+kind: M
+shot: 胸上・メタリカ・泡吹いて気絶している間に
+acting: （「魔法なら何度も試したさ。お前が、泡吹いて気絶している間にな！」）
+dialogue:
+- L1421「魔法なら何度も試したさ。お前が、泡吹いて気絶している間にな！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 12.75
+  - 6.75
+  - 1.4
+  look: metallica
+  lens: 32
+  move: ビスコの肩越しに、メタリカ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- metallica
+- hundred-knight
+- bisco
+overlays: []
+fallback: null
+act:
+  start: メタリカがビスコに向き直る
+  end: にやりとするメタリカ
+timing:
+  lead: 0.4

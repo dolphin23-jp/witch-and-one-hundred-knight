@@ -1,0 +1,35 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-030
+scene: A34
+tc: 257.4
+sec: 8.0
+kind: M
+shot: 実を抱えて戻る百騎兵・これはずっしりの実
+acting: ルッキーニィが駆け寄る（「これは”ずっしりの実”！ありがとうございます！」）
+dialogue:
+- L1295「これは”ずっしりの実”！ありがとうございます！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.0
+  - 57.6
+  - 1.0
+  look: hundred-knight
+  lens: 28
+  move: 広場の南西から、戻ってくる百騎兵を迎える
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- heavy-fruit
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 百騎兵が実を抱えて広場に戻る
+  end: 実を受け取るルッキーニィ
+timing:
+  lead: 2.6

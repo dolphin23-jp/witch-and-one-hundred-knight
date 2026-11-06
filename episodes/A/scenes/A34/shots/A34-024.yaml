@@ -1,0 +1,38 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-024
+scene: A34
+tc: 196.7
+sec: 11.5
+kind: M
+shot: 膝上・ルッキーニィが百騎兵に頼む
+acting: （「”ずっしりの実”を探してきてもらっていいですか？」）
+dialogue:
+- L1276「でも、それだけじゃ心細いので、百騎兵さんにお願いがあります。」
+- L1277「”ずっしりの実”を探してきてもらっていいですか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.04
+  - 51.89
+  - 0.85
+  look: luckiny
+  lens: 28
+  move: 百騎兵の脇の低い所から、ルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが百騎兵に向き直る（「でも、それだけじゃ心細いので、百騎兵さんにお願いがあります。」）
+  end: 手を合わせるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1276: 0.4
+    L1277: 7.4

@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-005
+scene: A33
+tc: 34.2
+sec: 10.3
+kind: A
+shot: 寄り・メタリカ・歴史に刻んでやる
+acting: （「キヒヒ！こうなったら、自らのチカラでさらなる沼の拡張を行い、」）両手を広げて（「沼の魔女の名を歴史に刻んでやる！」）
+dialogue:
+- L1155「キヒヒ！こうなったら、自らのチカラでさらなる沼の拡張を行い、沼の魔女の名を歴史に刻んでやる！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.8
+  - 4.0
+  - 1.1
+  look: metallica
+  lens: 28
+  move: 階段の脇の低い所から見上げ、ゆっくり寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 階段の5段目で胸を張るメタリカ
+  end: 両手を掲げるメタリカ
+timing:
+  lead: 0.4

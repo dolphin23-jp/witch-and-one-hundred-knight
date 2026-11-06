@@ -1,0 +1,34 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-011
+scene: A35
+tc: 77.8
+sec: 3.0
+kind: A
+shot: 吐き出しをくぐって、脇腹を斬る
+acting: 百騎兵が身を低くしてくぐり抜け、踏み込んでジェルの脇腹を斬る。ゲルが飛び散る
+dialogue: []
+sound: ゲルを吐く音、斬る音
+notes: null
+camera:
+  pos:
+  - 38.6
+  - 20.4
+  - 2.2
+  look:
+  - 35.0
+  - 22.6
+  lens: 26
+  move: 北東の沼の岸の高い所から見下ろす（吐き出しが手前へ来る）。斬る瞬間に寄る
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: ジェルが緑のゲルを吐き出す
+  end: 斬り抜けて跳び退く百騎兵
+timing:
+  lead: 0.4

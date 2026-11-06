@@ -1,0 +1,38 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-014
+scene: A33
+tc: 110.4
+sec: 5.0
+kind: A
+shot: あおり・扉から這って入る大きな虫
+acting: ルッキーニィが跳びのく（「うわぁ！？でっかい虫！！！」）
+dialogue:
+- L1172「うわぁ！？でっかい虫！！！」
+sound: 扉が開く音、虫が這う音
+notes: null
+camera:
+  pos:
+  - 4.6
+  - 5.6
+  - 0.5
+  look:
+  - 6.9
+  - 6.9
+  lens: 24
+  move: 床の近くから玄関を見る。這ってくる虫に合わせて少し下がる
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが扉を開ける。外の光の中から、大きな虫が6本足で這って入ってくる（臭いの気配）
+  end: 部屋に入った虫
+timing:
+  lead: 1.4

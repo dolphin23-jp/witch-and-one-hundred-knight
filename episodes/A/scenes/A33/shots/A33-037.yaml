@@ -1,0 +1,41 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-037
+scene: A33
+tc: 281.4
+sec: 12.4
+kind: M
+shot: 膝上・メタリカ・土にでも潜ってろ
+acting: 床を指さす（「だったら土にでも潜ってろ。それがお前にできる唯一の応援だ。」）
+dialogue:
+- L1203「はぁ……。わかったわかった。大好きな王子を応援したいんだな。」
+- L1204「だったら土にでも潜ってろ。それがお前にできる唯一の応援だ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.3
+  - 6.5
+  - 1.3
+  look: metallica
+  lens: 24
+  move: 南東の棚の前から、メタリカ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカがため息をつく（「はぁ……。わかったわかった。大好きな王子を応援したいんだな。」）
+  end: 床を指さすメタリカ
+timing:
+  lead: 0.4
+  at:
+    L1203: 0.4
+    L1204: 6.67

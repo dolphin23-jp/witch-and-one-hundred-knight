@@ -1,0 +1,31 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-005
+scene: A35
+tc: 31.7
+sec: 4.0
+kind: M
+shot: 大引き・小道を北の沼へ
+acting: 木々の向こうに、かすんだ沼が見えてくる
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.8
+  - 33.4
+  - 5.4
+  look: hundred-knight
+  lens: 26
+  move: 梢の高さから、小道を駆ける百騎兵を追い、沼へ向けて振る
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 百騎兵が小道を北へ駆ける
+  end: 沼の手前の百騎兵
+timing:
+  lead: 0.4

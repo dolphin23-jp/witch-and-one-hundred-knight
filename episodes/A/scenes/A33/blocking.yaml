@@ -1,0 +1,3072 @@
+# A33 魔女邸・魔女会報とミトンの来訪（7章 回1 の始め）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A33 動きの設計（案）」。準備（案）の表の 7-01・7-02（縮める）と章の題（Revival の読み上げ）。7-03 は A34 の頭に移した
+# 場所: 居間（world/witch-house-3d-layout.yaml）。午後（afternoon）。人物は witch-house-6b-extra（ルッキーニィ）と ch7-people-extra（ミトン）
+#   玄関の扉は 012 まで閉じている（door_closed）。メタリカは階段（段の上面の高さに合わせて一段ずつ）を上り下りする
+# ミトンの臭いは、漫符ではなく黄緑の薄い気配（fx mist。準備（案）の「臭いの画」）。気絶のぐるぐるやルッキーニィの汗などの漫符は合成（D-027）
+# ミトンは這う時は lie（6本足で這う）、立ってからは stand。立った高さ 1.2m（デフォルメしない）
+scene: A33
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+- file: world/witch-house-6b-extra.yaml
+  offset: [0.0, 0.0]
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 9
+lighting: afternoon
+places:
+  table: [4.2, 2.4]
+  door: [6.9, 7.0]
+  landing: [0.75, 0.6]
+  b_sofa: [4.9, 0.8]
+  b_lie: [5.9, 3.4]
+  mit: [5.5, 5.6]
+  met: [3.2, 5.4]
+  m_sofa: &id018 [3.8, 0.8]
+start:
+  bisco:
+    at: &id001 [4.9, 0.8]
+    face: 180
+  luckiny:
+    at: &id002 [3.0, 3.2]
+    face: 60
+  arlecchino:
+    at: &id003 [6.3, 2.3]
+    face: 250
+  hundred-knight:
+    at: &id004 [2.4, 4.5]
+    face: 40
+  metallica:
+    at: &id005 [0.75, 1.65]
+    face: 180
+  mitten:
+    at: &id009 [6.9, 8.4]
+    face: 0
+cuts:
+  A33-001:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight]
+    hidden_ok: [metallica, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: *id001
+        face: 180
+        pose: sit
+        z: 0.42
+      - {t: 2.2, face: 240}
+      luckiny:
+      - t: 0.0
+        at: *id002
+        face: 60
+        pose: stand
+      - {t: 0.9, pose: hop}
+      - {t: 1.8, pose: look_up, face: 300}
+      arlecchino:
+      - t: 0.0
+        at: *id003
+        face: 250
+        pose: stand
+      - {t: 2.6, face: 280}
+      hundred-knight:
+      - t: 0.0
+        at: *id004
+        face: 40
+        pose: stand
+      - {t: 2.0, face: 320}
+    cam_keys:
+    - t: 0.0
+      cam: [7.2, 6.4, 3.6]
+      look: table
+      look_h: 0.8
+      lens: 22
+      frame: 引き
+    - t: 6.6
+      cam: [6.4, 5.5, 1.9]
+      look: [3.2, 2.8]
+      look_h: 1.1
+      lens: 24
+      ease: inout
+    act: {start: 午後の居間。テーブルのまわりに、ソファのビスコ、ルッキーニィ、アルレッキーノ、百騎兵, do: 天井の上で大きな音。ルッキーニィが跳び上がって階段の上を見上げる（「うわ！？う、上から……2階から何か大きな音がしましたよ！」）, end: 皆が階段の上を見る}
+    camera: 東南の高い所から居間の全体を見下ろし、ゆっくり降りながらルッキーニィへ
+    kind: M
+    door_closed: true
+  A33-002:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight]
+    hidden_ok: [metallica, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 240
+        pose: sit
+        z: 0.42
+      - {t: 4.68, face: 230}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 300
+        pose: look_up
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      - {t: 0.4, pose: bow}
+      - {t: 4.33, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [5.6, 4.9, 1.3]
+      look: [5.5, 1.7]
+      look_h: 1.3
+      lens: 26
+      frame: 全身
+    - t: 9.2
+      cam: [5.5, 4.65, 1.3]
+      look: [5.4, 1.6]
+      look_h: 1.3
+      lens: 28
+    act: {start: アルレッキーノが落ち着いて, do: （「おそらくリカ様へのお届け物でしょう。はい。」）ソファのビスコが顔をしかめる（「またあの鳥の手紙か？今度は何だ？」）, end: 階段の上を見るビスコ}
+    camera: テーブルの南東から北へ、アルレッキーノとソファのビスコ
+    kind: M
+    door_closed: true
+  A33-003:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 230
+        pose: sit
+        z: 0.42
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 300
+        pose: look_up
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: *id005
+        face: 180
+        pose: run
+        z: 2.49
+      - {t: 0.6, pose: arms_up}
+      - t: 0.7
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: stand
+        face: 150
+    cam_keys:
+    - t: 0.0
+      cam: [1.95, 4.0, 0.5]
+      look: metallica
+      lens: 22
+      frame: 全身
+      look_h: 3.37
+    - t: 5.6
+      cam: [1.9, 3.8, 0.55]
+      look: metallica
+      lens: 24
+      look_h: 3.06
+    act: {start: 2階から階段を駆け降りてくるメタリカ, do: 会報を頭の上に掲げる（「キヒヒ！来たぞ来たぞ！”魔女会報”だ！」）, end: 会報を掲げるメタリカ}
+    camera: 階段の下の手前の低い所から、階段の上のメタリカを見上げる。少し寄る
+    kind: A
+    door_closed: true
+  A33-004:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 230
+        pose: sit
+        z: 0.42
+      - {t: 5.62, face: 245}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 300
+        pose: look_up
+      - {t: 0.4, pose: hop, face: 290}
+      - {t: 4.27, pose: stand}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 2.15]
+        face: 150
+        pose: stand
+        z: 2.18
+      - t: 5.62
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: walk
+        face: 180
+      - t: 6.52
+        at: [0.75, 2.65]
+        z: 1.87
+        pose: walk
+        face: 180
+      - t: 7.42
+        at: [0.75, 3.15]
+        z: 1.55
+        pose: walk
+        face: 180
+      - t: 8.52
+        at: &id008 [0.75, 3.15]
+        z: 1.55
+        pose: proud
+        face: 110
+    cam_keys:
+    - t: 0.0
+      cam: [3.6, 1.7, 1.5]
+      look: luckiny
+      look_h: 0.9
+      lens: 32
+      frame: 膝上
+    - t: 5.27
+      cam: [3.6, 1.7, 1.5]
+      look: luckiny
+      look_h: 0.9
+      lens: 32
+    - t: 12.8
+      cam: [3.5, 1.75, 1.6]
+      look: metallica
+      lens: 28
+      ease: inout
+      look_h: 3.3
+    act: {start: ルッキーニィが目を輝かせる, do: （「”魔女会報”！？魔女にしか送られてこない、あの！」）メタリカが得意げに階段を降りる（「キヒヒ！とうとうワタシの名を世に轟かす日が来たようだなあ。」）, end: 5段目で胸を張るメタリカ}
+    camera: テーブルの北から、ルッキーニィから階段のメタリカへ振る
+    kind: M
+    door_closed: true
+  A33-005:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 245
+        pose: sit
+        z: 0.42
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 290
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: proud
+        z: 1.55
+      - {t: 4.6, pose: arms_up}
+    cam_keys:
+    - t: 0.0
+      cam: [2.8, 4.0, 1.1]
+      look: metallica
+      lens: 28
+      frame: 膝上
+      look_h: 2.67
+    - t: 10.3
+      cam: [2.2, 3.6, 1.7]
+      look: metallica
+      lens: 38
+      ease: inout
+      frame: 胸上
+      look_h: 2.93
+    act: {start: 階段の5段目で胸を張るメタリカ, do: （「キヒヒ！こうなったら、自らのチカラでさらなる沼の拡張を行い、」）両手を広げて（「沼の魔女の名を歴史に刻んでやる！」）, end: 両手を掲げるメタリカ}
+    camera: 階段の脇の低い所から見上げ、ゆっくり寄る
+    kind: A
+    door_closed: true
+  A33-006:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 245
+        pose: sit
+        z: 0.42
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 290
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: arms_up
+        z: 1.55
+    cam_keys:
+    - t: 0.0
+      cam: &id006 [3.5, 1.5, 1.0]
+      look: bisco
+      look_h: 1.15
+      lens: 30
+      frame: 胸上
+    - t: 4.2
+      cam: *id006
+      look: bisco
+      look_h: 1.15
+      lens: 31.5
+    act: {start: ソファのビスコがあきれて階段を見る, do: （「なんだか、あいつ楽しそうだな。」）, end: 肩をすくめるビスコ}
+    camera: ソファとテーブルの間の西から、ビスコの正面
+    kind: M
+    door_closed: true
+  A33-007:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 245
+        pose: sit
+        z: 0.42
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 290
+        pose: stand
+      - {t: 5.87, pose: hop, face: 285}
+      - {t: 9.46, pose: stand}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 280
+        pose: stand
+      - {t: 0.4, pose: gesture, face: 260}
+      - {t: 5.52, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: arms_up
+        z: 1.55
+    cam_keys:
+    - t: 0.0
+      cam: [4.6, 5.9, 1.6]
+      look: [4.6, 2.6]
+      look_h: 1.1
+      lens: 24
+      frame: 全身
+    - t: 11.4
+      cam: [4.3, 5.6, 1.5]
+      look: [4.3, 2.7]
+      look_h: 1.1
+      lens: 25
+    act: {start: アルレッキーノが説明する, do: （「魔女会報が届くのは正式な魔女様だけですから。はい。」）ルッキーニィが階段のメタリカへ跳ねて喜ぶ（「よかったですね、魔女様。ボクも嬉しいです！」）, end: 階段を見上げるルッキーニィ}
+    camera: 南の手前から、アルレッキーノとルッキーニィの二人（間にテーブル）
+    kind: M
+    door_closed: true
+  A33-008:
+    frame: 寄り
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 245
+        pose: sit
+        z: 0.42
+      - {t: 0.4, pose: look_down, face: 185}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 285
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 260
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: arms_up
+        z: 1.55
+    cam_keys:
+    - t: 0.0
+      cam: [5.3, 1.95, 0.95]
+      look: bisco
+      look_h: 1.15
+      lens: 35
+      frame: 胸上
+    - t: 12.5
+      cam: [5.25, 1.8, 1.05]
+      look: bisco
+      lens: 42
+      ease: inout
+      frame: 寄り
+      look_h: 1.77
+    act: {start: にぎやかな声から離れて、ビスコがうつむく, do: （心の声「(すっかりそれどころではなかったがあの夜会にいたのだろうか)」「(私に呪いをかけた魔女が……。)」）, end: 考え込むビスコの顔}
+    camera: ソファの正面の低い所から、ビスコの顔へゆっくり寄る（独白）
+    kind: A
+    door_closed: true
+  A33-009:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 185
+        pose: look_down
+        z: 0.42
+      - {t: 0.3, pose: sit, face: 200}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 285
+        pose: stand
+      - {t: 0.2, pose: stand, face: 75}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 260
+        pose: stand
+      - {t: 0.2, face: 255}
+      - {t: 5.87, pose: bow}
+      - {t: 10.3, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: arms_up
+        z: 1.55
+    cam_keys:
+    - t: 0.0
+      cam: [7.3, 2.75, 1.6]
+      look: luckiny
+      look_h: 0.9
+      lens: 38
+      frame: 膝上
+    - t: 11.2
+      cam: [7.25, 2.75, 1.6]
+      look: luckiny
+      look_h: 0.9
+      lens: 42
+    act: {start: ルッキーニィがアルレッキーノに振り向く, do: （「あれ？そういえばマーニィさんはどうしたんですか？」）アルレッキーノが答える（「マーニィ様ならあの日の昼には旅に出られました。はい。」）, end: 目を丸くするルッキーニィ}
+    camera: アルレッキーノの背中越しに（東の本棚の前から）、ルッキーニィ
+    kind: M
+    door_closed: true
+  A33-010:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 200
+        pose: sit
+        z: 0.42
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 75
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 255
+        pose: stand
+      - {t: 4.34, pose: bow}
+      - {t: 7.7, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 3.15]
+        face: 110
+        pose: arms_up
+        z: 1.55
+    cam_keys:
+    - t: 0.0
+      cam: &id007 [3.4, 3.55, 1.2]
+      look: arlecchino
+      look_h: 1.22
+      lens: 45
+      frame: 膝上
+    - t: 8.6
+      cam: *id007
+      look: arlecchino
+      look_h: 1.22
+      lens: 47.2
+    act: {start: ルッキーニィが苦笑い（「なんていうか……自由な人ですね。」）, do: アルレッキーノが一礼する（「自称旅人でございますゆえ。はい。」）, end: 一礼したアルレッキーノ}
+    camera: ルッキーニィの横から、アルレッキーノの正面（少し見上げる）
+    kind: M
+    door_closed: true
+  A33-011:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 200
+        pose: sit
+        z: 0.42
+      - {t: 0.3, pose: sit, face: 230}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 75
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 255
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: *id008
+        z: 1.55
+        pose: proud
+        face: 110
+      - {t: 0.6, pose: stand, face: 0}
+      - t: 0.8
+        at: [0.75, 3.15]
+        z: 1.55
+        pose: walk
+        face: 0
+      - t: 1.32
+        at: [0.75, 2.65]
+        z: 1.87
+        pose: walk
+        face: 0
+      - t: 1.84
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: walk
+        face: 0
+      - t: 2.36
+        at: [0.75, 1.65]
+        z: 2.49
+        pose: walk
+        face: 0
+      - t: 2.88
+        at: [0.75, 1.15]
+        z: 2.8
+        pose: walk
+        face: 0
+      - t: 3.4
+        at: [0.75, 0.9]
+        z: 2.8
+        pose: walk
+        face: 0
+      - t: 3.8
+        at: [0.75, 0.3]
+        z: 2.8
+        pose: walk
+        face: 0
+    cam_keys:
+    - t: 0.0
+      cam: [6.0, 3.65, 1.0]
+      look: [2.2, 2.4]
+      look_h: 1.4
+      lens: 20
+      frame: 引き
+    - t: 5.8
+      cam: [6.1, 3.55, 1.05]
+      look: [2.0, 2.0]
+      look_h: 1.8
+      lens: 21
+    act: {start: ソファのビスコがぼやく, do: （「まったく。もうちょっとゆっくりしていけばいいのに。」）奥で、メタリカが会報を抱えて2階へ戻っていく, end: 空になった階段}
+    camera: 東南の低い所から、手前のソファのビスコと、奥の階段を上がるメタリカ
+    kind: M
+    door_closed: true
+  A33-012:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight]
+    hidden_ok: [metallica, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [4.9, 0.8]
+        face: 230
+        pose: sit
+        z: 0.42
+      - {t: 0.4, pose: lean}
+      - t: 1.92
+        at: [4.9, 1.25]
+        z: 0.0
+        pose: stand
+        face: 150
+      - t: 2.72
+        at: [5.4, 1.9]
+        pose: walk
+        face: 150
+      - t: 4.92
+        at: [5.9, 3.3]
+        pose: walk
+        face: 160
+        ease: out
+      - {t: 5.32, pose: cover, face: 158}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 75
+        pose: stand
+      - {t: 3.92, face: 120}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 255
+        pose: stand
+      - {t: 3.32, face: 200}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [6.0, 5.6, 1.3]
+      look: bisco
+      look_h: 0.89
+      lens: 28
+      frame: 全身
+    - t: 7.2
+      cam: [6.1, 5.75, 1.3]
+      look: bisco
+      look_h: 0.78
+      lens: 32
+    act: {start: ソファのビスコの鼻がひくつく, do: （「ん……？んんっ！！！」）立ち上がり、鼻を押さえて玄関の方へ（「な、なんだ、この臭い……？外からか？」）, end: 玄関をにらむビスコ}
+    camera: 玄関の側から、こちらへ歩いてくるビスコを迎える
+    kind: M
+    door_closed: true
+  A33-013:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight]
+    hidden_ok: [metallica, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.3]
+        face: 158
+        pose: cover
+      - {t: 0.5, face: '@luckiny'}
+      luckiny:
+      - t: 0.0
+        at: [3.0, 3.2]
+        face: 120
+        pose: stand
+      - {t: 0.3, pose: walk, face: 110}
+      - t: 1.6
+        at: [4.2, 3.6]
+        pose: walk
+        face: 140
+      - t: 4.1
+        at: [6.5, 6.2]
+        pose: walk
+        face: 170
+        ease: out
+      - {t: 4.5, pose: stand, face: 175}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 200
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 320
+        pose: stand
+      - {t: 1.0, face: 100}
+    cam_keys:
+    - t: 0.0
+      cam: [1.7, 5.1, 3.0]
+      look: luckiny
+      look_h: 0.9
+      lens: 24
+      frame: 引き
+    - t: 5.0
+      cam: [1.9, 5.1, 2.9]
+      look: [6.6, 6.4]
+      look_h: 1.0
+      lens: 26
+      ease: inout
+    act: {start: ルッキーニィが玄関へ歩く, do: （「ここにお客さんなんて珍しいですね……。」）扉に手をかける, end: 扉の前のルッキーニィ}
+    camera: 西の階段の下の高い所から、玄関へ向かうルッキーニィを追って振る
+    kind: M
+    door_closed: true
+  A33-014:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.3]
+        face: '@luckiny'
+        pose: cover
+      - {t: 1.0, face: 160}
+      luckiny:
+      - t: 0.0
+        at: [6.5, 6.2]
+        face: 175
+        pose: stand
+      - t: 1.1
+        pose: hop
+        at: [6.4, 5.7]
+      - t: 1.9
+        at: [6.2, 5.0]
+        pose: crouch
+        face: 150
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 200
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: *id009
+        face: 0
+        pose: lie
+      - t: 1.2
+        at: [6.85, 7.4]
+        pose: lie
+        face: 350
+      - t: 4.4
+        at: [6.6, 6.0]
+        pose: lie
+        face: 330
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [4.6, 5.6, 0.5]
+      look: [6.9, 6.9]
+      look_h: 0.7
+      lens: 24
+      frame: 全身
+    - t: 5.0
+      cam: [4.5, 5.55, 0.45]
+      look: [6.6, 6.0]
+      look_h: 0.4
+      lens: 26
+    fx:
+    - kind: mist
+      t: [0.2, 5.0]
+      at: mitten
+      r: 0.4
+      h: 1.2
+      z: 0.1
+      color: &id010 [190, 205, 90]
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが扉を開ける。外の光の中から、大きな虫が6本足で這って入ってくる（臭いの気配）, do: ルッキーニィが跳びのく（「うわぁ！？でっかい虫！！！」）, end: 部屋に入った虫}
+    camera: 床の近くから玄関を見る。這ってくる虫に合わせて少し下がる
+    kind: A
+  A33-015:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.3]
+        face: 160
+        pose: cover
+      - {t: 0.4, pose: cover, face: 155}
+      - {t: 3.4, pose: cough}
+      - {t: 4.48, pose: fall, face: 300}
+      - t: 5.28
+        at: [5.9, 3.4]
+        pose: lie
+        face: 300
+      luckiny:
+      - t: 0.0
+        at: [6.2, 5.0]
+        face: 150
+        pose: crouch
+      - {t: 5.48, pose: stand, face: 330}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 200
+        pose: stand
+      - {t: 5.68, face: 220}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 330
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [2.0, 6.3, 3.0]
+      look: [5.6, 4.2]
+      look_h: 0.8
+      lens: 24
+      frame: 引き
+    - t: 7.2
+      cam: [2.2, 6.2, 2.9]
+      look: [5.7, 4.0]
+      look_h: 0.6
+      lens: 26
+    fx:
+    - kind: mist
+      t: [0.0, 7.2]
+      at: mitten
+      r: 0.4
+      h: 1.2
+      z: 0.1
+      color: *id010
+      alpha: 0.82
+      glow: 0.4
+    act: {start: 臭いが部屋に広がる。ビスコが口を押さえてよろめく, do: （「こ、この臭いの正体……か！うっ……。もう、だめ……」）後ろへ倒れて気絶する, end: 床にのびたビスコ}
+    camera: '西南の高い所（棚の上）から、部屋の東を見下ろす引き（準備（案）: 気絶するビスコは引きで）'
+    kind: A
+  A33-016:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [6.2, 5.0]
+        face: 330
+        pose: stand
+      - {t: 0.1, pose: run, face: 345}
+      - t: 1.0
+        at: [5.7, 4.1]
+        pose: run
+        ease: out
+      - {t: 1.2, pose: kneel, face: 340}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 220
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 330
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [3.9, 3.6, 0.8]
+      look: luckiny
+      look_h: 0.7
+      lens: 26
+      frame: 全身
+    - t: 4.9
+      cam: [4.1, 3.7, 0.75]
+      look: [5.6, 3.7]
+      look_h: 0.5
+      lens: 30
+    act: {start: ルッキーニィが倒れたビスコへ駆け寄る, do: ひざをついて揺する（「あぁ！？ビスコさん！しっかりしてください！！」）, end: ビスコのそばのルッキーニィ}
+    camera: テーブルの南の低い所から、駆け寄るルッキーニィ
+    kind: M
+  A33-017:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [5.7, 4.1]
+        face: 340
+        pose: kneel
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 220
+        pose: stand
+      - {t: 0.2, face: 225, pose: look_down}
+      - {t: 6.22, pose: nod}
+      - {t: 7.22, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 330
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: [4.3, 4.0, 0.35]
+      look: arlecchino
+      lens: 18
+      frame: 全身
+      look_h: 0.95
+    - t: 8.1
+      cam: [4.35, 3.95, 0.35]
+      look: arlecchino
+      lens: 19
+      look_h: 0.95
+    act: {start: アルレッキーノが倒れたビスコを見下ろす, do: （「さすが犬鼻。嗅覚が強いことが仇となり、刺激に耐えられなかったのでしょう。」）, end: うなずくアルレッキーノ}
+    camera: 床のビスコの脇の低い所から、アルレッキーノを見上げる
+    kind: M
+  A33-018:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [5.7, 4.1]
+        face: 340
+        pose: kneel
+      - {t: 0.2, face: 20}
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 225
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 330
+        pose: lie
+    cam_keys:
+    - t: 0.0
+      cam: &id011 [6.1, 2.65, 1.8]
+      look: luckiny
+      lens: 28
+      frame: 膝上
+      look_h: 0.52
+    - t: 5.3
+      cam: *id011
+      look: luckiny
+      lens: 29.4
+      look_h: 0.52
+    act: {start: ルッキーニィがビスコを抱えて振り向く, do: （「アルレッキーノさん、冷静に説明しないでください。」）, end: アルレッキーノをにらむルッキーニィ}
+    camera: アルレッキーノの肩の高さから、ひざをついたルッキーニィを見下ろす
+    kind: M
+  A33-019:
+    frame: 寄り
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [5.7, 4.1]
+        face: 20
+        pose: kneel
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 225
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 330
+        pose: lie
+      - {t: 0.3, face: 315}
+      - {t: 3.06, face: 335}
+    cam_keys:
+    - t: 0.0
+      cam: &id012 [5.3, 4.75, 0.45]
+      look: &id013 [6.25, 5.5]
+      look_h: 0.35
+      lens: 28
+      frame: 寄り
+    - t: 4.6
+      cam: *id012
+      look: *id013
+      look_h: 0.35
+      lens: 29.4
+    fx: []
+    act: {start: 床の上の虫が顔を上げて部屋を見回す, do: （「こ、ここが魔女様の家でちか？」）, end: 顔を上げた虫}
+    camera: 床の高さから、虫の顔
+    kind: M
+  A33-020:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [5.7, 4.1]
+        face: 20
+        pose: kneel
+      - {t: 0.3, pose: hop}
+      - t: 1.0
+        at: [4.9, 4.2]
+        pose: stand
+        face: 140
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 225
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.6, 6.0]
+        face: 335
+        pose: lie
+      - t: 0.4
+        at: [6.35, 5.75]
+        pose: crouch
+        face: 320
+      - {t: 1.0, pose: stand, face: 320}
+    cam_keys:
+    - t: 0.0
+      cam: [5.55, 4.75, 0.3]
+      look: mitten
+      look_h: 0.3
+      lens: 22
+      frame: 全身
+    - t: 3.9
+      cam: [5.5, 4.7, 0.3]
+      look: mitten
+      look_h: 0.6
+      lens: 22
+      ease: inout
+    fx: []
+    act: {start: 虫が後ろの脚で立ち上がる（立った高さ 1.2m。4本の腕、背中の透けた羽根）, do: ルッキーニィが跳び上がる（「うわ！？立ちあがった！！！」）, end: 立ったミトン}
+    camera: '床すれすれから見上げ、立ち上がるミトンに合わせて上へ（準備（案）: 低い位置から見上げる）'
+    kind: A
+  A33-021:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 225
+        pose: stand
+      - {t: 0.2, face: 170}
+      - {t: 1.2, pose: bow}
+      - {t: 4.52, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 320
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: &id014 [6.0, 4.6, 1.5]
+      look: arlecchino
+      look_h: 1.22
+      lens: 35
+      frame: 膝上
+    - t: 5.4
+      cam: *id014
+      look: arlecchino
+      look_h: 1.22
+      lens: 36.8
+    act: {start: アルレッキーノが客を迎える, do: 一礼する（「間違いなくここは、魔女様の家にございます。はい。」）, end: 一礼したアルレッキーノ}
+    camera: ミトンの側（南）から、アルレッキーノの正面
+    kind: M
+  A33-022:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 170
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 320
+        pose: stand
+      - {t: 0.4, pose: hop}
+      - {t: 1.6, pose: stand, face: 270}
+      - {t: 3.4, face: 345}
+      - {t: 6.31, face: 300}
+    cam_keys:
+    - t: 0.0
+      cam: [4.6, 4.9, 1.0]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      frame: 胸上
+    - t: 11.6
+      cam: [4.7, 4.95, 1.0]
+      look: mitten
+      look_h: 0.95
+      lens: 36
+    fx: []
+    act: {start: ミトンが喜んで跳ねる（「よかったでち！」）, do: 部屋を見回す（「……でもなんか、イメージしてたのと違うでちね。」「魔女様はどこでち？お願いしたいことがあるんでち。」）, end: 皆の方を向くミトン}
+    camera: 部屋の中ほどから、ミトン
+    kind: M
+  A33-023:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [6.3, 2.3]
+        face: 170
+        pose: stand
+      - {t: 0.3, pose: arms_up, face: 200}
+      - {t: 3.0, pose: bow}
+      - {t: 4.6, pose: walk, face: 300}
+      - t: 10.3
+        at: [5.4, 1.8]
+        pose: walk
+        face: 300
+        ease: out
+      - {t: 10.6, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 300
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [2.3, 5.7, 1.7]
+      look: [5.4, 4.0]
+      look_h: 1.0
+      lens: 20
+      frame: 引き
+    - t: 10.9
+      cam: [2.5, 5.6, 1.7]
+      look: [5.3, 3.8]
+      look_h: 1.0
+      lens: 21
+    fx:
+    - kind: mist
+      t: [0.0, 10.9]
+      at: mitten
+      r: 0.4
+      h: 1.2
+      z: 0.1
+      color: *id010
+      alpha: 0.82
+      glow: 0.4
+    act: {start: アルレッキーノが手を打って喜ぶ, do: （「なんと！リカ様に依頼でございますか！お待ちくださいませ。ただいまリカ様をーー」）階段の方へ歩き出す, end: 階段へ向かうアルレッキーノ}
+    camera: 西南から、部屋の東半分（倒れたビスコ、ミトン、ルッキーニィ、アルレッキーノ）
+    kind: M
+  A33-024:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 300
+        pose: stand
+      - {t: 0.4, face: 280}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 300
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [0.75, 0.3]
+        face: 0
+        pose: walk
+        z: 2.8
+      - {t: 0.05, face: 180}
+      - t: 0.5
+        at: [0.75, 1.65]
+        z: 2.49
+        pose: walk
+        face: 180
+      - t: 0.9
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: proud
+        face: 140
+    cam_keys:
+    - t: 0.0
+      cam: &id015 [3.4, 3.9, 1.3]
+      look: metallica
+      lens: 30
+      frame: 全身
+      look_h: 3.68
+    - t: 3.4
+      cam: *id015
+      look: metallica
+      lens: 31.5
+      look_h: 3.68
+    act: {start: 階段の上にメタリカが現れる, do: （「ふむ、依頼と聞こえたが！」）, end: 階段の上から見下ろすメタリカ}
+    camera: 部屋の中ほどから、階段の上を見上げる
+    kind: M
+  A33-025:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 280
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 300
+        pose: stand
+      - {t: 0.3, face: 300}
+      metallica:
+      - t: 0.0
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: stand
+        face: 140
+      - t: 1.3
+        at: [0.75, 2.15]
+        z: 2.18
+        pose: walk
+        face: 180
+      - t: 2.11
+        at: [0.75, 2.65]
+        z: 1.87
+        pose: walk
+        face: 180
+      - t: 2.91
+        at: [0.75, 3.15]
+        z: 1.55
+        pose: walk
+        face: 180
+      - t: 3.72
+        at: [0.75, 3.65]
+        z: 1.24
+        pose: walk
+        face: 180
+      - t: 4.53
+        at: [0.75, 4.15]
+        z: 0.93
+        pose: walk
+        face: 180
+      - t: 5.33
+        at: [0.75, 4.65]
+        z: 0.62
+        pose: walk
+        face: 180
+      - t: 6.14
+        at: [0.75, 5.15]
+        z: 0.31
+        pose: walk
+        face: 180
+    cam_keys:
+    - t: 0.0
+      cam: [7.4, 6.6, 1.5]
+      look: [1.2, 2.8]
+      look_h: 2.4
+      lens: 26
+      frame: 引き
+    - t: 7.0
+      cam: [7.35, 6.6, 1.45]
+      look: [1.4, 4.4]
+      look_h: 1.0
+      lens: 28
+      ease: inout
+    act: {start: メタリカが虫に気づいて眉をひそめる, do: （「……あん？なんだこいつは？」）階段を降りながら（「デカいブリダンゴだな！」）, end: 階段の下のメタリカ}
+    camera: ミトンの背中越しに（玄関の脇から）、階段を降りるメタリカ
+    kind: M
+  A33-026:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 280
+        pose: stand
+      - {t: 0.4, pose: gesture, face: 230}
+      - {t: 3.8, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      - {t: 1.5, face: 120}
+      mitten:
+      - t: 0.0
+        at: [6.35, 5.75]
+        face: 300
+        pose: stand
+      - t: 1.0
+        at: [6.0, 5.65]
+        pose: walk
+        face: 270
+      - t: 2.4
+        at: [5.5, 5.6]
+        pose: stand
+        face: 270
+        ease: out
+      metallica:
+      - t: 0.0
+        at: [0.75, 5.15]
+        face: 180
+        pose: walk
+        z: 0.31
+      - t: 0.5
+        at: [0.85, 5.75]
+        z: 0.0
+        pose: walk
+        face: 100
+      - t: 3.75
+        at: [3.2, 5.4]
+        pose: walk
+        face: 90
+        ease: out
+      - {t: 4.05, pose: cross, face: 90}
+    cam_keys:
+    - t: 0.0
+      cam: [4.9, 6.35, 1.1]
+      look: metallica
+      lens: 22
+      frame: 全身
+      look_h: 1.19
+    - t: 6.0
+      cam: [5.0, 6.4, 1.15]
+      look: metallica
+      lens: 26
+      ease: inout
+      frame: 膝上
+      look_h: 1.12
+    act: {start: アルレッキーノが紹介する（「リカ様に依頼に来られたお客様にございます。」）, do: メタリカが階段の下からミトンの前へ歩き、ぴしゃりと（「メタリカだ。」）, end: ミトンの前に立つメタリカ}
+    camera: 南の棚の前から、歩いてくるメタリカを追い、止まった所で寄る
+    kind: M
+  A33-027:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 230
+        pose: stand
+      - {t: 0.3, pose: gesture, face: 160}
+      - {t: 6.25, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: &id016 [4.4, 4.6, 1.7]
+      look: arlecchino
+      lens: 36
+      frame: 膝上
+      look_h: 1.22
+    - t: 7.2
+      cam: *id016
+      look: arlecchino
+      lens: 37.8
+      look_h: 1.22
+    act: {start: アルレッキーノが手で示す, do: （「このお姿から察するに、この辺りで有名な通称”ブリダンゴ姫”かと。」）, end: ミトンを示すアルレッキーノ}
+    camera: 南から、テーブルの脇のアルレッキーノ（手前に倒れたビスコの頭）
+    kind: M
+  A33-028:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.2]
+        face: 140
+        pose: stand
+      - {t: 0.3, pose: walk, face: 200}
+      - t: 2.0
+        at: [4.9, 4.9]
+        pose: walk
+        face: 140
+        ease: out
+      - {t: 2.3, pose: stand, face: 140}
+      - {t: 6.13, pose: lean}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 160
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: stand
+      - {t: 4.63, face: 320}
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [4.0, 6.3, 1.15]
+      look: [5.25, 5.25]
+      look_h: 0.95
+      lens: 28
+      frame: 全身
+    - t: 12.3
+      cam: [4.1, 6.25, 1.1]
+      look: [5.2, 5.25]
+      look_h: 0.9
+      lens: 32
+    fx: []
+    act: {start: ルッキーニィがおそるおそるミトンに近づく, do: （「ブリダンゴ……？初めて見ました……。」）顔をのぞき込む（「立つし、喋るし。もしかして虫じゃなくて、妖精の仲間とかですか？」）, end: のぞき込むルッキーニィ}
+    camera: 南の棚の前から、横に並ぶ二人
+    kind: M
+  A33-029:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.9]
+        face: 140
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 160
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 320
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: cross
+      - {t: 0.3, pose: proud}
+    cam_keys:
+    - t: 0.0
+      cam: &id017 [4.8, 5.8, 1.25]
+      look: metallica
+      look_h: 1.38
+      lens: 35
+      frame: 胸上
+    - t: 4.2
+      cam: *id017
+      look: metallica
+      look_h: 1.38
+      lens: 36.8
+    act: {start: メタリカが吹き出す, do: （「キヒヒ！妖精だと！？ブリダンゴが？」）, end: 笑うメタリカ}
+    camera: ミトンの側から、メタリカの正面
+    kind: M
+  A33-030:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.9, 4.9]
+        face: 140
+        pose: stand
+      - t: 0.5
+        at: [4.7, 4.6]
+        pose: stand
+        face: 140
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 160
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 320
+        pose: stand
+      - {t: 0.3, pose: arms_up, face: 270}
+      - {t: 3.4, pose: shake}
+      - {t: 5.61, pose: arms_up}
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [3.9, 5.0, 0.6]
+      look: mitten
+      lens: 26
+      frame: 膝上
+      look_h: 0.77
+    - t: 7.1
+      cam: [4.0, 5.05, 0.6]
+      look: mitten
+      lens: 26
+      look_h: 0.77
+    fx: []
+    act: {start: ミトンが4本の腕を振り上げて怒る, do: （「ち、違うでち！妖精なんかと一緒にしないでほしいでち！！！失礼なヤツでち！」）, end: 腕を振り上げたミトン}
+    camera: メタリカの側の低い所から、ミトンを見上げる
+    kind: A
+  A33-031:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 140
+        pose: stand
+      - {t: 0.2, face: 25}
+      - {t: 0.7, pose: hop}
+      - {t: 4.18, pose: stand}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 160
+        pose: stand
+      - {t: 4.53, face: 190}
+      - {t: 10.96, pose: nod}
+      - {t: 13.14, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: arms_up
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [3.7, 5.5, 1.6]
+      look: [5.0, 3.0]
+      look_h: 1.1
+      lens: 30
+      frame: 全身
+    - t: 13.7
+      cam: [3.75, 5.4, 1.6]
+      look: [5.05, 2.9]
+      look_h: 1.15
+      lens: 32
+    act: {start: ルッキーニィがアルレッキーノに振り向く（「えぇ！？妖精よりブリダンゴのほうが上なんですか？」）, do: アルレッキーノ（「一般的には違います。はい。しかしこの方は誇りをお持ちなのかと……」「ブリダンゴであることに。」）, end: うなずくアルレッキーノ}
+    camera: 南西から、手前のルッキーニィと奥のアルレッキーノ（間に倒れたビスコ）
+    kind: M
+  A33-032:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 25
+        pose: stand
+      - {t: 0.2, face: 210}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 190
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: arms_up
+      - {t: 3.92, pose: hold, face: 270}
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: proud
+      - {t: 0.2, pose: cross, face: 90}
+    cam_keys:
+    - t: 0.0
+      cam: [2.6, 5.9, 1.6]
+      look: [4.6, 5.4]
+      look_h: 1.0
+      lens: 30
+      frame: 全身
+    - t: 9.2
+      cam: [2.7, 5.85, 1.55]
+      look: [4.7, 5.45]
+      look_h: 0.95
+      lens: 34
+    fx: []
+    act: {start: メタリカが腕を組む（「……。一応、内容だけでも聞こうか。」）, do: ミトンが胸の前で手を合わせる（「あたち……。王子様をオウエンしたいんでち！」）, end: 向き合う二人}
+    camera: 西南の棚の端から、メタリカの肩越しにミトン
+    kind: M
+  A33-033:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 210
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 190
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      metallica:
+      - t: 0.0
+        at: [3.2, 5.4]
+        face: 90
+        pose: cross
+      - {t: 0.3, pose: walk, face: 90}
+      - t: 1.0
+        at: [3.6, 5.4]
+        pose: lean
+        face: 90
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [5.3, 6.5, 1.15]
+      look: metallica
+      lens: 24
+      frame: 膝上
+      look_h: 1.12
+    - t: 7.9
+      cam: [5.3, 6.45, 1.15]
+      look: metallica
+      lens: 26
+      look_h: 1.12
+    act: {start: メタリカが一歩詰め寄る, do: （「あん？王子？応援？お前、意味わかってるのか？」）, end: 顔を近づけるメタリカ}
+    camera: ミトンの背中の脇（南）から、メタリカ
+    kind: M
+  A33-034:
+    frame: 寄り
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 210
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 190
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      - {t: 0.3, pose: stand}
+      - {t: 3.0, pose: hop}
+      - {t: 6.12, pose: hold}
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 90
+        pose: lean
+    cam_keys:
+    - t: 0.0
+      cam: [4.5, 5.9, 0.95]
+      look: mitten
+      look_h: 0.95
+      lens: 30
+      frame: 胸上
+    - t: 7.0
+      cam: [4.65, 5.85, 0.95]
+      look: mitten
+      lens: 34
+      ease: inout
+      frame: 寄り
+      look_h: 1.04
+    fx: []
+    act: {start: ミトンが顔を赤くして言い返す, do: （「わ、わかってるでち！あたち、王子様が大好きなんでち！」）跳ねる, end: うっとりするミトン}
+    camera: メタリカの側から、ミトンの顔へ寄る
+    kind: A
+  A33-035:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 210
+        pose: stand
+      - {t: 0.2, face: 150, pose: cover}
+      - {t: 8.48, pose: hop}
+      - {t: 9.98, pose: stand}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 190
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 90
+        pose: lean
+    cam_keys:
+    - t: 0.0
+      cam: [6.4, 4.4, 1.2]
+      look: luckiny
+      lens: 32
+      frame: 胸上
+      look_h: 1.11
+    - t: 10.9
+      cam: [6.35, 4.42, 1.2]
+      look: luckiny
+      lens: 36
+      look_h: 1.11
+    act: {start: ルッキーニィが頬を押さえてどぎまぎする, do: （「大好きって……！その……王子様に恋心……ってことですか？」）, end: 頬を押さえたルッキーニィ}
+    camera: 北東（倒れたビスコの足の側）から、ルッキーニィ
+    kind: M
+  A33-036:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 150
+        pose: stand
+      - {t: 6.35, face: 30}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 190
+        pose: stand
+      - {t: 0.3, face: 200, pose: gesture}
+      - {t: 7.35, pose: nod}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 90
+        pose: lean
+      - {t: 6.35, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [1.6, 1.3, 3.3]
+      look: [4.6, 4.2]
+      look_h: 0.8
+      lens: 24
+      frame: 引き
+    - t: 8.2
+      cam: [1.7, 1.4, 3.2]
+      look: [4.6, 4.3]
+      look_h: 0.8
+      lens: 26
+    act: {start: アルレッキーノが淡々と, do: （「ちなみに現アマタイア国王にご子息はおりません。つまり本物の王子ではないかと。」）, end: 顔を見合わせる一同}
+    camera: 踊り場の脇の高い所から、部屋の南の一同を見下ろす
+    kind: M
+  A33-037:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 30
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 90
+        pose: stand
+      - {t: 0.3, pose: look_down, face: 90}
+      - {t: 6.67, pose: point, face: 110}
+    cam_keys:
+    - t: 0.0
+      cam: [5.3, 6.5, 1.3]
+      look: metallica
+      lens: 24
+      frame: 膝上
+      look_h: 1.12
+    - t: 12.4
+      cam: [5.25, 6.45, 1.3]
+      look: metallica
+      lens: 28
+      look_h: 1.12
+    act: {start: メタリカがため息をつく（「はぁ……。わかったわかった。大好きな王子を応援したいんだな。」）, do: 床を指さす（「だったら土にでも潜ってろ。それがお前にできる唯一の応援だ。」）, end: 床を指さすメタリカ}
+    camera: 南東の棚の前から、メタリカ
+    kind: M
+  A33-038:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 30
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 120
+        pose: stand
+      - {t: 0.5, face: 100}
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: hold
+      - {t: 5.79, pose: shake, face: 270}
+      - {t: 10.08, pose: arms_up}
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 110
+        pose: point
+      - {t: 0.3, pose: cross, face: 260}
+    cam_keys:
+    - t: 0.0
+      cam: [1.5, 6.0, 2.2]
+      look: [4.4, 5.5]
+      look_h: 0.9
+      lens: 28
+      frame: 全身
+    - t: 11.0
+      cam: [1.55, 6.0, 2.15]
+      look: [4.5, 5.5]
+      look_h: 1.0
+      lens: 30
+    fx: []
+    act: {start: メタリカが背を向ける（「何をしても無駄だと言っているんだ。わかったら、さっさと帰れ。」）, do: ミトンが地団駄を踏む（「どうして無駄なんでちか！？全然わからないでち！」）, end: 背を向けたメタリカと、食い下がるミトン}
+    camera: 西南の壺の脇から、背を向けるメタリカと奥のミトン
+    kind: M
+  A33-039:
+    frame: 寄り
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 30
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: arms_up
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 260
+        pose: cross
+      - {t: 0.3, pose: stand, face: 90}
+    cam_keys:
+    - t: 0.0
+      cam: [4.9, 6.2, 1.35]
+      look: metallica
+      lens: 32
+      frame: 胸上
+      look_h: 1.38
+    - t: 6.8
+      cam: [4.7, 6.05, 1.4]
+      look: metallica
+      lens: 42
+      ease: inout
+      frame: 寄り
+      look_h: 1.39
+    act: {start: メタリカが振り向き、ミトンを見据える, do: （「お前、自分自身のことを何もわかってないようだな……」）, end: 冷たい目のメタリカ}
+    camera: ミトンの側の低い所から、メタリカの顔へゆっくり寄る（後の伏線）
+    kind: A
+  A33-040:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 30
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: arms_up
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 90
+        pose: stand
+      - {t: 2.0, pose: point, face: 115}
+    cam_keys:
+    - t: 0.0
+      cam: [6.3, 4.4, 1.3]
+      look: [4.6, 5.5]
+      look_h: 1.0
+      lens: 28
+      frame: 膝上
+    - t: 7.3
+      cam: [6.25, 4.45, 1.3]
+      look: [4.4, 5.45]
+      look_h: 1.05
+      lens: 32
+    fx: []
+    act: {start: メタリカが玄関を指さす, do: （「これ以上話しても時間の無駄だ！ブリダンゴらしくゴミ溜めの巣穴にでも帰れ！」）, end: 玄関を指さすメタリカ}
+    camera: 北東（倒れたビスコの足の側）から、ミトンの肩越しにメタリカ
+    kind: M
+  A33-041:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 30
+        pose: stand
+      - {t: 6.55, face: 140}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [5.5, 5.6]
+        face: 270
+        pose: arms_up
+      - {t: 0.3, pose: arms_up, face: 270}
+      - {t: 5.55, pose: stand, face: 120}
+      - {t: 6.15, pose: walk, face: 125}
+      - t: 8.15
+        at: [6.7, 6.6]
+        pose: walk
+        face: 165
+      - t: 11.09
+        at: [6.9, 8.4]
+        pose: walk
+        face: 180
+      - t: 12.1
+        at: [7.0, 9.6]
+        pose: walk
+        face: 180
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 115
+        pose: point
+      - {t: 0.3, pose: cross, face: 95}
+    cam_keys:
+    - t: 0.0
+      cam: [5.0, 4.0, 1.2]
+      look: mitten
+      look_h: 0.6
+      lens: 30
+      frame: 全身
+    - t: 12.1
+      cam: [5.05, 4.05, 1.2]
+      look: [6.9, 7.2]
+      look_h: 1.0
+      lens: 30
+      ease: inout
+    fx: []
+    act: {start: ミトンが腕を振り上げる（「ブ、ブリダンゴをバカにするなんて許せないでち！失礼でち！」）, do: 背を向け、足を踏み鳴らして玄関から出ていく（「もうお前なんかに頼まないでち！こんなところに来て損したでち！！！」）, end: 開いたままの扉}
+    camera: 倒れたビスコの脇から、玄関へ出ていくミトンを追って振る
+    kind: M
+  A33-042:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: 140
+        pose: stand
+      - {t: 1.2, face: '@metallica'}
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: 200
+        pose: nod
+      - {t: 1.0, face: '@metallica'}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.6, 5.4]
+        face: 95
+        pose: cross
+      - {t: 0.3, pose: walk, face: 340}
+      - t: 1.6
+        at: [3.0, 3.9]
+        pose: walk
+        face: 10
+      - t: 3.4
+        at: [3.3, 1.6]
+        pose: walk
+        face: 40
+      - t: 4.0
+        at: [3.8, 1.25]
+        pose: walk
+        face: 180
+        ease: out
+      - t: 4.5
+        at: [3.8, 0.8]
+        z: 0.42
+        pose: sit
+        face: 180
+    cam_keys:
+    - t: 0.0
+      cam: [5.0, 5.9, 2.2]
+      look: metallica
+      lens: 16
+      frame: 全身
+      look_h: 0.88
+    - t: 7.5
+      cam: [4.9, 5.7, 2.1]
+      look: *id018
+      look_h: 0.9
+      lens: 30
+      ease: inout
+    act: {start: メタリカがふてくされて部屋を横切る, do: （「まったく。あんな奴に関わって、初めての依頼を無駄にしてたまるか……。」）ソファにどさりと座る, end: ソファで腕を組むメタリカ}
+    camera: 南の高い所から、北のソファへ歩くメタリカを追って振る
+    kind: M
+  A33-043:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: '@metallica'
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.4, 1.8]
+        face: '@metallica'
+        pose: nod
+      - {t: 0.3, pose: walk, face: 270}
+      - t: 1.6
+        at: [5.0, 2.0]
+        pose: walk
+        face: 300
+        ease: out
+      - {t: 1.9, pose: bow, face: 315}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 180
+        pose: sit
+        z: 0.42
+    cam_keys:
+    - t: 0.0
+      cam: [6.6, 0.7, 1.9]
+      look: [4.4, 1.5]
+      look_h: 1.1
+      lens: 24
+      frame: 全身
+    - t: 6.0
+      cam: [6.55, 0.75, 1.85]
+      look: [4.4, 1.45]
+      look_h: 1.1
+      lens: 26
+    act: {start: アルレッキーノがソファのメタリカの前へ進み出る, do: （「しかしリカ様、魔女ドクトリンには次の一節がございます。」）, end: ソファの前のアルレッキーノ}
+    camera: 北東の隅（本棚の脇）の高い所から、アルレッキーノとソファのメタリカ
+    kind: M
+  A33-044:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: '@metallica'
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.0, 2.0]
+        face: 315
+        pose: bow
+      - {t: 0.3, pose: stand, face: 315}
+      - {t: 1.6, pose: gesture}
+      - {t: 8.82, pose: bow}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 180
+        pose: sit
+        z: 0.42
+    cam_keys:
+    - t: 0.0
+      cam: [3.45, 1.35, 0.8]
+      look: arlecchino
+      lens: 20
+      frame: 膝上
+      look_h: 1.09
+    - t: 10.0
+      cam: [3.55, 1.4, 0.85]
+      look: arlecchino
+      lens: 22
+      ease: inout
+      look_h: 1.09
+    act: {start: アルレッキーノが胸に手を当てて唱える, do: （「魔女たる者は、どんな頼みごとも断るべからず。断るは安し、引き受けるは難し。」）, end: 唱え終えたアルレッキーノ}
+    camera: テーブルとソファの間の低い所から見上げ、ゆっくり寄る
+    kind: A
+  A33-045:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: '@metallica'
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.0, 2.0]
+        face: 315
+        pose: bow
+      - {t: 0.5, pose: stand}
+      - {t: 1.0, pose: walk, face: 110}
+      - t: 2.0
+        at: [5.6, 2.1]
+        pose: walk
+        face: 250
+        ease: out
+      - {t: 2.3, pose: stand, face: 250}
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 180
+        pose: sit
+        z: 0.42
+      - {t: 0.3, face: 150}
+      - {t: 5.06, face: 190}
+    cam_keys:
+    - t: 0.0
+      cam: &id019 [3.0, 2.2, 1.45]
+      look: metallica
+      look_h: 1.3
+      lens: 35
+      frame: 胸上
+    - t: 7.9
+      cam: *id019
+      look: metallica
+      look_h: 1.3
+      lens: 36.8
+    act: {start: メタリカがそっぽを向く, do: （「そんなことは知っている！だからちゃんと教えてやっただろう。」「何をしても無駄だとな。」）, end: 腕を組むメタリカ}
+    camera: テーブルの西の少し高い所から、ソファのメタリカの正面
+    kind: M
+  A33-046:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [4.7, 4.6]
+        face: '@metallica'
+        pose: stand
+      - {t: 0.3, pose: look_down, face: 320}
+      - {t: 3.8, pose: walk, face: 300}
+      - t: 5.2
+        at: [4.1, 4.0]
+        pose: walk
+        face: 300
+      - t: 9.19
+        at: [3.2, 3.0]
+        pose: walk
+        face: 15
+        ease: out
+      - {t: 9.49, pose: stand, face: 15}
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 100
+        pose: stand
+      - {t: 3.8, face: 60}
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 190
+        pose: sit
+        z: 0.42
+    cam_keys:
+    - t: 0.0
+      cam: [3.4, 1.6, 1.1]
+      look: luckiny
+      lens: 22
+      frame: 全身
+      look_h: 0.7
+    - t: 9.69
+      cam: [3.4, 1.6, 1.1]
+      look: luckiny
+      lens: 30
+      frame: 膝上
+      look_h: 0.9
+    - t: 17.0
+      cam: [3.35, 1.7, 1.05]
+      look: luckiny
+      lens: 36
+      ease: inout
+      frame: 胸上
+      look_h: 1.11
+    act: {start: ルッキーニィがうつむく（「無駄、ですか……。」）, do: メタリカの前へ歩み出る（「ブリダンゴが王子に恋だなんて、確かに変だと思いますけど……。」）顔を上げて（「でも、ちゃんとやれば何か、できることだってあるかもしれないじゃないですか。」）, end: メタリカを見つめるルッキーニィ}
+    camera: ソファの側から、歩み出るルッキーニィを迎え、言い切りで寄る
+    kind: A
+  A33-047:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: stand
+      - {t: 2.13, pose: look_down}
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 60
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 190
+        pose: sit
+        z: 0.42
+      - {t: 0.2, face: 200}
+    cam_keys:
+    - t: 0.0
+      cam: &id020 [5.2, 1.9, 1.4]
+      look: &id021 [3.6, 1.6]
+      look_h: 0.9
+      lens: 20
+      frame: 全身
+    - t: 5.3
+      cam: *id020
+      look: *id021
+      look_h: 0.9
+      lens: 21.0
+    act: {start: メタリカが目だけ動かしてにらむ（「……あん？」）, do: ルッキーニィが縮こまる（「い、いえ……その……。」）, end: うつむくルッキーニィ}
+    camera: 東（テーブルとソファの間）から、横に並ぶ二人
+    kind: M
+  A33-048:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: look_down
+      - {t: 0.3, pose: stand}
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.4, 4.5]
+        face: 60
+        pose: stand
+      - {t: 9.63, pose: walk, face: 40}
+      - t: 11.03
+        at: [2.6, 3.6]
+        pose: stand
+        face: 20
+        ease: out
+      metallica:
+      - t: 0.0
+        at: [3.8, 0.8]
+        face: 200
+        pose: sit
+        z: 0.42
+      - t: 3.0
+        at: [3.8, 1.25]
+        z: 0.0
+        pose: stand
+        face: 190
+      - {t: 9.63, pose: point, face: 195}
+    cam_keys:
+    - t: 0.0
+      cam: [3.75, 3.8, 0.9]
+      look: metallica
+      look_h: 1.13
+      lens: 24
+      frame: 膝上
+    - t: 14.4
+      cam: [3.75, 3.75, 0.9]
+      look: metallica
+      look_h: 1.12
+      lens: 26
+      ease: inout
+    act: {start: メタリカがため息をついて立ち上がる（「はぁ……。お前もわかってないのか……。よしわかった。」）, do: ルッキーニィと百騎兵を指さす（「ルッキーニィ、それから百騎兵。お前たち、あのブリダンゴを調べてこい。」）, end: 指さすメタリカ}
+    camera: ルッキーニィの後ろの低い所から、テーブル越しに立ち上がるメタリカを見上げる
+    kind: M
+  A33-049:
+    frame: 胸上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: stand
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.6, 3.6]
+        face: 20
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 195
+        pose: point
+      - {t: 0.3, pose: proud, face: 190}
+    cam_keys:
+    - t: 0.0
+      cam: [3.2, 2.6, 1.3]
+      look: metallica
+      lens: 30
+      frame: 胸上
+      look_h: 1.38
+    - t: 8.2
+      cam: [3.25, 2.5, 1.3]
+      look: metallica
+      lens: 34
+      ease: inout
+      look_h: 1.38
+    act: {start: メタリカが胸を張る, do: （「本当に、土に潜る以上の応援があるというなら、それをワタシが叶えてやる。」）, end: にやりとするメタリカ}
+    camera: ルッキーニィの肩の脇から、メタリカの正面。少し寄る
+    kind: M
+  A33-050:
+    frame: 膝上
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: stand
+      - {t: 0.4, pose: hop}
+      - {t: 2.28, face: 230}
+      - {t: 2.4, pose: stand, face: 15}
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.6, 3.6]
+        face: 20
+        pose: stand
+      - {t: 2.58, face: 50}
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 190
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [2.0, 2.0, 1.2]
+      look: [3.0, 3.3]
+      look_h: 1.0
+      lens: 26
+      frame: 膝上
+    - t: 4.7
+      cam: [2.05, 2.05, 1.15]
+      look: [3.0, 3.3]
+      look_h: 1.0
+      lens: 28
+    act: {start: ルッキーニィの顔がぱっと明るくなる, do: 跳ねて（「本当ですか！？どんな願いでもですか？」）, end: 百騎兵と顔を見合わせるルッキーニィ}
+    camera: 階段の脇（北西）から、ルッキーニィと百騎兵
+    kind: M
+  A33-051:
+    frame: 引き
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: stand
+      - {t: 0.3, face: 15}
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.6, 3.6]
+        face: 50
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 190
+        pose: proud
+      - {t: 0.3, pose: cross}
+    cam_keys:
+    - t: 0.0
+      cam: [1.2, 2.0, 3.2]
+      look: [3.3, 2.4]
+      look_h: 0.9
+      lens: 24
+      frame: 引き
+    - t: 5.2
+      cam: [1.2, 2.05, 3.15]
+      look: [3.3, 2.45]
+      look_h: 0.9
+      lens: 26
+    act: {start: メタリカが腕を組む, do: （「あぁ。いいだろう。見つけられたらだがな。」）, end: 腕を組むメタリカと、見上げる二人}
+    camera: 階段の8段目の上から、三人を見下ろす
+    kind: M
+  A33-052:
+    frame: 全身
+    only: [bisco, luckiny, arlecchino, hundred-knight, metallica]
+    hidden_ok: [mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      luckiny:
+      - t: 0.0
+        at: [3.2, 3.0]
+        face: 15
+        pose: stand
+      - {t: 0.2, pose: hop, face: 15}
+      - {t: 1.6, pose: run, face: 150}
+      - t: 2.6
+        at: [4.0, 4.2]
+        pose: run
+        face: 125
+      - t: 4.2
+        at: [5.8, 5.6]
+        pose: run
+        face: 145
+      - t: 5.0
+        at: [6.9, 7.0]
+        pose: run
+        face: 180
+      - t: 5.8
+        at: [6.9, 8.6]
+        pose: run
+        face: 180
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.6, 3.6]
+        face: 50
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 190
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [2.6, 5.9, 1.3]
+      look: luckiny
+      look_h: 0.7
+      lens: 24
+      frame: 全身
+    - t: 4.5
+      cam: [2.8, 5.95, 1.3]
+      look: [6.9, 7.3]
+      look_h: 1.0
+      lens: 26
+      ease: inout
+    act: {start: ルッキーニィが敬礼して, do: （「それじゃあ、ブリダンゴ姫のところへ行ってきます！」）玄関へ駆け出していく, end: 開いた玄関}
+    camera: 南西の棚の端から、駆けるルッキーニィを追って振る
+    kind: M
+  A33-053:
+    frame: 全身
+    only: [bisco, arlecchino, hundred-knight, metallica]
+    hidden_ok: [luckiny, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [2.6, 3.6]
+        face: 50
+        pose: stand
+      - {t: 0.2, pose: walk, face: 140}
+      - t: 1.8
+        at: [4.0, 4.4]
+        pose: walk
+        face: 130
+      - t: 3.6
+        at: [5.9, 5.8]
+        pose: walk
+        face: 145
+      - t: 4.6
+        at: [6.8, 7.0]
+        pose: walk
+        face: 180
+      - t: 7.2
+        at: [6.7, 7.9]
+        pose: walk
+        face: 180
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 190
+        pose: cross
+      - {t: 0.3, face: 150}
+      - {t: 0.8, pose: point, face: 150}
+    cam_keys:
+    - t: 0.0
+      cam: [3.0, 0.75, 1.25]
+      look: [5.0, 5.0]
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 7.2
+      cam: [3.05, 0.8, 1.25]
+      look: [6.4, 6.2]
+      look_h: 0.9
+      lens: 28
+      ease: inout
+    act: {start: 百騎兵がルッキーニィを追って玄関へ, do: メタリカがその背中へ（「ピラーを咲かせることも忘れるなよ、百騎兵！」）, end: 玄関を出ていく百騎兵}
+    camera: ソファの前、メタリカの肩越しに、玄関へ歩く百騎兵
+    kind: M
+  A33-054:
+    frame: 大引き
+    only: [bisco, arlecchino, metallica]
+    hidden_ok: [luckiny, hundred-knight, mitten]
+    keys:
+      bisco:
+      - t: 0.0
+        at: [5.9, 3.4]
+        face: 300
+        pose: lie
+      arlecchino:
+      - t: 0.0
+        at: [5.6, 2.1]
+        face: 250
+        pose: stand
+      - {t: 0.6, face: 140, pose: look_down}
+      metallica:
+      - t: 0.0
+        at: [3.8, 1.25]
+        face: 150
+        pose: point
+      - {t: 0.3, pose: walk, face: 0}
+      - t: 0.9
+        at: [3.8, 0.8]
+        z: 0.42
+        pose: sit
+        face: 180
+    cam_keys:
+    - t: 0.0
+      cam: [6.6, 6.2, 1.6]
+      look: [4.4, 2.0]
+      look_h: 0.8
+      lens: 24
+      frame: 引き
+    - t: 7.8
+      cam: [7.1, 6.6, 3.6]
+      look: [4.2, 2.4]
+      look_h: 0.5
+      lens: 20
+      ease: inout
+    act: {start: ソファに座り直して会報を広げるメタリカ。床にはのびたままのビスコと、そばに立つアルレッキーノ, do: 章の題「第3幕 第7章 魔女と虫姫」（Revival の読み上げ。題字は合成）, end: 居間の全景}
+    camera: 玄関の内側から、クレーンでゆっくり上がりながら引く
+    kind: M

@@ -1,0 +1,38 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-006
+scene: A35
+tc: 35.7
+sec: 17.4
+kind: A
+shot: 沼と中の島のピラー・この感じ
+acting: メタリカの声（「……あん？この感じ……」「キヒヒ、百騎兵！どうやら、ここにはピラーがあるようだぞ！偶然か……それとも」）
+dialogue:
+- L1333「……あん？この感じ……」
+- L1334「キヒヒ、百騎兵！どうやら、ここにはピラーがあるようだぞ！偶然か……それとも」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.6
+  - 27.8
+  - 1.3
+  look:
+  - 34.0
+  - 13.0
+  lens: 26
+  move: 百騎兵の背中越しに、沼と中の島のピラー（ゆっくり寄る）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 沼の岸で百騎兵が立ち止まる。濁った碧の沼、中の島に黒い尖塔（咲く前のピラー）
+  end: ピラーを見る百騎兵
+timing:
+  lead: 0.8
+  at:
+    L1333: 0.8
+    L1334: 7.47

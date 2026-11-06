@@ -1,0 +1,34 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-029
+scene: A34
+tc: 250.4
+sec: 7.0
+kind: A
+shot: 見せ場・穂を揺すると、実が頭に落ちる
+acting: 穂の先から丸い重い実が落ち、百騎兵の頭に当たる。百騎兵はよろけてしりもちをつき、転がった実を拾って高く掲げる
+dialogue: []
+sound: 穂がざわめく音、実が頭に当たる鈍い音
+notes: null
+camera:
+  pos:
+  - 27.9
+  - 70.6
+  - 1.6
+  look:
+  - 25.2
+  - 69.0
+  lens: 28
+  move: 茂みの脇から、百騎兵と穂の先（実が落ちる所でわずかに揺れる）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- heavy-fruit
+overlays: []
+fallback: null
+act:
+  start: 百騎兵が穂の茎に体当たりして揺する
+  end: 実を掲げる百騎兵
+timing:
+  lead: 0.4

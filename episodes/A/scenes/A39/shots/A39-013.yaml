@@ -1,0 +1,41 @@
+# A39 消えない臭い。blocking.yaml（Claude の案 2026-11-06、Living Spec「A39 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A39-013
+scene: A39
+tc: 100.2
+sec: 11.9
+kind: M
+shot: メタリカが百騎兵に命じる・捜してこい
+acting: 百騎兵を指さす（「百騎兵、ルッキーニィを捜してこい。オマエなら居場所がわかるだろ？」）百騎兵がうなずいて扉から駆け出す
+dialogue:
+- L1436「はぁ……。まったく……」
+- L1437「百騎兵、ルッキーニィを捜してこい。オマエなら居場所がわかるだろ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.6
+  - 7.0
+  - 2.6
+  look:
+  - 13.8
+  - 7.0
+  lens: 26
+  move: 東の棚の脇の高い所から、指さすメタリカと、扉から駆け出す百騎兵
+background: witch-house
+image: null
+refs:
+- arlecchino
+- metallica
+- hundred-knight
+- bisco
+overlays: []
+fallback: null
+act:
+  start: メタリカがため息をついて（「はぁ……。まったく……」）
+  end: 扉の方を見る三人
+timing:
+  lead: 0.4
+  at:
+    L1436: 0.4
+    L1437: 4.38

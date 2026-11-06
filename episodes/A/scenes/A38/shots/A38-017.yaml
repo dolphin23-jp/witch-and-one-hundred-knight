@@ -1,0 +1,40 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-017
+scene: A38
+tc: 123.4
+sec: 9.4
+kind: M
+shot: ミトンがそっぽを向く・誰も頼んでない
+acting: （「こんなのなら自分でやったほうがましでち！」）
+dialogue:
+- L1406「誰も特訓なんて頼んでなんかないでち！」
+- L1407「こんなのなら自分でやったほうがましでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.6
+  - 65.6
+  - 1.1
+  look:
+  - 35.2
+  - 63.3
+  lens: 28
+  move: 木の脇から、背を向けるミトンと、奥のルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンがぷいと背を向ける（「誰も特訓なんて頼んでなんかないでち！」）
+  end: 背を向けたミトン
+timing:
+  lead: 0.4
+  at:
+    L1406: 0.4
+    L1407: 5.01

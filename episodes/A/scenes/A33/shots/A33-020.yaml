@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-020
+scene: A33
+tc: 145.5
+sec: 3.9
+kind: A
+shot: あおり・ミトンが立ち上がる
+acting: ルッキーニィが跳び上がる（「うわ！？立ちあがった！！！」）
+dialogue:
+- L1178「うわ！？立ちあがった！！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.55
+  - 4.75
+  - 0.3
+  look: mitten
+  lens: 22
+  move: '床すれすれから見上げ、立ち上がるミトンに合わせて上へ（準備（案）: 低い位置から見上げる）'
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 虫が後ろの脚で立ち上がる（立った高さ 1.2m。4本の腕、背中の透けた羽根）
+  end: 立ったミトン
+timing:
+  lead: 0.5

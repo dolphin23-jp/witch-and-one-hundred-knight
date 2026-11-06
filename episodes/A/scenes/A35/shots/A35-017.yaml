@@ -1,0 +1,36 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-017
+scene: A35
+tc: 110.3
+sec: 11.2
+kind: M
+shot: 大引き（クレーンで上がる）・あいつらが待っている
+acting: （「あいつらが待っているんだろ？」）百騎兵がうなずき、小道を南へ駆け戻る
+dialogue:
+- L1341「なかなかにいい場所だ。ワタシは少しここで昼寝でもしていくからオマエは好きにしな」
+- L1342「あいつらが待っているんだろ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.6
+  - 15.2
+  - 1.6
+  look: hundred-knight
+  lens: 30
+  move: 中の島のピラーの脇から、クレーンで上がりながら、駆けていく百騎兵を見送る
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: メタリカの声（「なかなかにいい場所だ。ワタシは少しここで昼寝でもしていくからオマエは好きにしな」）
+  end: 咲いたピラーと、森へ消える百騎兵
+timing:
+  lead: 0.4
+  at:
+    L1341: 0.4
+    L1342: 7.49

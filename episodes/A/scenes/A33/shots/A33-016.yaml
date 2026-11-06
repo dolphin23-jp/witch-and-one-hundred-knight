@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-016
+scene: A33
+tc: 122.6
+sec: 4.9
+kind: M
+shot: 全身・駆け寄るルッキーニィ
+acting: ひざをついて揺する（「あぁ！？ビスコさん！しっかりしてください！！」）
+dialogue:
+- L1174「あぁ！？ビスコさん！しっかりしてください！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.9
+  - 3.6
+  - 0.8
+  look: luckiny
+  lens: 26
+  move: テーブルの南の低い所から、駆け寄るルッキーニィ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが倒れたビスコへ駆け寄る
+  end: ビスコのそばのルッキーニィ
+timing:
+  lead: 0.2

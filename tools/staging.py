@@ -50,6 +50,8 @@ POSTURE_H = {"lying": 0.3, "sitting": 0.6, "kneeling": 0.7, "crouching": 0.65}  
 # 6章後半 回3（A28〜A32、議会室）: リューベンス、ネザリア、巨大メタリカ、沼を浴びたテレッサ（回2 の直しと並行して作ったので、辞書の外で足す。2026-11-05）
 COLORS.update({"rubens": (95, 150, 60), "nezaria": (200, 180, 240), "metallica-giant": (255, 120, 20), "teressa-swamp": (110, 175, 120)})
 SHORT.update({"rubens": "リュ", "nezaria": "ネ", "metallica-giant": "巨メ", "teressa-swamp": "テ沼"})
+COLORS.update({"mitten": (70, 150, 190), "aromani-gel": (200, 160, 50), "heinz-carriage": (30, 50, 120), "heinz": (230, 230, 240), "heavy-fruit": (200, 115, 45), "perfume": (220, 160, 240)})   # 7章（A33〜）
+SHORT.update({"mitten": "ミ", "aromani-gel": "ジェ", "heinz-carriage": "馬車", "heinz": "ハ", "heavy-fruit": "実", "perfume": "瓶"})
 
 
 def cam_at(c, which):

@@ -1,0 +1,40 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-015
+scene: A38
+tc: 107.4
+sec: 10.0
+kind: A
+shot: ミトン・偉そうなことは言われたくない
+acting: （「できないことはできないでち！悔しかったら飛んでみろでち！」）
+dialogue:
+- L1403「空を飛ぶこともできないような人に、偉そうなことは言われたくないでち！」
+- L1404「できないことはできないでち！悔しかったら飛んでみろでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.9
+  - 60.6
+  - 2.4
+  look:
+  - 35.0
+  - 63.3
+  lens: 28
+  move: 北の高い所から、詰め寄るミトン（横に並ぶ二人）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンがルッキーニィに詰め寄る（「空を飛ぶこともできないような人に、偉そうなことは言われたくないでち！」）
+  end: にらみ合う二人
+timing:
+  lead: 0.4
+  at:
+    L1403: 0.4
+    L1404: 5.3

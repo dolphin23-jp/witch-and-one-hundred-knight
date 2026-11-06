@@ -1,0 +1,18 @@
+# 7章（A33〜）の新しい人物と動く小物。どの場所の配置にも layout_extra（offset [0, 0]）で足す。Claude の案（2026-11-06）
+# 形は tools/previs_ch7.py（SHAPE と decorate）。見た目の資料は refs/<対象>_sheet_01（D-054）
+#   mitten: ミトン（ブリダンゴ姫）。青い殻の大きな虫の女の子。桃色の髪、黒いリボン、赤紫の触角、黄色の毛の襟、腕4本と脚2本（6本足）、背中の透けた青い羽根。
+#     立った高さは推定 1.2m（ルッキーニィより低い。デフォルメしない）。這う時は姿勢 lie（6本足で這う）、飛ぶ時は z を上げる（羽ばたきは動画の段階で）
+#   aromani-gel: アロマニ・ジェル（金色のスライムの魔獣。角、紫の耳、緑の垂れる手、足元に広がるゲル）。沼地のピラーの守護者。推定 2.4m
+#   heinz-carriage: ハインツの豪華な馬車（紺と金の箱馬車と白い馬2頭。長さ約 8m）。人物として動かす（向きは馬の向き）。御者の兵士は馬車の一部
+#   heinz: ハインツ（7-13 は馬車の窓から顔を出す）
+#   heavy-fruit: ずっしりの実（ルッキーニィが置く・ミトンが食べる。運ぶ時は人物の手の位置に置く）
+#   perfume: アロマニの香水の小瓶
+id: ch7-people
+size: {w: 0.0, d: 0.0}   # 人物だけ（場所は足さない）
+people:
+  mitten: {ja: ミトン, eye: 1.0, h: 1.2, en: "Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae, a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back)"}
+  aromani-gel: {ja: アロマニ・ジェル, eye: 1.9, h: 2.4, en: "the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base)"}
+  heinz-carriage: {ja: ハインツの馬車, eye: 2.0, h: 3.4, en: "Heinz's luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver's seat)"}
+  heinz: {ja: ハインツ, eye: 1.65, h: 1.8, en: "Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim)"}
+  heavy-fruit: {ja: ずっしりの実, eye: 0.2, h: 0.3, en: "a heavy fruit (a round heavy orange-brown fruit the size of a melon)"}
+  perfume: {ja: 香水の小瓶, eye: 0.1, h: 0.14, en: "a small perfume bottle"}

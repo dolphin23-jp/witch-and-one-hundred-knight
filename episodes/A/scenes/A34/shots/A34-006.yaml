@@ -1,0 +1,36 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-006
+scene: A34
+tc: 43.6
+sec: 4.0
+kind: M
+shot: 寄り（低い）・ゴミを食べるミトン
+acting: （「ゴ、ゴミを食べた！？」）
+dialogue:
+- L1247「ゴ、ゴミを食べた！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 30.8
+  - 49.15
+  - 0.45
+  look:
+  - 31.7
+  - 49.5
+  lens: 30
+  move: ゴミの山の側の地面の高さから、ミトンの顔
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンがゴミをくわえて、もぐもぐ食べる
+  end: 口を動かすミトン
+timing:
+  lead: 1.2

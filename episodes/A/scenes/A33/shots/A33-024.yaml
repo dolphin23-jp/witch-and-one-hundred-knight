@@ -1,0 +1,37 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-024
+scene: A33
+tc: 177.3
+sec: 3.4
+kind: M
+shot: あおり・踊り場のメタリカ・依頼と聞こえたが
+acting: （「ふむ、依頼と聞こえたが！」）
+dialogue:
+- L1183「ふむ、依頼と聞こえたが！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.4
+  - 3.9
+  - 1.3
+  look: metallica
+  lens: 30
+  move: 部屋の中ほどから、階段の上を見上げる
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 階段の上にメタリカが現れる
+  end: 階段の上から見下ろすメタリカ
+timing:
+  lead: 0.2

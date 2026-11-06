@@ -1,0 +1,35 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-009
+scene: A40
+tc: 66.6
+sec: 6.0
+kind: A
+shot: 大引き・紅嵐街道をハインツの馬車が来る
+acting: 森への道の前で速度を落とし、止まる
+dialogue: []
+sound: 馬車の音、馬のいななき
+notes: null
+camera:
+  pos:
+  - 53.0
+  - 44.0
+  - 0.8
+  look: heinz-carriage
+  lens: 30
+  move: 街道の北の低い所から、近づいてくる馬車を迎える（クレーンで少し上がる）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heinz-carriage
+- heinz
+overlays: []
+fallback: null
+act:
+  start: 赤い落ち葉の紅嵐街道を、紺と金の豪華な箱馬車が白い馬2頭に引かれて北へ来る（御者台に鎧の兵士）
+  end: 止まった馬車
+timing:
+  lead: 0.4

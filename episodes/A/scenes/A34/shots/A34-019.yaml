@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-019
+scene: A34
+tc: 154.6
+sec: 10.9
+kind: M
+shot: 引き・ガマンするでち（もぐもぐ）
+acting: （「わ！つ、つい……！ガマンするでち！もぐもぐ……。」）頭を抱えるルッキーニィ
+dialogue:
+- L1269「そ、そうだったんでちか……。ガマンしないとダメでちね……。もぐもぐ……。」
+- L1270「わ！つ、つい……！ガマンするでち！もぐもぐ……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.6
+  - 53.4
+  - 0.9
+  look:
+  - 33.6
+  - 51.2
+  lens: 22
+  move: 広場の西の低い所から、横に並ぶ二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンがうなずく（「そ、そうだったんでちか……。ガマンしないとダメでちね……。もぐもぐ……。」）口は止まらない
+  end: 頭を抱えるルッキーニィと、食べ続けるミトン
+timing:
+  lead: 0.4
+  at:
+    L1269: 0.4
+    L1270: 5.77

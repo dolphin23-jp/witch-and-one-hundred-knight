@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-042
+scene: A33
+tc: 331.0
+sec: 7.5
+kind: M
+shot: メタリカがソファへ・初めての依頼
+acting: （「まったく。あんな奴に関わって、初めての依頼を無駄にしてたまるか……。」）ソファにどさりと座る
+dialogue:
+- L1214「まったく。あんな奴に関わって、初めての依頼を無駄にしてたまるか……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.0
+  - 5.9
+  - 2.2
+  look: metallica
+  lens: 16
+  move: 南の高い所から、北のソファへ歩くメタリカを追って振る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカがふてくされて部屋を横切る
+  end: ソファで腕を組むメタリカ
+timing:
+  lead: 0.4

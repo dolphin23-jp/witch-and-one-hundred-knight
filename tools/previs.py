@@ -39,6 +39,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import staging  # noqa: E402
 import motion  # noqa: E402  動きのキー（D-060）
 import previs_council  # noqa: E402  議会室（6章後半 回3、A28〜A32）の形・人形・効果（並行作業と重ならないよう別のファイル、2026-11-05）
+import previs_ch7  # noqa: E402  7章（A33〜）の人形（ミトン・アロマニ・ジェル・馬車）とチンクエの道具（2026-11-06）
+EXT = (previs_council, previs_ch7)   # 場面ごとの形の追加（build_extra・decorate を順に呼ぶ）
 
 import bpy  # noqa: E402
 from bpy_extras.object_utils import world_to_camera_view  # noqa: E402
@@ -271,7 +273,8 @@ SHAPE = {
 }
 WITCHES = ("purple-peel", "lily", "rabi", "teressa", "berda", "apprentice-a", "apprentice-b", "apprentice-c", "apprentice-d", "blind-witch", "guide-witch")
 SHAPE_DEFAULT = {"r": 0.16, "hr": 0.13, "arm": 0.05}
-SHAPE.update(previs_council.SHAPE)   # 回3 の人形（リューベンス・ネザリア・巨大メタリカ・沼を浴びたテレッサ）
+for _m in EXT:   # 回3 の人形（リューベンス・ネザリア・巨大メタリカ・沼を浴びたテレッサ）、7章の人形
+    SHAPE.update(_m.SHAPE)
 
 
 def linear(rgb):
@@ -296,23 +299,47 @@ def smooth_shade(obj):
             p.use_smooth = True
 
 
+_PRIM_MESH = {}   # 形（種類と大きさ）ごとの元のメッシュ。同じ形は複製して作る（bpy.ops の追加は物が増えるほど遅い。森の 725 個で 26 秒、2026-11-06）
+
+
+def _prim_mesh(kind, kw):
+    key = (kind, tuple(sorted((k, v if not isinstance(v, list) else tuple(v)) for k, v in kw.items() if k not in ("location", "rotation"))))
+    me = _PRIM_MESH.get(key)
+    if me is None:
+        args = {k: v for k, v in kw.items() if k not in ("location", "rotation")}
+        if kind == "cyl":
+            bpy.ops.mesh.primitive_cylinder_add(**{"vertices": 28, **args})
+        elif kind == "cone":
+            bpy.ops.mesh.primitive_cone_add(**{"vertices": 28, **args})
+        elif kind == "sphere":
+            bpy.ops.mesh.primitive_uv_sphere_add(segments=28, ring_count=14, **args)
+        elif kind == "cube":
+            bpy.ops.mesh.primitive_cube_add(**args)
+        tmp = bpy.context.object
+        me = tmp.data
+        smooth_shade(tmp)
+        me.use_fake_user = True
+        bpy.data.objects.remove(tmp, do_unlink=True)
+        _PRIM_MESH[key] = me
+    return me
+
+
 def prim(kind, mat, name, parent=None, loc=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1), **kw):
-    if kind == "cyl":
-        bpy.ops.mesh.primitive_cylinder_add(**{"vertices": 28, **kw})
-    elif kind == "cone":
-        bpy.ops.mesh.primitive_cone_add(**{"vertices": 28, **kw})
-    elif kind == "sphere":
-        bpy.ops.mesh.primitive_uv_sphere_add(segments=28, ring_count=14, **kw)
-    elif kind == "cube":
-        bpy.ops.mesh.primitive_cube_add(**kw)
-    o = bpy.context.object
-    o.name = name
+    me = _prim_mesh(kind, kw).copy()
+    me.use_fake_user = False
+    o = bpy.data.objects.new(name, me)
+    bpy.context.collection.objects.link(o)
+    vl = bpy.context.view_layer
+    for ob in list(vl.objects.selected):   # bpy.ops の追加と同じく、新しい物だけを選んで、作業中の物にする
+        if ob is not None:
+            ob.select_set(False)
+    o.select_set(True)
+    vl.objects.active = o
     o.data.materials.append(mat)
     o.parent = parent
     o.location = loc
     o.rotation_euler = rot
     o.scale = scale
-    smooth_shade(o)
     return o
 
 
@@ -747,7 +774,7 @@ def build_extra(name, pr, x, y, lit):
     """家・柱・家具・ランプなど（村とティトの家、A05b）。作ったら True。"""
     rot = pr.get("rot", 0)
     lamps = lit.get("lamps", 1.0) if lit else 1.0
-    if previs_council.build_extra(sys.modules[__name__], name, pr, x, y, lit):   # 議会室（A28〜A32）
+    if any(_m.build_extra(sys.modules[__name__], name, pr, x, y, lit) for _m in EXT):   # 議会室（A28〜A32）、チンクエ（7章）
         return True
     if build_otherworld(name, pr, x, y, lamps):
         return True
@@ -1182,7 +1209,8 @@ def build_person(who, h, torch=False, sword=False):
         horn = make_mat(f"{who}_horn", (0.85, 0.8, 0.7))
         for sx in (-1, 1):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
-    previs_council.decorate(sys.modules[__name__], who, root, head, arms, sh, body_h, col)   # 回3 の人形（A28〜A32）
+    for _m in EXT:   # 回3 の人形（A28〜A32）、7章の人形
+        _m.decorate(sys.modules[__name__], who, root, head, arms, sh, body_h, col)
     if sword:   # 剣: 右手の先から刃（百騎兵、A07）
         blade = make_mat(f"{who}_blade", (0.85, 0.88, 0.95))
         hilt = make_mat(f"{who}_hilt", (0.25, 0.2, 0.15))
@@ -1677,6 +1705,7 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
 
 def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False, motion_step=None):
     bpy.ops.wm.read_factory_settings(use_empty=True)
+    _PRIM_MESH.clear()   # 前のカットのメッシュは消えている
     scene = bpy.context.scene
     c_ = st.bk["cuts"][cut]
     build_site(lay, c_.get("lighting") or st.bk.get("lighting"), bool(c_.get("door_closed")))

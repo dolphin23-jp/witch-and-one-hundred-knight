@@ -1,0 +1,43 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-001
+scene: A40
+tc: 0.0
+sec: 14.4
+kind: M
+shot: 車輪の陰のルッキーニィ・静かにしないと
+acting: （「え？百騎兵さん……！」「何をしてるのかって？その……」）あわてて百騎兵を引き寄せる（「あ……！し、静かにしないと……」）
+dialogue:
+- L1444「え？百騎兵さん……！」
+- L1445「何をしてるのかって？その……」
+- L1446「あ……！し、静かにしないと……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 40.4
+  - 48.6
+  - 1.2
+  look:
+  - 38.6
+  - 47.6
+  lens: 28
+  move: 車輪の南東（ゴミの山の外）の低い所から、入ってくる百騎兵と、車輪の陰のルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heavy-fruit
+overlays: []
+fallback: null
+act:
+  start: 百騎兵がゴミ山の広場に入ると、立てかけた車輪の陰にルッキーニィがしゃがんでいる
+  end: 車輪の陰に並ぶ二人
+timing:
+  lead: 2.4
+  at:
+    L1444: 2.4
+    L1445: 5.1
+    L1446: 10.02

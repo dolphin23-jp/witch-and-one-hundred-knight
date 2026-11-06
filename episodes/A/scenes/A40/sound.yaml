@@ -1,0 +1,31 @@
+# A40 の BGM・効果音の置き場所（D-068、2026-11-06）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.24〜0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は石か砂の音）
+# BGM は原作どおり（パート25）: M43「ブリダンゴ姫」（21:03〜26:04）。馬車の音は手持ちの効果音にないので、低いうなり（rumble_low）を仮に置く（蹄と車輪の音は後で）
+scene: A40
+bgm:
+- src: audio/bgm/M43_loop.ogg
+  cut: A40-001
+  t: 0.0
+  until: {cut: A40-018, t: 16.1}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.5
+  volume: 0.22
+sfx:
+- src: audio/sfx/forest_air_loop.ogg
+  cut: A40-001
+  t: 0.0
+  until: {cut: A40-018, t: 16.1}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.0
+  volume: 0.08
+- src: audio/sfx/rumble_low.ogg
+  cut: A40-007
+  t: 0.0
+  until: {cut: A40-013, t: 9.1}
+  loop: true
+  fade_in: 2.0
+  fade_out: 2.5
+  volume: 0.15
+- {src: audio/sfx/whoosh_long.ogg, cut: A40-005, t: 3.9, rate: 0.9, volume: 0.3}

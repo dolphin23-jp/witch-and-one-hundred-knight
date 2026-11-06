@@ -1,0 +1,38 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-017
+scene: A34
+tc: 133.9
+sec: 12.1
+kind: M
+shot: 胸上・ルッキーニィ・王子様に嫌われますよ
+acting: ミトンがおろおろ（「は、はわわ……。しょ、食事をしたら王子様に嫌われるんでちか！？」）
+dialogue:
+- L1266「……というか、そんなところ王子様に見られたら嫌われますよ！」
+- L1267「は、はわわ……。しょ、食事をしたら王子様に嫌われるんでちか！？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.4
+  - 50.6
+  - 1.35
+  look: luckiny
+  lens: 32
+  move: ミトンの頭の上の高さから、ルッキーニィを見る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが腰に手を当てて（「……というか、そんなところ王子様に見られたら嫌われますよ！」）
+  end: おろおろするミトン
+timing:
+  lead: 0.4
+  at:
+    L1266: 0.4
+    L1267: 5.4

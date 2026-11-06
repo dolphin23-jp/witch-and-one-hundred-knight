@@ -1,0 +1,38 @@
+# A39 消えない臭い。blocking.yaml（Claude の案 2026-11-06、Living Spec「A39 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A39-003
+scene: A39
+tc: 15.1
+sec: 13.4
+kind: M
+shot: 膝上・アルレッキーノ・ガンコな汚れ
+acting: たわしを掲げて（「さすがは、ブリダンゴ姫といったところでございます」）
+dialogue:
+- L1416「申し訳ございません。ワタクシ、毎日ごしごしとお掃除をしているのですが、なかなかにガンコな汚れゆえ」
+- L1417「さすがは、ブリダンゴ姫といったところでございます」
+sound: null
+notes: null
+camera:
+  pos:
+  - 13.6
+  - 7.9
+  - 0.9
+  look: arlecchino
+  lens: 22
+  move: メタリカの脇の低い所から、浴槽の前のアルレッキーノ
+background: witch-house
+image: null
+refs:
+- arlecchino
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが立ち上がって一礼する（「申し訳ございません。ワタクシ、毎日ごしごしとお掃除をしているのですが、なかなかにガンコな汚れゆえ」）
+  end: たわしを掲げるアルレッキーノ
+timing:
+  lead: 0.4
+  at:
+    L1416: 0.4
+    L1417: 8.98

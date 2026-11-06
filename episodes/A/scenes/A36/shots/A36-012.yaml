@@ -1,0 +1,40 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-012
+scene: A36
+tc: 83.9
+sec: 14.1
+kind: A
+shot: 街道を見つめるミトン・王子様が通りかかるかも
+acting: （「もしかしたら王子様が通りかかるかもしれないでち……」「前にも、ちょっとご飯を探しにいった間に王子様が通りすぎたことがあるでち……」）
+dialogue:
+- L1360「もしかしたら王子様が通りかかるかもしれないでち……」
+- L1361「前にも、ちょっとご飯を探しにいった間に王子様が通りすぎたことがあるでち……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.6
+  - 53.8
+  - 1.0
+  look:
+  - 35.4
+  - 54.6
+  lens: 30
+  move: 街道の側の低い所から、街道を見つめるミトン（手前にルッキーニィ）。ゆっくり寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンが街道の方へ向き直る
+  end: 木々の向こうの街道を見つめるミトン
+timing:
+  lead: 0.4
+  at:
+    L1360: 0.4
+    L1361: 6.01

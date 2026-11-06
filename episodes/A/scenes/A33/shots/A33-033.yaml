@@ -1,0 +1,37 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-033
+scene: A33
+tc: 247.4
+sec: 7.9
+kind: M
+shot: 膝上・メタリカが詰め寄る
+acting: （「あん？王子？応援？お前、意味わかってるのか？」）
+dialogue:
+- L1199「あん？王子？応援？お前、意味わかってるのか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.3
+  - 6.5
+  - 1.15
+  look: metallica
+  lens: 24
+  move: ミトンの背中の脇（南）から、メタリカ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが一歩詰め寄る
+  end: 顔を近づけるメタリカ
+timing:
+  lead: 0.4

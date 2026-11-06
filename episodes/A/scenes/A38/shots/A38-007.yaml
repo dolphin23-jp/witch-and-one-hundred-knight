@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-007
+scene: A38
+tc: 47.7
+sec: 7.3
+kind: M
+shot: 引き・のろのろ飛んで降りる・どうでちか
+acting: 息を切らして地面に降りる（「はぁ、はぁ……。ど、どうでちか……？」）
+dialogue:
+- L1392「はぁ、はぁ……。ど、どうでちか……？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.6
+  - 62.2
+  - 1.9
+  look: mitten
+  lens: 28
+  move: 東の少し高い所から、宙を進むミトンを追って振る（ルッキーニィと百騎兵を手前に）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンがゆっくり、ふらふらと宙を進み
+  end: 降りて息を切らすミトン
+timing:
+  lead: 2.8

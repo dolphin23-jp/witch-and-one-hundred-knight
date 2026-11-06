@@ -1,0 +1,40 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-016
+scene: A40
+tc: 134.0
+sec: 12.7
+kind: A
+shot: 寄り・ルッキーニィ・手紙なら、あるいは
+acting: うなずく（「うんうん、それなら代わりにボクが渡すこともできるし」「そうだ、そうしよう……」）
+dialogue:
+- L1467「……そうだ。手紙なら、あるいは」
+- L1468「うんうん、それなら代わりにボクが渡すこともできるし」
+- L1469「そうだ、そうしよう……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.54
+  - 49.91
+  - 1.1
+  look: luckiny
+  lens: 35
+  move: ルッキーニィの正面の目の高さから（ゆっくり寄る）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが顔を上げる（「……そうだ。手紙なら、あるいは」）
+  end: 決めたルッキーニィ
+timing:
+  lead: 0.8
+  at:
+    L1467: 0.8
+    L1468: 4.62
+    L1469: 9.54

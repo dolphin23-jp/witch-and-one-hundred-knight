@@ -1,0 +1,42 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-046
+scene: A33
+tc: 362.4
+sec: 17.0
+kind: A
+shot: ルッキーニィの言い返し
+acting: メタリカの前へ歩み出る（「ブリダンゴが王子に恋だなんて、確かに変だと思いますけど……。」）顔を上げて（「でも、ちゃんとやれば何か、できることだってあるかもしれないじゃないですか。」）
+dialogue:
+- L1219「無駄、ですか……。」
+- L1220「ブリダンゴが王子に恋だなんて、確かに変だと思いますけど……。」
+- L1221「でも、ちゃんとやれば何か、できることだってあるかもしれないじゃないですか。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.4
+  - 1.6
+  - 1.1
+  look: luckiny
+  lens: 22
+  move: ソファの側から、歩み出るルッキーニィを迎え、言い切りで寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがうつむく（「無駄、ですか……。」）
+  end: メタリカを見つめるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1219: 0.4
+    L1220: 3.8
+    L1221: 9.69

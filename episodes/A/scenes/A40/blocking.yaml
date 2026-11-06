@@ -1,0 +1,931 @@
+# A40 チンクエの森・陰の見守りとハインツの馬車、北西のピラーへ（7章 回1 の終わり）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A40 動きの設計（案）」。準備（案）の表の 7-13（残す。くんくんの独り言 L1454 は削る）・7-14（まとめる）
+# 場所: world/cinque-forest-layout.yaml（ゴミ山の広場と、東の紅嵐街道の柵の脇）。昼（day）
+# ハインツの馬車は world/ch7-people-extra.yaml の heinz-carriage（向きは馬の向き。箱の中心は向きの後ろ 1.4m）。ハインツは箱の西の窓から顔を出す（z 0.1、体は箱の中）
+# 7-15（綿蛍の谷の墓地）からはパート26 以降の録画が要る（2026-11-06 時点で Drive にない）
+scene: A40
+layout: world/cinque-forest-layout.yaml
+layout_extra:
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 100
+lighting: day
+places:
+  wheel: [36.5, 46.5]
+  crate: [31.0, 47.8]
+  stop: [54.0, 52.0]
+  road_in: [44.0, 53.5]
+start:
+  luckiny:
+    at: &id001 [37.2, 45.5]
+    face: 255
+  hundred-knight:
+    at: &id002 [43.4, 53.0]
+    face: 300
+  mitten:
+    at: &id003 [31.6, 49.9]
+    face: 300
+  heavy-fruit:
+    at: &id004 [31.1, 47.9]
+    face: 0
+  heinz-carriage:
+    at: &id005 [54.0, 74.0]
+    face: 0
+  heinz:
+    at: &id006 [53.6, 75.4]
+    face: 270
+cuts:
+  A40-001:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten, heavy-fruit]
+    hidden_ok: [heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: *id001
+        face: 255
+        pose: crouch
+      - {t: 2.0, pose: crouch, face: 60}
+      - {t: 5.1, pose: look_down}
+      - {t: 10.02, pose: crouch, face: 70}
+      - {t: 10.62, face: 255}
+      hundred-knight:
+      - t: 0.0
+        at: *id002
+        face: 300
+        pose: walk
+      - t: 2.2
+        at: [39.0, 47.6]
+        pose: walk
+        face: 300
+        ease: out
+      - {t: 2.5, pose: stand, face: 250}
+      - t: 10.42
+        at: [37.6, 46.5]
+        pose: crouch
+        face: 255
+      mitten:
+      - t: 0.0
+        at: *id003
+        face: 300
+        pose: lie
+      heavy-fruit:
+      - t: 0.0
+        at: *id004
+        face: 0
+        pose: stand
+        z: 0.55
+    cam_keys:
+    - t: 0.0
+      cam: [40.4, 48.6, 1.2]
+      look: [38.6, 47.6]
+      look_h: 0.6
+      lens: 28
+      frame: 全身
+    - t: 14.4
+      cam: [40.35, 48.55, 1.2]
+      look: [37.6, 46.3]
+      look_h: 0.6
+      lens: 32
+      ease: inout
+    act: {start: 百騎兵がゴミ山の広場に入ると、立てかけた車輪の陰にルッキーニィがしゃがんでいる, do: （「え？百騎兵さん……！」「何をしてるのかって？その……」）あわてて百騎兵を引き寄せる（「あ……！し、静かにしないと……」）, end: 車輪の陰に並ぶ二人}
+    camera: 車輪の南東（ゴミの山の外）の低い所から、入ってくる百騎兵と、車輪の陰のルッキーニィ
+    kind: M
+  A40-002:
+    frame: 胸上
+    only: [mitten, heavy-fruit]
+    hidden_ok: [luckiny, hundred-knight, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [31.6, 49.9]
+        face: 300
+        pose: lie
+      - {t: 1.2, face: 290}
+      - t: 3.58
+        at: [31.8, 50.0]
+        pose: crouch
+        face: 240
+      - {t: 8.88, pose: look_down, face: 230}
+      heavy-fruit:
+      - t: 0.0
+        at: [31.1, 47.9]
+        face: 0
+        pose: stand
+        z: 0.55
+    cam_keys:
+    - t: 0.0
+      cam: [30.4, 50.9, 0.4]
+      look: [31.6, 49.9]
+      look_h: 0.3
+      lens: 30
+      frame: 胸上
+    - t: 14.5
+      cam: [30.45, 50.85, 0.45]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      ease: inout
+    fx: []
+    act: {start: 住みかの前で丸くなって寝ていたミトンがもぞもぞ動く（「ん……。んん……」）, do: 体を起こして（「んぁ……。おなか……へったでち……」「あのお腹がいっぱいになる”実”がまた食べたいでち……」）, end: 座ってお腹を押さえるミトン}
+    camera: ミトンの前の地面の高さから
+    kind: M
+  A40-003:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten, heavy-fruit]
+    hidden_ok: [heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [31.8, 50.0]
+        face: 230
+        pose: look_down
+      - {t: 0.4, pose: stand, face: 210}
+      - {t: 1.8, pose: hop}
+      - t: 4.44
+        at: [31.5, 48.5]
+        pose: walk
+        face: 205
+        ease: out
+      - {t: 5.34, pose: hold, face: 205}
+      heavy-fruit:
+      - t: 0.0
+        at: [31.1, 47.9]
+        face: 0
+        pose: stand
+        z: 0.55
+      - t: 5.34
+        at: [31.1, 47.9]
+        z: 0.55
+      - t: 5.64
+        at: [31.31, 48.92]
+        z: 0.75
+      - t: 8.63
+        at: [31.31, 48.92]
+        z: 0.75
+      - t: 8.73
+        at: [31.31, 48.92]
+        z: -0.6
+    cam_keys:
+    - t: 0.0
+      cam: [29.6, 46.6, 1.8]
+      look: [31.4, 48.6]
+      look_h: 0.6
+      lens: 28
+      frame: 全身
+    - t: 9.5
+      cam: [29.65, 46.65, 1.75]
+      look: mitten
+      look_h: 0.6
+      lens: 34
+      ease: inout
+    fx: []
+    act: {start: ミトンが木箱の上の実に気づく（「……！？あったでち！これはゴミじゃないでち！」）, do: 駆け寄ってかぶりつく（「もぐもぐ！今日もおいしいでち！」）, end: 実をほおばるミトン}
+    camera: 木箱の奥（ゴミの山の側）の少し高い所から、駆け寄るミトン
+    kind: M
+  A40-004:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: crouch
+      - {t: 4.14, pose: hold, face: 255}
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [31.5, 48.5]
+        face: 205
+        pose: hold
+      - {t: 0.2, pose: stand, face: 60}
+      - {t: 1.4, face: 30}
+      - {t: 4.14, pose: hop, face: 60}
+      - {t: 6.54, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [30.4, 47.6, 1.0]
+      look: mitten
+      lens: 30
+      frame: 膝上
+      look_h: 0.77
+    - t: 4.14
+      cam: [30.4, 47.6, 1.0]
+      look: mitten
+      lens: 30
+      look_h: 0.77
+    - t: 7.4
+      cam: [30.45, 47.65, 1.0]
+      look: luckiny
+      lens: 50
+      ease: inout
+      frame: 胸上
+      look_h: 1.11
+    fx: []
+    act: {start: ミトンが首をかしげる（「……？でも、どうして置いてあるんでち？」）, do: （「まぁ、いいでち。ラッキーでち」）車輪の陰で、ルッキーニィがほっと微笑む, end: 車輪の陰のルッキーニィの横顔}
+    camera: ミトンの肩越しから、奥の車輪の陰（ルッキーニィ）へ振る
+    kind: M
+  A40-005:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: hold
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [31.5, 48.5]
+        face: 60
+        pose: stand
+      - {t: 0.2, pose: proud, face: 120}
+      - {t: 3.49, pose: arms_up, face: 120}
+      - t: 3.89
+        at: [31.5, 48.5]
+        z: 0.1
+      - t: 5.9
+        at: [33.0, 50.4]
+        z: 1.3
+        pose: arms_up
+        face: 120
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [33.6, 53.6, 0.5]
+      look: mitten
+      look_h: 0.6
+      lens: 26
+      frame: 全身
+    - t: 5.9
+      cam: [33.6, 53.5, 0.5]
+      look: mitten
+      look_h: 1.9
+      lens: 26
+      ease: inout
+    act: {start: ミトンが拳を握り（「じゃあ、もう一度練習でち！」）, do: 羽根を広げて、ふらふらと浮かび上がる, end: 宙に浮くミトン}
+    camera: 広場の南の低い所から、浮かぶミトンを見上げる（奥にゴミの山）
+    kind: M
+  A40-006:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: hold
+      - {t: 0.3, pose: hold, face: 255}
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [33.0, 50.4]
+        face: 120
+        pose: arms_up
+        z: 1.3
+    cam_keys:
+    - t: 0.0
+      cam: [35.84, 45.26, 0.75]
+      look: luckiny
+      lens: 35
+      frame: 胸上
+      look_h: 1.11
+    - t: 4.5
+      cam: [35.84, 45.26, 0.75]
+      look: luckiny
+      lens: 45
+      ease: inout
+      frame: 寄り
+      look_h: 1.22
+    act: {start: 車輪の陰で、ルッキーニィが両手を胸の前で握る, do: （「ミトンさん……。頑張ってください……！」）, end: 見上げるルッキーニィ}
+    camera: 車輪の脇から、ルッキーニィの顔（ゆっくり寄る）
+    kind: A
+  A40-007:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 255
+        pose: hold
+      - {t: 1.2, pose: stand, face: 100}
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 255
+        pose: crouch
+      - {t: 1.6, face: 100}
+      mitten:
+      - t: 0.0
+        at: [33.0, 50.4]
+        face: 120
+        pose: arms_up
+        z: 1.3
+    cam_keys:
+    - t: 0.0
+      cam: [38.6, 44.6, 0.8]
+      look: [37.4, 46.0]
+      look_h: 0.6
+      lens: 28
+      frame: 膝上
+    - t: 5.2
+      cam: [38.55, 44.65, 0.8]
+      look: [37.4, 46.0]
+      look_h: 0.6
+      lens: 32
+    act: {start: 遠くから蹄と車輪の音, do: ルッキーニィが街道の方を振り向く（「うん？……馬車の音？」）, end: 街道の方を見るルッキーニィと百騎兵}
+    camera: 二人の東の低い所から、街道の方へ振り向く二人
+    kind: M
+  A40-008:
+    frame: 引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.2, 45.5]
+        face: 100
+        pose: stand
+      - {t: 2.78, pose: run, face: 95}
+      - t: 4.6
+        at: [48.6, 50.8]
+        pose: run
+        face: 100
+        ease: out
+      - {t: 4.9, pose: crouch, face: 95}
+      hundred-knight:
+      - t: 0.0
+        at: [37.6, 46.5]
+        face: 100
+        pose: crouch
+      - {t: 2.98, pose: run, face: 100}
+      - t: 4.7
+        at: [48.0, 51.6]
+        pose: run
+        face: 95
+        ease: out
+      - {t: 5.0, pose: crouch, face: 95}
+      mitten:
+      - t: 0.0
+        at: [33.0, 50.4]
+        face: 120
+        pose: arms_up
+        z: 1.3
+      - {t: 0.3, z: 0.0, pose: crouch, face: 90}
+      - {t: 2.58, pose: lie, face: 80}
+      - t: 4.18
+        at: [42.0, 51.6]
+        pose: lie
+        face: 80
+      - t: 4.8
+        at: [50.4, 49.4]
+        pose: lie
+        face: 70
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [38.8, 42.4, 3.0]
+      look: mitten
+      look_h: 0.8
+      lens: 26
+      frame: 引き
+    - t: 5.2
+      cam: [41.0, 44.0, 3.2]
+      look: [49.0, 50.6]
+      look_h: 0.5
+      lens: 28
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 5.2]
+      at: mitten
+      r: 0.4
+      h: 1.0
+      z: 0.1
+      color: [190, 205, 90]
+      alpha: 0.82
+      glow: 0.3
+    act: {start: 宙のミトンがはっとして降りる（「……！？この音は！でち！」）, do: 6本足で這って広場を駆け抜け、街道の柵の陰へ。ルッキーニィと百騎兵もあわてて追う, end: 柵の陰にしゃがむ三人}
+    camera: 広場の北の高い所から、東の街道へ駆ける三人を追って振る
+    kind: M
+  A40-009:
+    frame: 大引き
+    only: [luckiny, hundred-knight, mitten, heinz-carriage, heinz]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 95
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      heinz-carriage:
+      - t: 0.0
+        at: *id005
+        face: 0
+        pose: stand
+      - t: 4.6
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+        ease: out
+      heinz:
+      - t: 0.0
+        at: *id006
+        face: 270
+        pose: lean
+        z: 0.1
+      - t: 4.6
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [53.0, 44.0, 0.8]
+      look: heinz-carriage
+      look_h: 1.6
+      lens: 30
+      frame: 大引き
+    - t: 6.0
+      cam: [52.6, 45.6, 2.2]
+      look: heinz-carriage
+      look_h: 1.7
+      lens: 30
+      ease: inout
+      frame: 全身
+    act: {start: 赤い落ち葉の紅嵐街道を、紺と金の豪華な箱馬車が白い馬2頭に引かれて北へ来る（御者台に鎧の兵士）, do: 森への道の前で速度を落とし、止まる, end: 止まった馬車}
+    camera: 街道の北の低い所から、近づいてくる馬車を迎える（クレーンで少し上がる）
+    kind: A
+  A40-010:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten, heinz-carriage, heinz]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 95
+        pose: crouch
+      - {t: 1.6, pose: cover, face: 95}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      heinz-carriage:
+      - t: 0.0
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+      heinz:
+      - t: 0.0
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+    cam_keys:
+    - t: 0.0
+      cam: [47.4, 51.4, 1.3]
+      look: heinz
+      look_h: 1.25
+      lens: 40
+      frame: 膝上
+    - t: 5.4
+      cam: [47.5, 51.4, 1.3]
+      look: heinz
+      look_h: 1.25
+      lens: 50
+      ease: inout
+    act: {start: 馬車の窓のカーテンが開き、金髪の若い貴族が顔を出して森を眺める, do: 柵の陰でルッキーニィが息をのむ（「あ、あの人……ハインツだ！」）, end: 窓のハインツ}
+    camera: 柵の陰の三人の後ろから、柵ごしに馬車の窓のハインツ
+    kind: A
+  A40-011:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten, heinz-carriage, heinz]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 95
+        pose: cover
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      heinz-carriage:
+      - t: 0.0
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+      heinz:
+      - t: 0.0
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+    cam_keys:
+    - t: 0.0
+      cam: [51.6, 55.6, 1.75]
+      look: heinz
+      look_h: 1.67
+      lens: 45
+      frame: 寄り
+    - t: 14.4
+      cam: [51.7, 55.5, 1.75]
+      look: heinz
+      look_h: 1.67
+      lens: 55
+    act: {start: ルッキーニィが小声で百騎兵に（「知らないんですか？超有名人ですよ！ハインツ・フォン・フラウゼ！」）, do: （「教皇のご子息で見ての通りの美形。女性にモテモテなんですよ」）窓のハインツが遠くを見る, end: 整ったハインツの横顔}
+    camera: 馬車の脇（南西）から、窓のハインツの顔
+    kind: M
+  A40-012:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten, heinz-carriage, heinz]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 95
+        pose: cover
+      - {t: 0.3, pose: crouch, face: 95}
+      - {t: 6.38, face: 45}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      heinz-carriage:
+      - t: 0.0
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+      heinz:
+      - t: 0.0
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+    cam_keys:
+    - t: 0.0
+      cam: [49.9, 51.27, 0.75]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 10.0
+      cam: [49.9, 51.27, 0.75]
+      look: luckiny
+      look_h: 0.79
+      lens: 60
+      ease: in
+      frame: 寄り
+    act: {start: ルッキーニィが言いかけて、はっとする（「世間では王子様なんて呼ばれて……。あれ？王子様って、まさか……！」）, do: 隣の柵の陰のミトンを見る, end: ミトンを見るルッキーニィ}
+    camera: ルッキーニィの正面（柵の側の低い所）から、顔へ寄る
+    kind: A
+  A40-013:
+    frame: 大引き
+    only: [luckiny, hundred-knight, mitten, heinz-carriage, heinz]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 45
+        pose: crouch
+      - {t: 4.0, pose: stand, face: 40}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      heinz-carriage:
+      - t: 0.0
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+      - t: 0.8
+        at: [54.0, 52.0]
+        face: 0
+        pose: stand
+      - t: 4.2
+        at: [54.0, 36.0]
+        face: 0
+        pose: stand
+        ease: in
+      - t: 9.1
+        at: [54.0, 24.0]
+        face: 0
+        pose: stand
+      heinz:
+      - t: 0.0
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+      - t: 0.8
+        at: [53.6, 53.4]
+        face: 270
+        pose: lean
+        z: 0.1
+      - t: 4.2
+        at: [53.6, 37.4]
+        face: 270
+        pose: lean
+        z: 0.1
+        ease: in
+      - t: 9.1
+        at: [53.6, 25.4]
+        face: 270
+        pose: lean
+        z: 0.1
+    cam_keys:
+    - t: 0.0
+      cam: [48.4, 53.4, 2.2]
+      look: heinz-carriage
+      look_h: 1.7
+      lens: 30
+      frame: 全身
+    - t: 9.1
+      cam: [48.4, 53.3, 2.2]
+      look: [54.0, 36.0]
+      look_h: 1.0
+      lens: 28
+      ease: inout
+      frame: 大引き
+    act: {start: ハインツが窓のカーテンを閉め、馬車が北へ走り去る, do: ルッキーニィが柵から顔を出す（「行っちゃった……。何の用だったんだろう……？」）, end: 落ち葉の舞う街道}
+    camera: 柵の陰の三人の後ろの高い所から、北へ去る馬車
+    kind: M
+  A40-014:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 40
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 70
+        pose: lie
+      - {t: 0.3, pose: crouch, face: 70}
+      - {t: 0.9, pose: hold, face: 60}
+      - {t: 2.4, face: 80}
+      - {t: 5.82, face: 60}
+    cam_keys:
+    - t: 0.0
+      cam: [52.0, 49.0, 1.35]
+      look: mitten
+      lens: 32
+      frame: 胸上
+      look_h: 0.3
+    - t: 6.7
+      cam: [51.95, 49.05, 1.35]
+      look: mitten
+      lens: 36
+      look_h: 0.95
+    fx: []
+    act: {start: 柵の陰でミトンがうっとりと身をくねらせる, do: （「あぁ……王子様をみちゃったでち……。でへへ」）, end: うっとりするミトン}
+    camera: 柵の外（街道の側）の少し高い所から、柵ごしにミトン
+    kind: A
+  A40-015:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 40
+        pose: stand
+      - {t: 0.2, pose: cover, face: 280}
+      - {t: 5.4, pose: look_down}
+      - {t: 11.09, pose: look_down, face: 300}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 60
+        pose: hold
+    cam_keys:
+    - t: 0.0
+      cam: [47.4, 52.0, 1.9]
+      look: luckiny
+      look_h: 0.9
+      lens: 30
+      frame: 膝上
+    - t: 15.8
+      cam: [47.45, 51.95, 1.85]
+      look: luckiny
+      look_h: 0.9
+      lens: 34
+    act: {start: ルッキーニィが頭を抱える（「はぁ……王子様がハインツなんて貴族の息子どころじゃないですよ。本当に高嶺の花じゃないですか……」）, do: 肩を落とす（「直接会うなんて、絶対に無理です……」）, end: うなだれるルッキーニィ}
+    camera: 百騎兵の後ろの高い所から、頭を抱えるルッキーニィを見下ろす（奥にミトン）
+    kind: M
+  A40-016:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 300
+        pose: look_down
+      - {t: 0.3, pose: stand, face: 300}
+      - {t: 4.62, pose: nod}
+      - {t: 9.04, pose: stand}
+      - {t: 9.54, pose: hold}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 60
+        pose: hold
+    cam_keys:
+    - t: 0.0
+      cam: [47.54, 49.91, 1.1]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 12.7
+      cam: [47.54, 49.91, 1.1]
+      look: luckiny
+      look_h: 1.22
+      lens: 55
+      ease: inout
+      frame: 寄り
+    act: {start: ルッキーニィが顔を上げる（「……そうだ。手紙なら、あるいは」）, do: うなずく（「うんうん、それなら代わりにボクが渡すこともできるし」「そうだ、そうしよう……」）, end: 決めたルッキーニィ}
+    camera: ルッキーニィの正面の目の高さから（ゆっくり寄る）
+    kind: A
+  A40-017:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 300
+        pose: hold
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: crouch
+      - {t: 0.3, pose: stand, face: 95}
+      - {t: 5.18, pose: look_up}
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 60
+        pose: hold
+    cam_keys:
+    - t: 0.0
+      cam: [49.26, 51.71, 0.5]
+      look: hundred-knight
+      look_h: 0.46
+      lens: 32
+      frame: 胸上
+    - t: 10.8
+      cam: [49.26, 51.71, 0.5]
+      look: hundred-knight
+      look_h: 0.71
+      lens: 40
+    act: {start: 百騎兵の頭の中にメタリカの声（千里眼越し）（「キヒヒ、百騎兵！お遊びはここまでだ」）, do: （「ブリダンゴにかまうのもいいが本来の仕事に戻るときだぞ」）百騎兵が顔を上げる, end: 顔を上げる百騎兵}
+    camera: 百騎兵の正面の低い所から
+    kind: M
+  A40-018:
+    frame: 大引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit, heinz-carriage, heinz]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [48.6, 50.8]
+        face: 300
+        pose: hold
+      - {t: 6.2, face: '@hundred-knight'}
+      hundred-knight:
+      - t: 0.0
+        at: [48.0, 51.6]
+        face: 95
+        pose: look_up
+      - {t: 0.3, face: 300}
+      - {t: 5.6, pose: run, face: 290}
+      - t: 16.1
+        at: [37.4, 44.6]
+        pose: run
+        face: 305
+      mitten:
+      - t: 0.0
+        at: [50.4, 49.4]
+        face: 60
+        pose: hold
+      - {t: 6.4, pose: stand, face: 80}
+    cam_keys:
+    - t: 0.0
+      cam: [49.6, 53.4, 1.2]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 28
+      frame: 全身
+    - t: 16.1
+      cam: [50.4, 55.2, 9.0]
+      look: [30.0, 36.0]
+      look_h: 0.0
+      lens: 24
+      ease: inout
+      frame: 大引き
+    act: {start: （「ワタシのダウジング・ペンデュラムによるとピラーはここから北西の方角にあるようだ」）百騎兵が森の北西を見る, do: （「キヒヒ、そのあたりはまだ、手をつけていない場所だ。一通りのピラーもあわせて片付けて来い」）百騎兵が二人を残して、広場を北西へ駆けていく, end: 紅葉の森の上から、北西へ向かう百騎兵}
+    camera: 百騎兵の後ろから、クレーンで梢の上へ上がり、北西の森を見せる
+    kind: M

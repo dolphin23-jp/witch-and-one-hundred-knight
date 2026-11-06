@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-002
+scene: A38
+tc: 13.4
+sec: 7.2
+kind: M
+shot: ミトンが立ち上がって跳ねる
+acting: （「よかったでち！やったでち！これなら王子様にも嫌われないでちか？」）
+dialogue:
+- L1383「よかったでち！やったでち！これなら王子様にも嫌われないでちか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.8
+  - 62.0
+  - 1.3
+  look: mitten
+  lens: 28
+  move: ルッキーニィの斜め後ろから、跳ねるミトン（後ろに夕日の森）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンが後ろの脚で立ち上がり、跳ねる
+  end: ルッキーニィを見上げるミトン
+timing:
+  lead: 0.3

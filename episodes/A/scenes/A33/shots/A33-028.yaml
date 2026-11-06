@@ -1,0 +1,43 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-028
+scene: A33
+tc: 200.9
+sec: 12.3
+kind: M
+shot: 二人・ルッキーニィがミトンをのぞき込む
+acting: （「ブリダンゴ……？初めて見ました……。」）顔をのぞき込む（「立つし、喋るし。もしかして虫じゃなくて、妖精の仲間とかですか？」）
+dialogue:
+- L1190「ブリダンゴ……？初めて見ました……。」
+- L1191「立つし、喋るし。もしかして虫じゃなくて、妖精の仲間とかですか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.0
+  - 6.3
+  - 1.15
+  look:
+  - 5.25
+  - 5.25
+  lens: 28
+  move: 南の棚の前から、横に並ぶ二人
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがおそるおそるミトンに近づく
+  end: のぞき込むルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1190: 0.4
+    L1191: 4.63
