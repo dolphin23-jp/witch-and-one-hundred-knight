@@ -91,7 +91,7 @@ def _obj(name, me, mat):
 
 
 MOTES = {   # 場所の空気（2026-11-07）: 色・大きさ・数・光るか・形（縦横の比）・動き
-    "dust": {"color": [255, 235, 200], "size": 0.022, "n": 60, "glow": 1.2, "alpha": 0.7, "move": "float"},
+    "dust": {"color": [235, 205, 160], "size": 0.02, "n": 40, "glow": 0.35, "alpha": 0.45, "move": "float"},   # 暗い部屋で雪に見えないよう控えめに
     "fireflies": {"color": [210, 255, 140], "size": 0.05, "n": 50, "glow": 4.0, "alpha": 0.95, "move": "firefly"},
     "leaves": {"color": [205, 80, 40], "size": 0.07, "n": 34, "glow": 0.0, "alpha": 1.0, "move": "fall", "shape": (1.0, 0.12, 0.6)},
     "sand": {"color": [230, 200, 150], "size": 0.025, "n": 70, "glow": 0.3, "alpha": 0.6, "move": "wind", "shape": (5.0, 0.6, 0.6)},

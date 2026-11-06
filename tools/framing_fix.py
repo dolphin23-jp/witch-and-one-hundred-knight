@@ -187,7 +187,8 @@ def fix_scene(scene_dir, dry=False):
         write_cam_keys(bk_path, out)
         logp = scene_dir / "gen" / "framing_fix.yaml"
         old = (yaml.safe_load(logp.read_text(encoding="utf-8")) or {}) if logp.exists() else {}
-        old[datetime.date.today().isoformat()] = log
+        day = datetime.date.today().isoformat()
+        old[day] = {**(old.get(day) or {}), **log}   # 同じ日の前の記録に重ねる（上書きしない）
         logp.write_text(yaml.safe_dump(old, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
     return log
 

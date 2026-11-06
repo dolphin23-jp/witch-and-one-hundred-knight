@@ -307,9 +307,9 @@ def gesture(prm, who, t, mo):
     if mo > 0.02:
         w = calm * min(1.0, mo * 1.4)
         ra = list(q.get("r_arm") or (0.0, 0.0, 0.0))
-        ra[0] = float(ra[0]) + 14.0 * w
+        ra[0] = float(ra[0]) + 9.0 * w
         q["r_arm"] = ra
-        q["r_el"] = float(q.get("r_el", 0.0)) + 26.0 * w
+        q["r_el"] = float(q.get("r_el", 0.0)) + 17.0 * w
         hd = list(q.get("head") or (0.0, 0.0, 0.0))
         hd[0] = float(hd[0]) + 4.0 * w * math.sin(2 * math.pi * 1.6 * t + seed)
         q["head"] = hd

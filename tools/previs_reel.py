@@ -267,6 +267,77 @@ def comm_window(work, scene_dir, shots, video, total):
     return out
 
 
+# 場所の環境音（2026-11-07、下絵のアップグレードの続き）。sound.yaml に環境音（loop の sfx）がない場面に、場所と光で選んで薄く敷く。
+# (layout の id, 光の名前) か layout の id → [(音, 音量, 速さ)]。sound.yaml の頭に ambience: false と書けば敷かない
+AMBIENCE = {
+    "marika-forest": [("audio/sfx/forest_air_loop.ogg", 0.12, 1.0)], "hekkahenne-forest": [("audio/sfx/forest_air_loop.ogg", 0.12, 1.0)],
+    "cinque-forest": [("audio/sfx/forest_air_loop.ogg", 0.1, 1.0)],
+    ("cinque-forest", "marsh"): [("audio/sfx/forest_air_loop.ogg", 0.08, 1.0), ("audio/sfx/swamp_bubble_loop.ogg", 0.07, 1.0)],
+    ("beast-village", "night"): [("audio/sfx/wind_night_loop.ogg", 0.08, 1.0)], ("az-brocken", "night_mtn"): [("audio/sfx/wind_night_loop.ogg", 0.09, 1.0)],
+    "az-brocken": [("audio/sfx/wind_night_loop.ogg", 0.07, 1.15)], "tettara-desert": [("audio/sfx/wind_night_loop.ogg", 0.09, 1.2)],
+    "tettara-dunes": [("audio/sfx/wind_night_loop.ogg", 0.09, 1.2)], "underground-cavern": [("audio/sfx/wind_night_loop.ogg", 0.06, 0.7)],
+    ("council-room", "council_ruin"): [("audio/sfx/swamp_bubble_loop.ogg", 0.06, 0.9)], "witch-city": [("audio/sfx/wind_night_loop.ogg", 0.07, 0.9)],
+}
+
+
+def ambience(scene_dir, snd, total):
+    if any(it.get("loop") and it.get("kind") == "sfx" for it in snd):
+        return []
+    sy = scene_dir / "sound.yaml"
+    if sy.exists() and (yaml.safe_load(sy.read_text(encoding="utf-8")) or {}).get("ambience") is False:
+        return []
+    bk = yaml.safe_load((scene_dir / "blocking.yaml").read_text(encoding="utf-8"))
+    lay = yaml.safe_load((ROOT / bk["layout"]).read_text(encoding="utf-8"))
+    items = AMBIENCE.get((lay.get("id"), bk.get("lighting")), AMBIENCE.get(lay.get("id"), []))
+    return [{"src": src, "kind": "sfx", "at0": 0.0, "end0": total, "loop": True, "volume": vol, "rate": rate, "fade_in": 1.5, "fade_out": 2.0}
+            for src, vol, rate in items if (ROOT / src).exists()]
+
+
+def subtitles(work, scene_dir, video, total):
+    """画面の下に、流れている台詞の文を出す（確認用。スマホで、どの台詞かと表情を照らし合わせる）。文は audio/<場面>/original/script.yaml。
+    scene.yaml に subtitles: false と書けば出さない。"""
+    sc = yaml.safe_load((scene_dir / "scene.yaml").read_text(encoding="utf-8")) if (scene_dir / "scene.yaml").exists() else {}
+    if (sc or {}).get("subtitles") is False or not (scene_dir / "voice.yaml").exists():
+        return video
+    src = ROOT / "audio" / scene_dir.name / "original"
+    texts, who = {}, {}
+    sp = src / "script.yaml"
+    if sp.exists():
+        for l in (yaml.safe_load(sp.read_text(encoding="utf-8")) or {}).get("lines") or []:
+            texts[l["id"]] = str(l.get("text", "")).strip()
+    import wave
+    items = []
+    for l in (yaml.safe_load((scene_dir / "voice.yaml").read_text(encoding="utf-8")) or {}).get("lines") or []:
+        wav = next(iter(sorted(src.glob(f"{l['id']}_*.wav"))), None)
+        if wav is None or not texts.get(l["id"]):
+            continue
+        with wave.open(str(wav)) as w:
+            dur = w.getnframes() / float(w.getframerate())
+        items.append((float(l["at"]), float(l["at"]) + dur, texts[l["id"]]))
+    if not items:
+        return video
+    font = f":fontfile={FONT}" if pathlib.Path(FONT).exists() else ""
+    flt = []
+    for k, (a, b, text) in enumerate(items):
+        rows, cur = [], ""
+        for ch in text:   # 26 字ごとに折り返す（2行まで）
+            cur += ch
+            if len(cur) >= 26:
+                rows.append(cur)
+                cur = ""
+        if cur:
+            rows.append(cur)
+        if len(rows) > 2:
+            rows = [rows[0], "".join(rows[1:])[:25] + "…"]
+        tf = work / f"sub_{k:03d}.txt"
+        tf.write_text("\n".join(rows), encoding="utf-8")
+        flt.append(f"drawtext=textfile='{tf}'{font}:fontsize=22:line_spacing=6:fontcolor=white:borderw=3:bordercolor=black@0.85"
+                   f":x=(w-text_w)/2:y=h-text_h-18:enable='between(t,{a:.2f},{b:.2f})'")
+    out = work / "subtitled.mp4"
+    run("-i", video, "-vf", ",".join(flt), "-an", "-t", f"{total}", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "22", out)
+    return out
+
+
 def run(*a):
     subprocess.run(["ffmpeg", "-v", "error", "-y", *map(str, a)], check=True)
 
@@ -300,6 +371,7 @@ def main():
     total = sum(float(s["sec"]) for s in shots)
     video = join_with_transitions(work, shots, parts)
     video = comm_window(work, scene_dir, shots, video, total)
+    video = subtitles(work, scene_dir, video, total)   # 台詞の字幕（確認用、2026-11-07）
     vy = yaml.safe_load((scene_dir / "voice.yaml").read_text(encoding="utf-8")) if (scene_dir / "voice.yaml").exists() else {"lines": []}
     src_dir = ROOT / "audio" / scene / "original"
     ins, flt = [], []
@@ -310,6 +382,7 @@ def main():
         ins += ["-i", wav]
         flt.append(f"[{sum(1 for x in ins if x == '-i')}]aresample=44100,aformat=channel_layouts=stereo,adelay={round(l['at'] * 1000)}|{round(l['at'] * 1000)}[a{k}]")
     snd = sound_items(scene_dir, shots)
+    snd += ambience(scene_dir, snd, sum(float(s["sec"]) for s in shots))   # 場所の環境音（2026-11-07）
     comm, cstarts = comm_starts(scene_dir, shots)   # 通信の小窓のノイズの音（D-069）
     for t0 in cstarts:
         d = float(comm.get("sec", 2.5))
