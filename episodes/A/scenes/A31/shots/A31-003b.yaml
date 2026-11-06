@@ -1,0 +1,77 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、D-060・D-062）から作成。
+# 2026-11-06 の下絵のアップグレードで戦い（000〜004）を組み直した。kind: M＝小さな動き、A＝見せ場
+id: A31-003b
+scene: A31
+tc: 28.2
+sec: 2.8
+kind: A
+shot: 全身・見上げる百騎兵
+acting: 百騎兵が振り向いて見上げる。巨大メタリカが胸を張って、にやりと見下ろす（二人の共同作業）
+dialogue: []
+sound: 台詞なし。BGM は M42「毒沼の乱入」。効果音は sound.yaml
+notes: null
+camera:
+  pos:
+  - 55.9
+  - 50.3
+  - 0.35
+  look: metallica-giant
+  lens: 20
+  move: 百騎兵の後ろの床すれすれから、巨大メタリカの顔を見上げる
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の肩越しに、巨大メタリカを見上げる
+  end: 見上げる百騎兵と、見下ろす巨大メタリカ
+timing:
+  lead: 0.0
+blocking:
+  start: テ沼（左・斜め後ろ（画面右向き））、ベ（中央・正面）、リュ（中央・斜め前（画面右向き））、百（中央・斜め前（画面左向き））、巨メ（中央・正面）、ネ（中央・斜め前（画面右向き））
+  end: テ沼（左・斜め後ろ（画面右向き））、ベ（左・正面）、リュ（中央・斜め前（画面右向き））、百（中央・背中）、巨メ（中央・正面）、ネ（中央・斜め前（画面右向き））
+  background: 壊れた議会室
+  panels: []
+  staging_en: 'In frame (exactly 6 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+    drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Berda, the lye witch,
+    as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow
+    hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green
+    book, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a
+    gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), looking up at giant Metallica, in the center of the frame, in three-quarter
+    view, turned toward screen left; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green
+    swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background; Nezaria, the fog witch and chairwoman,
+    as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress
+    with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame,
+    in three-quarter view, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber:
+    a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets
+    of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 6 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+    drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Berda, the lye witch,
+    as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow
+    hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green
+    book, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a
+    gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), looking up at giant Metallica, who grins down at it, in the center
+    of the frame, with the back to the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant
+    grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; Nezaria, the fog witch and chairwoman, as
+    in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress
+    with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the right of the frame,
+    in three-quarter view, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber:
+    a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets
+    of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
+    tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-003b_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-003b_end.png

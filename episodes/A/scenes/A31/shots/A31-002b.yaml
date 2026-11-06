@@ -1,0 +1,67 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、D-060・D-062）から作成。
+# 2026-11-06 の下絵のアップグレードで戦い（000〜004）を組み直した。kind: M＝小さな動き、A＝見せ場
+id: A31-002b
+scene: A31
+tc: 20.3
+sec: 3.2
+kind: A
+shot: 全身・背後の砂の拳
+acting: 百騎兵の背後で、パープルピールが両手を掲げると床の砂が柱になって噴き上がり、先が巨大な砂の拳になる。百騎兵が気づいて振り向き、剣で身構える。巨大メタリカの指先に雷が集まる
+dialogue: []
+sound: 台詞なし。BGM は M42「毒沼の乱入」。効果音は sound.yaml
+notes: null
+camera:
+  pos:
+  - 54.9
+  - 47.2
+  - 0.45
+  look: hundred-knight
+  lens: 22
+  move: 百騎兵の正面の床すれすれから、背後に伸び上がる砂の拳へ見上げていく
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: 正面の床すれすれ、手前に百騎兵
+  end: 見上げる百騎兵と、そびえ立つ砂の拳
+timing:
+  lead: 0.0
+blocking:
+  start: ウ（左・横顔（画面左向き））、ラ（左・斜め前（画面右向き））、百（中央・斜め前（画面左向き））、パ（右・斜め前（画面左向き））、ビ（右・斜め前（画面右向き））
+  end: ウ（中央・横顔（画面左向き））、ラ（中央・斜め前（画面右向き））、百（中央・背中）、パ（中央・斜め前（画面左向き））、ビ（右・斜め前（画面右向き））
+  background: 壊れた議会室
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left,
+    small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background;
+    the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
+    its sword), turning around as a giant fist of sand rises behind it, in the center of the frame, in three-quarter view, turned toward screen left; Purple Peel, the dust witch, as in her reference sheet,
+    standing, on the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy
+    uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen right, small in the background.
+    No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night
+    sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a
+    gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen
+    left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the
+    background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets,
+    holding its sword), bracing with its sword under the towering fist of sand, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing,
+    on the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform
+    with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen right, small in the background. No
+    other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night
+    sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a
+    gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-002b_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-002b_end.png

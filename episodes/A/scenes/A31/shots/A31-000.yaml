@@ -1,0 +1,78 @@
+# A31 巨大メタリカとの戦い。blocking.yaml（Claude の案 2026-11-05、D-060・D-062）から作成。
+# 2026-11-06 の下絵のアップグレードで戦い（000〜004）を組み直した。kind: M＝小さな動き、A＝見せ場
+id: A31-000
+scene: A31
+tc: 0.0
+sec: 3.8
+kind: A
+shot: 引き・にらみ合い
+acting: にらみ合い。リリーの手に氷の光が、パープルピールの掲げた両手に砂が渦を巻いて集まる。百騎兵は低く構えて頭の炎が燃え上がり、後ろで巨大メタリカが腕を組んで見下ろし、体のまわりに雷が走る
+dialogue: []
+sound: 台詞なし。BGM は M42「毒沼の乱入」。効果音は sound.yaml
+notes: null
+camera:
+  pos:
+  - 45.2
+  - 56.6
+  - 0.6
+  look:
+  - 53.8
+  - 50.4
+  lens: 26
+  move: 百騎兵の後ろの床すれすれから、クレーンで上がりながら引く
+background: council-room
+image: null
+refs:
+- lily
+- purple-peel
+- rabi
+- usamaru
+- berda
+- rubens
+- bisco
+- hundred-knight
+- nezaria
+- teressa-swamp
+- metallica-giant
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の後ろの床すれすれ、向こうにリリーとパープルピール
+  end: クレーンで上がって、巨大メタリカの足元の百騎兵と、向こうの二人の魔女
+timing:
+  lead: 0.0
+blocking:
+  start: 巨メ（左・斜め前（画面右向き））、百（左・斜め後ろ（画面右向き））、リ（中央・斜め前（画面左向き））、パ（中央・正面）、ラ（右・斜め前（画面左向き））
+  end: ベ（左・横顔（画面右向き））、リュ（左・横顔（画面右向き））、ネ（左・横顔（画面右向き））、ビ（左・背中）、百（左・斜め後ろ（画面右向き））、巨メ（中央・斜め前（画面右向き））、パ（中央・斜め前（画面左向き））、リ（中央・斜め前（画面左向き））、ラ（右・横顔（画面左向き））、ウ（右・背中）
+  background: 壊れた議会室
+  panels: []
+  staging_en: 'In frame (exactly 5 people, from left to right): giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
+    a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far left of the frame, in three-quarter view, turned toward screen
+    right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+    gauntlets, holding its sword), in a low battle stance facing the two witches, at the far left of the frame, seen from behind at an angle, turned toward screen right; Lily (Liliane), the thin-ice witch,
+    as in her reference sheet, conjuring ice in her outstretched hand, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; Purple Peel, the dust witch,
+    as in her reference sheet, raising both arms as sand swirls above her, in the center of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference
+    sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Low angle looking up; the sky fills the upper part of the
+    frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled
+    gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery
+    hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly 10 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned toward screen right, small
+    in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve
+    dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame, in profile, turned toward screen right, small
+    in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight
+    lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting
+    on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder
+    and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back to the camera; the Hundred Knight
+    (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), in a low
+    battle stance, small at the feet of giant Metallica, on the left of the frame, seen from behind at an angle, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as
+    in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around
+    one raised hand, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, in
+    the center of the frame, in three-quarter view, turned toward screen left, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame,
+    in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned
+    toward screen left, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, with the back to the camera, small in the background.
+    No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night
+    sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a
+    gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  sketch:
+  - episodes/A/scenes/A31/gen/sketch/A31-000_start.png
+  - episodes/A/scenes/A31/gen/sketch/A31-000_end.png
