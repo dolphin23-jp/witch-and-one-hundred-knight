@@ -10,6 +10,7 @@
 #   蛇の頭 (34.05, 45) 高さ 4.25、ドーム (33.2, 45)。戦いの後は (32.4, 45) に下がる（獅子 (29.1, 45)、山羊 (31.3, ±)、蛇 (35.85, 45)）。
 #   頭ごとには動かせないので、話す頭はカメラで示す。
 # 何もない空間の裂け目は fx の rift、獅子の炎は fx の breath。マーニィは魔女邸から通信で話す（小窓は scene.yaml の comm）。
+# 2026-11-06 の下絵のアップグレード: 夜光列車との戦い（018〜021）の百騎兵の動き・効果・止め・スローを磨き直した（カットと秒はそのまま）。
 scene: A23
 layout: world/hekkahenne-forest-layout.yaml
 map_ymax: 110
@@ -443,23 +444,36 @@ cuts:
         - {t: 7.0, at: [30.4, 45.0], face: 270, pose: stand}
       hundred-knight:
         - {t: 0.0, at: [24.6, 46.0], z: 0.05, face: 85, pose: ready}
-        - {t: 2.4, at: [24.6, 46.0], z: 0.05, face: 85, pose: ready}
-        - {t: 2.7, at: [24.8, 45.6], z: 0.05, face: 85, pose: crouch}
-        - {t: 3.6, at: [30.8, 45.0], z: 2.65, face: 90, pose: jump, arc: 1.6}
-        - {t: 3.9, at: [30.8, 45.0], z: 2.65, face: 90, pose: crouch}
-        - {t: 4.4, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
-        - {t: 7.0, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
+        - {t: 2.3, at: [24.6, 46.0], z: 0.05, face: 85, pose: low_ready, blend: 0.3}
+        - {t: 2.7, at: [24.8, 45.6], z: 0.05, face: 85, pose: jump_crouch, blend: 0.12}
+        - {t: 2.85, at: [25.4, 45.4], z: 0.6, face: 88, pose: jump_up, blend: 0.06}
+        - {t: 3.3, at: [28.6, 45.1], z: 5.0, face: 90, pose: tumble, blend: 0.12, ease: out}
+        - {t: 3.7, at: [30.8, 45.0], z: 3.4, face: 90, pose: land, blend: 0.1, ease: in}
+        - {t: 4.4, at: [30.8, 45.0], z: 3.4, face: 90, pose: ready, blend: 0.35}
+        - {t: 7.0, at: [30.8, 45.0], z: 3.4, face: 90, pose: ready}
       bisco:
         - {t: 0.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
         - {t: 7.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
     cam_keys:
       - {t: 0.0, cam: [26.0, 51.6, 1.6], look: [28.0, 45.0], look_h: 1.5, lens: 20, frame: 引き}
       - {t: 3.4, cam: [26.6, 51.4, 1.8], look: [28.8, 45.0], look_h: 1.8, lens: 20}
-      - {t: 7.0, cam: [27.4, 51.2, 2.4], look: [30.2, 45.0], look_h: 2.4, lens: 22}
-    shake: [{t: [3.2, 4.2], amp: 1.6}]
+      - {t: 7.0, cam: [27.4, 51.2, 2.4], look: [30.2, 45.0], look_h: 3.0, lens: 22}
+    shake:
+      - {t: [3.2, 4.2], amp: 1.6}
     act: {start: 構える百騎兵と列車（横から）, do: 列車が後ろへ下がって勢いをつけ、ホームへ突っ込んでくる。百騎兵は跳んで避け、そのまま列車の屋根に飛び乗る, end: 屋根の上で構える百騎兵}
     camera: 南の低い所から横に。屋根へ跳ぶ百騎兵を追って上がる
     kind: A
+    fx:
+      - {kind: impact, t: 3.4, at: [26.4, 45.0, 1.2], size: 2.2, dur: 0.24}
+      - {kind: impact_frame, t: 3.4, frames: 2, mode: mono}
+      - {kind: debris, t: 3.4, at: [26.2, 45.0, 0.6], n: 22, speed: 6.0, size: 0.22, up: 0.7, dir: 270, spread: 70, color: [140, 100, 70]}
+      - {kind: shock, t: 3.4, at: [26.2, 45.0], r: 4.0, dur: 0.5}
+      - {kind: dust, t: 3.4, at: [26.0, 45.0], r: 2.0, h: 1.0, dur: 1.4, n: 10}
+      - {kind: speedlines, t: [2.9, 3.4], focus: hundred-knight, inner: 0.3}
+      - {kind: flowlines, t: [2.4, 3.4], angle: 0, n: 40}
+    timewarp:
+      - {t: [3.0, 3.38], rate: 0.45}
+      - {t: 3.4, hold: 0.1, shake: 1.8}
   A23-019:
     frame: 全身（屋根の高さ）
     only: [hundred-knight, night-train]
@@ -468,25 +482,37 @@ cuts:
         - {t: 0.0, at: [30.4, 45.0], face: 270, pose: stand}
         - {t: 7.0, at: [30.4, 45.0], face: 270, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: [30.8, 45.0], z: 2.65, face: 90, pose: ready}
-        - {t: 0.6, at: [30.9, 45.0], z: 2.65, face: 90, pose: run}
-        - {t: 1.8, at: [32.0, 45.0], z: 2.65, face: 90, pose: run}
-        - {t: 2.6, at: [33.2, 45.0], z: 3.9, face: 90, pose: slash, arc: 0.5}
-        - {t: 3.3, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready, arc: 0.4}
-        - {t: 4.6, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
-        - {t: 5.1, at: [32.6, 45.1], z: 3.4, face: 85, pose: slash, arc: 0.3}
-        - {t: 5.6, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
-        - {t: 7.0, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
+        - {t: 0.0, at: [30.8, 45.0], z: 3.4, face: 90, pose: ready}
+        - {t: 0.5, at: [30.9, 45.0], z: 3.4, face: 90, pose: dash, blend: 0.12, ease: in}
+        - {t: 1.8, at: [32.0, 45.0], z: 3.4, face: 90, pose: dash, ease: linear}
+        - {t: 1.95, at: [32.2, 45.0], z: 3.4, face: 90, pose: jump_crouch, blend: 0.06}
+        - {t: 2.3, at: [32.8, 45.0], z: 4.5, face: 90, pose: air_slash_up, blend: 0.1, ease: out}
+        - {t: 2.55, at: [33.2, 45.0], z: 4.65, face: 90, pose: air_slash_down, blend: 0.06, pease: in}
+        - {t: 3.2, at: [32.1, 45.3], z: 3.4, face: 90, pose: land, blend: 0.1, arc: 0.6, ease: in}
+        - {t: 3.8, at: [32.1, 45.3], z: 3.4, face: 90, pose: ready, blend: 0.3}
+        - {t: 4.6, at: [32.1, 45.3], z: 3.4, face: 90, pose: swing_back, blend: 0.15}
+        - {t: 4.95, at: [32.6, 45.1], z: 4.1, face: 85, pose: swing_through, blend: 0.06, pease: in, ease: out}
+        - {t: 5.6, at: [32.1, 45.3], z: 3.4, face: 90, pose: land, blend: 0.1, ease: in}
+        - {t: 6.3, at: [32.1, 45.3], z: 3.4, face: 90, pose: ready, blend: 0.3}
+        - {t: 7.0, at: [32.1, 45.3], z: 3.4, face: 90, pose: ready}
     cam_keys:
       - {t: 0.0, cam: [27.8, 45.9, 3.6], look: [33.0, 45.0], look_h: 3.6, lens: 28, frame: 全身}
       - {t: 7.0, cam: [28.8, 46.4, 3.5], look: [33.4, 45.0], look_h: 3.8, lens: 30}
-    shake: [{t: [2.6, 3.3], amp: 1.0}, {t: [5.1, 5.6], amp: 0.8}]
+    shake:
+      - {t: [2.6, 3.3], amp: 1.0}
+      - {t: [5.1, 5.6], amp: 0.8}
     fx:
-      - {kind: spark, t: [2.6, 3.2], at: [33.75, 45.0], z: 4.2}
-      - {kind: spark, t: [5.1, 5.6], at: [33.4, 45.0], z: 3.9}
+      - {kind: impact, t: 2.55, at: [33.75, 45.0, 4.2], size: 1.4, dur: 0.2}
+      - {kind: sparks, t: 2.55, at: [33.75, 45.0, 4.2], n: 20, speed: 6.0}
+      - {kind: impact_frame, t: 2.55, frames: 1, mode: white}
+      - {kind: impact, t: 4.95, at: [33.4, 45.0, 3.9], size: 1.3, dur: 0.2}
+      - {kind: sparks, t: 4.95, at: [33.4, 45.0, 3.9], n: 20, speed: 6.0}
     act: {start: 屋根の上の百騎兵（列車の前から）, do: 百騎兵が屋根を後ろへ駆け、襲いかかる蛇の頭に跳んで斬りつける（火花）。着地してもう一度打ち合う, end: 屋根の上で蛇と向き合う百騎兵}
     camera: 獅子の頭の上、屋根の高さから後ろへ。蛇と打ち合う百騎兵
     kind: A
+    timewarp:
+      - {t: 2.55, hold: 0.08, shake: 1.2}
+      - {t: 4.95, hold: 0.08, shake: 1.2}
   A23-020:
     frame: 引き（斜め上から）
     only: [hundred-knight, bisco, night-train]
@@ -495,27 +521,35 @@ cuts:
         - {t: 0.0, at: [30.4, 45.0], face: 270, pose: stand}
         - {t: 8.0, at: [30.4, 45.0], face: 270, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: [32.1, 45.3], z: 2.65, face: 90, pose: ready}
-        - {t: 0.4, at: [32.1, 45.3], z: 2.65, face: 270, pose: ready}
-        - {t: 0.6, at: [31.9, 45.2], z: 2.65, face: 270, pose: run}
-        - {t: 1.5, at: [28.8, 45.0], z: 2.65, face: 270, pose: run}
-        - {t: 2.3, at: [25.0, 44.2], z: 0.05, face: 270, pose: jump, arc: 1.2}
-        - {t: 2.6, at: [25.0, 44.2], z: 0.05, face: 90, pose: ready}
-        - {t: 3.3, at: [25.0, 44.2], z: 0.05, face: 90, pose: ready}
-        - {t: 3.9, at: [23.0, 42.4], z: 0.05, face: 120, pose: jump, arc: 0.8}
-        - {t: 4.2, at: [23.0, 42.4], z: 0.05, face: 120, pose: crouch}
-        - {t: 5.6, at: [23.0, 42.4], z: 0.05, face: 120, pose: ready}
-        - {t: 8.0, at: [23.0, 42.4], z: 0.05, face: 120, pose: ready}
+        - {t: 0.0, at: [32.1, 45.3], z: 3.4, face: 90, pose: ready}
+        - {t: 0.4, at: [32.1, 45.3], z: 3.4, face: 270, pose: ready, blend: 0.25}
+        - {t: 0.6, at: [31.9, 45.2], z: 3.4, face: 270, pose: dash, blend: 0.12}
+        - {t: 1.5, at: [28.8, 45.0], z: 3.4, face: 270, pose: dash, ease: linear}
+        - {t: 1.62, at: [28.6, 45.0], z: 3.4, face: 270, pose: jump_crouch, blend: 0.06}
+        - {t: 1.95, at: [26.8, 44.6], z: 4.4, face: 270, pose: tumble, blend: 0.1, ease: out}
+        - {t: 2.35, at: [25.0, 44.2], z: 0.05, face: 270, pose: land, blend: 0.1, ease: in}
+        - {t: 2.7, at: [25.0, 44.2], z: 0.05, face: 90, pose: ready, blend: 0.25}
+        - {t: 3.35, at: [25.0, 44.2], z: 0.05, face: 100, pose: jump_crouch, blend: 0.1}
+        - {t: 3.5, at: [24.4, 43.6], z: 0.4, face: 120, pose: dive, blend: 0.06}
+        - {t: 3.85, at: [23.4, 42.6], z: 0.05, face: 120, pose: tumble, blend: 0.08, ease: in}
+        - {t: 4.25, at: [23.0, 42.4], z: 0.05, face: 120, pose: land, blend: 0.1}
+        - {t: 5.6, at: [23.0, 42.4], z: 0.05, face: 110, pose: low_ready, blend: 0.4}
+        - {t: 8.0, at: [23.0, 42.4], z: 0.05, face: 110, pose: low_ready}
       bisco:
         - {t: 0.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
         - {t: 8.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
     cam_keys:
-      - {t: 0.0, cam: [19.2, 40.2, 2.05], look: [26.5, 45.0], look_h: 1.00, lens: 24, frame: 引き}
-      - {t: 3.0, cam: [19.3, 40.3, 2.05], look: [25.0, 44.8], look_h: 0.60, lens: 24}
-      - {t: 8.0, cam: [19.6, 40.5, 1.85], look: [24.2, 44.6], look_h: 0.50, lens: 26}
-    shake: [{t: [3.3, 5.3], amp: 0.9}]
+      - {t: 0.0, cam: [19.2, 40.2, 2.05], look: [26.5, 45.0], look_h: 1.0, lens: 24, frame: 引き}
+      - {t: 3.0, cam: [19.3, 40.3, 2.05], look: [25.0, 44.8], look_h: 0.6, lens: 24}
+      - {t: 8.0, cam: [19.6, 40.5, 1.85], look: [24.2, 44.6], look_h: 0.5, lens: 26}
+    shake:
+      - {t: [3.3, 5.3], amp: 0.9}
     fx:
       - {kind: breath, t: [3.3, 5.3], at: [26.0, 45.0], z: 1.6, face: 270, length: 6.0, r: 1.0}
+      - {kind: charge, t: [2.6, 3.3], at: [26.2, 45.0, 1.6], r: 1.4, n: 16, color: [255, 160, 70]}
+      - {kind: speedlines, t: [3.3, 3.9], focus: [26.0, 45.0, 1.6], inner: 0.32, color: [255, 220, 170]}
+      - {kind: dust, t: 2.35, at: [25.0, 44.2], r: 0.8, h: 0.3, dur: 0.7, n: 7}
+      - {kind: dust, t: 4.25, at: [23.0, 42.4], r: 0.9, h: 0.3, dur: 0.8, n: 7}
     act: {start: 屋根の百騎兵（ホームの北西から）, do: 百騎兵が屋根を前へ駆けて獅子の頭を越え、ホームに跳び降りる。獅子が炎を吐き、百騎兵は北へ跳んで避ける。炎は伸びたビスコのすぐ脇をかすめる, end: 炎の向こうで構え直す百騎兵}
     camera: ホームの北西の少し高い所から。跳び降りる百騎兵を追って振り下ろす
     kind: A
@@ -529,29 +563,42 @@ cuts:
         - {t: 4.4, at: train_back, face: 270, pose: stand, ease: out}
         - {t: 8.0, at: train_back, face: 270, pose: stand}
       hundred-knight:
-        - {t: 0.0, at: [23.0, 42.4], z: 0.05, face: 120, pose: ready}
-        - {t: 0.8, at: [23.2, 42.6], z: 0.05, face: 120, pose: run}
-        - {t: 1.9, at: [25.0, 44.4], z: 0.05, face: 100, pose: run}
-        - {t: 2.5, at: [26.0, 45.0], z: 1.5, face: 90, pose: slash, arc: 0.5}
-        - {t: 3.0, at: [25.4, 45.2], z: 0.05, face: 90, pose: ready, arc: 0.3}
-        - {t: 5.0, at: [25.4, 45.2], z: 0.05, face: 90, pose: ready}
-        - {t: 5.6, at: [25.4, 45.2], z: 0.05, face: 90, pose: proud}
+        - {t: 0.0, at: [23.0, 42.4], z: 0.05, face: 110, pose: low_ready}
+        - {t: 0.6, at: [23.2, 42.6], z: 0.05, face: 110, pose: dash, blend: 0.1, ease: in}
+        - {t: 1.85, at: [25.0, 44.4], z: 0.05, face: 100, pose: dash, ease: linear}
+        - {t: 1.97, at: [25.2, 44.5], z: 0.05, face: 95, pose: jump_crouch, blend: 0.06}
+        - {t: 2.25, at: [25.6, 44.8], z: 1.4, face: 90, pose: air_slash_up, blend: 0.1, ease: out}
+        - {t: 2.5, at: [26.0, 45.0], z: 1.5, face: 90, pose: air_slash_down, blend: 0.06, pease: in}
+        - {t: 2.95, at: [25.4, 45.2], z: 0.05, face: 90, pose: hero_land, blend: 0.1, arc: 0.5, ease: in}
+        - {t: 4.8, at: [25.4, 45.2], z: 0.05, face: 90, pose: hero_land}
+        - {t: 5.4, at: [25.4, 45.2], z: 0.05, face: 90, pose: stand, blend: 0.4}
+        - {t: 5.9, at: [25.4, 45.2], z: 0.05, face: 90, pose: proud, blend: 0.3}
         - {t: 8.0, at: [25.4, 45.2], z: 0.05, face: 90, pose: proud}
       bisco:
         - {t: 0.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
         - {t: 8.0, at: [23.6, 46.6], z: 0.05, face: 250, pose: lie}
     cam_keys:
-      - {t: 0.0, cam: [26.8, 48.8, 0.95], look: [24.8, 44.6], look_h: 0.80, lens: 24, frame: 全身}
-      - {t: 2.5, cam: [26.8, 48.7, 0.95], look: [26.2, 45.0], look_h: 1.20, lens: 24}
-      - {t: 4.4, cam: [26.6, 48.9, 1.0], look: [28.0, 45.0], look_h: 1.6, lens: 22}
-      - {t: 8.0, cam: [26.4, 49.2, 1.1], look: [28.6, 45.0], look_h: 1.6, lens: 22}
-    shake: [{t: [2.5, 3.8], amp: 2.0}]
+      - {t: 0.0, cam: [26.8, 48.8, 0.95], look: [24.8, 44.6], look_h: 0.8, lens: 24, frame: 全身}
+      - {t: 2.5, cam: [26.8, 48.7, 0.95], look: [26.2, 45.0], look_h: 1.2, lens: 24}
+      - {t: 4.4, cam: [26.6, 48.9, 1.0], look: [27.4, 45.0], look_h: 1.5, lens: 22}
+      - {t: 8.0, cam: [25.6, 50.4, 1.3], look: [27.2, 45.0], look_h: 1.4, lens: 20, ease: inout}
+    shake:
+      - {t: [2.5, 3.8], amp: 2.0}
     fx:
-      - {kind: spark, t: [2.5, 3.2], at: [26.5, 45.0], z: 1.8}
+      - {kind: impact, t: 2.5, at: [26.5, 45.0, 1.8], size: 3.0, dur: 0.3, spikes: 18}
+      - {kind: impact_frame, t: 2.5, frames: 3, mode: mono}
+      - {kind: sparks, t: 2.5, at: [26.5, 45.0, 1.8], n: 30, speed: 8.0}
+      - {kind: shock, t: 2.5, at: [26.4, 45.0], r: 5.0, dur: 0.6}
+      - {kind: debris, t: 2.5, at: [26.5, 45.0, 1.8], n: 16, speed: 6.0, size: 0.15, up: 0.6, dir: 90, spread: 60, color: [150, 150, 160]}
+      - {kind: sparks, t: 2.7, times: [2.7, 2.95, 3.2, 3.45, 3.7, 3.95, 4.2], at: night-train, z: 0.2, n: 30, speed: 4.0, dur: 0.3}
+      - {kind: speedlines, t: [2.0, 2.5], focus: hundred-knight, inner: 0.3}
+      - {kind: letterbox, t: [5.2, 8.0], h: 0.1}
     act: {start: 構え直す百騎兵（ホームの南の低い所から）, do: 百騎兵が駆けて跳び、獅子の鼻づらに渾身の一太刀（火花、大きな揺れ）。列車が火花を散らして後ろへ滑って止まる。百騎兵は着地して胸を張る, end: 止まった列車と、ホームの縁で胸を張る百騎兵}
-    camera: ホームの南東の外の低い所から煽る。斬った瞬間に大きく揺れ、滑る列車を追って振る
+    camera: ホームの南東の外の低い所から煽る。斬った瞬間に大きく揺れ、滑る列車を追って振りながら少し引き、ヒーロー着地の百騎兵と止まった列車を一緒に入れる
     kind: A
-  # ---------- 戦いの後 ----------
+    timewarp:
+      - {t: [2.1, 2.48], rate: 0.4}
+      - {t: 2.5, hold: 0.16, shake: 2.4}
   A23-022:
     frame: 肩なめ（百騎兵越しに列車）
     only: [hundred-knight, bisco, night-train]
