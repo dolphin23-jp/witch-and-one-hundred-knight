@@ -38,7 +38,7 @@ import random
 import bpy
 from mathutils import Matrix, Vector
 
-KINDS_3D = ("impact", "shock", "debris", "dust", "aura", "charge", "beam", "slashmark", "sparks", "wall", "orb")
+KINDS_3D = ("impact", "shock", "debris", "dust", "aura", "charge", "beam", "slashmark", "sparks", "wall", "orb", "motes")
 KINDS_2D = ("speedlines", "flowlines", "impact_frame", "letterbox")
 
 
@@ -90,11 +90,35 @@ def _obj(name, me, mat):
     return o
 
 
+MOTES = {   # 場所の空気（2026-11-07）: 色・大きさ・数・光るか・形（縦横の比）・動き
+    "dust": {"color": [255, 235, 200], "size": 0.022, "n": 60, "glow": 1.2, "alpha": 0.7, "move": "float"},
+    "fireflies": {"color": [210, 255, 140], "size": 0.05, "n": 50, "glow": 4.0, "alpha": 0.95, "move": "firefly"},
+    "leaves": {"color": [205, 80, 40], "size": 0.07, "n": 34, "glow": 0.0, "alpha": 1.0, "move": "fall", "shape": (1.0, 0.12, 0.6)},
+    "sand": {"color": [230, 200, 150], "size": 0.025, "n": 70, "glow": 0.3, "alpha": 0.6, "move": "wind", "shape": (5.0, 0.6, 0.6)},
+    "snow": {"color": [250, 250, 255], "size": 0.03, "n": 70, "glow": 0.6, "alpha": 0.9, "move": "fall"},
+    "miasma": {"color": [120, 255, 200], "size": 0.05, "n": 50, "glow": 2.5, "alpha": 0.8, "move": "rise"},
+    "sparkles": {"color": [200, 170, 255], "size": 0.04, "n": 60, "glow": 4.0, "alpha": 0.9, "move": "firefly"},
+    "embers": {"color": [255, 150, 60], "size": 0.022, "n": 40, "glow": 4.0, "alpha": 0.95, "move": "rise"},
+}
+
+
 def build(P, fx, i):
     """立体の効果の物を作る。効果でなければ None。"""
     kind = fx.get("kind")
     if kind not in KINDS_3D:
         return None
+    if kind == "motes":   # 漂う粒（ほこり・蛍・落ち葉・砂・雪・瘴気・光の粒・火の粉）。カメラの前の箱の中に、決まった乱数で置く
+        st = dict(MOTES.get(fx.get("style", "dust"), MOTES["dust"]))
+        st.update({k: v for k, v in fx.items() if k in ("color", "size", "n", "glow", "alpha")})
+        fx["_st"] = st
+        m = _alpha_mat(P, f"fx{i}_mote", _col({"color": st["color"]}, st["color"]), float(st["alpha"]), float(st["glow"]))
+        sh = st.get("shape", (1.0, 1.0, 1.0))
+        objs = []
+        for j in range(int(st["n"])):
+            o = P.prim("sphere", m, f"fx{i}_mote{j}", None, (0, 0, -500), radius=float(st["size"]), scale=sh)
+            o.visible_shadow = False
+            objs.append(o)
+        return objs
     if kind == "impact":
         col = _col(fx, [255, 246, 215])
         star = _obj(f"fx{i}_star", _star_mesh(f"fx{i}_starm", int(fx.get("spikes", 12)), seed=i), _alpha_mat(P, f"fx{i}_starmat", col, 0.95, 3.0))
@@ -205,6 +229,35 @@ def pose(P, fx, objs, t, ctx):
     t0 = float(tt[0] if isinstance(tt, (list, tuple)) else tt)
     t1 = float(tt[1]) if isinstance(tt, (list, tuple)) else t0 + float(fx.get("dur", 0.25))
     p = Vector(ctx["where"](fx.get("at", [0, 0]), t0 if kind in ("impact", "shock", "debris", "dust", "slashmark") else t, fx.get("z")))
+    if kind == "motes":
+        st = fx.get("_st") or MOTES["dust"]
+        cx, cy, cz = fx.get("at", [0.0, 0.0, 1.5])
+        W, D, H = fx.get("box", [10.0, 10.0, 4.0])
+        rnd = _rng(i_of(fx), 7)
+        mv = st.get("move", "float")
+        for j, o in enumerate(objs):
+            bx, by, bz = rnd.uniform(-0.5, 0.5) * W, rnd.uniform(-0.5, 0.5) * D, rnd.uniform(0.0, 1.0) * H
+            ph, sp = rnd.uniform(0, 6.283), rnd.uniform(0.6, 1.4)
+            if mv == "fall":       # 上から下へ（落ち葉・雪）。左右に揺れる
+                bz = (bz - 0.35 * sp * t) % H
+                bx += 0.35 * math.sin(1.1 * t * sp + ph)
+                o.rotation_euler = (1.7 * t * sp + ph, 0.6 * math.sin(t + ph), 0.9 * t + ph)
+            elif mv == "wind":     # 横へ流れる（砂）
+                bx = ((bx + 3.0 * sp * t + W / 2) % W) - W / 2
+                bz = bz * 0.35 + 0.08 * math.sin(3.0 * t + ph)
+            elif mv == "rise":     # 下から上へ（瘴気・火の粉）
+                bz = (bz + 0.25 * sp * t) % H
+                bx += 0.2 * math.sin(0.8 * t * sp + ph)
+            else:                  # 漂う（ほこり・蛍・光の粒）
+                bx += 0.25 * math.sin(0.5 * t * sp + ph)
+                by += 0.25 * math.cos(0.43 * t * sp + ph * 1.3)
+                bz += 0.18 * math.sin(0.37 * t * sp + ph * 0.7)
+            o.location = P.bl((cx + bx, cy + by), cz - H * 0.35 + bz)
+            if mv == "firefly":    # ゆっくり明滅
+                k = 0.35 + 0.65 * max(0.0, math.sin(1.3 * t * sp + ph))
+                s = float(st["size"]) * (0.4 + 0.6 * k)
+                o.scale = (s / float(st["size"]),) * 3
+        return True
     if kind == "impact":
         dur = float(fx.get("dur", 0.2))
         u = (t - t0) / dur
@@ -614,3 +667,9 @@ def post(path, fxs, t, frame_i, ctx):
             d.rectangle([0, 0, W, h], fill=(0, 0, 0))
             d.rectangle([0, H - h, W, H], fill=(0, 0, 0))
     im.save(path)
+
+
+def i_of(fx):
+    """効果ごとに決まった乱数の種（at の座標から）。"""
+    a = fx.get("at") or [0, 0, 0]
+    return int(abs(a[0] * 7.3 + a[1] * 3.1)) % 9973

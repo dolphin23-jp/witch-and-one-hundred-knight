@@ -38,12 +38,25 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import staging  # noqa: E402
 import motion  # noqa: E402  動きのキー（D-060）
+import previs_face  # noqa: E402  顔と会話の芝居（2026-11-07）
+FACES = {}   # 人物 → 顔の部品（previs_face.add_face）
 import previs_council  # noqa: E402  議会室（6章後半 回3、A28〜A32）の形・人形・効果（並行作業と重ならないよう別のファイル、2026-11-05）
 import previs_ch7  # noqa: E402  7章（A33〜）の人形（ミトン・アロマニ・ジェル・馬車）とチンクエの道具（2026-11-06）
 import previs_rig  # noqa: E402  関節のある人形と姿勢の補間（2026-11-06 の下絵のアップグレード）
 import previs_fx  # noqa: E402  戦いの効果（閃光・衝撃・破片・土煙・集中線・剣の軌跡）と、止め・スロー（2026-11-06）
 FXCTX = {}   # 効果がその時刻の場面を知るための道具（render_cut が入れる）
-RENDER = {"engine": "workbench", "rig": True}   # 描き方（2026-11-06 の下絵のアップグレード）。workbench（既定、tools/previs_look.py）か cycles（前の描き方）
+RENDER = {"engine": "workbench", "rig": True, "face": True, "dof": True, "grade": True, "ambient": True}   # face・dof・grade・ambient は 2026-11-07
+# 場所の空気（2026-11-07、previs_fx の motes）。(layout の id, 光の名前) か layout の id で選ぶ。None で出さない。カットの ambient: false で消す、{style: ...} で替える
+AMBIENT = {
+    "witch-house": "dust", "living-room": "dust", "st-dolce": "dust", "underground-cavern": "dust", "beast-village": "dust",
+    "az-brocken": "dust", "council-room": "dust", "witch-house-front": "dust", "swamp-hill": "miasma",
+    "marika-forest": "fireflies", "hekkahenne-forest": "fireflies", "cinque-forest": "leaves",
+    "rift-void": "sparkles", "witch-city": "sparkles", "tettara-desert": "sand", "tettara-dunes": "sand",
+    ("council-room", "council_ruin"): "miasma", ("cinque-forest", "marsh"): "miasma", ("az-brocken", "night_mtn"): None,
+    ("witch-city", "void_gate"): "sparkles",
+}
+AMBIENT_BOX = {"dust": [7.0, 7.0, 3.0], "fireflies": [10.0, 10.0, 3.5], "leaves": [10.0, 10.0, 5.0], "sand": [12.0, 8.0, 2.5],
+               "miasma": [10.0, 10.0, 4.0], "sparkles": [12.0, 12.0, 6.0], "snow": [10.0, 10.0, 5.0], "embers": [8.0, 8.0, 4.0]}   # 描き方（2026-11-06 の下絵のアップグレード）。workbench（既定、tools/previs_look.py）か cycles（前の描き方）
 EXT = (previs_council, previs_ch7)   # 場面ごとの形の追加（build_extra・decorate を順に呼ぶ）
 
 import bpy  # noqa: E402
@@ -97,6 +110,9 @@ class Plan:
     def __init__(self, st, cut, sec):
         self.st, self.cut, self.sec = st, cut, sec
         self.c = st.bk["cuts"][cut]
+        _sp = st.dir / "shots" / f"{cut}.yaml"   # カットの頭の場面の時刻（台詞・口の動き・聞き手の視線に使う、2026-11-07）
+        self.shot = (yaml.safe_load(_sp.read_text(encoding="utf-8")) or {}) if _sp.exists() else {}
+        self.tc0 = float(self.shot.get("tc", 0.0))
         self.s = st.states[cut]
         self.start_pos, self.start_face = self.s["start"]
         self.end_pos, self.end_face = self.s["end"]
@@ -230,12 +246,25 @@ class Plan:
         """視線（gaze）に向かって頭だけ回す（体の向きとの差、±80°まで）。"""
         g0 = (self.c.get("gaze") or {}).get(who)
         if g0 is None:
-            return 0.0
+            return self._listen_offset(who, t, pos, body)
         g1 = (self.c.get("gaze_end") or {}).get(who, g0)
         b0 = self.st.face_of(g0, who, pos)
         b1 = self.st.face_of(g1, who, pos)
         b = lerp_bearing(b0, b1, smooth(t / max(self.sec, 1e-6)))
         return max(-80.0, min(80.0, staging.ang_diff(b, body)))
+
+    def _listen_offset(self, who, t, pos, body):
+        """gaze のない人は、ほかの人が話している間、話し手のほうへ頭を向ける（±70°まで。話し手が替わると約0.3秒で向き直る、2026-11-07）。"""
+        if not RENDER.get("face", True):
+            return 0.0
+        acc = 0.0
+        steps = (0.0, 0.12, 0.24, 0.36)
+        for dt in steps:
+            sp = previs_face.speaker_at(self.st.dir, self.tc0 + max(0.0, t - dt), self.people)
+            if sp and sp != who and sp in pos and who in pos:
+                b = staging.bearing_of((pos[sp][0] - pos[who][0], pos[sp][1] - pos[who][1]))
+                acc += max(-70.0, min(70.0, staging.ang_diff(b, body)))
+        return acc / len(steps)
 
     def roll(self, t):
         """画面の傾き（度）。cam_keys の roll を時刻で補間する（なければ 0）。"""
@@ -1211,7 +1240,12 @@ def build_person(who, h, torch=False, sword=False):
         prim("cube", make_mat("servant_mouth", (0.25, 0.25, 0.28)), f"{who}_mouth", head, (0, hr * 0.95, hr * 0.62), size=2.0, scale=(hr * 0.55, 0.012, 0.012))
     else:
         prim("sphere", m_body, f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1, 1, 1.2 if who == "arlecchino" else 1))
-        prim("cone", m_face, f"{who}_nose", head, (0, hr * 1.0, hr), (-math.pi / 2, 0, 0), radius1=hr * 0.3, radius2=0.0, depth=hr * 0.7)
+        face = previs_face.add_face(sys.modules[__name__], who, head, hr) if rig is not None and RENDER.get("face", True) else None
+        if face is not None:   # 顔（目・眉・口、2026-11-07 tools/previs_face.py）。鼻は小さく
+            FACES[who] = face
+            prim("cone", m_face, f"{who}_nose", head, (0, hr * 0.9, hr * 0.86), (-math.pi / 2, 0, 0), radius1=hr * 0.08, radius2=0.0, depth=hr * 0.2)
+        else:
+            prim("cone", m_face, f"{who}_nose", head, (0, hr * 1.0, hr), (-math.pi / 2, 0, 0), radius1=hr * 0.3, radius2=0.0, depth=hr * 0.7)
     if who == "metallica":
         hat = make_mat("hat", (0.35, 0.2, 0.5))
         prim("cyl", hat, "hat_brim", head, (0, 0, hr * 1.7), radius=0.38, depth=0.025)
@@ -1849,7 +1883,7 @@ def apply_pose(root, head, arms, who, pose, b, x, y, z, t, lay):
     root.scale = (1, 1, k)
 
 
-def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False, motion_step=None):
+def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denoise=False, preview=False, motion_step=None, audit=None):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     _PRIM_MESH.clear()   # 前のカットのメッシュは消えている
     scene = bpy.context.scene
@@ -1858,6 +1892,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     plan = Plan(st, cut, sec)
     figs = {}
     previs_rig.RIGS.clear()
+    FACES.clear()
     for who in plan.people:
         figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False), lay["people"][who].get("sword", False))
     rigtracks = {}   # 関節の人形の姿勢（キーの姿勢を補間、進んだ道のり、回り続けた角度）
@@ -1891,6 +1926,17 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         reveals.append((rv, objs, sink, base))
     creatures = {n: build_creature(n, tr) for n, tr in plan.creatures.items()}
     fxs = [(fx, build_fx(fx, i)) for i, fx in enumerate(plan.c.get("fx") or [])]
+    lit_name = c_.get("lighting") or st.bk.get("lighting")
+    amb = c_.get("ambient", True)
+    style = (amb.get("style") if isinstance(amb, dict) else None) or AMBIENT.get((lay.get("id"), lit_name), AMBIENT.get(lay.get("id")))
+    if RENDER.get("ambient", True) and RENDER["engine"] == "workbench" and amb is not False and style and (lay.get("id"), lit_name) not in [k for k, v in AMBIENT.items() if v is None]:
+        (cx0, cy0, cz0), yaw0, pitch0, _l0 = plan.camera(0.0, plan.positions(0.0))   # カメラの前 4.5m を真ん中に（世界に止まっているので、カメラが動くと粒が流れて見える）
+        dd = 4.5 * math.cos(pitch0)
+        fxa = {"kind": "motes", "style": style, "box": AMBIENT_BOX.get(style, [8.0, 8.0, 3.0]),
+               "at": [cx0 + math.sin(math.radians(yaw0)) * dd, cy0 - math.cos(math.radians(yaw0)) * dd, cz0 + 4.5 * math.sin(pitch0)]}
+        if isinstance(amb, dict):
+            fxa.update({k: v for k, v in amb.items() if k != "style"})
+        fxs.append((fxa, build_fx(fxa, len(fxs))))
     broom = None
     if c_.get("broom"):   # ホウキ（A15）: broom の人物が ride のときだけ、体の下に描く（後ろへ長く伸ばし、ほかの人物が後ろに乗れる）
         bm = make_mat("broom_stick", (0.45, 0.3, 0.15))
@@ -1933,6 +1979,27 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         v = world_to_camera_view(scene, cam, where(at, t, z))
         return (v.x, v.y) if v.z > 0 else None
 
+    names = {w: [str(lay["people"][w].get("ja", "")).split("（")[0]] for w in plan.people}
+    acting_ex = previs_face.acting_expr(str(plan.shot.get("acting", "")), names)   # カットの芝居の文から（その人の名前と同じ区切りの言葉）
+    texts = previs_face._texts(st.dir)
+    key_ex = {w: sorted((float(k.get("t", 0.0)), k["expr"]) for k in ks if isinstance(k, dict) and k.get("expr"))
+              for w, ks in (plan.c.get("keys") or {}).items()}
+
+    def face_state(who, t, T):
+        """(表情, 口の開き)。keys の expr → 話している台詞の言葉 → 芝居の文 → neutral。"""
+        sp = previs_face.speaking(st.dir, who, plan.tc0 + T)
+        ex = None
+        for kt, kx in key_ex.get(who, []):
+            if kt <= t + 1e-6:
+                ex = kx
+        if ex is None and sp:
+            ex = previs_face.expr_from_speech(texts.get(sp[0], ""))
+        if ex is None:
+            ex = acting_ex.get(who)
+        if ex in ("angry", "annoyed") and sp and sp[1] > 0.5 and "！！" in texts.get(sp[0], ""):
+            ex = "shout"
+        return (ex or "neutral"), (sp[1] if sp else 0.0)
+
     FXCTX.clear()
     FXCTX.update({"cam": cam, "where": where, "project": project, "fps": fps,
                   "ground": lambda p: motion.ground_z(lay, p.x, -p.y)})
@@ -1965,8 +2032,13 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             zz = motion.ground_z(lay, x, y) + plan.height(who, t)
             if who in rigtracks:
                 prm, dist, spd, sxa, sza = rigtracks[who].at(t)
+                ex, mo = face_state(who, t, T) if who in FACES else ("neutral", 0.0)
+                if who in FACES:
+                    prm = previs_face.gesture(prm, who, t, mo)   # 話す身ぶり・呼吸（2026-11-07）
                 previs_rig.apply(previs_rig.RIGS[who], prm, b, x, y, zz, t, dist, spd, sxa, sza,
                                  gaze=plan.head_offset(who, t, pos, b), bl=bl)
+                if who in FACES:
+                    previs_face.pose(FACES[who], ex, mo, previs_face.blink(who, t))
             else:
                 apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, zz, t, lay)
                 head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
@@ -2004,12 +2076,26 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             cam.rotation_euler = (math.pi / 2 + pitch, 0, -math.radians(yaw))
         cam.data.lens = lens
         bpy.context.view_layer.update()
+        if RENDER["engine"] == "workbench" and RENDER.get("dof", True):   # 寄り・胸上は顔に焦点を合わせて背景をぼかす（2026-11-07）
+            import previs_audit
+            lk, fr = previs_audit._cam_state(plan, t)
+            frs = str(fr or "").split("→")[-1]
+            if lk in previs_rig.RIGS and lk in plan.shown and ("寄り" in frs or "胸上" in frs or "アップ" in frs):
+                rgk = previs_rig.RIGS[lk]
+                hc = rgk.head.matrix_world @ Vector((0, 0, rgk.hr))
+                cam.data.dof.use_dof = True
+                cam.data.dof.focus_distance = max(0.2, (hc - cam.matrix_world.translation).length)
+                cam.data.dof.aperture_fstop = 1.4 if ("寄り" in frs or "アップ" in frs) else 2.2
+            else:
+                cam.data.dof.use_dof = False
         for fx, objs in fxs:   # 効果はカメラを置いた後（カメラへ向ける閃光があるため）
             pose_fx(fx, objs, t, pos, st.place)
         bpy.context.view_layer.update()
         return pos
 
-    if motion_step:   # 動きの確認: motion_step 秒ごとのコマだけ描く（動画は作らない）
+    if audit is not None:   # 構図の測定（--audit）: 0.75 秒ごとに動かして、描かずに顔の位置・大きさ・隠れを測る
+        idx = sorted({min(n - 1, round(k * 0.75 * fps)) for k in range(int(sec / 0.75) + 1)} | {n - 1})
+    elif motion_step:   # 動きの確認: motion_step 秒ごとのコマだけ描く（動画は作らない）
         idx = sorted({min(n - 1, round(k * motion_step * fps)) for k in range(int(sec / motion_step) + 1)} | {n - 1})
     elif preview:     # 始め・中ほど・終わりの3枚だけ
         idx = [0, n // 2, n - 1]
@@ -2036,11 +2122,19 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 v = world_to_camera_view(scene, cam, p)
                 res.append({"who": e["who"], "staging_s": e["s"], "blender_s": round((v.x - 0.5) * 2, 2)})
             checks[which] = res
+        if audit is not None:
+            import previs_audit
+            audit.append(previs_audit.measure(scene, cam, figs, plan, lay, tw.scene_t(i / fps), i / fps))
+            continue
         scene.render.filepath = str(frames_dir / f"{i:04d}.png")
         if RENDER["engine"] == "workbench":
             previs_look.sync()   # コマごとに変わる霧・光の透け方
         bpy.ops.render.render(write_still=True)
         previs_fx.post(frames_dir / f"{i:04d}.png", plan.c.get("fx") or [], tw.scene_t(i / fps), i, FXCTX)   # 集中線・反転など
+        if RENDER["engine"] == "workbench" and RENDER.get("grade", True):
+            previs_look.grade(frames_dir / f"{i:04d}.png", (lay.get("lighting") or {}).get(lit_name) or {})   # 色調と周辺減光（2026-11-07）
+    if audit is not None:
+        return None, frames_dir, n, {"warnings": warnings, "frames": list(idx)}
     out_dir.mkdir(parents=True, exist_ok=True)
     checks["warnings"] = warnings
     checks["frames"] = list(idx)
@@ -2116,6 +2210,7 @@ def main():
                     help="描き方。workbench（既定、1コマ約0.3秒、輪郭線と影。EGL が要る）か cycles（前の描き方、1コマ約6秒）")
     ap.add_argument("--preview", action="store_true", help="始め・中ほど・終わりの3枚だけ描いて確認画像を作る（動画は作らない）")
     ap.add_argument("--motion", type=float, nargs="?", const=0.5, help="動きの確認（D-060）: この秒ごとのコマだけ描いて <カット>_motion.jpg を作る（既定 0.5秒、動画は作らない）")
+    ap.add_argument("--audit", action="store_true", help="構図の測定（2026-11-07）: 描かずに、0.75秒ごとの各人物の顔の位置・大きさ・隠れを gen/framing.yaml に書く（tools/framing.py で読む）")
     a = ap.parse_args()
     RENDER["engine"] = a.engine
     st = staging.Stage(a.scene_dir)
@@ -2125,6 +2220,13 @@ def main():
     size = tuple(int(v) for v in a.size.split("x"))
     work = pathlib.Path(tempfile.mkdtemp(prefix="previs_"))
     cuts = a.cuts or st.order
+    if a.audit:
+        import previs_audit
+        try:
+            previs_audit.run(st, lay, a.scene_dir, cuts, a.fps, size, a.samples, out_dir, work, render_cut)
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+        return
     try:
         for cut in cuts:
             shot = yaml.safe_load((ROOT / a.scene_dir / "shots" / f"{cut}.yaml").read_text(encoding="utf-8"))

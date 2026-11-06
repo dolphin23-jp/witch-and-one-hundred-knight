@@ -108,6 +108,10 @@ def apply(scene, lit, sun_obj=None, outline=True, aa="FXAA"):
     sh.cavity_ridge_factor = 0.6
     sh.cavity_valley_factor = 1.0
     sh.show_specular_highlight = False
+    try:
+        sh.use_dof = True   # カメラの被写界深度（寄り・胸上だけカメラ側で入れる、2026-11-07）
+    except Exception:
+        pass
     sh.background_type = "WORLD"
     try:
         disp.render_aa = aa
@@ -158,3 +162,21 @@ def sync():
         c = m.diffuse_color
         if abs(c[3] - a) > 1e-4:
             m.diffuse_color = (c[0], c[1], c[2], a)
+
+
+
+def grade(path, lit):
+    """描いたコマに、わずかなコントラスト・光の色み・周辺減光をかける（2026-11-07）。"""
+    import numpy as np
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    a = np.asarray(im).astype(np.float32) / 255.0
+    a = np.clip(0.5 + (a - 0.5) * 1.06, 0.0, 1.0)
+    sc = np.array(lit.get("sun_color") or [255, 240, 220], dtype=np.float32) / 255.0
+    a = a * (0.94 + 0.06 * sc)
+    h, w = a.shape[:2]
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2) / np.sqrt(2)
+    v = 1.0 - 0.22 * np.clip((r - 0.45) / 0.55, 0.0, 1.0) ** 1.6
+    a = a * v[..., None]
+    Image.fromarray((np.clip(a, 0, 1) * 255).astype(np.uint8)).save(path)

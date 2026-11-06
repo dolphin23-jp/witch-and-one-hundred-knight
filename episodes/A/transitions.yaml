@@ -1,0 +1,59 @@
+# 場面の境目のつなぎ方（2026-11-07、Claude の案。下絵のアップグレードの続き。ユーザー「シーンの切り替え（A01 A02 の間といったところも含めて）」）
+# 場面の中のカットのつなぎは、ショットファイルの transition（D-069）。ここは場面と場面の境目だけ。
+# tools/transitions.py が、前の場面の終わりと次の場面の頭をつないだ確認用の短い動画（previs/transitions/）を作る。
+# Animatic（Remotion）で話を通して組むときも、これに合わせる。
+#
+# kind（画のつなぎ方）:
+#   cut       そのままつなぐ（動きでつなぐ・同じ時間が続く）
+#   dissolve  溶けるように重ねる（同じ場所で少し時間が経つ、空から空・夕日から夕日のように形で合わせる）
+#   black     暗転を挟む（時間が飛ぶ・章の終わり・余韻）。sec は暗くなってから明けるまでの長さ
+#   white     白く飛ばす（扉を開けた光・裂け目を抜ける・門の光）
+#   wipe      ワイプ（旅で場所が変わる）。dir は動く向き（left: 右から左へ、right: 左から右へ）
+#   iris      丸く閉じて開く（ギャグの締め）
+# audio（音のつなぎ方。省くと画と同じ）:
+#   lead  次の場面の音を、画より何秒先に出すか（J カット。次の場面の笑い声・声が先に聞こえる）
+#   tail  前の場面の音を、画の後ろへ何秒残すか（L カット。BGM や高笑いの余韻を暗転の中へ）
+# why: そのつなぎにした理由
+boundaries:
+  - {from: A01, to: A01b, kind: white, sec: 0.5, why: メタリカが扉を開け放ち、翠の光が流れ込む。光で白く飛ばして、外の「見よ！」へ}
+  - {from: A01b, to: A02, kind: dissolve, sec: 0.8, why: 同じ朝・同じ屋敷の前。ダウジングの振り子の光から、少し後のビスコの飛び出しへ}
+  - {from: A02, to: A04, kind: black, sec: 1.2, audio: {tail: 0.8, lead: 0.5}, why: 朝靄の別れから砂漠の昼へ（旅と時間の飛び）。見送りの BGM を暗転の中に残し、砂漠の風を先に出す}
+  - {from: A04, to: A05, kind: cut, why: 北東の砂丘へ駆け出す → 稜線で手招き。動きでつなぐ}
+  - {from: A05, to: A05b, kind: dissolve, sec: 1.0, why: 昼過ぎの砂漠から夕焼けの岩の隙間へ（時間と道のり）。砂を払うギャグの後を、ゆっくり溶かす}
+  - {from: A05b, to: A06, kind: dissolve, sec: 1.0, why: 窓明かりから上がった星空と、星空から下りる 006-000。空と空を重ねてつなぐ}
+  - {from: A06, to: A07, kind: wipe, dir: left, sec: 0.8, why: 同じ夜、村の中で井戸へ。前からのワイプ（D-069）のまま}
+  - {from: A07, to: A08, kind: cut, why: せり上がるピラーに振り向く → 駆けていく。動きでつなぐ}
+  - {from: A08, to: A08b, kind: black, sec: 1.0, why: メタリカの「あん？」で落とし、暗転して夜明けの村へ（時間の飛び）}
+  - {from: A08b, to: A09, kind: black, sec: 1.2, audio: {tail: 1.0}, why: 「帰るぞ、百騎兵」で大きく引いた村から、夜の魔女邸へ（旅の章の終わり）。BGM を暗転の中に残す}
+  - {from: A09, to: A10, kind: wipe, dir: right, sec: 0.6, why: 寝室から追い出されてとぼとぼ出ていく → 翌日のマーリカの森。出ていく向きのワイプ}
+  - {from: A10, to: A11, kind: wipe, dir: left, sec: 0.6, why: 森からトーチカを抱えて魔女邸へ戻る（旅）}
+  - {from: A11, to: A12, kind: black, sec: 0.8, why: 幻影の命令で南へ走り出す → 午後の居間（時間と場所が飛ぶ）}
+  - {from: A12, to: A13, kind: white, sec: 0.6, why: 扉を開けて外の光の中へ出ていく百騎兵 → 黄昏前の砂漠の縁。光で白く飛ばす}
+  - {from: A13, to: A14, kind: dissolve, sec: 1.0, why: 小さくなる百騎兵の先の地平線の山と白い月 → その山の板の道。遠景から近景へ溶かす}
+  - {from: A14, to: A15, kind: dissolve, sec: 0.8, why: 咲くピラーと沈みかけの夕日 → 夕日の中を飛んでくるホウキ。夕日と夕日を重ねる}
+  - {from: A15, to: A16, kind: dissolve, sec: 0.6, why: 同じ峰の上、少し後の黄昏。広場の木の像から高い所の引きへ}
+  - {from: A16, to: A17, kind: cut, audio: {lead: 0.6}, why: 「う、うるさいっ！」の落ちで切り、夜会の魔女たちの「フフフフ」を先に聞かせる}
+  - {from: A17, to: A18, kind: black, sec: 1.6, audio: {tail: 1.4}, why: 星空の下でうずくまる二人と魔女たちの高笑い。長い暗転で余韻を残し、翌朝の閉じた扉へ}
+  - {from: A18, to: A19, kind: dissolve, sec: 1.0, audio: {lead: 0.4}, why: 同じ屋敷の朝から午後へ。閉じた扉の前の手つかずの食事に溶かし、居間のビスコの声を先に出す}
+  - {from: A19, to: A20, kind: wipe, dir: left, sec: 0.6, why: 「わからない、だと……？」と見上げる → 森の庭園へ（旅）。前からのワイプのまま}
+  - {from: A20, to: A21, kind: wipe, dir: right, sec: 0.8, why: 紙切れを持って振り向く → バスルームの左の扉から入ってくる。前からのワイプのまま}
+  - {from: A21, to: A22, kind: cut, why: 二人で扉から出ていく → 玄関から居間へ入ってくる。屋敷の中の動きでつなぐ}
+  - {from: A22, to: A23, kind: black, sec: 0.8, why: 「隠し森にあった駅よ？」→ 夕暮れの駅（時間と旅）。前からの暗転のまま}
+  - {from: A23, to: A24, kind: white, sec: 0.6, why: 列車が空の裂け目へ消える → 異空間を走る列車。裂け目を抜ける光で白く飛ばす}
+  - {from: A24, to: A24b, kind: dissolve, sec: 0.8, why: 異空間で手分けする二人 → 同じ夜の魔女邸（並行する時間）}
+  - {from: A24b, to: A25, kind: wipe, dir: right, sec: 0.6, why: 夜空を見上げる二人 → 異空間の板の道を渡る百騎兵。前からのワイプのまま}
+  - {from: A25, to: A26, kind: black, sec: 1.0, audio: {tail: 0.8}, why: 盲いた魔女の独白の終わり。暗転で余韻を残し、列車に飛び乗る動きへ切り替える}
+  - {from: A26, to: A27, kind: cut, why: 塔の門へ歩き出す → 門の柱の陰からテレッサ。同じ場所でつなぐ}
+  - {from: A27, to: A28, kind: white, sec: 0.8, why: 光って開く門の中へ歩いて入る → 議会場の宴。門の光で白く飛ばす}
+  - {from: A28, to: A29, kind: dissolve, sec: 0.5, why: 足元に流れ込む白い霧 → 霧が立ち込める議会室。霧で溶かす}
+  - {from: A29, to: A30, kind: cut, why: 床がかすかに揺れ始める → 揺れる議会室。動きでつなぐ}
+  - {from: A30, to: A31, kind: cut, why: 「さあ！いくぞっ！！」→ にらみ合い。そのまま戦いへ}
+  - {from: A31, to: A32, kind: cut, why: ニワトリが2度鳴く → 「あと1回鳴く前に！」。同じ時間でつなぐ}
+  - {from: A32, to: A33, kind: black, sec: 1.6, audio: {tail: 1.2}, why: 6章の終わり。白ネズミの「チュー！」から朝の空へ抜けて、長い暗転。7章の魔女邸へ}
+  - {from: A33, to: A34, kind: black, sec: 1.0, why: 章の題（第3幕 第7章）の後の暗転から、紅嵐街道へ}
+  - {from: A34, to: A35, kind: dissolve, sec: 0.8, why: 森の中で場所が移る（ゴミ山 → 沼地の小道）。メタリカの声の後を溶かす}
+  - {from: A35, to: A36, kind: cut, why: 小道を南へ駆け戻る → 戻ってきた百騎兵。動きでつなぐ}
+  - {from: A36, to: A37, kind: wipe, dir: left, sec: 0.5, why: 街道へ歩き出す三人 → 魔女邸のバスルーム（旅、同じ日）}
+  - {from: A37, to: A38, kind: dissolve, sec: 1.0, why: 逃げ出す二人と残るメタリカ → 夕方の帰り道（時間が経つ）}
+  - {from: A38, to: A39, kind: black, sec: 1.0, why: 残るミトンと、ルッキーニィを追う百騎兵 → 数日後の魔女邸（時間の飛び）。メタリカの「おのれっ！！」で明ける}
+  - {from: A39, to: A40, kind: wipe, dir: right, sec: 0.5, why: 扉から駆け出す百騎兵 → 車輪の陰のルッキーニィ（駆け出す向きのワイプ）}
