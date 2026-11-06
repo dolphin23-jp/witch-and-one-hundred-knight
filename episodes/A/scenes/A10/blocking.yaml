@@ -4,6 +4,7 @@
 # 石段の下の段は z 0.3、上の段は z 0.6。メタリカは魔女邸からの通信で、声だけ（画に出さない。A04 と同じ）
 # スケアコッコ（設定画 C、高さ約60cm）は下絵では小さな人形（previs.py の SHAPE）。トーチカは碧い光の輪と光（fx）
 # 漫符（006 の汗、007 の青い縦線、013 の「！」、017 の目を回す星）は合成（D-027）
+# 2026-11-06 の下絵のアップグレード: スケアコッコの追いかけっこと捕獲（014〜018）の百騎兵の動き・効果・止め・スローを磨き直した（飛びつき tackle、捕獲の光線）。
 scene: A10
 layout: world/marika-forest-layout.yaml
 map_ymax: 26
@@ -321,8 +322,9 @@ cuts:
         - {t: 4.5, at: [17.5, 13.5], face: 80, pose: run}
       hundred-knight:
         - {t: 0.0, at: hk_bush, face: 45, pose: stand}
-        - {t: 1.6, at: hk_bush, face: 75, pose: run}
-        - {t: 4.5, at: [15.8, 13.9], face: 80, pose: run}
+        - {t: 1.3, at: hk_bush, face: 60, pose: low_ready, blend: 0.2}
+        - {t: 1.6, at: hk_bush, face: 75, pose: run, blend: 0.12}
+        - {t: 4.5, at: [15.8, 13.9], face: 80, pose: run, ease: linear}
     cam_keys:
       - {t: 0.0, cam: {follow: scarecocco, offset: [-0.5, 3.2], z: 0.6}, look: scarecocco, lens: 28, frame: 全身}
       - {t: 4.5, cam: {follow: scarecocco, offset: [-1.2, 3.2], z: 0.6}, look: scarecocco, lens: 28, ease: linear}
@@ -330,6 +332,11 @@ cuts:
     act: {start: 見合う二人, do: スケアコッコが胸を反らして一声鳴き、東へ逃げる。百騎兵が追う, end: 走るスケアコッコと百騎兵}
     camera: 南から低く並走（トラッキング）
     kind: A
+    fx:
+      - {kind: speedlines, t: [0.4, 1.2], focus: scarecocco, inner: 0.3, n: 60}
+      - {kind: flowlines, t: [1.7, 4.5], angle: 0, n: 30}
+      - {kind: dust, t: 1.5, at: sc_meet, r: 0.6, h: 0.2, dur: 0.6, n: 6}
+      - {kind: dust, t: 1.65, at: hk_bush, r: 0.6, h: 0.2, dur: 0.6, n: 6}
   A10-015:
     frame: 全身
     only: [hundred-knight, scarecocco]
@@ -343,12 +350,15 @@ cuts:
         - {t: 6.0, at: [18.6, 7.9], face: 270, pose: run}
       hundred-knight:
         - {t: 0.0, at: [15.8, 13.9], face: 45, pose: run}
-        - {t: 1.5, at: [17.9, 12.0], face: 40, pose: run}
-        - {t: 2.7, at: [19.1, 11.2], face: 30, pose: run}
-        - {t: 3.0, at: [19.6, 10.4], z: 1.0, face: 25, pose: jump}
-        - {t: 3.4, at: [20.1, 9.4], z: 0.0, face: 20, pose: run}
-        - {t: 4.6, at: [21.0, 8.1], face: 340, pose: run}
-        - {t: 6.0, at: [20.0, 7.7], face: 280, pose: run}
+        - {t: 1.5, at: [17.9, 12.0], face: 40, pose: run, ease: linear}
+        - {t: 2.7, at: [19.1, 11.2], face: 30, pose: run, ease: linear}
+        - {t: 2.82, at: [19.25, 11.0], face: 28, pose: jump_crouch, blend: 0.06}
+        - {t: 2.95, at: [19.4, 10.8], z: 0.4, face: 26, pose: jump_up, blend: 0.06}
+        - {t: 3.15, at: [19.6, 10.4], z: 1.1, face: 25, pose: jump_tuck, blend: 0.08, ease: out}
+        - {t: 3.4, at: [20.1, 9.4], z: 0.0, face: 20, pose: land, blend: 0.08, ease: in}
+        - {t: 3.6, at: [20.3, 9.1], face: 15, pose: run, blend: 0.12}
+        - {t: 4.6, at: [21.0, 8.1], face: 340, pose: run, ease: linear}
+        - {t: 6.0, at: [20.0, 7.7], face: 280, pose: run, ease: linear}
     cam_keys:
       - {t: 0.0, cam: {follow: hundred-knight, offset: [-2.6, 2.6], z: 1.7}, look: scarecocco, look_h: 0.5, lens: 28, frame: 全身}
       - {t: 3.0, cam: {follow: hundred-knight, offset: [-2.6, 2.6], z: 1.7}, look: scarecocco, look_h: 0.5, lens: 28, ease: linear}
@@ -357,6 +367,11 @@ cuts:
     act: {start: 走るスケアコッコと百騎兵, do: 地面から出た太い根を、スケアコッコが跳び越え、百騎兵も跳び越える。大樹の方へ回り込む, end: 大樹の根もとを走る二人}
     camera: 百騎兵の斜め後ろ、低い所から追う
     kind: A
+    fx:
+      - {kind: dust, t: 2.0, at: [20.2, 9.3], r: 0.5, h: 0.2, dur: 0.5, n: 5}
+      - {kind: dust, t: 3.4, at: [20.1, 9.4], r: 0.6, h: 0.2, dur: 0.6, n: 6}
+    timewarp:
+      - {t: [3.0, 3.3], rate: 0.5}
   A10-016:
     frame: 全身（煽り）
     only: [hundred-knight, scarecocco]
@@ -372,11 +387,12 @@ cuts:
         - {t: 5.0, at: [14.2, 8.6], face: 90, pose: stand}
       hundred-knight:
         - {t: 0.0, at: [20.0, 7.7], face: 270, pose: run}
-        - {t: 1.6, at: [17.6, 7.9], face: 270, pose: run}
-        - {t: 2.0, at: [16.6, 7.6], z: 0.9, face: 270, pose: jump}
-        - {t: 2.3, at: [16.0, 7.4], z: 0.6, face: 270, pose: point}
-        - {t: 2.8, at: [16.0, 7.4], z: 0.6, face: 270, pose: lie}
-        - {t: 5.0, at: [16.0, 7.4], z: 0.6, face: 270, pose: lie}
+        - {t: 1.5, at: [17.7, 7.9], face: 270, pose: run, ease: linear}
+        - {t: 1.62, at: [17.5, 7.85], face: 270, pose: jump_crouch, blend: 0.06}
+        - {t: 1.8, at: [17.0, 7.7], z: 0.8, face: 270, pose: tackle, blend: 0.08, ease: out}
+        - {t: 2.15, at: [16.2, 7.45], z: 0.9, face: 270, pose: tackle, ease: linear}
+        - {t: 2.4, at: [16.0, 7.4], z: 0.6, face: 270, pose: lie, blend: 0.1, ease: in}
+        - {t: 5.0, at: [16.0, 7.4], z: 0.6, face: 270, pose: {base: lie, r_arm: [150, 30, 0], l_arm: [150, 30, 0]}, blend: 0.6}
     cam_keys:
       - {t: 0.0, cam: [16.3, 11.5, 0.5], look: [16.5, 7.6], look_h: 1.0, lens: 24, frame: 全身（煽り）}
       - {t: 5.0, cam: [16.0, 11.4, 0.5], look: [15.4, 7.8], look_h: 0.9, lens: 24}
@@ -384,6 +400,13 @@ cuts:
     act: {start: 大樹の石段へ走る二人, do: スケアコッコが羽ばたいて石段に飛び乗る。百騎兵が飛びかかるが、ひらりとかわされて石段に腹ばいで落ちる, end: 石段で腹ばいの百騎兵と、下で振り返るスケアコッコ}
     camera: 南の低い所から煽り。奥に大樹の扉
     kind: A
+    fx:
+      - {kind: impact, t: 2.4, at: [16.0, 7.4, 0.8], size: 1.0, dur: 0.16, color: [255, 250, 220]}
+      - {kind: dust, t: 2.4, at: [16.0, 7.4, 0.6], r: 1.0, h: 0.3, dur: 1.0, n: 8}
+      - {kind: speedlines, t: [1.8, 2.3], focus: hundred-knight, inner: 0.32}
+    timewarp:
+      - {t: [1.9, 2.25], rate: 0.5}
+      - {t: 2.4, hold: 0.1, shake: 1.0}
   A10-017:
     frame: 全身
     only: [hundred-knight, scarecocco]
@@ -400,27 +423,34 @@ cuts:
         - {t: 6.0, at: sc_down, face: 290, pose: lie}
       hundred-knight:
         - {t: 0.0, at: [16.0, 7.4], z: 0.6, face: 270, pose: lie}
-        - {t: 0.8, at: [16.0, 7.6], z: 0.6, face: 270, pose: crouch}
-        - {t: 1.3, at: [16.3, 8.15], z: 0.0, face: 250, pose: stand}
-        - {t: 1.6, at: [16.1, 8.2], face: 255, pose: run}
-        - {t: 2.4, at: [15.0, 8.4], face: 265, pose: run}
-        - {t: 3.0, at: [13.6, 8.25], face: 260, pose: run, ease: out}
-        - {t: 3.3, at: hk_strike, face: 255, pose: stand}
-        - {t: 3.7, at: hk_strike, face: 255, pose: slash}
-        - {t: 4.3, at: hk_strike, face: 255, pose: slash}
-        - {t: 4.7, at: hk_strike, face: 255, pose: stand}
+        - {t: 0.8, at: [16.0, 7.6], z: 0.6, face: 270, pose: getup, blend: 0.3}
+        - {t: 1.3, at: [16.3, 8.15], z: 0.0, face: 250, pose: stand, blend: 0.25}
+        - {t: 1.6, at: [16.1, 8.2], face: 255, pose: run, blend: 0.12}
+        - {t: 3.0, at: [13.6, 8.25], face: 260, pose: run, ease: linear}
+        - {t: 3.3, at: hk_strike, face: 255, pose: slash_up, blend: 0.2, ease: out}
+        - {t: 3.82, at: hk_strike, face: 255, pose: slash_up}
+        - {t: 3.92, at: hk_strike, face: 255, pose: slash_down, blend: 0.06, pease: in}
+        - {t: 4.5, at: hk_strike, face: 255, pose: slash_follow, blend: 0.2}
+        - {t: 5.2, at: hk_strike, face: 255, pose: stand, blend: 0.4}
         - {t: 6.0, at: hk_strike, face: 255, pose: stand}
     fx:
-      - {kind: spark, t: [3.8, 4.3], at: sc_corner, z: 0.4}
+      - {kind: impact, t: 3.92, at: [12.9, 7.8, 0.4], size: 1.4, dur: 0.2}
+      - {kind: impact_frame, t: 3.92, frames: 1, mode: white}
+      - {kind: sparks, t: 3.92, at: [12.9, 7.8, 0.4], n: 18, speed: 5.0}
+      - {kind: debris, t: 3.95, at: [12.8, 7.8, 0.5], n: 10, speed: 2.5, size: 0.08, up: 0.9, color: [235, 235, 225]}
+      - {kind: flowlines, t: [1.7, 3.0], angle: 0, n: 28}
     cam_keys:
       - {t: 0.0, cam: [10.8, 10.2, 1.6], look: [14.6, 8.0], look_h: 0.5, lens: 28, frame: 全身}
       - {t: 3.5, cam: [10.9, 10.5, 1.5], look: [13.1, 8.0], look_h: 0.45, lens: 32}
       - {t: 6.0, cam: [11.3, 10.8, 1.4], look: [12.9, 7.9], look_h: 0.4, lens: 35}
-    shake: [{t: [3.8, 4.4], amp: 1.5}]
+    shake:
+      - {t: [3.8, 4.4], amp: 1.5}
     bg: forest
     act: {start: 石段で腹ばいの百騎兵, do: 起き上がって追いかけ、根の際に追い詰める。スケアコッコがつつき返すが、百騎兵の一撃でひっくり返る, end: ひっくり返って目を回すスケアコッコと百騎兵}
     camera: 西の低い所から、近づく百騎兵と追い詰められたスケアコッコを、南へ回り込みながら（オービット）。一撃で揺れ
     kind: A
+    timewarp:
+      - {t: 3.92, hold: 0.1, shake: 1.4}
   A10-018:
     frame: 寄り
     only: [hundred-knight, scarecocco]
@@ -432,14 +462,17 @@ cuts:
         - {t: 5.5, at: sc_down, z: -1.5, face: 290, pose: lie}
       hundred-knight:
         - {t: 0.0, at: hk_strike, face: 255, pose: stand}
-        - {t: 0.5, at: hk_strike, face: 255, pose: hold}
-        - {t: 2.2, at: hk_strike, face: 255, pose: hold}
-        - {t: 2.8, at: hk_strike, face: 190, pose: arms_up}
-        - {t: 5.5, at: hk_strike, face: 190, pose: arms_up}
+        - {t: 0.5, at: hk_strike, face: 255, pose: cast, blend: 0.25}
+        - {t: 2.2, at: hk_strike, face: 255, pose: cast}
+        - {t: 2.8, at: hk_strike, face: 190, pose: cast_up, blend: 0.35}
+        - {t: 5.5, at: hk_strike, face: 190, pose: cast_up}
     fx:
+      - {kind: charge, t: [0.4, 1.0], at: [13.1, 8.1, 0.6], r: 0.9, n: 12, color: [120, 255, 230]}
+      - {kind: beam, t: [0.9, 1.9], at: [13.1, 8.1, 0.6], to: [12.25, 7.75, 0.3], r: 0.12, color: [120, 255, 230], grow: 0.15}
       - {kind: ring, t: [0.9, 2.2], at: sc_down, r: 1.2, n: 3, color: [120, 255, 230]}
-      - {kind: light, t: [0.9, 1.6], at: sc_down, z: 0.5, energy: 400, color: [150, 255, 230], fade: 0.8}
-      - {kind: spark, t: [1.5, 2.0], at: sc_down, z: 0.4, color: [150, 255, 230]}
+      - {kind: shock, t: 1.9, at: sc_down, r: 1.6, dur: 0.5, color: [120, 255, 230]}
+      - {kind: sparks, t: 1.6, times: [1.6, 1.8, 2.0], at: [12.25, 7.75, 0.4], n: 14, speed: 3.0, color: [170, 255, 235]}
+      - {kind: aura, t: [2.8, 5.5], at: hundred-knight, r: 0.3, h: 1.0, color: [120, 255, 230]}
     cam_keys:
       - {t: 0.0, cam: [12.6, 10.0, 0.6], look: [12.85, 7.97], look_h: 0.4, lens: 32, frame: 寄り}
       - {t: 2.2, cam: [12.65, 9.8, 0.6], look: [12.85, 7.97], look_h: 0.4, lens: 35}

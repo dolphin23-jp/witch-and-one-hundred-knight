@@ -1,70 +1,283 @@
 cuts:
-  A31-001:
+  A31-000:
     cam:
-    - 59.4
-    - 56.0
-    - 4.2
-    lens: 24
-    bearing: 277
-    frame: 引き
+    - 47.9
+    - 56.4
+    - 0.5
+    lens: 26
+    bearing: 45
+    frame: 全身
     start:
       people:
-      - who: bisco
-        s: -0.49
-        dist: 10.01
-        side: 左
-        body: 横顔（画面右向き）
-      - who: hundred-knight
-        s: 0.0
-        dist: 11.09
-        side: 中央
-        body: 横顔（画面右向き）
-      - who: teressa-swamp
-        s: 0.02
-        dist: 15.55
-        side: 中央
-        body: 背中
-      - who: usamaru
-        s: 0.03
-        dist: 2.63
-        side: 中央
-        body: 斜め前（画面右向き）
-      - who: berda
-        s: 0.26
-        dist: 17.57
-        side: 中央
-        body: 斜め前（画面右向き）
-      - who: rabi
-        s: 0.32
-        dist: 3.33
-        side: 中央
-        body: 背中
-      - who: rubens
-        s: 0.5
-        dist: 16.93
-        side: 右
-        body: 斜め前（画面右向き）
-      - who: purple-peel
-        s: 0.79
-        dist: 6.76
-        side: 右
-        body: 斜め後ろ（画面左向き）
       - who: metallica-giant
-        s: 0.8
-        dist: 10.26
+        s: -0.82
+        dist: 7.04
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.8
+        dist: 1.63
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: lily
+        s: -0.06
+        dist: 9.97
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: purple-peel
+        s: 0.03
+        dist: 7.42
+        side: 中央
+        body: 正面
+      - who: rabi
+        s: 1.0
+        dist: 6.96
         side: 右
         body: 斜め前（画面左向き）
-      - who: nezaria
-        s: 0.82
-        dist: 14.88
-        side: 右
-        body: 斜め前（画面右向き）
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+      bg: 壊れた議会室〔要用意〕
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
       - 円すいの天井（放射状の梁）
       - 円卓（赤い布に金色の魔法陣）
       - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（空き。扉の側）
+      - 円い壁（北〜北東が破れている）
+      - 天井（真ん中と北側が抜けて空が見える）
+      - 床を覆う毒沼（碧。D-063）
+      - 破れた壁の瓦礫（北東）
+      - 床の瓦礫
+      - 倒れた椅子
+      - 傾いて残った椅子
+      - 傾いて残った椅子
+      - 月（北東の空。破れた壁から見える）
+      staging: 'In frame (exactly 5 people, from left to right): giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
+        a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far left of the frame, in three-quarter view, turned toward
+        screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized
+        blue-and-silver gauntlets, holding its sword), in a low battle stance facing the two witches, at the far left of the frame, seen from behind at an angle, turned toward screen right; Lily (Liliane),
+        the thin-ice witch, as in her reference sheet, conjuring ice in her outstretched hand, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; Purple
+        Peel, the dust witch, as in her reference sheet, raising both arms as sand swirls above her, in the center of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame
+        witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Low angle looking up; the sky
+        fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing
+        jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+        the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: berda
+        s: -1.09
+        dist: 9.37
+        side: 左
+        body: 横顔（画面右向き）
+      - who: rubens
+        s: -0.79
+        dist: 12.32
+        side: 左
+        body: 横顔（画面右向き）
+      - who: nezaria
+        s: -0.5
+        dist: 15.34
+        side: 左
+        body: 横顔（画面右向き）
+      - who: bisco
+        s: -0.46
+        dist: 2.82
+        side: 左
+        body: 背中
+      - who: hundred-knight
+        s: -0.43
+        dist: 6.43
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: metallica-giant
+        s: -0.19
+        dist: 12.63
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: purple-peel
+        s: 0.16
+        dist: 10.71
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: lily
+        s: 0.21
+        dist: 13.14
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: rabi
+        s: 0.74
+        dist: 7.77
+        side: 右
+        body: 横顔（画面左向き）
+      - who: usamaru
+        s: 0.93
+        dist: 7.1
+        side: 右
+        body: 背中
+      staging: 'In frame (exactly 10 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in profile, turned toward screen right, small in
+        the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve
+        dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame, in profile, turned toward screen right,
+        small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very
+        long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny
+        white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments,
+        blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, with the back
+        to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+        gauntlets, holding its sword), in a low battle stance, small at the feet of giant Metallica, on the left of the frame, seen from behind at an angle, turned toward screen right, small in the background;
+        giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising
+        around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Purple Peel, the
+        dust witch, as in her reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; Lily (Liliane), the thin-ice witch, as in
+        her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet,
+        standing, at the far right of the frame, in profile, turned toward screen left, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right
+        of the frame, with the back to the camera, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a
+        huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing
+        planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood
+        panelled walls, tall windows full of stars between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 54.6
+        - 49.0
+        via:
+        - - 54.6
+          - 49.0
+        t:
+        - 0.0
+        - 3.8
+      purple-peel:
+        to:
+        - 53.2
+        - 51.2
+        via:
+        - - 53.2
+          - 51.2
+        t:
+        - 0.0
+        - 3.8
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 3.8
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 3.8
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 3.8
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 3.8
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 3.8
+      hundred-knight:
+        to:
+        - 48.4
+        - 54.6
+        via:
+        - - 48.4
+          - 54.6
+        t:
+        - 0.0
+        - 3.8
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 3.8
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 3.8
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 135
+        via:
+        - - 50.0
+          - 48.6
+        t:
+        - 0.0
+        - 3.8
+    note: null
+  A31-001:
+    cam:
+    - 45.8
+    - 58.2
+    - 0.7
+    lens: 24
+    bearing: 36
+    frame: 全身
+    start:
+      people:
+      - who: nezaria
+        s: -0.96
+        dist: 10.7
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: metallica-giant
+        s: -0.29
+        dist: 10.24
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.0
+        dist: 4.44
+        side: 中央
+        body: 背中
+      - who: lily
+        s: 0.18
+        dist: 12.61
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: purple-peel
+        s: 0.25
+        dist: 10.01
+        side: 中央
+        body: 正面
+      - who: rabi
+        s: 0.97
+        dist: 8.85
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 円い壁（羽目板・柱・縦長の窓とカーテン）
+      - 円すいの天井（放射状の梁）
+      - 円卓（赤い布に金色の魔法陣）
+      - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
       - 椅子（ラビィ）
       - 椅子（空き）
       - 椅子（空き。扉の側）
@@ -76,94 +289,67 @@ cuts:
       - 円い壁（北〜北東が破れている）
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
+      - 破れた壁の瓦礫（北）
+      - 破れた壁の瓦礫（北東）
+      - 床の瓦礫
       - 倒れた椅子
-      - 倒れた椅子
-      - 床に落ちた天球儀の惑星（黄）
-      - 床に落ちた天球儀の惑星（桃）
-      staging: 'In frame (exactly 10 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue
-        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, in profile,
-        turned toward screen right; Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping
-        hair and clothes, eyes shut, standing, in the center of the frame, with the back to the camera; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, in the center of the frame,
-        in three-quarter view, turned toward screen right; Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen right; Rabi (Rabil
-        Lalla La), the flame witch, as in her reference sheet, standing, on the right of the frame, with the back to the camera; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long
-        straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back,
-        holding a big green book, standing, on the right of the frame, in three-quarter view, turned toward screen right; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right
-        of the frame, seen from behind at an angle, turned toward screen left; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes
-        as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far right of the frame, in three-quarter view,
-        turned toward screen left; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it,
-        very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a
-        tiny white mouse sitting on her hat brim, standing, at the far right of the frame, in three-quarter view, turned toward screen right. No other people. High angle looking down. Behind: dark wood
-        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
-        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      - 傾いて残った椅子
+      - 傾いて残った椅子
+      - 月（北東の空。破れた壁から見える）
+      staging: 'In frame (exactly 6 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
+        and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
+        (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; giant
+        Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around
+        her feet, crackles of lightning around one raised hand, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small,
+        waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), dashing across
+        the swamp floor, a wave of sand chasing it, in the center of the frame, with the back to the camera; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the
+        frame, in three-quarter view, turned toward screen left, small in the background; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, facing the camera,
+        small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the
+        background. No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing
+        jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from
+        the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
-      - who: bisco
-        s: -0.62
-        dist: 11.34
+      - who: metallica-giant
+        s: -0.72
+        dist: 9.11
         side: 左
-        body: 斜め前（画面右向き）
-      - who: hundred-knight
-        s: 0.0
-        dist: 6.21
-        side: 中央
-        body: 横顔（画面右向き）
-      - who: teressa-swamp
-        s: 0.04
-        dist: 14.98
-        side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 正面
       - who: purple-peel
-        s: 0.15
-        dist: 5.42
+        s: -0.2
+        dist: 7.49
+        side: 中央
+        body: 正面
+      - who: lily
+        s: -0.05
+        dist: 9.99
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: hundred-knight
+        s: 0.19
+        dist: 3.9
         side: 中央
         body: 背中
-      - who: berda
-        s: 0.36
-        dist: 15.65
-        side: 右
-        body: 正面
-      - who: rubens
-        s: 0.63
-        dist: 13.97
-        side: 右
-        body: 斜め前（画面右向き）
-      - who: metallica-giant
-        s: 0.67
-        dist: 7.85
+      - who: rabi
+        s: 0.76
+        dist: 4.85
         side: 右
         body: 横顔（画面左向き）
-      - who: lily
-        s: 0.91
-        dist: 3.5
-        side: 右
-        body: 斜め後ろ（画面左向き）
-      - who: nezaria
-        s: 1.03
-        dist: 10.98
-        side: 右
-        body: 斜め前（画面右向き）
-      staging: 'In frame (exactly 9 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, waist-high:
-        big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center
-        of the frame, in profile, turned toward screen right; Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping
-        witch hat, dripping hair and clothes, eyes shut, standing, in the center of the frame, seen from behind at an angle, turned toward screen right; Purple Peel, the dust witch, as in her reference
-        sheet, standing, in the center of the frame, with the back to the camera; Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, facing the camera; Rubens, the pumpkin
-        witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and
-        frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far right of the frame, in three-quarter view, turned toward screen right; giant Metallica,
-        about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet,
-        crackles of lightning around one raised hand, standing, at the far right of the frame, in profile, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing,
-        at the far right of the frame, seen from behind at an angle, turned toward screen left; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch
-        hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff
-        with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far right of the frame, in three-quarter view, turned toward screen right. No other
-        people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top
-        of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+      staging: 'In frame (exactly 5 people, from left to right): giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
+        a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far left of the frame, facing the camera, small in the background;
+        Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her reference
+        sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with
+        a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), having vaulted over the sand wave, landing and turning to Lily,
+        in the center of the frame, with the back to the camera; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the frame, in profile, turned toward screen
+        left. No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green
+        swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+        planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       lily:
         to:
         - 54.6
         - 49.0
-        face: 230
+        face: 225
         t:
         - 0.0
         - 5.6
@@ -171,142 +357,832 @@ cuts:
         to:
         - 53.2
         - 51.2
-        face: 240
+        face: 200
+        via:
+        - - 53.2
+          - 51.2
         t:
         - 0.0
-        - 4.0
+        - 5.6
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 5.6
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 5.6
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 5.6
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 5.6
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 5.6
       hundred-knight:
         to:
-        - 52.6
-        - 52.0
-        face: 330
+        - 53.8
+        - 55.1
         via:
-        - - 52.6
-          - 56.4
-        - - 54.2
-          - 55.0
+        - - 48.6
+          - 54.8
+        - - 51.6
+          - 56.1
+        - - 51.75
+          - 56.1
+        - - 51.95
+          - 56.0
+        - - 52.9
+          - 55.7
         - - 53.6
-          - 52.6
+          - 55.3
+        - - 53.8
+          - 55.1
+        - - 53.8
+          - 55.1
         t:
         - 0.0
-        - 7.0
+        - 5.6
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 5.6
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 5.6
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 140
+        t:
+        - 0.0
+        - 5.6
     note: null
-  A31-002:
+  A31-001b:
     cam:
-    - 56.8
+    - 55.6
     - 46.6
-    - 0.6
-    lens: 28
-    bearing: 218
+    - 1.9
+    lens: 30
+    bearing: 192
     frame: 全身
     start:
       people:
+      - who: usamaru
+        s: -0.59
+        dist: 8.56
+        side: 左
+        body: 斜め前（画面左向き）
       - who: rabi
-        s: -1.04
-        dist: 6.84
+        s: -0.48
+        dist: 7.9
         side: 左
         body: 斜め前（画面右向き）
-      - who: bisco
-        s: -0.12
-        dist: 14.1
-        side: 中央
-        body: 斜め前（画面右向き）
-      - who: purple-peel
-        s: 0.0
-        dist: 5.84
-        side: 中央
-        body: 背中
       - who: hundred-knight
         s: 0.0
-        dist: 6.84
+        dist: 8.69
         side: 中央
-        body: 斜め前（画面右向き）
+        body: 正面
       - who: lily
-        s: 0.13
-        dist: 3.25
+        s: 0.31
+        dist: 2.56
         side: 中央
         body: 背中
-      - who: teressa-swamp
-        s: 0.65
-        dist: 13.54
+      - who: purple-peel
+        s: 0.47
+        dist: 5.0
+        side: 右
+        body: 背中
+      - who: bisco
+        s: 0.52
+        dist: 12.91
+        side: 右
+        body: 斜め前（画面右向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（空き。扉の側）
+      - 廊下の灯り
+      - 両開きの扉（開いている）
+      staging: 'In frame (exactly 6 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in three-quarter view, turned toward
+        screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small
+        in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+        gauntlets, holding its sword), deflecting flying ice shards with its sword, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch, as in her
+        reference sheet, standing, on the right of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on the right of the frame, with the back to the
+        camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver
+        armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. Behind: the wrecked round council chamber: a huge
+        jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets
+        of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled
+        walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: usamaru
+        s: -0.39
+        dist: 8.83
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: rabi
+        s: -0.28
+        dist: 8.1
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.0
+        dist: 10.36
+        side: 中央
+        body: 正面
+      - who: lily
+        s: 0.56
+        dist: 2.5
+        side: 右
+        body: 背中
+      - who: purple-peel
+        s: 0.69
+        dist: 4.84
+        side: 右
+        body: 背中
+      - who: bisco
+        s: 0.72
+        dist: 12.44
+        side: 右
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 6 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in three-quarter view, turned toward
+        screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small
+        in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+        gauntlets, holding its sword), having back-flipped away from the ice volley, sword ready, in the center of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch,
+        as in her reference sheet, standing, on the right of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, at the far right of the frame, with
+        the back to the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white
+        tail, silver armored boots), standing, at the far right of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. Behind: the wrecked round council
+        chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen
+        glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table,
+        dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 54.6
+        - 49.0
+        via:
+        - - 54.6
+          - 49.0
+        - - 54.6
+          - 49.0
+        t:
+        - 0.0
+        - 3.6
+      purple-peel:
+        to:
+        - 53.2
+        - 51.2
+        face: 180
+        t:
+        - 0.0
+        - 3.6
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 3.6
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 3.6
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 3.6
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 3.6
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 3.6
+      hundred-knight:
+        to:
+        - 54.6
+        - 56.9
+        via:
+        - - 53.8
+          - 55.1
+        - - 53.8
+          - 55.1
+        - - 53.8
+          - 55.1
+        - - 53.8
+          - 55.1
+        - - 53.9
+          - 55.3
+        - - 54.0
+          - 55.6
+        - - 54.6
+          - 56.9
+        - - 54.6
+          - 56.9
+        t:
+        - 0.0
+        - 3.6
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 3.6
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 3.6
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        t:
+        - 0.0
+        - 3.6
+    note: null
+  A31-001c:
+    cam:
+    - 55.5
+    - 59.9
+    - 0.45
+    lens: 22
+    bearing: 355
+    frame: 全身
+    start:
+      people:
+      - who: rubens
+        s: -1.01
+        dist: 13.31
+        side: 左
+        body: 横顔（画面右向き）
+      - who: nezaria
+        s: -0.65
+        dist: 15.69
+        side: 左
+        body: 横顔（画面右向き）
+      - who: metallica-giant
+        s: -0.47
+        dist: 11.74
+        side: 左
+        body: 正面
+      - who: hundred-knight
+        s: -0.25
+        dist: 3.07
+        side: 中央
+        body: 背中
+      - who: purple-peel
+        s: -0.21
+        dist: 8.87
+        side: 中央
+        body: 正面
+      - who: lily
+        s: 0.01
+        dist: 10.94
+        side: 中央
+        body: 正面
+      - who: rabi
+        s: 0.28
+        dist: 5.02
+        side: 中央
+        body: 斜め後ろ（画面左向き）
+      - who: usamaru
+        s: 0.49
+        dist: 4.17
         side: 右
         body: 斜め後ろ（画面右向き）
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+      bg: 壊れた議会室〔要用意〕
       props:
       - 円い壁（羽目板・柱・縦長の窓とカーテン）
       - 円すいの天井（放射状の梁）
       - 円卓（赤い布に金色の魔法陣）
       - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
       - 椅子（リリー）
       - 椅子（パープルピール）
       - 椅子（ラビィ）
       - 椅子（空き）
       - 椅子（空き。扉の側）
+      - 椅子（リューベンス）
+      - 椅子（空き。ヴァレンティーヌの席）
       - 椅子（空き）
-      - 椅子（ベルダ）
       - 円い壁（北〜北東が破れている）
       - 天井（真ん中と北側が抜けて空が見える）
       - 床を覆う毒沼（碧。D-063）
-      - 廊下の灯り
-      - 両開きの扉（開いている）
-      staging: 'In frame (exactly 6 people, from left to right): Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned
-        toward screen right, small in the background; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt,
-        a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Purple Peel, the dust witch,
-        as in her reference sheet, standing, in the center of the frame, with the back to the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and
-        a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, in three-quarter view, turned toward screen right,
-        small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera; Teressa drenched from head to toe in the
-        glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far right of the frame,
-        seen from behind at an angle, turned toward screen right, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
-        curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
-        tall windows full of stars between purple-red curtains.'
+      - 破れた壁の瓦礫（北）
+      - 破れた壁の瓦礫（北東）
+      - 床の瓦礫
+      - 倒れた椅子
+      - 倒れた椅子
+      - 傾いて残った椅子
+      - 傾いて残った椅子
+      - 月（北東の空。破れた壁から見える）
+      staging: 'In frame (exactly 8 people, from left to right): Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress,
+        stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, at the far left of the frame,
+        in profile, turned toward screen right, small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender
+        underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed
+        gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; giant Metallica,
+        about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet,
+        crackles of lightning around one raised hand, standing, on the left of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet
+        with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), dashing straight at Lily, on the left of the frame, with
+        the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Lily (Liliane), the thin-ice witch,
+        as in her reference sheet, standing, in the center of the frame, facing the camera, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the right
+        of the frame, seen from behind at an angle, turned toward screen left; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the right of the frame, seen from behind at
+        an angle, turned toward screen right. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through
+        the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside
+        the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+        of stars between purple-red curtains.'
     end:
       people:
-      - who: bisco
+      - who: hundred-knight
+        s: -0.13
+        dist: 2.27
+        side: 中央
+        body: 背中
+      - who: lily
+        s: 0.06
+        dist: 3.98
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), leaping at the ice wall, sword raised high, in the center of the frame, with the back to the camera; Lily (Liliane), the thin-ice
+        witch, as in her reference sheet, standing, in the center of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round
+        council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble,
+        fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round
+        table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 54.6
+        - 49.0
+        face: 180
+        via:
+        - - 54.6
+          - 49.0
+        t:
+        - 0.0
+        - 2.6
+      purple-peel:
+        to:
+        - 53.2
+        - 51.2
+        face: 150
+        t:
+        - 0.0
+        - 2.6
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 2.6
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 2.6
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 2.6
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 2.6
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 2.6
+      hundred-knight:
+        to:
+        - 54.55
+        - 50.75
+        via:
+        - - 54.6
+          - 56.9
+        - - 54.6
+          - 56.4
+        - - 54.55
+          - 51.6
+        - - 54.55
+          - 51.3
+        - - 54.55
+          - 51.0
+        t:
+        - 0.0
+        - 2.6
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 2.6
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 2.6
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        t:
+        - 0.0
+        - 2.6
+    note: null
+  A31-002:
+    cam:
+    - 58.4
+    - 51.4
+    - 1.0
+    lens: 26
+    bearing: 293
+    frame: 全身
+    start:
+      people:
+      - who: teressa-swamp
+        s: -0.91
+        dist: 12.37
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: purple-peel
+        s: -0.54
+        dist: 4.88
+        side: 左
+        body: 斜め前（画面左向き）
+      - who: berda
+        s: -0.5
+        dist: 15.15
+        side: 左
+        body: 正面
+      - who: hundred-knight
         s: -0.33
-        dist: 14.14
+        dist: 3.8
+        side: 左
+        body: 横顔（画面右向き）
+      - who: rubens
+        s: -0.21
+        dist: 15.31
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: metallica-giant
+        s: -0.11
+        dist: 8.83
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: nezaria
+        s: 0.11
+        dist: 14.09
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: lily
+        s: 0.25
+        dist: 4.43
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 円い壁（羽目板・柱・縦長の窓とカーテン）
+      - 円すいの天井（放射状の梁）
+      - 円卓（赤い布に金色の魔法陣）
+      - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 椅子（リューベンス）
+      - 椅子（空き。ヴァレンティーヌの席）
+      - 椅子（空き）
+      - 円い壁（北〜北東が破れている）
+      - 天井（真ん中と北側が抜けて空が見える）
+      - 床を覆う毒沼（碧。D-063）
+      - 破れた壁の瓦礫（北）
+      - 床の瓦礫
+      - 倒れた椅子
+      - 倒れた椅子
+      - 床に落ちた天球儀の惑星（黄）
+      - 床に落ちた天球儀の惑星（桃）
+      staging: 'In frame (exactly 8 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+        drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Purple Peel,
+        the dust witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen left; Berda, the lye witch, as in her reference sheet, standing, on the
+        left of the frame, facing the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black
+        face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), slashing down through Lily''s ice wall from midair, on the left of the frame, in profile, turned toward screen right;
+        Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with
+        orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in three-quarter view, turned toward screen right, small
+        in the background; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp
+        miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background; Nezaria,
+        the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy
+        half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim,
+        standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the
+        right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing
+        the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at
+        the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: purple-peel
+        s: -0.95
+        dist: 4.53
+        side: 左
+        body: 正面
+      - who: berda
+        s: -0.76
+        dist: 14.36
+        side: 左
+        body: 正面
+      - who: rubens
+        s: -0.45
+        dist: 14.84
         side: 左
         body: 斜め前（画面右向き）
-      - who: purple-peel
-        s: -0.19
-        dist: 6.08
-        side: 中央
-        body: 背中
       - who: hundred-knight
-        s: -0.14
-        dist: 4.95
-        side: 中央
-        body: 正面
-      - who: lily
-        s: 0.0
-        dist: 1.41
-        side: 中央
-        body: 背中
-      - who: teressa-swamp
-        s: 0.46
-        dist: 14.42
-        side: 右
-        body: 斜め後ろ（画面右向き）
+        s: -0.44
+        dist: 3.91
+        side: 左
+        body: 斜め前（画面右向き）
       - who: metallica-giant
-        s: 0.87
-        dist: 6.51
+        s: -0.38
+        dist: 8.59
+        side: 左
+        body: 正面
+      - who: nezaria
+        s: -0.12
+        dist: 14.01
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: lily
+        s: 0.63
+        dist: 3.92
         side: 右
         body: 横顔（画面左向き）
-      - who: berda
-        s: 0.95
-        dist: 13.15
+      staging: 'In frame (exactly 7 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, at the far left of the frame, facing the camera; Berda, the lye witch,
+        as in her reference sheet, standing, at the far left of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight
+        yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding
+        a big green book, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), landed, sword ready, Lily knocked down into the
+        swamp, on the left of the frame, in three-quarter view, turned toward screen right; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair
+        and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, on the left of the frame, facing the camera,
+        small in the background; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very
+        long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny
+        white mouse sitting on her hat brim, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; Lily (Liliane), the thin-ice witch, as in her
+        reference sheet, standing, at the far right of the frame, in profile, turned toward screen left. No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the far
+        wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the
+        round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars
+        between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 56.0
+        - 47.4
+        face: 220
+        via:
+        - - 54.6
+          - 49.0
+        - - 56.0
+          - 47.4
+        t:
+        - 0.0
+        - 4.4
+      purple-peel:
+        to:
+        - 53.2
+        - 51.2
+        face: 60
+        via:
+        - - 53.2
+          - 51.2
+        - - 53.2
+          - 51.2
+        t:
+        - 0.0
+        - 4.4
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 4.4
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 4.4
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 4.4
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 4.4
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 4.4
+      hundred-knight:
+        to:
+        - 54.6
+        - 49.95
+        face: 45
+        via:
+        - - 54.58
+          - 50.3
+        - - 54.6
+          - 49.95
+        - - 54.6
+          - 49.95
+        t:
+        - 0.0
+        - 4.4
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 4.4
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 4.4
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 130
+        t:
+        - 0.0
+        - 4.4
+    note: null
+  A31-002b:
+    cam:
+    - 54.9
+    - 47.2
+    - 0.45
+    lens: 22
+    bearing: 186
+    frame: 全身
+    start:
+      people:
+      - who: usamaru
+        s: -0.42
+        dist: 8.14
+        side: 左
+        body: 横顔（画面左向き）
+      - who: rabi
+        s: -0.35
+        dist: 7.41
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.0
+        dist: 2.77
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: purple-peel
+        s: 0.37
+        dist: 4.16
         side: 右
-        body: 正面
-      staging: 'In frame (exactly 7 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-        brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background; Purple Peel, the
-        dust witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
-        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, facing the
-        camera; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, in the center of the frame, with the back to the camera; Teressa drenched from head to toe in the glowing jade-green
-        poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut, standing, on the right of the frame, seen from behind at
-        an angle, turned toward screen right, small in the background; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
-        a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, at the far right of the frame, in profile, turned toward screen left,
-        small in the background; Berda, the lye witch, as in her reference sheet, standing, at the far right of the frame, facing the camera, small in the background. No other people. Behind: dark wood
-        panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the
-        glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.48
+        dist: 11.77
+        side: 右
+        body: 斜め前（画面右向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（空き。扉の側）
+      - 廊下の灯り
+      - 両開きの扉（開いている）
+      staging: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left,
+        small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background;
+        the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
+        its sword), turning around as a giant fist of sand rises behind it, in the center of the frame, in three-quarter view, turned toward screen left; Purple Peel, the dust witch, as in her reference
+        sheet, standing, on the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor
+        over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen right, small
+        in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the
+        roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council
+        chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red
+        curtains.'
+    end:
+      people:
+      - who: usamaru
+        s: -0.33
+        dist: 8.4
+        side: 中央
+        body: 横顔（画面左向き）
+      - who: rabi
+        s: -0.27
+        dist: 7.68
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.01
+        dist: 3.07
+        side: 中央
+        body: 背中
+      - who: purple-peel
+        s: 0.25
+        dist: 4.48
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: bisco
+        s: 0.35
+        dist: 12.15
+        side: 右
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left,
+        small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right, small in the background;
+        the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding
+        its sword), bracing with its sword under the towering fist of sand, in the center of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing, on
+        the right of the frame, in three-quarter view, turned toward screen left; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform
+        with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the right of the frame, in three-quarter view, turned toward screen right, small in the background.
+        No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the
+        night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the
+        top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       lily:
         to:
@@ -314,156 +1190,588 @@ cuts:
         - 47.4
         t:
         - 0.0
-        - 2.4
-      hundred-knight:
-        to: &id001
-        - 53.8
-        - 50.2
-        face: 20
-        via:
-        - *id001
-        t:
-        - 0.0
-        - 2.4
-    note: null
-  A31-003:
-    cam:
-    - 52.6
-    - 45.8
-    - 12.4
-    lens: 26
-    bearing: 173
-    frame: 大引き
-    start:
-      people:
-      - who: usamaru
-        s: -0.41
-        dist: 10.26
-        side: 左
-        body: 横顔（画面左向き）
-      - who: rabi
-        s: -0.37
-        dist: 9.39
-        side: 左
-        body: 正面
-      - who: hundred-knight
-        s: -0.2
-        dist: 4.52
-        side: 中央
-        body: 斜め前（画面左向き）
-      - who: purple-peel
-        s: 0.03
-        dist: 5.43
-        side: 中央
-        body: 横顔（画面右向き）
-      - who: bisco
-        s: 0.62
-        dist: 12.04
-        side: 右
-        body: 正面
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
-      props:
-      - 椅子（リリー）
-      - 椅子（パープルピール）
-      - 椅子（ラビィ）
-      - 椅子（空き）
-      - 椅子（空き。扉の側）
-      - 床の瓦礫
-      - 倒れた椅子
-      - 廊下の灯り
-      - 両開きの扉（開いている）
-      staging: 'In frame (exactly 5 people, from left to right): Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left;
-        Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, facing the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet
-        with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, in three-quarter
-        view, turned toward screen left; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in profile, turned toward screen right; Bisco (short black bob hair
-        with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far
-        right of the frame, facing the camera. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
-        Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall
-        windows full of stars between purple-red curtains.'
-    end:
-      people:
-      - who: purple-peel
-        s: -0.3
-        dist: 8.83
-        side: 中央
-        body: 斜め後ろ（画面左向き）
-      - who: usamaru
-        s: -0.23
-        dist: 10.43
-        side: 中央
-        body: 横顔（画面左向き）
-      - who: rabi
-        s: -0.19
-        dist: 9.52
-        side: 中央
-        body: 正面
-      - who: hundred-knight
-        s: 0.05
-        dist: 4.49
-        side: 中央
-        body: 斜め後ろ（画面左向き）
-      - who: bisco
-        s: 0.92
-        dist: 11.37
-        side: 右
-        body: 正面
-      staging: 'In frame (exactly 5 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, seen from behind at an angle, turned toward screen
-        left; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in profile, turned toward screen left; Rabi (Rabil Lalla La), the flame witch, as in her
-        reference sheet, standing, in the center of the frame, facing the camera; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume,
-        black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, in the center of the frame, seen from behind at an angle, turned toward screen left; Bisco (short
-        black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing,
-        at the far right of the frame, facing the camera. No other people. High angle looking down. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red
-        curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls,
-        tall windows full of stars between purple-red curtains.'
-    move:
+        - 3.2
       purple-peel:
         to:
-        - 56.6
-        - 54.0
-        face: 120
+        - 53.2
+        - 51.2
+        face: 80
         via:
-        - - 54.4
-          - 52.6
+        - - 53.2
+          - 51.2
+        t:
+        - 0.0
+        - 3.2
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 3.2
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 3.2
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 3.2
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 3.2
+      bisco:
+        to:
+        - 49.0
+        - 58.4
         t:
         - 0.0
         - 3.2
       hundred-knight:
         to:
-        - 53.8
-        - 50.2
-        face: 130
+        - 54.6
+        - 49.95
+        face: 175
+        via:
+        - - 54.6
+          - 49.95
+        - - 54.6
+          - 49.95
         t:
         - 0.0
-        - 1.0
+        - 3.2
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 3.2
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 3.2
       metallica-giant:
         to:
         - 50.0
         - 48.6
-        face: 150
+        face: 125
+        via:
+        - - 50.0
+          - 48.6
         t:
         - 0.0
-        - 3.6
+        - 3.2
+    note: null
+  A31-003:
+    cam:
+    - 60.2
+    - 57.8
+    - 4.2
+    lens: 22
+    bearing: 317
+    frame: 大引き
+    start:
+      people:
+      - who: teressa-swamp
+        s: -0.81
+        dist: 13.92
+        side: 左
+        body: 背中
+      - who: berda
+        s: -0.56
+        dist: 17.51
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: rubens
+        s: -0.35
+        dist: 18.89
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: usamaru
+        s: -0.31
+        dist: 3.92
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: rabi
+        s: -0.23
+        dist: 4.92
+        side: 中央
+        body: 背中
+      - who: nezaria
+        s: -0.12
+        dist: 19.17
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: metallica-giant
+        s: -0.11
+        dist: 13.68
+        side: 中央
+        body: 正面
+      - who: purple-peel
+        s: -0.09
+        dist: 9.6
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: 0.15
+        dist: 9.57
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: lily
+        s: 0.46
+        dist: 10.49
+        side: 右
+        body: 斜め前（画面左向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 円い壁（羽目板・柱・縦長の窓とカーテン）
+      - 円すいの天井（放射状の梁）
+      - 円卓（赤い布に金色の魔法陣）
+      - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
+      - 椅子（ラビィ）
+      - 椅子（空き）
+      - 椅子（空き。扉の側）
+      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 椅子（リューベンス）
+      - 椅子（空き。ヴァレンティーヌの席）
+      - 椅子（空き）
+      - 円い壁（北〜北東が破れている）
+      - 天井（真ん中と北側が抜けて空が見える）
+      - 床を覆う毒沼（碧。D-063）
+      - 破れた壁の瓦礫（北）
+      - 破れた壁の瓦礫（北東）
+      - 床の瓦礫
+      - 倒れた椅子
+      - 倒れた椅子
+      - 倒れた椅子
+      - 床に落ちた天球儀の惑星（黄）
+      - 床に落ちた天球儀の惑星（桃）
+      staging: 'In frame (exactly 10 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+        drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, with the back to the camera; Berda, the lye witch, as in her reference sheet, standing, on the left
+        of the frame, in three-quarter view, turned toward screen right; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled
+        headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding a big green book, standing, on the left of the
+        frame, in three-quarter view, turned toward screen right; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in three-quarter view, turned toward
+        screen right; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, on the left of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her
+        reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with
+        black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, in the center of the frame,
+        in profile, turned toward screen right; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant
+        grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; Purple Peel, the dust witch, as in her
+        reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown
+        piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), bracing against the blast, sword planted, in the center of the frame, in
+        three-quarter view, turned toward screen left; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen left.
+        No other people. High angle looking down. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded
+        with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden
+        light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: berda
+        s: -0.78
+        dist: 16.23
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: usamaru
+        s: -0.6
+        dist: 2.89
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: rubens
+        s: -0.5
+        dist: 17.7
+        side: 左
+        body: 斜め前（画面右向き）
+      - who: rabi
+        s: -0.42
+        dist: 3.89
+        side: 左
+        body: 背中
+      - who: nezaria
+        s: -0.21
+        dist: 18.1
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: metallica-giant
+        s: -0.2
+        dist: 12.63
+        side: 中央
+        body: 正面
+      - who: purple-peel
+        s: -0.11
+        dist: 4.23
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: hundred-knight
+        s: 0.14
+        dist: 8.6
+        side: 中央
+        body: 正面
+      - who: lily
+        s: 0.53
+        dist: 9.62
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 9 people, from left to right): Berda, the lye witch, as in her reference sheet, standing, at the far left of the frame, in three-quarter view, turned toward screen right;
+        Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the left of the frame, in three-quarter view, turned toward screen right; Rubens, the pumpkin witch, as in her reference
+        sheet (rubens_sheet_01): long straight yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and
+        legs, a brown satchel on her back, holding a big green book, standing, on the left of the frame, in three-quarter view, turned toward screen right; Rabi (Rabil Lalla La), the flame witch, as in
+        her reference sheet, standing, on the left of the frame, with the back to the camera; Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch
+        hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff
+        with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on the left of the frame, in profile, turned toward screen right; giant Metallica, about
+        13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica, a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles
+        of lightning around one raised hand, standing, in the center of the frame, facing the camera; Purple Peel, the dust witch, as in her reference sheet, standing, in the center of the frame, in profile,
+        turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver
+        gauntlets, holding its sword), rising to its guard amid falling sand, in the center of the frame, facing the camera; Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the
+        right of the frame, in three-quarter view, turned toward screen left. No other people. High angle looking down. Behind: the wrecked round council chamber: a huge jagged hole torn through the far
+        wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the
+        round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars
+        between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 56.0
+        - 47.4
+        t:
+        - 0.0
+        - 4.6
+      purple-peel:
+        to:
+        - 56.6
+        - 54.0
+        face: 60
+        via:
+        - - 53.2
+          - 51.2
+        - - 53.6
+          - 51.9
+        - - 56.6
+          - 54.0
+        t:
+        - 0.0
+        - 4.6
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 4.6
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 4.6
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 4.6
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 4.6
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 4.6
+      hundred-knight:
+        to:
+        - 54.6
+        - 49.95
+        face: 160
+        via:
+        - - 54.6
+          - 49.95
+        - - 54.6
+          - 49.95
+        - - 54.6
+          - 49.95
+        t:
+        - 0.0
+        - 4.6
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 4.6
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 4.6
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 120
+        via:
+        - - 50.0
+          - 48.6
+        t:
+        - 0.0
+        - 4.6
+    note: null
+  A31-003b:
+    cam:
+    - 55.9
+    - 50.3
+    - 0.35
+    lens: 20
+    bearing: 286
+    frame: 全身
+    start:
+      people:
+      - who: teressa-swamp
+        s: -0.71
+        dist: 10.47
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: berda
+        s: -0.33
+        dist: 12.94
+        side: 中央
+        body: 正面
+      - who: rubens
+        s: -0.08
+        dist: 12.76
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.02
+        dist: 1.35
+        side: 中央
+        body: 斜め前（画面左向き）
+      - who: metallica-giant
+        s: 0.0
+        dist: 6.14
+        side: 中央
+        body: 正面
+      - who: nezaria
+        s: 0.23
+        dist: 11.17
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 壊れた議会室〔要用意〕
+      props:
+      - 円い壁（羽目板・柱・縦長の窓とカーテン）
+      - 円すいの天井（放射状の梁）
+      - 円卓（赤い布に金色の魔法陣）
+      - 天球儀（透けた大きな球、金の輪、光る惑星）
+      - 議長の椅子（北）
+      - 椅子（空き。マーリカの席）
+      - 椅子（リリー）
+      - 椅子（パープルピール）
+      - 椅子（空き）
+      - 椅子（ベルダ）
+      - 椅子（リューベンス）
+      - 椅子（空き。ヴァレンティーヌの席）
+      - 椅子（空き）
+      - 円い壁（北〜北東が破れている）
+      - 天井（真ん中と北側が抜けて空が見える）
+      - 床を覆う毒沼（碧。D-063）
+      - 床の瓦礫
+      - 倒れた椅子
+      - 倒れた椅子
+      - 床に落ちた天球儀の惑星（黄）
+      - 床に落ちた天球儀の惑星（桃）
+      staging: 'In frame (exactly 6 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+        drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Berda, the lye
+        witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight
+        yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding
+        a big green book, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), looking up at giant Metallica, in the center of
+        the frame, in three-quarter view, turned toward screen left; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
+        a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera, small in the background;
+        Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender
+        hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on
+        her hat brim, standing, on the right of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part
+        of the frame. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp
+        water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
+        of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    end:
+      people:
+      - who: teressa-swamp
+        s: -0.79
+        dist: 10.25
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: berda
+        s: -0.37
+        dist: 12.73
+        side: 左
+        body: 正面
+      - who: rubens
+        s: -0.09
+        dist: 12.55
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: hundred-knight
+        s: -0.02
+        dist: 1.14
+        side: 中央
+        body: 背中
+      - who: metallica-giant
+        s: 0.0
+        dist: 5.93
+        side: 中央
+        body: 正面
+      - who: nezaria
+        s: 0.26
+        dist: 10.97
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly 6 people, from left to right): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked
+        drooping witch hat, dripping hair and clothes, eyes shut, standing, at the far left of the frame, seen from behind at an angle, turned toward screen right, small in the background; Berda, the lye
+        witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Rubens, the pumpkin witch, as in her reference sheet (rubens_sheet_01): long straight
+        yellow hair covering one eye, an orange frilled headdress, stitch scars, a dark green puffed-sleeve dress with orange lacing and frills, bandaged arms and legs, a brown satchel on her back, holding
+        a big green book, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the Hundred Knight (small, waist-high: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), looking up at giant Metallica, who grins down at
+        it, in the center of the frame, with the back to the camera; giant Metallica, about 13 m tall, as in her reference sheet (metallica-giant_sheet_01): the same face, hat, hair and clothes as Metallica,
+        a wild triumphant grin, jade-green swamp miasma rising around her feet, crackles of lightning around one raised hand, standing, in the center of the frame, facing the camera; Nezaria, the fog witch
+        and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside and a gold ring around it, very long straight lavender hair, sleepy half-closed
+        eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head (the talking staff), a tiny white mouse sitting on her hat brim, standing, on
+        the right of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the
+        wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs
+        and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over
+        a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+    move:
+      lily:
+        to:
+        - 56.0
+        - 47.4
+        t:
+        - 0.0
+        - 2.8
+      purple-peel:
+        to:
+        - 56.6
+        - 54.0
+        t:
+        - 0.0
+        - 2.8
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 2.8
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 2.8
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 2.8
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 2.8
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 2.8
+      hundred-knight:
+        to:
+        - 54.6
+        - 49.95
+        face: 275
+        via:
+        - - 54.6
+          - 49.95
+        t:
+        - 0.0
+        - 2.8
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 2.8
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 2.8
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 105
+        via:
+        - - 50.0
+          - 48.6
+        t:
+        - 0.0
+        - 2.8
     note: null
   A31-004:
     cam:
     - 51.6
     - 50.2
-    - 0.45
+    - 1.7
     lens: 28
     bearing: 102
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: -0.33
-        dist: 2.15
-        side: 中央
-        body: 斜め後ろ（画面右向き）
+        s: -0.47
+        dist: 2.88
+        side: 左
+        body: 正面
       - who: purple-peel
         s: 0.74
         dist: 5.68
         side: 右
-        body: 背中
+        body: 横顔（画面左向き）
       - who: rabi
         s: 1.01
         dist: 5.45
@@ -474,7 +1782,7 @@ cuts:
         dist: 6.2
         side: 右
         body: 横顔（画面左向き）
-      bg: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+      bg: 壊れた議会室〔要用意〕
       props:
       - 椅子（パープルピール）
       - 椅子（ラビィ）
@@ -482,12 +1790,12 @@ cuts:
       - 傾いて残った椅子
       - 傾いて残った椅子
       staging: 'In frame (exactly 4 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
-        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, seen from behind at an angle, turned toward screen right; Purple Peel, the dust witch, as
-        in her reference sheet, standing, at the far right of the frame, with the back to the camera; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right of the
-        frame, facing the camera; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background.
-        No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains.
-        Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall
-        windows full of stars between purple-red curtains.'
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), turning back toward the witches, sword ready, on the left of the frame, facing the camera; Purple Peel, the dust witch, as in
+        her reference sheet, standing, at the far right of the frame, in profile, turned toward screen left; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far right
+        of the frame, facing the camera; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, in profile, turned toward screen left, small in the background.
+        No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green
+        swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing
+        planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
     end:
       people:
       - who: hundred-knight
@@ -501,35 +1809,111 @@ cuts:
         side: 右
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
-        orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the left of the frame, with the back to the camera; Purple Peel, the dust witch, as in her reference sheet, standing,
-        at the far right of the frame, facing the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: dark wood panelled round walls with tall arched windows
-        full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over
-        a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+        orange eyes, oversized blue-and-silver gauntlets, holding its sword), sword ready, the two witches on their knees beyond, on the left of the frame, with the back to the camera; Purple Peel, the
+        dust witch, as in her reference sheet, standing, at the far right of the frame, facing the camera. No other people. Behind: the wrecked round council chamber: a huge jagged hole torn through the
+        far wall and the roof showing the night sky, cracked wooden floor flooded with glowing jade-green swamp water, toppled gothic chairs and rubble, fallen glowing planets of the orrery. Night inside
+        the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full
+        of stars between purple-red curtains.'
     move:
       lily:
         to:
         - 56.0
         - 47.4
         face: 240
+        via:
+        - - 56.0
+          - 47.4
         t:
         - 0.0
-        - 0.8
+        - 3.6
       purple-peel:
         to:
         - 56.6
         - 54.0
         face: 280
+        via:
+        - - 56.6
+          - 54.0
+        - - 56.6
+          - 54.0
         t:
         - 0.0
-        - 1.0
+        - 3.6
+      rabi:
+        to:
+        - 56.2
+        - 54.8
+        t:
+        - 0.0
+        - 3.6
+      usamaru:
+        to:
+        - 56.8
+        - 55.6
+        t:
+        - 0.0
+        - 3.6
+      berda:
+        to:
+        - 42.4
+        - 50.4
+        t:
+        - 0.0
+        - 3.6
+      rubens:
+        to:
+        - 43.4
+        - 47.6
+        t:
+        - 0.0
+        - 3.6
+      bisco:
+        to:
+        - 49.0
+        - 58.4
+        t:
+        - 0.0
+        - 3.6
       hundred-knight:
         to:
         - 53.8
         - 50.2
         face: 100
+        via:
+        - - 54.6
+          - 49.95
+        - - 53.8
+          - 50.2
+        - - 53.8
+          - 50.2
         t:
         - 0.0
-        - 0.3
+        - 3.6
+      nezaria:
+        to:
+        - 45.8
+        - 45.0
+        t:
+        - 0.0
+        - 3.6
+      teressa-swamp:
+        to:
+        - 44.0
+        - 53.8
+        t:
+        - 0.0
+        - 3.6
+      metallica-giant:
+        to:
+        - 50.0
+        - 48.6
+        face: 150
+        via:
+        - - 50.0
+          - 48.6
+        t:
+        - 0.0
+        - 3.6
     note: null
   A31-005:
     cam:
@@ -1108,11 +2492,11 @@ cuts:
         - 0.0
         - 9.5
       rubens:
-        to: &id002
+        to: &id001
         - 42.6
         - 53.0
         via:
-        - *id002
+        - *id001
         t:
         - 0.0
         - 5.0
@@ -1207,12 +2591,12 @@ cuts:
         wood panelled walls, tall windows full of stars between purple-red curtains.'
     move:
       purple-peel:
-        to: &id003
+        to: &id002
         - 45.2
         - 47.6
         face: 330
         via:
-        - *id003
+        - *id002
         t:
         - 0.0
         - 5.1
@@ -2114,8 +3498,44 @@ cuts:
     note: null
 checks:
   axis: []
-  jumps: []
+  jumps:
+  - cut: A31-000
+    who: hundred-knight
+    kind: 向き
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A31-000
+    who: metallica-giant
+    kind: 向き
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A31-001b
+    who: lily
+    kind: 向き
+    note: 前のカットの終わりか、このカットの始めに映っている
   overlap: []
   offscreen: []
-  hidden: []
+  hidden:
+  - cut: A31-000
+    which: start
+    who: scarecocco
+  - cut: A31-000
+    which: end
+    who: scarecocco
+  - cut: A31-001
+    which: start
+    who: scarecocco
+  - cut: A31-001
+    which: end
+    who: scarecocco
+  - cut: A31-001c
+    which: start
+    who: scarecocco
+  - cut: A31-001c
+    which: end
+    who: scarecocco
+  - cut: A31-003
+    which: start
+    who: scarecocco
+  - cut: A31-003
+    which: end
+    who: scarecocco
   camera: []

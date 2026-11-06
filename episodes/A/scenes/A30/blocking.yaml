@@ -498,163 +498,68 @@ cuts:
     hidden_ok: [metallica, metallica-giant, teressa-swamp]
     keys:
       lily:
-      - t: 0.0
-        at: [52.91, 47.19]
-        face: 20
-        pose: stand
-      - t: 0.5
-        at: [57.0, 47.4]
-        pose: run
-        face: 110
-      - {t: 2.0, pose: ready, face: 280}
+        - {t: 0.0, at: [52.91, 47.19], face: 20, pose: stand}
+        - {t: 0.5, at: [57.0, 47.4], pose: run, face: 110}
+        - {t: 2.0, pose: ready, face: 280}
       purple-peel:
-      - t: 0.0
-        at: [53.93, 50.98]
-        face: 0
-        pose: ready
-      - t: 0.5
-        at: [57.4, 51.0]
-        pose: run
-        face: 100
-      - {t: 2.0, pose: ready, face: 300}
+        - {t: 0.0, at: [53.93, 50.98], face: 0, pose: ready}
+        - {t: 0.5, at: [57.4, 51.0], pose: run, face: 100}
+        - {t: 2.0, pose: ready, face: 300}
       rabi:
-      - t: 0.0
-        at: [52.91, 52.81]
-        face: 30
-        pose: stand
-      - t: 0.6
-        at: [56.2, 54.8]
-        pose: run
-        face: 130
-      - {t: 2.2, pose: stand, face: 320}
+        - {t: 0.0, at: [52.91, 52.81], face: 30, pose: stand}
+        - {t: 0.6, at: [56.2, 54.8], pose: run, face: 130}
+        - {t: 2.2, pose: stand, face: 320}
       usamaru:
-      - t: 0.0
-        at: [53.14, 53.49]
-        face: 60
-        pose: hop
-        z: 0.9
-      - t: 0.8
-        at: [56.8, 55.6]
-        z: 1.2
+        - {t: 0.0, at: [53.14, 53.49], face: 60, pose: hop, z: 0.9}
+        - {t: 0.8, at: [56.8, 55.6], z: 1.2}
       berda:
-      - t: 0.0
-        at: [47.09, 52.81]
-        face: 40
-        pose: ready
-      - t: 0.6
-        at: [44.4, 51.4]
-        pose: run
-        face: 250
-      - t: 2.2
-        at: [42.8, 50.6]
-        pose: ready
-        face: 60
+        - {t: 0.0, at: [47.09, 52.81], face: 40, pose: ready}
+        - {t: 0.6, at: [44.4, 51.4], pose: run, face: 250}
+        - {t: 2.2, at: [42.8, 50.6], pose: ready, face: 60}
       rubens:
-      - t: 0.0
-        at: [46.1, 50.0]
-        face: 30
-        pose: sit
-      - t: 0.8
-        at: [43.4, 47.6]
-        pose: walk
-        face: 300
-      - {t: 2.6, pose: stand, face: 60}
+        - {t: 0.0, at: [46.1, 50.0], face: 30, pose: sit}
+        - {t: 0.8, at: [43.4, 47.6], pose: walk, face: 300}
+        - {t: 2.6, pose: stand, face: 60}
       bisco:
-      - t: 0.0
-        at: [49.05, 53.32]
-        face: 20
-        pose: look_up
-      - t: 0.4
-        at: [49.0, 58.4]
-        pose: crouch
-        face: 10
-      - {t: 3.0, pose: stand}
+        - {t: 0.0, at: [49.05, 53.32], face: 20, pose: look_up}
+        - {t: 0.4, at: [49.0, 58.4], pose: crouch, face: 10}
+        - {t: 3.0, pose: stand}
       teressa:
-      - t: 0.0
-        at: [46.52, 53.86]
-        face: 20
-        pose: cover
-      - t: 1.4
-        at: [45.6, 54.4]
-        pose: run
-        face: 220
-      - t: 2.0
-        at: [45.5, 55.7]
-        pose: fall
-      - {t: 2.6, pose: lie, face: 60}
+        - {t: 0.0, at: [46.52, 53.86], face: 20, pose: cover}
+        - {t: 1.4, at: [45.6, 54.4], pose: run, face: 220}
+        - {t: 2.0, at: [45.5, 55.7], pose: fall}
+        - {t: 2.6, pose: lie, face: 60}
       hundred-knight:
-      - t: 0.0
-        at: [50.3, 60.4]
-        face: 350
-        pose: lie
+        - {t: 0.0, at: [50.3, 60.4], face: 350, pose: lie}
       nezaria:
-      - t: 0.0
-        at: [50.0, 46.1]
-        face: 160
-        pose: sit
-      - t: 0.4
-        at: [45.8, 45.0]
-        pose: walk
-        face: 240
-      - {t: 2.4, pose: stand, face: 60}
+        - {t: 0.0, at: [50.0, 46.1], face: 160, pose: sit}
+        - {t: 0.4, at: [45.8, 45.0], pose: walk, face: 240}
+        - {t: 2.4, pose: stand, face: 60}
       night-train:
-      - t: 0.0
-        at: [51.2, 37.0]
-        face: 195
-        pose: stand
-        z: 0.0
-      - t: 1.6
-        at: [50.6, 46.0]
-        ease: out
+        - {t: 0.0, at: [51.2, 37.0], face: 195, pose: stand, z: 0.0}
+        - {t: 1.6, at: [50.6, 46.0], ease: out}
     cam_keys:
-    - t: 0.0
-      cam: [49.0, 59.0, 1.1]
-      look: [51.0, 42.0]
-      look_h: 2.4
-      lens: 20
-      frame: 引き
-    - t: 12.5
-      cam: [48.4, 60.6, 1.0]
-      look: [50.8, 46.0]
-      look_h: 1.8
-      lens: 20
+      - {t: 0.0, cam: [51.6, 53.6, 0.7], look: [51.1, 38.6], look_h: 2.4, lens: 22, frame: 引き（低い正面）}
+      - {t: 1.6, cam: [51.5, 54.0, 0.65], look: [50.6, 46.2], look_h: 2.0, lens: 22, ease: out}
+      - {t: 2.4, cam: [51.6, 54.8, 1.4], look: [50.4, 47.0], look_h: 1.6, lens: 22, ease: inout}
+      - {t: 4.8, cam: [50.8, 57.6, 4.2], look: [50.0, 48.5], look_h: 0.4, lens: 22, ease: inout}
+      - {t: 12.5, cam: [49.8, 58.8, 4.8], look: [50.4, 46.8], look_h: 1.0, lens: 22, ease: inout}
     shake:
-    - t: [0.0, 2.0]
-      amp: 2.0
+      - {t: [0.0, 2.0], amp: 2.0}
     fx:
-    - kind: flash
-      t: [0.0, 0.7]
-      peak: 0.0
-      at: [50.0, 50.0]
-      alpha: 1.0
-    - kind: shards
-      t: [0.1, 2.5]
-      at: [51.6, 38.4]
-      z: 4.0
-      dir: 190
-      spread: 110
-      speed: 7.0
-      size: 0.5
-      n: 22
-      color: [80, 60, 50]
-    - kind: surge
-      t: [0.8, 4.5]
-      at: [50.8, 44.0]
-      to: [45.0, 56.0]
-      r: 2.0
-      h: 1.4
-      z: 0.3
-      n: 22
-      color: [32, 160, 120]
-    - kind: pool
-      t: [1.0, 5.0]
-      at: [50.0, 50.0]
-      r0: 2.0
-      r: 12.4
-      color: [32, 150, 118]
-      glow: 0.35
+      - {kind: flash, t: [0.0, 0.4], peak: 0.0, at: [50.0, 50.0], alpha: 1.0}
+      - {kind: shards, t: [0.1, 2.5], at: [51.6, 38.4], z: 4.0, dir: 190, spread: 110, speed: 7.0, size: 0.5, n: 22, color: [80, 60, 50]}
+      - {kind: surge, t: [1.2, 4.8], at: [50.4, 47.2], to: [45.0, 56.0], r: 1.5, h: 1.3, z: 0.3, n: 22, color: [32, 160, 120]}
+      - {kind: pool, t: [1.0, 5.0], at: [50.0, 50.0], r0: 2.0, r: 12.4, color: [32, 150, 118], glow: 0.35}
+      - {kind: impact, t: 0.12, at: [51.1, 38.6, 2.4], size: 4.2, dur: 0.35, spikes: 18, color: [255, 240, 210]}
+      - {kind: shock, t: 0.15, at: [51.0, 39.5], r: 7.0, dur: 0.7}
+      - {kind: debris, t: 0.1, at: [51.1, 38.4, 3.0], n: 34, speed: 9.0, size: 0.32, up: 0.6, dir: 180, spread: 100, color: [92, 58, 36]}
+      - {kind: dust, t: 0.3, at: [51.0, 40.0], r: 3.2, h: 3.0, dur: 3.0, n: 16, color: [120, 95, 80]}
+      - {kind: sparks, t: 0.6, times: [0.6, 0.8, 1.0, 1.2, 1.4, 1.6], at: night-train, z: 0.2, n: 26, speed: 5.0, dur: 0.3, color: [255, 200, 120]}
+      - {kind: speedlines, t: [0.4, 1.8], focus: night-train, inner: 0.32}
+      - {kind: shock, t: 0.7, at: [50.8, 44.5, 2.0], r: 4.5, dur: 0.5, color: [255, 205, 150]}
     act: {start: 暗転から白い閃光。北の壁が破れ、瓦礫と一緒に夜光列車が飛び込む, do: 獅子が吠え（「がおおおお！！滅茶苦茶じゃぞい〜！！」）、口から碧の毒沼の泥水が波になって床へあふれる。魔女たちが逃げ、テレッサが波にのまれて倒れる, end: 沼に沈む議会室と、止まった列車}
-    camera: 扉の側の低い所から、突っ込んでくる列車を受けて少し下がる
+    camera: 部屋の真ん中の低い所から破れる北の壁を正面に。列車がまっすぐこちらへ突っ込んで止まり、魔女たちが左右へ散って画面を横切る。沼があふれると、カメラは後ろへ上がって沈んでいく議会室を見下ろす
     kind: A
     hide_props: [cswamp]
   A30-007:
@@ -3045,6 +2950,11 @@ cuts:
       t: [2.0, 3.0]
       at: *id015
       z: 0.6
+    - {kind: aura, t: [1.4, 3.4], at: hundred-knight, r: 0.35, h: 1.0, color: [150, 215, 255]}   # 2026-11-06 の下絵のアップグレードで足した見せ場の効果
+    - {kind: charge, t: [1.0, 2.2], at: [50.3, 60.4, 0.6], r: 1.4, n: 14, color: [150, 215, 255]}
+    - {kind: impact, t: 2.3, at: [50.3, 60.4, 0.6], size: 1.8, dur: 0.25, color: [200, 235, 255]}
+    - {kind: shock, t: 2.3, at: [50.3, 60.4], r: 3.0, dur: 0.6, color: [150, 215, 255]}
+    - {kind: speedlines, t: [2.3, 3.4], focus: hundred-knight, inner: 0.3}
     act: {start: メタリカが片手を突き上げる, do: （「んん…………」「目覚めろっ！百騎兵！！！」）倒れていた百騎兵の頭の炎が燃え上がり、跳ね起きて宙を舞う, end: 宙で回る百騎兵}
     camera: 倒れた百騎兵の脇の床すれすれから、跳ね起きるのを見上げる
     kind: A
@@ -3334,6 +3244,12 @@ cuts:
       r: 9.0
       n: 4
       color: [60, 200, 160]
+    - {kind: shock, t: 1.2, at: [50.0, 49.4], r: 9.0, dur: 1.0, color: [90, 230, 170]}   # 2026-11-06 の下絵のアップグレードで足した見せ場の効果
+    - {kind: debris, t: 2.2, at: [50.0, 49.4, 0.5], n: 26, speed: 7.0, size: 0.3, up: 0.9, color: [60, 160, 120]}
+    - {kind: shock, t: 4.5, at: [50.0, 49.4], r: 11.0, dur: 1.2, color: [90, 230, 170]}
+    - {kind: speedlines, t: [6.6, 8.4], focus: metallica-giant, z: 10.0, inner: 0.32, color: [210, 255, 235]}
+    - {kind: impact_frame, t: 7.8, frames: 2, mode: white}
+    - {kind: letterbox, t: [6.6, 8.4], h: 0.1}
     act: {start: メタリカの足元から碧の瘴気が噴き上がる, do: （「キヒヒ！こいつらに沼のチカラの真骨頂を見せてやる」）噴き上げの中にメタリカが沈み、巨大なメタリカがせり上がって立つ。頭は破れた天井の上の夜空へ, end: 見上げる巨大メタリカ}
     camera: 床すれすれから、せり上がる巨大メタリカに合わせてクレーンで上へ（あおる）
     kind: A
@@ -3581,6 +3497,8 @@ cuts:
       - [52.6, 46.4]
       z_to: 13.0
       energy: 2000
+    - {kind: charge, t: [0.2, 4.4], at: [52.6, 49.6, 10.0], r: 2.6, n: 22, color: [255, 245, 150]}   # 2026-11-06 の下絵のアップグレードで足した見せ場の効果
+    - {kind: sparks, t: 0.5, times: [0.5, 0.9, 1.3, 1.7, 2.1, 2.5, 2.9, 3.3, 3.7, 4.1], at: [52.6, 49.6, 10.0], n: 24, speed: 6.0, dur: 0.3, color: [255, 245, 160]}
     act: {start: 巨大メタリカの顔（夜空と月を背に）, do: 片手に雷をまとわせて（「さあ！いくぞっ！！」）, end: 雷の手を振りかざす巨大メタリカ}
     camera: 部屋の南の端の低い所から、巨大メタリカの顔を見上げる（近いと肩と帽子のつばで顔が隠れる）
     kind: A

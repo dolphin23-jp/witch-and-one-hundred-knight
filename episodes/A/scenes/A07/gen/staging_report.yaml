@@ -365,6 +365,94 @@ cuts:
         - 0.0
         - 7.6
     note: null
+  A07-008b:
+    cam:
+    - 35.0
+    - 31.4
+    - 3.2
+    lens: 24
+    bearing: 322
+    frame: 寄り
+    start:
+      people: []
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北西）
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      - 天井からの砂の滝
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'No people in frame. High angle looking down. Close on the sand-eater''s head as it rears back and roars; the shock of the roar blows sand across the floor. Behind: the huge underground cavern:
+        a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+        column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people: []
+      staging: 'No people in frame. High angle looking down. Close on the sand-eater''s head as it rears back and roars; the shock of the roar blows sand across the floor. Behind: the huge underground cavern:
+        a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+        column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to: land
+        t:
+        - 0.0
+        - 2.4
+    note: null
+  A07-008c:
+    cam:
+    - 31.15
+    - 28.55
+    - 0.42
+    lens: 34
+    bearing: 218
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 1.85
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（南西）
+      - 光る苔
+      - 獣の骨
+      - 岩
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), sinking into a low stance, its big sword swept back behind it, in the
+        center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 1.57
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in a low battle stance, sword held back, head flame blazing, in the
+        center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to: land
+        via:
+        - land
+        - land
+        t:
+        - 0.0
+        - 2.0
+    note: null
   A07-009:
     cam:
     - 24.2
@@ -393,10 +481,10 @@ cuts:
       - 天井からの砂の滝
       - 獣の骨
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its sword ready as the monster leaps high, at the far right
-        of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a
-        column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
-        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in a low stance as the monster leaps high, at the far right of the
+        frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column
+        of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green
+        moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
@@ -405,10 +493,10 @@ cuts:
         side: 中央
         body: 横顔（画面左向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching, about to jump, the monster diving at it from above, in the
-        center of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss,
-        a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
-        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching deep, about to jump, the monster diving at it from above,
+        in the center of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
         to: land
@@ -423,7 +511,7 @@ cuts:
     cam:
     - 35.4
     - 33.4
-    - 2.0
+    - 1.4
     lens: 22
     bearing: 302
     frame: 全身
@@ -448,10 +536,10 @@ cuts:
       - 岩（A08 でルッキーニィが陰からのぞく）
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), leaping straight up as the monster''s head slams into the sand below,
-        in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
-        round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
-        hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), leaping straight up, tucked in midair, as the monster''s head slams
+        into the sand below, in the center of the frame, seen from behind at an angle, turned toward screen right, small in the background. No other people. Behind: the huge underground cavern: a sandy
+        floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of
+        moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
@@ -467,32 +555,37 @@ cuts:
     move:
       hundred-knight:
         to: dodge
-        face: 270
+        face: 268
         via:
         - land
-        - - 31.4
+        - - 30.9
           - 30.4
+        - - 31.8
+          - 30.8
+        - - 32.3
+          - 31.0
+        - dodge
         - dodge
         - dodge
         t:
         - 0.0
-        - 2.4
+        - 2.8
     note: null
   A07-011:
     cam:
-    - 31.2
-    - 28.4
-    - 0.45
-    lens: 32
-    bearing: 155
-    frame: 寄り
+    - 32.0
+    - 27.4
+    - 0.6
+    lens: 24
+    bearing: 174
+    frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: 0.0
-        dist: 2.86
+        s: -0.0
+        dist: 3.62
         side: 中央
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       bg: 地下空洞の全景〔空洞 全景〕
       props:
       - 岩の柱（南東）
@@ -500,195 +593,376 @@ cuts:
       - 天井からの砂の滝
       - 岩
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), stepping in and slashing diagonally at the monster''s passing body,
-        in the center of the frame, in three-quarter view, turned toward screen right. No other people. Bright sparks fly where the sword strikes the monster''s armored side. Behind: the huge underground
-        cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale
-        blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), stepping in and slashing down at the monster''s passing armored body,
+        in the center of the frame, in profile, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 2.66
+        dist: 3.45
         side: 中央
         body: 横顔（画面右向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), having leapt back, holding its sword ready, in the center of the frame,
-        in profile, turned toward screen right. No other people. Bright sparks fly where the sword strikes the monster''s armored side. Behind: the huge underground cavern: a sandy floor, massive rock pillars,
-        round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
-        hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), having back-flipped away, landing with its sword ready, in the center
+        of the frame, in profile, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a
+        column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
+        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
-        to: hk_back
-        face: 250
+        to:
+        - 33.6
+        - 30.6
+        face: 245
         via:
-        - slash
-        - slash
-        - slash
-        - hk_back
+        - - 31.5
+          - 31.3
+        - - 31.2
+          - 31.4
+        - - 31.15
+          - 31.4
+        - - 31.3
+          - 31.35
+        - - 31.6
+          - 31.25
+        - - 33.6
+          - 30.6
+        - - 33.6
+          - 30.6
         t:
         - 0.0
-        - 2.4
+        - 2.6
+    note: null
+  A07-011b:
+    cam:
+    - 31.0
+    - 38.6
+    - 1.3
+    lens: 26
+    bearing: 18
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 8.41
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北東）
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
+      - 獣の骨
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), blocking the monster''s sweeping head with its sword, in the center
+        of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels
+        in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the
+        ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 5.97
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), having skidded back, rising from a crouch with its sword planted in
+        the sand, in the center of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss,
+        a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
+        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 37.2
+        - 34.4
+        face: '@sand-eater'
+        via:
+        - - 33.6
+          - 30.6
+        - - 33.6
+          - 30.6
+        - - 34.0
+          - 31.0
+        - - 36.4
+          - 33.6
+        - - 37.2
+          - 34.4
+        - - 37.2
+          - 34.4
+        - - 37.2
+          - 34.4
+        t:
+        - 0.0
+        - 3.9
+    note: null
+  A07-011c:
+    cam:
+    - 35.7
+    - 39.9
+    - 1.2
+    lens: 26
+    bearing: 15
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 5.7
+        side: 中央
+        body: 横顔（画面左向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 岩の柱（北東）
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
+      - 天井からの砂の滝
+      - 獣の骨
+      - 岩
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), dashing straight at the charging monster, sword swept back, in the
+        center of the frame, in profile, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss,
+        a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
+        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people: []
+      staging: 'No people in frame. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
+        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
+        sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 29.87
+        - 34.93
+        via:
+        - - 37.2
+          - 34.4
+        - - 36.96
+          - 34.35
+        - - 31.83
+          - 33.22
+        - - 31.44
+          - 33.14
+        - - 31.09
+          - 33.06
+        - - 30.28
+          - 32.89
+        - - 30.46
+          - 32.93
+        - - 30.46
+          - 32.93
+        - - 30.46
+          - 32.93
+        - - 30.38
+          - 32.91
+        - - 30.38
+          - 32.91
+        - - 30.38
+          - 32.91
+        - - 30.38
+          - 32.91
+        - - 30.58
+          - 32.95
+        - - 30.38
+          - 33.15
+        - - 30.77
+          - 33.83
+        - - 30.57
+          - 34.03
+        - - 29.87
+          - 34.93
+        - - 29.87
+          - 34.93
+        t:
+        - 0.0
+        - 5.4
     note: null
   A07-012:
     cam:
-    - 35.0
-    - 28.4
-    - 1.6
-    lens: 24
-    bearing: 210
+    - 25.36516301631496
+    - 39.927697376705765
+    - 4.6
+    lens: 20
+    bearing: 49
     frame: 引き
     start:
       people:
       - who: hundred-knight
-        s: 0.4
-        dist: 3.59
-        side: 右
+        s: -0.14
+        dist: 6.68
+        side: 中央
         body: 背中
       bg: 地下空洞の全景〔空洞 全景〕
       props:
-      - 岩の柱（南西）
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北東）
+      - 北の壁の大きな横穴（砂食みの出る所）
+      - 東の横穴
       - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
+      - 天井からの砂の滝
       - 獣の骨
+      - 岩
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing with its sword ready in the foreground, on the right of the
-        frame, with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight
-        from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the
-        rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), small in the foreground, sword ready, watching the monster, in the
+        center of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+        glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto
+        the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
-        s: 0.47
-        dist: 3.83
-        side: 右
+        s: -0.39
+        dist: 5.75
+        side: 左
         body: 背中
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing with its sword ready, on the right of the frame, with the
-        back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole
-        in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls,
-        thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), watching the cloud of sand where the monster dove under, on the left
+        of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
+        floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
-        to: hk_back
-        face: 215
-        via:
-        - hk_back
+        to:
+        - 29.87
+        - 34.93
         t:
         - 0.0
         - 3.0
     note: null
   A07-013:
     cam:
-    - 35.6
-    - 27.6
-    - 0.45
+    - 27.66516301631496
+    - 32.927697376705765
+    - 0.5
     lens: 24
-    bearing: 201
+    bearing: 130
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: 0.57
-        dist: 4.36
-        side: 右
-        body: 背中
+        s: 0.05
+        dist: 2.98
+        side: 中央
+        body: 斜め後ろ（画面左向き）
       bg: 地下空洞の全景〔空洞 全景〕
       props:
-      - 岩の柱（南西）
-      - 光る苔
+      - 岩の柱（南東）
       - 光る苔
       - 天井からの砂の滝
-      - 獣の骨
+      - 岩
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), bracing with its sword ready, seen from low behind, on the right of
-        the frame, with the back to the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. A long bulge in the sand races toward the Hundred Knight as the monster
-        swims under the floor. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
-        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
-        sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), turning to follow the bulge moving under the sand, in the center of
+        the frame, seen from behind at an angle, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the huge underground cavern: a sandy
+        floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of
+        moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
-        s: 0.44
-        dist: 4.01
-        side: 右
-        body: 背中
+        s: -0.14
+        dist: 2.26
+        side: 中央
+        body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), bracing, the bulge in the sand right at its feet, on the right of the
-        frame, with the back to the camera. No other people. Low angle looking up; the sky fills the upper part of the frame. A long bulge in the sand races toward the Hundred Knight as the monster swims
-        under the floor. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside
-        the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling
-        from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in a low stance, the bulge right at its feet, in the center of the
+        frame, seen from behind at an angle, turned toward screen left. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: the huge underground cavern: a sandy floor,
+        massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight
+        falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
-        to: hk_back
-        face: 205
+        to:
+        - 29.87
+        - 34.93
+        via:
+        - - 29.87
+          - 34.93
         t:
         - 0.0
-        - 3.0
+        - 3.2
     note: null
   A07-013b:
     cam:
-    - 31.3
-    - 32.9
-    - 0.55
-    lens: 30
-    bearing: 28
+    - 31.46516301631496
+    - 35.427697376705765
+    - 0.5
+    lens: 32
+    bearing: 287
     frame: 寄り
     start:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 2.15
+        dist: 1.67
         side: 中央
         body: 正面
       bg: 地下空洞の全景〔空洞 全景〕
       props:
-      - 岩の柱（北東）
+      - 岩の柱（北西）
+      - 西の横穴
       - 光る苔
-      - 天井からの砂の滝
       - 獣の骨
+      - 岩
+      - 岩（A08 でルッキーニィが陰からのぞく）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), holding its sword ready, the sand trembling at its feet, in the center
-        of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight
-        from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the
-        rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), looking down at the trembling sand at its feet, in the center of the
+        frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the
+        hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls,
+        thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 1.81
+        dist: 1.42
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching, bracing, looking down at the sand under its feet, in the
-        center of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight
-        from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the
-        rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching low, bracing, in the center of the frame, facing the camera.
+        No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside
+        the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling
+        from the ceiling, deep shadows.'
     move:
       hundred-knight:
-        to: hk_back
+        to:
+        - 29.87
+        - 34.93
         via:
-        - hk_back
-        - hk_back
-        - hk_back
+        - - 29.87
+          - 34.93
+        - - 29.87
+          - 34.93
+        - - 29.87
+          - 34.93
         t:
         - 0.0
-        - 1.8
+        - 2.0
     note: null
   A07-014:
     cam:
-    - 36.6
-    - 36.4
+    - 34.86516301631496
+    - 39.927697376705765
     - 0.5
     lens: 20
-    bearing: 321
+    bearing: 315
     frame: 引き
     start:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 6.9
+        dist: 7.07
         side: 中央
-        body: 斜め前（画面左向き）
+        body: 斜め前（画面右向き）
       bg: 地下空洞の全景〔空洞 全景〕
       props:
       - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
@@ -699,209 +973,346 @@ cuts:
       - 北の壁の大きな横穴（砂食みの出る所）
       - 西の横穴
       - 光る苔
-      - 光る苔
       - 天井からの砂の滝
+      - 獣の骨
       - 岩
       - 岩（A08 でルッキーニィが陰からのぞく）
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), being thrown high into the air by the monster bursting up from below,
-        tumbling, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in
-        the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
-        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    end:
-      people:
-      - who: hundred-knight
-        s: 0.0
-        dist: 7.47
-        side: 中央
-        body: 斜め前（画面左向き）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), tumbling high in the air near the cavern ceiling, in the center of
-        the frame, in three-quarter view, turned toward screen left. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
-        moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
-        glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    move:
-      hundred-knight:
-        to:
-        - 32.1
-        - 30.8
-        via:
-        - hk_back
-        - hk_back
-        - - 32.2
-          - 30.9
-        t:
-        - 0.0
-        - 2.4
-    note: null
-  A07-015:
-    cam:
-    - 28.4
-    - 29.6
-    - 9.5
-    lens: 30
-    bearing: 108
-    frame: 全身
-    start:
-      people:
-      - who: hundred-knight
-        s: 0.0
-        dist: 9.5
-        side: 中央
-        body: 横顔（画面右向き）
-      bg: 地下空洞の俯瞰〔空洞 俯瞰〕
-      props:
-      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
-      - 井戸の筒
-      - 村の地面（井戸のまわり）
-      - 石の井戸の縁
-      - 岩の柱（南東）
-      - 東の横穴
-      - 光る苔
-      - 天井からの砂の滝
-      - 天井からの砂の滝
-      - 岩
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), twisting in mid-air and landing upside down on the cavern ceiling,
-        in the center of the frame, in profile, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near
-        the ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
-        hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    end:
-      people:
-      - who: hundred-knight
-        s: -0.03
-        dist: 5.88
-        side: 中央
-        body: 斜め後ろ（画面右向き）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching upside down on the rock ceiling, the monster far below, in
-        the center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
-        a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
-        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    move:
-      hundred-knight:
-        to: ceil
-        face: 160
-        via:
-        - ceil
-        - ceil
-        t:
-        - 0.0
-        - 2.6
-    note: null
-  A07-015b:
-    cam:
-    - 33.6
-    - 32.1
-    - 12.6
-    lens: 32
-    bearing: 311
-    frame: 寄り
-    start:
-      people:
-      - who: hundred-knight
-        s: 0.0
-        dist: 12.6
-        side: 中央
-        body: 正面
-      bg: 地下空洞の俯瞰〔空洞 俯瞰〕
-      props:
-      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
-      - 井戸の筒
-      - 村の地面（井戸のまわり）
-      - 石の井戸の縁
-      - 岩の柱（北西）
-      - 光る苔
-      - 天井からの砂の滝
-      - ピラー（魔法の柱。A07 の終わりに光り始める）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching upside down on the rock ceiling, close up, about to kick
-        off, in the center of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
-        a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
-        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    end:
-      people:
-      - who: hundred-knight
-        s: -0.0
-        dist: 13.2
-        side: 中央
-        body: 背中
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), diving head first straight down at the monster, its sword thrust ahead,
-        seen from above and behind, in the center of the frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from
-        high above near the ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling
-        from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
-    move:
-      hundred-knight:
-        to:
-        - 32.4
-        - 31.5
-        via:
-        - ceil
-        - ceil
-        - - 32.05
-          - 30.8
-        t:
-        - 0.0
-        - 2.2
-    note: null
-  A07-016:
-    cam:
-    - 32.2
-    - 27.4
-    - 3.8
-    lens: 28
-    bearing: 176
-    frame: 寄り
-    start:
-      people:
-      - who: hundred-knight
-        s: 0.03
-        dist: 4.1
-        side: 中央
-        body: 背中
-      bg: 地下空洞の全景〔空洞 全景〕
-      props:
-      - 岩の柱（南東）
-      - 光る苔
-      - 天井からの砂の滝
-      - 岩
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), diving head first from above with its sword thrust ahead, in the center
-        of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), launched into the air by the monster erupting from the sand, in the
+        center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing
         green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy
         floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 5.3
+        dist: 7.35
         side: 中央
-        body: 背中
+        body: 斜め前（画面右向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching on top of the monster''s head, its sword driven deep into
-        the monster''s eye, in the center of the frame, with the back to the camera. No other people. High angle looking down. The Hundred Knight drives its sword deep into the monster''s huge eye; sparks
-        and sand burst out. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
-        Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of
-        sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), spinning high in the air near the ceiling, in the center of the frame,
+        in three-quarter view, turned toward screen right. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column
+        of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green
+        moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
         to:
-        - 32.4
-        - 32.6
+        - 30.97
+        - 34.03
         via:
-        - - 32.55
-          - 31.8
-        - - 32.58
-          - 31.85
-        - - 32.6
-          - 31.9
-        - - 32.5
-          - 32.3
+        - - 29.87
+          - 34.93
+        - - 30.17
+          - 34.73
+        - - 30.67
+          - 34.33
         t:
         - 0.0
-        - 3.8
+        - 2.6
+    note: null
+  A07-014b:
+    cam:
+    - 26.16516301631496
+    - 37.02769737670577
+    - 10.4
+    lens: 28
+    bearing: 58
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 5.66
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      bg: 地下空洞の俯瞰〔空洞 俯瞰〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北東）
+      - 東の横穴
+      - 光る苔
+      - 天井からの砂の滝
+      - 天井からの砂の滝
+      - 獣の骨
+      - 岩
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), in midair, blocking the monster''s biting head with its sword, in the
+        center of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
+        a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 11.8
+        side: 中央
+        body: 斜め前（画面右向き）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), springing off the monster''s head toward the ceiling, in the center
+        of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near
+        the ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round
+        hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 31.37
+        - 33.43
+        face: 200
+        via:
+        - - 31.07
+          - 33.98
+        - - 31.07
+          - 33.98
+        - - 31.12
+          - 33.93
+        - - 30.76
+          - 34.44
+        - - 30.76
+          - 34.44
+        - - 30.91
+          - 34.24
+        t:
+        - 0.0
+        - 2.6
+    note: null
+  A07-015:
+    cam:
+    - 27.96516301631496
+    - 32.02769737670577
+    - 9.729434236049784
+    lens: 30
+    bearing: 112
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 9.73
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 地下空洞の俯瞰〔空洞 俯瞰〕
+      props:
+      - 岩の柱（南東）
+      - 東の横穴
+      - 光る苔
+      - 天井からの砂の滝
+      - 岩
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), twisting in midair toward the ceiling, in the center of the frame,
+        in profile, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling: a circle of
+        moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto
+        the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.29
+        dist: 5.4
+        side: 中央
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching upside down on the cave ceiling, the monster far below, on
+        the left of the frame, seen from behind at an angle, turned toward screen right. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
+        a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 31.57
+        - 33.23
+        face: 160
+        via:
+        - - 31.57
+          - 33.23
+        - - 31.57
+          - 33.23
+        t:
+        - 0.0
+        - 2.6
+    note: null
+  A07-015b:
+    cam:
+    - 32.96516301631496
+    - 33.52769737670577
+    - 12.529434236049784
+    lens: 32
+    bearing: 282
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.0
+        dist: 12.53
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: 地下空洞の俯瞰〔空洞 俯瞰〕
+      props:
+      - 岩の柱（北西）
+      - 西の横穴
+      - 光る苔
+      - 岩
+      - 岩（A08 でルッキーニィが陰からのぞく）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), crouching upside down on the ceiling, coiling to spring, in the center
+        of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the
+        ceiling: a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole
+        in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.14
+        dist: 13.13
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), diving head first toward the monster below, sword thrust ahead, in
+        the center of the frame, with the back to the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern seen from high above near the ceiling:
+        a circle of moonlight on the sandy floor, rock pillars, round tunnels, green moss. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 31.87
+        - 33.83
+        via:
+        - - 31.57
+          - 33.23
+        - - 31.57
+          - 33.23
+        - - 31.62
+          - 33.33
+        t:
+        - 0.0
+        - 2.2
+    note: null
+  A07-016:
+    cam:
+    - 26.34
+    - 38.87
+    - 5.9
+    lens: 22
+    bearing: 52
+    frame: 寄り
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.1
+        dist: 7.46
+        side: 中央
+        body: 斜め前（画面右向き）
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北東）
+      - 東の横穴
+      - 光る苔
+      - 光る苔
+      - 天井からの砂の滝
+      - 天井からの砂の滝
+      - 獣の骨
+      - 岩
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), diving head first, sword thrust at the monster''s eye, in the center
+        of the frame, in three-quarter view, turned toward screen right, small in the background. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock
+        pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling
+        from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 5.95
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), clinging beside the monster''s eye, its sword buried in it, in the
+        center of the frame, with the back to the camera. No other people. High angle looking down. The Hundred Knight drives its sword deep into the monster''s huge flower-like eye; sparks and sand burst
+        out. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge
+        underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from
+        the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 29.47
+        - 36.44
+        face: '@sand-eater'
+        via:
+        - - 29.47
+          - 36.44
+        - - 29.47
+          - 36.44
+        t:
+        - 0.0
+        - 4.6
+    note: null
+  A07-016b:
+    cam:
+    - 36.2
+    - 38.29
+    - 7.25
+    lens: 26
+    bearing: 298
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.0
+        dist: 4.8
+        side: 中央
+        body: 背中
+      bg: 地下空洞の全景〔空洞 全景〕
+      props:
+      - 地下空洞（丸い洞。天井の真ん中に井戸の穴）
+      - 井戸の筒
+      - 村の地面（井戸のまわり）
+      - 石の井戸の縁
+      - 岩の柱（北西）
+      - 岩の柱（南西）
+      - 西の横穴
+      - 光る苔
+      - 天井からの砂の滝
+      - 獣の骨
+      - 岩
+      - 岩（A08 でルッキーニィが陰からのぞく）
+      - ピラー（魔法の柱。A07 の終わりに光り始める）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), clinging to its sword buried in the thrashing monster''s eye, in the
+        center of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+        glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto
+        the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 9.25
+        side: 中央
+        body: 正面
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), ripping its sword free in a rising arc and flipping away, in the center
+        of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the
+        walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling
+        onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+    move:
+      hundred-knight:
+        to:
+        - 31.35
+        - 35.7
+        face: 150
+        via:
+        - - 31.96
+          - 36.03
+        - - 31.96
+          - 36.03
+        - - 31.75
+          - 35.2
+        t:
+        - 0.0
+        - 3.6
     note: null
   A07-017:
     cam:
@@ -909,13 +1320,13 @@ cuts:
     - 38.8
     - 0.4
     lens: 20
-    bearing: 346
+    bearing: 317
     frame: 引き
     start:
       people:
       - who: hundred-knight
-        s: -0.03
-        dist: 6.45
+        s: 0.0
+        dist: 4.21
         side: 中央
         body: 正面
       bg: 地下空洞の全景〔空洞 全景〕
@@ -926,16 +1337,18 @@ cuts:
       - 石の井戸の縁
       - 岩の柱（北西）
       - 北の壁の大きな横穴（砂食みの出る所）
+      - 西の横穴
       - 光る苔
       - 天井からの砂の滝
-      - 天井からの砂の滝
       - 獣の骨
+      - 岩
+      - 岩（A08 でルッキーニィが陰からのぞく）
       - ピラー（魔法の柱。A07 の終わりに光り始める）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), on the monster''s head, about to jump off, in the center of the frame,
-        facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole
-        in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls,
-        thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), flipping down toward the camera, in the center of the frame, facing
+        the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the
+        ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams
+        of sand falling from the ceiling, deep shadows.'
     end:
       people:
       - who: hundred-knight
@@ -944,26 +1357,34 @@ cuts:
         side: 中央
         body: 正面
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing after a hero landing, the fallen monster collapsing in the
-        dust behind it, on the left of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
-        moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
-        glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing after a hero landing, flicking its sword, the fallen monster
+        behind, on the left of the frame, facing the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a
+        column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing
+        green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
     move:
       hundred-knight:
-        to: hk_end
+        to:
+        - 33.8
+        - 34.8
         face: 170
         via:
-        - - 32.4
-          - 32.6
-        - - 32.9
-          - 33.4
-        - hk_end
-        - hk_end
-        - hk_end
-        - hk_end
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
+        - - 33.8
+          - 34.8
         t:
         - 0.0
-        - 5.2
+        - 5.6
     note: null
   A07-018:
     cam:
@@ -1027,6 +1448,18 @@ checks:
   axis: []
   jumps:
   - cut: A07-001
+    who: hundred-knight
+    kind: 位置
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A07-011c
+    who: hundred-knight
+    kind: 向き
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A07-012
+    who: hundred-knight
+    kind: 向き
+    note: 前のカットの終わりか、このカットの始めに映っている
+  - cut: A07-016b
     who: hundred-knight
     kind: 位置
     note: 前のカットの終わりか、このカットの始めに映っている

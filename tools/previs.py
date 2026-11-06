@@ -40,6 +40,10 @@ import staging  # noqa: E402
 import motion  # noqa: E402  動きのキー（D-060）
 import previs_council  # noqa: E402  議会室（6章後半 回3、A28〜A32）の形・人形・効果（並行作業と重ならないよう別のファイル、2026-11-05）
 import previs_ch7  # noqa: E402  7章（A33〜）の人形（ミトン・アロマニ・ジェル・馬車）とチンクエの道具（2026-11-06）
+import previs_rig  # noqa: E402  関節のある人形と姿勢の補間（2026-11-06 の下絵のアップグレード）
+import previs_fx  # noqa: E402  戦いの効果（閃光・衝撃・破片・土煙・集中線・剣の軌跡）と、止め・スロー（2026-11-06）
+FXCTX = {}   # 効果がその時刻の場面を知るための道具（render_cut が入れる）
+RENDER = {"engine": "workbench", "rig": True}   # 描き方（2026-11-06 の下絵のアップグレード）。workbench（既定、tools/previs_look.py）か cycles（前の描き方）
 EXT = (previs_council, previs_ch7)   # 場面ごとの形の追加（build_extra・decorate を順に呼ぶ）
 
 import bpy  # noqa: E402
@@ -121,8 +125,54 @@ class Plan:
         t0, t1 = self._window(who)
         return smooth((t - t0) / max(1e-6, t1 - t0))
 
+    def ride(self, who, t):
+        """キーの on（生き物の体の上に乗る、2026-11-06）: その時刻の体の上の位置 (x, y, 高さ)。乗っていなければ None。
+        on: {c: 生き物, s: 頭からの道のり m, up: 体の上の面からの高さの倍率（1 で背中の上）, dz: さらに上げる m}。
+        on のあるキーとないキーの間は、地面の位置と体の上の位置を混ぜる（跳び乗る・跳び降りる。arc で弧）。"""
+        tr = self.tracks.get(who)
+        if tr is None or not self.creatures:
+            return None
+        a, b, u = motion.segment(tr.k, t)
+        oa, ob = a.get("on"), b.get("on")
+        if not oa and not ob:
+            return None
+
+        def body_pt(on):
+            ct = self.creatures[on["c"]]
+            s_ = float(on.get("s", 0.0))
+            S = ct.s_of(t)
+            pt = ct.point_at_s(S - s_)
+            f = min(1.0, max(0.0, s_ / ct.len))
+            r = ct.r * (1.0 - 0.55 * f) * (1.15 if s_ < ct.len / max(1, ct.segs - 1) else 1.0)
+            if on.get("off") is not None:   # 体の向きに沿ったずらし [横, 前, 背]（その所の太さに対する割合）。目の横にしがみつくなど
+                sp = ct.len / max(1, ct.segs - 1)   # 体の節の間隔（目の置き方 pose_creature と同じ向きにする）
+                a_, b_ = ct.point_at_s(S - s_), ct.point_at_s(S - s_ - sp)
+                # 向きは Blender の座標（y 北が正）で、pose_creature の目の置き方と同じ式で求め、layout の座標（y 南が正）へ戻す
+                dB = Vector((a_[0] - b_[0], -(a_[1] - b_[1]), a_[2] - b_[2]))
+                dB = dB.normalized() if dB.length > 1e-6 else Vector((0, 1, 0))
+                sB = dB.cross(Vector((0, 0, 1)))
+                sB = sB.normalized() if sB.length > 1e-3 else Vector((1, 0, 0))
+                uB = sB.cross(dB).normalized()
+                o = on["off"]
+                v = sB * float(o[0]) + dB * float(o[1]) + uB * float(o[2])
+                return (pt[0] + r * v.x, pt[1] - r * v.y, pt[2] + r * v.z + float(on.get("dz", 0.0)))
+            return (pt[0], pt[1], pt[2] + r * float(on.get("up", 1.0)) + float(on.get("dz", 0.0)))
+        if oa and ob and oa.get("c") == ob.get("c"):
+            on = {**ob, "s": lerp(float(oa.get("s", 0.0)), float(ob.get("s", 0.0)), u),
+                  "up": lerp(float(oa.get("up", 1.0)), float(ob.get("up", 1.0)), u), "dz": lerp(float(oa.get("dz", 0.0)), float(ob.get("dz", 0.0)), u)}
+            if oa.get("off") is not None and ob.get("off") is not None:
+                on["off"] = [lerp(float(x), float(y), u) for x, y in zip(oa["off"], ob["off"])]
+            return body_pt(on)
+        pa = body_pt(oa) if oa else (a["at"][0], a["at"][1], float(a.get("z", 0.0)))
+        pb = body_pt(ob) if ob else (b["at"][0], b["at"][1], float(b.get("z", 0.0)))
+        z = lerp(pa[2], pb[2], u) + (float(b["arc"]) * math.sin(math.pi * u) if b.get("arc") and a is not b else 0.0)
+        return (lerp(pa[0], pb[0], u), lerp(pa[1], pb[1], u), z)
+
     def position(self, who, t):
         if who in self.tracks:
+            rd = self.ride(who, t)
+            if rd is not None:
+                return rd[:2]
             return self.tracks[who].at(t)[0]
         if self.start_pos[who] == self.end_pos[who] and not (self.c.get("move") or {}).get(who, {}).get("via"):
             return tuple(self.start_pos[who])
@@ -132,8 +182,13 @@ class Plan:
         return {w: self.position(w, t) for w in self.people}
 
     def height(self, who, t):
-        """地面からの高さ m（跳ぶ・埋まる）。キーのない人物は 0。"""
-        return self.tracks[who].at(t)[1] if who in self.tracks else 0.0
+        """地面からの高さ m（跳ぶ・埋まる・生き物に乗る）。キーのない人物は 0。"""
+        if who in self.tracks:
+            rd = self.ride(who, t)
+            if rd is not None:
+                return rd[2] - motion.ground_z(self.st.lay, rd[0], rd[1])
+            return self.tracks[who].at(t)[1]
+        return 0.0
 
     def pose_name(self, who, t):
         if who in self.tracks:
@@ -150,6 +205,9 @@ class Plan:
                     return self.start_face[who]
                 if isinstance(f, str) and f.startswith("@"):
                     f = f[1:]
+                if isinstance(f, str) and f in self.creatures:   # 生き物の頭を見る（2026-11-06）
+                    hx, hy, _ = self.creatures[f].head(t)
+                    return staging.bearing_of((hx - pos[who][0], hy - pos[who][1]))
                 return self.st.face_of(f, who, pos)
             if kind == "dir":
                 return fa
@@ -1122,24 +1180,29 @@ def build_person(who, h, torch=False, sword=False):
     m_body = make_mat(f"{who}_body", col)
     m_dark = make_mat(f"{who}_dark", tuple(c * 0.45 for c in col))
     m_face = make_mat(f"{who}_nose", (1.0, 0.93, 0.8))
-    if who == "karakuri-doll":   # 卵形の胴（球を縦に伸ばす）
-        prim("sphere", m_body, f"{who}_body", root, (0, 0, body_h * 0.5), radius=1.0, scale=(r, r, body_h * 0.55))
-    else:
-        prim("cyl", m_body, f"{who}_body", root, (0, 0, body_h / 2), radius=r, depth=body_h)
     al = body_h * 0.6
-    arms = {}
-    for sx in (-1, 1):   # 腕は肩を軸に回せるように、肩の位置の空の親に付ける
-        piv = bpy.data.objects.new(f"SHOULDER_{who}{sx}", None)
-        bpy.context.collection.objects.link(piv)
-        piv.parent = root
-        piv.location = (sx * (r + arm), 0, body_h * 0.92)
-        prim("cyl", m_dark, f"{who}_arm{sx}", piv, (0, 0, -al / 2), radius=arm, depth=al)
-        arms[sx] = piv
-    root["arms"] = 1
-    head = bpy.data.objects.new(f"HEAD_{who}", None)
-    bpy.context.collection.objects.link(head)
-    head.parent = root
-    head.location = (0, 0, body_h)
+    rig = None
+    if RENDER.get("rig", True) and who not in previs_rig.SKIP:   # 関節のある人形（2026-11-06、tools/previs_rig.py）
+        bpy.data.objects.remove(root, do_unlink=True)
+        root, head, arms, rig = previs_rig.build(sys.modules[__name__], who, h, sh, col, m_body, m_dark)
+    else:
+        if who == "karakuri-doll":   # 卵形の胴（球を縦に伸ばす）
+            prim("sphere", m_body, f"{who}_body", root, (0, 0, body_h * 0.5), radius=1.0, scale=(r, r, body_h * 0.55))
+        else:
+            prim("cyl", m_body, f"{who}_body", root, (0, 0, body_h / 2), radius=r, depth=body_h)
+        arms = {}
+        for sx in (-1, 1):   # 腕は肩を軸に回せるように、肩の位置の空の親に付ける
+            piv = bpy.data.objects.new(f"SHOULDER_{who}{sx}", None)
+            bpy.context.collection.objects.link(piv)
+            piv.parent = root
+            piv.location = (sx * (r + arm), 0, body_h * 0.92)
+            prim("cyl", m_dark, f"{who}_arm{sx}", piv, (0, 0, -al / 2), radius=arm, depth=al)
+            arms[sx] = piv
+        root["arms"] = 1
+        head = bpy.data.objects.new(f"HEAD_{who}", None)
+        bpy.context.collection.objects.link(head)
+        head.parent = root
+        head.location = (0, 0, body_h)
     if who == "forest-servant":   # 白い丸い頭と、橙に光る四角い目（鼻の代わりに向きを示す）、ギザギザの口の白い帯
         prim("sphere", make_mat("servant_head", (0.93, 0.93, 0.96), rough=0.3), f"{who}_head", head, (0, 0, hr), radius=hr, scale=(1.05, 1, 1.05))
         eye = make_mat("servant_eye", (1.0, 0.6, 0.15), emit=1.5)
@@ -1199,8 +1262,9 @@ def build_person(who, h, torch=False, sword=False):
             prim("cube", boot, f"servant_boot{sx}", root, (sx * r * 0.45, 0.04, 0.09), size=2.0, scale=(0.09, 0.14, 0.09))
         green = make_mat("servant_arm", (0.27, 0.29, 0.22))
         for sx in (-1, 1):
-            for ob in arms[sx].children:
-                ob.data.materials.clear(); ob.data.materials.append(green)
+            for ob in arms[sx].children_recursive:
+                if ob.type == "MESH":
+                    ob.data.materials.clear(); ob.data.materials.append(green)
     elif who == "arlecchino":
         horn = make_mat("horn", (0.72, 0.45, 0.2))
         for sx in (-1, 1):
@@ -1211,6 +1275,13 @@ def build_person(who, h, torch=False, sword=False):
             prim("cone", horn, f"horn{sx}", head, (sx * hr * 0.5, 0, hr * 2.2), (0, sx * 0.25, 0), radius1=0.035, radius2=0.0, depth=0.3)
     for _m in EXT:   # 回3 の人形（A28〜A32）、7章の人形
         _m.decorate(sys.modules[__name__], who, root, head, arms, sh, body_h, col)
+    if rig is not None:   # 関節の人形: 飾りを関節へ付け替え、剣と松明は右手に
+        previs_rig.reparent_decor(rig)
+        if sword:
+            previs_rig.attach_sword(sys.modules[__name__], rig, who)
+        if torch:
+            previs_rig.attach_torch(sys.modules[__name__], rig, who)
+        return root, head, arms
     if sword:   # 剣: 右手の先から刃（百騎兵、A07）
         blade = make_mat(f"{who}_blade", (0.85, 0.88, 0.95))
         hilt = make_mat(f"{who}_hilt", (0.25, 0.2, 0.15))
@@ -1279,17 +1350,83 @@ def build_creature(name, track):
     if getattr(track, "mound", "") == "soft":   # 広く低い半透明の盛り上がり（節が管のように並んで見えないように）
         m_mound = beam_mat(f"{name}_mound_soft", tuple(min(1.0, c * 1.2) for c in SAND), strength=0.05, alpha=0.55)
     segs, shadows, mounds = [], [], []
+    m_band = make_mat(f"{name}_band", (0.86, 0.38, 0.16))
     for i in range(track.segs):
-        segs.append(prim("sphere", m_head if i == 0 else m_body, f"{name}_seg{i}", None, (0, 0, -50), radius=1.0))
+        segs.append(prim("sphere", m_head if i == 0 else (m_band if i in (2, 3) else m_body), f"{name}_seg{i}", None, (0, 0, -50), radius=1.0))
         shadows.append(prim("cyl", m_shadow, f"{name}_shadow{i}", None, (0, 0, -50), radius=1.0, depth=0.02))
         mounds.append(prim("sphere", m_mound, f"{name}_mound{i}", None, (0, 0, -50), radius=1.0))
-    return segs, shadows, mounds
+    deco = {}
+    if name == "sand-eater":   # 設定画（sand-eater_sheet_01「針菌幼虫」）: とがった頭、左右の黄色い花のような目、腹の橙のトゲ、尾の赤いトゲ（2026-11-06）
+        spike = make_mat(f"{name}_spike", (0.92, 0.36, 0.14))
+        eye = make_mat(f"{name}_eye", (1.0, 0.86, 0.35), emit=1.2)
+        ring = make_mat(f"{name}_eyering", (0.95, 0.45, 0.12), emit=0.6)
+        pupil = make_mat(f"{name}_pupil", (0.25, 0.12, 0.05))
+        deco["nose"] = prim("cone", m_head, f"{name}_nose", None, (0, 0, -50), radius1=1.0, radius2=0.0, depth=1.0, vertices=20)
+        deco["eyes"] = [(prim("cyl", ring, f"{name}_eyering{sx}", None, (0, 0, -50), radius=1.0, depth=1.0, vertices=24),
+                         prim("cyl", eye, f"{name}_eye{sx}", None, (0, 0, -50), radius=1.0, depth=1.0, vertices=24),
+                         prim("cyl", pupil, f"{name}_pupil{sx}", None, (0, 0, -50), radius=1.0, depth=1.0, vertices=12)) for sx in (-1, 1)]
+        deco["tail"] = prim("cone", spike, f"{name}_tail", None, (0, 0, -50), radius1=1.0, radius2=0.0, depth=1.0, vertices=12)
+        deco["mouth"] = prim("sphere", make_mat(f"{name}_mouth", (0.35, 0.05, 0.04)), f"{name}_mouth", None, (0, 0, -50), radius=1.0)   # 口（キーの open で開く）
+        deco["legs"] = [prim("cone", spike, f"{name}_leg{i}{sx}", None, (0, 0, -50), radius1=1.0, radius2=0.0, depth=1.0, vertices=8)
+                        for i in range(2, track.segs - 2) for sx in (-1, 1)]
+    return segs, shadows, mounds, deco
+
+
+def _aim(o, p, d, size):
+    """円すい・円柱（+Z が軸）を、点 p に、向き d へ向けて置く。size は (半径, 半径, 長さ)。"""
+    from mathutils import Vector as _V
+    o.location = p
+    o.rotation_mode = "QUATERNION"
+    o.rotation_quaternion = _V((0, 0, 1)).rotation_difference(d)
+    o.scale = size
 
 
 def pose_creature(parts, track, t):
-    segs, shadows, mounds = parts
+    segs, shadows, mounds, deco = parts
     soft = getattr(track, "mound", "") == "soft"
-    for (p, r), so, sh, mo in zip(track.body(t), segs, shadows, mounds):
+    body = track.body(t)
+    if deco:   # 頭・目・トゲ・尾（体の節の並びから向きを出す）
+        pts = [Vector(bl((p[0], p[1]), p[2])) for p, r in body]
+        rs = [r for p, r in body]
+        up = Vector((0, 0, 1))
+
+        def dir_at(i):
+            a, b = (pts[0], pts[1]) if i == 0 else (pts[i - 1], pts[i])
+            d = a - b
+            return d.normalized() if d.length > 1e-6 else Vector((0, 1, 0))
+        d0 = dir_at(0)
+        side0 = d0.cross(up)
+        side0 = side0.normalized() if side0.length > 1e-3 else Vector((1, 0, 0))
+        up0 = side0.cross(d0).normalized()
+        r0 = rs[0]
+        _aim(deco["nose"], pts[0] + d0 * r0 * 0.55, d0, (r0 * 0.78, r0 * 0.78, r0 * 1.9))
+        for (rg_, ey, pu), sx in zip(deco["eyes"], (-1, 1)):
+            c = pts[0] + side0 * sx * r0 * 0.86 + up0 * r0 * 0.28 - d0 * r0 * 0.05
+            n = (side0 * sx).normalized()
+            _aim(rg_, c, n, (r0 * 0.46, r0 * 0.46, 0.05))
+            _aim(ey, c + n * 0.03, n, (r0 * 0.34, r0 * 0.34, 0.05))
+            _aim(pu, c + n * 0.06, n, (r0 * 0.1, r0 * 0.1, 0.05))
+        op = track.open_at(t) if hasattr(track, "open_at") else 0.0
+        mo_ = deco["mouth"]
+        if op > 0.02:   # 口: 頭の前の下に、暗い赤の楕円（開くほど大きい）
+            _aim(mo_, pts[0] + d0 * r0 * 0.62 - up0 * r0 * 0.42, d0, (r0 * 0.55 * op, r0 * 0.38 * op + 0.02, r0 * 0.5 * op + 0.02))
+        else:
+            mo_.location = (0, 0, -50)
+        dl = dir_at(len(pts) - 1)
+        rl = rs[-1]
+        _aim(deco["tail"], pts[-1] - dl * rl * 1.6, -dl, (rl * 0.75, rl * 0.75, rl * 3.2))
+        k = 0
+        for i in range(2, len(pts) - 2):
+            di = dir_at(i)
+            si = di.cross(up)
+            si = si.normalized() if si.length > 1e-3 else Vector((1, 0, 0))
+            ui = si.cross(di).normalized()
+            for sx in (-1, 1):
+                o = deco["legs"][k]
+                k += 1
+                outv = (si * sx * 0.8 - ui * 0.6).normalized()
+                _aim(o, pts[i] + outv * rs[i] * 0.95, (outv - ui * 0.4).normalized(), (rs[i] * 0.16, rs[i] * 0.16, rs[i] * 0.7))
+    for (p, r), so, sh, mo in zip(body, segs, shadows, mounds):
         x, y, z = p
         so.location = bl((x, y), z)
         so.scale = (r, r, r)
@@ -1304,6 +1441,11 @@ def pose_creature(parts, track, t):
 
 
 def build_fx(fx, i):
+    if fx.get("kind") in previs_fx.KINDS_2D:   # 画面の効果は描いた後に重ねる（物は作らない）
+        return []
+    ext = previs_fx.build(sys.modules[__name__], fx, i)   # 戦いの効果（2026-11-06）
+    if ext is not None:
+        return ext
     ext = previs_council.build_fx(sys.modules[__name__], fx, i)   # 霧・雷撃・閃光・沼の波（A28〜A32）
     if ext is not None:
         return ext
@@ -1366,14 +1508,14 @@ def build_fx(fx, i):
         lt.data.shadow_soft_size = 0.3
         return [o, lt]
     if kind == "shards":  # 飛び散るガラスの破片（窓破り、A18）
-        gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.7)
+        gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.4)   # alpha は透ける割合。Workbench で見えるよう 0.7 → 0.4（2026-11-06）
         return [prim("cube", gm, f"fx{i}_sh{j}", None, (0, 0, -50), size=1.0) for j in range(int(fx.get("n", 14)))]
     if kind == "rift":    # 何もない空間の裂け目（夜光列車が出入りする。縦長の光る楕円が開いて閉じる、A23）
         rm = beam_mat(f"fx{i}_rift", col or (0.7, 0.45, 1.0), strength=3.0, alpha=0.85)
         cm = make_mat(f"fx{i}_rift_core", (0.02, 0.0, 0.05), rough=1.0)
         return [prim("sphere", rm, f"fx{i}_rift", None, (0, 0, -50), radius=1.0), prim("sphere", cm, f"fx{i}_rift_core", None, (0, 0, -50), radius=1.0)]
     if kind == "breath":  # 火を吐く（獅子の口から前へ伸びる炎の円すい、A23 の戦い）
-        fm = beam_mat(f"fx{i}_breath", col or (1.0, 0.5, 0.1), strength=4.0, alpha=0.8)
+        fm = beam_mat(f"fx{i}_breath", col or (1.0, 0.5, 0.1), strength=4.0, alpha=0.45)   # 透ける割合。Workbench で炎が読めるよう 0.8 → 0.45（2026-11-06）
         return [prim("cone", fm, f"fx{i}_breath", None, (0, 0, -50), radius1=1.0, radius2=0.15, depth=1.0)]
     if kind == "paper":   # ひらひら舞い落ちる紙切れ（切符、A20）
         pm = make_mat(f"fx{i}_paper", (0.95, 0.92, 0.82))
@@ -1389,6 +1531,10 @@ def build_fx(fx, i):
 
 
 def pose_fx(fx, objs, t, pos, place):
+    if fx.get("kind") in previs_fx.KINDS_2D:
+        return
+    if previs_fx.pose(sys.modules[__name__], fx, objs, t, FXCTX):
+        return
     if previs_council.pose_fx(sys.modules[__name__], fx, objs, t, pos, place):
         return
     at = fx["at"]
@@ -1711,8 +1857,15 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     build_site(lay, c_.get("lighting") or st.bk.get("lighting"), bool(c_.get("door_closed")))
     plan = Plan(st, cut, sec)
     figs = {}
+    previs_rig.RIGS.clear()
     for who in plan.people:
         figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False), lay["people"][who].get("sword", False))
+    rigtracks = {}   # 関節の人形の姿勢（キーの姿勢を補間、進んだ道のり、回り続けた角度）
+    for who in plan.people:
+        if who in previs_rig.RIGS:
+            keys = plan.tracks[who].k if who in plan.tracks else None
+            rigtracks[who] = previs_rig.PoseTrack(keys, (lambda tt, w=who: plan.position(w, tt)), sec,
+                                                  fallback=(lambda tt, w=who: plan.pose_name(w, tt)), who=who)
         if who not in plan.shown:   # 画に映さない人物は描かない（静止画と同じ）
             for o in [figs[who][0]] + list(figs[who][0].children_recursive):
                 o.hide_render = True
@@ -1756,21 +1909,67 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     scene.camera = cam
     w, h = size
     setup_render(scene, w, h, samples, denoise)
+    if RENDER["engine"] == "workbench":   # アニメの絵コンテに近い見た目で速く描く（tools/previs_look.py）
+        import previs_look
+        previs_look.apply(scene, (lay.get("lighting") or {}).get(c_.get("lighting") or st.bk.get("lighting")) or {})
     n = max(2, round(sec * fps))
+    tw = previs_fx.TimeWarp(c_.get("timewarp"))   # 止め・スロー（2026-11-06）。キーの時刻は場面の時刻
+
+    def where(at, t, z=None):
+        """効果の置き場所（Blender の座標）。人物（体の 0.6 の高さ）・生き物（頭）・場所・[x, y]・[x, y, z]。"""
+        if isinstance(at, (list, tuple)) and len(at) == 3:
+            return Vector(bl((at[0], at[1]), at[2]))
+        if isinstance(at, str) and at in plan.people:
+            x, y = plan.position(at, t)
+            zz = motion.ground_z(lay, x, y) + plan.height(at, t)
+            return Vector(bl((x, y), zz + (lay["people"][at]["h"] * 0.6 if z is None else float(z))))
+        if isinstance(at, str) and at in plan.creatures:
+            hx, hy, hz = plan.creatures[at].head(t)
+            return Vector(bl((hx, hy), hz + (0.0 if z is None else float(z))))
+        x, y = st.place(at)
+        return Vector(bl((x, y), motion.ground_z(lay, x, y) + (0.0 if z is None else float(z))))
+
+    def project(at, t, z=None):
+        v = world_to_camera_view(scene, cam, where(at, t, z))
+        return (v.x, v.y) if v.z > 0 else None
+
+    FXCTX.clear()
+    FXCTX.update({"cam": cam, "where": where, "project": project, "fps": fps,
+                  "ground": lambda p: motion.ground_z(lay, p.x, -p.y)})
+    trails = {}
+    if c_.get("trail", True):
+        for who, rgx in previs_rig.RIGS.items():
+            if getattr(rgx, "tip", None) is not None and who in plan.shown:
+                trails[who] = previs_fx.Trail(sys.modules[__name__], who, rgx)
     frames_dir = pathlib.Path(tempfile.mkdtemp(prefix=f"previs_{cut}_", dir=work_root))
     checks = {}
     warnings = []
     cam_moves = bool(plan.c.get("cam_end"))   # staging.py はカメラ本体の移動を知らないので、終わりの比較はしない
 
+    def pose_one(who, t, pos=None):
+        """1人だけ時刻 t の姿勢にする（剣の軌跡で、少し前の剣の位置を取る）。"""
+        pos = pos or plan.positions(t)
+        b = plan.face(who, t, pos)
+        x, y = pos[who]
+        zz = motion.ground_z(lay, x, y) + plan.height(who, t)
+        prm, dist, spd, sxa, sza = rigtracks[who].at(t)
+        previs_rig.apply(previs_rig.RIGS[who], prm, b, x, y, zz, t, dist, spd, sxa, sza, gaze=plan.head_offset(who, t, pos, b), bl=bl)
+
     def pose(i):
-        t = i / fps
+        T = i / fps
+        t = tw.scene_t(T)
         pos = plan.positions(t)
         for who, (root, head, arms) in figs.items():
             b = plan.face(who, t, pos)
             x, y = pos[who]
             zz = motion.ground_z(lay, x, y) + plan.height(who, t)
-            apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, zz, t, lay)
-            head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
+            if who in rigtracks:
+                prm, dist, spd, sxa, sza = rigtracks[who].at(t)
+                previs_rig.apply(previs_rig.RIGS[who], prm, b, x, y, zz, t, dist, spd, sxa, sza,
+                                 gaze=plan.head_offset(who, t, pos, b), bl=bl)
+            else:
+                apply_pose(root, head, arms, who, plan.pose_name(who, t), b, x, y, zz, t, lay)
+                head.rotation_euler = (0, 0, -math.radians(plan.head_offset(who, t, pos, b)))
             if broom is not None and who == c_["broom"]:
                 riding = plan.pose_name(who, t) == "ride"
                 for o in [broom] + list(broom.children_recursive):
@@ -1779,8 +1978,9 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 broom.rotation_euler = (0, 0, -math.radians(b))
         for name, parts in creatures.items():
             pose_creature(parts, plan.creatures[name], t)
-        for fx, objs in fxs:
-            pose_fx(fx, objs, t, pos, st.place)
+        for who, tr in trails.items():   # 剣の軌跡（少し前の剣の位置から帯を作り、最後に今の姿勢へ戻す）。走る・歩く間は描かない
+            prm_now = rigtracks[who].params(t)
+            tr.update(t, lambda tt, w=who: pose_one(w, tt), active=max(float(prm_now.get("run", 0.0)), float(prm_now.get("walk", 0.0))) < 0.5)
         for rv, objs, sink, base in reveals:   # t の間に床の下からせり上がる（光も強くなる）
             t0, t1 = rv["t"]
             u = 0.0 if t < t0 else min(1.0, (t - t0) / max(1e-6, t1 - t0))
@@ -1791,6 +1991,9 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 if en is not None:
                     o.data.energy = en * u
         (cx, cy, cz), yaw, pitch, lens = plan.camera(t, pos)
+        hy, hp = tw.hold_shake(T)   # 止めている間の小さな揺れ
+        yaw += hy
+        pitch += math.radians(hp)
         cam.location = bl((cx, cy), cz)
         roll = plan.roll(t)   # 画面を傾ける（ダッチアングル、cam_keys の roll 度。A07 の戦い）
         if roll:
@@ -1800,6 +2003,9 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         else:
             cam.rotation_euler = (math.pi / 2 + pitch, 0, -math.radians(yaw))
         cam.data.lens = lens
+        bpy.context.view_layer.update()
+        for fx, objs in fxs:   # 効果はカメラを置いた後（カメラへ向ける閃光があるため）
+            pose_fx(fx, objs, t, pos, st.place)
         bpy.context.view_layer.update()
         return pos
 
@@ -1831,7 +2037,10 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 res.append({"who": e["who"], "staging_s": e["s"], "blender_s": round((v.x - 0.5) * 2, 2)})
             checks[which] = res
         scene.render.filepath = str(frames_dir / f"{i:04d}.png")
+        if RENDER["engine"] == "workbench":
+            previs_look.sync()   # コマごとに変わる霧・光の透け方
         bpy.ops.render.render(write_still=True)
+        previs_fx.post(frames_dir / f"{i:04d}.png", plan.c.get("fx") or [], tw.scene_t(i / fps), i, FXCTX)   # 集中線・反転など
     out_dir.mkdir(parents=True, exist_ok=True)
     checks["warnings"] = warnings
     checks["frames"] = list(idx)
@@ -1903,9 +2112,12 @@ def main():
     ap.add_argument("--samples", type=int, default=10)
     ap.add_argument("--out", help="出力先（既定 previs/<シーン>）")
     ap.add_argument("--denoise", action="store_true", help="ノイズ除去を入れる（1フレーム約1秒増える。既定は切る）")
+    ap.add_argument("--engine", choices=("workbench", "cycles"), default="workbench",
+                    help="描き方。workbench（既定、1コマ約0.3秒、輪郭線と影。EGL が要る）か cycles（前の描き方、1コマ約6秒）")
     ap.add_argument("--preview", action="store_true", help="始め・中ほど・終わりの3枚だけ描いて確認画像を作る（動画は作らない）")
     ap.add_argument("--motion", type=float, nargs="?", const=0.5, help="動きの確認（D-060）: この秒ごとのコマだけ描いて <カット>_motion.jpg を作る（既定 0.5秒、動画は作らない）")
     a = ap.parse_args()
+    RENDER["engine"] = a.engine
     st = staging.Stage(a.scene_dir)
     lay = st.lay
     scene_id = pathlib.Path(a.scene_dir).name

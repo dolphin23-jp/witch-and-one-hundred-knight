@@ -6,5 +6,6 @@
 apt-get update -y || true
 apt-get install -y ffmpeg || true          # 動画の書き出し、フレームの抜き出し
 apt-get install -y fonts-noto-cjk || true  # 日本語フォント（テロップ、HTMLの描画）
+apt-get install -y libegl1 libegl-mesa0 || true  # 下絵（tools/previs.py）を Workbench で速く描く（EGL＝ソフトウェアの OpenGL。2026-11-06）
 pip install --break-system-packages pyyaml || true
 exit 0

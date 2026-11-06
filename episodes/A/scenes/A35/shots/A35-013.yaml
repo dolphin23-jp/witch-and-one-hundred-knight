@@ -1,14 +1,14 @@
-# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
-# kind: M＝小さな動き、A＝見せ場
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、D-060・D-062）から作成。
+# 2026-11-06 の下絵のアップグレードでジェルとの戦い（010〜013）を組み直した。kind: M＝小さな動き、A＝見せ場
 id: A35-013
 scene: A35
-tc: 84.2
+tc: 89.0
 sec: 3.6
 kind: A
-shot: 引き・ジェルが崩れて沈む
-acting: 百騎兵が跳び降りると、ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる
+shot: 全身・崩れるジェルとヒーロー着地
+acting: 百騎兵が剣を抜いて後ろへ宙返りし、手前へヒーロー着地。ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる（上下の黒帯）
 dialogue: []
-sound: ゲルが崩れる音
+sound: 台詞なし。BGM は M20。効果音は sound.yaml
 notes: null
 camera:
   pos:
@@ -28,7 +28,26 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 剣を突き立てられたジェルが震え
-  end: 金色の溜まりの脇に立つ百騎兵
+  start: ジェルの頭の上の百騎兵
+  end: 立ち上がる百騎兵と、金色の溜まり（奥に沼のピラー）
 timing:
   lead: 0.4
+blocking:
+  start: ジェ（中央・正面）、百（中央・背中）
+  end: 百（左・背中）、ジェ（左・正面）
+  background: 紅葉の森
+  panels: []
+  staging_en: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
+    with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, facing the camera; the Hundred Knight (small, about waist-high
+    to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts,
+    brown shoes), flipping back off the collapsing gel, on the left of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick
+    mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+    plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing after a hero landing beside the golden puddle, on the left of the
+    frame, with the back to the camera; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green slime,
+    drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple
+    trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and
+    moss.'
+  sketch:
+  - episodes/A/scenes/A35/gen/sketch/A35-013_start.png
+  - episodes/A/scenes/A35/gen/sketch/A35-013_end.png

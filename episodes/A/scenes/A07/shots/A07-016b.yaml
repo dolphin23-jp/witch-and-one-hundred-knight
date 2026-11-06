@@ -1,0 +1,53 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。009〜018 は台詞なし
+# 2026-11-06 の下絵のアップグレードで戦い（008b〜017）を組み直した。kind: M＝小さな動き、A＝見せ場
+id: A07-016b
+scene: A07
+tc: 116.5
+sec: 3.6
+kind: A
+shot: 全身・暴れる砂食みと引き抜く
+acting: 砂食みが首を振って百騎兵を振り落とそうと暴れる。百騎兵は剣にしがみついて耐え、足を頭に掛けて踏ん張り、剣を斬り上げるように引き抜く（大きな軌跡、白黒反転、黄色い体液の飛沫）。そのまま後ろへ宙返り
+dialogue: []
+sound: 台詞なし。BGM は M20 地下空洞（原作の戦いの曲）。効果音は sound.yaml
+notes: null
+camera:
+  pos:
+    follow: hundred-knight
+    offset:
+    - 4.24
+    - 2.26
+    z: 7.25
+  look: hundred-knight
+  lens: 26
+  move: 横（西）の高さから、暴れる頭を追う。引き抜く瞬間に寄って傾ける
+background: underground-cavern
+image: null
+refs:
+- hundred-knight
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 暴れる砂食みの頭の引き
+  end: 宙返りする百騎兵と、のけぞる砂食み
+timing:
+  lead: 0.0
+blocking:
+  start: 百（中央・背中）
+  end: 百（中央・正面）
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), clinging to its sword buried in the thrashing monster''s eye, in the center
+    of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
+    moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
+    glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), ripping its sword free in a rising arc and flipping away, in the center
+    of the frame, facing the camera, small in the background. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls,
+    glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the
+    sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-016b_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-016b_end.png

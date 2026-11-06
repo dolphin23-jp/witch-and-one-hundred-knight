@@ -32,46 +32,105 @@ sfx:
   - {src: audio/sfx/monster_roar.ogg, cut: A07-007, t: 4.4, rate: 0.6, volume: 0.4}   # 鎌首をもたげる咆哮（L214 の頭に少し重なる）
   - {src: audio/sfx/sword_ready.ogg, cut: A07-008, t: 1.0, volume: 0.45}
   - {src: audio/sfx/whoosh_fast.ogg, cut: A07-008, t: 1.0, volume: 0.28}   # 頭の炎が燃え上がる
-  # 戦い（009〜017、台詞なし）
+  # 戦い（008b〜017、台詞なし。2026-11-06 の下絵のアップグレードで組み直した）。t は出来上がりの時刻（カットの timewarp の止め・スローの分を足した）
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-008b, t: 0.9, rate: 0.55, volume: 0.85}   # 咆哮
+  - {src: audio/sfx/monster_roar2.ogg, cut: A07-008b, t: 0.92, rate: 0.5, volume: 0.45}
+  - {src: audio/sfx/wind_gust.ogg, cut: A07-008b, t: 0.95, volume: 0.4}   # 咆哮の風で砂が吹き飛ぶ
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-008b, t: 0.9, dur: 1.5, fade_out: 0.5, volume: 0.4}
+  - {src: audio/sfx/rocks_small.ogg, cut: A07-008b, t: 1.1, volume: 0.3}   # 天井から小石
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-008c, t: 0.6, volume: 0.3}   # 頭の炎が燃え上がる
+  - {src: audio/sfx/magic_shimmer.ogg, cut: A07-008c, t: 0.6, volume: 0.18}
+  - {src: audio/sfx/sword_ready.ogg, cut: A07-008c, t: 0.75, volume: 0.5}   # 低く構える
   - {src: audio/sfx/monster_roar2.ogg, cut: A07-009, t: 0.2, rate: 0.6, volume: 0.6}
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-009, t: 0.55, volume: 0.35}   # 跳び上がる
   - {src: audio/sfx/whoosh_long.ogg, cut: A07-009, t: 1.0, volume: 0.5}
-  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-010, t: 0.15, volume: 0.5}   # 跳ぶ
-  - {src: audio/sfx/impact_heavy.ogg, cut: A07-010, t: 0.33, volume: 0.85}   # 頭が叩きつけられる
-  - {src: audio/sfx/sand_burst.ogg, cut: A07-010, t: 0.35, volume: 0.5}
-  - {src: audio/sfx/thud_land.ogg, cut: A07-010, t: 1.2, volume: 0.4}
-  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011, t: 0.05, volume: 0.35}   # 踏み込む
-  - {src: audio/sfx/sword_slash.ogg, cut: A07-011, t: 0.33, volume: 0.8}
-  - {src: audio/sfx/sword_hit.ogg, cut: A07-011, t: 0.36, volume: 0.7}     # 殻に当たる火花
-  - {src: audio/sfx/monster_hurt.ogg, cut: A07-011, t: 0.5, rate: 0.6, volume: 0.6}
-  - {src: audio/sfx/thud_land.ogg, cut: A07-011, t: 1.35, volume: 0.3}
-  - {src: audio/sfx/monster_roar.ogg, cut: A07-012, t: 0.2, rate: 0.7, volume: 0.45}
-  - {src: audio/sfx/sand_burst.ogg, cut: A07-012, t: 1.2, volume: 0.7}     # 潜る
-  - {src: audio/sfx/rumble_rise.ogg, cut: A07-013, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.5}   # 砂の下を近づく。013b の溜めでぷつりと止める
-  - {src: audio/sfx/ground_shake.ogg, cut: A07-013b, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.35}
-  - {src: audio/sfx/sand_burst.ogg, cut: A07-014, t: 0.0, volume: 0.85}     # 突き上げ
-  - {src: audio/sfx/orig_sand-eater_burst_p17-1829.ogg, cut: A07-014, t: 0.05, volume: 0.6}
-  - {src: audio/sfx/monster_roar.ogg, cut: A07-014, t: 0.3, rate: 0.55, volume: 0.6}
-  - {src: audio/sfx/whoosh_long.ogg, cut: A07-014, t: 0.3, volume: 0.45}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-010, t: 0.14, volume: 0.5}   # 跳ぶ
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-010, t: 0.46, volume: 0.95}   # 叩きつけ（止め）
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-010, t: 0.48, volume: 0.6}
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-010, t: 0.55, volume: 0.45}
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-010, t: 0.46, dur: 1.0, fade_out: 0.4, volume: 0.4}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-010, t: 1.4, volume: 0.4}   # 着地
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011, t: 0.02, volume: 0.3}   # 踏み込む
+  - {src: audio/sfx/sword_swing.ogg, cut: A07-011, t: 0.2, volume: 0.45}
+  - {src: audio/sfx/sword_slash.ogg, cut: A07-011, t: 0.33, volume: 0.8}   # 斬る
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-011, t: 0.42, volume: 0.75}   # 殻に当たる
+  - {src: audio/sfx/monster_hurt.ogg, cut: A07-011, t: 0.58, rate: 0.6, volume: 0.6}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011, t: 1.0, volume: 0.35}   # 宙返り
+  - {src: audio/sfx/thud_land.ogg, cut: A07-011, t: 2.0, volume: 0.35}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-011b, t: 0.45, rate: 0.7, volume: 0.45}   # 回り込む
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-011b, t: 0.8, volume: 0.45}   # 頭の横なぎ
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-011b, t: 1.26, volume: 0.7}   # 剣で受ける（止め）
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-011b, t: 1.26, volume: 0.8}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-011b, t: 1.27, volume: 0.6}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011b, t: 1.3, volume: 0.4}   # 吹き飛ぶ
+  - {src: audio/sfx/thud_land.ogg, cut: A07-011b, t: 1.72, volume: 0.45}
+  - {src: audio/sfx/sand_pour_loop.ogg, cut: A07-011b, t: 1.8, dur: 0.5, fade_out: 0.25, volume: 0.35, loop: true}   # 床を滑る
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-011b, t: 2.2, volume: 0.4}   # 剣を突き立てる
+  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A07-011b, t: 2.5, volume: 0.35}   # 輪を描いて回る
+  - {src: audio/sfx/rumble_rise.ogg, cut: A07-011c, t: 0.4, dur: 1.7, fade_out: 0.3, volume: 0.4}   # 突進が近づく
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-011c, t: 0.9, rate: 0.6, volume: 0.6}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-011c, t: 1.8, volume: 0.45}   # 跳ぶ
+  - {src: audio/sfx/thud_land.ogg, cut: A07-011c, t: 2.02, volume: 0.4}   # 頭に乗る
+  - {src: audio/sfx/sword_swing.ogg, cut: A07-011c, t: 2.4, volume: 0.4}
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-011c, t: 2.56, volume: 0.7}   # 1太刀
+  - {src: audio/sfx/monster_hurt.ogg, cut: A07-011c, t: 2.61, rate: 0.65, volume: 0.5}
+  - {src: audio/sfx/sword_swing.ogg, cut: A07-011c, t: 2.98, volume: 0.4}
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-011c, t: 3.14, volume: 0.7}   # 2太刀
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-011c, t: 3.58, volume: 0.5}   # 尾の上で跳ぶ
+  - {src: audio/sfx/sword_slash.ogg, cut: A07-011c, t: 4.49, volume: 0.85}   # 斬り下ろし（止め）
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-011c, t: 4.62, volume: 0.8}
+  - {src: audio/sfx/monster_hurt.ogg, cut: A07-011c, t: 4.7, rate: 0.55, volume: 0.7}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-011c, t: 4.95, volume: 0.5}   # ヒーロー着地
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-011c, t: 4.95, dur: 0.6, fade_out: 0.3, volume: 0.3}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-012, t: 0.4, rate: 0.65, volume: 0.7}   # 吠える
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-012, t: 1.6, volume: 0.8}   # 潜る
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-012, t: 1.75, volume: 0.5}
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-012, t: 1.6, dur: 1.5, fade_out: 0.6, volume: 0.45}
+  - {src: audio/sfx/sand_burst.ogg, cut: A07-014, t: 0.0, volume: 0.9}   # 突き上げ（止め）
+  - {src: audio/sfx/orig_sand-eater_burst_p17-1829.ogg, cut: A07-014, t: 0.05, volume: 0.7}
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-014, t: 0.24, volume: 0.8}
+  - {src: audio/sfx/monster_roar.ogg, cut: A07-014, t: 0.42, rate: 0.55, volume: 0.6}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-014, t: 0.42, volume: 0.5}
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-014, t: 0.62, volume: 0.4}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-014b, t: 0.2, volume: 0.3}
+  - {src: audio/sfx/monster_roar2.ogg, cut: A07-014b, t: 0.35, rate: 0.7, volume: 0.5}   # かみつき
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-014b, t: 0.59, volume: 0.75}   # 剣で受ける
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-014b, t: 0.59, volume: 0.5}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-014b, t: 1.27, volume: 0.35}   # 頭に着地
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-014b, t: 1.6, volume: 0.55}   # 蹴る
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-014b, t: 1.65, volume: 0.5}
   - {src: audio/sfx/whoosh_fast.ogg, cut: A07-015, t: 0.2, volume: 0.35}   # 宙で回る
-  - {src: audio/sfx/thud_land.ogg, cut: A07-015, t: 0.78, volume: 0.35}    # 天井に着地
+  - {src: audio/sfx/thud_land.ogg, cut: A07-015, t: 0.8, volume: 0.35}   # 天井に着地
   - {src: audio/sfx/rocks_small.ogg, cut: A07-015, t: 0.85, volume: 0.35}
   - {src: audio/sfx/metal_clank.ogg, cut: A07-015b, t: 1.0, volume: 0.2}   # 剣を握り直す
-  - {src: audio/sfx/thud_land.ogg, cut: A07-015b, t: 1.3, volume: 0.4}     # 天井を蹴る
-  - {src: audio/sfx/whoosh_long.ogg, cut: A07-015b, t: 1.35, volume: 0.6}
-  - {src: audio/sfx/sword_hit.ogg, cut: A07-016, t: 0.35, volume: 0.8}     # 目に突き立てる
-  - {src: audio/sfx/impact_heavy.ogg, cut: A07-016, t: 0.35, rate: 0.8, volume: 0.9}   # スローの間、低く長く
-  - {src: audio/sfx/monster_die.ogg, cut: A07-016, t: 0.5, rate: 0.55, volume: 0.7}
-  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-016, t: 1.7, volume: 0.3}
-  - {src: audio/sfx/thud_land.ogg, cut: A07-016, t: 2.0, volume: 0.3}
-  - {src: audio/sfx/sword_swing.ogg, cut: A07-017, t: 0.5, volume: 0.4}    # 剣を抜く
-  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-017, t: 0.7, volume: 0.35}
-  - {src: audio/sfx/monster_roar.ogg, cut: A07-017, t: 0.8, rate: 0.5, volume: 0.6}   # 暴れる
-  - {src: audio/sfx/thud_land.ogg, cut: A07-017, t: 1.6, volume: 0.6}      # ヒーロー着地
-  - {src: audio/sfx/impact_heavy.ogg, cut: A07-017, t: 2.85, volume: 0.8}  # 倒れる
-  - {src: audio/sfx/ground_shake.ogg, cut: A07-017, t: 2.85, dur: 2.2, fade_out: 0.8, volume: 0.45}
-  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A07-017, t: 3.0, volume: 0.4}   # 床をのたうつ
-  - {src: audio/sfx/rocks_small.ogg, cut: A07-017, t: 3.4, volume: 0.3}
-  - {src: audio/sfx/sword_ready.ogg, cut: A07-017, t: 3.4, volume: 0.3}   # 立ち上がる
+  - {src: audio/sfx/thud_land.ogg, cut: A07-015b, t: 1.54, volume: 0.45}   # 天井を蹴る
+  - {src: audio/sfx/rocks_small.ogg, cut: A07-015b, t: 1.57, volume: 0.35}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-015b, t: 1.57, volume: 0.6}
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-016, t: 0.0, volume: 0.35}
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-016, t: 1.07, volume: 0.9}   # 目に突き立てる（止め）
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-016, t: 1.07, rate: 0.85, volume: 1.0}
+  - {src: audio/sfx/monster_die.ogg, cut: A07-016, t: 1.18, rate: 0.55, volume: 0.85}
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-016, t: 1.12, dur: 1.4, fade_out: 0.6, volume: 0.4}
+  - {src: audio/sfx/monster_hurt.ogg, cut: A07-016b, t: 0.2, rate: 0.6, volume: 0.6}   # 暴れる
+  - {src: audio/sfx/monster_roar2.ogg, cut: A07-016b, t: 1.0, rate: 0.55, volume: 0.6}
+  - {src: audio/sfx/metal_clank.ogg, cut: A07-016b, t: 1.5, volume: 0.3}   # しがみつく
+  - {src: audio/sfx/sword_slash.ogg, cut: A07-016b, t: 2.74, volume: 0.9}   # 引き抜く（止め）
+  - {src: audio/sfx/sword_hit.ogg, cut: A07-016b, t: 2.87, volume: 0.7}
+  - {src: audio/sfx/monster_die.ogg, cut: A07-016b, t: 2.97, rate: 0.5, volume: 0.85}
+  - {src: audio/sfx/whoosh_fast.ogg, cut: A07-016b, t: 3.12, volume: 0.4}   # 宙返り
+  - {src: audio/sfx/whoosh_long.ogg, cut: A07-017, t: 0.0, volume: 0.4}
+  - {src: audio/sfx/thud_land.ogg, cut: A07-017, t: 1.7, volume: 0.55}   # ヒーロー着地（止め）
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-017, t: 1.7, rate: 0.9, volume: 0.5}
+  - {src: audio/sfx/monster_die.ogg, cut: A07-017, t: 1.9, rate: 0.5, volume: 0.6}   # 断末魔
+  - {src: audio/sfx/impact_heavy.ogg, cut: A07-017, t: 3.0, rate: 0.7, volume: 0.9}   # 崩れ落ちる
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-017, t: 3.0, dur: 2.2, fade_out: 0.8, volume: 0.55}
+  - {src: audio/sfx/orig_sand-eater_rumble_p17-1943.ogg, cut: A07-017, t: 3.1, volume: 0.4}
+  - {src: audio/sfx/rocks_fall.ogg, cut: A07-017, t: 3.1, volume: 0.5}
+  - {src: audio/sfx/sword_swing.ogg, cut: A07-017, t: 4.3, volume: 0.4}   # 剣を振って払う
+  - {src: audio/sfx/sword_ready.ogg, cut: A07-017, t: 4.6, volume: 0.3}
+  # 砂の下を近づく。013b の溜めでぷつりと止める
+  - {src: audio/sfx/rumble_rise.ogg, cut: A07-013, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.5}
+  - {src: audio/sfx/ground_shake.ogg, cut: A07-013b, t: 0.0, until: {cut: A07-013b, t: 1.2}, fade_out: 0.15, volume: 0.35}
   # ピラーが現れる（018）
   - {src: audio/sfx/sand_pour_loop.ogg, cut: A07-018, t: 0.0, until: {cut: A07-018, t: 3.0}, loop: true, fade_out: 1.0, volume: 0.2}
   - {src: audio/sfx/rumble_rise.ogg, cut: A07-018, t: 1.6, volume: 0.55}

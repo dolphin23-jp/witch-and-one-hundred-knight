@@ -1,0 +1,46 @@
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。009〜018 は台詞なし
+# 2026-11-06 の下絵のアップグレードで戦い（008b〜017）を組み直した。kind: M＝小さな動き、A＝見せ場
+id: A07-008b
+scene: A07
+tc: 71.4
+sec: 2.4
+kind: A
+shot: 寄り・砂食みの咆哮
+acting: 身を引いて溜め、突き出すように吠える。風圧で床の砂が吹き飛び、天井から小石が落ちる
+dialogue: []
+sound: 台詞なし。BGM は M20 地下空洞（原作の戦いの曲）。効果音は sound.yaml
+notes: null
+camera:
+  pos:
+  - 35.0
+  - 31.4
+  - 3.2
+  look: sand-eater
+  lens: 24
+  move: 頭の斜め下から見上げる寄り。吠える瞬間にぐっと寄って画面を傾け、集中線
+background: underground-cavern
+image: null
+refs:
+- sand-eater
+overlays: []
+fallback: null
+act:
+  start: 鎌首をもたげた砂食みの頭の寄り（下から）
+  end: 吠え続ける砂食みの頭
+timing:
+  lead: 0.0
+blocking:
+  start: （人物なし）
+  end: （人物なし）
+  background: 地下空洞の全景〔空洞 全景〕
+  panels:
+  - 空洞 全景
+  staging_en: 'No people in frame. High angle looking down. Close on the sand-eater''s head as it rears back and roars; the shock of the roar blows sand across the floor. Behind: the huge underground cavern:
+    a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column
+    of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  staging_en_end: 'No people in frame. High angle looking down. Close on the sand-eater''s head as it rears back and roars; the shock of the roar blows sand across the floor. Behind: the huge underground
+    cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue
+    column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
+  sketch:
+  - episodes/A/scenes/A07/gen/sketch/A07-008b_start.png
+  - episodes/A/scenes/A07/gen/sketch/A07-008b_end.png

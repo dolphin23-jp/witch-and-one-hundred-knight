@@ -1,25 +1,25 @@
-# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。秒は原作の声の実測に芝居の間を足した目安。009〜018 は台詞なし
-# kind: M＝小さな動き、A＝見せ場
+# A07 井戸と地下空洞・砂食みとの戦い。blocking.yaml（Claude の案 2026-10-31、D-060・D-062）から作成。009〜018 は台詞なし
+# 2026-11-06 の下絵のアップグレードで戦い（008b〜017）を組み直した。kind: M＝小さな動き、A＝見せ場
 id: A07-012
 scene: A07
-tc: 78.8
+tc: 93.5
 sec: 3.0
 kind: A
-shot: 引き・砂食み
-acting: 砂食みが砂に潜る
+shot: 引き・潜る砂食み
+acting: 斬られた砂食みが鎌首をもたげて吠え、頭から砂の床へ潜る（砂の噴き上げ、衝撃の輪、岩）
 dialogue: []
 sound: 台詞なし。BGM は M20 地下空洞（原作の戦いの曲）。効果音は sound.yaml
 notes: null
 camera:
   pos:
-  - 35.0
-  - 28.4
-  - 1.6
+  - 25.36516301631496
+  - 39.927697376705765
+  - 4.6
   look:
-  - 29.0
-  - 39.0
-  lens: 24
-  move: 百騎兵の後ろ（北東）からの引き。潜る動きを追って振る
+  - 38.87
+  - 28.28
+  lens: 20
+  move: 百騎兵の斜め後ろの高い所からの引き（俯瞰）。潜る所へゆっくり寄る
 background: underground-cavern
 image: null
 refs:
@@ -28,24 +28,26 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 横からの引き
-  end: 砂煙
+  start: 手前に小さく百騎兵、奥で身をよじる砂食み（俯瞰の引き）
+  end: 砂煙と、構えて見つめる百騎兵
+timing:
+  lead: 0.0
 blocking:
-  start: 百（右・背中）
-  end: 百（右・背中）
+  start: 百（中央・背中）
+  end: 百（左・背中）
   background: 地下空洞の全景〔空洞 全景〕
   panels:
   - 空洞 全景
   staging_en: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing with its sword ready in the foreground, on the right of the frame,
-    with the back to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the
-    hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls,
-    thin streams of sand falling from the ceiling, deep shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), small in the foreground, sword ready, watching the monster, in the center
+    of the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
+    moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
+    glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   staging_en_end: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), standing with its sword ready, on the right of the frame, with the back
-    to the camera. No other people. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green moss, a column of moonlight from the hole in the ceiling.
-    Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor, glowing green moss on the rock walls, thin streams of sand
-    falling from the ceiling, deep shadows.'
+    face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, wielding a big sword), watching the cloud of sand where the monster dove under, on the left of
+    the frame, with the back to the camera. No other people. High angle looking down. Behind: the huge underground cavern: a sandy floor, massive rock pillars, round tunnels in the walls, glowing green
+    moss, a column of moonlight from the hole in the ceiling. Inside the huge underground cavern at night: a pale blue column of moonlight falling from a round hole in the ceiling onto the sandy floor,
+    glowing green moss on the rock walls, thin streams of sand falling from the ceiling, deep shadows.'
   sketch:
   - episodes/A/scenes/A07/gen/sketch/A07-012_start.png
   - episodes/A/scenes/A07/gen/sketch/A07-012_end.png

@@ -592,108 +592,23 @@ cuts:
     note: null
   A14-009:
     cam:
-    - 1.5
-    - 47.0
-    - 3.0
-    lens: 30
-    bearing: 97
-    frame: 引き
+    - 5.15
+    - 44.8
+    - 1.2
+    lens: 32
+    bearing: 123
+    frame: 全身（横から追う）
     start:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 8.72
+        dist: 5.99
         side: 中央
-        body: 横顔（画面左向き）
+        body: 斜め前（画面左向き）
       bg: 風紋の足場と尖塔〔山道〕
       props:
       - 行き止まりの丸い踊り場
       - 北の縁の草むら（古の風紋が隠れている）
-      - 尖塔
-      - 尖塔
-      - 白夜月（東の空）
-      - 階段の4段目（上面 1.24m）
-      - 階段の5段目（上面 1.56m）
-      - 階段の6段目（上面 1.87m）
-      - 階段の7段目（上面 2.18m）
-      - 階段の8段目（上面 2.49m）
-      - 階段の9段目（上面 2.8m）
-      - 階段の上の踊り場
-      - 赤いソファの座面（座る人物は z 0.42）
-      - 赤いソファの高い背もたれ
-      - 赤い布の丸テーブル（A12 では三品が載る）
-      - 天井までの本棚（北）
-      - 天井までの本棚（南）
-      - 床に積んだ本の山
-      - テーブルの上の吊りランプ
-      - 玄関の横の燭台
-      - 本棚の端の燭台
-      - 赤い天蓋のベッド（上の人物は z 0.55）
-      - 天蓋の柱
-      - 天蓋の柱
-      - 天蓋の柱
-      - 天蓋の柱
-      - ベッド脇の小机（燭台）
-      - ベッド脇の小机
-      - 天井までの本棚（西の壁）
-      - 本と薬瓶の机（西の壁）
-      - 机の椅子
-      - 窓の下手の引き出し
-      - 古い長持（人形の棚の下）
-      - 床に積んだ本
-      - 床に積んだ本と巻物
-      - 天井の真鍮のランプ
-      - 机の上のランプ
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile, turned toward
-        screen left. No other people. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long shadows. Late
-        afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
-    end:
-      people:
-      - who: hundred-knight
-        s: 0.0
-        dist: 13.29
-        side: 中央
-        body: 斜め前（画面左向き）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in three-quarter view, turned
-        toward screen left. No other people. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long shadows.
-        Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
-    move:
-      hundred-knight:
-        to: j2
-        face: 315
-        via:
-        - rune0
-        - rune0
-        - j1
-        - j1
-        - j1
-        - j2
-        t:
-        - 0.0
-        - 6.5
-    note: null
-  A14-010:
-    cam:
-    - 17.5
-    - 29.0
-    - 5.5
-    lens: 22
-    bearing: 148
-    frame: 全身（下から煽る）
-    start:
-      people:
-      - who: hundred-knight
-        s: 0.0
-        dist: 4.72
-        side: 中央
-        body: 正面
-      bg: 二つの峰のあいだの空〔山道〕
-      props:
-      - 足場2
-      - 足場2の風紋
-      - 尖塔
       - 階段の1段目（上面 0.31m）
       - 階段の2段目（上面 0.62m）
       - 階段の3段目（上面 0.93m）
@@ -732,33 +647,113 @@ cuts:
       - 天井の真鍮のランプ
       - 机の上のランプ
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera. No other
-        people. High angle looking down. Behind: the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep shadow. Late afternoon on a high desert mountain:
-        the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in three-quarter view, turned
+        toward screen left. No other people. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long shadows.
+        Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: hundred-knight
         s: 0.0
-        dist: 11.86
+        dist: 5.94
         side: 中央
-        body: 背中
+        body: 正面
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back to the camera,
-        small in the background. No other people. High angle looking down. Behind: the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep shadow. Late
-        afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, facing the camera. No other
+        people. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long shadows. Late afternoon on a high
+        desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      hundred-knight:
+        to: j2
+        face: 323
+        via:
+        - rune0
+        - rune0
+        - - 10.7
+          - 45.4
+        - - 11.7
+          - 42.6
+        - - 12.3
+          - 40.7
+        - j1
+        - j1
+        - j1
+        - - 12.9
+          - 39.6
+        - - 17.0
+          - 35.8
+        - - 19.4
+          - 33.6
+        - j2
+        t:
+        - 0.0
+        - 5.85
+    note: null
+  A14-010:
+    cam:
+    - 23.5
+    - 29.5
+    - 6.5
+    lens: 28
+    bearing: 225
+    frame: 全身（下から煽る）
+    start:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 4.95
+        side: 中央
+        body: 横顔（画面右向き）
+      bg: 二つの峰のあいだの空〔山道〕
+      props:
+      - 行き止まりの丸い踊り場
+      - 北の縁の草むら（古の風紋が隠れている）
+      - 枯れ草
+      - 足場1
+      - 足場1の風紋
+      - 足場2
+      - 足場2の風紋
+      - 尖塔
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile, turned toward
+        screen right. No other people. High angle looking down. Behind: the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep shadow. Late afternoon on
+        a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: hundred-knight
+        s: 0.0
+        dist: 14.8
+        side: 中央
+        body: 横顔（画面右向き）
+      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile, turned toward
+        screen right, small in the background. No other people. High angle looking down. Behind: the open sky between two high mountain peaks at sunset, rock spires below, the desert far beneath in deep
+        shadow. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       hundred-knight:
         to: j4
         face: 30
         via:
         - j2
+        - - 19.6
+          - 32.5
+        - - 17.0
+          - 29.0
+        - - 14.6
+          - 25.8
         - j3
         - j3
         - j3
+        - - 14.5
+          - 24.4
+        - - 18.2
+          - 20.4
+        - - 20.5
+          - 18.0
+        - j4
         - j4
         t:
         - 0.0
-        - 7.0
+        - 6.1
     note: null
   A14-011:
     cam:
@@ -767,7 +762,7 @@ cuts:
     - 32.0
     lens: 28
     bearing: 55
-    frame: 大引き
+    frame: 大引き（空撮）
     start:
       people:
       - who: hundred-knight
@@ -795,35 +790,45 @@ cuts:
       - 白夜月（東の空）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
         face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, seen from behind at an angle,
-        turned toward screen left. No other people. High angle looking down. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden
-        late-afternoon light, long shadows. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below
-        in a soft haze.'
+        turned toward screen left, small in the background. No other people. High angle looking down. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high
+        above the desert, golden late-afternoon light, long shadows. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
+        the vast desert below in a soft haze.'
     end:
       people:
       - who: hundred-knight
-        s: 0.06
-        dist: 20.62
+        s: -0.13
+        dist: 23.4
         side: 中央
-        body: 背中
+        body: 斜め後ろ（画面右向き）
       staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back to the camera.
-        No other people. High angle looking down. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high above the desert, golden late-afternoon light, long
-        shadows. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, seen from behind at an angle,
+        turned toward screen right, small in the background. No other people. High angle looking down. Behind: small round wooden landings with glowing spiral wind patterns on top of tall rock spires high
+        above the desert, golden late-afternoon light, long shadows. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
+        the vast desert below in a soft haze.'
     move:
       hundred-knight:
         to: p_land
-        face: 40
+        face: 35
         via:
         - j4
+        - - 20.6
+          - 18.0
         - - 21.9
           - 16.4
-        - p_land
+        - - 22.05
+          - 16.25
+        - - 22.5
+          - 15.9
+        - - 24.2
+          - 14.3
+        - - 25.9
+          - 12.9
         - p_land
         - p_land
         - p_land
         t:
         - 0.0
-        - 8.5
+        - 7.46
     note: null
   A14-012:
     cam:
@@ -1074,20 +1079,20 @@ cuts:
     cam:
     - 33.6
     - 15.4
-    - 24.0
-    lens: 26
+    - 25.8
+    lens: 22
     bearing: 316
     frame: 全身
     start:
       people:
       - who: hundred-knight
-        s: -0.08
-        dist: 24.0
+        s: -0.06
+        dist: 25.8
         side: 中央
         body: 横顔（画面右向き）
       - who: karakuri-doll
-        s: 0.12
-        dist: 24.0
+        s: 0.1
+        dist: 25.8
         side: 中央
         body: 斜め前（画面左向き）
       bg: ピラーの峰の広場〔山頂〕
@@ -1097,74 +1102,369 @@ cuts:
       - 枯れ草
       - 遠くの山並み（北西）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile,
-        turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning skull
-        face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background.
-        No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud
-        pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
-        long shadows, the vast desert below in a soft haze.'
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), leaping and flipping over the spinning doll, in
+        the center of the frame, in profile, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon
+        swirling patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen
+        left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak,
+        a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock
+        spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: karakuri-doll
-        s: -0.16
-        dist: 24.2
+        s: -0.14
+        dist: 25.2
         side: 中央
-        body: 横顔（画面右向き）
+        body: 斜め前（画面右向き）
       - who: hundred-knight
-        s: 0.16
-        dist: 24.2
+        s: 0.13
+        dist: 25.2
         side: 中央
         body: 斜め前（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
-        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen right, small in the background; the
-        Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in three-quarter view, turned toward screen left, small in the background.
-        No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud
-        pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
-        long shadows, the vast desert below in a soft haze.'
+        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background;
+        the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), landed on the far side, turning to face the doll, sword ready, in the center of the frame, in three-quarter view,
+        turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass
+        on a high mountain peak, a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm
+        golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       karakuri-doll:
-        to: doll_roll
+        to:
+        - 26.9
+        - 12.2
         face: 40
         via:
         - doll_in
-        - doll_roll
-        - doll_roll
+        - - 26.9
+          - 12.2
+        - - 26.9
+          - 12.2
         t:
         - 0.0
-        - 5.5
+        - 5.2
       hundred-knight:
-        to: hk_over
+        to:
+        - 30.8
+        - 8.3
         face: 225
         via:
         - - 27.8
           - 11.3
-        - hk_over
-        - hk_over
+        - - 27.8
+          - 11.3
+        - - 28.3
+          - 10.8
+        - - 29.3
+          - 9.7
+        - - 30.8
+          - 8.3
+        - - 30.8
+          - 8.3
+        - - 30.8
+          - 8.3
         t:
         - 0.0
-        - 5.5
+        - 5.2
+    note: null
+  A14-016b:
+    cam:
+    - 24.6
+    - 5.2
+    - 23.3
+    lens: 22
+    bearing: 133
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.1
+        dist: 23.3
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: karakuri-doll
+        s: 0.19
+        dist: 23.3
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: ピラーの峰の広場〔山頂〕
+      props:
+      - ピラーの峰の丸い広場
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
+      - 尖塔
+      - 尖塔
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), parrying the bouncing, spinning doll, in the center
+        of the frame, in profile, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling
+        patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left,
+        small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a
+        tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock
+        spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: karakuri-doll
+        s: -0.06
+        dist: 21.2
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: -0.0
+        dist: 21.2
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
+        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small,
+        about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black
+        claws, beige shorts, brown shoes, a sword in his right hand), teetering at the very edge of the cliff, regaining its stance, in the center of the frame, with the back to the camera, small in the
+        background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed
+        flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden
+        walkways, long shadows, the vast desert below in a soft haze.'
+    move:
+      karakuri-doll:
+        to:
+        - 32.4
+        - 6.0
+        via:
+        - - 26.9
+          - 12.2
+        - - 25.4
+          - 13.8
+        - - 29.4
+          - 9.4
+        - - 31.4
+          - 7.4
+        - - 30.6
+          - 8.2
+        - - 33.0
+          - 5.5
+        - - 31.6
+          - 6.8
+        - - 32.4
+          - 6.0
+        t:
+        - 0.0
+        - 4.6
+      hundred-knight:
+        to:
+        - 35.2
+        - 2.8
+        via:
+        - - 30.8
+          - 8.3
+        - - 30.8
+          - 8.3
+        - - 32.3
+          - 6.6
+        - - 32.3
+          - 6.6
+        - - 32.3
+          - 6.6
+        - - 34.0
+          - 4.3
+        - - 35.2
+          - 2.8
+        - - 35.2
+          - 2.8
+        t:
+        - 0.0
+        - 4.6
     note: null
   A14-017:
     cam:
-    - 32.6
-    - 6.4
-    - 22.6
-    lens: 28
-    bearing: 225
-    frame: 全身（低い）
+    - 29.6
+    - 0.2
+    - 22.8
+    lens: 22
+    bearing: 135
+    frame: 全身
     start:
       people:
+      - who: hundred-knight
+        s: -0.11
+        dist: 22.8
+        side: 中央
+        body: 斜め前（画面右向き）
+      - who: karakuri-doll
+        s: 0.11
+        dist: 22.8
+        side: 中央
+        body: 斜め前（画面左向き）
+      bg: ピラーの峰の広場〔山頂〕
+      props:
+      - 枯れ草
+      - 尖塔
+      - 尖塔
+      - 階段の1段目（上面 0.31m）
+      - 階段の2段目（上面 0.62m）
+      - 階段の3段目（上面 0.93m）
+      - 階段の4段目（上面 1.24m）
+      - 階段の5段目（上面 1.56m）
+      - 階段の6段目（上面 1.87m）
+      - 階段の7段目（上面 2.18m）
+      - 階段の8段目（上面 2.49m）
+      - 階段の9段目（上面 2.8m）
+      - 階段の上の踊り場
+      - 赤いソファの座面（座る人物は z 0.42）
+      - 赤いソファの高い背もたれ
+      - 赤い布の丸テーブル（A12 では三品が載る）
+      - 天井までの本棚（北）
+      - 天井までの本棚（南）
+      - 薬瓶と燭台の棚
+      - 床に積んだ本の山
+      - 階段の下の壺
+      - テーブルの上の吊りランプ
+      - 玄関の横の燭台
+      - 本棚の端の燭台
+      - 赤い天蓋のベッド（上の人物は z 0.55）
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - 天蓋の柱
+      - ベッド脇の小机（燭台）
+      - ベッド脇の小机
+      - 天井までの本棚（西の壁）
+      - 本と薬瓶の机（西の壁）
+      - 机の椅子
+      - 窓の下手の引き出し
+      - 古い長持（人形の棚の下）
+      - 床に積んだ本
+      - 床に積んだ本と巻物
+      - 天井の真鍮のランプ
+      - 机の上のランプ
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), rolling aside along the cliff edge as the doll crashes
+        down, in the center of the frame, in three-quarter view, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted
+        in ochre and maroon swirling patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view,
+        turned toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass
+        on a high mountain peak, a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm
+        golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+    end:
+      people:
+      - who: karakuri-doll
+        s: -0.01
+        dist: 23.1
+        side: 中央
+        body: 正面
+      - who: hundred-knight
+        s: 0.04
+        dist: 23.1
+        side: 中央
+        body: 背中
+      staging: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
+        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small,
+        about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black
+        claws, beige shorts, brown shoes, a sword in his right hand), having slashed the doll away across the plaza, in the center of the frame, with the back to the camera, small in the background. No
+        other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud
+        pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways,
+        long shadows, the vast desert below in a soft haze.'
+    move:
+      karakuri-doll:
+        to:
+        - 28.3
+        - 13.4
+        via:
+        - - 32.4
+          - 6.0
+        - - 34.0
+          - 4.2
+        - - 35.2
+          - 2.8
+        - - 33.8
+          - 4.6
+        - - 33.2
+          - 5.2
+        - - 28.3
+          - 13.4
+        - - 28.3
+          - 13.4
+        t:
+        - 0.0
+        - 5.2
+      hundred-knight:
+        to:
+        - 32.6
+        - 4.6
+        face: 215
+        via:
+        - - 35.2
+          - 2.8
+        - - 34.6
+          - 2.5
+        - - 32.4
+          - 1.8
+        - - 32.4
+          - 1.8
+        - - 32.4
+          - 1.8
+        - - 32.5
+          - 3.6
+        - - 32.6
+          - 4.6
+        - - 32.6
+          - 4.6
+        - - 32.6
+          - 4.6
+        t:
+        - 0.0
+        - 5.2
+    note: null
+  A14-017b:
+    cam:
+    - 35.2
+    - 2.9999999999999996
+    - 22.6
+    lens: 24
+    bearing: 238
+    frame: 全身
+    start:
+      people:
+      - who: karakuri-doll
+        s: -0.31
+        dist: 22.6
+        side: 中央
+        body: 正面
       - who: hundred-knight
         s: -0.0
         dist: 22.6
         side: 中央
         body: 背中
-      - who: karakuri-doll
-        s: -0.0
-        dist: 22.6
-        side: 中央
-        body: 正面
       bg: ピラーの峰の広場〔山頂〕
       props:
       - 行き止まりの丸い踊り場
@@ -1179,60 +1479,67 @@ cuts:
       - 足場4
       - 足場4の風紋
       - ピラーの峰の丸い広場
+      - 咲く前のピラー・オブ・テンペランス
+      - 枯れ草
       - 尖塔
       - 尖塔
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back
-        to the camera, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning skull face under
-        a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, facing the camera, small in the background. No other people. High angle looking down.
-        Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar with green glass panels in the middle,
-        the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft
-        haze.'
+      - 西の太陽（黄昏の前）
+      - 沈みかけの太陽
+      staging: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
+        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, on the left of the frame, facing the camera, small in the background; the Hundred Knight (small,
+        about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black
+        claws, beige shorts, brown shoes, a sword in his right hand), dashing after the doll, sword swept back, in the center of the frame, with the back to the camera, small in the background. No other
+        people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar
+        with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
+        the vast desert below in a soft haze.'
     end:
       people:
       - who: karakuri-doll
-        s: -0.0
-        dist: 22.6
+        s: -0.02
+        dist: 24.8
         side: 中央
         body: 正面
       - who: hundred-knight
-        s: 0.04
-        dist: 22.6
+        s: -0.0
+        dist: 24.8
         side: 中央
         body: 背中
       staging: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
         skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small,
         about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black
-        claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, with the back to the camera, small in the background. No other people. High angle looking down.
-        Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar with green glass panels in the middle,
-        the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the vast desert below in a soft
-        haze.'
+        claws, beige shorts, brown shoes, a sword in his right hand), high in the air against the sunset sky, sword raised overhead, in the center of the frame, with the back to the camera, small in the
+        background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed
+        flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden
+        walkways, long shadows, the vast desert below in a soft haze.'
     move:
       karakuri-doll:
-        to: doll_hit
-        via:
-        - doll_roll
-        - - 29.7
-          - 9.6
-        - doll_hit
-        - doll_hit
+        to:
+        - 28.3
+        - 13.4
         t:
         - 0.0
-        - 5.5
+        - 3.4
       hundred-knight:
         to:
-        - 30.4
-        - 8.7
-        face: 220
+        - 28.9
+        - 12.2
+        face: 210
         via:
-        - hk_over
-        - - 30.4
-          - 8.7
-        - - 30.4
-          - 8.7
+        - - 32.6
+          - 4.6
+        - - 32.2
+          - 5.3
+        - - 30.3
+          - 9.2
+        - - 30.2
+          - 9.5
+        - - 30.0
+          - 9.9
+        - - 29.0
+          - 12.0
         t:
         - 0.0
-        - 5.5
+        - 3.4
     note: null
   A14-018:
     cam:
@@ -1245,10 +1552,10 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.15
+        s: 0.08
         dist: 22.5
         side: 中央
-        body: 斜め前（画面右向き）
+        body: 横顔（画面右向き）
       - who: karakuri-doll
         s: 0.15
         dist: 22.5
@@ -1302,12 +1609,12 @@ cuts:
       - 天井の真鍮のランプ
       - 机の上のランプ
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in three-quarter
-        view, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
-        skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other
-        people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar
-        with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows,
-        the vast desert below in a soft haze.'
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), slashing down from midair, splitting the doll in
+        two, in the center of the frame, in profile, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre
+        and maroon swirling patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen
+        left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak,
+        a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock
+        spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     end:
       people:
       - who: hundred-knight
@@ -1321,12 +1628,12 @@ cuts:
         side: 中央
         body: 横顔（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing, in the center of the frame, in profile,
-        turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning skull
-        face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen left, small in the background. No other people.
-        High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark closed flower-bud pillar with green
-        glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden walkways, long shadows, the
-        vast desert below in a soft haze.'
+        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), standing after a hero landing, the broken doll beside
+        it, in the center of the frame, in profile, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and
+        maroon swirling patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in profile, turned toward screen
+        left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak,
+        a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock
+        spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
     move:
       hundred-knight:
         to:
@@ -1334,8 +1641,12 @@ cuts:
         - 12.8
         face: 215
         via:
-        - - 30.4
-          - 8.7
+        - - 28.6
+          - 12.9
+        - - 28.6
+          - 12.8
+        - - 28.6
+          - 12.8
         - - 28.6
           - 12.8
         - - 28.6
@@ -1351,7 +1662,8 @@ cuts:
         - 13.9
         face: 30
         via:
-        - doll_hit
+        - - 28.3
+          - 13.4
         - - 28.1
           - 13.9
         t:
@@ -1527,24 +1839,57 @@ checks:
   - cut: A14-005
     which: start
     who: karakuri-doll
-  - cut: A14-010
+  - cut: A14-009
     which: start
     who: metallica
-  - cut: A14-010
+  - cut: A14-009
     which: start
     who: luckiny
-  - cut: A14-010
+  - cut: A14-009
     which: start
     who: bisco
-  - cut: A14-010
+  - cut: A14-009
     which: start
     who: arlecchino
-  - cut: A14-010
+  - cut: A14-009
     which: end
-    who: karakuri-doll
+    who: metallica
+  - cut: A14-009
+    which: end
+    who: luckiny
+  - cut: A14-009
+    which: end
+    who: bisco
+  - cut: A14-009
+    which: end
+    who: arlecchino
   - cut: A14-011
     which: start
     who: karakuri-doll
+  - cut: A14-016b
+    which: start
+    who: metallica
+  - cut: A14-016b
+    which: start
+    who: luckiny
+  - cut: A14-016b
+    which: start
+    who: bisco
+  - cut: A14-016b
+    which: start
+    who: arlecchino
+  - cut: A14-017
+    which: start
+    who: metallica
+  - cut: A14-017
+    which: start
+    who: luckiny
+  - cut: A14-017
+    which: start
+    who: bisco
+  - cut: A14-017
+    which: start
+    who: arlecchino
   - cut: A14-018
     which: start
     who: metallica
