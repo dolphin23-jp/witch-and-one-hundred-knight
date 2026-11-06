@@ -178,10 +178,15 @@ class Stage:
         return tuple(v)
 
     def face_of(self, f, who, pos):
-        """向きの指定（数値の方位、人物名、場所名、[x, y]）を方位にする。"""
+        """向きの指定（数値の方位、人物名、場所名、[x, y]、生き物の名前）を方位にする。"""
         if isinstance(f, (int, float)):
             return float(f) % 360
-        t = pos.get(f) if isinstance(f, str) and f in pos else self.place(f)
+        cc = (self.bk["cuts"].get(getattr(self, "_cur_cut", None)) or {}).get("creatures") or {}
+        if isinstance(f, str) and f not in pos and f in cc:   # 生き物（砂食みなど）: カットの頭の頭の位置へ（2026-11-06）
+            k0 = sorted(cc[f]["keys"], key=lambda k: float(k["t"]))[0]
+            t = self.place(k0["at"])
+        else:
+            t = pos.get(f) if isinstance(f, str) and f in pos else self.place(f)
         p = pos[who]
         return bearing_of((t[0] - p[0], t[1] - p[1]))
 
@@ -194,6 +199,10 @@ class Stage:
 
         def set_face(who, f):
             if isinstance(f, str) and f.startswith("@"):
+                cc = (self.bk["cuts"].get(getattr(self, "_cur_cut", None)) or {}).get("creatures") or {}
+                if f[1:] in cc:   # 生き物は追い続けない（staging は生き物の動きを知らない）
+                    track.pop(who, None)
+                    return self.face_of(f[1:], who, cur_pos)
                 track[who] = f[1:]
                 return self.face_of(f[1:], who, cur_pos)
             track.pop(who, None)
@@ -209,6 +218,7 @@ class Stage:
             cur_face[who] = set_face(who, s["face"])
         out = {}
         for cut in self.order:
+            self._cur_cut = cut
             c = self.bk["cuts"][cut] or {}
             jumps = []
             before = dict(cur_face)

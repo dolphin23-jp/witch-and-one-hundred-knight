@@ -465,7 +465,7 @@ def build_fx(P, fx, i):
         objs = []
         for k in range(len(fx.get("to") or [])):
             for s in range(8):
-                objs.append(P.prim("cyl", m, f"fx{i}_b{k}{s}", None, (0, 0, -50), radius=0.07, depth=1.0, vertices=6))
+                objs.append(P.prim("cyl", m, f"fx{i}_b{k}{s}", None, (0, 0, -50), radius=float(fx.get("r", 0.07)), depth=1.0, vertices=6))   # r: 太さ（2026-11-06 の下絵のアップグレードで書けるように）
         bpy.ops.object.light_add(type="POINT", location=(0, 0, -50))
         lt = bpy.context.object
         lt.name = f"LGT_fx{i}"

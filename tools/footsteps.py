@@ -69,14 +69,16 @@ def main():
             t = DT
             while t <= sec:
                 p, z, pose = tr.at(t)
+                pose = motion.pose_base(pose)
                 dz, prev_z = abs(z - prev_z), z
                 d = math.dist(p, prev)
                 prev = p
                 speed = d / DT
-                still = pose in ("jump", "lie", "sit", "kneel", "kneel_hold", "ride", "spin", "fall", "hop", "tumble", "flip", "dive") or dz / DT > 0.4   # 宙にいる間（上下に動いている間）は足音なし
-                if (pose in ("walk", "run") and speed > 0.15) or (not still and speed > 0.35):
+                still = pose in ("jump", "lie", "sit", "kneel", "kneel_hold", "ride", "spin", "fall", "hop", "tumble", "flip", "dive",
+                                 "jump_up", "jump_tuck", "jump_fall", "backflip", "air_slash_up", "air_slash_down", "hit", "cling", "lie_back", "crawl") or dz / DT > 0.4   # 宙にいる間（上下に動いている間）は足音なし
+                if (pose in ("walk", "run", "dash", "sprint") and speed > 0.15) or (not still and speed > 0.35):
                     acc += d
-                    running = pose == "run" or speed > 2.6
+                    running = pose in ("run", "dash", "sprint") or speed > 2.6
                     stride = base * (1.6 if running else 1.0)
                     if acc >= stride:
                         acc = 0.0

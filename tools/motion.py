@@ -44,6 +44,13 @@ POSE_POSTURE = {"crouch": "crouching", "crouching": "crouching", "kneel": "kneel
                 "sit": "sitting", "sitting": "sitting", "lie": "lying", "lying": "lying"}
 
 
+def pose_base(p):
+    """姿勢の名前（辞書で上書きを書いたときは base。2026-11-06 の関節の人形）。"""
+    if isinstance(p, dict):
+        return p.get("base", "stand")
+    return p
+
+
 def ease(name, u):
     u = min(1.0, max(0.0, u))
     if name == "linear":
@@ -128,9 +135,9 @@ def expand_keys(c):
                 m["via"] = vias
             m["t"] = [float(a["t"]), float(b["t"])]
             mv[who] = m
-        pa = POSE_POSTURE.get(a.get("pose"))
+        pa = POSE_POSTURE.get(pose_base(a.get("pose")))
         last_pose = next((k["pose"] for k in reversed(ks) if "pose" in k), a.get("pose"))
-        pb = POSE_POSTURE.get(last_pose)
+        pb = POSE_POSTURE.get(pose_base(last_pose))
         if pa:
             p0[who] = pa
         if pa or pb:
@@ -210,11 +217,18 @@ def expand_cam(c, pos_start, pos_end, place=None):
         hd = heads(t)
         pos2 = {**pos, **{n: h[:2] for n, h in hd.items()}}
         return resolve_cam(cam, pos2, (lambda n, x, y: hd[n][2] if n in hd else 0.0))
+    def rlook(v, t):   # 見る先が生き物なら、その時刻の頭の位置（2026-11-06）
+        if isinstance(v, str) and v in creatures:
+            h = creature_head(c, v, t, place)
+            return [round(h[0], 2), round(h[1], 2)], h[2]
+        return v, None
     c["cam"] = resolve(a["cam"], pos_start, float(a["t"]))
-    c["look"] = a["look"]
+    c["look"], lh0 = rlook(a["look"], float(a["t"]))
     c["lens"] = a.get("lens", c.get("lens", 35))
     if a.get("look_h") is not None:
         c["look_h"] = a["look_h"]
+    elif lh0 is not None:
+        c["look_h"] = lh0
     if a.get("frame"):
         c["frame"] = a["frame"]
     c.setdefault("frame", "全身")
@@ -224,8 +238,12 @@ def expand_cam(c, pos_start, pos_end, place=None):
             ce = resolve(last["cam"], pos_end, float(b["t"]))
             if ce != c["cam"]:
                 c["cam_end"] = ce
-        if last["look"] is not None and last["look"] != c["look"]:
-            c["look_end"] = last["look"]
+        if last["look"] is not None:
+            le, lhe = rlook(last["look"], float(b["t"]))
+            if le != c["look"]:
+                c["look_end"] = le
+            if lhe is not None and last["look_h"] is None:
+                last["look_h"] = lhe
         if last["lens"] is not None and last["lens"] != c["lens"]:
             c["lens_end"] = last["lens"]
         if last["look_h"] is not None and last["look_h"] != c.get("look_h"):
@@ -344,6 +362,11 @@ class CreatureTrack:
     def head(self, t):
         a, b, u = segment(self.k, t)
         return (lerp(a["at"][0], b["at"][0], u), lerp(a["at"][1], b["at"][1], u), lerp(a["z"], b["z"], u))
+
+    def open_at(self, t):
+        """口の開き 0〜1（キーの open。2026-11-06）。"""
+        a, b, u = segment(self.k, t)
+        return lerp(float(a.get("open", 0.0)), float(b.get("open", 0.0)), u)
 
     def s_of(self, t):
         if t <= self.t0:
