@@ -744,70 +744,233 @@ cuts:
       staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
         with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred
         Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange
-        maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red
-        leaves and moss.'
+        gauntlets with black claws, beige shorts, brown shoes), leaping aside as the gel monster body-slams the ground, on the right of the frame, in profile, turned toward screen left. No other people.
+        Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering
+        through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
       - who: aromani-gel
-        s: -0.3
-        dist: 4.19
+        s: -0.01
+        dist: 4.05
         side: 中央
-        body: 斜め後ろ（画面右向き）
+        body: 背中
       - who: hundred-knight
-        s: 0.0
-        dist: 6.59
+        s: 0.05
+        dist: 6.51
         side: 中央
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
-        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, seen from behind at an angle, turned toward screen right;
-        the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, facing the camera, small in the background. No other people. Behind: a deep autumn forest of crimson
-        and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on
-        fallen red leaves and moss.'
+        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, with the back to the camera; the Hundred Knight (small,
+        about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with
+        black claws, beige shorts, brown shoes), landed, sword ready, facing the splattered gel, in the center of the frame, facing the camera, small in the background. No other people. Behind: a deep autumn
+        forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy,
+        dappled light on fallen red leaves and moss.'
     move:
       hundred-knight:
-        to: &id003
+        to:
         - 36.4
         - 23.0
         face: 285
         via:
+        - - 34.0
+          - 24.2
+        - - 34.3
+          - 24.0
         - - 35.4
           - 23.6
-        - *id003
+        - - 36.4
+          - 23.0
+        - - 36.4
+          - 23.0
         t:
         - 0.0
-        - 2.0
+        - 3.0
       aromani-gel:
         to:
-        - 33.9
-        - 22.6
-        face: 110
+        - 33.95
+        - 23.3
+        face: 105
         via:
+        - - 33.82
+          - 21.2
         - - 33.9
-          - 22.6
+          - 22.4
+        - - 33.95
+          - 23.3
+        - - 33.95
+          - 23.3
         t:
         - 0.0
-        - 2.2
+        - 3.0
+    note: null
+  A35-010b:
+    cam:
+    - 36.4
+    - 19.6
+    - 1.5
+    lens: 26
+    bearing: 196
+    frame: 全身
+    start:
+      people:
+      - who: hundred-knight
+        s: -0.42
+        dist: 3.26
+        side: 左
+        body: 横顔（画面右向き）
+      - who: aromani-gel
+        s: 0.44
+        dist: 4.24
+        side: 右
+        body: 横顔（画面左向き）
+      bg: 紅葉の森
+      props:
+      - 大きなゴミの山（ミトンの住みかの裏）
+      - ゴミの山（西）
+      - ゴミの山（北東）
+      - ゴミの山（南西）
+      - 立てかけた車輪
+      - 倒れた車輪
+      - 木箱（ミトンの住みかの前）
+      - 木箱
+      - 樽
+      - 骨
+      - 壺
+      - かなきり穂の茂み
+      - かなきり穂の茂み
+      - かなきり穂の茂み
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), blocking the gel''s sweeping green hand, on the left of the frame, in
+        profile, turned toward screen right; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green
+        slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the right of the frame, in profile, turned toward screen left. No other people. Behind: a deep autumn
+        forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy,
+        dappled light on fallen red leaves and moss.'
+    end:
+      people:
+      - who: hundred-knight
+        s: -0.15
+        dist: 3.29
+        side: 中央
+        body: 横顔（画面右向き）
+      - who: aromani-gel
+        s: 0.14
+        dist: 4.09
+        side: 中央
+        body: 横顔（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), having spun through a whirling slash, in the center of the frame, in
+        profile, turned toward screen right; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green
+        slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in profile, turned toward screen left. No other people. Behind: a deep autumn
+        forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy,
+        dappled light on fallen red leaves and moss.'
+    move:
+      hundred-knight:
+        to:
+        - 35.0
+        - 23.0
+        via:
+        - - 36.4
+          - 23.0
+        - - 36.4
+          - 23.0
+        - - 36.6
+          - 23.15
+        - - 37.0
+          - 23.4
+        - - 37.0
+          - 23.4
+        - - 36.0
+          - 23.2
+        - - 35.2
+          - 23.05
+        - - 35.0
+          - 23.0
+        - - 35.0
+          - 23.0
+        t:
+        - 0.0
+        - 3.4
+      aromani-gel:
+        to:
+        - 33.95
+        - 23.3
+        face: 110
+        via:
+        - - 33.95
+          - 23.3
+        - - 33.95
+          - 23.3
+        - - 33.95
+          - 23.3
+        t:
+        - 0.0
+        - 3.4
     note: null
   A35-011:
     cam:
     - 38.6
     - 20.4
-    - 2.2
+    - 1.6
     lens: 26
     bearing: 239
-    frame: 全身
+    frame: 寄り
     start:
       people:
       - who: hundred-knight
-        s: -0.48
-        dist: 3.23
-        side: 左
+        s: -0.11
+        dist: 4.43
+        side: 中央
         body: 斜め後ろ（画面右向き）
       - who: aromani-gel
-        s: 0.16
-        dist: 5.16
+        s: -0.01
+        dist: 5.48
         side: 中央
         body: 斜め前（画面左向き）
       bg: 紅葉の森
@@ -845,42 +1008,63 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, seen from behind at an angle, turned
-        toward screen right; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green slime, drooping
-        green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: a deep autumn forest
-        of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled
-        light on fallen red leaves and moss.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), ducking under the spit and slashing upward, in the center of the frame,
+        seen from behind at an angle, turned toward screen right; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
+        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other
+        people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering
+        through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
+      - who: aromani-gel
+        s: -0.13
+        dist: 4.19
+        side: 中央
+        body: 斜め前（画面左向き）
       - who: hundred-knight
         s: 0.0
-        dist: 3.89
+        dist: 3.74
         side: 中央
-        body: 横顔（画面右向き）
-      staging: 'In frame (exactly one person): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
-        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, in profile, turned toward screen right. No other people.
-        Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering
-        through the red canopy, dappled light on fallen red leaves and moss.'
+        body: 斜め後ろ（画面右向き）
+      staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
+        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in three-quarter view, turned toward screen left; the Hundred
+        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes), high above the gel, sword raised, in the center of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind:
+        a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through
+        the red canopy, dappled light on fallen red leaves and moss.'
     move:
       hundred-knight:
         to:
-        - 36.2
-        - 24.4
+        - 34.2
+        - 22.75
         face: 300
         via:
-        - - 35.1
-          - 21.9
+        - - 35.0
+          - 23.0
+        - - 34.4
+          - 22.6
+        - - 34.25
+          - 22.5
+        - - 34.2
+          - 22.45
+        - - 34.1
+          - 22.6
+        - - 34.15
+          - 22.7
         t:
         - 0.0
-        - 2.6
+        - 3.0
       aromani-gel:
         to:
-        - 33.9
-        - 22.6
-        face: 120
+        - 33.95
+        - 23.3
+        via:
+        - - 33.95
+          - 23.3
+        - - 33.95
+          - 23.3
         t:
         - 0.0
-        - 2.4
+        - 3.0
     note: null
   A35-012:
     cam:
@@ -888,25 +1072,26 @@ cuts:
     - 27.2
     - 0.5
     lens: 22
-    bearing: 9
+    bearing: 355
     frame: 全身
     start:
       people:
       - who: aromani-gel
-        s: -0.38
-        dist: 4.45
-        side: 左
+        s: -0.09
+        dist: 3.94
+        side: 中央
         body: 斜め前（画面右向き）
       - who: hundred-knight
-        s: 0.47
-        dist: 3.01
-        side: 右
-        body: 横顔（画面左向き）
+        s: -0.0
+        dist: 4.47
+        side: 中央
+        body: 斜め後ろ（画面左向き）
       bg: 紅葉の森
       props:
       - 沼（濁った碧の水）
       - 中の島（泥）
       - 咲く前のピラー（沼地のピラー。黒い尖塔に緑のガラス。背景の参考画の形）
+      - がま
       - がま
       - がま
       - 倒木（水に浸かる）
@@ -917,53 +1102,53 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
+      - 紅葉の木
       staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
-        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, in three-quarter view, turned toward screen right; the Hundred
-        Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes), standing, on the right of the frame, in profile, turned toward screen left. No other people. Low angle looking up; the sky fills the upper
-        part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm
-        sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in three-quarter view, turned toward screen right; the
+        Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+        gauntlets with black claws, beige shorts, brown shoes), diving sword-first at the gel''s head, in the center of the frame, seen from behind at an angle, turned toward screen left. No other people.
+        Low angle looking up; the sky fills the upper part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn
+        daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
       - who: aromani-gel
         s: 0.0
-        dist: 3.41
+        dist: 3.15
         side: 中央
         body: 斜め前（画面右向き）
       - who: hundred-knight
-        s: 0.19
-        dist: 3.15
+        s: 0.06
+        dist: 3.28
         side: 中央
         body: 斜め後ろ（画面左向き）
       staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
         with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, in the center of the frame, in three-quarter view, turned toward screen right; the
         Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
-        gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, seen from behind at an angle, turned toward screen left. No other people. Low angle looking up; the
-        sky fills the upper part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of
-        crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+        gauntlets with black claws, beige shorts, brown shoes), its sword buried in the gel''s head, in the center of the frame, seen from behind at an angle, turned toward screen left. No other people.
+        Low angle looking up; the sky fills the upper part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn
+        daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       hundred-knight:
         to:
-        - 34.6
-        - 23.23
+        - 34.05
+        - 23.15
         via:
-        - - 34.6
-          - 22.6
-        - - 34.3
-          - 22.8
-        - - 34.1
-          - 22.7
-        - - 34.6
-          - 23.23
+        - - 34.2
+          - 22.85
+        - - 34.05
+          - 23.15
         t:
         - 0.0
         - 3.4
       aromani-gel:
-        to: &id004
-        - 34.2
-        - 23.0
+        to:
+        - 33.95
+        - 23.3
         via:
-        - *id004
+        - - 33.95
+          - 23.3
+        - - 33.95
+          - 23.3
         t:
         - 0.0
         - 3.4
@@ -978,16 +1163,16 @@ cuts:
     frame: 引き
     start:
       people:
-      - who: hundred-knight
-        s: -0.25
-        dist: 6.36
-        side: 中央
-        body: 背中
       - who: aromani-gel
-        s: -0.23
-        dist: 6.82
+        s: -0.31
+        dist: 6.88
         side: 中央
         body: 正面
+      - who: hundred-knight
+        s: -0.27
+        dist: 6.87
+        side: 中央
+        body: 背中
       bg: 紅葉の森
       props:
       - 沼（濁った碧の水）
@@ -1010,11 +1195,12 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, with the back to the camera; the
-        Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green slime, drooping green slimy hands, a spreading
-        puddle of green gel at its base), standing, on the left of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks,
-        fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      staging: 'In frame (exactly 2 people, from left to right): the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth
+        with dripping green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, facing the camera; the Hundred Knight (small, about waist-high
+        to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige
+        shorts, brown shoes), flipping back off the collapsing gel, on the left of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees
+        with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and
+        moss.'
     end:
       people:
       - who: hundred-knight
@@ -1023,34 +1209,43 @@ cuts:
         side: 左
         body: 背中
       - who: aromani-gel
-        s: -0.37
-        dist: 6.47
+        s: -0.46
+        dist: 6.5
         side: 左
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, with the back to the camera; the
-        Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping green slime, drooping green slimy hands, a spreading
-        puddle of green gel at its base), standing, on the left of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks,
-        fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing after a hero landing beside the golden puddle, on the left of
+        the frame, with the back to the camera; the Aromani Gel (a glossy golden slime monster: a pear-shaped body with two small horns and purple leaf-like ears, red eyes, a gaping mouth with dripping
+        green slime, drooping green slimy hands, a spreading puddle of green gel at its base), standing, on the left of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson
+        and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on
+        fallen red leaves and moss.'
     move:
       hundred-knight:
-        to: &id005
+        to:
         - 35.4
         - 23.8
         via:
-        - - 34.8
+        - - 34.3
           - 23.3
-        - *id005
+        - - 35.4
+          - 23.8
+        - - 35.4
+          - 23.8
+        - - 35.4
+          - 23.8
         t:
         - 0.0
-        - 2.2
+        - 3.6
       aromani-gel:
         to:
-        - 34.2
-        - 23.0
+        - 33.95
+        - 23.3
+        via:
+        - - 33.95
+          - 23.3
         t:
         - 0.0
-        - 2.6
+        - 2.8
     note: null
   A35-014:
     cam:
@@ -1252,12 +1447,12 @@ cuts:
         of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       hundred-knight:
-        to: &id006
+        to: &id003
         - 34.6
         - 22.4
         face: 270
         via:
-        - *id006
+        - *id003
         t:
         - 0.0
         - 7.29
@@ -1370,7 +1565,19 @@ cuts:
 checks:
   axis: []
   jumps: []
-  overlap: []
+  overlap:
+  - cut: A35-012
+    which: end
+    who:
+    - hundred-knight
+    - aromani-gel
+    d: 0.18
+  - cut: A35-013
+    which: start
+    who:
+    - hundred-knight
+    - aromani-gel
+    d: 0.18
   offscreen: []
   hidden: []
   camera: []

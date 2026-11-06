@@ -27,6 +27,33 @@ bgm:
   fade_out: 2.5
   volume: 0.24
 sfx:
+# 戦い（010〜013、2026-11-06 の下絵のアップグレードで組み直した）。t は出来上がりの時刻（止め・スローの分を足した）
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-010, t: 0.3, volume: 0.45}   # 跳ぶ
+- {src: audio/sfx/monster_roar2.ogg, cut: A35-010, t: 0.3, rate: 1.1, volume: 0.35}   # 跳びかかる
+- {src: audio/sfx/impact_heavy.ogg, cut: A35-010, t: 0.92, rate: 0.9, volume: 0.7}   # 叩きつけ（止め）
+- {src: audio/sfx/swamp_bubble_loop.ogg, cut: A35-010, t: 0.95, dur: 1.0, fade_out: 0.5, volume: 0.4}   # ゲルが飛び散る
+- {src: audio/sfx/thud_land.ogg, cut: A35-010, t: 1.25, volume: 0.35}
+- {src: audio/sfx/whoosh_long.ogg, cut: A35-010b, t: 0.4, rate: 1.1, volume: 0.4}   # 緑の手の横なぎ
+- {src: audio/sfx/impact_heavy.ogg, cut: A35-010b, t: 0.82, rate: 1.2, volume: 0.45}   # 受ける
+- {src: audio/sfx/swamp_bubble_loop.ogg, cut: A35-010b, t: 0.83, dur: 0.6, fade_out: 0.3, volume: 0.3}
+- {src: audio/sfx/metal_clank.ogg, cut: A35-010b, t: 1.32, volume: 0.35}   # 剣を突き立てる
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-010b, t: 1.92, volume: 0.4}   # 駆け込む
+- {src: audio/sfx/sword_swing.ogg, cut: A35-010b, t: 2.12, volume: 0.45}   # 回転斬り
+- {src: audio/sfx/sword_slash.ogg, cut: A35-010b, t: 2.35, volume: 0.75}
+- {src: audio/sfx/monster_hurt.ogg, cut: A35-010b, t: 2.51, rate: 0.95, volume: 0.5}
+- {src: audio/sfx/swamp_bubble_loop.ogg, cut: A35-011, t: 0.3, dur: 0.7, fade_out: 0.3, volume: 0.35}   # 吐き出し
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-011, t: 0.75, volume: 0.4}   # くぐる
+- {src: audio/sfx/sword_slash.ogg, cut: A35-011, t: 1.08, volume: 0.8}   # 斬り上げ（止め）
+- {src: audio/sfx/monster_hurt.ogg, cut: A35-011, t: 1.28, rate: 0.9, volume: 0.55}
+- {src: audio/sfx/whoosh_long.ogg, cut: A35-011, t: 1.38, volume: 0.45}   # 宙へ
+- {src: audio/sfx/whoosh_long.ogg, cut: A35-012, t: 0.35, rate: 0.9, volume: 0.5}   # 突っ込む
+- {src: audio/sfx/sword_hit.ogg, cut: A35-012, t: 1.55, rate: 0.9, volume: 0.85}   # 突き刺す（止め）
+- {src: audio/sfx/impact_heavy.ogg, cut: A35-012, t: 1.55, volume: 0.7}
+- {src: audio/sfx/monster_die.ogg, cut: A35-012, t: 1.69, rate: 0.9, volume: 0.6}
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-013, t: 0.35, volume: 0.35}   # 宙返り
+- {src: audio/sfx/thud_land.ogg, cut: A35-013, t: 0.95, volume: 0.5}   # ヒーロー着地
+- {src: audio/sfx/rumble_low.ogg, cut: A35-013, t: 1.0, volume: 0.35}   # 崩れる
+- {src: audio/sfx/swamp_bubble_loop.ogg, cut: A35-013, t: 1.2, dur: 2.2, fade_out: 1.0, volume: 0.3}
 - src: audio/sfx/forest_air_loop.ogg
   cut: A35-001
   t: 0.0
@@ -46,15 +73,6 @@ sfx:
 - {src: audio/sfx/monster_roar.ogg, cut: A35-007, t: 0.6, rate: 0.8, volume: 0.55}
 - {src: audio/sfx/rumble_rise.ogg, cut: A35-007, t: 0.2, volume: 0.35}
 - {src: audio/sfx/sword_ready.ogg, cut: A35-008, t: 0.3, volume: 0.4}
-- {src: audio/sfx/whoosh_fast.ogg, cut: A35-010, t: 0.3, volume: 0.45}
-- {src: audio/sfx/impact_heavy.ogg, cut: A35-010, t: 0.7, rate: 0.9, volume: 0.6}
-- {src: audio/sfx/whoosh_long.ogg, cut: A35-011, t: 0.3, rate: 1.2, volume: 0.4}
-- {src: audio/sfx/sword_slash.ogg, cut: A35-011, t: 1.55, volume: 0.6}
-- {src: audio/sfx/monster_hurt.ogg, cut: A35-011, t: 1.7, rate: 0.9, volume: 0.5}
-- {src: audio/sfx/whoosh_fast.ogg, cut: A35-012, t: 0.75, rate: 0.8, volume: 0.45}
-- {src: audio/sfx/sword_hit.ogg, cut: A35-012, t: 1.95, rate: 0.9, volume: 0.7}
-- {src: audio/sfx/monster_die.ogg, cut: A35-013, t: 0.6, rate: 0.9, volume: 0.55}
-- {src: audio/sfx/rumble_low.ogg, cut: A35-013, t: 1.0, volume: 0.35}
 - {src: audio/sfx/rumble_rise.ogg, cut: A35-014, t: 0.0, volume: 0.4}
 - {src: audio/sfx/magic_burst.ogg, cut: A35-014, t: 1.4, volume: 0.6}
 - {src: audio/sfx/crystal_chime.ogg, cut: A35-014, t: 1.6, rate: 0.8, volume: 0.4}

@@ -1,3 +1,4 @@
+# 2026-11-06 の下絵のアップグレード: アロマニ・ジェルとの戦い（010〜013）を組み直して長くした（010b 横なぎと回転斬りを足した）。
 # A35 森の小道のアルレッキーノと、沼地のピラー・アロマニ・ジェル戦（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
 # Living Spec「A35 動きの設計（案）」。準備（案）の表の 7-07（縮める）・7-08（残す。短い戦闘の見せ場）
 # 場所: world/cinque-forest-layout.yaml の北（森の小道と沼。中の島に沼地のピラー mpillar_marsh）。沼の昼（marsh）
@@ -354,315 +355,197 @@ cuts:
     act: {start: メタリカの声が弾む, do: （「ピラーがあるとなれば話は別だぞ！全力でこいつを叩き潰せ！そして、ピラーを咲かせるんだ！」）百騎兵の目が光る, end: 踏み込む直前の百騎兵}
     camera: 百騎兵の正面の低い所から、目へ寄る
     kind: A
+  # ---------- アロマニ・ジェルとの戦い（010〜013、台詞なし。2026-11-06 の下絵のアップグレードで組み直した。約13秒 → 約18秒） ----------
+  # 010b 横なぎを受けて回転斬り を足し、011 に斬り上げて宙へ追う流れを入れた。効果と時間の操作は tools/previs_fx.py
   A35-010:
     frame: 全身
     only: [hundred-knight, aromani-gel]
-    hidden_ok: [arlecchino]
     keys:
       hundred-knight:
-      - t: 0.0
-        at: [34.0, 24.2]
-        face: 0
-        pose: ready
-      - {t: 0.1, pose: crouch, face: 0}
-      - {t: 0.3, z: 0.3, pose: jump, face: 60}
-      - t: 0.8
-        at: [35.4, 23.6]
-        z: 1.6
-        pose: jump
-        face: 70
-        ease: out
-      - t: 1.3
-        at: [36.4, 23.0]
-        z: 0.0
-        pose: crouch
-        face: 280
-        ease: in
-      - {t: 2.0, pose: ready, face: 285}
+        - {t: 0.0, at: [34.0, 24.2], face: 0, pose: ready}
+        - {t: 0.15, at: [34.0, 24.2], face: 0, pose: jump_crouch, blend: 0.1}
+        - {t: 0.3, at: [34.3, 24.0], z: 0.4, face: 60, pose: jump_up, blend: 0.06}
+        - {t: 0.7, at: [35.4, 23.6], z: 1.7, face: 80, pose: jump_tuck, blend: 0.12, ease: out}
+        - {t: 1.15, at: [36.4, 23.0], z: 0.0, face: 280, pose: land, blend: 0.1, ease: in}
+        - {t: 1.9, at: [36.4, 23.0], face: 280, pose: ready, blend: 0.35}
+        - {t: 3.0, at: [36.4, 23.0], face: 285, pose: ready}
       aromani-gel:
-      - t: 0.0
-        at: [33.8, 21.4]
-        face: 180
-        pose: lean
-      - t: 0.7
-        at: [33.9, 22.6]
-        pose: lean
-        face: 180
-        ease: in
-      - t: 2.2
-        at: [33.9, 22.6]
-        pose: stand
-        face: 110
-    cam_keys:
-    - t: 0.0
-      cam: [29.6, 24.0, 0.8]
-      look: [34.4, 22.8]
-      look_h: 0.9
-      lens: 24
-      frame: 全身
-    - t: 0.8
-      cam: [29.7, 24.0, 1.0]
-      look: hundred-knight
-      look_h: 2.05
-      lens: 24
-      roll: 7
-      ease: out
-    - t: 2.8
-      cam: [29.9, 24.1, 0.9]
-      look: hundred-knight
-      look_h: 0.45
-      lens: 28
-      roll: 0
-      ease: inout
-    shake:
-    - t: [0.7, 1.2]
-      amp: 0.9
+        - {t: 0.0, at: [33.8, 21.4], face: 180, pose: lean}
+        - {t: 0.25, at: [33.82, 21.2], face: 180, pose: arms_up}
+        - {t: 0.62, at: [33.9, 22.4], z: 1.2, face: 180, pose: jump, ease: out}
+        - {t: 0.82, at: [33.95, 23.3], z: 0.0, face: 180, pose: lean, ease: in}
+        - {t: 2.2, at: [33.95, 23.3], face: 110, pose: stand}
+        - {t: 3.0, at: [33.95, 23.3], face: 105, pose: stand}
     fx:
-    - kind: plume
-      t: [0.7, 2.0]
-      at: [34.0, 23.6]
-      r: 1.1
-      h: 1.6
-      color: &id006 [106, 196, 70]
-      shape: fall
-    act: {start: ジェルが体ごと倒れ込むように体当たりしてくる, do: 百騎兵が東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる, end: 着地して向き直る百騎兵}
-    camera: 西の低い所から、跳ぶ百騎兵を追う（跳び上がりで画面を傾ける）
+      - {kind: impact, t: 0.82, at: [33.95, 23.3, 0.6], size: 2.0, dur: 0.22, color: [240, 255, 200]}
+      - {kind: impact_frame, t: 0.82, frames: 2, mode: mono}
+      - {kind: shock, t: 0.82, at: [33.95, 23.3], r: 3.4, dur: 0.55, color: [180, 240, 150]}
+      - {kind: debris, t: 0.82, at: [33.95, 23.3, 0.5], n: 18, speed: 5.0, size: 0.18, up: 0.8, color: [230, 180, 60]}
+      - {kind: debris, t: 0.84, at: [33.95, 23.3, 0.4], n: 12, speed: 4.0, size: 0.16, up: 0.7, color: [106, 196, 70]}
+      - {kind: plume, t: [0.8, 2.0], at: [33.95, 23.3], r: 1.1, h: 1.4, color: [106, 196, 70], shape: fall}
+      - {kind: dust, t: 1.15, at: [36.4, 23.0], r: 0.8, h: 0.25, dur: 0.7, n: 7}
+    timewarp:
+      - {t: 0.82, hold: 0.1, shake: 1.6}
+    shake:
+      - {t: [0.85, 1.4], amp: 1.0}
+    cam_keys:
+      - {t: 0.0, cam: [29.6, 24.0, 0.8], look: [34.4, 22.8], look_h: 0.9, lens: 24, frame: 全身}
+      - {t: 0.7, cam: [29.8, 24.1, 1.1], look: hundred-knight, lens: 24, roll: 8, ease: out}
+      - {t: 3.0, cam: [30.0, 24.2, 0.9], look: [35.4, 23.0], look_h: 0.6, lens: 26, roll: 0, ease: inout}
+    bg: null
+    act: {start: 岸で向き合う二人（西の低い所から）, do: ジェルが両手を上げて体を伸ばし、百騎兵めがけて跳びかかる。百騎兵は東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる（止め・白黒のコマ、金色と緑のゲルが飛び散る）, end: 着地して構える百騎兵と、地面に広がったジェル, sync: （台詞なし）}
+    camera: 西の低い所から、跳ぶ百騎兵を追う（跳び上がりで傾ける）
+    pose: {hundred-knight: leaping aside as the gel monster body-slams the ground}
+    pose_end: {hundred-knight: 'landed, sword ready, facing the splattered gel'}
     kind: A
-  A35-011:
+  A35-010b:
     frame: 全身
     only: [hundred-knight, aromani-gel]
-    hidden_ok: [arlecchino]
     keys:
       hundred-knight:
-      - t: 0.0
-        at: [36.4, 23.0]
-        face: 285
-        pose: ready
-      - {t: 0.4, pose: crouch}
-      - t: 1.3
-        at: [35.1, 21.9]
-        pose: run
-        face: 290
-        ease: in
-      - {t: 1.6, pose: slash, face: 280}
-      - {t: 2.0, pose: ready}
-      - t: 2.6
-        at: [36.2, 24.4]
-        pose: crouch
-        face: 300
-        ease: out
+        - {t: 0.0, at: [36.4, 23.0], face: 285, pose: ready}
+        - {t: 0.5, at: [36.4, 23.0], face: 280, pose: guard, blend: 0.2}
+        - {t: 0.72, at: [36.4, 23.0], face: 280, pose: guard}
+        - {t: 0.78, at: [36.6, 23.15], face: 280, pose: stagger, blend: 0.06}
+        - {t: 1.25, at: [37.0, 23.4], face: 280, pose: brace, blend: 0.12, ease: out}
+        - {t: 1.6, at: [37.0, 23.4], face: 280, pose: low_ready, blend: 0.2}
+        - {t: 1.85, at: [36.0, 23.2], face: 280, pose: dash, blend: 0.1, ease: in}
+        - {t: 2.05, at: [35.2, 23.05], face: 280, pose: spin_slash, blend: 0.08}
+        - {t: 2.6, at: [35.0, 23.0], face: 280, pose: spin_slash, ease: out}
+        - {t: 2.85, at: [35.0, 23.0], face: 280, pose: slash_follow, blend: 0.12}
+        - {t: 3.4, at: [35.0, 23.0], face: 285, pose: ready, blend: 0.3}
       aromani-gel:
-      - t: 0.0
-        at: [33.9, 22.6]
-        face: 110
-        pose: lean
-      - {t: 1.2, pose: stand}
-      - {t: 1.7, pose: fall, face: 100}
-      - {t: 2.4, pose: stand, face: 120}
-    cam_keys:
-    - t: 0.0
-      cam: [38.6, 20.4, 2.2]
-      look: [35.0, 22.6]
-      look_h: 0.8
-      lens: 26
-      frame: 全身
-    - t: 1.2
-      cam: [38.4, 20.6, 2.1]
-      look: hundred-knight
-      look_h: 0.29
-      lens: 30
-    - t: 1.6
-      cam: [38.0, 20.9, 1.9]
-      look: &id007 [35.1, 21.9]
-      look_h: 0.7
-      lens: 38
-      roll: -6
-      ease: in
-    - t: 3.0
-      cam: [38.1, 21.0, 1.9]
-      look: hundred-knight
-      look_h: 0.29
-      lens: 32
-      roll: 0
-      ease: inout
+        - {t: 0.0, at: [33.95, 23.3], face: 105, pose: stand}
+        - {t: 0.4, at: [33.95, 23.3], face: 100, pose: slash}
+        - {t: 0.95, at: [33.95, 23.3], face: 100, pose: stand}
+        - {t: 2.3, at: [33.95, 23.3], face: 110, pose: fall}
+        - {t: 3.4, at: [33.95, 23.3], face: 110, pose: lean}
     fx:
-    - kind: plume
-      t: [0.4, 1.5]
-      at: [35.9, 23.0]
-      r: 0.5
-      h: 0.8
-      color: *id006
-      shape: fall
-    - kind: spark
-      t: [1.55, 2.0]
-      at: *id007
-      z: 0.8
-    - kind: plume
-      t: [1.6, 2.6]
-      at: *id007
-      r: 0.6
-      h: 1.2
-      color: *id006
-      shape: fall
-    act: {start: ジェルが緑のゲルを吐き出す, do: 百騎兵が身を低くしてくぐり抜け、踏み込んでジェルの脇腹を斬る。ゲルが飛び散る, end: 斬り抜けて跳び退く百騎兵}
-    camera: 北東の沼の岸の高い所から見下ろす（吐き出しが手前へ来る）。斬る瞬間に寄る
+      - {kind: impact, t: 0.75, at: [36.1, 23.1, 0.7], size: 1.3, dur: 0.18, color: [220, 255, 190]}
+      - {kind: debris, t: 0.75, at: [36.1, 23.1, 0.7], n: 10, speed: 3.0, size: 0.12, up: 0.6, color: [106, 196, 70]}
+      - {kind: dust, t: 1.0, at: [36.8, 23.3], r: 0.8, h: 0.25, dur: 0.8, n: 7}
+      - {kind: flowlines, t: [0.78, 1.25], angle: 0, n: 34}
+      - {kind: impact, t: 2.3, at: [34.6, 23.0, 0.9], size: 1.6, dur: 0.2, color: [255, 240, 190]}
+      - {kind: impact_frame, t: 2.3, frames: 1, mode: white}
+      - {kind: debris, t: 2.3, at: [34.6, 23.0, 0.9], n: 16, speed: 5.0, size: 0.15, up: 0.7, color: [230, 180, 60]}
+      - {kind: debris, t: 2.32, at: [34.5, 22.9, 1.2], n: 4, speed: 2.5, size: 0.3, up: 0.9, color: [106, 196, 70]}
+    timewarp:
+      - {t: 0.75, hold: 0.07, shake: 1.0}
+      - {t: 2.3, hold: 0.09, shake: 1.4}
+    cam_keys:
+      - {t: 0.0, cam: [36.4, 19.6, 1.5], look: [35.4, 23.0], look_h: 0.9, lens: 26, frame: 全身}
+      - {t: 1.3, cam: [36.8, 19.8, 1.3], look: hundred-knight, lens: 26, ease: inout}
+      - {t: 2.3, cam: [36.2, 20.2, 1.0], look: [35.0, 23.0], look_h: 0.8, lens: 30, roll: -8, ease: in}
+      - {t: 3.4, cam: [36.4, 20.0, 1.2], look: [34.6, 23.0], look_h: 0.9, lens: 26, roll: 0, ease: out}
+    bg: null
+    act: {start: 構える百騎兵（北から）, do: ジェルが緑の手を横なぎに振る。百騎兵は剣で受けるが（止め）押し流され、剣を突き立てて踏みとどまる。すぐに低く駆け込み、こまのように回って斬る（回転斬り、白い閃光と止め、金色のゲルが飛び散る）, end: 振り抜いた百騎兵と、身をよじるジェル, sync: （台詞なし。新しいカット）}
+    camera: 北の低い所から。回転斬りの瞬間に寄って傾ける
+    pose: {hundred-knight: blocking the gel's sweeping green hand}
+    pose_end: {hundred-knight: having spun through a whirling slash}
+    kind: A
+  A35-011:
+    frame: 寄り
+    only: [hundred-knight, aromani-gel]
+    keys:
+      hundred-knight:
+        - {t: 0.0, at: [35.0, 23.0], face: 285, pose: ready}
+        - {t: 0.35, at: [35.0, 23.0], face: 285, pose: crouch, blend: 0.12}
+        - {t: 0.75, at: [34.4, 22.6], face: 290, pose: dash, blend: 0.08, ease: in}
+        - {t: 0.95, at: [34.25, 22.5], face: 290, pose: upper_low, blend: 0.08}
+        - {t: 1.1, at: [34.2, 22.45], z: 0.3, face: 290, pose: upper_high, blend: 0.06, pease: in}
+        - {t: 1.7, at: [34.1, 22.6], z: 2.4, face: 290, pose: tumble, blend: 0.15, ease: out}
+        - {t: 2.2, at: [34.15, 22.7], z: 3.6, face: 300, pose: air_slash_up, blend: 0.15, ease: out}
+        - {t: 3.0, at: [34.2, 22.75], z: 3.9, face: 300, pose: air_slash_up, ease: out}
+      aromani-gel:
+        - {t: 0.0, at: [33.95, 23.3], face: 110, pose: lean}
+        - {t: 0.3, at: [33.95, 23.3], face: 110, pose: lean}
+        - {t: 1.15, at: [33.95, 23.3], face: 110, pose: arms_up}
+        - {t: 3.0, at: [33.95, 23.3], face: 110, pose: look_up}
+    fx:
+      - {kind: plume, t: [0.3, 1.0], at: [34.6, 22.9], r: 0.45, h: 0.8, color: [106, 196, 70], shape: fall}
+      - {kind: impact, t: 1.1, at: [34.1, 22.85, 1.0], size: 1.6, dur: 0.2, color: [255, 240, 190]}
+      - {kind: impact_frame, t: 1.1, frames: 1, mode: white}
+      - {kind: debris, t: 1.1, at: [34.1, 22.85, 1.0], n: 18, speed: 6.0, size: 0.15, up: 1.0, color: [230, 180, 60]}
+      - {kind: speedlines, t: [1.15, 1.8], focus: hundred-knight, inner: 0.3}
+    timewarp:
+      - {t: 1.1, hold: 0.08, shake: 1.2}
+      - {t: [1.8, 3.0], rate: 0.4}
+    cam_keys:
+      - {t: 0.0, cam: [38.6, 20.4, 1.6], look: [35.0, 22.6], look_h: 0.8, lens: 26, frame: 寄り}
+      - {t: 1.1, cam: [38.0, 20.9, 1.0], look: [34.2, 22.6], look_h: 1.0, lens: 30, roll: 10, ease: in}
+      - {t: 3.0, cam: [37.6, 21.2, 1.2], look: hundred-knight, lens: 24, roll: 14, ease: out}
+    bg: null
+    act: {start: 回転斬りの後、向き合う二人, do: ジェルが緑のゲルを吐く。百騎兵は身を低くしてくぐり抜け、懐へ踏み込んで下から斬り上げる（白い閃光・止め、金色のゲルが噴き上がる）。そのまま跳び上がり、宙で回ってジェルの頭上へ（スロー）, end: ジェルの頭上で剣を振りかぶる百騎兵（見上げる）, sync: （台詞なし）}
+    camera: 北東の高い所から。斬り上げで寄って傾け、跳ぶ百騎兵を追って見上げる
+    pose: {hundred-knight: ducking under the spit and slashing upward}
+    pose_end: {hundred-knight: 'high above the gel, sword raised'}
     kind: A
   A35-012:
     frame: 全身
     only: [hundred-knight, aromani-gel]
-    hidden_ok: [arlecchino]
     keys:
       hundred-knight:
-      - t: 0.0
-        at: [36.2, 24.4]
-        face: 300
-        pose: crouch
-      - t: 0.6
-        at: [34.6, 22.6]
-        pose: run
-        face: 300
-        ease: in
-      - {t: 0.75, z: 0.3, pose: jump}
-      - t: 1.3
-        at: [34.3, 22.8]
-        z: 4.4
-        pose: tumble
-        face: 300
-        ease: out
-      - t: 1.7
-        at: [34.1, 22.7]
-        z: 4.6
-        pose: dive
-        face: 300
-      - t: 2.0
-        at: [34.6, 23.23]
-        z: 2.4
-        pose: dive
-        face: 300
-        ease: in
-      - t: 3.4
-        at: [34.6, 23.23]
-        z: 2.35
-        pose: dive
-        face: 300
+        - {t: 0.0, at: [34.2, 22.75], z: 3.9, face: 300, pose: air_slash_up}
+        - {t: 0.35, at: [34.2, 22.85], z: 4.3, face: 300, pose: dive, blend: 0.15, ease: out}
+        - {t: 0.75, at: [34.05, 23.15], z: 2.55, face: 300, pose: dive, ease: in}
+        - {t: 3.4, at: [34.05, 23.15], z: 2.5, face: 300, pose: dive, ease: linear}
       aromani-gel:
-      - t: 0.0
-        at: [33.9, 22.6]
-        face: 120
-        pose: arms_up
-      - t: 1.2
-        at: [34.2, 23.0]
-        pose: lean
-        face: 120
-      - {t: 2.0, pose: stand}
-      - {t: 3.4, pose: look_up}
-    cam_keys:
-    - t: 0.0
-      cam: [34.6, 27.2, 0.5]
-      look: [35.2, 23.2]
-      look_h: 1.2
-      lens: 22
-      frame: 全身
-    - t: 1.3
-      cam: [34.6, 27.0, 0.6]
-      look: hundred-knight
-      look_h: 4.85
-      lens: 22
-      roll: 9
-      ease: out
-    - t: 2.2
-      cam: [34.5, 26.6, 0.7]
-      look: aromani-gel
-      look_h: 1.2
-      lens: 26
-      roll: -4
-      ease: in
-    - t: 3.4
-      cam: [34.5, 26.4, 0.7]
-      look: aromani-gel
-      look_h: 1.2
-      lens: 28
-      roll: 0
-    shake:
-    - t: [2.0, 2.6]
-      amp: 1.2
+        - {t: 0.0, at: [33.95, 23.3], face: 110, pose: look_up}
+        - {t: 0.76, at: [33.95, 23.3], face: 110, pose: look_up}
+        - {t: 1.0, at: [33.95, 23.3], face: 110, pose: arms_up}
+        - {t: 3.4, at: [33.95, 23.3], face: 110, pose: arms_up}
     fx:
-    - kind: spark
-      t: [1.95, 2.5]
-      at: &id008 [34.2, 23.0]
-      z: 2.5
-    - kind: light
-      t: [1.95, 2.0]
-      at: *id008
-      z: 2.6
-      energy: 300
-      fade: 0.5
-      color: [255, 230, 150]
-    act: {start: ジェルが緑の手を振り上げて迫る, do: 百騎兵が地面を蹴って高く跳び、宙で回って、ジェルの頭へ剣から突っ込む, end: ジェルの頭に剣を突き立てた百騎兵}
-    camera: 南の低い所から見上げ、跳ぶ百騎兵を追って上へ（頂点で画面を傾け、斬り下ろしで下へ）
+      - {kind: speedlines, t: [0.35, 0.75], focus: hundred-knight, inner: 0.24, n: 90}
+      - {kind: impact, t: 0.76, at: [33.95, 23.3, 2.3], size: 2.6, dur: 0.28, spikes: 16, color: [255, 240, 190]}
+      - {kind: impact_frame, t: 0.76, frames: 3, mode: mono}
+      - {kind: debris, t: 0.76, at: [33.95, 23.3, 2.2], n: 22, speed: 5.5, size: 0.16, up: 0.8, color: [230, 180, 60]}
+      - {kind: shock, t: 0.76, at: [33.95, 23.3, 2.2], r: 2.8, dur: 0.5}
+      - {kind: sparks, t: 0.76, at: [33.95, 23.3, 2.3], n: 20, speed: 6.0, color: [255, 240, 190]}
+    timewarp:
+      - {t: [0.4, 0.74], rate: 0.35}
+      - {t: 0.76, hold: 0.16, shake: 2.2}
+    shake:
+      - {t: [0.8, 1.6], amp: 1.4}
+    cam_keys:
+      - {t: 0.0, cam: [34.6, 27.2, 0.5], look: hundred-knight, lens: 22, frame: 全身}
+      - {t: 0.76, cam: [34.6, 26.8, 0.6], look: [33.95, 23.3], look_h: 2.2, lens: 28, roll: -10, ease: in}
+      - {t: 2.0, cam: [34.55, 26.6, 0.7], look: aromani-gel, look_h: 1.6, lens: 30, roll: -4, ease: out}
+      - {t: 3.4, cam: [34.5, 26.4, 0.7], look: aromani-gel, look_h: 1.4, lens: 30, roll: 0, ease: inout}
+    bg: null
+    act: {start: ジェルの頭上の百騎兵（南の床すれすれから見上げる）, do: 百騎兵が宙で身を返し、ジェルの頭へ剣から突っ込む（集中線・スロー）。突き刺さる瞬間に長めの止めと白黒のコマ、閃光、金色のゲルが四方へ飛ぶ, end: ジェルの頭に剣を突き立てた百騎兵, sync: （台詞なし）}
+    camera: 南の床すれすれから見上げる。突き刺さる瞬間に寄って傾ける
+    pose: {hundred-knight: diving sword-first at the gel's head}
+    pose_end: {hundred-knight: its sword buried in the gel's head}
     kind: A
   A35-013:
-    frame: 引き
+    frame: 全身
     only: [hundred-knight, aromani-gel]
-    hidden_ok: [arlecchino]
     keys:
       hundred-knight:
-      - t: 0.0
-        at: [34.6, 23.23]
-        face: 300
-        pose: dive
-        z: 2.35
-      - t: 0.6
-        at: [34.8, 23.3]
-        z: 1.6
-        pose: jump
-        face: 120
-      - t: 1.1
-        at: [35.4, 23.8]
-        z: 0.0
-        pose: crouch
-        face: 300
-        ease: in
-      - {t: 2.2, pose: stand, face: 300}
+        - {t: 0.0, at: [34.05, 23.15], z: 2.5, face: 300, pose: dive}
+        - {t: 0.35, at: [34.3, 23.3], z: 2.9, face: 120, pose: backflip, blend: 0.1, ease: out}
+        - {t: 0.95, at: [35.4, 23.8], z: 0.0, face: 300, pose: hero_land, blend: 0.12, ease: in}
+        - {t: 2.2, at: [35.4, 23.8], face: 300, pose: hero_land}
+        - {t: 2.9, at: [35.4, 23.8], face: 300, pose: stand, blend: 0.45}
+        - {t: 3.6, at: [35.4, 23.8], face: 300, pose: stand}
       aromani-gel:
-      - t: 0.0
-        at: [34.2, 23.0]
-        face: 120
-        pose: look_up
-      - {t: 0.8, pose: fall}
-      - t: 2.6
-        at: [34.2, 23.0]
-        z: -2.6
-        pose: fall
-        ease: in
-    cam_keys:
-    - t: 0.0
-      cam: [40.6, 25.6, 3.0]
-      look: [34.0, 21.6]
-      look_h: 1.2
-      lens: 26
-      frame: 引き
-    - t: 3.6
-      cam: [40.4, 25.4, 2.8]
-      look: [34.0, 21.0]
-      look_h: 0.8
-      lens: 28
+        - {t: 0.0, at: [33.95, 23.3], face: 110, pose: arms_up}
+        - {t: 0.8, at: [33.95, 23.3], face: 110, pose: fall}
+        - {t: 2.8, at: [33.95, 23.3], z: -2.6, face: 110, pose: fall}
     fx:
-    - kind: plume
-      t: [0.8, 3.0]
-      at: *id008
-      r: 1.6
-      h: 2.2
-      color: &id009 [230, 180, 60]
-      shape: fall
-    - kind: pool
-      t: [1.2, 3.4]
-      at: *id008
-      r0: 0.4
-      r: 1.4
-      color: *id009
-    act: {start: 剣を突き立てられたジェルが震え, do: 百騎兵が跳び降りると、ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる, end: 金色の溜まりの脇に立つ百騎兵}
+      - {kind: plume, t: [0.8, 3.0], at: [33.95, 23.3], r: 1.6, h: 2.2, color: [230, 180, 60], shape: fall}
+      - {kind: pool, t: [1.2, 3.6], at: [33.95, 23.3], r0: 0.4, r: 1.4, color: [230, 180, 60]}
+      - {kind: dust, t: 0.95, at: [35.4, 23.8], r: 1.1, h: 0.4, dur: 1.0, n: 9}
+      - {kind: shock, t: 0.95, at: [35.4, 23.8], r: 2.2, dur: 0.5}
+      - {kind: letterbox, t: [2.0, 3.6], h: 0.1}
+    cam_keys:
+      - {t: 0.0, cam: [40.6, 25.6, 3.0], look: [34.0, 21.6], look_h: 1.2, lens: 26, frame: 引き}
+      - {t: 3.6, cam: [40.4, 25.4, 2.8], look: [34.0, 21.0], look_h: 0.8, lens: 28}
+    bg: null
+    act: {start: ジェルの頭の上の百騎兵, do: 百騎兵が剣を抜いて後ろへ宙返りし、手前へヒーロー着地。ジェルはどろりと崩れて地面に沈み、金色の溜まりが広がる（上下の黒帯）, end: 立ち上がる百騎兵と、金色の溜まり（奥に沼のピラー）, sync: （台詞なし）}
     camera: 東の高い所から、崩れるジェルと跳び降りる百騎兵（奥に沼のピラー）
+    pose: {hundred-knight: flipping back off the collapsing gel}
+    pose_end: {hundred-knight: standing after a hero landing beside the golden puddle}
     kind: A
   A35-014:
     frame: 大引き
@@ -731,10 +614,15 @@ cuts:
       color: [150, 255, 200]
     - kind: pool
       t: [5.0, 0.0]
-      at: *id008
+      at: [34.2, 23.0]
       r0: 1.4
       r: 1.4
-      color: *id009
+      color: [230, 180, 60]
+    - {kind: charge, t: [0.6, 1.4], at: pillar, z: 3.0, r: 2.2, n: 18, color: [120, 240, 200]}   # 2026-11-06 の下絵のアップグレードで足した見せ場の効果
+    - {kind: impact, t: 1.4, at: pillar, z: 3.2, size: 3.8, dur: 0.35, spikes: 20, color: [200, 255, 230]}
+    - {kind: impact_frame, t: 1.4, frames: 2, mode: white}
+    - {kind: shock, t: 1.45, at: pillar, r: 10.0, dur: 1.0, color: [150, 255, 210]}
+    - {kind: speedlines, t: [1.4, 2.2], focus: pillar, z: 3.2, inner: 0.3, color: [210, 255, 235]}
     act: {start: 中の島の黒い尖塔の緑のガラスが強く光る, do: 碧の閃光とともに頂きの花びらが開き、波紋が走って、沼の碧が岸を越えて広がる, end: 咲いたピラーと広がった碧の沼}
     camera: 岸の百騎兵の後ろから、クレーンで上がりながら咲くピラーへ
     kind: A
@@ -786,10 +674,10 @@ cuts:
       color: &id011 [150, 255, 200]
     - kind: pool
       t: [7.5, 0.0]
-      at: *id008
+      at: [34.2, 23.0]
       r0: 1.4
       r: 1.4
-      color: *id009
+      color: [230, 180, 60]
     - kind: mist
       t: [0.0, 8.5]
       at: [34.4, 14.6]
@@ -856,10 +744,10 @@ cuts:
       color: *id011
     - kind: pool
       t: [7.0, 0.0]
-      at: *id008
+      at: [34.2, 23.0]
       r0: 1.4
       r: 1.4
-      color: *id009
+      color: [230, 180, 60]
     act: {start: メタリカの声（「なにを、ぼやっとしているんだ？オマエは、そいつからキモを抜き取って持ち帰るんじゃなかったのか？」）, do: 百騎兵が金色の溜まりに手を突っ込み、光るキモを抜き取って掲げる, end: キモを掲げる百騎兵}
     camera: 金色の溜まりの脇の低い所から
     kind: M
@@ -918,10 +806,10 @@ cuts:
       color: *id011
     - kind: pool
       t: [10.2, 0.0]
-      at: *id008
+      at: [34.2, 23.0]
       r0: 1.4
       r: 1.4
-      color: *id009
+      color: [230, 180, 60]
     act: {start: メタリカの声（「なかなかにいい場所だ。ワタシは少しここで昼寝でもしていくからオマエは好きにしな」）, do: （「あいつらが待っているんだろ？」）百騎兵がうなずき、小道を南へ駆け戻る, end: 咲いたピラーと、森へ消える百騎兵}
     camera: 中の島のピラーの脇から、クレーンで上がりながら、駆けていく百騎兵を見送る
     kind: M
