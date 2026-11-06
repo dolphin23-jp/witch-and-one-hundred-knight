@@ -570,9 +570,12 @@ def pose_fx(P, fx, objs, t, pos, place):
             x = a[0] + (b[0] - a[0]) * f + (rnd(j, 61) - 0.5) * R
             y = a[1] + (b[1] - a[1]) * f + (rnd(j, 62) - 0.5) * R
             front = max(0.0, 1.0 - (u - f) * 3.0)   # 波の先が高い
-            o.location = P.bl((x, y), z0 + H * (0.2 + 0.8 * front) * (1.0 - f * 0.3))
+            if t > t1:   # 着いた波の先も沼へ沈む（2026-11-06）
+                front *= max(0.0, 1.0 - (t - t1) / 0.8)
+            # 先が通った後は沼の面へ沈む（前は高さ 0.5H の塊の列が最後まで残り、手前をふさいだ。2026-11-06）
+            o.location = P.bl((x, y), z0 + H * (0.05 + 0.75 * front) * (1.0 - f * 0.3))
             s = R * (0.6 + 0.4 * rnd(j, 63))
-            o.scale = (s, s, H * (0.5 + 0.8 * front))
+            o.scale = (s, s, H * (0.12 + 1.0 * front))
         return True
     # bolt
     targets = fx.get("to") or []

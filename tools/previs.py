@@ -1508,14 +1508,14 @@ def build_fx(fx, i):
         lt.data.shadow_soft_size = 0.3
         return [o, lt]
     if kind == "shards":  # 飛び散るガラスの破片（窓破り、A18）
-        gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.7)
+        gm = beam_mat(f"fx{i}_glass", tuple(v / 255 for v in fx.get("color", [200, 235, 255])), strength=0.8, alpha=0.4)   # alpha は透ける割合。Workbench で見えるよう 0.7 → 0.4（2026-11-06）
         return [prim("cube", gm, f"fx{i}_sh{j}", None, (0, 0, -50), size=1.0) for j in range(int(fx.get("n", 14)))]
     if kind == "rift":    # 何もない空間の裂け目（夜光列車が出入りする。縦長の光る楕円が開いて閉じる、A23）
         rm = beam_mat(f"fx{i}_rift", col or (0.7, 0.45, 1.0), strength=3.0, alpha=0.85)
         cm = make_mat(f"fx{i}_rift_core", (0.02, 0.0, 0.05), rough=1.0)
         return [prim("sphere", rm, f"fx{i}_rift", None, (0, 0, -50), radius=1.0), prim("sphere", cm, f"fx{i}_rift_core", None, (0, 0, -50), radius=1.0)]
     if kind == "breath":  # 火を吐く（獅子の口から前へ伸びる炎の円すい、A23 の戦い）
-        fm = beam_mat(f"fx{i}_breath", col or (1.0, 0.5, 0.1), strength=4.0, alpha=0.8)
+        fm = beam_mat(f"fx{i}_breath", col or (1.0, 0.5, 0.1), strength=4.0, alpha=0.45)   # 透ける割合。Workbench で炎が読めるよう 0.8 → 0.45（2026-11-06）
         return [prim("cone", fm, f"fx{i}_breath", None, (0, 0, -50), radius1=1.0, radius2=0.15, depth=1.0)]
     if kind == "paper":   # ひらひら舞い落ちる紙切れ（切符、A20）
         pm = make_mat(f"fx{i}_paper", (0.95, 0.92, 0.82))
