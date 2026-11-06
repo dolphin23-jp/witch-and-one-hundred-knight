@@ -72,16 +72,7 @@ cuts:
       look_h: 0.8
       lens: 30
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 8.5]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: &id006 [190, 205, 90]
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: 北の小道から百騎兵が駆け戻り、光るキモを差し出す, do: ルッキーニィが跳ねて受け取る（「あ、ありがとうございます！これで”アロマニの香水”が作れます」）, end: キモを受け取ったルッキーニィ}
     camera: 広場の南の低い所から、駆けてくる百騎兵を迎える
     kind: M
@@ -238,26 +229,17 @@ cuts:
         z: 0.9
     cam_keys:
     - t: 0.0
-      cam: [33.8, 54.2, 1.2]
+      cam: [33.2, 54.0, 1.3]
       look: luckiny
-      look_h: 0.41
       lens: 28
       frame: 全身
+      look_h: 0.41
     - t: 9.4
-      cam: [33.9, 54.25, 1.2]
+      cam: [33.3, 54.05, 1.3]
       look: luckiny
+      lens: 32
       look_h: 0.7
-      lens: 34
-    fx:
-    - kind: mist
-      t: [0.0, 9.4]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: *id006
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ルッキーニィが額をぬぐって立ち上がる（「ふぅ……完成しました！」）, do: 小瓶を掲げてミトンへ歩み寄る（「それじゃあ、ミトンさん。これをつけてみてください」）, end: 小瓶を差し出すルッキーニィ}
     camera: ミトンの背中越しに（西から）、歩いてくるルッキーニィ
     kind: M
@@ -316,16 +298,7 @@ cuts:
       look: [35.5, 54.8]
       look_h: 0.7
       lens: 32
-    fx:
-    - kind: mist
-      t: [0.0, 8.4]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: *id006
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ルッキーニィが小瓶を向けると、ミトンが4本の腕をばたつかせる（「んぁ！やめるでち、わかったでち！自分でやるでち！」）, do: 小瓶を取り上げて、しげしげと見る（「こ、これでいい匂いになるんでちね！」）, end: 小瓶を掲げるミトン}
     camera: 北の高い所から、横に並ぶ二人
     kind: A
@@ -386,17 +359,17 @@ cuts:
     - kind: mist
       t: [0.4, 3.0]
       at: mitten
-      r: 0.8
-      h: 1.5
-      z: 0.2
+      r: 0.45
+      h: 1.4
+      z: 0.3
       color: [245, 175, 225]
-      alpha: 0.5
-      glow: 0.6
+      alpha: 0.8
+      glow: 0.5
     act: {start: ミトンが小瓶を頭の上で振る, do: 桃色の霧が体じゅうにふりかかる, end: 霧の中のミトン}
     camera: ミトンの正面の低い所から
     kind: M
   A36-007:
-    frame: 膝上
+    frame: 胸上
     only: [luckiny, mitten, hundred-knight, perfume]
     keys:
       luckiny:
@@ -427,19 +400,19 @@ cuts:
         z: 0.8
     cam_keys:
     - t: 0.0
-      cam: [34.4, 54.2, 1.25]
+      cam: [36.07, 54.1, 1.2]
       look: luckiny
-      look_h: 0.9
-      lens: 32
-      frame: 膝上
+      lens: 30
+      frame: 胸上
+      look_h: 1.11
     - t: 7.3
-      cam: [34.5, 54.25, 1.2]
+      cam: [36.05, 54.12, 1.2]
       look: luckiny
-      look_h: 0.9
-      lens: 38
+      lens: 34
+      look_h: 1.11
     fx: []
     act: {start: ミトンが胸を張る（「ど、どうでちか？いい匂いになったでちか？」）, do: ルッキーニィがおそるおそる鼻を近づける（「くんくん……」）, end: 鼻を近づけるルッキーニィ}
-    camera: ミトンの肩越しに、近づくルッキーニィの顔
+    camera: ミトンの脇（北東）から、近づくルッキーニィの顔
     kind: M
   A36-008:
     frame: 全身
@@ -495,16 +468,7 @@ cuts:
       lens: 26
       roll: 0
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 7.4]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: *id006
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ルッキーニィの顔がゆがむ, do: のけぞってよろけ、しりもちをつく（「うぐっ……くえっ！ダ、ダメです……。まだヒドイ臭いです！」）, end: しりもちをついたルッキーニィ}
     camera: 地面すれすれから、のけぞるルッキーニィ（画面を傾ける）
     kind: A
@@ -650,21 +614,12 @@ cuts:
       look: [35.8, 55.0]
       look_h: 0.8
       lens: 32
-    fx:
-    - kind: mist
-      t: [0.0, 13.8]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: *id006
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ミトンが小瓶を木箱に置き、不安そうに（「あそこまで行くんでちか？すぐに帰ってこられるでちか？」）, do: （「お風呂だけだから、そんなに時間はかからないと思うけど……」「何か用事があるんですか？」）, end: 首をかしげるルッキーニィ}
     camera: 南の木箱の脇の低い所から、二人
     kind: M
   A36-012:
-    frame: 引き
+    frame: 全身
     only: [luckiny, mitten, hundred-knight]
     hidden_ok: [perfume]
     keys:
@@ -692,29 +647,21 @@ cuts:
         pose: stand
     cam_keys:
     - t: 0.0
-      cam: [33.8, 55.2, 1.0]
-      look: [53.0, 53.0]
-      look_h: 1.0
-      lens: 28
-      frame: 引き
+      cam: [38.6, 53.8, 1.0]
+      look: [35.4, 54.6]
+      look_h: 0.9
+      lens: 30
+      frame: 全身
     - t: 14.1
-      cam: [34.0, 55.1, 1.0]
-      look: [53.0, 53.2]
-      look_h: 1.0
-      lens: 38
+      cam: [38.3, 53.85, 1.0]
+      look: mitten
+      lens: 36
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 14.1]
-      at: mitten
-      r: 0.4
-      h: 1.1
-      z: 0.1
-      color: *id006
-      alpha: 0.82
-      glow: 0.4
+      frame: 膝上
+      look_h: 0.77
+    fx: []
     act: {start: ミトンが街道の方へ向き直る, do: （「もしかしたら王子様が通りかかるかもしれないでち……」「前にも、ちょっとご飯を探しにいった間に王子様が通りすぎたことがあるでち……」）, end: 木々の向こうの街道を見つめるミトン}
-    camera: ミトンの背中越しに、木々の向こうの紅嵐街道（ゆっくり寄る）
+    camera: 街道の側の低い所から、街道を見つめるミトン（手前にルッキーニィ）。ゆっくり寄る
     kind: A
   A36-013:
     frame: 膝上
@@ -778,16 +725,16 @@ cuts:
         pose: stand
     cam_keys:
     - t: 0.0
-      cam: [35.27, 55.13, 0.7]
+      cam: [35.47, 55.7, 0.75]
       look: mitten
-      look_h: 1.04
       lens: 35
       frame: 寄り
-    - t: 8.2
-      cam: [35.27, 55.13, 0.7]
-      look: mitten
       look_h: 1.04
+    - t: 8.2
+      cam: [35.47, 55.7, 0.75]
+      look: mitten
       lens: 40
+      look_h: 1.04
     fx: []
     act: {start: ミトンがしょげて, do: （「う……！わ、わかったでち……。お風呂に入りにいくでち……」）, end: うなだれるミトン}
     camera: ミトンの正面の低い所から
@@ -852,7 +799,7 @@ cuts:
       r: 0.4
       h: 1.1
       z: 0.1
-      color: *id006
+      color: [190, 205, 90]
       alpha: 0.82
       glow: 0.4
     act: {start: ルッキーニィが手を打つ（「よし、決まりですね。それじゃあ、急いでいって戻ってきましょう」）, do: 先に立って街道の方へ歩き出す。ミトンが6本足で這ってついていき、百騎兵が続く, end: 広場を出ていく三人}

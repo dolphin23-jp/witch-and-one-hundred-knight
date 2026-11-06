@@ -56,10 +56,10 @@ cuts:
         pose: stand
     cam_keys:
     - t: 0.0
-      cam: [16.4, 8.0, 0.9]
+      cam: [16.7, 7.6, 1.0]
       look: [15.3, 8.3]
       look_h: 0.6
-      lens: 40
+      lens: 36
       frame: 寄り
     - t: 7.1
       cam: [17.4, 7.0, 2.4]
@@ -75,7 +75,7 @@ cuts:
       r: 0.4
       h: 1.4
       z: 0.5
-      color: &id007 [190, 205, 90]
+      color: [190, 205, 90]
       alpha: 0.82
       glow: 0.3
     act: {start: 浴槽の縁を、アルレッキーノがたわしで磨いている（まだ臭いが漂う）, do: メタリカが地団駄を踏む（「おのれっ！！この風呂はどうなってるんだ！」）, end: 腕を組むメタリカ}
@@ -106,16 +106,16 @@ cuts:
         pose: stand
     cam_keys:
     - t: 0.0
-      cam: [14.73, 8.54, 1.35]
+      cam: [15.07, 9.26, 1.3]
       look: metallica
-      look_h: 1.54
       lens: 32
       frame: 胸上
+      look_h: 1.38
     - t: 8.0
-      cam: [14.73, 8.54, 1.35]
+      cam: [15.07, 9.26, 1.3]
       look: metallica
-      look_h: 1.54
-      lens: 38
+      lens: 36
+      look_h: 1.38
     fx: []
     act: {start: メタリカが鼻をつまんで, do: （「あれから何日経ったと思ってる！な、なんで、いつまでも風呂の臭いがとれんのだ……」）, end: うんざりするメタリカ}
     camera: 浴槽の側から、メタリカの正面
@@ -147,19 +147,19 @@ cuts:
         pose: stand
     cam_keys:
     - t: 0.0
-      cam: [13.75, 7.0, 0.85]
+      cam: [13.6, 7.9, 0.9]
       look: arlecchino
-      look_h: 0.79
-      lens: 28
+      lens: 22
       frame: 膝上
+      look_h: 0.79
     - t: 13.4
-      cam: [13.8, 7.05, 0.85]
+      cam: [13.65, 7.9, 0.9]
       look: arlecchino
+      lens: 24
       look_h: 1.22
-      lens: 32
     fx: []
     act: {start: アルレッキーノが立ち上がって一礼する（「申し訳ございません。ワタクシ、毎日ごしごしとお掃除をしているのですが、なかなかにガンコな汚れゆえ」）, do: たわしを掲げて（「さすがは、ブリダンゴ姫といったところでございます」）, end: たわしを掲げるアルレッキーノ}
-    camera: メタリカの肩越しに、浴槽の前のアルレッキーノ（低めから）
+    camera: メタリカの脇の低い所から、浴槽の前のアルレッキーノ
     kind: M
   A39-004:
     frame: 全身
@@ -196,29 +196,20 @@ cuts:
       - {t: 8.02, pose: cover}
     cam_keys:
     - t: 0.0
-      cam: [14.6, 10.4, 1.5]
+      cam: [15.0, 8.4, 1.6]
       look: *id006
       look_h: 1.2
       lens: 30
       frame: 全身
     - t: 8.9
-      cam: [14.55, 10.35, 1.5]
+      cam: [14.95, 8.35, 1.6]
       look: bisco
-      look_h: 0.78
-      lens: 34
+      lens: 32
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 8.9]
-      at: *id004
-      r: 0.4
-      h: 1.4
-      z: 0.5
-      color: *id007
-      alpha: 0.82
-      glow: 0.3
+      look_h: 0.78
+    fx: []
     act: {start: 扉が開き、鼻を押さえたビスコがよろよろ入ってくる, do: （「おい、この臭い……魔法でなんとかならないのか？食事どころじゃないぞ……」）, end: 壁にもたれるビスコ}
-    camera: 浴槽の奥（南のカーテンの前）から、扉のビスコ
+    camera: 浴槽の縁の手前から、扉のビスコ
     kind: M
   A39-005:
     frame: 胸上
@@ -249,19 +240,19 @@ cuts:
         pose: cover
     cam_keys:
     - t: 0.0
-      cam: [12.75, 6.75, 1.85]
+      cam: [12.75, 6.75, 1.4]
       look: metallica
-      look_h: 1.54
       lens: 32
       frame: 胸上
+      look_h: 1.38
     - t: 6.7
-      cam: [12.8, 6.8, 1.85]
+      cam: [12.8, 6.8, 1.4]
       look: metallica
-      look_h: 1.54
       lens: 36
+      look_h: 1.38
     fx: []
     act: {start: メタリカがビスコに向き直る, do: （「魔法なら何度も試したさ。お前が、泡吹いて気絶している間にな！」）, end: にやりとするメタリカ}
-    camera: ビスコの肩越しに、メタリカ（高めから）
+    camera: ビスコの肩越しに、メタリカ
     kind: M
   A39-006:
     frame: 膝上
@@ -332,18 +323,18 @@ cuts:
         pose: cover
     cam_keys:
     - t: 0.0
-      cam: [13.07, 6.61, 1.4]
+      cam: [12.36, 6.11, 1.35]
       look: metallica
-      look_h: 1.54
       lens: 35
       frame: 胸上
+      look_h: 1.38
     - t: 8.2
-      cam: [13.07, 6.61, 1.4]
+      cam: [12.36, 6.11, 1.35]
       look: metallica
-      look_h: 1.39
-      lens: 55
+      lens: 45
       ease: inout
       frame: 寄り
+      look_h: 1.39
     act: {start: メタリカが意地悪く目を細める, do: （「キヒヒ、先日の異空間ではその犬っ鼻を百騎兵に自慢していたじゃないか」）, end: にやつくメタリカ}
     camera: ビスコの側から、メタリカの顔へ寄る
     kind: A
@@ -377,28 +368,19 @@ cuts:
       - {t: 3.1, pose: stand}
     cam_keys:
     - t: 0.0
-      cam: [16.4, 8.2, 2.4]
-      look: [13.7, 7.1]
+      cam: [15.6, 6.4, 2.4]
+      look: [13.8, 7.1]
       look_h: 0.9
       lens: 28
       frame: 全身
     - t: 7.6
-      cam: [16.35, 8.15, 2.35]
-      look: [13.7, 7.1]
+      cam: [15.55, 6.45, 2.35]
+      look: [13.8, 7.1]
       look_h: 0.9
       lens: 30
-    fx:
-    - kind: mist
-      t: [0.0, 7.6]
-      at: *id004
-      r: 0.4
-      h: 1.4
-      z: 0.5
-      color: *id007
-      alpha: 0.82
-      glow: 0.3
+    fx: []
     act: {start: ビスコが真っ赤になって跳び上がる（「なっ！！おまえ見ていたのか？」）, do: メタリカが肩をすくめる（「ちょっとだけな。キヒヒ」）, end: 向き合う二人}
-    camera: 浴槽の縁（北東）の高い所から、向き合う二人と百騎兵
+    camera: 北の壁ぎわの高い所から、向き合う二人と百騎兵
     kind: M
   A39-009:
     frame: 胸上
@@ -556,18 +538,18 @@ cuts:
       - {t: 0.3, pose: stand, face: 110}
     cam_keys:
     - t: 0.0
-      cam: &id008 [14.6, 7.6, 1.45]
+      cam: &id007 [14.9, 6.6, 1.4]
       look: bisco
-      look_h: 1.22
       lens: 35
       frame: 胸上
-    - t: 6.8
-      cam: *id008
-      look: bisco
       look_h: 1.22
+    - t: 6.8
+      cam: *id007
+      look: bisco
       lens: 36.8
+      look_h: 1.22
     act: {start: ビスコが鼻から手を離し、心配そうに, do: （「大丈夫なのか、メタリカ？あいつ、最近元気がなかったが……」）, end: メタリカを見るビスコ}
-    camera: メタリカの肩越しに、ビスコ
+    camera: 北東から、ビスコ
     kind: M
   A39-013:
     frame: 全身
@@ -611,27 +593,18 @@ cuts:
       - {t: 10.1, face: '@hundred-knight'}
     cam_keys:
     - t: 0.0
-      cam: [15.8, 9.0, 2.6]
+      cam: [16.6, 7.0, 2.6]
       look: [13.8, 7.0]
       look_h: 0.9
       lens: 26
       frame: 全身
     - t: 11.9
-      cam: [15.75, 8.95, 2.55]
+      cam: [16.55, 7.0, 2.55]
       look: [13.3, 6.5]
       look_h: 0.9
       lens: 28
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 11.9]
-      at: *id004
-      r: 0.4
-      h: 1.4
-      z: 0.5
-      color: *id007
-      alpha: 0.82
-      glow: 0.3
+    fx: []
     act: {start: メタリカがため息をついて（「はぁ……。まったく……」）, do: 百騎兵を指さす（「百騎兵、ルッキーニィを捜してこい。オマエなら居場所がわかるだろ？」）百騎兵がうなずいて扉から駆け出す, end: 扉の方を見る三人}
-    camera: 浴槽の上の高い所から、指さすメタリカと、扉から駆け出す百騎兵
+    camera: 東の棚の脇の高い所から、指さすメタリカと、扉から駆け出す百騎兵
     kind: M

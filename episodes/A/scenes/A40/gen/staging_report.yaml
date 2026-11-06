@@ -1,23 +1,36 @@
 cuts:
   A40-001:
     cam:
-    - 34.8
-    - 47.6
-    - 0.7
+    - 40.2
+    - 46.0
+    - 1.0
     lens: 28
-    bearing: 81
+    bearing: 232
     frame: 全身
     start:
       people:
-      - who: luckiny
-        s: -0.58
-        dist: 2.81
-        side: 左
-        body: 正面
+      - who: mitten
+        s: 0.37
+        dist: 9.18
+        side: 右
+        body: 斜め後ろ（画面右向き）
+      - who: heavy-fruit
+        s: 0.76
+        dist: 8.35
+        side: 右
+        body: 横顔（画面右向き）
       bg: 紅葉の森
       props:
-      - ゴミの山（北東）
+      - ゴミの山（西）
+      - ゴミの山（南西）
       - 立てかけた車輪
+      - 木箱（ミトンの住みかの前）
+      - 樽
+      - 骨
+      - 壺
+      - かなきり穂の茂み
+      - かなきり穂の茂み
+      - かなきり穂の茂み
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
@@ -40,38 +53,55 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy
-        trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      - 紅葉の木
+      - 紅葉の木
+      staging: 'In frame (exactly 2 people, from left to right): Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae,
+        a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, on the right of the frame,
+        seen from behind at an angle, turned toward screen right, small in the background; a heavy fruit (a round heavy orange-brown fruit the size of a melon), standing, at the far right of the frame,
+        in profile, turned toward screen right, small in the background. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled
+        sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
-      - who: luckiny
-        s: -0.32
-        dist: 2.82
+      - who: mitten
+        s: -0.76
+        dist: 8.62
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: heavy-fruit
+        s: -0.33
+        dist: 9.08
         side: 中央
-        body: 正面
+        body: 横顔（画面右向き）
       - who: hundred-knight
-        s: 0.22
-        dist: 3.35
+        s: -0.28
+        dist: 2.56
         side: 中央
-        body: 正面
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
-        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the
-        right of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime
-        in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+        body: 背中
+      - who: luckiny
+        s: 0.37
+        dist: 2.94
+        side: 右
+        body: 背中
+      staging: 'In frame (exactly 4 people, from left to right): Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae,
+        a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, at the far left of the
+        frame, seen from behind at an angle, turned toward screen right, small in the background; a heavy fruit (a round heavy orange-brown fruit the size of a melon), standing, on the left of the frame,
+        in profile, turned toward screen right, small in the background; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue
+        flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, with the back to the camera;
+        Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy
+        tail), standing, on the right of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves,
+        dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       luckiny:
         to:
-        - 37.4
-        - 46.1
+        - 37.2
+        - 45.5
         t:
         - 0.0
         - 10.62
       hundred-knight:
         to:
-        - 38.2
-        - 46.8
+        - 37.6
+        - 46.5
         face: 255
         via:
         - - 39.0
@@ -313,13 +343,13 @@ cuts:
       people:
       - who: luckiny
         s: 0.0
-        dist: 7.12
+        dist: 7.08
         side: 中央
         body: 正面
       - who: hundred-knight
-        s: 0.31
-        dist: 7.75
-        side: 中央
+        s: 0.42
+        dist: 7.16
+        side: 右
         body: 正面
       staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
         green furry goat legs with dark hooves, a green fluffy tail), standing, in the center of the frame, facing the camera, small in the background; the Hundred Knight (small, about waist-high to Metallica:
@@ -329,8 +359,8 @@ cuts:
     move:
       luckiny:
         to:
-        - 37.4
-        - 46.1
+        - 37.2
+        - 45.5
         t:
         - 0.0
         - 4.14
@@ -408,10 +438,17 @@ cuts:
         dist: 3.16
         side: 中央
         body: 斜め前（画面右向き）
-      staging: 'In frame (exactly one person): Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae, a fluffy yellow fur
-        collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, in the center of the frame, in three-quarter
-        view, turned toward screen right. No other people. Low angle looking up; the sky fills the upper part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy
-        trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      - who: luckiny
+        s: 1.02
+        dist: 7.17
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 2 people, from left to right): Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae,
+        a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, in the center of the frame,
+        in three-quarter view, turned toward screen right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green
+        furry goat legs with dark hooves, a green fluffy tail), standing, at the far right of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Low angle
+        looking up; the sky fills the upper part of the frame. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime
+        in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       mitten:
         to:
@@ -427,11 +464,11 @@ cuts:
     note: null
   A40-006:
     cam:
-    - 36.34
-    - 46.99
+    - 35.84
+    - 45.26
     - 0.75
     lens: 35
-    bearing: 50
+    bearing: 100
     frame: 胸上
     start:
       people:
@@ -440,6 +477,11 @@ cuts:
         dist: 1.38
         side: 中央
         body: 正面
+      - who: hundred-knight
+        s: 0.91
+        dist: 1.95
+        side: 右
+        body: 斜め前（画面右向き）
       bg: 紅葉の森
       props:
       - ゴミの山（北東）
@@ -460,14 +502,11 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      - 紅葉の木
-      - 紅葉の木
-      - 紅葉の木
-      - 紅葉の木
-      - 紅葉の木
-      staging: 'In frame (exactly one person): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat
-        legs with dark hooves, a green fluffy tail), standing, in the center of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy
-        trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
+        green furry goat legs with dark hooves, a green fluffy tail), standing, in the center of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
+        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the
+        far right of the frame, in three-quarter view, turned toward screen right. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves,
+        dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
       - who: luckiny
@@ -481,36 +520,49 @@ cuts:
     move:
       luckiny:
         to:
-        - 37.4
-        - 46.1
+        - 37.2
+        - 45.5
         t:
         - 0.0
         - 0.3
     note: null
   A40-007:
     cam:
-    - 35.8
-    - 46.4
-    - 0.7
-    lens: 30
-    bearing: 90
+    - 38.6
+    - 44.6
+    - 0.8
+    lens: 28
+    bearing: 221
     frame: 膝上
     start:
       people:
-      - who: luckiny
-        s: -0.31
-        dist: 1.6
-        side: 中央
-        body: 正面
       - who: hundred-knight
-        s: 0.28
-        dist: 2.4
+        s: -0.35
+        dist: 2.09
+        side: 左
+        body: 斜め後ろ（画面右向き）
+      - who: mitten
+        s: 0.09
+        dist: 8.05
         side: 中央
-        body: 正面
+        body: 横顔（画面左向き）
+      - who: luckiny
+        s: 0.47
+        dist: 1.59
+        side: 右
+        body: 背中
       bg: 紅葉の森
       props:
-      - ゴミの山（北東）
+      - ゴミの山（西）
+      - ゴミの山（南西）
       - 立てかけた車輪
+      - 木箱（ミトンの住みかの前）
+      - 樽
+      - 骨
+      - 壺
+      - かなきり穂の茂み
+      - かなきり穂の茂み
+      - かなきり穂の茂み
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
@@ -530,41 +582,55 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, facing the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue
-        helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the
-        right of the frame, facing the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime
-        in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      - 紅葉の木
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, seen from behind at an angle, turned
+        toward screen right; Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae, a fluffy yellow fur collar, a yellow
+        segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, in the center of the frame, in profile, turned toward screen
+        left, small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with
+        dark hooves, a green fluffy tail), standing, on the right of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy
+        trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
-      - who: luckiny
-        s: -0.57
-        dist: 1.52
-        side: 左
-        body: 背中
       - who: hundred-knight
-        s: 0.15
-        dist: 2.37
+        s: -0.42
+        dist: 2.02
+        side: 左
+        body: 横顔（画面左向き）
+      - who: mitten
+        s: 0.11
+        dist: 7.98
         side: 中央
-        body: 背中
-      staging: 'In frame (exactly 2 people, from left to right): Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim,
-        green furry goat legs with dark hooves, a green fluffy tail), standing, on the left of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round
-        silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes),
-        standing, in the center of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled
-        sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+        body: 横顔（画面左向き）
+      - who: luckiny
+        s: 0.56
+        dist: 1.52
+        side: 右
+        body: 斜め前（画面左向き）
+      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, in profile, turned toward screen
+        left; Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a big black bow, magenta antennae, a fluffy yellow fur collar, a yellow segmented belly,
+        four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back), standing, in the center of the frame, in profile, turned toward screen left, small in
+        the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves,
+        a green fluffy tail), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange maple trees with
+        thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       luckiny:
         to:
-        - 37.4
-        - 46.1
+        - 37.2
+        - 45.5
         face: 100
         t:
         - 0.0
         - 1.2
       hundred-knight:
         to:
-        - 38.2
-        - 46.8
+        - 37.6
+        - 46.5
         face: 100
         t:
         - 0.0
@@ -581,14 +647,14 @@ cuts:
     start:
       people:
       - who: hundred-knight
-        s: -0.77
-        dist: 3.91
+        s: -0.52
+        dist: 4.02
         side: 左
         body: 横顔（画面左向き）
       - who: luckiny
-        s: -0.39
-        dist: 3.82
-        side: 左
+        s: -0.22
+        dist: 3.45
+        side: 中央
         body: 横顔（画面左向き）
       - who: mitten
         s: 0.0
@@ -638,7 +704,7 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the far left of the frame, in profile, turned toward screen
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, on the left of the frame, in profile, turned toward screen
         left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green
         fluffy tail), standing, on the left of the frame, in profile, turned toward screen left; Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments: pink hair, a
         big black bow, magenta antennae, a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings on the back),
@@ -718,8 +784,8 @@ cuts:
         side: 中央
         body: 正面
       - who: heinz
-        s: 0.05
-        dist: 31.38
+        s: 0.02
+        dist: 31.4
         side: 中央
         body: 横顔（画面右向き）
       - who: mitten
@@ -772,13 +838,13 @@ cuts:
         side: 中央
         body: 正面
       - who: heinz
-        s: 0.27
-        dist: 7.71
+        s: 0.15
+        dist: 7.83
         side: 中央
         body: 横顔（画面右向き）
       staging: 'In frame (exactly 2 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
         emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, in the center of the frame, facing the
-        camera; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, on the right of the frame, in profile, turned toward screen right. No other
+        camera; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, in profile, turned toward screen right. No other
         people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering
         through the red canopy, dappled light on fallen red leaves and moss.'
     move:
@@ -791,7 +857,7 @@ cuts:
         - 4.6
       heinz:
         to:
-        - 53.02
+        - 53.6
         - 53.4
         t:
         - 0.0
@@ -803,25 +869,25 @@ cuts:
     - 51.4
     - 1.3
     lens: 40
-    bearing: 110
+    bearing: 108
     frame: 膝上
     start:
       people:
       - who: heinz-carriage
-        s: -0.57
-        dist: 6.42
+        s: -0.5
+        dist: 6.47
         side: 左
         body: 横顔（画面左向き）
+      - who: heinz
+        s: -0.0
+        dist: 6.51
+        side: 中央
+        body: 正面
       - who: hundred-knight
-        s: -0.04
+        s: 0.02
         dist: 0.63
         side: 中央
         body: 背中
-      - who: heinz
-        s: 0.0
-        dist: 5.97
-        side: 中央
-        body: 正面
       bg: 紅葉の森
       props:
       - 紅葉の木
@@ -836,35 +902,35 @@ cuts:
       - 紅葉の木
       staging: 'In frame (exactly 3 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
         emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, on the left of the frame, in profile,
-        turned toward screen left, small in the background; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
-        on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, with the back to the camera; Heinz von
-        Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, facing the camera. No other people. Behind: a deep autumn forest
-        of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled
-        light on fallen red leaves and moss.'
+        turned toward screen left, small in the background; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, facing
+        the camera, small in the background; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, with the back to the camera. No other people. Behind:
+        a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through
+        the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
       - who: heinz-carriage
-        s: -0.73
-        dist: 6.32
+        s: -0.64
+        dist: 6.36
         side: 左
         body: 横顔（画面左向き）
       - who: heinz
         s: 0.0
-        dist: 5.87
+        dist: 6.42
         side: 中央
         body: 正面
       - who: hundred-knight
-        s: 0.09
+        s: 0.18
         dist: 0.54
         side: 中央
         body: 背中
       staging: 'In frame (exactly 3 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
         emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, at the far left of the frame, in profile,
         turned toward screen left, small in the background; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, facing
-        the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized
-        blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, with the back to the camera. No other people. Behind: a deep autumn forest of crimson
-        and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on
-        fallen red leaves and moss.'
+        the camera, small in the background; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black
+        face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, in the center of the frame, with the back to the camera. No other people. Behind:
+        a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through
+        the red canopy, dappled light on fallen red leaves and moss.'
     move:
       luckiny:
         to:
@@ -880,20 +946,20 @@ cuts:
     - 55.6
     - 1.75
     lens: 45
-    bearing: 33
+    bearing: 42
     frame: 寄り
     start:
       people:
+      - who: heinz-carriage
+        s: -0.38
+        dist: 4.28
+        side: 左
+        body: 斜め後ろ（画面左向き）
       - who: heinz
         s: 0.0
-        dist: 2.62
+        dist: 2.97
         side: 中央
         body: 斜め前（画面左向き）
-      - who: heinz-carriage
-        s: 0.04
-        dist: 4.33
-        side: 中央
-        body: 斜め後ろ（画面左向き）
       bg: 紅葉の森
       props:
       - 紅葉の木
@@ -913,30 +979,28 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      - 紅葉の木
-      - 紅葉の木
-      staging: 'In frame (exactly 2 people, from left to right): Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame,
-        in three-quarter view, turned toward screen left; Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
-        emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, in the center of the frame, seen from
-        behind at an angle, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn
-        daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      staging: 'In frame (exactly 2 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
+        emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, on the left of the frame, seen from
+        behind at an angle, turned toward screen left; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a
+        forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
+      - who: heinz-carriage
+        s: -0.47
+        dist: 4.14
+        side: 左
+        body: 斜め後ろ（画面左向き）
       - who: heinz
-        s: -0.0
-        dist: 2.48
+        s: 0.0
+        dist: 2.83
         side: 中央
         body: 斜め前（画面左向き）
-      - who: heinz-carriage
-        s: 0.06
-        dist: 4.19
-        side: 中央
-        body: 斜め後ろ（画面左向き）
-      staging: 'In frame (exactly 2 people, from left to right): Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame,
-        in three-quarter view, turned toward screen left; Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
-        emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, in the center of the frame, seen from
-        behind at an angle, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn
-        daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      staging: 'In frame (exactly 2 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
+        emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, on the left of the frame, seen from
+        behind at an angle, turned toward screen left; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, in the center of the frame, in three-quarter
+        view, turned toward screen left. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a
+        forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move: {}
     note: null
   A40-012:
@@ -1014,27 +1078,22 @@ cuts:
     note: null
   A40-013:
     cam:
-    - 46.6
-    - 52.6
-    - 2.4
+    - 48.4
+    - 53.4
+    - 2.2
     lens: 30
-    bearing: 85
+    bearing: 76
     frame: 全身
     start:
       people:
-      - who: hundred-knight
-        s: -1.0
-        dist: 1.48
-        side: 左
-        body: 斜め後ろ（画面右向き）
       - who: heinz-carriage
         s: 0.0
-        dist: 7.42
+        dist: 5.77
         side: 中央
         body: 横顔（画面左向き）
       - who: heinz
-        s: 0.35
-        dist: 6.33
+        s: 0.42
+        dist: 5.04
         side: 右
         body: 正面
       bg: 紅葉の森
@@ -1050,50 +1109,50 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
-      staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
-        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the far left of the frame, seen from behind at an angle,
-        turned toward screen right; Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross emblem on the door,
-        large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, in the center of the frame, in profile, turned toward screen
-        left, small in the background; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, on the right of the frame, facing the camera, small
-        in the background. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson
-        maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      - 紅葉の木
+      - 紅葉の木
+      staging: 'In frame (exactly 2 people, from left to right): Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a gold sun-and-cross
+        emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, in the center of the frame, in profile,
+        turned toward screen left; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, on the right of the frame, facing the camera. No other people.
+        Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering
+        through the red canopy, dappled light on fallen red leaves and moss.'
     end:
       people:
+      - who: hundred-knight
+        s: -0.94
+        dist: 1.49
+        side: 左
+        body: 横顔（画面右向き）
+      - who: luckiny
+        s: -0.37
+        dist: 2.44
+        side: 左
+        body: 斜め後ろ（画面右向き）
       - who: heinz
-        s: -0.3
-        dist: 27.35
+        s: -0.2
+        dist: 28.15
         side: 中央
         body: 横顔（画面左向き）
       - who: heinz-carriage
-        s: -0.26
-        dist: 29.03
+        s: -0.19
+        dist: 29.6
         side: 中央
         body: 背中
-      - who: luckiny
-        s: 0.74
-        dist: 2.37
-        side: 右
-        body: 背中
       - who: mitten
-        s: 0.78
-        dist: 4.38
-        side: 右
-        body: 背中
-      - who: hundred-knight
-        s: 1.01
-        dist: 1.39
-        side: 右
+        s: 0.25
+        dist: 4.33
+        side: 中央
         body: 斜め後ろ（画面右向き）
-      staging: 'In frame (exactly 5 people, from left to right): Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with gold trim), standing, on the left of the frame,
-        in profile, turned toward screen left, small in the background; Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown on the roof, gold lanterns, white curtains, a
-        gold sun-and-cross emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the driver''s seat), standing, on the left of the
-        frame, with the back to the camera, small in the background; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur
-        trim, green furry goat legs with dark hooves, a green fluffy tail), standing, at the far right of the frame, with the back to the camera; Mitten, the Buridango Princess (a large bug girl in shiny
-        teal-blue armored shell segments: pink hair, a big black bow, magenta antennae, a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent
-        light-blue insect wings on the back), standing, at the far right of the frame, with the back to the camera; the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet
-        with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the far right
-        of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves,
-        dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
+      staging: 'In frame (exactly 5 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
+        plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the far left of the frame, in profile, turned toward screen
+        right; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green
+        fluffy tail), standing, on the left of the frame, seen from behind at an angle, turned toward screen right; Heinz von Frause (a handsome young nobleman: neat blond hair, a white-and-blue coat with
+        gold trim), standing, in the center of the frame, in profile, turned toward screen left, small in the background; Heinz''s luxurious carriage (a royal-blue coach with ornate gold trim, a gold crown
+        on the roof, gold lanterns, white curtains, a gold sun-and-cross emblem on the door, large blue-and-gold spoked wheels, drawn by two white horses in blue-and-gold harness, a guard in armor on the
+        driver''s seat), standing, in the center of the frame, with the back to the camera, small in the background; Mitten, the Buridango Princess (a large bug girl in shiny teal-blue armored shell segments:
+        pink hair, a big black bow, magenta antennae, a fluffy yellow fur collar, a yellow segmented belly, four arms and two legs ending in yellow star-shaped tips, translucent light-blue insect wings
+        on the back), standing, on the right of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: a deep autumn forest of crimson and orange maple trees with
+        thick mossy trunks, fallen red leaves, dappled sunlight. Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss.'
     move:
       luckiny:
         to:
@@ -1117,12 +1176,12 @@ cuts:
         - 9.1
       heinz:
         to:
-        - 53.02
+        - 53.6
         - 25.4
         via:
-        - - 53.02
+        - - 53.6
           - 53.4
-        - - 53.02
+        - - 53.6
           - 37.4
         t:
         - 0.0
@@ -1130,27 +1189,27 @@ cuts:
     note: null
   A40-014:
     cam:
-    - 52.2
+    - 52.0
     - 49.0
-    - 0.8
+    - 1.35
     lens: 32
-    bearing: 257
+    bearing: 256
     frame: 胸上
     start:
       people:
       - who: hundred-knight
-        s: -0.62
-        dist: 4.66
+        s: -0.61
+        dist: 4.51
         side: 左
         body: 斜め前（画面左向き）
       - who: luckiny
         s: -0.44
-        dist: 3.9
+        dist: 3.74
         side: 左
         body: 正面
       - who: mitten
-        s: -0.0
-        dist: 1.84
+        s: 0.0
+        dist: 1.65
         side: 中央
         body: 正面
       bg: 紅葉の森
@@ -1186,6 +1245,7 @@ cuts:
       - 紅葉の木
       - 紅葉の木
       - 紅葉の木
+      - 紅葉の木
       staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame
         plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes), standing, at the far left of the frame, in three-quarter view, turned
         toward screen left; Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves,
@@ -1196,18 +1256,18 @@ cuts:
     end:
       people:
       - who: hundred-knight
-        s: -0.78
-        dist: 4.57
+        s: -0.73
+        dist: 4.41
         side: 左
         body: 斜め前（画面左向き）
       - who: luckiny
-        s: -0.56
-        dist: 3.82
+        s: -0.53
+        dist: 3.65
         side: 左
         body: 正面
       - who: mitten
         s: 0.0
-        dist: 1.78
+        dist: 1.59
         side: 中央
         body: 正面
       staging: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame

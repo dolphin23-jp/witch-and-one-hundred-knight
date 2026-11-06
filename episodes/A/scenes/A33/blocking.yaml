@@ -175,16 +175,16 @@ cuts:
         face: 150
     cam_keys:
     - t: 0.0
-      cam: [2.0, 5.3, 0.6]
+      cam: [1.95, 4.0, 0.5]
       look: metallica
-      lens: 26
+      lens: 22
       frame: 全身
-      look_h: 3.46
+      look_h: 3.37
     - t: 5.6
-      cam: [1.95, 5.1, 0.7]
+      cam: [1.9, 3.8, 0.55]
       look: metallica
-      lens: 28
-      look_h: 3.16
+      lens: 24
+      look_h: 3.06
     act: {start: 2階から階段を駆け降りてくるメタリカ, do: 会報を頭の上に掲げる（「キヒヒ！来たぞ来たぞ！”魔女会報”だ！」）, end: 会報を掲げるメタリカ}
     camera: 階段の下の手前の低い所から、階段の上のメタリカを見上げる。少し寄る
     kind: A
@@ -261,7 +261,7 @@ cuts:
       look: metallica
       lens: 28
       ease: inout
-      look_h: 3.43
+      look_h: 3.3
     act: {start: ルッキーニィが目を輝かせる, do: （「”魔女会報”！？魔女にしか送られてこない、あの！」）メタリカが得意げに階段を降りる（「キヒヒ！とうとうワタシの名を世に轟かす日が来たようだなあ。」）, end: 5段目で胸を張るメタリカ}
     camera: テーブルの北から、ルッキーニィから階段のメタリカへ振る
     kind: M
@@ -305,14 +305,14 @@ cuts:
       look: metallica
       lens: 28
       frame: 膝上
-      look_h: 2.8
+      look_h: 2.67
     - t: 10.3
       cam: [2.2, 3.6, 1.7]
       look: metallica
       lens: 38
       ease: inout
       frame: 胸上
-      look_h: 3.09
+      look_h: 2.93
     act: {start: 階段の5段目で胸を張るメタリカ, do: （「キヒヒ！こうなったら、自らのチカラでさらなる沼の拡張を行い、」）両手を広げて（「沼の魔女の名を歴史に刻んでやる！」）, end: 両手を掲げるメタリカ}
     camera: 階段の脇の低い所から見上げ、ゆっくり寄る
     kind: A
@@ -756,13 +756,13 @@ cuts:
       - {t: 1.0, face: 100}
     cam_keys:
     - t: 0.0
-      cam: [1.6, 5.6, 2.8]
+      cam: [1.7, 5.1, 3.0]
       look: luckiny
       look_h: 0.9
       lens: 24
       frame: 引き
     - t: 5.0
-      cam: [1.8, 5.6, 2.7]
+      cam: [1.9, 5.1, 2.9]
       look: [6.6, 6.4]
       look_h: 1.0
       lens: 26
@@ -1153,16 +1153,7 @@ cuts:
       look_h: 0.6
       lens: 22
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 3.9]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: 虫が後ろの脚で立ち上がる（立った高さ 1.2m。4本の腕、背中の透けた羽根）, do: ルッキーニィが跳び上がる（「うわ！？立ちあがった！！！」）, end: 立ったミトン}
     camera: '床すれすれから見上げ、立ち上がるミトンに合わせて上へ（準備（案）: 低い位置から見上げる）'
     kind: A
@@ -1381,12 +1372,12 @@ cuts:
       look: metallica
       lens: 30
       frame: 全身
-      look_h: 3.77
+      look_h: 3.68
     - t: 3.4
       cam: *id015
       look: metallica
       lens: 31.5
-      look_h: 3.77
+      look_h: 3.68
     act: {start: 階段の上にメタリカが現れる, do: （「ふむ、依頼と聞こえたが！」）, end: 階段の上から見下ろすメタリカ}
     camera: 部屋の中ほどから、階段の上を見上げる
     kind: M
@@ -1551,14 +1542,14 @@ cuts:
       look: metallica
       lens: 22
       frame: 全身
-      look_h: 1.29
+      look_h: 1.19
     - t: 6.0
       cam: [5.0, 6.4, 1.15]
       look: metallica
       lens: 26
       ease: inout
       frame: 膝上
-      look_h: 1.25
+      look_h: 1.12
     act: {start: アルレッキーノが紹介する（「リカ様に依頼に来られたお客様にございます。」）, do: メタリカが階段の下からミトンの前へ歩き、ぴしゃりと（「メタリカだ。」）, end: ミトンの前に立つメタリカ}
     camera: 南の棚の前から、歩いてくるメタリカを追い、止まった所で寄る
     kind: M
@@ -1668,16 +1659,7 @@ cuts:
       look: [5.2, 5.25]
       look_h: 0.9
       lens: 32
-    fx:
-    - kind: mist
-      t: [0.0, 12.3]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ルッキーニィがおそるおそるミトンに近づく, do: （「ブリダンゴ……？初めて見ました……。」）顔をのぞき込む（「立つし、喋るし。もしかして虫じゃなくて、妖精の仲間とかですか？」）, end: のぞき込むルッキーニィ}
     camera: 南の棚の前から、横に並ぶ二人
     kind: M
@@ -1720,13 +1702,13 @@ cuts:
     - t: 0.0
       cam: &id017 [4.8, 5.8, 1.25]
       look: metallica
-      look_h: 1.54
+      look_h: 1.38
       lens: 35
       frame: 胸上
     - t: 4.2
       cam: *id017
       look: metallica
-      look_h: 1.54
+      look_h: 1.38
       lens: 36.8
     act: {start: メタリカが吹き出す, do: （「キヒヒ！妖精だと！？ブリダンゴが？」）, end: 笑うメタリカ}
     camera: ミトンの側から、メタリカの正面
@@ -1892,16 +1874,7 @@ cuts:
       look: [4.7, 5.45]
       look_h: 0.95
       lens: 34
-    fx:
-    - kind: mist
-      t: [0.0, 9.2]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: メタリカが腕を組む（「……。一応、内容だけでも聞こうか。」）, do: ミトンが胸の前で手を合わせる（「あたち……。王子様をオウエンしたいんでち！」）, end: 向き合う二人}
     camera: 西南の棚の端から、メタリカの肩越しにミトン
     kind: M
@@ -1951,12 +1924,12 @@ cuts:
       look: metallica
       lens: 24
       frame: 膝上
-      look_h: 1.25
+      look_h: 1.12
     - t: 7.9
       cam: [5.3, 6.45, 1.15]
       look: metallica
       lens: 26
-      look_h: 1.25
+      look_h: 1.12
     act: {start: メタリカが一歩詰め寄る, do: （「あん？王子？応援？お前、意味わかってるのか？」）, end: 顔を近づけるメタリカ}
     camera: ミトンの背中の脇（南）から、メタリカ
     kind: M
@@ -2005,12 +1978,12 @@ cuts:
       lens: 30
       frame: 胸上
     - t: 7.0
-      cam: [4.7, 5.85, 0.95]
+      cam: [4.65, 5.85, 0.95]
       look: mitten
-      look_h: 1.04
-      lens: 45
+      lens: 34
       ease: inout
       frame: 寄り
+      look_h: 1.04
     fx: []
     act: {start: ミトンが顔を赤くして言い返す, do: （「わ、わかってるでち！あたち、王子様が大好きなんでち！」）跳ねる, end: うっとりするミトン}
     camera: メタリカの側から、ミトンの顔へ寄る
@@ -2162,12 +2135,12 @@ cuts:
       look: metallica
       lens: 24
       frame: 膝上
-      look_h: 1.25
+      look_h: 1.12
     - t: 12.4
       cam: [5.25, 6.45, 1.3]
       look: metallica
       lens: 28
-      look_h: 1.25
+      look_h: 1.12
     act: {start: メタリカがため息をつく（「はぁ……。わかったわかった。大好きな王子を応援したいんだな。」）, do: 床を指さす（「だったら土にでも潜ってろ。それがお前にできる唯一の応援だ。」）, end: 床を指さすメタリカ}
     camera: 南東の棚の前から、メタリカ
     kind: M
@@ -2211,26 +2184,17 @@ cuts:
       - {t: 0.3, pose: cross, face: 260}
     cam_keys:
     - t: 0.0
-      cam: [2.0, 6.2, 2.2]
+      cam: [1.5, 6.0, 2.2]
       look: [4.4, 5.5]
       look_h: 0.9
       lens: 28
       frame: 全身
     - t: 11.0
-      cam: [2.1, 6.2, 2.15]
+      cam: [1.55, 6.0, 2.15]
       look: [4.5, 5.5]
       look_h: 1.0
       lens: 30
-    fx:
-    - kind: mist
-      t: [0.0, 11.0]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: メタリカが背を向ける（「何をしても無駄だと言っているんだ。わかったら、さっさと帰れ。」）, do: ミトンが地団駄を踏む（「どうして無駄なんでちか！？全然わからないでち！」）, end: 背を向けたメタリカと、食い下がるミトン}
     camera: 西南の壺の脇から、背を向けるメタリカと奥のミトン
     kind: M
@@ -2275,7 +2239,7 @@ cuts:
       look: metallica
       lens: 32
       frame: 胸上
-      look_h: 1.54
+      look_h: 1.38
     - t: 6.8
       cam: [4.7, 6.05, 1.4]
       look: metallica
@@ -2401,16 +2365,7 @@ cuts:
       look_h: 1.0
       lens: 30
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 11.09]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
+    fx: []
     act: {start: ミトンが腕を振り上げる（「ブ、ブリダンゴをバカにするなんて許せないでち！失礼でち！」）, do: 背を向け、足を踏み鳴らして玄関から出ていく（「もうお前なんかに頼まないでち！こんなところに来て損したでち！！！」）, end: 開いたままの扉}
     camera: 倒れたビスコの脇から、玄関へ出ていくミトンを追って振る
     kind: M
@@ -2471,7 +2426,7 @@ cuts:
       look: metallica
       lens: 16
       frame: 全身
-      look_h: 0.98
+      look_h: 0.88
     - t: 7.5
       cam: [4.9, 5.7, 2.1]
       look: *id018
@@ -2629,13 +2584,13 @@ cuts:
     - t: 0.0
       cam: &id019 [3.0, 2.2, 1.45]
       look: metallica
-      look_h: 1.45
+      look_h: 1.3
       lens: 35
       frame: 胸上
     - t: 7.9
       cam: *id019
       look: metallica
-      look_h: 1.45
+      look_h: 1.3
       lens: 36.8
     act: {start: メタリカがそっぽを向く, do: （「そんなことは知っている！だからちゃんと教えてやっただろう。」「何をしても無駄だとな。」）, end: 腕を組むメタリカ}
     camera: テーブルの西の少し高い所から、ソファのメタリカの正面
@@ -2803,13 +2758,13 @@ cuts:
     - t: 0.0
       cam: [3.75, 3.8, 0.9]
       look: metallica
-      look_h: 1.26
+      look_h: 1.13
       lens: 24
       frame: 膝上
     - t: 14.4
       cam: [3.75, 3.75, 0.9]
       look: metallica
-      look_h: 1.25
+      look_h: 1.12
       lens: 26
       ease: inout
     act: {start: メタリカがため息をついて立ち上がる（「はぁ……。お前もわかってないのか……。よしわかった。」）, do: ルッキーニィと百騎兵を指さす（「ルッキーニィ、それから百騎兵。お前たち、あのブリダンゴを調べてこい。」）, end: 指さすメタリカ}
@@ -2852,13 +2807,13 @@ cuts:
       look: metallica
       lens: 30
       frame: 胸上
-      look_h: 1.54
+      look_h: 1.38
     - t: 8.2
       cam: [3.25, 2.5, 1.3]
       look: metallica
       lens: 34
       ease: inout
-      look_h: 1.54
+      look_h: 1.38
     act: {start: メタリカが胸を張る, do: （「本当に、土に潜る以上の応援があるというなら、それをワタシが叶えてやる。」）, end: にやりとするメタリカ}
     camera: ルッキーニィの肩の脇から、メタリカの正面。少し寄る
     kind: M
