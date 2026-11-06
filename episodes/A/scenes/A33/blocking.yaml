@@ -1465,16 +1465,6 @@ cuts:
       look_h: 1.0
       lens: 28
       ease: inout
-    fx:
-    - kind: mist
-      t: [0.0, 7.0]
-      at: mitten
-      r: 0.4
-      h: 1.2
-      z: 0.1
-      color: *id010
-      alpha: 0.82
-      glow: 0.4
     act: {start: メタリカが虫に気づいて眉をひそめる, do: （「……あん？なんだこいつは？」）階段を降りながら（「デカいブリダンゴだな！」）, end: 階段の下のメタリカ}
     camera: ミトンの背中越しに（玄関の脇から）、階段を降りるメタリカ
     kind: M
@@ -2697,16 +2687,16 @@ cuts:
       - {t: 0.2, face: 200}
     cam_keys:
     - t: 0.0
-      cam: &id020 [5.0, 1.5, 1.2]
-      look: &id021 [3.5, 1.9]
+      cam: &id020 [5.2, 1.9, 1.4]
+      look: &id021 [3.6, 1.6]
       look_h: 0.9
-      lens: 22
+      lens: 20
       frame: 全身
     - t: 5.3
       cam: *id020
       look: *id021
       look_h: 0.9
-      lens: 23.1
+      lens: 21.0
     act: {start: メタリカが目だけ動かしてにらむ（「……あん？」）, do: ルッキーニィが縮こまる（「い、いえ……その……。」）, end: うつむくルッキーニィ}
     camera: 東（テーブルとソファの間）から、横に並ぶ二人
     kind: M
@@ -2855,14 +2845,14 @@ cuts:
     - t: 0.0
       cam: [2.0, 2.0, 1.2]
       look: [3.0, 3.3]
-      look_h: 0.85
-      lens: 28
+      look_h: 1.0
+      lens: 26
       frame: 膝上
     - t: 4.7
       cam: [2.05, 2.05, 1.15]
       look: [3.0, 3.3]
-      look_h: 0.85
-      lens: 32
+      look_h: 1.0
+      lens: 28
     act: {start: ルッキーニィの顔がぱっと明るくなる, do: 跳ねて（「本当ですか！？どんな願いでもですか？」）, end: 百騎兵と顔を見合わせるルッキーニィ}
     camera: 階段の脇（北西）から、ルッキーニィと百騎兵
     kind: M
@@ -3023,13 +3013,13 @@ cuts:
       - {t: 0.8, pose: point, face: 150}
     cam_keys:
     - t: 0.0
-      cam: [3.3, 0.9, 1.7]
+      cam: [3.0, 0.75, 1.25]
       look: [5.0, 5.0]
       look_h: 0.8
       lens: 26
       frame: 全身
     - t: 7.2
-      cam: [3.35, 0.95, 1.7]
+      cam: [3.05, 0.8, 1.25]
       look: [6.4, 6.2]
       look_h: 0.9
       lens: 28
