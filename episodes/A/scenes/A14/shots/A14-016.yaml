@@ -1,25 +1,25 @@
-# A14 アズ・ブロッケン山・風紋とピラーの守護者（黄昏の前）。blocking.yaml（Claude の案 2026-11-01、Living Spec「A14 動きの設計（案）」）から tools/new_shots.py で作成。秒は原作の声の実測に芝居の間を足した目安
-# kind: M＝小さな動き、A＝見せ場
+# A14 アズ・ブロッケン山・風紋とピラーの守護者。blocking.yaml（Claude の案 2026-11-01、D-060・D-062）から作成。
+# 2026-11-06 の下絵のアップグレードでからくり人形との戦い（016〜018）を組み直した。kind: M＝小さな動き、A＝見せ場
 id: A14-016
 scene: A14
 tc: 118.2
-sec: 5.5
+sec: 5.4
 kind: A
-shot: 全身・転がる人形を跳び越える百騎兵
-acting: 人形が猛烈に回転して転がってくる。百騎兵は高く跳んで人形を跳び越え、反対側に着地して振り向く
+shot: 全身・転がる突進を跳び越す
+acting: 人形が猛烈に回転して火花を散らしながら転がってくる。百騎兵は沈んでから高く跳び、宙で回って人形を跳び越える（頂点はスロー）。反対側に着地して振り向く
 dialogue: []
-sound: null
+sound: 台詞なし。効果音は sound.yaml
 notes: null
 camera:
   pos:
   - 33.6
   - 15.4
-  - 24.0
+  - 23.2
   look:
   - 28.6
   - 10.2
-  lens: 26
-  move: 南東のやや高い所から、転がる人形と跳ぶ百騎兵を（広角）
+  lens: 24
+  move: 南東のやや高い所から。跳ぶ所で低く寄って傾ける
 background: az-brocken
 image: null
 refs:
@@ -32,3 +32,26 @@ act:
   end: 入れ替わって向き合う二人
 timing:
   lead: 0.3
+blocking:
+  start: 百（中央・横顔（画面右向き））、人形（中央・斜め前（画面左向き））
+  end: 人形（中央・斜め前（画面右向き））、百（中央・斜め前（画面左向き））
+  background: ピラーの峰の広場〔山頂〕
+  panels:
+  - 山頂
+  staging_en: 'In frame (exactly 2 people, from left to right): the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume
+    on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), leaping and flipping over the spinning doll, in the
+    center of the frame, in profile, turned toward screen right, small in the background; the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling
+    patterns, a grinning skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen left, small
+    in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain peak, a tall dark
+    closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the rock spires and wooden
+    walkways, long shadows, the vast desert below in a soft haze.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the guardian clockwork doll: a large round egg-shaped figure about 1.8 m tall, painted in ochre and maroon swirling patterns, a grinning
+    skull face under a striped hood and a flat disc-shaped cap, as in its reference sheet, standing, in the center of the frame, in three-quarter view, turned toward screen right, small in the background;
+    the Hundred Knight (small, about waist-high to an adult: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver
+    gauntlets with black claws, beige shorts, brown shoes, a sword in his right hand), landed on the far side, turning to face the doll, sword ready, in the center of the frame, in three-quarter view, turned
+    toward screen left, small in the background. No other people. High angle looking down. Behind: a round plateau of cracked stone paving with faint spiral circles and tufts of golden grass on a high mountain
+    peak, a tall dark closed flower-bud pillar with green glass panels in the middle, the sky turning orange. Late afternoon on a high desert mountain: the low sun in the west, warm golden light on the
+    rock spires and wooden walkways, long shadows, the vast desert below in a soft haze.'
+  sketch:
+  - episodes/A/scenes/A14/gen/sketch/A14-016_start.png
+  - episodes/A/scenes/A14/gen/sketch/A14-016_end.png

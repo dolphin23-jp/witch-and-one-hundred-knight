@@ -18,7 +18,7 @@ bpy を使わないので staging.py からも読める。
     - {t: 0.0, cam: [x, y, 高さ], look: luckiny, look_h: 1.0, lens: 35, frame: 全身}
     - {t: 1.5, cam: {follow: luckiny, offset: [-2, 3], z: 1.2}, look: luckiny, lens: 28, ease: linear}
     cam の follow は、その時刻の人物の位置から offset（東, 南 m）ずらした所。look は人物名・場所名・[x, y]。
-    look_h は見る点の高さ m（省くと人物は背の 0.75、場所は 0）。
+    look_h は見る点の高さ m（省くと人物は背の 0.75、場所は 0）。書いたキーより後のキーは、書かなければ同じ look_h を引き継ぐ（人物を追うキーには書かない。2026-11-06）。
 
   shake: [{t: [2.4, 3.0], amp: 1.5}]       # カメラの揺れ（度）。手持ちの揺れは amp 0.4 くらい
 
