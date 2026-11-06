@@ -25,9 +25,27 @@ def _socket(node, *names):
     return None
 
 
+def mix_opacity(m):
+    """発光と透明を混ぜる材質（previs.py の beam_mat の形）の不透明さ。Fac は「透ける割合」（透明の BSDF が下の口）。
+    2026-11-06: はじめ Fac をそのまま不透明さにしていて、薄い霧・瘴気・光の柱がほぼ不透明に描かれていた（逆）。"""
+    if not m.use_nodes or not m.node_tree:
+        return None
+    mix = next((n for n in m.node_tree.nodes if n.type == "MIX_SHADER"), None)
+    if mix is None:
+        return None
+    fac = float(mix.inputs["Fac"].default_value)
+    for lk in m.node_tree.links:
+        if lk.to_node == mix and lk.from_node.type == "BSDF_TRANSPARENT":
+            return fac if lk.to_socket == mix.inputs[1] else 1.0 - fac
+    return 1.0 - fac
+
+
 def material_look(m):
     """材質から (色 linear RGB, alpha, 光るか) を読む。make_mat・beam_mat・swirl_mat の形に合わせる。"""
     col, alpha, glow = (0.6, 0.6, 0.6), 1.0, 0.0
+    if "fx_alpha" in m:   # previs_fx の効果の材質: 色と透け方はもう diffuse_color に入っている（光るので暗くしない）
+        c = tuple(m.diffuse_color)
+        return c[:3], c[3], 1.0
     if not m.use_nodes or not m.node_tree:
         c = tuple(m.diffuse_color)
         return c[:3], c[3], 0.0
@@ -54,7 +72,7 @@ def material_look(m):
             els = ramp.color_ramp.elements
             col = tuple(els[max(0, len(els) - 2)].color)[:3]
         if mix is not None:
-            alpha = float(mix.inputs["Fac"].default_value)
+            alpha = mix_opacity(m)
     return col, alpha, glow
 
 
@@ -108,13 +126,16 @@ def apply(scene, lit, sun_obj=None, outline=True, aa="FXAA"):
     disp.shadow_focus = 0.9
     for m in bpy.data.materials:
         col, alpha, glow = material_look(m)
-        if glow > 0.05:   # 光る物は暗くしない（夜・洞窟で目立つ）
+        if "fx_alpha" in m:
+            pass   # 効果の材質はそのまま（previs_fx が毎コマ透け方を変える）
+        elif glow > 0.05:   # 光る物は暗くしない（夜・洞窟で目立つ）
             k = 1.0 + min(0.6, 0.15 * glow)
             c = tuple(min(1.0, v * k) for v in col)
+            m.diffuse_color = (*c, alpha)
         else:
             c = tuple(v * level * t for v, t in zip(col, tint))
-        m.diffuse_color = (*c, alpha)
-        if alpha < 0.999:
+            m.diffuse_color = (*c, alpha)
+        if alpha < 0.999 or mix_opacity(m) is not None:
             try:
                 m.blend_method = "BLEND"
             except Exception:
@@ -126,3 +147,14 @@ def apply(scene, lit, sun_obj=None, outline=True, aa="FXAA"):
             bg = w.node_tree.nodes["Background"]
             sky = tuple(bg.inputs["Color"].default_value)[:3]
         w.color = tuple(min(1.0, v * (0.75 + 0.35 * level)) for v in sky)
+
+
+def sync():
+    """毎コマ、描く直前に呼ぶ。霧の濃さ・画面いっぱいの光など、コマごとに Fac を変える材質の透け方を Workbench の色に写す。"""
+    for m in bpy.data.materials:
+        a = mix_opacity(m)
+        if a is None:
+            continue
+        c = m.diffuse_color
+        if abs(c[3] - a) > 1e-4:
+            m.diffuse_color = (c[0], c[1], c[2], a)

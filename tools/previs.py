@@ -2037,6 +2037,8 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 res.append({"who": e["who"], "staging_s": e["s"], "blender_s": round((v.x - 0.5) * 2, 2)})
             checks[which] = res
         scene.render.filepath = str(frames_dir / f"{i:04d}.png")
+        if RENDER["engine"] == "workbench":
+            previs_look.sync()   # コマごとに変わる霧・光の透け方
         bpy.ops.render.render(write_still=True)
         previs_fx.post(frames_dir / f"{i:04d}.png", plan.c.get("fx") or [], tw.scene_t(i / fps), i, FXCTX)   # 集中線・反転など
     out_dir.mkdir(parents=True, exist_ok=True)
