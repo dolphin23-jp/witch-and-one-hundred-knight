@@ -1,0 +1,43 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-011
+scene: A36
+tc: 70.1
+sec: 13.8
+kind: M
+shot: 二人・すぐに帰ってこられるでちか
+acting: （「お風呂だけだから、そんなに時間はかからないと思うけど……」「何か用事があるんですか？」）
+dialogue:
+- L1357「あそこまで行くんでちか？すぐに帰ってこられるでちか？」
+- L1358「お風呂だけだから、そんなに時間はかからないと思うけど……」
+- L1359「何か用事があるんですか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.6
+  - 58.4
+  - 0.9
+  look:
+  - 35.8
+  - 55.0
+  lens: 28
+  move: 南の木箱の脇の低い所から、二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+- perfume
+overlays: []
+fallback: null
+act:
+  start: ミトンが小瓶を木箱に置き、不安そうに（「あそこまで行くんでちか？すぐに帰ってこられるでちか？」）
+  end: 首をかしげるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1357: 0.4
+    L1358: 6.1
+    L1359: 10.81

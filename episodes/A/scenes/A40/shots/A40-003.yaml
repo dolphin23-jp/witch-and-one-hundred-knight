@@ -1,0 +1,41 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-003
+scene: A40
+tc: 28.9
+sec: 9.5
+kind: M
+shot: 木箱の上の実・これはゴミじゃないでち
+acting: 駆け寄ってかぶりつく（「もぐもぐ！今日もおいしいでち！」）
+dialogue:
+- L1450「……！？あったでち！これはゴミじゃないでち！」
+- L1451「もぐもぐ！今日もおいしいでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 29.6
+  - 46.6
+  - 1.8
+  look:
+  - 31.4
+  - 48.6
+  lens: 28
+  move: 木箱の奥（ゴミの山の側）の少し高い所から、駆け寄るミトン
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heavy-fruit
+overlays: []
+fallback: null
+act:
+  start: ミトンが木箱の上の実に気づく（「……！？あったでち！これはゴミじゃないでち！」）
+  end: 実をほおばるミトン
+timing:
+  lead: 0.4
+  at:
+    L1450: 0.4
+    L1451: 5.64

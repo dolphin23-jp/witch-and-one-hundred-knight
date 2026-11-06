@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-021
+scene: A38
+tc: 156.1
+sec: 4.1
+kind: A
+shot: 寄り・ミトン・早く帰れでち
+acting: （「うるさいでち！早く帰れでち！」）
+dialogue:
+- L1412「うるさいでち！早く帰れでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.1
+  - 62.56
+  - 0.75
+  look: mitten
+  lens: 35
+  move: ミトンの正面の低い所から、顔へ寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンが振り向いて叫ぶ
+  end: 涙をこらえるミトン
+timing:
+  lead: 0.4

@@ -1,0 +1,1992 @@
+# A34 チンクエの森とゴミ山・ミトンの特訓（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A34 動きの設計（案）」。準備（案）の表の 7-03〜7-06。7-03 は場所の資料に合わせて森の入口（紅嵐街道）に置いた
+# 場所: world/cinque-forest-layout.yaml（チンクエの森。東に紅嵐街道、中ほどにゴミ山の広場、南西にかなきり穂、北に沼地のピラー）。昼（day）
+# 人物と小物は world/ch7-people-extra.yaml（ミトン、ずっしりの実）。ルッキーニィは cinque-forest-layout の people
+# 7-05 の探索（028・029）は台詞なしの見せ場（準備（案）: 百騎兵が穂を揺すり、落ちてきた重い実を頭で受ける）。ずっしりの実は人物として動かす（heavy-fruit）
+# L1281（得意料理の約束）は、7-05 の「お約束したボクの得意料理」の前ふりなので戻した（docs/log.md の提案）
+# メタリカの念押し（041・042）は千里眼越しの声。画は森の小道を北（沼地のピラー、A35）へ歩く百騎兵
+scene: A34
+layout: world/cinque-forest-layout.yaml
+layout_extra:
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 100
+lighting: day
+places:
+  road_in: [53.0, 53.6]
+  dump: [32.0, 49.0]
+  grass: [25.0, 71.0]
+  path_n: [34.0, 41.0]
+start:
+  luckiny:
+    at: &id001 [53.0, 53.6]
+    face: 160
+  hundred-knight:
+    at: &id002 [54.2, 66.0]
+    face: 0
+  mitten:
+    at: &id003 [31.4, 49.2]
+    face: 300
+  heavy-fruit:
+    at: &id006 [24.9, 69.4]
+    face: 0
+cuts:
+  A34-001:
+    frame: 大引き
+    only: [luckiny, hundred-knight]
+    hidden_ok: [mitten, heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: *id001
+        face: 160
+        pose: stand
+      - {t: 2.8, pose: wave, face: 165}
+      - {t: 5.01, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: *id002
+        face: 0
+        pose: walk
+      - t: 5.0
+        at: [54.0, 55.3]
+        pose: walk
+        face: 350
+        ease: out
+      - {t: 5.3, pose: stand, face: 330}
+    cam_keys:
+    - t: 0.0
+      cam: [56.8, 70.0, 8.0]
+      look: [54.2, 60.0]
+      look_h: 0.6
+      lens: 22
+      frame: 大引き
+    - t: 5.6
+      cam: [58.2, 54.8, 1.3]
+      look: [53.5, 54.5]
+      look_h: 0.85
+      lens: 28
+      ease: inout
+      frame: 全身
+    act: {start: 紅葉の森を抜ける紅嵐街道。百騎兵が赤い落ち葉の道を北へ歩いてくる, do: 森への道の入口で待っていたルッキーニィが手を振る（「あ、百騎兵さん！こっちです。」）, end: ルッキーニィの前で止まる百騎兵}
+    camera: 街道の上の高い所（木々の梢の高さ）から、歩く百騎兵を追いながら降り、東の柵の外の横から二人
+    kind: A
+  A34-002:
+    frame: 全身
+    only: [luckiny, hundred-knight]
+    hidden_ok: [mitten, heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [53.0, 53.6]
+        face: 165
+        pose: stand
+      - {t: 0.2, face: 140}
+      - {t: 3.4, pose: point, face: 270}
+      - {t: 7.4, pose: stand, face: 140}
+      hundred-knight:
+      - t: 0.0
+        at: [54.0, 55.3]
+        face: 330
+        pose: stand
+      - {t: 3.6, face: 285}
+      - {t: 7.4, face: 330}
+    cam_keys:
+    - t: 0.0
+      cam: [57.6, 52.4, 1.8]
+      look: [53.4, 54.2]
+      look_h: 0.85
+      lens: 30
+      frame: 全身
+    - t: 8.3
+      cam: [57.5, 52.6, 1.75]
+      look: [52.6, 54.0]
+      look_h: 0.85
+      lens: 30
+    act: {start: ルッキーニィが森の奥を指さす, do: （「ブリダンゴ姫の居場所がわかりました。紅嵐街道沿いの森……”チンクエ”にあるゴミ山だそうです。」）, end: 森の奥を見る二人}
+    camera: 街道の東の柵の外から、二人と森への道
+    kind: M
+  A34-003:
+    frame: 寄り
+    only: [luckiny, hundred-knight]
+    hidden_ok: [mitten, heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [53.0, 53.6]
+        face: 140
+        pose: stand
+      - {t: 0.3, face: 145}
+      - {t: 2.3, pose: look_down}
+      - {t: 6.8, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [54.0, 55.3]
+        face: 330
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [53.36, 54.93, 0.95]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 14.6
+      cam: [53.36, 54.93, 0.98]
+      look: luckiny
+      look_h: 1.22
+      lens: 60
+      ease: inout
+      frame: 寄り
+    act: {start: ルッキーニィがためらって（「あの……。」）, do: うつむいてから顔を上げる（「……ただ、望みが高すぎるからって、無駄ってことにはならないと思うんです。魔女様にはああ言われましたけど……。」）, end: 百騎兵を見つめるルッキーニィ}
+    camera: 百騎兵の目の高さから、ルッキーニィの顔へゆっくり寄る
+    kind: A
+  A34-004:
+    frame: 引き
+    only: [luckiny, hundred-knight]
+    hidden_ok: [mitten, heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [53.0, 53.6]
+        face: 145
+        pose: stand
+      - {t: 5.24, pose: wave, face: 140}
+      - {t: 6.34, pose: run, face: 265}
+      - t: 8.3
+        at: [44.6, 53.3]
+        pose: run
+        face: 268
+      hundred-knight:
+      - t: 0.0
+        at: [54.0, 55.3]
+        face: 330
+        pose: stand
+      - {t: 6.74, face: 280}
+    cam_keys:
+    - t: 0.0
+      cam: [55.6, 55.6, 1.2]
+      look: luckiny
+      look_h: 0.7
+      lens: 30
+      frame: 全身
+    - t: 8.3
+      cam: [55.6, 55.5, 1.2]
+      look: [44.0, 53.4]
+      look_h: 0.9
+      lens: 34
+      ease: inout
+      frame: 引き
+    act: {start: ルッキーニィが笑顔に戻る, do: （「それじゃあ、百騎兵さん。ボクは先に行ってるんで、準備が出来たら追ってきてください。」）森への道を駆けていく, end: 森の奥へ消えるルッキーニィ}
+    camera: 百騎兵の背中越しに、森への道を駆けていくルッキーニィ
+    kind: M
+  A34-005:
+    frame: 大引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [38.6, 52.6]
+        face: 290
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [43.2, 53.8]
+        face: 270
+        pose: walk
+      - t: 1.4
+        at: [39.4, 53.5]
+        pose: walk
+        face: 285
+        ease: out
+      - {t: 1.7, pose: stand}
+      mitten:
+      - t: 0.0
+        at: *id003
+        face: 300
+        pose: lie
+      - t: 2.0
+        at: [32.0, 49.9]
+        face: 240
+      - t: 5.8
+        at: [32.2, 49.8]
+        face: 300
+    cam_keys:
+    - t: 0.0
+      cam: [42.2, 55.2, 1.7]
+      look: [33.0, 49.8]
+      look_h: 0.6
+      lens: 28
+      frame: 大引き
+    - t: 6.8
+      cam: [41.8, 55.0, 1.6]
+      look: [32.6, 49.8]
+      look_h: 0.5
+      lens: 32
+    fx:
+    - kind: mist
+      t: [0.0, 6.8]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: &id004 [190, 205, 90]
+      alpha: 0.82
+      glow: 0.4
+    act: {start: 広場の東の端。ルッキーニィが身をかがめ、追いついた百騎兵と、ゴミ山をのぞく, do: （「いましたね。だけど……ゴミ山で何をしてるんでしょうか？」）ゴミの山の前で、大きな虫が這いまわってゴミをあさっている, end: ゴミをあさるミトン}
+    camera: 二人の後ろの少し高い所から、広場の奥のゴミ山
+    kind: M
+  A34-006:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [38.6, 52.6]
+        face: 290
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [39.4, 53.5]
+        face: 285
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 49.8]
+        face: 300
+        pose: lie
+      - {t: 0.3, face: 295}
+      - {t: 0.9, face: 305}
+      - {t: 1.5, face: 297}
+      - {t: 2.1, face: 303}
+    cam_keys:
+    - t: 0.0
+      cam: [30.8, 49.15, 0.45]
+      look: [31.7, 49.5]
+      look_h: 0.3
+      lens: 30
+      frame: 寄り
+    - t: 4.0
+      cam: [30.85, 49.2, 0.45]
+      look: [31.7, 49.5]
+      look_h: 0.3
+      lens: 34
+    fx: []
+    act: {start: ミトンがゴミをくわえて、もぐもぐ食べる, do: （「ゴ、ゴミを食べた！？」）, end: 口を動かすミトン}
+    camera: ゴミの山の側の地面の高さから、ミトンの顔
+    kind: M
+  A34-007:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [38.6, 52.6]
+        face: 290
+        pose: crouch
+      hundred-knight:
+      - t: 0.0
+        at: [39.4, 53.5]
+        face: 285
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 49.8]
+        face: 303
+        pose: lie
+      - {t: 0.2, face: 120}
+      - t: 0.6
+        at: [32.4, 50.1]
+        pose: crouch
+        face: 120
+      - {t: 1.1, pose: stand}
+      - {t: 2.1, pose: hold}
+    cam_keys:
+    - t: 0.0
+      cam: [35.2, 52.0, 0.8]
+      look: mitten
+      look_h: 0.3
+      lens: 30
+      frame: 全身
+    - t: 4.5
+      cam: [35.1, 51.9, 0.8]
+      look: mitten
+      look_h: 0.6
+      lens: 32
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 4.5]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ミトンがびくりとして振り向き、立ち上がる, do: （「だ、誰でちか！？まさか、王子様！？」）胸の前で手を合わせる, end: 期待して立つミトン}
+    camera: 広場の中ほどの低い所から、ミトン（奥にゴミの山）
+    kind: M
+  A34-008:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [38.6, 52.6]
+        face: 290
+        pose: walk
+      - t: 5.0
+        at: [35.0, 51.9]
+        pose: walk
+        face: 295
+        ease: out
+      - {t: 5.3, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [39.4, 53.5]
+        face: 285
+        pose: stand
+      - {t: 0.3, pose: walk, face: 290}
+      - t: 5.2
+        at: [35.9, 52.8]
+        pose: walk
+        face: 300
+        ease: out
+      - {t: 5.5, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.1]
+        face: 120
+        pose: hold
+      - {t: 0.3, pose: stand, face: 120}
+      - {t: 3.0, pose: arms_up}
+    cam_keys:
+    - t: 0.0
+      cam: [31.1, 49.0, 1.25]
+      look: [36.6, 52.6]
+      look_h: 0.9
+      lens: 28
+      frame: 全身
+    - t: 5.8
+      cam: [31.15, 49.05, 1.25]
+      look: [35.6, 52.2]
+      look_h: 0.9
+      lens: 32
+    fx:
+    - kind: mist
+      t: [0.0, 5.8]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: 近づいてくる二人を見て、ミトンががっかりして身構える, do: （「んあ？魔女の所にいた……。な、何の用でちか！」）, end: 身構えるミトン}
+    camera: ミトンの背中越しに（住みかの木箱の脇から）、歩いてくるルッキーニィと百騎兵
+    kind: M
+  A34-009:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.0, 51.9]
+        face: 295
+        pose: stand
+      - {t: 1.6, pose: gesture, face: 300}
+      - {t: 4.28, pose: stand}
+      - {t: 6.63, pose: look_down}
+      - {t: 12.2, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.1]
+        face: 120
+        pose: arms_up
+      - {t: 0.3, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [33.0, 50.6, 1.1]
+      look: [35.4, 52.3]
+      look_h: 0.85
+      lens: 30
+      frame: 全身
+    - t: 13.6
+      cam: [33.1, 50.65, 1.1]
+      look: [35.3, 52.25]
+      look_h: 0.9
+      lens: 34
+    act: {start: ルッキーニィが鼻を押さえるのをこらえて名乗る（「ボクはルッキーニィ。こっちは百騎兵さん。」）, do: （「ここへは、ええと……。何か応援の方法を、一緒に考えられないかと思って来たんですけど……。」）, end: 頭をかくルッキーニィ}
+    camera: ミトンの側から、ルッキーニィと百騎兵
+    kind: M
+  A34-010:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.0, 51.9]
+        face: 300
+        pose: stand
+      - {t: 3.82, pose: lean, face: 295}
+      - t: 4.52
+        at: [35.2, 52.0]
+        pose: cover
+        face: 295
+      - {t: 9.08, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.1]
+        face: 120
+        pose: stand
+      - {t: 0.1, pose: hop, face: 115}
+      - t: 0.9
+        at: [33.6, 51.0]
+        pose: stand
+        face: 115
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [34.4, 48.4, 2.0]
+      look: [34.3, 51.4]
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 10.0
+      cam: [34.5, 48.5, 1.95]
+      look: [34.4, 51.4]
+      look_h: 0.85
+      lens: 28
+    fx:
+    - kind: mist
+      t: [0.0, 10.0]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ミトンが跳ねて詰め寄る（「本当でちか！依頼を受けてくれるんでちね！」）, do: 臭いにのけぞるルッキーニィ（「い、いや……。そういうわけでもないんですけど……。」）, end: 近い二人}
+    camera: 北の木箱の側の少し高い所から、横に並ぶ二人
+    kind: M
+  A34-011:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.2, 52.0]
+        face: 295
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.6, 51.0]
+        face: 115
+        pose: stand
+      - {t: 0.2, pose: proud}
+      - {t: 4.0, pose: hold, face: 100}
+      - {t: 5.4, face: 130}
+      - {t: 7.21, face: 115}
+    cam_keys:
+    - t: 0.0
+      cam: [34.86, 51.07, 0.9]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      frame: 胸上
+    - t: 8.1
+      cam: [34.86, 51.07, 0.9]
+      look: mitten
+      look_h: 0.95
+      lens: 38
+    fx: []
+    act: {start: ミトンが胸を張る（「よろしくでち！あたちはミトンでち！」）, do: 照れて体をくねらせる（「大好きなのは王子様でち……えへへ。」）, end: 照れるミトン}
+    camera: ルッキーニィの脇の低い所から、ミトン
+    kind: A
+  A34-012:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.2, 52.0]
+        face: 295
+        pose: stand
+      - {t: 0.2, pose: stand, face: 295}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.6, 51.0]
+        face: 115
+        pose: hold
+    cam_keys:
+    - t: 0.0
+      cam: &id005 [34.22, 51.02, 1.1]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 7.3
+      cam: *id005
+      look: luckiny
+      look_h: 1.11
+      lens: 36.8
+    act: {start: ルッキーニィが気を取り直して, do: （「それはわかりました……。それで、王子様とはどうやって知り合ったんですか？」）, end: たずねるルッキーニィ}
+    camera: ミトンの脇から、ルッキーニィの正面
+    kind: M
+  A34-013:
+    frame: 引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.2, 52.0]
+        face: 295
+        pose: stand
+      - {t: 0.6, face: '@mitten'}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.6, 51.0]
+        face: 115
+        pose: hold
+      - {t: 0.3, pose: walk, face: 95}
+      - t: 1.2
+        at: [33.9, 51.1]
+        pose: hold
+        face: 95
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [32.4, 50.2, 1.05]
+      look: [52.0, 54.0]
+      look_h: 1.0
+      lens: 30
+      frame: 引き
+    - t: 6.8
+      cam: [32.6, 50.3, 1.05]
+      look: [52.0, 54.2]
+      look_h: 1.0
+      lens: 40
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 6.8]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ミトンが街道の方へ向き直り、うっとりと手を合わせる, do: （「王子様は馬車に乗ってきたでち。運命の出会いでち。」）, end: 木々の向こうの街道を見るミトン}
+    camera: ミトンの背中越しに、木々の向こうの紅嵐街道（ゆっくり寄る）
+    kind: A
+  A34-014:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.2, 52.0]
+        face: '@mitten'
+        pose: stand
+      - {t: 3.68, pose: lean, face: 290}
+      - t: 4.28
+        at: [35.6, 52.2]
+        pose: fall
+        face: 290
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.9, 51.1]
+        face: 95
+        pose: hold
+      - {t: 2.88, pose: walk, face: 110}
+      - t: 3.88
+        at: [34.5, 51.4]
+        pose: lean
+        face: 110
+      - {t: 6.48, pose: hop}
+      - {t: 8.65, pose: lean}
+    cam_keys:
+    - t: 0.0
+      cam: [36.4, 49.0, 2.0]
+      look: [34.6, 51.5]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 9.6
+      cam: [36.3, 49.1, 1.95]
+      look: [34.7, 51.6]
+      look_h: 0.8
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 9.6]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが生返事（「う、うん……。」）, do: ミトンがくるりと振り返って詰め寄る（「早く王子様をオウエンしたいでち！さあ、どうすればいいでちか？さあさあ、言うでち！」）, end: のけぞるルッキーニィ}
+    camera: 北東の高い所から、詰め寄るミトンとのけぞるルッキーニィ
+    kind: M
+  A34-015:
+    frame: 引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 290
+        pose: stand
+      - t: 0.2
+        pose: stand
+        at: [35.4, 52.1]
+        face: 290
+      - {t: 1.9, pose: gesture}
+      - {t: 7.3, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.5, 51.4]
+        face: 110
+        pose: lean
+      - {t: 7.65, pose: look_down, face: 115}
+      - {t: 9.05, pose: walk, face: 300}
+      - t: 10.85
+        at: [32.0, 49.7]
+        pose: walk
+        face: 300
+        ease: out
+      - {t: 11.15, pose: crouch}
+    cam_keys:
+    - t: 0.0
+      cam: [34.0, 57.4, 1.6]
+      look: [33.6, 50.6]
+      look_h: 0.7
+      lens: 26
+      frame: 引き
+    - t: 11.8
+      cam: [33.7, 57.2, 1.6]
+      look: [33.2, 50.4]
+      look_h: 0.7
+      lens: 28
+    fx:
+    - kind: mist
+      t: [0.0, 11.8]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが立ち上がって聞き返す（「どうって……。キミは何か知らないんですか？王子様が喜びそうなこととか……」）, do: ミトンがしょんぼりと背を向け（「うぅ〜……。む、難しいことはわからないでち……。」）、ゴミの山の前にしゃがむ, end: ゴミの前にしゃがむミトン}
+    camera: 広場の南から、三人とゴミ山
+    kind: M
+  A34-016:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 290
+        pose: stand
+      - {t: 0.4, pose: point, face: 290}
+      - {t: 2.33, pose: stand}
+      - {t: 6.38, pose: cross, face: 290}
+      - {t: 7.95, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.0, 49.7]
+        face: 300
+        pose: crouch
+      - {t: 2.73, pose: crouch, face: 110}
+      - {t: 4.33, pose: hold}
+    cam_keys:
+    - t: 0.0
+      cam: [30.7, 49.6, 0.6]
+      look: [32.4, 50.2]
+      look_h: 0.6
+      lens: 28
+      frame: 胸上
+    - t: 8.8
+      cam: [30.75, 49.65, 0.6]
+      look: [32.6, 50.3]
+      look_h: 0.7
+      lens: 32
+    fx: []
+    act: {start: ルッキーニィが叫ぶ（「なっ！？またゴミを食べて！」）, do: ミトンが振り向き、くわえたゴミを差し出す（「もぐもぐ……。おいちいでちよ。食べたいでちか？」）（「い、いりませんよ！」）, end: ゴミを差し出すミトン}
+    camera: ゴミの山の側の低い所から、しゃがんだミトン（奥にルッキーニィ）
+    kind: M
+  A34-017:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 290
+        pose: stand
+      - {t: 0.2, pose: proud, face: 290}
+      - {t: 5.0, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.0, 49.7]
+        face: 110
+        pose: hold
+      - {t: 5.4, pose: stand, face: 115}
+      - {t: 6.4, pose: shake}
+      - {t: 11.24, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [33.4, 50.6, 1.35]
+      look: luckiny
+      look_h: 1.11
+      lens: 32
+      frame: 胸上
+    - t: 5.0
+      cam: [33.4, 50.6, 1.35]
+      look: luckiny
+      look_h: 1.11
+      lens: 32
+    - t: 12.1
+      cam: [33.45, 50.7, 1.3]
+      look: mitten
+      look_h: 0.95
+      lens: 30
+      ease: inout
+    fx: []
+    act: {start: ルッキーニィが腰に手を当てて（「……というか、そんなところ王子様に見られたら嫌われますよ！」）, do: ミトンがおろおろ（「は、はわわ……。しょ、食事をしたら王子様に嫌われるんでちか！？」）, end: おろおろするミトン}
+    camera: ミトンの頭の上の高さから、ルッキーニィを見る
+    kind: M
+  A34-018:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 290
+        pose: stand
+      - {t: 0.2, pose: point, face: 290}
+      - {t: 3.8, pose: point, face: 300}
+      - {t: 7.65, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.0, 49.7]
+        face: 115
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [38.4, 52.9, 2.5]
+      look: [34.0, 50.8]
+      look_h: 0.6
+      lens: 28
+      frame: 全身
+    - t: 8.6
+      cam: [38.3, 52.85, 2.45]
+      look: [34.2, 50.9]
+      look_h: 0.65
+      lens: 32
+    act: {start: ルッキーニィが指を立てて, do: （「そうじゃなくて！ダメなのは拾い食いの方ですよ。しかもゴミなんて！」）, end: ゴミの山を指すルッキーニィ}
+    camera: ルッキーニィの後ろの高い所から、ゴミの山を指す背中と、しょげるミトン
+    kind: M
+  A34-019:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 300
+        pose: stand
+      - {t: 5.77, pose: cover, face: 290}
+      - {t: 9.42, pose: look_down}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.0, 49.7]
+        face: 115
+        pose: stand
+      - {t: 0.2, pose: nod, face: 115}
+      - {t: 3.0, pose: crouch, face: 300}
+      - {t: 5.77, pose: stand, face: 115}
+      - {t: 7.37, pose: crouch, face: 300}
+    cam_keys:
+    - t: 0.0
+      cam: [31.6, 53.4, 0.9]
+      look: [33.8, 51.0]
+      look_h: 0.7
+      lens: 26
+      frame: 全身
+    - t: 10.9
+      cam: [31.7, 53.3, 0.9]
+      look: [33.8, 51.0]
+      look_h: 0.7
+      lens: 28
+    fx:
+    - kind: mist
+      t: [0.0, 10.9]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ミトンがうなずく（「そ、そうだったんでちか……。ガマンしないとダメでちね……。もぐもぐ……。」）口は止まらない, do: （「わ！つ、つい……！ガマンするでち！もぐもぐ……。」）頭を抱えるルッキーニィ, end: 頭を抱えるルッキーニィと、食べ続けるミトン}
+    camera: 広場の西の低い所から、横に並ぶ二人
+    kind: M
+  A34-020:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 290
+        pose: look_down
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.0, 49.7]
+        face: 300
+        pose: crouch
+      - t: 0.2
+        at: [32.2, 50.0]
+        pose: look_down
+        face: 115
+    cam_keys:
+    - t: 0.0
+      cam: [32.82, 50.47, 0.75]
+      look: mitten
+      look_h: 0.68
+      lens: 35
+      frame: 寄り
+    - t: 6.9
+      cam: [32.82, 50.47, 0.75]
+      look: mitten
+      look_h: 1.04
+      lens: 42
+    fx: []
+    act: {start: ミトンがしょんぼりとうつむく, do: （「ご、ごめんでち……！でも自分ではどうすることもできないでち……！」）, end: うつむくミトン}
+    camera: ミトンの正面の低い所から（少し寄る）
+    kind: M
+  A34-021:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.4, 52.1]
+        face: 290
+        pose: look_down
+      - t: 0.2
+        at: [35.6, 52.2]
+        pose: stand
+        face: 290
+      - {t: 2.2, pose: arms_up}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 115
+        pose: look_down
+    cam_keys:
+    - t: 0.0
+      cam: [34.6, 51.2, 0.3]
+      look: luckiny
+      look_h: 0.9
+      lens: 22
+      frame: 膝上
+    - t: 5.5
+      cam: [34.6, 51.2, 0.3]
+      look: luckiny
+      look_h: 0.9
+      lens: 22
+      ease: inout
+    act: {start: ルッキーニィが拳を握って顔を上げる, do: （「これはもう……、特訓するしかないですね！！」）, end: 拳を突き上げるルッキーニィ}
+    camera: 地面すれすれから見上げ、拳に合わせて少し上へ
+    kind: A
+  A34-022:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 290
+        pose: arms_up
+      - {t: 0.2, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 115
+        pose: look_down
+      - {t: 0.2, pose: stand, face: 112}
+      - {t: 1.4, pose: lean}
+    cam_keys:
+    - t: 0.0
+      cam: [36.2, 52.5, 1.25]
+      look: mitten
+      look_h: 0.95
+      lens: 35
+      frame: 胸上
+    - t: 5.1
+      cam: [36.1, 52.45, 1.25]
+      look: mitten
+      look_h: 0.95
+      lens: 40
+    fx: []
+    act: {start: ミトンが顔を上げて目を丸くする, do: （「と、特訓でちか！？いったい何をするんでち！？」）, end: 身を乗り出すミトン}
+    camera: ルッキーニィの肩越しに、ミトン
+    kind: M
+  A34-023:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 290
+        pose: stand
+      - {t: 0.4, pose: point, face: 290}
+      - {t: 2.4, pose: stand}
+      - {t: 7.0, pose: proud}
+      - {t: 12.76, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 112
+        pose: lean
+      - {t: 11.96, pose: nod}
+      - {t: 13.06, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [34.0, 47.6, 2.2]
+      look: [34.6, 51.5]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 13.7
+      cam: [33.8, 47.7, 2.15]
+      look: [34.6, 51.5]
+      look_h: 0.85
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 13.7]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが指を立てて説明する（「まずは無意識にゴミを食べるのをやめないといけませんね。ちゃんとした食事をとりましょう。」）, do: 胸をたたく（「まかせてください。ボクが側についていて、その癖が治るように手伝いますから。」）, end: うなずくミトン}
+    camera: 広場の北（ゴミの山の脇）の高い所から、向き合う二人
+    kind: M
+  A34-024:
+    frame: 膝上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 290
+        pose: stand
+      - {t: 0.2, face: 139}
+      - {t: 7.4, pose: hold}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 112
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [37.2, 52.78, 0.85]
+      look: luckiny
+      lens: 28
+      frame: 膝上
+      look_h: 0.9
+    - t: 11.5
+      cam: [37.15, 52.78, 0.85]
+      look: luckiny
+      lens: 30
+      look_h: 0.9
+    act: {start: ルッキーニィが百騎兵に向き直る（「でも、それだけじゃ心細いので、百騎兵さんにお願いがあります。」）, do: （「”ずっしりの実”を探してきてもらっていいですか？」）, end: 手を合わせるルッキーニィ}
+    camera: 百騎兵の脇の低い所から、ルッキーニィ
+    kind: M
+  A34-025:
+    frame: 全身
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 139
+        pose: hold
+      - {t: 0.2, pose: stand}
+      - {t: 6.14, pose: bow}
+      - {t: 8.5, pose: stand}
+      - {t: 10.3, pose: gesture}
+      - {t: 13.93, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 300
+        pose: stand
+      - {t: 0.3, face: 250}
+      - {t: 13.53, pose: nod}
+      - {t: 14.23, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 112
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [38.4, 55.4, 1.15]
+      look: [35.6, 52.4]
+      look_h: 0.75
+      lens: 28
+      frame: 全身
+    - t: 14.8
+      cam: [38.3, 55.2, 1.1]
+      look: [35.6, 52.4]
+      look_h: 0.75
+      lens: 32
+    act: {start: （「拾い食いの癖と空腹感がなくなれば、もうゴミは食べないと思うんです。」）, do: 頭を下げる（「お願いします、百騎兵さん！」）顔を上げて（「お礼と言っては何なんですけど、後でボクの得意料理をご馳走しますから。」）, end: うなずく百騎兵}
+    camera: 南東から、ルッキーニィと百騎兵（奥にミトン）
+    kind: M
+  A34-026:
+    frame: 引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 139
+        pose: stand
+      - {t: 0.3, pose: point, face: 215}
+      - {t: 6.78, pose: wave}
+      hundred-knight:
+      - t: 0.0
+        at: [35.9, 52.8]
+        face: 250
+        pose: stand
+      - {t: 5.38, pose: walk, face: 215}
+      - t: 8.7
+        at: [33.6, 56.4]
+        pose: walk
+        face: 215
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 112
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [37.0, 51.0, 2.0]
+      look: [28.0, 64.0]
+      look_h: 0.8
+      lens: 26
+      frame: 引き
+    - t: 8.7
+      cam: [37.0, 51.1, 2.0]
+      look: [27.0, 66.0]
+      look_h: 0.8
+      lens: 30
+      ease: inout
+    act: {start: ルッキーニィが南西の茂みを指さす, do: （「”ずっしりの実”っていうのは通称なんですが、この辺りにある”かなきり穂”から稀に落ちる”実”のことなんです。」）百騎兵が歩き出す, end: 茂みへ歩く百騎兵}
+    camera: ルッキーニィの背中越しに、南西のかなきり穂の茂みの方
+    kind: M
+  A34-027:
+    frame: 寄り
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 215
+        pose: wave
+      - {t: 0.2, pose: stand, face: 300}
+      - {t: 6.36, pose: look_down}
+      - {t: 12.19, pose: hold}
+      hundred-knight:
+      - t: 0.0
+        at: [33.6, 56.4]
+        face: 215
+        pose: walk
+      - t: 14.7
+        at: [29.0, 63.0]
+        pose: walk
+        face: 220
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 112
+        pose: stand
+      - {t: 0.3, pose: crouch, face: 300}
+    cam_keys:
+    - t: 0.0
+      cam: [34.27, 51.84, 1.1]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 14.7
+      cam: [34.27, 51.84, 1.1]
+      look: luckiny
+      look_h: 1.22
+      lens: 60
+      ease: inout
+      frame: 寄り
+    act: {start: 百騎兵を見送ったルッキーニィが、ゴミをあさるミトンの背中を見る, do: （心の声「(王子様に恋なんて、分不相応かもしれない……)」「(でも、諦めなければ何か見つかるかもしれないんだ……)」「(ボクだって……)」）, end: 拳を胸に当てるルッキーニィ}
+    camera: ルッキーニィの正面から、顔へゆっくり寄る
+    kind: A
+  A34-028:
+    frame: 引き
+    only: [hundred-knight]
+    hidden_ok: [luckiny, mitten, heavy-fruit]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.6, 52.2]
+        face: 300
+        pose: hold
+      hundred-knight:
+      - t: 0.0
+        at: [28.6, 64.6]
+        face: 220
+        pose: walk
+      - t: 2.8
+        at: [25.6, 68.6]
+        pose: walk
+        face: 225
+        ease: out
+      - {t: 3.2, pose: look_up, face: 225}
+      mitten:
+      - t: 0.0
+        at: [32.2, 50.0]
+        face: 300
+        pose: crouch
+    cam_keys:
+    - t: 0.0
+      cam: [21.0, 68.4, 0.7]
+      look: [27.0, 66.4]
+      look_h: 0.7
+      lens: 26
+      frame: 引き
+    - t: 4.0
+      cam: [21.3, 68.5, 0.75]
+      look: hundred-knight
+      look_h: 0.8
+      lens: 32
+      ease: inout
+    act: {start: かなきり穂の茂み。背の高い穂が揺れる, do: 百騎兵が茂みの前まで歩いてきて、穂を見上げる, end: 穂を見上げる百騎兵}
+    camera: 茂みの奥（西）の低い所から、穂の間に歩いてくる百騎兵
+    kind: M
+  A34-029:
+    frame: 全身
+    only: [hundred-knight, heavy-fruit]
+    hidden_ok: [luckiny, mitten]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [25.6, 68.6]
+        face: 225
+        pose: look_up
+      - {t: 0.3, pose: shake, face: 225}
+      - {t: 2.0, pose: look_up}
+      - {t: 2.6, pose: fall}
+      - t: 4.0
+        pose: stand
+        at: [25.6, 68.6]
+      - t: 4.6
+        at: [25.9, 68.9]
+        pose: crouch
+        face: 200
+      - {t: 5.3, pose: arms_up, face: 160}
+      heavy-fruit:
+      - t: 0.0
+        at: *id006
+        face: 0
+        pose: stand
+        z: 1.5
+      - t: 1.9
+        at: [24.9, 69.4]
+        z: 1.5
+      - t: 2.5
+        at: [25.6, 68.6]
+        z: 0.95
+      - t: 3.1
+        at: [26.1, 68.2]
+        z: 0.0
+      - t: 3.8
+        at: [26.2, 69.0]
+        z: 0.0
+      - t: 4.6
+        at: [26.2, 69.0]
+        z: 0.0
+      - t: 5.3
+        at: [26.06, 69.35]
+        z: 1.05
+    cam_keys:
+    - t: 0.0
+      cam: [27.9, 70.6, 1.6]
+      look: [25.2, 69.0]
+      look_h: 1.0
+      lens: 28
+      frame: 全身
+    - t: 2.6
+      cam: [27.9, 70.6, 1.6]
+      look: [25.4, 68.8]
+      look_h: 0.8
+      lens: 30
+    - t: 7.0
+      cam: [27.7, 70.4, 1.4]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 32
+      ease: inout
+    shake:
+    - t: [2.5, 2.9]
+      amp: 0.4
+    act: {start: 百騎兵が穂の茎に体当たりして揺する, do: 穂の先から丸い重い実が落ち、百騎兵の頭に当たる。百騎兵はよろけてしりもちをつき、転がった実を拾って高く掲げる, end: 実を掲げる百騎兵}
+    camera: 茂みの脇から、百騎兵と穂の先（実が落ちる所でわずかに揺れる）
+    kind: A
+  A34-030:
+    frame: 全身
+    only: [hundred-knight, heavy-fruit, luckiny, mitten]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [31.4, 59.4]
+        face: 40
+        pose: walk
+      - t: 2.4
+        at: [35.4, 53.4]
+        pose: walk
+        face: 40
+        ease: out
+      - {t: 2.7, pose: stand, face: 300}
+      heavy-fruit:
+      - t: 0.0
+        at: [31.71, 59.03]
+        face: 40
+        pose: stand
+        z: 0.45
+      - t: 2.4
+        at: [35.71, 53.03]
+        z: 0.45
+        pose: stand
+        face: 40
+      - t: 2.7
+        at: [34.98, 53.16]
+        z: 0.45
+        pose: stand
+        face: 300
+      - t: 4.2
+        at: [35.01, 53.17]
+        z: 0.65
+      luckiny:
+      - t: 0.0
+        at: [35.0, 52.4]
+        face: 160
+        pose: stand
+      - {t: 1.8, pose: hop}
+      - t: 2.6
+        at: [34.58, 52.92]
+        pose: hold
+        face: 120
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.4]
+        face: 140
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [32.0, 57.6, 1.0]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 28
+      frame: 全身
+    - t: 8.0
+      cam: [32.2, 57.4, 1.05]
+      look: [35.0, 53.4]
+      look_h: 0.75
+      lens: 32
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 8.0]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: 百騎兵が実を抱えて広場に戻る, do: ルッキーニィが駆け寄る（「これは”ずっしりの実”！ありがとうございます！」）, end: 実を受け取るルッキーニィ}
+    camera: 広場の南西から、戻ってくる百騎兵を迎える
+    kind: M
+  A34-031:
+    frame: 胸上
+    only: [hundred-knight, heavy-fruit, luckiny, mitten]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      heavy-fruit:
+      - t: 0.0
+        at: [35.01, 53.17]
+        face: 300
+        pose: stand
+        z: 0.65
+      - t: 0.6
+        at: [34.98, 53.16]
+        z: 0.0
+      luckiny:
+      - t: 0.0
+        at: [34.58, 52.92]
+        face: 120
+        pose: hold
+      - {t: 0.3, pose: crouch}
+      - {t: 1.0, pose: stand}
+      - {t: 1.4, pose: hold, face: 120}
+      - {t: 4.93, pose: stand}
+      - {t: 13.76, pose: look_down}
+      - {t: 18.61, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.4]
+        face: 140
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [36.25, 52.63, 1.0]
+      look: luckiny
+      lens: 32
+      frame: 胸上
+      look_h: 1.11
+    - t: 19.5
+      cam: [36.2, 52.6, 1.0]
+      look: luckiny
+      lens: 36
+      look_h: 1.11
+    act: {start: ルッキーニィが実を地面に置き、腰の袋から包みを出して百騎兵に渡す（「では、これがお約束したボクの得意料理です」）, do: 照れて（「実は、お腹がすいたときにいつでも食べれるように、持ち歩いているんです。」「まだ、砂羊の放牧をしていたときの感覚が抜けなくて、ちょっと困っているんですけどね。」）, end: 頭をかくルッキーニィ}
+    camera: 百騎兵の目の高さから、ルッキーニィ
+    kind: M
+  A34-032:
+    frame: 全身
+    only: [hundred-knight, heavy-fruit, luckiny, mitten]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      heavy-fruit:
+      - t: 0.0
+        at: [34.98, 53.16]
+        face: 300
+        pose: stand
+      - t: 0.8
+        at: [34.98, 52.26]
+        z: 0.55
+      - t: 2.6
+        at: [33.45, 51.4]
+        z: 0.6
+        ease: out
+      - t: 4.82
+        at: [33.04, 51.0]
+        z: 0.55
+      luckiny:
+      - t: 0.0
+        at: [34.58, 52.92]
+        face: 120
+        pose: stand
+      - {t: 0.2, pose: crouch, face: 230}
+      - {t: 0.8, pose: hold, face: 300}
+      - {t: 1.2, pose: walk, face: 300}
+      - t: 2.6
+        at: [33.7, 51.9]
+        pose: hold
+        face: 300
+        ease: out
+      - {t: 4.82, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.4, 50.4]
+        face: 140
+        pose: stand
+      - {t: 1.6, pose: walk, face: 120}
+      - t: 2.6
+        at: [32.6, 50.8]
+        pose: stand
+        face: 115
+        ease: out
+      - {t: 4.82, pose: hold}
+    cam_keys:
+    - t: 0.0
+      cam: [33.0, 47.8, 2.0]
+      look: [33.6, 51.4]
+      look_h: 0.75
+      lens: 26
+      frame: 全身
+    - t: 9.1
+      cam: [33.2, 47.9, 1.95]
+      look: [33.4, 51.2]
+      look_h: 0.75
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 9.1]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが実を抱えてミトンへ差し出す（「さあ、ミトンさん！これを食べてみてください。」）, do: ミトンが目を輝かせて受け取る（「ほあ！これを食べれば、お腹が満腹になるでちね！」）, end: 実を抱えるミトン}
+    camera: 北のゴミの山の脇の少し高い所から、実を渡す二人
+    kind: M
+  A34-033:
+    frame: 胸上
+    only: [hundred-knight, heavy-fruit, luckiny, mitten]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      heavy-fruit:
+      - t: 0.0
+        at: [33.04, 51.0]
+        face: 300
+        pose: stand
+        z: 0.55
+      - t: 0.2
+        at: [33.04, 51.0]
+        z: 0.65
+      - t: 1.4
+        at: [33.02, 50.99]
+        z: 0.8
+      - t: 1.5
+        at: [33.02, 50.99]
+        z: -0.6
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: hold
+      - {t: 0.2, pose: hold}
+      - {t: 1.6, pose: hop}
+      - {t: 5.76, pose: stand}
+      - {t: 6.26, pose: lean}
+    cam_keys:
+    - t: 0.0
+      cam: [33.86, 50.91, 0.85]
+      look: mitten
+      lens: 32
+      frame: 胸上
+      look_h: 0.95
+    - t: 10.0
+      cam: [33.86, 50.91, 0.85]
+      look: mitten
+      lens: 32
+      look_h: 0.95
+    fx: []
+    act: {start: ミトンが実にかぶりつく。目を見開いて（「んあ！？お、お腹いっぱいでち！もう拾い食いはしないでち！」）跳ねる, do: （「これでもう王子様に嫌われないでちか？」）, end: 首をかしげるミトン}
+    camera: ミトンの正面の低い所から
+    kind: A
+  A34-034:
+    frame: 全身
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 300
+        pose: stand
+      - {t: 0.2, pose: cover, face: 290}
+      - {t: 6.86, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: lean
+      - {t: 7.26, pose: stand, face: 110}
+      - {t: 8.26, face: 140}
+      - {t: 10.56, face: 110}
+    cam_keys:
+    - t: 0.0
+      cam: [33.6, 54.6, 0.8]
+      look: [33.3, 51.2]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 11.5
+      cam: [33.5, 54.5, 0.8]
+      look: [33.2, 51.2]
+      look_h: 0.8
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 11.5]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが鼻をつまみながら（「まだですね。次は、その臭いをなんとかしないと……」）, do: ミトンがきょとんとする（「臭いでち？何の臭いでち？」）, end: 首をかしげるミトン}
+    camera: 広場の南の低い所から、二人
+    kind: M
+  A34-035:
+    frame: 寄り
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 290
+        pose: stand
+      - {t: 0.2, pose: look_down, face: 295}
+      - {t: 3.4, pose: stand, face: 300}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 110
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [32.13, 52.04, 1.1]
+      look: luckiny
+      lens: 40
+      frame: 胸上
+      look_h: 1.11
+    - t: 7.9
+      cam: [32.13, 52.04, 1.1]
+      look: luckiny
+      lens: 52
+      ease: inout
+      frame: 寄り
+      look_h: 1.22
+    act: {start: ルッキーニィが言いよどみ、思い切って, do: （「う〜ん……。……ミトンさん、あなたが臭うんです」）, end: 言い切ったルッキーニィ}
+    camera: ミトンの脇から、ルッキーニィの顔
+    kind: A
+  A34-036:
+    frame: 胸上
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 300
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 110
+        pose: stand
+      - {t: 0.2, pose: arms_up, face: 115}
+      - {t: 1.2, pose: cover, face: 90}
+      - {t: 3.94, pose: look_down, face: 110}
+    cam_keys:
+    - t: 0.0
+      cam: [34.5, 52.0, 1.4]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      frame: 胸上
+    - t: 4.8
+      cam: [34.45, 51.95, 1.4]
+      look: mitten
+      look_h: 0.95
+      lens: 36
+    fx: []
+    act: {start: ミトンががく然として, do: 自分の腕をかぐ（「んあ！あたち……臭かったでちか！」）, end: 自分をかぐミトン}
+    camera: ルッキーニィの肩越しに、ミトン（高めから）
+    kind: M
+  A34-037:
+    frame: 全身
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 300
+        pose: stand
+      - {t: 0.2, pose: look_down, face: 300}
+      - {t: 10.28, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 110
+        pose: look_down
+      - {t: 10.68, pose: proud, face: 115}
+    cam_keys:
+    - t: 0.0
+      cam: [37.2, 48.2, 2.4]
+      look: [33.4, 51.2]
+      look_h: 0.7
+      lens: 26
+      frame: 全身
+    - t: 15.4
+      cam: [37.0, 48.3, 2.35]
+      look: [33.3, 51.2]
+      look_h: 0.7
+      lens: 28
+    fx:
+    - kind: mist
+      t: [0.0, 15.4]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが申し訳なさそうに（「はい……正直すごい臭いです……。お風呂には……入っているわけないですよね……。」）, do: ミトンが胸を張る（「自慢じゃないでちが、お風呂なんてここにはないでち！」）, end: 胸を張るミトン}
+    camera: 広場の北東の高い所から、二人とゴミ山
+    kind: M
+  A34-038:
+    frame: 胸上
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 300
+        pose: stand
+      - {t: 0.2, face: 20}
+      - {t: 6.7, face: 290, pose: hop}
+      - {t: 8.39, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: proud
+      - {t: 6.7, pose: lean, face: 115}
+    cam_keys:
+    - t: 0.0
+      cam: [34.2, 53.6, 1.15]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 9.3
+      cam: [34.25, 53.55, 1.15]
+      look: luckiny
+      look_h: 1.11
+      lens: 40
+    act: {start: ルッキーニィが目をそらしてつぶやく（「それは、そうですよね……。だって、外ですしね……。」）, do: ミトンがじろりと見る（「なんか、いったでちか？」）, end: あわてるルッキーニィ}
+    camera: ルッキーニィの横から（ミトンをなめて）
+    kind: M
+  A34-039:
+    frame: 膝上
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 290
+        pose: stand
+      - {t: 0.2, pose: wave, face: 295}
+      - {t: 2.0, pose: stand}
+      - {t: 7.95, pose: point}
+      - {t: 14.26, pose: proud}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: lean
+      - {t: 0.3, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [31.8, 50.6, 0.75]
+      look: luckiny
+      look_h: 0.9
+      lens: 30
+      frame: 膝上
+    - t: 16.2
+      cam: [31.85, 50.65, 0.75]
+      look: luckiny
+      look_h: 0.9
+      lens: 34
+    fx: []
+    act: {start: ルッキーニィが手を振ってごまかし（「い、いえ！それでは、応急措置ですが香水にしましょう。臭いに負けない香りをつけるんです。」）, do: 指を立てる（「最強の香水と言われる”アロマニの香水”なら、ミトンさんの臭いにも勝てるはず……です！」）, end: 指を立てるルッキーニィ}
+    camera: ゴミの山の脇の低い所から、ルッキーニィ（手前にミトン）
+    kind: M
+  A34-040:
+    frame: 全身
+    only: [hundred-knight, luckiny, mitten]
+    hidden_ok: [heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [35.4, 53.4]
+        face: 300
+        pose: stand
+      - {t: 5.22, pose: nod}
+      - {t: 6.12, pose: stand}
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 295
+        pose: proud
+      - {t: 0.2, face: 110, pose: stand}
+      - {t: 3.0, pose: point, face: 345}
+      - {t: 5.82, pose: stand, face: 110}
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [36.6, 54.4, 1.8]
+      look: [34.3, 51.4]
+      look_h: 0.85
+      lens: 28
+      frame: 全身
+    - t: 6.7
+      cam: [36.5, 54.3, 1.8]
+      look: [34.3, 51.4]
+      look_h: 0.85
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 6.7]
+      at: mitten
+      r: 0.4
+      h: 1.1
+      z: 0.1
+      color: *id004
+      alpha: 0.82
+      glow: 0.4
+    act: {start: ルッキーニィが百騎兵に向き直り, do: （「百騎兵さん、アロマニ・ジェルからその”キモ”を取ってきてくれませんか？」）北の森を指す, end: うなずく百騎兵}
+    camera: 百騎兵の背中越しに、ルッキーニィとミトン
+    kind: M
+  A34-041:
+    frame: 引き
+    only: [hundred-knight]
+    hidden_ok: [luckiny, mitten, heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.6, 44.6]
+        face: 355
+        pose: walk
+      - t: 13.5
+        at: [34.0, 35.0]
+        pose: walk
+        face: 0
+      luckiny:
+      - t: 0.0
+        at: [33.7, 51.9]
+        face: 110
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [32.6, 50.8]
+        face: 115
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.4, 36.6, 0.8]
+      look: hundred-knight
+      look_h: 0.6
+      lens: 28
+      frame: 引き
+    - t: 13.5
+      cam: [34.2, 31.8, 0.9]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 30
+      frame: 全身
+    act: {start: 百騎兵がひとりで森の小道を北へ歩く。ゴミ山が後ろに遠ざかる, do: メタリカの声（千里眼越し）（「おい、百騎兵。ワタシは、今回お前たちのしていることに口はださない。」「ただ、オマエにはピラーを咲かせる役目があるってことを忘れるなよ。」）, end: 小道を歩く百騎兵}
+    camera: 小道の先（北）の低い所から、歩いてくる百騎兵を迎えて後ろへ下がる
+    kind: M
+  A34-042:
+    frame: 大引き
+    only: [hundred-knight]
+    hidden_ok: [luckiny, mitten, heavy-fruit]
+    keys:
+      hundred-knight:
+      - t: 0.0
+        at: [34.0, 35.0]
+        face: 0
+        pose: walk
+      - t: 6.3
+        at: [33.9, 27.0]
+        pose: walk
+        face: 0
+    cam_keys:
+    - t: 0.0
+      cam: [34.6, 37.2, 1.2]
+      look: hundred-knight
+      look_h: 0.45
+      lens: 28
+      frame: 全身
+    - t: 6.3
+      cam: [35.0, 38.6, 7.5]
+      look: [34.0, 18.0]
+      look_h: 1.0
+      lens: 24
+      ease: inout
+      frame: 大引き
+    act: {start: 百騎兵が紅葉の森の小道を進む, do: メタリカの声（「まぁ、それさえ覚えているなら好きにするがいいさ。」）, end: 森の奥（沼の方）へ消える百騎兵}
+    camera: 百騎兵の後ろから、クレーンで梢の高さへ上がる（奥に沼の気配）
+    kind: M

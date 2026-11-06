@@ -1,0 +1,34 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-016
+scene: A35
+tc: 102.3
+sec: 8.0
+kind: M
+shot: 百騎兵がキモを抜き取る
+acting: 百騎兵が金色の溜まりに手を突っ込み、光るキモを抜き取って掲げる
+dialogue:
+- L1340「なにを、ぼやっとしているんだ？オマエは、そいつからキモを抜き取って持ち帰るんじゃなかったのか？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.4
+  - 22.8
+  - 0.5
+  look:
+  - 34.2
+  - 22.2
+  lens: 30
+  move: 金色の溜まりの脇の低い所から
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: メタリカの声（「なにを、ぼやっとしているんだ？オマエは、そいつからキモを抜き取って持ち帰るんじゃなかったのか？」）
+  end: キモを掲げる百騎兵
+timing:
+  lead: 0.4

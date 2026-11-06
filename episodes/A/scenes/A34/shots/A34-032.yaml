@@ -1,0 +1,41 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-032
+scene: A34
+tc: 284.9
+sec: 9.1
+kind: M
+shot: ルッキーニィが実をミトンへ
+acting: ミトンが目を輝かせて受け取る（「ほあ！これを食べれば、お腹が満腹になるでちね！」）
+dialogue:
+- L1299「さあ、ミトンさん！これを食べてみてください。」
+- L1300「ほあ！これを食べれば、お腹が満腹になるでちね！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.0
+  - 47.8
+  - 2.0
+  look:
+  - 33.6
+  - 51.4
+  lens: 26
+  move: 北のゴミの山の脇の少し高い所から、実を渡す二人
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- heavy-fruit
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが実を抱えてミトンへ差し出す（「さあ、ミトンさん！これを食べてみてください。」）
+  end: 実を抱えるミトン
+timing:
+  lead: 0.4
+  at:
+    L1299: 0.4
+    L1300: 4.22

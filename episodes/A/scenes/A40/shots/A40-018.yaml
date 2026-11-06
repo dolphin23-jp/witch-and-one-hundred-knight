@@ -1,0 +1,38 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-018
+scene: A40
+tc: 157.5
+sec: 16.1
+kind: M
+shot: 大引き（クレーンで上がる）・北西のピラーへ
+acting: （「キヒヒ、そのあたりはまだ、手をつけていない場所だ。一通りのピラーもあわせて片付けて来い」）百騎兵が二人を残して、広場を北西へ駆けていく
+dialogue:
+- L1472「ワタシのダウジング・ペンデュラムによるとピラーはここから北西の方角にあるようだ」
+- L1474「キヒヒ、そのあたりはまだ、手をつけていない場所だ。一通りのピラーもあわせて片付けて来い」
+sound: null
+notes: null
+camera:
+  pos:
+  - 49.6
+  - 53.4
+  - 1.2
+  look: hundred-knight
+  lens: 28
+  move: 百騎兵の後ろから、クレーンで梢の上へ上がり、北西の森を見せる
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: （「ワタシのダウジング・ペンデュラムによるとピラーはここから北西の方角にあるようだ」）百騎兵が森の北西を見る
+  end: 紅葉の森の上から、北西へ向かう百騎兵
+timing:
+  lead: 0.4
+  at:
+    L1472: 0.4
+    L1474: 6.4

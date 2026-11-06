@@ -1,0 +1,785 @@
+# A37 魔女邸バスルーム・入浴騒動（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A37 動きの設計（案）」。準備（案）の表の 7-10
+# 場所: バスルーム（world/witch-house-6b-extra.yaml。layout_extra）。昼（bath_day）。A21 と同じ部屋
+# ミトンは浴槽の中で z 0.15（縁の高さ 0.7）。湯気は白い fx mist、しぶきは碧の fx plume。メタリカの手の雷は spark（お仕置きの予告）
+# 扉の外（y 6 より北）は描かない。出入りする人物はそこで消える
+scene: A37
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+- file: world/witch-house-6b-extra.yaml
+  offset: [0.0, 0.0]
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 11
+lighting: bath_day
+places:
+  tub: [15.6, 9.4]
+  door: &id005 [13.0, 6.0]
+  d_in: [13.0, 6.7]
+start:
+  luckiny:
+    at: &id001 [13.0, 5.0]
+    face: 180
+  hundred-knight:
+    at: &id002 [13.0, 4.4]
+    face: 180
+  mitten:
+    at: &id003 [13.0, 5.6]
+    face: 180
+  metallica:
+    at: &id007 [12.4, 5.2]
+    face: 150
+cuts:
+  A37-001:
+    frame: 引き
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: *id001
+        face: 180
+        pose: walk
+      - t: 1.4
+        at: [13.0, 6.7]
+        pose: walk
+        face: 170
+      - t: 2.6
+        at: [14.5, 7.6]
+        pose: walk
+        face: 150
+        ease: out
+      - {t: 2.9, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: *id002
+        face: 180
+        pose: walk
+      - {t: 0.6, pose: walk, face: 180}
+      - t: 2.0
+        at: [13.0, 6.7]
+        pose: walk
+        face: 160
+      - t: 3.0
+        at: [13.8, 7.0]
+        pose: stand
+        face: 140
+        ease: out
+      mitten:
+      - t: 0.0
+        at: *id003
+        face: 180
+        pose: lie
+      - t: 1.8
+        at: [13.3, 6.9]
+        pose: lie
+        face: 150
+      - t: 2.6
+        at: [14.6, 7.9]
+        pose: lie
+        face: 140
+      - t: 6.77
+        at: [15.2, 8.2]
+        pose: stand
+        face: 160
+      - {t: 7.17, pose: jump, z: 0.4}
+      - t: 7.67
+        at: [15.5, 8.9]
+        z: 1.2
+        pose: jump
+        face: 170
+      - t: 8.07
+        at: [15.6, 9.3]
+        z: 0.15
+        pose: stand
+        face: 0
+        ease: in
+    cam_keys:
+    - t: 0.0
+      cam: [17.6, 10.3, 2.6]
+      look: [13.6, 6.8]
+      look_h: 0.8
+      lens: 24
+      frame: 引き
+    - t: 8.1
+      cam: [17.5, 10.2, 2.5]
+      look: [15.0, 8.4]
+      look_h: 0.7
+      lens: 26
+      ease: inout
+    fx:
+    - kind: plume
+      t: [7.47, 8.1]
+      at: &id004 [15.6, 9.3]
+      z: 0.7
+      r: 1.0
+      h: 1.4
+      color: &id009 [26, 150, 110]
+      shape: fall
+    act: {start: 扉が開き、ルッキーニィ、這うミトン、百騎兵が入ってくる。光る沼の湯の浴槽, do: ミトンが浴槽へ這い寄り（「これがお風呂でちか！早速、入るでち」）、縁から跳んで飛び込む。しぶきが上がる, end: 湯につかったミトン}
+    camera: 南東の隅の高い所（カーテンの脇）から、扉から入ってくる三人と浴槽
+    kind: A
+  A37-002:
+    frame: 胸上
+    only: [luckiny, hundred-knight, mitten]
+    hidden_ok: [metallica]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [14.5, 7.6]
+        face: 150
+        pose: stand
+      - {t: 0.3, pose: cover, face: 330}
+      - {t: 2.4, pose: walk, face: 315}
+      - t: 6.02
+        at: [13.0, 6.7]
+        pose: walk
+        face: 0
+      - t: 7.2
+        at: [13.0, 5.0]
+        pose: walk
+        face: 0
+      hundred-knight:
+      - t: 0.0
+        at: [13.8, 7.0]
+        face: 140
+        pose: stand
+      - {t: 2.8, pose: walk, face: 330}
+      - t: 6.22
+        at: [13.2, 6.3]
+        pose: walk
+        face: 0
+      - t: 7.2
+        at: [13.0, 4.4]
+        pose: walk
+        face: 0
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 0
+        pose: stand
+        z: 0.15
+    cam_keys:
+    - t: 0.0
+      cam: [15.4, 8.35, 1.15]
+      look: luckiny
+      look_h: 1.11
+      lens: 30
+      frame: 胸上
+    - t: 7.2
+      cam: [15.35, 8.3, 1.2]
+      look: [13.4, 6.6]
+      look_h: 1.0
+      lens: 28
+      ease: inout
+      frame: 全身
+    act: {start: ルッキーニィが顔を赤くしてそむける, do: （「あ……、じゃあボク外に出てるから！ちゃんと自分で洗ってくださいね」）百騎兵を押して扉の外へ出る, end: 閉まりかけの扉}
+    camera: 浴槽の北の縁の脇から、ルッキーニィ（後ろに扉）
+    kind: M
+  A37-003:
+    frame: 膝上
+    only: [mitten]
+    hidden_ok: [luckiny, hundred-knight, metallica]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [13.0, 5.0]
+        face: 0
+        pose: walk
+      hundred-knight:
+      - t: 0.0
+        at: [13.0, 4.4]
+        face: 0
+        pose: walk
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 0
+        pose: stand
+        z: 0.15
+      - {t: 0.4, face: 60}
+      - {t: 0.8, pose: shake}
+      - {t: 2.0, pose: arms_up, face: 90}
+    cam_keys:
+    - t: 0.0
+      cam: [17.0, 8.4, 0.9]
+      look: mitten
+      look_h: 0.92
+      lens: 28
+      frame: 膝上
+    - t: 3.2
+      cam: [17.05, 8.35, 0.95]
+      look: mitten
+      look_h: 0.92
+      lens: 26
+      ease: inout
+    shake:
+    - t: [1.0, 3.2]
+      amp: 0.3
+    fx:
+    - kind: mist
+      t: [0.3, 3.2]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: &id006 [225, 240, 230]
+      alpha: 0.6
+      glow: 0.3
+    - kind: ring
+      t: [0.2, 3.2]
+      at: *id004
+      z: 0.65
+      r: 1.2
+      n: 4
+      color: [40, 170, 140]
+    act: {start: 浴槽の沼の湯がぼこぼこと泡立つ, do: 湯気が天井まで噴き上がり、中でミトンがばたつく, end: 湯気に包まれた浴槽}
+    camera: 浴槽の東の低い所から、泡立つ湯とミトン（湯気に合わせて上へ）
+    kind: A
+  A37-004:
+    frame: 全身
+    only: [mitten, luckiny, hundred-knight]
+    hidden_ok: [metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 90
+        pose: arms_up
+        z: 0.15
+      luckiny:
+      - t: 0.0
+        at: [13.0, 5.0]
+        face: 0
+        pose: walk
+      - t: 0.3
+        at: [13.0, 5.6]
+        pose: lean
+        face: 180
+      - t: 0.8
+        at: [13.0, 6.7]
+        pose: walk
+        face: 160
+      - t: 1.2
+        at: [14.0, 7.2]
+        pose: walk
+        face: 140
+        ease: out
+      - {t: 1.6, pose: cover, face: 140}
+      hundred-knight:
+      - t: 0.0
+        at: [13.0, 4.4]
+        face: 0
+        pose: walk
+      - {t: 0.5, face: 180}
+      - t: 1.6
+        at: [13.1, 6.4]
+        pose: walk
+        face: 170
+      - t: 4.8
+        at: [14.25, 6.65]
+        pose: stand
+        face: 140
+        ease: out
+    cam_keys:
+    - t: 0.0
+      cam: [15.2, 8.6, 1.4]
+      look: *id005
+      look_h: 1.2
+      lens: 30
+      frame: 全身
+    - t: 4.8
+      cam: [15.15, 8.55, 1.4]
+      look: luckiny
+      lens: 26
+      ease: inout
+      look_h: 0.7
+    fx:
+    - kind: mist
+      t: [0.0, 4.8]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    act: {start: 扉が開き、ルッキーニィが顔を出す, do: 湯気に目を丸くして入ってくる（「うわ……！ちょっと……何が起きてるんですか！？」）, end: 湯気の前で立ちすくむルッキーニィ}
+    camera: 湯気の向こう（浴槽の脇）から、扉のルッキーニィ
+    kind: M
+  A37-005:
+    frame: 膝上
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 90
+        pose: arms_up
+        z: 0.15
+      luckiny:
+      - t: 0.0
+        at: [14.0, 7.2]
+        face: 140
+        pose: cover
+      - t: 0.6
+        at: [14.7, 7.45]
+        pose: walk
+        face: 120
+        ease: out
+      - {t: 1.0, pose: hop, face: 300}
+      - {t: 1.8, pose: stand, face: 300}
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: *id007
+        face: 150
+        pose: walk
+      - t: 1.0
+        at: [13.0, 6.7]
+        pose: walk
+        face: 160
+      - t: 1.6
+        at: [13.5, 7.25]
+        pose: stand
+        face: 130
+        ease: out
+      - {t: 2.6, pose: proud}
+    cam_keys:
+    - t: 0.0
+      cam: [14.9, 8.2, 0.5]
+      look: metallica
+      lens: 24
+      frame: 膝上
+      look_h: 1.25
+    - t: 8.0
+      cam: [14.85, 8.15, 0.5]
+      look: metallica
+      lens: 26
+      look_h: 1.25
+    fx:
+    - kind: mist
+      t: [0.0, 8.0]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    act: {start: ルッキーニィの後ろの扉に、メタリカが立つ, do: （「あん？なんだ、これは！？お前たち！ワタシの風呂で何をしている！」）, end: 腰に手を当てるメタリカ}
+    camera: 床の近くから、扉のメタリカを見上げる（手前にルッキーニィの背中）
+    kind: A
+  A37-006:
+    frame: 胸上
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 90
+        pose: arms_up
+        z: 0.15
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 300
+        pose: stand
+      - {t: 0.2, pose: wave, face: 290}
+      - {t: 5.82, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 130
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: &id008 [13.15, 7.0, 1.5]
+      look: luckiny
+      look_h: 1.11
+      lens: 32
+      frame: 胸上
+    - t: 6.7
+      cam: *id008
+      look: luckiny
+      look_h: 1.11
+      lens: 33.6
+    fx:
+    - kind: mist
+      t: [0.0, 6.7]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    act: {start: ルッキーニィが両手をばたつかせる, do: （「ま、魔女様！これはですね……」）, end: 言い訳を探すルッキーニィ}
+    camera: メタリカの肩越しに、ルッキーニィ
+    kind: M
+  A37-007:
+    frame: 胸上
+    only: [mitten]
+    hidden_ok: [luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 90
+        pose: arms_up
+        z: 0.15
+      - {t: 0.3, pose: shake, face: 0}
+      - {t: 2.8, pose: arms_up, face: 340}
+      - {t: 3.49, pose: shake, face: 20}
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 290
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 130
+        pose: proud
+    cam_keys:
+    - t: 0.0
+      cam: [16.3, 10.35, 1.0]
+      look: mitten
+      look_h: 1.1
+      lens: 30
+      frame: 胸上
+    - t: 5.4
+      cam: [16.25, 10.3, 1.05]
+      look: mitten
+      look_h: 1.1
+      lens: 34
+    shake:
+    - t: [0.3, 5.4]
+      amp: 0.5
+    fx:
+    - kind: mist
+      t: [0.0, 5.4]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    - kind: plume
+      t: [0.4, 5.4]
+      at: *id004
+      z: 0.7
+      r: 0.9
+      h: 1.2
+      color: *id009
+    act: {start: 湯気の中でミトンが4本の腕をばたつかせる, do: （「あ、熱いでち！目にしみるでち！もう無理でちーー！！」）しぶきが飛ぶ, end: もがくミトン}
+    camera: 浴槽の縁の高さ（南のカーテンの前）から、ミトン（揺れる）
+    kind: A
+  A37-008:
+    frame: 膝上
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 20
+        pose: shake
+        z: 0.15
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 290
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 130
+        pose: proud
+      - {t: 0.3, pose: point, face: 140}
+      - {t: 7.77, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [14.4, 8.6, 2.1]
+      look: metallica
+      lens: 28
+      frame: 膝上
+      look_h: 1.25
+    - t: 8.7
+      cam: [14.35, 8.55, 2.05]
+      look: metallica
+      lens: 30
+      look_h: 1.25
+    fx:
+    - kind: mist
+      t: [0.0, 8.7]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    act: {start: メタリカが浴槽を指さして目をむく, do: （「ブ、ブリダンゴを風呂に入れただと！？妖精ならいざ知らず、こんな虫を！」）, end: 浴槽を指さすメタリカ}
+    camera: 浴槽の湯気ごし（西のカーテンの脇の高い所）から、メタリカを見下ろす
+    kind: M
+  A37-009:
+    frame: 膝上
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 20
+        pose: shake
+        z: 0.15
+      - {t: 0.2, z: 0.3, pose: arms_up, face: 330}
+      - {t: 2.6, pose: proud}
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 290
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 140
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [15.2, 8.0, 0.6]
+      look: mitten
+      lens: 24
+      frame: 膝上
+      look_h: 0.92
+    - t: 5.2
+      cam: [15.2, 7.95, 0.6]
+      look: mitten
+      lens: 24
+      look_h: 1.07
+    fx:
+    - kind: mist
+      t: [0.0, 5.2]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    - kind: plume
+      t: [0.2, 1.4]
+      at: *id004
+      z: 0.7
+      r: 0.8
+      h: 1.0
+      color: *id009
+      shape: fall
+    act: {start: ミトンが湯から伸び上がり、腕を振り上げる, do: （「妖精なんかと比べないでほしいでち！あたちはブリダンゴでち！」）, end: 湯の中で胸を張るミトン}
+    camera: 浴槽の北の縁の低い所から見上げる
+    kind: A
+  A37-010:
+    frame: 寄り
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 330
+        pose: proud
+        z: 0.3
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 290
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 140
+        pose: stand
+      - {t: 0.2, pose: stand, face: 130}
+      - {t: 4.38, pose: point}
+    cam_keys:
+    - t: 0.0
+      cam: [14.47, 8.06, 1.35]
+      look: metallica
+      look_h: 1.54
+      lens: 32
+      frame: 胸上
+    - t: 8.9
+      cam: [14.47, 8.06, 1.35]
+      look: metallica
+      look_h: 1.39
+      lens: 55
+      ease: in
+      frame: 寄り
+    fx:
+    - kind: mist
+      t: [0.0, 8.9]
+      at: *id004
+      r: 1.4
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    - kind: spark
+      t: [4.38, 8.9]
+      at: [13.84, 7.54]
+      z: 1.3
+    - kind: light
+      t: [4.38, 8.9]
+      at: [13.84, 7.54]
+      z: 1.3
+      energy: 120
+      color: [255, 240, 150]
+    act: {start: メタリカが一喝する（「そんなことはどうでもいい！！」）, do: 手のひらに雷の火花を散らす（「今すぐ出ていかないと、お仕置きだぞ！」）, end: 雷をまとうメタリカの手}
+    camera: ルッキーニィの肩の高さから、メタリカの顔へ寄る
+    kind: A
+  A37-011:
+    frame: 引き
+    only: [mitten, luckiny, hundred-knight, metallica]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [15.6, 9.3]
+        face: 330
+        pose: proud
+        z: 0.3
+      - t: 0.8
+        at: [15.6, 9.3]
+        z: 0.15
+        pose: stand
+        face: 0
+      - t: 1.2
+        at: [15.5, 8.9]
+        z: 1.0
+        pose: jump
+        face: 340
+      - t: 1.6
+        at: [15.4, 8.15]
+        z: 0.0
+        pose: run
+        face: 320
+        ease: in
+      - t: 2.9
+        at: [14.0, 7.25]
+        pose: run
+        face: 320
+      - t: 3.6
+        at: [13.1, 6.5]
+        pose: run
+        face: 0
+      - t: 4.6
+        at: [13.0, 5.2]
+        pose: run
+        face: 0
+      luckiny:
+      - t: 0.0
+        at: [14.7, 7.45]
+        face: 290
+        pose: stand
+      - {t: 0.2, pose: run, face: 150}
+      - t: 0.8
+        at: [15.0, 8.15]
+        pose: hold
+        face: 160
+        ease: out
+      - {t: 1.6, pose: run, face: 320}
+      - t: 2.8
+        at: [13.6, 6.9]
+        pose: run
+        face: 330
+      - t: 3.4
+        at: [13.0, 6.7]
+        pose: run
+        face: 0
+      - t: 4.6
+        at: [13.0, 4.6]
+        pose: run
+        face: 0
+      hundred-knight:
+      - t: 0.0
+        at: [14.25, 6.65]
+        face: 140
+        pose: stand
+      - {t: 1.4, pose: run, face: 300}
+      - t: 2.2
+        at: [13.3, 6.3]
+        pose: run
+        face: 330
+      - t: 4.6
+        at: [13.0, 3.8]
+        pose: run
+        face: 0
+      metallica:
+      - t: 0.0
+        at: [13.5, 7.25]
+        face: 130
+        pose: point
+      - {t: 1.0, face: '@mitten'}
+      - {t: 3.4, pose: cross, face: 40}
+    cam_keys:
+    - t: 0.0
+      cam: [12.4, 10.6, 2.7]
+      look: [14.6, 7.8]
+      look_h: 0.8
+      lens: 24
+      frame: 引き
+    - t: 4.6
+      cam: [12.45, 10.5, 2.65]
+      look: [13.6, 6.8]
+      look_h: 0.9
+      lens: 26
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 4.6]
+      at: *id004
+      r: 1.2
+      h: 2.2
+      z: 0.7
+      color: *id006
+      alpha: 0.6
+      glow: 0.3
+    - kind: plume
+      t: [1.0, 2.4]
+      at: [15.2, 8.2]
+      z: 0.3
+      r: 0.8
+      h: 1.0
+      color: *id009
+      shape: fall
+    act: {start: ルッキーニィが浴槽へ飛びつき（「すすすみません！！！今すぐ出ていきます！！」）, do: 湯から飛び出したミトンの腕を引いて、百騎兵と扉から駆け出す。メタリカが一人残って腕を組む, end: 腕を組むメタリカと湯気}
+    camera: 南西の高い所（西のカーテンの上）から、部屋じゅうを駆ける三人
+    kind: A

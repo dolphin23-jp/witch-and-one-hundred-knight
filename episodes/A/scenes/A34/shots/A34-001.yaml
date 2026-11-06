@@ -1,0 +1,35 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-001
+scene: A34
+tc: 0.0
+sec: 5.6
+kind: A
+shot: 大引き（クレーンで降りる）・紅嵐街道
+acting: 森への道の入口で待っていたルッキーニィが手を振る（「あ、百騎兵さん！こっちです。」）
+dialogue:
+- L1239「あ、百騎兵さん！こっちです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 56.8
+  - 70.0
+  - 8.0
+  look:
+  - 54.2
+  - 60.0
+  lens: 22
+  move: 街道の上の高い所（木々の梢の高さ）から、歩く百騎兵を追いながら降り、東の柵の外の横から二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 紅葉の森を抜ける紅嵐街道。百騎兵が赤い落ち葉の道を北へ歩いてくる
+  end: ルッキーニィの前で止まる百騎兵
+timing:
+  lead: 3.0

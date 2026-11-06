@@ -1,0 +1,31 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-003
+scene: A37
+tc: 15.3
+sec: 3.2
+kind: A
+shot: 浴槽が泡立ち、湯気が噴き上がる
+acting: 湯気が天井まで噴き上がり、中でミトンがばたつく
+dialogue: []
+sound: ぼこぼこと泡立つ音、ミトンの悲鳴（声は次のカットの台詞で）
+notes: null
+camera:
+  pos:
+  - 17.0
+  - 8.4
+  - 0.9
+  look: mitten
+  lens: 28
+  move: 浴槽の東の低い所から、泡立つ湯とミトン（湯気に合わせて上へ）
+background: witch-house
+image: null
+refs:
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 浴槽の沼の湯がぼこぼこと泡立つ
+  end: 湯気に包まれた浴槽
+timing:
+  lead: 0.4

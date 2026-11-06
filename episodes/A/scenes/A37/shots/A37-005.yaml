@@ -1,0 +1,35 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-005
+scene: A37
+tc: 23.3
+sec: 8.0
+kind: A
+shot: あおり・扉のメタリカ・ワタシの風呂で何をしている
+acting: （「あん？なんだ、これは！？お前たち！ワタシの風呂で何をしている！」）
+dialogue:
+- L1369「あん？なんだ、これは！？お前たち！ワタシの風呂で何をしている！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 14.9
+  - 8.2
+  - 0.5
+  look: metallica
+  lens: 24
+  move: 床の近くから、扉のメタリカを見上げる（手前にルッキーニィの背中）
+background: witch-house
+image: null
+refs:
+- mitten
+- luckiny
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィの後ろの扉に、メタリカが立つ
+  end: 腰に手を当てるメタリカ
+timing:
+  lead: 0.4

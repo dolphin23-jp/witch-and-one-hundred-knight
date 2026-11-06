@@ -1,0 +1,38 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-023
+scene: A33
+tc: 166.4
+sec: 10.9
+kind: M
+shot: 引き・アルレッキーノ・依頼でございますか
+acting: （「なんと！リカ様に依頼でございますか！お待ちくださいませ。ただいまリカ様をーー」）階段の方へ歩き出す
+dialogue:
+- L1182「なんと！リカ様に依頼でございますか！お待ちくださいませ。ただいまリカ様をーー」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.3
+  - 5.7
+  - 1.7
+  look:
+  - 5.4
+  - 4.0
+  lens: 20
+  move: 西南から、部屋の東半分（倒れたビスコ、ミトン、ルッキーニィ、アルレッキーノ）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが手を打って喜ぶ
+  end: 階段へ向かうアルレッキーノ
+timing:
+  lead: 0.4

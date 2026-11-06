@@ -1,0 +1,205 @@
+# チンクエの森（紅嵐街道沿いの森）の下絵用の配置。7章前半（A34〜A36・A38・A40）。Claude の案（2026-11-06）
+# 見た目の資料: world/cinque-dump（紅葉の森のゴミ山。樽・車輪・木箱・骨・壺、苔の盛り土、小道、街道の柵）と
+#   world/marsh-pillar（紅葉の森の沼。中の島に緑の尖塔形のピラー、がま、倒木、もや、泡）。背景の画像は「場所の見た目の資料」で、その視点は写さない（D-058）
+# 座標: x は西 0 → 東 80、y は北 0 → 南 100（m）。方位: 北 0・東 90・南 180・西 270
+# 地図（1枚に、7章前半のチンクエの場所を全部置く。場面ごとに使う所を決める）:
+#   ゴミ山の広場（中心 34, 53、半径約 12m）: ミトンの住みか。北西に大きなゴミの山、西・北東・南西にも山。東は街道への道（x 44〜52、y 51〜56）。
+#   紅嵐街道（x 52〜56、南北にまっすぐ）。西の縁に柵（x 51.4、y 30〜50 と 57〜85。広場の前は柵が切れる）。ハインツの馬車は南から北へ通る（7-13）。
+#   かなきり穂の茂み（中心 25, 71）: ずっしりの実が落ちる穂の茂み（7-05）。
+#   森の小道（x 32.5〜35.5、y 22〜41）: 広場から北の沼へ。アルレッキーノのフィールドワーク（7-07、33, 30 あたり）。
+#   沼地のピラー（沼の中心 34, 13、半径 7.5m）: 中の島（半径 2.4m）に咲く前のピラー（bud）。がまと倒木。アロマニ・ジェルが守る（7-08）。
+id: cinque-forest
+size: {w: 80.0, d: 100.0}
+compass: 北 0、東 90、南 180、西 270（沼は北、街道は東、かなきり穂は南西）
+time: 秋の昼（紅葉の森、木漏れ日）
+ground: {color: [72, 58, 34], ja: 落ち葉と苔の地面}
+sky: {color: [170, 190, 215]}
+sun: {from: 215, elev: 42}
+light_en: "Autumn daytime in a forest of crimson maples: warm sunlight filtering through the red canopy, dappled light on fallen red leaves and moss."
+
+lighting:
+  day: {sun_from: 215, sun_elev: 42, sun_energy: 2.6, sun_color: [255, 225, 185], sky: [175, 190, 210], sky_strength: 0.75, lamps: 0.0}
+  marsh: {sun_from: 200, sun_elev: 30, sun_energy: 2.2, sun_color: [240, 220, 190], sky: [150, 160, 150], sky_strength: 0.7, lamps: 0.0}
+  evening: {sun_from: 250, sun_elev: 14, sun_energy: 2.4, sun_color: [255, 170, 110], sky: [200, 150, 130], sky_strength: 0.55, lamps: 0.0}
+
+areas:
+  - {kind: circle, center: [34.0, 53.0], r: 12.0, ja: ゴミ山の広場（土と苔）, color: [84, 68, 40]}
+  - {kind: rect, x: [44.0, 52.0], y: [51.5, 55.5], ja: 広場から街道への道, color: [92, 72, 46]}
+  - {kind: rect, x: [52.0, 56.0], y: [0.0, 100.0], ja: 紅嵐街道（赤い落ち葉の土の道）, color: [124, 58, 40]}
+  - {kind: rect, x: [32.5, 35.5], y: [21.0, 42.0], ja: 森の小道, color: [90, 70, 44]}
+  - {kind: circle, center: [25.0, 71.0], r: 5.0, ja: かなきり穂の茂みの草地, color: [76, 70, 36]}
+
+horizon:
+  - {from: 0, to: 360, ja: 紅葉の森, en: "a deep autumn forest of crimson and orange maple trees with thick mossy trunks, fallen red leaves, dappled sunlight"}
+
+views:
+  dump:
+    ja: チンクエのゴミ山
+    panel: チンクエのゴミ山
+    en: "a garbage heap in a crimson autumn forest beside a highway: mossy mounds of junk with old barrels, broken cart wheels, wooden crates, animal bones, clay pots and rags, a dirt clearing, a wooden fence along a road covered in red leaves"
+  marsh:
+    ja: 沼地のピラー
+    panel: 沼地のピラー
+    en: "a murky green marsh in a crimson autumn forest: a small muddy island in the middle with a tall slender dark spire pillar with glowing green glass panels, cattails, fallen mossy logs, drifting mist, bubbles on the water"
+  road:
+    ja: 紅嵐街道
+    panel: チンクエのゴミ山
+    en: "a straight dirt highway covered in red fallen leaves through a crimson maple forest, a wooden rail fence along its side"
+
+props:
+  # ---- ゴミ山の広場 ----
+  junk_nw: {at: [27.0, 45.0], r: 4.2, h: 2.2, n: 12, seed: 1, ja: 大きなゴミの山（ミトンの住みかの裏）}
+  junk_w: {at: [23.0, 55.0], r: 3.2, h: 1.6, n: 9, seed: 2, ja: ゴミの山（西）}
+  junk_ne: {at: [41.0, 45.0], r: 2.6, h: 1.3, n: 7, seed: 3, ja: ゴミの山（北東）}
+  junk_sw: {at: [28.0, 62.0], r: 2.4, h: 1.2, n: 7, seed: 4, ja: ゴミの山（南西）}
+  wheel_1: {at: [36.5, 46.5], r: 0.65, rot: 30, lean: 75, ja: 立てかけた車輪}
+  wheel_2: {at: [40.5, 60.0], r: 0.6, rot: 120, lean: 10, ja: 倒れた車輪}
+  crate_1: {at: [31.0, 47.8], w: 0.8, d: 0.6, h: 0.55, rot: 20, ja: 木箱（ミトンの住みかの前）}
+  crate_2: {at: [38.0, 58.5], w: 0.7, d: 0.7, h: 0.5, rot: 70, ja: 木箱}
+  barrel_1: {at: [29.6, 48.6], r: 0.3, h: 0.8, ja: 樽}
+  bones_1: {at: [37.0, 49.5], r: 0.8, ja: 骨}
+  jar_1: {at: [25.5, 50.5], r: 0.3, ja: 壺}
+  # ---- かなきり穂の茂み（7-05） ----
+  reeds_k1: {at: [24.0, 70.0], r: 1.6, n: 30, h: 1.6, ja: かなきり穂の茂み}
+  reeds_k2: {at: [27.5, 72.5], r: 1.3, n: 24, h: 1.5, ja: かなきり穂の茂み}
+  reeds_k3: {at: [21.5, 73.5], r: 1.2, n: 20, h: 1.4, ja: かなきり穂の茂み}
+  # ---- 紅嵐街道の柵 ----
+  fence_road_n: {from: [51.4, 30.0], to: [51.4, 50.5], h: 1.0, t: 0.12, ja: 街道の柵（北）}
+  fence_road_s: {from: [51.4, 56.5], to: [51.4, 85.0], h: 1.0, t: 0.12, ja: 街道の柵（南）}
+  # ---- 沼地のピラー（7-08） ----
+  pond_marsh: {at: [34.0, 13.0], r: 7.5, color: [38, 60, 34], ja: 沼（濁った碧の水）}
+  bush_islet: {at: [34.0, 13.0], r: 2.4, h: 0.45, color: [96, 74, 44], ja: 中の島（泥）}
+  mpillar_marsh: {at: [34.0, 13.0], h: 4.4, r: 0.42, ja: 咲く前のピラー（沼地のピラー。黒い尖塔に緑のガラス。背景の参考画の形）}
+  reeds_c1: {at: [28.0, 18.5], r: 1.2, n: 18, h: 1.6, ear: [92, 56, 30], ja: がま}
+  reeds_c2: {at: [41.0, 16.0], r: 1.0, n: 14, h: 1.5, ear: [92, 56, 30], ja: がま}
+  reeds_c3: {at: [30.0, 7.0], r: 1.0, n: 14, h: 1.5, ear: [92, 56, 30], ja: がま}
+  log_1: {at: [40.0, 9.0], len: 4.5, r: 0.4, rot: 60, lean: 12, ja: 倒木（水に浸かる）}
+  log_2: {at: [26.0, 11.0], len: 3.8, r: 0.35, rot: 150, lean: 0, ja: 倒木}
+  # ---- 紅葉の木 ----
+  tree_000: {at: [42.7, 37.1], h: 11, r: 0.57, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_001: {at: [71.1, 22.6], h: 16, r: 0.73, crown: 3.5, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_002: {at: [8.9, 42.8], h: 14, r: 0.66, crown: 4.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_003: {at: [11.4, 23.4], h: 15, r: 0.54, crown: 4.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_004: {at: [46.3, 7.9], h: 13, r: 0.74, crown: 4.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_005: {at: [32.1, 95.7], h: 12, r: 0.62, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_006: {at: [45.4, 20.0], h: 16, r: 0.72, crown: 4.0, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_007: {at: [6.5, 21.8], h: 16, r: 0.65, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_008: {at: [42.4, 76.6], h: 13, r: 0.57, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_009: {at: [46.5, 45.5], h: 14, r: 0.76, crown: 4.4, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_010: {at: [20.9, 19.3], h: 14, r: 0.76, crown: 3.2, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_011: {at: [8.2, 30.8], h: 12, r: 0.56, crown: 3.9, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_012: {at: [68.5, 72.0], h: 15, r: 0.63, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_013: {at: [28.0, 91.6], h: 16, r: 0.53, crown: 3.9, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_014: {at: [5.0, 66.1], h: 15, r: 0.66, crown: 4.3, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_015: {at: [45.5, 86.0], h: 15, r: 0.68, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_016: {at: [27.8, 35.6], h: 13, r: 0.63, crown: 4.6, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_017: {at: [65.8, 92.7], h: 14, r: 0.68, crown: 4.4, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_018: {at: [45.9, 67.4], h: 12, r: 0.61, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_019: {at: [23.6, 39.0], h: 13, r: 0.65, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_020: {at: [39.5, 22.9], h: 14, r: 0.67, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_021: {at: [31.7, 85.7], h: 15, r: 0.52, crown: 3.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_022: {at: [14.6, 40.6], h: 16, r: 0.74, crown: 4.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_023: {at: [69.1, 80.7], h: 16, r: 0.5, crown: 3.6, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_024: {at: [74.8, 16.5], h: 13, r: 0.66, crown: 3.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_025: {at: [13.5, 65.2], h: 12, r: 0.56, crown: 3.5, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_026: {at: [22.0, 2.4], h: 16, r: 0.8, crown: 3.5, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_027: {at: [36.7, 85.6], h: 16, r: 0.49, crown: 3.8, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_028: {at: [62.6, 39.7], h: 12, r: 0.73, crown: 4.4, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_029: {at: [76.8, 44.3], h: 14, r: 0.55, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_030: {at: [2.0, 16.5], h: 11, r: 0.55, crown: 4.6, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_031: {at: [74.1, 60.9], h: 14, r: 0.46, crown: 3.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_032: {at: [68.4, 61.0], h: 14, r: 0.69, crown: 4.0, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_033: {at: [10.8, 48.9], h: 16, r: 0.55, crown: 3.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_034: {at: [38.5, 31.9], h: 13, r: 0.66, crown: 3.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_035: {at: [22.1, 81.6], h: 16, r: 0.53, crown: 4.6, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_036: {at: [74.4, 36.7], h: 16, r: 0.65, crown: 4.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_037: {at: [42.1, 95.9], h: 14, r: 0.75, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_038: {at: [60.7, 53.1], h: 16, r: 0.76, crown: 4.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_039: {at: [27.1, 23.4], h: 16, r: 0.65, crown: 3.6, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_040: {at: [63.3, 80.6], h: 12, r: 0.67, crown: 3.9, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_041: {at: [63.1, 21.2], h: 13, r: 0.54, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_042: {at: [73.2, 96.9], h: 14, r: 0.53, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_043: {at: [8.1, 11.8], h: 16, r: 0.67, crown: 3.6, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_044: {at: [65.9, 48.0], h: 14, r: 0.62, crown: 3.2, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_045: {at: [65.4, 13.5], h: 14, r: 0.63, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_046: {at: [61.5, 74.0], h: 12, r: 0.76, crown: 3.7, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_047: {at: [69.6, 43.7], h: 11, r: 0.59, crown: 4.0, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_048: {at: [27.3, 78.9], h: 11, r: 0.46, crown: 4.1, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_049: {at: [74.0, 71.6], h: 12, r: 0.7, crown: 4.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_050: {at: [77.5, 4.6], h: 12, r: 0.63, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_051: {at: [13.1, 81.3], h: 15, r: 0.61, crown: 3.5, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_052: {at: [3.1, 95.2], h: 14, r: 0.63, crown: 4.2, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_053: {at: [9.8, 74.0], h: 13, r: 0.63, crown: 3.9, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_054: {at: [21.1, 30.1], h: 14, r: 0.52, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_055: {at: [60.0, 33.3], h: 14, r: 0.63, crown: 4.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_056: {at: [71.7, 50.2], h: 16, r: 0.79, crown: 3.8, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_057: {at: [48.3, 76.5], h: 11, r: 0.54, crown: 3.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_058: {at: [10.1, 55.8], h: 11, r: 0.45, crown: 3.9, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_059: {at: [16.5, 6.1], h: 14, r: 0.67, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_060: {at: [59.8, 89.6], h: 15, r: 0.54, crown: 3.6, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_061: {at: [72.1, 87.7], h: 16, r: 0.59, crown: 4.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_062: {at: [13.7, 70.7], h: 12, r: 0.8, crown: 4.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_063: {at: [69.3, 17.6], h: 14, r: 0.52, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_064: {at: [3.5, 55.2], h: 11, r: 0.73, crown: 4.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_065: {at: [68.6, 10.1], h: 14, r: 0.67, crown: 4.4, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_066: {at: [5.0, 76.8], h: 12, r: 0.57, crown: 4.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_067: {at: [66.6, 66.9], h: 14, r: 0.61, crown: 3.7, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_068: {at: [26.9, 28.8], h: 15, r: 0.68, crown: 4.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_069: {at: [15.9, 87.9], h: 14, r: 0.57, crown: 4.6, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_070: {at: [72.4, 27.7], h: 13, r: 0.7, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_071: {at: [35.9, 66.5], h: 14, r: 0.69, crown: 4.0, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_072: {at: [28.4, 3.7], h: 16, r: 0.73, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_073: {at: [4.8, 3.8], h: 16, r: 0.56, crown: 4.0, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_074: {at: [38.1, 91.7], h: 14, r: 0.67, crown: 3.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_075: {at: [12.6, 97.0], h: 13, r: 0.5, crown: 3.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_076: {at: [65.6, 3.4], h: 14, r: 0.47, crown: 4.5, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_077: {at: [65.9, 85.6], h: 13, r: 0.72, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_078: {at: [16.1, 27.8], h: 13, r: 0.67, crown: 3.2, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_079: {at: [22.0, 94.3], h: 11, r: 0.52, crown: 3.3, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_080: {at: [15.9, 34.2], h: 13, r: 0.54, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_081: {at: [17.3, 50.5], h: 12, r: 0.75, crown: 3.5, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_082: {at: [74.8, 83.9], h: 14, r: 0.57, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_083: {at: [26.8, 96.5], h: 14, r: 0.73, crown: 3.5, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_084: {at: [19.5, 64.4], h: 16, r: 0.66, crown: 4.5, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_085: {at: [60.3, 61.2], h: 16, r: 0.77, crown: 4.1, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_086: {at: [17.1, 59.6], h: 16, r: 0.74, crown: 3.5, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_087: {at: [11.0, 87.8], h: 16, r: 0.52, crown: 3.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_088: {at: [47.9, 62.6], h: 14, r: 0.68, crown: 3.4, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_089: {at: [38.9, 4.4], h: 11, r: 0.54, crown: 3.6, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_090: {at: [66.9, 28.9], h: 12, r: 0.62, crown: 4.1, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_091: {at: [71.4, 92.3], h: 14, r: 0.61, crown: 3.4, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_092: {at: [48.7, 15.3], h: 14, r: 0.54, crown: 3.5, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_093: {at: [44.2, 32.7], h: 15, r: 0.75, crown: 3.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_094: {at: [2.0, 39.6], h: 13, r: 0.61, crown: 4.1, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_095: {at: [20.9, 12.5], h: 16, r: 0.55, crown: 3.9, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_096: {at: [61.0, 2.1], h: 14, r: 0.6, crown: 4.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_097: {at: [47.7, 3.0], h: 11, r: 0.51, crown: 3.8, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_098: {at: [77.7, 28.7], h: 16, r: 0.46, crown: 4.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_099: {at: [3.7, 49.8], h: 16, r: 0.71, crown: 4.8, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_100: {at: [19.3, 42.7], h: 11, r: 0.63, crown: 4.0, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_101: {at: [70.2, 4.9], h: 12, r: 0.46, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_102: {at: [37.3, 79.1], h: 16, r: 0.49, crown: 3.4, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_103: {at: [70.3, 34.6], h: 16, r: 0.58, crown: 4.0, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_104: {at: [73.9, 8.3], h: 15, r: 0.64, crown: 4.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_105: {at: [23.4, 89.1], h: 13, r: 0.6, crown: 3.9, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_106: {at: [77.4, 50.7], h: 15, r: 0.47, crown: 3.7, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_107: {at: [2.3, 86.8], h: 13, r: 0.74, crown: 3.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_108: {at: [2.9, 33.4], h: 15, r: 0.79, crown: 4.6, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_109: {at: [77.1, 66.1], h: 13, r: 0.79, crown: 4.2, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_110: {at: [74.4, 32.0], h: 11, r: 0.57, crown: 3.7, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_111: {at: [13.9, 12.9], h: 13, r: 0.49, crown: 4.8, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_112: {at: [8.8, 61.7], h: 11, r: 0.72, crown: 3.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_113: {at: [62.2, 27.4], h: 16, r: 0.64, crown: 3.8, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_114: {at: [48.8, 94.0], h: 15, r: 0.47, crown: 3.7, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_115: {at: [41.0, 88.0], h: 11, r: 0.47, crown: 4.5, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_116: {at: [16.1, 17.3], h: 14, r: 0.66, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+  tree_117: {at: [21.8, 24.7], h: 15, r: 0.77, crown: 4.2, leaf: [170, 40, 40], ja: 紅葉の木}
+  tree_118: {at: [66.0, 53.5], h: 15, r: 0.5, crown: 4.3, leaf: [214, 92, 40], ja: 紅葉の木}
+  tree_119: {at: [17.4, 75.2], h: 16, r: 0.66, crown: 4.3, leaf: [196, 58, 38], ja: 紅葉の木}
+
+people:
+  luckiny: {ja: ルッキーニィ, eye: 1.3, h: 1.4, en: "Luckiny (a small goat-like beastfolk: two tall ridged horns, short light ash-brown hair, a red hood and short red cape with white fur trim, green furry goat legs with dark hooves, a green fluffy tail)"}
+  hundred-knight: {ja: 百騎兵, eye: 0.8, h: 0.9, en: "the Hundred Knight (small, about waist-high to Metallica: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume on top, black face with orange eyes, oversized blue-and-silver gauntlets with black claws, beige shorts, brown shoes)"}
+  metallica: {ja: メタリカ, eye: 1.5, h: 1.6, en: "Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots)"}
+  arlecchino: {ja: アルレッキーノ, eye: 1.9, h: 1.9, en: "Arlecchino (a bulky servant as tall as a man: white egg-shaped head with red eyes, a crack over one eye and a stitched tooth pattern, two copper horn-like pipes on the head, pink scarf, black double-breasted coat, olive-green arms, big black boots)"}
+  bisco: {ja: ビスコ, eye: 1.5, h: 1.55, en: "Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots)"}

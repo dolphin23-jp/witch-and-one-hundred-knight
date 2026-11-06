@@ -1,0 +1,36 @@
+# A39 消えない臭い。blocking.yaml（Claude の案 2026-11-06、Living Spec「A39 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A39-001
+scene: A39
+tc: 0.0
+sec: 7.1
+kind: M
+shot: 寄り→引き・磨くアルレッキーノと、いら立つメタリカ
+acting: メタリカが地団駄を踏む（「おのれっ！！この風呂はどうなってるんだ！」）
+dialogue:
+- L1414「おのれっ！！この風呂はどうなってるんだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.4
+  - 8.0
+  - 0.9
+  look:
+  - 15.3
+  - 8.3
+  lens: 40
+  move: 浴槽の縁の手元から、引きながら上がり、部屋とメタリカを見せる
+background: witch-house
+image: null
+refs:
+- arlecchino
+- metallica
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 浴槽の縁を、アルレッキーノがたわしで磨いている（まだ臭いが漂う）
+  end: 腕を組むメタリカ
+timing:
+  lead: 2.0

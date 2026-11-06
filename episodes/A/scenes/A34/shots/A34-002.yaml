@@ -1,0 +1,35 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-002
+scene: A34
+tc: 5.6
+sec: 8.3
+kind: M
+shot: 二人・チンクエにあるゴミ山
+acting: （「ブリダンゴ姫の居場所がわかりました。紅嵐街道沿いの森……”チンクエ”にあるゴミ山だそうです。」）
+dialogue:
+- L1240「ブリダンゴ姫の居場所がわかりました。紅嵐街道沿いの森……”チンクエ”にあるゴミ山だそうです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 57.6
+  - 52.4
+  - 1.8
+  look:
+  - 53.4
+  - 54.2
+  lens: 30
+  move: 街道の東の柵の外から、二人と森への道
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが森の奥を指さす
+  end: 森の奥を見る二人
+timing:
+  lead: 0.4

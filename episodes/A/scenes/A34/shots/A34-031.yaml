@@ -1,0 +1,41 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-031
+scene: A34
+tc: 265.4
+sec: 19.5
+kind: M
+shot: 胸上・ルッキーニィの得意料理
+acting: 照れて（「実は、お腹がすいたときにいつでも食べれるように、持ち歩いているんです。」「まだ、砂羊の放牧をしていたときの感覚が抜けなくて、ちょっと困っているんですけどね。」）
+dialogue:
+- L1296「では、これがお約束したボクの得意料理です」
+- L1297「実は、お腹がすいたときにいつでも食べれるように、持ち歩いているんです。」
+- L1298「まだ、砂羊の放牧をしていたときの感覚が抜けなくて、ちょっと困っているんですけどね。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.25
+  - 52.63
+  - 1.0
+  look: luckiny
+  lens: 32
+  move: 百騎兵の目の高さから、ルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- heavy-fruit
+- luckiny
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが実を地面に置き、腰の袋から包みを出して百騎兵に渡す（「では、これがお約束したボクの得意料理です」）
+  end: 頭をかくルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1296: 0.4
+    L1297: 4.93
+    L1298: 11.76

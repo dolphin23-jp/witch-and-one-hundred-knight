@@ -1,0 +1,36 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-008
+scene: A34
+tc: 52.1
+sec: 5.8
+kind: M
+shot: ミトンの肩越し・何の用でちか
+acting: （「んあ？魔女の所にいた……。な、何の用でちか！」）
+dialogue:
+- L1249「んあ？魔女の所にいた……。な、何の用でちか！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.1
+  - 49.0
+  - 1.25
+  look:
+  - 36.6
+  - 52.6
+  lens: 28
+  move: ミトンの背中越しに（住みかの木箱の脇から）、歩いてくるルッキーニィと百騎兵
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 近づいてくる二人を見て、ミトンががっかりして身構える
+  end: 身構えるミトン
+timing:
+  lead: 0.4

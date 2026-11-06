@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-019
+scene: A38
+tc: 145.0
+sec: 5.4
+kind: M
+shot: 胸上・ミトン・余計なお世話でち
+acting: （「さ、最初からそうするつもりだったでち！余計なお世話でち！」）
+dialogue:
+- L1410「さ、最初からそうするつもりだったでち！余計なお世話でち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.81
+  - 63.88
+  - 1.0
+  look: mitten
+  lens: 32
+  move: ミトンの正面（木の側）から、背を向けたミトンの顔
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンが振り向かずに
+  end: 背を向けたままのミトン
+timing:
+  lead: 0.4

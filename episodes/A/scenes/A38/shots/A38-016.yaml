@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-016
+scene: A38
+tc: 117.4
+sec: 6.0
+kind: M
+shot: 寄り・ルッキーニィ・せっかく特訓してあげてるのに
+acting: （「な、なんですか……！せっかく特訓してあげてるのに……！」）
+dialogue:
+- L1405「な、なんですか……！せっかく特訓してあげてるのに……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.7
+  - 63.82
+  - 1.15
+  look: luckiny
+  lens: 35
+  move: ルッキーニィの正面から、顔へ寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがかっとなる
+  end: 拳を握るルッキーニィ
+timing:
+  lead: 0.4

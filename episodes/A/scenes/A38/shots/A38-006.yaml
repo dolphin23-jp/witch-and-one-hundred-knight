@@ -1,0 +1,31 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-006
+scene: A38
+tc: 44.5
+sec: 3.2
+kind: A
+shot: 寄り・夕日に透ける羽根
+acting: 透けた青い羽根が夕日を受けて光る（羽ばたきは動画の段階で）
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.6
+  - 64.6
+  - 2.0
+  look: mitten
+  lens: 40
+  move: ミトンの背中の高さで、羽根に寄って回り込む
+background: cinque-forest
+image: null
+refs:
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 宙に浮いたミトンの背中
+  end: 羽根
+timing:
+  lead: 0.4

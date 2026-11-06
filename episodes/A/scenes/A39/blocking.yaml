@@ -1,0 +1,637 @@
+# A39 数日後の魔女邸バスルーム・消えない臭い（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A39 動きの設計（案）」。準備（案）の表の 7-12（百騎兵が話しかけた時のアルレッキーノの独白と、「結局そこか……」の前後を削る）
+# 場所: バスルーム（world/witch-house-6b-extra.yaml。A21・A37 と同じ）。昼（bath_day）
+# 臭いは浴槽の上の黄緑の薄い fx mist（漫符ではない）。ビスコの汗などの漫符は合成（D-027）
+scene: A39
+layout: world/witch-house-3d-layout.yaml
+layout_extra:
+- file: world/witch-house-6b-extra.yaml
+  offset: [0.0, 0.0]
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 11
+lighting: bath_day
+places:
+  tub: &id004 [15.6, 9.4]
+  door: &id006 [13.0, 6.0]
+start:
+  arlecchino:
+    at: &id001 [15.3, 8.3]
+    face: 175
+  metallica:
+    at: &id002 [14.2, 7.4]
+    face: 150
+  hundred-knight:
+    at: &id003 [13.95, 6.5]
+    face: 160
+  bisco:
+    at: &id005 [13.0, 5.4]
+    face: 180
+cuts:
+  A39-001:
+    frame: 引き
+    only: [arlecchino, metallica, hundred-knight]
+    hidden_ok: [bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: *id001
+        face: 175
+        pose: crouch
+      - {t: 0.6, face: 160}
+      - {t: 1.2, face: 190}
+      - {t: 1.8, face: 170}
+      - {t: 2.4, face: 185}
+      metallica:
+      - t: 0.0
+        at: *id002
+        face: 150
+        pose: cross
+      - {t: 2.0, pose: shake, face: 150}
+      - {t: 6.26, pose: cross}
+      hundred-knight:
+      - t: 0.0
+        at: *id003
+        face: 160
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [16.4, 8.0, 0.9]
+      look: [15.3, 8.3]
+      look_h: 0.6
+      lens: 40
+      frame: 寄り
+    - t: 7.1
+      cam: [17.4, 7.0, 2.4]
+      look: [14.6, 7.8]
+      look_h: 1.0
+      lens: 24
+      ease: inout
+      frame: 引き
+    fx:
+    - kind: mist
+      t: [0.0, 7.1]
+      at: *id004
+      r: 0.4
+      h: 1.4
+      z: 0.5
+      color: &id007 [190, 205, 90]
+      alpha: 0.82
+      glow: 0.3
+    act: {start: 浴槽の縁を、アルレッキーノがたわしで磨いている（まだ臭いが漂う）, do: メタリカが地団駄を踏む（「おのれっ！！この風呂はどうなってるんだ！」）, end: 腕を組むメタリカ}
+    camera: 浴槽の縁の手元から、引きながら上がり、部屋とメタリカを見せる
+    kind: M
+  A39-002:
+    frame: 胸上
+    only: [arlecchino, metallica, hundred-knight]
+    hidden_ok: [bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 185
+        pose: crouch
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 150
+        pose: cross
+      - {t: 0.3, pose: cover, face: 150}
+      - {t: 3.4, pose: point, face: 160}
+      - {t: 6.34, pose: look_down}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [14.73, 8.54, 1.35]
+      look: metallica
+      look_h: 1.54
+      lens: 32
+      frame: 胸上
+    - t: 8.0
+      cam: [14.73, 8.54, 1.35]
+      look: metallica
+      look_h: 1.54
+      lens: 38
+    fx: []
+    act: {start: メタリカが鼻をつまんで, do: （「あれから何日経ったと思ってる！な、なんで、いつまでも風呂の臭いがとれんのだ……」）, end: うんざりするメタリカ}
+    camera: 浴槽の側から、メタリカの正面
+    kind: M
+  A39-003:
+    frame: 膝上
+    only: [arlecchino, metallica, hundred-knight]
+    hidden_ok: [bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 185
+        pose: crouch
+      - {t: 0.3, pose: stand, face: 320}
+      - {t: 1.0, pose: bow}
+      - {t: 7.58, pose: stand}
+      - {t: 8.98, pose: arms_up}
+      - {t: 12.53, pose: stand}
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 160
+        pose: look_down
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [13.75, 7.0, 0.85]
+      look: arlecchino
+      look_h: 0.79
+      lens: 28
+      frame: 膝上
+    - t: 13.4
+      cam: [13.8, 7.05, 0.85]
+      look: arlecchino
+      look_h: 1.22
+      lens: 32
+    fx: []
+    act: {start: アルレッキーノが立ち上がって一礼する（「申し訳ございません。ワタクシ、毎日ごしごしとお掃除をしているのですが、なかなかにガンコな汚れゆえ」）, do: たわしを掲げて（「さすがは、ブリダンゴ姫といったところでございます」）, end: たわしを掲げるアルレッキーノ}
+    camera: メタリカの肩越しに、浴槽の前のアルレッキーノ（低めから）
+    kind: M
+  A39-004:
+    frame: 全身
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 320
+        pose: stand
+      - {t: 1.0, face: 330}
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 160
+        pose: look_down
+      - {t: 0.8, face: 300}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: *id005
+        face: 180
+        pose: walk
+      - t: 1.2
+        at: [13.1, 7.05]
+        pose: cover
+        face: 150
+        ease: out
+      - {t: 4.2, pose: cough}
+      - {t: 8.02, pose: cover}
+    cam_keys:
+    - t: 0.0
+      cam: [14.6, 10.4, 1.5]
+      look: *id006
+      look_h: 1.2
+      lens: 30
+      frame: 全身
+    - t: 8.9
+      cam: [14.55, 10.35, 1.5]
+      look: bisco
+      look_h: 0.78
+      lens: 34
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 8.9]
+      at: *id004
+      r: 0.4
+      h: 1.4
+      z: 0.5
+      color: *id007
+      alpha: 0.82
+      glow: 0.3
+    act: {start: 扉が開き、鼻を押さえたビスコがよろよろ入ってくる, do: （「おい、この臭い……魔法でなんとかならないのか？食事どころじゃないぞ……」）, end: 壁にもたれるビスコ}
+    camera: 浴槽の奥（南のカーテンの前）から、扉のビスコ
+    kind: M
+  A39-005:
+    frame: 胸上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 300
+        pose: look_down
+      - {t: 0.2, pose: cross, face: 295}
+      - {t: 2.8, pose: point}
+      - {t: 5.75, pose: cross}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 150
+        pose: cover
+    cam_keys:
+    - t: 0.0
+      cam: [12.75, 6.75, 1.85]
+      look: metallica
+      look_h: 1.54
+      lens: 32
+      frame: 胸上
+    - t: 6.7
+      cam: [12.8, 6.8, 1.85]
+      look: metallica
+      look_h: 1.54
+      lens: 36
+    fx: []
+    act: {start: メタリカがビスコに向き直る, do: （「魔法なら何度も試したさ。お前が、泡吹いて気絶している間にな！」）, end: にやりとするメタリカ}
+    camera: ビスコの肩越しに、メタリカ（高めから）
+    kind: M
+  A39-006:
+    frame: 膝上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: cross
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 150
+        pose: cover
+      - {t: 0.2, pose: cover, face: 115}
+      - {t: 3.0, pose: stand}
+      - {t: 5.25, pose: cover}
+    cam_keys:
+    - t: 0.0
+      cam: [14.4, 7.9, 0.8]
+      look: bisco
+      lens: 28
+      frame: 膝上
+      look_h: 0.99
+    - t: 7.4
+      cam: [14.35, 7.85, 0.8]
+      look: bisco
+      lens: 30
+      look_h: 0.99
+    act: {start: ビスコが鼻を押さえたまま言い返す, do: （「し、しょうがないだろう……！犬の鼻になってからにおいの強いものは苦手なんだ」）, end: 顔をしかめるビスコ}
+    camera: メタリカの脇の低い所から、ビスコ
+    kind: M
+  A39-007:
+    frame: 寄り
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: cross
+      - {t: 0.2, pose: lean, face: 295}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 115
+        pose: cover
+    cam_keys:
+    - t: 0.0
+      cam: [13.07, 6.61, 1.4]
+      look: metallica
+      look_h: 1.54
+      lens: 35
+      frame: 胸上
+    - t: 8.2
+      cam: [13.07, 6.61, 1.4]
+      look: metallica
+      look_h: 1.39
+      lens: 55
+      ease: inout
+      frame: 寄り
+    act: {start: メタリカが意地悪く目を細める, do: （「キヒヒ、先日の異空間ではその犬っ鼻を百騎兵に自慢していたじゃないか」）, end: にやつくメタリカ}
+    camera: ビスコの側から、メタリカの顔へ寄る
+    kind: A
+  A39-008:
+    frame: 全身
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: lean
+      - {t: 3.1, pose: proud, face: 295}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 115
+        pose: cover
+      - {t: 0.2, pose: hop, face: 115}
+      - {t: 2.7, pose: point}
+      - {t: 3.1, pose: stand}
+    cam_keys:
+    - t: 0.0
+      cam: [16.4, 8.2, 2.4]
+      look: [13.7, 7.1]
+      look_h: 0.9
+      lens: 28
+      frame: 全身
+    - t: 7.6
+      cam: [16.35, 8.15, 2.35]
+      look: [13.7, 7.1]
+      look_h: 0.9
+      lens: 30
+    fx:
+    - kind: mist
+      t: [0.0, 7.6]
+      at: *id004
+      r: 0.4
+      h: 1.4
+      z: 0.5
+      color: *id007
+      alpha: 0.82
+      glow: 0.3
+    act: {start: ビスコが真っ赤になって跳び上がる（「なっ！！おまえ見ていたのか？」）, do: メタリカが肩をすくめる（「ちょっとだけな。キヒヒ」）, end: 向き合う二人}
+    camera: 浴槽の縁（北東）の高い所から、向き合う二人と百騎兵
+    kind: M
+  A39-009:
+    frame: 胸上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: proud
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 115
+        pose: stand
+      - {t: 0.2, pose: stand, face: 120}
+      - {t: 2.8, pose: cross, face: 60}
+    cam_keys:
+    - t: 0.0
+      cam: [14.1, 7.9, 1.2]
+      look: bisco
+      lens: 30
+      frame: 胸上
+      look_h: 1.22
+    - t: 7.3
+      cam: [14.05, 7.85, 1.2]
+      look: bisco
+      lens: 32
+      look_h: 1.22
+    act: {start: ビスコが拳を震わせる, do: （「くっ……覗き見とは！おとなしく引きこもっていると思ったらなんてヤツだ」）, end: そっぽを向くビスコ}
+    camera: メタリカの脇から、ビスコ
+    kind: M
+  A39-010:
+    frame: 膝上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 330
+        pose: stand
+      - {t: 0.2, pose: crouch, face: 175}
+      - {t: 4.8, pose: stand, face: 320}
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: proud
+      - {t: 0.2, pose: stand, face: 60}
+      - {t: 2.0, face: 140}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 60
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [12.5, 6.4, 2.3]
+      look: [14.8, 7.9]
+      look_h: 1.0
+      lens: 28
+      frame: 膝上
+    - t: 9.2
+      cam: [12.55, 6.45, 2.25]
+      look: [14.9, 8.0]
+      look_h: 1.0
+      lens: 32
+    fx: []
+    act: {start: メタリカが部屋を見回す（「ところで、ルッキーニィがいないが、どうしたんだ？出かけているのか？」）, do: アルレッキーノが手を止めて（「先ほど、お食事を持って出かけられました」）, end: 顔を上げるアルレッキーノ}
+    camera: 扉の脇の高い所から、メタリカと浴槽の前のアルレッキーノ
+    kind: M
+  A39-011:
+    frame: 膝上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 320
+        pose: stand
+      - {t: 2.86, pose: gesture, face: 320}
+      - {t: 7.89, pose: bow}
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 140
+        pose: stand
+      - {t: 0.3, face: 140}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 60
+        pose: cross
+    cam_keys:
+    - t: 0.0
+      cam: [14.6, 6.9, 0.8]
+      look: arlecchino
+      lens: 24
+      frame: 膝上
+      look_h: 1.22
+    - t: 9.6
+      cam: [14.65, 6.95, 0.8]
+      look: arlecchino
+      lens: 26
+      look_h: 1.09
+    fx: []
+    act: {start: メタリカ（「出かけたって、どこへ？」）, do: アルレッキーノが首をかしげて（「存じあげませんが……。反抗的なお年頃なのかもしれません。はい」）, end: 一礼するアルレッキーノ}
+    camera: メタリカの脇の低い所から、アルレッキーノ
+    kind: M
+  A39-012:
+    frame: 胸上
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 320
+        pose: bow
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 140
+        pose: stand
+      - {t: 0.3, face: 295}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 60
+        pose: cross
+      - {t: 0.3, pose: stand, face: 110}
+    cam_keys:
+    - t: 0.0
+      cam: &id008 [14.6, 7.6, 1.45]
+      look: bisco
+      look_h: 1.22
+      lens: 35
+      frame: 胸上
+    - t: 6.8
+      cam: *id008
+      look: bisco
+      look_h: 1.22
+      lens: 36.8
+    act: {start: ビスコが鼻から手を離し、心配そうに, do: （「大丈夫なのか、メタリカ？あいつ、最近元気がなかったが……」）, end: メタリカを見るビスコ}
+    camera: メタリカの肩越しに、ビスコ
+    kind: M
+  A39-013:
+    frame: 全身
+    only: [arlecchino, metallica, hundred-knight, bisco]
+    keys:
+      arlecchino:
+      - t: 0.0
+        at: [15.3, 8.3]
+        face: 320
+        pose: bow
+      - {t: 10.3, face: 320}
+      metallica:
+      - t: 0.0
+        at: [14.2, 7.4]
+        face: 295
+        pose: stand
+      - {t: 0.3, pose: look_down, face: 330}
+      - {t: 4.38, pose: point, face: 345}
+      - {t: 10.3, pose: cross, face: 330}
+      hundred-knight:
+      - t: 0.0
+        at: [13.95, 6.5]
+        face: 160
+        pose: stand
+      - {t: 5.58, face: 160}
+      - {t: 9.3, pose: nod}
+      - {t: 9.9, pose: run, face: 300}
+      - t: 10.6
+        at: [13.0, 6.7]
+        pose: run
+        face: 0
+      - t: 11.9
+        at: [13.0, 4.6]
+        pose: run
+        face: 0
+      bisco:
+      - t: 0.0
+        at: [13.1, 7.05]
+        face: 110
+        pose: stand
+      - {t: 10.1, face: '@hundred-knight'}
+    cam_keys:
+    - t: 0.0
+      cam: [15.8, 9.0, 2.6]
+      look: [13.8, 7.0]
+      look_h: 0.9
+      lens: 26
+      frame: 全身
+    - t: 11.9
+      cam: [15.75, 8.95, 2.55]
+      look: [13.3, 6.5]
+      look_h: 0.9
+      lens: 28
+      ease: inout
+    fx:
+    - kind: mist
+      t: [0.0, 11.9]
+      at: *id004
+      r: 0.4
+      h: 1.4
+      z: 0.5
+      color: *id007
+      alpha: 0.82
+      glow: 0.3
+    act: {start: メタリカがため息をついて（「はぁ……。まったく……」）, do: 百騎兵を指さす（「百騎兵、ルッキーニィを捜してこい。オマエなら居場所がわかるだろ？」）百騎兵がうなずいて扉から駆け出す, end: 扉の方を見る三人}
+    camera: 浴槽の上の高い所から、指さすメタリカと、扉から駆け出す百騎兵
+    kind: M

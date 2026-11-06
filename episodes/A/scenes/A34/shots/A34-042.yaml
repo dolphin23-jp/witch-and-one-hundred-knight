@@ -1,0 +1,32 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-042
+scene: A34
+tc: 389.3
+sec: 6.3
+kind: M
+shot: 大引き（クレーンで上がる）・好きにするがいいさ
+acting: メタリカの声（「まぁ、それさえ覚えているなら好きにするがいいさ。」）
+dialogue:
+- L1321「まぁ、それさえ覚えているなら好きにするがいいさ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.6
+  - 37.2
+  - 1.2
+  look: hundred-knight
+  lens: 28
+  move: 百騎兵の後ろから、クレーンで梢の高さへ上がる（奥に沼の気配）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 百騎兵が紅葉の森の小道を進む
+  end: 森の奥（沼の方）へ消える百騎兵
+timing:
+  lead: 0.4

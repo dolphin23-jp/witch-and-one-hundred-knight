@@ -1,0 +1,38 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-013
+scene: A36
+tc: 98.0
+sec: 11.9
+kind: M
+shot: 膝上・ルッキーニィ・嫌われるだけですよ
+acting: 指を立てる（「それに……そんな臭い体じゃ、会っても嫌われるだけですよ！」）
+dialogue:
+- L1362「大丈夫です。心配しなくても、今日は来ないですよ！」
+- L1363「それに……そんな臭い体じゃ、会っても嫌われるだけですよ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.4
+  - 53.6
+  - 1.65
+  look: luckiny
+  lens: 32
+  move: ミトンの脇の高めから、ルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが胸を張って（「大丈夫です。心配しなくても、今日は来ないですよ！」）
+  end: 指を立てるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1362: 0.4
+    L1363: 5.55

@@ -1,0 +1,40 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-010
+scene: A33
+tc: 83.8
+sec: 8.6
+kind: M
+shot: 膝上・アルレッキーノ・自称旅人
+acting: アルレッキーノが一礼する（「自称旅人でございますゆえ。はい。」）
+dialogue:
+- L1166「なんていうか……自由な人ですね。」
+- L1167「自称旅人でございますゆえ。はい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.4
+  - 3.55
+  - 1.2
+  look: arlecchino
+  lens: 45
+  move: ルッキーニィの横から、アルレッキーノの正面（少し見上げる）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが苦笑い（「なんていうか……自由な人ですね。」）
+  end: 一礼したアルレッキーノ
+timing:
+  lead: 0.4
+  at:
+    L1166: 0.4
+    L1167: 4.34

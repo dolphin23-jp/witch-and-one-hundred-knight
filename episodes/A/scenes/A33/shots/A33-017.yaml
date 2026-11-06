@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-017
+scene: A33
+tc: 127.5
+sec: 8.1
+kind: M
+shot: あおり・アルレッキーノ・さすが犬鼻
+acting: （「さすが犬鼻。嗅覚が強いことが仇となり、刺激に耐えられなかったのでしょう。」）
+dialogue:
+- L1175「さすが犬鼻。嗅覚が強いことが仇となり、刺激に耐えられなかったのでしょう。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.3
+  - 4.0
+  - 0.35
+  look: arlecchino
+  lens: 18
+  move: 床のビスコの脇の低い所から、アルレッキーノを見上げる
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが倒れたビスコを見下ろす
+  end: うなずくアルレッキーノ
+timing:
+  lead: 0.4

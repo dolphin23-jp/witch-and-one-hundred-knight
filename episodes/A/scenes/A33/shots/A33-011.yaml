@@ -1,0 +1,38 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-011
+scene: A33
+tc: 92.4
+sec: 5.8
+kind: M
+shot: 引き（低い）・ビスコのぼやき、2階へ戻るメタリカ
+acting: （「まったく。もうちょっとゆっくりしていけばいいのに。」）奥で、メタリカが会報を抱えて2階へ戻っていく
+dialogue:
+- L1168「まったく。もうちょっとゆっくりしていけばいいのに。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.0
+  - 3.65
+  - 1.0
+  look:
+  - 2.2
+  - 2.4
+  lens: 20
+  move: 東南の低い所から、手前のソファのビスコと、奥の階段を上がるメタリカ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ソファのビスコがぼやく
+  end: 空になった階段
+timing:
+  lead: 0.4

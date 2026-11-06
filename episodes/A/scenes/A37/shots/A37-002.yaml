@@ -1,0 +1,34 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-002
+scene: A37
+tc: 8.1
+sec: 7.2
+kind: M
+shot: 胸上・ルッキーニィが顔をそむける
+acting: （「あ……、じゃあボク外に出てるから！ちゃんと自分で洗ってくださいね」）百騎兵を押して扉の外へ出る
+dialogue:
+- L1367「あ……、じゃあボク外に出てるから！ちゃんと自分で洗ってくださいね」
+sound: null
+notes: null
+camera:
+  pos:
+  - 15.4
+  - 8.35
+  - 1.15
+  look: luckiny
+  lens: 30
+  move: 浴槽の北の縁の脇から、ルッキーニィ（後ろに扉）
+background: witch-house
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが顔を赤くしてそむける
+  end: 閉まりかけの扉
+timing:
+  lead: 0.4

@@ -1,0 +1,36 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-012
+scene: A40
+tc: 92.4
+sec: 10.0
+kind: A
+shot: 寄り・ルッキーニィ・王子様って、まさか
+acting: 隣の柵の陰のミトンを見る
+dialogue:
+- L1462「世間では王子様なんて呼ばれて……。あれ？王子様って、まさか……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 49.9
+  - 51.27
+  - 0.75
+  look: luckiny
+  lens: 35
+  move: ルッキーニィの正面（柵の側の低い所）から、顔へ寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heinz-carriage
+- heinz
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが言いかけて、はっとする（「世間では王子様なんて呼ばれて……。あれ？王子様って、まさか……！」）
+  end: ミトンを見るルッキーニィ
+timing:
+  lead: 0.4

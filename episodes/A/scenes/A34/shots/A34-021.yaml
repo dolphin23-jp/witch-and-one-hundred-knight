@@ -1,0 +1,34 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-021
+scene: A34
+tc: 172.4
+sec: 5.5
+kind: A
+shot: あおり・ルッキーニィ・特訓するしかない
+acting: （「これはもう……、特訓するしかないですね！！」）
+dialogue:
+- L1272「これはもう……、特訓するしかないですね！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.6
+  - 51.2
+  - 0.3
+  look: luckiny
+  lens: 22
+  move: 地面すれすれから見上げ、拳に合わせて少し上へ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが拳を握って顔を上げる
+  end: 拳を突き上げるルッキーニィ
+timing:
+  lead: 0.6

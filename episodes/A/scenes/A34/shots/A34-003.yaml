@@ -1,0 +1,37 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-003
+scene: A34
+tc: 13.9
+sec: 14.6
+kind: A
+shot: 寄り・ルッキーニィの本音・無駄ってことにはならない
+acting: うつむいてから顔を上げる（「……ただ、望みが高すぎるからって、無駄ってことにはならないと思うんです。魔女様にはああ言われましたけど……。」）
+dialogue:
+- L1241「あの……。」
+- L1243「……ただ、望みが高すぎるからって、無駄ってことにはならないと思うんです。魔女様にはああ言われましたけど……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 53.36
+  - 54.93
+  - 0.95
+  look: luckiny
+  lens: 35
+  move: 百騎兵の目の高さから、ルッキーニィの顔へゆっくり寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがためらって（「あの……。」）
+  end: 百騎兵を見つめるルッキーニィ
+timing:
+  lead: 0.8
+  at:
+    L1241: 0.8
+    L1243: 3.3

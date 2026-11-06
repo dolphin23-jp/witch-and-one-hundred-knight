@@ -1,0 +1,36 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-007
+scene: A40
+tc: 56.2
+sec: 5.2
+kind: M
+shot: ルッキーニィが顔を上げる・馬車の音
+acting: ルッキーニィが街道の方を振り向く（「うん？……馬車の音？」）
+dialogue:
+- L1457「うん？……馬車の音？」
+sound: 遠くから近づく馬車の音（蹄と車輪）
+notes: null
+camera:
+  pos:
+  - 35.8
+  - 46.4
+  - 0.7
+  look:
+  - 37.8
+  - 46.4
+  lens: 30
+  move: 二人の西の低い所から、東の街道の方へ振り向く二人
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 遠くから蹄と車輪の音
+  end: 街道の方を見るルッキーニィと百騎兵
+timing:
+  lead: 1.2

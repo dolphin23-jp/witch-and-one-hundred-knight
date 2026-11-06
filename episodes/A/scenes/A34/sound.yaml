@@ -1,0 +1,58 @@
+# A34 の BGM・効果音の置き場所（D-068、2026-11-06）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.24〜0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は石か砂の音）
+# BGM は原作どおり（パート24）: 森の入口（7-03）は M05（12:03〜12:30）→ ゴミ山は M43「ブリダンゴ姫」（13:17〜20:26）→ 実が見つかると M21（20:26〜）と M18（20:50〜）→ 臭いの話から M43（21:14〜24:30）。環境音は森の風と小鳥（forest_air_loop）
+scene: A34
+bgm:
+- src: audio/bgm/catalog/M05.ogg
+  cut: A34-001
+  t: 0.0
+  until: {cut: A34-004, t: 8.3}
+  loop: true
+  fade_in: 2.0
+  fade_out: 1.5
+  volume: 0.22
+- src: audio/bgm/M43_loop.ogg
+  cut: A34-005
+  t: 0.0
+  until: {cut: A34-029, t: 7.0}
+  loop: true
+  fade_in: 1.5
+  fade_out: 1.0
+  volume: 0.24
+- src: audio/bgm/catalog/M21.ogg
+  cut: A34-030
+  t: 0.0
+  until: {cut: A34-030, t: 8.0}
+  fade_in: 0.2
+  fade_out: 1.0
+  volume: 0.28
+- src: audio/bgm/catalog/M18.ogg
+  cut: A34-031
+  t: 0.0
+  until: {cut: A34-033, t: 10.0}
+  loop: true
+  fade_in: 0.8
+  fade_out: 1.0
+  volume: 0.24
+- src: audio/bgm/M43_loop.ogg
+  cut: A34-034
+  t: 0.0
+  until: {cut: A34-042, t: 6.3}
+  loop: true
+  fade_in: 1.0
+  fade_out: 2.5
+  volume: 0.24
+sfx:
+- src: audio/sfx/forest_air_loop.ogg
+  cut: A34-001
+  t: 0.0
+  until: {cut: A34-042, t: 6.3}
+  loop: true
+  fade_in: 2.0
+  fade_out: 2.0
+  volume: 0.08
+- {src: audio/sfx/cloth_swish.ogg, cut: A34-007, t: 0.6, rate: 0.7, volume: 0.3}
+- {src: audio/sfx/wind_gust.ogg, cut: A34-029, t: 0.2, rate: 1.2, volume: 0.25}
+- {src: audio/sfx/thud_land.ogg, cut: A34-029, t: 2.5, rate: 1.3, volume: 0.6}
+- {src: audio/sfx/thud_land.ogg, cut: A34-029, t: 3.1, rate: 1.6, volume: 0.35}
+- {src: audio/sfx/crystal_chime.ogg, cut: A34-029, t: 5.3, rate: 1.1, volume: 0.3}

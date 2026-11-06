@@ -1,0 +1,33 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-009
+scene: A35
+tc: 66.7
+sec: 8.3
+kind: A
+shot: 寄り・百騎兵の目・叩き潰せ
+acting: （「ピラーがあるとなれば話は別だぞ！全力でこいつを叩き潰せ！そして、ピラーを咲かせるんだ！」）百騎兵の目が光る
+dialogue:
+- L1338「ピラーがあるとなれば話は別だぞ！全力でこいつを叩き潰せ！そして、ピラーを咲かせるんだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 33.67
+  - 22.98
+  - 0.55
+  look: hundred-knight
+  lens: 32
+  move: 百騎兵の正面の低い所から、目へ寄る
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: メタリカの声が弾む
+  end: 踏み込む直前の百騎兵
+timing:
+  lead: 0.3

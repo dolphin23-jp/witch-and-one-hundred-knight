@@ -1,0 +1,33 @@
+# A36 の BGM・効果音の置き場所（D-068、2026-11-06）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.24〜0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は石か砂の音）
+# BGM は原作どおり（パート25）: 戻った所に M21（6:12〜）→ M43「ブリダンゴ姫」（7:11〜16:19。A37・A38 まで続く）。6:35〜7:11 の M14 は短いので M43 に寄せた
+scene: A36
+bgm:
+- src: audio/bgm/catalog/M21.ogg
+  cut: A36-001
+  t: 0.0
+  until: {cut: A36-001, t: 8.5}
+  fade_in: 0.3
+  fade_out: 1.0
+  volume: 0.28
+- src: audio/bgm/M43_loop.ogg
+  cut: A36-002
+  t: 0.0
+  until: {cut: A36-015, t: 8.0}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.5
+  volume: 0.24
+sfx:
+- src: audio/sfx/forest_air_loop.ogg
+  cut: A36-001
+  t: 0.0
+  until: {cut: A36-015, t: 8.0}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.0
+  volume: 0.08
+- {src: audio/sfx/magic_shimmer.ogg, cut: A36-003, t: 1.6, rate: 1.2, volume: 0.35}
+- {src: audio/sfx/crystal_chime.ogg, cut: A36-003, t: 1.75, rate: 1.3, volume: 0.25}
+- {src: audio/sfx/whoosh_long.ogg, cut: A36-006, t: 0.4, rate: 1.4, volume: 0.3}
+- {src: audio/sfx/thud_land.ogg, cut: A36-008, t: 1.4, rate: 1.2, volume: 0.45}

@@ -1,0 +1,34 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-010
+scene: A35
+tc: 75.0
+sec: 2.8
+kind: A
+shot: 体当たりを跳んでかわす
+acting: 百騎兵が東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる
+dialogue: []
+sound: ゲルの体当たりの重い音、水しぶき
+notes: null
+camera:
+  pos:
+  - 29.6
+  - 24.0
+  - 0.8
+  look:
+  - 34.4
+  - 22.8
+  lens: 24
+  move: 西の低い所から、跳ぶ百騎兵を追う（跳び上がりで画面を傾ける）
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: ジェルが体ごと倒れ込むように体当たりしてくる
+  end: 着地して向き直る百騎兵
+timing:
+  lead: 0.4

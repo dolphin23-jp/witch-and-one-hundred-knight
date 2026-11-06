@@ -1,0 +1,36 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-026
+scene: A34
+tc: 223.0
+sec: 8.7
+kind: M
+shot: ルッキーニィが南西の茂みを指す
+acting: （「”ずっしりの実”っていうのは通称なんですが、この辺りにある”かなきり穂”から稀に落ちる”実”のことなんです。」）百騎兵が歩き出す
+dialogue:
+- L1282「”ずっしりの実”っていうのは通称なんですが、この辺りにある”かなきり穂”から稀に落ちる”実”のことなんです。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 37.0
+  - 51.0
+  - 2.0
+  look:
+  - 28.0
+  - 64.0
+  lens: 26
+  move: ルッキーニィの背中越しに、南西のかなきり穂の茂みの方
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが南西の茂みを指さす
+  end: 茂みへ歩く百騎兵
+timing:
+  lead: 0.4

@@ -1,0 +1,37 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-034
+scene: A33
+tc: 255.3
+sec: 7.0
+kind: A
+shot: 寄り・ミトン・王子様が大好き
+acting: （「わ、わかってるでち！あたち、王子様が大好きなんでち！」）跳ねる
+dialogue:
+- L1200「わ、わかってるでち！あたち、王子様が大好きなんでち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.5
+  - 5.9
+  - 0.95
+  look: mitten
+  lens: 30
+  move: メタリカの側から、ミトンの顔へ寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ミトンが顔を赤くして言い返す
+  end: うっとりするミトン
+timing:
+  lead: 0.4

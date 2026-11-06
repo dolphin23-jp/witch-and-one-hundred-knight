@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-022
+scene: A38
+tc: 160.2
+sec: 6.7
+kind: A
+shot: 走り去るルッキーニィを追う
+acting: 背を向けて森の中を走り去る
+dialogue:
+- L1413「……っ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.2
+  - 63.6
+  - 1.0
+  look: luckiny
+  lens: 30
+  move: '走るルッキーニィの横を追いかける（準備（案）: 走り去るルッキーニィを追う）'
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが息をのみ（「……っ！」）
+  end: 木々の間に消えるルッキーニィ
+timing:
+  lead: 0.3

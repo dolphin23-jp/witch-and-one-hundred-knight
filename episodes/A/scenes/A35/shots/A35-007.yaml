@@ -1,0 +1,35 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-007
+scene: A35
+tc: 53.1
+sec: 5.9
+kind: A
+shot: あおり・沼からアロマニ・ジェルが伸び上がる
+acting: メタリカの声（「そして、オマエが探している”アロマニ・ジェル”ってのが守護者ってわけか」）岸へにじり上がる
+dialogue:
+- L1335「そして、オマエが探している”アロマニ・ジェル”ってのが守護者ってわけか」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.2
+  - 24.8
+  - 0.3
+  look:
+  - 33.8
+  - 19.6
+  lens: 22
+  move: 岸の地面すれすれ（百騎兵の脇）から見上げ、伸び上がるジェルに合わせて上へ
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- aromani-gel
+overlays: []
+fallback: null
+act:
+  start: 沼の水面が盛り上がり、金色のゲルの魔獣が伸び上がる（角、紫の耳、赤い目、垂れる緑の手）
+  end: 百騎兵の前にそびえるジェル
+timing:
+  lead: 0.4

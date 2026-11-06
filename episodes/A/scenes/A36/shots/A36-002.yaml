@@ -1,0 +1,34 @@
+# A36 香水の失敗とお風呂。blocking.yaml（Claude の案 2026-11-06、Living Spec「A36 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A36-002
+scene: A36
+tc: 8.5
+sec: 4.8
+kind: M
+shot: ルッキーニィが木箱へ・香水を作ります
+acting: （「では、さっそく”アロマニの香水”を作ります」）木箱の前にひざをつく
+dialogue:
+- L1347「では、さっそく”アロマニの香水”を作ります」
+sound: null
+notes: null
+camera:
+  pos:
+  - 40.2
+  - 60.6
+  - 2.2
+  look: luckiny
+  lens: 28
+  move: 木箱の奥（南東）の高い所から、駆けてくるルッキーニィ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが木箱の方へ駆けていく
+  end: 木箱に向かうルッキーニィ
+timing:
+  lead: 0.4

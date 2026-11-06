@@ -1,0 +1,41 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-002
+scene: A33
+tc: 6.6
+sec: 9.2
+kind: M
+shot: アルレッキーノとソファのビスコ
+acting: （「おそらくリカ様へのお届け物でしょう。はい。」）ソファのビスコが顔をしかめる（「またあの鳥の手紙か？今度は何だ？」）
+dialogue:
+- L1147「おそらくリカ様へのお届け物でしょう。はい。」
+- L1148「またあの鳥の手紙か？今度は何だ？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.6
+  - 4.9
+  - 1.3
+  look:
+  - 5.5
+  - 1.7
+  lens: 26
+  move: テーブルの南東から北へ、アルレッキーノとソファのビスコ
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノが落ち着いて
+  end: 階段の上を見るビスコ
+timing:
+  lead: 0.4
+  at:
+    L1147: 0.4
+    L1148: 4.68

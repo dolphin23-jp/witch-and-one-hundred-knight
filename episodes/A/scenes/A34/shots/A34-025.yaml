@@ -1,0 +1,42 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-025
+scene: A34
+tc: 208.2
+sec: 14.8
+kind: M
+shot: 二人（百騎兵とルッキーニィ）・お願いします
+acting: 頭を下げる（「お願いします、百騎兵さん！」）顔を上げて（「お礼と言っては何なんですけど、後でボクの得意料理をご馳走しますから。」）
+dialogue:
+- L1278「拾い食いの癖と空腹感がなくなれば、もうゴミは食べないと思うんです。」
+- L1279「お願いします、百騎兵さん！」
+- L1281「お礼と言っては何なんですけど、後でボクの得意料理をご馳走しますから。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.4
+  - 55.4
+  - 1.15
+  look:
+  - 35.6
+  - 52.4
+  lens: 28
+  move: 南東から、ルッキーニィと百騎兵（奥にミトン）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: （「拾い食いの癖と空腹感がなくなれば、もうゴミは食べないと思うんです。」）
+  end: うなずく百騎兵
+timing:
+  lead: 0.4
+  at:
+    L1278: 0.4
+    L1279: 6.14
+    L1281: 8.8

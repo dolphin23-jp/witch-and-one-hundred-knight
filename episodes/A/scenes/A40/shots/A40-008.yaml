@@ -1,0 +1,34 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-008
+scene: A40
+tc: 61.4
+sec: 5.2
+kind: M
+shot: ミトンが降りて街道へ駆ける・この音は
+acting: 6本足で這って広場を駆け抜け、街道の柵の陰へ。ルッキーニィと百騎兵もあわてて追う
+dialogue:
+- L1458「……！？この音は！でち！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 38.8
+  - 42.4
+  - 3.0
+  look: mitten
+  lens: 26
+  move: 広場の北の高い所から、東の街道へ駆ける三人を追って振る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 宙のミトンがはっとして降りる（「……！？この音は！でち！」）
+  end: 柵の陰にしゃがむ三人
+timing:
+  lead: 0.2

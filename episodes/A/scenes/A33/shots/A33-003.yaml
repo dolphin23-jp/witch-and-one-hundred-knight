@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-003
+scene: A33
+tc: 15.8
+sec: 5.6
+kind: A
+shot: あおり・踊り場のメタリカ・魔女会報だ
+acting: 会報を頭の上に掲げる（「キヒヒ！来たぞ来たぞ！”魔女会報”だ！」）
+dialogue:
+- L1149「キヒヒ！来たぞ来たぞ！”魔女会報”だ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 2.0
+  - 5.3
+  - 0.6
+  look: metallica
+  lens: 26
+  move: 階段の下の手前の低い所から、階段の上のメタリカを見上げる。少し寄る
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: 2階から階段を駆け降りてくるメタリカ
+  end: 会報を掲げるメタリカ
+timing:
+  lead: 0.3

@@ -1,0 +1,36 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-018
+scene: A33
+tc: 135.6
+sec: 5.3
+kind: M
+shot: 見下ろし・ルッキーニィ・冷静に説明しないで
+acting: （「アルレッキーノさん、冷静に説明しないでください。」）
+dialogue:
+- L1176「アルレッキーノさん、冷静に説明しないでください。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.1
+  - 2.65
+  - 1.8
+  look: luckiny
+  lens: 28
+  move: アルレッキーノの肩の高さから、ひざをついたルッキーニィを見下ろす
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィがビスコを抱えて振り向く
+  end: アルレッキーノをにらむルッキーニィ
+timing:
+  lead: 0.4

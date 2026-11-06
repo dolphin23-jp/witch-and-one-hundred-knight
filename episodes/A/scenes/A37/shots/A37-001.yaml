@@ -1,0 +1,36 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-001
+scene: A37
+tc: 0.0
+sec: 8.1
+kind: A
+shot: 引き・バスルームに入る三人・ミトンが飛び込む
+acting: ミトンが浴槽へ這い寄り（「これがお風呂でちか！早速、入るでち」）、縁から跳んで飛び込む。しぶきが上がる
+dialogue:
+- L1366「これがお風呂でちか！早速、入るでち」
+sound: 水に飛び込む音
+notes: null
+camera:
+  pos:
+  - 17.6
+  - 10.3
+  - 2.6
+  look:
+  - 13.6
+  - 6.8
+  lens: 24
+  move: 南東の隅の高い所（カーテンの脇）から、扉から入ってくる三人と浴槽
+background: witch-house
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 扉が開き、ルッキーニィ、這うミトン、百騎兵が入ってくる。光る沼の湯の浴槽
+  end: 湯につかったミトン
+timing:
+  lead: 2.6

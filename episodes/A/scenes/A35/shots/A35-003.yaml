@@ -1,0 +1,33 @@
+# A35 沼地のピラーとアロマニ・ジェル。blocking.yaml（Claude の案 2026-11-06、Living Spec「A35 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A35-003
+scene: A35
+tc: 16.7
+sec: 10.7
+kind: M
+shot: アルレッキーノが背後を気にして去る
+acting: （「それでは、ワタクシはこれにて失礼します。さっきから、背後にいやな視線を感じておりますれば」）一礼して、東の森へ去る
+dialogue:
+- L1327「それでは、ワタクシはこれにて失礼します。さっきから、背後にいやな視線を感じておりますれば」
+sound: null
+notes: null
+camera:
+  pos:
+  - 31.4
+  - 31.6
+  - 2.2
+  look: arlecchino
+  lens: 30
+  move: 小道の西の高い所から、去るアルレッキーノを追って振る
+background: cinque-forest
+image: null
+refs:
+- hundred-knight
+- arlecchino
+overlays: []
+fallback: null
+act:
+  start: アルレッキーノがちらりと背後の森を振り返る
+  end: 木々の間に消えるアルレッキーノ
+timing:
+  lead: 0.4

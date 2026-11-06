@@ -1,0 +1,34 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-009
+scene: A38
+tc: 68.2
+sec: 5.1
+kind: M
+shot: 胸上・ミトン・やってみるでち
+acting: （「は、早く、でちか……！やってみるでち……！」）羽根を広げて浮かぶ
+dialogue:
+- L1395「は、早く、でちか……！やってみるでち……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 36.3
+  - 63.2
+  - 1.7
+  look: mitten
+  lens: 32
+  move: ルッキーニィの肩越しに、ミトン（高めから）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンが歯を食いしばって構える
+  end: 浮かび上がるミトン
+timing:
+  lead: 0.4

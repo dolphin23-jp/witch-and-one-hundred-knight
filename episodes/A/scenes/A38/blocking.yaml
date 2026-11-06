@@ -1,0 +1,964 @@
+# A38 ゴミ山の外れ・飛ぶ特訓と喧嘩（7章 回1）。D-058、D-060、D-062「3D を全編先に」。Claude の案（2026-11-06）
+# Living Spec「A38 動きの設計（案）」。準備（案）の表の 7-11（臭いの再確認と、6本足の問答の前半を削る）
+# 場所: world/cinque-forest-layout.yaml のゴミ山の広場の南の外れ（一本の紅葉の木 tree_071 の前）。夕方（evening）
+# ミトンの羽根を初めて見せる（005・006。形見の伏線）。飛ぶ時は z を上げる（羽ばたきは動画の段階で）
+# 022 は走り去るルッキーニィを追い、023 は残るミトンを高い所から小さく（準備（案）のカメラの方針）
+scene: A38
+layout: world/cinque-forest-layout.yaml
+layout_extra:
+- file: world/ch7-people-extra.yaml
+  offset: [0.0, 0.0]
+map_ymax: 100
+lighting: evening
+places:
+  tree: [35.9, 66.5]
+  road_in: [44.0, 53.6]
+start:
+  luckiny:
+    at: &id001 [41.4, 56.6]
+    face: 225
+  mitten:
+    at: &id002 [40.4, 57.4]
+    face: 225
+  hundred-knight:
+    at: &id003 [42.2, 56.2]
+    face: 225
+cuts:
+  A38-001:
+    frame: 大引き
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: *id001
+        face: 225
+        pose: walk
+      - t: 12.6
+        at: [36.2, 63.6]
+        pose: walk
+        face: 230
+        ease: out
+      - {t: 12.9, pose: look_down, face: 270}
+      mitten:
+      - t: 0.0
+        at: *id002
+        face: 225
+        pose: lie
+      - t: 12.6
+        at: [34.4, 63.8]
+        pose: lie
+        face: 250
+        ease: out
+      hundred-knight:
+      - t: 0.0
+        at: *id003
+        face: 225
+        pose: walk
+      - {t: 0.3, pose: walk, face: 225}
+      - t: 12.8
+        at: [36.9, 62.5]
+        pose: walk
+        face: 240
+        ease: out
+      - {t: 13.1, pose: stand, face: 250}
+    cam_keys:
+    - t: 0.0
+      cam: [33.4, 68.6, 6.4]
+      look: [39.0, 59.4]
+      look_h: 0.6
+      lens: 24
+      frame: 大引き
+    - t: 13.4
+      cam: [33.0, 67.2, 1.4]
+      look: [35.4, 63.4]
+      look_h: 0.8
+      lens: 26
+      ease: inout
+      frame: 全身
+    act: {start: 夕方。紅葉が西日に燃える森の外れを、三人が戻ってくる（ミトンは這っている）, do: ルッキーニィがしょんぼり（「魔女様、怒ってたなぁ……。あとでちゃんと謝らないと……」）、ミトンは上機嫌（「今日は王子様通らなかったみたいでち。よかったでち！」）, end: 木の前で止まる三人}
+    camera: 木の梢の高さから、降りながら歩いてくる三人を迎える
+    kind: M
+  A38-002:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 270
+        pose: look_down
+      - {t: 0.4, pose: stand, face: 265}
+      mitten:
+      - t: 0.0
+        at: [34.4, 63.8]
+        face: 250
+        pose: lie
+      - {t: 0.3, pose: crouch, face: 80}
+      - {t: 0.3, pose: hop}
+      - {t: 0.7, pose: stand, face: 85}
+      - {t: 2.9, pose: stand}
+      - {t: 4.89, pose: hold}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [37.3, 63.2, 1.3]
+      look: mitten
+      look_h: 0.3
+      lens: 30
+      frame: 全身
+    - t: 7.2
+      cam: [37.25, 63.25, 1.3]
+      look: mitten
+      look_h: 0.6
+      lens: 34
+    act: {start: ミトンが後ろの脚で立ち上がり、跳ねる, do: （「よかったでち！やったでち！これなら王子様にも嫌われないでちか？」）, end: ルッキーニィを見上げるミトン}
+    camera: ルッキーニィの肩越しに、跳ねるミトン（後ろに夕日の森）
+    kind: M
+  A38-003:
+    frame: 膝上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 265
+        pose: stand
+      - {t: 0.3, pose: cross, face: 265}
+      - {t: 4.34, pose: gesture}
+      - {t: 11.92, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.4, 63.8]
+        face: 85
+        pose: hold
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.2, 63.14, 1.0]
+      look: luckiny
+      look_h: 0.9
+      lens: 32
+      frame: 膝上
+    - t: 12.8
+      cam: [34.2, 63.14, 1.0]
+      look: luckiny
+      look_h: 0.9
+      lens: 38
+    act: {start: ルッキーニィが考え込み（「そうですね……。あとは……」）, do: 言いにくそうに（「6本足で這うのはちょっとやめられませんか？キミは自分で立ち上がれるんですし」）, end: ミトンを見るルッキーニィ}
+    camera: ミトンの頭の高さから、ルッキーニィ
+    kind: M
+  A38-004:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 265
+        pose: stand
+      - {t: 3.4, pose: hop, face: 265}
+      - {t: 5.65, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.4, 63.8]
+        face: 85
+        pose: hold
+      - {t: 0.3, pose: look_down, face: 85}
+      - {t: 3.2, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [35.2, 66.0, 0.6]
+      look: [35.3, 63.6]
+      look_h: 0.8
+      lens: 26
+      frame: 全身
+    - t: 6.5
+      cam: [35.25, 65.9, 0.6]
+      look: [35.3, 63.6]
+      look_h: 0.8
+      lens: 28
+    act: {start: ミトンがしょんぼり（「そうでちか……。飛ぶのはダメでちか？」）, do: ルッキーニィが跳び上がる（「と、飛べるの！？」）, end: 目を丸くするルッキーニィ}
+    camera: 木の脇の低い所から、横に並ぶ二人
+    kind: M
+  A38-005:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 265
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.4, 63.8]
+        face: 85
+        pose: stand
+      - {t: 0.3, pose: arms_up, face: 60}
+      - {t: 1.2, z: 0.2, pose: stand}
+      - {t: 4.6, z: 1.5, pose: arms_up, ease: out}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [35.6, 62.4, 0.3]
+      look: mitten
+      look_h: 0.6
+      lens: 24
+      frame: 全身
+    - t: 4.6
+      cam: [35.6, 62.45, 0.3]
+      look: mitten
+      look_h: 2.1
+      lens: 24
+      ease: inout
+    act: {start: ミトンが背中の透けた羽根を広げる（形見になる羽根）, do: （「飛べるでち！ほら！」）ふわりと浮かび上がる, end: 宙に浮いたミトン}
+    camera: 地面すれすれから、浮かぶミトンを見上げる（夕日が羽根を透かす）
+    kind: A
+  A38-006:
+    frame: 寄り
+    only: [mitten]
+    hidden_ok: [luckiny, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 265
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.4, 63.8]
+        face: 60
+        pose: arms_up
+        z: 1.5
+      - t: 3.2
+        at: [34.1, 64.0]
+        z: 1.6
+        face: 70
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [33.6, 64.6, 2.0]
+      look: mitten
+      look_h: 2.54
+      lens: 40
+      frame: 寄り
+    - t: 3.2
+      cam: [33.9, 65.0, 2.1]
+      look: mitten
+      look_h: 2.64
+      lens: 45
+      ease: inout
+    act: {start: 宙に浮いたミトンの背中, do: 透けた青い羽根が夕日を受けて光る（羽ばたきは動画の段階で）, end: 羽根}
+    camera: ミトンの背中の高さで、羽根に寄って回り込む
+    kind: A
+  A38-007:
+    frame: 引き
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 265
+        pose: stand
+      - {t: 0.4, face: '@mitten'}
+      mitten:
+      - t: 0.0
+        at: [34.1, 64.0]
+        face: 70
+        pose: arms_up
+        z: 1.6
+      - {t: 0.7, face: 250}
+      - t: 2.6
+        at: [33.0, 64.8]
+        z: 0.3
+        pose: arms_up
+        face: 240
+      - {t: 3.0, z: 0.0, pose: crouch, face: 70}
+      - {t: 3.8, pose: stand, face: 75}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: 250
+        pose: stand
+      - {t: 0.6, face: '@mitten'}
+    cam_keys:
+    - t: 0.0
+      cam: [38.6, 62.2, 1.9]
+      look: mitten
+      look_h: 1.8
+      lens: 28
+      frame: 引き
+    - t: 7.3
+      cam: [38.5, 62.3, 1.8]
+      look: mitten
+      look_h: 0.8
+      lens: 30
+      ease: inout
+    act: {start: ミトンがゆっくり、ふらふらと宙を進み, do: 息を切らして地面に降りる（「はぁ、はぁ……。ど、どうでちか……？」）, end: 降りて息を切らすミトン}
+    camera: 東の少し高い所から、宙を進むミトンを追って振る（ルッキーニィと百騎兵を手前に）
+    kind: M
+  A38-008:
+    frame: 胸上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: '@mitten'
+        pose: stand
+      - {t: 0.2, pose: look_down, face: 255}
+      - {t: 5.93, pose: point}
+      - {t: 12.27, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [33.0, 64.8]
+        face: 75
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.4, 64.2, 0.75]
+      look: luckiny
+      look_h: 1.11
+      lens: 32
+      frame: 胸上
+    - t: 13.2
+      cam: [34.45, 64.15, 0.75]
+      look: luckiny
+      look_h: 1.11
+      lens: 36
+    act: {start: ルッキーニィが言葉を選ぶ（「うーん……。で、でも這うよりはいいかもしれませんね」）, do: 指を立てて（「でも、もう少しだけ速く飛べませんか？それじゃあ、王子様が待ちくたびれますよ」）, end: 指を立てたルッキーニィ}
+    camera: ミトンの側の低い所から、ルッキーニィ（後ろに夕空）
+    kind: M
+  A38-009:
+    frame: 胸上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 255
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.0, 64.8]
+        face: 75
+        pose: stand
+      - {t: 0.3, pose: crouch, face: 75}
+      - {t: 3.6, pose: arms_up}
+      - {t: 5.1, z: 0.8, pose: arms_up, ease: out}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [36.3, 63.2, 1.7]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      frame: 胸上
+    - t: 5.1
+      cam: [36.25, 63.25, 1.7]
+      look: mitten
+      look_h: 1.75
+      lens: 30
+      ease: inout
+    act: {start: ミトンが歯を食いしばって構える, do: （「は、早く、でちか……！やってみるでち……！」）羽根を広げて浮かぶ, end: 浮かび上がるミトン}
+    camera: ルッキーニィの肩越しに、ミトン（高めから）
+    kind: M
+  A38-010:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 255
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [33.0, 64.8]
+        face: 60
+        pose: arms_up
+        z: 0.8
+      - t: 1.6
+        at: [34.3, 63.2]
+        z: 0.3
+        pose: arms_up
+        face: 60
+        ease: in
+      - {t: 1.8, z: 0.0, pose: fall, face: 70}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [33.8, 60.2, 2.4]
+      look: mitten
+      look_h: 1.4
+      lens: 26
+      frame: 全身
+    - t: 6.4
+      cam: [33.85, 60.3, 2.3]
+      look: mitten
+      look_h: 0.36
+      lens: 30
+      ease: inout
+    shake:
+    - t: [1.7, 2.1]
+      amp: 0.4
+    fx:
+    - kind: plume
+      t: [1.7, 3.0]
+      at: [34.3, 63.2]
+      r: 0.6
+      h: 0.6
+      color: [150, 70, 40]
+      shape: fall
+    act: {start: ミトンが少しだけ速く宙を進むが, do: すぐに失速して地面に落ちる（「はぁ、はぁ……！疲れたでち……！もう、ダメでち……！」）, end: 地面にへたり込むミトン}
+    camera: 北の高い所から、横切って落ちるミトンを追う
+    kind: A
+  A38-011:
+    frame: 膝上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.2, 63.6]
+        face: 255
+        pose: stand
+      - {t: 0.2, pose: walk, face: 255}
+      - t: 1.0
+        at: [35.8, 63.3]
+        pose: cross
+        face: 265
+        ease: out
+      - {t: 7.02, pose: arms_up}
+      - {t: 10.73, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.3, 63.2]
+        face: 70
+        pose: fall
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [33.6, 62.5, 0.6]
+      look: luckiny
+      lens: 28
+      frame: 膝上
+      look_h: 0.9
+    - t: 11.6
+      cam: [33.65, 62.55, 0.6]
+      lens: 30
+      look: luckiny
+      look_h: 0.9
+    act: {start: ルッキーニィがあきれて（「ええ？こ、これだけですか？この程度じゃ、話になりませんよ……」）, do: 拳を握る（「これは猛特訓が必要ですね。頑張りましょう！」）, end: 張り切るルッキーニィ}
+    camera: へたり込んだミトンの肩越しに、見下ろすルッキーニィ
+    kind: M
+  A38-012:
+    frame: 寄り
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.8, 63.3]
+        face: 265
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.3, 63.2]
+        face: 70
+        pose: fall
+      - {t: 0.4, pose: look_down, face: 75}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [35.01, 62.87, 0.55]
+      look: mitten
+      look_h: 0.63
+      lens: 35
+      frame: 寄り
+    - t: 5.5
+      cam: [35.01, 62.87, 0.55]
+      look: mitten
+      look_h: 1.04
+      lens: 40
+    act: {start: ミトンがうつむいたまま、ぽつりと（「ムリでち……」）, do: ルッキーニィ（「え？」）, end: うつむくミトン}
+    camera: ミトンの正面の低い所から（静かに）
+    kind: M
+  A38-013:
+    frame: 膝上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.8, 63.3]
+        face: 265
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.3, 63.2]
+        face: 75
+        pose: look_down
+      - {t: 0.2, pose: stand, face: 80}
+      - {t: 1.2, pose: arms_up}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [35.9, 62.8, 0.4]
+      look: mitten
+      lens: 26
+      frame: 膝上
+      look_h: 0.77
+    - t: 5.6
+      cam: [35.9, 62.85, 0.4]
+      look: mitten
+      lens: 26
+      look_h: 0.77
+    act: {start: ミトンががばっと立ち上がる, do: （「これ以上速くなんてムリでち！飛ぶのはすごく大変なんでち！」）, end: 腕を振り上げるミトン}
+    camera: ルッキーニィの側の低い所から見上げる
+    kind: A
+  A38-014:
+    frame: 胸上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.8, 63.3]
+        face: 265
+        pose: stand
+      - {t: 0.3, pose: hold, face: 265}
+      mitten:
+      - t: 0.0
+        at: [34.3, 63.2]
+        face: 80
+        pose: arms_up
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: &id004 [33.7, 63.0, 1.3]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 5.0
+      cam: *id004
+      look: luckiny
+      look_h: 1.11
+      lens: 36.8
+    act: {start: ルッキーニィがなだめる, do: （「今はそうかもしれないけど、頑張ればきっと……」）, end: 手を伸ばしかけるルッキーニィ}
+    camera: ミトンの肩越しに、ルッキーニィ（夕日の逆光）
+    kind: M
+  A38-015:
+    frame: 膝上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [35.8, 63.3]
+        face: 265
+        pose: hold
+      - {t: 1.0, pose: stand, face: 265}
+      - t: 2.4
+        at: [36.0, 63.35]
+        pose: lean
+      mitten:
+      - t: 0.0
+        at: [34.3, 63.2]
+        face: 80
+        pose: arms_up
+      - {t: 0.2, pose: walk, face: 85}
+      - t: 1.0
+        at: [34.9, 63.25]
+        pose: lean
+        face: 85
+        ease: out
+      - {t: 5.3, pose: arms_up}
+      - {t: 9.07, pose: lean}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.9, 60.6, 2.4]
+      look: [35.0, 63.3]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 10.0
+      cam: [34.95, 60.8, 2.3]
+      look: [35.0, 63.3]
+      look_h: 0.8
+      lens: 32
+    act: {start: ミトンがルッキーニィに詰め寄る（「空を飛ぶこともできないような人に、偉そうなことは言われたくないでち！」）, do: （「できないことはできないでち！悔しかったら飛んでみろでち！」）, end: にらみ合う二人}
+    camera: 北の高い所から、詰め寄るミトン（横に並ぶ二人）
+    kind: A
+  A38-016:
+    frame: 寄り
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.0, 63.35]
+        face: 265
+        pose: lean
+      - {t: 0.2, pose: stand, face: 265}
+      - {t: 1.4, pose: proud}
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 85
+        pose: lean
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.7, 63.82, 1.15]
+      look: luckiny
+      look_h: 1.11
+      lens: 35
+      frame: 胸上
+    - t: 6.0
+      cam: [34.7, 63.82, 1.15]
+      look: luckiny
+      look_h: 1.22
+      lens: 50
+      ease: in
+      frame: 寄り
+    act: {start: ルッキーニィがかっとなる, do: （「な、なんですか……！せっかく特訓してあげてるのに……！」）, end: 拳を握るルッキーニィ}
+    camera: ルッキーニィの正面から、顔へ寄る
+    kind: M
+  A38-017:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.0, 63.35]
+        face: 265
+        pose: proud
+      - {t: 0.3, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 85
+        pose: lean
+      - {t: 0.2, pose: stand, face: 85}
+      - {t: 1.0, pose: cross, face: 240}
+      - {t: 5.01, pose: stand, face: 230}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [33.6, 65.6, 1.1]
+      look: [35.2, 63.3]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 9.4
+      cam: [33.65, 65.55, 1.1]
+      look: [35.0, 63.4]
+      look_h: 0.8
+      lens: 30
+    act: {start: ミトンがぷいと背を向ける（「誰も特訓なんて頼んでなんかないでち！」）, do: （「こんなのなら自分でやったほうがましでち！」）, end: 背を向けたミトン}
+    camera: 木の脇から、背を向けるミトンと、奥のルッキーニィ
+    kind: M
+  A38-018:
+    frame: 膝上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.0, 63.35]
+        face: 265
+        pose: stand
+      - {t: 0.2, pose: look_down, face: 265}
+      - {t: 5.84, pose: point, face: 265}
+      - {t: 11.34, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 230
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [34.0, 63.5, 0.7]
+      look: luckiny
+      look_h: 0.9
+      lens: 30
+      frame: 膝上
+    - t: 12.2
+      cam: [34.05, 63.5, 0.7]
+      look: luckiny
+      look_h: 0.9
+      lens: 34
+    act: {start: ルッキーニィが声を落として（「そうですか……。よくわかりました……」）, do: 顔を上げて言い放つ（「じゃあ、もう知りませんよ！勝手に、陰から応援すればいいじゃないですか」）, end: 言い放ったルッキーニィ}
+    camera: ミトンの背中越しに（低い所から）、ルッキーニィ
+    kind: M
+  A38-019:
+    frame: 胸上
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.0, 63.35]
+        face: 265
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 230
+        pose: stand
+      - {t: 0.3, pose: cross, face: 230}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: &id005 [33.81, 63.88, 1.0]
+      look: mitten
+      look_h: 0.95
+      lens: 32
+      frame: 胸上
+    - t: 5.4
+      cam: *id005
+      look: mitten
+      look_h: 0.95
+      lens: 33.6
+    act: {start: ミトンが振り向かずに, do: （「さ、最初からそうするつもりだったでち！余計なお世話でち！」）, end: 背を向けたままのミトン}
+    camera: ミトンの正面（木の側）から、背を向けたミトンの顔
+    kind: M
+  A38-020:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [36.0, 63.35]
+        face: 265
+        pose: stand
+      - {t: 0.2, pose: walk, face: 60}
+      - {t: 0.4, pose: point, face: 250}
+      - t: 1.6
+        at: [37.4, 62.2]
+        pose: walk
+        face: 50
+        ease: out
+      - {t: 4.79, pose: stand}
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 230
+        pose: cross
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@mitten'
+        pose: stand
+      - {t: 1.0, face: '@luckiny'}
+    cam_keys:
+    - t: 0.0
+      cam: [39.4, 64.6, 2.2]
+      look: [36.4, 63.0]
+      look_h: 0.8
+      lens: 28
+      frame: 全身
+    - t: 5.7
+      cam: [39.3, 64.5, 2.1]
+      look: [36.6, 62.6]
+      look_h: 0.8
+      lens: 30
+    act: {start: ルッキーニィが数歩離れて振り返る, do: （「本当に帰りますよ！謝るなら今ですよ！」）, end: 振り返ったルッキーニィ}
+    camera: 東の高い所から、離れていくルッキーニィと背を向けたミトン
+    kind: M
+  A38-021:
+    frame: 寄り
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.4, 62.2]
+        face: 50
+        pose: stand
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 230
+        pose: cross
+      - {t: 0.2, pose: arms_up, face: 60}
+      - {t: 3.18, pose: stand}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@luckiny'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [36.1, 62.56, 0.75]
+      look: mitten
+      look_h: 0.95
+      lens: 35
+      frame: 胸上
+    - t: 4.1
+      cam: [36.1, 62.56, 0.75]
+      look: mitten
+      look_h: 1.04
+      lens: 55
+      ease: in
+      frame: 寄り
+    act: {start: ミトンが振り向いて叫ぶ, do: （「うるさいでち！早く帰れでち！」）, end: 涙をこらえるミトン}
+    camera: ミトンの正面の低い所から、顔へ寄る
+    kind: A
+  A38-022:
+    frame: 全身
+    only: [luckiny, mitten, hundred-knight]
+    keys:
+      luckiny:
+      - t: 0.0
+        at: [37.4, 62.2]
+        face: 50
+        pose: stand
+      - {t: 0.2, pose: look_down, face: 250}
+      - {t: 0.8, pose: run, face: 45}
+      - t: 2.0
+        at: [39.6, 59.8]
+        pose: run
+        face: 40
+      - t: 6.7
+        at: [44.6, 54.2]
+        pose: run
+        face: 40
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 60
+        pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@luckiny'
+        pose: stand
+    cam_keys:
+    - t: 0.0
+      cam: [38.2, 63.6, 1.0]
+      look: luckiny
+      look_h: 1.11
+      lens: 30
+      frame: 胸上
+    - t: 1.4
+      cam: [39.4, 61.6, 1.0]
+      look: luckiny
+      look_h: 1.11
+      lens: 28
+      ease: in
+    - t: 6.7
+      cam: [41.8, 58.6, 1.1]
+      look: luckiny
+      look_h: 0.7
+      lens: 30
+      ease: out
+      frame: 全身
+    act: {start: ルッキーニィが息をのみ（「……っ！」）, do: 背を向けて森の中を走り去る, end: 木々の間に消えるルッキーニィ}
+    camera: '走るルッキーニィの横を追いかける（準備（案）: 走り去るルッキーニィを追う）'
+    kind: A
+  A38-023:
+    frame: 大引き
+    only: [mitten, hundred-knight]
+    hidden_ok: [luckiny]
+    keys:
+      mitten:
+      - t: 0.0
+        at: [34.9, 63.25]
+        face: 60
+        pose: stand
+      - {t: 0.4, pose: look_down, face: 40}
+      hundred-knight:
+      - t: 0.0
+        at: [36.9, 62.5]
+        face: '@luckiny'
+        pose: stand
+      - {t: 0.6, face: '@mitten'}
+      - {t: 2.0, face: 45}
+      - {t: 2.8, pose: walk, face: 45}
+      - t: 6.0
+        at: [40.4, 58.8]
+        pose: walk
+        face: 40
+    cam_keys:
+    - t: 0.0
+      cam: [35.2, 66.2, 6.0]
+      look: mitten
+      look_h: 0.6
+      lens: 30
+      frame: 引き
+    - t: 6.0
+      cam: [35.0, 66.6, 10.0]
+      look: mitten
+      look_h: 0.4
+      lens: 26
+      ease: inout
+      frame: 大引き
+    act: {start: 夕日の森の外れ。木の前に、ミトンが一人ぽつんと立つ, do: 百騎兵がミトンとルッキーニィの去った方を見比べ、ルッキーニィを追って歩き出す, end: 小さく残るミトン}
+    camera: '木の梢の上から、小さなミトンを見下ろし、さらに上がる（準備（案）: 残るミトンを高い位置から小さく）'
+    kind: A

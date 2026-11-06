@@ -1,0 +1,32 @@
+# A37 入浴騒動。blocking.yaml（Claude の案 2026-11-06、Living Spec「A37 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A37-007
+scene: A37
+tc: 38.0
+sec: 5.4
+kind: A
+shot: 寄り・湯の中でもがくミトン
+acting: （「あ、熱いでち！目にしみるでち！もう無理でちーー！！」）しぶきが飛ぶ
+dialogue:
+- L1371「あ、熱いでち！目にしみるでち！もう無理でちーー！！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 16.3
+  - 10.35
+  - 1.0
+  look: mitten
+  lens: 30
+  move: 浴槽の縁の高さ（南のカーテンの前）から、ミトン（揺れる）
+background: witch-house
+image: null
+refs:
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 湯気の中でミトンが4本の腕をばたつかせる
+  end: もがくミトン
+timing:
+  lead: 0.4

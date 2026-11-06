@@ -1,0 +1,38 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-015
+scene: A40
+tc: 118.2
+sec: 15.8
+kind: M
+shot: ルッキーニィが頭を抱える・高嶺の花
+acting: 肩を落とす（「直接会うなんて、絶対に無理です……」）
+dialogue:
+- L1465「はぁ……王子様がハインツなんて貴族の息子どころじゃないですよ。本当に高嶺の花じゃないですか……」
+- L1466「直接会うなんて、絶対に無理です……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.4
+  - 52.0
+  - 1.9
+  look: luckiny
+  lens: 30
+  move: 百騎兵の後ろの高い所から、頭を抱えるルッキーニィを見下ろす（奥にミトン）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ルッキーニィが頭を抱える（「はぁ……王子様がハインツなんて貴族の息子どころじゃないですよ。本当に高嶺の花じゃないですか……」）
+  end: うなだれるルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1465: 0.4
+    L1466: 11.09

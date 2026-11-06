@@ -1,0 +1,38 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-017
+scene: A40
+tc: 146.7
+sec: 10.8
+kind: M
+shot: 百騎兵・お遊びはここまでだ
+acting: （「ブリダンゴにかまうのもいいが本来の仕事に戻るときだぞ」）百騎兵が顔を上げる
+dialogue:
+- L1470「キヒヒ、百騎兵！お遊びはここまでだ」
+- L1471「ブリダンゴにかまうのもいいが本来の仕事に戻るときだぞ」
+sound: null
+notes: null
+camera:
+  pos:
+  - 49.26
+  - 51.71
+  - 0.5
+  look: hundred-knight
+  lens: 32
+  move: 百騎兵の正面の低い所から
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 百騎兵の頭の中にメタリカの声（千里眼越し）（「キヒヒ、百騎兵！お遊びはここまでだ」）
+  end: 顔を上げる百騎兵
+timing:
+  lead: 0.4
+  at:
+    L1470: 0.4
+    L1471: 5.78

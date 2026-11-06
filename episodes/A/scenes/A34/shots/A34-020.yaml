@@ -1,0 +1,34 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-020
+scene: A34
+tc: 165.5
+sec: 6.9
+kind: M
+shot: 寄り・ミトン・自分ではどうすることも
+acting: （「ご、ごめんでち……！でも自分ではどうすることもできないでち……！」）
+dialogue:
+- L1271「ご、ごめんでち……！でも自分ではどうすることもできないでち……！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 32.82
+  - 50.47
+  - 0.75
+  look: mitten
+  lens: 35
+  move: ミトンの正面の低い所から（少し寄る）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンがしょんぼりとうつむく
+  end: うつむくミトン
+timing:
+  lead: 0.4

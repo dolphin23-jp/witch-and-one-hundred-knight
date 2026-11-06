@@ -1,0 +1,34 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-011
+scene: A34
+tc: 81.5
+sec: 8.1
+kind: A
+shot: 胸上・ミトンの名乗り
+acting: 照れて体をくねらせる（「大好きなのは王子様でち……えへへ。」）
+dialogue:
+- L1254「よろしくでち！あたちはミトンでち！大好きなのは王子様でち……えへへ。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.86
+  - 51.07
+  - 0.9
+  look: mitten
+  lens: 32
+  move: ルッキーニィの脇の低い所から、ミトン
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: ミトンが胸を張る（「よろしくでち！あたちはミトンでち！」）
+  end: 照れるミトン
+timing:
+  lead: 0.4

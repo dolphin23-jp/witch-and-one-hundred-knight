@@ -1,0 +1,40 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-048
+scene: A33
+tc: 384.7
+sec: 14.4
+kind: M
+shot: あおり・メタリカが立つ・調べてこい
+acting: ルッキーニィと百騎兵を指さす（「ルッキーニィ、それから百騎兵。お前たち、あのブリダンゴを調べてこい。」）
+dialogue:
+- L1224「はぁ……。お前もわかってないのか……。よしわかった。」
+- L1225「ルッキーニィ、それから百騎兵。お前たち、あのブリダンゴを調べてこい。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.75
+  - 3.8
+  - 0.9
+  look: metallica
+  lens: 24
+  move: ルッキーニィの後ろの低い所から、テーブル越しに立ち上がるメタリカを見上げる
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカがため息をついて立ち上がる（「はぁ……。お前もわかってないのか……。よしわかった。」）
+  end: 指さすメタリカ
+timing:
+  lead: 0.4
+  at:
+    L1224: 0.4
+    L1225: 9.63

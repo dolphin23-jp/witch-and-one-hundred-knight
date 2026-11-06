@@ -1,0 +1,40 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-045
+scene: A33
+tc: 354.5
+sec: 7.9
+kind: M
+shot: 胸上・ソファのメタリカ・何をしても無駄だとな
+acting: （「そんなことは知っている！だからちゃんと教えてやっただろう。」「何をしても無駄だとな。」）
+dialogue:
+- L1217「そんなことは知っている！だからちゃんと教えてやっただろう。」
+- L1218「何をしても無駄だとな。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 3.0
+  - 2.2
+  - 1.45
+  look: metallica
+  lens: 35
+  move: テーブルの西の少し高い所から、ソファのメタリカの正面
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカがそっぽを向く
+  end: 腕を組むメタリカ
+timing:
+  lead: 0.4
+  at:
+    L1217: 0.4
+    L1218: 5.06

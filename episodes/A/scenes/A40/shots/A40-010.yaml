@@ -1,0 +1,36 @@
+# A40 陰の見守りと王子様。blocking.yaml（Claude の案 2026-11-06、Living Spec「A40 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A40-010
+scene: A40
+tc: 72.6
+sec: 5.4
+kind: A
+shot: 窓から顔を出すハインツ・ハインツだ
+acting: 柵の陰でルッキーニィが息をのむ（「あ、あの人……ハインツだ！」）
+dialogue:
+- L1459「あ、あの人……ハインツだ！」
+sound: null
+notes: null
+camera:
+  pos:
+  - 47.4
+  - 51.4
+  - 1.3
+  look: heinz
+  lens: 40
+  move: 柵の陰の三人の後ろから、柵ごしに馬車の窓のハインツ
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+- heinz-carriage
+- heinz
+overlays: []
+fallback: null
+act:
+  start: 馬車の窓のカーテンが開き、金髪の若い貴族が顔を出して森を眺める
+  end: 窓のハインツ
+timing:
+  lead: 1.6

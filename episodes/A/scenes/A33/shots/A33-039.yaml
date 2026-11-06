@@ -1,0 +1,37 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-039
+scene: A33
+tc: 304.8
+sec: 6.8
+kind: A
+shot: 寄り・メタリカ・自分自身のことを
+acting: （「お前、自分自身のことを何もわかってないようだな……」）
+dialogue:
+- L1210「お前、自分自身のことを何もわかってないようだな……」
+sound: null
+notes: null
+camera:
+  pos:
+  - 4.9
+  - 6.2
+  - 1.35
+  look: metallica
+  lens: 32
+  move: ミトンの側の低い所から、メタリカの顔へゆっくり寄る（後の伏線）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- mitten
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが振り向き、ミトンを見据える
+  end: 冷たい目のメタリカ
+timing:
+  lead: 0.8

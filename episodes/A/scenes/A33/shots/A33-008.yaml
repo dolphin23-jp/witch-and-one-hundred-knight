@@ -1,0 +1,40 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-008
+scene: A33
+tc: 60.1
+sec: 12.5
+kind: A
+shot: 寄り・ビスコの独白・呪いをかけた魔女
+acting: （心の声「(すっかりそれどころではなかったがあの夜会にいたのだろうか)」「(私に呪いをかけた魔女が……。)」）
+dialogue:
+- L1160「(すっかりそれどころではなかったがあの夜会にいたのだろうか)」
+- L1161「(私に呪いをかけた魔女が……。)」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.3
+  - 1.95
+  - 0.95
+  look: bisco
+  lens: 35
+  move: ソファの正面の低い所から、ビスコの顔へゆっくり寄る（独白）
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: にぎやかな声から離れて、ビスコがうつむく
+  end: 考え込むビスコの顔
+timing:
+  lead: 0.8
+  at:
+    L1160: 0.8
+    L1161: 8.53

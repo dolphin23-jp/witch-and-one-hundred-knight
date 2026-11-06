@@ -1,0 +1,42 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-047
+scene: A33
+tc: 379.4
+sec: 5.3
+kind: M
+shot: 横から・メタリカがにらむ
+acting: ルッキーニィが縮こまる（「い、いえ……その……。」）
+dialogue:
+- L1222「……あん？」
+- L1223「い、いえ……その……。」
+sound: null
+notes: null
+camera:
+  pos:
+  - 5.0
+  - 1.5
+  - 1.2
+  look:
+  - 3.5
+  - 1.9
+  lens: 22
+  move: 東（テーブルとソファの間）から、横に並ぶ二人
+background: witch-house
+image: null
+refs:
+- bisco
+- luckiny
+- arlecchino
+- hundred-knight
+- metallica
+overlays: []
+fallback: null
+act:
+  start: メタリカが目だけ動かしてにらむ（「……あん？」）
+  end: うつむくルッキーニィ
+timing:
+  lead: 0.4
+  at:
+    L1222: 0.4
+    L1223: 2.13

@@ -1,0 +1,61 @@
+# A35 の BGM・効果音の置き場所（D-068、2026-11-06）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.24〜0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は石か砂の音）
+# BGM は原作どおり（パート25）: 森の小道は新しい曲 M44「チンクエの森」（0:00〜1:47。ループは決められないので、45秒の切り出しを1回だけ）→ ピラーとジェルは M20「地下空洞」（1:47〜3:48）→ 咲く所（3:48〜4:15 の27秒の短い曲は決められない）は BGM を止めて効果音だけ → 咲いた後は M19「ピラー」（M03 と同じくらい似る。4:15〜）
+scene: A35
+bgm:
+- src: audio/bgm/catalog/M44.ogg
+  cut: A35-001
+  t: 0.0
+  until: {cut: A35-005, t: 4.0}
+  fade_in: 1.5
+  fade_out: 1.5
+  volume: 0.24
+- src: audio/bgm/M20_loop.ogg
+  cut: A35-006
+  t: 0.0
+  until: {cut: A35-013, t: 3.6}
+  loop: true
+  fade_in: 1.0
+  fade_out: 1.0
+  volume: 0.26
+- src: audio/bgm/catalog/M19.ogg
+  cut: A35-015
+  t: 0.0
+  until: {cut: A35-017, t: 11.2}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.5
+  volume: 0.24
+sfx:
+- src: audio/sfx/forest_air_loop.ogg
+  cut: A35-001
+  t: 0.0
+  until: {cut: A35-005, t: 4.0}
+  loop: true
+  fade_in: 1.5
+  fade_out: 1.5
+  volume: 0.08
+- src: audio/sfx/swamp_bubble_loop.ogg
+  cut: A35-006
+  t: 0.0
+  until: {cut: A35-017, t: 11.2}
+  loop: true
+  fade_in: 1.5
+  fade_out: 2.0
+  volume: 0.09
+- {src: audio/sfx/monster_roar.ogg, cut: A35-007, t: 0.6, rate: 0.8, volume: 0.55}
+- {src: audio/sfx/rumble_rise.ogg, cut: A35-007, t: 0.2, volume: 0.35}
+- {src: audio/sfx/sword_ready.ogg, cut: A35-008, t: 0.3, volume: 0.4}
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-010, t: 0.3, volume: 0.45}
+- {src: audio/sfx/impact_heavy.ogg, cut: A35-010, t: 0.7, rate: 0.9, volume: 0.6}
+- {src: audio/sfx/whoosh_long.ogg, cut: A35-011, t: 0.3, rate: 1.2, volume: 0.4}
+- {src: audio/sfx/sword_slash.ogg, cut: A35-011, t: 1.55, volume: 0.6}
+- {src: audio/sfx/monster_hurt.ogg, cut: A35-011, t: 1.7, rate: 0.9, volume: 0.5}
+- {src: audio/sfx/whoosh_fast.ogg, cut: A35-012, t: 0.75, rate: 0.8, volume: 0.45}
+- {src: audio/sfx/sword_hit.ogg, cut: A35-012, t: 1.95, rate: 0.9, volume: 0.7}
+- {src: audio/sfx/monster_die.ogg, cut: A35-013, t: 0.6, rate: 0.9, volume: 0.55}
+- {src: audio/sfx/rumble_low.ogg, cut: A35-013, t: 1.0, volume: 0.35}
+- {src: audio/sfx/rumble_rise.ogg, cut: A35-014, t: 0.0, volume: 0.4}
+- {src: audio/sfx/magic_burst.ogg, cut: A35-014, t: 1.4, volume: 0.6}
+- {src: audio/sfx/crystal_chime.ogg, cut: A35-014, t: 1.6, rate: 0.8, volume: 0.4}
+- {src: audio/sfx/magic_shimmer.ogg, cut: A35-016, t: 7.29, volume: 0.35}

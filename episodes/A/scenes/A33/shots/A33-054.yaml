@@ -1,0 +1,43 @@
+# A33 魔女会報とミトンの来訪。blocking.yaml（Claude の案 2026-11-06、Living Spec「A33 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A33-054
+scene: A33
+tc: 428.9
+sec: 7.8
+kind: M
+shot: 引き（クレーンで上がる）・章の題
+acting: 章の題「第3幕 第7章 魔女と虫姫」（Revival の読み上げ。題字は合成）
+dialogue:
+- L1231「第3幕 第7章 魔女と虫姫」
+sound: null
+notes: null
+camera:
+  pos:
+  - 6.6
+  - 6.2
+  - 1.6
+  look:
+  - 4.4
+  - 2.0
+  lens: 24
+  move: 玄関の内側から、クレーンでゆっくり上がりながら引く
+background: witch-house
+image: null
+refs:
+- bisco
+- arlecchino
+- metallica
+overlays: []
+fallback: null
+act:
+  start: ソファに座り直して会報を広げるメタリカ。床にはのびたままのビスコと、そばに立つアルレッキーノ
+  end: 居間の全景
+timing:
+  lead: 0.8
+transition:
+  kind: fade
+  sec: 0.6
+title:
+  text: 第3幕 第7章\n魔女と虫姫
+  at: 0.9
+  sec: 5.8

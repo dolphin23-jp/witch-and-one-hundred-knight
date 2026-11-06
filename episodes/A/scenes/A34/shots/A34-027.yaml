@@ -1,0 +1,40 @@
+# A34 ゴミ山の虫姫と特訓。blocking.yaml（Claude の案 2026-11-06、Living Spec「A34 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A34-027
+scene: A34
+tc: 231.7
+sec: 14.7
+kind: A
+shot: 寄り・ルッキーニィの心の声・ボクだって
+acting: （心の声「(王子様に恋なんて、分不相応かもしれない……)」「(でも、諦めなければ何か見つかるかもしれないんだ……)」「(ボクだって……)」）
+dialogue:
+- L1285「(王子様に恋なんて、分不相応かもしれない……)」
+- L1286「(でも、諦めなければ何か見つかるかもしれないんだ……)」
+- L1287「(ボクだって……)」
+sound: null
+notes: null
+camera:
+  pos:
+  - 34.27
+  - 51.84
+  - 1.1
+  look: luckiny
+  lens: 35
+  move: ルッキーニィの正面から、顔へゆっくり寄る
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- hundred-knight
+- mitten
+overlays: []
+fallback: null
+act:
+  start: 百騎兵を見送ったルッキーニィが、ゴミをあさるミトンの背中を見る
+  end: 拳を胸に当てるルッキーニィ
+timing:
+  lead: 0.8
+  at:
+    L1285: 0.8
+    L1286: 6.36
+    L1287: 12.19

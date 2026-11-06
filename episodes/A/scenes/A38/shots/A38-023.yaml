@@ -1,0 +1,32 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-023
+scene: A38
+tc: 166.9
+sec: 6.0
+kind: A
+shot: 大引き（高い所から）・残るミトン
+acting: 百騎兵がミトンとルッキーニィの去った方を見比べ、ルッキーニィを追って歩き出す
+dialogue: []
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.2
+  - 66.2
+  - 6.0
+  look: mitten
+  lens: 30
+  move: '木の梢の上から、小さなミトンを見下ろし、さらに上がる（準備（案）: 残るミトンを高い位置から小さく）'
+background: cinque-forest
+image: null
+refs:
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: 夕日の森の外れ。木の前に、ミトンが一人ぽつんと立つ
+  end: 小さく残るミトン
+timing:
+  lead: 0.4

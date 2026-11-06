@@ -1,0 +1,46 @@
+# A33 の BGM・効果音の置き場所（D-068、2026-11-06）。tools/previs_reel.py が通しの下絵に重ねる。書き方は previs_reel.py の sound_items()。
+# 音量は台詞を 1.0 とした大きさ（素材の大きさをならしてから掛ける）。BGM 0.24〜0.28、環境音 0.07〜0.15、効果音 0.3〜0.8。足音は自動（footsteps.yaml。床は石か砂の音）
+# BGM は原作どおり（パート24、tools/bgm_split.py の曲分け）: M05「魔女邸の前・穏やか」（0:27〜3:24。M14 と交互に出るが同じ曲の節と見た）→ ミトンが入ってきてからは新しい曲 M43「ブリダンゴ姫」（3:24〜7:59、ループ約90.7秒）→ ミトンが帰った後は M05 に戻る（8:21〜10:04）→ 章の題に M21「場面の頭の短い曲」（10:04〜10:32）
+scene: A33
+bgm:
+- src: audio/bgm/catalog/M05.ogg
+  cut: A33-001
+  t: 0.0
+  until: {cut: A33-014, t: 1.0}
+  loop: true
+  fade_in: 1.5
+  fade_out: 0.8
+  volume: 0.24
+- src: audio/bgm/M43_loop.ogg
+  cut: A33-015
+  t: 0.0
+  until: {cut: A33-041, t: 12.1}
+  loop: true
+  fade_in: 0.8
+  fade_out: 2.0
+  volume: 0.26
+- src: audio/bgm/catalog/M05.ogg
+  cut: A33-042
+  t: 1.0
+  until: {cut: A33-053, t: 7.2}
+  loop: true
+  fade_in: 2.0
+  fade_out: 1.0
+  volume: 0.22
+- src: audio/bgm/catalog/M21.ogg
+  cut: A33-054
+  t: 0.0
+  until: {cut: A33-054, t: 7.8}
+  fade_in: 0.3
+  fade_out: 1.2
+  volume: 0.3
+sfx:
+- {src: audio/sfx/impact_heavy.ogg, cut: A33-001, t: 0.3, rate: 0.8, volume: 0.45}
+- {src: audio/sfx/thud_land.ogg, cut: A33-001, t: 0.55, rate: 0.7, volume: 0.4}
+- {src: audio/sfx/door_open.ogg, cut: A33-003, t: 0.1, rate: 0.9, volume: 0.4}
+- {src: audio/sfx/door_open.ogg, cut: A33-014, t: 0.4, volume: 0.5}
+- {src: audio/sfx/cloth_swish.ogg, cut: A33-014, t: 1.2, rate: 0.6, volume: 0.25}
+- {src: audio/sfx/thud_land.ogg, cut: A33-015, t: 5.28, rate: 0.9, volume: 0.5}
+- {src: audio/sfx/cloth_swish.ogg, cut: A33-020, t: 0.4, rate: 0.7, volume: 0.3}
+- {src: audio/sfx/door_open.ogg, cut: A33-024, t: 0.1, rate: 0.9, volume: 0.3}
+- {src: audio/sfx/cloth_swish.ogg, cut: A33-042, t: 4.5, volume: 0.3}

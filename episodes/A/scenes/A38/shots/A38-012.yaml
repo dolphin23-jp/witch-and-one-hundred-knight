@@ -1,0 +1,38 @@
+# A38 飛ぶ特訓と喧嘩。blocking.yaml（Claude の案 2026-11-06、Living Spec「A38 動きの設計（案）」）から作成。秒は原作の声の実測（audio/A33/original/lines.csv）に芝居の間を足したもの
+# kind: M＝小さな動き、A＝見せ場
+id: A38-012
+scene: A38
+tc: 91.3
+sec: 5.5
+kind: M
+shot: 寄り・ミトン・ムリでち
+acting: ルッキーニィ（「え？」）
+dialogue:
+- L1399「ムリでち……」
+- L1400「え？」
+sound: null
+notes: null
+camera:
+  pos:
+  - 35.01
+  - 62.87
+  - 0.55
+  look: mitten
+  lens: 35
+  move: ミトンの正面の低い所から（静かに）
+background: cinque-forest
+image: null
+refs:
+- luckiny
+- mitten
+- hundred-knight
+overlays: []
+fallback: null
+act:
+  start: ミトンがうつむいたまま、ぽつりと（「ムリでち……」）
+  end: うつむくミトン
+timing:
+  lead: 0.8
+  at:
+    L1399: 0.8
+    L1400: 3.43
