@@ -1480,7 +1480,7 @@ cuts:
         z: 0.9
     cam_keys:
     - {t: 0.0, cam: [52.4, 61.6, 0.35], look: metallica-giant, look_h: 6.41, lens: 18.0, frame: 全身}
-    - {t: 8.6, cam: [52.0, 61.4, 0.4], look: metallica-giant, look_h: 6.46, lens: 19.0}
+    - {t: 8.6, cam: [52.0, 61.4, 0.4], look: metallica-giant, look_h: 7.6, lens: 19}
     shake:
     - t: [1.4, 3.0]
       amp: 1.4
@@ -1567,8 +1567,8 @@ cuts:
         at: [47.89, 47.71]
         ease: out
     cam_keys:
-    - {t: 0.0, cam: [39.28, 45.56, 0.5], look: [49.0, 48.4], look_h: 7.71, lens: 18, frame: 全身}
-    - {t: 8.8, cam: [42.67, 47.14, 0.5], look: [49.4, 48.4], look_h: 8.65, lens: 20.0}
+    - {t: 0.0, cam: [39.28, 45.56, 0.5], look: [49.0, 48.4], look_h: 3.0, lens: 20, frame: 全身}
+    - {t: 8.8, cam: [42.67, 47.14, 0.5], look: [49.4, 48.4], look_h: 5.0, lens: 20}
     act: {start: ビスコが巨大メタリカの足元まで詰め寄る, do: （「だからって全員殺すのか！？そんなことをして何になるんだ！お前だって、そんなことで気が済むのか！」）, end: 見上げて叫ぶビスコ}
     camera: ビスコの後ろの低い所から、見上げる巨大メタリカまで入れる（大きさの差）
     kind: A
@@ -2767,7 +2767,7 @@ cuts:
         pose: sit
         z: 0.9
     cam_keys:
-    - {t: 0.0, cam: [47.0, 48.6, 1.6], look: metallica-giant, look_h: 11.63, lens: 77, frame: 胸上}
+    - {t: 0.0, cam: [47.0, 48.6, 1.6], look: metallica-giant, look_h: 11.41, lens: 43, frame: 胸上}
     - {t: 6.4, cam: [47.2, 48.8, 1.6], look: metallica-giant, look_h: 11.04, lens: 24.0}
     act: {start: 巨大メタリカがあわてて身を乗り出す, do: （「おい！待て！ワタシは……」）ビスコへ手を伸ばす（「ビスコっ！！！」）, end: 伸ばした巨大な手}
     camera: ビスコの頭上から見上げ、伸びてくる巨大な手
@@ -3167,7 +3167,7 @@ cuts:
     cam_keys:
     - {t: 0.0, cam: [46.6, 45.9, 1.65], look: [46.13, 44.96], look_h: 1.41, lens: 60.0, frame: 寄り}
     - {t: 3.7, cam: [46.6, 46.2, 2.6], look: nezaria, look_h: 1.39, lens: 30.0}
-    - {t: 10.1, cam: [58.0, 24.0, 18.0], look: [49.0, 53.0], look_h: -1.51, lens: 22.0, frame: 大引き, ease: inout}
+    - {t: 10.1, cam: [58.0, 24.0, 18.0], look: [49.0, 53.0], look_h: 7.0, lens: 22, frame: 大引き, ease: inout}
     fx:
     - kind: flash
       t: [8.5, 10.1]

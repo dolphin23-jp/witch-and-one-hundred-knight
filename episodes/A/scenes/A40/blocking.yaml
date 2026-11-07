@@ -400,7 +400,7 @@ cuts:
         ease: out
     cam_keys:
     - {t: 0.0, cam: [38.8, 42.4, 3.0], look: mitten, look_h: 1.0, lens: 26.0, frame: 引き}
-    - {t: 5.2, cam: [41.0, 44.0, 3.2], look: [49.0, 50.6], look_h: -0.27, lens: 28.0, ease: inout}
+    - {t: 5.2, cam: [41.0, 44.0, 3.2], look: [49.0, 50.6], look_h: 0.5, lens: 28, ease: inout}
     fx:
     - kind: mist
       t: [0.0, 5.2]
@@ -701,7 +701,7 @@ cuts:
       - {t: 2.4, face: 80}
       - {t: 5.82, face: 60}
     cam_keys:
-    - {t: 0.0, cam: [52.0, 49.0, 1.35], look: mitten, lens: 135, frame: 胸上, look_h: 0.3}
+    - {t: 0.0, cam: [52.0, 49.0, 1.35], look: mitten, lens: 58, frame: 胸上, look_h: 0.27}
     - {t: 6.7, cam: [51.95, 49.05, 1.35], look: mitten, lens: 36.0, look_h: 0.86}
     fx: []
     act: {start: 柵の陰でミトンがうっとりと身をくねらせる, do: （「あぁ……王子様をみちゃったでち……。でへへ」）, end: うっとりするミトン}

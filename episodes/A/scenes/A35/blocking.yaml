@@ -280,7 +280,7 @@ cuts:
       - {t: 0.3, pose: lean, face: 180}
       - {t: 4.2, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [32.6, 19.9, 2.6], look: hundred-knight, lens: 97, frame: 膝上, look_h: 0.47}
+    - {t: 0.0, cam: [32.6, 19.9, 2.6], look: hundred-knight, lens: 54, frame: 膝上, look_h: 0.32}
     - {t: 7.7, cam: [32.65, 20.0, 2.55], look: hundred-knight, lens: 34.0, look_h: 0.14}
     act: {start: 百騎兵が剣を構える, do: メタリカの声（「これは、さすがにちょっと、出来すぎてやしないか？」「キヒヒ、まあつまらん検証はいらん」）, end: 構えた百騎兵}
     camera: ジェルの肩越しに、構える百騎兵
@@ -352,9 +352,9 @@ cuts:
     shake:
       - {t: [0.85, 1.4], amp: 1.0}
     cam_keys:
-      - {t: 0.0, cam: [29.6, 24.0, 0.8], look: [34.4, 22.8], look_h: -0.25, lens: 24.0, frame: 全身}
+      - {t: 0.0, cam: [29.6, 24.0, 0.8], look: [34.4, 22.8], look_h: 0.9, lens: 24, frame: 全身}
       - {t: 0.7, cam: [29.8, 24.1, 1.1], look: hundred-knight, lens: 24.0, roll: 8, ease: out, look_h: 1.12}
-      - {t: 3.0, cam: [30.0, 24.2, 0.9], look: [35.4, 23.0], look_h: -0.56, lens: 26.0, roll: 0, ease: inout}
+      - {t: 3.0, cam: [30.0, 24.2, 0.9], look: [35.4, 23.0], look_h: 0.6, lens: 26, roll: 0, ease: inout}
     bg: null
     act: {start: 岸で向き合う二人（西の低い所から）, do: ジェルが両手を上げて体を伸ばし、百騎兵めがけて跳びかかる。百騎兵は東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる（止め・白黒のコマ、金色と緑のゲルが飛び散る）, end: 着地して構える百騎兵と、地面に広がったジェル, sync: （台詞なし）}
     camera: 西の低い所から、跳ぶ百騎兵を追う（跳び上がりで傾ける）
@@ -732,7 +732,7 @@ cuts:
         pose: run
         face: 180
     cam_keys:
-    - {t: 0.0, cam: [35.6, 15.2, 1.6], look: hundred-knight, look_h: -0.49, lens: 30.0, frame: 全身}
+    - {t: 0.0, cam: [35.6, 15.2, 1.6], look: hundred-knight, look_h: 0.45, lens: 30, frame: 全身}
     - {t: 11.2, cam: [35.8, 15.6, 6.8], look: [34.0, 30.0], look_h: 0.6, lens: 26.0, ease: inout, frame: 大引き}
     fx:
     - kind: bloom

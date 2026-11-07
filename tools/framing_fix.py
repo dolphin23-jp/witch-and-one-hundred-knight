@@ -14,7 +14,8 @@
   python tools/framing_fix.py episodes/A/scenes/A12 --cuts A12-003,A12-007              # そのカットだけ
 
 直し方（人物を見るキーごと。そのキーの時刻にいちばん近い測定のコマで）:
-  見る高さ = 顔を画面の決まった高さ（寄り 0.52・胸上 0.6・膝上 0.68・全身 0.74・引き 0.66）に置く高さ（そのキーのレンズとカメラからの距離で計算）
+  見る高さ = 顔を画面の決まった高さ（寄り 0.52・胸上 0.6・膝上 0.68・全身 0.74・引き 0.66）に置く高さ（そのキーのレンズとカメラからの距離で計算）。
+              全身・引き・大引きは、顔が外・頭や足が切れるときだけ、主役の体の範囲（足元の 0.3m 下〜頭の 0.5m 上）の中で（遠いカメラで地面の下を見ないように）
   レンズ    = 大きさが目安の外なら、今のレンズ × 目安の真ん中 ÷ 測った大きさ（元の 0.6〜1.8 倍・18mm 以上）。前のキーから引き継いだ画の大きさや、
               二人・肩ごし・肩なめ・「→」の画は、レンズを変えず見る高さだけ直す（A07-016 の 26mm → 135mm、A14-007「寄り（二人）」で二人目が外れた、2026-11-07）。目安の中なら変えない
   画の大きさは、キーの frame（なければ前のキー、なければカットの frame。「全身→寄り」は最初のキーが全身、ほかは寄り）
@@ -265,10 +266,17 @@ def fix_scene(scene_dir, dry=False, only=None, cuts=None):
                             k["cam"] = [round(m["wx"] + dx * nd / dist, 2), round(m["wy"] + dy * nd / dist, 2), cm[2]]
                             changed_cam = True
                 cam_now = k.get("cam") if isinstance(k.get("cam"), list) else s.get("cam")
-                if cam_now and "wx" in m:   # 顔を画面の FACE_Y の高さに置く見る高さ（そのキーのレンズとカメラからの距離で）
+                kinds_here = {i["kind"] for i in v["issues"] if subj in (i.get("who") or [])}
+                aim = key in framing.FACE_FRAMES or bool(kinds_here & {"顔が外", "頭が切れ", "足が切れ"})
+                if cam_now and "wx" in m and aim:   # 顔を画面の FACE_Y の高さに置く見る高さ（そのキーのレンズとカメラからの距離で）
                     d = ((cam_now[0] - m["wx"]) ** 2 + (cam_now[1] - m["wy"]) ** 2 + (cam_now[2] - m["hz"]) ** 2) ** 0.5
                     fh = 2.0 * d * HALF_SENSOR_H / float(new_lens)
                     new_lh = round(float(m["hz"]) - (FACE_Y[key] - 0.5) * fh, 2)
+                    if key not in framing.FACE_FRAMES:   # 全身・引き・大引き: 見る点は主役の体の範囲（足元の少し下〜頭の少し上）から出さない。
+                        bz_ = float(m.get("bz", float(m["hz"]) - 1.5))   # 遠いカメラで地面の下を見て、A30-038 の巨大メタリカが画面の上に切れた（2026-11-07）
+                        new_lh = round(min(float(m["hz"]) + 0.5, max(bz_ - 0.3, new_lh)), 2)
+                elif not aim:
+                    new_lh = lh0   # 全身・引きで、顔が外・頭や足が切れていなければ、見る高さは元の構図のまま
             elif lh0 is None and m is not None:   # 画の大きさがわからない人物のキー: 今までの既定（背の 0.75）を書く
                 new_lh = round(float(m.get("bz", m["hz"] - 0.9 * float(m.get("h", 1.6)))) + 0.75 * float(m.get("h", 1.6)), 2)
             elif lh0 is None:   # 場所を見るキーの既定は 0

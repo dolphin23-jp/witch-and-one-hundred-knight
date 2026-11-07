@@ -2865,7 +2865,7 @@ cuts:
         pose: point
       - {t: 0.3, pose: arms_up, face: 175}
     cam_keys:
-    - {t: 0.0, cam: [49.3, 59.5, 0.3], look: hundred-knight, look_h: -0.09, lens: 28.0, frame: 全身}
+    - {t: 0.0, cam: [49.3, 59.5, 0.3], look: hundred-knight, look_h: 0.2, lens: 28, frame: 全身}
     - {t: 2.0, cam: [49.3, 59.5, 0.35], look: hundred-knight, look_h: -0.05, lens: 28.0}
     - {t: 8.6, cam: [49.1, 59.8, 0.6], look: hundred-knight, look_h: 2.48, lens: 24.0}
     fx:
@@ -3140,9 +3140,9 @@ cuts:
       - {t: 2.0, z: -14.0}
       - {t: 7.8, z: 0.0, ease: out, pose: arms_up}
     cam_keys:
-    - {t: 0.0, cam: [49.8, 59.0, 0.4], look: [49.6, 50.6], look_h: -0.45, lens: 22.0, frame: 全身}
-    - {t: 5.78, cam: [49.7, 59.5, 0.6], look: [50.0, 48.6], look_h: -3.46, lens: 18.0}
-    - {t: 8.4, cam: [49.6, 61.8, 1.0], look: [50.0, 48.6], look_h: -2.25, lens: 18.0, frame: 大引き}
+    - {t: 0.0, cam: [49.8, 59.0, 0.4], look: [49.6, 50.6], look_h: 1.4, lens: 22, frame: 全身}
+    - {t: 5.78, cam: [49.7, 59.5, 0.6], look: [50.0, 48.6], look_h: 6.0, lens: 18}
+    - {t: 8.4, cam: [49.6, 61.8, 1.0], look: [50.0, 48.6], look_h: 11.0, lens: 16, frame: 大引き}
     shake:
     - t: [1.4, 8.4]
       amp: 1.0
@@ -3305,7 +3305,7 @@ cuts:
         face: 180
         pose: arms_up
     cam_keys:
-    - {t: 0.0, cam: [52.4, 51.2, 9.4], look: [56.2, 54.8], look_h: 1.05, lens: 135, frame: 膝上}
+    - {t: 0.0, cam: [52.4, 51.2, 9.4], look: [56.2, 54.8], look_h: 0.66, lens: 54, frame: 膝上}
     - {t: 5.5, cam: [52.2, 51.1, 9.6], look: [50.6, 56.4], look_h: 0.8, lens: 26.0}
     act: {start: ラビィとリューベンスが見上げる, do: ラビィ（「うほっ！すっげええ！！」）、リューベンス（「これほどとは……」）, end: 見上げる二人}
     camera: 巨大メタリカの肩の高さから見下ろす（巨大メタリカの目線）
