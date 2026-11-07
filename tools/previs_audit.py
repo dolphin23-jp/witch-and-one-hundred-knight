@@ -105,6 +105,10 @@ def measure(scene, cam, figs, plan, lay, t, T):
         vc, vt, vb, vf = (world_to_camera_view(scene, cam, p) for p in (c, top, chin, feet))
         inside = vc.z > 0 and 0.0 <= vc.x <= 1.0 and 0.0 <= vc.y <= 1.0
         occ = _occluder(scene, dg, origin, c, figs[who][0], hr * 1.05) if vc.z > 0 else None
+        if occ is None and vc.z > 0:   # 目の高さの顔の面の点への線でも調べる（頭の真ん中への線は帽子のつばの下を通っても、目はつばで隠れる。A37-008、2026-11-07）
+            eye = hm @ Vector((0, hr * 0.95, hr * 1.12))
+            if (origin - eye).dot(hm.to_3x3() @ Vector((0, 1, 0))) > 0:   # 顔がカメラの側を向いているときだけ
+                occ = _occluder(scene, dg, origin, eye, figs[who][0], 0.03)
         fw = hm.to_3x3() @ Vector((0, 1, 0))   # 顔の向き（顔は頭の +Y の側）
         tc = origin - c
         fa = math.degrees(fw.angle(tc)) if fw.length > 1e-6 and tc.length > 1e-6 else 0.0
