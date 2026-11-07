@@ -267,14 +267,33 @@ def speaker_at(scene_dir, T, present):
     return None
 
 
+NOT_IF = {"手を振": ("振りかざ", "振り回", "振り払", "振り上げ")}   # 「雷の手を振りかざす」は手を振る（笑み）ではない
+
+
 def expr_from_text(text):
     for name, words in WORDS:
-        if any(wd in text for wd in words):
+        if any(wd in text and not any(x in text for x in NOT_IF.get(wd, ())) for wd in words):
             return name
     return None
 
 
 _JA_ALL = None
+
+
+def _subject_first(clause, hit, names):
+    """区切りの主語を先頭にする: 「〜が」「〜は」の付いた名前 → 区切りの終わりの名前（「アルレッキーノをにらむルッキーニィ」はルッキーニィ）→ 前に出る名前。"""
+    if len(hit) < 2:
+        return hit
+    def ja_of(w):
+        return [j for j in names.get(w) or [] if j] or ([ja_names()[w]] if w in ja_names() else [])
+    for w in hit:
+        if any(f"{j}が" in clause or f"{j}は" in clause for j in ja_of(w)):
+            return [w] + [x for x in hit if x != w]
+    tail = clause.rstrip("　 。、！？…）」")
+    for w in hit:
+        if any(j and tail.endswith(j) for j in ja_of(w)):
+            return [w] + [x for x in hit if x != w]
+    return hit
 
 
 def ja_names():
@@ -305,7 +324,8 @@ def acting_expr(acting, names):
             continue
         hit = sorted((min(clause.find(j) for j in ja if j and j in clause), w) for w, ja in names.items() if ja and any(j and j in clause for j in ja))
         hit = [w for _p, w in hit]   # 区切りの中で前に出てくる順（「ビスコが百騎兵をにらむ」はビスコ。2026-11-07 までは人物の並び順で取り違えた）
-        for w in hit[:1]:   # 区切りの最初の名前（主語）だけ
+        hit = _subject_first(clause, hit, names)
+        for w in hit[:1]:   # 区切りの主語だけ
             out.setdefault(w, ex)
     return out
 

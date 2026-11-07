@@ -5,7 +5,8 @@
   python tools/expr_map.py episodes/A/scenes/A17 --all     # 全カット
 
 表情の決め方は previs.py の face_state と同じ（tools/previs_face.py）:
-  keys の expr → 話している台詞の文の感動詞と記号 → カットの画の名前（shot）と芝居（acting）の文で、その人の名前と同じ区切りにある言葉 → ふつう
+  keys の expr → 話している台詞の文の感動詞と記号 → カットの画の名前（shot）と芝居（acting）の文で、その人が主語の区切りにある言葉
+  → 立ち位置の設計（blocking の act）の始め・終わりの文 → ふつう
 「気持ちの山」: 画の名前か芝居の文に気持ちの言葉（泣く・怒る・笑う・驚く・照れる…、previs_face.WORDS）があるカット。
 主役: 画の名前に最初に出てくる人。その人が台詞でも芝居でも keys でも「ふつう」なら、印（!）を付ける。
 """
@@ -56,8 +57,10 @@ def scene_map(scene_dir):
         pos = [(label.find(n[0]), w) for w, n in names.items() if n and n[0] and n[0] in label]
         if pos:
             subj = min(pos)[1]
+        bact = c.get("act") if isinstance(c.get("act"), dict) else {}   # 立ち位置の設計の始め・終わりの文（previs.py と同じく、ほかで決まらない人の補い）
+        act_se = {**previs_face.acting_expr(str(bact.get("end") or ""), names), **previs_face.acting_expr(str(bact.get("start") or ""), names)}
         subj_ex = (key_ex.get(subj) or [None])[0] if subj else None
-        subj_ex = subj_ex or (act.get(subj) if subj else None)
+        subj_ex = subj_ex or (act.get(subj) if subj else None) or (act_se.get(subj) if subj else None)
         flag = bool(mood and subj and not subj_ex and not any(e for _l, e in lines))
         rows.append({"cut": cut, "shot": label, "mood": mood, "subj": subj, "act": act, "keys": {w: v for w, v in key_ex.items() if v},
                      "lines": lines, "flag": flag})

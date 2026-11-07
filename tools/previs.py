@@ -1988,9 +1988,13 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     texts = previs_face._texts(st.dir)
     key_ex = {w: sorted((float(k.get("t", 0.0)), k["expr"]) for k in ks if isinstance(k, dict) and k.get("expr"))
               for w, ks in (plan.c.get("keys") or {}).items()}
+    act_ = plan.c.get("act") if isinstance(plan.c.get("act"), dict) else {}
+    act_start = previs_face.acting_expr(str(act_.get("start") or ""), names)   # 立ち位置の設計の「始め」「終わり」の文から（2026-11-07）。
+    act_end = previs_face.acting_expr(str(act_.get("end") or ""), names)       # 「終わり」はカットの 6 割の時刻から。どちらも、ほかで決まらない人だけ
+    t_end = 0.6 * float(sec)
 
     def face_state(who, t, T):
-        """(表情, 口の開き)。keys の expr → 話している台詞の言葉 → 芝居の文 → neutral。"""
+        """(表情, 口の開き)。keys の expr → 話している台詞の言葉 → 画の名前と芝居の文 → 立ち位置の設計の始め・終わりの文 → neutral。"""
         sp = previs_face.speaking(st.dir, who, plan.tc0 + T)
         ex = None
         for kt, kx in key_ex.get(who, []):
@@ -2000,6 +2004,8 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             ex = previs_face.expr_from_speech(texts.get(sp[0], ""))
         if ex is None:
             ex = acting_ex.get(who)
+        if ex is None:
+            ex = act_end.get(who) if (who in act_end and t >= t_end) else act_start.get(who) if (who not in act_end or t < t_end) else None
         if ex in ("angry", "annoyed") and sp and sp[1] > 0.5 and "！！" in texts.get(sp[0], ""):
             ex = "shout"
         return (ex or "neutral"), (sp[1] if sp else 0.0)
