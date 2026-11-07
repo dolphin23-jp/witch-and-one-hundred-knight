@@ -1,0 +1,56 @@
+A09-004:
+  shot: 全身・メタリカ（後ずさりの追い）
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - metallica
+    by:
+    - hat_brim
+    frames: 8/11
+A09-006:
+  shot: 全身→寄り・メタリカ
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - metallica
+    frame: 全身
+    measured: 1.51
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 9/11
+A09-012:
+  shot: 寄り・メタリカ・百騎兵
+  issues:
+  - kind: 話し手が見えない
+    who:
+    - metallica
+    line: L285
+A09-013:
+  shot: 全身（煽り）・メタリカ・百騎兵
+  issues:
+  - kind: 足が切れ
+    who:
+    - metallica
+    frames: 10/10
+A09-014:
+  shot: 全身（俯瞰）・メタリカ・百騎兵
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - metallica
+    by:
+    - hat_brim
+    frames: 9/12
+A09-015:
+  shot: 引き・寝室・メタリカ・百騎兵
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - metallica
+    by:
+    - hat_brim
+    frames: 5/11
