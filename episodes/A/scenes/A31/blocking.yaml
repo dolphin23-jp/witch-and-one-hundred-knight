@@ -678,8 +678,8 @@ cuts:
         pose: stand
       - {t: 0.3, pose: cross, face: 130}
     cam_keys:
-    - {t: 0.0, cam: [55.8, 60.6, 0.6], look: metallica-giant, look_h: 17.84, lens: 34.0, frame: 胸上}
-    - {t: 5.7, cam: [55.6, 60.8, 0.6], look: metallica-giant, look_h: 17.68, lens: 38.0}
+    - {t: 0.0, cam: [55.8, 60.6, 0.6], look: metallica-giant, look_h: 10.91, lens: 34.0, frame: 胸上}
+    - {t: 5.7, cam: [55.6, 60.8, 0.6], look: metallica-giant, look_h: 10.94, lens: 38.0}
     act: {start: 巨大メタリカが見下ろして笑う, do: （「キヒヒ！いいザマだな、三流魔女どもが」）, end: 腕を組む巨大メタリカ}
     camera: 部屋の南東の端の沼の面すれすれから見上げる（遠くからでないと顔が隠れる）
     kind: M
@@ -1478,17 +1478,8 @@ cuts:
         face: 300
         pose: point
     cam_keys:
-    - t: 0.0
-      cam: [46.8, 46.4, 0.5]
-      look: nezaria
-      look_h: 1.6
-      lens: 30
-      frame: 膝上
-    - t: 4.0
-      cam: [47.0, 46.6, 0.8]
-      look: nezaria
-      look_h: 2.2
-      lens: 26
+    - {t: 0.0, cam: [46.8, 46.4, 0.5], look: nezaria, look_h: 1.18, lens: 30.0, frame: 膝上}
+    - {t: 4.0, cam: [47.0, 46.6, 0.8], look: nezaria, look_h: 1.1, lens: 26.0}
     fx:
     - kind: light
       t: [0.6, 4.0]

@@ -15,6 +15,8 @@
   話し手が見えない 台詞の間ずっと、話し手（映っている人）の顔が見えず、カメラもほかの人を見ていない
   顔が向こう向き 寄り・胸上・膝上で、主役の顔がカメラの反対を向いている（顔の向きとカメラの角度 105 度より大きい、コマの半分以上）。
                  カットの説明（画・芝居・カメラ・姿勢）に、その人の背中・後ろ姿・振り向くなどとあれば数えない（2026-11-07、A08-005 で見つけた）
+  顔の高さ     寄り・胸上・膝上で、主役の顔の真ん中が画面の下 3 割より下か、上 8% より上（コマの半分以上）。A31-005「胸上・巨大メタリカ」で、
+               見る高さが顔より 6m 上で、顔が画面の下の端にあった（2026-11-07）
   線を越える   イマジナリーライン（180度ルール）。主役が見ている相手との二人を結ぶ線の、カメラがいる側を、カットの順に追う。
                前のカットで決まった側と反対の側から次のカットが始まると、向き合う二人が同じ向きを見ているように見える。
                線の上（線から 0.5m 以内か、二人の真ん中から見て 20 度以内）のカットと、カットの中でカメラが線を越えるカットは、そこで側を決め直す。二人が 1.5m 以上動いたら決め直す。
@@ -311,6 +313,18 @@ def analyze(scene_dir):
                           "what": "顔" if frame_rule(key)[1] == "head" else "体"})
         if feet >= max(1, 0.5 * n):
             found.append({"kind": "足が切れ", "who": whos, "frames": f"{feet}/{n}"})
+        # 顔の高さ（寄り・胸上・膝上で、顔が画面の下の端・上の端）
+        ys = {}
+        for s, w, _ in subj_rows:
+            if not w or not s["people"][w]["in"]:
+                continue
+            rule = frame_rule(s.get("frame"))
+            if rule and rule[0] in FACE_FRAMES:
+                ys.setdefault(w, []).append(float(s["people"][w]["y"]))
+        for w, v in ys.items():
+            bad = [y for y in v if y < 0.3 or y > 0.92]
+            if len(bad) >= max(1, 0.5 * n):
+                found.append({"kind": "顔の高さ", "who": [w], "frames": f"{len(bad)}/{n}", "y": round(sorted(v)[len(v) // 2], 2)})
         # 顔が向こう向き（寄り・胸上・膝上）
         away = {}
         for s, w, _ in subj_rows:
@@ -355,7 +369,7 @@ def report(scene_dir, issues, total):
             f"{i['kind']}（{'・'.join(i.get('who') or [])}" + (f"、{i['frames']}" if 'frames' in i else "")
             + (f"、{'・'.join(i['by'])}" if 'by' in i else "") + (f"、{i['frame']} の{i['what']}の大きさ {i['measured']}、目安 {i['expect'][0]}〜{i['expect'][1]}" if i['kind'] == '大きさ' else "")
             + (f"、{i['line']}" if 'line' in i and i['kind'] != '線を越える' else "") + (f"、顔とカメラの角度 {i['angle']} 度" if 'angle' in i else "")
-            + (f"、{i['after']} と反対の側から" if 'after' in i else "") + "）" for i in v["issues"]))
+            + (f"、{i['after']} と反対の側から" if 'after' in i else "") + (f"、顔の高さ {i['y']}（下 0・上 1）" if 'y' in i else "") + "）" for i in v["issues"]))
     (scene_dir / "gen" / "framing_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (scene_dir / "gen" / "framing_issues.yaml").write_text(yaml.safe_dump(issues, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
     return kinds
