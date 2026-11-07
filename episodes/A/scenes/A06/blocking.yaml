@@ -96,10 +96,10 @@ cuts:
         - {t: 4.0, at: ti_tbl1, face: 110, pose: stand, ease: out}
         - {t: 11.6, at: ti_tbl1, face: 110, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [57.0, 28.5, 1.3], look: luckiny, look_h: 0.67, lens: 32.0, frame: 全身}
-      - {t: 2.4, cam: [59.4, 28.75, 1.25], look: luckiny, look_h: 0.69, lens: 22, ease: inout}
-      - {t: 8.4, cam: [59.4, 28.75, 1.25], look: luckiny, look_h: 0.69, lens: 22}
-      - {t: 11.6, cam: [59.3, 28.3, 1.2], look: luckiny, look_h: 0.68, lens: 18, ease: inout}
+      - {t: 0.0, cam: [57.0, 28.5, 1.3], look: luckiny, look_h: 0.29, lens: 32.0, frame: 全身}
+      - {t: 2.4, cam: [59.4, 28.75, 1.25], look: luckiny, look_h: 0.99, lens: 35.0, ease: inout}
+      - {t: 8.4, cam: [59.4, 28.75, 1.25], look: luckiny, look_h: 1.0, lens: 35.0}
+      - {t: 11.6, cam: [59.3, 28.3, 1.2], look: luckiny, look_h: 1.08, lens: 45.0, ease: inout}
     bg: tito_room
     act: {start: 夜のティトの家。奥のカーテンを弾いてルッキーニィが元気に入ってくる。続いてティトも奥から出てくる, do: 百騎兵の前で止まって「ようこそ我が家へ」。「あっ、名前を」で口に手を当て、「〜といいます」でぺこりとお辞儀、「是非、」で両手を腰に当てて胸を張る。奥でティトがほほえんで見ている, end: 胸を張るルッキーニィ（百騎兵の肩越し、奥にティト）, sync: L176「ようこそ我が家へ。…ラナ・ニア・ルッキーニィといいます。」は 0.4秒から、L177「是非、ルッキーニィと呼んでください。」は 8.9秒から}
     camera: 入ってくるのを追って横に振り、百騎兵の肩越しで止まる → L177 でゆっくり寄る
@@ -155,10 +155,10 @@ cuts:
       villager-c:
         - {t: 0.0, at: vc, face: 340, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 1.6, lens: 22.0, frame: 引き}
-      - {t: 4.6, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 1.6, lens: 22.0}
-      - {t: 5.0, cam: [58.95, 34.3, 0.35], look: villager-b, look_h: 0.89, lens: 18, ease: inout}
-      - {t: 10.6, cam: [58.95, 34.3, 0.4], look: villager-b, look_h: 0.89, lens: 18}
+      - {t: 0.0, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 0.66, lens: 22.0, frame: 引き}
+      - {t: 4.6, cam: [58.95, 34.3, 0.35], look: [57.8, 30.3], look_h: 0.62, lens: 22.0}
+      - {t: 5.0, cam: [58.95, 34.3, 0.35], look: villager-b, look_h: 1.35, lens: 32.0, ease: inout}
+      - {t: 10.6, cam: [58.95, 34.3, 0.4], look: villager-b, look_h: 1.37, lens: 35.0}
     bg: door_out
     light_en: "Night outside the house: a deep blue starry sky, the flickering orange light of the villagers' torches, warm lamplight from the open doorway."
     act: {start: 外。開いた扉の前で、松明を持った村人3人に囲まれたティト（2026-11-01 ユーザーの見直し 3回目）, do: 村人たちがにらむ間（1.5秒）。「え、ええっ！？」で後ずさる。カメラが話し出した村人Bへ速く振る, end: 一歩詰め寄る村人B, sync: L180（ティト）は 1.5秒から、L181（村人B）「近くで砂食みを見たヤツがいるんだ！…」は L180 の 0.25秒あと}
@@ -182,8 +182,8 @@ cuts:
       villager-c:
         - {t: 0.0, at: vc, face: 355, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 0.86, lens: 35.0, frame: 全身}
-      - {t: 3.6, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 0.86, lens: 22, ease: linear}
+      - {t: 0.0, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 1.12, lens: 35.0, frame: 全身}
+      - {t: 3.6, cam: [58.3, 29.2, 1.6], look: villager-a, look_h: 1.27, lens: 40.0, ease: linear}
     bg: door_out
     light_en: "Night outside the house: a deep blue starry sky, the flickering orange light of the villagers' torches, warm lamplight from the open doorway."
     act: {start: ティトの肩越しに、詰め寄る村人たち, do: 村人Aが一歩出て叫ぶ, end: 叫ぶ村人A, sync: L182（村人A）「すぐに村も襲われるかもしれないぞ！」は 0.3秒から（L183 は次の 004b へ移した（2026-11-01 ユーザーの見直し 3回目））}
@@ -273,9 +273,9 @@ cuts:
         - {t: 0.0, at: hk_peek, face: 175, pose: stand}
         - {t: 2.0, at: hk_peek, face: "@luckiny", pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [56.9, 31.1, 1.4], look: [57.45, 28.8], look_h: 0.39, lens: 44.0, frame: 全身}
-      - {t: 2.4, cam: [56.9, 31.1, 1.4], look: [57.5, 29.05], look_h: 0.69, lens: 24, ease: inout}
-      - {t: 10.7, cam: [56.95, 30.95, 1.35], look: [57.5, 29.05], look_h: 0.66, lens: 23, ease: linear}
+      - {t: 0.0, cam: [56.9, 31.1, 1.4], look: [57.45, 28.8], look_h: 0.67, lens: 44.0, frame: 全身}
+      - {t: 2.4, cam: [56.9, 31.1, 1.4], look: [57.5, 29.05], look_h: 1.06, lens: 48.0, ease: inout}
+      - {t: 10.7, cam: [56.95, 30.95, 1.35], look: [57.5, 29.05], look_h: 1.08, lens: 54.0, ease: linear}
     bg: tito_door
     light_en: "Night at the open front door: warm lamplight from inside the house falling on the doorway, the flickering orange light of torches from outside."
     act: {start: うつむくティトの肩越しに、開いた扉口, do: 奥で縮こまっていたルッキーニィが立ち上がり、おずおずと扉口まで出てくる（2026-11-01 ユーザーの見直し 3回目）。気づいたティトが振り返り、不安そうに「ラナ？どうなっているの？」と問う。ルッキーニィが目をそらしてうつむく, end: うつむくルッキーニィ, sync: L186（ティト）は 2.7秒から、L187「そ……、それは……！」は L186 の 0.25秒あと}
@@ -373,8 +373,8 @@ cuts:
         - {t: 0.0, at: lk_mid, face: 250, pose: stand}
         - {t: 8.3, at: lk_mid, face: "@tito", pose: stand}
     cam_keys:
-      - {t: 0.0, cam: {follow: tito, offset: [1.8, 0.2], z: 0.95}, look: tito, look_h: 0.74, lens: 18, frame: 全身}
-      - {t: 8.3, cam: {follow: tito, offset: [1.4, 0.15], z: 0.95}, look: tito, look_h: 0.74, lens: 18}
+      - {t: 0.0, cam: {follow: tito, offset: [1.8, 0.2], z: 0.95}, look: tito, look_h: 0.89, lens: 19.0, frame: 全身}
+      - {t: 8.3, cam: {follow: tito, offset: [1.4, 0.15], z: 0.95}, look: tito, look_h: 1.17, lens: 35.0}
     bg: tito_door
     act: {start: 家の中。ティトが壁の角笛へ歩く, do: 角笛をつかんで振り返り、扉へ向かいながら「ラナは旅人さんと隠れてなさい！」, end: 扉の前で振り返るティト, sync: L190「砂食みが……！？こうしてはいられない……！」は 0.3秒から、L191「お母さん、行かなきゃならないわ。…」は 3.7秒から}
     camera: 角笛を取ったティトの前を、後ろに下がりながら追う
@@ -396,8 +396,8 @@ cuts:
         - {t: 2.8, at: door_in, face: 0, pose: stroke}
         - {t: 7.4, at: door_in, face: 0, pose: stroke}
     cam_keys:
-      - {t: 0.0, cam: [55.35, 28.7, 1.6], look: [57.78, 28.35], look_h: 1.33, lens: 87, frame: 寄り}
-      - {t: 7.4, cam: [55.6, 27.5, 1.6], look: [57.78, 28.35], look_h: 1.24, lens: 95, ease: inout}
+      - {t: 0.0, cam: [55.35, 28.7, 1.6], look: [57.78, 28.35], look_h: 1.33, lens: 72, frame: 寄り}
+      - {t: 7.4, cam: [55.6, 27.5, 1.6], look: [57.78, 28.35], look_h: 1.24, lens: 45.0, ease: inout}
     bg: tito_door
     act: {start: 扉の前のティトに、ルッキーニィが駆け寄ってすがりつく, do: ティトがかがんで、ルッキーニィの頭をなでる, end: 二人の横顔, sync: L192「そんな！！母さん……！！！」は 0.2秒から、L193「大丈夫。あなたを死なせはしないわ。絶対に……！」は 2.9秒から}
     camera: 二人の横顔の寄り。ゆっくり回り込む
@@ -539,8 +539,8 @@ cuts:
         - {t: 13.5, at: [55.4, 30.95], face: 285, pose: stand, ease: out}
         - {t: 17.2, at: [55.4, 30.95], face: 285, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [60.3, 30.9, 0.75], look: hundred-knight, look_h: 0.32, lens: 40.0, frame: 全身}
-      - {t: 9.0, cam: [60.1, 31.0, 0.75], look: hundred-knight, look_h: 0.32, lens: 28, ease: linear}
+      - {t: 0.0, cam: [60.3, 30.9, 0.75], look: hundred-knight, look_h: 0.48, lens: 40.0, frame: 全身}
+      - {t: 9.0, cam: [60.1, 31.0, 0.75], look: hundred-knight, look_h: 0.52, lens: 45.0, ease: linear}
       - {t: 13.4, cam: {follow: hundred-knight, offset: [1.4, 0.5], z: 1.0}, look: [34.0, 30.0], look_h: 0.6, lens: 30.0, ease: inout}
       - {t: 17.2, cam: {follow: hundred-knight, offset: [1.3, 0.45], z: 1.15}, look: [34.0, 30.0], look_h: 0.4, lens: 40.0, frame: 肩越し, ease: linear}
     bg: village_night
