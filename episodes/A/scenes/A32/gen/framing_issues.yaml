@@ -1,15 +1,3 @@
-A32-005:
-  shot: リリー・殺されるのか
-  issues:
-  - kind: 大きさ
-    who:
-    - lily
-    frame: 膝上
-    measured: 0.55
-    expect:
-    - 0.6
-    - 1.75
-    what: 体
 A32-010:
   shot: 巨大メタリカ・出すぎたマネを
   issues:
@@ -59,17 +47,6 @@ A32-017:
       - 46.2
     - - 50.77
       - 49.04
-A32-018:
-  shot: ビスコ・お前だって気が済むのか
-  issues:
-  - kind: 顔が外
-    who:
-    - bisco
-    frames: 10/13
-  - kind: 話し手が見えない
-    who:
-    - bisco
-    line: L1121
 A32-020:
   shot: ビスコ・おとなしくしててくれ
   issues:
@@ -130,10 +107,15 @@ A32-031:
 A32-033:
   shot: 巨大メタリカ・ビスコっ
   issues:
-  - kind: 顔が外
+  - kind: 大きさ
     who:
     - metallica-giant
-    frames: 4/10
+    frame: 胸上
+    measured: 0.09
+    expect:
+    - 0.12
+    - 0.5
+    what: 顔
 A32-038:
   shot: 白ネズミ・チュー → 朝の空へ
   issues:
@@ -144,5 +126,10 @@ A32-038:
     measured: 0.01
     expect:
     - 0.24
-    - 0.96
+    - 0.97
     what: 顔
+  - kind: 顔の高さ
+    who:
+    - nezaria
+    frames: 8/15
+    y: 0.2

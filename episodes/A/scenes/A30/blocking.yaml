@@ -1976,17 +1976,8 @@ cuts:
         face: 180
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [54.6, 52.2, 2.2]
-      look: rabi
-      look_h: 1.0
-      lens: 34
-      frame: 膝上
-    - t: 7.0
-      cam: [54.8, 52.4, 2.1]
-      look: rabi
-      look_h: 1.0
-      lens: 38
+    - {t: 0.0, cam: [54.6, 52.2, 1.45], look: rabi, look_h: 1.0, lens: 34, frame: 膝上}
+    - {t: 7.0, cam: [54.8, 52.4, 1.65], look: rabi, look_h: 1.0, lens: 38}
     act: {start: ラビィが目を輝かせる, do: （「な、なんだこいつ！メチャクチャやりやがって！！お、面白れええ！！」）跳びはねる, end: 跳びはねるラビィとウサギ人形}
     camera: ラビィの正面の高い所から
     kind: M

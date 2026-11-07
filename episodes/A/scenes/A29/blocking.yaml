@@ -2171,17 +2171,8 @@ cuts:
         face: 180
         pose: sit
     cam_keys:
-    - t: 0.0
-      cam: [51.2, 50.0, 1.9]
-      look: rabi
-      look_h: 1.2
-      lens: 34
-      frame: 膝上
-    - t: 13.1
-      cam: [51.6, 50.2, 1.8]
-      look: rabi
-      look_h: 1.3
-      lens: 38
+    - {t: 0.0, cam: [51.2, 50.0, 1.25], look: rabi, look_h: 1.2, lens: 34, frame: 膝上}
+    - {t: 13.1, cam: [51.6, 50.2, 1.49], look: rabi, look_h: 1.3, lens: 38}
     act: {start: ラビィが椅子の上に跳び乗るように立つ, do: 手を挙げる（「はい、はーい！アタシにそいつの処刑をさせてくれよ！」）、得意げに（「つーか、本当にそれほどの魔力を持つヤツならアタシ以外じゃ勝てねーだろ！」）, end: 胸を張るラビィ}
     camera: ラビィの左前（円卓の上の高い所）から
     kind: M
@@ -2460,8 +2451,8 @@ cuts:
         face: 180
         pose: sit
     cam_keys:
-    - {t: 0.0, cam: [48.93, 50.19, 3.05], look: berda, look_h: 1.11, lens: 30.0, frame: 膝上}
-    - {t: 10.7, cam: [48.85, 50.3, 2.9], look: berda, look_h: 1.18, lens: 34.0}
+    - {t: 0.0, cam: [48.93, 50.19, 1.65], look: berda, look_h: 1.11, lens: 30.0, frame: 膝上}
+    - {t: 10.7, cam: [48.85, 50.3, 1.64], look: berda, look_h: 1.18, lens: 34.0}
     act: {start: ベルダが議長に向き直る, do: （「さあ、霧の魔女ことネザリア議長！」）指をさす（「本議題の採決を！沼の魔女の魔力剥奪を求刑します！」）, end: 議長を指すベルダ}
     camera: 円卓の上の高い所（議長の側）から、ベルダを見下ろす
     kind: M
