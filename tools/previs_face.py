@@ -32,15 +32,15 @@ EXPR = {   # brow: 眉の内側を上げる角度（度、－で怒り）、rais
     "annoyed": dict(brow=-12, raise_=0.0, eye=0.58, mw=0.9, corner=-14, mo=0.0),
 }
 WORDS = [   # カットの芝居（acting）の文の言葉 → 表情（上ほど強い）。台詞の文には使わない（「お疲れ様」「泣き虫」「怒ってたなぁ」を取り違える）
-    ("grin", ("にやり", "ニヤ", "不敵", "高笑い", "ほくそ笑", "得意げ", "勝ち誇", "キヒヒ")),
+    ("grin", ("にやり", "ニヤ", "不敵", "高笑い", "ほくそ笑", "得意げ", "勝ち誇", "キヒヒ", "含み笑", "したり顔", "悪い顔")),
     ("shout", ("怒鳴", "叫ぶ", "叫び", "叫ん", "わめ")),
-    ("angry", ("怒る", "怒り", "怒っ", "激怒", "睨", "にらむ", "にらみ", "にらま", "いら立", "苛立", "噛みつ", "かみつ", "食ってかか")),
-    ("surprised", ("驚", "びっくり", "ぎょっ", "目を丸", "跳び上が", "飛び上が")),
+    ("angry", ("怒る", "怒り", "怒っ", "激怒", "睨", "にらむ", "にらみ", "にらま", "いら立", "苛立", "噛みつ", "かみつ", "食ってかか", "悔し", "歯ぎしり")),
+    ("surprised", ("驚", "びっくり", "ぎょっ", "目を丸", "跳び上が", "飛び上が", "凍りつ", "青ざめ", "固まる", "固まっ", "怯え", "おびえ", "息をのむ", "息を呑")),
     ("sad", ("泣く", "泣い", "泣き出", "涙", "悲し", "しょんぼり", "落ち込", "うなだれ", "寂し", "さびし", "うつむ")),
     ("shy", ("照れ", "赤面", "頬を染", "もじもじ", "恥ずかし")),
     ("tired", ("疲れ", "ため息", "溜息", "ぐったり", "眠", "へたり込", "息を切ら")),
-    ("annoyed", ("呆れ", "あきれ", "うんざり", "舌打ち", "困っ", "困り", "むっと", "ふくれ")),
-    ("smile", ("笑う", "笑っ", "笑顔", "微笑", "ほほえ", "嬉し", "うれし", "喜", "はしゃ", "にこ", "ニコ", "手を振")),
+    ("annoyed", ("呆れ", "あきれ", "うんざり", "舌打ち", "困っ", "困り", "むっと", "ふくれ", "むくれ", "すねる", "すねて", "ジト目")),
+    ("smile", ("笑う", "笑っ", "笑顔", "微笑", "ほほえ", "嬉し", "うれし", "喜", "はしゃ", "にこ", "ニコ", "手を振", "目を輝か", "吹き出", "ばんざい", "ほっと", "うっとり")),
 ]
 SPEECH = [   # 台詞の文の感動詞と記号 → 表情（話している間）
     ("grin", ("キヒヒ", "キーッヒッヒ", "ヒッヒッヒ", "フフフ", "フフッ", "クックッ", "ククク")),
@@ -274,14 +274,37 @@ def expr_from_text(text):
     return None
 
 
+_JA_ALL = None
+
+
+def ja_names():
+    """全部の配置（world/*-layout.yaml の people と world/ch7-people-extra.yaml）から集めた、人物の日本語の名前（「（」より前）。
+    配置によっては ja を書いていない人物がいる（居間のルッキーニィ・マーニィ）ので、その補いに使う。"""
+    global _JA_ALL
+    if _JA_ALL is None:
+        _JA_ALL = {}
+        for f in sorted((ROOT / "world").glob("*.yaml")):
+            try:
+                d = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+            except Exception:
+                continue
+            for w, pz in ((d.get("people") if isinstance(d, dict) else None) or {}).items():
+                ja = str((pz or {}).get("ja") or "").split("（")[0] if isinstance(pz, dict) else ""
+                if ja and w not in _JA_ALL:
+                    _JA_ALL[w] = ja
+    return _JA_ALL
+
+
 def acting_expr(acting, names):
     """カットの芝居の文から、人物ごとの表情（その人の名前と同じ区切り「。」「、」にある言葉）。names: {人物: 日本語の名前}。"""
     out = {}
-    for clause in re.split(r"[。、（）「」]", acting or ""):
+    names = {w: ([j for j in ja if j] or ([ja_names()[w]] if w in ja_names() else [])) for w, ja in names.items()}
+    for clause in re.split(r"[。、（）「」・]", acting or ""):   # 「・」は画の名前（寄り・泣くメタリカ）の区切り
         ex = expr_from_text(clause)
         if not ex:
             continue
-        hit = [w for w, ja in names.items() if ja and any(j and j in clause for j in ja)]
+        hit = sorted((min(clause.find(j) for j in ja if j and j in clause), w) for w, ja in names.items() if ja and any(j and j in clause for j in ja))
+        hit = [w for _p, w in hit]   # 区切りの中で前に出てくる順（「ビスコが百騎兵をにらむ」はビスコ。2026-11-07 までは人物の並び順で取り違えた）
         for w in hit[:1]:   # 区切りの最初の名前（主語）だけ
             out.setdefault(w, ex)
     return out

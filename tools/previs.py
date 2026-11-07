@@ -1984,7 +1984,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
         return (v.x, v.y) if v.z > 0 else None
 
     names = {w: [str(lay["people"][w].get("ja", "")).split("（")[0]] for w in plan.people}
-    acting_ex = previs_face.acting_expr(str(plan.shot.get("acting", "")), names)   # カットの芝居の文から（その人の名前と同じ区切りの言葉）
+    acting_ex = previs_face.acting_expr(str(plan.shot.get("shot", "")) + "。" + str(plan.shot.get("acting", "")), names)   # 画の名前（寄り・泣くメタリカ）と芝居の文から（その人の名前と同じ区切りの言葉。2026-11-07 に画の名前も）
     texts = previs_face._texts(st.dir)
     key_ex = {w: sorted((float(k.get("t", 0.0)), k["expr"]) for k in ks if isinstance(k, dict) and k.get("expr"))
               for w, ks in (plan.c.get("keys") or {}).items()}
