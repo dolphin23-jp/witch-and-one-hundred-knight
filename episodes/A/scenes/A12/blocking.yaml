@@ -117,8 +117,11 @@ cuts:
         - {t: 3.2, at: m_greet, face: 290, pose: proud}
         - {t: 5.3, at: m_greet, face: 290, pose: proud}
     cam_keys:
-      - {t: 0.0, cam: [6.9, 4.4, 0.8], look: metallica, look_h: 0.99, lens: 21.0, frame: 全身}
-      - {t: 5.3, cam: [6.4, 6.4, 0.8], look: metallica, look_h: 1.15, lens: 35.0, ease: linear}
+      - {t: 0.0, cam: [6.81, 4.36, 0.8], look: metallica, look_h: 0.99, lens: 21.0, frame: 全身}
+      - {t: 1.2, cam: [6.36, 5.92, 0.8], look: metallica, look_h: 1.02, lens: 24.0, ease: linear}
+      - {t: 2.2, cam: [4.9, 6.4, 0.8], look: metallica, look_h: 1.05, lens: 26.0, ease: linear}
+      - {t: 3.2, cam: [3.56, 6.04, 0.8], look: metallica, look_h: 1.1, lens: 30.0, ease: linear}
+      - {t: 5.3, cam: [3.02, 5.38, 0.8], look: metallica, look_h: 1.15, lens: 35.0, ease: out}
     bg: living
     act: {start: 拳を掲げたメタリカ, do: 嬉しさが抑えきれず、くるりと一回りして胸を張る, end: 胸を張ったメタリカ}
     camera: 東の低い所から、回るメタリカに合わせて回り込む（オービット、見せ場）
