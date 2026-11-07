@@ -7,8 +7,9 @@
   python tools/framing_fix.py episodes/A/scenes/A12 --dry-run  # 直す中身を見るだけ
 
 直し方（人物を見るキーごと。そのキーの時刻にいちばん近い測定のコマで）:
-  見る高さ = 顔の真ん中の高さ − 背 × {寄り 0.03・胸上 0.12・膝上 0.24・全身と引き 0.42}
-  レンズ    = 大きさが目安の外なら、今のレンズ × 目安の真ん中 ÷ 測った大きさ（18〜135mm。18mm で足りなければカメラの位置から考え直す）。目安の中なら変えない
+  見る高さ = 顔を画面の決まった高さ（寄り 0.52・胸上 0.6・膝上 0.68・全身 0.74・引き 0.66）に置く高さ（そのキーのレンズとカメラからの距離で計算）
+  レンズ    = 大きさが目安の外なら、今のレンズ × 目安の真ん中 ÷ 測った大きさ（元の 0.6〜1.8 倍・18mm 以上）。前のキーから引き継いだ画の大きさや、
+              二人・肩ごし・肩なめ・「→」の画は、レンズを変えず見る高さだけ直す（A07-016 の 26mm → 135mm、A14-007「寄り（二人）」で二人目が外れた、2026-11-07）。目安の中なら変えない
   画の大きさは、キーの frame（なければ前のキー、なければカットの frame。「全身→寄り」は最初のキーが全身、ほかは寄り）
 cam_keys の look・lens・look_h は書いていないキーへ引き継がれる（motion.py）ので、直したカットはすべてのキーに見る高さとレンズを書く（直さないキーは今までの値）。
 直した後は python tools/previs.py <場面> <カット>… --audit で測り直し、python tools/framing.py で確かめる。
@@ -27,7 +28,9 @@ import framing  # noqa: E402
 
 FIX = {"顔が外", "頭が切れ", "足が切れ", "大きさ", "顔が隠れ"}
 TARGET = {"寄り": ("head", 0.42), "胸上": ("head", 0.24), "膝上": ("body", 1.0), "全身": ("body", 0.72), "引き": ("body", 0.38), "大引き": ("body", 0.18)}
-OFF = {"寄り": 0.03, "胸上": 0.12, "膝上": 0.24, "全身": 0.42, "引き": 0.42, "大引き": 0.42}
+OFF = {"寄り": 0.03, "胸上": 0.12, "膝上": 0.24, "全身": 0.42, "引き": 0.42, "大引き": 0.42}   # カメラの位置が測定にないときだけ使う
+FACE_Y = {"寄り": 0.52, "胸上": 0.6, "膝上": 0.68, "全身": 0.74, "引き": 0.66, "大引き": 0.6}   # 顔を置く画面の高さ（下 0・上 1）
+HALF_SENSOR_H = 10.125   # mm（横 36mm・16:9 の縦の半分）
 
 
 def _fl(x):
@@ -138,7 +141,7 @@ def fix_scene(scene_dir, dry=False):
             if m is not None and rule is not None:
                 key = rule[0]
                 h = float(m.get("h") or people.get(subj, {}).get("h", 1.6))
-                new_lh = round(float(m["hz"]) - OFF[key] * h, 2)
+                new_lh = round(float(m["hz"]) - OFF[key] * h, 2)   # レンズを決めた後で、距離がわかれば置き直す
                 kind, tgt = TARGET[key]
                 size = float(m["frac"]) if kind == "head" else float(m["top"]) - float(m.get("fy", m["top"] - 1.0))
                 lo, hi = rule[2], rule[3]
@@ -146,9 +149,12 @@ def fix_scene(scene_dir, dry=False):
                     kk = max(1.0, min(2.6, (m["frac"] / max(1e-3, m["top"] - m.get("fy", 0.0))) / 0.16)) if m["top"] - m.get("fy", 0.0) > 0.05 else 1.0
                     hi *= kk
                     tgt = min(tgt * (1.0 + 0.35 * (kk - 1.0)), hi * 0.8)
-                if size > 0.01 and not (lo <= size <= hi):
+                lab_s = str(k.get("frame") or c.get("frame") or "")
+                inherited = not k.get("frame") and idx > 0
+                multi = any(w in lab_s for w in ("二人", "三人", "四人", "肩", "なめ", "→", "群", "全員"))
+                if size > 0.01 and not (lo <= size <= hi) and not inherited and not multi:   # 引き継いだ画の大きさ・二人以上の画はレンズを変えない
                     want = lens0 * tgt / size
-                    new_lens = round(max(18.0, min(135.0, want)))   # 18mm より広くはしない（ゆがみが強すぎる）
+                    new_lens = round(max(18.0, min(135.0, lens0 * 1.8, max(lens0 * 0.6, want))))   # 元の 0.6〜1.8 倍、18mm より広くはしない
                     cm = k.get("cam")
                     if want < 18.0 and isinstance(cm, list) and len(cm) >= 3 and "wx" in m and s.get("cam"):   # まだ大きすぎる: カメラを主役から引く（1.6m まで）
                         dx, dy = cm[0] - m["wx"], cm[1] - m["wy"]
@@ -157,6 +163,11 @@ def fix_scene(scene_dir, dry=False):
                             nd = min(dist + 1.6, dist * 18.0 / max(1.0, want))
                             k["cam"] = [round(m["wx"] + dx * nd / dist, 2), round(m["wy"] + dy * nd / dist, 2), cm[2]]
                             changed_cam = True
+                cam_now = k.get("cam") if isinstance(k.get("cam"), list) else s.get("cam")
+                if cam_now and "wx" in m:   # 顔を画面の FACE_Y の高さに置く見る高さ（そのキーのレンズとカメラからの距離で）
+                    d = ((cam_now[0] - m["wx"]) ** 2 + (cam_now[1] - m["wy"]) ** 2 + (cam_now[2] - m["hz"]) ** 2) ** 0.5
+                    fh = 2.0 * d * HALF_SENSOR_H / float(new_lens)
+                    new_lh = round(float(m["hz"]) - (FACE_Y[key] - 0.5) * fh, 2)
             elif lh0 is None and m is not None:   # 画の大きさがわからない人物のキー: 今までの既定（背の 0.75）を書く
                 new_lh = round(float(m.get("bz", m["hz"] - 0.9 * float(m.get("h", 1.6)))) + 0.75 * float(m.get("h", 1.6)), 2)
             elif lh0 is None:   # 場所を見るキーの既定は 0
