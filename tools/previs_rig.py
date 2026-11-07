@@ -552,6 +552,8 @@ def apply(rg, prm, bearing, x, y, z, t, dist=0.0, speed=0.0, spin_x=0.0, spin_z=
     la = list(prm.get("l_arm") or ZERO3)
     re_, le_ = float(prm.get("r_el", 0.0)), float(prm.get("l_el", 0.0))
     head = list(prm.get("head") or ZERO3)
+    if getattr(rg, "brim", False) and head[0] > 16.0:   # つばの広い帽子（メタリカ・魔女）: うつむきすぎると、つばで顔が隠れる（A08-007「あん？」、2026-11-07）
+        head[0] = 16.0 + (head[0] - 16.0) * 0.25
     if getattr(rg, "torch", None) is not None and not prm.get("torch_free"):   # 松明は頭の上に掲げて持つ
         ra, re_ = [150.0, 8.0, 0.0], 25.0
     lift_z = 0.0

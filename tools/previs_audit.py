@@ -8,15 +8,18 @@
   hz・bz 顔の真ん中と足元の高さ（m、Blender の z。tools/framing_fix.py が見る高さを決めるのに使う）
   wx・wy 顔の場面の x・y（m）。コマの cam はカメラの場面の x・y・高さ
   in     顔が画面の中にあるか
-  occ    カメラと顔の間をふさぐ物の名前（なければ null。半透明の物・効果・本人の帽子や髪は数えない）
+  occ    カメラと顔の間をふさぐ物の名前（なければ null。半透明の物・効果・本人の髪や腕は数えない。本人の帽子のつばは数える）
+  fa     顔の向きとカメラの向きの角度（度。0 で正面、90 で真横、90 を超えると顔が向こうを向いて写らない）
+  fh     顔の向き（場面の向き、北 0・東 90。tools/framing_fix.py がカメラを顔の前へ回すのに使う）
   probe  見る先の顔が隠れているコマだけ: カメラを左右・上下にずらして顔が見える、いちばん小さいずれ {dx, dy, dz}（tools/framing_fix.py が使う）
-と、カメラの見る先（look）・カットの画の大きさ（frame）・レンズを、episodes/<話>/scenes/<場面>/gen/framing.yaml に書く。
+と、カメラの見る先（look）・カットの画の大きさ（frame）・レンズ・カメラの向き（yaw、北 0・東 90。tools/framing.py が視線の左右を見るのに使う）を、episodes/<話>/scenes/<場面>/gen/framing.yaml に書く。
 読むのは tools/framing.py（話し手の顔が写っていない・切れている・隠れている・大きさが画の大きさと合わないカットを洗い出す）。
 
 2026-11-07 にこれを作ったきっかけ: A12-011「寄り・メタリカ」が、前の描き方でも新しい描き方でも胴体しか写っていなかった
 （階段の上（z 1.0）に立つメタリカを、見る高さ 1.5m（腰）で見ていた）。
 """
 import datetime
+import math
 import pathlib
 
 import bpy
@@ -62,8 +65,8 @@ def _occluder(scene, dg, origin, target, own_root, stop_short):
         remaining -= step
         if obj is None:
             continue
-        if _root_of(obj) is own_root:
-            return None   # 本人（帽子・髪・腕）に当たった
+        if _root_of(obj) is own_root:   # 本人（髪・腕）に当たった。帽子のつばだけは隠す物に数える（A08-007、2026-11-07）
+            return obj.name if obj.name.endswith("brim") else None
         if obj.hide_render or _translucent(obj):
             continue
         return obj.name
@@ -88,8 +91,9 @@ def measure(scene, cam, figs, plan, lay, t, T):
     origin = cam.matrix_world.translation.copy()
     look, frame = _cam_state(plan, t)
     cw = cam.matrix_world.translation
+    cf = cam.matrix_world.to_3x3() @ Vector((0, 0, -1))   # カメラの向き（カメラは -Z を見る）
     out = {"T": round(T, 2), "t": round(t, 2), "look": look, "frame": frame, "lens": round(float(cam.data.lens), 1),
-           "cam": [round(cw.x, 2), round(-cw.y, 2), round(cw.z, 2)], "people": {}}
+           "cam": [round(cw.x, 2), round(-cw.y, 2), round(cw.z, 2)], "yaw": round(math.degrees(math.atan2(cf.x, cf.y)) % 360.0), "people": {}}
     for who in plan.shown:
         rg = previs_rig.RIGS.get(who)
         if rg is None or who not in figs:
@@ -101,9 +105,13 @@ def measure(scene, cam, figs, plan, lay, t, T):
         vc, vt, vb, vf = (world_to_camera_view(scene, cam, p) for p in (c, top, chin, feet))
         inside = vc.z > 0 and 0.0 <= vc.x <= 1.0 and 0.0 <= vc.y <= 1.0
         occ = _occluder(scene, dg, origin, c, figs[who][0], hr * 1.05) if vc.z > 0 else None
+        fw = hm.to_3x3() @ Vector((0, 1, 0))   # 顔の向き（顔は頭の +Y の側）
+        tc = origin - c
+        fa = math.degrees(fw.angle(tc)) if fw.length > 1e-6 and tc.length > 1e-6 else 0.0
+        fh = math.degrees(math.atan2(fw.x, fw.y)) % 360.0   # 場面の向き（北 0・東 90。layout は y が南、Blender は y が北。staging.bearing_of と同じ）
         out["people"][who] = {"x": round(vc.x, 3), "y": round(vc.y, 3), "z": round(vc.z, 2), "frac": round(abs(vt.y - vb.y), 3),
                               "top": round(vt.y, 3), "fy": round(vf.y, 3), "in": bool(inside), "occ": occ, "hz": round(c.z, 2), "bz": round(feet.z, 2),
-                              "wx": round(c.x, 2), "wy": round(-c.y, 2),
+                              "wx": round(c.x, 2), "wy": round(-c.y, 2), "fa": round(fa), "fh": round(fh),
                               "h": float(lay["people"][who]["h"])}
     if look in out["people"] and out["people"][look]["occ"] and look in figs:   # 見る先の顔が隠れている: カメラを少しずらして見える所を探す
         out["probe"] = _probe(scene, dg, cam, previs_rig.RIGS[look], figs[look][0])
@@ -118,7 +126,7 @@ def _probe(scene, dg, cam, rg, own_root):
     right = (cam.matrix_world.to_quaternion() @ Vector((1, 0, 0)))
     right.z = 0.0
     right = right.normalized() if right.length > 1e-6 else Vector((1, 0, 0))
-    cands = sorted({(dx, dz) for dx in (0.0, 0.15, -0.15, 0.3, -0.3, 0.45, -0.45, 0.6, -0.6, 0.8, -0.8) for dz in (0.0, 0.15, 0.3, -0.15, 0.45)},
+    cands = sorted({(dx, dz) for dx in (0.0, 0.15, -0.15, 0.3, -0.3, 0.45, -0.45, 0.6, -0.6, 0.8, -0.8) for dz in (0.0, 0.15, 0.3, -0.15, 0.45, -0.3)},   # -0.3 は帽子のつばの下から顔を見る（2026-11-07）
                    key=lambda v: abs(v[0]) + abs(v[1]) * 1.2)
     for dx, dz in cands:
         if dx == 0.0 and dz == 0.0:

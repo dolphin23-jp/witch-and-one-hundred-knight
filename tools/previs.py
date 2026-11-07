@@ -1250,6 +1250,8 @@ def build_person(who, h, torch=False, sword=False):
         hat = make_mat("hat", (0.35, 0.2, 0.5))
         prim("cyl", hat, "hat_brim", head, (0, 0, hr * 1.7), radius=0.38, depth=0.025)
         prim("cone", hat, "hat_cone", head, (0, -0.03, hr * 1.7 + 0.3), (math.radians(8), 0, 0), radius1=0.25, radius2=0.0, depth=0.6)
+        if rig is not None:
+            rig.brim = True   # うつむきの角度を抑える（previs_rig.apply）
         for sx in (-1, 1):   # 長い三つ編み（背中側を見分けるため）
             prim("cyl", m_dark, f"braid{sx}", head, (sx * 0.1, -hr * 0.9, -0.45), radius=0.04, depth=1.1)
     elif who in WITCHES:   # 夜会の魔女と見習い魔女のとんがり帽子（人物の色を濃くしたもの）
@@ -1257,6 +1259,8 @@ def build_person(who, h, torch=False, sword=False):
         big = 1.0 if who.startswith("apprentice") else 1.15
         prim("cyl", hat, f"{who}_brim", head, (0, 0, hr * 1.7), radius=0.3 * big, depth=0.02)
         prim("cone", hat, f"{who}_cone", head, (0, 0, hr * 1.7 + 0.25 * big), radius1=0.18 * big, radius2=0.0, depth=0.5 * big)
+        if rig is not None:
+            rig.brim = True
     elif who == "karakuri-doll":
         cap = make_mat("doll_cap", (0.5, 0.3, 0.25))
         skull = make_mat("doll_skull", (0.9, 0.85, 0.7))
