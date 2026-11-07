@@ -174,12 +174,12 @@ cuts:
       hundred-knight:
         - {t: 0.0, at: hk_in, face: 0, pose: stand}
       tito:
-        - {t: 0.0, at: ti_kn, face: 180, pose: kneel_hold}
+        - {t: 0.0, at: ti_kn, face: 180, pose: kneel_hold, expr: smile}
         - {t: 1.6, at: ti_kn, face: 180, pose: kneel}
         - {t: 6.5, at: ti_kn, face: 180, pose: kneel}
     cam_keys:
-      - {t: 0.0, cam: [57.25, 28.1, 0.95], look: tito, look_h: 0.95, lens: 50, frame: 寄り}
-      - {t: 6.5, cam: [57.35, 27.85, 0.95], look: tito, look_h: 0.95, lens: 60, ease: linear}
+      - {t: 0.0, cam: [57.25, 28.1, 0.95], look: tito, look_h: 1.02, lens: 50.0, frame: 寄り}
+      - {t: 6.5, cam: [57.35, 27.85, 0.95], look: tito, look_h: 1.03, lens: 60.0, ease: linear}
     bg: tito_door
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
     act: {start: 切り返し。ひざをついたティトの寄り, do: 手を離し、心配そうに笑う, end: ティトの顔, sync: L163「魔女になると言って、３日前に出ていったきりで、心配してたんです。」は 0.15秒から}
@@ -222,14 +222,14 @@ cuts:
     only: [tito]
     keys:
       tito:
-        - {t: 0.0, at: ti_win, face: 0, pose: stand}
+        - {t: 0.0, at: ti_win, face: 0, pose: stand, expr: smile}
         - {t: 0.6, at: ti_win, face: 0, pose: look_up}
         - {t: 2.2, at: ti_win, face: 0, pose: look_up}
         - {t: 3.0, at: ti_win, face: 150, pose: stand}
         - {t: 7.5, at: ti_win, face: 150, pose: stand}
-        - {t: 7.8, at: ti_win, face: 150, pose: cover}
+        - {t: 7.8, at: ti_win, face: 150, pose: cover, expr: surprised}
         - {t: 8.5, at: ti_win, face: 120, pose: stand}
-        - {t: 8.9, at: [54.75, 24.55], face: 100, pose: walk}
+        - {t: 8.9, at: [54.75, 24.55], face: 100, pose: walk, expr: neutral}
         - {t: 10.1, at: [57.5, 24.55], pose: walk, ease: linear}
         - {t: 10.7, at: ti_cur, face: 30, pose: walk, ease: linear}
         - {t: 11.4, at: ti_back, face: 0, pose: walk, ease: linear}

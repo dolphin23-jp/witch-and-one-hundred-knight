@@ -59,8 +59,8 @@ cuts:
         - {t: 4.4, at: b_in, face: 315, pose: bow}
         - {t: 5.5, at: b_in, face: 315, pose: bow}
     cam_keys:
-      - {t: 0.0, cam: [5.3, 4.6, 0.9], look: bisco, look_h: 1.1, lens: 35, frame: 全身}
-      - {t: 5.5, cam: [5.6, 4.95, 0.95], look: bisco, look_h: 1.1, lens: 35}
+      - {t: 0.0, cam: [5.3, 4.6, 0.9], look: bisco, look_h: 0.97, lens: 35.0, frame: 全身}
+      - {t: 5.5, cam: [5.02, 4.62, 0.95], look: bisco, look_h: 1.04, lens: 35.0}
     bg: living
     act: {start: 玄関の扉が開く, do: 疲れきったビスコが入ってきて、肩を落として頭を下げる, end: 頭を下げたビスコ}
     camera: 玄関の内側の低い位置から、入ってくるビスコを正面で。ゆっくり寄る
@@ -79,8 +79,8 @@ cuts:
         - {t: 0.0, at: b_in, face: 315, pose: bow}
         - {t: 7.2, at: b_in, face: 300, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: {follow: metallica, offset: [-1.5, 1.3], z: 0.45}, look: metallica, look_h: 1.3, lens: 24, frame: 全身}
-      - {t: 7.2, cam: {follow: metallica, offset: [-2.1, 1.7], z: 0.5}, look: metallica, look_h: 1.3, lens: 24}
+      - {t: 0.0, cam: {follow: metallica, offset: [-1.5, 1.3], z: 0.45}, look: metallica, look_h: 0.79, lens: 24.0, frame: 全身}
+      - {t: 7.2, cam: {follow: metallica, offset: [-2.1, 1.7], z: 0.5}, look: metallica, look_h: 0.8, lens: 24.0}
     bg: living
     act: {start: 腕組みのメタリカ, do: にやりと振り返り、テーブルの横を通ってビスコへ歩み寄りながら指を立てる, end: ビスコの前で指を立てるメタリカ}
     camera: メタリカの足もとの低い位置（南西）から見上げる煽り。ゆっくり引く
@@ -95,10 +95,10 @@ cuts:
         - {t: 2.0, at: m_greet, face: 300, pose: arms_up}
         - {t: 6.6, at: m_greet, face: 300, pose: arms_up}
     cam_keys:
-      - {t: 0.0, cam: [3.4, 4.4, 1.4], look: table, look_h: 0.9, lens: 35, frame: インサート}
-      - {t: 1.2, cam: [3.4, 4.4, 1.4], look: table, look_h: 0.9, lens: 35}
-      - {t: 3.2, cam: [3.4, 4.4, 1.4], look: metallica, look_h: 1.45, lens: 35, frame: 胸上}
-      - {t: 6.6, cam: [3.5, 4.45, 1.45], look: metallica, look_h: 1.5, lens: 40}
+      - {t: 0.0, cam: [3.4, 4.4, 1.4], look: table, look_h: 0.9, lens: 35.0, frame: インサート}
+      - {t: 1.2, cam: [3.4, 4.4, 1.4], look: table, look_h: 0.9, lens: 35.0}
+      - {t: 3.2, cam: [3.4, 4.4, 1.4], look: metallica, look_h: 1.37, lens: 35.0, frame: 胸上}
+      - {t: 6.6, cam: [3.5, 4.45, 1.45], look: metallica, look_h: 1.38, lens: 40.0}
     bg: living
     act: {start: テーブルの三品の寄り, do: 握った拳を掲げるメタリカへ振る, end: 拳を掲げたメタリカの顔}
     camera: テーブルの三品に寄った画から、右へ振ってメタリカの顔へ（見せ場）
@@ -108,7 +108,7 @@ cuts:
     only: [metallica, hundred-knight]
     keys:
       metallica:
-        - {t: 0.0, at: m_greet, face: 300, pose: arms_up}
+        - {t: 0.0, at: m_greet, face: 300, pose: arms_up, expr: smile}
         - {t: 0.4, at: m_greet, face: 300, pose: stand}
         - {t: 0.95, at: m_greet, face: 30, pose: stand, ease: linear}
         - {t: 1.5, at: m_greet, face: 120, pose: stand, ease: linear}
@@ -117,8 +117,11 @@ cuts:
         - {t: 3.2, at: m_greet, face: 290, pose: proud}
         - {t: 5.3, at: m_greet, face: 290, pose: proud}
     cam_keys:
-      - {t: 0.0, cam: [6.9, 4.4, 0.8], look: metallica, look_h: 1.2, lens: 35, frame: 全身}
-      - {t: 5.3, cam: [6.4, 6.4, 0.8], look: metallica, look_h: 1.2, lens: 35, ease: linear}
+      - {t: 0.0, cam: [6.81, 4.36, 0.8], look: metallica, look_h: 0.99, lens: 21.0, frame: 全身}
+      - {t: 1.2, cam: [6.36, 5.92, 0.8], look: metallica, look_h: 1.02, lens: 24.0, ease: linear}
+      - {t: 2.2, cam: [4.9, 6.4, 0.8], look: metallica, look_h: 1.05, lens: 26.0, ease: linear}
+      - {t: 3.2, cam: [3.56, 6.04, 0.8], look: metallica, look_h: 1.1, lens: 30.0, ease: linear}
+      - {t: 5.3, cam: [3.02, 5.38, 0.8], look: metallica, look_h: 1.15, lens: 35.0, ease: out}
     bg: living
     act: {start: 拳を掲げたメタリカ, do: 嬉しさが抑えきれず、くるりと一回りして胸を張る, end: 胸を張ったメタリカ}
     camera: 東の低い所から、回るメタリカに合わせて回り込む（オービット、見せ場）
@@ -141,8 +144,8 @@ cuts:
         - {t: 7.5, at: hk2, face: 80, pose: walk}
         - {t: 8.8, at: hk2, face: 80, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [4.8, 4.0, 1.6], look: bisco, look_h: 1.1, lens: 28, frame: 全身}
-      - {t: 8.8, cam: [5.45, 3.3, 0.95], look: b_sofa, look_h: 0.9, lens: 28}
+      - {t: 0.0, cam: [4.8, 4.0, 1.6], look: bisco, look_h: 0.77, lens: 28.0, frame: 全身}
+      - {t: 8.8, cam: [5.45, 3.3, 0.95], look: b_sofa, look_h: 0.9, lens: 28.0}
     bg: living
     act: {start: 玄関の前のビスコ, do: ソファへ崩れるように座り込み、背もたれにのけぞってため息。百騎兵がソファの端に寄る, end: ソファにのけぞるビスコ}
     camera: ソファの南から、座り込むビスコの高さに合わせて下がる（クレーン下げ）
@@ -159,9 +162,9 @@ cuts:
         - {t: 7.8, at: m_stair, z: 1.0, face: 120, pose: stand}
         - {t: 10.4, at: m_stair, z: 1.0, face: 120, pose: proud}
     cam_keys:
-      - {t: 0.0, cam: {follow: metallica, offset: [2.4, 0.4], z: 1.3}, look: metallica, look_h: 1.2, lens: 35, frame: 全身}
-      - {t: 7.0, cam: {follow: metallica, offset: [2.0, 0.6], z: 1.6}, look: metallica, look_h: 1.3, lens: 35, ease: linear}
-      - {t: 10.4, cam: [2.6, 4.4, 1.7], look: metallica, look_h: 1.4, lens: 35}
+      - {t: 0.0, cam: {follow: metallica, offset: [2.4, 0.4], z: 1.3}, look: metallica, look_h: 0.95, lens: 22.0, frame: 全身}
+      - {t: 7.0, cam: {follow: metallica, offset: [2.0, 0.6], z: 1.6}, look: metallica, look_h: 2.12, lens: 35.0, ease: linear}
+      - {t: 10.4, cam: [2.6, 4.4, 1.7], look: metallica, look_h: 2.16, lens: 35.0}
     bg: living
     act: {start: 胸を張るメタリカ, do: 機嫌よく階段へ向かい、数段上がる。途中で振り返って含みのある笑い, end: 階段の途中で振り返ったメタリカ}
     camera: 東から並走して追う（トラッキング）。階段の下で止まる
@@ -190,8 +193,8 @@ cuts:
         - {t: 1.0, at: b_sofa, z: 0.42, face: 200, pose: sit}
         - {t: 5.0, at: b_sofa, z: 0.42, face: 235, pose: sit}
     cam_keys:
-      - {t: 0.0, cam: [5.1, 2.75, 0.95], look: bisco, look_h: 1.0, lens: 50, frame: 胸上}
-      - {t: 5.0, cam: [5.1, 2.75, 0.95], look: bisco, look_h: 1.0, lens: 50}
+      - {t: 0.0, cam: [5.1, 2.75, 0.95], look: bisco, look_h: 1.38, lens: 50.0, frame: 胸上}
+      - {t: 5.0, cam: [5.1, 2.75, 0.95], look: bisco, look_h: 1.38, lens: 50.0}
     bg: living
     act: {start: ソファにのけぞるビスコ, do: きょとんと顔を上げてメタリカを見る。尻尾が小さく揺れる, end: メタリカを見るビスコ}
     camera: ビスコの目の高さ（ソファの前の低い所）から正面の寄り。止め
@@ -224,7 +227,7 @@ cuts:
     only: [metallica]
     keys:
       metallica:
-        - {t: 0.0, at: m_stair, z: 1.0, face: 20, pose: cross}
+        - {t: 0.0, at: m_stair, z: 1.0, face: 20, pose: cross, expr: angry}
         - {t: 0.6, at: m_stair, z: 1.0, face: 81, pose: cross}
         - {t: 4.0, at: m_stair, z: 1.0, face: 81, pose: cross}
       arlecchino:
@@ -232,9 +235,9 @@ cuts:
         - {t: 1.4, at: a_bow, face: 270, pose: shake}
         - {t: 4.0, at: a_bow, face: 270, pose: shake}
     cam_keys:
-      - {t: 0.0, cam: [2.6, 3.9, 2.0], look: metallica, look_h: 1.5, lens: 50, frame: 胸上}
-      - {t: 1.2, cam: [1.9, 3.85, 2.05], look: metallica, look_h: 1.5, lens: 85, frame: 寄り, ease: out}
-      - {t: 4.0, cam: [1.9, 3.85, 2.05], look: metallica, look_h: 1.5, lens: 85}
+      - {t: 0.0, cam: [2.6, 3.9, 2.0], look: metallica, look_h: 2.27, lens: 50.0, frame: 胸上}
+      - {t: 1.2, cam: [1.9, 3.85, 2.05], look: metallica, look_h: 2.42, lens: 51, frame: 寄り, ease: out}
+      - {t: 4.0, cam: [1.9, 3.85, 2.05], look: metallica, look_h: 2.41, lens: 85.0}
     bg: living
     act: {start: 階段の上のメタリカ, do: 首だけ回してアルレッキーノをじろりとにらむ（アルレッキーノは画の外で固まる。青い縦線と汗は合成）, end: にらむメタリカの顔}
     camera: メタリカの顔へ素早く寄る（ズームイン）
@@ -248,8 +251,8 @@ cuts:
         - {t: 0.4, at: a_bow, face: 260, pose: walk}
         - {t: 4.0, at: [6.9, 0.35], face: 250, pose: walk, ease: in}
     cam_keys:
-      - {t: 0.0, cam: {follow: arlecchino, offset: [-1.4, 2.6], z: 1.4}, look: arlecchino, look_h: 1.2, lens: 28, frame: 全身}
-      - {t: 4.0, cam: {follow: arlecchino, offset: [-1.4, 2.6], z: 1.4}, look: arlecchino, look_h: 1.2, lens: 28, ease: linear}
+      - {t: 0.0, cam: {follow: arlecchino, offset: [-1.4, 2.6], z: 1.4}, look: arlecchino, look_h: 0.89, lens: 28.0, frame: 全身}
+      - {t: 4.0, cam: {follow: arlecchino, offset: [-1.4, 2.6], z: 1.4}, look: arlecchino, look_h: 0.88, lens: 28.0, ease: linear}
     bg: living
     act: {start: 固まったアルレッキーノ, do: メタリカの方を向いたまま、そろそろと横歩きで後ずさり、本棚の奥へ逃げる, end: 本棚の奥へ消えるアルレッキーノ}
     camera: 南から、本棚ぞいに去るアルレッキーノを追う（トラッキング）
@@ -266,8 +269,8 @@ cuts:
         - {t: 0.0, at: [8.6, 0.6], face: 250, pose: stand}
         - {t: 6.1, at: [8.6, 0.6], face: 250, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [2.45, 2.85, 2.0], look: metallica, look_h: 1.4, lens: 50, frame: 膝上}
-      - {t: 6.1, cam: [2.45, 2.85, 2.0], look: metallica, look_h: 1.4, lens: 50}
+      - {t: 0.0, cam: [2.45, 2.85, 2.0], look: metallica, look_h: 2.21, lens: 30.0, frame: 膝上}
+      - {t: 6.1, cam: [2.45, 2.85, 2.0], look: metallica, look_h: 2.33, lens: 50.0}
     bg: living
     act: {start: にらんだ後のメタリカ, do: 手すりに寄りかかり、ぷいと横を向いてつぶやく（頬の赤みは合成）, end: 横を向いたメタリカ}
     camera: 北東から横顔で。動かさずに止める
@@ -288,8 +291,8 @@ cuts:
         - {t: 1.5, at: hk2, face: 235, pose: look_up}
         - {t: 4.9, at: hk2, face: 235, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [0.35, 4.3, 2.3], look: bisco, look_h: 0.9, lens: 40, frame: 胸上}
-      - {t: 4.9, cam: [0.5, 4.15, 2.3], look: bisco, look_h: 0.9, lens: 45}
+      - {t: 0.0, cam: [0.44, 4.42, 2.3], look: bisco, look_h: 1.4, lens: 72.0, frame: 胸上}
+      - {t: 4.9, cam: [0.59, 4.27, 2.3], look: bisco, look_h: 1.31, lens: 45.0}
     bg: living
     act: {start: ソファのビスコ, do: ソファから身を乗り出して目を丸くする。百騎兵もメタリカを見上げる, end: 目を丸くしたビスコ}
     camera: メタリカの肩ごし（南西の階段の上）から、ビスコへ。ゆっくり寄る
@@ -299,7 +302,7 @@ cuts:
     only: [metallica, bisco, hundred-knight]
     keys:
       metallica:
-        - {t: 0.0, at: m_stair, z: 1.0, face: 150, pose: stand}
+        - {t: 0.0, at: m_stair, z: 1.0, face: 150, pose: stand, expr: shout}
         - {t: 0.5, at: m_stair, z: 1.0, face: 175, pose: run}
         - {t: 1.8, at: [0.85, 5.5], z: 0.0, face: 175, pose: run, ease: in}
         - {t: 2.9, at: [1.7, 3.2], face: 25, pose: run, ease: linear}
@@ -307,7 +310,7 @@ cuts:
         - {t: 4.4, at: m_down, face: 63, pose: point}
         - {t: 7.5, at: m_down, face: 63, pose: point}
       bisco:
-        - {t: 0.0, at: b_sofa, z: 0.42, face: 235, pose: sit}
+        - {t: 0.0, at: b_sofa, z: 0.42, face: 235, pose: sit, expr: surprised}
         - {t: 4.2, at: b_sofa, z: 0.42, face: 240, pose: sit}
         - {t: 7.5, at: b_sofa, z: 0.42, face: 240, pose: sit}
       hundred-knight:
@@ -335,8 +338,8 @@ cuts:
         - {t: 1.2, at: hk2, face: 66, pose: look_up}
         - {t: 8.2, at: hk2, face: 66, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [1.85, 2.25, 0.8], look: metallica, look_h: 1.45, lens: 35, frame: 胸上}
-      - {t: 8.2, cam: [2.05, 2.15, 0.8], look: metallica, look_h: 1.45, lens: 40}
+      - {t: 0.0, cam: [1.85, 2.25, 0.8], look: metallica, look_h: 1.28, lens: 35.0, frame: 胸上}
+      - {t: 8.2, cam: [2.11, 2.29, 0.8], look: metallica, look_h: 1.27, lens: 40.0}
     bg: living
     act: {start: ビスコを指さすメタリカ, do: 百騎兵に向き直る。百騎兵はソファの脇で背筋を伸ばして聞く, end: 百騎兵を見下ろすメタリカ}
     camera: 百騎兵の目の高さ（0.8m）の後ろから、見上げるメタリカを正面で。ゆっくり寄る

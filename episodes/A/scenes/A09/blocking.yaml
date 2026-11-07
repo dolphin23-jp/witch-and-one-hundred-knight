@@ -99,10 +99,10 @@ cuts:
         - {t: 5.2, at: m_up, face: 160, pose: cross}
         - {t: 7.4, at: m_up, face: 160, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30, frame: 全身}
-      - {t: 1.9, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30}
-      - {t: 2.6, cam: [1.85, 2.65, 0.85], look: metallica, look_h: 1.1, lens: 28}
-      - {t: 7.4, cam: [1.8, 2.7, 0.9], look: metallica, look_h: 1.1, lens: 28}
+      - {t: 0.0, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30.0, frame: 全身}
+      - {t: 1.9, cam: [1.9, 2.6, 0.85], look: [4.1, 0.85], look_h: 0.5, lens: 30.0}
+      - {t: 2.6, cam: [1.85, 2.65, 0.85], look: metallica, look_h: 1.35, lens: 28.0}
+      - {t: 7.4, cam: [1.8, 2.7, 0.9], look: metallica, look_h: 0.79, lens: 28.0}
     shake: [{t: [2.1, 2.9], amp: 1.5}]
     bg: living
     act: {start: 朝の光。ソファで寝てしまったメタリカ, do: 「遅いっ」で跳ね起き、両腕を振り上げて怒鳴る, end: 腕を組んで玄関をにらむメタリカ}
@@ -142,8 +142,8 @@ cuts:
         - {t: 0.6, at: hk_door, face: 315, pose: stand}
         - {t: 4.1, at: hk_door, face: 315, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [6.3, 6.6, 0.75], look: metallica, lens: 35, frame: 全身}
-      - {t: 4.1, cam: [6.25, 6.55, 0.75], look: metallica, lens: 38}
+      - {t: 0.0, cam: [6.41, 6.5, 0.75], look: metallica, lens: 35.0, frame: 全身, look_h: 0.79}
+      - {t: 4.1, cam: [6.36, 6.45, 0.75], look: metallica, lens: 38.0, look_h: 0.8}
     bg: living
     act: {start: 腕を組んだメタリカ, do: 振り向いて、玄関の脇の百騎兵を指さす, end: 百騎兵を指さすメタリカ}
     camera: 百騎兵の肩ごし（低い）から、指さすメタリカを煽りで
@@ -160,8 +160,8 @@ cuts:
         - {t: 5.0, at: m_window, face: 350, pose: point}
         - {t: 7.3, at: m_window, face: 350, pose: point}
     cam_keys:
-      - {t: 0.0, cam: [2.85, 0.55, 1.45], look: metallica, lens: 28, frame: 全身}
-      - {t: 7.3, cam: [2.9, 0.55, 1.45], look: metallica, lens: 30}
+      - {t: 0.0, cam: [2.85, 0.55, 1.45], look: metallica, lens: 28.0, frame: 全身, look_h: 1.04}
+      - {t: 7.3, cam: [2.9, 0.55, 1.45], look: metallica, lens: 30.0, look_h: 1.25}
     bg: living
     act: {start: 指を立てたメタリカ（テーブルの西）, do: 丸窓へ歩いてきて、窓の外の森の方角を指す。「ゲロクソオンナ」で顔をしかめる, end: 窓の外（カメラ）を指すメタリカの寄り}
     camera: 丸窓の脇（北）から、近づいてくるメタリカを正面で。最後は窓の外を指す寄り
@@ -334,8 +334,8 @@ cuts:
         - {t: 1.3, at: hk_bed, face: 95, pose: cover}
         - {t: 6.8, at: hk_bed, face: 95, pose: cover}
     cam_keys:
-      - {t: 0.0, cam: [14.6, 1.55, 0.7], look: metallica, lens: 20, frame: 全身}
-      - {t: 6.8, cam: [14.65, 1.6, 0.7], look: metallica, lens: 22}
+      - {t: 0.0, cam: [14.6, 1.55, 0.7], look: metallica, lens: 20.0, frame: 全身, look_h: 1.49}
+      - {t: 6.8, cam: [14.15, 1.22, 0.7], look: metallica, lens: 22.0, look_h: 1.01}
     bg: bedroom
     act: {start: 腕を組むメタリカと、うずくまる百騎兵, do: ベッドから下りて仁王立ち、指さして叱る。百騎兵は頭を押さえる, end: 指さすメタリカと、頭を押さえる百騎兵}
     camera: 百騎兵の目の高さから見上げる広角の煽り

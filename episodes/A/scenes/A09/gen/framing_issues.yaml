@@ -1,0 +1,29 @@
+A09-006:
+  shot: 全身→寄り・メタリカ
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - metallica
+    frame: 全身
+    measured: 1.51
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 9/11
+A09-012:
+  shot: 寄り・メタリカ・百騎兵
+  issues:
+  - kind: 話し手が見えない
+    who:
+    - metallica
+    line: L285
+A09-013:
+  shot: 全身（煽り）・メタリカ・百騎兵
+  issues:
+  - kind: 足が切れ
+    who:
+    - metallica
+    frames: 10/10

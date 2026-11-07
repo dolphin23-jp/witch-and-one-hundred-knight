@@ -147,8 +147,8 @@ cuts:
     - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
     - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
     cam_keys:
-    - {t: 0.0, cam: [35.4, 5.6, 22.55], look: [34.6, 8.6], look_h: 23.0, lens: 32, frame: 全身}
-    - {t: 8.5, cam: [35.3, 5.8, 22.55], look: [34.6, 8.6], look_h: 23.0, lens: 36}
+    - {t: 0.0, cam: [35.4, 5.6, 22.55], look: [34.6, 8.6], look_h: 22.62, lens: 32.0, frame: 全身}
+    - {t: 8.5, cam: [35.3, 5.8, 22.55], look: [34.6, 8.6], look_h: 22.72, lens: 36.0}
     bg: azb_swamp
     act: {start: はしゃぐルッキーニィ, do: 沼の瘴気にむせて体を折り、咳き込む。ビスコが慌てて寄り、のぞき込む, end: 咳き込むルッキーニィと、のぞき込むビスコ}
     camera: 北の地面に近い所から二人の寄り
@@ -173,8 +173,8 @@ cuts:
     - {kind: pool, t: [-1.0, 0.0], at: bud, z: 22.0, r0: 7.0, r: 7.0}
     - {kind: light, t: [-1.0, 0.0], at: bud, z: 24.5, energy: 450, color: [150, 255, 170]}
     cam_keys:
-    - {t: 0.0, cam: [31.4, 12.3, 23.7], look: arlecchino, lens: 34, frame: 全身}
-    - {t: 6.0, cam: [31.5, 12.2, 23.7], look: arlecchino, lens: 38}
+    - {t: 0.0, cam: [31.4, 12.3, 23.7], look: arlecchino, lens: 34.0, frame: 全身, look_h: 23.21}
+    - {t: 6.0, cam: [31.5, 12.2, 23.7], look: arlecchino, lens: 38.0, look_h: 23.27}
     bg: azb_swamp
     act: {start: 咳き込むルッキーニィ, do: アルレッキーノがメタリカに「瘴気がございます」と手で示す。メタリカが振り向く, end: アルレッキーノとメタリカ（奥にむせるルッキーニィ）}
     camera: 南西のやや高い所からアルレッキーノの寄り
@@ -202,8 +202,8 @@ cuts:
     - {kind: spark, t: [1.0, 1.8], at: metallica, z: 23.3, color: [200, 255, 220]}
     - {kind: light, t: [1.0, 2.0], at: metallica, z: 23.4, energy: 120, color: [200, 255, 220], fade: 2.0}
     cam_keys:
-    - {t: 0.0, cam: [36.9, 7.4, 24.3], look: [33.6, 9.3], look_h: 23.9, lens: 32, frame: 寄り}
-    - {t: 8.5, cam: [36.6, 7.3, 24.3], look: [33.8, 8.9], look_h: 23.9, lens: 34}
+    - {t: 0.0, cam: [36.9, 7.4, 23.64], look: [33.6, 9.3], look_h: 23.44, lens: 58, frame: 寄り}
+    - {t: 8.5, cam: [36.6, 7.3, 23.58], look: [33.8, 8.9], look_h: 23.42, lens: 34.0}
     bg: azb_swamp
     act: {start: 振り向いたメタリカ, do: 「護符を作っておいたんだ」と指を立て、光る護符を取り出して、ルッキーニィの前へ差し出す, end: 護符を差し出すメタリカ}
     camera: ルッキーニィの肩ごし（北東の高い所）から、護符を差し出すメタリカ
@@ -445,8 +445,8 @@ cuts:
       - {t: 0.6, at: b_up, z: 26.0, face: 250, pose: stand}
       - {t: 8.0, at: b_up, z: 26.0, face: 250, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [61.2, 5.3, 27.1], look: luckiny, look_h: 27.0, lens: 35, frame: 全身}
-    - {t: 8.0, cam: [61.1, 5.25, 27.1], look: luckiny, look_h: 27.0, lens: 38}
+    - {t: 0.0, cam: [61.2, 5.3, 27.1], look: luckiny, look_h: 26.69, lens: 35.0, frame: 全身}
+    - {t: 8.0, cam: [61.1, 5.25, 27.1], look: luckiny, look_h: 26.69, lens: 38.0}
     bg: azb_summit
     act: {start: 弟子と紹介されたルッキーニィ, do: 緊張して深々とお辞儀し、名乗る。もう一度お辞儀, end: お辞儀するルッキーニィ}
     camera: ビスコの肩ごし（東）からルッキーニィ
@@ -489,8 +489,8 @@ cuts:
       - {t: 6.5, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
       - {t: 9.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
     cam_keys:
-    - {t: 0.0, cam: [60.5, 2.6, 27.9], look: luckiny, look_h: 27.0, lens: 40, frame: 寄り}
-    - {t: 9.0, cam: [60.4, 2.75, 27.85], look: luckiny, look_h: 27.0, lens: 46}
+    - {t: 0.0, cam: [60.5, 2.6, 27.9], look: luckiny, look_h: 27.24, lens: 72, frame: 寄り}
+    - {t: 9.0, cam: [60.4, 2.75, 27.85], look: luckiny, look_h: 27.4, lens: 46.0}
     bg: azb_summit
     act: {start: 訴えるビスコ, do: ルッキーニィは目を輝かせて両手を握り「魔女の鑑ですね！」と跳ねる。ビスコはがっくりうつむく, end: 跳ねるルッキーニィと、うなだれるビスコ}
     camera: 北東のやや高い所から、ビスコの肩ごしにルッキーニィの寄り

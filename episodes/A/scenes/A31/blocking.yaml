@@ -544,13 +544,13 @@ cuts:
         - {t: 2.8, at: [44.0, 53.8], face: 300, pose: lie}
       metallica-giant:
         - {t: 0.0, at: [50.0, 48.6], face: 120, pose: {base: point, r_arm: [60, 10, 0], head: [30, 0, 0]}}
-        - {t: 0.8, at: [50.0, 48.6], face: 105, pose: {base: proud, head: [32, 0, 0], lean: 6}, blend: 0.6}
+        - {t: 0.8, at: [50.0, 48.6], face: 105, pose: {base: proud, head: [32, 0, 0], lean: 6}, blend: 0.6, expr: grin}
         - {t: 2.8, at: [50.0, 48.6], face: 105, pose: {base: proud, head: [32, 0, 0], lean: 6}}
     fx:
       - {kind: dust, t: 0.0, at: [54.3, 52.6], r: 3.0, h: 2.0, dur: 1.6, n: 10}
     cam_keys:
-      - {t: 0.0, cam: [55.9, 50.3, 0.35], look: metallica-giant, look_h: 11.4, lens: 20, frame: 全身}
-      - {t: 2.8, cam: [55.7, 50.25, 0.35], look: metallica-giant, look_h: 11.6, lens: 22, ease: inout}
+      - {t: 0.0, cam: [62.18, 51.62, 0.35], look: metallica-giant, look_h: 11.4, lens: 20, frame: 全身}
+      - {t: 2.8, cam: [58.76, 51.15, 0.35], look: metallica-giant, look_h: 11.6, lens: 22, ease: inout}
     bg: council_ruin
     act: {start: 百騎兵の肩越しに、巨大メタリカを見上げる, do: 百騎兵が振り向いて見上げる。巨大メタリカが胸を張って、にやりと見下ろす（二人の共同作業）, end: 見上げる百騎兵と、見下ろす巨大メタリカ, sync: （台詞なし。新しいカット）}
     camera: 百騎兵の後ろの床すれすれから、巨大メタリカの顔を見上げる
@@ -678,17 +678,8 @@ cuts:
         pose: stand
       - {t: 0.3, pose: cross, face: 130}
     cam_keys:
-    - t: 0.0
-      cam: [55.8, 60.6, 0.6]
-      look: metallica-giant
-      look_h: 11.4
-      lens: 34
-      frame: 胸上
-    - t: 5.7
-      cam: [55.6, 60.8, 0.6]
-      look: metallica-giant
-      look_h: 11.6
-      lens: 38
+    - {t: 0.0, cam: [55.8, 60.6, 0.6], look: metallica-giant, look_h: 10.91, lens: 34.0, frame: 胸上}
+    - {t: 5.7, cam: [55.6, 60.8, 0.6], look: metallica-giant, look_h: 10.94, lens: 38.0}
     act: {start: 巨大メタリカが見下ろして笑う, do: （「キヒヒ！いいザマだな、三流魔女どもが」）, end: 腕を組む巨大メタリカ}
     camera: 部屋の南東の端の沼の面すれすれから見上げる（遠くからでないと顔が隠れる）
     kind: M
@@ -850,17 +841,8 @@ cuts:
       - {t: 0.3, pose: stand, face: 160}
       - {t: 2.4, pose: arms_up}
     cam_keys:
-    - t: 0.0
-      cam: [52.75, 53.36, 11.5]
-      look: metallica-giant
-      look_h: 11.7
-      lens: 26
-      frame: 胸上
-    - t: 8.0
-      cam: [52.6, 53.1, 11.7]
-      look: metallica-giant
-      look_h: 11.9
-      lens: 30
+    - {t: 0.0, cam: [53.6, 54.72, 11.5], look: metallica-giant, look_h: 10.36, lens: 18, frame: 胸上}
+    - {t: 8.0, cam: [53.37, 54.5, 11.7], look: metallica-giant, look_h: 10.32, lens: 30.0}
     fx:
     - kind: bolt
       t: [2.9, 8.0]
@@ -1071,17 +1053,8 @@ cuts:
         face: 160
         pose: arms_up
     cam_keys:
-    - t: 0.0
-      cam: [43.6, 52.6, 1.1]
-      look: purple-peel
-      look_h: 1.1
-      lens: 30
-      frame: 全身
-    - t: 5.1
-      cam: [44.4, 48.6, 1.1]
-      look: purple-peel
-      look_h: 1.1
-      lens: 30
+    - {t: 0.0, cam: [42.99, 53.01, 1.1], look: purple-peel, look_h: 1.02, lens: 18.0, frame: 全身}
+    - {t: 5.1, cam: [43.99, 49.24, 1.1], look: purple-peel, look_h: 1.81, lens: 30.0}
     fx:
     - kind: bolt
       t: [1.6, 2.4]
@@ -1249,17 +1222,8 @@ cuts:
       - {t: 0.3, pose: arms_up, face: 180}
       - {t: 4.4, pose: shake}
     cam_keys:
-    - t: 0.0
-      cam: [48.4, 61.4, 0.3]
-      look: metallica-giant
-      look_h: 7.0
-      lens: 18
-      frame: 全身
-    - t: 10.8
-      cam: [49.4, 60.8, 0.35]
-      look: metallica-giant
-      look_h: 8.0
-      lens: 18
+    - {t: 0.0, cam: [48.4, 61.4, 0.3], look: metallica-giant, look_h: 6.42, lens: 18.0, frame: 全身}
+    - {t: 10.8, cam: [49.4, 60.8, 0.35], look: metallica-giant, look_h: 8.0, lens: 18}
     shake:
     - t: [1.4, 2.6]
       amp: 1.6
@@ -1514,17 +1478,8 @@ cuts:
         face: 300
         pose: point
     cam_keys:
-    - t: 0.0
-      cam: [46.8, 46.4, 0.5]
-      look: nezaria
-      look_h: 1.6
-      lens: 30
-      frame: 膝上
-    - t: 4.0
-      cam: [47.0, 46.6, 0.8]
-      look: nezaria
-      look_h: 2.2
-      lens: 26
+    - {t: 0.0, cam: [46.8, 46.4, 0.5], look: nezaria, look_h: 1.18, lens: 30.0, frame: 膝上}
+    - {t: 4.0, cam: [47.0, 46.6, 0.8], look: nezaria, look_h: 1.1, lens: 26.0}
     fx:
     - kind: light
       t: [0.6, 4.0]
@@ -1777,17 +1732,8 @@ cuts:
         pose: point
       - {t: 0.3, pose: cross, face: 250}
     cam_keys:
-    - t: 0.0
-      cam: [45.76, 52.84, 10.6]
-      look: metallica-giant
-      look_h: 11.2
-      lens: 30
-      frame: 胸上
-    - t: 5.1
-      cam: [45.9, 52.5, 11.0]
-      look: metallica-giant
-      look_h: 11.4
-      lens: 32
+    - {t: 0.0, cam: [45.76, 52.84, 10.6], look: metallica-giant, look_h: 10.37, lens: 18.0, frame: 胸上}
+    - {t: 5.1, cam: [44.7, 53.56, 11.0], look: metallica-giant, look_h: 10.36, lens: 32.0}
     fx:
     - kind: fog
       t: [0.0, 5.1]
@@ -1951,17 +1897,8 @@ cuts:
         face: 250
         pose: cross
     cam_keys:
-    - t: 0.0
-      cam: [51.4, 55.4, 1.3]
-      look: bisco
-      look_h: 1.35
-      lens: 36
-      frame: 胸上
-    - t: 5.9
-      cam: [51.2, 55.8, 1.3]
-      look: bisco
-      look_h: 1.4
-      lens: 42
+    - {t: 0.0, cam: [51.4, 55.4, 1.3], look: bisco, look_h: 1.3, lens: 65.0, frame: 胸上}
+    - {t: 5.9, cam: [51.2, 55.8, 1.3], look: bisco, look_h: 1.21, lens: 42.0}
     act: {start: 朝日を浴びるビスコ, do: 破れた壁の向こうの朝焼けを見る（「あ、朝が来た……！ヴァルプルギスの夜会が終わる！」）, end: 朝日に目を細めるビスコ}
     camera: ビスコの斜め前から、朝日を逆光に
     kind: M

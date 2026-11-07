@@ -117,8 +117,8 @@ cuts:
         face: 140
         pose: stand
       - {t: 0.3, face: 145}
-      - {t: 2.3, pose: look_down}
-      - {t: 6.8, pose: stand}
+      - {t: 2.3, pose: look_down, expr: sad}
+      - {t: 6.8, pose: stand, expr: neutral}
       hundred-knight:
       - t: 0.0
         at: [54.0, 55.3]
@@ -213,17 +213,8 @@ cuts:
         at: [32.2, 49.8]
         face: 300
     cam_keys:
-    - t: 0.0
-      cam: [42.2, 55.2, 1.7]
-      look: [33.0, 49.8]
-      look_h: 0.6
-      lens: 28
-      frame: 大引き
-    - t: 6.8
-      cam: [41.8, 55.0, 1.6]
-      look: [32.6, 49.8]
-      look_h: 0.5
-      lens: 32
+    - {t: 0.0, cam: [42.2, 55.2, 1.7], look: [33.0, 49.8], look_h: 0.6, lens: 28.0, frame: 大引き}
+    - {t: 6.8, cam: [41.8, 55.0, 1.6], look: [32.6, 49.8], look_h: 0.5, lens: 32}
     fx:
     - kind: mist
       t: [0.0, 6.8]
@@ -357,17 +348,8 @@ cuts:
       - {t: 0.3, pose: stand, face: 120}
       - {t: 3.0, pose: arms_up}
     cam_keys:
-    - t: 0.0
-      cam: [31.6, 48.2, 1.3]
-      look: [36.4, 52.6]
-      look_h: 0.9
-      lens: 28
-      frame: 全身
-    - t: 5.8
-      cam: [31.65, 48.25, 1.3]
-      look: [35.8, 52.3]
-      look_h: 0.9
-      lens: 30
+    - {t: 0.0, cam: [31.6, 48.2, 1.3], look: [36.4, 52.6], look_h: 0.9, lens: 28.0, frame: 全身}
+    - {t: 5.8, cam: [31.65, 48.25, 1.3], look: [35.8, 52.3], look_h: 0.9, lens: 30}
     fx: []
     act: {start: 近づいてくる二人を見て、ミトンががっかりして身構える, do: （「んあ？魔女の所にいた……。な、何の用でちか！」）, end: 身構えるミトン}
     camera: ミトンの背中越しに（住みかの木箱の脇から）、歩いてくるルッキーニィと百騎兵
@@ -398,17 +380,8 @@ cuts:
         pose: arms_up
       - {t: 0.3, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [33.0, 51.9, 1.1]
-      look: [35.5, 52.4]
-      look_h: 0.85
-      lens: 30
-      frame: 全身
-    - t: 13.6
-      cam: [33.1, 51.95, 1.1]
-      look: [35.4, 52.4]
-      look_h: 0.9
-      lens: 34
+    - {t: 0.0, cam: [33.0, 51.9, 1.1], look: [35.5, 52.4], look_h: 0.95, lens: 30.0, frame: 全身}
+    - {t: 13.6, cam: [33.1, 51.95, 1.1], look: [35.4, 52.4], look_h: 1.01, lens: 34.0}
     act: {start: ルッキーニィが鼻を押さえるのをこらえて名乗る（「ボクはルッキーニィ。こっちは百騎兵さん。」）, do: （「ここへは、ええと……。何か応援の方法を、一緒に考えられないかと思って来たんですけど……。」）, end: 頭をかくルッキーニィ}
     camera: ミトンの側から、ルッキーニィと百騎兵
     kind: M
@@ -723,17 +696,8 @@ cuts:
       - {t: 2.73, pose: crouch, face: 110}
       - {t: 4.33, pose: hold}
     cam_keys:
-    - t: 0.0
-      cam: [36.4, 52.0, 1.2]
-      look: [32.6, 50.1]
-      look_h: 0.6
-      lens: 36
-      frame: 胸上
-    - t: 8.8
-      cam: [36.35, 51.95, 1.2]
-      look: [32.4, 50.0]
-      look_h: 0.65
-      lens: 40
+    - {t: 0.0, cam: [36.4, 52.0, 1.2], look: [32.6, 50.1], look_h: 0.47, lens: 36.0, frame: 胸上}
+    - {t: 8.8, cam: [36.35, 51.95, 1.2], look: [32.4, 50.0], look_h: 0.71, lens: 40.0}
     fx: []
     act: {start: ルッキーニィが叫ぶ（「なっ！？またゴミを食べて！」）, do: ミトンが振り向き、くわえたゴミを差し出す（「もぐもぐ……。おいちいでちよ。食べたいでちか？」）（「い、いりませんよ！」）, end: ゴミを差し出すミトン}
     camera: ルッキーニィの肩越しに、ゴミの前にしゃがんだミトン
@@ -764,23 +728,9 @@ cuts:
       - {t: 6.4, pose: shake}
       - {t: 11.24, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [33.4, 50.6, 1.35]
-      look: luckiny
-      look_h: 1.11
-      lens: 32
-      frame: 胸上
-    - t: 5.0
-      cam: [33.4, 50.6, 1.35]
-      look: luckiny
-      look_h: 1.11
-      lens: 32
-    - t: 12.1
-      cam: [33.45, 50.7, 1.3]
-      look: mitten
-      look_h: 0.95
-      lens: 30
-      ease: inout
+    - {t: 0.0, cam: [33.4, 50.6, 1.35], look: luckiny, look_h: 1.12, lens: 32.0, frame: 胸上}
+    - {t: 5.0, cam: [33.4, 50.6, 1.35], look: luckiny, look_h: 1.12, lens: 32.0}
+    - {t: 12.1, cam: [33.45, 50.7, 1.3], look: mitten, look_h: 0.84, lens: 30.0, ease: inout}
     fx: []
     act: {start: ルッキーニィが腰に手を当てて（「……というか、そんなところ王子様に見られたら嫌われますよ！」）, do: ミトンがおろおろ（「は、はわわ……。しょ、食事をしたら王子様に嫌われるんでちか！？」）, end: おろおろするミトン}
     camera: ミトンの頭の上の高さから、ルッキーニィを見る
@@ -850,17 +800,8 @@ cuts:
       - {t: 5.77, pose: stand, face: 115}
       - {t: 7.37, pose: crouch, face: 300}
     cam_keys:
-    - t: 0.0
-      cam: [31.6, 53.4, 0.9]
-      look: [33.6, 51.2]
-      look_h: 0.7
-      lens: 22
-      frame: 全身
-    - t: 10.9
-      cam: [31.7, 53.3, 0.9]
-      look: [33.6, 51.2]
-      look_h: 0.7
-      lens: 23
+    - {t: 0.0, cam: [31.6, 53.4, 0.9], look: [33.6, 51.2], look_h: 0.7, lens: 22.0, frame: 全身}
+    - {t: 10.9, cam: [31.7, 53.3, 0.9], look: [33.6, 51.2], look_h: 0.45, lens: 23.0}
     fx: []
     act: {start: ミトンがうなずく（「そ、そうだったんでちか……。ガマンしないとダメでちね……。もぐもぐ……。」）口は止まらない, do: （「わ！つ、つい……！ガマンするでち！もぐもぐ……。」）頭を抱えるルッキーニィ, end: 頭を抱えるルッキーニィと、食べ続けるミトン}
     camera: 広場の西の低い所から、横に並ぶ二人
@@ -1401,6 +1342,7 @@ cuts:
         at: [34.58, 52.92]
         face: 120
         pose: hold
+        expr: shy
       - {t: 0.3, pose: crouch}
       - {t: 1.0, pose: stand}
       - {t: 1.4, pose: hold, face: 120}
@@ -1456,6 +1398,7 @@ cuts:
         at: [34.58, 52.92]
         face: 120
         pose: stand
+        expr: smile
       - {t: 0.2, pose: crouch, face: 230}
       - {t: 0.8, pose: hold, face: 300}
       - {t: 1.2, pose: walk, face: 300}
@@ -1881,19 +1824,8 @@ cuts:
         pose: walk
         face: 0
     cam_keys:
-    - t: 0.0
-      cam: [34.6, 37.2, 1.2]
-      look: hundred-knight
-      look_h: 0.45
-      lens: 28
-      frame: 全身
-    - t: 6.3
-      cam: [35.0, 38.6, 7.5]
-      look: [34.0, 18.0]
-      look_h: 1.0
-      lens: 24
-      ease: inout
-      frame: 大引き
+    - {t: 0.0, cam: [34.6, 37.2, 1.2], look: hundred-knight, look_h: 0.29, lens: 28.0, frame: 全身}
+    - {t: 6.3, cam: [35.0, 38.6, 7.5], look: [34.0, 18.0], look_h: 1.0, lens: 24.0, ease: inout, frame: 大引き}
     act: {start: 百騎兵が紅葉の森の小道を進む, do: メタリカの声（「まぁ、それさえ覚えているなら好きにするがいいさ。」）, end: 森の奥（沼の方）へ消える百騎兵}
     camera: 百騎兵の後ろから、クレーンで梢の高さへ上がる（奥に沼の気配）
     kind: M

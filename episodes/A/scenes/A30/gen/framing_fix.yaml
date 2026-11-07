@@ -1,0 +1,251 @@
+'2026-11-06':
+  A30-038:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 5.78
+      look:
+      - 50.0
+      - 48.6
+      frame: 全身
+      look_h:
+      - -1.61
+      - -1.61
+      lens:
+      - 18.0
+      - 88
+'2026-11-07':
+  A30-014:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 0.0
+      look: teressa-swamp
+      frame: 寄り
+      look_h:
+      - 1.05
+      - 1.05
+      lens:
+      - 72.0
+      - 72.0
+      moved:
+        lower_for_brim:
+        - 1.45
+        - 1.14
+    - t: 15.8
+      look: teressa-swamp
+      frame: 寄り
+      look_h:
+      - 1.0
+      - 1.0
+      lens:
+      - 50.0
+      - 50.0
+      moved:
+        lower_for_brim:
+        - 1.1
+        - 1.08
+    note: つばの下へ下げると頭が画面の上で切れ、まだつばで隠れるので、元のカメラに戻した
+  A30-021:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: teressa-swamp
+      frame: 膝上
+      look_h:
+      - 0.7
+      - 0.91
+      lens:
+      - 34.0
+      - 34.0
+    - t: 12.73
+      look: berda
+      frame: 膝上
+      look_h:
+      - 1.11
+      - 1.05
+      lens:
+      - 30.0
+      - 30.0
+  A30-033:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: purple-peel
+      frame: 膝上
+      look_h:
+      - 1.03
+      - 1.17
+      lens:
+      - 30.0
+      - 30.0
+    - t: 11.7
+      look: purple-peel
+      frame: 膝上
+      look_h:
+      - 1.03
+      - 1.29
+      lens:
+      - 36.0
+      - 36.0
+  A30-038:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look:
+      - 49.6
+      - 50.6
+      frame: 全身
+      look_h:
+      - 1.4
+      - -0.3
+      lens:
+      - 22.0
+      - 22.0
+    - t: 5.78
+      look:
+      - 50.0
+      - 48.6
+      frame: 全身
+      look_h:
+      - 6.0
+      - -2.7
+      lens:
+      - 18.0
+      - 18.0
+    - t: 8.4
+      look:
+      - 50.0
+      - 48.6
+      frame: 大引き
+      look_h:
+      - 11.0
+      - -2.41
+      lens:
+      - 16.0
+      - 16.0
+    note: 巨大メタリカが沼からせり上がる見せ場。自動の直しで見る高さが地面の下になり、巨大メタリカが画面の上に切れていたので、元の設計（クレーンで追う）に戻した（2026-11-07）
+  A30-039:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: berda
+      frame: 胸上
+      look_h:
+      - 1.31
+      - 1.39
+      lens:
+      - 30.0
+      - 30.0
+    - t: 7.7
+      look: berda
+      frame: 胸上
+      look_h:
+      - 1.31
+      - 1.41
+      lens:
+      - 34.0
+      - 34.0
+  A30-040:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look:
+      - 56.2
+      - 54.8
+      frame: 膝上
+      look_h:
+      - 1.0
+      - 0.66
+      lens:
+      - 30.0
+      - 54
+  A30-025:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 48.6
+          - 50.47
+        - - 46.03
+          - 55.4
+        after: A30-023
+    - t: 7.3
+      moved:
+        mirror: *id001
+        after: A30-023
+    note: 鏡写しにすると 14 度 → 112 度（背中）になるので、元のカメラに戻した（線を越えたまま）
+  A30-032:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id002
+        - - 42.54
+          - 50.48
+        - - 43.45
+          - 53.53
+        after: A30-021
+    - t: 5.7
+      moved:
+        mirror: *id002
+        after: A30-021
+    note: 線で鏡写しにすると、ベルダの顔が向こう向きになるので、元のカメラに戻した（線を越えたまま。目で確かめる）
+  A30-013:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 0.0
+      look: teressa-swamp
+      frame: 膝上
+      look_h:
+      - 0.6
+      - 0.03
+      lens:
+      - 34.0
+      - 34.0
+    - t: 10.2
+      look: teressa-swamp
+      frame: 膝上
+      look_h:
+      - 0.8
+      - 0.89
+      lens:
+      - 38.0
+      - 38.0
+      moved:
+        dx: 0.0
+        dy: -0.0
+        dz: -0.15
+    note: 少しずらすと顔が画面の外へ出るので、元のカメラに戻した（つばで顔が隠れたまま）
+  A30-041:
+    issues:
+    - 顔の高さ
+    keys:
+    - t: 0.0
+      look: metallica-giant
+      frame: 胸上
+      look_h:
+      - 17.31
+      - 11.01
+      lens:
+      - 40.0
+      - 40.0
+    - t: 4.6
+      look: metallica-giant
+      frame: 胸上
+      look_h:
+      - 17.8
+      - 11.21
+      lens:
+      - 46.0
+      - 46.0

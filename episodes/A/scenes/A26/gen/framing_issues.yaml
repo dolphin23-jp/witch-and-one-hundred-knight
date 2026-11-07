@@ -1,0 +1,25 @@
+A26-010:
+  shot: 2人→議事塔
+  issues:
+  - kind: 顔が外
+    who:
+    - bisco
+    - guide-witch
+    frames: 11/19
+A26-011:
+  shot: 胸上・案内魔女（冬のニワトリ）
+  issues:
+  - kind: 顔が隠れ
+    who: &id001
+    - guide-witch
+    by:
+    - ENV_dais_station_city
+    frames: 16/24
+  - kind: 大きさ
+    who: *id001
+    frame: 胸上
+    measured: 0.1
+    expect:
+    - 0.12
+    - 0.5
+    what: 顔

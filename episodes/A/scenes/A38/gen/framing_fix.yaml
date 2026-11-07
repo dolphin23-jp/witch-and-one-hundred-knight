@@ -1,0 +1,59 @@
+'2026-11-07':
+  A38-006:
+    issues:
+    - 顔が向こう向き
+    keys:
+    - t: 0.0
+      look: mitten
+      frame: 胸上
+      look_h:
+      - 2.45
+      - 2.34
+      lens:
+      - 40.0
+      - 40.0
+      moved:
+        turn: -126
+    - t: 3.2
+      look: mitten
+      frame: 胸上
+      look_h:
+      - 2.55
+      - 2.46
+      lens:
+      - 44.0
+      - 44.0
+      moved:
+        turn: -99
+  A38-014:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 35.8
+          - 63.3
+        - - 34.19
+          - 63.2
+        after: A38-011
+    - t: 5.0
+      moved:
+        mirror: *id001
+        after: A38-011
+  A38-016:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id002
+        - - 35.77
+          - 63.37
+        - - 35.09
+          - 63.22
+        after: A38-011
+    - t: 6.0
+      moved:
+        mirror: *id002
+        after: A38-011

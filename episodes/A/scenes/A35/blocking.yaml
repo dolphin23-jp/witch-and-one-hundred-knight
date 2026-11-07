@@ -84,17 +84,8 @@ cuts:
       - {t: 0.3, pose: gesture, face: 230}
       - {t: 5.48, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [34.5, 32.0, 0.85]
-      look: arlecchino
-      look_h: 1.22
-      lens: 28
-      frame: 膝上
-    - t: 7.4
-      cam: [34.55, 31.95, 0.85]
-      look: arlecchino
-      look_h: 1.22
-      lens: 32
+    - {t: 0.0, cam: [34.5, 32.0, 0.85], look: arlecchino, look_h: 1.23, lens: 28.0, frame: 膝上}
+    - {t: 7.4, cam: [34.44, 32.14, 0.85], look: arlecchino, look_h: 1.23, lens: 32.0}
     act: {start: アルレッキーノが手袋の指で草の葉をつまんで見せる, do: （「ワタクシでございますか？　ワタクシは現在、定例のフィールドワークの真っ最中でございます」）, end: 得意げなアルレッキーノ}
     camera: 百騎兵の目の高さから、見上げるアルレッキーノ
     kind: M
@@ -151,17 +142,8 @@ cuts:
       - {t: 0.2, face: 80}
       - {t: 3.13, pose: look_up}
     cam_keys:
-    - t: 0.0
-      cam: [36.0, 32.1, 0.6]
-      look: hundred-knight
-      look_h: 0.71
-      lens: 32
-      frame: 胸上
-    - t: 4.3
-      cam: [35.9, 32.15, 0.6]
-      look: hundred-knight
-      look_h: 0.71
-      lens: 38
+    - {t: 0.0, cam: [36.0, 32.1, 0.6], look: hundred-knight, look_h: 0.71, lens: 32, frame: 胸上}
+    - {t: 4.3, cam: [35.9, 32.15, 0.6], look: hundred-knight, look_h: 0.71, lens: 38}
     act: {start: アルレッキーノの去った森を、百騎兵が見つめる, do: メタリカの声（「……ここは、沼からかなり距離があるぞ！」）, end: 首をかしげる百騎兵}
     camera: 百騎兵の正面の低い所から（背に東の森）
     kind: M
@@ -181,18 +163,8 @@ cuts:
         pose: run
         face: 0
     cam_keys:
-    - t: 0.0
-      cam: [36.8, 33.4, 5.4]
-      look: hundred-knight
-      look_h: 0.6
-      lens: 26
-      frame: 大引き
-    - t: 4.0
-      cam: [36.4, 27.4, 4.6]
-      look: *id003
-      look_h: 1.6
-      lens: 24
-      ease: inout
+    - {t: 0.0, cam: [36.8, 33.4, 5.4], look: hundred-knight, look_h: 0.24, lens: 26.0, frame: 大引き}
+    - {t: 4.0, cam: [36.4, 27.4, 4.6], look: [34.0, 13.0], look_h: 1.6, lens: 24.0, ease: inout}
     act: {start: 百騎兵が小道を北へ駆ける, do: 木々の向こうに、かすんだ沼が見えてくる, end: 沼の手前の百騎兵}
     camera: 梢の高さから、小道を駆ける百騎兵を追い、沼へ向けて振る
     kind: M
@@ -308,17 +280,8 @@ cuts:
       - {t: 0.3, pose: lean, face: 180}
       - {t: 4.2, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [32.6, 19.9, 2.6]
-      look: hundred-knight
-      lens: 30
-      frame: 膝上
-      look_h: 0.58
-    - t: 7.7
-      cam: [32.65, 20.0, 2.55]
-      look: hundred-knight
-      lens: 34
-      look_h: 0.58
+    - {t: 0.0, cam: [32.6, 19.9, 2.6], look: hundred-knight, lens: 54, frame: 膝上, look_h: 0.32}
+    - {t: 7.7, cam: [32.65, 20.0, 2.55], look: hundred-knight, lens: 34.0, look_h: 0.14}
     act: {start: 百騎兵が剣を構える, do: メタリカの声（「これは、さすがにちょっと、出来すぎてやしないか？」「キヒヒ、まあつまらん検証はいらん」）, end: 構えた百騎兵}
     camera: ジェルの肩越しに、構える百騎兵
     kind: M
@@ -390,7 +353,7 @@ cuts:
       - {t: [0.85, 1.4], amp: 1.0}
     cam_keys:
       - {t: 0.0, cam: [29.6, 24.0, 0.8], look: [34.4, 22.8], look_h: 0.9, lens: 24, frame: 全身}
-      - {t: 0.7, cam: [29.8, 24.1, 1.1], look: hundred-knight, lens: 24, roll: 8, ease: out}
+      - {t: 0.7, cam: [29.8, 24.1, 1.1], look: hundred-knight, lens: 24.0, roll: 8, ease: out, look_h: 1.12}
       - {t: 3.0, cam: [30.0, 24.2, 0.9], look: [35.4, 23.0], look_h: 0.6, lens: 26, roll: 0, ease: inout}
     bg: null
     act: {start: 岸で向き合う二人（西の低い所から）, do: ジェルが両手を上げて体を伸ばし、百騎兵めがけて跳びかかる。百騎兵は東へ跳んでかわし、ジェルは百騎兵のいた地面に叩きつけられる（止め・白黒のコマ、金色と緑のゲルが飛び散る）, end: 着地して構える百騎兵と、地面に広がったジェル, sync: （台詞なし）}
@@ -769,19 +732,8 @@ cuts:
         pose: run
         face: 180
     cam_keys:
-    - t: 0.0
-      cam: [35.6, 15.2, 1.6]
-      look: hundred-knight
-      look_h: 0.45
-      lens: 30
-      frame: 全身
-    - t: 11.2
-      cam: [35.8, 15.6, 6.8]
-      look: [34.0, 30.0]
-      look_h: 0.6
-      lens: 26
-      ease: inout
-      frame: 大引き
+    - {t: 0.0, cam: [35.6, 15.2, 1.6], look: hundred-knight, look_h: 0.45, lens: 30, frame: 全身}
+    - {t: 11.2, cam: [35.8, 15.6, 6.8], look: [34.0, 30.0], look_h: 0.6, lens: 26.0, ease: inout, frame: 大引き}
     fx:
     - kind: bloom
       t: [10.2, 0.0]

@@ -552,18 +552,8 @@ cuts:
         pose: stand
         z: 0.8
     cam_keys:
-    - t: 0.0
-      cam: [37.52, 57.28, 1.1]
-      look: luckiny
-      look_h: 0.9
-      lens: 32
-      frame: 膝上
-    - t: 12.1
-      cam: [37.52, 57.28, 1.1]
-      look: luckiny
-      look_h: 0.9
-      lens: 40
-      ease: inout
+    - {t: 0.0, cam: [37.52, 57.28, 1.1], look: luckiny, look_h: 0.9, lens: 32, frame: 膝上}
+    - {t: 12.1, cam: [37.52, 57.28, 1.1], look: luckiny, look_h: 0.9, lens: 40, ease: inout}
     act: {start: ルッキーニィが立ち上がり、ため息（「やっぱり、ちゃんと体を洗うしかないみたいですね……」）, do: 腕を組んで考え（「し、仕方ない。魔女邸のお風呂を使わせてもらうしかない、ですね」）, end: 決めたルッキーニィ}
     camera: ルッキーニィの正面（東）から、少し寄る
     kind: M
@@ -724,17 +714,8 @@ cuts:
         face: 250
         pose: stand
     cam_keys:
-    - t: 0.0
-      cam: [35.47, 55.7, 0.75]
-      look: mitten
-      lens: 35
-      frame: 寄り
-      look_h: 1.04
-    - t: 8.2
-      cam: [35.47, 55.7, 0.75]
-      look: mitten
-      lens: 40
-      look_h: 1.04
+    - {t: 0.0, cam: [35.47, 55.7, 0.75], look: mitten, lens: 35, frame: 寄り, look_h: 1.04}
+    - {t: 8.2, cam: [35.47, 55.7, 0.75], look: mitten, lens: 40, look_h: 1.04}
     fx: []
     act: {start: ミトンがしょげて, do: （「う……！わ、わかったでち……。お風呂に入りにいくでち……」）, end: うなだれるミトン}
     camera: ミトンの正面の低い所から

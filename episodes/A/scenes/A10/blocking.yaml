@@ -85,8 +85,8 @@ cuts:
         - {t: 1.0, at: hk_talk, face: 5, pose: look_up}
         - {t: 8.7, at: hk_talk, face: 5, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [17.4, 9.0, 1.5], look: arlecchino, lens: 35, frame: 全身}
-      - {t: 8.7, cam: [17.2, 9.9, 1.4], look: [14.85, 10.1], look_h: 1.1, lens: 35}
+      - {t: 0.0, cam: [17.4, 9.0, 1.5], look: arlecchino, lens: 35.0, frame: 全身, look_h: 1.25}
+      - {t: 8.7, cam: [17.2, 9.9, 1.4], look: [14.85, 10.1], look_h: 1.36, lens: 35.0}
     bg: forest
     act: {start: 向き合う二人, do: アルレッキーノが歩み出て、指を一本立てて説明する。百騎兵は見上げる, end: 指を立てるアルレッキーノと見上げる百騎兵}
     camera: 東から横顔の二人。歩くアルレッキーノに合わせて並走
@@ -155,8 +155,8 @@ cuts:
         - {t: 0.0, at: hk_talk, face: 10, pose: look_up}
         - {t: 8.6, at: hk_talk, face: 10, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [16.8, 8.2, 1.7], look: [14.8, 10.1], look_h: 0.9, lens: 32, frame: 全身}
-      - {t: 8.6, cam: [16.7, 8.3, 1.65], look: [14.8, 10.2], look_h: 0.8, lens: 35}
+      - {t: 0.0, cam: [16.8, 8.2, 1.7], look: [14.8, 10.1], look_h: 0.88, lens: 20, frame: 全身}
+      - {t: 8.6, cam: [16.7, 8.3, 1.65], look: [14.8, 10.2], look_h: 0.88, lens: 35.0}
     bg: forest
     act: {start: 腕を組むアルレッキーノとじっと見る百騎兵, do: 「お昼寝」で腰を落として寝る仕草、「いえ」で姿勢を正して腕を組み、思案のふり, end: 腕を組むアルレッキーノと百騎兵}
     camera: アルレッキーノの肩ごし（北東）から、百騎兵の顔へ
@@ -194,7 +194,7 @@ cuts:
         - {t: 0.0, at: hk_talk, face: 10, pose: look_up}
         - {t: 8.3, at: hk_talk, face: 10, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [15.6, 11.3, 0.4], look: arlecchino, look_h: 2.0, lens: 24, frame: 全身（煽り）}
+      - {t: 0.0, cam: [15.9, 12.2, 0.4], look: arlecchino, look_h: 2.0, lens: 24, frame: 全身（煽り）}
       - {t: 8.3, cam: [15.55, 11.2, 0.4], look: arlecchino, look_h: 2.1, lens: 24}
     bg: forest
     act: {start: 見上げるアルレッキーノ, do: 空を見上げたまま、背筋を伸ばして聞く, end: 背筋を伸ばしたアルレッキーノ}
@@ -219,9 +219,9 @@ cuts:
         - {t: 5.6, at: hk_talk, face: 120, pose: stand}
         - {t: 8.3, at: hk_talk, face: 150, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [17.3, 9.0, 1.5], look: [14.85, 10.1], look_h: 1.2, lens: 30, frame: 全身}
-      - {t: 4.2, cam: [17.3, 9.0, 1.5], look: [14.9, 10.0], look_h: 1.2, lens: 30}
-      - {t: 8.3, cam: [17.3, 9.1, 1.5], look: arlecchino, look_h: 1.2, lens: 30}
+      - {t: 0.0, cam: [17.3, 9.0, 1.5], look: [14.85, 10.1], look_h: 0.89, lens: 19, frame: 全身}
+      - {t: 4.2, cam: [17.3, 9.0, 1.5], look: [14.9, 10.0], look_h: 0.89, lens: 30.0}
+      - {t: 8.3, cam: [17.3, 9.1, 1.5], look: arlecchino, look_h: 0.88, lens: 30.0}
     bg: forest
     act: {start: 背筋を伸ばしたアルレッキーノと百騎兵, do: 空へ、次に百騎兵へお辞儀して、南の小道へ去っていく, end: 去っていく背中と、見送る百騎兵}
     camera: 東から二人を。去っていく背中を追って振る
@@ -254,8 +254,8 @@ cuts:
       - {kind: light, t: [1.6, 2.4], at: hundred-knight, z: 0.6, energy: 25, color: [120, 255, 230]}
       - {kind: spark, t: [1.6, 2.2], at: hundred-knight, z: 0.55, color: [150, 255, 230]}
     cam_keys:
-      - {t: 0.0, cam: [14.2, 11.4, 0.35], look: hundred-knight, look_h: 0.7, lens: 35, frame: 寄り}
-      - {t: 5.8, cam: [14.3, 11.3, 0.35], look: hundred-knight, look_h: 0.6, lens: 42}
+      - {t: 0.0, cam: [14.2, 11.4, 0.35], look: hundred-knight, look_h: 0.67, lens: 35.0, frame: 寄り}
+      - {t: 5.8, cam: [14.3, 11.3, 0.35], look: hundred-knight, look_h: 0.67, lens: 42.0}
     bg: forest
     act: {start: 百騎兵, do: 手を前に出すと、捕獲用のトーチカが碧く光って現れる, end: トーチカを持つ百騎兵}
     camera: 百騎兵の足もとの低い所から寄り

@@ -228,17 +228,8 @@ cuts:
         pose: cover
       - {t: 1.6, pose: proud}
     cam_keys:
-    - t: 0.0
-      cam: [48.8, 58.3, 0.8]
-      look: teressa
-      look_h: 1.3
-      lens: 32
-      frame: 肩なめ
-    - t: 5.4
-      cam: [48.9, 58.2, 0.8]
-      look: teressa
-      look_h: 1.35
-      lens: 36
+    - {t: 0.0, cam: [48.8, 58.3, 0.8], look: teressa, look_h: 1.3, lens: 32.0, frame: 肩なめ}
+    - {t: 5.4, cam: [48.96, 58.34, 0.8], look: teressa, look_h: 1.35, lens: 36.0}
     act: {start: ビスコの目の高さから見上げるテレッサ, do: 口に手を当てて笑い、胸を張る（「ふふふ、ここは伝統あるヴァルプルギスの議会場ですわ」）, end: 胸を張るテレッサ}
     camera: ビスコの肩越しの低い所から見上げる
     kind: M
@@ -257,6 +248,7 @@ cuts:
         at: [53.9, 50.0]
         face: 270
         pose: sit
+        expr: grin
       - {t: 0.5, pose: sit}
       rabi:
       - t: 0.0
@@ -557,6 +549,7 @@ cuts:
         at: [49.2, 57.8]
         face: '@teressa'
         pose: kneel
+        expr: annoyed
       - {t: 1.4, face: '@usamaru'}
       teressa:
       - t: 0.0
@@ -628,17 +621,8 @@ cuts:
         face: '@rabi'
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [51.6, 58.9, 0.85]
-      look: [49.9, 57.0]
-      look_h: 0.8
-      lens: 38
-      frame: 寄り
-    - t: 5.4
-      cam: [51.0, 59.3, 0.85]
-      look: [49.9, 57.1]
-      look_h: 0.8
-      lens: 42
+    - {t: 0.0, cam: [51.6, 58.9, 0.85], look: [49.9, 57.0], look_h: 1.33, lens: 68, frame: 寄り}
+    - {t: 5.4, cam: [51.0, 59.3, 0.85], look: [49.9, 57.1], look_h: 1.32, lens: 42.0}
     act: {start: かがんでビスコの頭の匂いをかぐラビィ, do: 顔をしかめる（「なんかクセーと思ったら犬化の魔法がかかってんのか」）, end: 鼻をつまむラビィ}
     camera: 二人の顔の高さで横から（ラビィの背中側に回り込む）
     kind: M
@@ -696,23 +680,9 @@ cuts:
         face: '@rabi'
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [51.7, 55.0, 1.25]
-      look: [49.5, 57.4]
-      look_h: 0.85
-      lens: 28
-      frame: 肩なめ
-    - t: 4.35
-      cam: [51.4, 55.2, 1.1]
-      look: *id010
-      look_h: 0.75
-      lens: 32
-    - t: 11.4
-      cam: [50.2, 55.5, 0.95]
-      look: *id010
-      look_h: 0.7
-      lens: 40
-      frame: 胸上
+    - {t: 0.0, cam: [51.7, 55.0, 1.25], look: [49.5, 57.4], look_h: 0.85, lens: 28.0, frame: 肩なめ}
+    - {t: 4.35, cam: [51.4, 55.2, 1.1], look: [49.2, 57.8], look_h: 0.75, lens: 32.0}
+    - {t: 11.4, cam: [50.2, 55.5, 0.95], look: [49.2, 57.8], look_h: 0.98, lens: 40.0, frame: 胸上}
     act: {start: ラビィが何かに気づく, do: 腹を抱えて笑い（「しかも、これ……アハハハハ！！！」）、ビスコを指さす（「かかりそこなってるじゃんか！…素人の仕事だな！」）。ビスコがはっとする（呪いの伏線）, end: 指さすラビィと、目を見開くビスコ}
     camera: ラビィの肩越しに、指さされるビスコへ寄る（感情の山）
     kind: A
@@ -828,18 +798,8 @@ cuts:
         face: '@rabi'
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [51.4, 52.0, 1.3]
-      look: lily
-      look_h: 0.95
-      lens: 36
-      frame: 膝上
-    - t: 5.9
-      cam: [51.3, 52.2, 1.3]
-      look: [46.62, 48.05]
-      look_h: 1.0
-      lens: 30
-      frame: 引き
+    - {t: 0.0, cam: [51.4, 52.0, 1.3], look: lily, look_h: 1.0, lens: 65.0, frame: 膝上}
+    - {t: 5.9, cam: [51.3, 52.2, 1.3], look: [46.62, 48.05], look_h: 0.58, lens: 30.0, frame: 引き}
     act: {start: 頬杖をつくリリー。隣に空いた椅子が2つ, do: 空いたヴァレンティーヌの席に目をやる（「まあ、ヴァレンティーヌ候は今日も欠席のようだけどね」）, end: 空いた席}
     camera: リリーから、向かいの空いた席（ヴァレンティーヌ）へ振る
     kind: M
@@ -863,6 +823,7 @@ cuts:
         at: [50.5, 56.4]
         face: '@berda'
         pose: stand
+        expr: smile
       - {t: 0.3, pose: jump, face: 0}
       - {t: 1.6, pose: arms_up}
       - {t: 6.3, pose: stand, face: 300}
@@ -968,17 +929,8 @@ cuts:
         face: '@rabi'
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [51.6, 58.0, 1.45]
-      look: berda
-      look_h: 0.95
-      lens: 34
-      frame: 肩なめ
-    - t: 11.4
-      cam: [50.09, 55.07, 1.5]
-      look: berda
-      look_h: 1.0
-      lens: 40
+    - {t: 0.0, cam: [51.95, 57.71, 1.45], look: berda, look_h: 0.95, lens: 34.0, frame: 肩なめ}
+    - {t: 11.4, cam: [49.89, 55.29, 1.35], look: berda, look_h: 1.0, lens: 40.0}
     act: {start: ラビィの肩越しに、座ったベルダ, do: ラビィが歩み寄って挑発する（「それより、泣き虫ベルダ！…文句たれてんじゃねーよ！」「死にてぇなら別だけどな」）, end: にらむラビィ}
     camera: ラビィの後ろから、ベルダへ寄る
     kind: M
@@ -1514,24 +1466,9 @@ cuts:
         pose: ready
       - {t: 2.8, pose: shake}
     cam_keys:
-    - t: 0.0
-      cam: [47.48, 48.5, 1.45]
-      look: rubens
-      look_h: 1.35
-      lens: 45
-      frame: 胸上
-    - t: 1.6
-      cam: [47.5, 48.55, 1.4]
-      look: rubens
-      look_h: 1.35
-      lens: 45
-    - t: 4.4
-      cam: [47.6, 48.75, 1.3]
-      look: hundred-knight
-      look_h: 0.6
-      lens: 40
-      ease: inout
-      frame: 全身
+    - {t: 0.0, cam: [47.48, 48.5, 1.45], look: rubens, look_h: 1.4, lens: 45.0, frame: 胸上}
+    - {t: 1.6, cam: [47.5, 48.55, 1.4], look: rubens, look_h: 1.35, lens: 45.0}
+    - {t: 4.4, cam: [47.6, 48.75, 1.3], look: hundred-knight, look_h: 0.6, lens: 72, ease: inout, frame: 全身}
     fx:
     - kind: mist
       t: [0.9, 4.4]
@@ -1612,17 +1549,8 @@ cuts:
         face: 0
         pose: shake
     cam_keys:
-    - t: 0.0
-      cam: [50.5, 61.0, 0.55]
-      look: lily
-      look_h: 1.2
-      lens: 36
-      frame: 肩なめ
-    - t: 10.0
-      cam: [50.6, 60.9, 0.6]
-      look: lily
-      look_h: 1.3
-      lens: 42
+    - {t: 0.0, cam: [49.72, 60.83, 0.55], look: lily, look_h: 1.2, lens: 36.0, frame: 肩なめ}
+    - {t: 10.0, cam: [50.45, 60.87, 0.6], look: lily, look_h: 1.3, lens: 42.0}
     act: {start: ゆっくり立ち上がるリリー, do: 百騎兵をしげしげと見る（「へえ、それがあの魔女の使い魔？噂だと、伝説の魔神、百騎兵って話だけど」）, end: 冷ややかなリリー}
     camera: ふらつく百騎兵の後ろの低い所から、奥のリリーへ（百騎兵をなめる）
     kind: M
@@ -1865,6 +1793,7 @@ cuts:
         at: [52.93, 47.27]
         face: 200
         pose: cross
+        expr: grin
       - {t: 0.3, face: 220}
       - {t: 4.4, face: 200, pose: cross}
       purple-peel:
@@ -2045,17 +1974,8 @@ cuts:
         face: 0
         pose: shake
     cam_keys:
-    - t: 0.0
-      cam: [49.8, 52.9, 1.0]
-      look: rabi
-      look_h: 1.3
-      lens: 40
-      frame: 胸上
-    - t: 7.8
-      cam: [49.9, 53.1, 1.0]
-      look: rabi
-      look_h: 1.3
-      lens: 44
+    - {t: 0.0, cam: [49.8, 52.9, 1.0], look: rabi, look_h: 1.3, lens: 40, frame: 胸上}
+    - {t: 7.8, cam: [49.9, 53.1, 1.0], look: rabi, look_h: 1.3, lens: 44}
     act: {start: ラビィが頭の後ろで手を組む, do: （「まあ、あいつ性格悪そうだし絶対に友達とか仲間がいないタイプだぜ」）, end: けらけら笑うラビィ}
     camera: ラビィの正面の低い所から
     kind: M
@@ -2237,12 +2157,14 @@ cuts:
         at: [49.2, 57.8]
         face: '@hundred-knight'
         pose: kneel
+        expr: sad
       - {t: 0.4, pose: kneel, face: 0}
       - {t: 4.88, pose: cry}
       - t: 9.87
         at: [49.4, 57.4]
         pose: stand
         face: 350
+        expr: angry
       teressa:
       - t: 0.0
         at: [51.7, 56.9]
@@ -2449,6 +2371,7 @@ cuts:
         at: [48.2, 56.3]
         face: '@bisco'
         pose: stand
+        expr: grin
       rubens:
       - t: 0.0
         at: [46.07, 49.02]
@@ -2459,6 +2382,7 @@ cuts:
         at: [49.4, 57.4]
         face: '@berda'
         pose: look_down
+        expr: angry
       - {t: 0.5, pose: stand, face: '@berda'}
       - {t: 1.9, pose: ready}
       teressa:

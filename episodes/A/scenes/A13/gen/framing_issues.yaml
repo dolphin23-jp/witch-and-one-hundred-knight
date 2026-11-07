@@ -1,0 +1,61 @@
+A13-004:
+  shot: 寄り・ルッキーニィの肩ごし・驚くメタリカ
+  issues:
+  - kind: 大きさ
+    who:
+    - metallica
+    frame: 寄り
+    measured: 0.22
+    expect:
+    - 0.24
+    - 1.03
+    what: 顔
+A13-005:
+  shot: 寄り・メタリカの正面（奥にルッキーニィ）
+  issues:
+  - kind: 線を越える
+    who:
+    - luckiny
+    - metallica
+    after: A13-004
+    line:
+    - - 72.12
+      - 39.85
+    - - 73.35
+      - 40.13
+A13-015:
+  shot: 全身（後ろ姿）・崖の切れ目の村と夕日（逆光）
+  issues:
+  - kind: 足が切れ
+    who:
+    - luckiny
+    frames: 12/22
+A13-019:
+  shot: 全身（肩ごし）・北東の山を指さすメタリカ
+  issues:
+  - kind: 足が切れ
+    who:
+    - metallica
+    frames: 10/13
+A13-020:
+  shot: 引き→空・白夜月（クレーン）
+  issues:
+  - kind: 顔が外
+    who:
+    - metallica
+    frames: 10/17
+  - kind: 話し手が見えない
+    who:
+    - metallica
+    line: L379
+A13-023:
+  shot: 引き（クレーン）・見送るルッキーニィ、遠くの山と月
+  issues:
+  - kind: 顔が外
+    who:
+    - luckiny
+    frames: 8/17
+  - kind: 話し手が見えない
+    who:
+    - luckiny
+    line: L385

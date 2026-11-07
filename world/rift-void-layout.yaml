@@ -20,12 +20,12 @@ sky: {color: [8, 8, 30]}
 sun: {from: 200, elev: 60}
 light_en: "A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air."
 lighting:
-  void: {sun_from: 200, sun_elev: 60, sun_energy: 0.35, sun_color: [175, 165, 255], sky: [10, 10, 34], sky_strength: 0.6, lamps: 1.2,
+  void: {level: 0.66, sun_from: 200, sun_elev: 60, sun_energy: 0.35, sun_color: [175, 165, 255], sky: [10, 10, 34], sky_strength: 0.6, lamps: 1.2,
          fill: {at: [108.0, 50.0], z: 14.0, energy: 1400, color: [170, 170, 255], radius: 10.0}}   # 門の前（A24）
   void_run: {sun_from: 200, sun_elev: 60, sun_energy: 0.3, sun_color: [175, 165, 255], sky: [8, 8, 30], sky_strength: 0.6, lamps: 1.2}   # 走る列車（A24・A26）
   train_inside: {sun_from: 200, sun_elev: 60, sun_energy: 0.0, sun_color: [175, 145, 255], sky: [8, 6, 14], sky_strength: 0.2, lamps: 1.0,
                  fill: {at: [201.3, 103.5], z: 2.0, energy: 90, color: [255, 170, 90], radius: 0.6}}   # 真っ暗な車中（窓の帯だけ琥珀色）
-  witch_den: {sun_from: 160, sun_elev: 55, sun_energy: 0.4, sun_color: [190, 170, 255], sky: [12, 10, 36], sky_strength: 0.6, lamps: 1.4,
+  witch_den: {level: 0.72, sun_from: 160, sun_elev: 55, sun_energy: 0.4, sun_color: [190, 170, 255], sky: [12, 10, 36], sky_strength: 0.6, lamps: 1.4,
               fill: {at: [78.0, 104.0], z: 10.0, energy: 1200, color: [190, 170, 255], radius: 8.0}}   # 魔女の居場所（A25 前半。大木の根元）
   memory_garden: {sun_from: 150, sun_elev: 50, sun_energy: 0.5, sun_color: [190, 230, 255], sky: [10, 12, 38], sky_strength: 0.6, lamps: 1.2,
                   fill: {at: [48.0, 112.0], z: 10.0, energy: 1400, color: [170, 240, 220], radius: 9.0}}   # 追憶の園（A25 後半。光る翠ノ実の緑）
@@ -90,5 +90,5 @@ views:
   void_run: {ja: 異空間を走る列車, panel: null, en: "an endless ground of luminous swirling blue and violet light like a glowing sea, a railway laid directly on it running into the darkness, dark leafless trees far away, a pitch-dark navy sky"}
   void_gate: {ja: 異空間の閉じた門, panel: null, en: "a gigantic translucent gothic gate standing across the railway: two slender spires at its sides, a pointed arched top, vertical bars of faint blue light, its skirts flaring out to the ground, on an endless ground of glowing swirling blue and violet light"}
   train_inside: {ja: 車中, panel: null, en: "the dark interior of a strange train carriage: two rows of seats, almost pitch black except for a thin band of amber light from the windows"}
-  witch_den: {ja: 魔女の居場所, panel: null, en: "the foot of a huge leafless ancient tree whose roots spread over a ground of glowing swirling blue and violet light, dark holes in the ground around it, an old chair and two old lanterns"}
+  witch_den: {ja: 魔女の居場所, panel: null, en: "the foot of a huge leafless ancient tree whose roots spread over a ground of glowing swirling blue and violet light, dark holes in the ground around it, an old chair and two old lanterns", level: 0.72}  # level: 下絵（Workbench）の明るさ。暗い紺の魔女を黒い空を背に見上げると黒に沈んだので上げた（A25-015、2026-11-07）
   memory_garden: {ja: 追憶の園, panel: null, en: "a garden in the void: trees bearing softly glowing translucent green fruits, a huge tree with a low ring of stones and an old wooden bench at its roots, standing stones, blue grass on a ground of glowing swirling light"}

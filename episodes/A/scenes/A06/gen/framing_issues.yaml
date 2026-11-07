@@ -1,0 +1,94 @@
+A06-001:
+  shot: 全身→寄り・ルッキーニィ・百騎兵（肩越し）・ティト
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - luckiny
+    frame: 全身
+    measured: 1.12
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 14/17
+A06-003:
+  shot: 引き（煽り）・ティト・村人4人
+  issues:
+  - kind: 大きさ
+    who:
+    - tito
+    - villager-b
+    frame: 引き
+    measured: 1.22
+    expect:
+    - 0.0
+    - 0.65
+    what: 体
+A06-004:
+  shot: 全身・村人たち（ティトの肩越し）
+  issues:
+  - kind: 大きさ
+    who: &id002
+    - villager-a
+    frame: 全身
+    measured: 1.2
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id002
+    frames: 6/6
+A06-004b:
+  shot: 寄り・ティト（横顔）・扉口からのぞく百騎兵とルッキーニィ
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - villager-c
+    by:
+    - tito_shoulderball-1
+    frames: 7/12
+  - kind: 話し手が見えない
+    who:
+    - villager-c
+    line: L183
+A06-006:
+  shot: 寄り・ルッキーニィ（ティトの肩越し）
+  issues:
+  - kind: 大きさ
+    who: &id003
+    - luckiny
+    - tito
+    frame: 全身
+    measured: 2.04
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id003
+    frames: 12/16
+A06-008:
+  shot: 全身・ティト・ルッキーニィ
+  issues:
+  - kind: 大きさ
+    who: &id004
+    - tito
+    frame: 全身
+    measured: 1.69
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id004
+    frames: 9/12
+A06-014:
+  shot: 全身→肩越し・百騎兵（ひとり）・夜の村と遠くの井戸
+  issues:
+  - kind: 足が切れ
+    who:
+    - hundred-knight
+    frames: 13/24

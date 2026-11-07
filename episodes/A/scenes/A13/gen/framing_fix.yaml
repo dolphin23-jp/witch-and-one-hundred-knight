@@ -1,0 +1,208 @@
+'2026-11-06':
+  A13-004:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 寄り
+      look_h:
+      - 1.75
+      - 1.71
+      lens:
+      - 35.0
+      - 135
+    - t: 8.0
+      look: metallica
+      frame: 寄り
+      look_h:
+      - 1.75
+      - 1.67
+      lens:
+      - 40.0
+      - 93
+  A13-011:
+    issues:
+    - 足が切れ
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 全身（煽り）
+      look_h:
+      - 1.7
+      - 1.09
+      lens:
+      - 28.0
+      - 28.0
+    - t: 8.6
+      look: metallica
+      frame: 全身（煽り）
+      look_h:
+      - 1.7
+      - 1.24
+      lens:
+      - 30.0
+      - 30.0
+  A13-017:
+    issues:
+    - 足が切れ
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 全身（煽り）
+      look_h:
+      - 2.0
+      - 1.1
+      lens:
+      - 24.0
+      - 24.0
+    - t: 13.0
+      look: metallica
+      frame: 全身（煽り）
+      look_h:
+      - 2.3
+      - 1.49
+      lens:
+      - 24.0
+      - 24.0
+  A13-018:
+    issues:
+    - 頭が切れ
+    keys:
+    - t: 0.0
+      look: luckiny
+      frame: 寄り（顔）
+      look_h:
+      - 1.15
+      - 1.2
+      lens:
+      - 45.0
+      - 45.0
+    - t: 8.0
+      look: luckiny
+      frame: 寄り（顔）
+      look_h:
+      - 1.15
+      - 1.23
+      lens:
+      - 55.0
+      - 55.0
+  A13-020:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 引き
+      look_h:
+      - 1.7
+      - 1.3
+      lens:
+      - 28.0
+      - 18
+    - t: 1.2
+      look: metallica
+      frame: 引き
+      look_h:
+      - 1.7
+      - 1.3
+      lens:
+      - 28.0
+      - 18
+'2026-11-07':
+  A13-004:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 寄り
+      look_h:
+      - 1.75
+      - 1.73
+      lens:
+      - 35.0
+      - 63
+  A13-020:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 引き
+      look_h:
+      - 1.3
+      - 1.41
+      lens:
+      - 18.0
+      - 18.0
+    - t: 1.2
+      look: metallica
+      frame: 引き
+      look_h:
+      - 1.3
+      - 1.61
+      lens:
+      - 28.0
+      - 28.0
+  A13-005:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 72.12
+          - 39.85
+        - - 73.35
+          - 40.13
+        after: A13-004
+    - t: 9.5
+      moved:
+        mirror: *id001
+        after: A13-004
+    note: 線で鏡写しにすると、カメラの方を向くメタリカの顔が向こう向きになるので、元のカメラに戻した（線を越えたまま。目で確かめる）
+  A13-014:
+    issues:
+    - 顔が向こう向き
+    keys:
+    - t: 0.0
+      look: luckiny
+      frame: 寄り
+      look_h:
+      - 1.1
+      - 1.26
+      lens:
+      - 45.0
+      - 45.0
+      moved:
+        turn: -85
+    - t: 9.0
+      look: luckiny
+      frame: 寄り
+      look_h:
+      - 1.1
+      - 1.27
+      lens:
+      - 50.0
+      - 50.0
+      moved:
+        turn: -85
+  A13-018:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id002
+        - - 72.16
+          - 39.31
+        - - 71.14
+          - 39.63
+        after: A13-017
+    - t: 8.0
+      moved:
+        mirror: *id002
+        after: A13-017

@@ -282,18 +282,8 @@ cuts:
         face: 140
         ease: out
     cam_keys:
-    - t: 0.0
-      cam: [15.2, 8.6, 1.4]
-      look: *id005
-      look_h: 1.2
-      lens: 30
-      frame: 全身
-    - t: 4.8
-      cam: [15.15, 8.55, 1.4]
-      look: luckiny
-      lens: 26
-      ease: inout
-      look_h: 0.7
+    - {t: 0.0, cam: [15.2, 8.6, 1.4], look: [13.0, 6.0], look_h: 0.69, lens: 30.0, frame: 全身}
+    - {t: 4.8, cam: [15.15, 8.55, 1.4], look: luckiny, lens: 26.0, ease: inout, look_h: 0.67}
     fx:
     - kind: mist
       t: [0.0, 4.8]
@@ -456,17 +446,8 @@ cuts:
         face: 130
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [16.3, 10.35, 1.0]
-      look: mitten
-      look_h: 1.1
-      lens: 30
-      frame: 胸上
-    - t: 5.4
-      cam: [16.25, 10.3, 1.05]
-      look: mitten
-      look_h: 1.1
-      lens: 34
+    - {t: 0.0, cam: [16.3, 10.35, 1.0], look: mitten, look_h: 1.0, lens: 30.0, frame: 胸上}
+    - {t: 5.4, cam: [16.38, 8.41, 1.05], look: mitten, look_h: 1.03, lens: 34.0}
     shake:
     - t: [0.3, 5.4]
       amp: 0.5
@@ -518,17 +499,8 @@ cuts:
       - {t: 0.3, pose: point, face: 140}
       - {t: 7.77, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [14.4, 8.6, 2.1]
-      look: metallica
-      lens: 28
-      frame: 膝上
-      look_h: 1.12
-    - t: 8.7
-      cam: [14.35, 8.55, 2.05]
-      look: metallica
-      lens: 30
-      look_h: 1.12
+    - {t: 0.0, cam: [14.4, 8.6, 1.6], look: metallica, lens: 28.0, frame: 膝上, look_h: 1.3}
+    - {t: 8.7, cam: [14.35, 8.55, 1.7], look: metallica, lens: 30.0, look_h: 1.32}
     fx:
     - kind: mist
       t: [0.0, 8.7]

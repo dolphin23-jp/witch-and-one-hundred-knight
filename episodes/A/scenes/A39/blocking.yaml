@@ -105,17 +105,8 @@ cuts:
         face: 160
         pose: stand
     cam_keys:
-    - t: 0.0
-      cam: [15.07, 9.26, 1.3]
-      look: metallica
-      lens: 32
-      frame: 胸上
-      look_h: 1.38
-    - t: 8.0
-      cam: [15.07, 9.26, 1.3]
-      look: metallica
-      lens: 36
-      look_h: 1.38
+    - {t: 0.0, cam: [15.07, 9.26, 1.3], look: metallica, lens: 32.0, frame: 胸上, look_h: 1.32}
+    - {t: 8.0, cam: [15.07, 9.26, 1.45], look: metallica, lens: 36.0, look_h: 1.34}
     fx: []
     act: {start: メタリカが鼻をつまんで, do: （「あれから何日経ったと思ってる！な、なんで、いつまでも風呂の臭いがとれんのだ……」）, end: うんざりするメタリカ}
     camera: 浴槽の側から、メタリカの正面
@@ -195,18 +186,8 @@ cuts:
       - {t: 4.2, pose: cough}
       - {t: 8.02, pose: cover}
     cam_keys:
-    - t: 0.0
-      cam: [15.0, 8.4, 1.6]
-      look: *id006
-      look_h: 1.2
-      lens: 30
-      frame: 全身
-    - t: 8.9
-      cam: [14.95, 8.35, 1.6]
-      look: bisco
-      lens: 32
-      ease: inout
-      look_h: 0.78
+    - {t: 0.0, cam: [15.0, 8.4, 1.6], look: [13.0, 6.0], look_h: 0.84, lens: 30.0, frame: 全身}
+    - {t: 8.9, cam: [14.95, 8.35, 1.6], look: bisco, lens: 32.0, ease: inout, look_h: 1.08}
     fx: []
     act: {start: 扉が開き、鼻を押さえたビスコがよろよろ入ってくる, do: （「おい、この臭い……魔法でなんとかならないのか？食事どころじゃないぞ……」）, end: 壁にもたれるビスコ}
     camera: 浴槽の縁の手前から、扉のビスコ
@@ -282,17 +263,8 @@ cuts:
       - {t: 3.0, pose: stand}
       - {t: 5.25, pose: cover}
     cam_keys:
-    - t: 0.0
-      cam: [14.4, 7.9, 0.8]
-      look: bisco
-      lens: 28
-      frame: 膝上
-      look_h: 0.99
-    - t: 7.4
-      cam: [14.35, 7.85, 0.8]
-      look: bisco
-      lens: 30
-      look_h: 0.99
+    - {t: 0.0, cam: [14.4, 7.9, 0.8], look: bisco, lens: 28.0, frame: 膝上, look_h: 1.04}
+    - {t: 7.4, cam: [14.35, 7.85, 0.8], look: bisco, lens: 30.0, look_h: 1.04}
     act: {start: ビスコが鼻を押さえたまま言い返す, do: （「し、しょうがないだろう……！犬の鼻になってからにおいの強いものは苦手なんだ」）, end: 顔をしかめるビスコ}
     camera: メタリカの脇の低い所から、ビスコ
     kind: M
@@ -452,17 +424,8 @@ cuts:
         face: 60
         pose: cross
     cam_keys:
-    - t: 0.0
-      cam: [12.5, 6.4, 2.3]
-      look: [14.8, 7.9]
-      look_h: 1.0
-      lens: 28
-      frame: 膝上
-    - t: 9.2
-      cam: [12.55, 6.45, 2.25]
-      look: [14.9, 8.0]
-      look_h: 1.0
-      lens: 32
+    - {t: 0.0, cam: [12.5, 6.4, 1.83], look: [14.8, 7.9], look_h: 1.24, lens: 28.0, frame: 膝上}
+    - {t: 9.2, cam: [12.55, 6.45, 1.82], look: [14.9, 8.0], look_h: 1.31, lens: 32.0}
     fx: []
     act: {start: メタリカが部屋を見回す（「ところで、ルッキーニィがいないが、どうしたんだ？出かけているのか？」）, do: アルレッキーノが手を止めて（「先ほど、お食事を持って出かけられました」）, end: 顔を上げるアルレッキーノ}
     camera: 扉の脇の高い所から、メタリカと浴槽の前のアルレッキーノ

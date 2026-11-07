@@ -64,10 +64,10 @@ cuts:
     frame: 引き
     keys:
       tito:
-        - {t: 0.0, at: door_front, face: 180, pose: stand}
+        - {t: 0.0, at: door_front, face: 180, pose: stand, expr: smile}
         - {t: 0.5, at: door_front, face: 180, pose: bow}
         - {t: 3.6, at: door_front, face: 180, pose: bow}
-        - {t: 4.4, at: door_front, face: 180, pose: stand}
+        - {t: 4.4, at: door_front, face: 180, pose: stand, expr: surprised}
         - {t: 10.6, at: door_front, face: 185, pose: stand}
       metallica: [{t: 0.0, at: m0, face: 10, pose: stand}, {t: 10.6, at: m0, face: 10, pose: stand}]
       hundred-knight: [{t: 0.0, at: h0, face: 60, pose: stand}, {t: 10.6, at: h0, face: 50, pose: stand}]
@@ -90,8 +90,8 @@ cuts:
         - {t: 0.6, at: door_front, face: 185, pose: bow, ease: inout}
         - {t: 5.2, at: door_front, face: 185, pose: bow}
     cam_keys:
-      - {t: 0.0, cam: [54.6, 31.4, 1.1], look: tito, look_h: 1.15, lens: 40, frame: 寄り}
-      - {t: 5.2, cam: [54.8, 31.3, 1.0], look: tito, look_h: 1.0, lens: 45, ease: linear}
+      - {t: 0.0, cam: [54.6, 31.4, 1.1], look: tito, look_h: 1.35, lens: 72.0, frame: 寄り}
+      - {t: 5.2, cam: [54.8, 31.3, 1.0], look: tito, look_h: 1.16, lens: 45.0, ease: linear}
     bg: house_front
     act: {start: ティトの横顔, do: 「偉大なる沼の魔女様と従者様に」と、もう一度深く頭を下げる, end: 頭を下げたままのティト, sync: L226「偉大なる沼の魔女様と従者様に心よりの感謝を……。」は 0.3秒から}
     camera: 西からの横顔の寄り。頭を下げるのに合わせて少し下がる
@@ -110,8 +110,8 @@ cuts:
         - {t: 4.8, at: m0, face: 15, pose: proud, ease: inout}
         - {t: 10.2, at: m0, face: 15, pose: proud}
     cam_keys:
-      - {t: 0.0, cam: [57.6, 32.0, 0.5], look: metallica, look_h: 1.5, lens: 28, frame: 全身}
-      - {t: 10.2, cam: [57.5, 32.3, 0.55], look: metallica, look_h: 1.45, lens: 32, ease: linear}
+      - {t: 0.0, cam: [57.6, 32.0, 0.5], look: metallica, look_h: 0.8, lens: 18, frame: 全身}
+      - {t: 10.2, cam: [57.5, 32.3, 0.55], look: metallica, look_h: 0.79, lens: 32.0, ease: linear}
     bg: house_front
     act: {start: 足元からの煽りのメタリカ, do: 腕を組んでふんぞり返り、「体調もすこぶる良好だ」で胸を張る, end: 胸を張るメタリカ, sync: L227「ふん！ピラーのついでだ。大したことではない。」は 0.3秒から、L228「沼はこの村の真下に…体調もすこぶる良好だ。」は 4.7秒から}
     camera: 低い位置から煽る（ティトの側から）。ゆっくり寄る
@@ -127,7 +127,7 @@ cuts:
     keys:
       luckiny:
         - {t: 0.0, at: l0, face: 280, pose: stand}
-        - {t: 0.3, at: l0, face: 240, pose: walk}
+        - {t: 0.3, at: l0, face: 240, pose: walk, expr: smile}
         - {t: 1.3, at: l1, face: 220, pose: walk, ease: out}
         - {t: 1.6, at: l1, face: 220, pose: arms_up}
         - {t: 4.0, at: l1, face: 220, pose: arms_up}
@@ -138,8 +138,8 @@ cuts:
         - {t: 1.2, at: m0, face: 40, pose: stand}
         - {t: 7.2, at: m0, face: 40, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [56.8, 35.6, 1.7], look: luckiny, look_h: 1.1, lens: 40, frame: 寄り}   # メタリカの右肩の後ろ（重ならない向き）
-      - {t: 7.2, cam: [56.8, 35.5, 1.7], look: luckiny, look_h: 0.95, lens: 45, ease: linear}
+      - {t: 0.0, cam: [56.8, 35.6, 1.7], look: luckiny, look_h: 1.26, lens: 72, frame: 寄り}
+      - {t: 7.2, cam: [56.8, 35.5, 1.7], look: luckiny, look_h: 1.09, lens: 45.0, ease: linear}
     bg: house_front
     act: {start: メタリカの肩越し, do: ルッキーニィが横から割り込んできて、両手を上げて喜び、ぺこりと頭を下げる, end: 頭を下げるルッキーニィ, sync: L229「それはよかったです！では、早速ですが魔女様！弟子にしてください！」は 0.3秒から}
     camera: メタリカの肩越しにルッキーニィ（切り返しの1）
@@ -151,7 +151,7 @@ cuts:
     only: [metallica, luckiny]
     keys:
       metallica:
-        - {t: 0.0, at: m0, face: 40, pose: stand}
+        - {t: 0.0, at: m0, face: 40, pose: stand, expr: annoyed}
         - {t: 0.4, at: m0, face: 40, pose: cross}
         - {t: 6.7, at: m0, face: 40, pose: cross}
       luckiny:
@@ -159,8 +159,8 @@ cuts:
         - {t: 0.6, at: l1, face: 220, pose: stand}
         - {t: 6.7, at: l1, face: 220, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [58.3, 31.15, 1.35], look: metallica, look_h: 1.45, lens: 40, frame: 寄り}   # ルッキーニィの右肩の後ろ
-      - {t: 6.7, cam: [58.3, 31.25, 1.35], look: metallica, look_h: 1.45, lens: 45, ease: linear}
+      - {t: 0.0, cam: [58.3, 31.15, 1.35], look: metallica, look_h: 1.45, lens: 72.0, frame: 寄り}
+      - {t: 6.7, cam: [58.3, 31.25, 1.35], look: metallica, look_h: 1.43, lens: 45.0, ease: linear}
     bg: house_front
     act: {start: ルッキーニィの肩越し, do: メタリカが腕を組み、あきれ顔で突き放す, end: 腕を組むメタリカ, sync: L230「あん？何が“では早速”だ？お前に構っている暇はない。」は 0.3秒から}
     camera: ルッキーニィの肩越しにメタリカ（切り返しの2）
@@ -181,8 +181,8 @@ cuts:
         - {t: 0.0, at: l1, face: 220, pose: stand}
         - {t: 8.1, at: l1, face: 215, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [54.0, 36.6, 1.4], look: metallica, look_h: 1.3, lens: 35, frame: 全身}
-      - {t: 8.1, cam: [54.2, 36.8, 1.4], look: metallica, look_h: 1.3, lens: 40, ease: linear}
+      - {t: 0.0, cam: [54.0, 36.6, 1.4], look: metallica, look_h: 0.79, lens: 35.0, frame: 全身}
+      - {t: 8.1, cam: [54.2, 36.8, 1.4], look: metallica, look_h: 0.79, lens: 40.0, ease: linear}
     bg: house_front
     act: {start: 南西から、腕を組むメタリカ, do: メタリカがそっぽを向いて数歩離れる。奥に取り残されるルッキーニィ, end: そっぽを向いたメタリカ、奥にルッキーニィ, sync: L231「ワタシは忙しいんだ。これから、ヴァルプルギスの夜会の準備があるからな。」は 0.3秒から}
     camera: 南西から。そっぽを向いて離れるメタリカの正面
@@ -245,8 +245,8 @@ cuts:
         - {t: 1.8, at: m1, face: 150, pose: gesture}
         - {t: 9.8, at: m1, face: 150, pose: gesture}
     cam_keys:   # 引いて、鼻で笑って手を振る芝居が見える大きさに（帽子のつばで上が埋まっていた、2026-11-01 の見直し）
-      - {t: 0.0, cam: [58.3, 36.7, 1.3], look: metallica, look_h: 1.35, lens: 35, frame: 寄り}
-      - {t: 9.8, cam: [58.15, 36.5, 1.3], look: metallica, look_h: 1.4, lens: 42, ease: linear}
+      - {t: 0.0, cam: [58.3, 36.7, 1.3], look: metallica, look_h: 1.41, lens: 63, frame: 寄り}
+      - {t: 9.8, cam: [58.15, 36.5, 1.3], look: metallica, look_h: 1.42, lens: 42.0, ease: linear}
     bg: house_front
     act: {start: メタリカの寄り, do: 「何が賢者マーリカ様だ」と鼻で笑い、片手を振って毒づく, end: 毒づくメタリカの寄り, sync: L235「キヒヒ、何が賢者マーリカ様だ。あんな奴、ただのゲロクソの性悪魔女だ。」は 0.3秒から}
     camera: 正面（南東）の上半身。ゆっくり寄る
@@ -271,8 +271,8 @@ cuts:
         - {t: 1.0, at: m1, face: 150, pose: cross}
         - {t: 6.8, at: m1, face: 140, pose: cross}
     cam_keys:   # ルッキーニィの正面（西）の低い所から見上げる（跳び上がる驚き）。奥の右にメタリカ
-      - {t: 0.0, cam: [54.4, 34.6, 0.55], look: luckiny, look_h: 1.1, lens: 32, frame: 寄り}
-      - {t: 6.8, cam: [54.6, 34.5, 0.55], look: luckiny, look_h: 1.1, lens: 36, ease: linear}
+      - {t: 0.0, cam: [54.4, 34.6, 0.55], look: luckiny, look_h: 1.24, lens: 58, frame: 寄り}
+      - {t: 6.8, cam: [54.6, 34.5, 0.55], look: luckiny, look_h: 1.24, lens: 36.0, ease: linear}
     bg: house_front
     act: {start: メタリカの毒づきを聞いたルッキーニィ, do: 「へえ！性悪！！」と跳び上がり、口に手を当てて「意外と腹黒だったってことですか！？」、「驚きです！！」で両手を上げる, end: 目を輝かせて身ぶりで話すルッキーニィ, sync: L236「へえ！性悪！！意外と腹黒だったってことですか！？驚きです！！」は 0.3秒から（2026-11-01 の見直しで戻した）}
     camera: ルッキーニィの正面（西）の低い所から見上げる。奥の右にメタリカ
@@ -424,7 +424,7 @@ cuts:
     only: [metallica, luckiny, tito, hundred-knight]
     keys:
       metallica:
-        - {t: 0.0, at: m1, face: 159, pose: cross}
+        - {t: 0.0, at: m1, face: 159, pose: cross, expr: annoyed}
         - {t: 0.4, at: m1, face: 159, pose: gesture}
         - {t: 4.2, at: m1, face: 159, pose: cross}
         - {t: 8.7, at: m1, face: 150, pose: cross}
@@ -460,8 +460,8 @@ cuts:
         - {t: 3.2, at: c160, face: 340, pose: bow}
         - {t: 6.7, at: c160, face: 340, pose: bow}
     cam_keys:
-      - {t: 0.0, cam: [58.6, 34.2, 0.5], look: luckiny, look_h: 1.2, lens: 32, frame: 全身}
-      - {t: 6.7, cam: [58.5, 34.4, 0.5], look: luckiny, look_h: 1.0, lens: 35, ease: linear}
+      - {t: 0.0, cam: [58.6, 34.2, 0.5], look: luckiny, look_h: 0.68, lens: 32.0, frame: 全身}
+      - {t: 6.7, cam: [58.5, 34.4, 0.5], look: luckiny, look_h: 0.52, lens: 35.0, ease: linear}
     bg: house_front
     act: {start: 低い位置からルッキーニィ, do: 「諦めません！」と両手を振り上げ、「どうか弟子に」で深く頭を下げる, end: 頭を下げるルッキーニィ, sync: L246「あ、諦めません！何でもしますから！どうか弟子にしてください！」は 0.3秒から}
     camera: 北東の低い位置から煽る
@@ -509,10 +509,10 @@ cuts:
         - {t: 4.7, at: m1, face: 159, pose: stand, ease: out}
         - {t: 7.9, at: m1, face: 159, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [54.4, 37.0, 1.4], look: luckiny, look_h: 1.1, lens: 35, frame: 全身}
-      - {t: 4.3, cam: [54.5, 37.0, 1.4], look: luckiny, look_h: 1.1, lens: 35}
-      - {t: 4.9, cam: [55.4, 36.0, 1.45], look: metallica, look_h: 1.5, lens: 55, frame: 寄り, ease: out}
-      - {t: 7.9, cam: [55.5, 35.9, 1.45], look: metallica, look_h: 1.5, lens: 55}
+      - {t: 0.0, cam: [59.88, 35.03, 1.4], look: luckiny, look_h: 0.69, lens: 35.0, frame: 全身}
+      - {t: 4.3, cam: [59.8, 35.09, 1.4], look: luckiny, look_h: 0.69, lens: 35.0}
+      - {t: 4.9, cam: [58.47, 34.89, 1.45], look: metallica, look_h: 1.42, lens: 55.0, frame: 寄り, ease: out}
+      - {t: 7.9, cam: [58.33, 34.88, 1.45], look: metallica, look_h: 1.42, lens: 55.0}
     bg: house_front
     act: {start: 南西からルッキーニィ, do: ルッキーニィが「ボクが探しておきます！」と手を上げる。「なに？」でメタリカが振り向き、カメラが素早く寄る, end: 振り向いたメタリカの寄り, sync: L249「そうだ！“スズの音草”は、ボクが探しておきます！」は 0.3秒から、L250「なに？“スズの音草”があるのか？」は 4.5秒から}
     camera: 南西から。「なに？」でメタリカへ素早く寄る
@@ -539,8 +539,8 @@ cuts:
         - {t: 4.3, at: m1, face: 39, pose: cross}
         - {t: 8.1, at: m1, face: 39, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [60.0, 34.2, 2.4], look: [57.2, 34.4], look_h: 1.2, lens: 30, frame: 寄り}
-      - {t: 8.1, cam: [59.8, 34.0, 2.3], look: [57.0, 34.1], look_h: 1.25, lens: 34, ease: linear}
+      - {t: 0.0, cam: [60.0, 34.2, 2.4], look: [57.2, 34.4], look_h: 1.44, lens: 54, frame: 寄り}
+      - {t: 8.1, cam: [59.8, 34.0, 2.3], look: [57.0, 34.1], look_h: 1.43, lens: 34.0, ease: linear}
     bg: house_front
     act: {start: 東から3人, do: ティトが慌ててルッキーニィをたしなめる。メタリカがティトへ向き直って説明を求める, end: 腕を組んでティトを見るメタリカ, sync: L251「ラナ！軽はずみなことを言ってはいけません！」は 0.3秒から、L252「あん？どういうことだ？説明しろ。」は 3.9秒から}
     camera: 東の少し高い所からの3人。ゆっくり寄る
@@ -563,8 +563,8 @@ cuts:
         - {t: 0.0, at: m1, face: 39, pose: cross}
         - {t: 8.1, at: m1, face: 39, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [55.3, 31.4, 1.3], look: tito, look_h: 1.3, lens: 38, frame: 寄り}   # 北西から。手振りの腕が画面を横切らない距離（2026-11-01 の見直し）
-      - {t: 8.1, cam: [55.45, 31.5, 1.3], look: tito, look_h: 1.3, lens: 44, ease: linear}
+      - {t: 0.0, cam: [55.3, 31.4, 1.3], look: tito, look_h: 1.35, lens: 68.0, frame: 寄り}
+      - {t: 8.1, cam: [55.45, 31.5, 1.3], look: tito, look_h: 1.35, lens: 44.0, ease: linear}
     bg: house_front
     act: {start: ティトの横顔, do: 小さく頭を下げてから、手振りを交えて「スズの音草」を説明する, end: 説明するティトの横顔, sync: L253「申し訳ありません。“スズの音草”とは人々の感情に反応する不思議な草のことです。」は 0.3秒から}
     camera: 北西からティトの横顔の寄り
@@ -580,9 +580,9 @@ cuts:
         - {t: 1.0, at: t1, face: 95, pose: stand, ease: inout}
         - {t: 5.5, at: t1, face: 95, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.3, lens: 40, frame: 寄り}   # ティトの南東。横顔から東の砂地へ約100度振る
-      - {t: 1.2, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.3, lens: 40}
-      - {t: 5.5, cam: [58.5, 34.4, 1.5], look: [72.0, 31.0], look_h: 1.0, lens: 40, frame: 大引き, ease: inout}
+      - {t: 0.0, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.35, lens: 40.0, frame: 寄り}
+      - {t: 1.2, cam: [58.4, 34.4, 1.5], look: tito, look_h: 1.35, lens: 40.0}
+      - {t: 5.5, cam: [58.5, 34.4, 1.5], look: [72.0, 31.0], look_h: 1.0, lens: 40.0, frame: 大引き, ease: inout}
     bg: desert_edge
     light_en: "Early morning: the low sun rising in the east through the gap in the red cliffs, barren sand outside the village glowing gold."
     act: {start: ティトの横顔, do: ティトが村の外の方を見る。カメラがティトの横顔から、崖の切れ目の外の荒れた砂地へゆっくり振る, end: 村の外の荒れた砂地と朝日, sync: L254「昔はこの辺りに生えていたらしいのですが、今ではもう……。」は 0.3秒から}
@@ -629,19 +629,19 @@ cuts:
     only: [metallica, tito]
     keys:
       metallica:
-        - {t: 0.0, at: m1, face: 39, pose: cross}
+        - {t: 0.0, at: m1, face: 39, pose: cross, expr: annoyed}
         - {t: 0.4, at: m1, face: 39, pose: gesture}
         - {t: 6.8, at: m1, face: 39, pose: cross}
         - {t: 11.4, at: m1, face: 39, pose: cross}
       tito:
         - {t: 0.0, at: t1, face: 95, pose: look_down}
         - {t: 1.0, at: t1, face: 215, pose: stand}
-        - {t: 7.0, at: t1, face: 215, pose: stand}
+        - {t: 7.0, at: t1, face: 215, pose: stand, expr: sad}
         - {t: 7.6, at: t1, face: 215, pose: look_down}
         - {t: 11.4, at: t1, face: 215, pose: look_down}
     cam_keys:   # メタリカの肩越し。帽子のつばの下を通す低さ（2026-11-01 の見直し）
-      - {t: 0.0, cam: [55.0, 35.6, 1.25], look: tito, look_h: 1.35, lens: 45, frame: 寄り}
-      - {t: 11.4, cam: [55.1, 35.5, 1.25], look: tito, look_h: 1.3, lens: 55, ease: linear}
+      - {t: 0.0, cam: [55.0, 35.6, 1.25], look: tito, look_h: 1.32, lens: 81, frame: 寄り}
+      - {t: 11.4, cam: [55.1, 35.5, 1.25], look: tito, look_h: 1.32, lens: 55.0, ease: linear}
     bg: house_front
     act: {start: メタリカの肩越しにティト, do: メタリカが手を振って問いただす。ティトが向き直り、目を伏せて首を振る, end: うつむくティト, sync: L257「あん？ならば、砂食みがいなくなった今、…生えるということじゃないのか？」は 0.3秒から、L258「残念ですが、砂食みは１匹ではありません。」は 7.1秒から}
     camera: メタリカの肩越しにティト。ゆっくり寄る
@@ -664,11 +664,11 @@ cuts:
         - {t: 0.0, at: m1, face: 39, pose: cross}
         - {t: 11.4, at: m1, face: 50, pose: cross}
     cam_keys:   # 南から歩き出すティト → 西から、ティトの肩越しに村の外の朝日（遠くを見る）→ 振り返ったティトの顔
-      - {t: 0.0, cam: [58.4, 37.4, 1.0], look: tito, look_h: 1.2, lens: 35, frame: 全身}
-      - {t: 3.4, cam: [55.8, 33.4, 1.4], look: [70.0, 31.5], look_h: 1.4, lens: 28, ease: inout}
-      - {t: 7.4, cam: [55.9, 33.35, 1.4], look: [70.0, 31.5], look_h: 1.4, lens: 30}
-      - {t: 8.6, cam: [56.0, 33.3, 1.35], look: tito, look_h: 1.3, lens: 40, ease: inout}
-      - {t: 11.4, cam: [56.1, 33.25, 1.35], look: tito, look_h: 1.3, lens: 45, ease: linear}
+      - {t: 0.0, cam: [58.4, 37.4, 1.0], look: tito, look_h: 0.75, lens: 35.0, frame: 全身}
+      - {t: 3.4, cam: [55.8, 33.4, 1.4], look: [70.0, 31.5], look_h: 1.4, lens: 28.0, ease: inout}
+      - {t: 7.4, cam: [55.9, 33.35, 1.4], look: [70.0, 31.5], look_h: 1.4, lens: 30.0}
+      - {t: 8.6, cam: [56.0, 33.3, 1.35], look: tito, look_h: 1.04, lens: 40.0, ease: inout}
+      - {t: 11.4, cam: [56.1, 33.25, 1.35], look: tito, look_h: 1.07, lens: 45.0, ease: linear}
     bg: house_front
     act: {start: うつむいたティト, do: 昔の話をしながら村の外（東、朝日の方）へ数歩歩いて遠くを見る。「今のように数が増えては」で振り返り、目を伏せる, end: 振り返って目を伏せるティト、手前の端にメタリカ, sync: L259「大昔に、どこぞの魔女様が…根こそぎ退治してくれたとききましたが……。」は 0.3秒から、L260「今のように数が増えては、もうそれも困難でしょう。」はその後（2026-11-01 の見直しで戻した。036 でメタリカが思いつく前ふり）}
     camera: 南から歩き出すティト → 西から、ティトの肩越しに村の外の朝日 → 振り返ったティトの顔へ寄る
@@ -708,7 +708,7 @@ cuts:
     only: [luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: c160, face: 15, pose: look_down}
+        - {t: 0.0, at: c160, face: 15, pose: look_down, expr: sad}
         - {t: 0.4, at: c160, face: 5, pose: stand}
         - {t: 1.0, at: [57.2, 35.6], face: 5, pose: arms_up, ease: out}
         - {t: 5.0, at: [57.2, 35.6], face: 5, pose: arms_up}
@@ -782,7 +782,7 @@ cuts:
         - {t: 0.0, at: m1, face: 159, pose: cross}
         - {t: 1.2, at: m1, face: 80, pose: cross, ease: inout}
         - {t: 1.5, at: m1, face: 80, pose: walk}
-        - {t: 2.8, at: m3, face: 80, pose: walk, ease: out}
+        - {t: 2.8, at: m3, face: 80, pose: walk, ease: out, expr: grin}
         - {t: 3.1, at: m3, face: 85, pose: proud}
         - {t: 5.7, at: m3, face: 85, pose: proud}
     cam_keys:
@@ -809,8 +809,8 @@ cuts:
         - {t: 7.4, at: c160, face: 339, pose: arms_up}
         - {t: 9.9, at: c160, face: 339, pose: arms_up}
     cam_keys:
-      - {t: 0.0, cam: [54.6, 36.6, 0.35], look: luckiny, look_h: 1.0, lens: 28, frame: 全身}
-      - {t: 9.9, cam: [54.8, 36.5, 0.35], look: luckiny, look_h: 1.1, lens: 28, ease: linear}
+      - {t: 0.0, cam: [54.6, 36.6, 0.35], look: luckiny, look_h: 0.52, lens: 28.0, frame: 全身}
+      - {t: 9.9, cam: [54.8, 36.5, 0.35], look: luckiny, look_h: 0.68, lens: 28.0, ease: linear}
     bg: house_front
     act: {start: 西の低い位置から（背後に朝日）, do: ルッキーニィが跳び上がって喜び、礼を言って頭を下げ、また手を上げる, end: 両手を上げて喜ぶルッキーニィ、背後に朝日, sync: L267「ほ、本当ですか！ありがとうございます！」は 0.3秒から、L268「“スズの音草”は、必ず探しておきます！」は 6.4秒から}
     camera: 西の低い位置から煽る。背後に朝日（逆光）

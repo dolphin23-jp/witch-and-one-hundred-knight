@@ -34,7 +34,7 @@ cuts:
         - {t: 1.9, at: hk_in, face: 120, pose: stand}
         - {t: 5.8, at: hk_in, face: 115, pose: stand}
       luckiny:
-        - {t: 0.0, at: l_tub, face: 180, pose: lean}
+        - {t: 0.0, at: l_tub, face: 180, pose: lean, expr: smile}
         - {t: 2.0, at: l_tub, face: 180, pose: lean}
         - {t: 2.5, at: l_tub, face: 302, pose: stand}
         - {t: 3.4, at: l_tub, face: 302, pose: wave}
@@ -85,7 +85,7 @@ cuts:
     only: [luckiny, marny, hundred-knight]
     keys:
       luckiny:
-        - {t: 0.0, at: l_back, face: 220, pose: stand}
+        - {t: 0.0, at: l_back, face: 220, pose: stand, expr: shy}
         - {t: 0.4, at: l_back, face: 222, pose: wave}
         - {t: 3.6, at: l_back, face: 225, pose: stand}
         - {t: 7.6, at: l_back, face: 240, pose: stand}
@@ -93,7 +93,7 @@ cuts:
         - {t: 13.6, at: l_back, face: 252, pose: stand}
       marny:
         - {t: 0.0, at: m_curtain, z: 1.35, face: 40, pose: proud}
-        - {t: 7.0, at: m_curtain, z: 1.35, face: 40, pose: stand}
+        - {t: 7.0, at: m_curtain, z: 1.35, face: 40, pose: stand, expr: smile}
         - {t: 7.6, at: [14.5, 8.3], z: 1.45, face: 60, pose: arms_up, ease: inout}
         - {t: 10.6, at: [14.6, 7.9], z: 1.5, face: 75, pose: stand, ease: inout}
         - {t: 13.6, at: [14.6, 7.9], z: 1.5, face: 75, pose: gesture}

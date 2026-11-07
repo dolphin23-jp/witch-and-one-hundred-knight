@@ -1,0 +1,58 @@
+A18-008:
+  shot: 膝上（ビスコ）・ビスコ・ルッキーニィ
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - bisco
+    frame: 全身
+    measured: 1.26
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 12/18
+A18-013:
+  shot: 全身→胸上（アルレッキーノ）・アルレッキーノ・ビスコ・ルッキーニィ
+  issues:
+  - kind: 大きさ
+    who: &id002
+    - arlecchino
+    frame: 全身
+    measured: 1.5
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id002
+    frames: 19/23
+A18-018:
+  shot: 肩なめ（アルレッキーノ越しにビスコ）・アルレッキーノ・ビスコ・ルッキーニィ・百騎兵
+  issues:
+  - kind: 顔が外
+    who:
+    - arlecchino
+    - bisco
+    frames: 7/17
+  - kind: 話し手が見えない
+    who:
+    - arlecchino
+    line: L578
+A18-023:
+  shot: 胸上（マーニィの高さ）・マーニィ・ルッキーニィ・アルレッキーノ・ビスコ
+  issues:
+  - kind: 顔が外
+    who:
+    - arlecchino
+    - luckiny
+    frames: 18/28
+  - kind: 話し手が見えない
+    who:
+    - arlecchino
+    line: L594
+  - kind: 話し手が見えない
+    who:
+    - arlecchino
+    line: L595

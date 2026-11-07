@@ -1,0 +1,53 @@
+A35-004:
+  shot: 寄り・百騎兵・沼から距離がある
+  issues:
+  - kind: 線を越える
+    who:
+    - arlecchino
+    - hundred-knight
+    after: A35-003
+    line:
+    - - 35.22
+      - 31.17
+    - - 34.1
+      - 32.4
+A35-005:
+  shot: 大引き・小道を北の沼へ
+  issues:
+  - kind: 顔が外
+    who:
+    - hundred-knight
+    frames: 5/7
+A35-008:
+  shot: 胸上・構える百騎兵・出来すぎ
+  issues:
+  - kind: 大きさ
+    who:
+    - hundred-knight
+    frame: 膝上
+    measured: 0.31
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A35-010:
+  shot: 全身・跳びかかりをかわす
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - hundred-knight
+    by:
+    - gel_belly
+    frames: 4/6
+A35-017:
+  shot: 大引き（クレーンで上がる）・あいつらが待っている
+  issues:
+  - kind: 大きさ
+    who:
+    - hundred-knight
+    frame: 全身
+    measured: 0.11
+    expect:
+    - 0.15
+    - 1.04
+    what: 体

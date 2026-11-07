@@ -1,0 +1,52 @@
+A11-002:
+  shot: 全身（煽り）・アルレッキーノ（口まね）
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - arlecchino
+    frame: 全身
+    measured: 1.24
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 5/7
+A11-004:
+  shot: 全身→テーブル・アルレッキーノ・トーチカ
+  issues:
+  - kind: 大きさ
+    who: &id002
+    - arlecchino
+    frame: 全身
+    measured: 1.21
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id002
+    frames: 13/13
+A11-005:
+  shot: 全身（肩ごし）・アルレッキーノ・百騎兵
+  issues:
+  - kind: 大きさ
+    who: &id003
+    - arlecchino
+    frame: 全身
+    measured: 1.15
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id003
+    frames: 6/8
+A11-007:
+  shot: 全身（煽り）・アルレッキーノ・階段の上の光と煙
+  issues:
+  - kind: 足が切れ
+    who:
+    - arlecchino
+    frames: 12/14
