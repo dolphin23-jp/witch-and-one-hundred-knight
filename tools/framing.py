@@ -326,15 +326,17 @@ def analyze(scene_dir):
             if len(bad) >= max(1, 0.5 * n):
                 found.append({"kind": "顔の高さ", "who": [w], "frames": f"{len(bad)}/{n}", "y": round(sorted(v)[len(v) // 2], 2)})
         # 顔が向こう向き（寄り・胸上・膝上）
-        away = {}
+        away, seen_w = {}, {}
         for s, w, _ in subj_rows:
             if not w or not s["people"][w]["in"] or "fa" not in s["people"][w]:
                 continue
             rule = frame_rule(s.get("frame"))
-            if rule and rule[0] in FACE_FRAMES and float(s["people"][w]["fa"]) > AWAY:
-                away[w] = away.get(w, 0) + 1
+            if rule and rule[0] in FACE_FRAMES:
+                seen_w[w] = seen_w.get(w, 0) + 1   # その人が主役のコマ（場所を見るカットでは、話している間だけ。A25-023 で、話す時間が短いと全体の半分に届かず見逃した）
+                if float(s["people"][w]["fa"]) > AWAY:
+                    away[w] = away.get(w, 0) + 1
         for w, k_ in away.items():
-            if k_ >= max(1, 0.5 * n) and not back_ok(sh, (bk.get("cuts") or {}).get(cut) or {}, w, ja.get(w, "")):
+            if k_ >= max(2, 0.5 * seen_w.get(w, n)) and not back_ok(sh, (bk.get("cuts") or {}).get(cut) or {}, w, ja.get(w, "")):
                 fas = sorted(float(s["people"][w]["fa"]) for s, ww, _ in subj_rows if ww == w and "fa" in s["people"][w])
                 found.append({"kind": "顔が向こう向き", "who": [w], "frames": f"{k_}/{n}", "angle": round(fas[len(fas) // 2])})
         # 話し手が見えない（台詞の間ずっと）

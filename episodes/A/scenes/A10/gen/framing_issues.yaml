@@ -16,7 +16,15 @@ A10-003:
 A10-008:
   shot: 全身（煽り）・アルレッキーノ
   issues:
-  - kind: 足が切れ
-    who:
+  - kind: 大きさ
+    who: &id002
     - arlecchino
-    frames: 9/12
+    frame: 全身
+    measured: 1.63
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id002
+    frames: 12/12

@@ -1,10 +1,15 @@
 A16-003:
   shot: 寄り・樽に三品を入れるメタリカ
   issues:
-  - kind: 顔が外
+  - kind: 大きさ
     who:
     - arlecchino
-    frames: 8/16
+    frame: 寄り
+    measured: 0.18
+    expect:
+    - 0.24
+    - 1.32
+    what: 顔
 A16-009:
   shot: 寄り（煽り）・得意げに踊るメタリカ
   issues:
@@ -22,3 +27,15 @@ A16-009:
     - metallica
     frames: 8/13
     angle: 114
+A16-012:
+  shot: 寄り（手持ち）・焦るメタリカ
+  issues:
+  - kind: 大きさ
+    who:
+    - metallica
+    frame: 寄り
+    measured: 0.21
+    expect:
+    - 0.24
+    - 0.95
+    what: 顔
