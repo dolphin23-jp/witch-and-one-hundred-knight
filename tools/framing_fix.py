@@ -4,7 +4,8 @@
 話し手が見えないは直さない（カメラの位置から考え直す）。
 顔が向こう向き（寄り・胸上・膝上で主役の顔がカメラの反対を向く）は、カメラを主役の周りに、同じ距離・同じ高さのまま、
 顔の向きから 40 度の所まで回す（今カメラがいる側へ。主役の視線の線を越えないので、話し相手との左右は変わらない。2026-11-07）。
-線を越える（イマジナリーライン）は、そのカットのカメラのキーを、二人を結ぶ線で鏡写しにする（主役との距離・高さ・顔との角度は同じまま、前のカットの側へ）。
+線を越える（イマジナリーライン）は、そのカットのカメラのキーを、二人を結ぶ線で鏡写しにする（主役との距離・高さは同じまま、前のカットの側へ）。
+ただし鏡写しで主役の顔とカメラの角度が 20 度より大きく増えて 60 度を超えるなら（主役が相手をまっすぐ見ていないカット）、直さない（表情を優先）。
 寄り・胸上・膝上で本人の帽子のつばが顔を隠すときは、そのカットでその人を見るキーのカメラを、つばの下から顔が見える高さ（顔からの高さ ≤ 横の距離 × 0.04、ほぼ目の高さ）まで下げる。
 
   python tools/framing_fix.py episodes/A/scenes/A12            # 直して gen/framing_fix.yaml に記録
@@ -79,6 +80,28 @@ def mirror_cut(keys, line, places):
             if abs(x - float(pt[0])) + abs(y - float(pt[1])) > 0.3:
                 k["look"] = [round(x, 2), round(y, 2)]
     return done
+
+
+def mirror_hides_face(keys, samples, line):
+    """線で鏡写しにすると、カメラの見る人の顔とカメラの角度（横の向き）が 20 度より大きく増え、60 度を超えるか。
+    主役が相手をまっすぐ見ていないと、鏡写しで顔の向きとの角度が変わる（A15-014・A30-025・A35-004 で、ほぼ正面から横顔や背中になった）。"""
+    before, after = [], []
+    for k in keys:
+        cm, lk = k.get("cam"), k.get("look")
+        if not (isinstance(cm, list) and len(cm) >= 2 and isinstance(lk, str)):
+            continue
+        s = min(samples, key=lambda s: abs(float(s["t"]) - float(k.get("t", 0.0))))
+        m = s["people"].get(lk)
+        if not m or "fh" not in m or "wx" not in m:
+            continue
+        mx, my = _mirror((float(cm[0]), float(cm[1])), line[0], line[1])
+        for (x, y), acc in (((float(cm[0]), float(cm[1])), before), ((mx, my), after)):
+            b = _bearing(x - m["wx"], y - m["wy"])
+            acc.append(abs((b - float(m["fh"]) + 180.0) % 360.0 - 180.0))
+    if not before:
+        return False
+    b0, a0 = sum(before) / len(before), sum(after) / len(after)
+    return a0 - b0 > 20.0 and a0 > 60.0
 
 
 def _turn(dx, dy, fh):
@@ -181,6 +204,9 @@ def fix_scene(scene_dir, dry=False, only=None, cuts=None):
         prev = {"look": None, "lens": 35.0, "look_h": None, "frame": None}
         changed = []
         cross = next((i for i in v["issues"] if i["kind"] == "線を越える"), None) if "線を越える" in allowed else None
+        if cross and mirror_hides_face(keys, samples, cross["line"]):   # 鏡写しにすると主役の顔が見えなくなる: 直さない（A15-014 で 26 度 → 82 度になった）
+            log[cut] = {"issues": [i["kind"] for i in v["issues"]], "keys": [], "note": "線を越えるが、鏡写しにすると主役の顔が横か後ろを向くので直さない"}
+            continue
         if cross:   # イマジナリーライン: まずカメラを線で鏡写しにする（ほかの直しは、測り直してから）
             done = mirror_cut(keys, cross["line"], bk.get("places") or {})
             if done:
