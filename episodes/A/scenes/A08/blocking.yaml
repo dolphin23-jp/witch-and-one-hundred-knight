@@ -209,7 +209,7 @@ cuts:
     only: [metallica, hundred-knight]
     keys:
       metallica:
-        - {t: 0.0, at: rise, face: 130, pose: proud}
+        - {t: 0.0, at: rise, face: 130, pose: proud, expr: grin}
         - {t: 1.2, at: rise, face: 110, pose: arms_up, ease: inout}
         - {t: 4.0, at: rise, face: 110, pose: arms_up}
         - {t: 4.6, at: rise, face: 130, pose: proud}
@@ -247,9 +247,9 @@ cuts:
     only: [luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: peek, face: 55, pose: crouch}
+        - {t: 0.0, at: peek, face: 55, pose: crouch, expr: surprised}
         - {t: 1.6, at: peek, face: 55, pose: crouch}
-        - {t: 2.6, at: peek, face: 55, pose: stand, ease: out}
+        - {t: 2.6, at: peek, face: 55, pose: stand, ease: out, expr: smile}
         - {t: 6.6, at: peek, face: 58, pose: stand}
     creatures:
       sand-eater:   # 倒れたまま（A08-001 の続き）

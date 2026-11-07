@@ -1,0 +1,212 @@
+'2026-11-06':
+  A35-002:
+    issues:
+    - 頭が切れ
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: arlecchino
+      frame: 膝上
+      look_h:
+      - 1.22
+      - 1.23
+      lens:
+      - 28.0
+      - 28.0
+    - t: 7.4
+      look: arlecchino
+      frame: 膝上
+      look_h:
+      - 1.22
+      - 1.23
+      lens:
+      - 32.0
+      - 18
+      moved:
+        dolly:
+        - 34.44
+        - 32.14
+        - 0.85
+  A35-005:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 大引き
+      look_h:
+      - 0.6
+      - 0.29
+      lens:
+      - 26.0
+      - 26.0
+  A35-008:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 膝上
+      look_h:
+      - 0.58
+      - 0.43
+      lens:
+      - 30.0
+      - 135
+    - t: 7.7
+      look: hundred-knight
+      frame: 膝上
+      look_h:
+      - 0.58
+      - 0.43
+      lens:
+      - 34.0
+      - 133
+  A35-010:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 0.0
+      look:
+      - 34.4
+      - 22.8
+      frame: 全身
+      look_h:
+      - 0.9
+      - 0.27
+      lens:
+      - 24.0
+      - 24.0
+    - t: 0.7
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 0.9
+      - 1.95
+      lens:
+      - 24.0
+      - 24.0
+    - t: 3.0
+      look:
+      - 35.4
+      - 23.0
+      frame: 全身
+      look_h:
+      - 0.6
+      - 0.27
+      lens:
+      - 26.0
+      - 26.0
+  A35-017:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 0.45
+      - 0.32
+      lens:
+      - 30.0
+      - 30.0
+'2026-11-07':
+  A35-005:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 大引き
+      look_h:
+      - 0.29
+      - 0.24
+      lens:
+      - 26.0
+      - 26.0
+  A35-008:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 膝上
+      look_h:
+      - 0.43
+      - 0.47
+      lens:
+      - 54.0
+      - 97
+    - t: 7.7
+      look: hundred-knight
+      frame: 膝上
+      look_h:
+      - 0.43
+      - 0.14
+      lens:
+      - 34.0
+      - 34.0
+  A35-010:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 0.0
+      look:
+      - 34.4
+      - 22.8
+      frame: 全身
+      look_h:
+      - 0.27
+      - -0.25
+      lens:
+      - 24.0
+      - 24.0
+    - t: 0.7
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 1.95
+      - 1.12
+      lens:
+      - 24.0
+      - 24.0
+    - t: 3.0
+      look:
+      - 35.4
+      - 23.0
+      frame: 全身
+      look_h:
+      - 0.27
+      - -0.56
+      lens:
+      - 26.0
+      - 26.0
+  A35-017:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 0.32
+      - -0.49
+      lens:
+      - 30.0
+      - 30.0
+  A35-004:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 35.22
+          - 31.17
+        - - 34.1
+          - 32.4
+        after: A35-003
+    - t: 4.3
+      moved:
+        mirror: *id001
+        after: A35-003

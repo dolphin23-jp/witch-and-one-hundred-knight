@@ -1,0 +1,44 @@
+'2026-11-07':
+  A36-010:
+    issues:
+    - 顔が向こう向き
+    keys:
+    - t: 0.0
+      look: luckiny
+      frame: 膝上
+      look_h:
+      - 0.9
+      - 1.01
+      lens:
+      - 32.0
+      - 32.0
+      moved:
+        turn: 112
+    - t: 12.1
+      look: luckiny
+      frame: 膝上
+      look_h:
+      - 0.9
+      - 1.09
+      lens:
+      - 40.0
+      - 40.0
+      moved:
+        turn: 110
+    note: 顔の前へ回しても、ルッキーニィが向きを変えるので向こう向きのコマが残る。元のカメラに戻した
+  A36-014:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 36.49
+          - 55.49
+        - - 35.0
+          - 54.4
+        after: A36-013
+    - t: 8.2
+      moved:
+        mirror: *id001
+        after: A36-013

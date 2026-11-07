@@ -224,29 +224,15 @@ cuts:
         at: [31.5, 48.5]
         face: 205
         pose: hold
+        expr: smile
       - {t: 0.2, pose: stand, face: 60}
       - {t: 1.4, face: 30}
       - {t: 4.14, pose: hop, face: 60}
       - {t: 6.54, pose: stand}
     cam_keys:
-    - t: 0.0
-      cam: [30.4, 47.6, 1.0]
-      look: mitten
-      lens: 30
-      frame: 膝上
-      look_h: 0.77
-    - t: 4.14
-      cam: [30.4, 47.6, 1.0]
-      look: mitten
-      lens: 30
-      look_h: 0.77
-    - t: 7.4
-      cam: [30.45, 47.65, 1.0]
-      look: luckiny
-      lens: 50
-      ease: inout
-      frame: 胸上
-      look_h: 1.11
+    - {t: 0.0, cam: [30.4, 47.6, 1.0], look: mitten, lens: 30.0, frame: 膝上, look_h: 0.77}
+    - {t: 4.14, cam: [30.4, 47.6, 1.0], look: mitten, lens: 30.0, look_h: 0.86}
+    - {t: 7.4, cam: [30.45, 47.65, 1.0], look: luckiny, lens: 90.0, ease: inout, frame: 胸上, look_h: 1.12}
     fx: []
     act: {start: ミトンが首をかしげる（「……？でも、どうして置いてあるんでち？」）, do: （「まぁ、いいでち。ラッキーでち」）車輪の陰で、ルッキーニィがほっと微笑む, end: 車輪の陰のルッキーニィの横顔}
     camera: ミトンの肩越しから、奥の車輪の陰（ルッキーニィ）へ振る
@@ -361,17 +347,8 @@ cuts:
         pose: arms_up
         z: 1.3
     cam_keys:
-    - t: 0.0
-      cam: [38.6, 44.6, 0.8]
-      look: [37.4, 46.0]
-      look_h: 0.6
-      lens: 28
-      frame: 膝上
-    - t: 5.2
-      cam: [38.55, 44.65, 0.8]
-      look: [37.4, 46.0]
-      look_h: 0.6
-      lens: 32
+    - {t: 0.0, cam: [38.6, 44.6, 0.8], look: [37.4, 46.0], look_h: 0.93, lens: 28.0, frame: 膝上}
+    - {t: 5.2, cam: [38.55, 44.65, 0.8], look: [37.4, 46.0], look_h: 0.94, lens: 32.0}
     act: {start: 遠くから蹄と車輪の音, do: ルッキーニィが街道の方を振り向く（「うん？……馬車の音？」）, end: 街道の方を見るルッキーニィと百騎兵}
     camera: 二人の東の低い所から、街道の方へ振り向く二人
     kind: M
@@ -422,18 +399,8 @@ cuts:
         face: 70
         ease: out
     cam_keys:
-    - t: 0.0
-      cam: [38.8, 42.4, 3.0]
-      look: mitten
-      look_h: 0.8
-      lens: 26
-      frame: 引き
-    - t: 5.2
-      cam: [41.0, 44.0, 3.2]
-      look: [49.0, 50.6]
-      look_h: 0.5
-      lens: 28
-      ease: inout
+    - {t: 0.0, cam: [38.8, 42.4, 3.0], look: mitten, look_h: 1.0, lens: 26.0, frame: 引き}
+    - {t: 5.2, cam: [41.0, 44.0, 3.2], look: [49.0, 50.6], look_h: -0.27, lens: 28.0, ease: inout}
     fx:
     - kind: mist
       t: [0.0, 5.2]
@@ -539,18 +506,8 @@ cuts:
         pose: lean
         z: 0.1
     cam_keys:
-    - t: 0.0
-      cam: [47.4, 51.4, 1.3]
-      look: heinz
-      look_h: 1.25
-      lens: 40
-      frame: 膝上
-    - t: 5.4
-      cam: [47.5, 51.4, 1.3]
-      look: heinz
-      look_h: 1.25
-      lens: 50
-      ease: inout
+    - {t: 0.0, cam: [47.4, 51.4, 1.3], look: heinz, look_h: 1.38, lens: 72.0, frame: 膝上}
+    - {t: 5.4, cam: [47.5, 51.4, 1.3], look: heinz, look_h: 1.26, lens: 50.0, ease: inout}
     act: {start: 馬車の窓のカーテンが開き、金髪の若い貴族が顔を出して森を眺める, do: 柵の陰でルッキーニィが息をのむ（「あ、あの人……ハインツだ！」）, end: 窓のハインツ}
     camera: 柵の陰の三人の後ろから、柵ごしに馬車の窓のハインツ
     kind: A
@@ -586,17 +543,8 @@ cuts:
         pose: lean
         z: 0.1
     cam_keys:
-    - t: 0.0
-      cam: [51.6, 55.6, 1.75]
-      look: heinz
-      look_h: 1.67
-      lens: 45
-      frame: 寄り
-    - t: 14.4
-      cam: [51.7, 55.5, 1.75]
-      look: heinz
-      look_h: 1.67
-      lens: 55
+    - {t: 0.0, cam: [51.6, 55.6, 1.75], look: heinz, look_h: 1.69, lens: 81.0, frame: 寄り}
+    - {t: 14.4, cam: [51.7, 55.5, 1.75], look: heinz, look_h: 1.7, lens: 55.0}
     act: {start: ルッキーニィが小声で百騎兵に（「知らないんですか？超有名人ですよ！ハインツ・フォン・フラウゼ！」）, do: （「教皇のご子息で見ての通りの美形。女性にモテモテなんですよ」）窓のハインツが遠くを見る, end: 整ったハインツの横顔}
     camera: 馬車の脇（南西）から、窓のハインツの顔
     kind: M
@@ -753,17 +701,8 @@ cuts:
       - {t: 2.4, face: 80}
       - {t: 5.82, face: 60}
     cam_keys:
-    - t: 0.0
-      cam: [52.0, 49.0, 1.35]
-      look: mitten
-      lens: 32
-      frame: 胸上
-      look_h: 0.3
-    - t: 6.7
-      cam: [51.95, 49.05, 1.35]
-      look: mitten
-      lens: 36
-      look_h: 0.95
+    - {t: 0.0, cam: [52.0, 49.0, 1.35], look: mitten, lens: 135, frame: 胸上, look_h: 0.3}
+    - {t: 6.7, cam: [51.95, 49.05, 1.35], look: mitten, lens: 36.0, look_h: 0.86}
     fx: []
     act: {start: 柵の陰でミトンがうっとりと身をくねらせる, do: （「あぁ……王子様をみちゃったでち……。でへへ」）, end: うっとりするミトン}
     camera: 柵の外（街道の側）の少し高い所から、柵ごしにミトン

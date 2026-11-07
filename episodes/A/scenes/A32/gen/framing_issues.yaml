@@ -1,0 +1,130 @@
+A32-005:
+  shot: リリー・殺されるのか
+  issues:
+  - kind: 大きさ
+    who:
+    - lily
+    frame: 膝上
+    measured: 0.55
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A32-010:
+  shot: 巨大メタリカ・出すぎたマネを
+  issues:
+  - kind: 大きさ
+    who:
+    - metallica-giant
+    frame: 膝上
+    measured: 1.85
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A32-013:
+  shot: ビスコ・夜会にも招待して
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - bisco
+    by:
+    - scarecocco_body
+    frames: 14/18
+  - kind: 話し手が見えない
+    who:
+    - bisco
+    line: L1115
+A32-016:
+  shot: ビスコ・不問に
+  issues:
+  - kind: 顔が外
+    who:
+    - bisco
+    frames: 8/11
+  - kind: 話し手が見えない
+    who:
+    - bisco
+    line: L1119
+A32-017:
+  shot: 巨大メタリカ・不問だと
+  issues:
+  - kind: 線を越える
+    who:
+    - bisco
+    - metallica-giant
+    after: A32-015
+    line:
+    - - 47.62
+      - 46.2
+    - - 50.77
+      - 49.04
+A32-018:
+  shot: ビスコ・お前だって気が済むのか
+  issues:
+  - kind: 顔が外
+    who:
+    - bisco
+    frames: 10/13
+  - kind: 話し手が見えない
+    who:
+    - bisco
+    line: L1121
+A32-024:
+  shot: 議長・採決をとりましょう
+  issues:
+  - kind: 大きさ
+    who:
+    - nezaria
+    frame: 膝上
+    measured: 0.26
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A32-025:
+  shot: ビスコ・剣のつかで床を打つ
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - bisco
+    frame: 全身
+    measured: 2.17
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 8/13
+A32-031:
+  shot: パープルピール・再教育だ
+  issues:
+  - kind: 大きさ
+    who:
+    - purple-peel
+    frame: 膝上
+    measured: 1.98
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A32-033:
+  shot: 巨大メタリカ・ビスコっ
+  issues:
+  - kind: 顔が外
+    who:
+    - metallica-giant
+    frames: 4/10
+A32-038:
+  shot: 白ネズミ・チュー → 朝の空へ
+  issues:
+  - kind: 大きさ
+    who:
+    - nezaria
+    frame: 寄り
+    measured: 0.01
+    expect:
+    - 0.24
+    - 0.96
+    what: 顔

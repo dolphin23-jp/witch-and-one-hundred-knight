@@ -1,0 +1,263 @@
+'2026-11-06':
+  A28-003:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 5.4
+      look: teressa
+      frame: 肩なめ
+      look_h:
+      - 1.35
+      - 1.35
+      lens:
+      - 36.0
+      - 36.0
+      moved:
+        dx: 0.06
+        dy: 0.14
+        dz: 0.0
+  A28-009:
+    issues:
+    - 大きさ
+    keys:
+    - t: 0.0
+      look:
+      - 49.9
+      - 57.0
+      frame: 寄り
+      look_h:
+      - 0.8
+      - 1.33
+      lens:
+      - 38.0
+      - 92
+    - t: 5.4
+      look:
+      - 49.9
+      - 57.1
+      frame: 寄り
+      look_h:
+      - 0.8
+      - 1.32
+      lens:
+      - 42.0
+      - 102
+  A28-010:
+    issues:
+    - 顔が外
+    keys:
+    - t: 11.4
+      look:
+      - 49.2
+      - 57.8
+      frame: 胸上
+      look_h:
+      - 0.7
+      - 0.91
+      lens:
+      - 40.0
+      - 40.0
+  A28-012:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: lily
+      frame: 膝上
+      look_h:
+      - 0.95
+      - 0.85
+      lens:
+      - 36.0
+      - 66
+    - t: 5.9
+      look:
+      - 46.62
+      - 48.05
+      frame: 引き
+      look_h:
+      - 1.0
+      - 0.53
+      lens:
+      - 30.0
+      - 30.0
+  A28-014:
+    issues:
+    - 顔が隠れ
+    keys:
+    - t: 0.0
+      look: berda
+      frame: 肩なめ
+      look_h:
+      - 0.95
+      - 0.95
+      lens:
+      - 34.0
+      - 34.0
+      moved:
+        dx: 0.35
+        dy: -0.29
+        dz: 0.0
+    - t: 11.4
+      look: berda
+      frame: 肩なめ
+      look_h:
+      - 1.0
+      - 1.0
+      lens:
+      - 40.0
+      - 40.0
+      moved:
+        dx: -0.2
+        dy: 0.22
+        dz: -0.15
+  A28-022:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: rubens
+      frame: 胸上
+      look_h:
+      - 1.35
+      - 1.28
+      lens:
+      - 45.0
+      - 45.0
+    - t: 1.6
+      look: rubens
+      frame: 胸上
+      look_h:
+      - 1.35
+      - 1.23
+      lens:
+      - 45.0
+      - 45.0
+    - t: 4.4
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 0.6
+      - 0.32
+      lens:
+      - 40.0
+      - 135
+  A28-023:
+    issues:
+    - 顔が隠れ
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look: lily
+      frame: 肩なめ
+      look_h:
+      - 1.2
+      - 1.2
+      lens:
+      - 36.0
+      - 36.0
+      moved:
+        dx: -0.78
+        dy: -0.17
+        dz: 0.0
+    - t: 10.0
+      look: lily
+      frame: 肩なめ
+      look_h:
+      - 1.3
+      - 1.3
+      lens:
+      - 42.0
+      - 42.0
+      moved:
+        dx: -0.15
+        dy: -0.03
+        dz: 0.0
+'2026-11-07':
+  A28-010:
+    issues:
+    - 顔が外
+    keys:
+    - t: 11.4
+      look:
+      - 49.2
+      - 57.8
+      frame: 胸上
+      look_h:
+      - 0.91
+      - 0.98
+      lens:
+      - 40.0
+      - 40.0
+  A28-012:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: lily
+      frame: 膝上
+      look_h:
+      - 0.85
+      - 1.0
+      lens:
+      - 65.0
+      - 65.0
+    - t: 5.9
+      look:
+      - 46.62
+      - 48.05
+      frame: 引き
+      look_h:
+      - 0.53
+      - 0.58
+      lens:
+      - 30.0
+      - 30.0
+  A28-022:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: rubens
+      frame: 胸上
+      look_h:
+      - 1.28
+      - 1.4
+      lens:
+      - 45.0
+      - 45.0
+    - t: 1.6
+      look: rubens
+      frame: 胸上
+      look_h:
+      - 1.23
+      - 1.35
+      lens:
+      - 45.0
+      - 45.0
+    - t: 4.4
+      look: hundred-knight
+      frame: 全身
+      look_h:
+      - 0.32
+      - -0.11
+      lens:
+      - 72.0
+      - 72.0
+  A28-029:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 53.92
+          - 49.93
+        - - 50.8
+          - 54.61
+        after: A28-026
+    - t: 7.8
+      moved:
+        mirror: *id001
+        after: A28-026
+    note: 線で鏡写しにすると、ラビィの顔が向こう向きになるので、元のカメラに戻した（線を越えたまま。目で確かめる）

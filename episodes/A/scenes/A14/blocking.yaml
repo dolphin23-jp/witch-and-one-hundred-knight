@@ -129,8 +129,8 @@ cuts:
       - {t: 7.0, at: m_house, face: 90, pose: lean}
       - {t: 9.5, at: m_house, face: 90, pose: lean}
     cam_keys:
-    - {t: 0.0, cam: [201.65, 202.4, 0.7], look: [202.05, 200.3], look_h: 1.7, lens: 26, frame: 全身（煽り）}
-    - {t: 9.5, cam: [201.7, 202.25, 0.7], look: [202.05, 200.3], look_h: 1.75, lens: 30}
+    - {t: 0.0, cam: [201.36, 203.01, 0.7], look: [202.05, 200.3], look_h: 0.64, lens: 18.0, frame: 全身（煽り）}
+    - {t: 9.5, cam: [201.59, 202.82, 0.7], look: [202.05, 200.3], look_h: 0.89, lens: 30.0}
     bg: living_dusk
     act: {start: 向き合う二人, do: ルッキーニィが丸窓の前で空を見上げ、両手を広げて星を読み、北を指さす。メタリカは「試してやる」とテーブルの水晶玉へ向き直る, end: 北を指すルッキーニィ（奥にメタリカ）}
     camera: 丸窓の下の低い所から、窓の空を背にしたルッキーニィを煽る
@@ -193,8 +193,8 @@ cuts:
       - {t: 5.4, at: lk_window, face: 150, pose: stand}
       - {t: 7.0, at: lk_window, face: 150, pose: stand}
     cam_keys:
-    - {t: 0.0, cam: [204.6, 200.9, 1.5], look: [202.3, 200.9], look_h: 1.45, lens: 28, frame: 寄り（二人）}
-    - {t: 7.0, cam: [204.4, 200.92, 1.5], look: [202.3, 200.9], look_h: 1.45, lens: 32}
+    - {t: 0.0, cam: [204.6, 200.9, 1.5], look: [202.3, 200.9], look_h: 1.24, lens: 28.0, frame: 寄り（二人）}
+    - {t: 7.0, cam: [202.76, 199.05, 1.5], look: [202.3, 200.9], look_h: 1.33, lens: 32.0}
     bg: living_dusk
     act: {start: 北を指すルッキーニィ, do: メタリカがテーブルから寄ってきて「お手柄だ」とルッキーニィの頭をなでる。ルッキーニィはうれしくて跳ねる, end: 頭をなでるメタリカと、笑うルッキーニィ}
     camera: ソファの上（東）から二人の寄り（奥に丸窓）
@@ -471,9 +471,9 @@ cuts:
     timewarp:
       - {t: [1.55, 2.0], rate: 0.35}
     cam_keys:
-      - {t: 0.0, cam: [33.6, 15.4, 25.8], look: [28.6, 10.2], look_h: 22.6, lens: 22, frame: 全身}
-      - {t: 1.75, cam: [32.8, 14.4, 24.8], look: hundred-knight, lens: 22, roll: 8, ease: inout}
-      - {t: 5.2, cam: [33.2, 13.6, 25.2], look: [28.8, 10.0], look_h: 22.6, lens: 22, roll: 0, ease: inout}
+      - {t: 0.0, cam: [33.6, 15.4, 25.8], look: [28.6, 10.2], look_h: 21.71, lens: 40, frame: 全身}
+      - {t: 1.75, cam: [32.8, 14.4, 24.8], look: hundred-knight, lens: 22.0, roll: 8, ease: inout, look_h: 23.56}
+      - {t: 5.2, cam: [33.2, 13.6, 25.2], look: [28.8, 10.0], look_h: 22.6, lens: 22.0, roll: 0, ease: inout}
     bg: azb_pillar
     act: {start: にらみ合う二人, do: 人形が猛烈に回転して火花を散らしながら転がってくる。百騎兵は沈んでから高く跳び、宙で回って人形を跳び越える（頂点はスロー）。反対側に着地して振り向く, end: 入れ替わって向き合う二人, sync: （台詞なし）}
     camera: 南東のやや高い所から。跳ぶ所で低く寄って傾ける

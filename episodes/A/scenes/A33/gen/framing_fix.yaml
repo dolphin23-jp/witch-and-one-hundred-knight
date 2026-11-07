@@ -1,0 +1,241 @@
+'2026-11-06':
+  A33-016:
+    issues:
+    - 顔が外
+    keys:
+    - t: 4.9
+      look:
+      - 5.6
+      - 3.7
+      frame: 全身
+      look_h:
+      - 0.41
+      - 0.41
+      lens:
+      - 30.0
+      - 21
+'2026-11-07':
+  A33-004:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: luckiny
+      frame: 膝上
+      look_h:
+      - 0.9
+      - 1.05
+      lens:
+      - 32.0
+      - 32.0
+    - t: 5.27
+      look: luckiny
+      frame: 膝上
+      look_h:
+      - 0.94
+      - 1.09
+      lens:
+      - 32.0
+      - 32.0
+    - t: 12.8
+      look: metallica
+      frame: 膝上
+      look_h:
+      - 2.63
+      - 2.56
+      lens:
+      - 28.0
+      - 28.0
+  A33-008:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: bisco
+      frame: 胸上
+      look_h:
+      - 1.38
+      - 1.49
+      lens:
+      - 35.0
+      - 35.0
+    - t: 12.5
+      look: bisco
+      frame: 寄り
+      look_h:
+      - 1.76
+      - 1.8
+      lens:
+      - 42.0
+      - 42.0
+  A33-011:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look:
+      - 2.2
+      - 2.4
+      frame: 引き
+      look_h:
+      - 0.69
+      - 0.79
+      lens:
+      - 20.0
+      - 20.0
+    - t: 5.8
+      look:
+      - 2.0
+      - 2.0
+      frame: 引き
+      look_h:
+      - 0.69
+      - 0.8
+      lens:
+      - 21.0
+      - 21.0
+  A33-016:
+    issues:
+    - 顔が外
+    keys:
+    - t: 0.0
+      look: luckiny
+      frame: 全身
+      look_h:
+      - 0.69
+      - 0.77
+      lens:
+      - 26.0
+      - 26.0
+    - t: 4.9
+      look:
+      - 5.6
+      - 3.7
+      frame: 全身
+      look_h:
+      - 0.41
+      - 0.74
+      lens:
+      - 30.0
+      - 30.0
+  A33-026:
+    issues:
+    - 足が切れ
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 全身
+      look_h:
+      - 1.11
+      - 0.82
+      lens:
+      - 22.0
+      - 22.0
+    - t: 6.0
+      look: metallica
+      frame: 膝上
+      look_h:
+      - 1.08
+      - 1.16
+      lens:
+      - 26.0
+      - 26.0
+  A33-028:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look:
+      - 5.25
+      - 5.25
+      frame: 全身
+      look_h:
+      - 0.69
+      - 0.88
+      lens:
+      - 28.0
+      - 28.0
+    - t: 12.3
+      look:
+      - 5.2
+      - 5.25
+      frame: 全身
+      look_h:
+      - 0.64
+      - 0.99
+      lens:
+      - 32.0
+      - 32.0
+  A33-053:
+    issues:
+    - 顔が外
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look:
+      - 5.0
+      - 5.0
+      frame: 全身
+      look_h:
+      - 0.03
+      - 0.1
+      lens:
+      - 85.0
+      - 135
+  A33-005:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id001
+        - - 2.98
+          - 3.19
+        - - 0.63
+          - 3.11
+        after: A33-004
+    - t: 10.3
+      moved:
+        mirror: *id001
+        after: A33-004
+  A33-018:
+    issues:
+    - 線を越える
+    keys:
+    - t: 0.0
+      moved:
+        mirror: &id002
+        - - 5.39
+          - 3.03
+        - - 5.67
+          - 4.01
+        after: A33-016
+    - t: 5.3
+      moved:
+        mirror: *id002
+        after: A33-016
+  A33-037:
+    issues:
+    - 顔が隠れ
+    - 話し手が見えない
+    keys:
+    - t: 0.0
+      look: metallica
+      frame: 膝上
+      look_h:
+      - 1.12
+      - 1.16
+      lens:
+      - 24.0
+      - 24.0
+    - t: 12.4
+      look: metallica
+      frame: 膝上
+      look_h:
+      - 1.12
+      - 1.22
+      lens:
+      - 28.0
+      - 28.0

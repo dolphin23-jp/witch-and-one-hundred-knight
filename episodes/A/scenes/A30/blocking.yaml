@@ -1101,17 +1101,8 @@ cuts:
       - {t: 1.0, pose: kneel, face: 40}
       - {t: 3.4, pose: kneel_hold, face: 80}
     cam_keys:
-    - t: 0.0
-      cam: [46.4, 56.4, 0.6]
-      look: teressa-swamp
-      look_h: 0.6
-      lens: 34
-      frame: 膝上
-    - t: 10.2
-      cam: [46.6, 56.2, 0.75]
-      look: teressa-swamp
-      look_h: 0.8
-      lens: 38
+    - {t: 0.0, cam: [46.4, 56.4, 0.6], look: teressa-swamp, look_h: 0.6, lens: 34, frame: 膝上}
+    - {t: 10.2, cam: [46.6, 56.2, 0.75], look: teressa-swamp, look_h: 0.8, lens: 38}
     act: {start: 沼の中から身を起こすテレッサ（頭から沼を浴びている）, do: 手探りで（「えっ……え？そ、そんな……これ……！！見えない……何も見えませんわ……！！」）, end: 手を伸ばしてさまようテレッサ}
     camera: テレッサの目の高さで、手探りする手の先から
     kind: A
@@ -1175,17 +1166,8 @@ cuts:
       - {t: 0.3, pose: cough}
       - {t: 14.8, pose: cry}
     cam_keys:
-    - t: 0.0
-      cam: [46.73, 53.85, 1.15]
-      look: teressa-swamp
-      look_h: 0.75
-      lens: 40
-      frame: 寄り
-    - t: 15.8
-      cam: [46.55, 54.0, 1.1]
-      look: teressa-swamp
-      look_h: 0.75
-      lens: 50
+    - {t: 0.0, cam: [46.73, 53.85, 1.15], look: teressa-swamp, look_h: 1.05, lens: 72.0, frame: 寄り}
+    - {t: 15.8, cam: [46.55, 54.0, 1.1], look: teressa-swamp, look_h: 1.0, lens: 50.0}
     shake:
     - t: [2.4, 15.8]
       amp: 0.4
@@ -1759,22 +1741,9 @@ cuts:
         face: 260
         pose: proud
     cam_keys:
-    - t: 0.0
-      cam: [42.78, 54.24, 0.35]
-      look: teressa-swamp
-      look_h: 0.4
-      lens: 34
-      frame: 膝上
-    - t: 12.73
-      cam: [42.84, 54.1, 0.35]
-      look: berda
-      look_h: 1.4
-      lens: 30
-    - t: 16.2
-      cam: [42.9, 54.0, 0.4]
-      look: berda
-      look_h: 1.45
-      lens: 34
+    - {t: 0.0, cam: [42.78, 54.24, 0.35], look: teressa-swamp, look_h: 0.91, lens: 34.0, frame: 膝上}
+    - {t: 12.73, cam: [42.84, 54.1, 0.35], look: berda, look_h: 1.05, lens: 30.0}
+    - {t: 16.2, cam: [42.9, 54.0, 0.4], look: berda, look_h: 1.11, lens: 34.0}
     act: {start: テレッサの手が力なく落ちる, do: （「し、死に……。い、いやです……ベルダ様……た、助けて……助けて……」）沼に倒れて動かなくなる。ベルダが見下ろす（「……なんということ……！」）, end: 倒れたテレッサ}
     camera: テレッサの顔の高さの低い所から。最後にベルダを見上げる
     kind: M
@@ -2086,17 +2055,8 @@ cuts:
       - {t: 0.3, pose: stand, face: 300}
       - {t: 6.3, face: 260, pose: point}
     cam_keys:
-    - t: 0.0
-      cam: [47.0, 49.0, 1.6]
-      look: metallica
-      look_h: 1.55
-      lens: 40
-      frame: 胸上
-    - t: 7.3
-      cam: [46.8, 51.8, 1.6]
-      look: metallica
-      look_h: 1.55
-      lens: 40
+    - {t: 0.0, cam: [50.72, 50.94, 1.6], look: metallica, look_h: 1.55, lens: 40, frame: 胸上}
+    - {t: 7.3, cam: [48.54, 52.71, 1.6], look: metallica, look_h: 1.55, lens: 40}
     act: {start: メタリカの寄り, do: ぐるりと見回して挑発する（「さあ、三流魔女ども！どちらが本物の魔女か……いってみろよ！」）, end: にやりと笑うメタリカ}
     camera: メタリカのまわりを回る
     kind: M
@@ -2320,8 +2280,9 @@ cuts:
         at: [49.0, 58.4]
         face: '@metallica'
         pose: lean
+        expr: surprised
       - {t: 0.3, pose: stand, face: 350}
-      - {t: 9.58, pose: cover}
+      - {t: 9.58, pose: cover, expr: smile}
       - {t: 15.3, pose: shake}
       hundred-knight:
       - t: 0.0
@@ -2671,17 +2632,8 @@ cuts:
         face: '@purple-peel'
         pose: cross
     cam_keys:
-    - t: 0.0
-      cam: [43.4, 51.6, 1.2]
-      look: berda
-      look_h: 1.45
-      lens: 50
-      frame: 寄り
-    - t: 5.7
-      cam: [43.5, 51.4, 1.2]
-      look: berda
-      look_h: 1.45
-      lens: 58
+    - {t: 0.0, cam: [43.4, 51.6, 1.2], look: berda, look_h: 1.45, lens: 50, frame: 寄り}
+    - {t: 5.7, cam: [43.5, 51.4, 1.2], look: berda, look_h: 1.45, lens: 58}
     act: {start: 壁ぎわの暗がりのベルダ, do: 口元を隠して笑う（「これでは夜会が台無しね……。ふふふふ」）, end: ベルダの目}
     camera: ベルダの顔の寄り（暗い壁ぎわ、下から）
     kind: M
@@ -2754,17 +2706,8 @@ cuts:
         face: '@purple-peel'
         pose: cross
     cam_keys:
-    - t: 0.0
-      cam: [51.6, 51.8, 0.5]
-      look: purple-peel
-      look_h: 1.4
-      lens: 30
-      frame: 膝上
-    - t: 11.7
-      cam: [52.0, 51.8, 0.55]
-      look: purple-peel
-      look_h: 1.5
-      lens: 36
+    - {t: 0.0, cam: [51.6, 51.8, 0.5], look: purple-peel, look_h: 1.17, lens: 30.0, frame: 膝上}
+    - {t: 11.7, cam: [52.0, 51.8, 0.55], look: purple-peel, look_h: 1.29, lens: 36.0}
     act: {start: パープルピールが一歩出る, do: （「派手にやってくれたじゃないの！ええ、沼の魔女ちゃんよぉ！」「この落とし前、アタシたちがあんたにつけさせてやるよ」）, end: 指を鳴らすパープルピール}
     camera: パープルピールの低い所から、あおって寄る
     kind: M
@@ -2922,22 +2865,9 @@ cuts:
         pose: point
       - {t: 0.3, pose: arms_up, face: 175}
     cam_keys:
-    - t: 0.0
-      cam: [49.3, 59.5, 0.3]
-      look: hundred-knight
-      look_h: 0.2
-      lens: 28
-      frame: 全身
-    - t: 2.0
-      cam: [49.3, 59.5, 0.35]
-      look: hundred-knight
-      look_h: 0.4
-      lens: 28
-    - t: 8.6
-      cam: [49.1, 59.8, 0.6]
-      look: hundred-knight
-      look_h: 2.0
-      lens: 24
+    - {t: 0.0, cam: [49.3, 59.5, 0.3], look: hundred-knight, look_h: -0.09, lens: 28.0, frame: 全身}
+    - {t: 2.0, cam: [49.3, 59.5, 0.35], look: hundred-knight, look_h: -0.05, lens: 28.0}
+    - {t: 8.6, cam: [49.1, 59.8, 0.6], look: hundred-knight, look_h: 2.48, lens: 24.0}
     fx:
     - kind: light
       t: [1.4, 2.8]
@@ -3210,23 +3140,9 @@ cuts:
       - {t: 2.0, z: -14.0}
       - {t: 7.8, z: 0.0, ease: out, pose: arms_up}
     cam_keys:
-    - t: 0.0
-      cam: [49.8, 59.0, 0.4]
-      look: [49.6, 50.6]
-      look_h: 1.4
-      lens: 22
-      frame: 全身
-    - t: 5.78
-      cam: [49.7, 59.5, 0.6]
-      look: [50.0, 48.6]
-      look_h: 6.0
-      lens: 18
-    - t: 8.4
-      cam: [49.6, 60.2, 1.0]
-      look: [50.0, 48.6]
-      look_h: 11.0
-      lens: 16
-      frame: 大引き
+    - {t: 0.0, cam: [49.8, 59.0, 0.4], look: [49.6, 50.6], look_h: -0.45, lens: 22.0, frame: 全身}
+    - {t: 5.78, cam: [49.7, 59.5, 0.6], look: [50.0, 48.6], look_h: -3.46, lens: 18.0}
+    - {t: 8.4, cam: [49.6, 61.8, 1.0], look: [50.0, 48.6], look_h: -2.25, lens: 18.0, frame: 大引き}
     shake:
     - t: [1.4, 8.4]
       amp: 1.0
@@ -3318,17 +3234,8 @@ cuts:
         face: 180
         pose: arms_up
     cam_keys:
-    - t: 0.0
-      cam: [42.95, 48.9, 0.6]
-      look: berda
-      look_h: 1.6
-      lens: 30
-      frame: 胸上
-    - t: 7.7
-      cam: [42.9, 49.0, 0.6]
-      look: berda
-      look_h: 1.7
-      lens: 34
+    - {t: 0.0, cam: [42.95, 48.9, 0.6], look: berda, look_h: 1.39, lens: 30.0, frame: 胸上}
+    - {t: 7.7, cam: [42.9, 49.0, 0.6], look: berda, look_h: 1.41, lens: 34.0}
     act: {start: ベルダが見上げる, do: （「……ここまでの魔力が！想像以上だわ！」）目を細めて心の声（「でも、お陰で……」）, end: 薄く笑うベルダ}
     camera: ベルダの足元（北東）から見上げる
     kind: M
@@ -3398,17 +3305,8 @@ cuts:
         face: 180
         pose: arms_up
     cam_keys:
-    - t: 0.0
-      cam: [52.4, 51.2, 9.4]
-      look: [56.2, 54.8]
-      look_h: 1.0
-      lens: 30
-      frame: 膝上
-    - t: 5.5
-      cam: [52.2, 51.1, 9.6]
-      look: [50.6, 56.4]
-      look_h: 0.8
-      lens: 26
+    - {t: 0.0, cam: [52.4, 51.2, 9.4], look: [56.2, 54.8], look_h: 1.05, lens: 135, frame: 膝上}
+    - {t: 5.5, cam: [52.2, 51.1, 9.6], look: [50.6, 56.4], look_h: 0.8, lens: 26.0}
     act: {start: ラビィとリューベンスが見上げる, do: ラビィ（「うほっ！すっげええ！！」）、リューベンス（「これほどとは……」）, end: 見上げる二人}
     camera: 巨大メタリカの肩の高さから見下ろす（巨大メタリカの目線）
     kind: M
@@ -3476,17 +3374,8 @@ cuts:
         pose: arms_up
       - {t: 0.3, pose: point, face: 180}
     cam_keys:
-    - t: 0.0
-      cam: [50.8, 61.8, 1.6]
-      look: metallica-giant
-      look_h: 11.6
-      lens: 40
-      frame: 胸上
-    - t: 4.6
-      cam: [50.6, 61.4, 1.6]
-      look: metallica-giant
-      look_h: 11.7
-      lens: 46
+    - {t: 0.0, cam: [50.8, 61.8, 1.6], look: metallica-giant, look_h: 17.31, lens: 40.0, frame: 胸上}
+    - {t: 4.6, cam: [50.6, 61.4, 1.6], look: metallica-giant, look_h: 17.8, lens: 46.0}
     fx:
     - kind: bolt
       t: [0.4, 4.6]

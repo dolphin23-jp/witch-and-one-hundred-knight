@@ -1,0 +1,22 @@
+A10-003:
+  shot: 全身（横顔）・アルレッキーノ・百騎兵
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - arlecchino
+    frame: 全身
+    measured: 1.36
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 13/13
+A10-008:
+  shot: 全身（煽り）・アルレッキーノ
+  issues:
+  - kind: 足が切れ
+    who:
+    - arlecchino
+    frames: 9/12

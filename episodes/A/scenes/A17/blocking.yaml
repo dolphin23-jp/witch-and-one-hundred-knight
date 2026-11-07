@@ -163,7 +163,7 @@ cuts:
     only: [metallica, arlecchino, purple-peel, lily, rabi, usamaru, berda, teressa]
     keys:
       metallica:
-      - {t: 0.0, at: m_stop, z: 26.0, face: 340, pose: proud}
+      - {t: 0.0, at: m_stop, z: 26.0, face: 340, pose: proud, expr: grin}
       - {t: 0.6, at: m_stop, z: 26.0, face: 340, pose: stand}
       - {t: 1.0, at: [61.08, 3.12], z: 26.0, face: 315, pose: dance, ease: linear}
       - {t: 2.06, at: [60.92, 2.92], z: 26.0, face: 326, pose: dance, ease: linear}
@@ -204,7 +204,7 @@ cuts:
     only: [metallica, bisco, purple-peel, lily, rabi, usamaru, berda, teressa]
     keys:
       metallica:
-      - {t: 0.0, at: [61.08, 1.28], z: 26.0, face: 45, pose: dance, ease: linear}
+      - {t: 0.0, at: [61.08, 1.28], z: 26.0, face: 45, pose: dance, ease: linear, expr: annoyed}
       - {t: 0.96, at: [61.25, 1.14], z: 26.0, face: 55, pose: dance, ease: linear}
       - {t: 1.91, at: [61.45, 1.02], z: 26.0, face: 65, pose: dance, ease: linear}
       - {t: 2.87, at: [61.66, 0.94], z: 26.0, face: 75, pose: dance, ease: linear}
@@ -219,7 +219,7 @@ cuts:
       bisco:
       - {t: 0.0, at: b_g, z: 26.0, face: 350, pose: look_up}
       - {t: 8.6, at: b_g, z: 26.0, face: 350, pose: look_up}
-      - {t: 9.0, at: b_g, z: 26.0, face: 10, pose: cover}
+      - {t: 9.0, at: b_g, z: 26.0, face: 10, pose: cover, expr: shy}
       - {t: 16.2, at: b_g, z: 26.0, face: 10, pose: cover}
       purple-peel:
       - {t: 0.0, at: pp, z: 26.6, face: 146, pose: cover}
@@ -254,8 +254,8 @@ cuts:
       - {t: 0.0, at: [62.0, 0.9], z: 26.0, face: 210, pose: dance}
       - {t: 5.5, at: [62.0, 0.9], z: 26.0, face: 330, pose: dance}
     cam_keys:
-    - {t: 0.0, cam: [60.1, 1.5, 26.6], look: metallica, look_h: 27.5, lens: 36, frame: 寄り}
-    - {t: 5.5, cam: [60.2, 1.45, 26.6], look: metallica, look_h: 27.5, lens: 40}
+    - {t: 0.0, cam: [60.1, 1.5, 26.6], look: metallica, look_h: 27.42, lens: 65, frame: 寄り}
+    - {t: 5.5, cam: [60.2, 1.45, 26.6], look: metallica, look_h: 27.51, lens: 40.0}
     bg: azb_summit_night
     act: {start: 踊るメタリカ, do: 踊りを止めずに「これは儀式に必要な踊りなんだぞ！」と言い返す, end: 踊るメタリカの寄り}
     camera: 西の低い所からメタリカの寄り（奥に東の空）
@@ -459,8 +459,8 @@ cuts:
       - {t: 0.0, at: te_near, z: 26.0, face: 228, pose: lean}
       - {t: 9.0, at: te_near, z: 26.0, face: 228, pose: cover}
     cam_keys:
-    - {t: 0.0, cam: [60.4, 0.0, 27.4], look: metallica, look_h: 27.4, lens: 28, frame: 寄り}
-    - {t: 9.0, cam: [58.0, -1.4, 27.4], look: metallica, look_h: 27.4, lens: 58}
+    - {t: 0.0, cam: [63.72, 1.7, 27.45], look: metallica, look_h: 27.42, lens: 45.0, frame: 寄り}
+    - {t: 9.0, cam: [65.71, 2.4, 27.5], look: metallica, look_h: 27.42, lens: 95.0, ease: inout}
     bg: azb_summit_night
     act: {start: うつむくメタリカ, do: 顔を上げて「ウソの手紙……いや、招待状……だった……のか！？」。背景が引き伸ばされるように（めまいのように）見える, end: 気づいて凍りつくメタリカ}
     camera: 北西からメタリカ。カメラは下がりながらズームで寄る（ドリーズーム）
@@ -512,8 +512,8 @@ cuts:
       - {t: 0.6, at: te_back, z: 26.0, face: 245, pose: stand}
       - {t: 3.5, at: te_back, z: 26.0, face: 245, pose: lean}
     cam_keys:
-    - {t: 0.0, cam: [63.6, 0.6, 27.3], look: teressa, look_h: 27.25, lens: 45, frame: 寄り}
-    - {t: 3.5, cam: [63.7, 0.5, 27.3], look: teressa, look_h: 27.25, lens: 50}
+    - {t: 0.0, cam: [63.6, 0.6, 27.3], look: teressa, look_h: 27.33, lens: 81, frame: 寄り}
+    - {t: 3.5, cam: [63.7, 0.5, 27.3], look: teressa, look_h: 27.29, lens: 50.0}
     bg: azb_summit_night
     act: {start: 背を向けたテレッサ, do: 肩ごしに振り返って舌を出し「バーカ。」, end: 振り返ったテレッサ}
     camera: メタリカの目の高さ（南西）から、振り返るテレッサの寄り
@@ -940,8 +940,8 @@ cuts:
       - {t: 13.46, at: [61.99, 1.15], z: 26.0, face: 89, pose: dance, ease: linear}
       - {t: 14.5, at: [62.36, 1.21], z: 26.0, face: 110, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [59.4, 5.2, 26.75], look: [60.8, 2.1], look_h: 26.8, lens: 34, frame: 寄り}
-    - {t: 14.5, cam: [59.5, 4.9, 26.7], look: [60.7, 2.2], look_h: 26.8, lens: 40}
+    - {t: 0.0, cam: [59.4, 5.2, 26.75], look: [60.8, 2.1], look_h: 27.1, lens: 61, frame: 寄り}
+    - {t: 14.5, cam: [59.5, 4.9, 26.7], look: [60.7, 2.2], look_h: 27.1, lens: 40.0}
     bg: azb_summit_night
     act: {start: ひざをついたメタリカ, do: うつむいたまま「笑いものに……されたのか……？」「偉大なる、沼の魔女が……！」。後ろを見習い魔女たちが踊りながら横切る, end: うつむくメタリカの寄り}
     camera: 南の低い所から、うつむくメタリカの横顔の寄り（右の奥を踊りの輪が回る。ゆっくり寄る）
@@ -1080,9 +1080,9 @@ cuts:
       - {t: 21.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
       - {t: 21.6, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance}
     cam_keys:
-    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 26.7, lens: 34, frame: 寄り}
-    - {t: 21.0, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
-    - {t: 21.6, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 26.85, lens: 42}
+    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 27.13, lens: 61.0, frame: 寄り}
+    - {t: 21.0, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 27.06, lens: 42.0}
+    - {t: 21.6, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 27.05, lens: 42.0}
     bg: azb_summit_night
     act: {start: 並んでしゃがむ二人, do: メタリカは顔を両手でおおって泣き出し、「うるさい……」「くそっ……」「あんなヤツらに……」, end: 泣くメタリカの寄り}
     camera: 南東の低い所（顔が帽子に隠れない高さ）から二人、泣くメタリカへゆっくり寄る
@@ -1292,9 +1292,9 @@ cuts:
       - {t: 17.0, at: [61.64, 3.19], z: 26.0, face: 290, pose: dance, ease: linear}
       - {t: 18.0, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [59.9, 4.6, 27.4], look: metallica, look_h: 26.7, lens: 34, frame: 寄り}
-    - {t: 6.0, cam: [58.0, 7.0, 30.0], look: [60.5, 3.0], look_h: 26.5, lens: 30}
-    - {t: 18.0, cam: [44.0, 22.0, 52.0], look: [61.0, 2.0], look_h: 26.0, lens: 26}
+    - {t: 0.0, cam: [59.9, 4.6, 27.4], look: metallica, look_h: 27.06, lens: 61.0, frame: 寄り}
+    - {t: 6.0, cam: [58.0, 7.0, 30.0], look: [60.5, 3.0], look_h: 26.99, lens: 30.0}
+    - {t: 18.0, cam: [44.0, 22.0, 52.0], look: [61.0, 2.0], look_h: 26.53, lens: 26.0}
     bg: azb_summit_night
     act: {start: 泣くメタリカ, do: 「くそ、くそっ……」。ビスコが「メタリカ……」。夜空から魔女たちの高笑いが響く。カメラは上へ高く引き、星空の下の小さな山頂と、踊りの輪と、うずくまる二人, end: 夜の山頂（夜会編 回2 の終わり）}
     camera: メタリカの寄りから、上へ高く引いていく（クレーン）

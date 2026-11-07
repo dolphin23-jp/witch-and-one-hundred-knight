@@ -1,0 +1,96 @@
+A30-001:
+  shot: 揺れる議会室
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - berda
+    by:
+    - teressa_fore1
+    frames: 4/8
+A30-013:
+  shot: 沼を浴びたテレッサ・見えない
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - teressa-swamp
+    by:
+    - tswamp_brim
+    frames: 10/15
+A30-014:
+  shot: テレッサ・毒沼ですの
+  issues:
+  - kind: 顔が隠れ
+    who: &id001
+    - teressa-swamp
+    by:
+    - tswamp_brim
+    frames: 21/22
+  - kind: 頭が切れ
+    who: *id001
+    frames: 7/22
+A30-021:
+  shot: 倒れるテレッサ・ベルダ
+  issues:
+  - kind: 顔が外
+    who:
+    - berda
+    - teressa-swamp
+    frames: 10/23
+A30-032:
+  shot: 寄り・ベルダの含み笑い
+  issues:
+  - kind: 線を越える
+    who:
+    - berda
+    - teressa-swamp
+    after: A30-021
+    line:
+    - - 42.54
+      - 50.48
+    - - 43.45
+      - 53.53
+A30-033:
+  shot: パープルピール・落とし前
+  issues:
+  - kind: 大きさ
+    who:
+    - purple-peel
+    frame: 膝上
+    measured: 2.27
+    expect:
+    - 0.6
+    - 1.75
+    what: 体
+A30-038:
+  shot: 巨大化・沼の噴き上げから立ち上がる巨大メタリカ
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - metallica
+    by:
+    - ENV_cswamp
+    frames: 5/13
+A30-039:
+  shot: ベルダ・想像以上
+  issues:
+  - kind: 大きさ
+    who:
+    - berda
+    frame: 胸上
+    measured: 0.08
+    expect:
+    - 0.12
+    - 0.5
+    what: 顔
+A30-040:
+  shot: ラビィとリューベンス・見上げる
+  issues:
+  - kind: 顔が外
+    who:
+    - rabi
+    - rubens
+    frames: 4/9
+  - kind: 話し手が見えない
+    who:
+    - rubens
+    line: L1079

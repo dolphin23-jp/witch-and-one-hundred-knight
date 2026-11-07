@@ -245,23 +245,9 @@ cuts:
         pose: proud
         face: 110
     cam_keys:
-    - t: 0.0
-      cam: [3.6, 1.7, 1.5]
-      look: luckiny
-      look_h: 0.9
-      lens: 32
-      frame: 膝上
-    - t: 5.27
-      cam: [3.6, 1.7, 1.5]
-      look: luckiny
-      look_h: 0.9
-      lens: 32
-    - t: 12.8
-      cam: [3.5, 1.75, 1.6]
-      look: metallica
-      lens: 28
-      ease: inout
-      look_h: 3.3
+    - {t: 0.0, cam: [3.6, 1.7, 1.5], look: luckiny, look_h: 1.05, lens: 32.0, frame: 膝上}
+    - {t: 5.27, cam: [3.6, 1.7, 1.5], look: luckiny, look_h: 1.09, lens: 32.0}
+    - {t: 12.8, cam: [3.5, 1.75, 1.6], look: metallica, lens: 28.0, ease: inout, look_h: 2.56}
     act: {start: ルッキーニィが目を輝かせる, do: （「”魔女会報”！？魔女にしか送られてこない、あの！」）メタリカが得意げに階段を降りる（「キヒヒ！とうとうワタシの名を世に轟かす日が来たようだなあ。」）, end: 5段目で胸を張るメタリカ}
     camera: テーブルの北から、ルッキーニィから階段のメタリカへ振る
     kind: M
@@ -300,19 +286,8 @@ cuts:
         z: 1.55
       - {t: 4.6, pose: arms_up}
     cam_keys:
-    - t: 0.0
-      cam: [2.8, 4.0, 1.1]
-      look: metallica
-      lens: 28
-      frame: 膝上
-      look_h: 2.67
-    - t: 10.3
-      cam: [2.2, 3.6, 1.7]
-      look: metallica
-      lens: 38
-      ease: inout
-      frame: 胸上
-      look_h: 2.93
+    - {t: 0.0, cam: [2.86, 2.37, 1.1], look: metallica, lens: 28, frame: 膝上, look_h: 2.67}
+    - {t: 10.3, cam: [2.23, 2.73, 1.7], look: metallica, lens: 38, ease: inout, frame: 胸上, look_h: 2.93}
     act: {start: 階段の5段目で胸を張るメタリカ, do: （「キヒヒ！こうなったら、自らのチカラでさらなる沼の拡張を行い、」）両手を広げて（「沼の魔女の名を歴史に刻んでやる！」）, end: 両手を掲げるメタリカ}
     camera: 階段の脇の低い所から見上げ、ゆっくり寄る
     kind: A
@@ -451,19 +426,8 @@ cuts:
         pose: arms_up
         z: 1.55
     cam_keys:
-    - t: 0.0
-      cam: [5.3, 1.95, 0.95]
-      look: bisco
-      look_h: 1.15
-      lens: 35
-      frame: 胸上
-    - t: 12.5
-      cam: [5.25, 1.8, 1.05]
-      look: bisco
-      lens: 42
-      ease: inout
-      frame: 寄り
-      look_h: 1.77
+    - {t: 0.0, cam: [5.3, 1.95, 0.95], look: bisco, look_h: 1.49, lens: 35.0, frame: 胸上}
+    - {t: 12.5, cam: [5.25, 1.8, 1.05], look: bisco, lens: 42.0, ease: inout, frame: 寄り, look_h: 1.8}
     act: {start: にぎやかな声から離れて、ビスコがうつむく, do: （心の声「(すっかりそれどころではなかったがあの夜会にいたのだろうか)」「(私に呪いをかけた魔女が……。)」）, end: 考え込むビスコの顔}
     camera: ソファの正面の低い所から、ビスコの顔へゆっくり寄る（独白）
     kind: A
@@ -641,17 +605,8 @@ cuts:
         pose: walk
         face: 0
     cam_keys:
-    - t: 0.0
-      cam: [6.0, 3.65, 1.0]
-      look: [2.2, 2.4]
-      look_h: 1.4
-      lens: 20
-      frame: 引き
-    - t: 5.8
-      cam: [6.1, 3.55, 1.05]
-      look: [2.0, 2.0]
-      look_h: 1.8
-      lens: 21
+    - {t: 0.0, cam: [6.0, 3.65, 1.0], look: [2.2, 2.4], look_h: 0.79, lens: 20.0, frame: 引き}
+    - {t: 5.8, cam: [6.1, 3.55, 1.05], look: [2.0, 2.0], look_h: 0.8, lens: 21.0}
     act: {start: ソファのビスコがぼやく, do: （「まったく。もうちょっとゆっくりしていけばいいのに。」）奥で、メタリカが会報を抱えて2階へ戻っていく, end: 空になった階段}
     camera: 東南の低い所から、手前のソファのビスコと、奥の階段を上がるメタリカ
     kind: M
@@ -944,17 +899,8 @@ cuts:
         face: 330
         pose: lie
     cam_keys:
-    - t: 0.0
-      cam: [3.9, 3.6, 0.8]
-      look: luckiny
-      look_h: 0.7
-      lens: 26
-      frame: 全身
-    - t: 4.9
-      cam: [4.1, 3.7, 0.75]
-      look: [5.6, 3.7]
-      look_h: 0.5
-      lens: 30
+    - {t: 0.0, cam: [3.9, 3.6, 0.8], look: luckiny, look_h: 0.77, lens: 26.0, frame: 全身}
+    - {t: 4.9, cam: [4.1, 3.7, 0.75], look: [5.6, 3.7], look_h: 0.74, lens: 30.0}
     act: {start: ルッキーニィが倒れたビスコへ駆け寄る, do: ひざをついて揺する（「あぁ！？ビスコさん！しっかりしてください！！」）, end: ビスコのそばのルッキーニィ}
     camera: テーブルの南の低い所から、駆け寄るルッキーニィ
     kind: M
@@ -1038,17 +984,8 @@ cuts:
         face: 330
         pose: lie
     cam_keys:
-    - t: 0.0
-      cam: &id011 [6.1, 2.65, 1.8]
-      look: luckiny
-      lens: 28
-      frame: 膝上
-      look_h: 0.52
-    - t: 5.3
-      cam: *id011
-      look: luckiny
-      lens: 29.4
-      look_h: 0.52
+    - {t: 0.0, cam: [4.59, 3.08, 1.8], look: luckiny, lens: 28, frame: 膝上, look_h: 0.52}
+    - {t: 5.3, cam: [4.59, 3.08, 1.8], look: luckiny, lens: 29.4, look_h: 0.52}
     act: {start: ルッキーニィがビスコを抱えて振り向く, do: （「アルレッキーノさん、冷静に説明しないでください。」）, end: アルレッキーノをにらむルッキーニィ}
     camera: アルレッキーノの肩の高さから、ひざをついたルッキーニィを見下ろす
     kind: M
@@ -1367,17 +1304,8 @@ cuts:
         pose: proud
         face: 140
     cam_keys:
-    - t: 0.0
-      cam: &id015 [3.4, 3.9, 1.3]
-      look: metallica
-      lens: 30
-      frame: 全身
-      look_h: 3.68
-    - t: 3.4
-      cam: *id015
-      look: metallica
-      lens: 31.5
-      look_h: 3.68
+    - {t: 0.0, cam: [3.4, 3.9, 1.3], look: metallica, lens: 30.0, frame: 全身, look_h: 3.6}
+    - {t: 3.4, cam: [3.4, 3.9, 1.3], look: metallica, lens: 31.5, look_h: 2.97}
     act: {start: 階段の上にメタリカが現れる, do: （「ふむ、依頼と聞こえたが！」）, end: 階段の上から見下ろすメタリカ}
     camera: 部屋の中ほどから、階段の上を見上げる
     kind: M
@@ -1527,19 +1455,8 @@ cuts:
         ease: out
       - {t: 4.05, pose: cross, face: 90}
     cam_keys:
-    - t: 0.0
-      cam: [4.9, 6.35, 1.1]
-      look: metallica
-      lens: 22
-      frame: 全身
-      look_h: 1.19
-    - t: 6.0
-      cam: [5.0, 6.4, 1.15]
-      look: metallica
-      lens: 26
-      ease: inout
-      frame: 膝上
-      look_h: 1.12
+    - {t: 0.0, cam: [4.9, 6.35, 1.1], look: metallica, lens: 22.0, frame: 全身, look_h: 0.82}
+    - {t: 6.0, cam: [5.0, 6.4, 1.15], look: metallica, lens: 26.0, ease: inout, frame: 膝上, look_h: 1.16}
     act: {start: アルレッキーノが紹介する（「リカ様に依頼に来られたお客様にございます。」）, do: メタリカが階段の下からミトンの前へ歩き、ぴしゃりと（「メタリカだ。」）, end: ミトンの前に立つメタリカ}
     camera: 南の棚の前から、歩いてくるメタリカを追い、止まった所で寄る
     kind: M
@@ -1638,17 +1555,8 @@ cuts:
         face: 90
         pose: cross
     cam_keys:
-    - t: 0.0
-      cam: [4.0, 6.3, 1.15]
-      look: [5.25, 5.25]
-      look_h: 0.95
-      lens: 28
-      frame: 全身
-    - t: 12.3
-      cam: [4.1, 6.25, 1.1]
-      look: [5.2, 5.25]
-      look_h: 0.9
-      lens: 32
+    - {t: 0.0, cam: [4.0, 6.3, 1.15], look: [5.25, 5.25], look_h: 0.88, lens: 28.0, frame: 全身}
+    - {t: 12.3, cam: [4.05, 6.31, 1.1], look: [5.2, 5.25], look_h: 0.99, lens: 32.0}
     fx: []
     act: {start: ルッキーニィがおそるおそるミトンに近づく, do: （「ブリダンゴ……？初めて見ました……。」）顔をのぞき込む（「立つし、喋るし。もしかして虫じゃなくて、妖精の仲間とかですか？」）, end: のぞき込むルッキーニィ}
     camera: 南の棚の前から、横に並ぶ二人
@@ -2120,17 +2028,8 @@ cuts:
       - {t: 0.3, pose: look_down, face: 90}
       - {t: 6.67, pose: point, face: 110}
     cam_keys:
-    - t: 0.0
-      cam: [5.3, 6.5, 1.3]
-      look: metallica
-      lens: 24
-      frame: 膝上
-      look_h: 1.12
-    - t: 12.4
-      cam: [5.25, 6.45, 1.3]
-      look: metallica
-      lens: 28
-      look_h: 1.12
+    - {t: 0.0, cam: [5.3, 6.5, 1.3], look: metallica, lens: 24.0, frame: 膝上, look_h: 1.16}
+    - {t: 12.4, cam: [5.25, 6.45, 1.3], look: metallica, lens: 28.0, look_h: 1.22}
     act: {start: メタリカがため息をつく（「はぁ……。わかったわかった。大好きな王子を応援したいんだな。」）, do: 床を指さす（「だったら土にでも潜ってろ。それがお前にできる唯一の応援だ。」）, end: 床を指さすメタリカ}
     camera: 南東の棚の前から、メタリカ
     kind: M
@@ -2465,17 +2364,8 @@ cuts:
         pose: sit
         z: 0.42
     cam_keys:
-    - t: 0.0
-      cam: [6.6, 0.7, 1.9]
-      look: [4.4, 1.5]
-      look_h: 1.1
-      lens: 24
-      frame: 全身
-    - t: 6.0
-      cam: [6.55, 0.75, 1.85]
-      look: [4.4, 1.45]
-      look_h: 1.1
-      lens: 26
+    - {t: 0.0, cam: [6.6, 0.7, 1.9], look: [4.4, 1.5], look_h: 0.77, lens: 24.0, frame: 全身}
+    - {t: 6.0, cam: [6.55, 0.75, 1.85], look: [4.4, 1.45], look_h: 0.64, lens: 26.0}
     act: {start: アルレッキーノがソファのメタリカの前へ進み出る, do: （「しかしリカ様、魔女ドクトリンには次の一節がございます。」）, end: ソファの前のアルレッキーノ}
     camera: 北東の隅（本棚の脇）の高い所から、アルレッキーノとソファのメタリカ
     kind: M
@@ -3012,18 +2902,8 @@ cuts:
       - {t: 0.3, face: 150}
       - {t: 0.8, pose: point, face: 150}
     cam_keys:
-    - t: 0.0
-      cam: [3.0, 0.75, 1.25]
-      look: [5.0, 5.0]
-      look_h: 0.8
-      lens: 26
-      frame: 全身
-    - t: 7.2
-      cam: [3.05, 0.8, 1.25]
-      look: [6.4, 6.2]
-      look_h: 0.9
-      lens: 28
-      ease: inout
+    - {t: 0.0, cam: [3.0, 0.75, 1.25], look: [5.0, 5.0], look_h: 0.1, lens: 135, frame: 全身}
+    - {t: 7.2, cam: [3.05, 0.8, 1.25], look: [6.4, 6.2], look_h: -0.69, lens: 28.0, ease: inout}
     act: {start: 百騎兵がルッキーニィを追って玄関へ, do: メタリカがその背中へ（「ピラーを咲かせることも忘れるなよ、百騎兵！」）, end: 玄関を出ていく百騎兵}
     camera: ソファの前、メタリカの肩越しに、玄関へ歩く百騎兵
     kind: M

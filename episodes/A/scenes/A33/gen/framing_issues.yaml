@@ -1,0 +1,64 @@
+A33-008:
+  shot: 寄り・ビスコの独白・呪いをかけた魔女
+  issues:
+  - kind: 頭が切れ
+    who:
+    - bisco
+    frames: 6/18
+A33-011:
+  shot: 引き（低い）・ビスコのぼやき、2階へ戻るメタリカ
+  issues:
+  - kind: 顔が外
+    who:
+    - bisco
+    frames: 6/9
+  - kind: 話し手が見えない
+    who:
+    - bisco
+    line: L1168
+A33-016:
+  shot: 全身・駆け寄るルッキーニィ
+  issues:
+  - kind: 足が切れ
+    who:
+    - luckiny
+    frames: 6/8
+A33-028:
+  shot: 二人・ルッキーニィがミトンをのぞき込む
+  issues:
+  - kind: 大きさ
+    who: &id001
+    - luckiny
+    frame: 全身
+    measured: 1.23
+    expect:
+    - 0.15
+    - 1.04
+    what: 体
+  - kind: 足が切れ
+    who: *id001
+    frames: 14/18
+A33-037:
+  shot: 膝上・メタリカ・土にでも潜ってろ
+  issues:
+  - kind: 顔が隠れ
+    who:
+    - metallica
+    by:
+    - hat_brim
+    frames: 8/18
+  - kind: 話し手が見えない
+    who:
+    - metallica
+    line: L1203
+A33-053:
+  shot: メタリカの肩越し・ピラーを咲かせることも忘れるなよ
+  issues:
+  - kind: 顔が外
+    who:
+    - metallica
+    frames: 8/11
+  - kind: 話し手が見えない
+    who:
+    - metallica
+    line: L1230

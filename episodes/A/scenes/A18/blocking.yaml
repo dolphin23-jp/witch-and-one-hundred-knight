@@ -114,8 +114,8 @@ cuts:
         - {t: 8.8, at: l_table, face: 311, pose: look_up}
         - {t: 10.4, at: l_table, face: 311, pose: look_up}
     cam_keys:
-      - {t: 0.0, cam: [1.85, 1.7, 1.0], look: [2.7, 3.5], look_h: 1.2, lens: 26, frame: 全身}
-      - {t: 10.4, cam: [1.8, 1.6, 1.05], look: [2.75, 3.5], look_h: 1.2, lens: 28}
+      - {t: 0.0, cam: [1.84, 1.69, 1.0], look: [2.7, 3.5], look_h: 0.69, lens: 18, frame: 全身}
+      - {t: 10.4, cam: [1.8, 1.6, 1.05], look: [2.75, 3.5], look_h: 0.64, lens: 28.0}
     act: {start: アルレッキーノとルッキーニィ, do: アルレッキーノが上の階を手で示して「お部屋の前に」。ルッキーニィは口元に手を当てて心配し、階段の上を見上げる, end: 階段の上を見上げるルッキーニィ}
     camera: 階段の脇（北西）の低い所から、向き合う二人を。ルッキーニィが階段の上を見上げると、カメラの方を見上げる顔になる
     kind: M
@@ -195,7 +195,7 @@ cuts:
     only: [bisco, luckiny, hundred-knight, arlecchino]
     keys:
       bisco:
-        - {t: 0.0, at: [5.0, 1.25], face: 178, pose: look_down}
+        - {t: 0.0, at: [5.0, 1.25], face: 178, pose: look_down, expr: sad}
         - {t: 0.6, at: [5.0, 1.25], face: 268, pose: walk}
         - {t: 2.6, at: [3.6, 1.35], face: 272, pose: walk}
         - {t: 4.0, at: [2.6, 0.9], face: 300, pose: walk}
@@ -220,9 +220,9 @@ cuts:
         - {t: 2.2, at: hk_side, face: 285, pose: stand}
         - {t: 11.7, at: hk_side, face: 288, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [6.6, 1.1, 1.55], look: bisco, look_h: 1.2, lens: 28, frame: 全身}
-      - {t: 4.6, cam: [5.6, 0.95, 1.48], look: bisco, look_h: 1.3, lens: 30}
-      - {t: 11.7, cam: [3.55, 0.75, 1.42], look: [2.25, 0.6], look_h: 1.4, lens: 36}
+      - {t: 0.0, cam: [6.6, 1.1, 1.55], look: bisco, look_h: 0.74, lens: 18, frame: 全身}
+      - {t: 4.6, cam: [5.6, 0.95, 1.48], look: bisco, look_h: 0.77, lens: 30.0}
+      - {t: 11.7, cam: [3.55, 0.75, 1.42], look: [2.25, 0.6], look_h: 1.4, lens: 36.0}
     act: {start: 目をそらしたビスコ, do: ビスコが黙ってソファの前を通り、丸窓の前へ歩いて外の光を見る。心の声。うつむき、また窓を見上げる。百騎兵とルッキーニィが目で追う, end: 丸窓の光の中のビスコの横顔}
     camera: 東（本棚の側）から、ソファの前を窓へ歩くビスコの背中を追い、ソファの上を前へ出て窓の前の横顔へ寄る
     kind: M
@@ -231,13 +231,13 @@ cuts:
     only: [bisco, luckiny]
     keys:
       luckiny:
-        - {t: 0.0, at: [3.2, 1.85], face: 315, pose: walk}
+        - {t: 0.0, at: [3.2, 1.85], face: 315, pose: walk, expr: smile}
         - {t: 0.9, at: [2.85, 1.05], face: 300, pose: walk, ease: out}
         - {t: 1.1, at: [2.85, 1.05], face: 295, pose: wave}
         - {t: 3.0, at: [2.85, 1.05], face: 295, pose: stand}
         - {t: 7.5, at: [2.85, 1.05], face: 295, pose: stand}
       bisco:
-        - {t: 0.0, at: b_window, face: 355, pose: look_up}
+        - {t: 0.0, at: b_window, face: 355, pose: look_up, expr: surprised}
         - {t: 3.1, at: b_window, face: 355, pose: stand}
         - {t: 3.25, at: b_window, z: 0.12, face: 60, pose: jump}
         - {t: 3.55, at: b_window, z: 0.0, face: 115, pose: stand}
@@ -271,8 +271,8 @@ cuts:
         - {t: 6.9, at: [2.7, 1.05], face: 143, pose: stand, ease: out}
         - {t: 12.5, at: [2.7, 1.05], face: 143, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [3.0, 4.2, 0.95], look: bisco, look_h: 1.15, lens: 30, frame: 全身}
-      - {t: 12.5, cam: [3.1, 3.95, 0.95], look: bisco, look_h: 1.25, lens: 36}
+      - {t: 0.0, cam: [3.0, 4.2, 0.95], look: bisco, look_h: 0.83, lens: 30.0, frame: 全身}
+      - {t: 12.5, cam: [3.1, 3.95, 0.95], look: bisco, look_h: 1.12, lens: 36.0}
     act: {start: 気まずそうなビスコ, do: ビスコがルッキーニィの前を通って、ゆっくりテーブルの方へ歩きながら呪いのことを話す。「こんな姿に」で自分の手を見る。ルッキーニィは目で追う, end: うつむくビスコ}
     camera: 南（玄関の側）の低い所から、こちらへ歩いてくるビスコを据えて振る。止まった所でゆっくり寄る
     kind: M
@@ -340,9 +340,9 @@ cuts:
     keys:
       bisco:
         - {t: 0.0, at: [3.12, 1.8], face: 310, pose: stand}
-        - {t: 0.6, at: [3.12, 1.8], face: 305, pose: cover}
+        - {t: 0.6, at: [3.12, 1.8], face: 305, pose: cover, expr: shy}
         - {t: 4.6, at: [3.12, 1.8], face: 305, pose: stand}
-        - {t: 5.6, at: [3.12, 1.8], face: 321, pose: look_up}
+        - {t: 5.6, at: [3.12, 1.8], face: 321, pose: look_up, expr: smile}
         - {t: 11.4, at: [3.12, 1.8], face: 324, pose: look_up}
       hundred-knight:
         - {t: 0.0, at: hk_side, face: 285, pose: stand}
@@ -420,10 +420,10 @@ cuts:
         - {t: 1.2, at: [2.65, 1.1], face: 175, pose: stand}
         - {t: 16.5, at: [2.65, 1.1], face: 175, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [3.3, 1.62, 0.8], look: arlecchino, look_h: 1.15, lens: 22, frame: 全身}
-      - {t: 5.8, cam: [3.3, 1.62, 0.8], look: arlecchino, look_h: 1.3, lens: 24}
-      - {t: 11.6, cam: [3.29, 1.65, 0.8], look: arlecchino, look_h: 1.45, lens: 28}
-      - {t: 16.5, cam: [3.27, 1.72, 0.85], look: arlecchino, look_h: 1.55, lens: 34}
+      - {t: 0.0, cam: [3.3, 1.62, 0.8], look: arlecchino, look_h: 1.0, lens: 22.0, frame: 全身}
+      - {t: 5.8, cam: [3.3, 1.62, 0.8], look: arlecchino, look_h: 1.28, lens: 24.0}
+      - {t: 11.6, cam: [3.29, 1.65, 0.8], look: arlecchino, look_h: 1.33, lens: 28.0}
+      - {t: 16.5, cam: [3.27, 1.72, 0.85], look: arlecchino, look_h: 1.26, lens: 34.0}
     act: {start: 上を見上げていたアルレッキーノ, do: 腕を組んで考え、テーブルの方へ歩み出る。ビスコが身を乗り出して聞き、アルレッキーノはビスコに向き直り、手を広げて「マーリカ様にございます」と頭を下げる, end: 頭を下げたアルレッキーノの寄り}
     camera: ビスコの前（テーブルの西）の低い所から、歩み出るアルレッキーノを煽る。名を明かす所で顔へ寄る
     kind: M
@@ -505,7 +505,7 @@ cuts:
     only: [bisco]
     keys:
       bisco:
-        - {t: 0.0, at: [3.6, 1.35], face: 190, pose: stand}
+        - {t: 0.0, at: [3.6, 1.35], face: 190, pose: stand, expr: smile}
         - {t: 1.0, at: [3.6, 1.35], face: 279, pose: stand}
         - {t: 1.6, at: [3.6, 1.35], face: 279, pose: look_up}
         - {t: 6.2, at: [3.6, 1.35], face: 279, pose: look_up}
@@ -568,10 +568,10 @@ cuts:
         - {t: 11.5, at: [2.65, 1.1], face: 329, pose: stand}
         - {t: 16.3, at: [2.65, 1.1], face: 329, pose: stand}
     cam_keys:
-      - {t: 0.0, cam: [6.3, 0.9, 0.75], look: [4.6, 1.6], look_h: 1.0, lens: 24, frame: 全身}
-      - {t: 10.8, cam: [6.3, 0.92, 0.76], look: [4.55, 1.6], look_h: 1.05, lens: 25}
-      - {t: 13.0, cam: [6.33, 0.95, 1.2], look: window, look_h: 1.75, lens: 28}
-      - {t: 16.3, cam: [6.35, 0.95, 1.35], look: window, look_h: 1.8, lens: 30}
+      - {t: 0.0, cam: [6.3, 0.9, 0.75], look: [4.6, 1.6], look_h: 0.77, lens: 24.0, frame: 全身}
+      - {t: 10.8, cam: [6.3, 0.92, 0.76], look: [4.55, 1.6], look_h: 0.77, lens: 25.0}
+      - {t: 13.0, cam: [6.33, 0.95, 1.2], look: window, look_h: 0.69, lens: 28.0}
+      - {t: 16.3, cam: [6.35, 0.95, 1.35], look: window, look_h: 0.69, lens: 30.0}
     act: {start: アルレッキーノの話を聞くビスコ, do: ビスコが百騎兵の方へ歩み寄り「百騎兵の支援はどうするんだ」。百騎兵が見上げる。窓の外から声がして、みんなが丸窓を向く, end: 丸窓}
     camera: 百騎兵の高さ（ソファの東の端）から、百騎兵の肩越しに歩み寄るビスコを。声がした所で丸窓へ振る
     kind: M
@@ -700,10 +700,10 @@ cuts:
         - {t: 0.0, at: [4.4, 1.45], face: 230, pose: stand}
         - {t: 20.0, at: [4.4, 1.45], face: 230, pose: cross}
     cam_keys:
-      - {t: 0.0, cam: [5.5, 4.1, 1.45], look: [4.15, 2.35], look_h: 1.3, lens: 32, frame: 胸上}
-      - {t: 13.4, cam: [5.45, 4.0, 1.42], look: [4.05, 2.55], look_h: 1.4, lens: 34}
-      - {t: 15.2, cam: [5.6, 4.3, 1.3], look: [3.75, 3.0], look_h: 1.25, lens: 24}
-      - {t: 20.0, cam: [5.7, 4.45, 1.2], look: [3.6, 2.9], look_h: 1.15, lens: 22}
+      - {t: 0.0, cam: [5.5, 4.1, 1.45], look: [4.15, 2.35], look_h: 1.12, lens: 58.0, frame: 胸上}
+      - {t: 13.4, cam: [5.45, 4.0, 1.42], look: [4.05, 2.55], look_h: 1.56, lens: 34.0}
+      - {t: 15.2, cam: [5.6, 4.3, 1.3], look: [3.75, 3.0], look_h: 1.49, lens: 24.0}
+      - {t: 20.0, cam: [5.7, 4.45, 1.2], look: [3.6, 2.9], look_h: 1.46, lens: 22.0}
     act: {start: テーブルの上のマーニィ, do: アルレッキーノが紹介すると、マーニィは得意げに舞い上がり、「反逆児」で振り向いてアルレッキーノを指さしてにらむ。ルッキーニィは「そんな厄介な妖精が…」とうつむく, end: 腕を組むマーニィと、うつむくルッキーニィ}
     camera: テーブルの南東から、マーニィの高さで（ビスコは奥、ルッキーニィはその下）。「反逆児」でマーニィがアルレッキーノを指さす所で引いて、アルレッキーノとルッキーニィも入れる
     kind: M
@@ -769,7 +769,7 @@ cuts:
     only: [marny, bisco, arlecchino, luckiny, hundred-knight]
     keys:
       marny:
-        - {t: 0.0, at: [3.45, 2.35], z: 1.55, face: 145, pose: cross}
+        - {t: 0.0, at: [3.45, 2.35], z: 1.55, face: 145, pose: cross, expr: smile}
         - {t: 0.4, at: [3.45, 2.35], z: 1.55, face: 80, pose: stand}
         - {t: 1.8, at: [5.85, 1.4], z: 1.25, face: 220, pose: stand, ease: inout}
         - {t: 2.2, at: [5.85, 1.4], z: 1.25, face: 215, pose: proud}
@@ -809,7 +809,7 @@ cuts:
         - {t: 0.0, at: [2.6, 1.0], face: 125, pose: look_down}
         - {t: 3.0, at: [2.6, 1.0], face: 105, pose: stand}
         - {t: 20.0, at: [2.6, 1.0], face: 130, pose: stand}
-        - {t: 21.0, at: [2.6, 1.0], face: 135, pose: wave}
+        - {t: 21.0, at: [2.6, 1.0], face: 135, pose: wave, expr: smile}
         - {t: 26.0, at: [2.6, 1.0], face: 140, pose: wave}
     cam_keys:
       - {t: 0.0, cam: [5.3, 6.5, 1.7], look: [4.35, 2.6], look_h: 1.0, lens: 24, frame: 全身}

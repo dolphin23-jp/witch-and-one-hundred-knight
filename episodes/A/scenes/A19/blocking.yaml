@@ -117,7 +117,7 @@ cuts:
     only: [bisco, arlecchino]
     keys:
       bisco:
-        - {t: 0.0, at: b_window, face: 350, pose: stand}
+        - {t: 0.0, at: b_window, face: 350, pose: stand, expr: surprised}
         - {t: 7.2, at: b_window, face: 350, pose: stand}
         - {t: 7.8, at: b_window, face: 130, pose: stand}
         - {t: 16.2, at: b_window, face: 130, pose: stand}
@@ -148,7 +148,7 @@ cuts:
     only: [bisco, arlecchino]
     keys:
       bisco:
-        - {t: 0.0, at: b_window, face: 130, pose: stand}
+        - {t: 0.0, at: b_window, face: 130, pose: stand, expr: sad}
         - {t: 0.4, at: b_window, face: 120, pose: walk}
         - {t: 2.4, at: [3.2, 1.35], face: 125, pose: walk, ease: out}
         - {t: 2.7, at: [3.2, 1.35], face: 128, pose: stand}
