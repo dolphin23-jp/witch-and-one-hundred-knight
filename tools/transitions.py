@@ -58,8 +58,8 @@ def clip(b, out):
     b_audio_at = off - lead           # 次の場面の音の頭（その場面の 0 秒）が来る所
     label = f"{b['from']} → {b['to']}  {JA.get(kind, kind)}" + (f" {d:g}秒" if d else "") + \
             (f"  音を先に {lead:g}秒" if lead else "") + (f"  音を残す {tail:g}秒" if tail else "")
-    fv = (f"[0:v]trim=start={a0:.3f}:end={a0 + LA:.3f},setpts=PTS-STARTPTS,fps=24,scale=854:480,format=yuv420p[va];"
-          f"[1:v]trim=start={lead:.3f}:end={TB:.3f},setpts=PTS-STARTPTS,fps=24,scale=854:480,format=yuv420p[vb];")
+    fv = (f"[0:v]trim=start={a0:.3f}:end={a0 + LA:.3f},setpts=PTS-STARTPTS,fps=24,scale=854:480,setsar=1,format=yuv420p[va];"
+          f"[1:v]trim=start={lead:.3f}:end={TB:.3f},setpts=PTS-STARTPTS,fps=24,scale=854:480,setsar=1,format=yuv420p[vb];")
     if kind == "cut":
         fv += "[va][vb]concat=n=2:v=1:a=0[vx];"
     else:
