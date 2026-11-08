@@ -22,6 +22,7 @@
   mist   半透明の噴き上げ（沼の瘴気）。plume と同じ書き方（r、h、z、color）で、中の人物が透けて見える。alpha（濃さ、既定 0.45）
 """
 import math
+import sys
 
 import bpy
 
@@ -358,6 +359,38 @@ def build_rubble(P, name, pr, x, y):
 
 # ---------- 人形 ----------
 
+BRIM_FRONT, BRIM_SIDE, BRIM_BACK = -30.0, 24.0, 30.0   # 度。放射状のつばの板の垂れ（負は上がる）。前（顔の向きから ±50 度）・真横・真後ろ。
+# 前は 30 度上げる（咳・泣くで背骨が 22〜28 度前へ傾いても、つばの前が目の高さより下がらない。2026-11-08 に写しで測った）
+
+
+def brim_droop(a):
+    """顔の向きからの角度 a（0 前〜180 後ろ）での、つばの板の垂れ（度）。前は上げ、50〜90 度で横の垂れへ、90〜180 度で後ろの垂れへ。"""
+    a = abs((a + 180.0) % 360.0 - 180.0)
+    if a <= 50.0:
+        return BRIM_FRONT
+    if a <= 90.0:
+        u = (a - 50.0) / 40.0
+        u = u * u * (3 - 2 * u)
+        return BRIM_FRONT + (BRIM_SIDE - BRIM_FRONT) * u
+    return BRIM_SIDE + (BRIM_BACK - BRIM_SIDE) * (a - 90.0) / 90.0
+
+
+def drooping_brim(P, mat, head, name, z, r_in, r_out, n=24, depth=0.02):
+    """前を上げ、横と後ろを垂らした帽子のつば（2026-11-08）。頭（head、顔は +Y）の目印に、放射状の薄い板を n 枚付ける。
+    板の名前は <name>_sNN_brim（tools/previs_audit.py は名前の終わりが brim の本人の物を「帽子のつば」として数える）。"""
+    L = r_out - r_in
+    W = 2 * math.pi * r_out / n * 1.12   # 外の縁で隣と少し重ねて、すき間を作らない（内側は重なる）
+    P.prim("cyl", mat, f"{name}_cap_brim", head, (0, 0, z), radius=r_in + 0.03, depth=depth)   # 真ん中の穴をふさぐ
+    for k in range(n):
+        b = (k + 0.5) * 360.0 / n   # 顔の向き（+Y）から右（+X）へ回る角度
+        d = math.radians(brim_droop(b))
+        br = math.radians(b)
+        ux, uy = math.sin(br), math.cos(br)
+        dx, dy, dz = ux * math.cos(d), uy * math.cos(d), -math.sin(d)
+        loc = (ux * r_in + dx * L / 2, uy * r_in + dy * L / 2, z + dz * L / 2)
+        P.prim("cube", mat, f"{name}_s{k:02d}_brim", head, loc, (-d, 0.0, -br), size=2.0, scale=(W / 2, L / 2 + 0.004, depth / 2))
+
+
 def decorate(P, who, root, head, arms, sh, body_h, col):
     hr, r = sh["hr"], sh["r"]
     al = body_h * 0.6
@@ -411,7 +444,13 @@ def decorate(P, who, root, head, arms, sh, body_h, col):
         _register_fog_handler()
     elif who == "teressa-swamp":   # 沼を浴びて垂れたとんがり帽子（碧に濡れた色）
         hat = P.make_mat("tswamp_hat", (0.18, 0.42, 0.34))
-        P.prim("cyl", hat, "tswamp_brim", head, (0, 0, hr * 1.6), (math.radians(-18), 0, 0), radius=0.3, depth=0.02)
+        # 2026-11-08（オーナー判断「前のつばを眉より上に上げてかまわない。横と後ろの垂れは残す」）: 前へ 18 度傾けた円盤のつばは、
+        # 前の縁が目より下（頭の半径の 0.89 倍）まで垂れ、眉と顔の面がつばを突き抜けていた（A30-013・A30-014）。
+        # つばを放射状の板に分け、前（顔の側）は少し上げ、横と後ろは垂らす。高さはメタリカのつばと同じ頭の半径の 1.7 倍（眉 1.47 倍より上）
+        drooping_brim(P, hat, head, "tswamp", z=hr * 1.7, r_in=0.10, r_out=0.30)
+        rg = sys.modules.get("previs_rig").RIGS.get(who) if sys.modules.get("previs_rig") else None
+        if rg is not None:
+            rg.brim = True   # うつむきの抑え（tools/previs_rig.py。背骨の前傾との合計）もメタリカ・魔女と同じにする
         P.prim("cone", hat, "tswamp_cone", head, (0, -0.12, hr * 1.6 + 0.18), (math.radians(-55), 0, 0), radius1=0.17, radius2=0.0, depth=0.45)
         drip = P.beam_mat("tswamp_drip", (0.25, 0.9, 0.6), strength=0.6, alpha=0.8)
         P.prim("sphere", drip, "tswamp_drip", root, (0, 0, body_h * 0.6), radius=1.0, scale=(r * 1.25, r * 1.25, body_h * 0.55))
