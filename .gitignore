@@ -15,3 +15,8 @@ __pycache__/
 archive/*.lock
 # コードで動かす方式の作業ファイル（切り抜き・穴埋め・奥行き・途中の動画。tools/celanim.py prep で作り直せる）
 cel/*/build/
+# 下絵の動画（2026-11-08 オーナー判断 (b)）: mp4 は Git に入れず、Drive の「一時退避（生成物）」へ置く（tools/archive.py、archive/drive_manifest.yaml）。
+# Git には確認画像（_check.jpg・_motion.jpg）・記録（manifest.yaml）・小さい確認用の動画（*_small.mp4）だけを入れる。
+# 前から Git にある mp4 は、そのまま（描き直したものから外す）
+previs/**/*.mp4
+!previs/**/*_small.mp4

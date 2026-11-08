@@ -1,5 +1,5 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-07'
+made: '2026-11-08'
 cuts:
   A13-001:
     sec: 9.5
@@ -2930,6 +2930,10 @@ cuts:
   A13-005:
     sec: 9.5
     shot: 寄り・メタリカの正面（奥にルッキーニィ）
+    input_hash: f27acefa35880830f226e42e88e8022fc885ebed4c596f39bc9081cada3d195a
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-08T13:04:37+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -2937,602 +2941,826 @@ cuts:
       frame: 寄り
       lens: 48.0
       cam:
-      - 74.5
-      - 42.3
+      - 75.82
+      - 39.68
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.014
-          y: 0.367
-          z: 3.21
-          frac: 0.177
-          top: 0.455
-          fy: -0.56
-          in: false
+          x: 0.748
+          y: 0.397
+          z: 3.67
+          frac: 0.155
+          top: 0.474
+          fy: -0.415
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.1
           wy: 39.85
-          fa: 36
+          fa: 14
           fh: 100
+          fay: 13
+          fap: 5
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.39
-          y: 0.72
-          z: 2.44
-          frac: 0.247
-          top: 0.844
-          fy: -0.716
+          x: 0.621
+          y: 0.722
+          z: 2.41
+          frac: 0.251
+          top: 0.847
+          fy: -0.718
           in: true
           occ: null
           hz: 1.72
           bz: 0.3
-          wx: 73.35
-          wy: 40.13
-          fa: 131
-          fh: 285
+          wx: 73.42
+          wy: 40.02
+          fa: 125
+          fh: 315
+          fay: 127
+          fap: 9
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 0.75
       t: 0.75
       look: metallica
       frame: 寄り
       lens: 48.1
       cam:
-      - 74.5
-      - 42.3
+      - 75.82
+      - 39.68
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.015
-          y: 0.458
-          z: 3.19
-          frac: 0.178
-          top: 0.547
-          fy: -0.563
-          in: false
+          x: 0.748
+          y: 0.476
+          z: 3.65
+          frac: 0.156
+          top: 0.554
+          fy: -0.418
+          in: true
           occ: null
           hz: 1.4
           bz: 0.0
           wx: 72.11
           wy: 39.85
-          fa: 36
+          fa: 13
           fh: 100
+          fay: 13
+          fap: 4
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.388
-          y: 0.719
-          z: 2.43
-          frac: 0.248
-          top: 0.843
-          fy: -0.72
+          x: 0.628
+          y: 0.721
+          z: 2.4
+          frac: 0.251
+          top: 0.846
+          fy: -0.722
           in: true
           occ: null
           hz: 1.72
           bz: 0.3
-          wx: 73.35
-          wy: 40.13
-          fa: 130
-          fh: 284
+          wx: 73.42
+          wy: 40.01
+          fa: 148
+          fh: 291
+          fay: 151
+          fap: 7
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 1.5
       t: 1.5
       look: metallica
       frame: 寄り
       lens: 48.3
       cam:
-      - 74.49
-      - 42.28
+      - 75.8
+      - 39.68
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.021
-          y: 0.483
-          z: 3.18
-          frac: 0.18
-          top: 0.573
-          fy: -0.571
-          in: false
+          x: 0.751
+          y: 0.498
+          z: 3.64
+          frac: 0.157
+          top: 0.577
+          fy: -0.424
+          in: true
           occ: null
           hz: 1.44
           bz: 0.0
           wx: 72.11
           wy: 39.85
-          fa: 36
+          fa: 13
           fh: 100
+          fay: 13
+          fap: 4
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.385
-          y: 0.719
-          z: 2.42
-          frac: 0.249
-          top: 0.843
-          fy: -0.732
+          x: 0.633
+          y: 0.72
+          z: 2.38
+          frac: 0.251
+          top: 0.846
+          fy: -0.734
           in: true
           occ: null
-          hz: 1.72
+          hz: 1.71
           bz: 0.3
-          wx: 73.34
-          wy: 40.13
-          fa: 129
-          fh: 283
+          wx: 73.42
+          wy: 40.0
+          fa: 156
+          fh: 284
+          fay: 159
+          fap: 6
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 2.25
       t: 2.25
       look: metallica
       frame: 寄り
       lens: 48.6
       cam:
-      - 74.49
-      - 42.26
+      - 75.78
+      - 39.69
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.032
-          y: 0.37
-          z: 3.18
-          frac: 0.181
-          top: 0.46
-          fy: -0.584
-          in: false
+          x: 0.755
+          y: 0.4
+          z: 3.65
+          frac: 0.158
+          top: 0.479
+          fy: -0.435
+          in: true
           occ: null
           hz: 1.29
           bz: 0.0
           wx: 72.09
           wy: 39.85
-          fa: 35
+          fa: 12
           fh: 100
+          fay: 12
+          fap: 1
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.383
-          y: 0.722
-          z: 2.41
-          frac: 0.253
-          top: 0.848
-          fy: -0.75
+          x: 0.636
+          y: 0.723
+          z: 2.37
+          frac: 0.255
+          top: 0.85
+          fy: -0.752
           in: true
           occ: null
-          hz: 1.72
+          hz: 1.71
           bz: 0.3
-          wx: 73.34
-          wy: 40.13
-          fa: 129
-          fh: 283
+          wx: 73.42
+          wy: 40.0
+          fa: 156
+          fh: 284
+          fay: 159
+          fap: 6
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.0
       t: 3.0
       look: metallica
       frame: 寄り
       lens: 48.9
       cam:
-      - 74.48
-      - 42.24
+      - 75.76
+      - 39.69
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.041
-          y: 0.418
-          z: 3.15
-          frac: 0.184
-          top: 0.51
-          fy: -0.6
-          in: false
+          x: 0.759
+          y: 0.443
+          z: 3.62
+          frac: 0.16
+          top: 0.523
+          fy: -0.448
+          in: true
           occ: null
           hz: 1.35
           bz: 0.0
           wx: 72.08
           wy: 39.85
-          fa: 35
+          fa: 12
           fh: 100
+          fay: 12
+          fap: 0
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.381
+          x: 0.638
           y: 0.727
-          z: 2.38
-          frac: 0.257
-          top: 0.855
-          fy: -0.773
+          z: 2.34
+          frac: 0.26
+          top: 0.857
+          fy: -0.775
           in: true
           occ: null
-          hz: 1.72
+          hz: 1.71
           bz: 0.3
-          wx: 73.34
-          wy: 40.13
-          fa: 129
-          fh: 283
+          wx: 73.42
+          wy: 40.0
+          fa: 156
+          fh: 284
+          fay: 159
+          fap: 6
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.75
       t: 3.75
       look: metallica
       frame: 寄り
       lens: 49.4
       cam:
-      - 74.47
-      - 42.21
+      - 75.73
+      - 39.7
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.046
-          y: 0.492
-          z: 3.11
-          frac: 0.188
-          top: 0.586
-          fy: -0.619
-          in: false
+          x: 0.763
+          y: 0.507
+          z: 3.57
+          frac: 0.164
+          top: 0.589
+          fy: -0.463
+          in: true
           occ: null
           hz: 1.45
           bz: 0.0
           wx: 72.1
           wy: 39.85
-          fa: 35
+          fa: 13
           fh: 100
+          fay: 12
+          fap: 4
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.379
-          y: 0.732
-          z: 2.35
-          frac: 0.263
-          top: 0.863
-          fy: -0.801
+          x: 0.64
+          y: 0.733
+          z: 2.31
+          frac: 0.265
+          top: 0.865
+          fy: -0.802
           in: true
           occ: null
-          hz: 1.72
+          hz: 1.71
           bz: 0.3
-          wx: 73.34
-          wy: 40.13
-          fa: 129
-          fh: 283
+          wx: 73.42
+          wy: 40.0
+          fa: 156
+          fh: 284
+          fay: 159
+          fap: 6
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 4.5
       t: 4.5
       look: metallica
       frame: 寄り
       lens: 49.8
       cam:
-      - 74.45
-      - 42.18
+      - 75.7
+      - 39.7
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.052
-          y: 0.358
-          z: 3.08
-          frac: 0.191
-          top: 0.453
-          fy: -0.64
-          in: false
+          x: 0.766
+          y: 0.391
+          z: 3.53
+          frac: 0.166
+          top: 0.474
+          fy: -0.48
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.11
           wy: 39.85
-          fa: 34
+          fa: 15
           fh: 102
+          fay: 14
+          fap: 6
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.504
+          x: 0.5
           y: 0.808
           z: 2.16
-          frac: 0.297
+          frac: 0.296
           top: 0.956
-          fy: -0.831
+          fy: -0.832
           in: true
           occ: null
           hz: 1.77
           bz: 0.3
-          wx: 73.6
-          wy: 40.19
-          fa: 43
-          fh: 200
+          wx: 73.59
+          wy: 40.2
+          fa: 8
+          fh: 75
+          fay: 2
+          fap: -8
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 5.25
       t: 5.25
       look: metallica
       frame: 寄り
       lens: 50.3
       cam:
-      - 74.44
-      - 42.16
+      - 75.67
+      - 39.71
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.062
-          y: 0.355
-          z: 3.05
-          frac: 0.195
-          top: 0.453
-          fy: -0.662
-          in: false
+          x: 0.771
+          y: 0.389
+          z: 3.5
+          frac: 0.169
+          top: 0.474
+          fy: -0.497
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.12
           wy: 39.85
-          fa: 32
+          fa: 17
           fh: 103
+          fay: 15
+          fap: 7
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.503
-          y: 0.802
-          z: 2.21
-          frac: 0.284
-          top: 0.943
-          fy: -0.863
+          x: 0.546
+          y: 0.805
+          z: 2.17
+          frac: 0.291
+          top: 0.95
+          fy: -0.864
           in: true
           occ: null
           hz: 1.76
           bz: 0.3
-          wx: 73.57
-          wy: 40.12
-          fa: 16
-          fh: 160
+          wx: 73.53
+          wy: 40.14
+          fa: 54
+          fh: 130
+          fay: 52
+          fap: -15
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
     - T: 6.0
       t: 6.0
       look: metallica
       frame: 寄り
       lens: 50.8
       cam:
-      - 74.43
-      - 42.13
+      - 75.64
+      - 39.71
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.078
-          y: 0.354
-          z: 3.03
-          frac: 0.198
-          top: 0.453
-          fy: -0.683
-          in: false
+          x: 0.778
+          y: 0.389
+          z: 3.49
+          frac: 0.172
+          top: 0.475
+          fy: -0.513
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.1
           wy: 39.85
-          fa: 32
+          fa: 16
           fh: 103
+          fay: 15
+          fap: 5
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.504
-          y: 0.81
-          z: 2.17
-          frac: 0.295
-          top: 0.957
-          fy: -0.894
+          x: 0.545
+          y: 0.814
+          z: 2.14
+          frac: 0.301
+          top: 0.964
+          fy: -0.895
           in: true
           occ: null
           hz: 1.76
           bz: 0.3
-          wx: 73.57
-          wy: 40.12
-          fa: 14
-          fh: 161
+          wx: 73.54
+          wy: 40.14
+          fa: 54
+          fh: 131
+          fay: 52
+          fap: -13
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: metallica_hand1
+            re: metallica_hand1
+            mo: metallica_hand1
     - T: 6.75
       t: 6.75
       look: metallica
       frame: 寄り
       lens: 51.2
       cam:
-      - 74.42
-      - 42.1
+      - 75.61
+      - 39.72
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.093
-          y: 0.353
-          z: 3.01
-          frac: 0.201
-          top: 0.453
-          fy: -0.702
-          in: false
+          x: 0.785
+          y: 0.389
+          z: 3.48
+          frac: 0.174
+          top: 0.476
+          fy: -0.529
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.08
           wy: 39.85
-          fa: 31
+          fa: 16
           fh: 103
+          fay: 15
+          fap: 4
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.505
-          y: 0.816
-          z: 2.15
-          frac: 0.299
-          top: 0.964
-          fy: -0.923
+          x: 0.548
+          y: 0.82
+          z: 2.11
+          frac: 0.306
+          top: 0.972
+          fy: -0.924
           in: true
           occ: null
           hz: 1.76
           bz: 0.3
-          wx: 73.57
-          wy: 40.12
-          fa: 16
-          fh: 162
+          wx: 73.54
+          wy: 40.14
+          fa: 55
+          fh: 132
+          fay: 53
+          fap: -15
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
     - T: 7.5
       t: 7.5
       look: metallica
       frame: 寄り
       lens: 51.5
       cam:
-      - 74.41
-      - 42.08
+      - 75.59
+      - 39.72
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.1
-          y: 0.351
-          z: 2.98
-          frac: 0.204
-          top: 0.453
-          fy: -0.719
-          in: false
+          x: 0.789
+          y: 0.388
+          z: 3.45
+          frac: 0.177
+          top: 0.476
+          fy: -0.542
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.09
           wy: 39.85
-          fa: 31
+          fa: 16
           fh: 103
+          fay: 15
+          fap: 4
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.506
-          y: 0.823
-          z: 2.12
-          frac: 0.305
-          top: 0.975
+          x: 0.546
+          y: 0.827
+          z: 2.08
+          frac: 0.312
+          top: 0.982
           fy: -0.949
           in: true
           occ: null
           hz: 1.77
           bz: 0.3
-          wx: 73.58
-          wy: 40.12
-          fa: 16
-          fh: 163
+          wx: 73.54
+          wy: 40.15
+          fa: 56
+          fh: 133
+          fay: 55
+          fap: -15
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
     - T: 8.25
       t: 8.25
       look: metallica
       frame: 寄り
       lens: 51.8
       cam:
-      - 74.4
-      - 42.06
+      - 75.57
+      - 39.73
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.101
-          y: 0.348
-          z: 2.95
-          frac: 0.207
-          top: 0.452
-          fy: -0.732
-          in: false
+          x: 0.79
+          y: 0.386
+          z: 3.41
+          frac: 0.179
+          top: 0.476
+          fy: -0.552
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.11
           wy: 39.85
-          fa: 33
+          fa: 15
           fh: 102
+          fay: 14
+          fap: 6
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.507
-          y: 0.829
-          z: 2.09
-          frac: 0.31
-          top: 0.983
-          fy: -0.968
+          x: 0.545
+          y: 0.832
+          z: 2.06
+          frac: 0.318
+          top: 0.991
+          fy: -0.969
           in: true
           occ: null
           hz: 1.77
           bz: 0.3
-          wx: 73.58
-          wy: 40.13
-          fa: 16
-          fh: 164
+          wx: 73.55
+          wy: 40.15
+          fa: 58
+          fh: 134
+          fay: 56
+          fap: -15
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
     - T: 9.0
       t: 9.0
       look: metallica
       frame: 寄り
       lens: 52.0
       cam:
-      - 74.4
-      - 42.05
+      - 75.56
+      - 39.73
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.101
-          y: 0.347
-          z: 2.94
-          frac: 0.209
-          top: 0.451
-          fy: -0.74
-          in: false
+          x: 0.791
+          y: 0.384
+          z: 3.39
+          frac: 0.181
+          top: 0.475
+          fy: -0.558
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.12
           wy: 39.85
-          fa: 35
+          fa: 14
           fh: 100
+          fay: 12
+          fap: 7
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.508
-          y: 0.83
-          z: 2.09
-          frac: 0.311
-          top: 0.985
+          x: 0.549
+          y: 0.834
+          z: 2.05
+          frac: 0.319
+          top: 0.993
           fy: -0.98
           in: true
           occ: null
           hz: 1.76
           bz: 0.3
-          wx: 73.58
-          wy: 40.12
-          fa: 17
-          fh: 165
+          wx: 73.54
+          wy: 40.14
+          fa: 58
+          fh: 135
+          fay: 56
+          fap: -15
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
     - T: 9.46
       t: 9.46
       look: metallica
       frame: 寄り
       lens: 52.0
       cam:
-      - 74.4
-      - 42.05
+      - 75.56
+      - 39.73
       - 1.6
-      yaw: 337
+      yaw: 257
       people:
         luckiny:
-          x: -0.103
-          y: 0.347
-          z: 2.94
-          frac: 0.209
-          top: 0.452
-          fy: -0.741
-          in: false
+          x: 0.791
+          y: 0.384
+          z: 3.39
+          frac: 0.181
+          top: 0.475
+          fy: -0.56
+          in: true
           occ: null
           hz: 1.28
           bz: 0.0
           wx: 72.12
           wy: 39.85
-          fa: 35
+          fa: 14
           fh: 100
+          fay: 12
+          fap: 7
+          bx: 72.1
+          by: 39.85
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.509
-          y: 0.829
-          z: 2.09
-          frac: 0.31
-          top: 0.982
+          x: 0.554
+          y: 0.833
+          z: 2.05
+          frac: 0.318
+          top: 0.992
           fy: -0.983
           in: true
           occ: null
           hz: 1.76
           bz: 0.3
-          wx: 73.58
-          wy: 40.11
-          fa: 18
-          fh: 165
+          wx: 73.54
+          wy: 40.14
+          fa: 58
+          fh: 135
+          fay: 56
+          fap: -16
+          bx: 73.6
+          by: 40.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: metallica_hand1
   A13-006:
     sec: 7.5
     shot: 全身（地面すれすれ）・スズの音草とルッキーニィ
