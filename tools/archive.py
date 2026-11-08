@@ -8,7 +8,7 @@
   python tools/archive.py upload [--limit N] [--shard K/N]   # manifest の未送信分を上げる（md5 を確かめる。途中から再開できる）
   python tools/archive.py verify                   # manifest の全件が Drive にあり、サイズが合うかを確かめる
   python tools/archive.py purge                    # 送信と確認が済んだものだけ git rm（作業ツリーから外す）
-  python tools/archive.py restore --scene A04      # 場面ごとに Drive から元の場所へ戻す（sha256 を確かめる）
+  python tools/archive.py restore --scene A04      # 場面ごとに Drive から元の場所へ戻す（sha256 を確かめる。previs/A04/ も含む）
   python tools/archive.py restore PATH…            # パスを指定して戻す
 
 manifest（archive/drive_manifest.yaml）の state は pending → uploaded。
@@ -56,18 +56,26 @@ def cmd_plan(args):
     m = load()
     have = {f["path"] for f in m["files"]}
     n = 0
+    refreshed = 0
     for line in pathlib.Path(args.list).read_text().splitlines():
         p = line.strip()
-        if not p or p in have:
+        if not p:
             continue
         src = ROOT / p
+        if p in have:
+            # まだ上げていないものを描き直した（別のセッションで作り直した）ときは、測り直す。上げたものは変えない
+            f = next(f for f in m["files"] if f["path"] == p)
+            if f["state"] == "pending" and src.exists() and sha256(src) != f["sha256"]:
+                f["bytes"], f["sha256"] = src.stat().st_size, sha256(src)
+                refreshed += 1
+            continue
         m["files"].append({"path": p, "bytes": src.stat().st_size, "sha256": sha256(src),
                            "drive": f"{FOLDER}/{p}", "id": None, "state": "pending"})
         n += 1
     m["files"].sort(key=lambda f: f["path"])
     save(m)
     tot = sum(f["bytes"] for f in m["files"])
-    print(f"追加 {n} 件。manifest 合計 {len(m['files'])} 件 {tot / 1e6:.0f}MB")
+    print(f"追加 {n} 件、測り直し {refreshed} 件。manifest 合計 {len(m['files'])} 件 {tot / 1e6:.0f}MB")
 
 
 def mark_uploaded(path, fid):
@@ -140,9 +148,12 @@ def cmd_verify(args):
 
 def cmd_purge(args):
     m = load()
-    ok = [f for f in m["files"] if f["state"] == "uploaded" and (ROOT / f["path"]).exists()]
-    if any(f["state"] != "uploaded" for f in m["files"]):
+    # 初めから Git の外のもの（2026-11-08 オーナー判断 (b) の下絵の mp4 など）は git rm しない（手元のファイルも残す）。
+    # まだ上げていなくても、Git の外のものは purge を止めない（purge が Git から外すのは Git にあるものだけ）
+    tracked = set(subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split("\0"))
+    if any(f["state"] != "uploaded" and f["path"] in tracked for f in m["files"]):
         sys.exit("未送信のファイルがあります。upload と verify を先に終えてください。")
+    ok = [f for f in m["files"] if f["state"] == "uploaded" and f["path"] in tracked and (ROOT / f["path"]).exists()]
     for f in ok:
         if sha256(ROOT / f["path"]) != f["sha256"]:
             sys.exit(f"ファイルが manifest と違います: {f['path']}")
@@ -163,7 +174,8 @@ def exclude_locally(path):
 def cmd_restore(args):
     m = load()
     sel = [f for f in m["files"]
-           if (args.scene and f"/scenes/{args.scene}/" in f["path"]) or f["path"] in set(args.paths)]
+           if (args.scene and (f"/scenes/{args.scene}/" in f["path"] or f["path"].startswith(f"previs/{args.scene}/")))
+           or f["path"] in set(args.paths)]
     if not sel:
         sys.exit("対象がありません（--scene か PATH を指定）")
     for i, f in enumerate(sel, 1):

@@ -37,6 +37,11 @@ start:
   hundred-knight:
     at: &id011 [50.0, 66.5]
     face: 0
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: 知らなかった魔女 ベルダ↔ラビィ, a: berda, b: rabi, side: [49.18, 53.0], why: A28-015・A28-029 の側}
+  - {name: 噂の姫君 ベルダ↔ビスコ, a: berda, b: bisco, side: [46.0, 56.6], cuts: [A28-033, A28-035], why: A28-033 で円卓を回り込んだ後の側}
+
 cuts:
   A28-001:
     frame: 引き
@@ -935,6 +940,7 @@ cuts:
     camera: ラビィの後ろから、ベルダへ寄る
     kind: M
   A28-015:
+    axis: 知らなかった魔女 ベルダ↔ラビィ
     frame: 膝上
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa]
     hidden_ok: [hundred-knight, nezaria]
@@ -1853,6 +1859,7 @@ cuts:
     camera: リリーの斜め下（円卓の上）から見上げる（窓の夜空を背に）
     kind: M
   A28-028:
+    axis: 知らなかった魔女 ベルダ↔ラビィ
     frame: 膝上
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight]
     hidden_ok: [nezaria]
@@ -1883,8 +1890,8 @@ cuts:
         at: [47.09, 52.81]
         face: '@purple-peel'
         pose: stand
-      - {t: 0.3, pose: cover, face: 60}
-      - {t: 5.89, pose: stand, face: 90}
+      - {t: 0.3, pose: cover, face: 30}
+      - {t: 5.89, pose: stand, face: 60}
       rubens:
       - t: 0.0
         at: [46.07, 49.02]
@@ -1906,21 +1913,13 @@ cuts:
         face: 0
         pose: shake
     cam_keys:
-    - t: 0.0
-      cam: [42.6, 55.8, 1.6]
-      look: berda
-      look_h: 1.35
-      lens: 34
-      frame: 肩なめ
-    - t: 10.5
-      cam: [44.0, 57.6, 1.5]
-      look: berda
-      look_h: 1.35
-      lens: 36
+    - {t: 0.0, cam: [46.64, 47.43, 1.6], look: berda, look_h: 1.35, lens: 34, frame: 肩なめ}
+    - {t: 10.5, cam: [48.92, 47.41, 1.5], look: berda, look_h: 1.35, lens: 36}
     act: {start: 立ったまま扇を口元に当てるベルダ, do: （「沼の魔女……私達ですら、知らなかった魔女ですからね」「当然、魔女同士の繋がりもなかったのでしょう」）, end: 微笑むベルダ}
-    camera: ベルダの後ろの壁ぎわから、円卓を回り込む
+    camera: 'ベルダの後ろの壁ぎわから、円卓を回り込む（2026-11-08 軸「知らなかった魔女 ベルダ↔ラビィ」の側へ: 鏡写し・ごまかし 30度。D-077 案。−130 度回す案は、手前の椅子とウサ丸が画面をふさいだのでやめた）'
     kind: M
   A28-029:
+    axis: 知らなかった魔女 ベルダ↔ラビィ
     frame: 胸上
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, teressa, hundred-knight]
     hidden_ok: [nezaria]
@@ -2326,19 +2325,10 @@ cuts:
         face: 350
         pose: lie
     cam_keys:
-    - t: 0.0
-      cam: [48.0, 54.9, 1.45]
-      look: bisco
-      look_h: 1.35
-      lens: 38
-      frame: 肩なめ
-    - t: 10.8
-      cam: [48.2, 55.3, 1.45]
-      look: bisco
-      look_h: 1.35
-      lens: 50
+    - {t: 0.0, cam: [46.79, 56.22, 1.45], look: bisco, look_h: 1.35, lens: 38, frame: 肩なめ}
+    - {t: 10.8, cam: [47.2, 56.39, 1.45], look: bisco, look_h: 1.35, lens: 50}
     act: {start: ベルダの肩越しにビスコ, do: ベルダが顔を寄せる（「沼の魔女とやらにたぶらかされてこのようなところまで来られるとは……」「国王陛下もさぞやお嘆きのことでありましょう」）, end: うつむいて震えるビスコ}
-    camera: ベルダの後ろから、ビスコの顔へ寄る
+    camera: 'ベルダの後ろから、ビスコの顔へ寄る（2026-11-08 軸「噂の姫君 ベルダ↔ビスコ」の側へ: 鏡写し・ごまかし 0度。D-077 案）'
     kind: M
   A28-035:
     frame: 寄り
@@ -2396,18 +2386,8 @@ cuts:
         face: 350
         pose: lie
     cam_keys:
-    - t: 0.0
-      cam: [49.6, 56.3, 1.05]
-      look: bisco
-      look_h: 1.4
-      lens: 46
-      frame: 寄り
-    - t: 5.9
-      cam: [50.3, 55.2, 1.0]
-      look: bisco
-      look_h: 0.9
-      lens: 30
-      frame: 全身
+    - {t: 0.0, cam: [48.28, 57.39, 1.05], look: bisco, look_h: 1.4, lens: 46, frame: 寄り}
+    - {t: 5.9, cam: [47.08, 56.9, 1.0], look: bisco, look_h: 0.9, lens: 30, frame: 全身}
     fx:
     - kind: fog
       t: [1.4, 5.9]
@@ -2417,5 +2397,5 @@ cuts:
       alpha: 0.18
       rise: 2.5
     act: {start: うつむいたビスコ, do: 顔を上げてベルダをにらむ（「な、なんだと？……お前に何がわかる……」）。足元に白い霧が流れ込んでくる, end: 霧の中でにらみ合う二人}
-    camera: ビスコのあおりの寄りから、足元に流れ込む霧に合わせて全身まで引く
+    camera: 'ビスコのあおりの寄りから、足元に流れ込む霧に合わせて全身まで引く（2026-11-08 軸「噂の姫君 ベルダ↔ビスコ」の側へ: 回す -100度・ごまかし 0度。D-077 案）'
     kind: M

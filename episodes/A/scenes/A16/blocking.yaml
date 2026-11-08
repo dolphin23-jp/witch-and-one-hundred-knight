@@ -312,11 +312,13 @@ cuts:
       - {t: 8.0, at: [61.0, 1.36], z: 26.0, face: 40, pose: dance, ease: linear}
       - {t: 9.0, at: [61.16, 1.2], z: 26.0, face: 50, pose: dance, ease: linear}
     cam_keys:
-    - {t: 0.0, cam: [64.6, 3.9, 26.4], look: metallica, look_h: 27.44, lens: 61, frame: 寄り}
-    - {t: 9.0, cam: [64.4, 4.1, 26.4], look: metallica, look_h: 27.5, lens: 38.0}
+    - {t: 0.0, cam: [61.0, 1.14, 26.4], look: metallica, look_h: 27.44, lens: 32, frame: 寄り}
+    - {t: 3.0, cam: [61.81, 1.13, 26.4], look: metallica, look_h: 27.46, lens: 30, ease: linear}
+    - {t: 6.0, cam: [62.57, 1.11, 26.4], look: metallica, look_h: 27.48, lens: 28, ease: linear}
+    - {t: 9.0, cam: [63.06, 1.2, 26.4], look: metallica, look_h: 27.5, lens: 26, ease: out}
     bg: azb_dusk_sky
     act: {start: 踊るメタリカ, do: 踊りながら、得意げに「正式な儀式の舞であったことが証明されたな」, end: 得意げに踊るメタリカ}
-    camera: 南東の低い所から、空を背に踊るメタリカを煽る
+    camera: 踊って回るメタリカに合わせて、北の低い所から東へ回り込み、空を背に煽る（2026-11-08。前は南東に止めていて、前半は背中だった）
     kind: M
   A16-010:
     frame: 全身（樽の脇）

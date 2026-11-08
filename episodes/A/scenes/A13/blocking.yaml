@@ -36,6 +36,10 @@ start:
   luckiny: {at: lk_tend, face: 60}
   hundred-knight: {at: hk_from, face: 265}
   metallica: {at: m_ph, face: 300}
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: 驚く メタリカ↔ルッキーニィ, a: metallica, b: luckiny, side: [71.0, 38.3], cuts: [A13-004, A13-005], why: A13-004 の肩ごしの側}
+
 cuts:
   A13-001:
     frame: 引き（高い所から）
@@ -153,16 +157,16 @@ cuts:
       - {t: 4.1, at: lk_stand, face: 100, pose: stand}
       - {t: 9.5, at: lk_stand, face: 100, pose: stand}
       metallica:
-      - {t: 0.0, at: m_near, z: 0.3, face: 285, pose: lean}
-      - {t: 4.0, at: m_near, z: 0.3, face: 285, pose: stand}
-      - {t: 4.8, at: m_near, z: 0.3, face: 160, pose: cross}
-      - {t: 9.5, at: m_near, z: 0.3, face: 165, pose: cross}
+      - {t: 0.0, at: m_near, z: 0.3, face: 315, pose: lean}
+      - {t: 4.0, at: m_near, z: 0.3, face: 315, pose: stand}
+      - {t: 4.8, at: m_near, z: 0.3, face: 130, pose: cross}
+      - {t: 9.5, at: m_near, z: 0.3, face: 135, pose: cross}
     cam_keys:
-    - {t: 0.0, cam: [74.5, 42.3, 1.6], look: metallica, look_h: 1.5, lens: 48, frame: 寄り}
-    - {t: 9.5, cam: [74.4, 42.05, 1.6], look: metallica, look_h: 1.5, lens: 52}
+    - {t: 0.0, cam: [75.82, 39.68, 1.6], look: metallica, look_h: 1.5, lens: 48, frame: 寄り}
+    - {t: 9.5, cam: [75.56, 39.73, 1.6], look: metallica, look_h: 1.5, lens: 52}
     bg: tettara_edge
     act: {start: 顔を寄せるメタリカと、うれしそうなルッキーニィ, do: ルッキーニィはぴょんぴょん跳ねてうなずく。メタリカは体を起こし、こちらへ向き直って腕を組み、首をひねる, end: 腕を組んで考えるメタリカ（奥にルッキーニィ）}
-    camera: メタリカの正面（南東）の寄り。奥にルッキーニィ
+    camera: 'メタリカの正面（南東）の寄り。奥にルッキーニィ（2026-11-08 軸「驚く メタリカ↔ルッキーニィ」の側へ: 回す -80度・ごまかし 30度。D-077 案）'
     kind: M
   A13-006:
     frame: 全身（低い）

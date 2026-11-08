@@ -1,5 +1,5 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-07'
+made: '2026-11-08'
 cuts:
   A14-001:
     sec: 10.0
@@ -3111,6 +3111,10 @@ cuts:
   A14-007:
     sec: 7.0
     shot: 寄り・ルッキーニィの頭をなでるメタリカ
+    input_hash: 518701cae9c233f842c92f35cd088b1d66eb1c31576293329effd83fe8b88c7d
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-08T13:04:19+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -3138,7 +3142,15 @@ cuts:
           wy: 202.55
           fa: 60
           fh: 90
+          fay: 59
+          fap: 14
+          bx: 203.35
+          by: 202.55
           h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
         luckiny:
           x: 0.618
           y: 0.537
@@ -3154,7 +3166,15 @@ cuts:
           wy: 200.51
           fa: 71
           fh: 28
+          fay: 71
+          fap: 9
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 0.75
       t: 0.75
       look: null
@@ -3170,18 +3190,26 @@ cuts:
           x: -0.088
           y: 0.627
           z: 1.54
-          frac: 0.235
-          top: 0.745
+          frac: 0.236
+          top: 0.746
           fy: -0.594
           in: false
           occ: null
           hz: 1.47
           bz: 0.0
-          wx: 203.04
+          wx: 203.05
           wy: 202.06
-          fa: 90
-          fh: 323
+          fa: 79
+          fh: 334
+          fay: 79
+          fap: 5
+          bx: 203.07
+          by: 202.1
           h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
         luckiny:
           x: 0.593
           y: 0.534
@@ -3197,7 +3225,15 @@ cuts:
           wy: 200.6
           fa: 50
           fh: 146
+          fay: 49
+          fap: 11
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: null
@@ -3210,21 +3246,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.349
-          y: 0.625
-          z: 2.0
-          frac: 0.183
+          x: 0.35
+          y: 0.624
+          z: 1.98
+          frac: 0.185
           top: 0.717
           fy: -0.34
           in: true
           occ: null
           hz: 1.46
           bz: 0.0
-          wx: 202.57
+          wx: 202.59
           wy: 201.28
-          fa: 115
-          fh: 325
+          fa: 86
+          fh: 353
+          fay: 86
+          fap: 5
+          bx: 202.59
+          by: 201.32
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.604
           y: 0.533
@@ -3240,7 +3284,15 @@ cuts:
           wy: 200.56
           fa: 45
           fh: 142
+          fay: 45
+          fap: 6
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 2.25
       t: 2.25
       look: null
@@ -3253,21 +3305,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.458
-          y: 0.561
-          z: 2.14
-          frac: 0.163
+          x: 0.47
+          y: 0.554
+          z: 2.0
+          frac: 0.171
           top: 0.641
           fy: -0.354
           in: true
           occ: null
           hz: 1.36
           bz: 0.0
-          wx: 202.41
-          wy: 201.01
-          fa: 116
-          fh: 330
+          wx: 202.55
+          wy: 200.98
+          fa: 90
+          fh: 0
+          fay: 88
+          fap: 26
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.612
           y: 0.528
@@ -3276,14 +3336,22 @@ cuts:
           top: 0.596
           fy: -0.15
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.28
           bz: 0.0
           wx: 202.0
           wy: 200.54
           fa: 44
           fh: 142
+          fay: 44
+          fap: 4
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: hat_brim
+            re: hat_brim
+            mo: ok
     - T: 3.0
       t: 3.0
       look: null
@@ -3296,21 +3364,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.459
-          y: 0.551
-          z: 2.12
-          frac: 0.165
-          top: 0.633
+          x: 0.471
+          y: 0.546
+          z: 1.97
+          frac: 0.177
+          top: 0.635
           fy: -0.396
           in: true
           occ: null
           hz: 1.36
           bz: 0.0
-          wx: 202.41
-          wy: 201.0
-          fa: 116
-          fh: 330
+          wx: 202.55
+          wy: 200.97
+          fa: 90
+          fh: 0
+          fay: 88
+          fap: 27
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.616
           y: 0.562
@@ -3319,14 +3395,22 @@ cuts:
           top: 0.631
           fy: -0.18
           in: true
-          occ: null
+          occ: hat_cone
           hz: 1.35
           bz: 0.0
           wx: 201.99
           wy: 200.54
           fa: 44
           fh: 142
+          fay: 44
+          fap: 2
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: ok
+            re: hat_cone
+            mo: hat_brim
     - T: 3.75
       t: 3.75
       look: null
@@ -3339,21 +3423,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.452
-          y: 0.548
-          z: 2.08
-          frac: 0.178
-          top: 0.636
+          x: 0.467
+          y: 0.54
+          z: 1.94
+          frac: 0.184
+          top: 0.632
           fy: -0.443
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
-          wx: 202.42
-          wy: 201.02
-          fa: 117
-          fh: 330
+          wx: 202.55
+          wy: 200.98
+          fa: 90
+          fh: 0
+          fay: 88
+          fap: 26
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.618
           y: 0.612
@@ -3369,7 +3461,15 @@ cuts:
           wy: 200.55
           fa: 44
           fh: 142
+          fay: 44
+          fap: 1
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: ok
+            re: hat_cone
+            mo: hat_cone
     - T: 4.5
       t: 4.5
       look: null
@@ -3382,21 +3482,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.445
-          y: 0.543
-          z: 2.04
-          frac: 0.187
-          top: 0.636
+          x: 0.461
+          y: 0.535
+          z: 1.91
+          frac: 0.193
+          top: 0.632
           fy: -0.49
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
-          wx: 202.42
-          wy: 201.03
-          fa: 116
-          fh: 330
+          wx: 202.55
+          wy: 200.99
+          fa: 89
+          fh: 0
+          fay: 88
+          fap: 25
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.619
           y: 0.546
@@ -3412,7 +3520,15 @@ cuts:
           wy: 200.56
           fa: 44
           fh: 142
+          fay: 44
+          fap: 4
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: hat_brim
     - T: 5.25
       t: 5.25
       look: null
@@ -3425,21 +3541,29 @@ cuts:
       yaw: 270
       people:
         metallica:
-          x: 0.445
-          y: 0.535
-          z: 2.01
-          frac: 0.189
+          x: 0.457
+          y: 0.528
+          z: 1.88
+          frac: 0.199
           top: 0.629
           fy: -0.533
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
-          wx: 202.42
-          wy: 201.03
-          fa: 116
-          fh: 330
+          wx: 202.55
+          wy: 200.99
+          fa: 89
+          fh: 0
+          fay: 88
+          fap: 25
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.621
           y: 0.497
@@ -3448,14 +3572,22 @@ cuts:
           top: 0.573
           fy: -0.28
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.29
           bz: 0.0
           wx: 202.0
           wy: 200.56
           fa: 44
           fh: 142
+          fay: 43
+          fap: 6
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: hat_brim
+            re: hat_brim
+            mo: ok
     - T: 6.0
       t: 6.0
       look: null
@@ -3468,21 +3600,29 @@ cuts:
       yaw: 271
       people:
         metallica:
-          x: 0.446
-          y: 0.527
-          z: 1.99
-          frac: 0.193
-          top: 0.623
+          x: 0.459
+          y: 0.52
+          z: 1.86
+          frac: 0.203
+          top: 0.622
           fy: -0.566
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
-          wx: 202.42
-          wy: 201.02
-          fa: 116
-          fh: 330
+          wx: 202.55
+          wy: 200.99
+          fa: 89
+          fh: 0
+          fay: 88
+          fap: 26
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.627
           y: 0.487
@@ -3491,14 +3631,22 @@ cuts:
           top: 0.565
           fy: -0.304
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.28
           bz: 0.0
           wx: 202.0
           wy: 200.55
           fa: 51
           fh: 150
+          fay: 51
+          fap: 5
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: hat_brim
+            re: hat_brim
+            mo: ok
     - T: 6.75
       t: 6.75
       look: null
@@ -3511,21 +3659,29 @@ cuts:
       yaw: 271
       people:
         metallica:
-          x: 0.45
-          y: 0.521
-          z: 1.99
-          frac: 0.193
-          top: 0.617
+          x: 0.464
+          y: 0.513
+          z: 1.85
+          frac: 0.204
+          top: 0.616
           fy: -0.584
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
-          wx: 202.41
-          wy: 201.01
-          fa: 117
-          fh: 330
+          wx: 202.55
+          wy: 200.98
+          fa: 90
+          fh: 0
+          fay: 88
+          fap: 27
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.633
           y: 0.484
@@ -3534,14 +3690,22 @@ cuts:
           top: 0.562
           fy: -0.317
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.28
           bz: 0.0
           wx: 201.99
           wy: 200.53
           fa: 51
           fh: 150
+          fay: 51
+          fap: 3
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: hat_brim
+            re: hat_brim
+            mo: ok
     - T: 6.96
       t: 6.96
       look: null
@@ -3554,21 +3718,29 @@ cuts:
       yaw: 271
       people:
         metallica:
-          x: 0.451
-          y: 0.52
-          z: 1.99
-          frac: 0.193
-          top: 0.615
+          x: 0.465
+          y: 0.512
+          z: 1.85
+          frac: 0.204
+          top: 0.614
           fy: -0.585
           in: true
           occ: null
           hz: 1.36
           bz: 0.0
-          wx: 202.41
-          wy: 201.01
-          fa: 117
-          fh: 330
+          wx: 202.55
+          wy: 200.97
+          fa: 90
+          fh: 0
+          fay: 88
+          fap: 27
+          bx: 202.55
+          by: 201.25
           h: 1.6
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: 0.634
           y: 0.484
@@ -3577,14 +3749,22 @@ cuts:
           top: 0.562
           fy: -0.318
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.28
           bz: 0.0
           wx: 201.99
           wy: 200.53
           fa: 51
           fh: 150
+          fay: 51
+          fap: 3
+          bx: 202.0
+          by: 200.55
           h: 1.4
+          lm:
+            le: hat_brim
+            re: hat_brim
+            mo: ok
   A14-008:
     sec: 8.5
     shot: 全身（煽り）・トーチカを受け取る百騎兵

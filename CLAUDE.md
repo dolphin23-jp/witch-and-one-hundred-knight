@@ -67,7 +67,7 @@
 | `world/` | 背景の参照画像と設計 |
 | `overlays/` | 漫符の素材集 |
 | `audio/` | 声、音楽、効果音。原作の音源は `audio/original/`（一覧は `index.yaml`）、長い音源から切り出した台詞は `audio/<シーン>/original/` |
-| `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg` |
+| `previs/<シーン>/` | Blender の下絵動画（`tools/previs.py`）と、静止画と並べた確認画像 `<カット>_check.jpg`。**下絵の mp4 は Git に入れない**（2026-11-08 オーナー判断 (b)、`.gitignore`）。前から Git にある mp4 を描き直したら `git rm --cached` し、Drive の「一時退避（生成物）」へ `tools/archive.py`（plan → upload → verify）で上げる。Git に入れるのは確認画像・0.5秒ごとのコマ（`_motion.jpg`）・版の記録（`manifest.yaml`）と、スマホで見る小さい動画（`_small.mp4`）だけ |
 | `cel/<場面>/` | コードで動かす方式の試作（D-071、D-072 で取り消し）の指定と書き出し。記録として残す |
 | `animatic/` | Animaticの組み立て（Remotion、D-050。`animatic/remotion/`）と、書き出した動画の一覧 `drive.yaml`。Drive に置けない書き出しは `animatic/exports/`。`tools/animatic.py`（ffmpeg）と `animatic/hyperframes/` は比較の記録として残す |
 | `pipeline/` | 役割ごとの実装の設定 |

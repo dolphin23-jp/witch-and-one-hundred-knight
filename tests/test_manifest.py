@@ -79,8 +79,15 @@ def test_compare_and_record(tmp_path):
 
 
 def test_status_finds_old_motion_sheets():
-    """2026-11-01 の旧人形の motion シート（A13-005・A14-007・A15-014・A16-009・A17-026・A17-028）は、記録がなくても Git から「古い」と出る。"""
+    """記録のない motion シート（2026-11-01 の旧人形のもの）は、Git から「古い（推定）」と出る。
+    2026-11-08 に描き直した A13-005・A14-007・A15-014・A16-009・A17-026・A17-028 は記録ができたので、推定ではなく記録で照合する。"""
+    import manifest
     import previs_status
     for scene, cut in (("A13", "A13-005"), ("A14", "A14-007"), ("A15", "A15-014"), ("A16", "A16-009"), ("A17", "A17-026"), ("A17", "A17-028")):
+        res = previs_status.scene_status(ROOT / "episodes/A/scenes" / scene, {cut})
+        assert res[cut]["motion"] in ("最新", "入力が古い", "道具が古い"), (cut, res[cut]["motion"])
+    for scene, cut in (("A13", "A13-004"), ("A14", "A14-006"), ("A16", "A16-008"), ("A17", "A17-025")):
+        if (manifest.load(scene).get(cut) or {}).get("motion"):
+            continue   # 後で描き直して記録ができたもの
         res = previs_status.scene_status(ROOT / "episodes/A/scenes" / scene, {cut})
         assert res[cut]["motion"].startswith("古い"), (cut, res[cut]["motion"])

@@ -34,6 +34,10 @@ start:
   arlecchino: {at: [7.95, 20.94], face: 65}
   hundred-knight: {at: [7.27, 21.25], face: 65}
   karakuri-doll: {at: doll, face: 30}
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: 名乗り ルッキーニィ↔メタリカ, a: luckiny, b: metallica, side: [61.2, 5.3], why: A15-012 の全身の側}
+
 cuts:
   A15-001:
     frame: 引き（逆光）
@@ -429,6 +433,7 @@ cuts:
     camera: 南の高い所から三人を見下ろす（ゆっくり寄る）
     kind: M
   A15-012:
+    axis: 名乗り ルッキーニィ↔メタリカ
     frame: 全身（ルッキーニィ）
     only: [luckiny, bisco]
     keys:
@@ -474,26 +479,27 @@ cuts:
     camera: 南西の低い所から、ルッキーニィに詰め寄るビスコを煽る（ゆっくり寄る）
     kind: M
   A15-014:
+    axis: 名乗り ルッキーニィ↔メタリカ
     frame: 寄り（ルッキーニィ）
     only: [luckiny, bisco]
     keys:
       luckiny:
-      - {t: 0.0, at: l_up, z: 26.0, face: 70, pose: stand}
-      - {t: 0.4, at: l_up, z: 26.0, face: 70, pose: hold}
-      - {t: 4.0, at: l_up, z: 26.0, face: 70, pose: hold}
-      - {t: 4.4, at: l_up, z: 26.0, face: 70, pose: hop}
-      - {t: 9.0, at: l_up, z: 26.0, face: 70, pose: hop}
+      - {t: 0.0, at: l_up, z: 26.0, face: 83.5, pose: stand}
+      - {t: 0.4, at: l_up, z: 26.0, face: 83.5, pose: hold}
+      - {t: 4.0, at: l_up, z: 26.0, face: 83, pose: hold}
+      - {t: 4.4, at: l_up, z: 26.0, face: 82.9, pose: hop}
+      - {t: 9.0, at: l_up, z: 26.0, face: 82.2, pose: hop}
       bisco:
       - {t: 0.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: gesture}
       - {t: 1.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: stand}
       - {t: 6.5, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
       - {t: 9.0, at: [59.2, 4.7], z: 26.0, face: 250, pose: look_down}
     cam_keys:
-    - {t: 0.0, cam: [60.5, 2.6, 27.9], look: luckiny, look_h: 27.24, lens: 72, frame: 寄り}
-    - {t: 9.0, cam: [60.4, 2.75, 27.85], look: luckiny, look_h: 27.4, lens: 46.0}
+    - {t: 0.0, cam: [61.13, 4.01, 27.9], look: luckiny, look_h: 27.24, lens: 72, frame: 寄り}
+    - {t: 9.0, cam: [60.95, 3.98, 27.85], look: luckiny, look_h: 27.4, lens: 46.0}
     bg: azb_summit
     act: {start: 訴えるビスコ, do: ルッキーニィは目を輝かせて両手を握り「魔女の鑑ですね！」と跳ねる。ビスコはがっくりうつむく, end: 跳ねるルッキーニィと、うなだれるビスコ}
-    camera: 北東のやや高い所から、ビスコの肩ごしにルッキーニィの寄り
+    camera: '北東のやや高い所から、ビスコの肩ごしにルッキーニィの寄り（2026-11-08 軸「名乗り ルッキーニィ↔メタリカ」の側へ: 鏡写し・ごまかし 15度。D-077 案）'
     kind: M
   A15-015:
     frame: 全身（三人・引き）

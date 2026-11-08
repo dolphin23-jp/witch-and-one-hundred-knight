@@ -51,32 +51,6 @@ A32-024:
     - nezaria
     frames: 14/22
     y: 0.19
-A32-025:
-  shot: ビスコ・剣のつかで床を打つ
-  issues:
-  - kind: 大きさ
-    who: &id001
-    - bisco
-    frame: 全身
-    measured: 2.17
-    expect:
-    - 0.15
-    - 1.04
-    what: 体
-  - kind: 足が切れ
-    who: *id001
-    frames: 8/13
-  - kind: 線を越える
-    who:
-    - bisco
-    - metallica-giant
-    after: A32-020
-    gap: 4
-    line:
-    - - 47.4
-      - 47.8
-    - - 50.0
-      - 48.6
 A32-031:
   shot: パープルピール・再教育だ
   issues:

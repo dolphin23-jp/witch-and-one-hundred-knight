@@ -1,5 +1,5 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-07'
+made: '2026-11-08'
 cuts:
   A39-001:
     sec: 7.1
@@ -7717,6 +7717,10 @@ cuts:
   A39-010:
     sec: 9.2
     shot: メタリカとアルレッキーノ・ルッキーニィは
+    input_hash: 1af6eb3da536b188e5f18a89a5c1d9feb23e6e480d88a11630e58fb573f5a56f
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-08T13:27:50+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -7744,7 +7748,15 @@ cuts:
           wy: 8.31
           fa: 26
           fh: 330
+          fay: 26
+          fap: 1
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: hat_cone
+            re: hat_cone
+            mo: hat_cone
         metallica:
           x: 0.46
           y: 0.549
@@ -7760,7 +7772,15 @@ cuts:
           wy: 7.45
           fa: 10
           fh: 295
+          fay: 5
+          fap: -9
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: 0.126
           y: -0.286
@@ -7776,7 +7796,14 @@ cuts:
           wy: 6.5
           fa: 108
           fh: 160
+          fay: 114
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
           x: 0.749
           y: 0.146
@@ -7792,7 +7819,15 @@ cuts:
           wy: 7.09
           fa: 92
           fh: 60
+          fay: 98
+          fap: 14
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: ok
+            re: back
+            mo: back
     - T: 0.75
       t: 0.75
       look: null
@@ -7810,7 +7845,7 @@ cuts:
           z: 3.63
           frac: 0.146
           top: 0.658
-          fy: 0.094
+          fy: 0.092
           in: true
           occ: hat_brim
           hz: 1.29
@@ -7819,30 +7854,46 @@ cuts:
           wy: 8.7
           fa: 76
           fh: 237
+          fay: 73
+          fap: 25
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: back
+            re: ok
+            mo: ok
         metallica:
-          x: 0.467
-          y: 0.541
-          z: 1.99
-          frac: 0.176
-          top: 0.63
-          fy: -0.328
+          x: 0.468
+          y: 0.542
+          z: 2.01
+          frac: 0.178
+          top: 0.632
+          fy: -0.33
           in: true
-          occ: hat_brim
+          occ: null
           hz: 1.47
           bz: 0.0
-          wx: 14.19
-          wy: 7.4
-          fa: 135
-          fh: 78
+          wx: 14.2
+          wy: 7.41
+          fa: 59
+          fh: 0
+          fay: 59
+          fap: 6
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
-          x: 0.125
-          y: -0.29
+          x: 0.124
+          y: -0.292
           z: 1.47
-          frac: 0.322
-          top: -0.124
-          fy: -0.803
+          frac: 0.323
+          top: -0.126
+          fy: -0.806
           in: false
           occ: null
           hz: 0.7
@@ -7851,14 +7902,21 @@ cuts:
           wy: 6.5
           fa: 106
           fh: 163
+          fay: 110
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
           x: 0.732
-          y: 0.148
+          y: 0.147
           z: 0.89
-          frac: 0.336
-          top: 0.324
-          fy: -1.33
+          frac: 0.337
+          top: 0.323
+          fy: -1.335
           in: true
           occ: null
           hz: 1.42
@@ -7867,12 +7925,20 @@ cuts:
           wy: 7.07
           fa: 125
           fh: 96
+          fay: 135
+          fap: 17
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 1.5
       t: 1.5
       look: null
       frame: 膝上
-      lens: 28.3
+      lens: 28.4
       cam:
       - 12.5
       - 6.4
@@ -7881,11 +7947,11 @@ cuts:
       people:
         arlecchino:
           x: 0.605
-          y: 0.573
+          y: 0.572
           z: 3.49
-          frac: 0.147
+          frac: 0.148
           top: 0.647
-          fy: 0.087
+          fy: 0.084
           in: true
           occ: null
           hz: 1.28
@@ -7894,30 +7960,46 @@ cuts:
           wy: 8.68
           fa: 40
           fh: 276
+          fay: 35
+          fap: 19
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.464
-          y: 0.54
-          z: 2.0
-          frac: 0.179
-          top: 0.631
-          fy: -0.338
+          x: 0.462
+          y: 0.538
+          z: 1.99
+          frac: 0.18
+          top: 0.63
+          fy: -0.345
           in: true
           occ: null
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 169
-          fh: 125
+          fa: 60
+          fh: 0
+          fay: 60
+          fap: 11
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
-          x: 0.121
-          y: -0.3
+          x: 0.118
+          y: -0.308
           z: 1.47
-          frac: 0.327
-          top: -0.132
-          fy: -0.82
+          frac: 0.329
+          top: -0.138
+          fy: -0.831
           in: false
           occ: null
           hz: 0.7
@@ -7926,14 +8008,21 @@ cuts:
           wy: 6.5
           fa: 105
           fh: 164
+          fay: 109
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.738
-          y: 0.138
+          x: 0.74
+          y: 0.133
           z: 0.88
-          frac: 0.339
-          top: 0.315
-          fy: -1.356
+          frac: 0.341
+          top: 0.311
+          fy: -1.371
           in: true
           occ: null
           hz: 1.42
@@ -7942,12 +8031,20 @@ cuts:
           wy: 7.07
           fa: 133
           fh: 108
+          fay: 147
+          fap: 17
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 2.25
       t: 2.25
       look: null
       frame: 膝上
-      lens: 28.6
+      lens: 28.9
       cam:
       - 12.51
       - 6.41
@@ -7955,12 +8052,12 @@ cuts:
       yaw: 123
       people:
         arlecchino:
-          x: 0.604
-          y: 0.558
+          x: 0.605
+          y: 0.556
           z: 3.26
-          frac: 0.153
-          top: 0.636
-          fy: 0.078
+          frac: 0.154
+          top: 0.635
+          fy: 0.072
           in: true
           occ: null
           hz: 1.29
@@ -7969,30 +8066,46 @@ cuts:
           wy: 8.53
           fa: 19
           fh: 308
+          fay: 3
+          fap: 19
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.464
-          y: 0.538
-          z: 2.0
+          x: 0.457
+          y: 0.533
+          z: 1.98
           frac: 0.182
-          top: 0.63
-          fy: -0.355
+          top: 0.626
+          fy: -0.366
           in: true
-          occ: null
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
-          wx: 14.21
-          wy: 7.41
-          fa: 160
-          fh: 140
+          wx: 14.2
+          wy: 7.39
+          fa: 61
+          fh: 0
+          fay: 60
+          fap: 15
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: hat_brim
+            mo: ok
         hundred-knight:
-          x: 0.114
-          y: -0.317
+          x: 0.109
+          y: -0.329
           z: 1.46
-          frac: 0.333
-          top: -0.146
-          fy: -0.847
+          frac: 0.336
+          top: -0.156
+          fy: -0.865
           in: false
           occ: null
           hz: 0.7
@@ -8001,14 +8114,21 @@ cuts:
           wy: 6.5
           fa: 105
           fh: 164
+          fay: 109
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.762
-          y: 0.115
+          x: 0.765
+          y: 0.107
           z: 0.87
-          frac: 0.343
-          top: 0.295
-          fy: -1.396
+          frac: 0.347
+          top: 0.289
+          fy: -1.421
           in: true
           occ: null
           hz: 1.42
@@ -8017,12 +8137,20 @@ cuts:
           wy: 7.09
           fa: 131
           fh: 108
+          fay: 145
+          fap: 16
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.0
       t: 3.0
       look: null
       frame: 膝上
-      lens: 29.0
+      lens: 29.3
       cam:
       - 12.51
       - 6.41
@@ -8031,11 +8159,11 @@ cuts:
       people:
         arlecchino:
           x: 0.567
-          y: 0.546
+          y: 0.544
           z: 3.09
-          frac: 0.159
+          frac: 0.16
           top: 0.628
-          fy: 0.066
+          fy: 0.059
           in: true
           occ: null
           hz: 1.3
@@ -8044,30 +8172,46 @@ cuts:
           wy: 8.29
           fa: 31
           fh: 313
+          fay: 4
+          fap: 31
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.461
-          y: 0.533
-          z: 1.99
-          frac: 0.185
-          top: 0.626
-          fy: -0.376
+          x: 0.458
+          y: 0.529
+          z: 1.98
+          frac: 0.187
+          top: 0.624
+          fy: -0.389
           in: true
           occ: null
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 158
-          fh: 140
+          fa: 61
+          fh: 0
+          fay: 60
+          fap: 11
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: hat_brim
+            mo: ok
         hundred-knight:
-          x: 0.105
-          y: -0.339
+          x: 0.1
+          y: -0.353
           z: 1.45
-          frac: 0.341
-          top: -0.164
-          fy: -0.882
+          frac: 0.345
+          top: -0.176
+          fy: -0.902
           in: false
           occ: null
           hz: 0.7
@@ -8076,14 +8220,21 @@ cuts:
           wy: 6.5
           fa: 105
           fh: 164
+          fay: 109
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.777
-          y: 0.095
+          x: 0.779
+          y: 0.085
           z: 0.86
-          frac: 0.35
-          top: 0.279
-          fy: -1.447
+          frac: 0.353
+          top: 0.271
+          fy: -1.474
           in: true
           occ: null
           hz: 1.42
@@ -8092,12 +8243,20 @@ cuts:
           wy: 7.09
           fa: 130
           fh: 108
+          fay: 145
+          fap: 16
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.75
       t: 3.75
       look: null
       frame: 膝上
-      lens: 29.5
+      lens: 29.7
       cam:
       - 12.52
       - 6.42
@@ -8108,41 +8267,57 @@ cuts:
           x: 0.518
           y: 0.537
           z: 3.03
-          frac: 0.162
+          frac: 0.164
           top: 0.622
-          fy: 0.052
+          fy: 0.048
           in: true
-          occ: hat_brim
+          occ: braid-1
           hz: 1.3
           bz: 0.0
           wx: 14.98
           wy: 8.11
           fa: 37
           fh: 310
+          fay: 6
+          fap: 36
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: braid-1
+            re: metallica_head
+            mo: braid-1
         metallica:
           x: 0.458
-          y: 0.527
+          y: 0.526
           z: 1.98
-          frac: 0.188
+          frac: 0.19
           top: 0.622
-          fy: -0.401
+          fy: -0.409
           in: true
           occ: null
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 157
-          fh: 140
+          fa: 60
+          fh: 0
+          fay: 60
+          fap: 9
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
-          x: 0.095
-          y: -0.365
+          x: 0.091
+          y: -0.373
           z: 1.44
-          frac: 0.349
-          top: -0.185
-          fy: -0.922
+          frac: 0.351
+          top: -0.193
+          fy: -0.934
           in: false
           occ: null
           hz: 0.7
@@ -8151,14 +8326,21 @@ cuts:
           wy: 6.5
           fa: 105
           fh: 164
+          fay: 109
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.767
-          y: 0.087
-          z: 0.85
-          frac: 0.361
-          top: 0.276
-          fy: -1.506
+          x: 0.768
+          y: 0.08
+          z: 0.86
+          frac: 0.362
+          top: 0.27
+          fy: -1.521
           in: true
           occ: null
           hz: 1.42
@@ -8167,12 +8349,20 @@ cuts:
           wy: 7.08
           fa: 131
           fh: 108
+          fay: 146
+          fap: 17
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 4.5
       t: 4.5
       look: null
       frame: 膝上
-      lens: 29.9
+      lens: 30.0
       cam:
       - 12.52
       - 6.42
@@ -8181,43 +8371,59 @@ cuts:
       people:
         arlecchino:
           x: 0.485
-          y: 0.527
-          z: 3.01
-          frac: 0.163
-          top: 0.612
-          fy: 0.037
+          y: 0.529
+          z: 3.02
+          frac: 0.162
+          top: 0.614
+          fy: 0.041
           in: true
-          occ: metallica_head
+          occ: hat_brim
           hz: 1.29
           bz: 0.0
           wx: 15.04
           wy: 8.0
           fa: 38
           fh: 308
+          fay: 6
+          fap: 38
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: metallica_head
+            re: braid-1
+            mo: metallica_body
         metallica:
-          x: 0.456
-          y: 0.521
+          x: 0.457
+          y: 0.523
           z: 1.97
-          frac: 0.192
-          top: 0.619
-          fy: -0.428
+          frac: 0.191
+          top: 0.62
+          fy: -0.422
           in: true
           occ: null
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 158
-          fh: 140
+          fa: 149
+          fh: 91
+          fay: 150
+          fap: 10
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.082
-          y: -0.394
-          z: 1.43
-          frac: 0.358
-          top: -0.21
-          fy: -0.965
+          x: 0.085
+          y: -0.388
+          z: 1.44
+          frac: 0.355
+          top: -0.205
+          fy: -0.955
           in: false
           occ: null
           hz: 0.7
@@ -8226,14 +8432,21 @@ cuts:
           wy: 6.5
           fa: 105
           fh: 164
+          fay: 109
+          fap: 38
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.751
-          y: 0.081
-          z: 0.85
-          frac: 0.373
+          x: 0.749
+          y: 0.083
+          z: 0.86
+          frac: 0.369
           top: 0.276
-          fy: -1.571
+          fy: -1.552
           in: true
           occ: null
           hz: 1.42
@@ -8242,532 +8455,757 @@ cuts:
           wy: 7.07
           fa: 133
           fh: 108
+          fay: 147
+          fap: 18
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 5.25
       t: 5.25
-      look: null
-      frame: 膝上
-      lens: 30.4
+      look: arlecchino
+      frame: 胸上
+      lens: 36.0
       cam:
-      - 12.53
-      - 6.43
-      - 1.82
-      yaw: 123
+      - 14.2
+      - 6.25
+      - 1.75
+      yaw: 153
       people:
         arlecchino:
-          x: 0.509
-          y: 0.73
-          z: 3.29
-          frac: 0.194
-          top: 0.828
-          fy: 0.022
+          x: 0.48
+          y: 0.587
+          z: 2.3
+          frac: 0.325
+          top: 0.751
+          fy: -0.642
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.29
           wy: 8.28
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: 3
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.454
-          y: 0.515
-          z: 1.96
-          frac: 0.196
-          top: 0.615
-          fy: -0.455
-          in: true
-          occ: null
+          x: 1.004
+          y: 0.153
+          z: 1.04
+          frac: 0.437
+          top: 0.374
+          fy: -2.079
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 160
+          fa: 135
           fh: 137
+          fay: 137
+          fap: 13
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.069
-          y: -0.424
-          z: 1.42
-          frac: 0.366
-          top: -0.236
-          fy: -1.01
+          x: 2.319
+          y: -9.508
+          z: 0.18
+          frac: 2.141
+          top: -8.346
+          fy: -12.432
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 111
+          fa: 96
           fh: 156
+          fay: 110
+          fap: 71
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.758
-          y: 0.066
-          z: 0.85
-          frac: 0.386
-          top: 0.267
-          fy: -1.639
-          in: true
+          x: 6.428
+          y: -1.836
+          z: 0.24
+          frac: 1.633
+          top: -0.982
+          fy: -8.476
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.05
           wy: 7.08
-          fa: 106
+          fa: 21
           fh: 75
+          fay: 21
+          fap: 4
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 6.0
       t: 6.0
-      look: null
-      frame: 膝上
-      lens: 30.9
+      look: arlecchino
+      frame: 胸上
+      lens: 36.6
       cam:
-      - 12.54
-      - 6.44
-      - 1.82
-      yaw: 123
+      - 14.2
+      - 6.26
+      - 1.75
+      yaw: 153
       people:
         arlecchino:
-          x: 0.509
-          y: 0.728
-          z: 3.29
-          frac: 0.197
-          top: 0.828
-          fy: 0.007
+          x: 0.48
+          y: 0.585
+          z: 2.3
+          frac: 0.33
+          top: 0.752
+          fy: -0.669
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.29
           wy: 8.29
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: 2
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.451
-          y: 0.509
-          z: 1.95
-          frac: 0.2
-          top: 0.61
-          fy: -0.481
-          in: true
-          occ: null
+          x: 1.017
+          y: 0.143
+          z: 1.03
+          frac: 0.449
+          top: 0.37
+          fy: -2.149
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 166
+          fa: 128
           fh: 129
+          fay: 129
+          fap: 13
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.056
-          y: -0.453
-          z: 1.4
-          frac: 0.375
-          top: -0.261
-          fy: -1.053
+          x: 2.478
+          y: -10.375
+          z: 0.17
+          frac: 2.207
+          top: -9.171
+          fy: -13.394
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 119
+          fa: 92
           fh: 143
+          fay: 96
+          fap: 71
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.777
-          y: 0.034
-          z: 0.83
-          frac: 0.391
-          top: 0.239
-          fy: -1.704
-          in: true
+          x: 7.004
+          y: -2.032
+          z: 0.22
+          frac: 1.611
+          top: -1.164
+          fy: -9.0
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.03
           wy: 7.08
-          fa: 139
+          fa: 64
           fh: 120
+          fay: 65
+          fap: 5
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 6.75
       t: 6.75
-      look: null
-      frame: 膝上
-      lens: 31.3
+      look: arlecchino
+      frame: 胸上
+      lens: 37.5
       cam:
-      - 12.54
-      - 6.44
-      - 1.82
-      yaw: 123
+      - 14.21
+      - 6.27
+      - 1.74
+      yaw: 153
       people:
         arlecchino:
-          x: 0.511
-          y: 0.726
-          z: 3.31
-          frac: 0.198
-          top: 0.826
-          fy: -0.006
+          x: 0.48
+          y: 0.573
+          z: 2.32
+          frac: 0.335
+          top: 0.741
+          fy: -0.729
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.31
           wy: 8.31
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: -2
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.45
-          y: 0.504
-          z: 1.94
-          frac: 0.204
-          top: 0.607
-          fy: -0.505
-          in: true
-          occ: null
+          x: 1.04
+          y: 0.12
+          z: 1.01
+          frac: 0.468
+          top: 0.356
+          fy: -2.309
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 166
+          fa: 128
           fh: 129
+          fay: 129
+          fap: 13
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.047
-          y: -0.478
-          z: 1.39
-          frac: 0.384
-          top: -0.28
-          fy: -1.093
+          x: 2.843
+          y: -12.349
+          z: 0.15
+          frac: 2.812
+          top: -10.824
+          fy: -16.176
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 120
+          fa: 91
           fh: 143
+          fay: 95
+          fap: 71
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.801
-          y: 0.007
-          z: 0.81
-          frac: 0.398
-          top: 0.216
-          fy: -1.765
-          in: true
+          x: 7.958
+          y: -2.357
+          z: 0.2
+          frac: 1.816
+          top: -1.378
+          fy: -10.473
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.01
           wy: 7.09
-          fa: 138
+          fa: 64
           fh: 120
+          fay: 65
+          fap: 4
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 7.5
       t: 7.5
-      look: null
-      frame: 膝上
-      lens: 31.6
+      look: arlecchino
+      frame: 胸上
+      lens: 38.6
       cam:
-      - 12.55
-      - 6.45
-      - 1.82
-      yaw: 123
+      - 14.21
+      - 6.28
+      - 1.73
+      yaw: 153
       people:
         arlecchino:
-          x: 0.511
-          y: 0.725
-          z: 3.32
-          frac: 0.199
-          top: 0.825
-          fy: -0.017
+          x: 0.48
+          y: 0.564
+          z: 2.33
+          frac: 0.343
+          top: 0.735
+          fy: -0.79
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.32
           wy: 8.33
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: -4
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.449
-          y: 0.501
-          z: 1.94
-          frac: 0.206
-          top: 0.605
-          fy: -0.525
-          in: true
-          occ: null
+          x: 1.061
+          y: 0.103
+          z: 1.0
+          frac: 0.489
+          top: 0.349
+          fy: -2.476
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 166
+          fa: 128
           fh: 129
+          fay: 129
+          fap: 14
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.041
-          y: -0.496
-          z: 1.39
-          frac: 0.394
-          top: -0.294
-          fy: -1.126
+          x: 3.279
+          y: -14.677
+          z: 0.13
+          frac: 3.842
+          top: -12.624
+          fy: -19.832
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 120
+          fa: 91
           fh: 143
+          fay: 93
+          fap: 72
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.797
-          y: -0.003
-          z: 0.81
-          frac: 0.407
-          top: 0.211
-          fy: -1.815
+          x: 9.041
+          y: -2.724
+          z: 0.18
+          frac: 2.083
+          top: -1.597
+          fy: -12.203
           in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.02
           wy: 7.09
-          fa: 138
+          fa: 63
           fh: 120
+          fay: 64
+          fap: 4
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 8.25
       t: 8.25
-      look: null
-      frame: 膝上
-      lens: 31.9
+      look: arlecchino
+      frame: 胸上
+      lens: 39.5
       cam:
-      - 12.55
-      - 6.45
-      - 1.82
-      yaw: 123
+      - 14.22
+      - 6.29
+      - 1.72
+      yaw: 153
       people:
         arlecchino:
-          x: 0.509
-          y: 0.724
-          z: 3.29
-          frac: 0.203
-          top: 0.826
-          fy: -0.025
+          x: 0.479
+          y: 0.578
+          z: 2.28
+          frac: 0.359
+          top: 0.758
+          fy: -0.814
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.3
           wy: 8.31
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: 0
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.449
-          y: 0.498
-          z: 1.94
-          frac: 0.208
-          top: 0.603
-          fy: -0.539
-          in: true
-          occ: null
+          x: 1.072
+          y: 0.109
+          z: 1.0
+          frac: 0.504
+          top: 0.362
+          fy: -2.547
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.21
           wy: 7.41
-          fa: 167
+          fa: 128
           fh: 129
+          fay: 129
+          fap: 14
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
-          x: 0.036
-          y: -0.51
-          z: 1.38
-          frac: 0.399
-          top: -0.305
-          fy: -1.15
+          x: 3.498
+          y: -15.82
+          z: 0.12
+          frac: 4.099
+          top: -13.625
+          fy: -21.125
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 120
+          fa: 91
           fh: 143
+          fay: 92
+          fap: 72
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.774
-          y: 0.002
-          z: 0.81
-          frac: 0.414
-          top: 0.219
-          fy: -1.851
-          in: true
+          x: 9.557
+          y: -2.869
+          z: 0.17
+          frac: 2.23
+          top: -1.654
+          fy: -12.655
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.04
           wy: 7.07
-          fa: 140
+          fa: 63
           fh: 120
+          fay: 64
+          fap: 5
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 9.0
       t: 9.0
-      look: null
-      frame: 膝上
-      lens: 32.0
+      look: arlecchino
+      frame: 胸上
+      lens: 40.0
       cam:
-      - 12.55
-      - 6.45
-      - 1.82
-      yaw: 123
+      - 14.22
+      - 6.3
+      - 1.72
+      yaw: 153
       people:
         arlecchino:
-          x: 0.507
-          y: 0.723
-          z: 3.27
-          frac: 0.205
-          top: 0.826
-          fy: -0.029
+          x: 0.478
+          y: 0.582
+          z: 2.26
+          frac: 0.368
+          top: 0.767
+          fy: -0.831
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.29
           wy: 8.29
-          fa: 16
+          fa: 12
           fh: 320
+          fay: 12
+          fap: 2
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.447
-          y: 0.496
-          z: 1.94
-          frac: 0.209
-          top: 0.602
-          fy: -0.546
-          in: true
-          occ: null
+          x: 1.085
+          y: 0.106
+          z: 0.99
+          frac: 0.515
+          top: 0.366
+          fy: -2.593
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 158
+          fa: 138
           fh: 140
+          fay: 139
+          fap: 13
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: out
+            mo: back
         hundred-knight:
-          x: 0.03
-          y: -0.52
-          z: 1.38
-          frac: 0.4
-          top: -0.315
-          fy: -1.161
+          x: 3.788
+          y: -17.414
+          z: 0.11
+          frac: 3.712
+          top: -15.384
+          fy: -22.171
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 107
+          fa: 95
           fh: 160
+          fay: 107
+          fap: 72
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.772
-          y: 0.008
-          z: 0.82
-          frac: 0.425
-          top: 0.228
-          fy: -1.869
-          in: true
+          x: 9.347
+          y: -2.754
+          z: 0.18
+          frac: 2.563
+          top: -1.43
+          fy: -12.972
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.05
           wy: 7.08
-          fa: 93
+          fa: 5
           fh: 60
+          fay: 4
+          fap: 3
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 9.17
       t: 9.17
-      look: null
-      frame: 膝上
-      lens: 32.0
+      look: arlecchino
+      frame: 胸上
+      lens: 40.0
       cam:
-      - 12.55
-      - 6.45
-      - 1.82
-      yaw: 123
+      - 14.22
+      - 6.3
+      - 1.72
+      yaw: 153
       people:
         arlecchino:
-          x: 0.507
-          y: 0.722
-          z: 3.27
-          frac: 0.205
-          top: 0.826
-          fy: -0.029
+          x: 0.478
+          y: 0.583
+          z: 2.25
+          frac: 0.369
+          top: 0.768
+          fy: -0.831
           in: true
-          occ: hat_cone
+          occ: null
           hz: 1.69
           bz: 0.0
           wx: 15.29
           wy: 8.29
-          fa: 17
+          fa: 12
           fh: 320
+          fay: 12
+          fap: 2
+          bx: 15.3
+          by: 8.3
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         metallica:
-          x: 0.447
-          y: 0.496
-          z: 1.93
-          frac: 0.209
-          top: 0.601
-          fy: -0.546
-          in: true
-          occ: null
+          x: 1.087
+          y: 0.106
+          z: 0.98
+          frac: 0.517
+          top: 0.366
+          fy: -2.594
+          in: false
+          occ: hat_brim
           hz: 1.47
           bz: 0.0
           wx: 14.2
           wy: 7.4
-          fa: 158
+          fa: 137
           fh: 140
+          fay: 139
+          fap: 13
+          bx: 14.2
+          by: 7.4
           h: 1.6
+          lm:
+            le: back
+            re: out
+            mo: back
         hundred-knight:
-          x: 0.029
-          y: -0.521
-          z: 1.38
-          frac: 0.399
-          top: -0.316
-          fy: -1.162
+          x: 3.83
+          y: -17.65
+          z: 0.11
+          frac: 3.492
+          top: -15.727
+          fy: -22.149
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 13.95
           wy: 6.5
-          fa: 107
+          fa: 95
           fh: 160
+          fay: 106
+          fap: 72
+          bx: 13.95
+          by: 6.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         bisco:
-          x: 0.773
-          y: 0.007
-          z: 0.82
-          frac: 0.425
-          top: 0.228
-          fy: -1.87
-          in: true
+          x: 9.347
+          y: -2.75
+          z: 0.18
+          frac: 2.56
+          top: -1.428
+          fy: -12.949
+          in: false
           occ: null
           hz: 1.42
           bz: 0.0
           wx: 13.05
           wy: 7.08
-          fa: 93
+          fa: 4
           fh: 60
+          fay: 4
+          fap: 3
+          bx: 13.1
+          by: 7.05
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
   A39-011:
     sec: 9.6
     shot: 膝上・アルレッキーノ・反抗的なお年頃

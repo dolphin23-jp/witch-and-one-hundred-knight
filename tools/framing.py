@@ -178,6 +178,23 @@ def _line_turned(st, A, B):
     return _adiff(a0, a1), math.hypot(m1[0] - m0[0], m1[1] - m0[1])
 
 
+def declared_axis(bk, cut, order):
+    """blocking.yaml で宣言した軸（2026-11-08、D-077 案）。カットに効く軸の dict、軸を外すカットは "free"、宣言がなければ None。
+    axes: [{name, a, b, side: [x, y]（カメラを置く側の点）, cuts: [始めのカット, 終わりのカット], why}]。
+    カットの axis: <名前> でその軸、axis: free か insert、axis_free: true、insert: true で軸の外（tools/staging.py と同じ印）。"""
+    c = (bk.get("cuts") or {}).get(cut) or {}
+    if c.get("axis_free") or c.get("insert") or c.get("axis") in ("free", "insert"):
+        return "free"
+    axes = bk.get("axes") or []
+    if c.get("axis"):
+        return next((ax for ax in axes if ax.get("name") == c["axis"]), None)
+    for ax in axes:
+        lo, hi = (ax.get("cuts") or [None, None])[:2]
+        if lo in order and hi in order and order.index(lo) <= order.index(cut) <= order.index(hi):
+            return ax
+    return None
+
+
 def line_issues(data, shots, bk, lines, trace=None, blocks=None, feet=None):
     """イマジナリーライン: カットの順に、主役と見ている相手の線のどちら側にカメラがいるかを追い、飛び越えたカットを返す。
 
@@ -232,6 +249,36 @@ def line_issues(data, shots, bk, lines, trace=None, blocks=None, feet=None):
         s0, s1 = rows[0], rows[-1]
         rule = frame_rule(s0.get("frame"))
         tr = {"cut": c} if trace is not None else None
+        ax = declared_axis(bk, c, list(bk.get("cuts") or {}) or cuts)   # 範囲はカットの並び（測っていないカットも数える）
+        if ax == "free":   # 軸を外すカット（axis: free・insert、axis_free・insert）
+            if tr is not None:
+                tr["skip"] = "軸の外（宣言）"
+                trace.append(tr)
+            continue
+        if ax is not None:   # 軸を宣言してある（D-077 案）: 推定を使わず、宣言の側と比べる
+            bad = []
+            for s in rows:
+                def one(w):
+                    if feet is not None:
+                        p_ = feet(c, w, float(s["t"]))
+                        if p_ is not None:
+                            return p_
+                    m_ = s["people"].get(w) or {}
+                    return _xy(m_) if "wx" in m_ else where(w, i, float(s["t"]))
+                A, B = one(ax["a"]), one(ax["b"])
+                if A is None or B is None:
+                    continue
+                ref = _side_of(A, B, ax["side"])
+                side = _side_of(A, B, s["cam"])
+                if ref != 0 and side == -ref:
+                    bad.append(s)
+            if tr is not None:
+                tr.update({"axis": ax["name"], "bad": len(bad), "n": len(rows)})
+                trace.append(tr)
+            if bad and not any(w in txt for w in CROSS_OK):
+                out.setdefault(c, []).append({"kind": "線を越える", "who": [ax["a"], ax["b"]], "axis": ax["name"], "frames": f"{len(bad)}/{len(rows)}",
+                                              "line": [[round(v, 2) for v in A], [round(v, 2) for v in B]]})
+            continue
         if rule and rule[0] == "大引き":   # 大引きで二人がともに画面に入れば、そこで側を決め直す
             for pair, st in list(state.items()):
                 pa, pb = s1["people"].get(pair[0]) or {}, s1["people"].get(pair[1]) or {}
@@ -419,6 +466,66 @@ def inherited_frame(rows, cam_keys):
     return {"kind": "画の大きさの引き継ぎ", "who": [bad_who], "keys": bad_keys, "frame": bad_frame, "ratio": ratios[-1]}
 
 
+STALL_SEC = 6.0    # 秒。長いカットで、人物（映る人）とカメラのキーが1つもない間がこれより長ければ知らせる（演出ノート「6秒静止禁止」）
+LONG_SEC = 9.0     # 秒。これより長いカットだけ見る
+SLOW_MPS, SLOW_LENS = 0.08, 1.5   # カメラの動きに数える速さ（m/秒・mm/秒）
+
+
+def stall_note(c, sec):
+    """長いカットの止まり（2026-11-08、オーナー判断「長いカットは、道具では警告まで」）。
+    映る人物（only）のキーの時刻・カメラのキーの時刻を「変わる時」とし、カメラが動く・寄る・振る間と、人物が歩く間は「動いている間」とする。
+    変わる時も動いている間もない、いちばん長い間が STALL_SEC 秒を超えれば、知らせる dict（なければ None）。
+    台詞が続いていても、画に新しい情報がなければ止まりとみなす。直すかどうかは場面の動きの設計で決める。"""
+    if not c or sec < LONG_SEC:
+        return None
+    only = c.get("only")
+    ts, active = {0.0, float(sec)}, []
+    for w, ks in (c.get("keys") or {}).items():
+        if only is not None and w not in only:
+            continue
+        ks = sorted((k for k in ks or [] if isinstance(k, dict)), key=lambda k: float(k.get("t", 0.0)))
+        prev_at = None
+        for k in ks:
+            t = float(k.get("t", 0.0))
+            if 0.0 < t < sec:
+                ts.add(round(t, 2))
+            at = k.get("at")
+            if at is not None and prev_at is not None and at != prev_at[1]:
+                active.append((prev_at[0], t))
+            if at is not None:
+                prev_at = (t, at)
+    ck = sorted(c.get("cam_keys") or [], key=lambda k: float(k.get("t", 0.0)))
+    for a_, b_ in zip(ck, ck[1:]):
+        ta, tb = float(a_.get("t", 0.0)), float(b_.get("t", 0.0))
+        if 0.0 < tb and ta < sec:
+            ts.add(round(tb, 2))
+        span = max(1e-6, tb - ta)
+        dist = (sum((float(x) - float(y)) ** 2 for x, y in zip(a_["cam"], b_["cam"])) ** 0.5
+                if isinstance(a_.get("cam"), list) and isinstance(b_.get("cam"), list) else 0.0)
+        dlens = abs(float(b_.get("lens", a_.get("lens", 35)) or 35) - float(a_.get("lens", 35) or 35))
+        # ゆっくりすぎる寄り（秒 SLOW_MPS m・SLOW_LENS mm より遅い）は、動きに数えない（21 秒かけて 0.8m 寄るのは止めと同じに見える）
+        if dist / span >= SLOW_MPS or dlens / span >= SLOW_LENS \
+                or (b_.get("look") is not None and b_.get("look") != a_.get("look") and span <= STALL_SEC) or isinstance(a_.get("cam"), dict):
+            if b_.get("ease") != "step":
+                active.append((ta, tb))
+    ts = sorted(ts)
+    best = (0.0, 0.0)
+    for a_, b_ in zip(ts, ts[1:]):   # 変わる時の間から、動いている間を除いた、いちばん長い所
+        cur = a_
+        for x0, x1 in sorted(active):
+            if x1 <= cur or x0 >= b_:
+                continue
+            if x0 > cur and x0 - cur > best[0]:
+                best = (x0 - cur, cur)
+            cur = max(cur, x1)
+        if b_ > cur and b_ - cur > best[0]:
+            best = (b_ - cur, cur)
+    gap, at = best
+    if gap <= STALL_SEC:
+        return None
+    return {"kind": "止まり", "who": [], "gap": round(gap, 1), "range": [round(at, 2), round(at + gap, 2)], "sec": sec}
+
+
 def feet_index(scene_dir, data):
     """blocking.yaml から、(カット, 人物, 時刻) → 足元の場面の x・y を返す関数（tools/staging.py と tools/motion.py。Blender なし）。
     keys のある人物はキーの補間（tools/previs.py と同じ motion.PersonTrack）、ない人物はカットの始め（後半は終わり）の立ち位置。
@@ -594,11 +701,28 @@ def analyze(scene_dir, trace=None, blocks=None, notes=None):
                 found.append({"kind": "話し手が見えない", "who": [w], "line": lid})
         inh = inherited_frame(rows, ((bk.get("cuts") or {}).get(cut) or {}).get("cam_keys"))
         if inh and notes is not None:   # 知らせ（問題の数には入れない。2026-11-08）
-            notes[cut] = {"shot": c.get("shot"), "notes": [inh]}
+            notes.setdefault(cut, {"shot": c.get("shot"), "notes": []})["notes"].append(inh)
+        stl = stall_note((bk.get("cuts") or {}).get(cut), float(c.get("sec") or 0.0))
+        if stl and notes is not None:
+            notes.setdefault(cut, {"shot": c.get("shot"), "notes": []})["notes"].append(stl)
         if found:
             issues[cut] = {"shot": c.get("shot"), "issues": found}
     for cut, found in line_issues(data, shots, bk, lines, trace=trace, blocks=blocks, feet=feet_index(scene_dir, data)).items():
         issues.setdefault(cut, {"shot": data["cuts"][cut].get("shot"), "issues": []})["issues"] += found
+    for cut in list(issues):   # 例外（waive: [{check: 種類, why: 理由}]）。印を外して、知らせに理由と一緒に書く（2026-11-08）
+        wv = (((bk.get("cuts") or {}).get(cut) or {}).get("waive")) or []
+        kinds_w = {str(w.get("check")): str(w.get("why", "")) for w in wv if isinstance(w, dict)}
+        if not kinds_w:
+            continue
+        keep = [i for i in issues[cut]["issues"] if i["kind"] not in kinds_w]
+        dropped = [i for i in issues[cut]["issues"] if i["kind"] in kinds_w]
+        if dropped and notes is not None:
+            notes.setdefault(cut, {"shot": issues[cut]["shot"], "notes": []})["notes"] += [
+                {"kind": "例外", "who": i.get("who") or [], "check": i["kind"], "why": kinds_w[i["kind"]]} for i in dropped]
+        if keep:
+            issues[cut]["issues"] = keep
+        else:
+            del issues[cut]
     order = list(data.get("cuts") or {})
     issues = {c: issues[c] for c in order if c in issues}
     return data, issues
@@ -625,13 +749,20 @@ def report(scene_dir, issues, total, line_blocks=None, notes=None, status=None):
             f"{i['kind']}（{'・'.join(i.get('who') or [])}" + (f"、{i['frames']}" if 'frames' in i else "")
             + (f"、{'・'.join(i['by'])}" if 'by' in i else "") + (f"、{i['frame']} の{i['what']}の大きさ {i['measured']}、目安 {i['expect'][0]}〜{i['expect'][1]}" if i['kind'] == '大きさ' else "")
             + (f"、{i['line']}" if 'line' in i and not i['kind'].startswith('線を越える') else "") + (f"、顔とカメラの角度 {i['angle']} 度" if 'angle' in i else "")
-            + (f"、{i['after']} と反対の側から" if 'after' in i else "") + (f"（間 {i['gap']} カット）" if i.get('gap') else "") + (f"、顔の高さ {i['y']}（下 0・上 1）" if 'y' in i else "") + "）" for i in v["issues"]))
+            + (f"、軸「{i['axis']}」の反対の側" if 'axis' in i else "") + (f"、{i['after']} と反対の側から" if 'after' in i else "") + (f"（間 {i['gap']} カット）" if i.get('gap') else "") + (f"、顔の高さ {i['y']}（下 0・上 1）" if 'y' in i else "") + "）" for i in v["issues"]))
     if line_blocks:
         md += ["", "## 線の側の並び（印のある区間。どちらの側にそろえるかは区間ごとに1つの判断）", ""] + line_blocks
     if notes:
         md += ["", "## 知らせ（問題の数に入れない）", ""]
         for cut, v in notes.items():
             for i in v["notes"]:
+                if i.get("kind") == "止まり":
+                    md.append(f"- **{cut}**（{v['shot']}）: 止まり（{i['sec']:g} 秒のカットで、人物とカメラのキーのない間が {i['gap']} 秒、"
+                              f"{i['range'][0]:g}〜{i['range'][1]:g} 秒。聞き手の反応・姿勢・表情・カメラの変化を足すか、カットの中で切り替えるか、場面の動きの設計で決める）")
+                    continue
+                if i.get("kind") == "例外":
+                    md.append(f"- **{cut}**（{v['shot']}）: 例外（{i['check']}、{'・'.join(i['who'])}）: {i['why']}")
+                    continue
                 md.append(f"- **{cut}**（{v['shot']}）: 画の大きさの引き継ぎ（{'・'.join(i['who'])}、frame のないキー {'・'.join(str(t) for t in i['keys'])} 秒で、"
                           f"{i['frame']} の大きさが {i['ratio']} 倍に変わる。キーに frame を書くと、その区間は書いた大きさで測る）")
     (scene_dir / "gen" / "framing_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
@@ -650,6 +781,9 @@ def explain(scene_dir, cuts):
     want = set(cuts)
     for r in tr:
         if want and r["cut"] not in want:
+            continue
+        if "axis" in r:
+            print(f"{r['cut']}: 軸「{r['axis']}」（宣言）、反対の側のコマ {r['bad']}/{r['n']}")
             continue
         if "skip" in r and "S" not in r:
             print(f"{r['cut']}: 判断しない（{r['skip']}）" + (f"。見せ直し: {r['reestablish']}" if r.get("reestablish") else ""))
