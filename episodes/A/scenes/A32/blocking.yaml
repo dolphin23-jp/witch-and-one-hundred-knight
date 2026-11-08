@@ -2126,8 +2126,9 @@ cuts:
         z: 0.9
     cam_keys:
     - {t: 0.0, cam: [48.19, 45.92, 0.9], look: bisco, look_h: 0.9, lens: 19.0, frame: 全身}
-    - {t: 5.75, cam: [48.07, 46.81, 0.35], look: bisco, look_h: 0.92, lens: 40.0}
-    - {t: 8.8, cam: [48.07, 46.81, 0.45], look: bisco, look_h: 1.21, lens: 36.0}
+    - {t: 4.2, cam: [48.18, 46.03, 0.83], look: bisco, look_h: 0.92, lens: 21.0, frame: 全身}   # 2026-11-08 見回す間は全身を見せ、剣を突き立てる直前に寄る（前は 3 秒から頭が切れていた）
+    - {t: 5.75, cam: [48.07, 46.81, 0.35], look: bisco, look_h: 0.92, lens: 40.0, frame: 膝上}
+    - {t: 8.8, cam: [48.07, 46.81, 0.45], look: bisco, look_h: 1.21, lens: 36.0, frame: 膝上}
     fx:
     - kind: spark
       t: [5.85, 6.55]
