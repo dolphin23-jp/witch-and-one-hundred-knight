@@ -115,7 +115,7 @@ def _turn(dx, dy, fh):
         return None
     b = _bearing(dx, dy)
     d = (b - fh + 180.0) % 360.0 - 180.0
-    if abs(d) <= 100.0:
+    if abs(d) <= framing.AWAY:   # 判定（tools/framing.py の横の角度 fay）と同じ物差し（2026-11-08。前は 100 度）
         return None
     nb = math.radians(fh + math.copysign(TURN_TO, d))
     return r * math.sin(nb), -r * math.cos(nb), round(math.copysign(TURN_TO, d) - d)
@@ -294,6 +294,8 @@ def fix_scene(scene_dir, dry=False, only=None, cuts=None, allow_unverified=False
                 new_lh = round(float(m.get("bz", m["hz"] - 0.9 * float(m.get("h", 1.6)))) + 0.75 * float(m.get("h", 1.6)), 2)
             elif lh0 is None:   # 場所を見るキーの既定は 0
                 new_lh = 0.0
+            if k.get("aim"):   # aim: eyes のキーは見る高さを人形の目の位置から決めるので、look_h を書き換えない（2026-11-08）
+                new_lh = lh0
             moved = None
             away_who = {w for i in v["issues"] if i["kind"] == "顔が向こう向き" for w in (i.get("who") or [])} if "顔が向こう向き" in allowed else set()
             if m is not None and subj in away_who and "fh" in m and "wx" in m:   # 顔が向こう向き: カメラを主役の顔の前の側へ回す

@@ -12,6 +12,11 @@
   fa     顔の向きとカメラの向きの角度（度。0 で正面、90 で真横、90 を超えると顔が向こうを向いて写らない）
   fh     顔の向き（場面の向き、北 0・東 90。tools/framing_fix.py がカメラを顔の前へ回すのに使う）
   probe  見る先の顔が隠れているコマだけ: カメラを左右・上下にずらして顔が見える、いちばん小さいずれ {dx, dy, dz}（tools/framing_fix.py が使う）
+  fay    顔の向きとカメラの向きの、横（水平）の角度（度、2026-11-08）。tools/framing.py の「顔が向こう向き」と tools/framing_fix.py の回り込みは、この物差し
+  fap    縦の角度（度、2026-11-08）。カメラが顔の向きの線より上なら正（見下ろす）、下なら負（見上げる）
+  lm     顔の目印（2026-11-08。tools/previs_face.py が作る両目と口の物）: {le: 左目, re: 右目, mo: 口} → ok（見える）・out（画面の外）・
+         back（顔の裏）か、ふさぐ物の名前。本人の帽子・つば・手・腕も数える（手で口を隠す芝居は、tools/framing.py が問題にしない）。顔のない人物は書かない
+  bx・by 足元の場面の x・y（m、2026-11-08。tools/framing.py が線の動きを足元で測る）
 と、カメラの見る先（look）・カットの画の大きさ（frame）・レンズ・カメラの向き（yaw、北 0・東 90。tools/framing.py が視線の左右を見るのに使う）を、episodes/<話>/scenes/<場面>/gen/framing.yaml に書く。
 カットごとに、測ったときの入力と道具のハッシュ（input_hash・tool_hash、tools/manifest.py）・測った時刻（made）・fps も書く（2026-11-08）。
 一部のカットだけ測ると前の結果に重ねるので、tools/framing.py がカットごとに今の入力と比べ、古い測定を知らせる。
@@ -48,7 +53,10 @@ def _translucent(o):
     return o.name.startswith(("fx", "FX", "TRAIL"))
 
 
-def _occluder(scene, dg, origin, target, own_root, stop_short):
+OWN_COVER = ("brim", "hat", "_hand", "_fore", "_cone")   # 目印への線で、本人の物でも数えるもの（帽子・つば・手・腕。2026-11-08）
+
+
+def _occluder(scene, dg, origin, target, own_root, stop_short, own_counts=None):
     d = target - origin
     dist = d.length
     if dist < 1e-4:
@@ -68,6 +76,8 @@ def _occluder(scene, dg, origin, target, own_root, stop_short):
         if obj is None:
             continue
         if _root_of(obj) is own_root:   # 本人（髪・腕）に当たった。帽子のつばだけは隠す物に数える（A08-007、2026-11-07）
+            if own_counts and any(k in obj.name for k in own_counts):   # 目印への線では帽子・手・腕も数える（2026-11-08）
+                return obj.name
             return obj.name if obj.name.endswith("brim") else None
         if obj.hide_render or _translucent(obj):
             continue
@@ -88,7 +98,7 @@ def _cam_state(plan, t):
     return (look if isinstance(look, str) else None), frame
 
 
-def measure(scene, cam, figs, plan, lay, t, T):
+def measure(scene, cam, figs, plan, lay, t, T, faces=None):
     dg = bpy.context.evaluated_depsgraph_get()
     origin = cam.matrix_world.translation.copy()
     look, frame = _cam_state(plan, t)
@@ -115,12 +125,59 @@ def measure(scene, cam, figs, plan, lay, t, T):
         tc = origin - c
         fa = math.degrees(fw.angle(tc)) if fw.length > 1e-6 and tc.length > 1e-6 else 0.0
         fh = math.degrees(math.atan2(fw.x, fw.y)) % 360.0   # 場面の向き（北 0・東 90。layout は y が南、Blender は y が北。staging.bearing_of と同じ）
+        fay, fap = _yaw_pitch(fw, tc)
         out["people"][who] = {"x": round(vc.x, 3), "y": round(vc.y, 3), "z": round(vc.z, 2), "frac": round(abs(vt.y - vb.y), 3),
                               "top": round(vt.y, 3), "fy": round(vf.y, 3), "in": bool(inside), "occ": occ, "hz": round(c.z, 2), "bz": round(feet.z, 2),
-                              "wx": round(c.x, 2), "wy": round(-c.y, 2), "fa": round(fa), "fh": round(fh),
-                              "h": float(lay["people"][who]["h"])}
+                              "wx": round(c.x, 2), "wy": round(-c.y, 2), "fa": round(fa), "fh": round(fh), "fay": round(fay), "fap": round(fap),
+                              "bx": round(feet.x, 2), "by": round(-feet.y, 2), "h": float(lay["people"][who]["h"])}
+        lm = _landmarks(scene, dg, cam, origin, (faces or {}).get(who), c, figs[who][0]) if vc.z > 0 else None
+        if lm:
+            out["people"][who]["lm"] = lm
     if look in out["people"] and out["people"][look]["occ"] and look in figs:   # 見る先の顔が隠れている: カメラを少しずらして見える所を探す
         out["probe"] = _probe(scene, dg, cam, previs_rig.RIGS[look], figs[look][0])
+    return out
+
+
+def _yaw_pitch(fw, tc):
+    """顔の向き fw とカメラへの向き tc（どちらも Blender の向き）の、横の角度（度、0〜180）と縦の角度（度、カメラが上なら正）。"""
+    fx, fy_ = fw.x, fw.y
+    cx, cy = tc.x, tc.y
+    hf, hc = math.hypot(fx, fy_), math.hypot(cx, cy)
+    if hf < 1e-6 or hc < 1e-6:
+        yaw = 0.0
+    else:
+        yaw = math.degrees(math.acos(max(-1.0, min(1.0, (fx * cx + fy_ * cy) / (hf * hc)))))
+    pitch = math.degrees(math.atan2(tc.z, max(1e-6, hc))) - math.degrees(math.atan2(fw.z, max(1e-6, hf)))
+    return yaw, pitch
+
+
+def _landmarks(scene, dg, cam, origin, face, center, own_root):
+    """両目と口の目印が見えるか（2026-11-08）。face は tools/previs_face.add_face の dict（目 eyes・口 mouth の物）、center は頭の球の真ん中。
+    裏かどうかは目印ごとに、頭の真ん中から目印への向き（顔の面の外向き）で決める（真横の顔でも、手前の目は見える）。"""
+    if not face:
+        return None
+    pts = []
+    eyes = face.get("eyes") or []
+    for name, o in zip(("le", "re"), eyes[:2]):
+        pts.append((name, o))
+    if face.get("mouth") is not None:
+        pts.append(("mo", face["mouth"]))
+    if not pts:
+        return None
+    hr = float(face.get("hr", 0.13))
+    out = {}
+    for name, o in pts:
+        p = o.matrix_world.translation.copy()
+        v = world_to_camera_view(scene, cam, p)
+        if not (v.z > 0 and 0.0 <= v.x <= 1.0 and 0.0 <= v.y <= 1.0):
+            out[name] = "out"
+            continue
+        nrm = p - center
+        if nrm.length < 1e-6 or (origin - p).dot(nrm) <= 0:   # 顔の面の裏（カメラから見て頭の向こう側）
+            out[name] = "back"
+            continue
+        occ = _occluder(scene, dg, origin, p, own_root, hr * 0.3, own_counts=OWN_COVER)
+        out[name] = occ or "ok"
     return out
 
 

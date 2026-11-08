@@ -8,12 +8,14 @@
 見る先（主役）: そのコマのカメラの look が人物ならその人。そうでなければ、そのとき話している人（映っていれば）。
 問題の種類:
   顔が外   主役の顔の真ん中が画面の外（コマの3割以上）
-  顔が隠れ 主役の顔の前を物（ほかの人物・家具・壁）がふさぐ（コマの3割以上）。本人の帽子のつばは、寄り・胸上・膝上のときだけ数える
+  顔が隠れ 主役の顔の前を物（ほかの人物・家具・壁）がふさぐ（コマの3割以上）。本人の帽子のつばは、寄り・胸上・膝上のときだけ数える。
+           両目・口の目印（lm、2026-11-08）を測ってあれば、両目がふさがれるか目印が1つも見えないコマを数える（本人の手で顔を覆う・口を隠すコマは数えない）
   頭が切れ 頭のてっぺんが画面の上で大きく切れる（寄りは 1.15、ほかは 1.06 を超える）
   足が切れ 全身なのに足元が画面の下で切れる
   大きさ   画の大きさと、顔（寄り・胸上）か体（膝上・全身・引き）の大きさが合わない
   話し手が見えない 台詞の間ずっと、話し手（映っている人）の顔が見えず、カメラもほかの人を見ていない
   顔が向こう向き 寄り・胸上・膝上で、主役の顔がカメラの反対を向いている（顔の向きとカメラの角度 105 度より大きい、コマの半分以上）。
+                 角度は横（水平）の角度 fay で測る（2026-11-08。前は上下も含む 3 次元の角度で、見上げる・見下ろすだけで大きくなった。古い測定は 3 次元のまま）
                  カットの説明（画・芝居・カメラ・姿勢）に、その人の背中・後ろ姿・振り向くなどとあれば数えない（2026-11-07、A08-005 で見つけた）
   顔の高さ     寄り・胸上・膝上で、主役の顔の真ん中が画面の下 3 割より下か、上 8% より上（コマの半分以上）。A31-005「胸上・巨大メタリカ」で、
                見る高さが顔より 6m 上で、顔が画面の下の端にあった（2026-11-07）
@@ -56,9 +58,37 @@ AWAY = 105.0   # 顔の向きとカメラの角度（度）。これより大き
 FACE_FRAMES = ("寄り", "胸上", "膝上")
 
 
+def _lm_occ(m):
+    """顔の目印（両目・口、2026-11-08 の測定の lm）から、顔をふさぐ物（なければ None）。
+    両目ともふさがれていれば、口が見えても隠れているとみなす（表情は目で読む。A30-013 は沼のテレッサの帽子のつばが両目を隠し、口だけ見えた）。
+    目印のどれかが見えれば None。顔の裏・画面の外だけなら None（顔が向こう向き・顔が外で数える）。
+    本人の手・腕でふさぐのは、顔を覆う・口を隠す芝居なので数えない。"""
+    lm = m.get("lm")
+
+    def blocked(v):
+        return v not in ("ok", "out", "back") and not any(k in str(v) for k in ("_hand", "_fore"))
+    eyes = [lm[k] for k in ("le", "re") if k in lm]
+    if eyes and all(blocked(v) for v in eyes):
+        return sorted(eyes, key=lambda v: (not str(v).endswith("brim"), str(v)))[0]
+    vals = list(lm.values())
+    if any(v == "ok" for v in vals):
+        return None
+    occ = [v for v in vals if blocked(v)]
+    if not occ:
+        return None
+    return sorted(occ, key=lambda v: (not str(v).endswith("brim"), str(v)))[0]
+
+
+def face_angle(m):
+    """顔が向こう向きの判定に使う角度。横（水平）の角度 fay があれば fay（2026-11-08。tools/framing_fix.py の回り込みと同じ物差し）、なければ 3 次元の fa。"""
+    return float(m["fay"]) if "fay" in m else float(m["fa"])
+
+
 def occ_of(s, w):
-    """コマ s で w の顔をふさぐ物。本人の帽子のつばは、寄り・胸上・膝上のときだけ数える（引きで帽子の上から見えるのは自然）。"""
-    o = (s["people"].get(w) or {}).get("occ")
+    """コマ s で w の顔をふさぐ物。本人の帽子のつばは、寄り・胸上・膝上のときだけ数える（引きで帽子の上から見えるのは自然）。
+    両目・口の目印（lm）を測ってあれば、目印で決める（2026-11-08）。"""
+    m = s["people"].get(w) or {}
+    o = _lm_occ(m) if "lm" in m else m.get("occ")
     if o and str(o).endswith("brim"):
         rule = frame_rule(s.get("frame"))
         if not rule or rule[0] not in FACE_FRAMES:
@@ -545,11 +575,11 @@ def analyze(scene_dir, trace=None, blocks=None, notes=None):
             rule = frame_rule(s.get("frame"))
             if rule and rule[0] in FACE_FRAMES:
                 seen_w[w] = seen_w.get(w, 0) + 1   # その人が主役のコマ（場所を見るカットでは、話している間だけ。A25-023 で、話す時間が短いと全体の半分に届かず見逃した）
-                if float(s["people"][w]["fa"]) > AWAY:
+                if face_angle(s["people"][w]) > AWAY:
                     away[w] = away.get(w, 0) + 1
         for w, k_ in away.items():
             if k_ >= max(2, 0.5 * seen_w.get(w, n)) and not back_ok(sh, (bk.get("cuts") or {}).get(cut) or {}, w, ja.get(w, "")):
-                fas = sorted(float(s["people"][w]["fa"]) for s, ww, _ in subj_rows if ww == w and "fa" in s["people"][w])
+                fas = sorted(face_angle(s["people"][w]) for s, ww, _ in subj_rows if ww == w and "fa" in s["people"][w])
                 found.append({"kind": "顔が向こう向き", "who": [w], "frames": f"{k_}/{n}", "angle": round(fas[len(fas) // 2])})
         # 話し手が見えない（台詞の間ずっと）
         for (a, b, w, lid) in lines:
