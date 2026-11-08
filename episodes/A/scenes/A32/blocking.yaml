@@ -47,6 +47,10 @@ start:
   scarecocco:
     at: &id012 [54.4, 40.2]
     face: 200
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: おとなしく ビスコ↔巨大メタリカ, a: bisco, b: metallica-giant, side: [52.4, 46.6], why: A32-015・A32-020 の側}
+
 cuts:
   A32-001:
     frame: 膝上
@@ -1241,6 +1245,7 @@ cuts:
     camera: パープルピールを正面に、歩み寄るのを受ける
     kind: M
   A32-015:
+    axis: おとなしく ビスコ↔巨大メタリカ
     frame: 膝上
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
     hidden_ok: [teressa, night-train, metallica]
@@ -1648,6 +1653,7 @@ cuts:
     camera: 巨大メタリカの顔の高さで、正面からわずかに寄る
     kind: A
   A32-020:
+    axis: おとなしく ビスコ↔巨大メタリカ
     frame: 膝上
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
     hidden_ok: [teressa, night-train, metallica]
@@ -2043,6 +2049,7 @@ cuts:
     camera: ネザリアの後ろの高い所から、朝日の差す議場全体へ（クレーンで上がる）
     kind: A
   A32-025:
+    axis: おとなしく ビスコ↔巨大メタリカ
     frame: 全身
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica-giant, scarecocco]
     hidden_ok: [teressa, night-train, metallica]
@@ -2083,9 +2090,9 @@ cuts:
         at: [47.4, 47.8]
         face: '@nezaria'
         pose: arms_up
-      - {t: 0.3, face: 60, pose: stand}
-      - {t: 1.4, face: 160}
-      - {t: 4.95, face: 90}
+      - {t: 0.3, face: 75, pose: stand}
+      - {t: 1.4, face: 145}
+      - {t: 4.95, face: 80.9}
       - {t: 5.75, pose: kneel}
       - {t: 6.95, pose: stand}
       hundred-knight:
@@ -2118,16 +2125,16 @@ cuts:
         at: [46.97, 47.55]
         z: 0.9
     cam_keys:
-    - {t: 0.0, cam: [47.0, 49.8, 0.9], look: bisco, look_h: 0.9, lens: 19.0, frame: 全身}
-    - {t: 5.75, cam: [47.4, 49.0, 0.35], look: bisco, look_h: 0.92, lens: 40.0}
-    - {t: 8.8, cam: [47.4, 49.0, 0.45], look: bisco, look_h: 1.21, lens: 36.0}
+    - {t: 0.0, cam: [49.44, 47.85, 0.9], look: bisco, look_h: 0.9, lens: 19.0, frame: 全身}
+    - {t: 5.75, cam: [48.58, 47.59, 0.35], look: bisco, look_h: 0.92, lens: 40.0}
+    - {t: 8.8, cam: [48.58, 47.59, 0.45], look: bisco, look_h: 1.21, lens: 36.0}
     fx:
     - kind: spark
       t: [5.85, 6.55]
       at: [48.0, 48.0]
       z: 0.05
     act: {start: ビスコがあたりを見回す（「え！？杖！？ええと……！」）, do: ニワトリを小脇に抱えたまま剣を抜き、つかを床に突き立てて打ち鳴らす（「私は賛成だ！」）, end: 床に剣を突き立てたビスコ}
-    camera: ビスコの足元の低い所から、床を打つ剣のつかに寄る
+    camera: 'ビスコの足元の低い所から、床を打つ剣のつかに寄る（2026-11-08 軸「おとなしく ビスコ↔巨大メタリカ」の側へ: 回す -100度・ごまかし 15度。D-077 案）'
     kind: A
   A32-026:
     frame: 胸上

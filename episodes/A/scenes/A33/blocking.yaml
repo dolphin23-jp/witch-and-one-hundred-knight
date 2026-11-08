@@ -41,6 +41,10 @@ start:
   mitten:
     at: &id009 [6.9, 8.4]
     face: 0
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: 恋心 ルッキーニィ↔ミトン, a: luckiny, b: mitten, side: [4.6, 4.9], why: A33-022 の側}
+
 cuts:
   A33-001:
     frame: 引き
@@ -1143,6 +1147,7 @@ cuts:
     camera: ミトンの側（南）から、アルレッキーノの正面
     kind: M
   A33-022:
+    axis: 恋心 ルッキーニィ↔ミトン
     frame: 胸上
     only: [bisco, luckiny, arlecchino, hundred-knight, mitten]
     hidden_ok: [metallica]
@@ -1887,6 +1892,7 @@ cuts:
     camera: メタリカの側から、ミトンの顔へ寄る
     kind: A
   A33-035:
+    axis: 恋心 ルッキーニィ↔ミトン
     frame: 胸上
     only: [bisco, luckiny, arlecchino, hundred-knight, mitten, metallica]
     keys:
