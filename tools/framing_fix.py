@@ -21,6 +21,9 @@
   画の大きさは、キーの frame（なければ前のキー、なければカットの frame。「全身→寄り」は最初のキーが全身、ほかは寄り）
 cam_keys の look・lens・look_h は書いていないキーへ引き継がれる（motion.py）ので、直したカットはすべてのキーに見る高さとレンズを書く（直さないキーは今までの値）。
 直した後は python tools/previs.py <場面> <カット>… --audit で測り直し、python tools/framing.py で確かめる。
+
+測定の版（2026-11-08、tools/manifest.py）: 測った後でそのカットの設計が変わった測定（入力が古い）では直さない。
+道具が変わった測定・ハッシュのない古い測定（2026-11-08 より前）も、--allow-unverified を付けなければ直さない（先に --audit で測り直す）。
 """
 import argparse
 import datetime
@@ -185,11 +188,21 @@ def label_for(k_frame, prev, cut_frame, idx, n):
     return cut_frame
 
 
-def fix_scene(scene_dir, dry=False, only=None, cuts=None):
+def fix_scene(scene_dir, dry=False, only=None, cuts=None, allow_unverified=False):
     allowed = set(only) if only else set(FIX)
     data, issues = framing.analyze(scene_dir)
     if cuts:
         issues = {c: v for c, v in issues.items() if c in cuts}
+    status = framing.measure_status(scene_dir, data)
+    skipped = {}
+    for c in list(issues):   # 古い測定では直さない（2026-11-08）
+        stt = status.get(c, "記録なし")
+        if stt == "入力が古い" or (stt != "最新" and not allow_unverified):
+            skipped[c] = stt
+            del issues[c]
+    if skipped:
+        print(f"{pathlib.Path(scene_dir).name}: 測定が最新でないので直さない {len(skipped)} カット（" +
+              "、".join(f"{c} {v}" for c, v in skipped.items()) + "）。先に python tools/previs.py <場面> <カット>… --audit で測り直す")
     bk_path = scene_dir / "blocking.yaml"
     bk = yaml.safe_load(bk_path.read_text(encoding="utf-8"))
     people = (yaml.safe_load((ROOT / bk["layout"]).read_text(encoding="utf-8")) or {}).get("people") or {}
@@ -344,6 +357,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only", help="直す種類（, で区切る）。省くと " + "・".join(sorted(FIX)))
     ap.add_argument("--cuts", help="直すカット（, で区切る）")
+    ap.add_argument("--allow-unverified", action="store_true", help="道具が変わった測定・ハッシュのない古い測定でも直す（入力が古い測定は直さない）")
     a = ap.parse_args()
     only = [k for k in (a.only or "").split(",") if k] or None
     if only and not set(only) <= FIX:
@@ -351,7 +365,7 @@ def main():
     cuts = set(k for k in (a.cuts or "").split(",") if k) or None
     for sd in a.scene_dirs:
         sd = ROOT / sd if not pathlib.Path(sd).is_absolute() else pathlib.Path(sd)
-        log = fix_scene(sd, a.dry_run, only, cuts)
+        log = fix_scene(sd, a.dry_run, only, cuts, a.allow_unverified)
         print(f"{sd.name}: {len(log)} カットのカメラを直した" + ("（見るだけ）" if a.dry_run else "") + ("  " + " ".join(log) if log else ""))
 
 

@@ -426,6 +426,26 @@ def feet_index(scene_dir, data):
     return fn
 
 
+def measure_status(scene_dir, data):
+    """測定（gen/framing.yaml）のカットごとの版（2026-11-08、tools/manifest.py）: 最新 / 入力が古い / 道具が古い / 記録なし。
+    入力が古い: 測った後で、そのカットの設計（blocking・ショットファイル・台詞など）が変わった。道具が古い: 測った後で下絵か測定の道具が変わった。
+    記録なし: 2026-11-08 より前の測定（ハッシュを書いていない）。"""
+    try:
+        import manifest   # noqa: PLC0415
+        si = manifest.SceneInputs(scene_dir)
+        th = manifest.tool_hash(manifest.AUDIT_TOOLS)
+    except Exception:
+        return {}
+    out = {}
+    for cut, v in (data.get("cuts") or {}).items():
+        try:
+            cur = si.input_hash(cut)
+        except Exception:
+            cur = None
+        out[cut] = manifest.compare(v, cur, th) if cur else "記録なし"
+    return out
+
+
 def analyze(scene_dir, trace=None, blocks=None, notes=None):
     fr = scene_dir / "gen" / "framing.yaml"
     if not fr.exists():
@@ -554,13 +574,22 @@ def analyze(scene_dir, trace=None, blocks=None, notes=None):
     return data, issues
 
 
-def report(scene_dir, issues, total, line_blocks=None, notes=None):
+def report(scene_dir, issues, total, line_blocks=None, notes=None, status=None):
     kinds = {}
     for v in issues.values():
         for i in v["issues"]:
             kinds[i["kind"]] = kinds.get(i["kind"], 0) + 1
     md = [f"# {scene_dir.name} 構図の洗い出し（tools/framing.py）", "",
           f"測ったカット {total}、問題のあるカット {len(issues)}。" + "、".join(f"{k} {v}" for k, v in kinds.items()), ""]
+    if status:   # 測定の版（2026-11-08）
+        cnt = {}
+        for v in status.values():
+            cnt[v] = cnt.get(v, 0) + 1
+        md += ["測定の版（tools/manifest.py）: " + "、".join(f"{k} {v}" for k, v in sorted(cnt.items())) +
+               "。最新でない測定の印は、今の設計と合っていないことがある（python tools/previs.py <場面> <カット>… --audit で測り直す）", ""]
+        old = [c for c, v in status.items() if v == "入力が古い"]
+        if old:
+            md += ["入力が古い測定のカット: " + "、".join(old), ""]
     for cut, v in issues.items():
         md.append(f"- **{cut}**（{v['shot']}）: " + "／".join(
             f"{i['kind']}（{'・'.join(i.get('who') or [])}" + (f"、{i['frames']}" if 'frames' in i else "")
@@ -631,7 +660,8 @@ def main():
             continue
         blocks, notes = {}, {}
         data, issues = analyze(sd, blocks=blocks, notes=notes)
-        kinds = report(sd, issues, len(data.get("cuts") or {}), block_lines(blocks, issues), notes)
+        status = measure_status(sd, data)
+        kinds = report(sd, issues, len(data.get("cuts") or {}), block_lines(blocks, issues), notes, status)
         print(f"{sd.name}: {len(data.get('cuts') or {})} カット中 {len(issues)} カット  " + "、".join(f"{k} {v}" for k, v in kinds.items()))
         if not a.quiet:
             for cut, v in issues.items():

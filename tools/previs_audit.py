@@ -13,6 +13,8 @@
   fh     顔の向き（場面の向き、北 0・東 90。tools/framing_fix.py がカメラを顔の前へ回すのに使う）
   probe  見る先の顔が隠れているコマだけ: カメラを左右・上下にずらして顔が見える、いちばん小さいずれ {dx, dy, dz}（tools/framing_fix.py が使う）
 と、カメラの見る先（look）・カットの画の大きさ（frame）・レンズ・カメラの向き（yaw、北 0・東 90。tools/framing.py が視線の左右を見るのに使う）を、episodes/<話>/scenes/<場面>/gen/framing.yaml に書く。
+カットごとに、測ったときの入力と道具のハッシュ（input_hash・tool_hash、tools/manifest.py）・測った時刻（made）・fps も書く（2026-11-08）。
+一部のカットだけ測ると前の結果に重ねるので、tools/framing.py がカットごとに今の入力と比べ、古い測定を知らせる。
 読むのは tools/framing.py（話し手の顔が写っていない・切れている・隠れている・大きさが画の大きさと合わないカットを洗い出す）。
 
 2026-11-07 にこれを作ったきっかけ: A12-011「寄り・メタリカ」が、前の描き方でも新しい描き方でも胴体しか写っていなかった
@@ -142,13 +144,15 @@ def _probe(scene, dg, cam, rg, own_root):
     return None
 
 
-def run(st, lay, scene_dir, cuts, fps, size, samples, out_dir, work, render_cut):
+def run(st, lay, scene_dir, cuts, fps, size, samples, out_dir, work, render_cut, hashes=None, tool_h=None):
     res = {}
     for cut in cuts:
         shot = yaml.safe_load((ROOT / scene_dir / "shots" / f"{cut}.yaml").read_text(encoding="utf-8"))
         rows = []
         render_cut(st, lay, cut, float(shot["sec"]), fps, size, samples, out_dir, work, audit=rows)
-        res[cut] = {"sec": float(shot["sec"]), "shot": shot.get("shot"), "samples": rows}
+        res[cut] = {"sec": float(shot["sec"]), "shot": shot.get("shot"),
+                    "input_hash": (hashes or {}).get(cut), "tool_hash": tool_h, "fps": fps,
+                    "made": datetime.datetime.now().astimezone().isoformat(timespec="seconds"), "samples": rows}
         print(f"{cut}: {len(rows)} コマを測った", flush=True)
     dst = ROOT / scene_dir / "gen" / "framing.yaml"
     old = {}
@@ -163,4 +167,8 @@ def run(st, lay, scene_dir, cuts, fps, size, samples, out_dir, work, render_cut)
             "made": datetime.date.today().isoformat(), "cuts": {c: old[c] for c in order}}
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
-    print(f"{dst.relative_to(ROOT)}（{len(res)} カット）")
+    try:
+        shown = dst.relative_to(ROOT)
+    except ValueError:   # リポジトリの外の写しの場面を測ったとき（テスト。2026-11-08）
+        shown = dst
+    print(f"{shown}（{len(res)} カット）")
