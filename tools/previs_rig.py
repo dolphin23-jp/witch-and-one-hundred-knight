@@ -527,6 +527,19 @@ def _leg_ik(rg, sx, target):
     return phi + alpha, a, -(math.pi - beta)
 
 
+BRIM_PITCH = 16.0      # 度。つばの広い帽子の人物の、顔の前への傾き（背骨の前傾＋頭のうつむき）がこれを超えた分は 1/4 にする
+BRIM_HEAD_MIN = 0.0    # 度。その抑えで、頭を背骨より後ろへは反らせない（お辞儀・しゃがむ・起き上がるで、顔を上げる芝居に変わらないように。2026-11-08）。
+                       # なので、背骨の前傾だけの姿勢（しゃがむ・咳など）は今までどおり。抑えるのは、前傾の上に重ねた頭のうつむきだけ
+
+
+def brim_head_pitch(lean, head_pitch):
+    """つばの広い帽子の人物の、抑えた後の頭のうつむき（度）。apply と同じ式（テストと影響の数え上げに使う、2026-11-08）。"""
+    total = lean + head_pitch
+    if total <= BRIM_PITCH:
+        return head_pitch
+    return max(BRIM_HEAD_MIN, BRIM_PITCH + (total - BRIM_PITCH) * 0.25 - lean)
+
+
 def apply(rg, prm, bearing, x, y, z, t, dist=0.0, speed=0.0, spin_x=0.0, spin_z=0.0, gaze=0.0, bl=None, ground=None):
     """姿勢の数を人形に当てる。bearing は体の向き（北 0・東 90）、(x, y, z) は足元の位置（layout の座標と高さ）。"""
     g = rg.giant
@@ -552,8 +565,6 @@ def apply(rg, prm, bearing, x, y, z, t, dist=0.0, speed=0.0, spin_x=0.0, spin_z=
     la = list(prm.get("l_arm") or ZERO3)
     re_, le_ = float(prm.get("r_el", 0.0)), float(prm.get("l_el", 0.0))
     head = list(prm.get("head") or ZERO3)
-    if getattr(rg, "brim", False) and head[0] > 16.0:   # つばの広い帽子（メタリカ・魔女）: うつむきすぎると、つばで顔が隠れる（A08-007「あん？」、2026-11-07）
-        head[0] = 16.0 + (head[0] - 16.0) * 0.25
     if getattr(rg, "torch", None) is not None and not prm.get("torch_free"):   # 松明は頭の上に掲げて持つ
         ra, re_ = [150.0, 8.0, 0.0], 25.0
     lift_z = 0.0
@@ -611,6 +622,12 @@ def apply(rg, prm, bearing, x, y, z, t, dist=0.0, speed=0.0, spin_x=0.0, spin_z=
     else:
         # 立っているときの息づかい（ごく小さく）
         lean += 0.8 * math.sin(2 * math.pi * 0.25 * t)
+    if getattr(rg, "brim", False):   # つばの広い帽子（メタリカ・魔女）: うつむきすぎると、つばで顔が隠れる（A08-007「あん？」、2026-11-07）。
+        # 2026-11-08: 頭の関節だけでなく、背骨の前傾との合計で抑える（泣く cry は前傾 22 度＋頭 25 度で、頭だけ抑えても顔は 40 度前後傾いていた。A17-026）。
+        # 揺れ（泣く・咳の osc）を足した後で抑える。頭を背骨より後ろへは反らせない（BRIM_HEAD_MIN）
+        total = lean + head[0]
+        if total > BRIM_PITCH:
+            head[0] = brim_head_pitch(lean, head[0])
     air = max(0.0, min(1.0, float(prm.get("air", 0.0))))
     body = float(prm.get("body", 0.0)) + spin_x
     roll = float(prm.get("roll", 0.0))

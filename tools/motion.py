@@ -12,6 +12,8 @@ bpy を使わないので staging.py からも読める。
       - {t: 1.2, at: lk_b, face: 240, pose: wave, ease: out}
       - {t: 2.6, at: lk_c, z: 0.4, pose: jump}             # z: 地面からの高さ m（埋まるのは負）
     face を省くと、動いている間は進む向き、止まっていれば前の向き。"@人物" はその人物を見続ける。
+    turn（2026-11-08）: そのキーの face へ向きを変える秒。キーの手前 turn 秒だけで向きを変え、それまでは前の向きのまま。
+      書かなければ今までどおり、前のキーからそのキーまでの間ずっとかけて向きを変える（キーの間が長いと、何秒もかけてゆっくり回る。A36-010）
     at を省くと前の位置のまま（姿勢や向きだけ変える）。
 
   cam_keys:                               # カメラ
@@ -19,6 +21,9 @@ bpy を使わないので staging.py からも読める。
     - {t: 1.5, cam: {follow: luckiny, offset: [-2, 3], z: 1.2}, look: luckiny, lens: 28, ease: linear}
     cam の follow は、その時刻の人物の位置から offset（東, 南 m）ずらした所。look は人物名・場所名・[x, y]。
     look_h は見る点の高さ m（省くと人物は背の 0.75、場所は 0）。書いたキーより後のキーは、書かなければ同じ look_h を引き継ぐ（人物を追うキーには書かない。2026-11-06）。
+    aim: eyes（2026-11-08）: look の人物の、その時刻の目の位置（人形の頭から。姿勢で頭が上下しても追う）を見る。look_h より先に効く。書いたキーだけに効き、次のキーへは引き継がない。
+      下絵（tools/previs.py）だけが目の位置を知る。略図・静止画の指示（tools/staging.py）と tools/frame_check.py・tools/camera_room_check.py は look_h（なければ背の 0.75）で計算する
+    face_y（2026-11-08）: 見る点（aim: eyes なら目）を置く画面の高さ（下 0・上 1、既定 0.5 は真ん中）。キーの間は補間し、書いていないキーは 0.5
 
   shake: [{t: [2.4, 3.0], amp: 1.5}]       # カメラの揺れ（度）。手持ちの揺れは amp 0.4 くらい
 
@@ -288,6 +293,12 @@ class PersonTrack:
         if md is not None and "face" not in b:
             return ("dir", md, None, 0.0)
         if fb is not None and a is not b:
+            tw = b.get("turn")
+            if tw is not None:   # 向きを変える秒（2026-11-08）: キーの手前 turn 秒だけで向きを変え、それまでは前の向きのまま
+                t0 = max(float(a["t"]), float(b["t"]) - max(0.0, float(tw)))
+                if t < t0:
+                    return ("hold", fa if fa is not None else md, None, 0.0)
+                return ("lerp", fa if fa is not None else md, fb, ease(b.get("ease", "inout"), (t - t0) / max(1e-6, float(b["t"]) - t0)))
             return ("lerp", fa if fa is not None else md, fb, u)
         return ("hold", fa if fa is not None else md, None, 0.0)
 
@@ -305,16 +316,32 @@ class CamTrack:
                     k[name] = prev[name]
             prev = k
 
-    def at(self, t, pos, look_pt, look_height, base_z=None):
+    def at(self, t, pos, look_pt, look_height, base_z=None, aim=None):
+        """aim（人物名 → その時刻の目の位置 (x, y, 高さ) か None）を渡すと、aim: eyes のキーは目を見る（2026-11-08）。"""
         a, b, u = segment(self.k, t)
         ca, cb = resolve_cam(a["cam"], pos, base_z), resolve_cam(b["cam"], pos, base_z)
         cam = [lerp(x, y, u) for x, y in zip(ca, cb)]
-        la, lb = look_pt(a["look"], pos), look_pt(b["look"], pos)
+
+        def target(k):
+            if aim is not None and k.get("aim") == "eyes" and isinstance(k.get("look"), str):
+                p = aim(k["look"])
+                if p is not None:
+                    return (float(p[0]), float(p[1])), float(p[2])
+            h = k.get("look_h") if k.get("look_h") is not None else look_height(k["look"])
+            return look_pt(k["look"], pos), h
+        (la, ha), (lb, hb) = target(a), target(b)
         look = (lerp(la[0], lb[0], u), lerp(la[1], lb[1], u))
-        ha = a.get("look_h") if a.get("look_h") is not None else look_height(a["look"])
-        hb = b.get("look_h") if b.get("look_h") is not None else look_height(b["look"])
         lens = lerp(float(a.get("lens", 35)), float(b.get("lens", a.get("lens", 35))), u)
         return cam, look, lerp(ha, hb, u), lens
+
+    def face_y_at(self, t):
+        """キーの face_y（見る点を置く画面の高さ。下 0・上 1、真ん中 0.5。2026-11-08）をその時刻で補間した値。どのキーにもなければ None。
+        書いていないキーは 0.5（真ん中）とみなす。"""
+        a, b, u = segment(self.k, t)
+        fa_, fb_ = a.get("face_y"), b.get("face_y")
+        if fa_ is None and fb_ is None:
+            return None
+        return lerp(float(fa_ if fa_ is not None else 0.5), float(fb_ if fb_ is not None else 0.5), u)
 
 
 def shake_at(shakes, t):

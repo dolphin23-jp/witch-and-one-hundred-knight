@@ -128,6 +128,7 @@ class Plan:
         self.camtrack = motion.CamTrack(self.c["cam_keys"]) if self.c.get("cam_keys") else None
         self.creatures = {n: motion.CreatureTrack(motion.creature_spec(st.bk["cuts"], cut, n), st.place)
                           for n in (self.c.get("creatures") or {})}
+        self.aim_fn = None   # 人物名 → その時刻の目の位置 (x, y, 高さ)。render_cut が入れる（cam_keys の aim: eyes、2026-11-08）
 
     # 人物
     def _window(self, who):
@@ -304,8 +305,11 @@ class Plan:
                     x, y = pos[v]
                     return look_height(v) + motion.ground_z(self.st.lay, x, y)
                 return look_height(v)
-            cam, look, lh, lens = self.camtrack.at(t, pos2, look_pt, look_height2, base_z)
+            cam, look, lh, lens = self.camtrack.at(t, pos2, look_pt, look_height2, base_z, aim=self.aim_fn)
             pitch = math.atan2(lh - cam[2], max(0.3, math.dist(cam[:2], look)))
+            fy = self.camtrack.face_y_at(t)
+            if fy is not None:   # 見る点を画面の face_y の高さに置く（2026-11-08）。縦の半分の画角は 36mm 幅・16:9 で 10.125mm
+                pitch -= math.atan((float(fy) - 0.5) * 2.0 * 10.125 / max(1.0, float(lens)))
             yaw = staging.bearing_of((look[0] - cam[0], look[1] - cam[1]))
             sy, sp = motion.shake_at(c.get("shake"), t)
             return cam, yaw + sy, pitch + math.radians(sp), lens
@@ -1902,6 +1906,18 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     FACES.clear()
     for who in plan.people:
         figs[who] = build_person(who, lay["people"][who]["h"], lay["people"][who].get("torch", False), lay["people"][who].get("sword", False))
+    def eyes_at(who):
+        """その人の今の目の位置（layout の x・y と高さ）。人形の関節から求める（カメラを置く前に view_layer.update を待たない）。2026-11-08"""
+        rgx = previs_rig.RIGS.get(who)
+        if rgx is None:
+            return None
+        f = FACES.get(who)
+        if f and f.get("eyes"):
+            ps = [previs_rig.fk(o).translation for o in f["eyes"][:2]]
+            p = sum(ps, Vector((0, 0, 0))) / len(ps)
+        else:
+            p = previs_rig.fk(rgx.head) @ Vector((0, rgx.hr * 0.95, rgx.hr * 1.12))
+        return (p.x, -p.y, p.z)
     rigtracks = {}   # 関節の人形の姿勢（キーの姿勢を補間、進んだ道のり、回り続けた角度）
     for who in plan.people:
         if who in previs_rig.RIGS:
@@ -2075,6 +2091,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
                 o.location.z = z0 - sink * (1.0 - u)
                 if en is not None:
                     o.data.energy = en * u
+        plan.aim_fn = eyes_at   # 人形をこの時刻の姿勢にした後なので、目の位置が使える（空気の粒の置き場所を決める t=0 の計算では使わない）
         (cx, cy, cz), yaw, pitch, lens = plan.camera(t, pos)
         hy, hp = tw.hold_shake(T)   # 止めている間の小さな揺れ
         yaw += hy
@@ -2137,7 +2154,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
             checks[which] = res
         if audit is not None:
             import previs_audit
-            audit.append(previs_audit.measure(scene, cam, figs, plan, lay, tw.scene_t(i / fps), i / fps))
+            audit.append(previs_audit.measure(scene, cam, figs, plan, lay, tw.scene_t(i / fps), i / fps, faces=FACES))
             continue
         scene.render.filepath = str(frames_dir / f"{i:04d}.png")
         if RENDER["engine"] == "workbench":
