@@ -184,7 +184,9 @@ def mime_of(path):
                                                                           "application/octet-stream")
 
 
-def put(src, dir_path, name=None, replace=False):
+def put(src, dir_path, name=None, replace=False, via_bridge=False):
+    """via_bridge: 窓口 URL（www.googleapis.com）へ直接送らず、受け口（script.google.com）だけを通して送る。
+    ネットワークで Google の API のホストを許可していない環境で使う（2026-11-08）。"""
     src = pathlib.Path(src)
     size = src.stat().st_size
     name = name or src.name
@@ -192,10 +194,11 @@ def put(src, dir_path, name=None, replace=False):
     url = call("upload", folder=folder, name=name, mime=mime_of(src), replace="1" if replace else "0")["url"]
     if not url:
         sys.exit("受け口が窓口 URL を返しませんでした")
-    f = _put_direct(url, src, size)
-    if "_error" in f:
+    f = {"_error": "受け口だけを通す指定"} if via_bridge else _put_direct(url, src, size)
+    if "_error" in f and not via_bridge:
         print(f"  直接送れませんでした（{f['_error']}）。受け口経由で送り直します。", flush=True)
         url = call("upload", folder=folder, name=name, mime=mime_of(src), replace="1" if replace else "0")["url"]
+    if "_error" in f:
         f = _put_via_bridge(url, src, size)
     local = hashlib.md5(src.read_bytes()).hexdigest()
     if f.get("md5Checksum") and f["md5Checksum"] != local:
@@ -205,7 +208,7 @@ def put(src, dir_path, name=None, replace=False):
 
 
 def cmd_put(args):
-    put(args.src, args.dir, args.name, args.replace)
+    put(args.src, args.dir, args.name, args.replace, args.via_bridge)
 
 
 def main():
@@ -217,6 +220,7 @@ def main():
     p.set_defaults(fn=cmd_get)
     p = sub.add_parser("put"); p.add_argument("src"); p.add_argument("dir"); p.add_argument("--name")
     p.add_argument("--replace", action="store_true", help="同じ名前のファイルをゴミ箱に入れてから置く")
+    p.add_argument("--via-bridge", action="store_true", help="www.googleapis.com へ直接送らず、受け口だけを通す")
     p.set_defaults(fn=cmd_put)
     args = ap.parse_args()
     args.fn(args)

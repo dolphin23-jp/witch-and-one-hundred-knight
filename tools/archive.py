@@ -5,7 +5,7 @@
 「一時退避（生成物）」。元のパスのまま置く。ユーザーが後で別の場所へ移してよい（その場合は manifest の drive 欄を直す）。
 
   python tools/archive.py plan LIST.txt            # 退避するファイルの一覧（1行1パス）から archive/drive_manifest.yaml を作る
-  python tools/archive.py upload [--limit N] [--shard K/N]   # manifest の未送信分を上げる（md5 を確かめる。途中から再開できる）
+  python tools/archive.py upload [--limit N] [--shard K/N] [--via-bridge]   # manifest の未送信分を上げる（md5 を確かめる。途中から再開できる）
   python tools/archive.py verify                   # manifest の全件が Drive にあり、サイズが合うかを確かめる
   python tools/archive.py purge                    # 送信と確認が済んだものだけ git rm（作業ツリーから外す）
   python tools/archive.py restore --scene A04      # 場面ごとに Drive から元の場所へ戻す（sha256 を確かめる。previs/A04/ も含む）
@@ -108,7 +108,7 @@ def cmd_upload(args):
         d = pathlib.PurePosixPath(f["drive"])
         for attempt in range(1, 4):
             try:
-                r = drive.put(src, str(d.parent), d.name, replace=True)
+                r = drive.put(src, str(d.parent), d.name, replace=True, via_bridge=args.via_bridge)
                 mark_uploaded(f["path"], r["id"])
                 break
             except SystemExit as e:
@@ -195,6 +195,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("plan"); p.add_argument("list"); p.set_defaults(fn=cmd_plan)
     p = sub.add_parser("upload"); p.add_argument("--limit", type=int)
+    p.add_argument("--via-bridge", action="store_true", help="www.googleapis.com へ直接送らず、受け口（script.google.com）だけを通す")
     p.add_argument("--shard", help="K/N（N 個のプロセスで分けて上げるときの K 番目。0 始まり）")
     p.set_defaults(fn=cmd_upload)
     p = sub.add_parser("verify"); p.set_defaults(fn=cmd_verify)
