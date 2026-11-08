@@ -1670,20 +1670,13 @@ cuts:
         at: [50.4, 51.2]
         face: 260
         pose: proud
-    cam_keys:
-    - t: 0.0
-      cam: [42.21, 49.05, 2.75]
-      look: teressa-swamp
-      look_h: 0.4
-      lens: 34
-      frame: 肩なめ
-    - t: 18.0
-      cam: [42.1, 49.0, 2.85]
-      look: teressa-swamp
-      look_h: 0.4
-      lens: 38
+    cam_keys:   # 2026-11-08 案1（第2版）。ベルダの 2.2m 後ろ・線の＋の側（A30-021 と同じ側）へ 1.2m・高さ 1.25m。肩を左の端へ、テレッサの目を狙う。下がるベルダについて下がり、最後はテレッサへ寄る
+    - {t: 0.0, cam: [40.77, 49.13, 1.25], look: teressa-swamp, aim: eyes, lens: 45, frame: 肩なめ}
+    - {t: 9.68, cam: [40.77, 49.13, 1.25], look: teressa-swamp, aim: eyes, lens: 50}
+    - {t: 10.68, cam: [40.37, 48.93, 1.25], look: teressa-swamp, aim: eyes, lens: 50, frame: 肩なめ}
+    - {t: 18.0, cam: [40.37, 48.93, 1.2], look: teressa-swamp, aim: eyes, lens: 70, frame: 膝上}
     act: {start: 沼の中を這うテレッサ, do: （「ひっ、ひぃ！！！い、嫌ですわ！死にたくありませんわーーー！！」）ベルダへ手を伸ばす（「ベ、ベルダ様……。た、助けて……たす……たす……」）。ベルダは一歩下がる, end: 見下ろすベルダ}
-    camera: ベルダの肩越しに、這い寄るテレッサを見下ろす
+    camera: ベルダの肩越しに、這い寄るテレッサを見下ろす（2026-11-08 案1。カメラをベルダの後ろ 2.2m・肩の高さへ下げて肩を左の端へ。下がるベルダについて下がり、最後の 7 秒でテレッサの膝上へ寄る）
     kind: A
   A30-021:
     frame: 膝上
