@@ -148,16 +148,15 @@ def cmd_verify(args):
 
 def cmd_purge(args):
     m = load()
-    ok = [f for f in m["files"] if f["state"] == "uploaded" and (ROOT / f["path"]).exists()]
-    if any(f["state"] != "uploaded" for f in m["files"]):
+    # 初めから Git の外のもの（2026-11-08 オーナー判断 (b) の下絵の mp4 など）は git rm しない（手元のファイルも残す）。
+    # まだ上げていなくても、Git の外のものは purge を止めない（purge が Git から外すのは Git にあるものだけ）
+    tracked = set(subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split("\0"))
+    if any(f["state"] != "uploaded" and f["path"] in tracked for f in m["files"]):
         sys.exit("未送信のファイルがあります。upload と verify を先に終えてください。")
+    ok = [f for f in m["files"] if f["state"] == "uploaded" and f["path"] in tracked and (ROOT / f["path"]).exists()]
     for f in ok:
         if sha256(ROOT / f["path"]) != f["sha256"]:
             sys.exit(f"ファイルが manifest と違います: {f['path']}")
-    # 初めから Git の外のもの（2026-11-08 オーナー判断 (b) の下絵の mp4 など）は git rm しない（手元のファイルも残す）
-    tracked = set(subprocess.run(["git", "ls-files", "-z", "--"] + [f["path"] for f in ok], cwd=ROOT, capture_output=True, text=True,
-                                 check=True).stdout.split("\0")) if ok else set()
-    ok = [f for f in ok if f["path"] in tracked]
     for i in range(0, len(ok), 100):
         subprocess.run(["git", "rm", "-q", "--"] + [f["path"] for f in ok[i:i + 100]], cwd=ROOT, check=True)
     print(f"git rm {len(ok)} 件（{sum(f['bytes'] for f in ok) / 1e6:.0f}MB）。コミットは別に行う")
