@@ -1,5 +1,5 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-07'
+made: '2026-11-08'
 cuts:
   A17-001:
     sec: 7.0
@@ -31868,12 +31868,16 @@ cuts:
   A17-026:
     sec: 21.6
     shot: 寄り・泣くメタリカ
+    input_hash: 5fd0352fbf6a01b3e862c41fe6104b48c99791b2fb719d478d9d2e527d9e266b
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-08T13:10:31+00:00'
     samples:
     - T: 0.0
       t: 0.0
       look: null
-      frame: 寄り
-      lens: 61.0
+      frame: 寄り（二人）
+      lens: 55.0
       cam:
       - 61.9
       - 4.8
@@ -31881,12 +31885,12 @@ cuts:
       yaw: 311
       people:
         metallica:
-          x: 0.823
-          y: 0.526
+          x: 0.791
+          y: 0.524
           z: 2.93
-          frac: 0.265
-          top: 0.658
-          fy: -0.71
+          frac: 0.239
+          top: 0.643
+          fy: -0.591
           in: true
           occ: null
           hz: 27.15
@@ -31895,14 +31899,22 @@ cuts:
           wy: 2.5
           fa: 51
           fh: 90
+          fay: 52
+          fap: -4
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
-          x: 0.343
-          y: 0.439
+          x: 0.359
+          y: 0.445
           z: 3.09
-          frac: 0.238
-          top: 0.557
-          fy: -0.69
+          frac: 0.214
+          top: 0.551
+          fy: -0.573
           in: true
           occ: null
           hz: 27.09
@@ -31911,41 +31923,57 @@ cuts:
           wy: 3.03
           fa: 84
           fh: 40
+          fay: 85
+          fap: -2
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 0.75
       t: 0.75
       look: null
-      frame: 寄り
-      lens: 60.9
+      frame: 寄り（二人）
+      lens: 55.2
       cam:
       - 61.9
-      - 4.8
+      - 4.79
       - 26.55
       yaw: 311
       people:
         metallica:
-          x: 0.935
-          y: 0.481
-          z: 2.75
-          frac: 0.229
-          top: 0.598
-          fy: -0.71
+          x: 0.877
+          y: 0.503
+          z: 2.77
+          frac: 0.244
+          top: 0.626
+          fy: -0.597
           in: true
-          occ: hat_brim
-          hz: 27.07
+          occ: null
+          hz: 27.1
           bz: 26.0
-          wx: 60.32
+          wx: 60.28
           wy: 2.5
-          fa: 58
+          fa: 54
           fh: 90
+          fay: 55
+          fap: 13
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.351
-          y: 0.437
-          z: 3.09
-          frac: 0.237
-          top: 0.554
-          fy: -0.689
+          x: 0.366
+          y: 0.443
+          z: 3.08
+          frac: 0.215
+          top: 0.549
+          fy: -0.578
           in: true
           occ: null
           hz: 27.09
@@ -31954,55 +31982,20 @@ cuts:
           wy: 3.01
           fa: 77
           fh: 47
+          fay: 78
+          fap: 0
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: null
-      frame: 寄り
-      lens: 60.7
-      cam:
-      - 61.89
-      - 4.79
-      - 26.55
-      yaw: 311
-      people:
-        metallica:
-          x: 0.938
-          y: 0.48
-          z: 2.73
-          frac: 0.234
-          top: 0.599
-          fy: -0.708
-          in: true
-          occ: hat_brim
-          hz: 27.07
-          bz: 26.0
-          wx: 60.33
-          wy: 2.5
-          fa: 58
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.345
-          y: 0.439
-          z: 3.08
-          frac: 0.237
-          top: 0.556
-          fy: -0.688
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 77
-          fh: 47
-          h: 1.55
-    - T: 2.25
-      t: 2.25
-      look: null
-      frame: 寄り
-      lens: 60.4
+      frame: 寄り（二人）
+      lens: 55.6
       cam:
       - 61.88
       - 4.78
@@ -32010,28 +32003,95 @@ cuts:
       yaw: 311
       people:
         metallica:
-          x: 0.929
-          y: 0.486
-          z: 2.72
-          frac: 0.243
-          top: 0.61
-          fy: -0.706
+          x: 0.89
+          y: 0.5
+          z: 2.74
+          frac: 0.248
+          top: 0.625
+          fy: -0.613
           in: true
-          occ: hat_brim
-          hz: 27.07
+          occ: null
+          hz: 27.09
           bz: 26.0
-          wx: 60.33
+          wx: 60.3
           wy: 2.5
-          fa: 57
+          fa: 54
           fh: 90
+          fay: 55
+          fap: 14
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.328
+          x: 0.361
           y: 0.443
           z: 3.06
-          frac: 0.238
-          top: 0.561
-          fy: -0.686
+          frac: 0.218
+          top: 0.551
+          fy: -0.594
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.42
+          wy: 3.02
+          fa: 77
+          fh: 47
+          fay: 78
+          fap: -1
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
+    - T: 2.25
+      t: 2.25
+      look: null
+      frame: 寄り（二人）
+      lens: 56.2
+      cam:
+      - 61.86
+      - 4.76
+      - 26.55
+      yaw: 311
+      people:
+        metallica:
+          x: 0.899
+          y: 0.501
+          z: 2.71
+          frac: 0.254
+          top: 0.629
+          fy: -0.637
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 60.3
+          wy: 2.5
+          fa: 54
+          fh: 90
+          fay: 55
+          fap: 14
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: 0.347
+          y: 0.446
+          z: 3.03
+          frac: 0.223
+          top: 0.557
+          fy: -0.617
           in: true
           occ: null
           hz: 27.09
@@ -32040,542 +32100,388 @@ cuts:
           wy: 3.04
           fa: 77
           fh: 47
+          fay: 78
+          fap: -3
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 3.0
       t: 3.0
       look: null
-      frame: 寄り
-      lens: 59.9
+      frame: 寄り（二人）
+      lens: 57.0
       cam:
-      - 61.87
-      - 4.77
+      - 61.84
+      - 4.73
       - 26.55
       yaw: 311
       people:
         metallica:
-          x: 0.915
-          y: 0.49
-          z: 2.72
-          frac: 0.236
-          top: 0.61
-          fy: -0.703
+          x: 0.901
+          y: 0.509
+          z: 2.69
+          frac: 0.261
+          top: 0.64
+          fy: -0.667
           in: true
-          occ: hat_brim
-          hz: 27.08
+          occ: null
+          hz: 27.1
           bz: 26.0
-          wx: 60.31
+          wx: 60.28
           wy: 2.5
-          fa: 57
+          fa: 54
           fh: 90
+          fay: 55
+          fap: 13
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.316
-          y: 0.446
-          z: 3.05
-          frac: 0.238
-          top: 0.564
-          fy: -0.683
+          x: 0.337
+          y: 0.447
+          z: 3.0
+          frac: 0.229
+          top: 0.56
+          fy: -0.645
           in: true
           occ: null
           hz: 27.1
           bz: 26.0
           wx: 59.4
           wy: 3.05
-          fa: 77
+          fa: 76
           fh: 47
+          fay: 77
+          fap: -4
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 3.75
       t: 3.75
       look: null
-      frame: 寄り
-      lens: 59.4
+      frame: 寄り（二人）
+      lens: 57.8
       cam:
-      - 61.86
-      - 4.75
+      - 61.82
+      - 4.7
       - 26.55
-      yaw: 311
+      yaw: 310
       people:
         metallica:
-          x: 0.893
-          y: 0.498
-          z: 2.72
-          frac: 0.233
-          top: 0.616
+          x: 0.899
+          y: 0.518
+          z: 2.67
+          frac: 0.267
+          top: 0.652
           fy: -0.699
           in: true
-          occ: hat_brim
-          hz: 27.09
-          bz: 26.0
-          wx: 60.29
-          wy: 2.5
-          fa: 57
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.316
-          y: 0.447
-          z: 3.02
-          frac: 0.237
-          top: 0.564
-          fy: -0.68
-          in: true
           occ: null
-          hz: 27.09
+          hz: 27.11
           bz: 26.0
-          wx: 59.41
-          wy: 3.03
-          fa: 77
-          fh: 47
-          h: 1.55
-    - T: 4.5
-      t: 4.5
-      look: null
-      frame: 寄り
-      lens: 58.8
-      cam:
-      - 61.84
-      - 4.73
-      - 26.54
-      yaw: 312
-      people:
-        metallica:
-          x: 0.868
-          y: 0.511
-          z: 2.72
-          frac: 0.243
-          top: 0.634
-          fy: -0.694
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 60.26
+          wx: 60.25
           wy: 2.5
-          fa: 55
+          fa: 53
           fh: 90
+          fay: 55
+          fap: 12
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.318
-          y: 0.446
-          z: 3.0
-          frac: 0.235
-          top: 0.563
+          x: 0.339
+          y: 0.449
+          z: 2.94
+          frac: 0.238
+          top: 0.566
           fy: -0.676
           in: true
           occ: null
           hz: 27.09
           bz: 26.0
           wx: 59.42
-          wy: 3.02
+          wy: 3.05
           fa: 76
           fh: 47
+          fay: 77
+          fap: -3
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
+    - T: 4.5
+      t: 4.5
+      look: null
+      frame: 寄り（二人）
+      lens: 58.6
+      cam:
+      - 61.79
+      - 4.67
+      - 26.55
+      yaw: 310
+      people:
+        metallica:
+          x: 0.899
+          y: 0.525
+          z: 2.65
+          frac: 0.273
+          top: 0.662
+          fy: -0.73
+          in: true
+          occ: null
+          hz: 27.12
+          bz: 26.0
+          wx: 60.23
+          wy: 2.5
+          fa: 53
+          fh: 90
+          fay: 54
+          fap: 11
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: 0.346
+          y: 0.446
+          z: 2.9
+          frac: 0.243
+          top: 0.567
+          fy: -0.706
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.44
+          wy: 3.04
+          fa: 76
+          fh: 47
+          fay: 78
+          fap: -1
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 5.25
       t: 5.25
       look: null
-      frame: 寄り
-      lens: 58.0
+      frame: 寄り（二人）
+      lens: 59.2
       cam:
-      - 61.82
-      - 4.71
-      - 26.54
-      yaw: 312
+      - 61.77
+      - 4.65
+      - 26.55
+      yaw: 310
       people:
         metallica:
-          x: 0.855
-          y: 0.516
-          z: 2.7
-          frac: 0.25
-          top: 0.643
-          fy: -0.689
+          x: 0.91
+          y: 0.527
+          z: 2.62
+          frac: 0.281
+          top: 0.669
+          fy: -0.759
           in: true
           occ: null
-          hz: 27.1
+          hz: 27.11
           bz: 26.0
-          wx: 60.26
+          wx: 60.24
           wy: 2.5
-          fa: 54
+          fa: 53
           fh: 90
+          fay: 54
+          fap: 10
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.309
-          y: 0.449
-          z: 2.97
-          frac: 0.234
-          top: 0.565
-          fy: -0.672
+          x: 0.346
+          y: 0.444
+          z: 2.88
+          frac: 0.247
+          top: 0.567
+          fy: -0.733
           in: true
           occ: null
           hz: 27.09
           bz: 26.0
-          wx: 59.42
-          wy: 3.02
+          wx: 59.43
+          wy: 3.03
           fa: 76
           fh: 47
+          fay: 77
+          fap: -1
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 6.0
       t: 6.0
       look: null
-      frame: 寄り
-      lens: 57.2
+      frame: 寄り（二人）
+      lens: 59.7
       cam:
-      - 61.8
-      - 4.68
-      - 26.54
-      yaw: 312
-      people:
-        metallica:
-          x: 0.862
-          y: 0.505
-          z: 2.64
-          frac: 0.235
-          top: 0.624
-          fy: -0.683
-          in: true
-          occ: hat_brim
-          hz: 27.08
-          bz: 26.0
-          wx: 60.3
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.287
-          y: 0.456
-          z: 2.93
-          frac: 0.234
-          top: 0.572
-          fy: -0.667
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.41
-          wy: 3.03
-          fa: 76
-          fh: 47
-          h: 1.55
-    - T: 6.75
-      t: 6.75
-      look: null
-      frame: 寄り
-      lens: 56.4
-      cam:
-      - 61.78
-      - 4.65
-      - 26.54
-      yaw: 313
-      people:
-        metallica:
-          x: 0.868
-          y: 0.492
-          z: 2.57
-          frac: 0.219
-          top: 0.603
-          fy: -0.677
-          in: true
-          occ: hat_brim
-          hz: 27.06
-          bz: 26.0
-          wx: 60.34
-          wy: 2.5
-          fa: 59
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.265
-          y: 0.462
-          z: 2.9
-          frac: 0.234
-          top: 0.578
-          fy: -0.661
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 76
-          fh: 47
-          h: 1.55
-    - T: 7.5
-      t: 7.5
-      look: null
-      frame: 寄り
-      lens: 55.5
-      cam:
-      - 61.75
+      - 61.76
       - 4.63
-      - 26.54
-      yaw: 313
+      - 26.55
+      yaw: 310
       people:
         metallica:
-          x: 0.858
-          y: 0.495
-          z: 2.54
-          frac: 0.227
-          top: 0.61
-          fy: -0.67
-          in: true
-          occ: hat_brim
-          hz: 27.06
-          bz: 26.0
-          wx: 60.35
-          wy: 2.5
-          fa: 58
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.257
-          y: 0.465
-          z: 2.86
-          frac: 0.233
-          top: 0.581
-          fy: -0.656
+          x: 0.934
+          y: 0.522
+          z: 2.57
+          frac: 0.286
+          top: 0.666
+          fy: -0.78
           in: true
           occ: null
           hz: 27.1
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 77
-          fh: 46
-          h: 1.55
-    - T: 8.25
-      t: 8.25
-      look: null
-      frame: 寄り
-      lens: 54.5
-      cam:
-      - 61.73
-      - 4.59
-      - 26.53
-      yaw: 314
-      people:
-        metallica:
-          x: 0.83
-          y: 0.51
-          z: 2.52
-          frac: 0.239
-          top: 0.631
-          fy: -0.663
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.32
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.256
-          y: 0.466
-          z: 2.82
-          frac: 0.231
-          top: 0.581
-          fy: -0.65
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 75
-          fh: 47
-          h: 1.55
-    - T: 9.0
-      t: 9.0
-      look: null
-      frame: 寄り
-      lens: 53.5
-      cam:
-      - 61.7
-      - 4.56
-      - 26.53
-      yaw: 314
-      people:
-        metallica:
-          x: 0.8
-          y: 0.521
-          z: 2.51
-          frac: 0.234
-          top: 0.64
-          fy: -0.655
-          in: true
-          occ: null
-          hz: 27.08
-          bz: 26.0
-          wx: 60.3
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.248
-          y: 0.469
-          z: 2.77
-          frac: 0.23
-          top: 0.583
-          fy: -0.644
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.01
-          fa: 75
-          fh: 47
-          h: 1.55
-    - T: 9.75
-      t: 9.75
-      look: null
-      frame: 寄り
-      lens: 52.5
-      cam:
-      - 61.68
-      - 4.53
-      - 26.53
-      yaw: 314
-      people:
-        metallica:
-          x: 0.773
-          y: 0.529
-          z: 2.49
-          frac: 0.228
-          top: 0.644
-          fy: -0.647
-          in: true
-          occ: null
-          hz: 27.09
           bz: 26.0
           wx: 60.27
           wy: 2.5
-          fa: 56
+          fa: 53
           fh: 90
+          fay: 55
+          fap: 13
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: out
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.226
-          y: 0.477
-          z: 2.73
-          frac: 0.229
-          top: 0.59
-          fy: -0.638
+          x: 0.333
+          y: 0.444
+          z: 2.88
+          frac: 0.25
+          top: 0.567
+          fy: -0.753
           in: true
           occ: null
           hz: 27.09
           bz: 26.0
           wx: 59.41
           wy: 3.03
-          fa: 75
+          fa: 76
           fh: 47
+          fay: 77
+          fap: -3
+          bx: 59.35
+          by: 3.1
           h: 1.55
-    - T: 10.5
-      t: 10.5
+          lm:
+            le: back
+            re: ok
+            mo: ok
+    - T: 6.75
+      t: 6.75
       look: null
-      frame: 寄り
-      lens: 51.5
+      frame: 寄り（二人）
+      lens: 60.0
       cam:
-      - 61.65
-      - 4.5
-      - 26.52
-      yaw: 315
+      - 61.75
+      - 4.62
+      - 26.55
+      yaw: 310
       people:
         metallica:
-          x: 0.752
-          y: 0.538
-          z: 2.46
-          frac: 0.236
-          top: 0.658
-          fy: -0.64
+          x: 0.955
+          y: 0.514
+          z: 2.53
+          frac: 0.29
+          top: 0.66
+          fy: -0.79
           in: true
           occ: null
-          hz: 27.1
+          hz: 27.09
           bz: 26.0
-          wx: 60.26
+          wx: 60.3
           wy: 2.5
           fa: 54
           fh: 90
+          fay: 56
+          fap: 14
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
-          x: 0.201
-          y: 0.485
-          z: 2.68
-          frac: 0.23
-          top: 0.598
-          fy: -0.631
+          x: 0.322
+          y: 0.446
+          z: 2.87
+          frac: 0.252
+          top: 0.571
+          fy: -0.763
           in: true
           occ: null
           hz: 27.1
           bz: 26.0
           wx: 59.4
           wy: 3.04
-          fa: 75
+          fa: 76
           fh: 47
+          fay: 76
+          fap: -5
+          bx: 59.35
+          by: 3.1
           h: 1.55
-    - T: 11.25
-      t: 11.25
-      look: null
-      frame: 寄り
-      lens: 50.5
+          lm:
+            le: back
+            re: ok
+            mo: ok
+    - T: 7.5
+      t: 7.5
+      look: bisco
+      frame: 胸上
+      lens: 45.1
       cam:
-      - 61.62
-      - 4.47
-      - 26.52
-      yaw: 316
+      - 60.93
+      - 3.38
+      - 26.95
+      yaw: 286
       people:
         metallica:
-          x: 0.742
-          y: 0.542
-          z: 2.42
-          frac: 0.241
-          top: 0.664
-          fy: -0.632
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 60.28
-          wy: 2.5
-          fa: 54
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.186
-          y: 0.49
-          z: 2.64
-          frac: 0.229
-          top: 0.603
-          fy: -0.625
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 74
-          fh: 47
-          h: 1.55
-    - T: 12.0
-      t: 12.0
-      look: null
-      frame: 寄り
-      lens: 49.5
-      cam:
-      - 61.6
-      - 4.44
-      - 26.52
-      yaw: 316
-      people:
-        metallica:
-          x: 0.745
-          y: 0.532
-          z: 2.35
-          frac: 0.227
-          top: 0.647
-          fy: -0.624
-          in: true
+          x: 1.495
+          y: 0.735
+          z: 0.84
+          frac: 0.66
+          top: 1.084
+          fy: -1.568
+          in: false
           occ: null
           hz: 27.08
           bz: 26.0
@@ -32583,582 +32489,1160 @@ cuts:
           wy: 2.5
           fa: 56
           fh: 90
+          fay: 55
+          fap: 19
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
-          x: 0.184
-          y: 0.492
-          z: 2.6
-          frac: 0.227
-          top: 0.604
-          fy: -0.619
+          x: 0.413
+          y: 0.591
+          z: 1.56
+          frac: 0.356
+          top: 0.769
+          fy: -0.993
           in: true
           occ: null
-          hz: 27.09
+          hz: 27.1
           bz: 26.0
           wx: 59.41
-          wy: 3.03
-          fa: 79
-          fh: 42
-          h: 1.55
-    - T: 12.75
-      t: 12.75
-      look: null
-      frame: 寄り
-      lens: 48.5
-      cam:
-      - 61.57
-      - 4.41
-      - 26.52
-      yaw: 317
-      people:
-        metallica:
-          x: 0.743
-          y: 0.525
-          z: 2.3
-          frac: 0.212
-          top: 0.633
-          fy: -0.616
-          in: true
-          occ: hat_brim
-          hz: 27.06
-          bz: 26.0
-          wx: 60.34
-          wy: 2.5
-          fa: 58
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.18
-          y: 0.495
-          z: 2.55
-          frac: 0.224
-          top: 0.606
-          fy: -0.613
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.01
-          fa: 74
-          fh: 47
-          h: 1.55
-    - T: 13.5
-      t: 13.5
-      look: null
-      frame: 寄り
-      lens: 47.5
-      cam:
-      - 61.55
-      - 4.37
-      - 26.51
-      yaw: 317
-      people:
-        metallica:
-          x: 0.724
-          y: 0.535
-          z: 2.27
-          frac: 0.222
-          top: 0.647
-          fy: -0.608
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.33
-          wy: 2.5
-          fa: 57
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.164
-          y: 0.501
-          z: 2.51
-          frac: 0.224
-          top: 0.612
-          fy: -0.607
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 74
-          fh: 47
-          h: 1.55
-    - T: 14.25
-      t: 14.25
-      look: null
-      frame: 寄り
-      lens: 46.6
-      cam:
-      - 61.52
-      - 4.35
-      - 26.51
-      yaw: 318
-      people:
-        metallica:
-          x: 0.699
-          y: 0.548
-          z: 2.25
-          frac: 0.232
-          top: 0.666
-          fy: -0.6
-          in: true
-          occ: null
-          hz: 27.08
-          bz: 26.0
-          wx: 60.31
-          wy: 2.5
+          wy: 3.05
           fa: 55
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.141
-          y: 0.51
-          z: 2.46
-          frac: 0.224
-          top: 0.621
-          fy: -0.601
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 73
           fh: 47
+          fay: 55
+          fap: 2
+          bx: 59.35
+          by: 3.1
           h: 1.55
-    - T: 15.0
-      t: 15.0
-      look: null
-      frame: 寄り
-      lens: 45.8
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 8.25
+      t: 8.25
+      look: bisco
+      frame: 胸上
+      lens: 45.5
       cam:
-      - 61.5
-      - 4.32
-      - 26.51
-      yaw: 318
+      - 60.92
+      - 3.38
+      - 26.95
+      yaw: 287
       people:
         metallica:
-          x: 0.681
-          y: 0.553
-          z: 2.23
-          frac: 0.225
-          top: 0.667
-          fy: -0.593
-          in: true
+          x: 1.466
+          y: 0.758
+          z: 0.86
+          frac: 0.662
+          top: 1.107
+          fy: -1.578
+          in: false
           occ: null
-          hz: 27.08
+          hz: 27.09
           bz: 26.0
           wx: 60.3
           wy: 2.5
           fa: 55
           fh: 90
+          fay: 55
+          fap: 17
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
-          x: 0.124
-          y: 0.517
-          z: 2.42
-          frac: 0.224
-          top: 0.627
-          fy: -0.596
+          x: 0.411
+          y: 0.598
+          z: 1.53
+          frac: 0.363
+          top: 0.78
+          fy: -1.007
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.42
+          wy: 3.03
+          fa: 55
+          fh: 47
+          fay: 56
+          fap: 4
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 9.0
+      t: 9.0
+      look: bisco
+      frame: 胸上
+      lens: 46.1
+      cam:
+      - 60.9
+      - 3.37
+      - 26.95
+      yaw: 287
+      people:
+        metallica:
+          x: 1.438
+          y: 0.79
+          z: 0.88
+          frac: 0.662
+          top: 1.137
+          fy: -1.627
+          in: false
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.27
+          wy: 2.5
+          fa: 54
+          fh: 90
+          fay: 54
+          fap: 16
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
+        bisco:
+          x: 0.408
+          y: 0.601
+          z: 1.51
+          frac: 0.373
+          top: 0.788
+          fy: -1.042
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.02
+          fa: 56
+          fh: 47
+          fay: 56
+          fap: 4
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 9.75
+      t: 9.75
+      look: bisco
+      frame: 胸上
+      lens: 46.7
+      cam:
+      - 60.88
+      - 3.37
+      - 26.95
+      yaw: 287
+      people:
+        metallica:
+          x: 1.453
+          y: 0.806
+          z: 0.88
+          frac: 0.673
+          top: 1.159
+          fy: -1.724
+          in: false
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.24
+          wy: 2.5
+          fa: 53
+          fh: 90
+          fay: 54
+          fap: 15
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
+        bisco:
+          x: 0.406
+          y: 0.596
+          z: 1.5
+          frac: 0.382
+          top: 0.787
+          fy: -1.097
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.42
+          wy: 3.03
+          fa: 55
+          fh: 47
+          fay: 56
+          fap: 3
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 10.5
+      t: 10.5
+      look: bisco
+      frame: 胸上
+      lens: 47.4
+      cam:
+      - 60.87
+      - 3.36
+      - 26.95
+      yaw: 286
+      people:
+        metallica:
+          x: 1.501
+          y: 0.812
+          z: 0.86
+          frac: 0.701
+          top: 1.179
+          fy: -1.833
+          in: false
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.24
+          wy: 2.5
+          fa: 53
+          fh: 90
+          fay: 54
+          fap: 14
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
+        bisco:
+          x: 0.406
+          y: 0.589
+          z: 1.5
+          frac: 0.389
+          top: 0.783
+          fy: -1.155
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 59.41
+          wy: 3.05
+          fa: 55
+          fh: 47
+          fay: 55
+          fap: 1
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 11.25
+      t: 11.25
+      look: bisco
+      frame: 胸上
+      lens: 47.8
+      cam:
+      - 60.85
+      - 3.36
+      - 26.95
+      yaw: 286
+      people:
+        metallica:
+          x: 1.554
+          y: 0.811
+          z: 0.83
+          frac: 0.734
+          top: 1.196
+          fy: -1.892
+          in: false
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.25
+          wy: 2.5
+          fa: 54
+          fh: 90
+          fay: 55
+          fap: 13
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: out
+            re: out
+            mo: out
+        bisco:
+          x: 0.404
+          y: 0.588
+          z: 1.49
+          frac: 0.396
+          top: 0.786
+          fy: -1.19
           in: true
           occ: null
           hz: 27.1
           bz: 26.0
           wx: 59.4
           wy: 3.05
-          fa: 73
+          fa: 55
           fh: 47
+          fay: 55
+          fap: 1
+          bx: 59.35
+          by: 3.1
           h: 1.55
-    - T: 15.75
-      t: 15.75
-      look: null
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+    - T: 12.0
+      t: 12.0
+      look: metallica
       frame: 寄り
-      lens: 45.0
+      lens: 40.0
       cam:
-      - 61.48
-      - 4.29
-      - 26.51
-      yaw: 319
+      - 61.06
+      - 2.78
+      - 26.75
+      yaw: 293
       people:
         metallica:
-          x: 0.666
+          x: 0.439
           y: 0.557
-          z: 2.21
-          frac: 0.219
-          top: 0.668
-          fy: -0.586
+          z: 0.9
+          frac: 0.566
+          top: 0.841
+          fy: -2.409
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.28
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 20
+          fap: 1
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.18
+          y: 0.242
+          z: 1.44
+          frac: 0.338
+          top: 0.406
+          fy: -1.738
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.42
+          wy: 3.04
+          fa: 34
+          fh: 47
+          fay: 34
+          fap: -3
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 12.75
+      t: 12.75
+      look: metallica
+      frame: 寄り
+      lens: 40.1
+      cam:
+      - 61.06
+      - 2.78
+      - 26.75
+      yaw: 294
+      people:
+        metallica:
+          x: 0.437
+          y: 0.565
+          z: 0.88
+          frac: 0.58
+          top: 0.857
+          fy: -2.404
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 60.3
+          wy: 2.5
+          fa: 19
+          fh: 90
+          fay: 20
+          fap: 3
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.19
+          y: 0.251
+          z: 1.42
+          frac: 0.343
+          top: 0.418
+          fy: -1.743
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.02
+          fa: 34
+          fh: 47
+          fay: 34
+          fap: -2
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 13.5
+      t: 13.5
+      look: metallica
+      frame: 寄り
+      lens: 40.5
+      cam:
+      - 61.05
+      - 2.78
+      - 26.75
+      yaw: 294
+      people:
+        metallica:
+          x: 0.436
+          y: 0.559
+          z: 0.87
+          frac: 0.588
+          top: 0.854
+          fy: -2.485
+          in: true
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 60.3
+          wy: 2.5
+          fa: 19
+          fh: 90
+          fay: 20
+          fap: 2
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.202
+          y: 0.239
+          z: 1.42
+          frac: 0.347
+          top: 0.408
+          fy: -1.799
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.03
+          fa: 33
+          fh: 47
+          fay: 34
+          fap: -3
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 14.25
+      t: 14.25
+      look: metallica
+      frame: 寄り
+      lens: 41.1
+      cam:
+      - 61.04
+      - 2.78
+      - 26.75
+      yaw: 293
+      people:
+        metallica:
+          x: 0.436
+          y: 0.549
+          z: 0.88
+          frac: 0.591
+          top: 0.844
+          fy: -2.616
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.28
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 20
+          fap: 0
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.217
+          y: 0.217
+          z: 1.42
+          frac: 0.352
+          top: 0.388
+          fy: -1.882
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.41
+          wy: 3.04
+          fa: 33
+          fh: 47
+          fay: 33
+          fap: -5
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 15.0
+      t: 15.0
+      look: metallica
+      frame: 寄り
+      lens: 41.9
+      cam:
+      - 61.03
+      - 2.77
+      - 26.75
+      yaw: 293
+      people:
+        metallica:
+          x: 0.436
+          y: 0.549
+          z: 0.89
+          frac: 0.598
+          top: 0.848
+          fy: -2.735
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.26
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 20
+          fap: 0
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.23
+          y: 0.203
+          z: 1.42
+          frac: 0.359
+          top: 0.377
+          fy: -1.955
+          in: false
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 59.4
+          wy: 3.05
+          fa: 33
+          fh: 47
+          fay: 33
+          fap: -6
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 15.75
+      t: 15.75
+      look: metallica
+      frame: 寄り
+      lens: 42.7
+      cam:
+      - 61.02
+      - 2.77
+      - 26.75
+      yaw: 293
+      people:
+        metallica:
+          x: 0.436
+          y: 0.546
+          z: 0.89
+          frac: 0.61
+          top: 0.85
+          fy: -2.894
+          in: true
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.25
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 19
+          fap: 0
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
+        bisco:
+          x: -0.236
+          y: 0.184
+          z: 1.41
+          frac: 0.37
+          top: 0.364
+          fy: -2.056
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.41
+          wy: 3.04
+          fa: 33
+          fh: 47
+          fay: 33
+          fap: -4
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 16.5
+      t: 16.5
+      look: metallica
+      frame: 寄り
+      lens: 43.6
+      cam:
+      - 61.01
+      - 2.77
+      - 26.75
+      yaw: 293
+      people:
+        metallica:
+          x: 0.433
+          y: 0.542
+          z: 0.88
+          frac: 0.629
+          top: 0.855
+          fy: -3.079
+          in: true
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.25
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 19
+          fap: -1
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.247
+          y: 0.163
+          z: 1.38
+          frac: 0.384
+          top: 0.349
+          fy: -2.176
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.03
+          fa: 33
+          fh: 47
+          fay: 33
+          fap: -3
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 17.25
+      t: 17.25
+      look: metallica
+      frame: 寄り
+      lens: 44.6
+      cam:
+      - 61.0
+      - 2.76
+      - 26.75
+      yaw: 293
+      people:
+        metallica:
+          x: 0.43
+          y: 0.534
+          z: 0.86
+          frac: 0.653
+          top: 0.859
+          fy: -3.298
+          in: true
+          occ: null
+          hz: 27.11
+          bz: 26.0
+          wx: 60.25
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 19
+          fap: -2
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: metallica_fore1
+            re: ok
+            mo: ok
+        bisco:
+          x: -0.276
+          y: 0.139
+          z: 1.36
+          frac: 0.398
+          top: 0.332
+          fy: -2.323
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.03
+          fa: 33
+          fh: 47
+          fay: 33
+          fap: -3
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 18.0
+      t: 18.0
+      look: metallica
+      frame: 寄り
+      lens: 45.5
+      cam:
+      - 60.98
+      - 2.76
+      - 26.75
+      yaw: 294
+      people:
+        metallica:
+          x: 0.425
+          y: 0.54
+          z: 0.84
+          frac: 0.687
+          top: 0.882
+          fy: -3.479
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.27
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 20
+          fap: -1
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: metallica_fore1
+        bisco:
+          x: -0.328
+          y: 0.132
+          z: 1.35
+          frac: 0.41
+          top: 0.33
+          fy: -2.45
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.42
+          wy: 3.04
+          fa: 32
+          fh: 47
+          fay: 33
+          fap: -4
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 18.75
+      t: 18.75
+      look: metallica
+      frame: 寄り
+      lens: 46.3
+      cam:
+      - 60.97
+      - 2.76
+      - 26.75
+      yaw: 294
+      people:
+        metallica:
+          x: 0.419
+          y: 0.539
+          z: 0.81
+          frac: 0.721
+          top: 0.898
+          fy: -3.688
+          in: true
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 60.28
+          wy: 2.5
+          fa: 18
+          fh: 90
+          fay: 20
+          fap: -1
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: metallica_fore1
+            re: ok
+            mo: metallica_fore1
+        bisco:
+          x: -0.382
+          y: 0.118
+          z: 1.34
+          frac: 0.422
+          top: 0.322
+          fy: -2.599
+          in: false
+          occ: null
+          hz: 27.1
+          bz: 26.0
+          wx: 59.4
+          wy: 3.05
+          fa: 32
+          fh: 47
+          fay: 32
+          fap: -6
+          bx: 59.35
+          by: 3.1
+          h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 19.5
+      t: 19.5
+      look: metallica
+      frame: 寄り
+      lens: 47.0
+      cam:
+      - 60.96
+      - 2.75
+      - 26.75
+      yaw: 295
+      people:
+        metallica:
+          x: 0.413
+          y: 0.534
+          z: 0.79
+          frac: 0.751
+          top: 0.907
+          fy: -3.895
           in: true
           occ: null
           hz: 27.09
           bz: 26.0
           wx: 60.29
           wy: 2.5
-          fa: 55
+          fa: 19
           fh: 90
+          fay: 21
+          fap: -1
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: metallica_fore1
         bisco:
-          x: 0.122
-          y: 0.519
-          z: 2.39
-          frac: 0.222
-          top: 0.629
-          fy: -0.591
-          in: true
+          x: -0.416
+          y: 0.103
+          z: 1.31
+          frac: 0.436
+          top: 0.313
+          fy: -2.744
+          in: false
           occ: null
-          hz: 27.09
+          hz: 27.1
           bz: 26.0
           wx: 59.41
-          wy: 3.03
-          fa: 73
+          wy: 3.05
+          fa: 32
           fh: 47
+          fay: 32
+          fap: -5
+          bx: 59.35
+          by: 3.1
           h: 1.55
-    - T: 16.5
-      t: 16.5
-      look: null
+          lm:
+            le: out
+            re: out
+            mo: out
+    - T: 20.25
+      t: 20.25
+      look: metallica
       frame: 寄り
-      lens: 44.2
+      lens: 47.6
       cam:
-      - 61.46
-      - 4.27
-      - 26.51
-      yaw: 319
+      - 60.96
+      - 2.75
+      - 26.75
+      yaw: 295
       people:
         metallica:
-          x: 0.651
-          y: 0.564
-          z: 2.19
-          frac: 0.225
-          top: 0.678
-          fy: -0.58
+          x: 0.411
+          y: 0.532
+          z: 0.78
+          frac: 0.767
+          top: 0.913
+          fy: -4.049
           in: true
           occ: null
           hz: 27.09
-          bz: 26.0
-          wx: 60.28
-          wy: 2.5
-          fa: 54
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.124
-          y: 0.52
-          z: 2.36
-          frac: 0.22
-          top: 0.629
-          fy: -0.587
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 73
-          fh: 47
-          h: 1.55
-    - T: 17.25
-      t: 17.25
-      look: null
-      frame: 寄り
-      lens: 43.6
-      cam:
-      - 61.44
-      - 4.25
-      - 26.5
-      yaw: 319
-      people:
-        metallica:
-          x: 0.641
-          y: 0.569
-          z: 2.17
-          frac: 0.23
-          top: 0.685
-          fy: -0.574
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 60.28
-          wy: 2.5
-          fa: 54
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.117
-          y: 0.524
-          z: 2.33
-          frac: 0.219
-          top: 0.632
-          fy: -0.583
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 72
-          fh: 47
-          h: 1.55
-    - T: 18.0
-      t: 18.0
-      look: null
-      frame: 寄り
-      lens: 43.1
-      cam:
-      - 61.43
-      - 4.23
-      - 26.5
-      yaw: 320
-      people:
-        metallica:
-          x: 0.643
-          y: 0.564
-          z: 2.13
-          frac: 0.22
-          top: 0.675
-          fy: -0.57
-          in: true
-          occ: null
-          hz: 27.08
           bz: 26.0
           wx: 60.3
           wy: 2.5
-          fa: 55
+          fa: 19
           fh: 90
+          fay: 21
+          fap: -1
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
-          x: 0.1
-          y: 0.531
-          z: 2.3
-          frac: 0.22
-          top: 0.64
-          fy: -0.58
-          in: true
-          occ: null
-          hz: 27.09
-          bz: 26.0
-          wx: 59.41
-          wy: 3.03
-          fa: 72
-          fh: 47
-          h: 1.55
-    - T: 18.75
-      t: 18.75
-      look: null
-      frame: 寄り
-      lens: 42.6
-      cam:
-      - 61.42
-      - 4.22
-      - 26.5
-      yaw: 320
-      people:
-        metallica:
-          x: 0.647
-          y: 0.557
-          z: 2.1
-          frac: 0.21
-          top: 0.664
-          fy: -0.566
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.32
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.085
-          y: 0.537
-          z: 2.27
-          frac: 0.221
-          top: 0.645
-          fy: -0.577
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 72
-          fh: 47
-          h: 1.55
-    - T: 19.5
-      t: 19.5
-      look: null
-      frame: 寄り
-      lens: 42.3
-      cam:
-      - 61.41
-      - 4.21
-      - 26.5
-      yaw: 320
-      people:
-        metallica:
-          x: 0.646
-          y: 0.56
-          z: 2.08
-          frac: 0.218
-          top: 0.67
-          fy: -0.563
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.33
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.085
-          y: 0.538
-          z: 2.26
-          frac: 0.22
-          top: 0.646
-          fy: -0.575
-          in: true
-          occ: null
-          hz: 27.1
-          bz: 26.0
-          wx: 59.4
-          wy: 3.04
-          fa: 72
-          fh: 47
-          h: 1.55
-    - T: 20.25
-      t: 20.25
-      look: null
-      frame: 寄り
-      lens: 42.1
-      cam:
-      - 61.4
-      - 4.2
-      - 26.5
-      yaw: 320
-      people:
-        metallica:
-          x: 0.641
-          y: 0.564
-          z: 2.08
-          frac: 0.224
-          top: 0.677
-          fy: -0.561
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.32
-          wy: 2.5
-          fa: 55
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.095
-          y: 0.535
-          z: 2.25
-          frac: 0.218
-          top: 0.643
-          fy: -0.574
-          in: true
+          x: -0.422
+          y: 0.089
+          z: 1.29
+          frac: 0.447
+          top: 0.304
+          fy: -2.844
+          in: false
           occ: null
           hz: 27.09
           bz: 26.0
           wx: 59.42
-          wy: 3.02
-          fa: 72
+          wy: 3.03
+          fa: 32
           fh: 47
+          fay: 32
+          fap: -4
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 21.0
       t: 21.0
       look: metallica
       frame: 寄り
-      lens: 42.0
+      lens: 47.9
       cam:
-      - 61.4
-      - 4.2
-      - 26.5
-      yaw: 321
+      - 60.95
+      - 2.75
+      - 26.75
+      yaw: 295
       people:
         metallica:
-          x: 0.635
-          y: 0.565
-          z: 2.08
-          frac: 0.217
-          top: 0.675
-          fy: -0.56
+          x: 0.413
+          y: 0.527
+          z: 0.79
+          frac: 0.762
+          top: 0.905
+          fy: -4.153
           in: true
           occ: null
-          hz: 27.08
+          hz: 27.1
           bz: 26.0
-          wx: 60.31
+          wx: 60.28
           wy: 2.5
-          fa: 55
+          fa: 19
           fh: 90
+          fay: 20
+          fap: -2
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: metallica_fore1
+            re: metallica_fore1
+            mo: ok
         bisco:
-          x: 0.099
-          y: 0.534
-          z: 2.25
-          frac: 0.217
-          top: 0.641
-          fy: -0.573
-          in: true
+          x: -0.408
+          y: 0.072
+          z: 1.29
+          frac: 0.452
+          top: 0.289
+          fy: -2.892
+          in: false
           occ: null
           hz: 27.09
           bz: 26.0
-          wx: 59.42
-          wy: 3.01
-          fa: 74
-          fh: 46
+          wx: 59.43
+          wy: 3.02
+          fa: 32
+          fh: 47
+          fay: 33
+          fap: -3
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 21.54
       t: 21.54
       look: metallica
       frame: 寄り
-      lens: 42.0
+      lens: 48.0
       cam:
-      - 61.4
-      - 4.2
-      - 26.5
-      yaw: 321
+      - 60.95
+      - 2.75
+      - 26.75
+      yaw: 296
       people:
         metallica:
-          x: 0.647
-          y: 0.568
-          z: 2.07
-          frac: 0.22
-          top: 0.679
-          fy: -0.549
-          in: true
-          occ: null
-          hz: 27.07
-          bz: 26.0
-          wx: 60.34
-          wy: 2.5
-          fa: 56
-          fh: 90
-          h: 1.6
-        bisco:
-          x: 0.095
-          y: 0.544
-          z: 2.25
-          frac: 0.218
-          top: 0.652
-          fy: -0.563
+          x: 0.407
+          y: 0.539
+          z: 0.76
+          frac: 0.792
+          top: 0.933
+          fy: -4.142
           in: true
           occ: null
           hz: 27.09
           bz: 26.0
-          wx: 59.42
-          wy: 3.02
-          fa: 79
-          fh: 40
+          wx: 60.31
+          wy: 2.5
+          fa: 19
+          fh: 90
+          fay: 21
+          fap: 0
+          bx: 60.0
+          by: 2.5
+          h: 1.6
+          lm:
+            le: ok
+            re: metallica_fore1
+            mo: ok
+        bisco:
+          x: -0.453
+          y: 0.091
+          z: 1.28
+          frac: 0.456
+          top: 0.311
+          fy: -2.919
+          in: false
+          occ: null
+          hz: 27.09
+          bz: 26.0
+          wx: 59.43
+          wy: 3.03
+          fa: 32
+          fh: 47
+          fay: 33
+          fap: -3
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
   A17-027:
     sec: 20.2
     shot: 全身（後ろから）・泣く二人と踊りの輪
@@ -36162,6 +36646,10 @@ cuts:
   A17-028:
     sec: 18.0
     shot: 大引き（クレーン）・夜の山頂
+    input_hash: a596ab2a345368cac166cf7ca087356811e734d1e0fd110137b16c67472966be
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-08T13:10:38+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -36175,21 +36663,29 @@ cuts:
       yaw: 3
       people:
         metallica:
-          x: 0.734
-          y: 0.538
+          x: 0.71
+          y: 0.564
           z: 2.14
-          frac: 0.281
-          top: 0.679
+          frac: 0.334
+          top: 0.733
           fy: -0.872
           in: true
           occ: null
-          hz: 27.09
+          hz: 27.1
           bz: 26.0
-          wx: 60.3
+          wx: 60.26
           wy: 2.5
-          fa: 104
+          fa: 102
           fh: 90
+          fay: 100
+          fap: 31
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: metallica_fore1
+            mo: back
         arlecchino:
           x: 4.363
           y: 1.673
@@ -36205,7 +36701,15 @@ cuts:
           wy: 3.39
           fa: 48
           fh: 200
+          fay: 48
+          fap: -6
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: -0.088
           y: 0.378
@@ -36221,7 +36725,15 @@ cuts:
           wy: 3.07
           fa: 95
           fh: 70
+          fay: 93
+          fap: 19
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: ok
+            mo: back
         luckiny:
           x: -0.635
           y: 1.243
@@ -36237,6 +36749,10 @@ cuts:
           wy: 6.55
           fa: 100
           fh: 70
+          fay: 100
+          fap: 44
+          bx: 60.9
+          by: 6.6
           h: 1.4
         hundred-knight:
           x: 2.854
@@ -36253,6 +36769,10 @@ cuts:
           wy: 5.5
           fa: 36
           fh: 80
+          fay: 27
+          fap: 25
+          bx: 58.7
+          by: 5.5
           h: 0.9
         apprentice-a:
           x: 1.12
@@ -36269,7 +36789,15 @@ cuts:
           wy: 1.53
           fa: 162
           fh: 40
+          fay: 163
+          fap: 7
+          bx: 61.2
+          by: 1.53
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-b:
           x: 1.82
           y: 0.614
@@ -36285,7 +36813,15 @@ cuts:
           wy: 1.4
           fa: 91
           fh: 130
+          fay: 91
+          fap: 5
+          bx: 62.67
+          by: 1.4
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-c:
           x: 2.986
           y: 0.257
@@ -36301,7 +36837,15 @@ cuts:
           wy: 2.86
           fa: 20
           fh: 220
+          fay: 19
+          fap: 7
+          bx: 62.8
+          by: 2.87
           h: 1.05
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-d:
           x: 1.846
           y: 0.254
@@ -36317,7 +36861,15 @@ cuts:
           wy: 3.0
           fa: 88
           fh: 310
+          fay: 88
+          fap: 10
+          bx: 61.33
+          by: 3.0
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 0.75
       t: 0.75
       look: metallica
@@ -36330,21 +36882,29 @@ cuts:
       yaw: 5
       people:
         metallica:
-          x: 0.715
-          y: 0.529
-          z: 2.28
-          frac: 0.236
-          top: 0.648
+          x: 0.689
+          y: 0.562
+          z: 2.27
+          frac: 0.303
+          top: 0.715
           fy: -0.73
           in: true
           occ: null
-          hz: 27.07
+          hz: 27.1
           bz: 26.0
-          wx: 60.32
+          wx: 60.28
           wy: 2.5
-          fa: 107
+          fa: 105
           fh: 90
+          fay: 102
+          fap: 35
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: metallica_fore1
+            mo: back
         arlecchino:
           x: 3.743
           y: 1.469
@@ -36360,7 +36920,15 @@ cuts:
           wy: 3.41
           fa: 23
           fh: 270
+          fay: 23
+          fap: -3
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: -0.016
           y: 0.344
@@ -36376,7 +36944,15 @@ cuts:
           wy: 3.06
           fa: 122
           fh: 47
+          fay: 121
+          fap: 23
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: -0.893
           y: 1.608
@@ -36392,6 +36968,10 @@ cuts:
           wy: 6.5
           fa: 49
           fh: 353
+          fay: 26
+          fap: 42
+          bx: 60.9
+          by: 6.6
           h: 1.4
         hundred-knight:
           x: 2.907
@@ -36408,6 +36988,10 @@ cuts:
           wy: 5.5
           fa: 43
           fh: 23
+          fay: 31
+          fap: 31
+          bx: 58.7
+          by: 5.5
           h: 0.9
         apprentice-a:
           x: 1.118
@@ -36424,7 +37008,15 @@ cuts:
           wy: 1.34
           fa: 64
           fh: 143
+          fay: 63
+          fap: 9
+          bx: 61.41
+          by: 1.35
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-b:
           x: 1.857
           y: 0.699
@@ -36440,7 +37032,15 @@ cuts:
           wy: 1.64
           fa: 11
           fh: 233
+          fay: 8
+          fap: 8
+          bx: 62.85
+          by: 1.6
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-c:
           x: 2.68
           y: 0.319
@@ -36456,7 +37056,15 @@ cuts:
           wy: 3.06
           fa: 62
           fh: 300
+          fay: 61
+          fap: 13
+          bx: 62.59
+          by: 3.05
           h: 1.05
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-d:
           x: 1.379
           y: 0.458
@@ -36472,7 +37080,15 @@ cuts:
           wy: 2.74
           fa: 89
           fh: 302
+          fay: 88
+          fap: 16
+          bx: 61.15
+          by: 2.79
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
     - T: 1.5
       t: 1.5
       look: metallica
@@ -36485,21 +37101,29 @@ cuts:
       yaw: 11
       people:
         metallica:
-          x: 0.636
-          y: 0.557
-          z: 2.67
-          frac: 0.2
-          top: 0.657
+          x: 0.617
+          y: 0.578
+          z: 2.66
+          frac: 0.244
+          top: 0.701
           fy: -0.433
           in: true
           occ: null
-          hz: 27.07
+          hz: 27.09
           bz: 26.0
-          wx: 60.33
+          wx: 60.3
           wy: 2.5
-          fa: 113
+          fa: 110
           fh: 90
+          fay: 106
+          fap: 40
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 2.67
           y: 1.199
@@ -36515,7 +37139,15 @@ cuts:
           wy: 3.42
           fa: 26
           fh: 271
+          fay: 26
+          fap: 2
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: 0.086
           y: 0.308
@@ -36531,7 +37163,15 @@ cuts:
           wy: 3.06
           fa: 129
           fh: 47
+          fay: 128
+          fap: 29
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: -2.055
           y: 2.96
@@ -36547,6 +37187,10 @@ cuts:
           wy: 6.5
           fa: 59
           fh: 352
+          fay: 34
+          fap: 50
+          bx: 60.9
+          by: 6.6
           h: 1.4
         hundred-knight:
           x: 4.178
@@ -36563,6 +37207,10 @@ cuts:
           wy: 5.5
           fa: 57
           fh: 23
+          fay: 36
+          fap: 47
+          bx: 58.7
+          by: 5.5
           h: 0.9
         apprentice-a:
           x: 0.987
@@ -36579,7 +37227,15 @@ cuts:
           wy: 1.21
           fa: 97
           fh: 111
+          fay: 97
+          fap: 11
+          bx: 61.65
+          by: 1.23
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-b:
           x: 1.622
           y: 0.761
@@ -36595,7 +37251,15 @@ cuts:
           wy: 1.86
           fa: 28
           fh: 201
+          fay: 26
+          fap: 11
+          bx: 62.97
+          by: 1.85
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-c:
           x: 2.0
           y: 0.363
@@ -36611,7 +37275,15 @@ cuts:
           wy: 3.19
           fa: 27
           fh: 257
+          fay: 21
+          fap: 18
+          bx: 62.35
+          by: 3.17
           h: 1.05
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-d:
           x: 1.001
           y: 0.548
@@ -36627,7 +37299,15 @@ cuts:
           wy: 2.52
           fa: 38
           fh: 244
+          fay: 34
+          fap: 17
+          bx: 61.03
+          by: 2.55
           h: 1.1
+          lm:
+            le: ok
+            re: apprentice-d_brim
+            mo: ok
     - T: 2.25
       t: 2.25
       look: metallica
@@ -36640,21 +37320,29 @@ cuts:
       yaw: 18
       people:
         metallica:
-          x: 0.549
-          y: 0.585
-          z: 3.25
-          frac: 0.16
-          top: 0.666
+          x: 0.537
+          y: 0.596
+          z: 3.23
+          frac: 0.182
+          top: 0.688
           fy: -0.151
           in: true
           occ: null
-          hz: 27.07
+          hz: 27.09
           bz: 26.0
-          wx: 60.33
+          wx: 60.3
           wy: 2.5
-          fa: 118
+          fa: 115
           fh: 90
+          fay: 109
+          fap: 45
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 1.877
           y: 1.059
@@ -36670,7 +37358,15 @@ cuts:
           wy: 3.41
           fa: 31
           fh: 272
+          fay: 30
+          fap: 8
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: 0.172
           y: 0.311
@@ -36686,7 +37382,15 @@ cuts:
           wy: 3.07
           fa: 134
           fh: 47
+          fay: 136
+          fap: 33
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: -15.772
           y: 17.29
@@ -36702,6 +37406,10 @@ cuts:
           wy: 6.5
           fa: 74
           fh: 350
+          fay: 45
+          fap: 60
+          bx: 60.9
+          by: 6.6
           h: 1.4
         hundred-knight:
           x: -2.055
@@ -36718,7 +37426,14 @@ cuts:
           wy: 5.5
           fa: 77
           fh: 23
+          fay: 53
+          fap: 68
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.846
           y: 0.886
@@ -36734,7 +37449,15 @@ cuts:
           wy: 1.16
           fa: 30
           fh: 184
+          fay: 28
+          fap: 12
+          bx: 61.91
+          by: 1.17
           h: 1.1
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         apprentice-b:
           x: 1.334
           y: 0.811
@@ -36750,7 +37473,15 @@ cuts:
           wy: 2.09
           fa: 46
           fh: 274
+          fay: 45
+          fap: 12
+          bx: 63.03
+          by: 2.11
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-c:
           x: 1.424
           y: 0.466
@@ -36766,7 +37497,15 @@ cuts:
           wy: 3.24
           fa: 84
           fh: 318
+          fay: 85
+          fap: 17
+          bx: 62.09
+          by: 3.23
           h: 1.05
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-d:
           x: 0.76
           y: 0.648
@@ -36782,7 +37521,15 @@ cuts:
           wy: 2.31
           fa: 104
           fh: 314
+          fay: 105
+          fap: 18
+          bx: 60.97
+          by: 2.29
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: back
+            mo: back
     - T: 3.0
       t: 3.0
       look: metallica
@@ -36795,21 +37542,29 @@ cuts:
       yaw: 23
       people:
         metallica:
-          x: 0.487
-          y: 0.592
-          z: 3.92
-          frac: 0.118
-          top: 0.652
+          x: 0.477
+          y: 0.6
+          z: 3.9
+          frac: 0.135
+          top: 0.668
           fy: 0.052
           in: true
-          occ: null
-          hz: 27.08
+          occ: hat_brim
+          hz: 27.1
           bz: 26.0
-          wx: 60.31
+          wx: 60.28
           wy: 2.5
-          fa: 122
+          fa: 119
           fh: 90
+          fay: 112
+          fap: 48
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 1.39
           y: 0.97
@@ -36825,7 +37580,15 @@ cuts:
           wy: 3.39
           fa: 36
           fh: 273
+          fay: 34
+          fap: 12
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: 0.242
           y: 0.342
@@ -36841,7 +37604,15 @@ cuts:
           wy: 3.08
           fa: 137
           fh: 47
+          fay: 143
+          fap: 36
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 3.963
           y: -3.082
@@ -36857,7 +37628,15 @@ cuts:
           wy: 6.5
           fa: 87
           fh: 347
+          fay: 57
+          fap: 68
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.078
           y: -3.127
@@ -36873,7 +37652,14 @@ cuts:
           wy: 5.5
           fa: 94
           fh: 23
+          fay: 116
+          fap: 78
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.75
           y: 0.902
@@ -36889,7 +37675,15 @@ cuts:
           wy: 1.18
           fa: 63
           fh: 152
+          fay: 62
+          fap: 15
+          bx: 62.18
+          by: 1.17
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 1.103
           y: 0.807
@@ -36905,7 +37699,15 @@ cuts:
           wy: 2.34
           fa: 20
           fh: 242
+          fay: 13
+          fap: 16
+          bx: 63.03
+          by: 2.38
           h: 1.1
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-c:
           x: 1.041
           y: 0.537
@@ -36921,7 +37723,15 @@ cuts:
           wy: 3.22
           fa: 48
           fh: 274
+          fay: 46
+          fap: 18
+          bx: 61.82
+          by: 3.23
           h: 1.05
+          lm:
+            le: out
+            re: out
+            mo: out
         apprentice-d:
           x: 0.613
           y: 0.715
@@ -36937,7 +37747,19 @@ cuts:
           wy: 2.07
           fa: 74
           fh: 282
+          fay: 74
+          fap: 19
+          bx: 60.97
+          by: 2.02
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
+      probe:
+        dx: -0.14
+        dy: -0.06
+        dz: -0.15
     - T: 3.75
       t: 3.75
       look: metallica
@@ -36950,21 +37772,29 @@ cuts:
       yaw: 27
       people:
         metallica:
-          x: 0.451
-          y: 0.586
-          z: 4.6
-          frac: 0.089
-          top: 0.631
+          x: 0.444
+          y: 0.592
+          z: 4.57
+          frac: 0.101
+          top: 0.643
           fy: 0.184
           in: true
-          occ: null
-          hz: 27.08
+          occ: hat_brim
+          hz: 27.11
           bz: 26.0
-          wx: 60.29
+          wx: 60.26
           wy: 2.5
-          fa: 125
+          fa: 121
           fh: 90
+          fay: 114
+          fap: 51
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 1.101
           y: 0.893
@@ -36980,7 +37810,15 @@ cuts:
           wy: 3.38
           fa: 41
           fh: 274
+          fay: 38
+          fap: 16
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: out
+            re: out
+            mo: out
         bisco:
           x: 0.295
           y: 0.379
@@ -36996,7 +37834,15 @@ cuts:
           wy: 3.07
           fa: 141
           fh: 47
+          fay: 148
+          fap: 39
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 1.948
           y: -0.966
@@ -37012,7 +37858,15 @@ cuts:
           wy: 6.49
           fa: 96
           fh: 343
+          fay: 67
+          fap: 74
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.348
           y: -1.44
@@ -37028,7 +37882,14 @@ cuts:
           wy: 5.5
           fa: 106
           fh: 23
+          fay: 164
+          fap: 73
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.697
           y: 0.849
@@ -37044,7 +37905,15 @@ cuts:
           wy: 1.26
           fa: 37
           fh: 185
+          fay: 33
+          fap: 19
+          bx: 62.44
+          by: 1.26
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.939
           y: 0.73
@@ -37060,7 +37929,15 @@ cuts:
           wy: 2.64
           fa: 47
           fh: 273
+          fay: 42
+          fap: 21
+          bx: 62.94
+          by: 2.63
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_brim
+            mo: ok
         apprentice-c:
           x: 0.791
           y: 0.534
@@ -37069,14 +37946,22 @@ cuts:
           top: 0.575
           fy: 0.218
           in: true
-          occ: null
+          occ: apprentice-c_brim
           hz: 26.94
           bz: 26.0
           wx: 61.57
           wy: 3.14
           fa: 71
           fh: 292
+          fay: 68
+          fap: 27
+          bx: 61.56
+          by: 3.14
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.53
           y: 0.718
@@ -37085,14 +37970,26 @@ cuts:
           top: 0.754
           fy: 0.419
           in: true
-          occ: hat_cone
+          occ: apprentice-d_brim
           hz: 26.99
           bz: 26.0
           wx: 61.06
           wy: 1.77
           fa: 105
           fh: 315
+          fay: 106
+          fap: 23
+          bx: 61.06
+          by: 1.76
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: back
+            mo: back
+      probe:
+        dx: -0.13
+        dy: -0.07
+        dz: -0.3
     - T: 4.5
       t: 4.5
       look: metallica
@@ -37105,21 +38002,29 @@ cuts:
       yaw: 30
       people:
         metallica:
-          x: 0.435
-          y: 0.577
-          z: 5.19
-          frac: 0.073
-          top: 0.614
+          x: 0.43
+          y: 0.58
+          z: 5.17
+          frac: 0.078
+          top: 0.619
           fy: 0.264
           in: true
-          occ: null
-          hz: 27.1
+          occ: hat_brim
+          hz: 27.12
           bz: 26.0
-          wx: 60.26
+          wx: 60.23
           wy: 2.5
-          fa: 126
+          fa: 122
           fh: 90
+          fay: 115
+          fap: 51
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.933
           y: 0.827
@@ -37135,7 +38040,15 @@ cuts:
           wy: 3.4
           fa: 45
           fh: 276
+          fay: 41
+          fap: 19
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.331
           y: 0.408
@@ -37151,7 +38064,15 @@ cuts:
           wy: 3.06
           fa: 143
           fh: 47
+          fay: 151
+          fap: 42
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 1.379
           y: -0.373
@@ -37167,7 +38088,15 @@ cuts:
           wy: 6.47
           fa: 103
           fh: 342
+          fay: 75
+          fap: 77
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.42
           y: -0.777
@@ -37183,7 +38112,14 @@ cuts:
           wy: 5.5
           fa: 113
           fh: 23
+          fay: 176
+          fap: 68
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.669
           y: 0.816
@@ -37199,7 +38135,15 @@ cuts:
           wy: 1.45
           fa: 22
           fh: 218
+          fay: 3
+          fap: 22
+          bx: 62.66
+          by: 1.41
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.824
           y: 0.69
@@ -37208,14 +38152,22 @@ cuts:
           top: 0.718
           fy: 0.443
           in: true
-          occ: null
+          occ: apprentice-b_brim
           hz: 27.05
           bz: 26.0
           wx: 62.75
           wy: 2.88
           fa: 69
           fh: 295
+          fay: 65
+          fap: 26
+          bx: 62.79
+          by: 2.86
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_brim
+            mo: apprentice-b_brim
         apprentice-c:
           x: 0.644
           y: 0.569
@@ -37231,7 +38183,15 @@ cuts:
           wy: 2.96
           fa: 91
           fh: 308
+          fay: 88
+          fap: 33
+          bx: 61.34
+          by: 2.99
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: back
+            mo: back
         apprentice-d:
           x: 0.503
           y: 0.741
@@ -37247,7 +38207,19 @@ cuts:
           wy: 1.51
           fa: 134
           fh: 348
+          fay: 138
+          fap: 25
+          bx: 61.21
+          by: 1.54
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
+      probe:
+        dx: -0.69
+        dy: -0.4
+        dz: -0.3
     - T: 5.25
       t: 5.25
       look: metallica
@@ -37260,21 +38232,29 @@ cuts:
       yaw: 31
       people:
         metallica:
-          x: 0.432
-          y: 0.569
-          z: 5.62
-          frac: 0.062
-          top: 0.6
+          x: 0.429
+          y: 0.57
+          z: 5.6
+          frac: 0.065
+          top: 0.603
           fy: 0.308
           in: true
-          occ: null
-          hz: 27.1
+          occ: hat_brim
+          hz: 27.11
           bz: 26.0
-          wx: 60.26
+          wx: 60.24
           wy: 2.5
-          fa: 126
+          fa: 123
           fh: 90
+          fay: 116
+          fap: 52
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.843
           y: 0.783
@@ -37290,7 +38270,15 @@ cuts:
           wy: 3.42
           fa: 48
           fh: 278
+          fay: 44
+          fap: 21
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.351
           y: 0.423
@@ -37306,7 +38294,15 @@ cuts:
           wy: 3.06
           fa: 144
           fh: 47
+          fay: 153
+          fap: 43
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 1.148
           y: -0.141
@@ -37322,7 +38318,15 @@ cuts:
           wy: 6.46
           fa: 108
           fh: 342
+          fay: 81
+          fap: 79
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.443
           y: -0.48
@@ -37338,7 +38342,14 @@ cuts:
           wy: 5.5
           fa: 116
           fh: 23
+          fay: 179
+          fap: 65
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.655
           y: 0.773
@@ -37354,7 +38365,15 @@ cuts:
           wy: 1.62
           fa: 42
           fh: 186
+          fay: 36
+          fap: 23
+          bx: 62.85
+          by: 1.61
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.755
           y: 0.642
@@ -37363,14 +38382,22 @@ cuts:
           top: 0.666
           fy: 0.436
           in: true
-          occ: null
+          occ: apprentice-b_brim
           hz: 27.03
           bz: 26.0
           wx: 62.58
           wy: 3.07
           fa: 36
           fh: 253
+          fay: 24
+          fap: 28
+          bx: 62.59
+          by: 3.05
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_brim
+            mo: ok
         apprentice-c:
           x: 0.567
           y: 0.568
@@ -37379,14 +38406,22 @@ cuts:
           top: 0.593
           fy: 0.362
           in: true
-          occ: null
+          occ: apprentice-c_brim
           hz: 26.98
           bz: 26.0
           wx: 61.13
           wy: 2.78
           fa: 49
           fh: 256
+          fay: 39
+          fap: 32
+          bx: 61.15
+          by: 2.79
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.493
           y: 0.731
@@ -37402,11 +38437,23 @@ cuts:
           wy: 1.32
           fa: 113
           fh: 97
+          fay: 114
+          fap: 25
+          bx: 61.41
+          by: 1.35
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
+      probe:
+        dx: 0.68
+        dy: 0.42
+        dz: 0.45
     - T: 6.0
       t: 6.0
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 30.0
       cam:
       - 58.0
@@ -37415,21 +38462,29 @@ cuts:
       yaw: 32
       people:
         metallica:
-          x: 0.437
-          y: 0.564
-          z: 5.81
-          frac: 0.055
-          top: 0.591
+          x: 0.433
+          y: 0.566
+          z: 5.79
+          frac: 0.06
+          top: 0.596
           fy: 0.323
           in: true
-          occ: null
-          hz: 27.08
+          occ: hat_brim
+          hz: 27.1
           bz: 26.0
-          wx: 60.3
+          wx: 60.27
           wy: 2.5
-          fa: 128
+          fa: 124
           fh: 90
+          fay: 117
+          fap: 54
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.813
           y: 0.768
@@ -37445,7 +38500,15 @@ cuts:
           wy: 3.41
           fa: 50
           fh: 280
+          fay: 47
+          fap: 21
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.356
           y: 0.427
@@ -37461,7 +38524,15 @@ cuts:
           wy: 3.07
           fa: 143
           fh: 47
+          fay: 153
+          fap: 42
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 1.081
           y: -0.08
@@ -37477,7 +38548,15 @@ cuts:
           wy: 6.47
           fa: 110
           fh: 343
+          fay: 84
+          fap: 80
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.447
           y: -0.39
@@ -37493,7 +38572,14 @@ cuts:
           wy: 5.5
           fa: 117
           fh: 23
+          fay: 178
+          fap: 63
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.664
           y: 0.753
@@ -37509,7 +38595,15 @@ cuts:
           wy: 1.81
           fa: 40
           fh: 259
+          fay: 35
+          fap: 21
+          bx: 62.99
+          by: 1.84
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.727
           y: 0.614
@@ -37525,7 +38619,15 @@ cuts:
           wy: 3.2
           fa: 85
           fh: 315
+          fay: 86
+          fap: 24
+          bx: 62.36
+          by: 3.19
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: back
+            mo: back
         apprentice-c:
           x: 0.528
           y: 0.578
@@ -37541,7 +38643,15 @@ cuts:
           wy: 2.58
           fa: 87
           fh: 302
+          fay: 88
+          fap: 28
+          bx: 61.01
+          by: 2.56
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: back
+            mo: back
         apprentice-d:
           x: 0.5
           y: 0.736
@@ -37557,11 +38667,19 @@ cuts:
           wy: 1.21
           fa: 48
           fh: 169
+          fay: 43
+          fap: 23
+          bx: 61.64
+          by: 1.21
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: ok
     - T: 6.75
       t: 6.75
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 30.0
       cam:
       - 57.84
@@ -37570,21 +38688,29 @@ cuts:
       yaw: 33
       people:
         metallica:
-          x: 0.445
-          y: 0.558
-          z: 6.16
-          frac: 0.049
-          top: 0.582
+          x: 0.441
+          y: 0.561
+          z: 6.13
+          frac: 0.056
+          top: 0.589
           fy: 0.333
           in: true
-          occ: null
-          hz: 27.06
+          occ: hat_brim
+          hz: 27.09
           bz: 26.0
-          wx: 60.34
+          wx: 60.3
           wy: 2.5
-          fa: 131
+          fa: 126
           fh: 90
+          fay: 118
+          fap: 57
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.794
           y: 0.759
@@ -37600,7 +38726,15 @@ cuts:
           wy: 3.39
           fa: 53
           fh: 283
+          fay: 49
+          fap: 22
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.364
           y: 0.425
@@ -37616,7 +38750,15 @@ cuts:
           wy: 3.08
           fa: 142
           fh: 47
+          fay: 154
+          fap: 41
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 1.027
           y: -0.037
@@ -37632,7 +38774,15 @@ cuts:
           wy: 6.48
           fa: 113
           fh: 345
+          fay: 87
+          fap: 80
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 0.458
           y: -0.318
@@ -37648,7 +38798,14 @@ cuts:
           wy: 5.5
           fa: 118
           fh: 23
+          fay: 176
+          fap: 62
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.677
           y: 0.736
@@ -37664,7 +38821,15 @@ cuts:
           wy: 2.07
           fa: 22
           fh: 227
+          fay: 2
+          fap: 22
+          bx: 63.03
+          by: 2.11
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.692
           y: 0.598
@@ -37680,7 +38845,15 @@ cuts:
           wy: 3.22
           fa: 48
           fh: 272
+          fay: 44
+          fap: 24
+          bx: 62.09
+          by: 3.23
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_brim
+            mo: ok
         apprentice-c:
           x: 0.506
           y: 0.603
@@ -37689,14 +38862,22 @@ cuts:
           top: 0.624
           fy: 0.425
           in: true
-          occ: null
+          occ: apprentice-c_brim
           hz: 27.0
           bz: 26.0
           wx: 60.98
           wy: 2.33
           fa: 59
           fh: 267
+          fay: 54
+          fap: 28
+          bx: 60.97
+          by: 2.29
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.519
           y: 0.746
@@ -37705,18 +38886,26 @@ cuts:
           top: 0.765
           fy: 0.577
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.05
           bz: 26.0
           wx: 61.86
           wy: 1.18
           fa: 77
           fh: 137
+          fay: 76
+          fap: 22
+          bx: 61.91
+          by: 1.16
           h: 1.1
+          lm:
+            le: back
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 7.5
       t: 7.5
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 29.8
       cam:
       - 57.4
@@ -37725,21 +38914,29 @@ cuts:
       yaw: 34
       people:
         metallica:
-          x: 0.453
-          y: 0.549
-          z: 7.07
-          frac: 0.044
-          top: 0.571
+          x: 0.45
+          y: 0.551
+          z: 7.04
+          frac: 0.048
+          top: 0.575
           fy: 0.355
           in: true
-          occ: null
-          hz: 27.06
+          occ: hat_brim
+          hz: 27.08
           bz: 26.0
-          wx: 60.35
+          wx: 60.31
           wy: 2.5
-          fa: 133
+          fa: 128
           fh: 90
+          fay: 120
+          fap: 59
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.754
           y: 0.733
@@ -37755,7 +38952,15 @@ cuts:
           wy: 3.38
           fa: 56
           fh: 285
+          fay: 53
+          fap: 25
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.387
           y: 0.428
@@ -37771,7 +38976,15 @@ cuts:
           wy: 3.07
           fa: 142
           fh: 47
+          fay: 157
+          fap: 44
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.917
           y: 0.065
@@ -37787,7 +39000,15 @@ cuts:
           wy: 6.47
           fa: 118
           fh: 345
+          fay: 93
+          fap: 82
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.48
           y: -0.164
@@ -37803,7 +39024,14 @@ cuts:
           wy: 5.5
           fa: 120
           fh: 25
+          fay: 174
+          fap: 59
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: out
+            re: out
         apprentice-a:
           x: 0.674
           y: 0.691
@@ -37812,14 +39040,22 @@ cuts:
           top: 0.708
           fy: 0.546
           in: true
-          occ: null
+          occ: apprentice-a_brim
           hz: 26.99
           bz: 26.0
           wx: 63.02
           wy: 2.39
           fa: 42
           fh: 260
+          fay: 33
+          fap: 27
+          bx: 63.02
+          by: 2.38
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: ok
         apprentice-b:
           x: 0.639
           y: 0.561
@@ -37828,14 +39064,22 @@ cuts:
           top: 0.58
           fy: 0.406
           in: true
-          occ: null
+          occ: apprentice-b_brim
           hz: 26.99
           bz: 26.0
           wx: 61.81
           wy: 3.22
           fa: 71
           fh: 292
+          fay: 67
+          fap: 33
+          bx: 61.82
+          by: 3.22
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_cone
+            mo: apprentice-b_brim
         apprentice-c:
           x: 0.485
           y: 0.609
@@ -37851,7 +39095,15 @@ cuts:
           wy: 2.02
           fa: 88
           fh: 300
+          fay: 88
+          fap: 31
+          bx: 60.98
+          by: 2.02
           h: 1.05
+          lm:
+            le: hat_cone
+            re: back
+            mo: back
         apprentice-d:
           x: 0.536
           y: 0.733
@@ -37860,18 +39112,26 @@ cuts:
           top: 0.75
           fy: 0.592
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 26.99
           bz: 26.0
           wx: 62.17
           wy: 1.18
           fa: 52
           fh: 170
+          fay: 46
+          fap: 26
+          bx: 62.18
+          by: 1.18
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: ok
     - T: 8.25
       t: 8.25
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 29.6
       cam:
       - 56.71
@@ -37880,21 +39140,29 @@ cuts:
       yaw: 35
       people:
         metallica:
-          x: 0.46
-          y: 0.539
-          z: 8.49
-          frac: 0.038
-          top: 0.558
+          x: 0.457
+          y: 0.54
+          z: 8.47
+          frac: 0.04
+          top: 0.559
           fy: 0.379
           in: true
-          occ: null
-          hz: 27.07
+          occ: hat_brim
+          hz: 27.09
           bz: 26.0
-          wx: 60.32
+          wx: 60.3
           wy: 2.5
-          fa: 134
+          fa: 129
           fh: 90
+          fay: 121
+          fap: 60
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.709
           y: 0.696
@@ -37910,7 +39178,15 @@ cuts:
           wy: 3.39
           fa: 61
           fh: 287
+          fay: 56
+          fap: 28
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.413
           y: 0.434
@@ -37926,7 +39202,15 @@ cuts:
           wy: 3.07
           fa: 144
           fh: 47
+          fay: 160
+          fap: 48
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.815
           y: 0.164
@@ -37942,7 +39226,15 @@ cuts:
           wy: 6.45
           fa: 123
           fh: 345
+          fay: 100
+          fap: 86
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.497
           y: -0.016
@@ -37958,7 +39250,14 @@ cuts:
           wy: 5.5
           fa: 123
           fh: 28
+          fay: 173
+          fap: 57
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: back
         apprentice-a:
           x: 0.655
           y: 0.656
@@ -37967,14 +39266,22 @@ cuts:
           top: 0.67
           fy: 0.53
           in: true
-          occ: null
+          occ: apprentice-a_brim
           hz: 27.05
           bz: 26.0
           wx: 62.91
           wy: 2.67
           fa: 68
           fh: 290
+          fay: 63
+          fap: 33
+          bx: 62.94
+          by: 2.64
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_cone
+            mo: apprentice-a_brim
         apprentice-b:
           x: 0.587
           y: 0.555
@@ -37990,7 +39297,15 @@ cuts:
           wy: 3.11
           fa: 92
           fh: 310
+          fay: 88
+          fap: 41
+          bx: 61.56
+          by: 3.14
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: back
+            mo: back
         apprentice-c:
           x: 0.48
           y: 0.626
@@ -37999,14 +39314,22 @@ cuts:
           top: 0.642
           fy: 0.499
           in: true
-          occ: hat_cone
+          occ: null
           hz: 27.0
           bz: 26.0
           wx: 61.09
           wy: 1.73
           fa: 115
           fh: 333
+          fay: 119
+          fap: 34
+          bx: 61.06
+          by: 1.76
           h: 1.05
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-d:
           x: 0.552
           y: 0.721
@@ -38015,18 +39338,26 @@ cuts:
           top: 0.735
           fy: 0.597
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.05
           bz: 26.0
           wx: 62.47
           wy: 1.29
           fa: 34
           fh: 203
+          fay: 16
+          fap: 30
+          bx: 62.44
+          by: 1.26
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: ok
     - T: 9.0
       t: 9.0
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 29.4
       cam:
       - 55.81
@@ -38035,21 +39366,29 @@ cuts:
       yaw: 36
       people:
         metallica:
-          x: 0.466
-          y: 0.527
-          z: 10.34
-          frac: 0.029
-          top: 0.542
+          x: 0.464
+          y: 0.528
+          z: 10.32
+          frac: 0.032
+          top: 0.544
           fy: 0.399
           in: true
           occ: hat_brim
-          hz: 27.09
+          hz: 27.1
           bz: 26.0
-          wx: 60.29
-          wy: 2.51
-          fa: 121
-          fh: 111
+          wx: 60.27
+          wy: 2.5
+          fa: 114
+          fh: 109
+          fay: 104
+          fap: 60
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.67
           y: 0.661
@@ -38065,7 +39404,15 @@ cuts:
           wy: 3.41
           fa: 38
           fh: 251
+          fay: 20
+          fap: 33
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.434
           y: 0.441
@@ -38081,7 +39428,15 @@ cuts:
           wy: 3.06
           fa: 137
           fh: 64
+          fay: 146
+          fap: 52
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.741
           y: 0.239
@@ -38097,7 +39452,15 @@ cuts:
           wy: 6.44
           fa: 132
           fh: 352
+          fay: 112
+          fap: 88
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.506
           y: 0.097
@@ -38113,7 +39476,14 @@ cuts:
           wy: 5.5
           fa: 121
           fh: 65
+          fay: 152
+          fap: 55
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: back
         apprentice-a:
           x: 0.631
           y: 0.614
@@ -38129,7 +39499,15 @@ cuts:
           wy: 2.89
           fa: 37
           fh: 217
+          fay: 10
+          fap: 36
+          bx: 62.8
+          by: 2.87
           h: 1.1
+          lm:
+            le: arlecchino_arm1
+            re: apprentice-a_brim
+            mo: arlecchino_arm1
         apprentice-b:
           x: 0.552
           y: 0.538
@@ -38138,14 +39516,22 @@ cuts:
           top: 0.55
           fy: 0.433
           in: true
-          occ: null
+          occ: apprentice-b_brim
           hz: 27.03
           bz: 26.0
           wx: 61.3
           wy: 2.99
           fa: 58
           fh: 266
+          fay: 45
+          fap: 40
+          bx: 61.33
+          by: 3.0
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_cone
+            mo: apprentice-b_brim
         apprentice-c:
           x: 0.48
           y: 0.621
@@ -38161,7 +39547,15 @@ cuts:
           wy: 1.51
           fa: 117
           fh: 336
+          fay: 122
+          fap: 36
+          bx: 61.2
+          by: 1.53
           h: 1.05
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-d:
           x: 0.558
           y: 0.691
@@ -38177,11 +39571,19 @@ cuts:
           wy: 1.41
           fa: 87
           fh: 137
+          fay: 84
+          fap: 35
+          bx: 62.67
+          by: 1.4
           h: 1.1
+          lm:
+            le: back
+            re: apprentice-d_brim
+            mo: back
     - T: 9.75
       t: 9.75
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 29.1
       cam:
       - 54.75
@@ -38190,21 +39592,29 @@ cuts:
       yaw: 37
       people:
         metallica:
-          x: 0.472
-          y: 0.516
-          z: 12.52
-          frac: 0.019
-          top: 0.525
+          x: 0.47
+          y: 0.518
+          z: 12.53
+          frac: 0.024
+          top: 0.53
           fy: 0.415
           in: true
           occ: null
-          hz: 27.1
+          hz: 27.12
           bz: 26.0
-          wx: 60.24
-          wy: 2.55
-          fa: 80
-          fh: 168
+          wx: 60.23
+          wy: 2.51
+          fa: 70
+          fh: 163
+          fay: 52
+          fap: 51
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: hat_cone
+            re: hat_brim
+            mo: hat_brim
         arlecchino:
           x: 0.638
           y: 0.631
@@ -38220,7 +39630,15 @@ cuts:
           wy: 3.41
           fa: 56
           fh: 275
+          fay: 46
+          fap: 35
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.448
           y: 0.445
@@ -38236,7 +39654,15 @@ cuts:
           wy: 3.07
           fa: 130
           fh: 70
+          fay: 142
+          fap: 48
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.69
           y: 0.289
@@ -38252,7 +39678,15 @@ cuts:
           wy: 6.45
           fa: 122
           fh: 334
+          fay: 97
+          fap: 87
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.51
           y: 0.179
@@ -38268,7 +39702,14 @@ cuts:
           wy: 5.5
           fa: 127
           fh: 32
+          fay: 174
+          fap: 53
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: back
         apprentice-a:
           x: 0.607
           y: 0.581
@@ -38277,14 +39718,22 @@ cuts:
           top: 0.591
           fy: 0.495
           in: true
-          occ: null
+          occ: apprentice-a_brim
           hz: 27.03
           bz: 26.0
           wx: 62.62
           wy: 3.05
           fa: 73
           fh: 298
+          fay: 71
+          fap: 34
+          bx: 62.59
+          by: 3.05
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_cone
+            mo: apprentice-a_brim
         apprentice-b:
           x: 0.529
           y: 0.532
@@ -38300,7 +39749,15 @@ cuts:
           wy: 2.83
           fa: 72
           fh: 289
+          fay: 69
+          fap: 37
+          bx: 61.15
+          by: 2.79
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_cone
+            mo: apprentice-b_brim
         apprentice-c:
           x: 0.486
           y: 0.614
@@ -38316,7 +39773,15 @@ cuts:
           wy: 1.35
           fa: 67
           fh: 154
+          fay: 62
+          fap: 35
+          bx: 61.41
+          by: 1.35
           h: 1.05
+          lm:
+            le: apprentice-c_cone
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.559
           y: 0.66
@@ -38325,18 +39790,26 @@ cuts:
           top: 0.669
           fy: 0.577
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.03
           bz: 26.0
           wx: 62.85
           wy: 1.58
           fa: 39
           fh: 244
+          fay: 21
+          fap: 33
+          bx: 62.85
+          by: 1.6
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 10.5
       t: 10.5
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 28.7
       cam:
       - 53.57
@@ -38345,21 +39818,29 @@ cuts:
       yaw: 38
       people:
         metallica:
-          x: 0.478
-          y: 0.51
+          x: 0.476
+          y: 0.511
           z: 15.04
-          frac: 0.016
-          top: 0.518
+          frac: 0.02
+          top: 0.521
           fy: 0.427
           in: true
           occ: null
-          hz: 27.11
+          hz: 27.12
           bz: 26.0
-          wx: 60.24
-          wy: 2.54
-          fa: 79
-          fh: 167
+          wx: 60.23
+          wy: 2.51
+          fa: 71
+          fh: 162
+          fay: 53
+          fap: 51
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: hat_cone
+            re: hat_brim
+            mo: hat_brim
         arlecchino:
           x: 0.615
           y: 0.609
@@ -38375,7 +39856,15 @@ cuts:
           wy: 3.4
           fa: 56
           fh: 275
+          fay: 47
+          fap: 36
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.459
           y: 0.449
@@ -38391,7 +39880,15 @@ cuts:
           wy: 3.07
           fa: 131
           fh: 70
+          fay: 144
+          fap: 50
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.654
           y: 0.326
@@ -38407,7 +39904,15 @@ cuts:
           wy: 6.47
           fa: 124
           fh: 335
+          fay: 101
+          fap: 86
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.512
           y: 0.238
@@ -38423,7 +39928,14 @@ cuts:
           wy: 5.5
           fa: 128
           fh: 35
+          fay: 176
+          fap: 52
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: back
         apprentice-a:
           x: 0.583
           y: 0.556
@@ -38432,14 +39944,22 @@ cuts:
           top: 0.564
           fy: 0.483
           in: true
-          occ: null
+          occ: apprentice-a_brim
           hz: 27.05
           bz: 26.0
           wx: 62.38
           wy: 3.14
           fa: 43
           fh: 254
+          fay: 28
+          fap: 34
+          bx: 62.35
+          by: 3.17
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_brim
+            mo: apprentice-a_brim
         apprentice-b:
           x: 0.514
           y: 0.534
@@ -38448,14 +39968,22 @@ cuts:
           top: 0.541
           fy: 0.464
           in: true
-          occ: null
+          occ: apprentice-b_brim
           hz: 27.05
           bz: 26.0
           wx: 61.06
           wy: 2.59
           fa: 48
           fh: 252
+          fay: 33
+          fap: 38
+          bx: 61.03
+          by: 2.55
           h: 1.1
+          lm:
+            le: apprentice-b_brim
+            re: apprentice-b_brim
+            mo: apprentice-b_brim
         apprentice-c:
           x: 0.494
           y: 0.607
@@ -38471,7 +39999,15 @@ cuts:
           wy: 1.25
           fa: 93
           fh: 122
+          fay: 95
+          fap: 35
+          bx: 61.65
+          by: 1.23
           h: 1.05
+          lm:
+            le: back
+            re: apprentice-c_cone
+            mo: back
         apprentice-d:
           x: 0.56
           y: 0.63
@@ -38480,18 +40016,26 @@ cuts:
           top: 0.638
           fy: 0.56
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.05
           bz: 26.0
           wx: 62.94
           wy: 1.81
           fa: 36
           fh: 212
+          fay: 11
+          fap: 34
+          bx: 62.97
+          by: 1.85
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 11.25
       t: 11.25
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 28.4
       cam:
       - 52.31
@@ -38500,21 +40044,29 @@ cuts:
       yaw: 39
       people:
         metallica:
-          x: 0.483
+          x: 0.482
           y: 0.507
-          z: 17.78
+          z: 17.76
           frac: 0.017
           top: 0.516
           fy: 0.436
           in: true
-          occ: hat_brim
-          hz: 27.1
+          occ: null
+          hz: 27.11
           bz: 26.0
-          wx: 60.28
+          wx: 60.25
           wy: 2.5
-          fa: 138
+          fa: 132
           fh: 90
+          fay: 127
+          fap: 64
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.597
           y: 0.591
@@ -38530,7 +40082,15 @@ cuts:
           wy: 3.39
           fa: 37
           fh: 227
+          fay: 0
+          fap: 37
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.468
           y: 0.453
@@ -38546,7 +40106,15 @@ cuts:
           wy: 3.07
           fa: 132
           fh: 70
+          fay: 145
+          fap: 50
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.628
           y: 0.353
@@ -38562,7 +40130,15 @@ cuts:
           wy: 6.48
           fa: 129
           fh: 341
+          fay: 109
+          fap: 86
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.512
           y: 0.281
@@ -38578,7 +40154,14 @@ cuts:
           wy: 5.5
           fa: 103
           fh: 107
+          fay: 113
+          fap: 50
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.564
           y: 0.529
@@ -38587,14 +40170,22 @@ cuts:
           top: 0.536
           fy: 0.474
           in: true
-          occ: null
+          occ: apprentice-a_brim
           hz: 26.99
           bz: 26.0
           wx: 62.08
           wy: 3.23
           fa: 55
           fh: 265
+          fay: 40
+          fap: 42
+          bx: 62.09
+          by: 3.23
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_cone
+            mo: apprentice-a_brim
         apprentice-b:
           x: 0.501
           y: 0.531
@@ -38610,7 +40201,15 @@ cuts:
           wy: 2.29
           fa: 123
           fh: 355
+          fay: 136
+          fap: 41
+          bx: 60.97
+          by: 2.29
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.502
           y: 0.598
@@ -38626,7 +40225,15 @@ cuts:
           wy: 1.17
           fa: 124
           fh: 85
+          fay: 134
+          fap: 39
+          bx: 61.91
+          by: 1.17
           h: 1.05
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-d:
           x: 0.562
           y: 0.599
@@ -38635,18 +40242,26 @@ cuts:
           top: 0.605
           fy: 0.544
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 26.99
           bz: 26.0
           wx: 63.03
           wy: 2.11
           fa: 59
           fh: 175
+          fay: 49
+          fap: 37
+          bx: 63.03
+          by: 2.11
           h: 1.1
+          lm:
+            le: apprentice-d_cone
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 12.0
       t: 12.0
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 28.0
       cam:
       - 51.0
@@ -38655,21 +40270,29 @@ cuts:
       yaw: 39
       people:
         metallica:
-          x: 0.487
+          x: 0.486
           y: 0.503
-          z: 20.6
+          z: 20.57
           frac: 0.015
-          top: 0.51
+          top: 0.511
           fy: 0.443
           in: true
-          occ: hat_brim
-          hz: 27.08
+          occ: null
+          hz: 27.1
           bz: 26.0
-          wx: 60.31
+          wx: 60.28
           wy: 2.5
-          fa: 142
+          fa: 133
           fh: 90
+          fay: 128
+          fap: 67
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.583
           y: 0.575
@@ -38685,7 +40308,15 @@ cuts:
           wy: 3.39
           fa: 38
           fh: 230
+          fay: 3
+          fap: 38
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.474
           y: 0.457
@@ -38701,7 +40332,15 @@ cuts:
           wy: 3.07
           fa: 134
           fh: 70
+          fay: 146
+          fap: 53
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.608
           y: 0.373
@@ -38717,7 +40356,15 @@ cuts:
           wy: 6.47
           fa: 126
           fh: 334
+          fay: 103
+          fap: 87
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.513
           y: 0.312
@@ -38733,7 +40380,14 @@ cuts:
           wy: 5.5
           fa: 103
           fh: 110
+          fay: 111
+          fap: 50
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.546
           y: 0.519
@@ -38749,7 +40403,15 @@ cuts:
           wy: 3.21
           fa: 82
           fh: 298
+          fay: 74
+          fap: 47
+          bx: 61.82
+          by: 3.23
           h: 1.1
+          lm:
+            le: apprentice-a_cone
+            re: back
+            mo: back
         apprentice-b:
           x: 0.495
           y: 0.539
@@ -38765,7 +40427,15 @@ cuts:
           wy: 1.97
           fa: 144
           fh: 28
+          fay: 169
+          fap: 48
+          bx: 60.97
+          by: 2.02
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.511
           y: 0.593
@@ -38781,7 +40451,15 @@ cuts:
           wy: 1.19
           fa: 103
           fh: 118
+          fay: 103
+          fap: 45
+          bx: 62.18
+          by: 1.17
           h: 1.05
+          lm:
+            le: back
+            re: apprentice-c_cone
+            mo: back
         apprentice-d:
           x: 0.56
           y: 0.577
@@ -38790,18 +40468,26 @@ cuts:
           top: 0.582
           fy: 0.529
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.05
           bz: 26.0
           wx: 63.01
           wy: 2.42
           fa: 47
           fh: 208
+          fay: 17
+          fap: 44
+          bx: 63.03
+          by: 2.38
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 12.75
       t: 12.75
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 27.6
       cam:
       - 49.69
@@ -38810,21 +40496,29 @@ cuts:
       yaw: 39
       people:
         metallica:
-          x: 0.49
+          x: 0.489
           y: 0.5
-          z: 23.42
-          frac: 0.012
-          top: 0.506
+          z: 23.38
+          frac: 0.013
+          top: 0.507
           fy: 0.448
           in: true
           occ: null
-          hz: 27.06
+          hz: 27.09
           bz: 26.0
-          wx: 60.34
+          wx: 60.3
           wy: 2.5
-          fa: 144
+          fa: 135
           fh: 90
+          fay: 128
+          fap: 68
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.573
           y: 0.563
@@ -38840,7 +40534,15 @@ cuts:
           wy: 3.41
           fa: 41
           fh: 232
+          fay: 5
+          fap: 41
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.479
           y: 0.461
@@ -38856,7 +40558,15 @@ cuts:
           wy: 3.06
           fa: 135
           fh: 70
+          fay: 147
+          fap: 54
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.593
           y: 0.388
@@ -38872,7 +40582,15 @@ cuts:
           wy: 6.46
           fa: 123
           fh: 327
+          fay: 97
+          fap: 89
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.513
           y: 0.336
@@ -38888,7 +40606,14 @@ cuts:
           wy: 5.5
           fa: 103
           fh: 112
+          fay: 109
+          fap: 51
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.534
           y: 0.509
@@ -38904,7 +40629,15 @@ cuts:
           wy: 3.14
           fa: 60
           fh: 266
+          fay: 44
+          fap: 45
+          bx: 61.56
+          by: 3.14
           h: 1.1
+          lm:
+            le: apprentice-a_brim
+            re: apprentice-a_cone
+            mo: apprentice-a_brim
         apprentice-b:
           x: 0.493
           y: 0.539
@@ -38920,7 +40653,15 @@ cuts:
           wy: 1.73
           fa: 127
           fh: 356
+          fay: 138
+          fap: 46
+          bx: 61.06
+          by: 1.76
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.517
           y: 0.582
@@ -38936,7 +40677,15 @@ cuts:
           wy: 1.26
           fa: 125
           fh: 86
+          fay: 135
+          fap: 42
+          bx: 62.44
+          by: 1.26
           h: 1.05
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-d:
           x: 0.557
           y: 0.557
@@ -38945,18 +40694,26 @@ cuts:
           top: 0.561
           fy: 0.515
           in: true
-          occ: null
+          occ: arlecchino_shoulderball1
           hz: 27.03
           bz: 26.0
           wx: 62.94
           wy: 2.66
           fa: 62
           fh: 176
+          fay: 49
+          fap: 44
+          bx: 62.94
+          by: 2.63
           h: 1.1
+          lm:
+            le: arlecchino_shoulderball1
+            re: arlecchino_shoulderball1
+            mo: arlecchino_shoulderball1
     - T: 13.5
       t: 13.5
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 27.3
       cam:
       - 48.43
@@ -38965,21 +40722,29 @@ cuts:
       yaw: 40
       people:
         metallica:
-          x: 0.492
+          x: 0.491
           y: 0.498
-          z: 26.12
+          z: 26.09
           frac: 0.011
           top: 0.504
           fy: 0.452
           in: true
           occ: null
-          hz: 27.07
+          hz: 27.09
           bz: 26.0
-          wx: 60.33
+          wx: 60.3
           wy: 2.5
-          fa: 143
+          fa: 134
           fh: 90
+          fay: 129
+          fap: 68
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.565
           y: 0.554
@@ -38995,7 +40760,15 @@ cuts:
           wy: 3.41
           fa: 43
           fh: 234
+          fay: 8
+          fap: 42
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.482
           y: 0.463
@@ -39011,7 +40784,15 @@ cuts:
           wy: 3.06
           fa: 135
           fh: 70
+          fay: 148
+          fap: 54
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.583
           y: 0.399
@@ -39027,7 +40808,15 @@ cuts:
           wy: 6.47
           fa: 120
           fh: 320
+          fay: 91
+          fap: 89
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.512
           y: 0.353
@@ -39043,7 +40832,14 @@ cuts:
           wy: 5.5
           fa: 102
           fh: 114
+          fay: 107
+          fap: 50
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.524
           y: 0.505
@@ -39059,7 +40855,15 @@ cuts:
           wy: 3.02
           fa: 106
           fh: 339
+          fay: 116
+          fap: 39
+          bx: 61.34
+          by: 2.99
           h: 1.1
+          lm:
+            le: apprentice-a_cone
+            re: back
+            mo: back
         apprentice-b:
           x: 0.494
           y: 0.54
@@ -39075,7 +40879,15 @@ cuts:
           wy: 1.55
           fa: 127
           fh: 69
+          fay: 151
+          fap: 38
+          bx: 61.21
+          by: 1.54
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.521
           y: 0.573
@@ -39091,7 +40903,15 @@ cuts:
           wy: 1.38
           fa: 67
           fh: 159
+          fay: 63
+          fap: 36
+          bx: 62.66
+          by: 1.41
           h: 1.05
+          lm:
+            le: apprentice-c_cone
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.552
           y: 0.542
@@ -39100,18 +40920,26 @@ cuts:
           top: 0.546
           fy: 0.504
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.03
           bz: 26.0
           wx: 62.81
           wy: 2.85
           fa: 44
           fh: 249
+          fay: 24
+          fap: 39
+          bx: 62.79
+          by: 2.86
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 14.25
       t: 14.25
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.9
       cam:
       - 47.25
@@ -39120,21 +40948,29 @@ cuts:
       yaw: 40
       people:
         metallica:
-          x: 0.493
-          y: 0.497
-          z: 28.63
+          x: 0.492
+          y: 0.496
+          z: 28.61
           frac: 0.01
           top: 0.502
           fy: 0.455
           in: true
-          occ: hat_brim
-          hz: 27.08
+          occ: null
+          hz: 27.1
           bz: 26.0
-          wx: 60.31
+          wx: 60.28
           wy: 2.5
-          fa: 141
+          fa: 134
           fh: 90
+          fay: 129
+          fap: 67
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.559
           y: 0.548
@@ -39150,7 +40986,15 @@ cuts:
           wy: 3.4
           fa: 43
           fh: 236
+          fay: 10
+          fap: 42
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.484
           y: 0.464
@@ -39166,7 +41010,15 @@ cuts:
           wy: 3.07
           fa: 133
           fh: 70
+          fay: 148
+          fap: 52
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.575
           y: 0.407
@@ -39182,7 +41034,15 @@ cuts:
           wy: 6.5
           fa: 116
           fh: 315
+          fay: 86
+          fap: 87
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.512
           y: 0.367
@@ -39198,7 +41058,14 @@ cuts:
           wy: 5.5
           fa: 100
           fh: 116
+          fay: 106
+          fap: 49
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.516
           y: 0.506
@@ -39214,7 +41081,15 @@ cuts:
           wy: 2.82
           fa: 83
           fh: 307
+          fay: 86
+          fap: 38
+          bx: 61.15
+          by: 2.79
           h: 1.1
+          lm:
+            le: apprentice-a_cone
+            re: back
+            mo: back
         apprentice-b:
           x: 0.496
           y: 0.543
@@ -39230,7 +41105,15 @@ cuts:
           wy: 1.4
           fa: 131
           fh: 37
+          fay: 178
+          fap: 35
+          bx: 61.41
+          by: 1.35
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.526
           y: 0.564
@@ -39246,7 +41129,15 @@ cuts:
           wy: 1.58
           fa: 90
           fh: 127
+          fay: 95
+          fap: 35
+          bx: 62.85
+          by: 1.61
           h: 1.05
+          lm:
+            le: back
+            re: apprentice-c_cone
+            mo: back
         apprentice-d:
           x: 0.547
           y: 0.53
@@ -39255,18 +41146,26 @@ cuts:
           top: 0.533
           fy: 0.494
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 27.05
           bz: 26.0
           wx: 62.62
           wy: 3.01
           fa: 38
           fh: 217
+          fay: 7
+          fap: 37
+          bx: 62.59
+          by: 3.05
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 15.0
       t: 15.0
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.6
       cam:
       - 46.19
@@ -39275,21 +41174,29 @@ cuts:
       yaw: 40
       people:
         metallica:
-          x: 0.494
+          x: 0.493
           y: 0.495
-          z: 30.9
+          z: 30.87
           frac: 0.009
           top: 0.5
           fy: 0.457
           in: true
-          occ: hat_brim
-          hz: 27.08
+          occ: null
+          hz: 27.1
           bz: 26.0
-          wx: 60.3
+          wx: 60.26
           wy: 2.5
-          fa: 143
+          fa: 134
           fh: 90
+          fay: 129
+          fap: 68
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.555
           y: 0.543
@@ -39305,7 +41212,15 @@ cuts:
           wy: 3.39
           fa: 42
           fh: 237
+          fay: 11
+          fap: 41
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.486
           y: 0.465
@@ -39321,7 +41236,15 @@ cuts:
           wy: 3.08
           fa: 132
           fh: 70
+          fay: 149
+          fap: 52
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.57
           y: 0.413
@@ -39337,7 +41260,15 @@ cuts:
           wy: 6.52
           fa: 112
           fh: 310
+          fay: 82
+          fap: 86
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.512
           y: 0.377
@@ -39353,7 +41284,14 @@ cuts:
           wy: 5.5
           fa: 99
           fh: 117
+          fay: 104
+          fap: 48
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.508
           y: 0.505
@@ -39369,7 +41307,15 @@ cuts:
           wy: 2.55
           fa: 111
           fh: 340
+          fay: 119
+          fap: 45
+          bx: 61.01
+          by: 2.56
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-b:
           x: 0.499
           y: 0.545
@@ -39385,7 +41331,15 @@ cuts:
           wy: 1.21
           fa: 130
           fh: 70
+          fay: 150
+          fap: 41
+          bx: 61.64
+          by: 1.21
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.531
           y: 0.554
@@ -39401,7 +41355,15 @@ cuts:
           wy: 1.85
           fa: 71
           fh: 160
+          fay: 63
+          fap: 42
+          bx: 62.99
+          by: 1.84
           h: 1.05
+          lm:
+            le: apprentice-c_cone
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.541
           y: 0.516
@@ -39410,18 +41372,26 @@ cuts:
           top: 0.519
           fy: 0.486
           in: true
-          occ: null
+          occ: apprentice-d_brim
           hz: 26.99
           bz: 26.0
           wx: 62.36
           wy: 3.19
           fa: 49
           fh: 250
+          fay: 26
+          fap: 43
+          bx: 62.36
+          by: 3.19
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_brim
+            mo: apprentice-d_brim
     - T: 15.75
       t: 15.75
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.4
       cam:
       - 45.29
@@ -39430,21 +41400,29 @@ cuts:
       yaw: 40
       people:
         metallica:
-          x: 0.495
+          x: 0.494
           y: 0.494
-          z: 32.81
+          z: 32.78
           frac: 0.009
           top: 0.499
           fy: 0.459
           in: true
-          occ: hat_brim
-          hz: 27.08
+          occ: null
+          hz: 27.11
           bz: 26.0
-          wx: 60.29
+          wx: 60.26
           wy: 2.5
-          fa: 144
+          fa: 135
           fh: 90
+          fay: 130
+          fap: 69
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.552
           y: 0.539
@@ -39460,7 +41438,15 @@ cuts:
           wy: 3.39
           fa: 42
           fh: 238
+          fay: 13
+          fap: 41
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.488
           y: 0.466
@@ -39476,7 +41462,15 @@ cuts:
           wy: 3.07
           fa: 134
           fh: 70
+          fay: 149
+          fap: 53
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.565
           y: 0.418
@@ -39492,7 +41486,15 @@ cuts:
           wy: 6.52
           fa: 111
           fh: 306
+          fay: 78
+          fap: 86
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.511
           y: 0.384
@@ -39508,7 +41510,14 @@ cuts:
           wy: 5.5
           fa: 98
           fh: 118
+          fay: 103
+          fap: 49
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.503
           y: 0.511
@@ -39524,7 +41533,15 @@ cuts:
           wy: 2.24
           fa: 135
           fh: 13
+          fay: 152
+          fap: 49
+          bx: 60.97
+          by: 2.29
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-b:
           x: 0.504
           y: 0.549
@@ -39540,7 +41557,15 @@ cuts:
           wy: 1.18
           fa: 115
           fh: 103
+          fay: 118
+          fap: 48
+          bx: 61.91
+          by: 1.16
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.535
           y: 0.545
@@ -39556,7 +41581,15 @@ cuts:
           wy: 2.16
           fa: 56
           fh: 193
+          fay: 31
+          fap: 48
+          bx: 63.03
+          by: 2.11
           h: 1.05
+          lm:
+            le: apprentice-c_cone
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.535
           y: 0.509
@@ -39572,11 +41605,19 @@ cuts:
           wy: 3.23
           fa: 71
           fh: 283
+          fay: 59
+          fap: 48
+          bx: 62.09
+          by: 3.23
           h: 1.1
+          lm:
+            le: apprentice-d_cone
+            re: apprentice-d_cone
+            mo: apprentice-d_brim
     - T: 16.5
       t: 16.5
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.2
       cam:
       - 44.6
@@ -39585,21 +41626,29 @@ cuts:
       yaw: 40
       people:
         metallica:
-          x: 0.495
+          x: 0.494
           y: 0.494
-          z: 34.28
+          z: 34.26
           frac: 0.008
           top: 0.498
           fy: 0.46
           in: true
-          occ: hat_brim
-          hz: 27.09
+          occ: null
+          hz: 27.11
           bz: 26.0
-          wx: 60.28
+          wx: 60.25
           wy: 2.5
-          fa: 142
+          fa: 134
           fh: 90
+          fay: 130
+          fap: 68
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.549
           y: 0.536
@@ -39615,7 +41664,15 @@ cuts:
           wy: 3.4
           fa: 44
           fh: 239
+          fay: 14
+          fap: 42
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.489
           y: 0.468
@@ -39631,7 +41688,15 @@ cuts:
           wy: 3.06
           fa: 135
           fh: 70
+          fay: 149
+          fap: 55
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.562
           y: 0.421
@@ -39647,7 +41712,15 @@ cuts:
           wy: 6.52
           fa: 110
           fh: 303
+          fay: 75
+          fap: 88
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.511
           y: 0.389
@@ -39663,7 +41736,14 @@ cuts:
           wy: 5.5
           fa: 99
           fh: 119
+          fay: 102
+          fap: 50
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.499
           y: 0.514
@@ -39679,7 +41759,15 @@ cuts:
           wy: 2.0
           fa: 114
           fh: 341
+          fay: 121
+          fap: 46
+          bx: 60.98
+          by: 2.02
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-b:
           x: 0.508
           y: 0.549
@@ -39695,7 +41783,15 @@ cuts:
           wy: 1.17
           fa: 134
           fh: 71
+          fay: 150
+          fap: 46
+          bx: 62.18
+          by: 1.18
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-c:
           x: 0.537
           y: 0.538
@@ -39711,7 +41807,15 @@ cuts:
           wy: 2.41
           fa: 73
           fh: 161
+          fay: 63
+          fap: 46
+          bx: 63.02
+          by: 2.38
           h: 1.05
+          lm:
+            le: apprentice-c_cone
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.529
           y: 0.503
@@ -39727,11 +41831,19 @@ cuts:
           wy: 3.23
           fa: 53
           fh: 251
+          fay: 28
+          fap: 47
+          bx: 61.82
+          by: 3.22
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_cone
+            mo: apprentice-d_brim
     - T: 17.25
       t: 17.25
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.0
       cam:
       - 44.16
@@ -39742,19 +41854,27 @@ cuts:
         metallica:
           x: 0.495
           y: 0.493
-          z: 35.23
+          z: 35.21
           frac: 0.008
           top: 0.497
           fy: 0.461
           in: true
-          occ: hat_brim
-          hz: 27.1
+          occ: null
+          hz: 27.11
           bz: 26.0
-          wx: 60.28
+          wx: 60.25
           wy: 2.5
-          fa: 141
+          fa: 134
           fh: 90
+          fay: 130
+          fap: 67
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.548
           y: 0.534
@@ -39770,7 +41890,15 @@ cuts:
           wy: 3.41
           fa: 46
           fh: 240
+          fay: 14
+          fap: 44
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.49
           y: 0.468
@@ -39786,7 +41914,15 @@ cuts:
           wy: 3.06
           fa: 135
           fh: 70
+          fay: 149
+          fap: 55
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.56
           y: 0.423
@@ -39802,7 +41938,15 @@ cuts:
           wy: 6.52
           fa: 110
           fh: 301
+          fay: 73
+          fap: 89
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.511
           y: 0.393
@@ -39818,7 +41962,14 @@ cuts:
           wy: 5.5
           fa: 98
           fh: 120
+          fay: 102
+          fap: 50
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.498
           y: 0.518
@@ -39834,7 +41985,15 @@ cuts:
           wy: 1.78
           fa: 131
           fh: 54
+          fay: 167
+          fap: 39
+          bx: 61.06
+          by: 1.76
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-b:
           x: 0.512
           y: 0.549
@@ -39850,7 +42009,15 @@ cuts:
           wy: 1.24
           fa: 79
           fh: 144
+          fay: 78
+          fap: 39
+          bx: 62.44
+          by: 1.26
           h: 1.1
+          lm:
+            le: apprentice-b_cone
+            re: apprentice-b_brim
+            mo: back
         apprentice-c:
           x: 0.538
           y: 0.531
@@ -39859,14 +42026,22 @@ cuts:
           top: 0.534
           fy: 0.506
           in: true
-          occ: null
+          occ: apprentice-c_brim
           hz: 26.98
           bz: 26.0
           wx: 62.97
           wy: 2.62
           fa: 39
           fh: 234
+          fay: 9
+          fap: 38
+          bx: 62.94
+          by: 2.64
           h: 1.05
+          lm:
+            le: apprentice-c_brim
+            re: apprentice-c_brim
+            mo: apprentice-c_brim
         apprentice-d:
           x: 0.524
           y: 0.5
@@ -39882,11 +42057,19 @@ cuts:
           wy: 3.17
           fa: 95
           fh: 324
+          fay: 101
+          fap: 41
+          bx: 61.56
+          by: 3.14
           h: 1.1
+          lm:
+            le: apprentice-d_cone
+            re: back
+            mo: back
     - T: 17.96
       t: 17.96
       look: null
-      frame: 寄り
+      frame: 引き
       lens: 26.0
       cam:
       - 44.0
@@ -39897,19 +42080,27 @@ cuts:
         metallica:
           x: 0.495
           y: 0.493
-          z: 35.57
+          z: 35.55
           frac: 0.008
           top: 0.497
           fy: 0.461
           in: true
-          occ: hat_brim
-          hz: 27.09
+          occ: null
+          hz: 27.11
           bz: 26.0
-          wx: 60.28
+          wx: 60.25
           wy: 2.5
-          fa: 141
+          fa: 134
           fh: 90
+          fay: 130
+          fap: 67
+          bx: 60.0
+          by: 2.5
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
         arlecchino:
           x: 0.547
           y: 0.534
@@ -39925,7 +42116,15 @@ cuts:
           wy: 3.41
           fa: 45
           fh: 240
+          fay: 15
+          fap: 44
+          bx: 62.9
+          by: 3.4
           h: 1.9
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         bisco:
           x: 0.49
           y: 0.468
@@ -39941,7 +42140,15 @@ cuts:
           wy: 3.07
           fa: 134
           fh: 70
+          fay: 149
+          fap: 53
+          bx: 59.35
+          by: 3.1
           h: 1.55
+          lm:
+            le: back
+            re: back
+            mo: back
         luckiny:
           x: 0.559
           y: 0.424
@@ -39957,7 +42164,15 @@ cuts:
           wy: 6.52
           fa: 109
           fh: 300
+          fay: 73
+          fap: 88
+          bx: 60.9
+          by: 6.6
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         hundred-knight:
           x: 0.511
           y: 0.394
@@ -39973,7 +42188,14 @@ cuts:
           wy: 5.5
           fa: 98
           fh: 120
+          fay: 102
+          fap: 49
+          bx: 58.7
+          by: 5.5
           h: 0.9
+          lm:
+            le: back
+            re: ok
         apprentice-a:
           x: 0.497
           y: 0.524
@@ -39989,7 +42211,15 @@ cuts:
           wy: 1.59
           fa: 127
           fh: 17
+          fay: 157
+          fap: 38
+          bx: 61.19
+          by: 1.54
           h: 1.1
+          lm:
+            le: back
+            re: back
+            mo: back
         apprentice-b:
           x: 0.516
           y: 0.549
@@ -40005,7 +42235,15 @@ cuts:
           wy: 1.38
           fa: 104
           fh: 107
+          fay: 115
+          fap: 36
+          bx: 62.66
+          by: 1.39
           h: 1.1
+          lm:
+            le: back
+            re: apprentice-b_cone
+            mo: back
         apprentice-c:
           x: 0.538
           y: 0.526
@@ -40014,14 +42252,22 @@ cuts:
           top: 0.529
           fy: 0.499
           in: true
-          occ: null
+          occ: arlecchino_arm1
           hz: 27.0
           bz: 26.0
           wx: 62.82
           wy: 2.8
           fa: 44
           fh: 197
+          fay: 28
+          fap: 36
+          bx: 62.81
+          by: 2.86
           h: 1.05
+          lm:
+            le: arlecchino_arm1
+            re: apprentice-c_brim
+            mo: arlecchino_arm1
         apprentice-d:
           x: 0.519
           y: 0.5
@@ -40037,4 +42283,12 @@ cuts:
           wy: 3.02
           fa: 68
           fh: 287
+          fay: 64
+          fap: 39
+          bx: 61.34
+          by: 3.01
           h: 1.1
+          lm:
+            le: apprentice-d_brim
+            re: apprentice-d_cone
+            mo: apprentice-d_brim
