@@ -1004,13 +1004,21 @@ cuts:
     keys:
       metallica:
       - {t: 0.0, at: m_back, z: 26.0, face: 90, pose: kneel}
-      - {t: 0.4, at: m_back, z: 26.0, face: 90, pose: cry}
-      - {t: 21.0, at: m_back, z: 26.0, face: 90, pose: cry}
-      - {t: 21.6, at: m_back, z: 26.0, face: 90, pose: cry}
+      - {t: 0.4, pose: cry, expr: sad}
+      - {t: 16.4, pose: cry}
+      - {t: 17.2, pose: {base: cry, r_arm: [70, 0, 25], l_arm: [70, 0, 25], r_el: 95, l_el: 95}, blend: 0.8}
+      - {t: 19.4, pose: {base: cry, r_arm: [70, 0, 25], l_arm: [70, 0, 25], r_el: 95, l_el: 95}}
+      - {t: 20.2, pose: cry, blend: 0.6}
+      - {t: 21.6, pose: cry}
       bisco:
       - {t: 0.0, at: b_side, z: 26.0, face: 40, pose: kneel}
-      - {t: 21.0, at: b_side, z: 26.0, face: 40, pose: kneel}
-      - {t: 21.6, at: b_side, z: 26.0, face: 40, pose: kneel}
+      - {t: 3.6, face: 54, turn: 0.5}
+      - {t: 5.6, face: 40, turn: 0.6}
+      - {t: 7.6, face: 47, turn: 0.6, expr: sad}
+      - {t: 8.8, pose: {base: kneel, r_arm: [55, -12, 0], r_el: 25}, blend: 0.7}
+      - {t: 10.3, pose: {base: kneel, r_arm: [55, -12, 0], r_el: 25}}
+      - {t: 11.3, pose: kneel, blend: 0.8}
+      - {t: 21.6, pose: kneel}
       apprentice-a:
       - {t: 0.0, at: [61.09, 2.73], z: 26.0, face: 330, pose: dance, ease: linear}
       - {t: 1.5, at: [60.95, 2.2], z: 26.0, face: 0, pose: dance, ease: linear}
@@ -1080,12 +1088,15 @@ cuts:
       - {t: 21.0, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance, ease: linear}
       - {t: 21.6, at: [61.48, 3.11], z: 26.0, face: 300, pose: dance}
     cam_keys:
-    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 27.13, lens: 61.0, frame: 寄り}
-    - {t: 21.0, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 27.06, lens: 42.0}
-    - {t: 21.6, cam: [61.4, 4.2, 26.5], look: metallica, look_h: 27.05, lens: 42.0}
+    - {t: 0.0, cam: [61.9, 4.8, 26.55], look: [59.7, 2.9], look_h: 27.13, lens: 55, frame: 寄り（二人）}
+    - {t: 6.95, cam: [61.75, 4.62, 26.55], look: [59.7, 2.9], look_h: 27.12, lens: 60}
+    - {t: 7.0, cam: [60.93, 3.38, 26.95], look: bisco, aim: eyes, face_y: 0.6, lens: 45, frame: 胸上, ease: step}
+    - {t: 11.95, cam: [60.85, 3.36, 26.95], look: bisco, aim: eyes, face_y: 0.6, lens: 48}
+    - {t: 12.0, cam: [61.06, 2.78, 26.75], look: metallica, aim: eyes, face_y: 0.58, lens: 40, frame: 寄り, ease: step}
+    - {t: 21.6, cam: [60.95, 2.75, 26.75], look: metallica, aim: eyes, face_y: 0.58, lens: 48}
     bg: azb_summit_night
     act: {start: 並んでしゃがむ二人, do: メタリカは顔を両手でおおって泣き出し、「うるさい……」「くそっ……」「あんなヤツらに……」, end: 泣くメタリカの寄り}
-    camera: 南東の低い所（顔が帽子に隠れない高さ）から二人、泣くメタリカへゆっくり寄る
+    camera: （2026-11-08 長いカットの組み直し 案1。tc・秒・台詞はそのまま、カットの中で3つに切り替える）南東の低い所から二人へ少し寄る → 7.0 秒 ビスコの胸上（メタリカを見て、手を伸ばしかけて引っ込める）→ 12.0 秒 つばの下から泣くメタリカの寄り（17 秒ごろ顔をおおう手が下がり、また顔をおおう）
     kind: A
   A17-027:
     frame: 全身（後ろから）
@@ -1293,8 +1304,8 @@ cuts:
       - {t: 18.0, at: [61.33, 3.0], z: 26.0, face: 310, pose: dance, ease: linear}
     cam_keys:
     - {t: 0.0, cam: [59.9, 4.6, 27.4], look: metallica, look_h: 27.06, lens: 61.0, frame: 寄り}
-    - {t: 6.0, cam: [58.0, 7.0, 30.0], look: [60.5, 3.0], look_h: 26.99, lens: 30.0}
-    - {t: 18.0, cam: [44.0, 22.0, 52.0], look: [61.0, 2.0], look_h: 26.53, lens: 26.0}
+    - {t: 6.0, cam: [58.0, 7.0, 30.0], look: [60.5, 3.0], look_h: 26.99, lens: 30.0, frame: 引き}
+    - {t: 18.0, cam: [44.0, 22.0, 52.0], look: [61.0, 2.0], look_h: 26.53, lens: 26.0, frame: 大引き}
     bg: azb_summit_night
     act: {start: 泣くメタリカ, do: 「くそ、くそっ……」。ビスコが「メタリカ……」。夜空から魔女たちの高笑いが響く。カメラは上へ高く引き、星空の下の小さな山頂と、踊りの輪と、うずくまる二人, end: 夜の山頂（夜会編 回2 の終わり）}
     camera: メタリカの寄りから、上へ高く引いていく（クレーン）

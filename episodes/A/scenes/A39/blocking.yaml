@@ -411,7 +411,7 @@ cuts:
         at: [14.2, 7.4]
         face: 295
         pose: proud
-      - {t: 0.2, pose: stand, face: 60}
+      - {t: 0.2, pose: stand, face: 0}
       - {t: 2.0, face: 140}
       hundred-knight:
       - t: 0.0
@@ -425,10 +425,12 @@ cuts:
         pose: cross
     cam_keys:
     - {t: 0.0, cam: [12.5, 6.4, 1.83], look: [14.8, 7.9], look_h: 1.24, lens: 28.0, frame: 膝上}
-    - {t: 9.2, cam: [12.55, 6.45, 1.82], look: [14.9, 8.0], look_h: 1.31, lens: 32.0}
+    - {t: 4.6, cam: [12.52, 6.42, 1.83], look: [14.85, 7.95], look_h: 1.27, lens: 30.0}
+    - {t: 6.2, cam: [12.54, 6.44, 1.82], look: arlecchino, aim: eyes, face_y: 0.6, lens: 38.0, frame: 胸上}
+    - {t: 9.2, cam: [12.55, 6.45, 1.82], look: arlecchino, aim: eyes, face_y: 0.6, lens: 40.0}
     fx: []
     act: {start: メタリカが部屋を見回す（「ところで、ルッキーニィがいないが、どうしたんだ？出かけているのか？」）, do: アルレッキーノが手を止めて（「先ほど、お食事を持って出かけられました」）, end: 顔を上げるアルレッキーノ}
-    camera: 扉の脇の高い所から、メタリカと浴槽の前のアルレッキーノ
+    camera: 扉の脇の高い所から、メタリカと浴槽の前のアルレッキーノ。答えるアルレッキーノの顔へ寄って焦点を渡す（2026-11-08）
     kind: M
   A39-011:
     frame: 膝上

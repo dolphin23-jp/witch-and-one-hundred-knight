@@ -54,6 +54,10 @@ start:
   metallica-giant:
     at: &id016 [50.0, 48.6]
     face: 180
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: 沼の魅力 メタリカ↔テレッサ（沼）, a: metallica, b: teressa-swamp, side: [52.0, 41.4], why: A30-022・A30-025 の側}
+
 cuts:
   A30-001:
     frame: 引き
@@ -1159,20 +1163,26 @@ cuts:
         face: 60
         pose: stand
       teressa-swamp:
-      - t: 0.0
-        at: [45.0, 55.2]
-        face: 80
-        pose: kneel_hold
+      - {t: 0.0, at: [45.0, 55.2], face: 80, pose: kneel_hold}
       - {t: 0.3, pose: cough}
-      - {t: 14.8, pose: cry}
+      - {t: 3.2, pose: look_down, blend: 0.5}
+      - {t: 5.6, pose: look_down, expr: surprised}
+      - {t: 9.5, pose: kneel_hold, blend: 0.4, expr: surprised}
+      - {t: 11.4, pose: shake, blend: 0.2, expr: shout}
+      - {t: 14.8, pose: cry, expr: sad}
     cam_keys:
-    - {t: 0.0, cam: [46.73, 53.85, 1.15], look: teressa-swamp, look_h: 1.05, lens: 72.0, frame: 寄り}
-    - {t: 15.8, cam: [46.55, 54.0, 1.1], look: teressa-swamp, look_h: 1.0, lens: 50.0}
-    shake:
-    - t: [2.4, 15.8]
-      amp: 0.4
+    - {t: 0.0, cam: [46.09, 55.71, 1.15], look: teressa-swamp, aim: eyes, face_y: 0.6, lens: 50, frame: 寄り}
+    - {t: 6.45, cam: [45.97, 55.65, 1.15], look: teressa-swamp, aim: eyes, face_y: 0.6, lens: 54}
+    - {t: 6.5, cam: [45.85, 55.55, 1.55], look: [45.25, 55.15], look_h: 0.85, lens: 40, frame: 寄り（手）, ease: step}
+    - {t: 9.45, cam: [45.83, 55.54, 1.5], look: [45.25, 55.15], look_h: 0.85, lens: 44}
+    - {t: 9.5, cam: [45.78, 55.74, 1.05], look: teressa-swamp, aim: eyes, face_y: 0.58, lens: 55, frame: 寄り, ease: step}
+    - {t: 15.8, cam: [45.72, 55.7, 1.05], look: teressa-swamp, aim: eyes, face_y: 0.58, lens: 60}
+    shake:   # 2026-11-08: 悲鳴（11.4 秒）で強く揺らす
+    - {t: [2.4, 11.3], amp: 0.3}
+    - {t: [11.4, 13.0], amp: 1.2}
+    - {t: [13.0, 15.8], amp: 0.5}
     act: {start: テレッサの顔の寄り, do: 臭いに気づいて青ざめる（「ぬ、沼……？これ……この臭い……ぬ、沼！？毒沼ですの……！」「ひっ、ひぃぃぃ！！」）, end: 震えるテレッサ}
-    camera: テレッサの顔へ寄る。揺れ
+    camera: （2026-11-08 長いカットの組み直し 案1。tc・秒・台詞はそのまま、カットの中で3つに切り替える）正面の低い所からテレッサの顔（咳きこみ、濡れた手を見下ろす）→ 6.5 秒 毒沼の滴る手の寄り（上から）→ 9.5 秒 青ざめて顔を上げるテレッサの寄り、悲鳴（11.4 秒）で揺れ
     kind: M
   A30-015:
     frame: 全身
@@ -1748,6 +1758,7 @@ cuts:
     camera: テレッサの顔の高さの低い所から。最後にベルダを見上げる
     kind: M
   A30-022:
+    axis: 沼の魅力 メタリカ↔テレッサ（沼）
     frame: 全身
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
@@ -1831,6 +1842,7 @@ cuts:
     camera: 破れた壁の上の高い所から見下ろし、歩くメタリカを追う
     kind: M
   A30-023:
+    axis: 沼の魅力 メタリカ↔テレッサ（沼）
     frame: 膝上
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
@@ -1890,25 +1902,16 @@ cuts:
       metallica:
       - t: 0.0
         at: [48.6, 50.6]
-        face: 240
+        face: 270
         pose: arms_up
-      - {t: 0.3, pose: point, face: 90}
-      - {t: 3.4, face: 220}
-      - {t: 8.1, pose: proud, face: 180}
+      - {t: 0.3, pose: point, face: 60}
+      - {t: 3.4, face: 250}
+      - {t: 8.1, pose: proud, face: 210}
     cam_keys:
-    - t: 0.0
-      cam: [48.4, 53.6, 0.6]
-      look: metallica
-      look_h: 1.6
-      lens: 30
-      frame: 膝上
-    - t: 8.7
-      cam: [48.0, 53.4, 0.6]
-      look: metallica
-      look_h: 1.7
-      lens: 34
+    - {t: 0.0, cam: [45.72, 49.74, 0.6], look: metallica, look_h: 1.6, lens: 30, frame: 膝上}
+    - {t: 8.7, cam: [45.77, 50.19, 0.6], look: metallica, look_h: 1.7, lens: 34}
     act: {start: メタリカが魔女たちを指さして回る, do: （「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」）, end: 得意顔のメタリカ}
-    camera: メタリカの正面（南）の低い所から、あおる
+    camera: 'メタリカの正面（南）の低い所から、あおる（2026-11-08 軸「沼の魅力 メタリカ↔テレッサ（沼）」の側へ: 鏡写し・ごまかし 30度。D-077 案）'
     kind: M
   A30-024:
     frame: 膝上
@@ -1982,6 +1985,7 @@ cuts:
     camera: ラビィの正面の高い所から
     kind: M
   A30-025:
+    axis: 沼の魅力 メタリカ↔テレッサ（沼）
     frame: 胸上
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]

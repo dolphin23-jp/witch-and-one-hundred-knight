@@ -26,6 +26,10 @@ start:
   perfume:
     at: &id004 [37.9, 58.3]
     face: 0
+# 軸の宣言（2026-11-08、D-077 案。オーナー判断「軸の宣言とごまかしを演出方針に」）。side はカメラを置く側の点。tools/framing.py が推定の代わりに使う
+axes:
+  - {name: お風呂 ルッキーニィ↔ミトン, a: luckiny, b: mitten, side: [35.4, 53.6], cuts: [A36-013, A36-014], why: A36-013 の側}
+
 cuts:
   A36-001:
     frame: 全身
@@ -534,7 +538,7 @@ cuts:
       - {t: 0.3, pose: stand, face: 120}
       - {t: 1.4, pose: look_down}
       - {t: 5.02, pose: cross, face: 110}
-      - {t: 10.41, pose: stand, face: 300}
+      - {t: 10.41, pose: stand, face: 300, turn: 0.5}   # 2026-11-08: 決めて振り向くのは最後の 0.5 秒（turn）
       mitten:
       - t: 0.0
         at: [35.2, 54.6]
@@ -705,20 +709,20 @@ cuts:
       mitten:
       - t: 0.0
         at: [35.0, 54.4]
-        face: 150
+        face: 120
         pose: stand
-      - {t: 0.3, pose: look_down, face: 150}
+      - {t: 0.3, pose: look_down, face: 120}
       hundred-knight:
       - t: 0.0
         at: [36.6, 53.6]
         face: 250
         pose: stand
     cam_keys:
-    - {t: 0.0, cam: [35.47, 55.7, 0.75], look: mitten, lens: 35, frame: 寄り, look_h: 1.04}
-    - {t: 8.2, cam: [35.47, 55.7, 0.75], look: mitten, lens: 40, look_h: 1.04}
+    - {t: 0.0, cam: [36.38, 54.46, 0.75], look: mitten, lens: 35, frame: 寄り, look_h: 1.04}
+    - {t: 8.2, cam: [36.38, 54.46, 0.75], look: mitten, lens: 40, look_h: 1.04}
     fx: []
     act: {start: ミトンがしょげて, do: （「う……！わ、わかったでち……。お風呂に入りにいくでち……」）, end: うなだれるミトン}
-    camera: ミトンの正面の低い所から
+    camera: 'ミトンの正面の低い所から（2026-11-08 軸「お風呂 ルッキーニィ↔ミトン」の側へ: 鏡写し・ごまかし 30度。D-077 案）'
     kind: M
   A36-015:
     frame: 大引き
