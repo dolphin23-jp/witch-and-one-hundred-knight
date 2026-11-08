@@ -46,6 +46,9 @@ import previs_rig  # noqa: E402  関節のある人形と姿勢の補間（2026-
 import previs_fx  # noqa: E402  戦いの効果（閃光・衝撃・破片・土煙・集中線・剣の軌跡）と、止め・スロー（2026-11-06）
 FXCTX = {}   # 効果がその時刻の場面を知るための道具（render_cut が入れる）
 RENDER = {"engine": "workbench", "rig": True, "face": True, "dof": True, "grade": True, "ambient": True}   # face・dof・grade・ambient は 2026-11-07
+# 描き方の組（2026-11-08、--profile）。review は見るため（今までどおり）、reference は Seedance に渡す参照用（焦点ぼかし・色調と周辺減光・空気の粒を切る）。
+# 字幕は tools/previs_reel.py が通しに入れるもので、カットの下絵には入らない
+PROFILES = {"review": {"dof": True, "grade": True, "ambient": True}, "reference": {"dof": False, "grade": False, "ambient": False}}
 # 場所の空気（2026-11-07、previs_fx の motes）。(layout の id, 光の名前) か layout の id で選ぶ。None で出さない。カットの ambient: false で消す、{style: ...} で替える
 AMBIENT = {
     "witch-house": "dust", "living-room": "dust", "st-dolce": "dust", "underground-cavern": "dust", "beast-village": "dust",
@@ -2159,7 +2162,7 @@ def render_cut(st, lay, cut, sec, fps, size, samples, out_dir, work_root, denois
     return mp4, frames_dir, n, checks
 
 
-def motion_sheet(cut, shot, frames_dir, frames, fps, out_dir, cols=4):
+def motion_sheet(cut, shot, frames_dir, frames, fps, out_dir, cols=4, stamp=""):
     """動きの確認用: 決まった秒ごとのコマを左上から並べ、秒を書いた画像（D-060）。"""
     from PIL import Image, ImageDraw, ImageFont
     W, H = 400, 225
@@ -2169,6 +2172,11 @@ def motion_sheet(cut, shot, frames_dir, frames, fps, out_dir, cols=4):
     font = ImageFont.truetype(staging.FONT, 18) if staging.FONT else None
     small = ImageFont.truetype(staging.FONT, 16) if staging.FONT else None
     d.text((10, 8), f"{cut}  {shot.get('sec')}秒  {shot.get('shot', '')}", fill=(230, 230, 230), font=font)
+    if stamp:   # 入力と道具の版（tools/manifest.py。2026-11-08）
+        if small is not None:
+            d.text((W * cols - 10, 10), stamp, fill=(170, 170, 170), font=small, anchor="ra")
+        else:
+            d.text((max(10, W * cols - 330), 10), stamp, fill=(170, 170, 170))
     for k, i in enumerate(frames):
         fr = Image.open(frames_dir / f"{i:04d}.png").convert("RGB").resize((W, H))
         x, y = (k % cols) * W, 36 + (k // cols) * H
@@ -2180,7 +2188,7 @@ def motion_sheet(cut, shot, frames_dir, frames, fps, out_dir, cols=4):
     return p
 
 
-def check_sheet(cut, shot, frames_dir, n, out_dir):
+def check_sheet(cut, shot, frames_dir, n, out_dir, stamp=""):
     """採用した静止画（上）と、下絵の始め・中ほど・終わり（下）を並べた確認用の画像。"""
     from PIL import Image, ImageDraw, ImageFont
     W, H = 480, 270
@@ -2192,6 +2200,8 @@ def check_sheet(cut, shot, frames_dir, n, out_dir):
     d = ImageDraw.Draw(sheet)
     font = ImageFont.truetype(staging.FONT, 18) if staging.FONT else None
     d.text((W + 12, 12), f"{cut}  上: 採用した静止画 / 下: 下絵（始め・中ほど・終わり）", fill=(220, 220, 220), font=font)
+    if stamp:   # 入力と道具の版（tools/manifest.py。2026-11-08）
+        d.text((W + 12, 44), stamp, fill=(170, 170, 170), font=font)
     for k, i in enumerate((0, n // 2, n - 1)):
         fr = Image.open(frames_dir / f"{i:04d}.png").convert("RGB").resize((W, H))
         sheet.paste(fr, (W * k, H))
@@ -2221,11 +2231,17 @@ def main():
     ap.add_argument("--preview", action="store_true", help="始め・中ほど・終わりの3枚だけ描いて確認画像を作る（動画は作らない）")
     ap.add_argument("--motion", type=float, nargs="?", const=0.5, help="動きの確認（D-060）: この秒ごとのコマだけ描いて <カット>_motion.jpg を作る（既定 0.5秒、動画は作らない）")
     ap.add_argument("--audit", action="store_true", help="構図の測定（2026-11-07）: 描かずに、0.75秒ごとの各人物の顔の位置・大きさ・隠れを gen/framing.yaml に書く（tools/framing.py で読む）")
+    ap.add_argument("--profile", choices=tuple(PROFILES), default="review",
+                    help="描き方の組（2026-11-08）。review（既定。見るための焦点ぼかし・色調・空気の粒あり）か reference（Seedance に渡す参照用。それらを切る）")
     a = ap.parse_args()
     RENDER["engine"] = a.engine
+    RENDER.update(PROFILES[a.profile])
     st = staging.Stage(a.scene_dir)
     lay = st.lay
     scene_id = pathlib.Path(a.scene_dir).name
+    import manifest   # 版の記録（2026-11-08）
+    si = manifest.SceneInputs(a.scene_dir)
+    tool_h = manifest.tool_hash(manifest.AUDIT_TOOLS if a.audit else manifest.RENDER_TOOLS)
     out_dir = ROOT / (a.out or f"previs/{scene_id}")
     size = tuple(int(v) for v in a.size.split("x"))
     work = pathlib.Path(tempfile.mkdtemp(prefix="previs_"))
@@ -2233,7 +2249,8 @@ def main():
     if a.audit:
         import previs_audit
         try:
-            previs_audit.run(st, lay, a.scene_dir, cuts, a.fps, size, a.samples, out_dir, work, render_cut)
+            previs_audit.run(st, lay, a.scene_dir, cuts, a.fps, size, a.samples, out_dir, work, render_cut,
+                             hashes={c: si.input_hash(c) for c in cuts}, tool_h=tool_h)
         finally:
             shutil.rmtree(work, ignore_errors=True)
         return
@@ -2243,7 +2260,17 @@ def main():
             mp4, fdir, n, checks = render_cut(st, lay, cut, float(shot["sec"]), a.fps, size, a.samples, out_dir, work,
                                               denoise=a.denoise, preview=a.preview, motion_step=a.motion)
             frames = checks.pop("frames")
-            sheet = motion_sheet(cut, shot, fdir, frames, a.fps, out_dir) if a.motion else check_sheet(cut, shot, fdir, n, out_dir)
+            ih = si.input_hash(cut)
+            stp = manifest.stamp(ih, tool_h)
+            sheet = motion_sheet(cut, shot, fdir, frames, a.fps, out_dir, stamp=stp) if a.motion else check_sheet(cut, shot, fdir, n, out_dir, stamp=stp)
+            meta = {"fps": a.fps, "size": list(size), "samples": a.samples, "engine": a.engine, "profile": a.profile,
+                    "render": {k: RENDER[k] for k in sorted(RENDER)}, "sec": float(shot["sec"]), "frame_count": n}
+            if a.motion:
+                manifest.record(scene_id, cut, "motion", manifest.entry(ih, tool_h, [sheet], step=a.motion, frames=len(frames), **meta), out_dir)
+            else:
+                manifest.record(scene_id, cut, "check", manifest.entry(ih, tool_h, [sheet], preview=bool(a.preview), **meta), out_dir)
+                if mp4:
+                    manifest.record(scene_id, cut, "video", manifest.entry(ih, tool_h, [mp4], **meta), out_dir)
             print(f"{cut}: {rel(mp4) if mp4 else '（動画なし）'}（{n}フレーム、{shot['sec']}秒）、{rel(sheet)}")
             warn = checks.pop("warnings", [])
             if warn:

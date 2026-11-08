@@ -347,6 +347,20 @@ def main():
     shots = sorted((yaml.safe_load(p.read_text(encoding="utf-8")) for p in (scene_dir / "shots").glob("*.yaml")), key=lambda s: float(s["tc"]))
     scene = shots[0]["scene"]
     pv = ROOT / "previs" / scene
+    try:   # 版の照合（2026-11-08、tools/manifest.py）: 通しに入れる下絵が今の設計と合っているか
+        sys.path.insert(0, str(ROOT / "tools"))
+        import manifest   # noqa: PLC0415
+        si = manifest.SceneInputs(scene_dir)
+        recs, rt = manifest.load(scene), manifest.tool_hash(manifest.RENDER_TOOLS)
+        st_ = {s["id"]: manifest.compare((recs.get(s["id"]) or {}).get("video"), si.input_hash(s["id"]), rt) for s in shots}
+        old = [c for c, v in st_.items() if v in ("入力が古い", "道具が古い")]
+        none = [c for c, v in st_.items() if v == "記録なし"]
+        if old:
+            print(f"警告: 今の設計・道具と合わない下絵 {len(old)} カット（{'、'.join(f'{c} {st_[c]}' for c in old)}）。描き直してから通しを作る")
+        if none:
+            print(f"知らせ: 版の記録のない下絵 {len(none)} カット（2026-11-08 より前に描いたもの。python tools/previs_status.py {sys.argv[1]} で推定できる）")
+    except Exception as e:
+        print(f"知らせ: 版の照合をしなかった（{type(e).__name__}: {e}）")
     work = pathlib.Path(tempfile.mkdtemp(prefix="reel_"))
     parts = []
     font = f":fontfile={FONT}" if pathlib.Path(FONT).exists() else ""
