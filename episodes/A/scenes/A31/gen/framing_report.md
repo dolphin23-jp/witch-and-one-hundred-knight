@@ -2,7 +2,7 @@
 
 測ったカット 25、問題のあるカット 3。大きさ 2、足が切れ 2
 
-測定の版（tools/manifest.py）: 記録なし 25。最新でない測定の印は、今の設計と合っていないことがある（python tools/previs.py <場面> <カット>… --audit で測り直す）
+測定の版（tools/manifest.py）: 最新 5、記録なし 20。最新でない測定の印は、今の設計と合っていないことがある（python tools/previs.py <場面> <カット>… --audit で測り直す）
 
 - **A31-003b**（全身・見上げる百騎兵）: 大きさ（metallica-giant、全身 の体の大きさ 1.52、目安 0.15〜1.04）／足が切れ（metallica-giant、5/5）
 - **A31-009**（走るパープルピール）: 足が切れ（purple-peel、6/8）

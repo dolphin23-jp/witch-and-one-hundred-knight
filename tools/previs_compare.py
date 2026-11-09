@@ -3,7 +3,7 @@
 
   python tools/previs_compare.py compare CUTS.txt OUT.mp4 [--before-rev 4fa404bd]
       前（左、Git の --before-rev の版の previs/<場面>/<カット>.mp4）と後（右、今の previs/<場面>/<カット>.mp4）を並べ、原作の台詞を重ねる
-  python tools/previs_compare.py chain CUTS.txt OUT.mp4
+  python tools/previs_compare.py chain CUTS.txt OUT.mp4 [--mark 直した]
       カットを、前後のカット（今の版）と続けて。線（イマジナリーライン）のつながりを見る
 
 CUTS.txt は 1 行に「場面 カット…」（例: `A17 A17-026 A17-028`）。chain は全部のカットの前後をつなぐ。
@@ -108,7 +108,7 @@ def compare(cuts, out, before_rev):
         encode(parts, out)
 
 
-def chain(cuts, out):
+def chain(cuts, out, mark="直した"):
     with tempfile.TemporaryDirectory() as td:
         work = pathlib.Path(td)
         parts = []
@@ -123,7 +123,7 @@ def chain(cuts, out):
                     wav = work / f"{cut}_{c}.wav"
                     voice_track(sc, tc, tc + sec, wav)
                     dst = work / f"{cut}_{c}.mp4"
-                    txt = f"{c}{'  （直した）' if c == cut else ''}  {str(sh.get('shot', ''))[:20]}"
+                    txt = f"{c}{f'  （{mark}）' if c == cut else ''}  {str(sh.get('shot', ''))[:20]}"
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ROOT / f"previs/{sc}/{c}.mp4"), "-i", str(wav), "-filter_complex",
                                     f"[0:v]{clip_filter(sec, 854, 480, txt)}[v]", "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-crf", "18",
                                     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", str(dst)], check=True)
@@ -138,12 +138,13 @@ def main():
     ap.add_argument("cuts")
     ap.add_argument("out")
     ap.add_argument("--before-rev", default="4fa404bd", help="前の版の Git のコミット（既定は 2026-11-08 の作り直しの前の main）")
+    ap.add_argument("--mark", default="直した", help="chain で、見てほしいカットの見出しに付ける言葉")
     a = ap.parse_args()
     cuts = read_cuts(a.cuts)
     if a.mode == "compare":
         compare(cuts, a.out, a.before_rev)
     else:
-        chain(cuts, a.out)
+        chain(cuts, a.out, a.mark)
 
 
 if __name__ == "__main__":
