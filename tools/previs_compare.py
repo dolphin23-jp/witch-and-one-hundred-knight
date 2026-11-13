@@ -5,6 +5,10 @@
       前（左、Git の --before-rev の版の previs/<場面>/<カット>.mp4）と後（右、今の previs/<場面>/<カット>.mp4）を並べ、原作の台詞を重ねる
   python tools/previs_compare.py chain CUTS.txt OUT.mp4 [--mark 直した]
       カットを、前後のカット（今の版）と続けて。線（イマジナリーライン）のつながりを見る
+  python tools/previs_compare.py run 場面 最初のカット 最後のカット OUT.mp4 [--before-dir DIR --before-rev REV] [--mark-cuts A30-018,…]
+      一続きのカットを、場面の時刻どおりに続けて（2026-11-13）。カットの境目や秒を変えたときに使う。
+      --before-dir を付けると、左に前（DIR/<カット>.mp4 を、Git の REV の版のショットファイルの tc・sec で並べる）、右に後（今）。
+      前と後で最初の tc と最後の終わりが同じなら、台詞（voice.yaml）は両方に合う。mp4 は Git にないので、前の動画はフォルダで渡す
 
 CUTS.txt は 1 行に「場面 カット…」（例: `A17 A17-026 A17-028`）。chain は全部のカットの前後をつなぐ。
 OUT と同じ所に、スマホで見る小さい版（_small.mp4、幅 3/4・低い画質）も作る。台詞は voice.yaml の置き場所どおり（BGM は入れない）。
@@ -132,19 +136,82 @@ def chain(cuts, out, mark="直した"):
         encode(parts, out)
 
 
+def run_cuts(sc, first, last):
+    order = list((yaml.safe_load((ROOT / f"episodes/A/scenes/{sc}/blocking.yaml").read_text(encoding="utf-8")) or {})["cuts"])
+    return order[order.index(first):order.index(last) + 1]
+
+
+def strip(work, name, items, w, h):
+    """items = [(mp4, sec, 見出し)] を続けた音なしの動画。"""
+    parts = []
+    for k, (src, sec, txt) in enumerate(items):
+        dst = work / f"{name}_{k:03d}.mp4"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-filter_complex", f"[0:v]{clip_filter(sec, w, h, txt)}[v]", "-map", "[v]",
+                        "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", str(dst)], check=True)
+        parts.append(dst)
+    lst = work / f"{name}.txt"
+    lst.write_text("".join(f"file '{p}'\n" for p in parts))
+    out = work / f"{name}.mp4"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(out)], check=True)
+    return out
+
+
+def run(sc, first, last, out, before_dir=None, before_rev="HEAD", marks=()):
+    cuts = run_cuts(sc, first, last)
+    after = [(ROOT / f"previs/{sc}/{c}.mp4", shot(sc, c)) for c in cuts]
+    t0 = float(after[0][1]["tc"])
+    t1 = float(after[-1][1]["tc"]) + float(after[-1][1]["sec"])
+
+    def txt(c, sh, side):
+        return f"{side}{c}{'  ★' if c in marks else ''}  {float(sh['sec']):.1f}秒  {str(sh.get('shot', ''))[:16]}"
+
+    with tempfile.TemporaryDirectory() as td:
+        work = pathlib.Path(td)
+        wav = work / "voice.wav"
+        voice_track(sc, t0, t1, wav)
+        if before_dir:
+            bsh = {c: yaml.safe_load(subprocess.run(["git", "show", f"{before_rev}:episodes/A/scenes/{sc}/shots/{c}.yaml"], cwd=ROOT,
+                                                    capture_output=True, check=True, text=True).stdout) for c in cuts}
+            b0 = float(bsh[cuts[0]]["tc"])
+            b1 = float(bsh[cuts[-1]]["tc"]) + float(bsh[cuts[-1]]["sec"])
+            if abs(b0 - t0) > 1e-6 or abs(b1 - t1) > 1e-6:
+                raise SystemExit(f"前と後で範囲が違う（前 {b0}〜{b1}、後 {t0}〜{t1}）。台詞が片方に合わなくなる")
+            left = strip(work, "before", [(pathlib.Path(before_dir) / f"{c}.mp4", float(bsh[c]["sec"]), txt(c, bsh[c], "前  ")) for c in cuts], 640, 360)
+            right = strip(work, "after", [(p, float(sh["sec"]), txt(c, sh, "後  ")) for c, (p, sh) in zip(cuts, after)], 640, 360)
+            vf = "[0:v][1:v]hstack=inputs=2[v]"
+            ins = ["-i", str(left), "-i", str(right)]
+        else:
+            right = strip(work, "after", [(p, float(sh["sec"]), txt(c, sh, "")) for c, (p, sh) in zip(cuts, after)], 854, 480)
+            vf = "[0:v]null[v]"
+            ins = ["-i", str(right)]
+        dst = work / "run.mp4"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-i", str(wav), "-filter_complex", vf, "-map", "[v]", "-map", f"{len(ins) // 2}:a",
+                        "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", str(dst)], check=True)
+        encode([dst], out)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("mode", choices=("compare", "chain"))
-    ap.add_argument("cuts")
-    ap.add_argument("out")
-    ap.add_argument("--before-rev", default="4fa404bd", help="前の版の Git のコミット（既定は 2026-11-08 の作り直しの前の main）")
+    ap.add_argument("mode", choices=("compare", "chain", "run"))
+    ap.add_argument("args", nargs="+", help="compare・chain: CUTS.txt OUT.mp4、run: 場面 最初のカット 最後のカット OUT.mp4")
+    ap.add_argument("--before-rev", default=None, help="前の版の Git のコミット（compare の既定は 2026-11-08 の作り直しの前の main 4fa404bd、run の既定は HEAD）")
+    ap.add_argument("--before-dir", default=None, help="run: 前の版の動画（<カット>.mp4）を置いたフォルダ")
     ap.add_argument("--mark", default="直した", help="chain で、見てほしいカットの見出しに付ける言葉")
+    ap.add_argument("--mark-cuts", default="", help="run: 見出しに ★ を付けるカット（コンマ区切り）")
     a = ap.parse_args()
-    cuts = read_cuts(a.cuts)
+    if a.mode == "run":
+        if len(a.args) != 4:
+            ap.error("run は 場面 最初のカット 最後のカット OUT.mp4")
+        sc, first, last, out = a.args
+        run(sc, first, last, out, a.before_dir, a.before_rev or "HEAD", tuple(x for x in a.mark_cuts.split(",") if x))
+        return
+    if len(a.args) != 2:
+        ap.error(f"{a.mode} は CUTS.txt OUT.mp4")
+    cuts = read_cuts(a.args[0])
     if a.mode == "compare":
-        compare(cuts, a.out, a.before_rev)
+        compare(cuts, a.args[1], a.before_rev or "4fa404bd")
     else:
-        chain(cuts, a.out, a.mark)
+        chain(cuts, a.args[1], a.mark)
 
 
 if __name__ == "__main__":

@@ -1441,8 +1441,11 @@ cuts:
   A30-018:
     frame: 胸上
     lighting: council_ruin
-    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
-    hidden_ok: [teressa, night-train, metallica-giant]
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant, hundred-knight]   # 百騎兵はビスコの 2m 後ろの床に倒れていて、胸上の低い画には入らない（2026-11-13 提案。ユーザー判断）
+    gaze: {bisco: metallica}   # ビスコはずっとメタリカ（画の外・画面の左）を見る（静止画の指示の言葉にも入る）
+    pose: {bisco: 'frozen with eyes wide open in astonishment, arms at her sides'}
+    pose_end: {bisco: 'beaming with joy, leaning forward toward Metallica with both hands clasped together and pushed forward at chin height'}
     keys:
       lily:
       - t: 0.0
@@ -1475,63 +1478,97 @@ cuts:
         at: [43.4, 47.6]
         face: 60
         pose: stand
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - t: 0.0
+        at: [45.0, 55.2]
+        face: 80
+        pose: cry
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
       bisco:
+      # 0〜0.4 目を見開いて止まる → 「メ、」で小さくのけぞり、両手が肩の前へ跳ね上がる → 無音の間に顔がほどけ、手をあごの下で握る → 「メタリカ！！！」で初めて身を乗り出し、握った手をあごの高さで前へ（at は動かさず、足だけ前へ）→ 2.0 で少し行き過ぎ、2.45 までに戻って首を少しかしげて止まる
       - t: 0.0
         at: [49.0, 58.4]
         face: 10
         pose: stand
-      - {t: 0.2, face: '@metallica', pose: lean}
-      hundred-knight:
-      - t: 0.0
-        at: [50.3, 60.4]
-        face: 350
-        pose: lie
-      nezaria:
-      - t: 0.0
-        at: [45.8, 45.0]
-        face: 60
-        pose: stand
-      teressa-swamp:
-      - t: 0.0
-        at: [45.0, 55.2]
-        face: 80
-        pose: cry
-      metallica:
-      - t: 0.0
-        at: [50.4, 51.2]
-        face: 260
-        pose: proud
+        expr: surprised
+      - {t: 0.2, face: '@metallica'}
+      - t: 0.65
+        blend: 0.25
+        pease: out
+        pose: {base: stand, lean: -9, head: [-10, 0, 0], r_arm: [15, 25, -15], l_arm: [15, 25, -15], r_el: 120, l_el: 120}
+      - t: 0.95
+        blend: 0.2
+        expr: smile
+        pose: {base: stand, lean: -7, head: [-9, 0, 0], r_arm: [24, 15, 15], l_arm: [24, 15, 15], r_el: 125, l_el: 125}
+      - t: 1.15
+        blend: 0.2
+        pease: out
+        pose: {base: stand, lean: -5, head: [-9, 0, 0], r_arm: [30, 6, 42], l_arm: [30, 6, 42], r_el: 128, l_el: 128}
+      # 右腕は話す身ぶり（声の大きさで右ひじ・右腕が上がる）の分だけ低くして、叫ぶ間も手が握り合ったままに見えるようにする
+      - t: 2.0
+        blend: 0.8
+        pease: out
+        pose: {base: stand, lean: 20, head: [-24, 0, 0], r_arm: [60, 0, 24], l_arm: [65, 0, 24], r_el: 80, l_el: 90, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}
+      - t: 2.45
+        blend: 0.45
+        pose: {base: stand, lean: 16, head: [-21, 0, 6], r_arm: [56, 0, 24], l_arm: [61, 0, 24], r_el: 82, l_el: 92, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}
+      # 止めの間も、うっとりと首のかしげがゆっくり深くなる（固まって見えないように）
+      - t: 2.9
+        blend: 0.45
+        pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}
+    ambient: {at: [50.9, 61.8, 1.7], box: [10.0, 8.0, 4.0]}   # 瘴気の粒の箱を、カメラの約 1.2m 先から奥へ（レンズのすぐ前の大きな泡が顔の横をふさがないように。ビスコのまわりと奥には残す）
     cam_keys:
+    # メタリカ↔ビスコの線の西（017 と同じ側、外積＋）の 3/4 前。視線はレンズの約 36 度左。見る点をビスコの画面の左へずらし、ビスコを画面の右寄りに置いて、見る先（画面の左）を空ける。
+    # 0〜1.1 はほぼ止め、1.1〜2.0 だけ 0.3m 寄りながら 46→50mm（身を乗り出しが止まる所で寄りきる）。終わりも約 33 度の 3/4 を保つ
     - t: 0.0
-      cam: [49.4, 56.6, 0.95]
-      look: bisco
-      look_h: 1.35
-      lens: 40
-      frame: 胸上
-    - t: 3.2
-      cam: [49.3, 56.8, 1.0]
-      look: bisco
+      cam: [48.18, 56.63, 1.0]
+      look: [49.154, 58.329]
       look_h: 1.4
       lens: 46
-    act: {start: ビスコ, do: 顔を輝かせる（「メ、メタリカ！！！」）, end: 身を乗り出すビスコ}
-    camera: ビスコの正面の低い所から
+      frame: 胸上
+      face_y: 0.6
+    - {t: 1.1, cam: [48.18, 56.64, 1.0], look: [49.154, 58.328], lens: 46, face_y: 0.6}
+    - {t: 2.0, cam: [48.38, 56.87, 1.0], look: [49.176, 58.329], lens: 50, face_y: 0.6, ease: out}
+    - {t: 2.9, cam: [48.39, 56.89, 1.0], look: [49.176, 58.329], lens: 50, face_y: 0.6}
+    act: {start: 目を見開くビスコ, do: 息をのみ、顔を輝かせて身を乗り出す（「メ、メタリカ！！！」）, end: 身を乗り出すビスコ}
+    camera: メタリカ↔ビスコの線の西（017 と同じ側）、ビスコの斜め前の低い所から。「メタリカ！！！」で短く寄る
     kind: M
   A30-019:
-    frame: 膝上
+    frame: 腰上
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
     hidden_ok: [teressa, night-train, metallica-giant]
+    gaze: {bisco: metallica}   # ビスコはメタリカに夢中のまま（聞き手の自動の視線を止める）
     keys:
-      lily:
-      - t: 0.0
-        at: [57.0, 47.4]
-        face: 280
-        pose: ready
-      - {t: 0.3, pose: cough, face: 250}
-      - t: 3.6
-        at: [57.6, 47.0]
-        pose: walk
-      - {t: 4.4, pose: cover}
+      lily:   # 2026-11-13 案A（判定後の直し）: 最初のコマからメタリカの方（画面の右）を向き、息をのむ顔で始める（カメラ目線にしない）。
+        # 吸い込む（0.05〜0.4）→ 小さくむせて手が口へ（0.4〜0.72、手は「くっ」0.7 に届く）→ 歯を食いしばって見据える → 無音の頭で足もとの霞へ目を落とし（2.5〜2.68）、
+        # 「まずいぞ」の前に顔を上げる（〜2.95）→ 手を外し、右手を胸もとへ引いて構え、左腕を低く横へ広げて仲間を制し、2歩下がる → 口を押さえて身構える
+      - {t: 0.0, at: [57.0, 47.4], face: 254, pose: {base: ready, drop: 0.12, lean: 5, twist: -8}, expr: surprised}   # 017・018 の構え（ready）を少しゆるめた形
+      - {t: 0.4, face: 253, pose: {base: stand, lean: -6, head: [-10, 0, 0], r_arm: [14, 12, 0], l_arm: [12, 12, 0], r_el: 30, l_el: 25}, blend: 0.35, pease: out}
+      - {t: 0.58, face: 252, pose: {base: stand, lean: 10, head: [8, 0, 0], r_arm: [48, 5, 30], r_el: 100, l_arm: [10, 8, 0], l_el: 20, osc: {cough: 0.25}}, blend: 0.16, pease: in, expr: annoyed}
+      - {t: 0.72, face: 251, pose: {base: cover, lean: 6, head: [4, 0, 0], r_arm: [62, 5, 35], r_el: 128}, blend: 0.12}
+      - {t: 0.86, face: 250, pose: {base: cover, lean: 3, head: [-2, 0, 0], r_arm: [62, 5, 35], r_el: 128}, blend: 0.12, expr: angry}
+      - {t: 2.45, face: 250, pose: {base: cover, lean: 5, head: [0, 0, 0], r_arm: [62, 5, 35], r_el: 128}, blend: 1.2}
+      - {t: 2.68, face: 250, pose: {base: cover, lean: 5, head: [13, 0, 0], r_arm: [62, 5, 35], r_el: 128}, blend: 0.18}
+      - {t: 2.8, face: 250, pose: {base: cover, lean: 5, head: [12, 0, 0], r_arm: [62, 5, 35], r_el: 128}}
+      - {t: 2.95, face: 250, pose: {base: cover, lean: 2, head: [-4, 0, 0], r_arm: [62, 5, 35], r_el: 128}, blend: 0.14, expr: surprised}
+      - {t: 3.18, at: [57.0, 47.4], face: 250, pose: {base: stand, walk: 1.0, drop: 0.06, lean: -3, head: [-4, 0, 0], r_arm: [30, 18, 30], r_el: 110, l_arm: [-15, 55, 0], l_el: 15}, blend: 0.18}
+      - {t: 4.2, at: [57.6, 47.0], face: 250, pose: {base: stand, walk: 1.0, drop: 0.06, lean: -2, head: [-2, 0, 0], r_arm: [30, 18, 30], r_el: 110, l_arm: [-15, 55, 0], l_el: 15}}
+      - {t: 4.38, face: 250, pose: {base: cover, lean: 5, head: [0, 0, 0]}, blend: 0.16, expr: angry}   # 020 と同じ cover。顔が見えるよう、頭は下げない
       purple-peel:
       - t: 0.0
         at: [57.4, 51.0]
@@ -1558,11 +1595,8 @@ cuts:
         at: [43.4, 47.6]
         face: 60
         pose: stand
-      bisco:
-      - t: 0.0
-        at: [49.0, 58.4]
-        face: '@metallica'
-        pose: lean
+      bisco:   # 018 の終わりと同じ、手を握って身を乗り出す形（メタリカに夢中）
+      - {t: 0.0, at: [49.0, 58.4], face: '@metallica', pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}}
       hundred-knight:
       - t: 0.0
         at: [50.3, 60.4]
@@ -1583,26 +1617,33 @@ cuts:
         at: [50.4, 51.2]
         face: 260
         pose: proud
-    cam_keys:
-    - t: 0.0
-      cam: [59.0, 45.6, 2.2]
-      look: [51.0, 50.0]
-      look_h: 1.2
-      lens: 30
-      frame: 肩なめ
-    - t: 4.6
-      cam: [59.2, 45.2, 2.1]
-      look: [51.0, 50.0]
-      look_h: 1.2
-      lens: 33
-    act: {start: リリーが口を押さえる, do: （「くっ……なんという瘴気……！まずいぞ！」）, end: 後ずさるリリー}
-    camera: リリーの斜め後ろの高い所から、肩越しにメタリカ
+    cam_keys:   # 2026-11-13 案A（判定後の直し）: リリーの右前・目の高さ 1.45m（018 の低い 1.0m と高さを変える）。始めはリリーから見て方位約 298 の 3/4（顔はレンズの約 44 度右＝画面の右を見る）。
+      # 奥の傾いた椅子の赤い矢印は、台詞の間は帽子の陰に入る。くっ〜瘴気の間にゆっくり寄り、下がるリリーを遅れて追いながら少し上がる（1.45→1.55m。方位 298→284。下がるリリーは画の左へずれる）。最後の 0.3 秒でもう一度少し寄る。終わりの赤い矢印は帽子のつばの右上の奥に離れる
+    - {t: 0.0, cam: [54.88, 46.27, 1.45], look: [56.9, 47.57], look_h: 1.5, face_y: 0.62, lens: 36, frame: 腰上}
+    - {t: 0.8, cam: [54.88, 46.27, 1.45], look: [56.9, 47.57], look_h: 1.5, face_y: 0.62, lens: 36}
+    - {t: 2.6, cam: [54.88, 46.27, 1.45], look: [56.91, 47.55], look_h: 1.48, face_y: 0.62, lens: 39}
+    - {t: 3.2, cam: [54.88, 46.27, 1.45], look: [56.91, 47.55], look_h: 1.48, face_y: 0.62, lens: 39}
+    - {t: 4.3, cam: [54.9, 46.35, 1.55], look: [57.47, 47.4], look_h: 1.5, face_y: 0.62, lens: 40.5}
+    - {t: 4.6, cam: [54.9, 46.35, 1.55], look: [57.5, 47.34], look_h: 1.5, face_y: 0.62, lens: 42.5}
+    shake:   # 「まずいぞ！」で小さく揺らす
+    - {t: [3.05, 3.5], amp: 0.35}
+    fx:   # 瘴気: 0.7 から画面の右の外（メタリカの方）から低い霞の波が沼の面を這って入り（1.25 には画面の右に見える）、見る先（画面の右奥）に薄い霞の帯がただよう。
+      # 足もとにも這い寄って腰の下に溜まり、下がる間に奥の霞が背後へ迫る。どれもリリーの顔の前は通らない
+    - {kind: surge, t: [0.7, 1.9], at: [56.68, 49.39], to: [58.87, 49.28], r: 0.6, h: 0.5, alpha: 0.16, n: 34, color: [50, 200, 150]}
+    - {kind: fog, t: [1.2, 4.6], at: [58.4, 49.6], r: 1.6, h: 0.5, z: 0.8, alpha: 0.11, rise: 0.8, n: 10, color: [60, 200, 150]}
+    - {kind: surge, t: [1.0, 2.3], at: [55.6, 48.9], to: [57.4, 47.9], r: 0.5, h: 0.45, alpha: 0.18, n: 18, color: [40, 190, 140]}
+    - {kind: fog, t: [1.7, 4.6], at: [57.9, 47.7], r: 1.4, h: 0.35, z: 0.4, alpha: 0.15, rise: 1.0, n: 12, color: [60, 200, 150]}
+    - {kind: fog, t: [3.3, 4.6], at: [59.0, 48.6], r: 1.3, h: 0.5, z: 0.6, alpha: 0.1, rise: 0.9, n: 10, color: [60, 200, 150]}
+    ambient: {at: [60.4, 48.4, 1.6], box: [4.0, 6.0, 3.5], n: 30}   # 泡はリリーの後ろと脇だけ（顔の前を通さない）
+    act: {start: 瘴気を吸って息をのむリリー, do: むせて口を押さえる（「くっ……なんという瘴気……！」）。足もとの霞に目を落とし、手を外して右手を胸もとに構え、左腕を低く広げて仲間を制し、2歩下がる（「まずいぞ！」）, end: 口を押さえて身構えるリリー}
+    camera: （2026-11-13 案A・判定後の直し）リリーの右前・目の高さ 1.45m・36mm の腰上。始めはリリーから見て方位約 298 の 3/4 で、くっ〜瘴気の間にゆっくり寄る（36→39mm）。下がるリリーを遅れて追いながら少し上がり（1.45→1.55m）、最後の 0.3 秒でもう一度少し寄る（→42.5mm）
     kind: M
   A30-020:
     frame: 全身
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
     hidden_ok: [teressa, night-train, metallica-giant]
+    gaze: {teressa-swamp: berda, berda: teressa-swamp, bisco: metallica}   # 2026-11-13: 声のファイルの話し手 teressa（隠れた人形）へ頭がねじれるのを止める
     keys:
       lily:
       - t: 0.0
@@ -1626,25 +1667,23 @@ cuts:
         pose: hop
         z: 1.2
       berda:
-      - t: 0.0
-        at: [42.8, 50.6]
-        face: 160
-        pose: stand
-      - t: 9.68
-        at: [42.4, 50.4]
-        pose: walk
-        face: 120
-      - {t: 10.68, pose: stand}
+      - {t: 0.0, at: [42.8, 50.6], face: 160, pose: stand}
+      - {t: 7.2, face: 160, pose: stand}
+      - {t: 7.7, face: 160, pose: {base: stand, lean: 7, r_ft: [0, 0.22, 0], r_arm: [22, 6, 0], r_el: 25, head: [10, 0, 0]}, blend: 0.45}
+      - {t: 8.1, face: 160, pose: {base: stand, lean: 7, r_ft: [0, 0.22, 0], r_arm: [22, 6, 0], r_el: 25, head: [10, 0, 0]}}
+      - {t: 8.55, face: 160, pose: {base: stand, lean: -3}, blend: 0.4}
+      - {t: 11.55, face: 160, pose: {base: stand, lean: -3}}
+      - {t: 11.85, face: 120, turn: 0.3, pose: {base: walk, lean: -12, twist: 12, head: [-5, 55, 0], r_arm: [35, 0, 40], r_el: 100, l_arm: [12, 6, 0], l_el: 20}, blend: 0.3}
+      - {t: 12.55, at: [42.4, 50.4], face: 120, pose: {base: stand, lean: -12, twist: 12, head: [-5, 55, 0], r_arm: [35, 0, 40], r_el: 100, l_arm: [12, 6, 0], l_el: 20}, blend: 0.3}
+      - {t: 16.6, face: 120, pose: {base: stand, lean: -12, twist: 12, head: [-5, 55, 0], r_arm: [35, 0, 40], r_el: 100, l_arm: [12, 6, 0], l_el: 20}}
+      - {t: 17.3, face: 120, pose: {base: stand, lean: -14, twist: 14, head: [-8, 68, 0], r_arm: [38, 0, 40], r_el: 105, l_arm: [12, 6, 0], l_el: 20}, blend: 0.6}   # すがる手に、さらに顔を背ける
       rubens:
       - t: 0.0
         at: [43.4, 47.6]
         face: 60
         pose: stand
-      bisco:
-      - t: 0.0
-        at: [49.0, 58.4]
-        face: '@metallica'
-        pose: lean
+      bisco:   # 018 の終わりと同じ、手を握って身を乗り出す形（メタリカに夢中）
+      - {t: 0.0, at: [49.0, 58.4], face: '@metallica', pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}}
       hundred-knight:
       - t: 0.0
         at: [50.3, 60.4]
@@ -1656,99 +1695,170 @@ cuts:
         face: 60
         pose: stand
       teressa-swamp:
-      - t: 0.0
-        at: [45.0, 55.2]
-        face: 80
-        pose: cry
-      - {t: 0.3, pose: crouch, face: 300}
-      - t: 8.68
-        at: [44.0, 53.8]
-        pose: crouch
-      - {t: 10.68, pose: kneel_hold}
-      metallica:
-      - t: 0.0
-        at: [50.4, 51.2]
-        face: 260
-        pose: proud
-    cam_keys:   # 2026-11-08 案1（第2版）。ベルダの 2.2m 後ろ・線の＋の側（A30-021 と同じ側）へ 1.2m・高さ 1.25m。肩を左の端へ、テレッサの目を狙う。下がるベルダについて下がり、最後はテレッサへ寄る
-    - {t: 0.0, cam: [40.77, 49.13, 1.25], look: teressa-swamp, aim: eyes, lens: 45, frame: 肩なめ}
-    - {t: 9.68, cam: [40.77, 49.13, 1.25], look: teressa-swamp, aim: eyes, lens: 50}
-    - {t: 10.68, cam: [40.37, 48.93, 1.25], look: teressa-swamp, aim: eyes, lens: 50, frame: 肩なめ}
-    - {t: 18.0, cam: [40.37, 48.93, 1.2], look: teressa-swamp, aim: eyes, lens: 70, frame: 膝上}
-    act: {start: 沼の中を這うテレッサ, do: （「ひっ、ひぃ！！！い、嫌ですわ！死にたくありませんわーーー！！」）ベルダへ手を伸ばす（「ベ、ベルダ様……。た、助けて……たす……たす……」）。ベルダは一歩下がる, end: 見下ろすベルダ}
-    camera: ベルダの肩越しに、這い寄るテレッサを見下ろす（2026-11-08 案1。カメラをベルダの後ろ 2.2m・肩の高さへ下げて肩を左の端へ。下がるベルダについて下がり、最後の 7 秒でテレッサの膝上へ寄る）
-    kind: A
-  A30-021:
-    frame: 膝上
-    lighting: council_ruin
-    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
-    hidden_ok: [teressa, night-train, metallica-giant]
-    keys:
-      lily:
-      - t: 0.0
-        at: [57.6, 47.0]
-        face: 250
-        pose: cover
-      purple-peel:
-      - t: 0.0
-        at: [57.4, 51.0]
-        face: 300
-        pose: ready
-      rabi:
-      - t: 0.0
-        at: [56.2, 54.8]
-        face: 280
-        pose: lean
-      usamaru:
-      - t: 0.0
-        at: [56.8, 55.6]
-        face: 60
-        pose: hop
-        z: 1.2
-      berda:
-      - t: 0.0
-        at: [42.4, 50.4]
-        face: 120
-        pose: stand
-      - {t: 12.73, pose: cover}
-      rubens:
-      - t: 0.0
-        at: [43.4, 47.6]
-        face: 60
-        pose: stand
-      bisco:
-      - t: 0.0
-        at: [49.0, 58.4]
-        face: '@metallica'
-        pose: lean
-      hundred-knight:
-      - t: 0.0
-        at: [50.3, 60.4]
-        face: 350
-        pose: lie
-      nezaria:
-      - t: 0.0
-        at: [45.8, 45.0]
-        face: 60
-        pose: stand
-      teressa-swamp:
-      - t: 0.0
-        at: [44.0, 53.8]
-        face: 300
-        pose: kneel_hold
-      - {t: 3.4, pose: crouch}
-      - {t: 11.38, pose: lie, face: 300}
+      - {t: 0.0, at: [45.0, 55.2], face: 80, pose: {base: cry, drop: 0.62, lean: 50, tilt: 12, head: [25, -80, 0], osc: {cry: 1.0, shake: 0.12}}, expr: sad}   # 沼に深く沈んで震える（立った柱に見えないよう腰を落とす）
+      - {t: 0.7, face: 80, pose: {base: cry, drop: 0.62, lean: 50, tilt: 12, head: [25, -80, 0], osc: {cry: 1.0, shake: 0.12}}}
+      - {t: 0.85, z: 0.07, face: 80, pose: {base: kneel, drop: 0.42, lean: 2, head: [-5, -80, 0], r_arm: [110, 20, 30], l_arm: [110, 20, 30], r_el: 115, l_el: 115}, blend: 0.12, pease: in, expr: surprised}
+      - {t: 1.05, z: 0.0, face: 80, pose: {base: cry, drop: 0.62, lean: 40, tilt: 8, head: [20, -80, 0], osc: {cry: 1.0, shake: 0.2}}, blend: 0.2}
+      - {t: 1.55, z: 0.05, face: '@berda', turn: 0.3, pose: {base: crouch, drop: 0.45, lean: 30, head: [-5, 0, 0], r_arm: [55, 20, 0], l_arm: [55, 20, 0], r_el: 25, l_el: 25, osc: {shake: 0.15}}, blend: 0.3}
+      - {t: 1.75, z: 0.0, face: '@berda', pose: {base: crouch, drop: 0.45, lean: 30, head: [-5, 0, 0], r_arm: [55, 20, 0], l_arm: [55, 20, 0], r_el: 25, l_el: 25, osc: {shake: 0.15}}}
+      - {t: 2.15, face: '@berda', pose: {base: kneel, lean: -18, head: [-30, 0, 0], r_arm: [45, 55, 0], l_arm: [45, 55, 0], r_el: 30, l_el: 30}, blend: 0.25, pease: out, expr: shout}
+      - {t: 2.6, face: '@berda', pose: {base: kneel, lean: -18, head: [-30, 0, 0], r_arm: [45, 55, 0], l_arm: [45, 55, 0], r_el: 30, l_el: 30}, expr: surprised}
+      - {t: 2.8, face: '@berda', pose: {base: kneel, lean: -18, head: [-30, 0, 0], r_arm: [45, 55, 0], l_arm: [45, 55, 0], r_el: 30, l_el: 30}}
+      - {t: 3.15, face: '@berda', pose: {base: kneel, lean: 50, drop: 0.55, r_arm: [75, 8, 0], l_arm: [75, 8, 0], r_el: 10, l_el: 10, head: [-30, 0, 0]}, blend: 0.2, pease: in, expr: surprised}
+      - {t: 3.65, face: '@berda', pose: {base: crouch, drop: 0.3, lean: 22, head: [-15, 0, 0], r_arm: [45, 20, 0], l_arm: [45, 20, 0], r_el: 20, l_el: 20}, blend: 0.35}
+      - {t: 4.1, at: [44.83, 54.96], face: '@berda', pose: {base: crawl, body: 55, drop: 0.5, head: [-45, 0, 0], r_arm: [125, 25, 0], l_arm: [105, 20, 0], r_el: 20, l_el: 30}, blend: 0.15, pease: in, ease: out}
+      - {t: 4.7, face: '@berda', pose: {base: crouch, drop: 0.42, lean: 34, head: [-15, 0, 0], r_arm: [45, 20, 0], l_arm: [45, 20, 0], r_el: 20, l_el: 20}, blend: 0.35}
+      - {t: 5.5, face: '@berda', pose: {base: kneel, lean: 18, drop: 0.55, head: [-30, 0, 0], r_arm: [62, 10, 0], l_arm: [62, 10, 0], r_el: 12, l_el: 12}, blend: 0.4}
+      - {t: 5.8, face: '@berda', pose: {base: kneel, lean: 18, drop: 0.55, head: [-30, 0, 0], r_arm: [62, 10, 0], l_arm: [62, 10, 0], r_el: 12, l_el: 12}}
+      - {t: 6.0, at: [44.83, 54.96], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], r_arm: [165, 10, 0], r_el: 15, l_arm: [100, 15, 0], l_el: 55, r_leg: [70, 15, -95], l_leg: [45, 15, -70], twist: 8}, blend: 0.3, expr: shout}
+      - {t: 6.45, at: [44.66, 54.72], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], l_arm: [165, 10, 0], l_el: 15, r_arm: [100, 15, 0], r_el: 55, l_leg: [70, 15, -95], r_leg: [45, 15, -70], twist: -8}, blend: 0.3, expr: surprised}
+      - {t: 6.9, at: [44.5, 54.49], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], r_arm: [165, 10, 0], r_el: 15, l_arm: [100, 15, 0], l_el: 55, r_leg: [70, 15, -95], l_leg: [45, 15, -70], twist: 8}, blend: 0.3}
+      - {t: 7.35, at: [44.33, 54.26], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], l_arm: [165, 10, 0], l_el: 15, r_arm: [100, 15, 0], r_el: 55, l_leg: [70, 15, -95], r_leg: [45, 15, -70], twist: -8}, blend: 0.3, expr: shout}
+      - {t: 7.8, at: [44.17, 54.03], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], r_arm: [165, 10, 0], r_el: 15, l_arm: [100, 15, 0], l_el: 55, r_leg: [70, 15, -95], l_leg: [45, 15, -70], twist: 8}, blend: 0.3}
+      - {t: 8.3, at: [44.0, 53.8], face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], l_arm: [165, 10, 0], l_el: 15, r_arm: [100, 15, 0], r_el: 55, l_leg: [70, 15, -95], r_leg: [45, 15, -70], twist: -8}, blend: 0.3}
+      - {t: 8.75, face: '@berda', pose: {base: crawl, body: 62, head: [-55, 0, 0], l_arm: [165, 10, 0], l_el: 15, r_arm: [100, 15, 0], r_el: 55, l_leg: [70, 15, -95], r_leg: [45, 15, -70], twist: -8}}   # 020b の頭まで這う形を残す（切り替えの後に起き上がる）
+      - {t: 9.15, at: [44.0, 53.8], face: '@berda', pose: {base: kneel, lean: 12, head: [-24, 0, 0], r_arm: [30, 10, 0], l_arm: [35, 10, 0], r_el: 20, l_el: 20}, blend: 0.4}   # 「ベ、」で上体を起こす
+      - {t: 9.5, face: '@berda', pose: {base: kneel, lean: 15, head: [-25, 0, 0], r_arm: [55, 6, 0], r_el: 30, l_arm: [30, 10, 0], l_el: 20}, blend: 0.35, expr: sad}
+      - {t: 10.7, face: '@berda', pose: {base: kneel, lean: 22, head: [-26, 0, 0], r_arm: [118, 6, 0], r_el: 4, l_arm: [25, 8, 0], l_el: 25}, blend: 1.2, pease: out}   # 無音で力をふりしぼって手を伸ばす
+      - {t: 11.5, face: '@berda', pose: {base: kneel, lean: 28, head: [-26, 0, 0], r_arm: [122, 4, 0], r_el: 0, l_arm: [20, 8, 0], l_el: 25}, blend: 0.8}
+      - {t: 11.95, face: '@berda', pose: {base: kneel, lean: 40, drop: 0.55, head: [-18, 0, 0], r_arm: [112, 0, 0], r_el: 0, l_arm: [45, 10, 0], l_el: 20}, blend: 0.25, pease: in}   # 背けたベルダへ手が空をつかむ
+      - {t: 12.27, face: '@berda', pose: {base: kneel, lean: 34, drop: 0.6, tilt: -16, twist: -18, head: [-2, -32, -40], r_arm: [40, 12, 0], r_el: 25, l_arm: [80, 5, 0], l_el: 5}, blend: 0.32, pease: in}   # 前へ崩れて左手を沼につく（体と頭を左手の側へ落とし、帽子の形を残す）
+      - {t: 13.2, face: '@berda', pose: {base: kneel, lean: 34, drop: 0.6, tilt: -16, twist: -18, head: [-2, -32, -40], r_arm: [40, 12, 0], r_el: 25, l_arm: [80, 5, 0], l_el: 5}}
+      - {t: 13.6, face: '@berda', pose: {base: kneel, lean: 24, drop: 0.52, head: [-30, 0, 0], r_arm: [104, 26, 0], r_el: 10, l_arm: [72, 5, 0], l_el: 8}, blend: 0.45, expr: sad}   # 「た、助けて」顔を上げ、手を高く外へ（ベルダの側へ）
+      - {t: 14.65, face: '@berda', pose: {base: kneel, lean: 22, drop: 0.52, head: [-30, 0, 0], r_arm: [116, 22, 0], r_el: 6, l_arm: [70, 5, 0], l_el: 8}, blend: 0.9, expr: tired}
+      - {t: 16.05, face: '@berda', pose: {base: kneel, lean: 30, drop: 0.58, head: [-16, 0, 0], r_arm: [60, 10, 0], r_el: 24, l_arm: [72, 5, 0], l_el: 8, osc: {shake: 0.06}}, blend: 1.3}   # 無音で腕が震えて下がる
+      - {t: 16.4, face: '@berda', pose: {base: kneel, lean: 24, drop: 0.55, head: [-20, 0, 0], r_arm: [86, 18, 0], r_el: 20, l_arm: [55, 6, 0], l_el: 15}, blend: 0.35, expr: sad}   # 最後の「たす……たす……」でもう一度手を上げる
+      - {t: 17.1, face: '@berda', pose: {base: kneel, lean: 18, drop: 0.52, head: [-18, 0, 0], r_arm: [114, 22, 0], r_el: 10, l_arm: [32, 8, 0], l_el: 26}, blend: 0.7}
+      - {t: 17.9, face: '@berda', pose: {base: kneel, lean: 12, r_arm: [130, 8, 0], r_el: 12, l_arm: [25, 8, 0], l_el: 30, head: [-15, 0, 0]}, blend: 0.8, pease: out}   # 021 の頭（同じ dict）へ渡し、021 の 0〜0.9 秒で手が落ちる
       metallica:
       - t: 0.0
         at: [50.4, 51.2]
         face: 260
         pose: proud
     cam_keys:
-    - {t: 0.0, cam: [42.78, 54.24, 0.35], look: teressa-swamp, look_h: 0.91, lens: 34.0, frame: 膝上}
-    - {t: 12.73, cam: [42.84, 54.1, 0.35], look: berda, look_h: 1.05, lens: 30.0}
-    - {t: 16.2, cam: [42.9, 54.0, 0.4], look: berda, look_h: 1.11, lens: 34.0}
+    - {t: 0.0, cam: [39.4, 54.2, 0.9], look: [45.39, 53.89], look_h: 1.05, lens: 40, frame: 全身}   # 020a: ベルダ↔テレッサの線の＋の側、壁ぎわの真横の低い所。沼のテレッサと奥のメタリカ（ベルダは画の左の外）
+    - {t: 4.9, cam: [39.4, 54.2, 0.9], look: [45.39, 53.89], look_h: 1.05, lens: 40}
+    - {t: 5.8, cam: [38.9, 54.5, 0.9], look: [44.54, 52.45], look_h: 0.8, lens: 30, frame: 引き}   # 気づくのに合わせて左へパン（少し引く）。ベルダ左・テレッサ右・奥の中ほどにメタリカ
+    - {t: 6.0, cam: [38.9, 54.5, 0.9], look: [44.54, 52.45], look_h: 0.8, lens: 30}
+    - {t: 8.35, cam: [39.72, 54.2, 0.82], look: [45.04, 51.43], look_h: 0.7, lens: 33, frame: 全身}   # 叫びの山で 0.85m 押し込み 30→33mm（揺れ 0.3）
+    - {t: 8.7, cam: [39.76, 54.18, 0.82], look: [45.06, 51.36], look_h: 0.7, lens: 33}
+    - {t: 8.75, cam: [40.77, 49.13, 1.42], look: teressa-swamp, aim: eyes, lens: 50, frame: 肩なめ, ease: step}   # 020b: 11-08 の肩なめ（ベルダの後頭部と肩は左の端。テレッサを少し見下ろす）
+    - {t: 11.45, cam: [40.77, 49.13, 1.42], look: teressa-swamp, aim: eyes, lens: 50}
+    - {t: 11.5, cam: [38.63, 51.62, 0.6], look: [44.56, 52.56], look_h: 0.9, lens: 32, frame: 全身, ease: step}   # 拒絶: 横の低い引きへ短く切り返す。伸びた手が空をつかみ、ベルダが背けて下がる
+    - {t: 12.2, cam: [38.66, 51.6, 0.6], look: [44.59, 52.5], look_h: 0.9, lens: 32.5}
+    - {t: 12.25, cam: [40.73, 49.11, 1.42], look: teressa-swamp, aim: eyes, lens: 50, frame: 胸上, ease: step}   # 肩なめへ戻る（ここから被写界深度、奥のビスコをぼかす）。下がるベルダに 0.2秒遅れて 0.2m だけ下がる
+    - {t: 12.75, cam: [40.55, 49.0, 1.42], look: teressa-swamp, aim: eyes, lens: 50}
+    - {t: 13.6, cam: [40.55, 49.0, 1.42], look: teressa-swamp, aim: eyes, lens: 50, ease: in}   # 「た、助けて」から寄り始める
+    - {t: 16.2, cam: [40.47, 48.98, 1.42], look: teressa-swamp, aim: eyes, lens: 57, ease: linear}
+    - {t: 17.9, cam: [40.4, 48.96, 1.42], look: teressa-swamp, aim: eyes, lens: 62, ease: linear}   # 寄り 50→62mm。＋の側へ少しずつ回り、ベルダの肩を左の端 1/5 に収める
+    shake:
+    - {t: [6.0, 8.35], amp: 0.3}
+    fx:
+    - {kind: fog, t: [-1.0, 8.4], at: teressa-swamp, r: 0.9, h: 0.3, alpha: 0.1, color: [60, 200, 150], n: 5, rise: 0.2, fade: 0.3}   # 沼の瘴気が低く薄く立つ（脅威）
+    - {kind: shock, t: 3.12, at: [44.79, 54.75], r: 0.6, dur: 0.5, color: [70, 215, 170]}   # 沼を叩く
+    - {kind: shock, t: 4.12, at: [44.58, 54.42], r: 0.5, dur: 0.45, color: [70, 215, 170]}   # 滑って手をつく
+    - {kind: shock, t: 6.40, at: [44.35, 53.76], r: 0.45, dur: 0.45, color: [70, 215, 170]}
+    - {kind: shock, t: 6.85, at: [43.97, 53.63], r: 0.45, dur: 0.45, color: [70, 215, 170]}
+    - {kind: shock, t: 7.30, at: [44.02, 53.3], r: 0.45, dur: 0.45, color: [70, 215, 170]}
+    - {kind: shock, t: 7.75, at: [43.64, 53.17], r: 0.45, dur: 0.45, color: [70, 215, 170]}
+    - {kind: shock, t: 8.25, at: [43.69, 52.84], r: 0.45, dur: 0.45, color: [70, 215, 170]}
+    - {kind: shock, t: 12.26, at: [43.92, 53.28], r: 0.5, dur: 0.5, color: [70, 215, 170]}   # 崩れて沼に手をつく
+    ambient: {at: [46.6, 54.6, 1.0], box: [4.0, 5.0, 2.6], n: 34}   # 瘴気の粒をカメラの前から外す（手前を横切る大きな泡を出さない）
+    act: {start: 沼の中で震えるテレッサ, do: （「ひっ、ひぃ！！！い、嫌ですわ！死にたくありませんわーーー！！」）沼を叩いて滑り、ベルダに気づいて這い寄る。ベルダは一瞬前へ出かけて止まる。テレッサは上体を起こし、ベルダへ手を伸ばす（「ベ、ベルダ様……。」）。ベルダは顔を背けて一歩下がる。テレッサの手は空をつかみ、沼に崩れる。もう一度すがり（「た、助けて……」）、腕が震えて下がる。最後の「たす……たす……」で、もう一度ベルダへ手を上げる。ベルダはさらに顔を背ける, end: ベルダへ手を上げたまま、見上げるテレッサ}
+    camera: （2026-11-13 案D）020a（0〜8.75）は、ベルダ↔テレッサの線の＋の側、壁ぎわの真横の低い所から全身。沼で震えるテレッサと奥のメタリカ → 5.8 で気づくのに合わせて左へパンしてベルダを入れる → 叫びで 0.85m 押し込み（30→33mm）揺れる。020b（8.75〜）は、11-08 の肩なめ（1.42m）。テレッサは這う形のまま入り「ベ、」で起き上がる。拒絶（11.5〜12.25）だけ横の低い引きへ切り返し、伸びた手とベルダの間の空きを見せる（桃の惑星はベルダの裾の後ろ）。肩なめへ戻ると被写界深度を入れ、下がるベルダに少し遅れて下がり、50→62mm で寄りながら＋の側へ少し回る（ベルダの肩は左の端）
+    kind: A
+  A30-021:
+    frame: 胸上
+    lighting: council_ruin
+    only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
+    hidden_ok: [teressa, night-train, metallica-giant]
+    hide_props: [moon_council]   # 月は 021 だけ消す（021a の頭の約 0.7 秒、低い所から見上げるテレッサの左の空に大きく出て、手より目立つため。020・022 には映らないので、つながりは変わらない）
+    gaze: {teressa-swamp: berda, berda: teressa-swamp, bisco: metallica}
+    keys:
+      lily:
+      - t: 0.0
+        at: [57.6, 47.0]
+        face: 250
+        pose: cover
+      purple-peel:
+      - t: 0.0
+        at: [57.4, 51.0]
+        face: 300
+        pose: ready
+      rabi:
+      - t: 0.0
+        at: [56.2, 54.8]
+        face: 280
+        pose: lean
+      usamaru:
+      - t: 0.0
+        at: [56.8, 55.6]
+        face: 60
+        pose: hop
+        z: 1.2
+      berda:
+      - {t: 0.0, at: [42.4, 50.4], face: 120, pose: {base: stand, head: [0, 45, 0]}}
+      - {t: 13.4, expr: surprised}   # 切り替えの前に驚きの顔にしておく（021b の最初のコマから）
+      - {t: 13.5, pose: {base: stand, head: [0, 45, 0]}}
+      - {t: 14.3, pose: {base: stand, lean: -2, head: [30, 0, 0]}, blend: 0.75}   # 「……なんということ」の弱い頭で、背けた顔をゆっくり倒れたテレッサ（カメラ）へ向けて見下ろす
+      - {t: 14.45, pose: {base: cover, lean: -6, head: [30, 0, 0], r_arm: [35, 35, -20], r_el: 135, walk: 0.96}, blend: 0.2}   # 声の強い所で右手を口へ（gaze で右へ向いた顔の口の前に手が来る形）。walk 0.96 は止まったままなので足は動かず、話す身ぶり（右腕の上下）だけを止める（手が口の前でちらつかないように）
+      - {t: 15.2, expr: sad}
+      rubens:
+      - t: 0.0
+        at: [43.4, 47.6]
+        face: 60
+        pose: stand
+      bisco:   # 018 の終わりと同じ、手を握って身を乗り出す形（メタリカに夢中）
+      - {t: 0.0, at: [49.0, 58.4], face: '@metallica', pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}}
+      hundred-knight:
+      - t: 0.0
+        at: [50.3, 60.4]
+        face: 350
+        pose: lie
+      nezaria:
+      - t: 0.0
+        at: [45.8, 45.0]
+        face: 60
+        pose: stand
+      teressa-swamp:
+      - {t: 0.0, at: [44.0, 53.8], face: '@berda', pose: {base: kneel, lean: 12, r_arm: [130, 8, 0], r_el: 12, l_arm: [25, 8, 0], l_el: 30, head: [-15, 0, 0]}, expr: sad}
+      - {t: 0.8, pose: {base: kneel, lean: 16, r_arm: [20, 8, 0], r_el: 15, l_arm: [22, 8, 0], l_el: 30, head: [-10, 0, 0]}, blend: 0.8}   # 0.0 から伸ばした右手が力なく落ちる（020 の終わりの同じ形から、動きの途中で切る）
+      - {t: 2.0, pose: {base: kneel, lean: 18, r_arm: [22, 8, 0], r_el: 25, l_arm: [24, 8, 0], l_el: 35, head: [26, 0, 0]}, blend: 0.8}
+      - {t: 2.75, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-8, 0, 0]}, blend: 0.3, expr: surprised}
+      - {t: 3.9, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-6, 15, 0]}, blend: 0.35}
+      - {t: 4.3, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-6, -15, 0]}, blend: 0.4}
+      - {t: 4.7, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-6, 15, 0]}, blend: 0.4}
+      - {t: 5.1, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-6, -15, 0]}, blend: 0.4}
+      - {t: 5.45, pose: {base: kneel, lean: 10, r_arm: [24, 10, 0], r_el: 25, l_arm: [24, 10, 0], l_el: 35, head: [-6, 0, 0]}, blend: 0.35}
+      - {t: 5.7, expr: sad}
+      - {t: 6.4, pose: {base: kneel, lean: 6, r_arm: [80, 8, 0], r_el: 18, l_arm: [24, 10, 0], l_el: 35, head: [-24, 0, 0]}, blend: 0.7}
+      - {t: 7.25, pose: {base: kneel, lean: 6, r_arm: [74, 8, 0], r_el: 22, l_arm: [24, 10, 0], l_el: 35, head: [-22, 0, 0]}, blend: 0.6}
+      - {t: 8.6, pose: {base: kneel, lean: 30, drop: 0.56, r_arm: [35, 10, 0], r_el: 20, l_arm: [30, 10, 0], l_el: 30, head: [-8, 0, 0], osc: {cry: 1.0}}, blend: 1.2, pease: in}
+      - {t: 8.95, expr: tired}
+      - {t: 9.7, pose: {base: kneel, lean: 26, drop: 0.56, r_arm: [35, 10, 0], r_el: 20, l_arm: [30, 10, 0], l_el: 30, head: [-16, 0, 0], osc: {cry: 0.6}}, blend: 0.6}   # 「助けて」で沈んだまま顔だけもう一度ベルダへ上げ、肩を震わせる（手は寄りの画の外になるので上げない）
+      - {t: 11.45, pose: {base: kneel, lean: 36, drop: 0.58, r_arm: [28, 10, 0], r_el: 15, l_arm: [26, 10, 0], l_el: 25, head: [-6, 0, 0], osc: {cry: 0.5}}, blend: 1.0}
+      - {t: 12.2, pose: {base: kneel, lean: 62, drop: 0.62, r_arm: [85, 10, 0], r_el: 8, l_arm: [75, 10, 0], l_el: 12, head: [-20, 0, 0]}, blend: 0.5, pease: in}
+      - {t: 12.75, pose: {base: lie, drop: 0.62, head: [-70, 35, 0]}, face: 300, turn: 1.0, blend: 0.5, pease: out}   # 最後の「…けて」が消えるのと一緒に沼へ沈み、12.75 から動かない
+      metallica:
+      - t: 0.0
+        at: [50.4, 51.2]
+        face: 260
+        pose: proud
+    cam_keys:   # 案A13: 021a（0〜13.0）は低い見上げのまま（高さ 0.35）、見る点をテレッサの目に固定。左の真横（テレッサから方位 250）から前の 3/4（方位 280、1.8 秒まで）へ回り込み（「し、」で顔が見え始める）、その後ゆっくり方位 294 へ回りながら 34→45mm で寄る（2〜9 秒の胸上を少し早めに寄せる）。倒れる頭を追って下を向く。13.5 で 021b（倒れた頭の横の沼すれすれからベルダを見上げる）へ切り替え
+    - {t: 0.0, cam: [42.78, 54.24, 0.35], look: teressa-swamp, aim: eyes, lens: 34, frame: 胸上}
+    - {t: 1.8, cam: [42.592, 53.552, 0.35], look: teressa-swamp, aim: eyes, lens: 37, frame: 胸上}
+    - {t: 5.5, cam: [42.573, 53.336, 0.35], look: teressa-swamp, aim: eyes, lens: 42, frame: 胸上}
+    - {t: 8.9, cam: [42.563, 53.219, 0.35], look: teressa-swamp, aim: eyes, lens: 44, frame: 寄り}
+    - {t: 11.8, cam: [42.538, 53.149, 0.35], look: teressa-swamp, aim: eyes, lens: 45, frame: 寄り}
+    - {t: 13.45, cam: [42.45, 53.236, 0.3], look: teressa-swamp, aim: eyes, lens: 45, frame: 寄り}
+    - {t: 13.5, cam: [43.1, 53.9, 0.18], look: [41.97, 50.55], look_h: 1.2, lens: 55, roll: -5, frame: 胸上, ease: step}   # 021b: 倒れた頭の横の沼すれすれ（0.18m）から見上げる。わずかに傾けて、倒れた目から見ていると分かるように。ベルダは画の中央やや右、惑星と月は画の外
+    - {t: 14.4, cam: [43.1, 53.9, 0.18], look: [41.97, 50.55], look_h: 1.2, lens: 55, roll: -5, frame: 胸上}
+    - {t: 16.9, cam: [43.1, 53.9, 0.18], look: [42.05, 50.5], look_h: 1.3, lens: 64, roll: -5, frame: 胸上}   # 口を押さえてから、その顔へゆっくり寄って止まる（55→64mm）
+    ambient: {at: [49.5, 52.0, 3.2], box: [6.0, 8.0, 4.0]}   # 瘴気の泡はテレッサの奥（東）2.5m より先だけに置く。021b（ベルダを見上げる）の画には入らない
+    fx:
+    - {kind: shock, t: 12.35, at: [43.3, 53.42, 0.0], r: 0.75, dur: 0.9, color: [90, 230, 170]}
     act: {start: テレッサの手が力なく落ちる, do: （「し、死に……。い、いやです……ベルダ様……た、助けて……助けて……」）沼に倒れて動かなくなる。ベルダが見下ろす（「……なんということ……！」）, end: 倒れたテレッサ}
-    camera: テレッサの顔の高さの低い所から。最後にベルダを見上げる
+    camera: （2026-11-13 組み直し 案A13）テレッサの顔より低い所（0.35m）から見上げたまま、左の真横から前の 3/4 へ回り込み、目に見る点を固定して寄る（倒れて止まるまで画から外さず、止まった顔を約 0.75 秒見せる）。13.5 で切り替え、倒れた頭の横の沼すれすれ（0.18m）からわずかに傾けた画で、顔を向けて口を押さえるベルダを見上げ、口を押さえてからゆっくり寄る
     kind: M
   A30-022:
     axis: 沼の魅力 メタリカ↔テレッサ（沼）
@@ -1756,6 +1866,7 @@ cuts:
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
     hidden_ok: [teressa, night-train, metallica-giant]
+    gaze: {berda: teressa-swamp, bisco: metallica}   # ベルダは 021 の終わりのまま、倒れたテレッサを見下ろす
     keys:
       lily:
       - t: 0.0
@@ -1779,20 +1890,14 @@ cuts:
         pose: hop
         z: 1.2
       berda:
-      - t: 0.0
-        at: [42.4, 50.4]
-        face: 120
-        pose: cover
+      - {t: 0.0, at: [42.4, 50.4], face: 120, pose: {base: cover, lean: -6, head: [30, 0, 0], r_arm: [35, 35, -20], r_el: 135, walk: 0.96}, expr: sad}   # 021 の終わりと同じ口を押さえる形（つながりの確認 2026-11-13）
       rubens:
       - t: 0.0
         at: [43.4, 47.6]
         face: 60
         pose: stand
-      bisco:
-      - t: 0.0
-        at: [49.0, 58.4]
-        face: '@metallica'
-        pose: lean
+      bisco:   # 018 の終わりと同じ、手を握って身を乗り出す形（メタリカに夢中）
+      - {t: 0.0, at: [49.0, 58.4], face: '@metallica', pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}}
       hundred-knight:
       - t: 0.0
         at: [50.3, 60.4]
@@ -1804,35 +1909,45 @@ cuts:
         face: 60
         pose: stand
       teressa-swamp:
-      - t: 0.0
-        at: [44.0, 53.8]
-        face: 300
-        pose: lie
-      metallica:
-      - t: 0.0
-        at: [50.4, 51.2]
-        face: 260
-        pose: proud
-      - {t: 0.3, pose: walk, face: 240}
-      - t: 8.38
-        at: [48.6, 50.6]
-        pose: walk
-        ease: out
-      - {t: 8.73, pose: arms_up}
-    cam_keys:
-    - t: 0.0
-      cam: [52.0, 41.4, 5.2]
-      look: metallica
-      look_h: 0.8
-      lens: 26
-      frame: 全身
-    - t: 14.6
-      cam: [50.4, 42.4, 4.8]
-      look: metallica
-      look_h: 0.8
-      lens: 28
-    act: {start: 沼の上を歩くメタリカ, do: （「キヒヒヒ！どいつもこいつもみっともなく取り乱しやがって！」「いい眺めじゃないか！キヒヒヒヒ！！！」）, end: 両手を広げるメタリカ}
-    camera: 破れた壁の上の高い所から見下ろし、歩くメタリカを追う
+      - {t: 0.0, at: [44.0, 53.8], face: 300, pose: {base: lie, drop: 0.62, head: [-70, 35, 0]}}
+      metallica:   # 0〜0.3 胸を張って立つ → 0.3〜3.4 胸を張った大股で (50.4,51.2) から (48.6,50.6) へ（約 0.6m/s）→ 笑い（2.8〜4.3）で肩を揺らし、3.4 で止まってのけぞる
+      - {t: 0.0, at: [50.4, 51.2], face: 260, pose: proud, expr: grin}
+      - {t: 0.3, pose: proud}
+      - {t: 0.75, at: [50.243, 51.148], face: 284, pose: {base: walk, run: 0.3, lean: -7, head: [-12, 0, 0]}, blend: 0.45, ease: in}
+      - {t: 2.8, at: [48.809, 50.67], face: 288, pose: {base: walk, run: 0.3, lean: -7, head: [-14, 0, 0], osc: {cough: 0.7, shake: 0.12}}, blend: 0.3, ease: linear}
+      - {t: 3.4, at: [48.6, 50.6], face: 286, pose: {base: walk, run: 0.3, lean: -9, head: [-16, 0, 0], osc: {cough: 0.8, shake: 0.12}}, blend: 0.2, ease: out}
+      - {t: 3.75, face: 284, pose: {base: proud, lean: -16, head: [-22, 0, 0], osc: {cough: 1.0, shake: 0.15}}, blend: 0.35}
+      - {t: 4.3, pose: {base: proud, lean: -13, head: [-18, 0, 0], osc: {cough: 0.7, shake: 0.1}}, blend: 0.3}
+      # 「どいつもこいつも」(4.55〜6.0): あごを上げ、カメラ側の北西の魔女（リューベンス 約 300 → ネザリア 約 333）を見下すように見回し、ネザリアで止める（2026-11-13: 前の案はだれもいない北＝カメラを見ていたので、見る相手のいる向きにした。顔は 3/4 でクレーンの画に入る）
+      - {t: 4.95, face: 305, turn: 0.45, pose: {base: gesture, lean: -4, head: [-18, 0, 0]}, blend: 0.4}
+      - {t: 5.4, face: 318, pose: {base: gesture, lean: -4, head: [-18, 0, 0]}, blend: 0.4}
+      - {t: 5.75, face: 335, pose: {base: gesture, lean: -6, head: [-22, 0, 0]}, blend: 0.35}
+      - {t: 6.0, face: 336, pose: {base: gesture, lean: -6, head: [-22, 0, 0]}}
+      - {t: 6.5, face: 238, turn: 0.5, pose: {base: look_down, lean: 20, head: [22, 0, 0], r_arm: [-15, 38, 0], l_arm: [-15, 38, 0], r_el: 105, l_el: 105}, blend: 0.55}
+      - {t: 7.7, pose: {base: look_down, lean: 22, head: [24, 0, 0], r_arm: [-15, 38, 0], l_arm: [-15, 38, 0], r_el: 105, l_el: 105}, blend: 0.3}
+      # 8.0〜8.33 小さく沈む溜め → 8.43 両腕を横へ大きく広げる（「いい眺めじゃないか！」）
+      - {t: 8.33, face: 235, pose: {base: stand, drop: 0.1, lean: 10, head: [10, 0, 0], r_arm: [15, 25, 15], l_arm: [15, 25, 15], r_el: 50, l_el: 50}, blend: 0.33}
+      - {t: 8.75, pose: {base: stand, lean: -8, head: [-10, 0, 0], r_arm: [10, 112, 0], l_arm: [10, 112, 0], r_el: 10, l_el: 10}, blend: 0.32, pease: out}
+      - {t: 9.9, pose: {base: stand, lean: -9, head: [-10, 0, 0], r_arm: [10, 114, 0], l_arm: [10, 114, 0], r_el: 12, l_el: 12}, blend: 0.3}
+      # 大笑い (9.9〜13.0): のけぞって揺れる → 13.0〜13.7 広げた腕のまま笑いの余韻で揺れ、023 へ渡す
+      - {t: 10.3, pose: {base: stand, lean: -15, head: [-12, 0, 0], r_arm: [10, 115, 0], l_arm: [10, 115, 0], r_el: 15, l_el: 15, osc: {cough: 1.0, shake: 0.15}}, blend: 0.4}
+      - {t: 13.0, pose: {base: stand, lean: -15, head: [-12, 0, 0], r_arm: [10, 115, 0], l_arm: [10, 115, 0], r_el: 15, l_el: 15, osc: {cough: 0.6, shake: 0.08}}, blend: 0.3}
+      - {t: 13.35, pose: {base: stand, lean: -15, head: [-12, 0, 0], r_arm: [10, 115, 0], l_arm: [10, 115, 0], r_el: 15, l_el: 15, osc: {cough: 0.3, shake: 0.05}}, blend: 0.35}   # 笑いの余韻で肩が揺れたまま 023 へ切る（境目で固まらない）
+    cam_keys:   # 案E: 回り込みながら下りる1本のクレーン。北西の高い所（6.2m・28mm）の神の目の引き（メタリカは左、テレッサ・ビスコ・百騎兵は中ほどから右、ベルダは右の端、惑星は右下の端）から、歩くメタリカのまわりを北へ回りながら下りて寄る。「どいつもこいつも」でネザリアを見下す 3/4 の顔を見て、向き直る彼女の右を回り、8.43 で右肩の後ろ（2.55m・30mm）に着く。大笑いの間はゆっくり後ろへ引いて少し上がる
+    - {t: 0, cam: [44.49, 44.51, 6.20], look: [47.00, 53.00], look_h: 0.00, lens: 28.0, frame: 引き}
+    - {t: 1.7, cam: [45.48, 44.50, 5.81], look: [47.21, 52.83], look_h: 0.13, lens: 28.2, ease: in}
+    - {t: 3.4, cam: [47.57, 45.02, 4.90], look: [47.71, 52.43], look_h: 0.43, lens: 28.7, ease: linear}
+    - {t: 5.1, cam: [49.28, 46.38, 3.81], look: [47.75, 52.91], look_h: 0.49, lens: 29.3, ease: linear}
+    - {t: 6.8, cam: [49.94, 47.79, 2.91], look: [47.36, 54.05], look_h: 0.32, lens: 29.8, ease: linear}
+    - {t: 8.43, cam: [50.00, 48.35, 2.55], look: [47.20, 54.50], look_h: 0.25, lens: 30.0, frame: 膝上, ease: out}
+    - {t: 9.9, cam: [50.02, 48.41, 2.52], look: [47.16, 54.5], look_h: 0.25, lens: 30.8}
+    # 大笑い (9.9〜13.7): ゆっくり後ろへ引きながら少し上がる（約1.2m・0.6m）。笑いが倒れた魔女たちの部屋に広がる「いい眺め」を見せ、帽子が画の真ん中を占め続けないようにする（2026-11-13 判定の勧め (a)）
+    - {t: 13.7, cam: [50.55, 47.32, 3.1], look: [47.15, 54.5], look_h: 0.2, lens: 30, frame: 全身, ease: inout}
+    ambient: {at: [46.5, 55.5, 2.2], box: [10.0, 7.0, 3.5]}   # 瘴気の泡はメタリカより南（テレッサ・ビスコの奥）だけに置く。下りるカメラの前を泡が横切らない
+    fx:
+    - {kind: shock, t: 8.43, at: [48.6, 50.6], r: 2.6, dur: 0.6, color: [90, 230, 170]}
+    act: {start: 倒れた者たちの間を胸を張って歩くメタリカ, do: （「キヒヒヒ！どいつもこいつもみっともなく取り乱しやがって！」「いい眺めじゃないか！キヒヒヒヒ！！！」）笑いながら歩いて止まり、北西の魔女たちを見下して見回し、倒れたテレッサをのぞき込む。小さく沈んでから両腕を横へ大きく広げ、のけぞって大笑い, end: 両腕を横へ広げてのけぞるメタリカ（肩越しに倒れたテレッサ）}
+    camera: （2026-11-13 組み直し 案E）北西の高い所（6.2m）の神の目の引きから、歩くメタリカのまわりを北へ回り込みながら下りて寄る1本のクレーン。「どいつもこいつも」でネザリアを見下す 3/4 の顔を見て、向き直る彼女の右を回り、「いい眺めじゃないか！」(8.43) の頭で右肩の後ろ（2.55m）に着き、肩越しに倒れたテレッサと奥のビスコ・百騎兵を見下ろす。大笑いの間はゆっくり後ろへ引いて少し上がり、部屋を見せる
     kind: M
   A30-023:
     axis: 沼の魅力 メタリカ↔テレッサ（沼）
@@ -1840,6 +1955,7 @@ cuts:
     lighting: council_ruin
     only: [lily, purple-peel, rabi, usamaru, berda, rubens, bisco, hundred-knight, nezaria, teressa-swamp, metallica]
     hidden_ok: [teressa, night-train, metallica-giant]
+    gaze: {berda: teressa-swamp, bisco: metallica}   # 画の外でも 022 とそろえる
     keys:
       lily:
       - t: 0.0
@@ -1863,20 +1979,14 @@ cuts:
         pose: hop
         z: 1.2
       berda:
-      - t: 0.0
-        at: [42.4, 50.4]
-        face: 120
-        pose: cover
+      - {t: 0.0, at: [42.4, 50.4], face: 120, pose: {base: cover, lean: -6, head: [30, 0, 0], r_arm: [35, 35, -20], r_el: 135, walk: 0.96}, expr: sad}
       rubens:
       - t: 0.0
         at: [43.4, 47.6]
         face: 60
         pose: stand
-      bisco:
-      - t: 0.0
-        at: [49.0, 58.4]
-        face: '@metallica'
-        pose: lean
+      bisco:   # 018 の終わりと同じ、手を握って身を乗り出す形（メタリカに夢中）
+      - {t: 0.0, at: [49.0, 58.4], face: '@metallica', pose: {base: stand, lean: 15, head: [-20, 0, 9], r_arm: [55, 0, 25], l_arm: [60, 0, 25], r_el: 83, l_el: 93, r_ft: [0, 0.32, 0], l_ft: [0, -0.06, 0]}}
       hundred-knight:
       - t: 0.0
         at: [50.3, 60.4]
@@ -1893,18 +2003,56 @@ cuts:
         face: 300
         pose: lie
       metallica:
-      - t: 0.0
-        at: [48.6, 50.6]
-        face: 270
-        pose: arms_up
-      - {t: 0.3, pose: point, face: 60}
-      - {t: 3.4, face: 250}
-      - {t: 8.1, pose: proud, face: 210}
+      # 頭: 022 の終わり（13.35 のキー）と同じ「両腕を横へ広げてのけぞる」形（キヒヒの笑いの続き）。head は 022 と同じ -12
+      - {t: 0.0, at: [48.6, 50.6], face: 235, pose: {base: stand, lean: -15, head: [-12, 0, 0], r_arm: [10, 115, 0], l_arm: [10, 115, 0], r_el: 15, l_el: 15}, expr: grin}
+      - {t: 0.3, pose: {base: stand, lean: -18, head: [-15, 0, 0], r_arm: [8, 128, -10], l_arm: [10, 116, 0], r_el: 22, l_el: 15}, blend: 0.3, pease: out}   # 振り下ろしの溜め（右腕を少し上・後ろへ引く）。境目で固まらず 0.0 から動き出す（つながりの確認 2026-11-13）
+      # 0.3〜1.0: 右腕を振り下ろしてネザリア（約333）を指す。体は 0.5 秒でカメラの側へ回す。にらむ
+      # walk: 0.96 は足を動かさない（止まっている人物は立ち姿のまま）。台詞の音節ごとに右腕を上下させる「話す身ぶり」（previs_face.gesture）を止めるため。
+      # 腕の動きはすべてキーで決めてあるので、指した腕・開いた腕が音節ごとに 1 コマ落ちて戻るのを防ぐ
+      - {t: 1.0, face: 312, turn: 0.5, pose: {base: point, walk: 0.96, lean: 8, twist: -8, head: [-4, -6, 0], r_arm: [94, 0, -16], r_el: 0, l_arm: [8, 20, 0], l_el: 20}, blend: 0.6, expr: angry}
+      # 句1「ワタシを騙してくれた礼だ！」(1.1〜3.1): 指を突きつけたまま、約2.1 の切れ目で体をリューベンス（約300）へ。「礼だ！」で前へ突き出す。腕はレンズから外し（画面の左）、顔の前を通さない
+      - {t: 1.85, pose: {base: point, walk: 0.96, lean: 10, twist: -8, head: [-2, -6, 0], r_arm: [97, 0, -16], r_el: 0, l_arm: [8, 20, 0], l_el: 20}, blend: 0.5}
+      - {t: 2.35, face: 300, turn: 0.35, pose: {base: point, walk: 0.96, lean: 7, twist: -6, head: [-8, 4, 0], r_arm: [92, 0, -8], r_el: 12, l_arm: [8, 22, 0], l_el: 20}, blend: 0.35}
+      - {t: 2.75, pose: {base: point, walk: 0.96, lean: 15, twist: -9, head: [-3, 4, 0], r_arm: [94, 0, -8], r_el: 0, l_arm: [8, 26, 0], l_el: 25}, blend: 0.18, pease: in}
+      - {t: 3.1, pose: {base: point, walk: 0.96, lean: 14, twist: -9, head: [-3, 4, 0], r_arm: [95, 0, -8], r_el: 0, l_arm: [8, 26, 0], l_el: 25}, blend: 0.3}
+      # 無音 (3.15〜3.65): 指を下ろし、両腕を開いて手のひらを返す（沼を見せびらかす）。ベルダ（約272）へ
+      - {t: 3.65, face: 274, turn: 0.45, pose: {base: stand, walk: 0.96, lean: -6, head: [-8, 0, 0], r_arm: [42, 48, -28], l_arm: [42, 48, -28], r_el: 35, l_el: 35}, blend: 0.45, expr: grin}
+      # 句2「存分に／沼の魅力を味わうがいい！」(3.7〜5.95): 開いた両手のひらで足もとの沼をゆっくり払うように、手を下へ・外へ広げ（3.65〜4.85）、倒れたテレッサ（約235）へ体を回して見下ろす
+      - {t: 4.85, pose: {base: stand, walk: 0.96, lean: 6, head: [4, 0, 0], r_arm: [24, 52, -12], l_arm: [24, 52, -12], r_el: 18, l_el: 18}, blend: 1.05}
+      - {t: 5.45, face: 240, turn: 0.55, pose: {base: stand, walk: 0.96, lean: 12, head: [8, 0, 0], r_arm: [22, 42, -10], l_arm: [62, 42, -22], r_el: 25, l_el: 18}, blend: 0.55}
+      - {t: 5.95, pose: {base: stand, walk: 0.96, lean: 13, head: [9, 0, 0], r_arm: [22, 44, -10], l_arm: [64, 44, -22], r_el: 25, l_el: 18}, blend: 0.4}
+      # 無音 (5.95〜6.3): 腕を引いて小さく沈む（予備動作）
+      - {t: 6.3, pose: {base: stand, walk: 0.96, drop: 0.1, lean: 16, head: [4, 0, 0], r_arm: [8, 26, 12], l_arm: [8, 26, 12], r_el: 80, l_el: 80}, blend: 0.33, expr: shout}
+      # 「死ぬほど」(6.3〜7.2): カメラ（約287）へ向き直り、前のめりに凄む
+      - {t: 6.8, face: 287, turn: 0.45, pose: {base: stand, walk: 0.96, drop: 0.08, lean: 18, head: [-4, 0, 0], r_arm: [10, 28, 12], l_arm: [10, 28, 12], r_el: 85, l_el: 85}, blend: 0.45}
+      - {t: 7.3, pose: {base: stand, walk: 0.96, drop: 0.1, lean: 19, head: [-6, 0, 0], r_arm: [8, 28, 12], l_arm: [8, 28, 12], r_el: 88, l_el: 88}, blend: 0.4}
+      # 「もってきたからな！！」(7.3〜8.15): 両腕を振り上げて V に広げる（決めは台詞の上）。叫ぶ間は顔をカメラへ向けたまま（あごは少しだけ上げる）
+      - {t: 7.68, pose: {base: stand, walk: 0.96, lean: -9, head: [-12, 0, 0], r_arm: [14, 126, 0], l_arm: [14, 126, 0], r_el: 10, l_el: 10}, blend: 0.36, pease: out}
+      - {t: 8.15, pose: {base: stand, walk: 0.96, lean: -10, head: [-13, 0, 0], r_arm: [14, 127, 0], l_arm: [14, 127, 0], r_el: 10, l_el: 10}, blend: 0.4}
+      # 8.2〜: 叫び終えて得意顔（grin）。あごを上げてのけぞり → あごを少し下ろし、低いカメラ（巻き込まれた魔女たちの目の高さ）を見下ろして止める。V の両拳は画の中に収める
+      - {t: 8.2, expr: grin}
+      - {t: 8.6, pose: {base: stand, lean: -12, head: [-20, 0, 0], r_arm: [14, 127, 0], l_arm: [14, 127, 0], r_el: 12, l_el: 12}, blend: 0.4}
+      - {t: 9.3, pose: {base: stand, lean: -9, head: [-8, 0, 0], r_arm: [14, 123, 0], l_arm: [14, 123, 0], r_el: 16, l_el: 16}, blend: 0.7}
     cam_keys:
-    - {t: 0.0, cam: [45.72, 49.74, 0.6], look: metallica, look_h: 1.6, lens: 30, frame: 膝上}
-    - {t: 8.7, cam: [45.77, 50.19, 0.6], look: metallica, look_h: 1.7, lens: 34}
-    act: {start: メタリカが魔女たちを指さして回る, do: （「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」）, end: 得意顔のメタリカ}
-    camera: 'メタリカの正面（南）の低い所から、あおる（2026-11-08 軸「沼の魅力 メタリカ↔テレッサ（沼）」の側へ: 鏡写し・ごまかし 30度。D-077 案）'
+    # 沼の面に近い低い所（0.45m・26mm・全身）。足もとの碧の沼と、その向こうのパープルピール・ラビィとウサ丸（リリーは画面の左の端の瓦礫の陰）
+    - {t: 0.0, cam: [45.7, 49.82, 0.45], look: metallica, look_h: 0.95, lens: 26, frame: 全身}
+    - {t: 3.6, cam: [45.72, 49.825, 0.45], look: metallica, look_h: 0.95, lens: 26}
+    # 句2 (3.6〜5.95): ごく遅い寄り（約0.2m）。6.0 からの押し込みへつなぐ
+    - {t: 5.95, cam: [45.92, 49.875, 0.455], look: metallica, look_h: 1.0, lens: 27.2}
+    # 6.0〜8.2: 台車で押し込み（始めから合わせて約0.75m）、35mm の低い寄りへ（宣言した軸の側のまま）。振り上げた V の両拳が画の中に収まる所で止める
+    - {t: 8.2, cam: [46.42, 50.01, 0.6], look: metallica, look_h: 1.12, lens: 35, frame: 腰上, ease: inout}
+    - {t: 9.3, cam: [46.47, 50.02, 0.6], look: metallica, look_h: 1.12, lens: 35}
+    shake: [{t: [7.25, 8.1], amp: 0.7}]
+    # 「もってきたからな！！」で、メタリカの後ろ（画面の左、パープルピールの左）の沼から碧の噴き上げ（016 と同じ mist）。ラビィの前はふさがない。
+    # 終わりをカットの外（11.5）に置くのは、mist の強さが範囲の 1/3 で最大になり、半ばで跳ねるため（9.3 で範囲のちょうど半ば）
+    # 2本の mist を半段ずらして重ね、球の間を埋めて切れ目のない柱にする（1本の h 4.2・r 0.6 では、離れた球を積んだ形に見えた）
+    fx:
+    - {kind: mist, t: [7.1, 11.5], at: [52.0, 49.65], r: 0.6, h: 3.6, color: [40, 190, 140], alpha: 0.4}
+    - {kind: mist, t: [7.15, 11.5], at: [52.05, 49.6], r: 0.5, h: 3.1, z: 0.35, color: [40, 190, 140], alpha: 0.4}
+    # 瘴気の泡はメタリカより後ろ（東の魔女たちの側）だけに。カメラと顔の間を通さない
+    ambient: {at: [54.2, 51.2, 1.6], box: [8.5, 10.0, 4.0]}
+    act: {start: 腕を広げたメタリカが、議会の魔女たちを順に指さす, do: （「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」）, end: 両腕を広げて得意顔のメタリカ}
+    camera: メタリカの西の沼の面に近い低い所（0.45m、宣言した軸の側）から全身をあおり、背景にパープルピール・ラビィとウサ丸。句2 でごく遅く寄り、「死ぬほど」から台車で押し込み、決めの「もってきたからな！！」で低い寄り（揺れ）
     kind: M
   A30-024:
     frame: 膝上

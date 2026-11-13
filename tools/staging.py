@@ -454,10 +454,16 @@ class Stage:
     def checks(self):
         res = {"axis": [], "jumps": [], "overlap": [], "offscreen": [], "hidden": []}
         for ax in self.bk.get("axes", []):
-            i0, i1 = self.order.index(ax["cuts"][0]), self.order.index(ax["cuts"][1])
-            for cut in self.order[i0:i1 + 1]:
+            # 範囲（cuts: [始め, 終わり]）か、カットの axis: <名前> で効く（tools/framing.py の declared_axis と同じ。A30 は cuts のない書き方）
+            span = []
+            if ax.get("cuts"):
+                i0, i1 = self.order.index(ax["cuts"][0]), self.order.index(ax["cuts"][1])
+                span = self.order[i0:i1 + 1]
+            for cut in self.order:
                 c = self.bk["cuts"][cut]
-                if c.get("axis_free") or c.get("insert"):
+                if cut not in span and c.get("axis") != ax["name"]:
+                    continue
+                if c.get("axis_free") or c.get("insert") or c.get("axis") in ("free", "insert") or (c.get("axis") and c["axis"] != ax["name"]):
                     continue
                 pos = self.states[cut]["start"][0]
                 a, b = pos.get(ax["a"]), pos.get(ax["b"])

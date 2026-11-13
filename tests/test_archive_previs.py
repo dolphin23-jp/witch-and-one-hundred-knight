@@ -76,3 +76,22 @@ def test_purge_not_blocked_by_pending_outside_git(tmp_path, monkeypatch):
     archive.cmd_plan(argparse.Namespace(list=str(tmp_path / "list3.txt")))
     with pytest.raises(SystemExit):
         archive.cmd_purge(argparse.Namespace())
+
+
+def test_plan_rerendered_keeps_previous_drive_version(tmp_path, monkeypatch):
+    """上げた後に描き直したものは、--rerendered TAG で新しい版を <フォルダ>/TAG/ へ（Drive の前の版は上書きしない。2026-11-13）。
+    TAG なしでは変えない。"""
+    mp4, lst = _setup(tmp_path, monkeypatch)
+    archive.cmd_plan(argparse.Namespace(list=str(lst)))
+    m = archive.load()
+    m["files"][0].update(state="uploaded", id="OLDID")
+    archive.save(m)
+    old = dict(archive.load()["files"][0])
+    mp4.write_bytes(b"new version")
+    archive.cmd_plan(argparse.Namespace(list=str(lst), rerendered=None))
+    assert archive.load()["files"][0] == old
+    archive.cmd_plan(argparse.Namespace(list=str(lst), rerendered="2026-11-13"))
+    f = archive.load()["files"][0]
+    assert f["state"] == "pending" and f["id"] is None and f["bytes"] == len(b"new version")
+    assert f["drive"] == "一時退避（生成物）/previs/A99/2026-11-13/A99-001.mp4"
+    assert f["prev"] == {"drive": old["drive"], "id": "OLDID", "bytes": old["bytes"], "sha256": old["sha256"]}

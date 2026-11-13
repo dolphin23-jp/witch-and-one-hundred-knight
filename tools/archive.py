@@ -5,6 +5,7 @@
 「一時退避（生成物）」。元のパスのまま置く。ユーザーが後で別の場所へ移してよい（その場合は manifest の drive 欄を直す）。
 
   python tools/archive.py plan LIST.txt            # 退避するファイルの一覧（1行1パス）から archive/drive_manifest.yaml を作る
+  python tools/archive.py plan LIST.txt --rerendered 2026-11-13   # 上げた後に描き直したものは、前の版を Drive に残したまま <フォルダ>/2026-11-13/ へ
   python tools/archive.py upload [--limit N] [--shard K/N] [--via-bridge]   # manifest の未送信分を上げる（md5 を確かめる。途中から再開できる）
   python tools/archive.py verify                   # manifest の全件が Drive にあり、サイズが合うかを確かめる
   python tools/archive.py purge                    # 送信と確認が済んだものだけ git rm（作業ツリーから外す）
@@ -67,6 +68,17 @@ def cmd_plan(args):
             f = next(f for f in m["files"] if f["path"] == p)
             if f["state"] == "pending" and src.exists() and sha256(src) != f["sha256"]:
                 f["bytes"], f["sha256"] = src.stat().st_size, sha256(src)
+                refreshed += 1
+            elif f["state"] == "uploaded" and src.exists() and sha256(src) != f["sha256"]:
+                tag = getattr(args, "rerendered", None)
+                if not tag:
+                    print(f"上げた後に描き直されています（--rerendered TAG で新しい版を別のフォルダへ）: {p}")
+                    continue
+                # 上げた後に描き直したもの（2026-11-13）: Drive の前の版はそのまま残し（上書きしない）、新しい版を <元のフォルダ>/<TAG>/ へ上げる。
+                # manifest は新しい版を指し、前の版は prev に残す（restore は新しい版を戻す）
+                d = pathlib.PurePosixPath(f["drive"])
+                f["prev"] = {"drive": f["drive"], "id": f["id"], "bytes": f["bytes"], "sha256": f["sha256"]}
+                f.update(bytes=src.stat().st_size, sha256=sha256(src), drive=str(d.parent / tag / d.name), id=None, state="pending")
                 refreshed += 1
             continue
         m["files"].append({"path": p, "bytes": src.stat().st_size, "sha256": sha256(src),
@@ -193,7 +205,9 @@ def cmd_restore(args):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    p = sub.add_parser("plan"); p.add_argument("list"); p.set_defaults(fn=cmd_plan)
+    p = sub.add_parser("plan"); p.add_argument("list")
+    p.add_argument("--rerendered", metavar="TAG", help="上げた後に描き直したファイルを、Drive の前の版を残したまま <元のフォルダ>/<TAG>/ へ新しく上げる（例 2026-11-13）")
+    p.set_defaults(fn=cmd_plan)
     p = sub.add_parser("upload"); p.add_argument("--limit", type=int)
     p.add_argument("--via-bridge", action="store_true", help="www.googleapis.com へ直接送らず、受け口（script.google.com）だけを通す")
     p.add_argument("--shard", help="K/N（N 個のプロセスで分けて上げるときの K 番目。0 始まり）")
