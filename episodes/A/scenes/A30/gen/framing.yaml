@@ -1,5 +1,5 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-08'
+made: '2026-11-13'
 cuts:
   A30-001:
     sec: 4.9
@@ -31908,6 +31908,10 @@ cuts:
   A30-017:
     sec: 10.6
     shot: メタリカ・手弁当で来てやった
+    input_hash: 997dcecfc2603fe3312dcb532a4fdb8ce69ff43db5c4dacab43eaee43fffbc91
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-13T08:43:03+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -31935,7 +31939,15 @@ cuts:
           wy: 47.33
           fa: 12
           fh: 280
+          fay: 12
+          fap: 4
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: -0.111
           y: 0.41
@@ -31951,7 +31963,15 @@ cuts:
           wy: 50.89
           fa: 13
           fh: 300
+          fay: 13
+          fap: 3
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.356
           y: 0.384
@@ -31967,7 +31987,15 @@ cuts:
           wy: 54.76
           fa: 30
           fh: 280
+          fay: 28
+          fap: 11
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -7.969
           y: -0.307
@@ -31983,6 +32011,10 @@ cuts:
           wy: 50.61
           fa: 107
           fh: 160
+          fay: 107
+          fap: -2
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.669
@@ -31999,6 +32031,10 @@ cuts:
           wy: 47.59
           fa: 30
           fh: 60
+          fay: 30
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.272
@@ -32015,7 +32051,15 @@ cuts:
           wy: 58.4
           fa: 22
           fh: 10
+          fay: 22
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.168
           y: 0.192
@@ -32031,7 +32075,14 @@ cuts:
           wy: 60.19
           fa: 60
           fh: 350
+          fay: 5
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.015
           y: 0.275
@@ -32047,23 +32098,35 @@ cuts:
           wy: 45.01
           fa: 99
           fh: 60
+          fay: 99
+          fap: -4
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 2.265
-          y: 0.236
-          z: 4.24
-          frac: 0.085
-          top: 0.278
+          x: 2.283
+          y: 0.248
+          z: 4.22
+          frac: 0.111
+          top: 0.303
           fy: -0.295
           in: false
-          occ: tswamp_brim
-          hz: 1.01
+          occ: tswamp_s18_brim
+          hz: 1.04
           bz: 0.0
-          wx: 45.28
-          wy: 55.15
-          fa: 77
+          wx: 45.24
+          wy: 55.16
+          fa: 71
           fh: 80
+          fay: 68
+          fap: 25
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.485
           y: 0.445
@@ -32079,7 +32142,15 @@ cuts:
           wy: 51.11
           fa: 134
           fh: 180
+          fay: 134
+          fap: -13
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 0.75
       t: 0.75
       look: metallica
@@ -32106,7 +32177,15 @@ cuts:
           wy: 47.32
           fa: 17
           fh: 251
+          fay: 17
+          fap: 0
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: -0.108
           y: 0.408
@@ -32122,7 +32201,15 @@ cuts:
           wy: 50.87
           fa: 10
           fh: 277
+          fay: 10
+          fap: 1
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.364
           y: 0.381
@@ -32138,7 +32225,15 @@ cuts:
           wy: 54.76
           fa: 17
           fh: 296
+          fay: 11
+          fap: 12
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -7.228
           y: -0.254
@@ -32154,6 +32249,10 @@ cuts:
           wy: 50.62
           fa: 58
           fh: 111
+          fay: 58
+          fap: -2
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.616
@@ -32170,6 +32269,10 @@ cuts:
           wy: 47.59
           fa: 12
           fh: 103
+          fay: 12
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.283
@@ -32186,7 +32289,15 @@ cuts:
           wy: 58.38
           fa: 22
           fh: 11
+          fay: 22
+          fap: 1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.181
           y: 0.188
@@ -32202,7 +32313,14 @@ cuts:
           wy: 60.19
           fa: 61
           fh: 1
+          fay: 17
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.05
           y: 0.275
@@ -32218,23 +32336,35 @@ cuts:
           wy: 45.0
           fa: 47
           fh: 113
+          fay: 47
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 2.287
-          y: 0.222
-          z: 4.16
-          frac: 0.077
-          top: 0.26
+          x: 2.303
+          y: 0.239
+          z: 4.15
+          frac: 0.111
+          top: 0.294
           fy: -0.31
           in: false
-          occ: tswamp_brim
-          hz: 0.99
+          occ: null
+          hz: 1.03
           bz: 0.0
-          wx: 45.31
-          wy: 55.13
-          fa: 64
-          fh: 52
+          wx: 45.27
+          wy: 55.15
+          fa: 52
+          fh: 58
+          fay: 47
+          fap: 26
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.494
           y: 0.442
@@ -32250,7 +32380,15 @@ cuts:
           wy: 51.25
           fa: 23
           fh: 298
+          fay: 16
+          fap: -17
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: metallica
@@ -32277,7 +32415,15 @@ cuts:
           wy: 47.32
           fa: 27
           fh: 241
+          fay: 26
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: -0.091
           y: 0.406
@@ -32293,7 +32439,15 @@ cuts:
           wy: 50.87
           fa: 17
           fh: 269
+          fay: 17
+          fap: 0
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.38
           y: 0.379
@@ -32309,7 +32463,15 @@ cuts:
           wy: 54.76
           fa: 13
           fh: 302
+          fay: 5
+          fap: 12
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -5.422
           y: -0.124
@@ -32325,6 +32487,10 @@ cuts:
           wy: 50.61
           fa: 40
           fh: 95
+          fay: 40
+          fap: -2
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.483
@@ -32341,6 +32507,10 @@ cuts:
           wy: 47.6
           fa: 24
           fh: 117
+          fay: 24
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.317
@@ -32357,7 +32527,15 @@ cuts:
           wy: 58.39
           fa: 23
           fh: 11
+          fay: 23
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.214
           y: 0.182
@@ -32373,7 +32551,14 @@ cuts:
           wy: 60.19
           fa: 61
           fh: 5
+          fay: 21
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.136
           y: 0.274
@@ -32389,23 +32574,35 @@ cuts:
           wy: 44.99
           fa: 32
           fh: 130
+          fay: 31
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 2.381
-          y: 0.21
+          x: 2.394
+          y: 0.225
           z: 3.94
-          frac: 0.086
-          top: 0.252
+          frac: 0.117
+          top: 0.283
           fy: -0.357
           in: false
           occ: null
-          hz: 0.99
+          hz: 1.02
           bz: 0.0
-          wx: 45.32
-          wy: 55.12
-          fa: 57
-          fh: 43
+          wx: 45.29
+          wy: 55.15
+          fa: 46
+          fh: 51
+          fay: 40
+          fap: 25
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.491
           y: 0.443
@@ -32421,7 +32618,15 @@ cuts:
           wy: 51.22
           fa: 29
           fh: 287
+          fay: 26
+          fap: -13
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 2.25
       t: 2.25
       look: metallica
@@ -32448,7 +32653,15 @@ cuts:
           wy: 47.33
           fa: 25
           fh: 241
+          fay: 25
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: -0.062
           y: 0.404
@@ -32464,7 +32677,15 @@ cuts:
           wy: 50.88
           fa: 16
           fh: 269
+          fay: 16
+          fap: -1
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.405
           y: 0.378
@@ -32480,7 +32701,15 @@ cuts:
           wy: 54.77
           fa: 11
           fh: 302
+          fay: 4
+          fap: 10
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -3.773
           y: -0.008
@@ -32496,6 +32725,10 @@ cuts:
           wy: 50.59
           fa: 38
           fh: 95
+          fay: 38
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.299
@@ -32512,6 +32745,10 @@ cuts:
           wy: 47.61
           fa: 21
           fh: 117
+          fay: 21
+          fap: -4
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.375
@@ -32528,7 +32765,15 @@ cuts:
           wy: 58.41
           fa: 24
           fh: 11
+          fay: 24
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.266
           y: 0.173
@@ -32544,7 +32789,14 @@ cuts:
           wy: 60.19
           fa: 60
           fh: 5
+          fay: 21
+          fap: 58
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.263
           y: 0.272
@@ -32560,23 +32812,35 @@ cuts:
           wy: 45.0
           fa: 34
           fh: 130
+          fay: 34
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 2.559
-          y: 0.196
+          x: 2.573
+          y: 0.21
           z: 3.59
-          frac: 0.104
-          top: 0.248
+          frac: 0.13
+          top: 0.274
           fy: -0.44
           in: false
           occ: null
-          hz: 1.0
+          hz: 1.02
           bz: 0.0
-          wx: 45.31
-          wy: 55.13
-          fa: 55
-          fh: 45
+          wx: 45.28
+          wy: 55.15
+          fa: 46
+          fh: 51
+          fay: 40
+          fap: 24
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.489
           y: 0.442
@@ -32592,7 +32856,15 @@ cuts:
           wy: 51.2
           fa: 39
           fh: 272
+          fay: 38
+          fap: -9
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.0
       t: 3.0
       look: metallica
@@ -32619,7 +32891,15 @@ cuts:
           wy: 47.32
           fa: 24
           fh: 241
+          fay: 24
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: -0.023
           y: 0.401
@@ -32635,7 +32915,15 @@ cuts:
           wy: 50.9
           fa: 15
           fh: 269
+          fay: 15
+          fap: -2
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.439
           y: 0.376
@@ -32644,14 +32932,22 @@ cuts:
           top: 0.397
           fy: 0.131
           in: true
-          occ: null
+          occ: braid1
           hz: 1.34
           bz: 0.0
           wx: 55.97
           wy: 54.77
           fa: 9
           fh: 302
+          fay: 3
+          fap: 9
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: braid1
+            re: ok
+            mo: ok
         berda:
           x: -2.605
           y: 0.07
@@ -32667,6 +32963,10 @@ cuts:
           wy: 50.58
           fa: 36
           fh: 95
+          fay: 36
+          fap: -4
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.084
@@ -32683,6 +32983,10 @@ cuts:
           wy: 47.61
           fa: 16
           fh: 117
+          fay: 16
+          fap: -4
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.455
@@ -32699,7 +33003,15 @@ cuts:
           wy: 58.42
           fa: 24
           fh: 11
+          fay: 24
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.341
           y: 0.161
@@ -32715,7 +33027,14 @@ cuts:
           wy: 60.19
           fa: 60
           fh: 4
+          fay: 21
+          fap: 57
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.436
           y: 0.269
@@ -32731,23 +33050,35 @@ cuts:
           wy: 45.0
           fa: 36
           fh: 130
+          fay: 36
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 2.848
-          y: 0.173
-          z: 3.13
-          frac: 0.118
-          top: 0.231
+          x: 2.868
+          y: 0.19
+          z: 3.12
+          frac: 0.152
+          top: 0.265
           fy: -0.575
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.03
           bz: 0.0
-          wx: 45.28
-          wy: 55.13
-          fa: 56
-          fh: 46
+          wx: 45.25
+          wy: 55.15
+          fa: 46
+          fh: 51
+          fay: 40
+          fap: 23
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.486
           y: 0.44
@@ -32763,7 +33094,15 @@ cuts:
           wy: 51.19
           fa: 47
           fh: 262
+          fay: 45
+          fap: -13
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.75
       t: 3.75
       look: metallica
@@ -32790,7 +33129,15 @@ cuts:
           wy: 47.32
           fa: 22
           fh: 241
+          fay: 22
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.023
           y: 0.397
@@ -32806,7 +33153,15 @@ cuts:
           wy: 50.89
           fa: 13
           fh: 269
+          fay: 13
+          fap: -2
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.484
           y: 0.372
@@ -32822,7 +33177,15 @@ cuts:
           wy: 54.77
           fa: 9
           fh: 302
+          fay: 2
+          fap: 9
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: metallica_body
+            re: metallica_body
+            mo: metallica_body
         berda:
           x: -1.8
           y: 0.12
@@ -32838,6 +33201,10 @@ cuts:
           wy: 50.6
           fa: 33
           fh: 95
+          fay: 33
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 0.145
@@ -32854,6 +33221,10 @@ cuts:
           wy: 47.6
           fa: 10
           fh: 117
+          fay: 10
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.558
@@ -32870,7 +33241,15 @@ cuts:
           wy: 58.41
           fa: 25
           fh: 11
+          fay: 25
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.438
           y: 0.142
@@ -32886,7 +33265,14 @@ cuts:
           wy: 60.19
           fa: 61
           fh: 5
+          fay: 22
+          fap: 58
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.67
           y: 0.263
@@ -32902,23 +33288,35 @@ cuts:
           wy: 45.01
           fa: 39
           fh: 130
+          fay: 39
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 3.292
-          y: 0.135
-          z: 2.6
-          frac: 0.142
-          top: 0.205
+          x: 3.32
+          y: 0.157
+          z: 2.59
+          frac: 0.185
+          top: 0.248
           fy: -0.793
           in: false
-          occ: tswamp_brim
-          hz: 1.02
+          occ: null
+          hz: 1.04
           bz: 0.0
-          wx: 45.25
-          wy: 55.13
-          fa: 57
-          fh: 46
+          wx: 45.22
+          wy: 55.16
+          fa: 46
+          fh: 51
+          fay: 40
+          fap: 24
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.478
           y: 0.434
@@ -32934,7 +33332,15 @@ cuts:
           wy: 51.18
           fa: 48
           fh: 260
+          fay: 43
+          fap: -22
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 4.5
       t: 4.5
       look: metallica
@@ -32961,7 +33367,15 @@ cuts:
           wy: 47.31
           fa: 20
           fh: 241
+          fay: 20
+          fap: -1
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.076
           y: 0.392
@@ -32977,7 +33391,15 @@ cuts:
           wy: 50.87
           fa: 11
           fh: 269
+          fay: 11
+          fap: 0
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.536
           y: 0.367
@@ -32993,7 +33415,15 @@ cuts:
           wy: 54.76
           fa: 11
           fh: 302
+          fay: 0
+          fap: 11
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -1.212
           y: 0.152
@@ -33009,6 +33439,10 @@ cuts:
           wy: 50.62
           fa: 30
           fh: 95
+          fay: 30
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 0.377
@@ -33025,6 +33459,10 @@ cuts:
           wy: 47.59
           fa: 4
           fh: 117
+          fay: 3
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.686
@@ -33041,7 +33479,15 @@ cuts:
           wy: 58.38
           fa: 26
           fh: 11
+          fay: 26
+          fap: 1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.56
           y: 0.119
@@ -33057,7 +33503,14 @@ cuts:
           wy: 60.19
           fa: 62
           fh: 5
+          fay: 24
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 1.989
           y: 0.255
@@ -33073,23 +33526,35 @@ cuts:
           wy: 45.0
           fa: 41
           fh: 130
+          fay: 41
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 3.968
-          y: 0.078
-          z: 2.05
-          frac: 0.199
-          top: 0.175
+          x: 4.007
+          y: 0.099
+          z: 2.04
+          frac: 0.241
+          top: 0.218
           fy: -1.163
           in: false
-          occ: tswamp_brim
-          hz: 1.03
+          occ: null
+          hz: 1.05
           bz: 0.0
-          wx: 45.24
-          wy: 55.13
-          fa: 55
-          fh: 48
+          wx: 45.21
+          wy: 55.16
+          fa: 46
+          fh: 52
+          fay: 41
+          fap: 23
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.48
           y: 0.433
@@ -33105,7 +33570,15 @@ cuts:
           wy: 51.18
           fa: 43
           fh: 260
+          fay: 39
+          fap: -20
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 5.25
       t: 5.25
       look: metallica
@@ -33132,7 +33605,15 @@ cuts:
           wy: 47.32
           fa: 19
           fh: 241
+          fay: 19
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.135
           y: 0.388
@@ -33148,7 +33629,15 @@ cuts:
           wy: 50.86
           fa: 9
           fh: 269
+          fay: 9
+          fap: 0
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.594
           y: 0.363
@@ -33164,7 +33653,15 @@ cuts:
           wy: 54.76
           fa: 12
           fh: 302
+          fay: 2
+          fap: 12
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.754
           y: 0.173
@@ -33180,6 +33677,10 @@ cuts:
           wy: 50.62
           fa: 26
           fh: 95
+          fay: 26
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 0.606
@@ -33196,6 +33697,10 @@ cuts:
           wy: 47.59
           fa: 4
           fh: 117
+          fay: 3
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 1.843
@@ -33212,7 +33717,15 @@ cuts:
           wy: 58.38
           fa: 28
           fh: 11
+          fay: 27
+          fap: 1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.707
           y: 0.093
@@ -33228,7 +33741,14 @@ cuts:
           wy: 60.19
           fa: 63
           fh: 5
+          fay: 25
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 2.43
           y: 0.241
@@ -33244,23 +33764,35 @@ cuts:
           wy: 45.0
           fa: 43
           fh: 130
+          fay: 43
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 5.021
-          y: -0.029
-          z: 1.52
-          frac: 0.287
-          top: 0.109
+          x: 5.085
+          y: -0.006
+          z: 1.51
+          frac: 0.336
+          top: 0.157
           fy: -1.858
           in: false
           occ: null
-          hz: 1.02
+          hz: 1.04
           bz: 0.0
-          wx: 45.25
-          wy: 55.14
-          fa: 54
-          fh: 48
+          wx: 45.23
+          wy: 55.16
+          fa: 46
+          fh: 52
+          fay: 41
+          fap: 23
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.482
           y: 0.432
@@ -33276,7 +33808,15 @@ cuts:
           wy: 51.18
           fa: 39
           fh: 260
+          fay: 34
+          fap: -20
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.0
       t: 6.0
       look: metallica
@@ -33303,7 +33843,15 @@ cuts:
           wy: 47.33
           fa: 17
           fh: 241
+          fay: 17
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.199
           y: 0.386
@@ -33319,7 +33867,15 @@ cuts:
           wy: 50.87
           fa: 7
           fh: 269
+          fay: 7
+          fap: 0
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.654
           y: 0.363
@@ -33335,7 +33891,15 @@ cuts:
           wy: 54.77
           fa: 11
           fh: 302
+          fay: 4
+          fap: 10
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.388
           y: 0.187
@@ -33351,6 +33915,10 @@ cuts:
           wy: 50.6
           fa: 21
           fh: 95
+          fay: 20
+          fap: -4
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 0.834
@@ -33367,6 +33935,10 @@ cuts:
           wy: 47.6
           fa: 9
           fh: 117
+          fay: 9
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.029
@@ -33383,7 +33955,15 @@ cuts:
           wy: 58.4
           fa: 29
           fh: 11
+          fay: 29
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 1.877
           y: 0.065
@@ -33399,7 +33979,14 @@ cuts:
           wy: 60.19
           fa: 63
           fh: 5
+          fay: 26
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 3.054
           y: 0.222
@@ -33415,23 +34002,35 @@ cuts:
           wy: 45.0
           fa: 45
           fh: 130
+          fay: 45
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 6.798
-          y: -0.253
-          z: 1.04
-          frac: 0.419
-          top: -0.057
+          x: 6.951
+          y: -0.207
+          z: 1.02
+          frac: 0.514
+          top: 0.038
           fy: -3.456
           in: false
           occ: null
-          hz: 1.0
+          hz: 1.03
           bz: 0.0
-          wx: 45.29
-          wy: 55.13
-          fa: 58
-          fh: 45
+          wx: 45.26
+          wy: 55.15
+          fa: 47
+          fh: 51
+          fay: 42
+          fap: 24
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.484
           y: 0.432
@@ -33447,7 +34046,15 @@ cuts:
           wy: 51.18
           fa: 34
           fh: 260
+          fay: 30
+          fap: -17
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.75
       t: 6.75
       look: metallica
@@ -33474,7 +34081,15 @@ cuts:
           wy: 47.33
           fa: 15
           fh: 241
+          fay: 15
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.261
           y: 0.386
@@ -33490,7 +34105,15 @@ cuts:
           wy: 50.89
           fa: 6
           fh: 269
+          fay: 6
+          fap: -2
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.714
           y: 0.363
@@ -33506,7 +34129,15 @@ cuts:
           wy: 54.77
           fa: 10
           fh: 302
+          fay: 6
+          fap: 9
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.096
           y: 0.195
@@ -33522,6 +34153,10 @@ cuts:
           wy: 50.58
           fa: 15
           fh: 95
+          fay: 15
+          fap: -4
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 1.072
@@ -33538,6 +34173,10 @@ cuts:
           wy: 47.61
           fa: 14
           fh: 117
+          fay: 14
+          fap: -4
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.237
@@ -33554,7 +34193,15 @@ cuts:
           wy: 58.42
           fa: 30
           fh: 11
+          fay: 30
+          fap: -3
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.067
           y: 0.034
@@ -33570,7 +34217,14 @@ cuts:
           wy: 60.19
           fa: 62
           fh: 4
+          fay: 27
+          fap: 58
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 3.977
           y: 0.192
@@ -33586,23 +34240,35 @@ cuts:
           wy: 45.0
           fa: 47
           fh: 130
+          fay: 47
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 10.498
-          y: -0.728
-          z: 0.62
-          frac: 0.782
-          top: -0.384
+          x: 10.953
+          y: -0.642
+          z: 0.6
+          frac: 0.962
+          top: -0.204
           fy: -9.682
           in: false
-          occ: tswamp_brim
-          hz: 0.99
+          occ: null
+          hz: 1.02
           bz: 0.0
-          wx: 45.31
-          wy: 55.12
-          fa: 61
-          fh: 42
+          wx: 45.28
+          wy: 55.15
+          fa: 48
+          fh: 51
+          fay: 42
+          fap: 26
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.486
           y: 0.431
@@ -33618,7 +34284,15 @@ cuts:
           wy: 51.18
           fa: 31
           fh: 260
+          fay: 25
+          fap: -18
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 7.5
       t: 7.5
       look: metallica
@@ -33645,7 +34319,15 @@ cuts:
           wy: 47.32
           fa: 14
           fh: 241
+          fay: 14
+          fap: -2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.317
           y: 0.386
@@ -33661,7 +34343,15 @@ cuts:
           wy: 50.89
           fa: 4
           fh: 269
+          fay: 4
+          fap: -2
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.77
           y: 0.363
@@ -33677,7 +34367,15 @@ cuts:
           wy: 54.77
           fa: 12
           fh: 302
+          fay: 7
+          fap: 9
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.135
           y: 0.198
@@ -33693,6 +34391,10 @@ cuts:
           wy: 50.58
           fa: 11
           fh: 95
+          fay: 10
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 1.327
@@ -33709,6 +34411,10 @@ cuts:
           wy: 47.61
           fa: 19
           fh: 117
+          fay: 19
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.45
@@ -33725,7 +34431,15 @@ cuts:
           wy: 58.41
           fa: 31
           fh: 11
+          fay: 31
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.267
           y: -0.002
@@ -33741,7 +34455,14 @@ cuts:
           wy: 60.19
           fa: 63
           fh: 5
+          fay: 28
+          fap: 58
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 5.446
           y: 0.142
@@ -33757,23 +34478,35 @@ cuts:
           wy: 45.0
           fa: 48
           fh: 130
+          fay: 48
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: 22.766
-          y: -2.146
-          z: 0.26
-          frac: 3.025
-          top: -1.076
+          x: 25.117
+          y: -2.129
+          z: 0.24
+          frac: 3.224
+          top: -0.877
           fy: 32.797
           in: false
           occ: null
-          hz: 0.99
+          hz: 1.02
           bz: 0.0
-          wx: 45.31
-          wy: 55.12
-          fa: 59
-          fh: 44
+          wx: 45.28
+          wy: 55.15
+          fa: 49
+          fh: 51
+          fay: 43
+          fap: 25
+          bx: 45.0
+          by: 55.2
           h: 1.5
+          lm:
+            le: out
+            re: out
+            mo: out
         metallica:
           x: 0.489
           y: 0.431
@@ -33789,7 +34522,15 @@ cuts:
           wy: 51.18
           fa: 29
           fh: 260
+          fay: 21
+          fap: -20
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 8.25
       t: 8.25
       look: metallica
@@ -33816,7 +34557,15 @@ cuts:
           wy: 47.31
           fa: 13
           fh: 241
+          fay: 12
+          fap: -1
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.363
           y: 0.385
@@ -33832,7 +34581,15 @@ cuts:
           wy: 50.88
           fa: 3
           fh: 269
+          fay: 3
+          fap: -1
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.82
           y: 0.362
@@ -33848,7 +34605,15 @@ cuts:
           wy: 54.76
           fa: 14
           fh: 302
+          fay: 9
+          fap: 11
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.317
           y: 0.198
@@ -33864,6 +34629,10 @@ cuts:
           wy: 50.6
           fa: 6
           fh: 95
+          fay: 5
+          fap: -4
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 1.593
@@ -33880,6 +34649,10 @@ cuts:
           wy: 47.6
           fa: 23
           fh: 117
+          fay: 23
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.652
@@ -33896,7 +34669,15 @@ cuts:
           wy: 58.39
           fa: 32
           fh: 11
+          fay: 32
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.462
           y: -0.04
@@ -33912,7 +34693,14 @@ cuts:
           wy: 60.19
           fa: 64
           fh: 5
+          fay: 29
+          fap: 59
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 7.993
           y: 0.053
@@ -33928,22 +34716,30 @@ cuts:
           wy: 45.0
           fa: 49
           fh: 130
+          fay: 49
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -289.381
-          y: 33.19
-          z: -0.02
-          frac: 16.622
-          top: -7.555
+          x: -131.913
+          y: 14.118
+          z: -0.04
+          frac: 44.725
+          top: -35.658
           fy: 8.185
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.03
           bz: 0.0
-          wx: 45.29
-          wy: 55.13
-          fa: 57
-          fh: 46
+          wx: 45.26
+          wy: 55.15
+          fa: 49
+          fh: 52
+          fay: 43
+          fap: 24
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.491
@@ -33960,7 +34756,15 @@ cuts:
           wy: 51.18
           fa: 26
           fh: 260
+          fay: 18
+          fap: -19
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 9.0
       t: 9.0
       look: metallica
@@ -33987,7 +34791,15 @@ cuts:
           wy: 47.32
           fa: 12
           fh: 241
+          fay: 12
+          fap: -1
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: out
+            re: out
+            mo: out
         purple-peel:
           x: 0.398
           y: 0.385
@@ -34003,7 +34815,15 @@ cuts:
           wy: 50.87
           fa: 1
           fh: 269
+          fay: 1
+          fap: 0
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.859
           y: 0.362
@@ -34019,7 +34839,15 @@ cuts:
           wy: 54.76
           fa: 16
           fh: 302
+          fay: 10
+          fap: 12
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.459
           y: 0.196
@@ -34035,6 +34863,10 @@ cuts:
           wy: 50.62
           fa: 4
           fh: 95
+          fay: 1
+          fap: -4
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 1.839
@@ -34051,6 +34883,10 @@ cuts:
           wy: 47.59
           fa: 25
           fh: 117
+          fay: 25
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.827
@@ -34067,7 +34903,15 @@ cuts:
           wy: 58.38
           fa: 33
           fh: 11
+          fay: 33
+          fap: 1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.632
           y: -0.073
@@ -34083,7 +34927,14 @@ cuts:
           wy: 60.19
           fa: 65
           fh: 5
+          fay: 30
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 12.753
           y: -0.117
@@ -34099,22 +34950,30 @@ cuts:
           wy: 45.0
           fa: 49
           fh: 130
+          fay: 49
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -24.24
-          y: 3.271
-          z: -0.22
-          frac: 0.475
-          top: 3.594
+          x: -21.721
+          y: 2.729
+          z: -0.24
+          frac: 0.999
+          top: 2.12
           fy: 5.525
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.04
           bz: 0.0
-          wx: 45.27
-          wy: 55.13
-          fa: 59
-          fh: 46
+          wx: 45.24
+          wy: 55.16
+          fa: 49
+          fh: 51
+          fay: 43
+          fap: 25
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.492
@@ -34131,7 +34990,15 @@ cuts:
           wy: 51.18
           fa: 24
           fh: 260
+          fay: 15
+          fap: -20
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 9.75
       t: 9.75
       look: metallica
@@ -34158,7 +35025,15 @@ cuts:
           wy: 47.33
           fa: 1
           fh: 251
+          fay: 1
+          fap: -1
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         purple-peel:
           x: 0.423
           y: 0.386
@@ -34174,7 +35049,15 @@ cuts:
           wy: 50.87
           fa: 7
           fh: 277
+          fay: 7
+          fap: 1
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.884
           y: 0.364
@@ -34190,7 +35073,15 @@ cuts:
           wy: 54.76
           fa: 13
           fh: 296
+          fay: 6
+          fap: 12
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.561
           y: 0.195
@@ -34206,6 +35097,10 @@ cuts:
           wy: 50.61
           fa: 15
           fh: 111
+          fay: 15
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 2.016
@@ -34222,6 +35117,10 @@ cuts:
           wy: 47.59
           fa: 41
           fh: 103
+          fay: 41
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 2.961
@@ -34238,7 +35137,15 @@ cuts:
           wy: 58.39
           fa: 34
           fh: 11
+          fay: 34
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.752
           y: -0.093
@@ -34254,7 +35161,14 @@ cuts:
           wy: 60.19
           fa: 64
           fh: 1
+          fay: 27
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 21.357
           y: -0.426
@@ -34270,22 +35184,30 @@ cuts:
           wy: 45.0
           fa: 67
           fh: 113
+          fay: 67
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -15.265
-          y: 2.292
-          z: -0.33
-          frac: 0.049
-          top: 2.261
+          x: -13.955
+          y: 1.939
+          z: -0.36
+          frac: 0.874
+          top: 1.436
           fy: 4.666
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.04
           bz: 0.0
-          wx: 45.27
-          wy: 55.13
-          fa: 66
-          fh: 54
+          wx: 45.23
+          wy: 55.16
+          fa: 56
+          fh: 58
+          fay: 50
+          fap: 27
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.492
@@ -34302,7 +35224,15 @@ cuts:
           wy: 51.18
           fa: 24
           fh: 260
+          fay: 13
+          fap: -21
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 10.5
       t: 10.5
       look: metallica
@@ -34329,7 +35259,15 @@ cuts:
           wy: 47.34
           fa: 28
           fh: 280
+          fay: 28
+          fap: 2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         purple-peel:
           x: 0.435
           y: 0.387
@@ -34345,7 +35283,15 @@ cuts:
           wy: 50.89
           fa: 31
           fh: 300
+          fay: 31
+          fap: 3
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.893
           y: 0.366
@@ -34361,7 +35307,15 @@ cuts:
           wy: 54.76
           fa: 15
           fh: 280
+          fay: 10
+          fap: 11
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.611
           y: 0.195
@@ -34377,6 +35331,10 @@ cuts:
           wy: 50.59
           fa: 62
           fh: 160
+          fay: 62
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 2.081
@@ -34393,6 +35351,10 @@ cuts:
           wy: 47.61
           fa: 85
           fh: 60
+          fay: 85
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 3.026
@@ -34409,7 +35371,15 @@ cuts:
           wy: 58.42
           fa: 33
           fh: 10
+          fay: 33
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.796
           y: -0.098
@@ -34425,7 +35395,14 @@ cuts:
           wy: 60.19
           fa: 61
           fh: 350
+          fay: 16
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 29.68
           y: -0.726
@@ -34441,22 +35418,30 @@ cuts:
           wy: 45.0
           fa: 120
           fh: 60
+          fay: 120
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -13.347
-          y: 2.04
-          z: -0.37
-          frac: 0.211
-          top: 1.909
+          x: -12.174
+          y: 1.757
+          z: -0.4
+          frac: 0.836
+          top: 1.284
           fy: 4.409
           in: false
           occ: null
-          hz: 1.02
+          hz: 1.04
           bz: 0.0
-          wx: 45.27
-          wy: 55.15
-          fa: 81
+          wx: 45.23
+          wy: 55.16
+          fa: 75
           fh: 80
+          fay: 72
+          fap: 27
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.492
@@ -34473,7 +35458,15 @@ cuts:
           wy: 51.18
           fa: 24
           fh: 260
+          fay: 12
+          fap: -21
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 10.54
       t: 10.54
       look: metallica
@@ -34500,7 +35493,15 @@ cuts:
           wy: 47.34
           fa: 28
           fh: 280
+          fay: 28
+          fap: 2
+          bx: 57.0
+          by: 47.4
           h: 1.65
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         purple-peel:
           x: 0.435
           y: 0.387
@@ -34516,7 +35517,15 @@ cuts:
           wy: 50.89
           fa: 31
           fh: 300
+          fay: 31
+          fap: 3
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         rabi:
           x: 0.893
           y: 0.366
@@ -34532,7 +35541,15 @@ cuts:
           wy: 54.76
           fa: 15
           fh: 280
+          fay: 10
+          fap: 10
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: 0.612
           y: 0.195
@@ -34548,6 +35565,10 @@ cuts:
           wy: 50.59
           fa: 62
           fh: 160
+          fay: 62
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: 2.081
@@ -34564,6 +35585,10 @@ cuts:
           wy: 47.61
           fa: 85
           fh: 60
+          fay: 85
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 3.027
@@ -34580,7 +35605,15 @@ cuts:
           wy: 58.42
           fa: 33
           fh: 10
+          fay: 33
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.797
           y: -0.098
@@ -34596,7 +35629,14 @@ cuts:
           wy: 60.19
           fa: 61
           fh: 350
+          fay: 16
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 29.791
           y: -0.73
@@ -34612,22 +35652,30 @@ cuts:
           wy: 45.0
           fa: 120
           fh: 60
+          fay: 120
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -13.272
-          y: 2.013
-          z: -0.37
-          frac: 0.303
-          top: 1.827
+          x: -12.185
+          y: 1.76
+          z: -0.4
+          frac: 0.85
+          top: 1.28
           fy: 4.406
           in: false
           occ: null
-          hz: 1.02
+          hz: 1.04
           bz: 0.0
-          wx: 45.27
-          wy: 55.15
-          fa: 80
+          wx: 45.23
+          wy: 55.16
+          fa: 75
           fh: 80
+          fay: 72
+          fap: 26
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.493
@@ -34644,10 +35692,22 @@ cuts:
           wy: 51.18
           fa: 24
           fh: 260
+          fay: 12
+          fap: -21
+          bx: 50.4
+          by: 51.2
           h: 1.6
+          lm:
+            le: ok
+            re: ok
+            mo: ok
   A30-018:
     sec: 3.2
     shot: ビスコ・メタリカ
+    input_hash: e065e97400d3556f2b02504dc8c395f9e5bd541e4566c731480a57c4bd34781c
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-13T08:43:10+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -34675,6 +35735,10 @@ cuts:
           wy: 47.33
           fa: 61
           fh: 280
+          fay: 61
+          fap: 2
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.526
@@ -34691,6 +35755,10 @@ cuts:
           wy: 50.89
           fa: 66
           fh: 300
+          fay: 66
+          fap: 1
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 2.676
@@ -34707,6 +35775,10 @@ cuts:
           wy: 54.76
           fa: 27
           fh: 280
+          fay: 26
+          fap: 8
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.55
@@ -34723,6 +35795,10 @@ cuts:
           wy: 50.61
           fa: 28
           fh: 160
+          fay: 28
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.702
@@ -34739,6 +35815,10 @@ cuts:
           wy: 47.59
           fa: 86
           fh: 60
+          fay: 86
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.5
@@ -34755,7 +35835,15 @@ cuts:
           wy: 58.4
           fa: 14
           fh: 10
+          fay: 3
+          fap: -14
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.081
           y: -0.357
@@ -34771,7 +35859,14 @@ cuts:
           wy: 60.19
           fa: 65
           fh: 350
+          fay: 4
+          fap: 65
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.158
           y: -0.023
@@ -34787,22 +35882,30 @@ cuts:
           wy: 45.01
           fa: 103
           fh: 60
+          fay: 103
+          fap: -3
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -9.214
-          y: -0.175
-          z: -0.5
-          frac: 0.665
-          top: -0.498
+          x: -9.708
+          y: -0.3
+          z: -0.48
+          frac: 0.944
+          top: -0.777
           fy: 3.252
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.04
           bz: 0.0
-          wx: 45.28
-          wy: 55.15
-          fa: 52
+          wx: 45.24
+          wy: 55.16
+          fa: 36
           fh: 80
+          fay: 29
+          fap: 22
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.484
@@ -34819,6 +35922,10 @@ cuts:
           wy: 51.18
           fa: 71
           fh: 260
+          fay: 68
+          fap: -24
+          bx: 50.4
+          by: 51.2
           h: 1.6
     - T: 0.75
       t: 0.75
@@ -34846,6 +35953,10 @@ cuts:
           wy: 47.31
           fa: 8
           fh: 218
+          fay: 1
+          fap: -8
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.545
@@ -34862,6 +35973,10 @@ cuts:
           wy: 50.85
           fa: 10
           fh: 232
+          fay: 2
+          fap: -10
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 2.706
@@ -34878,6 +35993,10 @@ cuts:
           wy: 54.74
           fa: 11
           fh: 244
+          fay: 10
+          fap: 5
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.56
@@ -34894,6 +36013,10 @@ cuts:
           wy: 50.62
           fa: 9
           fh: 142
+          fay: 9
+          fap: -2
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.711
@@ -34910,6 +36033,10 @@ cuts:
           wy: 47.59
           fa: 17
           fh: 130
+          fay: 17
+          fap: -2
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.504
@@ -34926,7 +36053,15 @@ cuts:
           wy: 58.14
           fa: 2
           fh: 11
+          fay: 2
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.115
           y: -0.404
@@ -34942,7 +36077,14 @@ cuts:
           wy: 60.18
           fa: 64
           fh: 320
+          fay: 25
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.162
           y: -0.039
@@ -34958,22 +36100,30 @@ cuts:
           wy: 45.0
           fa: 33
           fh: 130
+          fay: 33
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -8.977
-          y: -0.105
-          z: -0.51
-          frac: 0.664
-          top: -0.455
+          x: -8.685
+          y: -0.209
+          z: -0.54
+          frac: 0.847
+          top: -0.637
           fy: 3.067
           in: false
           occ: null
-          hz: 1.0
+          hz: 1.03
           bz: 0.0
-          wx: 45.3
-          wy: 55.19
-          fa: 52
-          fh: 143
+          wx: 45.27
+          wy: 55.15
+          fa: 27
+          fh: 132
+          fay: 22
+          fap: 16
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.485
@@ -34990,6 +36140,10 @@ cuts:
           wy: 51.16
           fa: 18
           fh: 189
+          fay: 2
+          fap: -18
+          bx: 50.4
+          by: 51.2
           h: 1.6
     - T: 1.5
       t: 1.5
@@ -35017,6 +36171,10 @@ cuts:
           wy: 47.32
           fa: 8
           fh: 217
+          fay: 1
+          fap: -8
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.611
@@ -35033,6 +36191,10 @@ cuts:
           wy: 50.85
           fa: 10
           fh: 232
+          fay: 2
+          fap: -10
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 2.824
@@ -35049,6 +36211,10 @@ cuts:
           wy: 54.74
           fa: 11
           fh: 244
+          fay: 10
+          fap: 6
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.57
@@ -35065,6 +36231,10 @@ cuts:
           wy: 50.61
           fa: 9
           fh: 142
+          fay: 9
+          fap: -3
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.733
@@ -35081,6 +36251,10 @@ cuts:
           wy: 47.6
           fa: 17
           fh: 130
+          fay: 17
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.502
@@ -35097,7 +36271,15 @@ cuts:
           wy: 58.15
           fa: 2
           fh: 11
+          fay: 1
+          fap: -2
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.152
           y: -0.486
@@ -35113,7 +36295,14 @@ cuts:
           wy: 60.18
           fa: 64
           fh: 320
+          fay: 24
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.17
           y: -0.078
@@ -35129,22 +36318,30 @@ cuts:
           wy: 44.99
           fa: 33
           fh: 130
+          fay: 33
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -7.452
-          y: -0.051
-          z: -0.64
-          frac: 0.574
-          top: -0.349
+          x: -7.28
+          y: -0.131
+          z: -0.66
+          frac: 0.716
+          top: -0.492
           fy: 2.726
           in: false
           occ: null
-          hz: 0.99
+          hz: 1.02
           bz: 0.0
-          wx: 45.32
-          wy: 55.18
-          fa: 49
-          fh: 142
+          wx: 45.29
+          wy: 55.15
+          fa: 26
+          fh: 132
+          fay: 21
+          fap: 16
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.499
@@ -35161,6 +36358,10 @@ cuts:
           wy: 51.16
           fa: 18
           fh: 190
+          fay: 2
+          fap: -18
+          bx: 50.4
+          by: 51.2
           h: 1.6
     - T: 2.25
       t: 2.25
@@ -35188,6 +36389,10 @@ cuts:
           wy: 47.32
           fa: 8
           fh: 217
+          fay: 1
+          fap: -8
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.691
@@ -35204,6 +36409,10 @@ cuts:
           wy: 50.87
           fa: 10
           fh: 232
+          fay: 2
+          fap: -10
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 2.968
@@ -35220,6 +36429,10 @@ cuts:
           wy: 54.74
           fa: 10
           fh: 244
+          fay: 9
+          fap: 5
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.573
@@ -35236,6 +36449,10 @@ cuts:
           wy: 50.59
           fa: 9
           fh: 142
+          fay: 8
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.754
@@ -35252,6 +36469,10 @@ cuts:
           wy: 47.61
           fa: 17
           fh: 130
+          fay: 17
+          fap: -3
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.5
@@ -35268,7 +36489,15 @@ cuts:
           wy: 58.17
           fa: 4
           fh: 11
+          fay: 0
+          fap: -4
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.191
           y: -0.575
@@ -35284,7 +36513,14 @@ cuts:
           wy: 60.18
           fa: 63
           fh: 321
+          fay: 23
+          fap: 60
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.177
           y: -0.123
@@ -35300,22 +36536,30 @@ cuts:
           wy: 45.0
           fa: 33
           fh: 130
+          fay: 33
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -6.491
-          y: -0.067
-          z: -0.75
-          frac: 0.543
-          top: -0.347
+          x: -6.389
+          y: -0.123
+          z: -0.77
+          frac: 0.643
+          top: -0.447
           fy: 2.442
           in: false
           occ: null
-          hz: 1.0
+          hz: 1.02
           bz: 0.0
-          wx: 45.31
-          wy: 55.18
-          fa: 44
-          fh: 140
+          wx: 45.28
+          wy: 55.15
+          fa: 25
+          fh: 131
+          fay: 20
+          fap: 16
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.518
@@ -35332,6 +36576,10 @@ cuts:
           wy: 51.16
           fa: 18
           fh: 190
+          fay: 2
+          fap: -17
+          bx: 50.4
+          by: 51.2
           h: 1.6
     - T: 3.0
       t: 3.0
@@ -35359,6 +36607,10 @@ cuts:
           wy: 47.33
           fa: 61
           fh: 280
+          fay: 61
+          fap: 1
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.747
@@ -35375,6 +36627,10 @@ cuts:
           wy: 50.91
           fa: 66
           fh: 300
+          fay: 66
+          fap: -1
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 3.076
@@ -35391,6 +36647,10 @@ cuts:
           wy: 54.76
           fa: 28
           fh: 280
+          fay: 27
+          fap: 8
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.574
@@ -35407,6 +36667,10 @@ cuts:
           wy: 50.58
           fa: 27
           fh: 160
+          fay: 26
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.762
@@ -35423,6 +36687,10 @@ cuts:
           wy: 47.61
           fa: 87
           fh: 60
+          fay: 87
+          fap: -4
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.499
@@ -35439,7 +36707,15 @@ cuts:
           wy: 58.18
           fa: 5
           fh: 11
+          fay: 0
+          fap: -5
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.192
           y: -0.622
@@ -35455,7 +36731,14 @@ cuts:
           wy: 60.19
           fa: 66
           fh: 350
+          fay: 6
+          fap: 65
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.181
           y: -0.151
@@ -35471,22 +36754,30 @@ cuts:
           wy: 45.0
           fa: 103
           fh: 60
+          fay: 103
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -5.861
-          y: -0.075
-          z: -0.85
-          frac: 0.449
-          top: -0.297
+          x: -6.072
+          y: -0.154
+          z: -0.83
+          frac: 0.62
+          top: -0.467
           fy: 2.299
           in: false
           occ: null
-          hz: 1.01
+          hz: 1.03
           bz: 0.0
-          wx: 45.29
-          wy: 55.15
-          fa: 55
+          wx: 45.25
+          wy: 55.16
+          fa: 39
           fh: 80
+          fay: 32
+          fap: 23
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.537
@@ -35503,6 +36794,10 @@ cuts:
           wy: 51.18
           fa: 70
           fh: 260
+          fay: 68
+          fap: -22
+          bx: 50.4
+          by: 51.2
           h: 1.6
     - T: 3.17
       t: 3.17
@@ -35530,6 +36825,10 @@ cuts:
           wy: 47.33
           fa: 61
           fh: 280
+          fay: 61
+          fap: 2
+          bx: 57.0
+          by: 47.4
           h: 1.65
         purple-peel:
           x: 1.75
@@ -35546,6 +36845,10 @@ cuts:
           wy: 50.91
           fa: 66
           fh: 300
+          fay: 66
+          fap: -1
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 3.082
@@ -35562,6 +36865,10 @@ cuts:
           wy: 54.76
           fa: 28
           fh: 280
+          fay: 27
+          fap: 7
+          bx: 56.2
+          by: 54.8
           h: 1.5
         berda:
           x: -1.574
@@ -35578,6 +36885,10 @@ cuts:
           wy: 50.58
           fa: 27
           fh: 160
+          fay: 26
+          fap: -5
+          bx: 42.8
+          by: 50.6
           h: 1.65
         rubens:
           x: -0.761
@@ -35594,6 +36905,10 @@ cuts:
           wy: 47.61
           fa: 87
           fh: 60
+          fay: 87
+          fap: -4
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 0.499
@@ -35610,7 +36925,15 @@ cuts:
           wy: 58.18
           fa: 5
           fh: 11
+          fay: 0
+          fap: -5
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         hundred-knight:
           x: -0.193
           y: -0.625
@@ -35626,7 +36949,14 @@ cuts:
           wy: 60.19
           fa: 66
           fh: 350
+          fay: 6
+          fap: 65
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: -0.182
           y: -0.153
@@ -35642,22 +36972,30 @@ cuts:
           wy: 45.0
           fa: 103
           fh: 60
+          fay: 103
+          fap: -2
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
-          x: -6.002
-          y: -0.119
-          z: -0.84
-          frac: 0.482
-          top: -0.357
+          x: -6.197
+          y: -0.188
+          z: -0.82
+          frac: 0.632
+          top: -0.508
           fy: 2.291
           in: false
           occ: null
-          hz: 1.02
+          hz: 1.05
           bz: 0.0
-          wx: 45.25
+          wx: 45.22
           wy: 55.16
-          fa: 52
+          fa: 38
           fh: 80
+          fay: 32
+          fap: 22
+          bx: 45.0
+          by: 55.2
           h: 1.5
         metallica:
           x: 0.537
@@ -35674,6 +37012,10 @@ cuts:
           wy: 51.18
           fa: 70
           fh: 260
+          fay: 68
+          fap: -22
+          bx: 50.4
+          by: 51.2
           h: 1.6
   A30-019:
     sec: 4.6
@@ -57805,6 +59147,10 @@ cuts:
   A30-024:
     sec: 7.0
     shot: ラビィ・面白れえ
+    input_hash: b1c99d4ece2a1832a674d5a17171b25c73dee8f1193a2453cfc323e14504d0cf
+    tool_hash: 62578ef8b8f23b36bce0f3ed3e49b82bb94ddd797751dd2b3590f682bdf5f624
+    fps: 24
+    made: '2026-11-13T08:43:18+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -57818,20 +59164,24 @@ cuts:
       yaw: 148
       people:
         lily:
-          x: 2.189
-          y: 0.711
+          x: 2.192
+          y: 0.71
           z: -2.87
-          frac: 0.132
-          top: 0.646
+          frac: 0.135
+          top: 0.643
           fy: 1.69
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
-          wx: 57.45
+          wx: 57.46
           wy: 47.05
-          fa: 45
+          fa: 44
           fh: 250
+          fay: 41
+          fap: 17
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -8.969
@@ -57848,7 +59198,15 @@ cuts:
           wy: 50.89
           fa: 56
           fh: 300
+          fay: 56
+          fap: 3
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.559
           y: 0.679
@@ -57864,22 +59222,34 @@ cuts:
           wy: 54.76
           fa: 53
           fh: 280
+          fay: 52
+          fap: 14
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
-          x: -0.648
+          x: -0.647
           y: 0.735
-          z: -7.71
-          frac: 0.052
-          top: 0.71
+          z: -7.72
+          frac: 0.053
+          top: 0.708
           fy: 1.07
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
-          wx: 42.54
+          wx: 42.53
           wy: 50.48
-          fa: 30
+          fa: 27
           fh: 120
+          fay: 22
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.194
@@ -57896,6 +59266,10 @@ cuts:
           wy: 47.59
           fa: 52
           fh: 60
+          fay: 52
+          fap: 1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.022
@@ -57912,7 +59286,15 @@ cuts:
           wy: 58.16
           fa: 48
           fh: 357
+          fay: 46
+          fap: 13
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.1
           y: 0.325
@@ -57928,7 +59310,14 @@ cuts:
           wy: 60.19
           fa: 70
           fh: 350
+          fay: 38
+          fap: 62
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.168
           y: 0.752
@@ -57944,6 +59333,10 @@ cuts:
           wy: 45.01
           fa: 69
           fh: 60
+          fay: 69
+          fap: -1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.633
@@ -57960,6 +59353,10 @@ cuts:
           wy: 53.5
           fa: 123
           fh: 300
+          fay: 143
+          fap: 61
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.369
@@ -57976,6 +59373,10 @@ cuts:
           wy: 50.47
           fa: 75
           fh: 180
+          fay: 74
+          fap: -19
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 0.75
       t: 0.75
@@ -57990,10 +59391,10 @@ cuts:
       people:
         lily:
           x: 2.199
-          y: 0.719
+          y: 0.718
           z: -2.86
-          frac: 0.135
-          top: 0.652
+          frac: 0.137
+          top: 0.65
           fy: 1.701
           in: false
           occ: null
@@ -58001,8 +59402,12 @@ cuts:
           bz: 0.0
           wx: 57.47
           wy: 47.06
-          fa: 18
-          fh: 203
+          fa: 14
+          fh: 204
+          fay: 5
+          fap: 13
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -10.584
@@ -58019,7 +59424,15 @@ cuts:
           wy: 50.86
           fa: 6
           fh: 249
+          fay: 5
+          fap: -3
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.542
           y: 0.673
@@ -58035,22 +59448,34 @@ cuts:
           wy: 54.67
           fa: 35
           fh: 300
+          fay: 31
+          fap: 16
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: rabi_brim
+            re: ok
+            mo: ok
         berda:
           x: -0.653
           y: 0.742
-          z: -7.7
-          frac: 0.052
-          top: 0.717
+          z: -7.71
+          frac: 0.053
+          top: 0.715
           fy: 1.079
           in: false
           occ: null
-          hz: 1.5
+          hz: 1.51
           bz: 0.0
-          wx: 42.55
+          wx: 42.54
           wy: 50.48
-          fa: 24
+          fa: 21
           fh: 110
+          fay: 12
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.197
@@ -58067,6 +59492,10 @@ cuts:
           wy: 47.59
           fa: 8
           fh: 105
+          fay: 8
+          fap: 1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.093
@@ -58083,7 +59512,15 @@ cuts:
           wy: 58.13
           fa: 6
           fh: 46
+          fay: 2
+          fap: 6
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.129
           y: 0.311
@@ -58099,7 +59536,14 @@ cuts:
           wy: 60.2
           fa: 46
           fh: 34
+          fay: 5
+          fap: 45
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.167
           y: 0.758
@@ -58115,6 +59559,10 @@ cuts:
           wy: 45.0
           fa: 17
           fh: 113
+          fay: 17
+          fap: 0
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.669
@@ -58131,6 +59579,10 @@ cuts:
           wy: 53.54
           fa: 97
           fh: 349
+          fay: 94
+          fap: 37
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.377
@@ -58147,6 +59599,10 @@ cuts:
           wy: 50.48
           fa: 31
           fh: 133
+          fay: 27
+          fap: -16
+          bx: 48.6
+          by: 50.6
           h: 1.6
       probe:
         dx: -0.0
@@ -58164,11 +59620,11 @@ cuts:
       yaw: 149
       people:
         lily:
-          x: 2.205
-          y: 0.742
-          z: -2.88
-          frac: 0.137
-          top: 0.673
+          x: 2.203
+          y: 0.741
+          z: -2.89
+          frac: 0.138
+          top: 0.672
           fy: 1.73
           in: false
           occ: null
@@ -58176,8 +59632,12 @@ cuts:
           bz: 0.0
           wx: 57.48
           wy: 47.06
-          fa: 25
-          fh: 188
+          fa: 23
+          fh: 189
+          fay: 20
+          fap: 12
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -12.07
@@ -58194,38 +59654,58 @@ cuts:
           wy: 50.85
           fa: 13
           fh: 232
+          fay: 11
+          fap: -7
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
-          x: 0.545
-          y: 0.672
-          z: 2.77
-          frac: 0.139
-          top: 0.743
+          x: 0.548
+          y: 0.668
+          z: 2.76
+          frac: 0.131
+          top: 0.735
           fy: -0.024
           in: true
           occ: rabi_brim
-          hz: 1.32
+          hz: 1.31
           bz: 0.0
-          wx: 55.96
+          wx: 55.95
           wy: 54.66
-          fa: 37
+          fa: 42
           fh: 300
+          fay: 31
+          fap: 29
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: rabi_brim
+            re: rabi_brim
+            mo: ok
         berda:
-          x: -0.667
-          y: 0.76
-          z: -7.71
-          frac: 0.052
-          top: 0.733
+          x: -0.666
+          y: 0.759
+          z: -7.72
+          frac: 0.053
+          top: 0.732
           fy: 1.101
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
-          wx: 42.54
+          wx: 42.53
           wy: 50.47
-          fa: 22
+          fa: 19
           fh: 107
+          fay: 9
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.208
@@ -58242,6 +59722,10 @@ cuts:
           wy: 47.6
           fa: 7
           fh: 119
+          fay: 7
+          fap: 0
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.147
@@ -58258,7 +59742,15 @@ cuts:
           wy: 58.13
           fa: 17
           fh: 61
+          fay: 17
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.151
           y: 0.306
@@ -58274,7 +59766,14 @@ cuts:
           wy: 60.21
           fa: 37
           fh: 40
+          fay: 11
+          fap: 35
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.163
           y: 0.775
@@ -58290,6 +59789,10 @@ cuts:
           wy: 44.99
           fa: 1
           fh: 130
+          fay: 1
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.705
@@ -58306,6 +59809,10 @@ cuts:
           wy: 53.55
           fa: 92
           fh: 353
+          fay: 90
+          fap: 23
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.39
@@ -58322,11 +59829,15 @@ cuts:
           wy: 50.49
           fa: 18
           fh: 117
+          fay: 11
+          fap: -14
+          bx: 48.6
+          by: 50.6
           h: 1.6
       probe:
-        dx: -0.0
-        dy: 0.0
-        dz: -0.3
+        dx: -0.13
+        dy: 0.08
+        dz: 0.0
     - T: 2.25
       t: 2.25
       look: rabi
@@ -58339,11 +59850,11 @@ cuts:
       yaw: 149
       people:
         lily:
-          x: 2.204
+          x: 2.203
           y: 0.777
           z: -2.92
-          frac: 0.138
-          top: 0.709
+          frac: 0.139
+          top: 0.707
           fy: 1.774
           in: false
           occ: null
@@ -58351,8 +59862,12 @@ cuts:
           bz: 0.0
           wx: 57.49
           wy: 47.06
-          fa: 25
-          fh: 188
+          fa: 23
+          fh: 189
+          fay: 20
+          fap: 12
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -13.181
@@ -58369,7 +59884,15 @@ cuts:
           wy: 50.87
           fa: 13
           fh: 232
+          fay: 11
+          fap: -6
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.542
           y: 0.682
@@ -58385,22 +59908,34 @@ cuts:
           wy: 54.68
           fa: 35
           fh: 300
+          fay: 31
+          fap: 16
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: rabi_brim
+            re: ok
+            mo: ok
         berda:
           x: -0.687
           y: 0.786
-          z: -7.72
+          z: -7.73
           frac: 0.054
-          top: 0.759
+          top: 0.758
           fy: 1.135
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
-          wx: 42.52
+          wx: 42.51
           wy: 50.46
-          fa: 20
+          fa: 19
           fh: 107
+          fay: 9
+          fap: 16
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.224
@@ -58417,6 +59952,10 @@ cuts:
           wy: 47.61
           fa: 7
           fh: 119
+          fay: 7
+          fap: -1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.195
@@ -58433,7 +59972,15 @@ cuts:
           wy: 58.15
           fa: 17
           fh: 61
+          fay: 17
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.175
           y: 0.313
@@ -58449,7 +59996,14 @@ cuts:
           wy: 60.21
           fa: 36
           fh: 40
+          fay: 10
+          fap: 35
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.154
           y: 0.801
@@ -58465,6 +60019,10 @@ cuts:
           wy: 45.0
           fa: 1
           fh: 130
+          fay: 1
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.75
@@ -58481,6 +60039,10 @@ cuts:
           wy: 53.55
           fa: 92
           fh: 353
+          fay: 90
+          fap: 23
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.406
@@ -58497,6 +60059,10 @@ cuts:
           wy: 50.49
           fa: 17
           fh: 118
+          fay: 11
+          fap: -13
+          bx: 48.6
+          by: 50.6
           h: 1.6
       probe:
         dx: -0.0
@@ -58514,11 +60080,11 @@ cuts:
       yaw: 149
       people:
         lily:
-          x: 2.196
-          y: 0.823
+          x: 2.195
+          y: 0.822
           z: -2.97
-          frac: 0.138
-          top: 0.754
+          frac: 0.14
+          top: 0.753
           fy: 1.83
           in: false
           occ: null
@@ -58526,8 +60092,12 @@ cuts:
           bz: 0.0
           wx: 57.48
           wy: 47.06
-          fa: 25
-          fh: 188
+          fa: 23
+          fh: 189
+          fay: 19
+          fap: 12
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -15.587
@@ -58544,7 +60114,15 @@ cuts:
           wy: 50.89
           fa: 12
           fh: 231
+          fay: 11
+          fap: -6
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.497
           y: 0.771
@@ -58560,13 +60138,21 @@ cuts:
           wy: 54.81
           fa: 29
           fh: 300
+          fay: 29
+          fap: -3
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
-          x: -0.714
+          x: -0.713
           y: 0.819
           z: -7.72
           frac: 0.055
-          top: 0.792
+          top: 0.791
           fy: 1.177
           in: false
           occ: null
@@ -58574,8 +60160,12 @@ cuts:
           bz: 0.0
           wx: 42.51
           wy: 50.46
-          fa: 20
+          fa: 19
           fh: 107
+          fay: 9
+          fap: 16
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.242
@@ -58592,6 +60182,10 @@ cuts:
           wy: 47.61
           fa: 7
           fh: 119
+          fay: 7
+          fap: 0
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.269
@@ -58608,7 +60202,15 @@ cuts:
           wy: 58.16
           fa: 17
           fh: 61
+          fay: 17
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.204
           y: 0.32
@@ -58624,7 +60226,14 @@ cuts:
           wy: 60.21
           fa: 36
           fh: 40
+          fay: 10
+          fap: 34
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.143
           y: 0.833
@@ -58640,6 +60249,10 @@ cuts:
           wy: 45.0
           fa: 1
           fh: 130
+          fay: 1
+          fap: 0
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.807
@@ -58656,6 +60269,10 @@ cuts:
           wy: 53.55
           fa: 92
           fh: 353
+          fay: 90
+          fap: 23
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.425
@@ -58672,6 +60289,10 @@ cuts:
           wy: 50.49
           fa: 17
           fh: 117
+          fay: 11
+          fap: -13
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 3.75
       t: 3.75
@@ -58685,20 +60306,24 @@ cuts:
       yaw: 149
       people:
         lily:
-          x: 2.186
-          y: 0.874
+          x: 2.184
+          y: 0.873
           z: -3.02
-          frac: 0.138
-          top: 0.806
+          frac: 0.14
+          top: 0.804
           fy: 1.891
           in: false
           occ: null
-          hz: 1.51
+          hz: 1.52
           bz: 0.0
           wx: 57.47
-          wy: 47.07
-          fa: 25
-          fh: 188
+          wy: 47.06
+          fa: 22
+          fh: 189
+          fay: 19
+          fap: 12
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -22.974
@@ -58715,7 +60340,15 @@ cuts:
           wy: 50.88
           fa: 11
           fh: 231
+          fay: 10
+          fap: -5
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.498
           y: 0.845
@@ -58731,22 +60364,34 @@ cuts:
           wy: 54.81
           fa: 29
           fh: 300
+          fay: 29
+          fap: -3
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.745
           y: 0.858
-          z: -7.68
-          frac: 0.056
-          top: 0.83
+          z: -7.69
+          frac: 0.057
+          top: 0.829
           fy: 1.224
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
-          wx: 42.53
+          wx: 42.52
           wy: 50.47
-          fa: 21
+          fa: 19
           fh: 107
+          fay: 9
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.259
@@ -58763,6 +60408,10 @@ cuts:
           wy: 47.6
           fa: 7
           fh: 119
+          fay: 7
+          fap: 0
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.376
@@ -58779,7 +60428,15 @@ cuts:
           wy: 58.15
           fa: 16
           fh: 61
+          fay: 16
+          fap: -1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.234
           y: 0.326
@@ -58795,7 +60452,14 @@ cuts:
           wy: 60.21
           fa: 36
           fh: 40
+          fay: 10
+          fap: 35
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.13
           y: 0.869
@@ -58811,6 +60475,10 @@ cuts:
           wy: 45.01
           fa: 1
           fh: 130
+          fay: 1
+          fap: 0
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.872
@@ -58827,6 +60495,10 @@ cuts:
           wy: 53.55
           fa: 92
           fh: 353
+          fay: 90
+          fap: 23
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.445
@@ -58843,6 +60515,10 @@ cuts:
           wy: 50.49
           fa: 17
           fh: 117
+          fay: 11
+          fap: -13
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 4.5
       t: 4.5
@@ -58856,20 +60532,24 @@ cuts:
       yaw: 149
       people:
         lily:
-          x: 2.18
-          y: 0.925
-          z: -3.06
-          frac: 0.139
-          top: 0.856
+          x: 2.179
+          y: 0.924
+          z: -3.07
+          frac: 0.141
+          top: 0.854
           fy: 1.954
           in: false
           occ: null
           hz: 1.51
           bz: 0.0
           wx: 57.47
-          wy: 47.07
-          fa: 25
-          fh: 188
+          wy: 47.06
+          fa: 22
+          fh: 189
+          fay: 19
+          fap: 12
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -50.205
@@ -58886,7 +60566,15 @@ cuts:
           wy: 50.86
           fa: 9
           fh: 232
+          fay: 8
+          fap: -5
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.501
           y: 0.788
@@ -58902,22 +60590,34 @@ cuts:
           wy: 54.8
           fa: 30
           fh: 300
+          fay: 29
+          fap: 3
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
-          x: -0.777
-          y: 0.898
-          z: -7.64
-          frac: 0.057
-          top: 0.87
+          x: -0.776
+          y: 0.897
+          z: -7.65
+          frac: 0.058
+          top: 0.868
           fy: 1.272
           in: false
           occ: null
-          hz: 1.5
+          hz: 1.51
           bz: 0.0
-          wx: 42.55
+          wx: 42.54
           wy: 50.48
-          fa: 23
+          fa: 19
           fh: 107
+          fay: 8
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.277
@@ -58934,6 +60634,10 @@ cuts:
           wy: 47.59
           fa: 7
           fh: 119
+          fay: 7
+          fap: 1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.487
@@ -58950,7 +60654,15 @@ cuts:
           wy: 58.13
           fa: 16
           fh: 61
+          fay: 16
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.262
           y: 0.331
@@ -58966,7 +60678,14 @@ cuts:
           wy: 60.21
           fa: 37
           fh: 40
+          fay: 10
+          fap: 36
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.119
           y: 0.906
@@ -58982,6 +60701,10 @@ cuts:
           wy: 45.0
           fa: 1
           fh: 130
+          fay: 1
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.938
@@ -58998,6 +60721,10 @@ cuts:
           wy: 53.55
           fa: 92
           fh: 353
+          fay: 90
+          fap: 24
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.466
@@ -59014,6 +60741,10 @@ cuts:
           wy: 50.49
           fa: 16
           fh: 117
+          fay: 11
+          fap: -13
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 5.25
       t: 5.25
@@ -59027,20 +60758,24 @@ cuts:
       yaw: 150
       people:
         lily:
-          x: 2.182
-          y: 0.968
-          z: -3.1
-          frac: 0.14
-          top: 0.899
+          x: 2.18
+          y: 0.967
+          z: -3.11
+          frac: 0.142
+          top: 0.897
           fy: 2.01
           in: false
           occ: null
-          hz: 1.51
+          hz: 1.52
           bz: 0.0
           wx: 57.48
           wy: 47.06
-          fa: 25
-          fh: 188
+          fa: 22
+          fh: 189
+          fay: 18
+          fap: 13
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -293.612
@@ -59057,7 +60792,15 @@ cuts:
           wy: 50.85
           fa: 8
           fh: 232
+          fay: 7
+          fap: -4
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.502
           y: 0.748
@@ -59073,22 +60816,34 @@ cuts:
           wy: 54.79
           fa: 30
           fh: 300
+          fay: 30
+          fap: 6
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.804
-          y: 0.934
-          z: -7.62
-          frac: 0.058
-          top: 0.905
+          y: 0.933
+          z: -7.63
+          frac: 0.059
+          top: 0.903
           fy: 1.317
           in: false
           occ: null
-          hz: 1.5
+          hz: 1.51
           bz: 0.0
-          wx: 42.55
+          wx: 42.54
           wy: 50.48
-          fa: 23
+          fa: 19
           fh: 107
+          fay: 8
+          fap: 18
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.295
@@ -59105,6 +60860,10 @@ cuts:
           wy: 47.59
           fa: 7
           fh: 119
+          fay: 7
+          fap: 1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.562
@@ -59121,7 +60880,15 @@ cuts:
           wy: 58.13
           fa: 16
           fh: 61
+          fay: 16
+          fap: 1
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.287
           y: 0.338
@@ -59137,7 +60904,14 @@ cuts:
           wy: 60.21
           fa: 37
           fh: 40
+          fay: 10
+          fap: 36
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.11
           y: 0.94
@@ -59153,6 +60927,10 @@ cuts:
           wy: 45.0
           fa: 1
           fh: 130
+          fay: 1
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -1.999
@@ -59169,6 +60947,10 @@ cuts:
           wy: 53.55
           fa: 93
           fh: 353
+          fay: 91
+          fap: 24
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.485
@@ -59185,6 +60967,10 @@ cuts:
           wy: 50.49
           fa: 16
           fh: 117
+          fay: 10
+          fap: -12
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 6.0
       t: 6.0
@@ -59198,11 +60984,11 @@ cuts:
       yaw: 150
       people:
         lily:
-          x: 2.185
+          x: 2.184
           y: 1.001
           z: -3.13
-          frac: 0.142
-          top: 0.931
+          frac: 0.143
+          top: 0.93
           fy: 2.054
           in: false
           occ: null
@@ -59210,8 +60996,12 @@ cuts:
           bz: 0.0
           wx: 57.49
           wy: 47.06
-          fa: 24
-          fh: 188
+          fa: 22
+          fh: 189
+          fay: 18
+          fap: 13
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: 581.077
@@ -59228,6 +61018,10 @@ cuts:
           wy: 50.86
           fa: 8
           fh: 232
+          fay: 7
+          fap: -4
+          bx: 57.4
+          by: 51.0
           h: 1.75
         rabi:
           x: 0.501
@@ -59244,13 +61038,21 @@ cuts:
           wy: 54.8
           fa: 30
           fh: 300
+          fay: 30
+          fap: 2
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.823
-          y: 0.96
-          z: -7.62
-          frac: 0.059
-          top: 0.93
+          y: 0.959
+          z: -7.63
+          frac: 0.06
+          top: 0.929
           fy: 1.351
           in: false
           occ: null
@@ -59258,8 +61060,12 @@ cuts:
           bz: 0.0
           wx: 42.53
           wy: 50.47
-          fa: 22
+          fa: 19
           fh: 107
+          fay: 8
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.311
@@ -59276,6 +61082,10 @@ cuts:
           wy: 47.6
           fa: 7
           fh: 119
+          fay: 7
+          fap: 1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.591
@@ -59292,7 +61102,15 @@ cuts:
           wy: 58.15
           fa: 15
           fh: 61
+          fay: 15
+          fap: 0
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.305
           y: 0.347
@@ -59308,7 +61126,14 @@ cuts:
           wy: 60.21
           fa: 37
           fh: 40
+          fay: 9
+          fap: 36
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.102
           y: 0.966
@@ -59324,6 +61149,10 @@ cuts:
           wy: 45.0
           fa: 1
           fh: 130
+          fay: 1
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -2.044
@@ -59340,6 +61169,10 @@ cuts:
           wy: 53.55
           fa: 93
           fh: 353
+          fay: 91
+          fap: 24
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.499
@@ -59356,6 +61189,10 @@ cuts:
           wy: 50.48
           fa: 16
           fh: 117
+          fay: 10
+          fap: -12
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 6.75
       t: 6.75
@@ -59369,20 +61206,24 @@ cuts:
       yaw: 150
       people:
         lily:
-          x: 2.172
-          y: 1.02
+          x: 2.174
+          y: 1.019
           z: -3.16
-          frac: 0.14
-          top: 0.951
+          frac: 0.142
+          top: 0.949
           fy: 2.077
           in: false
           occ: null
           hz: 1.52
           bz: 0.0
-          wx: 57.47
-          wy: 47.05
-          fa: 47
+          wx: 57.48
+          wy: 47.04
+          fa: 46
           fh: 250
+          fay: 43
+          fap: 18
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -164.534
@@ -59399,7 +61240,15 @@ cuts:
           wy: 50.9
           fa: 61
           fh: 300
+          fay: 61
+          fap: 6
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.498
           y: 0.842
@@ -59415,12 +61264,20 @@ cuts:
           wy: 54.8
           fa: 30
           fh: 300
+          fay: 30
+          fap: 2
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.833
           y: 0.973
           z: -7.63
-          frac: 0.06
+          frac: 0.061
           top: 0.943
           fy: 1.369
           in: false
@@ -59429,8 +61286,12 @@ cuts:
           bz: 0.0
           wx: 42.51
           wy: 50.46
-          fa: 28
+          fa: 27
           fh: 120
+          fay: 21
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.319
@@ -59447,6 +61308,10 @@ cuts:
           wy: 47.61
           fa: 53
           fh: 60
+          fay: 53
+          fap: -1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.547
@@ -59463,7 +61328,15 @@ cuts:
           wy: 58.18
           fa: 49
           fh: 357
+          fay: 48
+          fap: 12
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.286
           y: 0.377
@@ -59479,7 +61352,14 @@ cuts:
           wy: 60.19
           fa: 71
           fh: 350
+          fay: 40
+          fap: 63
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.097
           y: 0.979
@@ -59495,6 +61375,10 @@ cuts:
           wy: 45.0
           fa: 69
           fh: 60
+          fay: 69
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -2.03
@@ -59511,6 +61395,10 @@ cuts:
           wy: 53.5
           fa: 125
           fh: 300
+          fay: 144
+          fap: 61
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.502
@@ -59527,6 +61415,10 @@ cuts:
           wy: 50.48
           fa: 73
           fh: 180
+          fay: 73
+          fap: -17
+          bx: 48.6
+          by: 50.6
           h: 1.6
     - T: 6.96
       t: 6.96
@@ -59540,11 +61432,11 @@ cuts:
       yaw: 150
       people:
         lily:
-          x: 2.17
-          y: 1.022
+          x: 2.172
+          y: 1.021
           z: -3.16
-          frac: 0.14
-          top: 0.952
+          frac: 0.142
+          top: 0.95
           fy: 2.079
           in: false
           occ: null
@@ -59554,6 +61446,10 @@ cuts:
           wy: 47.05
           fa: 47
           fh: 250
+          fay: 43
+          fap: 18
+          bx: 57.6
+          by: 47.0
           h: 1.65
         purple-peel:
           x: -142.357
@@ -59570,7 +61466,15 @@ cuts:
           wy: 50.9
           fa: 61
           fh: 300
+          fay: 61
+          fap: 6
+          bx: 57.4
+          by: 51.0
           h: 1.75
+          lm:
+            le: out
+            re: out
+            mo: out
         rabi:
           x: 0.498
           y: 0.864
@@ -59586,12 +61490,20 @@ cuts:
           wy: 54.81
           fa: 30
           fh: 300
+          fay: 30
+          fap: 1
+          bx: 56.2
+          by: 54.8
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         berda:
           x: -0.834
           y: 0.974
           z: -7.63
-          frac: 0.06
+          frac: 0.061
           top: 0.944
           fy: 1.37
           in: false
@@ -59600,8 +61512,12 @@ cuts:
           bz: 0.0
           wx: 42.51
           wy: 50.46
-          fa: 28
+          fa: 27
           fh: 120
+          fay: 21
+          fap: 17
+          bx: 42.4
+          by: 50.4
           h: 1.65
         rubens:
           x: -0.32
@@ -59618,6 +61534,10 @@ cuts:
           wy: 47.61
           fa: 53
           fh: 60
+          fay: 53
+          fap: -1
+          bx: 43.4
+          by: 47.6
           h: 1.6
         bisco:
           x: 4.548
@@ -59634,7 +61554,15 @@ cuts:
           wy: 58.18
           fa: 49
           fh: 357
+          fay: 48
+          fap: 12
+          bx: 49.0
+          by: 58.4
           h: 1.55
+          lm:
+            le: out
+            re: out
+            mo: out
         hundred-knight:
           x: 2.287
           y: 0.377
@@ -59650,7 +61578,14 @@ cuts:
           wy: 60.19
           fa: 71
           fh: 350
+          fay: 40
+          fap: 63
+          bx: 50.3
+          by: 60.4
           h: 0.9
+          lm:
+            le: out
+            re: out
         nezaria:
           x: 0.097
           y: 0.98
@@ -59666,6 +61601,10 @@ cuts:
           wy: 45.0
           fa: 69
           fh: 60
+          fay: 69
+          fap: 1
+          bx: 45.8
+          by: 45.0
           h: 1.55
         teressa-swamp:
           x: -2.031
@@ -59682,6 +61621,10 @@ cuts:
           wy: 53.5
           fa: 125
           fh: 300
+          fay: 144
+          fap: 61
+          bx: 44.0
+          by: 53.8
           h: 1.5
         metallica:
           x: -0.504
@@ -59698,6 +61641,10 @@ cuts:
           wy: 50.48
           fa: 73
           fh: 180
+          fay: 73
+          fap: -16
+          bx: 48.6
+          by: 50.6
           h: 1.6
   A30-025:
     sec: 7.3
