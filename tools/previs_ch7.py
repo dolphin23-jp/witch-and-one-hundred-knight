@@ -12,6 +12,7 @@ previs_council.py と同じ呼ばれ方（previs.py の EXT の並び）:
   heinz-carriage  ハインツの馬車（refs/heinz-carriage_sheet_01）。紺と金の箱馬車、白い馬2頭、御者台の兵士。向きは馬の向き（前 = 人形の正面）
   heinz           ハインツ（金髪、白と紺の上着）
   heavy-fruit     ずっしりの実、perfume 香水の小瓶（人形の体を隠して小物だけ）
+  jade-fruit      翠ノ実（refs/yakai-props_sheet_01。りんご形の光る緑の実、茶色の茎と葉 1 枚。A25 で盲いた魔女がビスコの手に渡す。2026-11-13）
 
 道具（world/cinque-forest-layout.yaml）:
   junk    ゴミの山（苔の盛り土に樽・木箱・車輪・骨・壺・布）。r・h
@@ -32,6 +33,7 @@ SHAPE = {
     "heinz": {"r": 0.16, "hr": 0.13, "arm": 0.05},
     "heavy-fruit": {"r": 0.16, "hr": 0.02, "arm": 0.01},
     "perfume": {"r": 0.04, "hr": 0.02, "arm": 0.005},
+    "jade-fruit": {"r": 0.05, "hr": 0.02, "arm": 0.005},
 }
 PREFIXES = ("junk", "wheel", "crate", "reeds", "pond", "log", "mpillar")
 
@@ -211,6 +213,11 @@ def decorate(P, who, root, head, arms, sh, body_h, col):
         _hide_default(root)
         P.prim("sphere", P.make_mat("fruit_m", (0.78, 0.45, 0.18)), "fruit", root, (0, 0, 0.16), radius=0.17, scale=(1, 1, 0.9))
         P.prim("cyl", P.make_mat("fruit_stem", (0.3, 0.42, 0.15)), "fruit_stem", root, (0, 0, 0.32), radius=0.02, depth=0.08)
+    elif who == "jade-fruit":   # 翠ノ実: 手のひらに乗る大きさ（直径約 10cm）の、内から光る緑の実
+        _hide_default(root)
+        P.prim("sphere", P.make_mat("jade_fruit", (0.42, 0.95, 0.5), rough=0.35, emit=1.8), "jade", root, (0, 0, 0.05), radius=0.05, scale=(1, 1, 0.92))
+        P.prim("cyl", P.make_mat("jade_stem", (0.32, 0.22, 0.1)), "jade_stem", root, (0, 0, 0.105), radius=0.005, depth=0.03)
+        P.prim("sphere", P.make_mat("jade_leaf", (0.18, 0.48, 0.2)), "jade_leaf", root, (0.022, 0, 0.112), radius=1.0, scale=(0.028, 0.012, 0.005))
     elif who == "perfume":
         _hide_default(root)
         glass = P.beam_mat("perfume_glass", (0.85, 0.6, 0.95), strength=0.6, alpha=0.4)
