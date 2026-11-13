@@ -2,23 +2,23 @@
 # kind: M＝小さな動き、A＝見せ場
 id: A30-023
 scene: A30
-tc: 195.6
-sec: 8.7
+tc: 195.0
+sec: 9.3
 kind: M
 shot: メタリカ・沼の魅力
-acting: （「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」）
+acting: 腕を広げてのけぞった形（022 の続き）から右腕を振り下ろし、ネザリアを指さしてにらみ、リューベンスへ向き直って「礼だ！」で前へ突き出す（「ワタシを騙してくれた礼だ！」）。両腕を開いて手のひらを返し、足もとの沼を払うように手を下へ・外へ広げて見せびらかし、ベルダから倒れたテレッサへ体を回して見下ろす（「存分に沼の魅力を味わうがいい！」）。腕を引いて小さく沈み、カメラへ向き直って凄み（「死ぬほど」）、両腕を V に振り上げてカメラへ叫ぶ（「もってきたからな！！」）。後ろの沼から碧の噴き上げ。叫び終えてあごを上げる得意顔、両腕を広げたまま低いカメラを見下ろす
 dialogue:
 - L1049「ワタシを騙してくれた礼だ！存分に沼の魅力を味わうがいい！死ぬほどもってきたからな！！」
 sound: null
-notes: null
+notes: '2026-11-13 組み直し: カットの頭を 195.6→195.0 へ（022 の終わりの止めを詰め、台詞の前に 1.0 秒の予備動作）。L1049 はカットの 1.0〜8.36 秒。指す相手はカメラの側の魔女（ネザリア 333・リューベンス 300）。瘴気の泡はメタリカより後ろ（東）だけ（blocking の ambient）。同日の直し: 頭の head を 022 の終わりと同じ -12 に。台詞の間は「話す身ぶり」で右腕が音節ごとに上下しないよう止めた（blocking の walk: 0.96）。叫ぶ間は顔をカメラへ向け、あごを上げるのは叫び終えてから。V の両拳が画に収まる所で押し込みを止める。リリーは画面の左の端の瓦礫の陰（帽子の先だけ）'
 camera:
   pos:
-  - 48.4
-  - 53.6
-  - 0.6
+  - 45.7
+  - 49.82
+  - 0.45
   look: metallica
-  lens: 30
-  move: メタリカの正面（南）の低い所から、あおる
+  lens: 26
+  move: メタリカの西の沼の面に近い低い所（0.45m、宣言した軸の側）から全身をあおり、背景にパープルピール・ラビィとウサ丸（リリーは左の端の瓦礫の陰）。句2 でごく遅く寄り、「死ぬほど」から台車で押し込み（合わせて約0.75m）、決めの「もってきたからな！！」で 35mm の低い寄り（揺れ）。V の両拳は画の中
 background: council-room
 image: null
 refs:
@@ -36,29 +36,29 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: メタリカが魔女たちを指さして回る
-  end: 得意顔のメタリカ
+  start: 腕を広げたメタリカが、議会の魔女たちを順に指さす
+  end: 両腕を広げて得意顔のメタリカ（後ろに碧の噴き上げ）
 timing:
-  lead: 0.4
+  lead: 1.0
 blocking:
-  start: ネ（左・横顔（画面右向き））、メ（中央・斜め前（画面左向き））
-  end: ネ（左・横顔（画面右向き））、メ（中央・正面）
-  background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
+  start: パ（中央・正面）、メ（中央・斜め前（画面右向き））、ラ（中央・正面）、ウ（中央・斜め後ろ（画面左向き））
+  end: パ（左・正面）、メ（中央・正面）、ラ（右・正面）、ウ（右・斜め後ろ（画面左向き））
+  background: 壊れた議会室の東側（縦長の窓と紫がかった赤のカーテンの壁。床は碧の毒沼と瓦礫）
   panels: []
-  staging_en: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-    and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-    (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; Metallica (the orange-haired
-    witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
-    baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: dark wood panelled
-    round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets
-    of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
-  staging_en_end: 'In frame (exactly 2 people, from left to right): Nezaria, the fog witch and chairwoman, as in her reference sheet (nezaria_sheet_01): a very large white witch hat with a lavender underside
-    and a gold ring around it, very long straight lavender hair, sleepy half-closed eyes, a white dress with black frills and a gold medallion, holding a tall silver staff with a large ribbed gold head
-    (the talking staff), a tiny white mouse sitting on her hat brim, standing, at the far left of the frame, in profile, turned toward screen right, small in the background; Metallica (the orange-haired
-    witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon,
-    baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera. No other people. Behind: dark wood panelled round walls with tall arched
-    windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging
-    over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en: 'In frame (exactly 4 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background; Metallica (the orange-haired witch: huge dark purple witch hat
+    with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings, black top with a red ribbon, baggy dark purple pants with
+    gold concentric circles, curled-toe boots), standing, in the center of the frame, in three-quarter view, turned toward screen right; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet,
+    standing, on the right of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the right of the frame, seen from behind
+    at an angle, turned toward screen left, small in the background. No other people. Low angle from just above the swamp surface, looking up. Behind: the intact east side of the wrecked round council chamber:
+    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains; the floor is flooded with glowing jade-green poison swamp water, with rubble (a large dark
+    block of rubble at the far left edge of the frame); small jade-green miasma bubbles drift in the air behind Metallica.'
+  staging_en_end: 'In frame (exactly 4 people, from left to right): Purple Peel, the dust witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
+    Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings,
+    black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera; Rabi (Rabil Lalla La), the flame witch,
+    as in her reference sheet, standing, on the right of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, on the right of
+    the frame, seen from behind at an angle, turned toward screen left, small in the background. No other people. Low angle from just above the swamp surface, looking up. Behind: the intact east side of
+    the wrecked round council chamber: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains; the floor is flooded with glowing jade-green poison swamp
+    water, with rubble; small jade-green miasma bubbles drift in the air behind Metallica. A tall jade-green geyser of swamp water erupts from the swamp behind her on the left.'
   sketch:
   - episodes/A/scenes/A30/gen/sketch/A30-023_start.png
   - episodes/A/scenes/A30/gen/sketch/A30-023_end.png

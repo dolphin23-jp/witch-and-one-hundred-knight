@@ -114,6 +114,27 @@ def tilt_of(c, cam, look):
     return 0.0
 
 
+def with_eye_look_h(st, cut, which, c):
+    """カメラのキーが aim: eyes（人物の目を見る）で look_h を書いていないとき、その人物の目の高さ（姿勢を見る）を look_h にした c を返す。
+    下絵（tools/previs.py）は目を見るのに、ここでは水平の画として計算していた（A30-021 の低い見上げ。2026-11-13）。"""
+    if c.get("look_h") is not None:
+        return c
+    ck = motion.sorted_keys(st.bk["cuts"][cut].get("cam_keys") or [])
+    if not ck:
+        return c
+    k = ck[0] if which == "start" else ck[-1]
+    who = k.get("look")
+    if k.get("aim") != "eyes" or not isinstance(who, str) or who not in st.lay["people"] or k.get("look_h") is not None:
+        return c
+    pp = st.lay["people"][who]
+    pst = posture_of(st.bk["cuts"][cut], which, who)
+    eye = 0.2 if pst == "lying" else pp.get("eye", pp["h"] * 0.93) * POSTURE_H.get(pst, 1.0)
+    return {**c, "look_h": round(eye, 2)}
+
+
+POSTURE_EN = {"lying": "lying on the ground", "sitting": "sitting", "kneeling": "kneeling", "crouching": "crouching"}
+
+
 # ---------- 場面 ----------
 
 def merge_layouts(lay, extras):
@@ -279,8 +300,9 @@ class Stage:
         lens = c.get("lens_end", c["lens"]) if which == "end" else c["lens"]
         half = fov_half(lens)
         th = math.tan(half)
-        only = c.get("only")
+        only = c.get(f"only_{which}", c.get("only"))   # only_start・only_end: 始め・終わりの画だけに映す人物（カットの中で切り替えるとき。2026-11-13）
         people, hidden = [], []
+        c = with_eye_look_h(self, cut, which, c)
         tilt = tilt_of(c, cam, look)
         vhalf = math.atan(th * 9 / 16)
         for who, p in pos.items():
@@ -310,7 +332,10 @@ class Stage:
                 s = dot(v, right) / z / th
                 if abs(s) > 1.1:
                     continue
-            e = {"who": who, "s": round(s, 2), "dist": round(z, 2)}
+            # 画の高さに占める背の高さ（姿勢で低くなる。レンズを見る）。staging_en の「small in the background」に使う（2026-11-13）
+            pst = posture_of(cc, which, who)
+            hh = POSTURE_H["lying"] if pst == "lying" else self.lay["people"][who]["h"] * POSTURE_H.get(pst, 1.0)
+            e = {"who": who, "s": round(s, 2), "dist": round(z, 2), "frac": round(hh / max(1e-6, 2 * z * math.tan(vhalf)), 2)}
             e["side"] = "左" if s < -0.33 else ("右" if s > 0.33 else "中央")
             # 体の向き: 人物からカメラへの向きと、体の向きの差
             fb = face[who]
@@ -358,7 +383,7 @@ class Stage:
             z = dot(v, d)
             if z > 0.3 and abs(dot(v, right) / z / th) <= 1.0:
                 props.append(pr["ja"])
-        return {"people": people, "bg": bg, "props": props, "bearing": round(cb), "cam": list(c["cam"]), "lens": lens, "hidden": hidden}
+        return {"people": people, "bg": bg, "props": props, "bearing": round(cb), "cam": list(c["cam"]), "lens": lens, "hidden": hidden, "tilt": round(tilt, 3)}
 
     # ---------- 言葉 ----------
 
@@ -414,8 +439,10 @@ class Stage:
                 side = "right" if "画面右" in b else "left"
                 bt = {"斜め": "in three-quarter view", "横顔": "in profile", "斜め後": "seen from behind at an angle"}[
                     "斜め後" if b.startswith("斜め後ろ") else ("横顔" if b.startswith("横顔") else "斜め")] + f", turned toward screen {side}"
-            s = f"{en[e['who']]}, {poses.get(e['who'], 'standing')}, {where(e['s'])}, {bt}"
-            if e["dist"] > 6.0 and c.get("frame") not in ("大引き", "引き"):
+            pst = posture_of(c, which, e["who"])   # keys の姿勢から（lying・kneeling など。2026-11-13: 前は pose がなければ全員 standing）
+            s = f"{en[e['who']]}, {poses.get(e['who'], POSTURE_EN.get(pst, 'standing'))}, {where(e['s'])}, {bt}"
+            # 小さく映るか: 画の高さに占める背の高さ（レンズを見る）。前は距離 6m だけで決めていた（62mm の肩なめの主役が small になった）
+            if e.get("frac", 1.0) < 0.3 and e["dist"] > 4.0 and c.get("frame") not in ("大引き", "引き"):
                 s += ", small in the background"
             g = e.get("gaze")
             if e.get("gaze_to"):   # 相手の名前で書く（画面の外でも）
@@ -454,10 +481,16 @@ class Stage:
     def checks(self):
         res = {"axis": [], "jumps": [], "overlap": [], "offscreen": [], "hidden": []}
         for ax in self.bk.get("axes", []):
-            i0, i1 = self.order.index(ax["cuts"][0]), self.order.index(ax["cuts"][1])
-            for cut in self.order[i0:i1 + 1]:
+            # 範囲（cuts: [始め, 終わり]）か、カットの axis: <名前> で効く（tools/framing.py の declared_axis と同じ。A30 は cuts のない書き方）
+            span = []
+            if ax.get("cuts"):
+                i0, i1 = self.order.index(ax["cuts"][0]), self.order.index(ax["cuts"][1])
+                span = self.order[i0:i1 + 1]
+            for cut in self.order:
                 c = self.bk["cuts"][cut]
-                if c.get("axis_free") or c.get("insert"):
+                if cut not in span and c.get("axis") != ax["name"]:
+                    continue
+                if c.get("axis_free") or c.get("insert") or c.get("axis") in ("free", "insert") or (c.get("axis") and c["axis"] != ax["name"]):
                     continue
                 pos = self.states[cut]["start"][0]
                 a, b = pos.get(ax["a"]), pos.get(ax["b"])
@@ -829,7 +862,7 @@ def sketch_areas(st, d, cam, ch, d2, right, ct, stt, f, W, H, hz):
 
 def sketch(st, cut, which, path, W=1536, H=864):
     """カメラの位置・向き・レンズ・高さから、人物（色の人形）と崖の縁・遠景の方位を透視で描く。構図の参照に使う。"""
-    c = cam_at(st.bk["cuts"][cut], which)
+    c = with_eye_look_h(st, cut, which, cam_at(st.bk["cuts"][cut], which))
     pos, face = st.states[cut][which]
     cam = tuple(c["cam"][:2])
     ch = c["cam"][2]
@@ -896,7 +929,7 @@ def sketch(st, cut, which, path, W=1536, H=864):
             d.text((b[0], t[1] - 14), pr["ja"][:6], font=fs, fill=(60, 40, 30), anchor="mm")
     # 人物（遠い順に描く）
     order = []
-    only = c.get("only")
+    only = c.get(f"only_{which}", c.get("only"))
     for who, p in pos.items():
         if p is None or (only is not None and who not in only):
             continue
