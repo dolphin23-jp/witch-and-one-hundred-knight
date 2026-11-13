@@ -24,7 +24,7 @@ camera:
   look: teressa-swamp
   lens: 34
   move: （2026-11-13 組み直し 案A13）021a（0〜13.5）は、テレッサの顔より低い所（0.35m）から見上げたまま、左の真横（テレッサから方位 250）から前の 3/4（方位 280、1.8 秒まで。「し、」で顔が見え始める。その後ゆっくり 294）へ回り込み、見る点を目に固定して 34→45mm で寄る。倒れる頭を追って下を向き、沼に倒れて止まった顔を約 0.75 秒見せる。13.5
-    で切り替え（021b）、倒れた頭の横の沼すれすれ（0.18m）から、わずかに傾けた画（roll −5）で、顔を向けて口を押さえるベルダを 55mm の腰上で見上げ、口を押さえてから 64mm へゆっくり寄って止まる（ベルダは画の中央やや右、惑星と月は画の外）
+    で切り替え（021b）、倒れた頭の横の沼すれすれ（0.18m）から、わずかに傾けた画（roll −5）で、顔を向けて口を押さえるベルダを 55mm の腰上で見上げ、口を押さえてから 64mm へ寄り、「……なんということ……！」の終わり（15.6）で止まって、凍った間は動かさない（ベルダは画の中央やや右、惑星と月は画の外）
 background: council-room
 image: null
 refs:
@@ -47,24 +47,19 @@ act:
 timing:
   lead: 0.8
 blocking:
-  start: リ（中央・正面）、メ（中央・正面）、テ沼（中央・横顔（画面左向き）・目線 画面左）、パ（中央・斜め前（画面左向き））、ラ（右・正面）、ウ（右・斜め後ろ（画面左向き））
+  start: テ沼（中央・横顔（画面左向き）・目線 画面左）
   end: ベ（右・斜め前（画面右向き）・目線 カメラの方）
   background: 議会室の壁（縦長の窓と紫がかった赤のカーテン）
   panels: []
-  staging_en: 'In frame (exactly 6 people, from left to right): Lily (Liliane), the thin-ice witch, as in her reference sheet, standing, on the left of the frame, facing the camera, small in the background;
-    Metallica (the orange-haired witch: huge dark purple witch hat with a red jewel emblem and a rainbow-colored flame at its bent tip, very long orange hair ending in two long braids tied with green rings,
-    black top with a red ribbon, baggy dark purple pants with gold concentric circles, curled-toe boots), standing, in the center of the frame, facing the camera, small in the background; Teressa drenched
-    from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat, dripping hair and clothes, eyes shut, standing, in the center
-    of the frame, in profile, turned toward screen left, looking at Berda, the lye witch, as in her reference sheet (off screen, toward screen left); Purple Peel, the dust witch, as in her reference sheet,
-    standing, on the right of the frame, in three-quarter view, turned toward screen left, small in the background; Rabi (Rabil Lalla La), the flame witch, as in her reference sheet, standing, at the far
-    right of the frame, facing the camera, small in the background; Usamaru, Rabi''s floating rabbit doll, as in its reference sheet, standing, at the far right of the frame, seen from behind at an angle,
-    turned toward screen left, small in the background. No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the
-    round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars
+  staging_en: 'In frame (exactly one person): Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (teressa-swamp_sheet_01): soaked drooping witch hat,
+    dripping hair and clothes, eyes shut, kneeling in the swamp, her right arm still raised toward Berda, in the center of the frame, in profile, turned toward screen left, looking at Berda, the lye witch,
+    as in her reference sheet (off screen, toward screen left). No other people. Behind: dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside
+    the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars
     between purple-red curtains.'
-  staging_en_end: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, standing, on the right of the frame, in three-quarter view, turned toward screen right, looking at Teressa
-    drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (off screen, toward screen center). No other people. Behind: dark wood panelled round walls with tall
-    arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light from the glowing planets of a huge orrery
-    hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
+  staging_en_end: 'In frame (exactly one person): Berda, the lye witch, as in her reference sheet, covering her mouth with her right hand in shock, on the right of the frame, in three-quarter view, turned
+    toward screen right, looking at Teressa drenched from head to toe in the glowing jade-green poison swamp water, as in her reference sheet (off screen, toward screen center). No other people. Behind:
+    dark wood panelled round walls with tall arched windows full of stars between heavy purple-red curtains. Night inside the round council chamber at the top of a gothic witch tower: warm golden light
+    from the glowing planets of a huge orrery hanging over a round table, dark wood panelled walls, tall windows full of stars between purple-red curtains.'
   sketch:
   - episodes/A/scenes/A30/gen/sketch/A30-021_start.png
   - episodes/A/scenes/A30/gen/sketch/A30-021_end.png
