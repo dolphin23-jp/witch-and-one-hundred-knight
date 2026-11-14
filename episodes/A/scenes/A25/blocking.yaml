@@ -832,9 +832,13 @@ cuts:
   A25-036:
     frame: 全身（正面で受ける・東から）→肩なめ（ビスコの背越しに魔女）→胸上（ビスコ・南西の低い所から）
     lighting: witch_den
+    ambient: false   # 空気の粒がレンズの近くを通って大きな紫の玉になる（038・040・041 と同じ）。粒は奥にだけ置く
+    fx:
+      - {kind: motes, style: sparkles, at: [73.5, 100.5, 1.4], box: [4.0, 3.0, 2.0], n: 12}   # 036a の魔女の奥
+      - {kind: motes, style: sparkles, at: [84.0, 98.0, 1.5], box: [4.0, 3.0, 2.5], n: 12}   # 036b のビスコの奥
     only: [hundred-knight, blind-witch, bisco]
     only_end: [bisco]   # 036b（9.3〜）はビスコの胸上（画の右寄り、視線の先の左を空ける）。魔女は画の外の左、百騎兵は画の右の外
-    pose: {bisco: 'running toward the camera in a hurry, leaning forward', hundred-knight: 'dashing ahead past Bisco', blind-witch: 'standing far behind with her back turned to them, her left hand closed at her chest'}   # 静止画の指示文の言葉
+    pose: {bisco: 'running toward the camera in a hurry, leaning forward', hundred-knight: 'dashing ahead beside Bisco, nearer to the camera than the witch and in front of her', blind-witch: 'standing far behind with her back turned to them, her left hand closed at her chest'}   # 静止画の指示文の言葉
     pose_end: {bisco: 'turning away toward the exit with a tired sigh and taking the first step, seen from behind'}
     # 頭の向き: gaze は書かない（静止画の文に「魔女を見る」が入り、走る始めと出口へ向く終わりが誤るため）。
     # 魔女が話す間（L860、0.3〜9.09）は道具が頭を話し手へ ±70° 回すので、背を向けて走る・出口を見る間は head の 2 つ目で打ち消し、ビスコ自身が話す間（L861）は head で魔女へ向ける
@@ -874,20 +878,20 @@ cuts:
         - {t: 0.9, at: [79.93, 101.08], face: 58, pose: {base: dash, head: [0, -70, 0]}, ease: linear}
         - {t: 1.3, at: [81.35, 100.55], face: 64, pose: {base: run, head: [0, -70, 0]}, ease: linear}
         - {t: 1.75, at: [81.85, 100.45], face: 64, pose: {base: stand, lean: -15, drop: 0.1, r_ft: [0.05, 0.4, 0], head: [-10, -70, 0]}, blend: 0.35, ease: out}   # 行き過ぎて止まる
-        - {t: 2.3, face: 250, turn: 0.5, pose: stand, blend: 0.4}   # 北回りで振り返る
-        - {t: 2.9, at: [81.5, 100.6], face: 248, pose: walk}
-        - {t: 3.15, face: 248, pose: stand, blend: 0.2}
-        - {t: 4.6, face: 248, pose: stand}
-        - {t: 5.0, face: 42, turn: 0.4, pose: {base: stand, head: [0, -70, 0]}, blend: 0.4}   # ビスコと一緒に門の方を見る
-        - {t: 5.25, face: 42, pose: {base: walk, head: [0, -70, 0]}, blend: 0.2}
-        - {t: 6.05, at: [82.25, 100.05], face: 42, pose: {base: walk, head: [0, -70, 0]}}   # 待ちきれずに門の方へ数歩先に行く（画の右の外へ出る。6.5 の頼む声より前）
-        - {t: 6.3, face: 42, pose: {base: stand, head: [0, -70, 0]}, blend: 0.25}
-        - {t: 6.9, face: 42, pose: {base: stand, head: [-6, -40, 0]}, blend: 0.4}   # 肩越しにビスコを振り返る（画の外）
-        - {t: 11.6, face: 42, pose: {base: stand, head: [-6, -40, 0]}}
-        - {t: 11.9, face: 235, turn: 0.3, pose: walk, blend: 0.3}   # 来ないビスコを迎えに戻る（画の外）
-        - {t: 12.7, at: [81.5, 100.6], face: 235, pose: walk}
-        - {t: 12.9, face: 240, pose: stand, blend: 0.2}
-        - {t: 13.5, face: 60, turn: 0.45, pose: stand, blend: 0.45}   # ビスコと一緒に出口へ（037 の頭と同じ形）
+        - {t: 2.3, face: 250, turn: 0.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}   # 北回りで振り返り、剣を立てて持ち直す（剣先を人に向けない。037 と同じ持ち方）
+        - {t: 2.9, at: [81.5, 100.6], face: 248, pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+        - {t: 3.15, face: 248, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.2}
+        - {t: 4.6, face: 248, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+        - {t: 5.0, face: 42, turn: 0.4, pose: {base: stand, head: [0, -70, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}   # ビスコと一緒に門の方を見る
+        - {t: 5.25, face: 42, pose: {base: walk, head: [0, -70, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.2}
+        - {t: 6.05, at: [82.25, 100.05], face: 42, pose: {base: walk, head: [0, -70, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}}   # 待ちきれずに門の方へ数歩先に行く（画の右の外へ出る。6.5 の頼む声より前）
+        - {t: 6.3, face: 42, pose: {base: stand, head: [0, -70, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.25}
+        - {t: 6.9, face: 42, pose: {base: stand, head: [-6, -40, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}   # 肩越しにビスコを振り返る（画の外）
+        - {t: 11.6, face: 42, pose: {base: stand, head: [-6, -40, 0], r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+        - {t: 11.9, face: 235, turn: 0.3, pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.3}   # 来ないビスコを迎えに戻る（画の外）
+        - {t: 12.7, at: [82.3, 100.6], face: 235, pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}}   # 画の外で戻る先はビスコの右奥（037a の引きでビスコと重ならない位置）
+        - {t: 12.9, face: 240, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.2}
+        - {t: 13.5, face: 60, turn: 0.45, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.45}   # ビスコと一緒に出口へ（037 の頭と同じ形）
       blind-witch:
         - {t: 0.0, at: [75.6, 102.8], face: 250, pose: {base: stand, lean: 8, l_arm: [40, 0, 45], l_el: 115}}
         - {t: 0.45, face: 335, pose: {base: stand, lean: 8, l_arm: [40, 0, 45], l_el: 115}}   # 北回りで振り向く（途中でレンズの方を向かない）
@@ -920,6 +924,9 @@ cuts:
   A25-037:
     frame: 2人（南の低い所）→ 魔女の腰上（下から）
     axis: 忠告 魔女↔ビスコ
+    ambient: false   # 粒は奥にだけ（036 と同じ理由）
+    fx:
+      - {kind: motes, style: sparkles, at: [79.0, 99.5, 1.4], box: [9.0, 3.0, 2.5], n: 14}
     only: [hundred-knight, blind-witch, bisco]
     only_start: [blind-witch, bisco, hundred-knight]
     only_end: [blind-witch]
@@ -976,19 +983,19 @@ cuts:
       - {t: 11.2, pose: {base: cross, head: [-4, -80, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}}
       - {t: 16.1, pose: {base: cross, head: [-4, -80, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}}
       hundred-knight:   # 門の方を向いて待つ → 2.1 ビスコを見る（剣は立てて持つ）→ 3.3〜4.2 門へ向いて小さく跳ねて急かす → 4.6 またビスコを見る → 9.5〜11.8 遅れてとことこ戻る（カメラが寄るので画の外）→ 12.3 門の方（40）
-      - {t: 0, at: [81.5, 100.6], face: 60, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+      - {t: 0, at: [82.3, 100.6], face: 60, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}   # 036 の終わり（ビスコの右奥。引きでビスコと重ならない）
       - {t: 1.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
       - {t: 2.1, face: 235, turn: 0.55, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.45}
       - {t: 3.3, face: 48, turn: 0.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}
       - {t: 3.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0, osc: {hop: 0.55}}, blend: 0.15}
       - {t: 4.2, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.2}
       - {t: 4.75, face: 240, turn: 0.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}
-      - {t: 9.5, at: [81.5, 100.6], face: 240, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+      - {t: 9.5, at: [82.3, 100.6], face: 240, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
       - {t: 9.8, face: 254, turn: 0.3, pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.3}
       - {t: 11.5, at: [79.547, 101.158], face: 254, pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}, ease: inout}
       - {t: 11.8, at: [79.4, 101.2], pose: {base: walk, r_arm: [10, 8, 0], r_el: 90, grip: 0}, ease: out}
-      - {t: 12.3, face: 40, turn: 0.5, pose: stand, blend: 0.4}
-      - {t: 16.1, face: 40, pose: stand}
+      - {t: 12.3, face: 40, turn: 0.5, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}, blend: 0.4}
+      - {t: 16.1, face: 40, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
     cam_keys:
       - {t: 0.0, cam: [78.5, 109, 0.95], look: [78.2, 101.9], look_h: 1.0, lens: 27.5, frame: 引き}   # 037a: 線の南の低い所。魔女は左（灯りの柱は魔女の左へ離す）、ビスコと百騎兵は右で背中を見せて出口（右奥）へ
       - {t: 7.6, cam: [78.5, 109, 0.95], look: [78.2, 101.9], look_h: 1.0, lens: 27.8}   # 笑い・迷い・泣き落としの間は、3 人を入れたまま止める（レンズだけわずかに寄る）
@@ -1019,21 +1026,21 @@ cuts:
       blind-witch:   # 0〜0.6 立てた人差し指を下ろし、身を戻す → 1.3 静かに語り出す（声 1.4）→ 5.6「その手の中に」でビスコの手の方へわずかにうなずく | 038b: 8.4〜9.4「それを心に」で右手を胸の閉じた左手に重ね、頭を胸へ → 11.95〜13.3「色んなことが見えてくる」で顔を少し上げ背を伸ばす（目はつばの陰のまま）→ 14.6「はずだよ」で右手がゆるみ、笑みで止める → 15.6〜16.4 言い終わりに右手を下ろす
       - {t: 0, at: [75.6, 102.8], face: 79, pose: {base: stand, lean: 18, drop: 0.04, head: [-9, 0, 4], r_ft: [0, 0.16, 0], r_arm: [59, 10, 0], r_el: 72, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, expr: grin}   # 037 の終わり
       - {t: 0.6, pose: {base: stand, lean: 9, drop: 0.02, head: [-3, 0, 2], r_ft: [0, 0.08, 0], r_arm: [16, 8, 0], r_el: 30, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.55, pease: out}
-      - {t: 1.3, pose: {base: stand, lean: 7, head: [2, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 0.5, expr: smile}
-      - {t: 4.7, pose: {base: stand, lean: 8, head: [4, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 0.3}
-      - {t: 5.6, pose: {base: stand, lean: 10, head: [10, 0, -3], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 0.7}   # 見えないのに、手の在りかを知っている
+      - {t: 1.3, pose: {base: stand, lean: 7, head: [2, 0, 0], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.5, expr: smile}   # walk 0.96: 手前の右腕が話す身ぶりで 1 コマだけ跳ねないように
+      - {t: 4.7, pose: {base: stand, lean: 8, head: [4, 0, 0], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.3}
+      - {t: 5.1, pose: {base: stand, lean: 13, head: [18, 0, -4], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.45}   # 「その手の中に」の頭で、つばがビスコの手の方へはっきり下がる（見えないのに、手の在りかを知っている）
+      - {t: 6.4, pose: {base: stand, lean: 10, head: [10, 0, -3], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.8}
       - {t: 7.4, pose: {base: stand, lean: 8, head: [5, 0, 0], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.8}   # walk 0.96: 038b の手が話す身ぶりでちらつかないように
       - {t: 8.4, pose: {base: stand, lean: 7, head: [5, 0, 0], r_arm: [10, 8, 0], r_el: 22, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.3}
       - {t: 9.4, pose: {base: stand, lean: 9, head: [12, 0, -3], r_arm: [44, -2, 46], r_el: 104, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.95, pease: out, expr: smile}   # 両手を胸に（実を隠した左手に右手を重ねる）
       - {t: 11.7, pose: {base: stand, lean: 10, head: [14, 0, -4], r_arm: [44, -2, 46], r_el: 104, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.6}
-      - {t: 13.3, pose: {base: stand, lean: 4, head: [-9, 0, 2], r_arm: [40, -2, 44], r_el: 100, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.3, pease: out, expr: grin}   # 顔を少し上げる（あごは 23° 上がるが、目はつばの陰に残す）
-      - {t: 14.6, pose: {base: stand, lean: 3, head: [-11, 0, 3], r_arm: [30, 6, 30], r_el: 80, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.0, expr: smile}
-      - {t: 15.6, pose: {base: stand, lean: 3, head: [-12, 0, 3], r_arm: [28, 6, 28], r_el: 78, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.0}
-      - {t: 16.4, pose: {base: stand, lean: 3, head: [-12, 0, 3], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.8}   # 言い終わり（L865 は 15.53 まで）に右手を下ろす。039 の頭へ（あごを少し上げ smile、閉じた左手は胸）
-      bisco:   # 0.2〜1.05 腕を組んだまま右の肩越しに門へ目をやり、魔女へ戻る → 1.05〜1.55 声で腕をほどき姿勢を正す → 2.9〜3.85 重心を後ろへ、もう一度門の方へ目が行きかけて止まる → 3.9〜4.45「いつだって」で魔女へ戻り首をかしげる → 4.85〜6.0「その手の中に」で目を手へ落とし、両手を胸の前で椀にしてのぞき込む → 038b の間も（画の外）そのまま
+      - {t: 13.3, pose: {base: stand, lean: 4, head: [-4, 0, 2], r_arm: [40, -2, 44], r_el: 100, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.3, pease: out, expr: grin}   # 顔を少し上げる（あごの上げは浅く、背を伸ばす動きで見せる。目はつばの陰に残す）
+      - {t: 14.6, pose: {base: stand, lean: 3, head: [-5, 0, 3], r_arm: [30, 6, 30], r_el: 80, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.0, expr: smile}
+      - {t: 15.6, pose: {base: stand, lean: 3, head: [-5, 0, 3], r_arm: [28, 6, 28], r_el: 78, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 1.0}
+      - {t: 16.4, pose: {base: stand, lean: 3, head: [-5, 0, 3], r_arm: [8, 8, 0], r_el: 20, walk: 0.96, l_arm: [42, 0, 38], l_el: 112}, blend: 0.8}   # 言い終わり（L865 は 15.53 まで）に右手を下ろす。039 の頭へ（あごを少し上げ smile、閉じた左手は胸）
+      bisco:   # 0.2〜1.05 腕を組んだまま魔女の声を待つ（門へ目をやるのは 3.35 の 1 回だけ。036〜040 で門を見る芝居が重なるため）→ 1.05〜1.55 声で腕をほどき姿勢を正す → 2.9〜3.85 重心を後ろへ、もう一度門の方へ目が行きかけて止まる → 3.9〜4.45「いつだって」で魔女へ戻り首をかしげる → 4.85〜6.0「その手の中に」で目を手へ落とし、両手を胸の前で椀にしてのぞき込む → 038b の間も（画の外）そのまま
       - {t: 0, at: [77.6, 102.4], face: 259, pose: {base: cross, head: [-4, 0, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}, expr: annoyed}   # 腕組み: ひじは脇、前腕はみぞおちの下でほぼ水平に重ね（右が上）、手は反対の二の腕の下へ
       - {t: 0.2, pose: {base: cross, head: [-4, 0, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}}
-      - {t: 0.65, pose: {base: cross, twist: -12, head: [-6, -62, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}, blend: 0.4}
       - {t: 1.05, pose: {base: cross, head: [-3, 0, 0], r_arm: [6, 28, 64], r_el: 106, l_arm: [2, 20, 66], l_el: 100}, blend: 0.35}
       - {t: 1.55, pose: {base: stand, lean: -1, head: [-2, 0, 0]}, blend: 0.45, expr: neutral}
       - {t: 2.7, pose: {base: stand, lean: 1, head: [0, 0, 0]}, blend: 0.9}
@@ -1045,18 +1052,18 @@ cuts:
       - {t: 7.3, pose: {base: stand, lean: 7, head: [30, 0, 0], r_arm: [20, -5, 30], r_el: 108, l_arm: [20, -5, 30], l_el: 108}, blend: 1.2}   # 両手は胸の前で椀に（祈る形にしない。039 の頭と同じ形）、頭を下げてのぞき込む
       - {t: 16.4, pose: {base: stand, lean: 7, head: [30, 0, 0], r_arm: [20, -5, 30], r_el: 108, l_arm: [20, -5, 30], l_el: 108}, blend: 1.0}   # 039 の頭へ（胸の前の両手の椀と下を向いた頭）
       hundred-knight:   # 門の方を向いて待つ（ビスコを見るとレンズを見るので向かない）
-      - {t: 0, at: [79.4, 101.2], face: 40, pose: stand}
-      - {t: 16.4, face: 40, pose: stand}
+      - {t: 0, at: [79.4, 101.2], face: 40, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
+      - {t: 16.4, face: 40, pose: {base: stand, r_arm: [10, 8, 0], r_el: 90, grip: 0}}
     cam_keys:
       - {t: 0, cam: [75.665, 105.56, 0.9], look: [76.85, 102.68], look_h: 1.15, lens: 38, frame: 肩なめ}   # 038a: 魔女の右肩の後ろの低い所。魔女の帽子と肩は左の端 1/5、ビスコは右の 3 分の 1 で 3/4。門の左の尖塔がビスコの頭から生えないよう、前より 0.2m 右（東南東）。0〜7.65 の道すじ全体を同じだけずらす
       - {t: 1.4, cam: [75.675, 105.54, 0.9], look: [76.86, 102.68], lens: 38.2, ease: linear}
       - {t: 5.3, cam: [75.785, 105.38, 0.9], look: [76.95, 102.64], look_h: 1.15, lens: 39.6, ease: linear}   # 「本当に大事なものは、いつだって、」の間はごくゆっくり寄る
       - {t: 7.2, cam: [76.145, 104.83, 0.93], look: [77.47, 102.46], look_h: 1.17, lens: 50, frame: 胸上, ease: inout}   # 「その手の中に」で両手が上がるのに合わせて胸上へ押す（魔女は左へ外れ、ピントがビスコに来て奥の門がぼける）。注視をビスコの少し左にして、のぞき込む先（画面の左）を空け、百騎兵を右下の隅へ寄せる
       - {t: 7.65, cam: [76.155, 104.81, 0.93], look: [77.47, 102.46], look_h: 1.17, lens: 50.4, ease: out}
-      - {t: 7.7, cam: [77.84, 103.8, 0.68], look: blind-witch, look_h: 1.15, lens: 48, frame: 胸上, ease: step}   # 038b: 魔女の右前の低い所（顔の高さより下）から 3/4（向きの差 35°）。灯り a は右の 6 分の 1 の暖かい点で、寄るほど右へ離れる（前は魔女のあごの横に並んだ）
-      - {t: 11.9, cam: [77.825, 103.795, 0.68], look: blind-witch, look_h: 1.2, lens: 51, ease: linear}
-      - {t: 14.6, cam: [77.78, 103.78, 0.68], look: blind-witch, look_h: 1.26, lens: 56, ease: inout}   # 「見えてくるはずだよ」で顔を上げるのに合わせて寄る
-      - {t: 16.4, cam: [77.775, 103.778, 0.68], look: blind-witch, look_h: 1.26, lens: 56.4, ease: out}
+      - {t: 7.7, cam: [77.84, 103.8, 0.68], look: blind-witch, look_h: 1.17, lens: 54, frame: 胸上, ease: step}   # 038b: 魔女の右前の低い所（顔の高さより下）から 3/4（向きの差 35°）。灯り a は右の 6 分の 1 の暖かい点で、寄るほど右へ離れる（前は魔女のあごの横に並んだ）
+      - {t: 11.9, cam: [77.825, 103.795, 0.68], look: blind-witch, look_h: 1.2, lens: 58, ease: linear}
+      - {t: 14.6, cam: [77.78, 103.78, 0.68], look: blind-witch, look_h: 1.26, lens: 64, ease: inout}   # 037b より一段寄った画で主題を立てる。「見えてくるはずだよ」で顔を上げるのに合わせて寄る
+      - {t: 16.4, cam: [77.775, 103.778, 0.68], look: blind-witch, look_h: 1.26, lens: 64.5, ease: out}
     act: {start: 魔女の肩越しに、腕を組んで門を気にするビスコ, do: 魔女「本当に大事なものは、いつだって、その手の中にあるんだ」。ビスコは腕をほどき、もう一度門へ気が向きかけるが「いつだって」で言葉に捕まり、「その手の中に」で自分の両手を胸の前で椀にしてのぞき込む。魔女「それを心に留めておけば色んなことが見えてくるはずだよ」と胸に手を重ね、顔を少し上げて笑む, end: 顔を少し上げて笑む魔女（下から。目はつばの陰）}
     camera: 魔女の右肩の後ろの低い所からビスコ。「その手の中に」で両手の胸上へ押し、「あるんだ」の後の間（7.7）で、魔女の右前の低い所からの胸上の見上げに切り替えて顔へ寄る
     kind: M
@@ -1076,9 +1083,9 @@ cuts:
       - {t: 1.45, pose: {base: stand, lean: 3, r_arm: [40, 8, 14], r_el: 82, walk: 0.96, head: [-2, 80.3, 8]}, blend: 0.45, expr: sad}
       - {t: 2.3, pose: {base: stand, lean: 4, r_arm: [42, 12, 10], r_el: 78, walk: 0.96, head: [-1, 80.3, 10]}, blend: 0.6}
       - {t: 3.5, pose: {base: stand, lean: 7, r_arm: [38, 10, 12], r_el: 82, walk: 0.96, head: [0, 80.3, 7]}, blend: 1}
-      - {t: 4.6, pose: {base: stand, lean: 4, r_arm: [38, 10, 12], r_el: 82, walk: 0.96, head: [-4, 80.3, 2]}, blend: 0.3, expr: neutral}
-      - {t: 5.9, pose: {base: stand, lean: 0, r_arm: [30, 6, 14], r_el: 80, walk: 0.96, head: [4, 80.3, -2]}, blend: 0.9, expr: annoyed}
-      - {t: 7, pose: {base: stand, lean: 0, r_arm: [28, 6, 14], r_el: 78, walk: 0.96, head: [4, 80.3, -2]}, blend: 0.5}
+      - {t: 4.6, pose: {base: stand, lean: 4, r_arm: [30, 8, 12], r_el: 62, walk: 0.96, head: [-4, 80.3, 2]}, blend: 0.3, expr: neutral}
+      - {t: 5.9, pose: {base: stand, lean: 0, r_arm: [18, 6, 10], r_el: 42, walk: 0.96, head: [4, 80.3, -2]}, blend: 0.9, expr: annoyed}
+      - {t: 7, pose: {base: stand, lean: 0, r_arm: [10, 6, 6], r_el: 25, walk: 0.96, head: [4, 80.3, -2]}, blend: 0.5}
       - {t: 7.9, pose: {base: stand, lean: 1, r_arm: [4, 6, 0], r_el: 10, head: [2, 80.3, 0]}, blend: 0.6, expr: neutral}
       - {t: 8.5, pose: {base: stand, lean: 1, twist: -14, head: [-2, 23, 0]}, blend: 0.45}
       - {t: 8.95, pose: {base: stand, lean: 1, head: [0, 80.3, 0]}, blend: 0.4}
@@ -1094,13 +1101,13 @@ cuts:
       - {t: 14.15, face: 255, turn: 0.95, pose: {base: stand, lean: 7, drop: 0.02, head: [10, 78.4, 0], r_arm: [-4, 4, 0], l_arm: [-4, 4, 0], r_el: 5, l_el: 5}, blend: 0.85, expr: annoyed}
       - {t: 14.9, pose: {base: stand, lean: 7, drop: 0.02, head: [10, 78.4, 0], r_arm: [-4, 4, 0], l_arm: [-4, 4, 0], r_el: 5, l_el: 5}}
       blind-witch:   # 画の外（左の端につばと肩だけ）。7.3〜7.6 笑いの息で肩を揺らす（つばが揺れる）、11.25「ああ、」で顔を上げる。左手は胸元で閉じたまま（実を隠す手）。右手はカメラの側にあるので上げない（左下の手前に黒い塊として入るため）
-      - {t: 0, at: [75.6, 102.8], face: 79, pose: {base: stand, lean: 3, head: [-12, 0, 3], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, expr: smile}   # 038 の終わり（あごを少し上げた笑み、右手は下ろした）
+      - {t: 0, at: [75.6, 102.8], face: 79, pose: {base: stand, lean: 3, head: [-5, 0, 3], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, expr: smile}   # 038 の終わり（あごを少し上げた笑み、右手は下ろした）
       - {t: 2.6, pose: {base: stand, lean: 6, head: [-8, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 1.2}
       - {t: 3.6, pose: {base: stand, lean: 6, head: [-4, 0, 5], r_arm: [10, 8, 0], r_el: 24, l_arm: [42, 0, 38], l_el: 112}, blend: 0.8, expr: grin}
       - {t: 4.4, pose: {base: stand, lean: 6, head: [-6, 0, 2], r_arm: [10, 8, 0], r_el: 24, l_arm: [42, 0, 38], l_el: 112}, blend: 0.3}
       - {t: 7.15, pose: {base: stand, lean: 6, head: [-8, 0, 2], r_arm: [10, 8, 0], r_el: 24, l_arm: [42, 0, 38], l_el: 112}, blend: 0.4}
-      - {t: 7.3, pose: {base: stand, lean: 0, head: [-14, 0, 0], r_arm: [14, 10, 0], r_el: 30, osc: {cough: 0.7, shake: 0.08}, l_arm: [42, 0, 38], l_el: 112}, blend: 0.15}
-      - {t: 7.6, pose: {base: stand, lean: 0, head: [-14, 0, 0], r_arm: [14, 10, 0], r_el: 30, osc: {cough: 0.7, shake: 0.08}, l_arm: [42, 0, 38], l_el: 112}}
+      - {t: 7.3, pose: {base: stand, lean: 4, head: [-10, 0, 0], r_arm: [14, 10, 0], r_el: 30, osc: {cough: 0.7, shake: 0.08}, l_arm: [42, 0, 38], l_el: 112}, blend: 0.15}
+      - {t: 7.6, pose: {base: stand, lean: 4, head: [-10, 0, 0], r_arm: [14, 10, 0], r_el: 30, osc: {cough: 0.7, shake: 0.08}, l_arm: [42, 0, 38], l_el: 112}}
       - {t: 8.1, pose: {base: stand, lean: 6, head: [-6, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 0.5, expr: smile}
       - {t: 10.8, face: 80, pose: {base: stand, lean: 6, head: [-6, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}}
       - {t: 11.25, pose: {base: stand, lean: 6, head: [-12, 0, 0], r_arm: [8, 8, 0], r_el: 20, l_arm: [42, 0, 38], l_el: 112}, blend: 0.3, expr: grin}
@@ -1126,7 +1133,7 @@ cuts:
     only: [hundred-knight, blind-witch, bisco]
     only_start: [hundred-knight, blind-witch, bisco]
     only_end: [blind-witch, bisco]
-    pose: {blind-witch: 'standing on the left, small in the high wide view, her closed left hand held against her chest, grinning under the hat brim', bisco: 'standing in the middle with both hands on her hips, annoyed, facing the witch', hundred-knight: 'standing on the right, facing the far gate on the right'}
+    pose: {blind-witch: 'standing on the left, small in the high wide view, her closed left hand held against her chest, grinning under the hat brim', bisco: 'standing in the middle, arms hanging and just about to set both hands on her hips, annoyed, facing the witch', hundred-knight: 'standing on the right, facing the far gate on the right'}
     pose_end: {blind-witch: 'seen from low in front of her, leaning forward a little, holding out her closed left hand toward Bisco at waist height, her right hand rising to support it from below, a gentle smile under the hat brim', bisco: 'seen from behind her left shoulder in three-quarter back view, standing close to the witch, both hands rising from below toward the witch''s closed hand, a hand''s width below it, not touching yet, looking down at it'}
     trail: false   # 百騎兵が向きを変えるときの剣の軌跡を出さない
     ambient: false   # 空気の粒はレンズの近くを通さない（高い引きで紫の玉がビスコに重なった）。奥にだけ置く
@@ -1224,14 +1231,14 @@ cuts:
     only_start: [blind-witch, bisco]
     only_end: [blind-witch, bisco]   # 実はビスコの胸の前（pose_end の言葉で書く）
     hidden_ok: [jade-fruit]   # 0〜1.3 秒は足場の下に隠す
-    pose: {blind-witch: 'seen from just behind her right shoulder at the left edge, dark and out of focus, her closed left hand held out between them at waist height, her right hand supporting that forearm from below', bisco: 'leaning in, both hands closing around the witch''s closed hand, one from below and one from above, looking down at it, the hands against the dark sky'}
-    pose_end: {blind-witch: 'standing on the left, seen from slightly below, hands folded in front of her waist, shoulders shaking with a small toothy grin under the hat brim', bisco: 'bowing deeply toward the witch in profile, holding the softly glowing green jade fruit in both hands in front of her chest'}
+    pose: {blind-witch: 'seen from just behind her right shoulder at the left edge, dark and out of focus, her closed left hand held out between them at waist height, her right hand supporting that forearm from below', bisco: 'leaning in, both hands rising from below to close around the witch''s closed hand, her face out of frame above, the hands against the dark sky'}
+    pose_end: {blind-witch: 'standing on the left, seen from slightly below, hands folded in front of her waist, shoulders shaking with a small toothy grin under the hat brim', bisco: 'bowing deeply toward the witch in profile, her bowed head near the center of the frame, holding the softly glowing green jade fruit in both hands in front of her chest'}
     ambient: false   # 空気の粒が実の近くを通ると、光る玉が二つに見える
     fx:
-      - {kind: aura, t: [0.3, 1.4], at: [76.12, 102.72, 0.91], r: 0.062, h: 0.11, color: [110, 240, 140]}   # 指の間から漏れる緑の光（実は手の中。手より小さく）
-      - {kind: aura, t: [1.25, 1.8], at: jade-fruit, z: -0.03, r: 0.062, h: 0.105, color: [140, 255, 170]}   # 手が離れる瞬間の、明るさの小さな山（静かな奇跡。閃光や大きな球にしない）
-      - {kind: aura, t: [1.7, 3.2], at: jade-fruit, z: -0.015, r: 0.06, h: 0.1, color: [120, 245, 150]}   # 手のひらの実のほのかな光
-      - {kind: aura, t: [15.4, 17.3], at: jade-fruit, z: -0.015, r: 0.05, h: 0.09, color: [120, 245, 150]}   # 礼の胸の前で、手の中の実がほのかに光る（緑が読める）
+      - {kind: aura, t: [0.45, 1.3], at: [76.09, 102.78, 0.93], r: 0.022, h: 0.035, color: [110, 240, 140]}   # 握り合った手のすき間（カメラの側）から漏れる小さな緑の光。暗い拳は見えたまま。実の大きさの緑は 1.3 まで出さない（前は拳ほどの緑の玉で、実が先に見えた）
+      - {kind: aura, t: [1.3, 1.7], at: jade-fruit, z: 0.0, r: 0.042, h: 0.07, color: [140, 255, 170]}   # 手が離れる瞬間の、明るさの小さな山（静かな奇跡。閃光や大きな球にしない）
+      - {kind: aura, t: [1.7, 3.2], at: jade-fruit, z: 0.004, r: 0.038, h: 0.062, color: [120, 245, 150]}   # 手のひらの実のほのかな光
+      - {kind: aura, t: [15.4, 17.3], at: jade-fruit, z: 0.004, r: 0.038, h: 0.062, color: [120, 245, 150]}   # 礼の胸の前で、手の中の実がほのかに光る（緑が読める）
     keys:
       bisco:
       - {t: 0, at: [76.6, 102.7], face: 259, pose: {base: stand, walk: 0.96, lean: 6, head: [24, 0, 0], r_arm: [-8, -4, 10], r_el: 90, l_arm: [-8, -4, 10], l_el: 90}, expr: neutral}   # 040 の終わり: 両手を伸ばし始めた形（拳の下。0〜0.3 で上がって包む）
@@ -1277,8 +1284,8 @@ cuts:
       - {t: 6.15, pose: {base: stand, walk: 0.96, lean: 19, head: [-3, 0, 0], r_arm: [74.5, 10.1, 7.1], r_el: 55.1, l_arm: [117.2, 10.9, 21.3], l_el: 11.8}, blend: 0.15}
       - {t: 6.35, pose: {base: stand, walk: 0.96, lean: 19, head: [-3, 0, 0], r_arm: [74.5, 10.1, 7.1], r_el: 55.1, l_arm: [107.7, 10, 22], l_el: 17.1}, blend: 0.12}
       - {t: 6.95, pose: {base: stand, walk: 0.96, lean: 6, head: [-2, 0, 0], r_arm: [-13.9, 10, 37.8], r_el: 120.3, l_arm: [2.4, 9.5, 49.2], l_el: 109.8}, blend: 0.5}   # 手を離す
-      - {t: 7.95, pose: {base: stand, walk: 0.96, lean: 5, head: [-8, 0, 8], osc: {wave: 0.4}, r_arm: [64, 10, 0], r_el: 100, l_arm: [-1.6, 10.1, 51.8], l_el: 109.1}, blend: 0.35, pease: out, expr: grin}   # そいつは砂糖漬けにすると旨いんだ（指を立てて振る。顔はビスコの声の方のまま）
-      - {t: 11.4, pose: {base: stand, walk: 0.96, lean: 5, head: [-8, 0, 8], osc: {wave: 0.4}, r_arm: [64, 10, 0], r_el: 100, l_arm: [-1.6, 10.1, 51.8], l_el: 109.1}}
+      - {t: 7.95, pose: {base: stand, walk: 0.96, lean: 5, head: [-8, 0, 8], osc: {wave: 0.4}, r_arm: [57, 10, 0], r_el: 72, l_arm: [-1.6, 10.1, 51.8], l_el: 109.1}, blend: 0.35, pease: out, expr: grin}   # そいつは砂糖漬けにすると旨いんだ（指を立てて振る。顔はビスコの声の方のまま）
+      - {t: 11.4, pose: {base: stand, walk: 0.96, lean: 5, head: [-8, 0, 8], osc: {wave: 0.4}, r_arm: [57, 10, 0], r_el: 72, l_arm: [-1.6, 10.1, 51.8], l_el: 109.1}}
       - {t: 11.95, pose: {base: stand, walk: 0.96, lean: 6, head: [2, 0, 0], r_arm: [-12.8, 9.2, 38.6], r_el: 117.9, l_arm: [1, -0.4, 44.7], l_el: 106.3}, blend: 0.45, expr: smile}   # 先に手を下ろす（腹の前で両手を重ねる）
       - {t: 13.85, pose: {base: stand, walk: 0.96, lean: 6, head: [2, 0, 0], r_arm: [-12.8, 9.2, 38.6], r_el: 117.9, l_arm: [1, -0.4, 44.7], l_el: 106.3}}
       - {t: 14.2, pose: {base: stand, walk: 0.96, lean: 8, head: [12, 0, 0], r_arm: [-13.5, 9.5, 39.7], r_el: 119.8, l_arm: [0.3, 7.7, 51.3], l_el: 108.1}, blend: 0.3}   # 魔女殿……（小さくうなずく）
@@ -1333,9 +1340,9 @@ cuts:
         - {t: 15.75, at: [76.168, 102.762], face: 79, pose: stand, z: 0.797, ease: linear}
         - {t: 17.3, at: [76.168, 102.762], face: 79, pose: stand, z: 0.797, ease: linear}
     cam_keys:
-      - {t: 0, cam: [75.4, 104.2, 0.78], look: [76.12, 102.72], look_h: 0.96, lens: 52, frame: 寄り}   # 線の南、魔女の右肩の後ろの低い所。手は地平の線より上の暗い空を背に。肩は左の端（ぼけた前景）
-      - {t: 1.6, cam: [75.43, 104.14, 0.79], look: [76.13, 102.72], look_h: 0.95, lens: 55}   # 実が現れる間、わずかに寄る
-      - {t: 2.5, cam: [76, 104.32, 0.97], look: [76.4, 102.74], look_h: 1.142, lens: 50, face_y: 0.32}   # これは……: 実を追って東へ上がり、ビスコの驚いた顔（3/4）を真ん中の上に入れる。魔女の顔は左の外（帽子のつばの端だけ）、遠くの門は右の外
+      - {t: 0, cam: [75.4, 104.2, 0.78], look: [76.12, 102.72], look_h: 0.9, lens: 52, frame: 寄り}   # 線の南、魔女の右肩の後ろの低い所。手は地平の線より上の暗い空を背に。肩は左の端（ぼけた前景）
+      - {t: 1.45, cam: [75.43, 104.14, 0.79], look: [76.13, 102.72], look_h: 0.89, lens: 55}   # 実が現れる間、わずかに寄る（ビスコの顔は上の外に出しきる）
+      - {t: 2.2, cam: [76, 104.32, 0.97], look: [76.4, 102.74], look_h: 1.142, lens: 50, face_y: 0.32}   # これは……: 実を追って東へ上がり、ビスコの驚いた顔（3/4）を真ん中の上に入れる。魔女の顔は左の外（帽子のつばの端だけ）、遠くの門は右の外
       - {t: 2.62, cam: [76.01, 104.33, 0.97], look: [76.4, 102.74], look_h: 1.142, lens: 50, face_y: 0.32}
       - {t: 3.35, cam: [75.95, 104.98, 0.85], look: [76.08, 102.75], look_h: 1.12, lens: 38, frame: 膝上}   # ヒッヒッヒ: 笑い声で速く引き、のけぞって笑う魔女を帽子ごと入れる（3.2 には顔が全部入り、3.35 に 2 人の膝上）
       - {t: 5.2, cam: [76, 105.15, 0.82], look: [76.15, 102.75], look_h: 1.1, lens: 38}   # さあ、: ゆっくり引ききって南の低い所の膝上の 2 人。魔女の顔の高さより下から、実が真ん中

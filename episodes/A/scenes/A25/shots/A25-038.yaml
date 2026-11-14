@@ -6,12 +6,17 @@ tc: 480.0
 sec: 16.4
 kind: M
 shot: 肩なめ（ビスコの両手）→ 見上げ（魔女）・忠告
-acting: 魔女「本当に大事なものは、いつだって、その手の中にあるんだ」。腕を腰の前で組んで出口の門を気にしていたビスコは、右の肩越しに門へ目をやってから、魔女の静かな声に腕をほどく。もう一度門の方へ気が向きかけるが、「いつだって」で言葉に捕まって魔女へ戻り、首をかしげる。「その手の中に」で目を落とし、空の両手を胸の前で椀にし、頭を下げてのぞき込む（041 で翠ノ実が現れる手の仕込み）。魔女「それを心に留めておけば色んなことが見えてくるはずだよ」。胸の閉じた左手（実を隠した手）に右手を重ねて頭を胸へ寄せ、「見えてくる」で顔を少し上げて背を伸ばし（目はつばの陰のまま）、口元に笑みを残し、言い終わりに右手を下ろす（盲いた魔女の下からの顔。045〜047 の「すべて視える」の種）
+acting: 魔女「本当に大事なものは、いつだって、その手の中にあるんだ」。腕を腰の前で組んで出口の門を気にしていたビスコは、腕を組んだまま魔女の声を待ち、静かな声に腕をほどく。もう一度門の方へ気が向きかけるが、「いつだって」で言葉に捕まって魔女へ戻り、首をかしげる。「その手の中に」の頭で魔女のつばがビスコの手の方へ下がり（見えないのに手の在りかを知っている）、ビスコは目を落とし、空の両手を胸の前で椀にし、頭を下げてのぞき込む（041
+  で翠ノ実が現れる手の仕込み）。魔女「それを心に留めておけば色んなことが見えてくるはずだよ」。胸の閉じた左手（実を隠した手）に右手を重ねて頭を胸へ寄せ、「見えてくる」で顔を少し上げて背を伸ばし（目はつばの陰のまま）、口元に笑みを残し、言い終わりに右手を下ろす（盲いた魔女の下からの顔。045〜047 の「すべて視える」の種）
 dialogue:
 - L864「本当に大事なものは、いつだって、その手の中にあるんだ。」
 - L865「それを心に留めておけば色んなことが見えてくるはずだよ。」
 sound: null
-notes: 'カットの中で切り替える（7.7、ease: step、L864 と L865 の間の無音）。038a（0〜7.7）は魔女越しのビスコ、038b（7.7〜16.4）は魔女の見上げ。動画は構えごとに作る。空気の粒はレンズの近くを通さない（ambient: false と、奥の 2 か所の motes）。038a の終わり（7.65。着地点の静止画の候補）の言葉: Bisco ''standing with her head bowed low, peering down into her empty hands cupped together in front of her chest, palms up, a puzzled look'', the Hundred Knight ''small and out of focus at the lower right corner, its back to the camera'', the witch out of frame. 038b の頭（7.7）の言葉: the blind witch ''standing upright, seen from slightly below in three-quarter view, her right hand lowering to her side, her closed left hand against her chest, a calm smile, her eyes hidden in the shadow of the hat brim, a small warm lantern glowing far behind her on the right''. 038 の終わりは 039 の頭とそろえる（ビスコ: 胸の前の両手の椀 r_arm/l_arm [20, -5, 30]・ひじ 108、lean 7、head 30。魔女: lean 3、head [-12, 0, 3]、右手を下ろす [8, 8, 0]・ひじ 20、左手は胸）'
+notes: 'カットの中で切り替える（7.7、ease: step、L864 と L865 の間の無音）。038a（0〜7.7）は魔女越しのビスコ、038b（7.7〜16.4）は魔女の見上げ。動画は構えごとに作る。空気の粒はレンズの近くを通さない（ambient: false と、奥の 2 か所の motes）。038a の終わり（7.65。着地点の静止画の候補）の言葉: Bisco ''standing
+  with her head bowed low, peering down into her empty hands cupped together in front of her chest, palms up, a puzzled look'', the Hundred Knight ''small and out of focus at the lower right corner, its
+  back to the camera'', the witch out of frame. 038b の頭（7.7）の言葉: the blind witch ''standing upright, seen from slightly below in three-quarter view, her right hand lowering to her side, her closed left
+  hand against her chest, a calm smile, her eyes hidden in the shadow of the hat brim, a small warm lantern glowing far behind her on the right''. 038 の終わりは 039 の頭とそろえる（ビスコ: 胸の前の両手の椀 r_arm/l_arm [20, -5,
+  30]・ひじ 108、lean 7、head 30。魔女: lean 3、head [-12, 0, 3]、右手を下ろす [8, 8, 0]・ひじ 20、左手は胸）'
 camera:
   pos:
   - 75.665
@@ -21,7 +26,8 @@ camera:
   - 76.85
   - 102.68
   lens: 38
-  move: '038a: 魔女の右肩の後ろの低い所（0.9m）から、魔女の帽子と肩を左の端になめて、右の 3 分の 1 のビスコ（3/4。門の左の尖塔を頭から外す位置）。「本当に大事なものは、いつだって、」はごくゆっくり寄り、「その手の中に」で両手の胸上へ押す（38→50mm。魔女は左へ外れ、注視をビスコの少し左にしてのぞき込む先を空ける）。7.7 で切り替え、038b: 魔女の右前の低い所（0.68m、顔の高さより下）から 3/4（向きの差 35°）の胸上で見上げ、「見えてくるはずだよ」で顔へ寄る（48→56mm。右奥の灯りは寄るほど魔女から離れる）'
+  move: '038a: 魔女の右肩の後ろの低い所（0.9m）から、魔女の帽子と肩を左の端になめて、右の 3 分の 1 のビスコ（3/4。門の左の尖塔を頭から外す位置）。「本当に大事なものは、いつだって、」はごくゆっくり寄り、「その手の中に」で両手の胸上へ押す（38→50mm。魔女は左へ外れ、注視をビスコの少し左にしてのぞき込む先を空ける）。7.7 で切り替え、038b: 魔女の右前の低い所（0.68m、顔の高さより下）から
+    3/4（向きの差 35°）の胸上で見上げ、037b より一段寄った画（54mm）から「見えてくるはずだよ」で顔へ寄る（54→64.5mm、帽子の先は上で切れる。右奥の灯りは寄るほど魔女から離れる）'
 background: rift-void
 image: null
 refs:
@@ -46,18 +52,18 @@ blocking:
   staging_en: 'In frame (exactly 3 people, from left to right): the blind old witch Veraie (blind-witch_sheet_01): a small hunched old woman with long messy white hair, a huge wide-brimmed dark indigo pointed
     witch hat that hides her eyes in deep shadow, a wide toothy grin on a wrinkled face, a long loose dark indigo robe with wide sleeves and a small cord tie at the collar, thin gnarled hands, leaning on
     a twisted wooden broom with a knobbed handle, black shoes, seen from behind her right shoulder, her right index finger lowering from chin height, her left hand closed against her chest, the hat brim
-    hiding her eyes, at the far left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
-    gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing with her arms folded at her waist, forearms crossed under her chest, annoyed and impatient, facing the witch, on the right of the frame,
-    in three-quarter view, turned toward screen left; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with orange
-    eyes, oversized blue-and-silver gauntlets, holding its sword), standing small behind Bisco, facing the far gate, out of focus, at the far right of the frame, with the back to the camera. No other people. Behind: an endless
-    glowing sea of swirling blue and violet light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy
-    sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air.'
+    hiding her eyes, at the far left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy
+    uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), standing with her arms folded at her waist, forearms crossed under her chest, annoyed and impatient, facing
+    the witch, on the right of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue
+    flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing small behind Bisco, facing the far gate, out of focus, at the far right of the frame, with
+    the back to the camera. No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling
+    blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air.'
   staging_en_end: 'In frame (exactly one person): the blind old witch Veraie (blind-witch_sheet_01): a small hunched old woman with long messy white hair, a huge wide-brimmed dark indigo pointed witch hat
     that hides her eyes in deep shadow, a wide toothy grin on a wrinkled face, a long loose dark indigo robe with wide sleeves and a small cord tie at the collar, thin gnarled hands, leaning on a twisted
-    wooden broom with a knobbed handle, black shoes, standing with her chin slightly lifted, a soft knowing smile, her eyes still lost in the shadow of the hat brim, her closed left hand pressed to
-    her chest and her right hand lowered to her side, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees far away.
-    A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance,
-    an eerie still air.'
+    wooden broom with a knobbed handle, black shoes, standing with her chin slightly lifted, a soft knowing smile, her eyes still lost in the shadow of the hat brim, her closed left hand pressed to her
+    chest and her right hand lowered to her side, in the center of the frame, in three-quarter view, turned toward screen right. No other people. Behind: an endless glowing sea of swirling blue and violet
+    light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes
+    of dark leafless trees in the distance, an eerie still air.'
   sketch:
   - episodes/A/scenes/A25/gen/sketch/A25-038_start.png
   - episodes/A/scenes/A25/gen/sketch/A25-038_end.png
