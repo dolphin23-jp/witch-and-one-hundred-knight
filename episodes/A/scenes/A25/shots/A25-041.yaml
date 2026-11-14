@@ -5,53 +5,66 @@ scene: A25
 tc: 527.8
 sec: 17.3
 kind: M
-shot: 寄り・手渡される翠ノ実
-acting: ビスコが魔女の手を握ると、手の中に翠ノ実（「これは……」）。魔女「ヒッヒッヒ、さあ、それを持っておきな。そいつは砂糖漬けにすると旨いんだ」。ビスコが頭を下げる（「ありがとうございます、魔女殿……。感謝を」）
+shot: 寄り（手もと）→ 膝上 2 人 → 横顔の礼・手渡される翠ノ実
+acting: 線の南、魔女の右肩の後ろの低い所からの手もとの寄り。0〜0.3 にビスコの両手が、差し出された魔女の閉じた左手を下と上から包む（手は二人の真ん中、地平の線より上の暗い空を背に。魔女の右手は下ろさず、差し出した左の前腕を下から支える）。0.45〜1.3 に握り合った手のすき間から小さな緑の光が漏れ（暗い拳は見えたまま。実の大きさの緑はまだ出さない）、ビスコははっとして身をかがめる。魔女が両手をそっと抜き、上の手が開くと、ビスコの右の手のひら（038
+  で空だった手）に翠ノ実（1.3、光の小さな山。閃光にしない）。ビスコ「これは……」で実を胸の高さへ持ち上げ、驚いた顔（3/4）が真ん中の上に入る。魔女「ヒッヒッヒ」でのけぞって笑い（ビスコは魔女の顔を見る）、カメラが速く引いて、笑う魔女が帽子ごと入る（3.2 から）。「さあ、」で魔女は両手でビスコの手ごと実を包んで押し返し、「それを持っておきな」でぽん、ぽんと叩いて手を離す。ビスコは両手で実を胸へ引き寄せて見下ろす。「そいつは砂糖漬けにすると旨いんだ」で魔女はあごの高さで人差し指を立てて振っておどける（037b
+  の忠告の指と呼応する。振り上げた拳に見せない）（顔はビスコの声の方を向いたまま、実は見ない）。カメラはゆっくり寄る。ビスコは魔女へ目を上げ、「砂糖漬け」ではっとし（園で思ったことを言い当てられた）、照れて目を落とし、照れ笑い。声の後（11.5〜12.0）に魔女が先に手を下ろし、腹の前で両手を重ねる。ビスコ「ありがとうございます、」で実を胸の前に持ったまま小さく会釈（手と実は胸と一緒に前へ出る）、「魔女殿……」で魔女の顔を見る（魔女は小さくうなずく）。「感謝を。」で深く礼（腕は胸の前で実を持ったまま。実は両手の中でほのかに光る）。礼のまま止め、魔女は肩を小さく揺らして笑う
 dialogue:
 - L870「これは……。」
 - L871「ヒッヒッヒ、さあ、それを持っておきな。そいつは砂糖漬けにすると旨いんだ。」
 - L872「ありがとうございます、魔女殿……。感謝を。」
 sound: null
-notes: null
+notes: '翠ノ実は手に追従しないので、姿勢が移る間を 0.05 秒ごとに手の位置（FK）から求めてキーを打つ（1.3 秒までは足場の下に隠し、ease: step で手のひらに出す）。胸の前で持つ手は胸に対する腕の角度で決めてあり、会釈・礼で手と実が胸と一緒に前へ出る（前の版は手と実が場面の同じ点に残り、12.7〜13.4・15.3〜15.6 に実が胴に埋まった）。040 の終わりの魔女の手は
+  (76.25,102.70) で、0〜0.3 に二人の真ん中 (76.12) へ 13cm 戻る。動画は 7.12〜7.62 の無言（カメラはほぼ止め）で 0〜7.4・7.4〜17.3 の 2 本に分ける。044（範囲の外）の頭のビスコは翠ノ実を持っていない（only に jade-fruit がない）。そろえるなら 044 の only と keys に jade-fruit を足す'
 camera:
   pos:
-  - 76.4
-  - 101.2
-  - 1.0
+  - 75.4
+  - 104.2
+  - 0.78
   look:
-  - 76.1
-  - 102.7
-  lens: 40
-  move: 手もとの横の低い所から寄り、ゆっくり引いて二人を入れる
+  - 76.12
+  - 102.72
+  lens: 52
+  move: 線の南、魔女の右肩の後ろの低い所（0.78m、52〜55mm）から手もとの寄り。ビスコの顔は上の外に出しきり、実が出た直後（1.45）から実を追って東へ上がり、ビスコの驚いた顔（3/4）を真ん中に入れる（2.2、(76.0,104.32,0.97)、50mm。魔女の顔と遠くの門は画の外）。「ヒッヒッヒ」で速く引いて（2.62〜3.35）のけぞって笑う魔女を帽子ごと入れ、南の低い所の膝上の
+    2 人（(75.95,104.98,0.85)、38mm。魔女は横顔、ビスコは 3/4、実が真ん中）。「さあ」〜「それを持っておきな」はほぼ止め（7.5）。「砂糖漬け」でゆっくり寄る（10.7、44mm。ビスコのはっと・照れ笑いが大きくなり、椅子は画の下の外）。南南東へ回り込んで横顔の礼（15.2、(77.0,105.45,1.0)、48mm。灯りの柱と遠くの木は画の外）。礼で少し引き上がって放す
 background: rift-void
 image: null
 refs:
 - blind-witch
 - bisco
+- jade-fruit
 overlays: []
 fallback: null
 act:
-  start: 握り合う二人の手
-  end: お辞儀するビスコ
+  start: 差し出された魔女の閉じた手を、ビスコの両手が上下から包む（手もとの寄り。魔女の右手は左の前腕を下から支える）
+  end: 翠ノ実を胸の前に両手で持って深く礼をするビスコ（横顔）と、肩を揺らして笑う魔女
 timing:
-  lead: 0.3
+  lead: 1.6
   at:
     L870: 1.6
     L871: 2.62
     L872: 12.08
 blocking:
-  start: ビ（左・横顔（画面右向き））、盲（右・斜め前（画面左向き））
-  end: ビ（左・横顔（画面右向き））、盲（右・斜め前（画面左向き））
-  background: 暗い虚空と浮いた岩
+  start: 盲（左・横顔（画面右向き））、ビ（右・斜め前（画面左向き））
+  end: 盲（左・横顔（画面右向き））、ビ（中央・横顔（画面左向き））
+  background: 光る渦の地面と遠くの暗い木々
   panels: []
-  staging_en: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
-    belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in profile, turned toward screen right; the blind old witch (appearance to be fixed by a reference
-    sheet), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black
-    stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
-  staging_en_end: 'In frame (exactly 2 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-    brown belt, a fluffy black-and-white tail, silver armored boots), standing, on the left of the frame, in profile, turned toward screen right; the blind old witch (appearance to be fixed by a reference
-    sheet), standing, on the right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone.
-    A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+  staging_en: 'In frame (exactly 2 people, from left to right): the blind old witch Veraie (blind-witch_sheet_01): a small hunched old woman with long messy white hair, a huge wide-brimmed dark indigo pointed
+    witch hat that hides her eyes in deep shadow, a wide toothy grin on a wrinkled face, a long loose dark indigo robe with wide sleeves and a small cord tie at the collar, thin gnarled hands, leaning on
+    a twisted wooden broom with a knobbed handle, black shoes, seen from just behind her right shoulder at the left edge, dark and out of focus, her closed left hand held out between them at waist height,
+    her right hand supporting that forearm from below, at the far left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder
+    and chest armor over a navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), leaning in, both hands rising from below to close around the witch''s closed hand,
+    her face out of frame above, the hands against the dark sky, at the far right of the frame, in three-quarter view, turned toward screen left. No other people. Behind: an endless glowing sea of swirling
+    blue and violet light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars,
+    silhouettes of dark leafless trees in the distance, an eerie still air.'
+  staging_en_end: 'In frame (exactly 2 people, from left to right): the blind old witch Veraie (blind-witch_sheet_01): a small hunched old woman with long messy white hair, a huge wide-brimmed dark indigo
+    pointed witch hat that hides her eyes in deep shadow, a wide toothy grin on a wrinkled face, a long loose dark indigo robe with wide sleeves and a small cord tie at the collar, thin gnarled hands, leaning
+    on a twisted wooden broom with a knobbed handle, black shoes, standing on the left, seen from slightly below, hands folded in front of her waist, shoulders shaking with a small toothy grin under the
+    hat brim, on the left of the frame, in profile, turned toward screen right; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with
+    gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), bowing deeply toward the witch in profile, her bowed head near the center of the frame, holding the softly glowing green
+    jade fruit in both hands in front of her chest, in the center-right of the frame, in profile, turned toward screen left. No other people. Behind: an endless glowing sea of swirling blue and violet light,
+    dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark
+    leafless trees in the distance, an eerie still air.'
   sketch:
   - episodes/A/scenes/A25/gen/sketch/A25-041_start.png
   - episodes/A/scenes/A25/gen/sketch/A25-041_end.png
