@@ -2,26 +2,28 @@
 # kind: M＝小さな動き、A＝見せ場
 id: A25-039
 scene: A25
-tc: 496.7
-sec: 14.6
+tc: 496.4
+sec: 14.9
 kind: M
-shot: 寄り・ビスコ
-acting: ビスコ「……それは、どういう」。魔女「そのまんまの意味さ。イ〜ヒッヒッヒ！ああ、それからもうひとつ」
+shot: 胸上・帰りかけて呼び止められるビスコ
+acting: 0〜0.85 の無言で、ビスコが胸の前の両手の椀（038「その手の中に」の終わり）から顔を上げ（反応が先）、左手を下ろして右の手のひらだけ胸の前に残す。「……それは、どういう」で眉を寄せて首をかしげ、手のひらを魔女の方へ少し開く。答えを待って身を乗り出し、魔女「そのまんまの意味さ」（画の外の声）を真顔で聞き、言い終わりで眉をひそめる。笑いの息（画の外）の後の無音の 3.6 秒で、手を下ろし、右の肩越しに出口の方へちらりと目をやり、魔女へ小さく会釈して、北回りに出口へ向き直り一歩出る。魔女「ああ、」で一歩目のまま背中が固まり、「それからもうひとつ」で肩をがっくり落とし、頭から左の肩越しに、続いて体ごとゆっくり振り返る（立ったまま回る）。うんざり顔で
+  040「……まだあるのですか」へ
 dialogue:
 - L866「……それは、どういう。」
 - L867「そのまんまの意味さ。イ〜ヒッヒッヒ！ああ、それからもうひとつ。」
 sound: null
-notes: null
+notes: '魔女の L867 は画の外の声（038b で魔女の顔を見せた直後なので、ここはビスコの反応で受ける）。魔女は左の端のつばと肩だけ（振り返りで寄ると画の外へ出る）。百騎兵 (79.4,101.2) はこのカメラからビスコの真後ろ（方位の差 1〜2°）で体に隠れるので only から外した（040 で右に見える）。軸「忠告 魔女↔ビスコ」の南の側（魔女が画面の左、ビスコが右で画面の左を見る。038a
+  と同じ向き）。0〜7.0 のビスコは walk: 0.96 で話す身ぶりを止めている（L866 で右腕が上下して拳を振るように見えたため）。笑い「イ〜ヒッヒッヒ！」は声の wav では 7.2〜7.5 の息だけで、耳での確認待ち'
 camera:
   pos:
-  - 75.9
-  - 102.0
-  - 1.35
+  - 75.2
+  - 104.55
+  - 1.1
   look:
-  - 77.6
-  - 102.4
-  lens: 36
-  move: 魔女の横から、ビスコの顔へ
+  - 77.234
+  - 102.051
+  lens: 55
+  move: 線の南、魔女のすぐ右前（南南西 1.9m）の低い所（1.1m）から、画面の右寄りのビスコの胸上（3/4、目線は画面の左）。魔女のつばと肩を左の端になめる。問いと答えの間にゆっくり寄り（55→58.5mm）、帰りかけで少し戻し（55.5mm）、「ああ、」で固まった背中は止めで見せ、「それからもうひとつ」の振り返りに合わせてビスコへまっすぐ押す（(75.32,104.45)、60mm。頭は門の右の暗い空を背にする）
 background: rift-void
 image: null
 refs:
@@ -30,24 +32,30 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: ビスコの顔（魔女の横から）
-  end: ビスコ
+  start: 胸の前の両手の椀を見下ろすビスコ（038 の終わり。魔女の右前の低い所から、左の端に魔女のつば）
+  end: 肩を落として振り返ったビスコのうんざり顔
 timing:
-  lead: 0.3
+  lead: 0.7
   at:
-    L866: 0.4
-    L867: 2.5
+    L866: 0.7
+    L867: 2.8
 blocking:
-  start: ビ（中央・正面）
-  end: ビ（中央・正面）
-  background: 暗い虚空と浮いた岩
+  start: ビ（右・斜め前（画面左向き）・目線 下（両手の椀）・奥寄り）、盲（左の端・つばと肩だけ）
+  end: ビ（右・斜め前（画面左向き）・目線 画面左・奥寄り）
+  background: 光る渦の地面と遠くの暗い木々、ビスコの左奥に遠い門
   panels: []
   staging_en: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
-    black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black
-    stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    black-and-white tail, silver armored boots), standing, head bowed, looking down at her two hands cupped together in front of her chest as if holding something invisible, a thoughtful look, on the right
+    of the frame, in three-quarter view, turned toward screen left, seen from slightly below. At the far left edge of the frame, only the dark edge of the blind old witch''s huge wide-brimmed dark indigo
+    hat and her robed shoulder, dark and out of focus in the foreground (her face is not visible). No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees
+    far away, a gigantic translucent gothic gate far away behind her on the left, dim and out of focus. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing
+    sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air.'
   staging_en_end: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
-    black-and-white tail, silver armored boots), standing, in the center of the frame, facing the camera. No other people. Behind: an endless dark violet void with floating rocks and distant spires of black
-    stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating rocks lit softly from above, an eerie still air.'
+    black-and-white tail, silver armored boots), shoulders slumped and arms hanging, having just turned back over her shoulder toward the witch off-screen to the left with a fed-up, annoyed look, one step
+    away from where she stood, on the right of the frame, in three-quarter view, turned toward screen left, looking toward screen left (not at the camera), seen from slightly below, her head against the
+    dark sky right of the distant gate. No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees far away, a gigantic translucent gothic gate far away behind
+    her on the left, dim and out of focus. A dark otherworldly void: an endless ground of luminous swirling blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes
+    of dark leafless trees in the distance, an eerie still air.'
   sketch:
   - episodes/A/scenes/A25/gen/sketch/A25-039_start.png
   - episodes/A/scenes/A25/gen/sketch/A25-039_end.png

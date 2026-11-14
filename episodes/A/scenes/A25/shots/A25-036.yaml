@@ -5,8 +5,9 @@ scene: A25
 tc: 450.4
 sec: 13.5
 kind: M
-shot: 引き・呼び止める魔女
-acting: 魔女「……。ちょいとお待ちな！娘さんや。ちょいと待っておくれ……」。ビスコが立ち止まって振り返る（「……？魔女殿。急ぎますので……」）
+shot: 全身→肩なめ→胸上・呼び止める魔女と断るビスコ
+acting: 魔女「……。ちょいとお待ちな！娘さんや。ちょいと待っておくれ……」。ビスコは「お待ちな！」まで走り、後ろへ反って滑って止まり、「娘さんや」で頭だけ肩越しに振り返る。百騎兵は追い越して行き過ぎ、戻る。無音の間にビスコは魔女へ向き直って半歩戻りかけ、右の肩越しに門を見る（急ぎと礼儀の綱引き）。百騎兵は待ちきれずに門の方へ数歩先に行く（画の右の外へ）。魔女は右手を出したまま首をかしげて耳を澄まし、息で肩を落として背を丸め、手のひらを上に小さく手招きする（命令から哀願へ）。左手は胸元で閉じたまま。ビスコはじりじり出口へ下がり、「……？」で足を止めて首をかしげ、「魔女殿。」で小さく会釈し、「急ぎますので……」と足を出口へ向けたまま右手で出口を示す。肩を落として出口へ向き直り、一歩目を出す（037
+  へまたぐ。百騎兵は画の外で迎えに戻り、ビスコの北東に立つ）
 dialogue:
 - L860「……。ちょいとお待ちな！娘さんや。ちょいと待っておくれ……。」
 - L861「……？魔女殿。急ぎますので……。」
@@ -14,14 +15,15 @@ sound: null
 notes: null
 camera:
   pos:
-  - 77.2
-  - 96.8
-  - 1.8
+  - 83.2
+  - 102.7
+  - 1.15
   look:
-  - 78.4
-  - 102.2
-  lens: 26
-  move: 足場の北の少し高い所から
+  - 78.6
+  - 101.6
+  lens: 32
+  move: '036a（0〜9.3）走る先の東、走りの線の南の低い所から、駆け込む二人を正面で受け、0〜1.5 で斜め後ろ (84.0,104.0) へ下がって迎える（32→28mm）。息と頼む声の間（5.6〜9.25）にビスコの背の右後ろ (82.6,102.0,1.1) へ回り込みながら寄り（28→40mm）、ビスコの背越しに魔女（肩なめ。魔女は画の左で高さの半分近く、顔の高さより下から。灯り
+    a は二人の間の奥）。036b（9.3〜13.5、ease: step）線の南、ビスコの左前の低い所 (79.77,102.43,0.85) から 3/4 の胸上（42mm、止め）。ビスコは画の右寄りで視線の先の左（画の外の魔女）を空け、目は上から 1/3。「……？」・会釈・断り・向き直りを顔で受け、出口へ向き直る背中が画の右へ寄っていく'
 background: rift-void
 image: null
 refs:
@@ -31,30 +33,30 @@ refs:
 overlays: []
 fallback: null
 act:
-  start: 駆けていく二人（北から）
-  end: 振り返るビスコ
+  start: 駆け込んでくるビスコと百騎兵（正面）、奥の左に背を向けた魔女
+  end: 出口へ向き直って一歩目を出すビスコ（背中、胸上、画の右寄り）
 timing:
   lead: 0.3
   at:
     L860: 0.3
     L861: 9.39
 blocking:
-  start: ビ（中央・斜め前（画面左向き））、百（中央・斜め前（画面左向き））、盲（右・斜め後ろ（画面右向き））
-  end: ビ（左・横顔（画面右向き））、百（左・横顔（画面右向き））、盲（右・斜め前（画面左向き））
-  background: 暗い虚空と浮いた岩
+  start: 百（左・正面）、盲（左・背中）、ビ（中央・斜め前（画面右向き））
+  end: ビ（右・斜め後ろ（画面右向き））
+  background: 光る渦の地面と遠くの暗い木々
   panels: []
-  staging_en: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown
-    belt, a fluffy black-and-white tail, silver armored boots), standing, in the center of the frame, in three-quarter view, turned toward screen left; the Hundred Knight (small, waist-high: big round silver-and-blue
-    helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, on the right of the frame, in three-quarter
-    view, turned toward screen left; the blind old witch (appearance to be fixed by a reference sheet), standing, at the far right of the frame, seen from behind at an angle, turned toward screen right.
-    No other people. Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow
-    from below, floating rocks lit softly from above, an eerie still air.'
-  staging_en_end: 'In frame (exactly 3 people, from left to right): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim,
-    brown belt, a fluffy black-and-white tail, silver armored boots), standing, at the far left of the frame, in profile, turned toward screen right; the Hundred Knight (small, waist-high: big round silver-and-blue
-    helmet with a gold crown piece and a pale blue flame plume, black face with orange eyes, oversized blue-and-silver gauntlets, holding its sword), standing, at the far left of the frame, in profile,
-    turned toward screen right; the blind old witch (appearance to be fixed by a reference sheet), standing, at the far right of the frame, in three-quarter view, turned toward screen left. No other people.
-    Behind: an endless dark violet void with floating rocks and distant spires of black stone. A dark otherworldly void: a deep violet-black sky without sun or stars, faint purple glow from below, floating
-    rocks lit softly from above, an eerie still air.'
+  staging_en: 'In frame (exactly 3 people, from left to right): the Hundred Knight (small, waist-high: big round silver-and-blue helmet with a gold crown piece and a pale blue flame plume, black face with
+    orange eyes, oversized blue-and-silver gauntlets, holding its sword), dashing ahead past Bisco, on the left of the frame, facing the camera, small in the background; the blind old witch Veraie (blind-witch_sheet_01):
+    a small hunched old woman with long messy white hair, a huge wide-brimmed dark indigo pointed witch hat that hides her eyes in deep shadow, a wide toothy grin on a wrinkled face, a long loose dark indigo
+    robe with wide sleeves and a small cord tie at the collar, thin gnarled hands, leaning on a twisted wooden broom with a knobbed handle, black shoes, standing far behind with her back turned to them,
+    her left hand closed at her chest, on the left of the frame, with the back to the camera; Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a
+    navy uniform with gold trim, brown belt, a fluffy black-and-white tail, silver armored boots), running toward the camera in a hurry, leaning forward, in the center of the frame, in three-quarter view,
+    turned toward screen right. No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling
+    blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air.'
+  staging_en_end: 'In frame (exactly one person): Bisco (short black bob hair with two gold hair ornaments, blue eyes, silver shoulder and chest armor over a navy uniform with gold trim, brown belt, a fluffy
+    black-and-white tail, silver armored boots), turning away toward the exit with a tired sigh and taking the first step, seen from behind, on the right of the frame, seen from behind at an angle, turned
+    toward screen right. No other people. Behind: an endless glowing sea of swirling blue and violet light, dark leafless trees far away. A dark otherworldly void: an endless ground of luminous swirling
+    blue and violet light like a glowing sea, a pitch-dark navy sky without sun or stars, silhouettes of dark leafless trees in the distance, an eerie still air.'
   sketch:
   - episodes/A/scenes/A25/gen/sketch/A25-036_start.png
   - episodes/A/scenes/A25/gen/sketch/A25-036_end.png
