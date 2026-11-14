@@ -12,7 +12,7 @@ dialogue:
 - L860「……。ちょいとお待ちな！娘さんや。ちょいと待っておくれ……。」
 - L861「……？魔女殿。急ぎますので……。」
 sound: null
-notes: 立ち位置の文（staging_en）の百騎兵から「small in the background」を手で消した（tools/staging.py は背の低い百騎兵に自動で足すが、0 コマ目はビスコと同じ距離で魔女より手前）。shot_blocking.py で作り直したら、そのたびに消す。
+notes: 立ち位置の文（staging_en）の百騎兵から「small in the background」を手で消した（tools/staging.py は背の低い百騎兵に自動で足すが、0 コマ目はビスコと同じ距離で魔女より手前）。shot_blocking.py で作り直したら、そのたびに消す。 動画の生成は 9.3 で 2 本に分ける（036b は 4.2 秒なので 5 秒で作って切る）。
 camera:
   pos:
   - 83.2
