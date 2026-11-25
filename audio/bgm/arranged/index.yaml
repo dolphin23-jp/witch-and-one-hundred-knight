@@ -1,0 +1,14 @@
+# 原作の BGM を Claude が採譜・編曲して作り直したもの（D-078）。材料は原作の曲だけ。ゼロからの作曲と、音楽を生成する AI は使わない。
+# 作り方: tools/bgm_analyze.py（解析の下書き draft.yaml）→ Claude が直して arrangement.yaml → tools/arrange.py（MIDI と音）。
+# どの曲をどの編成で作り直し、どの場面に使うかはユーザーが決める。heard: ユーザーが聞いて確かめたら true。
+# <id>_original_clean_loop.ogg は比べる用の原曲（何周分もの演奏を重ねて効果音を消した1周。編曲と同じ小節から始まる）。
+items:
+  - id: M01
+    name: 魔女邸
+    version: v01
+    style: piano
+    files: {listen: M01/M01_piano_v01.mp3, loop: M01/M01_piano_v01_loop.ogg, midi: M01/M01_piano_v01.mid, compare: M01/M01_compare_original_piano.mp3}
+    loop_sec: 49.756
+    note: 34小節（164 BPM・4/4）。27小節目から（A→A′→B）。1周＋終わり（G7→Cm）で約58秒。旋律は自動の推定のまま（抜けた所は右手の和音）
+    scenes: []
+    heard: false

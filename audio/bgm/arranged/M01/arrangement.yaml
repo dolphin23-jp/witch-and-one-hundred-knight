@@ -1,0 +1,160 @@
+id: M01
+name: 魔女邸
+style: piano
+version: v01
+note: 原作の M01（魔女邸）を、解析の下書き（draft.yaml）から Claude がピアノに編曲したもの（D-078）。旋律は draft.yaml の推定のまま、明らかなオクターブの取り違え3か所（17・23・24小節）だけ直した。和音は、原曲と編曲のクロマの相関が低かった所を、原曲のクロマと低音を見て直した（B の「Gsus4」→ G の上の C・D・G、ほか。D♭maj7 の低音は
+  G とも推定されたが、中の音域に G がないので D♭ のまま）。旋律の推定が抜けた所（27・28・31小節など）は新しい旋律を足さず、右手で和音を置いた。低音は和音の根音。各小節の前半は、推定の低音（bass_hint）が和音の音なら転回形にする（後半の推定は打楽器でずれるので使わない）。
+source: {file: tmp/src/part20_bgm.mp3, from: '4:36', to: '9:02'}
+loop_sec: 49.756025
+bpm: 164
+beats_per_bar: 4
+seed: 7
+order: [27-34, 1-26]
+form: A（27〜34、E♭ の色で G7 へ）→ A′（1〜8、G で半終止）→ B（9〜26、C 短調。Cm→Gsus4→Fm/D♭→A♭ のくり返し）
+sections:
+- {from: 27, to: 34, dyn: mp}
+- {from: 1, to: 8, dyn: mp>mf}
+- {from: 9, to: 18, dyn: p}
+- {from: 19, to: 26, dyn: p>mf}
+ending:
+  chords: [G7, Cm]
+  beats: [4, 4]
+  rit: 0.9
+  dyn: p
+bars:
+  1:
+    chords: [Eb, Ebmaj7]
+    mel: G4 - - - Ab4 . . . . . D5 - Eb5 . F5 -
+    bass_hint: [Db2, null]
+  2:
+    chords: [Csus4, Ebmaj7]
+    mel: F5 . . . G5 - F5 . . . . . . . . .
+    bass_hint: [Ab2, null]
+  3:
+    chords: [Csus2, Gsus4]
+    mel: . . . . . . . . . . . . . . . .
+    bass_hint: [C3, null]
+  4:
+    chords: [Gsus4, Ebmaj7]
+    mel: . . . . . . . . G4 - Ab4 G4 - - - -
+    bass_hint: [C3, null]
+  5:
+    chords: [Gm7, Bb]
+    mel: F4 - - - - . . . . . . . . . . .
+    bass_hint: [Bb2, null]
+  6:
+    chords: [Gm7, Ddim]
+    mel: F4 - . . . . . . . . G5 - Ab5 - - .
+    bass_hint: [Bb2, null]
+  7:
+    chords: [Ebmaj7, G]
+    mel: . . Ab5 - G5 - . . . . . . . . . .
+    bass_hint: [F2, null]
+  8:
+    chords: [G, G]
+    mel: . . . . B4 - . . . . B4 - . . . .
+    bass_hint: [Bb2, null]
+  9:
+    chords: [Cm, Gsus4]
+    mel: . . . . . . . . G4 - . . G4 - - -
+    bass_hint: [B2, null]
+  10:
+    chords: [Abmaj7, Cm]
+    mel: G4 - . Eb4 - - - . . . . G4 - - . .
+    bass_hint: [B2, null]
+  11:
+    chords: [Cm, Cm]
+    mel: . Eb4 - - - - G5 - - - - - . . . .
+    bass_hint: [Eb3, null]
+  12:
+    chords: [Cm, Csus2/G]
+    mel: Eb5 - . . . . . . C5 - - - - - - .
+    bass_hint: [C2, null]
+  13:
+    chords: [Cm, Csus2/G]
+    mel: . Eb5 - - - - - C5 - - - - - - - -
+    bass_hint: [C3, null]
+  14:
+    chords: [Dbmaj7, Ab]
+    mel: C5 - - - - - - - Ab4 - - - C5 - Ab4 -
+    bass_hint: [G2, null]
+  15:
+    chords: [Cm, Cm]
+    mel: G4 . . G4 - - - - - - - - - - - .
+    bass_hint: [Eb3, null]
+  16:
+    chords: [Ab, Abmaj7]
+    mel: . . . . . . . . G5 - - - - - . .
+    bass_hint: [Ab2, null]
+  17:
+    chords: [Cm, Csus2/G]
+    mel: . . Eb5 - - - - . . . . . C5 - . .
+    bass_hint: [Eb2, null]
+  18:
+    chords: [Dbmaj7, Ab]
+    mel: . . . . . . . . Ab4 - - C5 - - Ab4 -
+    bass_hint: [G2, null]
+  19:
+    chords: [Cm, Cmadd9/G]
+    mel: G4 - - - - - - - - - - - - . . .
+    bass_hint: [Eb3, null]
+  20:
+    chords: [Fm7/Eb, Csus4]
+    mel: Ab4 - - . . G4 - - C5 - . . . . . .
+    bass_hint: [Eb2, null]
+  21:
+    chords: [Cm, Csus2/G]
+    mel: C5 - - - - - - - - - - - - - - .
+    bass_hint: [B2, null]
+  22:
+    chords: [Dbmaj7, Fm7]
+    mel: . . . . . . . . Ab4 - - F5 - - - -
+    bass_hint: [Db3, null]
+  23:
+    chords: [Cm, Cm]
+    mel: G4 - - - - - . . . G4 - - Eb4 . . .
+    bass_hint: [Eb3, null]
+  24:
+    chords: [Abmaj7, Abmaj7]
+    mel: Ab4 - - - - - - - G4 - . Eb4 - - - C4
+    bass_hint: [Ab2, null]
+  25:
+    chords: [Abmaj7, Cmadd9/G]
+    mel: C4 - - - - - - . G4 - - . Eb4 - . .
+    bass_hint: [Eb2, null]
+  26:
+    chords: [Dbmaj7, Fm7]
+    mel: F4 - C4 - - - - - Ab4 - - - . . . .
+    bass_hint: [G2, null]
+  27:
+    chords: [Ab, Ebmaj7]
+    mel: . . . . . . . . . . . . . . . .
+    bass_hint: [Eb3, null]
+  28:
+    chords: [Cm, Cmadd9]
+    mel: . . . . . . . . . Bb4 - . . . . .
+    bass_hint: [Ab2, null]
+  29:
+    chords: [Abmaj7, Ebmaj7]
+    mel: . G4 - - - Ab4 - G4 Eb5 - F5 - Eb5 C5 - .
+    bass_hint: [C3, null]
+  30:
+    chords: [Abmaj7, Gsus4]
+    mel: . . . . . . . . . . . . . G4 - .
+    bass_hint: [Bb2, null]
+  31:
+    chords: [Bb, Bb]
+    mel: . . . . . . . . . . . . . . . .
+    bass_hint: [Bb2, null]
+  32:
+    chords: [Bb7, Bb7]
+    mel: . . . . . . . . . . . . . D5 - .
+    bass_hint: [Ab2, null]
+  33:
+    chords: [Ebmaj7, Ddim]
+    mel: G4 - - - - . . . . . . . . F4 - G4
+    bass_hint: [F2, null]
+  34:
+    chords: [G7, G]
+    mel: G4 . . . . D5 - . G4 - - - - - - -
+    bass_hint: [Ab2, null]
