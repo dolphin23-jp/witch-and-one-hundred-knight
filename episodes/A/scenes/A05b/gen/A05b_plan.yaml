@@ -1,0 +1,469 @@
+# A05b の生成計画（承認を取るための表。tools/scene_plan.py が gen/plan_spec.yaml と blocking から作る）
+status: 承認待ち（生成なし・クレジットなし）
+scene: A05b。9カット 87.6秒
+credits_estimate:
+  stills: 14
+  videos: 90
+  total: 104
+order: 区間ごとに、静止画（開始→終わり）→ Claude が点検 → 動画。崩れた静止画の動画は作らずに報告。失敗しても自動では作り直さない
+stills:
+  model: gpt_image_2_5
+  quality: medium
+  resolution: 2k
+  aspect_ratio: '16:9'
+  note: 1枚1クレジット。終わりは開始の画を添えて作る
+  items:
+  - cut: A05b-013
+    which: start
+    kind: A
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_back.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/beast-village/panel_wide.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-013_start_previs.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.3 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), walking ahead through the narrow gap
+      between the red rocks, in the center of the frame, with the back to the camera; the Hundred Knight (character reference: image 2), walking behind her, in the center of the frame, with the back to
+      the camera. No other people. Behind: the red rock cliffs that enclose the valley, with a few wooden houses with red tiled roofs below them. Dusk in the desert valley: the sun setting in the west behind
+      the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high
+      to an adult). Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is
+      behind the characters in that direction, as described above. Composition: image 4 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its
+      camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-013_start_gpt-image-2.5_01.png
+  - cut: A05b-013
+    which: end
+    kind: A
+    frame: 大引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/luckiny/views/luckiny_front.png
+    - world/beast-village/panel_wide.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-013_end_previs.png
+    - episodes/A/scenes/A05b/stills/start/A05b-013_start_gpt-image-2.5_01.png
+    prompt: 'Camera: extreme wide shot, 28mm lens, camera height 13.0 m, high angle looking down. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: image 1), walking
+      behind her, small in the frame, at the far left of the frame, with the back to the camera, small in the background; Luckiny (character reference: image 2), walking out of the gap toward the village,
+      small in the frame, at the far left of the frame, facing the camera, small in the background. No other people. Beyond the rocks, the whole small village in the sandy valley comes into view below:
+      wooden houses with red tiled roofs, low stone walls, a stone well in the middle, red cliffs all around in the sunset. Behind: the red rock cliffs that enclose the valley, with a few wooden houses
+      with red tiled roofs below them, then wooden houses with red tiled roofs, low stone walls and wooden fences, dry grass, red cliffs behind. Dusk in the desert valley: the sun setting in the west behind
+      the red cliffs, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an
+      adult); Luckiny 1.4 m. Background: image 3 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-east; draw
+      only what is behind the characters in that direction, as described above. Composition: image 4 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props;
+      follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Image 5 is the first frame of the same shot
+      (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV
+      anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/end/A05b-013_end_gpt-image-2.5_01.png
+  - cut: A05b-014
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_side.png
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/beast-village/panel_corner.png
+    - world/beast-village/panel_alley.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-014_start_previs.png
+    prompt: 'Camera: full shot (whole body), 30mm lens, camera height 1.2 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: images 1, 2), walking backward in front of the
+      Hundred Knight, bowing politely, at the far left of the frame, in three-quarter view, turned toward screen right; the Hundred Knight (character reference: images 3, 4), walking toward her, in the
+      center of the frame, in three-quarter view, turned toward screen left. No other people. Behind: wooden houses with red tiled roofs, low stone walls and wooden fences, dry grass, red cliffs behind,
+      then a narrow lane between wooden houses with stone foundations, clay jars, the red cliffs beyond. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red sky fading
+      to purple overhead, long soft shadows, warm light on the walls, the first lamps lit. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: images
+      5, 6 only show what this place looks like (buildings, trees, materials, colors); do not copy their viewpoint or framing. The camera here faces south-east; draw only what is behind the characters in
+      that direction, as described above. Composition: image 7 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and
+      the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-014_start_gpt-image-2.5_01.png
+  - cut: A05b-014
+    which: end
+    skip: 後ろ向きに歩く・お辞儀・示す・走り去ると芝居の区切りが多い。終わりの画で途中を省かせない。下絵に従わせる
+  - cut: A05b-015
+    which: start
+    kind: M
+    frame: 引き
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/beast-village/panel_wide.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-015_start_previs.png
+    prompt: 'Camera: wide shot, 32mm lens, camera height 0.75 m. In frame (exactly one person): the Hundred Knight (character reference: images 1, 2), walking past behind the well, then stopping and looking
+      back, in the center of the frame, in three-quarter view, turned toward screen right. No other people. In the foreground stands an old round stone well with a dark open mouth. Behind: the middle of
+      the village: sandy ground with swirling patterns, wooden houses with red tiled roofs, fences and dry grass. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red
+      sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only
+      shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-west; draw only what is behind the characters in that direction,
+      as described above. Composition: image 4 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions,
+      poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions identical to their character reference images.
+      2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-015_start_gpt-image-2.5_01.png
+  - cut: A05b-015
+    which: end
+    kind: M
+    frame: 寄り
+    refs:
+    - world/beast-village/panel_wide.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-015_end_previs.png
+    - episodes/A/scenes/A05b/stills/start/A05b-015_start_gpt-image-2.5_01.png
+    prompt: 'Camera: close-up, 55mm lens, camera height 1.6 m. No people in frame. Close on the dark mouth of the old stone well; deep at the bottom there is a faint green glow. Behind: the middle of the
+      village: sandy ground with swirling patterns, wooden houses with red tiled roofs, fences and dry grass. Dusk in the desert valley: the sun setting in the west behind the red cliffs, an orange-red
+      sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit. Background: image 1 only shows what this place looks like (buildings, trees, materials, colors); do
+      not copy its viewpoint or framing. The camera here faces north-west; draw only what is behind the characters in that direction, as described above, with the background softly out of focus (shallow
+      depth of field). Composition: image 2 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses
+      and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Image 3 is the first frame of the same shot (made first): keep its background rendering, light and the
+      way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors,
+      16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/end/A05b-015_end_gpt-image-2.5_01.png
+  - cut: A05b-016
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/luckiny/views/luckiny_front.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tito-house/tito-house_room_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-016_start_previs.png
+    prompt: 'Camera: full shot (whole body), 35mm lens, camera height 1.0 m. In frame (exactly 2 people, from left to right): Luckiny (character reference: image 1), inside the lit room near the curtained
+      doorway at the back, beckoning with one hand, in the center of the frame, facing the camera, small in the background; the Hundred Knight (character reference: image 2), walking toward the open door
+      of the house at night, seen from behind, in the center of the frame, with the back to the camera. No other people. The camera is outside the small house at night, behind the Hundred Knight: the rough
+      stone-brick front wall and the open arched wooden door fill the frame; through the doorway the warm lamplit room inside is visible. Behind: inside Tito''s small house: a table with a red cloth and
+      stools in the middle, shelves with pots and bread, a small stone hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth
+      fire, deep soft shadows in the corners. Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is behind the characters in that direction, as described above. Composition: image 4 is
+      a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do
+      not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel
+      shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-016_start_gpt-image-2.5_01.png
+  - cut: A05b-016
+    which: end
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/tito/views/tito_front.png
+    - world/tito-house/tito-house_room_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-016_end_previs.png
+    - episodes/A/scenes/A05b/stills/start/A05b-016_start_gpt-image-2.5_01.png
+    prompt: 'Camera: full shot (whole body), 38mm lens, camera height 1.55 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing, seen from
+      behind over the shoulder, on the left of the frame, seen from behind at an angle, turned toward screen right; Tito (character reference: image 3), kneeling in front of the Hundred Knight, holding
+      its gauntlet in both hands, in the center of the frame, facing the camera. No other people. Inside the small house, close to the two. Behind: inside Tito''s small house: a table with a red cloth and
+      stools in the middle, shelves with pots and bread, a small stone hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth
+      fire, deep soft shadows in the corners. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Tito 1.5 m. Background: image 4 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image
+      5 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but
+      do not draw the mannequins, their colors or the plain shapes. Image 6 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep
+      each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no
+      speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/end/A05b-016_end_gpt-image-2.5_01.png
+  - cut: A05b-017
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/tito/views/tito_face_front.png
+    - characters/tito/views/tito_front.png
+    - characters/hundred-knight/views/hundred-knight_face_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tito-house/tito-house_door_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-017_start_previs.png
+    prompt: 'Camera: close-up, 50.0mm lens, camera height 0.95 m. In frame (exactly 2 people, from left to right): Tito (character reference: images 1, 2), kneeling, holding the Hundred Knight''s gauntlet,
+      smiling with worry, in the center of the frame, facing the camera; the Hundred Knight (character reference: images 3, 4, 5), standing in the foreground, seen from behind at the edge of the frame,
+      at the far right of the frame, seen from behind at an angle, turned toward screen left. No other people. Behind: inside Tito''s small house: rough stone-brick walls, a dark flagstone floor, shelves
+      with clay pots and bread, a table with a red cloth, round wooden stools, a straw crate, a clay jar, an arched wooden door. Night inside the house: warm orange light from oil lamps and the small hearth
+      fire, deep soft shadows in the corners. Heights: Tito 1.5 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 6 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north; draw only what is behind the characters in that direction, as described above, with the background softly
+      out of focus (shallow depth of field). Composition: image 7 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing
+      and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions identical to their character
+      reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-017_start_gpt-image-2.5_01.png
+  - cut: A05b-017
+    which: end
+    skip: 寄りで手を離して笑うだけ。カメラもゆっくり寄るだけ
+  - cut: A05b-018
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - characters/tito/views/tito_front.png
+    - world/tito-house/tito-house_room_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-018_start_previs.png
+    prompt: 'Camera: full shot (whole body), 28mm lens, camera height 1.35 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference: images 1, 2), standing near the door,
+      watching her, on the left of the frame, seen from behind at an angle, turned toward screen right; Tito (character reference: image 3), getting up from kneeling, gesturing at the bare room with one
+      hand, in the center of the frame, facing the camera. No other people. Behind: inside Tito''s small house: a table with a red cloth and stools in the middle, shelves with pots and bread, a small stone
+      hearth with a low fire, a curtained doorway at the back. Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners. Heights: the Hundred
+      Knight 0.9 m (small, only about waist-high to an adult); Tito 1.5 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing.
+      The camera here faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 5 is a rough 3D layout render with simple mannequin figures and
+      plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes.
+      Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions,
+      no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-018_start_gpt-image-2.5_01.png
+  - cut: A05b-018
+    which: end
+    skip: 部屋を横切るトラック。窓辺の着地は 019 の開始の画で固まる
+  - cut: A05b-019
+    which: start
+    kind: M
+    frame: 寄り
+    refs:
+    - characters/tito/views/tito_face_front.png
+    - characters/tito/views/tito_side.png
+    - characters/tito/views/tito_back.png
+    - world/tito-house/tito-house_window_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-019_start_previs.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 1.45 m. In frame (exactly one person): Tito (character reference: images 1, 2, 3), standing at the window, looking up at the starry sky, in the center
+      of the frame, seen from behind at an angle, turned toward screen right. No other people. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star
+      charts and a brass astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window.
+      Heights: Tito 1.5 m. Background: image 4 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces north-west; draw only
+      what is behind the characters in that direction, as described above, with the background softly out of focus (shallow depth of field). Composition: image 5 is a rough 3D layout render with simple
+      mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors
+      or the plain shapes. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-019_start_gpt-image-2.5_01.png
+  - cut: A05b-019
+    which: end
+    skip: 終わりは窓の外の星空（人物なし）。下絵に従わせる
+  - cut: A05b-020
+    which: start
+    kind: M
+    frame: 全身
+    refs:
+    - characters/hundred-knight/views/hundred-knight_front.png
+    - characters/hundred-knight/views/hundred-knight_side.png
+    - world/tito-house/tito-house_window_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-020_start_previs.png
+    prompt: 'Camera: full shot (whole body), 30mm lens, camera height 0.9 m. In frame (exactly one person): the Hundred Knight (character reference: images 1, 2), standing alone in the room, turning its
+      head toward the window, in the center of the frame, in three-quarter view, turned toward screen left, small in the background. No other people. Behind: inside Tito''s small house: a small square window
+      with a starry night sky, a shelf with rolled star charts and a brass astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window,
+      cool blue starlight coming in through the window. Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 3 only shows what this place looks like (buildings,
+      trees, materials, colors); do not copy its viewpoint or framing. The camera here faces south-east; draw only what is behind the characters in that direction, as described above. Composition: image
+      4 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but
+      do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line art,
+      cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-020_start_gpt-image-2.5_01.png
+  - cut: A05b-020
+    which: end
+    kind: M
+    frame: 肩越し
+    refs:
+    - characters/hundred-knight/views/hundred-knight_back.png
+    - world/tito-house/tito-house_window_gpt-image-2.5_01.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-020_end_previs.png
+    - episodes/A/scenes/A05b/stills/start/A05b-020_start_gpt-image-2.5_01.png
+    prompt: 'Camera: 肩越し, 30mm lens, camera height 1.05 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), standing at the shelf by the window, looking up at the star charts
+      and the astrolabe, seen from behind over the shoulder, in the center of the frame, with the back to the camera. No other people. On the shelf by the small window: rolled star charts and a brass astrolabe;
+      through the window, a deep blue night sky full of stars. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star charts and a brass astrolabe, a
+      simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window. Heights: the Hundred Knight 0.9
+      m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here
+      faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 3 is a rough 3D layout render with simple mannequin figures and plain shapes for
+      the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Image 4 is the first
+      frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
+      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/end/A05b-020_end_gpt-image-2.5_01.png
+  - cut: A05b-021
+    which: start
+    kind: A
+    frame: 寄り
+    refs:
+    - world/beast-village/panel_high.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-021_start_previs.png
+    prompt: 'Camera: close-up, 35mm lens, camera height 1.7 m. No people in frame. Close on the small lit window of Tito''s house from outside: warm lamplight in the window, a wooden wall and red tiled
+      roof edge, the starry sky. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows and lanterns, red cliffs all around under a deep
+      blue sky full of stars. Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns. Background: image 1 only shows what this place
+      looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces south-east; draw only what is behind the characters in that direction, as described above,
+      with the background softly out of focus (shallow depth of field). Composition: image 2 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow
+      its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Keep each character''s design, colors and proportions
+      identical to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks,
+      sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/start/A05b-021_start_gpt-image-2.5_01.png
+  - cut: A05b-021
+    which: end
+    kind: A
+    frame: 大引き
+    refs:
+    - world/beast-village/panel_high.png
+    - episodes/A/scenes/A05b/gen/sketch/A05b-021_end_previs.png
+    - episodes/A/scenes/A05b/stills/start/A05b-021_start_gpt-image-2.5_01.png
+    prompt: 'Camera: extreme wide shot, 24mm lens, camera height 15.5 m, high angle looking down. No people in frame. High above the whole small village in the valley at night: dark houses with red tiled
+      roofs, a few warm lit windows, red cliffs all around under a sky full of stars. Behind: the small village in the sandy valley at night: dark wooden houses with red tiled roofs, a few warm lit windows
+      and lanterns, red cliffs all around under a deep blue sky full of stars. Night in the village: a deep blue sky full of stars, cool faint moonlight, warm orange lamplight from a few windows and lanterns.
+      Background: image 1 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here faces south-west; draw only what is behind the
+      characters in that direction, as described above. Composition: image 2 is a rough 3D layout render with simple mannequin figures and plain shapes for the buildings and props; follow its camera angle,
+      framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Image 3 is the first frame of the same shot (made first): keep its
+      background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference images. 2D TV anime style, clean line
+      art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    output: episodes/A/scenes/A05b/stills/end/A05b-021_end_gpt-image-2.5_01.png
+videos:
+  model: seedance_2_0
+  mode: fast
+  resolution: 480p
+  credits_per_sec: 1
+  generate_audio: false
+  note: 開始の画＋（必要なカットだけ終わりの画）＋設定画＋下絵（Blender、854x480・24fps、関節のある人形。2026-11-27 に今の道具で描き直した）＋口パク参照（ルッキーニィ・ティトの台詞で口が見えるカット。 カットの長さの mp3 に原作の台詞をカット内の時刻で置く）。最短4秒・整数秒。生成音声は使わない（generate_audio=false）。 021 は 15.6秒で
+    Seedance の最長 15秒を超えるので、下絵を 15.0秒に縮めて 15秒で作り、組み立てで 15.6秒に伸ばす（4% 遅くするだけ。1本のクレーンを切らない）
+  items:
+  - cut: A05b-013
+    sec: 4.5
+    duration: 5
+    credits: 5
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-013_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A05b/stills/end/A05b-013_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A05b/A05b-013.mp4
+    audio_reference:
+    - audio/A05b/original/L154_luckiny.wav
+    prompt: Red sunset light. The camera follows low from behind as Luckiny and the Hundred Knight walk through a narrow gap between two tall red rocks, Luckiny ahead. At about 2.5 seconds Luckiny glances
+      back over her shoulder and speaks with a tired, relieved smile. As they pass through the gap, the camera cranes up high and back over the rocks in one smooth move, revealing the whole small village
+      in the sandy valley below, glowing in the sunset; the two become small figures walking toward it. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. The shot
+      ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions identical to the
+      first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face is black with only two glowing orange eyes. No one else appears.
+      No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-013_lines.mp3
+  - cut: A05b-014
+    sec: 12.2
+    duration: 13
+    credits: 13
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-014_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    previs: previs/A05b/A05b-014.mp4
+    audio_reference:
+    - audio/A05b/original/L155_luckiny.wav
+    - audio/A05b/original/L156_luckiny.wav
+    prompt: 'Late sunset light on a sandy village path between houses. The camera moves backward in front of the two at a low height: Luckiny walks backward ahead of the Hundred Knight, bowing politely
+      again and again as she invites it to her house. At about 4 seconds she stops and the Hundred Knight stops too. At about 5.4 seconds she points with one hand toward a house at the far east edge of
+      the village, talking, while the camera slowly pushes in on her; at about 9 seconds she bows once more, then turns around and runs off toward that house. The camera pans to follow her running away;
+      the Hundred Knight stands still, watching her go. Sync the speaking character''s mouth to the line in audio 1 whenever the face is visible. 2D TV anime style, clean line art, cel shading, rich but
+      soft colors, dynamic anime camera work. Keep every character''s design, colors and proportions identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high
+      to an adult), has no mouth and never speaks; its face is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat
+      drops or question marks).'
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-014_lines.mp3
+  - cut: A05b-015
+    sec: 8.4
+    duration: 9
+    credits: 9
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-015_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A05b/stills/end/A05b-015_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A05b/A05b-015.mp4
+    audio_reference: null
+    prompt: Dusk, backlit by the low western sun. A low camera with an old round stone well large in the foreground. Behind the well, the Hundred Knight walks past from left to right, stops abruptly at
+      about 1.5 seconds as if hearing a voice in its head, and turns to look back toward the well. Then the camera slowly rises and pushes in on the dark open mouth of the well; deep at the bottom a faint
+      green glow appears. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and
+      proportions identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face is black with only two glowing
+      orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  - cut: A05b-016
+    sec: 10.9
+    duration: 11
+    credits: 11
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-016_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A05b/stills/end/A05b-016_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/luckiny_sheet_01.jpg
+    - refs/tito_sheet_01.png
+    previs: previs/A05b/A05b-016.mp4
+    audio_reference:
+    - audio/A05b/original/L162_tito.wav
+    prompt: Night. The camera starts outside the open door of a small house, behind the Hundred Knight as it walks toward the door; inside, in the warm lamplight, Luckiny stands near a curtained doorway
+      at the back and beckons with one hand. At about 1.8 seconds she turns and runs through the curtain into the back room. The camera follows the Hundred Knight in through the doorway. After a short pause,
+      Tito hurries out through the curtain (about 4.7 seconds), comes straight to the Hundred Knight, kneels in front of it and takes its gauntlet in both hands (about 7.3 seconds), speaking gratefully.
+      The camera pans with her and settles slightly above and behind the Hundred Knight, looking over its shoulder at her face and her hands holding its gauntlet. Sync the speaking character's mouth to
+      the line in audio 1 whenever the face is visible. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every
+      character's design, colors and proportions identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face
+      is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-016_lines.mp3
+  - cut: A05b-017
+    sec: 5.0
+    duration: 5
+    credits: 5
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-017_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/tito_sheet_01.png
+    previs: previs/A05b/A05b-017.mp4
+    audio_reference:
+    - audio/A05b/original/L163_tito.wav
+    prompt: Night inside the house, warm lamplight. A close shot of Tito kneeling and holding the Hundred Knight's gauntlet in both hands; the Hundred Knight's shoulder is at the edge of the frame. At about
+      1.6 seconds she lets go of its hand and smiles with worry as she speaks. The camera very slowly pushes in on her face. Sync the speaking character's mouth to the line in audio 1 whenever the face
+      is visible. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions identical to the first frame and
+      the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face is black with only two glowing orange eyes. No one else appears. No text,
+      no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-017_lines.mp3
+  - cut: A05b-018
+    sec: 8.8
+    duration: 9
+    credits: 9
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-018_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    - refs/tito_sheet_01.png
+    previs: previs/A05b/A05b-018.mp4
+    audio_reference:
+    - audio/A05b/original/L164_tito.wav
+    prompt: Night inside the house, warm lamplight. Tito gets up from kneeling and, gesturing at the bare room with one open hand as she apologizes, walks across the room around the table toward the small
+      window; the camera trucks sideways along the wall with her, keeping her whole body in frame. The Hundred Knight stands near the door and turns its head to follow her. She stops at the window at the
+      end. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep
+      every character's design, colors and proportions identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its
+      face is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-018_lines.mp3
+  - cut: A05b-019
+    sec: 12.2
+    duration: 13
+    credits: 13
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-019_start_gpt-image-2.5_01.png
+    end_image: null
+    image_references:
+    - refs/tito_sheet_01.png
+    previs: previs/A05b/A05b-019.mp4
+    audio_reference:
+    - audio/A05b/original/L165_tito.wav
+    - audio/A05b/original/L167_tito.wav
+    prompt: Night, Tito at the small window, seen over her shoulder. She looks up at the starry sky through the window, then turns back and smiles apologetically as she speaks. At about 7.8 seconds she
+      suddenly covers her mouth with one hand as she remembers something, then hurries across the room past the bed to the curtained doorway at the back and goes through it; the camera pulls back and pans
+      to follow her, and holds on the doorway as she disappears behind the curtain. Sync the speaking character's mouth to the line in audio 1 whenever the face is visible. 2D TV anime style, clean line
+      art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions identical to the first frame and the reference sheets. The Hundred Knight is
+      small (about waist-high to an adult), has no mouth and never speaks; its face is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols
+      (no anger marks, sweat drops or question marks).
+    audio_reference_mp3: tmp/hf/a05b/audio/A05b-019_lines.mp3
+  - cut: A05b-020
+    sec: 10.0
+    duration: 10
+    credits: 10
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-020_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A05b/stills/end/A05b-020_end_gpt-image-2.5_01.png
+    image_references:
+    - refs/hundred-knight_sheet_01.png
+    previs: previs/A05b/A05b-020.mp4
+    audio_reference: null
+    prompt: 'Night inside the house, warm lamplight and cool blue starlight from the window. A low camera near the shelf by the window: the Hundred Knight, alone in the room, turns its head toward the window,
+      then walks across the room to the shelf; the camera circles around it as it passes and ends looking over its shoulder. It stops at the shelf and looks up at the rolled star charts and a brass astrolabe
+      on it, the starry sky in the small window beyond. The shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every
+      character''s design, colors and proportions identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face
+      is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+  - cut: A05b-021
+    sec: 15.6
+    duration: 15
+    credits: 15
+    start_image: episodes/A/scenes/A05b/stills/start/A05b-021_start_gpt-image-2.5_01.png
+    end_image: episodes/A/scenes/A05b/stills/end/A05b-021_end_gpt-image-2.5_01.png
+    image_references: []
+    previs: previs/A05b/A05b-021.mp4
+    audio_reference: null
+    prompt: Night outside. A close shot of the small lit window of Tito's house. The camera pulls away from the window and cranes up high in one slow continuous move, circling around the north side of the
+      house, until the whole small village in the valley is seen from high above under a sky full of stars, with a few warm lit windows below; at the very end the camera tilts up into the starry sky. The
+      shot ends on the given last frame. 2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions identical
+      to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face is black with only two glowing orange eyes. No one
+      else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+    previs_sent: tmp/hf/a05b/previs/A05b-021_15s.mp4
+    retime: 下絵 15.58秒 → 15.0秒（×0.9626）。組み立てで 15.6秒に伸ばす

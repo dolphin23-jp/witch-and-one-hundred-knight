@@ -48,7 +48,8 @@ cuts:
         - {t: 0.0, at: lk_a, pose: walk}
         - {t: 1.4, at: [12.8, 51.4], pose: walk, ease: linear}
         - {t: 2.6, at: [13.0, 49.4], face: 190, pose: walk, ease: linear}
-        - {t: 4.5, at: lk_b, pose: walk, ease: linear}
+        - {t: 3.3, face: 8, turn: 0.5, pose: walk}   # 振り返って労った後、村の方へ向き直って歩く（前は振り返ったまま後ろ向きに歩いていた。2026-11-27）
+        - {t: 4.5, at: lk_b, face: 8, pose: walk, ease: linear}
       hundred-knight:
         - {t: 0.0, at: hk_a, pose: walk}
         - {t: 4.5, at: hk_b, pose: walk, ease: linear}
