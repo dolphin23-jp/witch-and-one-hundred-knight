@@ -38,7 +38,7 @@ stills:
     frame: 大引き
     refs:
     - characters/hundred-knight/views/hundred-knight_back.png
-    - characters/luckiny/views/luckiny_front.png
+    - characters/luckiny/views/luckiny_back.png
     - world/beast-village/panel_wide.png
     - episodes/A/scenes/A05b/gen/sketch/A05b-013_end_previs.png
     - episodes/A/scenes/A05b/stills/start/A05b-013_start_gpt-image-2.5_01.png
@@ -253,15 +253,16 @@ stills:
     - world/tito-house/tito-house_window_gpt-image-2.5_01.png
     - episodes/A/scenes/A05b/gen/sketch/A05b-020_end_previs.png
     - episodes/A/scenes/A05b/stills/start/A05b-020_start_gpt-image-2.5_01.png
-    prompt: 'Camera: 肩越し, 30mm lens, camera height 1.05 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), standing at the shelf by the window, looking up at the star charts
-      and the astrolabe, seen from behind over the shoulder, in the center of the frame, with the back to the camera. No other people. On the shelf by the small window: rolled star charts and a brass astrolabe;
-      through the window, a deep blue night sky full of stars. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star charts and a brass astrolabe, a
-      simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window. Heights: the Hundred Knight 0.9
-      m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing. The camera here
-      faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 3 is a rough 3D layout render with simple mannequin figures and plain shapes for
-      the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes. Image 4 is the first
-      frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical to their character reference
-      images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).'
+    prompt: 'Camera: over-the-shoulder shot, 30mm lens, camera height 1.05 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), standing at the shelf by the window, looking
+      up at the star charts and the astrolabe, seen from behind over the shoulder, in the center of the frame, with the back to the camera. No other people. On the shelf by the small window: rolled star
+      charts and a brass astrolabe; through the window, a deep blue night sky full of stars. Behind: inside Tito''s small house: a small square window with a starry night sky, a shelf with rolled star charts
+      and a brass astrolabe, a simple wooden bed, stone-brick walls. Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window. Heights:
+      the Hundred Knight 0.9 m (small, only about waist-high to an adult). Background: image 2 only shows what this place looks like (buildings, trees, materials, colors); do not copy its viewpoint or framing.
+      The camera here faces north-west; draw only what is behind the characters in that direction, as described above. Composition: image 3 is a rough 3D layout render with simple mannequin figures and
+      plain shapes for the buildings and props; follow its camera angle, framing and the positions, poses and facing of the characters, but do not draw the mannequins, their colors or the plain shapes.
+      Image 4 is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn. Keep each character''s design, colors and proportions identical
+      to their character reference images. 2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+      or question marks).'
     output: episodes/A/scenes/A05b/stills/end/A05b-020_end_gpt-image-2.5_01.png
   - cut: A05b-021
     which: start
