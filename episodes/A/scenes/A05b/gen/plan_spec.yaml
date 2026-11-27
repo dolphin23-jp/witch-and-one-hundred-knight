@@ -1,0 +1,34 @@
+# A05b の生成計画の中身（tools/scene_plan.py が読む）。Claude の案（2026-11-27）。D-060: 動きは下絵で決め、終わりの画は着地点を固めたいカットだけ
+video: {model: seedance_2_0, mode: fast, resolution: 480p, credits_per_sec: 1}
+video_note: >-
+  開始の画＋（必要なカットだけ終わりの画）＋設定画＋下絵（Blender、854x480・24fps、関節のある人形。2026-11-27 に今の道具で描き直した）＋口パク参照（ルッキーニィ・ティトの台詞で口が見えるカット。
+  カットの長さの mp3 に原作の台詞をカット内の時刻で置く）。最短4秒・整数秒。生成音声は使わない（generate_audio=false）。
+  021 は 15.6秒で Seedance の最長 15秒を超えるので、下絵を 15.0秒に縮めて 15秒で作り、組み立てで 15.6秒に伸ばす（4% 遅くするだけ。1本のクレーンを切らない）
+tail: >-
+  2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions
+  identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face
+  is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
+  or question marks).
+no_end:
+  A05b-014: 後ろ向きに歩く・お辞儀・示す・走り去ると芝居の区切りが多い。終わりの画で途中を省かせない。下絵に従わせる
+  A05b-017: 寄りで手を離して笑うだけ。カメラもゆっくり寄るだけ
+  A05b-018: 部屋を横切るトラック。窓辺の着地は 019 の開始の画で固まる
+  A05b-019: 終わりは窓の外の星空（人物なし）。下絵に従わせる
+cels: []
+speaker:
+  A05b-013: luckiny
+  A05b-014: luckiny
+  A05b-016: tito
+  A05b-017: tito
+  A05b-018: tito
+  A05b-019: tito
+prompts:
+  A05b-013: "Red sunset light. The camera follows low from behind as Luckiny and the Hundred Knight walk through a narrow gap between two tall red rocks, Luckiny ahead. At about 2.5 seconds Luckiny glances back over her shoulder and speaks with a tired, relieved smile. As they pass through the gap, the camera cranes up high and back over the rocks in one smooth move, revealing the whole small village in the sandy valley below, glowing in the sunset; the two become small figures walking toward it."
+  A05b-014: "Late sunset light on a sandy village path between houses. The camera moves backward in front of the two at a low height: Luckiny walks backward ahead of the Hundred Knight, bowing politely again and again as she invites it to her house. At about 4 seconds she stops and the Hundred Knight stops too. At about 5.4 seconds she points with one hand toward a house at the far east edge of the village, talking, while the camera slowly pushes in on her; at about 9 seconds she bows once more, then turns around and runs off toward that house. The camera pans to follow her running away; the Hundred Knight stands still, watching her go."
+  A05b-015: "Dusk, backlit by the low western sun. A low camera with an old round stone well large in the foreground. Behind the well, the Hundred Knight walks past from left to right, stops abruptly at about 1.5 seconds as if hearing a voice in its head, and turns to look back toward the well. Then the camera slowly rises and pushes in on the dark open mouth of the well; deep at the bottom a faint green glow appears."
+  A05b-016: "Night. The camera starts outside the open door of a small house, behind the Hundred Knight as it walks toward the door; inside, in the warm lamplight, Luckiny stands near a curtained doorway at the back and beckons with one hand. At about 1.8 seconds she turns and runs through the curtain into the back room. The camera follows the Hundred Knight in through the doorway. After a short pause, Tito hurries out through the curtain (about 4.7 seconds), comes straight to the Hundred Knight, kneels in front of it and takes its gauntlet in both hands (about 7.3 seconds), speaking gratefully. The camera pans with her and settles looking over the Hundred Knight's shoulder at her."
+  A05b-017: "Night inside the house, warm lamplight. A close shot of Tito kneeling and holding the Hundred Knight's gauntlet in both hands; the Hundred Knight's shoulder is at the edge of the frame. At about 1.6 seconds she lets go of its hand and smiles with worry as she speaks. The camera very slowly pushes in on her face."
+  A05b-018: "Night inside the house, warm lamplight. Tito gets up from kneeling and, gesturing at the bare room with one open hand as she apologizes, walks across the room around the table toward the small window; the camera trucks sideways along the wall with her, keeping her whole body in frame. The Hundred Knight stands near the door and turns its head to follow her. She stops at the window at the end."
+  A05b-019: "Night, Tito at the small window, seen over her shoulder. She looks up at the starry sky through the window, then turns back and smiles apologetically as she speaks. At about 7.8 seconds she suddenly covers her mouth with one hand as she remembers something, then hurries across the room to the curtained doorway at the back and goes through it; the camera pans to follow her, then tilts up toward the window and the starry night sky outside."
+  A05b-020: "Night inside the house, warm lamplight and cool blue starlight from the window. A low camera near the shelf by the window: the Hundred Knight, alone in the room, turns its head toward the window, then walks across the room to the shelf; the camera circles around it as it passes and ends looking over its shoulder. It stops at the shelf and looks up at the rolled star charts and a brass astrolabe on it, the starry sky in the small window beyond."
+  A05b-021: "Night outside. A close shot of the small lit window of Tito's house. The camera pulls away from the window and cranes up high in one slow continuous move, circling around the north side of the house, until the whole small village in the valley is seen from high above under a sky full of stars, with a few warm lit windows below; at the very end the camera tilts up into the starry sky."

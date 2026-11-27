@@ -131,6 +131,8 @@ cuts:
     frame: 全身
     lighting: night
     only: [tito, hundred-knight, luckiny]
+    only_start: [hundred-knight, luckiny]   # 静止画の始めの画: ティトはまだ奥の部屋（壁の向こう）。2026-11-27
+    only_end: [tito, hundred-knight]        # 終わりの画: ルッキーニィは奥の部屋に駆け込んだ後
     keys:
       hundred-knight:
         - {t: 0.0, at: hk_door0, face: 0, pose: walk}
