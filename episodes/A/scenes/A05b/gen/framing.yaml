@@ -1,9 +1,13 @@
 note: tools/previs.py --audit が書く（tools/previs_audit.py）。読むのは tools/framing.py
-made: '2026-11-07'
+made: '2026-11-27'
 cuts:
   A05b-013:
     sec: 4.5
     shot: 全身→大引き・ルッキーニィ・百騎兵
+    input_hash: 37c49321e2830c7b15533711931d9b49fb5b63bac8ffa02f7a12bc26182e2f44
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:35+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -31,7 +35,14 @@ cuts:
           wy: 55.78
           fa: 170
           fh: 0
+          fay: 174
+          fap: 14
+          bx: 12.6
+          by: 55.8
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.5
           y: 0.6
@@ -47,7 +58,15 @@ cuts:
           wy: 53.97
           fa: 176
           fh: 0
+          fay: 176
+          fap: 3
+          bx: 12.6
+          by: 54.0
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 0.75
       t: 0.75
       look: luckiny
@@ -74,7 +93,14 @@ cuts:
           wy: 54.14
           fa: 169
           fh: 6
+          fay: 178
+          fap: 18
+          bx: 12.7
+          by: 54.17
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.5
           y: 0.609
@@ -90,7 +116,15 @@ cuts:
           wy: 52.57
           fa: 178
           fh: 5
+          fay: 180
+          fap: 6
+          bx: 12.71
+          by: 52.61
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 1.5
       t: 1.5
       look: luckiny
@@ -117,7 +151,14 @@ cuts:
           wy: 52.51
           fa: 166
           fh: 5
+          fay: 176
+          fap: 21
+          bx: 12.8
+          by: 52.53
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.498
           y: 0.619
@@ -133,7 +174,15 @@ cuts:
           wy: 51.19
           fa: 165
           fh: 351
+          fay: 165
+          fap: 8
+          bx: 12.82
+          by: 51.23
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 2.25
       t: 2.25
       look: luckiny
@@ -160,7 +209,14 @@ cuts:
           wy: 50.88
           fa: 159
           fh: 0
+          fay: 170
+          fap: 24
+          bx: 12.9
+          by: 50.9
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.494
           y: 0.623
@@ -176,7 +232,15 @@ cuts:
           wy: 50.0
           fa: 49
           fh: 236
+          fay: 48
+          fap: 10
+          bx: 12.94
+          by: 49.98
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.0
       t: 3.0
       look: luckiny
@@ -203,7 +267,14 @@ cuts:
           wy: 49.25
           fa: 137
           fh: 2
+          fay: 177
+          fap: 47
+          bx: 13.0
+          by: 49.27
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.487
           y: 0.141
@@ -219,7 +290,15 @@ cuts:
           wy: 48.37
           fa: 146
           fh: 4
+          fay: 179
+          fap: 39
+          bx: 13.13
+          by: 48.39
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.75
       t: 3.75
       look: null
@@ -246,7 +325,14 @@ cuts:
           wy: 47.61
           fa: 134
           fh: 11
+          fay: 173
+          fap: 51
+          bx: 13.1
+          by: 47.63
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.342
           y: 0.137
@@ -262,7 +348,15 @@ cuts:
           wy: 46.47
           fa: 140
           fh: 2
+          fay: 178
+          fap: 46
+          bx: 13.36
+          by: 46.49
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 4.46
       t: 4.46
       look: null
@@ -289,7 +383,14 @@ cuts:
           wy: 46.06
           fa: 134
           fh: 17
+          fay: 167
+          fap: 52
+          bx: 13.19
+          by: 46.09
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.276
           y: 0.154
@@ -305,10 +406,22 @@ cuts:
           wy: 44.67
           fa: 140
           fh: 4
+          fay: 179
+          fap: 47
+          bx: 13.59
+          by: 44.71
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
   A05b-014:
     sec: 12.2
     shot: 全身・ルッキーニィ・百騎兵
+    input_hash: aab9a096cdb6eb53c7baff68ad988c22e0b97ca976a7e72323d7de7fb7f006fb
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:37+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -336,7 +449,14 @@ cuts:
           wy: 41.58
           fa: 43
           fh: 0
+          fay: 42
+          fap: 10
+          bx: 20.3
+          by: 41.6
           h: 0.9
+          lm:
+            le: ok
+            re: ok
         luckiny:
           x: 0.134
           y: 0.645
@@ -352,7 +472,15 @@ cuts:
           wy: 40.42
           fa: 69
           fh: 225
+          fay: 70
+          fap: 2
+          bx: 21.5
+          by: 40.4
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 0.75
       t: 0.75
       look: hundred-knight
@@ -379,7 +507,14 @@ cuts:
           wy: 41.13
           fa: 87
           fh: 44
+          fay: 86
+          fap: 11
+          bx: 20.83
+          by: 41.15
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.24
           y: 0.626
@@ -395,7 +530,15 @@ cuts:
           wy: 39.98
           fa: 64
           fh: 231
+          fay: 64
+          fap: 3
+          bx: 22.02
+          by: 39.95
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: hundred-knight
@@ -422,7 +565,14 @@ cuts:
           wy: 40.68
           fa: 85
           fh: 42
+          fay: 85
+          fap: 11
+          bx: 21.35
+          by: 40.7
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.43
           y: 0.557
@@ -438,7 +588,15 @@ cuts:
           wy: 39.93
           fa: 84
           fh: 225
+          fay: 77
+          fap: 56
+          bx: 22.41
+          by: 39.63
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: back
     - T: 2.25
       t: 2.25
       look: hundred-knight
@@ -465,7 +623,14 @@ cuts:
           wy: 40.24
           fa: 83
           fh: 41
+          fay: 83
+          fap: 10
+          bx: 21.88
+          by: 40.25
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.519
           y: 0.555
@@ -481,7 +646,15 @@ cuts:
           wy: 39.66
           fa: 85
           fh: 225
+          fay: 81
+          fap: 50
+          bx: 22.72
+          by: 39.38
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: back
     - T: 3.0
       t: 3.0
       look: luckiny
@@ -508,7 +681,14 @@ cuts:
           wy: 39.79
           fa: 82
           fh: 39
+          fay: 81
+          fap: 10
+          bx: 22.4
+          by: 39.8
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.583
           y: 0.545
@@ -524,7 +704,15 @@ cuts:
           wy: 39.41
           fa: 88
           fh: 225
+          fay: 85
+          fap: 52
+          bx: 23.03
+          by: 39.13
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: back
     - T: 3.75
       t: 3.75
       look: luckiny
@@ -551,7 +739,14 @@ cuts:
           wy: 39.6
           fa: 90
           fh: 48
+          fay: 90
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.588
           y: 0.542
@@ -567,7 +762,15 @@ cuts:
           wy: 39.12
           fa: 86
           fh: 225
+          fay: 82
+          fap: 54
+          bx: 23.45
+          by: 38.83
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: back
     - T: 4.5
       t: 4.5
       look: luckiny
@@ -594,7 +797,14 @@ cuts:
           wy: 39.6
           fa: 90
           fh: 48
+          fay: 90
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.503
           y: 0.609
@@ -610,7 +820,15 @@ cuts:
           wy: 38.81
           fa: 76
           fh: 225
+          fay: 76
+          fap: 0
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 5.25
       t: 5.25
       look: luckiny
@@ -637,7 +855,14 @@ cuts:
           wy: 39.6
           fa: 90
           fh: 48
+          fay: 90
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.502
           y: 0.614
@@ -653,7 +878,15 @@ cuts:
           wy: 38.81
           fa: 84
           fh: 217
+          fay: 84
+          fap: 0
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 6.0
       t: 6.0
       look: luckiny
@@ -680,7 +913,14 @@ cuts:
           wy: 39.6
           fa: 89
           fh: 48
+          fay: 89
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.498
           y: 0.621
@@ -696,7 +936,15 @@ cuts:
           wy: 38.79
           fa: 82
           fh: 219
+          fay: 82
+          fap: -5
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 6.75
       t: 6.75
       look: luckiny
@@ -723,7 +971,14 @@ cuts:
           wy: 39.6
           fa: 89
           fh: 48
+          fay: 89
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.496
           y: 0.631
@@ -739,7 +994,15 @@ cuts:
           wy: 38.79
           fa: 87
           fh: 213
+          fay: 87
+          fap: -5
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 7.5
       t: 7.5
       look: luckiny
@@ -766,7 +1029,14 @@ cuts:
           wy: 39.6
           fa: 88
           fh: 48
+          fay: 88
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.498
           y: 0.643
@@ -782,7 +1052,15 @@ cuts:
           wy: 38.79
           fa: 85
           fh: 215
+          fay: 85
+          fap: -3
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 8.25
       t: 8.25
       look: luckiny
@@ -809,7 +1087,14 @@ cuts:
           wy: 39.6
           fa: 88
           fh: 48
+          fay: 88
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.505
           y: 0.654
@@ -825,7 +1110,15 @@ cuts:
           wy: 38.81
           fa: 75
           fh: 225
+          fay: 75
+          fap: 2
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 9.0
       t: 9.0
       look: luckiny
@@ -852,7 +1145,14 @@ cuts:
           wy: 39.6
           fa: 87
           fh: 48
+          fay: 87
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.638
           y: 0.556
@@ -868,7 +1168,15 @@ cuts:
           wy: 39.1
           fa: 86
           fh: 225
+          fay: 82
+          fap: 55
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: back
     - T: 9.75
       t: 9.75
       look: luckiny
@@ -895,7 +1203,14 @@ cuts:
           wy: 39.6
           fa: 87
           fh: 48
+          fay: 87
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: ok
+            re: back
         luckiny:
           x: 0.622
           y: 0.592
@@ -911,7 +1226,15 @@ cuts:
           wy: 39.05
           fa: 83
           fh: 225
+          fay: 81
+          fap: 45
+          bx: 23.5
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: ok
+            mo: ok
     - T: 10.5
       t: 10.5
       look: luckiny
@@ -938,7 +1261,14 @@ cuts:
           wy: 39.6
           fa: 104
           fh: 65
+          fay: 104
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.482
           y: 0.628
@@ -954,7 +1284,15 @@ cuts:
           wy: 38.62
           fa: 148
           fh: 81
+          fay: 152
+          fap: 12
+          bx: 24.7
+          by: 38.64
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 11.25
       t: 11.25
       look: luckiny
@@ -981,7 +1319,14 @@ cuts:
           wy: 39.6
           fa: 116
           fh: 77
+          fay: 116
+          fap: 7
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.495
           y: 0.603
@@ -997,7 +1342,15 @@ cuts:
           wy: 38.8
           fa: 161
           fh: 91
+          fay: 168
+          fap: 12
+          bx: 27.7
+          by: 38.8
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 12.0
       t: 12.0
       look: luckiny
@@ -1024,7 +1377,14 @@ cuts:
           wy: 39.6
           fa: 132
           fh: 94
+          fay: 132
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.501
           y: 0.577
@@ -1040,7 +1400,15 @@ cuts:
           wy: 38.99
           fa: 165
           fh: 104
+          fay: 176
+          fap: 13
+          bx: 30.7
+          by: 38.96
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 12.17
       t: 12.17
       look: luckiny
@@ -1067,7 +1435,14 @@ cuts:
           wy: 39.6
           fa: 133
           fh: 95
+          fay: 133
+          fap: 8
+          bx: 22.6
+          by: 39.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.495
           y: 0.572
@@ -1083,10 +1458,22 @@ cuts:
           wy: 38.97
           fa: 157
           fh: 81
+          fay: 162
+          fap: 13
+          bx: 31.37
+          by: 38.99
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
   A05b-015:
     sec: 8.4
     shot: 引き→寄り・百騎兵・井戸
+    input_hash: 67c10a3a532535aba6e4c009e5fa815b8639931e0147b8789bdb21b0fc95c91e
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:39+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -1114,7 +1501,14 @@ cuts:
           wy: 27.0
           fa: 46
           fh: 95
+          fay: 46
+          fap: 3
+          bx: 32.4
+          by: 27.0
           h: 0.9
+          lm:
+            le: ENV_well
+            re: ENV_well
     - T: 0.75
       t: 0.75
       look: null
@@ -1141,7 +1535,14 @@ cuts:
           wy: 27.06
           fa: 61
           fh: 91
+          fay: 61
+          fap: 4
+          bx: 33.78
+          by: 27.06
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 1.5
       t: 1.5
       look: null
@@ -1168,7 +1569,14 @@ cuts:
           wy: 27.1
           fa: 69
           fh: 90
+          fay: 69
+          fap: 0
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 2.25
       t: 2.25
       look: null
@@ -1195,7 +1603,14 @@ cuts:
           wy: 27.1
           fa: 36
           fh: 195
+          fay: 36
+          fap: 1
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 3.0
       t: 3.0
       look: null
@@ -1222,7 +1637,14 @@ cuts:
           wy: 27.1
           fa: 36
           fh: 195
+          fay: 36
+          fap: 1
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 3.75
       t: 3.75
       look: null
@@ -1249,7 +1671,14 @@ cuts:
           wy: 27.1
           fa: 35
           fh: 195
+          fay: 35
+          fap: 2
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 4.5
       t: 4.5
       look: null
@@ -1276,7 +1705,14 @@ cuts:
           wy: 27.1
           fa: 33
           fh: 195
+          fay: 32
+          fap: 4
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 5.25
       t: 5.25
       look: null
@@ -1303,7 +1739,14 @@ cuts:
           wy: 27.1
           fa: 29
           fh: 195
+          fay: 28
+          fap: 6
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 6.0
       t: 6.0
       look: null
@@ -1330,7 +1773,14 @@ cuts:
           wy: 27.1
           fa: 26
           fh: 195
+          fay: 24
+          fap: 9
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: out
+            re: out
     - T: 6.75
       t: 6.75
       look: null
@@ -1357,7 +1807,14 @@ cuts:
           wy: 27.1
           fa: 24
           fh: 195
+          fay: 20
+          fap: 12
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: out
+            re: out
     - T: 7.5
       t: 7.5
       look: well
@@ -1384,7 +1841,14 @@ cuts:
           wy: 27.1
           fa: 23
           fh: 195
+          fay: 19
+          fap: 14
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: out
+            re: out
     - T: 8.25
       t: 8.25
       look: well
@@ -1411,7 +1875,14 @@ cuts:
           wy: 27.1
           fa: 23
           fh: 195
+          fay: 19
+          fap: 14
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: out
+            re: out
     - T: 8.38
       t: 8.38
       look: well
@@ -1438,10 +1909,21 @@ cuts:
           wy: 27.1
           fa: 23
           fh: 195
+          fay: 19
+          fap: 14
+          bx: 34.6
+          by: 27.1
           h: 0.9
+          lm:
+            le: out
+            re: out
   A05b-016:
     sec: 10.9
     shot: 全身・百騎兵（後ろから、扉の外→家の中）・ルッキーニィ（奥）・ティト
+    input_hash: 671145762904ec4f261040ebc76ec72de6b0b6ee5b221b6e3888ecdc2082ca39
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:40:23+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -1469,7 +1951,14 @@ cuts:
           wy: 31.58
           fa: 174
           fh: 0
+          fay: 174
+          fap: 8
+          bx: 58.1
+          by: 31.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.423
           y: 0.564
@@ -1485,7 +1974,15 @@ cuts:
           wy: 24.6
           fa: 7
           fh: 185
+          fay: 7
+          fap: -1
+          bx: 57.4
+          by: 24.6
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         tito:
           x: 0.48
           y: 0.565
@@ -1501,7 +1998,15 @@ cuts:
           wy: 21.41
           fa: 2
           fh: 180
+          fay: 1
+          fap: -1
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_room_tito_n3
+            re: ENV_room_tito_n3
+            mo: ENV_room_tito_n3
     - T: 0.75
       t: 0.75
       look: null
@@ -1528,7 +2033,14 @@ cuts:
           wy: 30.32
           fa: 178
           fh: 6
+          fay: 178
+          fap: 8
+          bx: 57.96
+          by: 30.35
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.431
           y: 0.564
@@ -1544,7 +2056,15 @@ cuts:
           wy: 24.61
           fa: 5
           fh: 183
+          fay: 5
+          fap: -1
+          bx: 57.4
+          by: 24.6
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         tito:
           x: 0.49
           y: 0.563
@@ -1560,7 +2080,15 @@ cuts:
           wy: 21.41
           fa: 2
           fh: 180
+          fay: 2
+          fap: -1
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_room_tito_n3
+            re: ENV_room_tito_n3
+            mo: ENV_room_tito_n3
     - T: 1.5
       t: 1.5
       look: null
@@ -1587,7 +2115,14 @@ cuts:
           wy: 29.07
           fa: 170
           fh: 356
+          fay: 170
+          fap: 9
+          bx: 57.82
+          by: 29.1
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.465
           y: 0.566
@@ -1603,7 +2138,15 @@ cuts:
           wy: 24.6
           fa: 10
           fh: 189
+          fay: 10
+          fap: -2
+          bx: 57.4
+          by: 24.6
           h: 1.4
+          lm:
+            le: ok
+            re: ok
+            mo: ok
         tito:
           x: 0.531
           y: 0.558
@@ -1619,7 +2162,15 @@ cuts:
           wy: 21.4
           fa: 4
           fh: 180
+          fay: 3
+          fap: -3
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_room_tito_n3
+            re: ENV_room_tito_n3
+            mo: ENV_room_tito_n3
     - T: 2.25
       t: 2.25
       look: null
@@ -1646,7 +2197,14 @@ cuts:
           wy: 27.83
           fa: 171
           fh: 357
+          fay: 179
+          fap: 14
+          bx: 57.68
+          by: 27.85
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.508
           y: 0.561
@@ -1662,7 +2220,15 @@ cuts:
           wy: 23.81
           fa: 164
           fh: 357
+          fay: 176
+          fap: 12
+          bx: 57.83
+          by: 23.96
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         tito:
           x: 0.534
           y: 0.564
@@ -1678,7 +2244,15 @@ cuts:
           wy: 21.39
           fa: 4
           fh: 180
+          fay: 2
+          fap: -3
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_room_tito_n3
+            re: ENV_room_tito_n3
+            mo: ENV_room_tito_n3
     - T: 3.0
       t: 3.0
       look: luckiny
@@ -1705,7 +2279,14 @@ cuts:
           wy: 27.6
           fa: 155
           fh: 0
+          fay: 164
+          fap: 20
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
           x: 0.548
           y: 0.54
@@ -1721,7 +2302,15 @@ cuts:
           wy: 21.4
           fa: 164
           fh: 18
+          fay: 171
+          fap: 13
+          bx: 59.19
+          by: 21.54
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         tito:
           x: 0.423
           y: 0.561
@@ -1737,7 +2326,15 @@ cuts:
           wy: 21.39
           fa: 2
           fh: 180
+          fay: 1
+          fap: -2
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_curtain_1
+            re: ENV_room_tito_n3
+            mo: ENV_room_tito_n3
       probe: null
     - T: 3.75
       t: 3.75
@@ -1765,7 +2362,14 @@ cuts:
           wy: 27.6
           fa: 146
           fh: 0
+          fay: 156
+          fap: 24
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.608
           y: 0.535
@@ -1781,7 +2385,15 @@ cuts:
           wy: 21.17
           fa: 155
           fh: 30
+          fay: 159
+          fap: 14
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         tito:
           x: 0.469
           y: 0.557
@@ -1797,7 +2409,15 @@ cuts:
           wy: 21.41
           fa: 1
           fh: 180
+          fay: 1
+          fap: 0
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_curtain_1
+            re: ENV_room_tito_n3
+            mo: ENV_curtain_1
       probe: null
     - T: 4.5
       t: 4.5
@@ -1825,7 +2445,14 @@ cuts:
           wy: 27.6
           fa: 142
           fh: 0
+          fay: 151
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
           x: 0.638
           y: 0.533
@@ -1841,7 +2468,15 @@ cuts:
           wy: 21.16
           fa: 154
           fh: 30
+          fay: 158
+          fap: 15
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: back
+            re: back
+            mo: back
         tito:
           x: 0.496
           y: 0.556
@@ -1857,7 +2492,15 @@ cuts:
           wy: 21.41
           fa: 2
           fh: 180
+          fay: 1
+          fap: 1
+          bx: 58.1
+          by: 21.4
           h: 1.5
+          lm:
+            le: ENV_curtain_1
+            re: ENV_curtain_1
+            mo: ENV_curtain_1
       probe: null
     - T: 5.25
       t: 5.25
@@ -1865,34 +2508,41 @@ cuts:
       frame: 全身
       lens: 30.5
       cam:
-      - 58.29
-      - 28.75
-      - 1.35
+      - 58.31
+      - 28.74
+      - 1.36
       yaw: 3
       people:
         hundred-knight:
-          x: -0.019
-          y: -0.279
+          x: -0.031
+          y: -0.295
           z: 1.14
-          frac: 0.512
-          top: -0.021
-          fy: -1.147
+          frac: 0.511
+          top: -0.037
+          fy: -1.162
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 134
+          fa: 133
           fh: 9
+          fay: 141
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
-          x: 0.579
-          y: 0.557
-          z: 7.62
+          x: 0.58
+          y: 0.559
+          z: 7.61
           frac: 0.046
-          top: 0.58
-          fy: 0.305
+          top: 0.582
+          fy: 0.307
           in: true
           occ: ENV_room_tito_n5
           hz: 1.26
@@ -1901,11 +2551,19 @@ cuts:
           wy: 21.16
           fa: 105
           fh: 83
+          fay: 105
+          fap: 10
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: back
+            re: ENV_room_tito_n5
+            mo: back
         tito:
           x: 0.502
-          y: 0.581
-          z: 5.29
+          y: 0.582
+          z: 5.28
           frac: 0.071
           top: 0.617
           fy: 0.198
@@ -1915,484 +2573,680 @@ cuts:
           bz: 0.0
           wx: 58.57
           wy: 23.46
-          fa: 19
+          fa: 18
           fh: 165
+          fay: 18
+          fap: 4
+          bx: 58.56
+          by: 23.42
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.0
       t: 6.0
       look: tito
       frame: 全身
       lens: 33.5
       cam:
-      - 58.26
-      - 28.73
-      - 1.33
-      yaw: 1
+      - 58.41
+      - 28.68
+      - 1.44
+      yaw: 358
       people:
         hundred-knight:
-          x: 0.01
-          y: -0.235
-          z: 1.17
-          frac: 0.537
-          top: 0.038
-          fy: -1.123
+          x: -0.07
+          y: -0.332
+          z: 1.19
+          frac: 0.517
+          top: -0.067
+          fy: -1.174
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 132
+          fa: 125
           fh: 13
+          fay: 131
+          fap: 29
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         luckiny:
-          x: 0.629
-          y: 0.641
-          z: 7.54
-          frac: 0.051
-          top: 0.667
-          fy: 0.363
+          x: 0.649
+          y: 0.666
+          z: 7.45
+          frac: 0.052
+          top: 0.692
+          fy: 0.385
           in: true
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.38
           wy: 21.17
-          fa: 88
+          fa: 87
           fh: 101
+          fay: 87
+          fap: 6
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: back
+            re: ENV_room_tito_n5
+            mo: ENV_room_tito_n5
         tito:
-          x: 0.498
-          y: 0.674
-          z: 3.76
-          frac: 0.111
-          top: 0.73
-          fy: 0.093
+          x: 0.497
+          y: 0.675
+          z: 3.72
+          frac: 0.112
+          top: 0.731
+          fy: 0.094
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
           wx: 58.28
           wy: 24.95
-          fa: 17
+          fa: 19
           fh: 197
+          fay: 19
+          fap: 4
+          bx: 58.29
+          by: 24.91
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.75
       t: 6.75
       look: tito
       frame: 全身
       lens: 36.9
       cam:
-      - 58.21
-      - 28.71
-      - 1.31
-      yaw: 354
+      - 58.52
+      - 28.62
+      - 1.52
+      yaw: 347
       people:
         hundred-knight:
-          x: 0.134
-          y: -0.046
-          z: 1.25
-          frac: 0.539
-          top: 0.232
-          fy: -0.897
+          x: 0.048
+          y: -0.111
+          z: 1.37
+          frac: 0.461
+          top: 0.129
+          fy: -0.817
           in: false
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 133
+          fa: 120
           fh: 14
+          fay: 126
+          fap: 31
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 0.773
-          y: 0.844
-          z: 7.24
-          frac: 0.06
-          top: 0.874
-          fy: 0.525
+          x: 0.885
+          y: 0.955
+          z: 6.84
+          frac: 0.065
+          top: 0.987
+          fy: 0.619
           in: true
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.37
           wy: 21.18
-          fa: 88
+          fa: 86
           fh: 100
+          fay: 86
+          fap: 6
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: back
+            re: ENV_room_tito_n5
+            mo: ENV_room_tito_n5
         tito:
-          x: 0.497
-          y: 0.908
-          z: 2.32
-          frac: 0.202
-          top: 1.01
-          fy: -0.078
+          x: 0.495
+          y: 0.903
+          z: 2.29
+          frac: 0.203
+          top: 1.006
+          fy: -0.046
           in: true
           occ: null
           hz: 1.37
           bz: 0.0
           wx: 57.96
           wy: 26.34
-          fa: 17
+          fa: 26
           fh: 191
+          fay: 25
+          fap: 6
+          bx: 57.97
+          by: 26.32
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 7.5
       t: 7.5
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.331
-          y: 0.109
-          z: 1.33
-          frac: 0.521
-          top: 0.379
-          fy: -0.697
+          x: 0.263
+          y: 0.093
+          z: 1.52
+          frac: 0.426
+          top: 0.315
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 144
+          fa: 129
           fh: 0
+          fay: 138
+          fap: 33
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.017
-          y: 0.976
-          z: 6.67
-          frac: 0.068
-          top: 1.01
-          fy: 0.62
+          x: 1.236
+          y: 1.118
+          z: 5.92
+          frac: 0.078
+          top: 1.158
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.37
           wy: 21.17
-          fa: 88
+          fa: 86
           fh: 101
+          fay: 86
+          fap: 7
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.469
-          y: 0.718
-          z: 1.76
-          frac: 0.244
-          top: 0.844
-          fy: -0.163
+          x: 0.453
+          y: 0.684
+          z: 1.86
+          frac: 0.216
+          top: 0.796
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.03
-          fa: 31
+          fa: 44
           fh: 180
+          fay: 30
+          fap: 33
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 8.25
       t: 8.25
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.331
-          y: 0.11
-          z: 1.33
-          frac: 0.522
-          top: 0.38
-          fy: -0.697
+          x: 0.264
+          y: 0.094
+          z: 1.52
+          frac: 0.427
+          top: 0.317
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.59
-          fa: 144
+          fa: 130
           fh: 0
+          fay: 138
+          fap: 33
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.018
-          y: 0.975
-          z: 6.68
-          frac: 0.068
-          top: 1.009
-          fy: 0.62
+          x: 1.236
+          y: 1.118
+          z: 5.93
+          frac: 0.078
+          top: 1.157
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.38
           wy: 21.17
-          fa: 88
+          fa: 86
           fh: 101
+          fay: 86
+          fap: 7
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.468
-          y: 0.716
-          z: 1.76
-          frac: 0.246
-          top: 0.844
-          fy: -0.163
+          x: 0.452
+          y: 0.681
+          z: 1.86
+          frac: 0.219
+          top: 0.795
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.03
-          fa: 30
+          fa: 43
           fh: 180
+          fay: 30
+          fap: 31
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 9.0
       t: 9.0
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.33
-          y: 0.107
-          z: 1.32
-          frac: 0.521
-          top: 0.377
-          fy: -0.697
+          x: 0.262
+          y: 0.091
+          z: 1.52
+          frac: 0.425
+          top: 0.314
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 144
+          fa: 129
           fh: 0
+          fay: 138
+          fap: 32
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.018
-          y: 0.975
-          z: 6.68
-          frac: 0.067
-          top: 1.008
-          fy: 0.62
+          x: 1.237
+          y: 1.117
+          z: 5.93
+          frac: 0.078
+          top: 1.156
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.38
           wy: 21.16
-          fa: 88
+          fa: 86
           fh: 101
+          fay: 86
+          fap: 7
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.47
-          y: 0.719
-          z: 1.76
-          frac: 0.247
-          top: 0.847
-          fy: -0.163
+          x: 0.454
+          y: 0.685
+          z: 1.87
+          frac: 0.22
+          top: 0.799
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.03
-          fa: 30
+          fa: 43
           fh: 180
+          fay: 30
+          fap: 31
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 9.75
       t: 9.75
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.328
-          y: 0.103
-          z: 1.32
-          frac: 0.519
-          top: 0.373
-          fy: -0.697
+          x: 0.259
+          y: 0.087
+          z: 1.51
+          frac: 0.423
+          top: 0.309
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.61
-          fa: 143
+          fa: 128
           fh: 0
+          fay: 138
+          fap: 32
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.018
-          y: 0.975
-          z: 6.68
-          frac: 0.068
-          top: 1.009
-          fy: 0.62
+          x: 1.236
+          y: 1.118
+          z: 5.93
+          frac: 0.078
+          top: 1.157
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.38
           wy: 21.17
-          fa: 88
+          fa: 86
           fh: 101
+          fay: 86
+          fap: 7
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.472
-          y: 0.725
-          z: 1.78
-          frac: 0.248
-          top: 0.853
-          fy: -0.163
+          x: 0.458
+          y: 0.692
+          z: 1.88
+          frac: 0.222
+          top: 0.807
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.01
-          fa: 28
+          fa: 41
           fh: 180
+          fay: 30
+          fap: 29
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 10.5
       t: 10.5
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.327
-          y: 0.103
-          z: 1.32
-          frac: 0.519
-          top: 0.373
-          fy: -0.697
+          x: 0.259
+          y: 0.087
+          z: 1.51
+          frac: 0.422
+          top: 0.308
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.61
-          fa: 143
+          fa: 128
           fh: 0
+          fay: 138
+          fap: 32
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.017
-          y: 0.976
-          z: 6.67
-          frac: 0.068
-          top: 1.01
-          fy: 0.62
+          x: 1.236
+          y: 1.118
+          z: 5.92
+          frac: 0.078
+          top: 1.158
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.26
           bz: 0.0
           wx: 59.37
           wy: 21.17
-          fa: 88
+          fa: 86
           fh: 101
+          fay: 86
+          fap: 7
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.473
-          y: 0.726
-          z: 1.78
-          frac: 0.248
-          top: 0.854
-          fy: -0.163
+          x: 0.458
+          y: 0.693
+          z: 1.88
+          frac: 0.222
+          top: 0.808
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.01
-          fa: 28
+          fa: 41
           fh: 180
+          fay: 30
+          fap: 29
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 10.88
       t: 10.88
       look: tito
       frame: 全身
       lens: 38.0
       cam:
-      - 58.2
-      - 28.7
-      - 1.3
-      yaw: 343
+      - 58.55
+      - 28.6
+      - 1.55
+      yaw: 333
       people:
         hundred-knight:
-          x: 0.328
-          y: 0.104
-          z: 1.32
-          frac: 0.52
-          top: 0.374
-          fy: -0.697
+          x: 0.26
+          y: 0.088
+          z: 1.52
+          frac: 0.423
+          top: 0.31
+          fy: -0.547
           in: true
           occ: null
           hz: 0.7
           bz: 0.0
           wx: 57.65
           wy: 27.6
-          fa: 143
+          fa: 128
           fh: 0
+          fay: 138
+          fap: 32
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         luckiny:
-          x: 1.008
-          y: 0.981
-          z: 6.56
-          frac: 0.071
-          top: 1.016
-          fy: 0.62
+          x: 1.223
+          y: 1.123
+          z: 5.84
+          frac: 0.081
+          top: 1.164
+          fy: 0.721
           in: false
-          occ: ENV_curtain_1
+          occ: ENV_room_tito_n5
           hz: 1.28
           bz: 0.0
           wx: 59.29
           wy: 21.31
-          fa: 123
+          fa: 121
           fh: 65
+          fay: 121
+          fap: 1
+          bx: 59.3
+          by: 21.3
           h: 1.4
+          lm:
+            le: out
+            re: out
+            mo: out
         tito:
-          x: 0.472
-          y: 0.725
-          z: 1.77
-          frac: 0.248
-          top: 0.853
-          fy: -0.163
+          x: 0.457
+          y: 0.691
+          z: 1.88
+          frac: 0.221
+          top: 0.806
+          fy: -0.087
           in: true
           occ: null
           hz: 1.06
           bz: 0.0
           wx: 57.65
           wy: 27.02
-          fa: 28
+          fa: 41
           fh: 180
+          fay: 30
+          fap: 29
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
   A05b-017:
     sec: 5.0
     shot: 寄り・ティト
+    input_hash: bfed93dbbec969dcb2844256a8c61372ba101d601e851c75be39a79bdc7f1665
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:42+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -2420,7 +3274,14 @@ cuts:
           wy: 27.6
           fa: 136
           fh: 0
+          fay: 141
+          fap: 21
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.568
           y: 0.597
@@ -2436,7 +3297,15 @@ cuts:
           wy: 27.03
           fa: 23
           fh: 180
+          fay: 21
+          fap: 11
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 0.75
       t: 0.75
       look: tito
@@ -2463,7 +3332,14 @@ cuts:
           wy: 27.6
           fa: 135
           fh: 0
+          fay: 140
+          fap: 22
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.57
           y: 0.601
@@ -2479,7 +3355,15 @@ cuts:
           wy: 27.03
           fa: 23
           fh: 180
+          fay: 20
+          fap: 10
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: tito
@@ -2506,7 +3390,14 @@ cuts:
           wy: 27.6
           fa: 134
           fh: 0
+          fay: 140
+          fap: 23
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.55
           y: 0.622
@@ -2522,7 +3413,15 @@ cuts:
           wy: 26.98
           fa: 20
           fh: 180
+          fay: 20
+          fap: 5
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 2.25
       t: 2.25
       look: tito
@@ -2549,7 +3448,14 @@ cuts:
           wy: 27.6
           fa: 133
           fh: 0
+          fay: 139
+          fap: 24
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.529
           y: 0.632
@@ -2565,7 +3471,15 @@ cuts:
           wy: 26.93
           fa: 19
           fh: 180
+          fay: 19
+          fap: -2
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.0
       t: 3.0
       look: tito
@@ -2592,7 +3506,14 @@ cuts:
           wy: 27.6
           fa: 132
           fh: 0
+          fay: 137
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.538
           y: 0.636
@@ -2608,7 +3529,15 @@ cuts:
           wy: 26.94
           fa: 19
           fh: 180
+          fay: 19
+          fap: 3
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.75
       t: 3.75
       look: tito
@@ -2635,7 +3564,14 @@ cuts:
           wy: 27.6
           fa: 130
           fh: 0
+          fay: 136
+          fap: 27
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.547
           y: 0.638
@@ -2651,7 +3587,15 @@ cuts:
           wy: 26.96
           fa: 20
           fh: 180
+          fay: 19
+          fap: 6
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 4.5
       t: 4.5
       look: tito
@@ -2678,7 +3622,14 @@ cuts:
           wy: 27.6
           fa: 128
           fh: 0
+          fay: 135
+          fap: 28
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.547
           y: 0.644
@@ -2694,7 +3645,15 @@ cuts:
           wy: 26.95
           fa: 19
           fh: 180
+          fay: 19
+          fap: 2
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 4.96
       t: 4.96
       look: tito
@@ -2721,7 +3680,14 @@ cuts:
           wy: 27.6
           fa: 127
           fh: 0
+          fay: 134
+          fap: 29
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.546
           y: 0.647
@@ -2737,10 +3703,22 @@ cuts:
           wy: 26.95
           fa: 19
           fh: 180
+          fay: 19
+          fap: 2
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
   A05b-018:
     sec: 8.8
     shot: 全身・ティト
+    input_hash: 53f2cc9bf9e20bb0dd88500a44962667f15f278deae49f60a67a7efa001fe19f
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:43+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -2768,7 +3746,14 @@ cuts:
           wy: 27.6
           fa: 128
           fh: 0
+          fay: 133
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         tito:
           x: 0.478
           y: 0.612
@@ -2784,7 +3769,15 @@ cuts:
           wy: 26.95
           fa: 36
           fh: 180
+          fay: 32
+          fap: 18
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 0.75
       t: 0.75
       look: tito
@@ -2811,7 +3804,14 @@ cuts:
           wy: 27.6
           fa: 128
           fh: 0
+          fay: 133
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         tito:
           x: 0.495
           y: 0.771
@@ -2827,7 +3827,15 @@ cuts:
           wy: 26.87
           fa: 30
           fh: 180
+          fay: 30
+          fap: 3
+          bx: 57.65
+          by: 26.85
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 1.5
       t: 1.5
       look: tito
@@ -2854,7 +3862,14 @@ cuts:
           wy: 27.6
           fa: 131
           fh: 357
+          fay: 137
+          fap: 26
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         tito:
           x: 0.498
           y: 0.738
@@ -2870,7 +3885,15 @@ cuts:
           wy: 26.58
           fa: 162
           fh: 349
+          fay: 163
+          fap: -5
+          bx: 57.59
+          by: 26.57
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 2.25
       t: 2.25
       look: tito
@@ -2897,7 +3920,14 @@ cuts:
           wy: 27.6
           fa: 135
           fh: 355
+          fay: 143
+          fap: 28
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: back
         tito:
           x: 0.5
           y: 0.719
@@ -2913,7 +3943,15 @@ cuts:
           wy: 26.32
           fa: 175
           fh: 341
+          fay: 176
+          fap: -4
+          bx: 57.53
+          by: 26.31
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.0
       t: 3.0
       look: tito
@@ -2940,7 +3978,14 @@ cuts:
           wy: 27.6
           fa: 141
           fh: 353
+          fay: 157
+          fap: 33
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: back
+            re: out
         tito:
           x: 0.5
           y: 0.707
@@ -2956,7 +4001,15 @@ cuts:
           wy: 26.05
           fa: 172
           fh: 352
+          fay: 172
+          fap: 0
+          bx: 57.46
+          by: 26.05
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.75
       t: 3.75
       look: tito
@@ -2983,7 +4036,14 @@ cuts:
           wy: 27.6
           fa: 144
           fh: 352
+          fay: 177
+          fap: 37
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.499
           y: 0.696
@@ -2999,7 +4059,15 @@ cuts:
           wy: 25.78
           fa: 166
           fh: 340
+          fay: 167
+          fap: 4
+          bx: 57.4
+          by: 25.79
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 4.5
       t: 4.5
       look: tito
@@ -3026,7 +4094,14 @@ cuts:
           wy: 27.6
           fa: 133
           fh: 351
+          fay: 145
+          fap: 34
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.5
           y: 0.683
@@ -3042,7 +4117,15 @@ cuts:
           wy: 25.53
           fa: 169
           fh: 352
+          fay: 169
+          fap: 0
+          bx: 57.33
+          by: 25.54
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 5.25
       t: 5.25
       look: tito
@@ -3069,7 +4152,14 @@ cuts:
           wy: 27.6
           fa: 112
           fh: 344
+          fay: 115
+          fap: 27
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.504
           y: 0.669
@@ -3085,7 +4175,15 @@ cuts:
           wy: 25.26
           fa: 104
           fh: 289
+          fay: 104
+          fap: -5
+          bx: 56.98
+          by: 25.26
           h: 1.5
+          lm:
+            le: ok
+            re: back
+            mo: back
     - T: 6.0
       t: 6.0
       look: tito
@@ -3112,7 +4210,14 @@ cuts:
           wy: 27.6
           fa: 92
           fh: 333
+          fay: 92
+          fap: 21
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.503
           y: 0.657
@@ -3128,7 +4233,15 @@ cuts:
           wy: 24.95
           fa: 115
           fh: 297
+          fay: 115
+          fap: -4
+          bx: 56.28
+          by: 24.95
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 6.75
       t: 6.75
       look: tito
@@ -3155,7 +4268,14 @@ cuts:
           wy: 27.6
           fa: 78
           fh: 325
+          fay: 78
+          fap: 17
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.5
           y: 0.646
@@ -3171,7 +4291,15 @@ cuts:
           wy: 24.64
           fa: 114
           fh: 292
+          fay: 114
+          fap: 0
+          bx: 55.59
+          by: 24.64
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 7.5
       t: 7.5
       look: tito
@@ -3198,7 +4326,14 @@ cuts:
           wy: 27.6
           fa: 70
           fh: 320
+          fay: 69
+          fap: 16
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.497
           y: 0.635
@@ -3214,7 +4349,15 @@ cuts:
           wy: 24.32
           fa: 121
           fh: 294
+          fay: 121
+          fap: 4
+          bx: 54.89
+          by: 24.33
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 8.25
       t: 8.25
       look: tito
@@ -3241,7 +4384,14 @@ cuts:
           wy: 27.6
           fa: 65
           fh: 316
+          fay: 64
+          fap: 15
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.496
           y: 0.622
@@ -3257,7 +4407,15 @@ cuts:
           wy: 24.01
           fa: 131
           fh: 297
+          fay: 131
+          fap: 2
+          bx: 54.2
+          by: 24.02
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 8.75
       t: 8.75
       look: tito
@@ -3284,7 +4442,14 @@ cuts:
           wy: 27.6
           fa: 65
           fh: 315
+          fay: 64
+          fap: 15
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: out
+            re: out
         tito:
           x: 0.501
           y: 0.619
@@ -3300,10 +4465,22 @@ cuts:
           wy: 23.87
           fa: 169
           fh: 356
+          fay: 170
+          fap: 3
+          bx: 54.01
+          by: 23.91
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
   A05b-019:
     sec: 12.2
     shot: 寄り・ティト
+    input_hash: 28ccbfc605c4f123e00c5970cbca073ab99c1e0a6d01ba3cd2880fbbe5480027
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:45+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -3331,7 +4508,15 @@ cuts:
           wy: 23.89
           fa: 135
           fh: 0
+          fay: 135
+          fap: 4
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 0.75
       t: 0.75
       look: tito
@@ -3358,7 +4543,15 @@ cuts:
           wy: 24.07
           fa: 114
           fh: 0
+          fay: 130
+          fap: -40
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 1.5
       t: 1.5
       look: tito
@@ -3385,7 +4578,15 @@ cuts:
           wy: 24.09
           fa: 113
           fh: 0
+          fay: 130
+          fap: -41
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 2.25
       t: 2.25
       look: tito
@@ -3412,7 +4613,15 @@ cuts:
           wy: 24.1
           fa: 110
           fh: 2
+          fay: 128
+          fap: -43
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 3.0
       t: 3.0
       look: tito
@@ -3439,7 +4648,15 @@ cuts:
           wy: 23.9
           fa: 15
           fh: 150
+          fay: 15
+          fap: 2
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 3.75
       t: 3.75
       look: tito
@@ -3466,7 +4683,15 @@ cuts:
           wy: 23.91
           fa: 17
           fh: 150
+          fay: 15
+          fap: 7
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 4.5
       t: 4.5
       look: tito
@@ -3493,7 +4718,15 @@ cuts:
           wy: 23.91
           fa: 16
           fh: 150
+          fay: 15
+          fap: 4
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 5.25
       t: 5.25
       look: tito
@@ -3520,7 +4753,15 @@ cuts:
           wy: 23.89
           fa: 15
           fh: 150
+          fay: 15
+          fap: -1
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.0
       t: 6.0
       look: tito
@@ -3547,7 +4788,15 @@ cuts:
           wy: 23.89
           fa: 15
           fh: 150
+          fay: 15
+          fap: 2
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 6.75
       t: 6.75
       look: tito
@@ -3574,7 +4823,15 @@ cuts:
           wy: 23.89
           fa: 15
           fh: 150
+          fay: 15
+          fap: 2
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 7.5
       t: 7.5
       look: tito
@@ -3601,7 +4858,15 @@ cuts:
           wy: 23.91
           fa: 17
           fh: 150
+          fay: 15
+          fap: 7
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: ok
+            re: ok
+            mo: ok
     - T: 8.25
       t: 8.25
       look: tito
@@ -3628,7 +4893,15 @@ cuts:
           wy: 23.99
           fa: 27
           fh: 129
+          fay: 10
+          fap: 25
+          bx: 54.0
+          by: 23.9
           h: 1.5
+          lm:
+            le: tito_hand1
+            re: tito_hand1
+            mo: tito_fore1
     - T: 9.0
       t: 9.0
       look: tito
@@ -3655,7 +4928,15 @@ cuts:
           wy: 24.55
           fa: 115
           fh: 84
+          fay: 115
+          fap: 5
+          bx: 54.98
+          by: 24.55
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 9.75
       t: 9.75
       look: tito
@@ -3682,7 +4963,15 @@ cuts:
           wy: 24.55
           fa: 142
           fh: 92
+          fay: 142
+          fap: 4
+          bx: 56.7
+          by: 24.55
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 10.5
       t: 10.5
       look: tito
@@ -3709,7 +4998,15 @@ cuts:
           wy: 23.9
           fa: 178
           fh: 59
+          fay: 180
+          fap: 3
+          bx: 58.23
+          by: 23.92
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 11.25
       t: 11.25
       look: null
@@ -3736,7 +5033,15 @@ cuts:
           wy: 22.47
           fa: 132
           fh: 1
+          fay: 132
+          fap: 3
+          bx: 58.6
+          by: 22.5
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 12.0
       t: 12.0
       look: null
@@ -3763,7 +5068,15 @@ cuts:
           wy: 22.17
           fa: 134
           fh: 0
+          fay: 134
+          fap: 3
+          bx: 58.6
+          by: 22.2
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
     - T: 12.17
       t: 12.17
       look: null
@@ -3790,10 +5103,22 @@ cuts:
           wy: 22.16
           fa: 133
           fh: 0
+          fay: 133
+          fap: 3
+          bx: 58.6
+          by: 22.2
           h: 1.5
+          lm:
+            le: back
+            re: back
+            mo: back
   A05b-020:
     sec: 10.0
     shot: 全身→肩越し・百騎兵（ひとり）・窓辺の星図と天球儀の棚
+    input_hash: d997837da04ac1039fe3f3115a713a6ccd58020e204edafd09ac53b29b6003ab
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:46+00:00'
     samples:
     - T: 0.0
       t: 0.0
@@ -3821,7 +5146,14 @@ cuts:
           wy: 27.6
           fa: 41
           fh: 0
+          fay: 41
+          fap: 2
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 0.75
       t: 0.75
       look: hundred-knight
@@ -3848,7 +5180,14 @@ cuts:
           wy: 27.6
           fa: 14
           fh: 304
+          fay: 14
+          fap: 2
+          bx: 57.65
+          by: 27.6
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 1.5
       t: 1.5
       look: hundred-knight
@@ -3875,7 +5214,14 @@ cuts:
           wy: 26.54
           fa: 47
           fh: 356
+          fay: 46
+          fap: 6
+          bx: 57.58
+          by: 26.56
           h: 0.9
+          lm:
+            le: ok
+            re: ok
       probe:
         dx: 0.1
         dy: -0.12
@@ -3906,7 +5252,14 @@ cuts:
           wy: 24.91
           fa: 89
           fh: 2
+          fay: 88
+          fap: 8
+          bx: 57.51
+          by: 24.93
           h: 0.9
+          lm:
+            le: ok
+            re: back
     - T: 3.0
       t: 3.0
       look: hundred-knight
@@ -3933,7 +5286,14 @@ cuts:
           wy: 24.59
           fa: 33
           fh: 267
+          fay: 30
+          fap: 14
+          bx: 56.63
+          by: 24.58
           h: 0.9
+          lm:
+            le: ok
+            re: ok
     - T: 3.75
       t: 3.75
       look: hundred-knight
@@ -3960,7 +5320,14 @@ cuts:
           wy: 24.56
           fa: 84
           fh: 274
+          fay: 82
+          fap: 22
+          bx: 55.54
+          by: 24.57
           h: 0.9
+          lm:
+            le: ok
+            re: back
     - T: 4.5
       t: 4.5
       look: hundred-knight
@@ -3987,7 +5354,14 @@ cuts:
           wy: 24.4
           fa: 164
           fh: 333
+          fay: 167
+          fap: 17
+          bx: 54.52
+          by: 24.43
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 5.25
       t: 5.25
       look: null
@@ -4014,7 +5388,14 @@ cuts:
           wy: 24.15
           fa: 169
           fh: 320
+          fay: 179
+          fap: 10
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 6.0
       t: 6.0
       look: null
@@ -4041,7 +5422,14 @@ cuts:
           wy: 24.29
           fa: 119
           fh: 320
+          fay: 179
+          fap: -30
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 6.75
       t: 6.75
       look: null
@@ -4068,7 +5456,14 @@ cuts:
           wy: 24.29
           fa: 118
           fh: 320
+          fay: 180
+          fap: -29
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 7.5
       t: 7.5
       look: null
@@ -4095,7 +5490,14 @@ cuts:
           wy: 24.29
           fa: 117
           fh: 320
+          fay: 178
+          fap: -26
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 8.25
       t: 8.25
       look: null
@@ -4122,7 +5524,14 @@ cuts:
           wy: 24.29
           fa: 115
           fh: 320
+          fay: 176
+          fap: -24
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 9.0
       t: 9.0
       look: null
@@ -4149,7 +5558,14 @@ cuts:
           wy: 24.32
           fa: 108
           fh: 340
+          fay: 152
+          fap: -23
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 9.75
       t: 9.75
       look: null
@@ -4176,7 +5592,14 @@ cuts:
           wy: 24.33
           fa: 106
           fh: 340
+          fay: 150
+          fap: -22
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
     - T: 9.96
       t: 9.96
       look: null
@@ -4203,10 +5626,21 @@ cuts:
           wy: 24.33
           fa: 106
           fh: 340
+          fay: 150
+          fap: -22
+          bx: 54.35
+          by: 24.15
           h: 0.9
+          lm:
+            le: back
+            re: back
   A05b-021:
     sec: 15.6
     shot: 寄り→大引き・ティトの家の窓・村
+    input_hash: 1f9c16f96570547ab1db4f9248c7c52736d11979c09eb3953b940e27fe2ecd08
+    tool_hash: b507ff10b38ca4663ecc9d6bc74854cc92bb21a1812653e99e850960d8b1b6b1
+    fps: 24
+    made: '2026-11-27T19:37:48+00:00'
     samples:
     - T: 0.0
       t: 0.0

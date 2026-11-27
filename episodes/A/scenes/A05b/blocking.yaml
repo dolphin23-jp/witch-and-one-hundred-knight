@@ -159,10 +159,12 @@ cuts:
       - {t: 1.6, cam: [57.5, 31.2, 0.95], look: [57.6, 24.6], look_h: 1.0, lens: 32, ease: in}
       - {t: 2.5, cam: [57.85, 29.0, 1.1], look: luckiny, look_h: 1.05, lens: 30, ease: linear}
       - {t: 4.9, cam: [58.3, 28.75, 1.35], look: tito, look_h: 1.1, lens: 30, ease: out}
-      - {t: 7.3, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38, ease: inout}
-      - {t: 10.9, cam: [58.2, 28.7, 1.3], look: tito, look_h: 0.8, lens: 38}
+      - {t: 7.3, cam: [58.55, 28.6, 1.55], look: tito, look_h: 0.8, lens: 38, ease: inout}   # 肩越しを少し右上へ（前は百騎兵の頭がティトの手をふさいだ。2026-11-27）
+      - {t: 10.9, cam: [58.55, 28.6, 1.55], look: tito, look_h: 0.8, lens: 38}
     bg: tito_room
     light_en: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
+    extra_en: "The camera is outside the small house at night, behind the Hundred Knight: the rough stone-brick front wall and the open arched wooden door fill the frame; through the doorway the warm lamplit room inside is visible."   # 始めの画は扉の外（2026-11-27）
+    extra_en_end: "Inside the small house, close to the two."
     act: {start: 夜。ティトの家の扉の外から、扉へ歩いていく百騎兵の背中。開いた扉の向こうの明るい部屋で、先に帰っていたルッキーニィが手招きする, do: 百騎兵が扉から中へ入り、カメラも後ろから続いて入る。ルッキーニィはくるっと向きを変えて奥のカーテンへ駆け込む。入れ替わりにティトがカーテンを抜けて急ぎ足で出てきて、百騎兵の前でひざをつき、ガントレットを両手で包む, end: 肩越しに、ひざをついたティト, sync: L162「あら、あなたがラナを助けてくれた方ですね！感謝の言葉もありません……。」は 4.9秒から（ルッキーニィが奥へ消えてから 1.5秒の溜め、2026-11-01）}
     camera: 扉の外から百騎兵の後ろを追って家の中へ入り、奥へ駆け込むルッキーニィを見送る → 出てきたティトを追って振り、肩越しで止まる
     pose: {hundred-knight: "walking toward the open door of the house at night, seen from behind", luckiny: "inside the lit room near the curtained doorway at the back, beckoning with one hand", tito: "not visible yet"}
