@@ -18,7 +18,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 import staging  # noqa: E402
 
 FRAME_EN = {"大引き": "extreme wide shot", "引き": "wide shot", "全身": "full shot (whole body)", "膝上": "medium-long shot (knees up)",
-            "胸上": "medium close-up (chest up)", "寄り": "close-up", "大寄り": "extreme close-up"}
+            "胸上": "medium close-up (chest up)", "寄り": "close-up", "大寄り": "extreme close-up",
+            "肩越し": "over-the-shoulder shot", "肩なめ": "over-the-shoulder shot", "腰上": "medium shot (waist up)"}
 PANEL_FILE = {"用意画像 bg_01": "refs/witch-house-front_bg_01.png", "用意画像 bg_02": "refs/witch-house-front_bg_02.png",
               "枯れ木": "world/witch-house-front/panel_dead-tree.png", "沼の水面": "world/witch-house-front/panel_swamp-water.png"}
 CREDITS = {"nano_banana_pro": 2.0, "gpt_image_2_5": 1.0}   # 2k、16:9 の1枚（logs/generations.jsonl の実績。GPT Image 2.5 は quality medium）

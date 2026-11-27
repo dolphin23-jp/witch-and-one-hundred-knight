@@ -8,7 +8,7 @@
 カットの入力のハッシュ（input_hash）に入れるもの:
   blocking.yaml のそのカット（アンカーを開いたもの）と、カット以外の頭の項目（layout・layout_extra・lighting・places・start など）、
   前のカットまでの動きで決まるカットの頭の立ち位置と向き（tools/staging.py の状態）、生き物の after でつながる前のカットの通り道、
-  配置ファイル（layout と layout_extra）の中身、ショットファイル、そのカットの時間（前後 1 秒）にかかる voice.yaml の台詞と、その wav と、
+  配置ファイル（layout と layout_extra）の中身、ショットファイル（生成の結果の image・video・video_fit は除く）、そのカットの時間（前後 1 秒）にかかる voice.yaml の台詞と、その wav と、
   台詞の文（audio/<場面>/original/script.yaml の行。表情を決める）。
 道具のハッシュ（tool_hash）: 下絵を描く道具（RENDER_TOOLS）、測定ではそれに tools/previs_audit.py を足したもの（AUDIT_TOOLS）。
 
@@ -109,6 +109,15 @@ class SceneInputs:
         p = self.dir / "shots" / f"{cut}.yaml"
         return (yaml.safe_load(p.read_text(encoding="utf-8")) or {}) if p.exists() else {}
 
+    def shot_for_hash(self, cut):
+        """ハッシュに入れるショットファイル。生成の結果（採用した静止画 image・動画 video・組み立ての合わせ方 video_fit）は
+        下絵の入力ではないので除く（2026-11-27、A05b の生成の後に下絵の記録が古く見えたため）。前からの記録と同じハッシュになるよう、
+        image は項目を残して値を null にそろえる（下絵の記録のある場面は、どれも image: null で描いていた）。"""
+        sh = {k: v for k, v in self.shot(cut).items() if k not in ("video", "video_fit")}
+        if "image" in sh:
+            sh["image"] = None
+        return sh
+
     def inputs(self, cut):
         """カットの入力（ハッシュの元）。"""
         c = (self.raw.get("cuts") or {}).get(cut)
@@ -131,7 +140,7 @@ class SceneInputs:
             if end >= tc - 1.0 and at <= tc + sec + 1.0:
                 lines.append({"line": l, "wav": info, "script": self.script.get(lid)})
         return {"cut": c, "top": self.top, "start_state": start, "track_start": s.get("track_start"),
-                "creatures": creatures, "layout": self.layout_sha, "shot": sh, "voice": lines}
+                "creatures": creatures, "layout": self.layout_sha, "shot": self.shot_for_hash(cut), "voice": lines}
 
     def input_hash(self, cut):
         return _sha(_canon(self.inputs(cut)).encode())

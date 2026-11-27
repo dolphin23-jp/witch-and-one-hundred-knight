@@ -21,7 +21,7 @@ camera:
   lens: 35
   move: 窓から離れて大きく上がり（クレーン）、星空の下の村全体へ（見せ場）→ 最後に星空へ上へ振って A06-000 につなぐ
 background: beast-village
-image: null
+image: episodes/A/scenes/A05b/stills/start/A05b-021_start_gpt-image-2.5_01.png
 refs: []
 overlays: []
 fallback: null
@@ -45,3 +45,6 @@ blocking:
   sketch:
   - episodes/A/scenes/A05b/gen/sketch/A05b-021_start.png
   - episodes/A/scenes/A05b/gen/sketch/A05b-021_end.png
+video: episodes/A/scenes/A05b/video/A05b-021_seedance_2_0_480p_01.mp4
+# 動画は 15.0秒（下絵を 15.0秒に縮めて生成）。組み立てで 15.6秒に伸ばす（setpts=PTS*1.04）。scene_export の speed は速めるだけなので、組み立ての前に道具を直す
+video_fit: head
