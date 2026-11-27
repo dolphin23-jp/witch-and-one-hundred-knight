@@ -31,8 +31,8 @@ def frame(mp4, which, dst):
 def fill(text, frag):
     def rep(m):
         key, _, arg = m.group(1).partition(":")
-        if key == "COMP":
-            return frag["COMP"].replace("{n}", arg).strip()
+        if key in ("COMP", "COMPX"):
+            return " ".join(frag[key].replace("{n}", arg).split())
         if key == "FIRST":
             return frag["FIRST"].replace("{n}", arg)
         if key == "BG":
@@ -70,8 +70,10 @@ def main():
     for v in plan["videos"]["items"]:
         cut = v["cut"]
         sh = shots[cut]
-        who = [pathlib.Path(r).name.split("_sheet_01")[0] for r in v["image_references"]]
+        who = [pathlib.Path(r).name.split("_sheet_01")[0].split("_front")[0] for r in v["image_references"]]   # 何度流しても同じ（scene_plan.py の sheet か、後処理後の front）
         v["image_references"] = [f"characters/{w}/views/{w}_front.png" for w in who]
+        for r in v["image_references"]:
+            assert (ROOT / r).exists(), r
         if v.get("audio_reference"):   # カットの長さ（生成の秒）の mp3 に、台詞をカット内の時刻で置く
             out = TMP / "audio" / f"{cut}_lines.mp3"
             out.parent.mkdir(parents=True, exist_ok=True)
@@ -109,6 +111,7 @@ def main():
                     "プリセットの推薦（IN THE DARK など）で止まったら declined_preset_id を付けて同じ内容で出し直す（ジョブも課金も作られていない）。送る前に estimate_video_cost で 1秒1クレジットかを確かめる")
     plan["credits_estimate"]["note"] = ("作り直しは承認を取り直す（自動では作らない）。枠の目安 +15〜25（長いカット1本と静止画数枚）、上限の目安 約130。"
                                         "残高 1,200（2026-11-27、Plus）")
+    plan["note"] = "生成には、この計画の prompt と refs だけを使う（ショットファイルの staging_en は前の文のまま残ることがある）"
     p.write_text(head + yaml.safe_dump(plan, allow_unicode=True, sort_keys=False, width=200), encoding="utf-8")
     print("ok", p)
 
