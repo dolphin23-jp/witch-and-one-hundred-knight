@@ -1,19 +1,40 @@
-# A05b の生成計画の中身（tools/scene_plan.py が読む）。Claude の案（2026-11-27）。D-060: 動きは下絵で決め、終わりの画は着地点を固めたいカットだけ
+# A05b の生成計画の中身（tools/scene_plan.py が読み、作業用の後処理が stills と videos の差し替えを入れる）。Claude の案（2026-11-27）。
+# D-060: 動きは下絵で決め、終わりの画は着地点を固めたいカットだけ。生成の前の点検（3 観点の独立した点検、2026-11-27）の直しを入れた
 video: {model: seedance_2_0, mode: fast, resolution: 480p, credits_per_sec: 1}
 video_note: >-
-  開始の画＋（必要なカットだけ終わりの画）＋設定画＋下絵（Blender、854x480・24fps、関節のある人形。2026-11-27 に今の道具で描き直した）＋口パク参照（ルッキーニィ・ティトの台詞で口が見えるカット。
-  カットの長さの mp3 に原作の台詞をカット内の時刻で置く）。最短4秒・整数秒。生成音声は使わない（generate_audio=false）。
-  021 は 15.6秒で Seedance の最長 15秒を超えるので、下絵を 15.0秒に縮めて 15秒で作り、組み立てで 15.6秒に伸ばす（4% 遅くするだけ。1本のクレーンを切らない）
+  開始の画＋（必要なカットだけ終わりの画）＋人物の正面の切り抜き（characters/<人物>/views/<人物>_front.png）＋下絵（Blender、854x480・24fps、関節のある人形。2026-11-27 に今の道具で描き直した）
+  ＋口パク参照（ルッキーニィ・ティトの台詞で口が見えるカット。カットの長さの mp3 に原作の台詞をカット内の時刻で置く）。最短4秒・整数秒。生成音声は使わない（generate_audio=false）。
+  021 は 15.6秒で Seedance の最長 15秒を超えるので、下絵を 15.0秒（360コマ）に縮めて 15秒で作り、組み立てで 15.6秒に伸ばす（4% 遅くするだけ。1本のクレーンを切らない）。
+  口パクのカット（013・014・016・017・018・019）は、組み立てで video_fit: head にして声の時刻を保つ（A04・A05 と同じ）
 tail: >-
+  Video 1 is a rough 3D blocking animation with simple jointed mannequin figures (with simple drawn faces) and plain box shapes for the buildings and props:
+  follow its timing, positions, movement and camera, but do not draw the mannequins, their faces or colors, or the plain shapes.
   2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep every character's design, colors and proportions
-  identical to the first frame and the reference sheets. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face
+  identical to the first frame and the reference images. The Hundred Knight is small (about waist-high to an adult), has no mouth and never speaks; its face
   is black with only two glowing orange eyes. No one else appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops
   or question marks).
+tails:   # カットごとの末尾（写る人物が違うカット）
+  A05b-019: >-
+    Video 1 is a rough 3D blocking animation with a simple jointed mannequin figure (with a simple drawn face) and plain box shapes for the furniture:
+    follow its timing, positions, movement and camera, but do not draw the mannequin, its face or colors, or the plain shapes.
+    2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep Tito's design, colors and proportions identical to
+    the first frame and the reference image. Only Tito appears. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks).
+  A05b-021: >-
+    Video 1 is a rough 3D blocking animation with plain box shapes for the houses: follow its timing and camera movement, but do not draw the plain shapes.
+    2D TV anime style, clean line art, cel shading, rich but soft colors, dynamic anime camera work. Keep the look of the first frame. No people or creatures
+    appear anywhere in the shot. No text, no captions.
+lip:   # 口パクの文（scene_plan.py の共通の文を、話す人物の名前で置き換える）
+  A05b-013: "Sync Luckiny's mouth to the line in audio 1 whenever her face is visible."
+  A05b-014: "Sync Luckiny's mouth to the lines in audio 1 whenever her face is visible."
+  A05b-016: "Sync Tito's mouth to the line in audio 1 whenever her face is visible; Luckiny does not speak."
+  A05b-017: "Sync Tito's mouth to the line in audio 1."
+  A05b-018: "Sync Tito's mouth to the line in audio 1 whenever her face is visible."
+  A05b-019: "Sync Tito's mouth to the lines in audio 1 whenever her face is visible."
 no_end:
-  A05b-014: 後ろ向きに歩く・お辞儀・示す・走り去ると芝居の区切りが多い。終わりの画で途中を省かせない。下絵に従わせる
+  A05b-014: 後ろ向きに歩く・お辞儀・身ぶり・走り去ると芝居の区切りが多い。終わりの画で途中を省かせない。下絵に従わせる
   A05b-017: 寄りで手を離して笑うだけ。カメラもゆっくり寄るだけ
   A05b-018: 部屋を横切るトラック。窓辺の着地は 019 の開始の画で固まる
-  A05b-019: 終わりは窓の外の星空（人物なし）。下絵に従わせる
+  A05b-019: 終わりは窓の外の星空（人物なし。12.2 秒で振り上げが終わる）。下絵に従わせる
 cels: []
 speaker:
   A05b-013: luckiny
@@ -23,12 +44,145 @@ speaker:
   A05b-018: tito
   A05b-019: tito
 prompts:
-  A05b-013: "Red sunset light. The camera follows low from behind as Luckiny and the Hundred Knight walk through a narrow gap between two tall red rocks, Luckiny ahead. At about 2.5 seconds Luckiny glances back over her shoulder and speaks with a tired, relieved smile. As they pass through the gap, the camera cranes up high and back over the rocks in one smooth move, revealing the whole small village in the sandy valley below, glowing in the sunset; the two become small figures walking toward it."
-  A05b-014: "Late sunset light on a sandy village path between houses. The camera moves backward in front of the two at a low height: Luckiny walks backward ahead of the Hundred Knight, bowing politely again and again as she invites it to her house. At about 4 seconds she stops and the Hundred Knight stops too. At about 5.4 seconds she points with one hand toward a house at the far east edge of the village, talking, while the camera slowly pushes in on her; at about 9 seconds she bows once more, then turns around and runs off toward that house. The camera pans to follow her running away; the Hundred Knight stands still, watching her go."
-  A05b-015: "Dusk, backlit by the low western sun. A low camera with an old round stone well large in the foreground. Behind the well, the Hundred Knight walks past from left to right, stops abruptly at about 1.5 seconds as if hearing a voice in its head, and turns to look back toward the well. Then the camera slowly rises and pushes in on the dark open mouth of the well; deep at the bottom a faint green glow appears."
-  A05b-016: "Night. The camera starts outside the open door of a small house, behind the Hundred Knight as it walks toward the door; inside, in the warm lamplight, Luckiny stands near a curtained doorway at the back and beckons with one hand. At about 1.8 seconds she turns and runs through the curtain into the back room. The camera follows the Hundred Knight in through the doorway. After a short pause, Tito hurries out through the curtain (about 4.7 seconds), comes straight to the Hundred Knight, kneels in front of it and takes its gauntlet in both hands (about 7.3 seconds), speaking gratefully. The camera pans with her and settles slightly above and behind the Hundred Knight, looking over its shoulder at her face and her hands holding its gauntlet."
-  A05b-017: "Night inside the house, warm lamplight. A close shot of Tito kneeling and holding the Hundred Knight's gauntlet in both hands; the Hundred Knight's shoulder is at the edge of the frame. At about 1.6 seconds she lets go of its hand and smiles with worry as she speaks. The camera very slowly pushes in on her face."
-  A05b-018: "Night inside the house, warm lamplight. Tito gets up from kneeling and, gesturing at the bare room with one open hand as she apologizes, walks across the room around the table toward the small window; the camera trucks sideways along the wall with her, keeping her whole body in frame. The Hundred Knight stands near the door and turns its head to follow her. She stops at the window at the end."
-  A05b-019: "Night, Tito at the small window, seen over her shoulder. She looks up at the starry sky through the window, then turns back and smiles apologetically as she speaks. At about 7.8 seconds she suddenly covers her mouth with one hand as she remembers something, then hurries across the room past the bed to the curtained doorway at the back and goes through it; the camera pulls back and pans to follow her, and holds on the doorway as she disappears behind the curtain."
-  A05b-020: "Night inside the house, warm lamplight and cool blue starlight from the window. A low camera near the shelf by the window: the Hundred Knight, alone in the room, turns its head toward the window, then walks across the room to the shelf; the camera circles around it as it passes and ends looking over its shoulder. It stops at the shelf and looks up at the rolled star charts and a brass astrolabe on it, the starry sky in the small window beyond."
-  A05b-021: "Night outside. A close shot of the small lit window of Tito's house. The camera pulls away from the window and cranes up high in one slow continuous move, circling around the north side of the house, until the whole small village in the valley is seen from high above under a sky full of stars, with a few warm lit windows below; at the very end the camera tilts up into the starry sky."
+  A05b-013: "Red sunset light. The camera follows low from behind as Luckiny and the Hundred Knight walk through a narrow gap between two tall red rocks, Luckiny ahead. She talks from the start; at about 2.2 seconds she glances back over her shoulder with a tired, relieved smile, then faces forward again. As they pass through the gap, the camera cranes up high and back over the rocks in one smooth move, revealing the whole small village in the sandy valley below in the sunset light; the two become tiny figures walking toward it."
+  A05b-014: "Late sunset light just inside the village gate. The camera moves backward in front of the two at a low height: Luckiny walks backward ahead of the Hundred Knight in a deep polite bow as she invites it to her house (1 to 3.4 seconds). At about 4 seconds she stops and the Hundred Knight stops too. From about 5.4 seconds she explains with an open hand gesture where her house is, while the camera slowly pushes in on her; at about 9 seconds she bows once more, then turns around and runs off down the lane toward a house at the far edge of the village. The camera pans to follow her running away until she is small in the distance; the Hundred Knight is left behind off screen."
+  A05b-015: "Dusk, backlit by low warm sunlight from the west. A low camera with an old round stone well large in the foreground on the left. Just right of the well, the Hundred Knight walks from left to right, stops abruptly at about 1.5 seconds as if hearing a voice in its head, and turns to look back toward the well. Then the camera slowly rises and moves in over the well, looking down into its dark open mouth; deep at the bottom a faint round green glow appears."
+  A05b-016: "Night. The camera starts outside the open door of a small house, behind the Hundred Knight as it walks toward the door; inside, in the warm lamplight, Luckiny stands near a curtained doorway at the back and beckons with one hand. At about 1.8 seconds she turns and runs through the curtain into the back room. The camera follows the Hundred Knight in through the doorway. After a short pause, Tito hurries out through the curtain (about 5.3 seconds), comes straight to the Hundred Knight, kneels in front of it and takes its gauntlet in both hands (about 7.3 seconds), speaking gratefully. The camera pans with her and settles slightly above and behind the Hundred Knight, looking over its shoulder at her face and her hands holding its gauntlet."
+  A05b-017: "Night inside the house, warm lamplight. A close shot of Tito kneeling and holding the Hundred Knight's gauntlet in both hands; the Hundred Knight's shoulder is a blurred shape at the edge of the frame. At about 1.6 seconds she lets go of its hand and smiles with worry as she speaks. The camera very slowly pushes in on her face."
+  A05b-018: "Night inside the house, warm lamplight. Tito gets up from kneeling (about 0.8 seconds) and, gesturing at the bare room with one open hand as she apologizes, walks away from the camera across the room, around the table, toward the small window on the back wall; her back is to the camera for most of the line. The camera moves sideways along the wall to the west as she goes. The Hundred Knight stands near the door in the foreground at first and turns its head to follow her. She stops at the window at the end."
+  A05b-019: "Night, Tito at the small window, seen over her shoulder. She looks up at the starry sky through the window, then turns back and smiles apologetically as she speaks. At about 6.3 seconds, with a small gasp, she covers her mouth with one hand as she remembers something, then hurries past the bed to the curtained doorway at the back and goes through it (about 9.9 seconds); the camera follows her, then tilts up to the small window and ends on the starry night sky through it."
+  A05b-020: "Night inside the house, warm lamplight and cool blue starlight from the window. A low camera near the shelf by the window: across the room, beyond the table, the Hundred Knight, alone, turns its head toward the window (about 0.9 seconds). At about 1.3 seconds it starts walking across the room toward the shelf; it passes close by the camera at about 3.5 seconds as the camera circles around it, ending looking over its shoulder. It stops at the shelf at about 5 seconds and from about 5.6 seconds looks up at the rolled star charts and a brass astrolabe on it, the starry sky in the small window beyond."
+  A05b-021: "Night outside. A close shot of the small lit window of Tito's house. The camera pulls away from the window and cranes up high in one slow continuous move, circling around the north side of the house, until the whole small village in the valley is seen from high above, with a few warm lit windows below; at the very end the camera tilts up into a deep blue night sky full of stars."
+
+# 静止画の指示文と参照（scene_plan.py の自動の文を差し替える。点検 S1〜S19 の直し）
+_dusk: &dusk "Dusk in the desert valley: low warm sunlight from the west, an orange-red sky fading to purple overhead, long soft shadows, warm light on the walls, the first lamps lit."
+stills:
+  A05b-013/start:
+    refs: [characters/luckiny/views/luckiny_back.png, characters/hundred-knight/views/hundred-knight_back.png, world/beast-village/panel_gate.png, world/beast-village/panel_wide.png, episodes/A/scenes/A05b/gen/sketch/A05b-013_start_previs.png]
+    prompt: >-
+      Camera: low chase shot from just behind the Hundred Knight, 35mm lens, camera height 1.3 m. In frame (exactly 2 people): the Hundred Knight (character
+      reference: image 2) in the near foreground at the bottom center, seen from behind from the shoulders up, cut off by the bottom edge; Luckiny (character
+      reference: image 1) walking about two meters ahead in the middle of the frame, whole body, with her back to the camera. No other people. Two tall red rock
+      walls fill the left and right of the frame with a narrow sandy passage between them; far ahead through the gap, a glimpse of a stacked-stone gate pillar
+      and the orange sky. {DUSK} {HEIGHTS_LH} {BG:3,4} {COMP:5} {KEEP} {STYLE}
+  A05b-013/end:
+    refs: [characters/hundred-knight/views/hundred-knight_back.png, characters/luckiny/views/luckiny_back.png, world/beast-village/panel_high.png, world/beast-village/panel_wide.png, episodes/A/scenes/A05b/gen/sketch/A05b-013_end_previs.png, "{START}"]
+    prompt: >-
+      Camera: extreme wide shot from high above and behind, 28mm lens, camera height 13 m, looking down. In frame (exactly 2 people, both tiny): far below at the
+      lower left of the frame, Luckiny (character reference: image 2) and the Hundred Knight (character reference: image 1) walk out of the narrow gap between
+      the tall red rocks of the valley entrance, seen from above and behind, Luckiny a few steps ahead. No other people. The flat tops of the red rocks fill the
+      lower part of the frame in the foreground; beyond them the whole small village in the sandy valley comes into view: wooden houses with red tiled roofs, low
+      stone walls and wooden fences, a stone well. The camera looks down, so the sky is out of frame. Dusk: low warm sunlight from the west, long soft shadows
+      across the sand, warm light on the walls and roofs, the first lamps lit. {HEIGHTS_LH} {BG:3,4} {COMP:5} {FIRST:6} {KEEP} {STYLE}
+  A05b-014/start:
+    refs: [characters/luckiny/views/luckiny_front.png, characters/luckiny/views/luckiny_side.png, characters/hundred-knight/views/hundred-knight_front.png, characters/hundred-knight/views/hundred-knight_side.png, world/beast-village/panel_gate.png, world/beast-village/panel_corner.png, episodes/A/scenes/A05b/gen/sketch/A05b-014_start_previs.png]
+    prompt: >-
+      Camera: full shot (whole body), 30mm lens, camera height 1.2 m, moving backward in front of them. In frame (exactly 2 people, from left to right): Luckiny
+      (character reference: images 1, 2), walking backward ahead of the Hundred Knight and facing it with a polite smile, on the left of the frame, in
+      three-quarter view, turned toward screen right; the Hundred Knight (character reference: images 3, 4), walking toward her, in the center of the frame, in
+      three-quarter view, turned toward screen left. No other people. They have just come in through the village gate: a tall stacked-stone gate pillar stands
+      right behind the Hundred Knight, another at the right edge of the frame, a low stone wall behind Luckiny, wooden houses with red tiled roofs beyond, the
+      orange dusk sky. {DUSK} {HEIGHTS_LH} {BG:5,6} {COMP:7} {KEEP} {STYLE}
+  A05b-015/start:
+    refs: [characters/hundred-knight/views/hundred-knight_side.png, characters/hundred-knight/views/hundred-knight_front.png, world/beast-village/panel_wide.png, episodes/A/scenes/A05b/gen/sketch/A05b-015_start_previs.png]
+    prompt: >-
+      Camera: wide shot, 32mm lens, low camera height 0.75 m. In the foreground on the left stands a low old round stone well, large in the frame. In frame
+      (exactly one person): the Hundred Knight (character reference: images 1, 2), walking from left to right behind the well, just right of it, its whole body
+      visible, in profile turned toward screen right. No other people. Behind: the middle of the village: sandy ground, a wooden house with a red tiled roof on
+      the left, a wooden fence, a tall red cliff on the right. Dusk, slightly backlit: low warm sunlight from the west, an orange sky, long soft shadows, warm rim
+      light. {HEIGHTS_H} {BG:3} {COMP:4} {KEEP} {STYLE}
+  A05b-015/end:
+    refs: [episodes/A/scenes/A05b/gen/sketch/A05b-015_end_previs.png, "{START}"]
+    prompt: >-
+      Camera: close-up from just above the rim, 40mm lens, looking down into the old stone well. No people in frame. The pitch-black mouth of the well fills most
+      of the frame, with the worn grey stone rim curving along the bottom and the sides; deep down inside, in the upper part of the frame, a faint round green
+      glow. No sky, no houses. The last warm dusk light grazes the rim. Composition: image 1 is a rough 3D layout render with plain shapes; follow its camera
+      angle and framing, and redraw the plain shapes as the real old stone well, without their flat colors. Image 2 is the first frame of the same shot (made
+      first): keep its light, stone and colors. {STYLE}
+  A05b-016/start:
+    refs: [characters/luckiny/views/luckiny_front.png, characters/hundred-knight/views/hundred-knight_back.png, world/beast-village/panel_house.png, world/tito-house/tito-house_room_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-016_start_previs.png]
+    prompt: >-
+      Camera: full shot (whole body), 35mm lens, camera height 1.0 m, outside the small house at night. In frame (exactly 2 people): the Hundred Knight
+      (character reference: image 2) in the foreground center, seen from behind, walking toward the open door; Luckiny (character reference: image 1), small,
+      inside the lit room beyond the doorway, near a curtained doorway at the back, facing the camera and beckoning with one hand. No other people. The front wall
+      of Tito's small house fills the frame: a wooden plank wall on a grey stone foundation (like the village house in image 3) with the open wooden door in the
+      middle; through the doorway, the warm lamplit room inside (like image 4): a table with a red cloth, shelves with clay pots, a curtained doorway at the back.
+      At the right edge, a glimpse of the sandy ground and a red rock outside. Outside it is night: dark blue shadows, cool moonlight on the wall and the sand;
+      warm orange light spills out of the door. {HEIGHTS_LH} Background: images 3, 4 only show what these places look like (buildings, materials, colors); do not
+      copy their viewpoint or framing. {COMP:5} {KEEP} {STYLE}
+  A05b-016/end:
+    refs: [characters/hundred-knight/views/hundred-knight_back.png, characters/hundred-knight/views/hundred-knight_side.png, characters/tito/views/tito_front.png, world/tito-house/tito-house_window_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-016_end_previs.png, "{START}"]
+    prompt: >-
+      Camera: over-the-shoulder shot, 38mm lens, camera height 1.55 m, slightly above and behind the Hundred Knight. In frame (exactly 2 people): the Hundred
+      Knight (character reference: images 1, 2) in the near foreground at the lower left, only its helmet and plume seen from behind; Tito (character reference:
+      image 3), kneeling in front of it in the center of the frame, seen from the knees up, facing the camera, holding its gauntlet in both hands and looking at
+      it gratefully. No other people. Inside the small house: the red-clothed table on the left, a simple wooden bed against the back wall, stone-brick walls.
+      {NIGHT_IN} {HEIGHTS_HT} {BG:4} {COMP:5} Image 6 is the first frame of the same shot (made first, from outside the open door): keep the look of the room seen
+      through the doorway and the way the characters are drawn. {KEEP} {STYLE}
+  A05b-017/start:
+    refs: [characters/tito/views/tito_face_front.png, characters/tito/views/tito_front.png, characters/hundred-knight/views/hundred-knight_back.png, characters/hundred-knight/views/hundred-knight_side.png, world/tito-house/tito-house_room_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-017_start_previs.png]
+    prompt: >-
+      Camera: close-up, 50mm lens, camera height 0.95 m. In frame (exactly 2 people): Tito (character reference: images 1, 2), kneeling, seen from the chest up in
+      the center of the frame, facing the camera, holding the Hundred Knight's gauntlet in both hands at the bottom edge, smiling with worry; the Hundred Knight
+      (character reference: images 3, 4), a soft blurred shape at the far right edge in the foreground, seen from behind. No other people. Behind her, softly out
+      of focus (shallow depth of field): the curtained doorway in a brick arch to the back room, rough stone-brick walls. {NIGHT_IN} {HEIGHTS_HT} {BG:5} {COMP:6}
+      {KEEP} {STYLE}
+  A05b-018/start:
+    refs: [characters/hundred-knight/views/hundred-knight_back.png, characters/hundred-knight/views/hundred-knight_side.png, characters/tito/views/tito_front.png, world/tito-house/tito-house_window_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-018_start_previs.png]
+    prompt: >-
+      Camera: full shot (whole body), 28mm lens, camera height 1.35 m. In frame (exactly 2 people, from left to right): the Hundred Knight (character reference:
+      images 1, 2), in the near foreground on the left, seen from behind at an angle, its helmet and plume at the bottom edge; Tito (character reference: image 3),
+      kneeling on the floor in front of it in the center of the frame, facing the camera, about to get up. No other people. Inside the small house: the
+      red-clothed table with stools on the left, a simple wooden bed against the back wall, a small square window with a starry night sky high on the back wall,
+      stone-brick walls. {NIGHT_IN} {HEIGHTS_HT} {BG:4} {COMP:5} {KEEP} {STYLE}
+  A05b-019/start:
+    refs: [characters/tito/views/tito_side.png, characters/tito/views/tito_back.png, world/tito-house/tito-house_window_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-019_start_previs.png]
+    prompt: >-
+      Camera: medium shot from behind her, 35mm lens, camera height 1.45 m. In frame (exactly one person): Tito (character reference: images 1, 2), standing at
+      the small window, seen from behind at an angle, her horns and hood toward the camera, looking up at the starry sky through the window. No other people.
+      Inside the small house: the small square window with a deep blue starry night sky at the right edge, stone-brick walls, a dark wooden cabinet beside her.
+      {NIGHT_WIN} Heights: Tito 1.5 m. {BG:3} {COMP:4} {KEEP} {STYLE}
+  A05b-020/start:
+    refs: [characters/hundred-knight/views/hundred-knight_front.png, characters/hundred-knight/views/hundred-knight_side.png, world/tito-house/tito-house_door_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-020_start_previs.png]
+    prompt: >-
+      Camera: low shot from beside the shelf by the window, 30mm lens, camera height 0.9 m. In frame (exactly one person): the Hundred Knight (character
+      reference: images 1, 2), across the room beyond the red-clothed table in the foreground, only its helmet and glowing eyes visible above the table top, its
+      head turning toward the camera side. No other people. Behind it: the arched wooden door, a straw crate and a large clay jar beside it, the small hearth
+      glowing at the left edge, stone-brick walls. {NIGHT_IN} {HEIGHTS_H} {BG:3} {COMP:4} {KEEP} {STYLE}
+  A05b-020/end:
+    refs: [characters/hundred-knight/views/hundred-knight_back.png, world/tito-house/tito-house_window_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-020_end_previs.png, "{START}"]
+    prompt: >-
+      Camera: over-the-shoulder shot, 30mm lens, camera height 1.05 m. In frame (exactly one person): the Hundred Knight (character reference: image 1), in the
+      near foreground at the bottom, seen from behind, looking up. No other people. In front of it, the shelf by the small window: rolled star charts and a brass
+      astrolabe on the shelf, a small oil lamp; above, the small square window with a deep blue night sky full of stars; stone-brick walls. {NIGHT_WIN}
+      {HEIGHTS_H} {BG:2} {COMP:3} Image 4 is the first frame of the same shot (made first): keep its light, room and the way the Hundred Knight is drawn. {KEEP}
+      {STYLE}
+  A05b-021/start:
+    refs: [world/beast-village/panel_house.png, world/tito-house/tito-house_door_gpt-image-2.5_01.png, episodes/A/scenes/A05b/gen/sketch/A05b-021_start_previs.png]
+    prompt: >-
+      Camera: close-up from outside at night, 35mm lens, camera height 1.7 m. No people in frame. The small square window of Tito's house in the middle of the
+      frame, the dark outer wall around it filling the frame (a wooden house like image 1); through the window, the warm lamplit room inside (like image 2): a
+      table with a red cloth, the open front door beyond. No sky in frame. Night outside: cool faint moonlight on the wall, warm orange lamplight from the window.
+      Background: images 1, 2 only show what these places look like (buildings, materials, colors); do not copy their viewpoint or framing. {COMP:3} {STYLE}
+  A05b-021/end:
+    refs: [world/beast-village/panel_high.png, episodes/A/scenes/A05b/gen/sketch/A05b-021_end_previs.png, "{START}"]
+    prompt: >-
+      Camera: extreme wide shot from high above the village (15 m), 24mm lens, tilted up toward the sky. No people in frame. A deep blue night sky full of stars
+      fills the upper four fifths of the frame; along the bottom edge, the dark red-tiled rooftops of the village with a few warm lit windows, and the dark line
+      of the red cliffs. Background: image 1 only shows what the village looks like (houses, roofs, cliffs; it is in daylight, here it is night); do not copy its
+      viewpoint or framing. {COMP:2} Image 3 is the first frame of the same shot (made first): keep the look of the house and the night light. {STYLE}
+fragments:
+  DUSK: *dusk
+  NIGHT_IN: "Night inside the house: warm orange light from oil lamps and the small hearth fire, deep soft shadows in the corners."
+  NIGHT_WIN: "Night inside the house: warm orange light from a small oil lamp by the window, cool blue starlight coming in through the window."
+  HEIGHTS_LH: "Heights: Luckiny 1.4 m; the Hundred Knight 0.9 m (small, only about waist-high to an adult)."
+  HEIGHTS_H: "Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult)."
+  HEIGHTS_HT: "Heights: the Hundred Knight 0.9 m (small, only about waist-high to an adult); Tito 1.5 m."
+  KEEP: "Keep each character's design, colors and proportions identical to their character reference images."
+  STYLE: "2D TV anime style, clean line art, cel shading, rich but soft colors, 16:9. No text, no captions, no speech bubbles, no manga symbols (no anger marks, sweat drops or question marks)."
+  COMP: >-
+    Composition: image {n} is a rough 3D layout render with simple jointed mannequin figures and plain box shapes; follow its camera angle, framing and the
+    positions, poses and facing of the characters. Redraw every plain shape as the real rock, building, well or furniture described, in the same place and
+    size; do not draw the mannequins, their flat colors or their simple faces. Pale yellow spheres are small oil lamps; ignore small grey floating dots.
+  BG: "Background: {imgs} only {verb} what this place looks like (buildings, materials, colors); do not copy {its} viewpoint or framing."
+  FIRST: "Image {n} is the first frame of the same shot (made first): keep its background rendering, light and the way the characters are drawn."
